@@ -1,0 +1,14 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "command": {
+    "publish": {
+      "ignore": [
+        "*.md",
+        "src"
+      ]
+    }
+  },
+  "version": "0.0.0"
+}

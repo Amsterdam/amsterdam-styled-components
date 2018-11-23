@@ -1,0 +1,77 @@
+{
+  "name": "amsterdam-styled-components",
+  "description": "A library to manage styled components",
+  "license": "MPL-2.0",
+  "author": "Datapunt Amsterdam",
+  "homepage": "https://github.com/Amsterdam/amsterdam-styled-components#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amsterdam/amsterdam-styled-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
+  },
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build-storybook": "build-storybook",
+    "postinstall": "npx lerna bootstrap --hoist",
+    "lint": "npm run lint:js",
+    "lint:js": "npx eslint packages/**/src/** --ext js,jsx",
+    "storybook": "start-storybook -p 6006",
+    "test": "NODE_ENV=testing npx jest",
+    "transpile": "npx lerna exec --parallel -- babel src -d lib",
+    "transpile:watch": "npm run transpile -- -w",
+    "prettify:package": "npx prettier-package-json --write **/package.json"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.1.2",
+    "@babel/core": "7.1.2",
+    "@babel/plugin-proposal-class-properties": "7.1.0",
+    "@babel/plugin-syntax-dynamic-import": "7.0.0",
+    "@babel/plugin-transform-modules-commonjs": "7.1.0",
+    "@babel/plugin-transform-react-constant-elements": "7.0.0",
+    "@babel/plugin-transform-react-inline-elements": "7.0.0",
+    "@babel/preset-env": "7.1.0",
+    "@babel/preset-react": "7.0.0",
+    "@babel/register": "7.0.0",
+    "@storybook/addon-actions": "^4.0.8",
+    "@storybook/addon-links": "^4.0.8",
+    "@storybook/addons": "^4.0.8",
+    "@storybook/react": "^4.0.8",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.0.1",
+    "babel-loader": "8.0.4",
+    "babel-plugin-dynamic-import-node": "2.2.0",
+    "babel-plugin-lodash": "3.3.4",
+    "babel-plugin-react-intl": "3.0.1",
+    "babel-plugin-react-transform": "3.0.0",
+    "babel-plugin-styled-components": "1.8.0",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.19",
+    "enzyme": "3.7.0",
+    "enzyme-adapter-react-16": "1.6.0",
+    "enzyme-to-json": "3.3.4",
+    "eslint": "^5.9.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest-cli": "23.6.0",
+    "jest-styled-components": "6.2.2",
+    "lerna": "^3.4.3",
+    "prettier-package-json": "^2.0.1",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-test-renderer": "^16.6.3",
+    "regenerator-runtime": "^0.13.1"
+  },
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "standard",
+    "standard-react"
+  ],
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ]
+  },
+  "env": {
+    "jest": true
+  }
+}
