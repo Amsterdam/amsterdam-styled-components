@@ -29,9 +29,29 @@ function getPaddingBasedOnArrow (arrowPos) {
   }
 }
 
-export const StyledButton = styled.button`
+function getBackgroundColor (color, hover) {
+  switch (color) {
+    case null:
+      return hover ? '#CFCFCF' : '#E8E8E8'
+    case 'primary':
+      return hover ? '#B90000' : '#EC0000'
+    case 'secondary':
+      return hover ? '#002f66' : '#004699'
+  }
+}
+
+function getFontColor (color) {
+  switch (color) {
+    case null:
+      return '#000'
+    default:
+      return '#FFF'
+  }
+}
+
+export const ButtonStyled = styled.button`
   border: none;
-  color: ${({ primary }) => primary ? '#FFF' : '#000'};
+  color: ${({ color }) => getFontColor(color)};
 
   height: 38px;
   cursor: pointer;
@@ -39,16 +59,16 @@ export const StyledButton = styled.button`
   line-height: 1em;
   font-family: "AvenirNextLTW01-Regular", verdana, sans-serif;
 
-  background: ${({ arrowPos, primary }) => (
-    getArrowStyling(arrowPos, primary ? '#EC0000' : '#E8E8E8')
+  background: ${({ arrowPos, color }) => (
+    getArrowStyling(arrowPos, getBackgroundColor(color, false))
   )};
   background-size: 100% 50%;
   background-repeat: no-repeat;
   padding: ${({ arrowPos }) => getPaddingBasedOnArrow(arrowPos)};
 
   &:hover {
-    background: ${({ arrowPos, primary }) => (
-    getArrowStyling(arrowPos, primary ? '#B90000' : '#CFCFCF')
+    background: ${({ arrowPos, color }) => (
+    getArrowStyling(arrowPos, getBackgroundColor(color, true))
   )};
     background-size: 100% 50%;
     background-repeat: no-repeat;
