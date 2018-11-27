@@ -31,7 +31,7 @@ function getPaddingBasedOnArrow (arrowPos) {
 
 export const StyledButton = styled.button`
   border: none;
-  color: #FFF;
+  color: ${({ primary }) => primary ? '#FFF' : '#000'};
 
   height: 38px;
   cursor: pointer;
@@ -39,13 +39,17 @@ export const StyledButton = styled.button`
   line-height: 1em;
   font-family: "AvenirNextLTW01-Regular", verdana, sans-serif;
 
-  background: ${({ arrowPos }) => getArrowStyling(arrowPos, '#EC0000')};
+  background: ${({ arrowPos, primary }) => (
+    getArrowStyling(arrowPos, primary ? '#EC0000' : '#E8E8E8')
+  )};
   background-size: 100% 50%;
   background-repeat: no-repeat;
   padding: ${({ arrowPos }) => getPaddingBasedOnArrow(arrowPos)};
 
   &:hover {
-    background: ${props => getArrowStyling(props.arrowPos, '#B90000')};
+    background: ${({ arrowPos, primary }) => (
+    getArrowStyling(arrowPos, primary ? '#B90000' : '#CFCFCF')
+  )};
     background-size: 100% 50%;
     background-repeat: no-repeat;
   }
