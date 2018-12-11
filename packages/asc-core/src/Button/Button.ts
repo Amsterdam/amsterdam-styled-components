@@ -3,7 +3,7 @@ import styled from 'styled-components'
 // TODO: Put generics in a theme
 // TODO: Add correct font
 
-function getArrowStyling (arrowPos, color) {
+function getArrowStyling(arrowPos: any, color: any) {
   switch (arrowPos) {
     case null:
       return color
@@ -18,29 +18,29 @@ function getArrowStyling (arrowPos, color) {
   }
 }
 
-function getPaddingBasedOnArrow (arrowPos) {
+function getPaddingBasedOnArrow(arrowPos: any) {
   switch (arrowPos) {
-    case null:
-      return '0 10px 0 10px'
     case 'right':
       return ' 0 30px 0 10px'
     case 'left':
       return ' 0 10px 0 30px'
+    default:
+      return '0 10px 0 10px'
   }
 }
 
-function getBackgroundColor (color, hover) {
+function getBackgroundColor(color: any, hover: any) {
   switch (color) {
-    case null:
-      return hover ? '#CFCFCF' : '#E8E8E8'
     case 'primary':
       return hover ? '#B90000' : '#EC0000'
     case 'secondary':
       return hover ? '#002f66' : '#004699'
+    default:
+      return hover ? '#CFCFCF' : '#E8E8E8'
   }
 }
 
-function getFontColor (color) {
+function getFontColor(color: any) {
   switch (color) {
     case null:
       return '#000'
@@ -49,7 +49,7 @@ function getFontColor (color) {
   }
 }
 
-export const ButtonStyled = styled.button`
+const Button = styled.button`
   border: none;
   color: ${({ color }) => getFontColor(color)};
 
@@ -59,18 +59,19 @@ export const ButtonStyled = styled.button`
   line-height: 1em;
   font-family: "AvenirNextLTW01-Regular", verdana, sans-serif;
 
-  background: ${({ arrowPos, color }) => (
-    getArrowStyling(arrowPos, getBackgroundColor(color, false))
-  )};
+  background: ${({ arrowPos, color }: any) => (
+  getArrowStyling(arrowPos, getBackgroundColor(color, false))
+)};
   background-size: 100% 50%;
   background-repeat: no-repeat;
-  padding: ${({ arrowPos }) => getPaddingBasedOnArrow(arrowPos)};
+  padding: ${({ arrowPos }: any) => getPaddingBasedOnArrow(arrowPos)};
 
   &:hover {
-    background: ${({ arrowPos, color }) => (
-    getArrowStyling(arrowPos, getBackgroundColor(color, true))
-  )};
+    background: ${({ arrowPos, color }: any) => (
+  getArrowStyling(arrowPos, getBackgroundColor(color, true))
+)};
     background-size: 100% 50%;
     background-repeat: no-repeat;
   }
 `
+export default Button

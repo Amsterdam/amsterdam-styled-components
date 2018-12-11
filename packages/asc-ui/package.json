@@ -1,5 +1,5 @@
 {
-  "name": "@amsterdam/asc-core",
+  "name": "@amsterdam/asc-react",
   "description": "",
   "license": "MPL-2.0",
   "author": "Datapunt Amsterdam",
@@ -9,7 +9,11 @@
     "transpile": "npx tsc"
   },
   "dependencies": {
-    "@types/styled-components": "^4.1.1",
-    "styled-components": "^4.1.1"
+    "@amsterdam/asc-core": "1.0.0",
+    "classnames": "^2.2.6"
+  },
+  "peerDependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
   }
 }

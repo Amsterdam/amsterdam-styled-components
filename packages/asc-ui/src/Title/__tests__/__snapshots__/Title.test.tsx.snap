@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Title /> should render 1`] = `
+.c0 {
+  margin-top: 20px;
+}
+
+<styled.h1>
+  <StyledComponent
+    forwardedClass={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-bdVaJa",
+          "isStatic": false,
+          "lastClassName": "c0",
+          "rules": Array [
+            "
+  margin-top: 20px;
+  color: ",
+            [Function],
+            ";
+",
+          ],
+        },
+        "displayName": "styled.h1",
+        "render": [Function],
+        "styledComponentId": "sc-bdVaJa",
+        "target": "h1",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      }
+    }
+    forwardedRef={null}
+  >
+    <h1
+      className="c0"
+    />
+  </StyledComponent>
+</styled.h1>
+`;

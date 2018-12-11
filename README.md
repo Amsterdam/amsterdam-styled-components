@@ -46,9 +46,9 @@ The guidelines can be found here (TBD)
 ## Usage
 
 ##### Development
-
+To start watching files and start storybook:
 1. `npm install`
-2. `npm run storybook`
+2. `npm start`
 
 To test your components in other repo's, do the following:
 

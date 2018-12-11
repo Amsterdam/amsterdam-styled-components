@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ButtonBarStyled = styled.div`
+const ButtonBar = styled.div`
   display: flex;
   padding: 5px;
 
@@ -8,3 +8,5 @@ export const ButtonBarStyled = styled.div`
     margin-right: 5px;
   }
 `
+
+export default ButtonBar
