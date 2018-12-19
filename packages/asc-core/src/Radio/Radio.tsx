@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components'
 
 const Radio = styled.input.attrs({
-  type: 'radio',
+  type: 'radio'
 })`
   cursor: pointer;
   height: 28px;
@@ -10,16 +10,21 @@ const Radio = styled.input.attrs({
   width: 28px;
 `
 
-const Label = styled.label.attrs({
-  id: 'foo',
-})`
+const Label = styled.label`
 `
 
 const Wrapper = (props: any) => (
   <div>
-    <Radio />
-    <Label />
+    <Radio
+      id={props.id}
+      name={props.name}
+      value={props.value}
+    />
+    <Label
+      htmlFor={props.id}
+    >{props.label}
+    </Label>
   </div>
 )
 
-export default Radio
+export default Wrapper

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
-import Radio from './Radio'
+import { Radio } from '@amsterdam/asc-core'
 
 storiesOf('Radio', module).add('All Radios', () => (
   <div>
