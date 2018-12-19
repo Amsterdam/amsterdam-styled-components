@@ -12,10 +12,13 @@ const Radio = styled.input.attrs({
   position: absolute;
   top: 0;
   width: 28px;
+  zoom: 1;
 `
 
 const Label = styled.label`
-  color: ${props => props.disabled ? '#bebebe' : '#000'};
+  color: ${props => props.disabled ? '#bebebe' : '#434343'};
+  font-family: "AvenirNextLTW01-Regular", verdana, sans-serif;
+  font-size 16px;
   padding-left: 38px;
   line-height: 28px;
 
@@ -23,11 +26,12 @@ const Label = styled.label`
     border-radius: 50%;
     border: ${props => props.disabled ? '1px solid #bebebe' : '1px solid #000'};
     content: "";
-    height: calc(28px - 2px);
+    height: calc(28px - 4px);
     left: 0;
     position: absolute;
     top: 0;
-    width: calc(28px - 2px);
+    width: calc(28px - 4px);
+    zoom: 1;
   }
 
   &:after {
