@@ -50,8 +50,10 @@ const Label = styled.label`
   }
 `
 
-const Wrapper = styled.div`
+const Wrapper = styled.span`
   position: relative;
+  display: ${props => props.orientation === 'horizontal' ? 'inline-block' : 'block' };
+  margin-right: ${props => props.orientation === 'horizontal' ? '24px' : '0' };
   margin-bottom: 10px;
 
   input:checked + label:after {
@@ -60,7 +62,7 @@ const Wrapper = styled.div`
 `
 
 const InputRadio = (props: any) => (
-  <Wrapper>
+  <Wrapper orientation={props.orientation}>
     <Radio
       id={props.id}
       name={props.name}

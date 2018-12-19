@@ -13,6 +13,7 @@ const Radios = (props: any) => (
         id={`${props.name}-${radio.props.value}`}
         key={`${props.name}-${radio.props.value}`}
         name={props.name}
+        orientation={props.orientation}
         value={radio.props.value}
         label={radio.props.label}
         defaultChecked={radio.props.defaultChecked}

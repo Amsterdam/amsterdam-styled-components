@@ -4,7 +4,7 @@ import { Radios, Radio } from '@amsterdam/asc-core'
 
 storiesOf('Radios', module).add('All Radios', () => (
   <div>
-    <Radios name="gender">
+    <Radios name="gender" orientation="vertical">
       <Radio value="female" label="Vrouw" defaultChecked />
       <Radio value="male" label="Man" />
       <Radio value="none" label="Onzijdig" disabled />
