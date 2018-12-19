@@ -13,10 +13,6 @@ const Radio = styled.input.attrs({
 const Label = styled.label.attrs({
   id: 'foo',
 })`
-  cursor: pointer;
-  height: 28px;
-  margin: 0;
-  width: 28px;
 `
 
 const Wrapper = (props: any) => (
@@ -26,4 +22,4 @@ const Wrapper = (props: any) => (
   </div>
 )
 
-export default Wrapper
+export default Radio
