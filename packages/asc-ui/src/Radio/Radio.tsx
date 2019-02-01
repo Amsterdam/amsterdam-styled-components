@@ -5,7 +5,7 @@ const Radio = (props: any) => (
   <div>
     <RadioItem>
       <RadioStyled {...props} />
-      <RadioLabel {...props}>{props.value}</RadioLabel>
+      <RadioLabel {...props}>{props.label || props.value}</RadioLabel>
     </RadioItem>
   </div>
 )
