@@ -5,7 +5,8 @@ import Radio from './Radio'
 
 storiesOf('Radio', module).add('All radios', () => (
   <div>
-    <Radio id="female" name="name1" value="female" />
-    <Radio id="male" name="name1" value="male" />
+    <Radio id="female" name="gender" value="female" />
+    <Radio id="male" name="gender" value="male" />
+    <Radio id="none" name="gender" value="none" disabled />
   </div>
 ))

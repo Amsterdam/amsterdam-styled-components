@@ -1,10 +1,12 @@
 import * as React from 'react'
-import { Radio as RadioStyled, RadioLabel } from '@amsterdam/asc-core'
-
+import { Radio as RadioStyled, RadioLabel, RadioItem } from '@amsterdam/asc-core'
+console.log(RadioItem);
 const Radio = (props: any) => (
-  <div style={{position: 'relative'}}>
-    <RadioStyled {...props} />
-    <RadioLabel {...props}>{props.value}</RadioLabel>
+  <div>
+    <RadioItem>
+      <RadioStyled {...props} />
+      <RadioLabel {...props}>{props.value}</RadioLabel>
+    </RadioItem>
   </div>
 )
 
