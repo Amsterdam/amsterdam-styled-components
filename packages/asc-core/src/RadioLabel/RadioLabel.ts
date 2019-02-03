@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Label = styled.label.attrs({
-  htmlFor: (props) => props.id,
+  htmlFor: (props) => props.htmlFor,
   disabled: (props) => props.disabled
 })`
   color: ${props => props.disabled ? '#bebebe' : '#434343'};
