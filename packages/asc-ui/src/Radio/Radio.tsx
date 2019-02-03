@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Radio as RadioStyled, RadioLabel, RadioItem } from '@amsterdam/asc-core'
 
-export interface Props {
+interface Props {
   id: string;
   name: string;
   label: string;
