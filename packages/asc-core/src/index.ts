@@ -8,6 +8,7 @@ export { default as FormLabelStyled } from './components/FormLabel'
 export { default as Radio } from './Radio'
 export { default as RadioLabel } from './RadioLabel'
 export { default as RadioItem } from './RadioItem'
+export { default as RadioGroup } from './RadioGroup'
 
 // Non-components exports
 export { Theme } from './theme'
