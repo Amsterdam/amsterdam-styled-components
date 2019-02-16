@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Styled components should render buttons 1`] = `
+<ASCDefaultThemeProvider>
+  <ThemeProvider
+    theme={
+      Object {
+        "ascTheme": Object {
+          "colors": Object {
+            "primary": "#fffb11",
+            "secondary": "#a80b1f",
+          },
+          "typography": Object {
+            "primary": "AvenirNextLTW01-Regular\\", verdana, sans-serif",
+            "secondary": "AvenirNextLTW01-Regular\\", verdana, sans-serif",
+          },
+        },
+      }
+    }
+  >
+    <styled.div>
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-htpNat",
+              "isStatic": true,
+              "lastClassName": "gfGGKa",
+              "rules": Array [
+                "
+  display: flex;
+  padding: 5px;
+
+  & > * {
+    margin-right: 5px;
+  }
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "render": [Function],
+            "styledComponentId": "sc-htpNat",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <div
+          className="sc-htpNat gfGGKa"
+        >
+          <Button
+            color="primary"
+            text="hello"
+          >
+            <styled.button
+              color="primary"
+            >
+              <StyledComponent
+                color="primary"
+                forwardedClass={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-bwzfXH",
+                      "isStatic": false,
+                      "lastClassName": "cnSAQK",
+                      "rules": Array [
+                        "
+  border: none;
+  color: ",
+                        [Function],
+                        ";
+  height: 38px;
+  cursor: pointer;
+  font-size: 1em;
+  line-height: 1em;
+  background: ",
+                        [Function],
+                        ";
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  padding: 0 10px 0 10px;
+
+  &:hover {
+    background: ",
+                        [Function],
+                        ";
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+  }
+",
+                      ],
+                    },
+                    "displayName": "styled.button",
+                    "render": [Function],
+                    "styledComponentId": "sc-bwzfXH",
+                    "target": "button",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <button
+                  className="sc-bwzfXH eKMuCJ"
+                  color="primary"
+                >
+                  hello
+                </button>
+              </StyledComponent>
+            </styled.button>
+          </Button>
+          <Button
+            color="secondary"
+            text="world"
+          >
+            <styled.button
+              color="secondary"
+            >
+              <StyledComponent
+                color="secondary"
+                forwardedClass={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-bwzfXH",
+                      "isStatic": false,
+                      "lastClassName": "cnSAQK",
+                      "rules": Array [
+                        "
+  border: none;
+  color: ",
+                        [Function],
+                        ";
+  height: 38px;
+  cursor: pointer;
+  font-size: 1em;
+  line-height: 1em;
+  background: ",
+                        [Function],
+                        ";
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  padding: 0 10px 0 10px;
+
+  &:hover {
+    background: ",
+                        [Function],
+                        ";
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+  }
+",
+                      ],
+                    },
+                    "displayName": "styled.button",
+                    "render": [Function],
+                    "styledComponentId": "sc-bwzfXH",
+                    "target": "button",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <button
+                  className="sc-bwzfXH cnSAQK"
+                  color="secondary"
+                >
+                  world
+                </button>
+              </StyledComponent>
+            </styled.button>
+          </Button>
+        </div>
+      </StyledComponent>
+    </styled.div>
+  </ThemeProvider>
+</ASCDefaultThemeProvider>
+`;

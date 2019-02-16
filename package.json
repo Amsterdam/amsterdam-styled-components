@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
   },
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "build-storybook": "build-storybook",
@@ -19,11 +19,12 @@
     "clean:node_modules": "find ./packages -name node_modules -type d -exec rm -r {} +",
     "postinstall": "npm run clean && npx lerna link && npx lerna bootstrap --hoist",
     "lint": "npm run lint:js",
-    "lint:js": "npx eslint packages/**/src/** --ext js,jsx",
     "lint:css": "stylelint './packages/**/*.ts'",
-    "start": "concurrently \"npm run transpile:watch\" \"npm run storybook\"",
+    "lint:js": "tslint -p tsconfig.json",
+    "start": "npm i && npm run prettify:package && concurrently \"npm run transpile:watch\" \"npm run storybook\"",
     "storybook": "start-storybook -p 6006",
-    "test": "npx jest",
+    "test": "npm run transpile && npx jest",
+    "test:watch": "npm run test -- --watch",
     "transpile": "npx lerna exec --parallel -- npm run transpile --",
     "transpile:watch": "npm run transpile -- -w",
     "prettify:package": "npx prettier-package-json --write **/package.json"
@@ -40,7 +41,7 @@
     "@storybook/react": "^4.0.8",
     "@types/enzyme": "^3.1.15",
     "@types/enzyme-adapter-react-16": "^1.0.3",
-    "@types/jest": "^23.3.9",
+    "@types/jest": "^24.0.0",
     "@types/react": "^16.7.7",
     "@types/storybook__addon-actions": "^3.4.1",
     "@types/storybook__addon-info": "^3.4.2",
@@ -49,13 +50,14 @@
     "@types/styled-components": "^4.1.1",
     "babel-loader": "^8.0.4",
     "concurrently": "^4.1.0",
-    "enzyme": "3.7.0",
-    "enzyme-adapter-react-16": "1.6.0",
-    "enzyme-to-json": "3.3.4",
-    "jest": "^23.6.0",
-    "jest-cli": "23.6.0",
+    "enzyme": "3.8.0",
+    "enzyme-adapter-react-16": "1.9.1",
+    "enzyme-to-json": "3.3.5",
+    "jest": "^24.0.0",
+    "jest-cli": "24.1.0",
     "jest-styled-components": "^6.3.1",
-    "lerna": "^3.4.3",
+    "lerna": "^3.13.0",
+    "pre-commit": "^1.2.2",
     "prettier-package-json": "^2.0.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -70,12 +72,13 @@
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.1.6",
-    "typescript-eslint-parser": "^21.0.2"
+    "typescript-eslint-parser": "^22.0.0"
   },
+  "precommit": [
+    "lint",
+    "test"
+  ],
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
-  },
-  "dependencies": {
-    "@types/react-jss": "^8.6.0"
   }
 }

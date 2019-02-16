@@ -5,11 +5,15 @@
   "author": "Datapunt Amsterdam",
   "version": "1.0.0",
   "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "transpile": "npx tsc"
   },
   "dependencies": {
     "@types/styled-components": "^4.1.1",
+    "polished": "^2.3.3",
     "styled-components": "^4.1.1"
   }
 }

@@ -24,9 +24,14 @@ module.exports = {
       '<rootDir>/config/testing/mocks/image.ts',
   },
   testPathIgnorePatterns: ['/node_modules/', '/lib/'],
-  setupTestFrameworkScriptFile: '<rootDir>/config/testing/test-bundler.ts',
+  setupFilesAfterEnv: ['<rootDir>/config/testing/test-bundler.ts'],
   transform: {
     '\\.(ts|tsx)$': '<rootDir>/node_modules/ts-jest/preprocessor.js',
+  },
+  globals: {
+    'ts-jest': {
+      tsConfig: 'tsconfig.jest.json',
+    },
   },
   testRegex: '/__tests__/.*\\.(ts|tsx|js)$',
   snapshotSerializers: ['enzyme-to-json/serializer'],

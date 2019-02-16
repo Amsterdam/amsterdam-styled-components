@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "noLib": false,
+    "outDir": "./lib",
     "module": "commonjs",
     "target": "es5",
     "lib": [
@@ -14,6 +14,10 @@
     "allowJs": false,
     "jsx": "react",
     "moduleResolution": "node",
+    "rootDirs": [
+      "."
+    ],
+    "baseUrl": ".",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -24,10 +28,13 @@
     "declaration": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "strict": true
+    "emitDecoratorMetadata": true
   },
+  "include": [
+    "."
+  ],
   "exclude": [
-    "**/*.test.ts"
+    "./node_modules",
+    "lib"
   ]
 }
