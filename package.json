@@ -21,6 +21,8 @@
     "lint": "npm run lint:js",
     "lint:css": "stylelint './packages/**/*.ts'",
     "lint:js": "tslint -p tsconfig.json",
+    "prepare": "npm run transpile",
+    "publish": "lerna publish --contents lib",
     "start": "npm i && npm run prettify:package && concurrently \"npm run transpile:watch\" \"npm run storybook\"",
     "storybook": "start-storybook -p 6006",
     "test": "npm run transpile && npx jest",

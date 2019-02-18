@@ -3,6 +3,7 @@ import { ButtonBarStyled, Theme } from '@amsterdam/asc-core'
 import { mount } from 'enzyme'
 import ThemeProvider from '../ThemeProvider'
 import Button from '../components/Button'
+import 'jest-styled-components'
 
 describe('Styled components', () => {
   it('should render buttons', () => {
