@@ -11,23 +11,26 @@
   "bugs": {
     "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
   },
-  "version": "1.0.0",
+  "version": "0.1.0-alpha.0",
   "main": "index.js",
   "scripts": {
     "build-storybook": "build-storybook",
     "clean": "npm run clean:node_modules",
     "clean:node_modules": "find ./packages -name node_modules -type d -exec rm -r {} +",
-    "postinstall": "npm run clean && npx lerna link && npx lerna bootstrap --hoist",
+    "postinstall": "npm run clean && npx lerna link && npx lerna bootstrap --hoist && npm run transpile",
     "lint": "npm run lint:js",
     "lint:css": "stylelint './packages/**/*.ts'",
     "lint:js": "tslint -p tsconfig.json",
-    "start": "npm i && npm run prettify:package && concurrently \"npm run transpile:watch\" \"npm run storybook\"",
+    "prepare": "npm run transpile",
+    "publish": "lerna publish --contents lib",
+    "start": "npm i && npm run prettify:package && npm run watch:dev",
     "storybook": "start-storybook -p 6006",
     "test": "npm run transpile && npx jest",
     "test:watch": "npm run test -- --watch",
     "transpile": "npx lerna exec --parallel -- npm run transpile --",
     "transpile:watch": "npm run transpile -- -w",
-    "prettify:package": "npx prettier-package-json --write **/package.json"
+    "prettify:package": "npx prettier-package-json --write **/package.json",
+    "watch:dev": "concurrently \"npm run transpile:watch\" \"npm run storybook\""
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",

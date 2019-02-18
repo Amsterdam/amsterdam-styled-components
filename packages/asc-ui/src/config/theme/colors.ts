@@ -1,8 +1,8 @@
 import { Theme } from '@amsterdam/asc-core'
 
 const colors: Theme.ColorInterface = {
-  primary: '#fffb11',
-  secondary: '#a80b1f',
+  primary: '#414cff',
+  secondary: '#a86200',
 }
 
 export default colors
