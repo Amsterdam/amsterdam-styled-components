@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
   },
-  "version": "0.1.0-alpha.0",
+  "version": "0.2.0-alpha.0",
   "main": "index.js",
   "scripts": {
     "build-storybook": "build-storybook",
