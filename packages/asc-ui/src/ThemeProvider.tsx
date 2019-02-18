@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Theme, ThemeProvider } from '@amsterdam/asc-core'
+import { StyledComponents, Theme } from '@amsterdam/asc-core'
 import defaultTheme from './config/theme'
 
 interface Props {
@@ -12,9 +12,9 @@ const ASCDefaultThemeProvider = ({ theme, children }: Props) => {
     ascTheme: Object.assign({}, defaultTheme.ascTheme, theme),
   }
   return (
-    <ThemeProvider theme={namespacedTheme}>
+    <StyledComponents.ThemeProvider theme={namespacedTheme}>
       {children}
-    </ThemeProvider>
+    </StyledComponents.ThemeProvider>
   )
 }
 

@@ -1,11 +1,14 @@
 export const THEME_NAME = 'ascTheme'
 
 export namespace Theme {
-  export enum Color {
+  export enum TypeLevel {
     primary = 'primary',
     secondary = 'secondary',
     default = 'default',
   }
+
+  export type Color = TypeLevel
+  export type Typography = TypeLevel
 
   export interface ColorInterface {
     primary: string,

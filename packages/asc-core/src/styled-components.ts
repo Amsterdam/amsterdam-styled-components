@@ -7,8 +7,10 @@ const {
   createGlobalStyle,
   keyframes,
   ThemeProvider,
+  ServerStyleSheet,
+  StyleSheetManager,
 } = styledComponents as styledComponents.ThemedStyledComponentsModule<Theme.ThemeInterface>
 
-export { css, createGlobalStyle, keyframes, ThemeProvider }
+export { css, createGlobalStyle, keyframes, ThemeProvider, ServerStyleSheet, StyleSheetManager }
 
 export default styled

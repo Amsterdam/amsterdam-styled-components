@@ -1,9 +1,6 @@
-import { Theme } from '@amsterdam/asc-core'
-
+// Components
 export { default as ThemeProvider } from './ThemeProvider'
 export { default as Button } from './components/Button'
-// export { default as TextField } from './components/TextField'
 
-export {
-  Theme,
-}
+// Non-components exports
+export { StyledComponents, Theme } from '@amsterdam/asc-core'

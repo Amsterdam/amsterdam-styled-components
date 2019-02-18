@@ -12,7 +12,7 @@
     ],
     "sourceMap": true,
     "allowJs": false,
-    "jsx": "react",
+    "jsx": "preserve",
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
@@ -28,6 +28,6 @@
     "strict": true
   },
   "exclude": [
-    "**/*.test.ts"
+    "./lib"
   ]
 }
