@@ -1,9 +1,14 @@
-import styled from 'styled-components'
+import styled from '../../styled-components'
 
-const Label = styled.label.attrs({
-  htmlFor: (props) => props.htmlFor,
-  disabled: (props) => props.disabled
-})`
+interface Props {
+  htmlFor: string,
+  disabled?: boolean,
+}
+
+const Label = styled.label.attrs<Props>({
+  htmlFor: ({ htmlFor }: Props) => htmlFor,
+  disabled: ({ disabled }: Props) => disabled,
+})<Props>`
   color: ${props => props.disabled ? '#bebebe' : '#434343'};
   font-family: "AvenirNextLTW01-Regular", verdana, sans-serif;
   font-size 16px;
