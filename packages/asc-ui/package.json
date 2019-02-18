@@ -3,7 +3,7 @@
   "description": "",
   "license": "MPL-2.0",
   "author": "Datapunt Amsterdam",
-  "version": "1.0.0",
+  "version": "0.1.0-alpha.0",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib"
@@ -12,7 +12,7 @@
     "transpile": "npx tsc"
   },
   "dependencies": {
-    "@amsterdam/asc-core": "1.0.0",
+    "@amsterdam/asc-core": "^0.1.0-alpha.0",
     "@types/styled-components": "^4.1.1",
     "classnames": "^2.2.6"
   },
