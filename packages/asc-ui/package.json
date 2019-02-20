@@ -5,19 +5,21 @@
   "author": "Datapunt Amsterdam",
   "version": "0.2.1-alpha.0",
   "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "transpile": "npx tsc"
+    "lint": "tslint -c tslint.json -p tsconfig.json"
   },
   "dependencies": {
+    "@amsterdam/asc-assets": "^0.2.1-alpha.0",
     "@amsterdam/asc-core": "^0.2.1-alpha.0",
     "@types/styled-components": "^4.1.1",
     "classnames": "^2.2.6"
   },
   "peerDependencies": {
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2"
   }
 }

@@ -5,15 +5,20 @@
   "author": "Datapunt Amsterdam",
   "version": "0.2.1-alpha.0",
   "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "transpile": "npx tsc"
+    "lint": "tslint -c tslint.json -p tsconfig.json"
   },
   "dependencies": {
     "@types/styled-components": "^4.1.1",
     "polished": "^2.3.3",
+    "react": "^16.8.2",
     "styled-components": "^4.1.1"
   }
 }

@@ -4,15 +4,25 @@ export namespace Theme {
   export enum TypeLevel {
     primary = 'primary',
     secondary = 'secondary',
+    bright = 'bright',
     default = 'default',
   }
 
   export type Color = TypeLevel
-  export type Typography = TypeLevel
+
+  export type GlobalStyleType = string
+
+  export interface PaletteInterface {
+    light?: string,
+    dark?: string,
+    main?: string,
+  }
 
   export interface ColorInterface {
-    primary: string,
-    secondary: string,
+    primary: PaletteInterface,
+    secondary: PaletteInterface,
+    error: PaletteInterface,
+    bright: PaletteInterface,
   }
 
   export interface TypographyInterface {
@@ -21,8 +31,9 @@ export namespace Theme {
   }
 
   interface DefaultThemeInterface {
-    colors: ColorInterface;
-    typography: TypographyInterface;
+    colors: ColorInterface
+    typography: TypographyInterface
+    globalStyle: GlobalStyleType
   }
 
   export interface ThemeInterface {
@@ -32,9 +43,10 @@ export namespace Theme {
   export function getTheme(
     colors: ColorInterface,
     typography: TypographyInterface,
+    globalStyle: GlobalStyleType,
   ): ThemeInterface {
     return {
-      [THEME_NAME]: new Theme(colors, typography),
+      [THEME_NAME]: new Theme(colors, typography, globalStyle),
     }
   }
 
@@ -42,6 +54,7 @@ export namespace Theme {
     constructor(
       public colors: ColorInterface,
       public typography: TypographyInterface,
+      public globalStyle: GlobalStyleType,
     ) {
     }
   }

@@ -11,11 +11,11 @@ const Label = styled.label.attrs<Props>({
 })<Props>`
   color: ${props => props.disabled ? '#bebebe' : '#434343'};
   font-family: "AvenirNextLTW01-Regular", verdana, sans-serif;
-  font-size 16px;
+  font-size: 16px;
   padding-left: 38px;
   line-height: 28px;
 
-  &:before {
+  &::before {
     border-radius: 50%;
     border: ${props => props.disabled ? '1px solid #bebebe' : '1px solid #000'};
     content: "";
@@ -27,7 +27,7 @@ const Label = styled.label.attrs<Props>({
     zoom: 1;
   }
 
-  &:after {
+  &::after {
     background-color: #0000;
     border: 6px solid;
     border-radius: 50%;

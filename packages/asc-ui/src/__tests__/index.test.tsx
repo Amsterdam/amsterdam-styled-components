@@ -10,8 +10,8 @@ describe('Styled components', () => {
     const component = mount(
       <ThemeProvider>
         <ButtonBarStyled>
-          <Button text="hello" color={Theme.TypeLevel.primary} />
-          <Button text="world" color={Theme.TypeLevel.secondary} />
+          <Button color={Theme.TypeLevel.primary}>Hello</Button>
+          <Button color={Theme.TypeLevel.secondary}>World</Button>
         </ButtonBarStyled>
       </ThemeProvider>,
     )

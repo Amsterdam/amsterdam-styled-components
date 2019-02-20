@@ -9,7 +9,7 @@
       false
     ],
     "semicolon": [
-      false,
+      true,
       "never"
     ],
     "variable-name": [

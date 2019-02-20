@@ -7,7 +7,7 @@ interface IProps {
 const FormLabel = styled.label.attrs({
   type: 'text',
 })`
-  margin-bottom:5px;
+  margin-bottom: 5px;
   color: ${(props: IProps) => props.error ? 'blue' : 'black'};
 `
 

@@ -5,7 +5,7 @@ exports[`<TextField /> should render 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  box-shadow: inset 0 0 0 1px #414cff;
+  box-shadow: inset 0 0 0 1px;
   font-size: 1rem;
   border: 0;
   border-radius: 0;
@@ -25,12 +25,25 @@ exports[`<TextField /> should render 1`] = `
       Object {
         "ascTheme": Object {
           "colors": Object {
-            "primary": "#414cff",
-            "secondary": "#a86200",
+            "bright": Object {
+              "main": "#ffffff",
+            },
+            "error": Object {
+              "main": "#ec0000",
+            },
+            "primary": Object {
+              "dark": "#00387a",
+              "main": "#004699",
+            },
+            "secondary": Object {
+              "dark": "#bc0000",
+              "main": "#ec0000",
+            },
           },
+          "globalStyle": "",
           "typography": Object {
-            "primary": "AvenirNextLTW01-Regular\\", verdana, sans-serif",
-            "secondary": "AvenirNextLTW01-Regular\\", verdana, sans-serif",
+            "primary": "AvenirNextLTW01-Regular, verdana, sans-serif",
+            "secondary": "AvenirNextLTW01-Regular, verdana, sans-serif",
           },
         },
       }
@@ -43,7 +56,7 @@ exports[`<TextField /> should render 1`] = `
         >
           <StyledComponent
             error={false}
-            forwardedClass={
+            forwardedComponent={
               Object {
                 "$$typeof": Symbol(react.forward_ref),
                 "attrs": Array [
@@ -57,7 +70,7 @@ exports[`<TextField /> should render 1`] = `
                   "lastClassName": "c0",
                   "rules": Array [
                     "
-  margin-bottom:5px;
+  margin-bottom: 5px;
   color: ",
                     [Function],
                     ";
@@ -65,6 +78,7 @@ exports[`<TextField /> should render 1`] = `
                   ],
                 },
                 "displayName": "styled.label",
+                "foldedComponentIds": Array [],
                 "render": [Function],
                 "styledComponentId": "sc-bxivhb",
                 "target": "label",
@@ -85,7 +99,7 @@ exports[`<TextField /> should render 1`] = `
         </styled.label>
         <styled.input>
           <StyledComponent
-            forwardedClass={
+            forwardedComponent={
               Object {
                 "$$typeof": Symbol(react.forward_ref),
                 "attrs": Array [
@@ -94,15 +108,13 @@ exports[`<TextField /> should render 1`] = `
                   },
                 ],
                 "componentStyle": ComponentStyle {
-                  "componentId": "sc-bdVaJa",
-                  "isStatic": false,
+                  "componentId": "sc-bwzfXH",
+                  "isStatic": true,
                   "lastClassName": "c1",
                   "rules": Array [
                     "
   appearance: none;
-  box-shadow: inset 0 0 0 1px ",
-                    [Function],
-                    ";
+  box-shadow: inset 0 0 0 1px;
   font-size: 1rem;
   border: 0;
   border-radius: 0;
@@ -113,8 +125,9 @@ exports[`<TextField /> should render 1`] = `
                   ],
                 },
                 "displayName": "styled.input",
+                "foldedComponentIds": Array [],
                 "render": [Function],
-                "styledComponentId": "sc-bdVaJa",
+                "styledComponentId": "sc-bwzfXH",
                 "target": "input",
                 "toString": [Function],
                 "warnTooManyClasses": [Function],

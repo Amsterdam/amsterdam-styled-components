@@ -1,33 +1,55 @@
 {
   "compilerOptions": {
     "noLib": false,
-    "module": "commonjs",
+    "module": "esnext",
     "target": "es5",
     "lib": [
-      "es5",
-      "es6",
-      "es7",
-      "es2017",
-      "dom"
+      "dom",
+      "dom.iterable",
+      "esnext"
     ],
+    "types": [
+      "enzyme",
+      "enzyme-adapter-react-16",
+      "jest",
+      "node",
+      "react",
+      "react-dom",
+      "storybook__addon-actions",
+      "storybook__addon-info",
+      "storybook__addon-links",
+      "storybook__react",
+      "styled-components"
+    ],
+    "baseUrl": "./packages",
+    "paths": {
+      "@amsterdam/*": [
+        "./*/src"
+      ]
+    },
+    "composite": true,
     "sourceMap": true,
     "allowJs": false,
-    "jsx": "preserve",
+    "jsx": "react",
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
+    "declaration": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "declaration": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "strict": true
   },
+  "files": [
+    "custom.d.ts"
+  ],
   "exclude": [
-    "./lib"
+    "node_modules",
+    "lib"
   ]
 }

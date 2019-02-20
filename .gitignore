@@ -7,6 +7,9 @@ node_modules
 # production
 /build
 /packages/**/lib
+/packages/**/*.d.ts
+/packages/**/*.js.map
+/packages/**/*.js
 
 # misc
 .cache

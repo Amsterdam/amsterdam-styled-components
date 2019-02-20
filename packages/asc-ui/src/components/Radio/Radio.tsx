@@ -2,12 +2,12 @@ import * as React from 'react'
 import { RadioItemStyled, RadioLabelStyled } from '@amsterdam/asc-core'
 
 interface Props {
-  id: string;
-  name: string;
-  label: string;
-  value?: string;
-  defaultChecked?: boolean;
-  disabled?: boolean;
+  id: string
+  name: string
+  label: string
+  value?: string
+  defaultChecked?: boolean
+  disabled?: boolean
 }
 
 const Radio = ({ id, name, value, label, defaultChecked, disabled }: Props) => (

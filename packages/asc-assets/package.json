@@ -1,0 +1,22 @@
+{
+  "name": "@amsterdam/asc-assets",
+  "description": "> TODO: description",
+  "license": "ISC",
+  "author": "Chris van Mook <chris@chrisvanmook.com>",
+  "homepage": "https://github.com/Amsterdam/amsterdam-styled-components/tree/master/packages/asc-assets#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amsterdam/amsterdam-styled-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
+  },
+  "version": "0.2.1-alpha.0",
+  "main": "./index.js",
+  "files": [
+    "lib"
+  ],
+  "directories": {
+    "assets": "assets"
+  }
+}

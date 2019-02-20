@@ -3,38 +3,42 @@
 exports[`Styled components should render buttons 1`] = `
 .c1 {
   border: none;
-  color: #beb300;
+  color: #fff;
   height: 38px;
   cursor: pointer;
   font-size: 1em;
   line-height: 1em;
-  background: #414cff;
+  background: #004699;
   background-size: 100% 50%;
   background-repeat: no-repeat;
   padding: 0 10px 0 10px;
+  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
 }
 
 .c1:hover {
-  background: #000441;
+  background: #00387a;
   background-size: 100% 50%;
   background-repeat: no-repeat;
 }
 
 .c2 {
   border: none;
-  color: #579dff;
+  color: #fff;
   height: 38px;
   cursor: pointer;
   font-size: 1em;
   line-height: 1em;
-  background: #a86200;
+  background: #ec0000;
   background-size: 100% 50%;
   background-repeat: no-repeat;
   padding: 0 10px 0 10px;
+  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
 }
 
 .c2:hover {
-  background: #000;
+  background: #bc0000;
   background-size: 100% 50%;
   background-repeat: no-repeat;
 }
@@ -57,12 +61,25 @@ exports[`Styled components should render buttons 1`] = `
       Object {
         "ascTheme": Object {
           "colors": Object {
-            "primary": "#414cff",
-            "secondary": "#a86200",
+            "bright": Object {
+              "main": "#ffffff",
+            },
+            "error": Object {
+              "main": "#ec0000",
+            },
+            "primary": Object {
+              "dark": "#00387a",
+              "main": "#004699",
+            },
+            "secondary": Object {
+              "dark": "#bc0000",
+              "main": "#ec0000",
+            },
           },
+          "globalStyle": "",
           "typography": Object {
-            "primary": "AvenirNextLTW01-Regular\\", verdana, sans-serif",
-            "secondary": "AvenirNextLTW01-Regular\\", verdana, sans-serif",
+            "primary": "AvenirNextLTW01-Regular, verdana, sans-serif",
+            "secondary": "AvenirNextLTW01-Regular, verdana, sans-serif",
           },
         },
       }
@@ -70,7 +87,7 @@ exports[`Styled components should render buttons 1`] = `
   >
     <styled.div>
       <StyledComponent
-        forwardedClass={
+        forwardedComponent={
           Object {
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
@@ -90,6 +107,7 @@ exports[`Styled components should render buttons 1`] = `
               ],
             },
             "displayName": "styled.div",
+            "foldedComponentIds": Array [],
             "render": [Function],
             "styledComponentId": "sc-htpNat",
             "target": "div",
@@ -105,19 +123,18 @@ exports[`Styled components should render buttons 1`] = `
         >
           <Button
             color="primary"
-            text="hello"
           >
             <styled.button
               color="primary"
             >
               <StyledComponent
                 color="primary"
-                forwardedClass={
+                forwardedComponent={
                   Object {
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-bwzfXH",
+                      "componentId": "sc-bdVaJa",
                       "isStatic": false,
                       "lastClassName": "c2",
                       "rules": Array [
@@ -136,6 +153,12 @@ exports[`Styled components should render buttons 1`] = `
   background-size: 100% 50%;
   background-repeat: no-repeat;
   padding: 0 10px 0 10px;
+  ",
+                        [Function],
+                        "
+  ",
+                        "transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;",
+                        ";
 
   &:hover {
     background: ",
@@ -148,8 +171,9 @@ exports[`Styled components should render buttons 1`] = `
                       ],
                     },
                     "displayName": "styled.button",
+                    "foldedComponentIds": Array [],
                     "render": [Function],
-                    "styledComponentId": "sc-bwzfXH",
+                    "styledComponentId": "sc-bdVaJa",
                     "target": "button",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -162,26 +186,25 @@ exports[`Styled components should render buttons 1`] = `
                   className="c1"
                   color="primary"
                 >
-                  hello
+                  Hello
                 </button>
               </StyledComponent>
             </styled.button>
           </Button>
           <Button
             color="secondary"
-            text="world"
           >
             <styled.button
               color="secondary"
             >
               <StyledComponent
                 color="secondary"
-                forwardedClass={
+                forwardedComponent={
                   Object {
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-bwzfXH",
+                      "componentId": "sc-bdVaJa",
                       "isStatic": false,
                       "lastClassName": "c2",
                       "rules": Array [
@@ -200,6 +223,12 @@ exports[`Styled components should render buttons 1`] = `
   background-size: 100% 50%;
   background-repeat: no-repeat;
   padding: 0 10px 0 10px;
+  ",
+                        [Function],
+                        "
+  ",
+                        "transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;",
+                        ";
 
   &:hover {
     background: ",
@@ -212,8 +241,9 @@ exports[`Styled components should render buttons 1`] = `
                       ],
                     },
                     "displayName": "styled.button",
+                    "foldedComponentIds": Array [],
                     "render": [Function],
-                    "styledComponentId": "sc-bwzfXH",
+                    "styledComponentId": "sc-bdVaJa",
                     "target": "button",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -226,7 +256,7 @@ exports[`Styled components should render buttons 1`] = `
                   className="c2"
                   color="secondary"
                 >
-                  world
+                  World
                 </button>
               </StyledComponent>
             </styled.button>

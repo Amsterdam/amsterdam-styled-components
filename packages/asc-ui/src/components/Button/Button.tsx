@@ -1,15 +1,15 @@
 import * as React from 'react'
 import { ButtonStyled, Theme } from '@amsterdam/asc-core'
 
-interface Props {
-  text: string,
+type Props = {
   color: Theme.Color,
+  size?: ButtonStyled.Size,
 }
 
-const Button = ({ text, color }: Props) => (
-  <ButtonStyled color={color}>
-    {text}
-  </ButtonStyled>
+const Button: React.FC<Props> = ({ children, color, size }) => (
+  <ButtonStyled.default color={color} size={size}>
+    {children}
+  </ButtonStyled.default>
 )
 
 export default Button

@@ -12,7 +12,7 @@ app.use(express.static(path.resolve(__dirname, '../dist')))
 const sheet = new StyledComponents.ServerStyleSheet()
 const jsx = sheet.collectStyles(
   <ThemeProvider>
-    <Button text="Hello" color={Theme.TypeLevel.primary} />
+    <Button color={Theme.TypeLevel.primary}>Hello</Button>
   </ThemeProvider>,
 )
 
