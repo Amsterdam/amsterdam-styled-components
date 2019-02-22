@@ -19,11 +19,13 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -b packages/asc-core packages/asc-assets packages/asc-ui",
-    "build-storybook": "build-storybook",
+    "build:storybook": "build-storybook",
+    "build:watch": "yarn build -w",
     "clean": "yarn clean:node_modules && yarn clean:build",
     "clean:build": "find ./packages -name lib -type d -exec rm -rf {} +",
     "clean:node_modules": "find ./packages -name node_modules -type d -exec rm -rf {} +",
     "postinstall": "yarn clean && lerna link && lerna bootstrap",
+    "link-packages": "lerna run ",
     "lint": "yarn lint:js",
     "lint:css": "stylelint './packages/asc-core/src/**/*.ts'",
     "lint:js": "lerna run lint --parallel",
@@ -82,6 +84,9 @@
     "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.3.3",
     "typescript-eslint-parser": "^22.0.0"
+  },
+  "engines": {
+    "node": "^8 || ^10"
   },
   "precommit": [
     "lint",

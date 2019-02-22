@@ -26,7 +26,7 @@ function getThemeColor(theme: Theme.ThemeInterface, color?: Theme.TypeLevel) {
 const Button = styled.button<Props>`
   border: none;
   color: ${({ color, theme }) => readableColor(getThemeColor(theme, color))};
-  height: 38px;
+  min-height: 38px;
   cursor: pointer;
   font-size: 1em;
   line-height: 1em;

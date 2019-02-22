@@ -1,0 +1,20 @@
+sudo: false
+language: node_js
+node_js:
+  - '10'
+  - '8'
+branches:
+  only:
+    - draft
+cache:
+  yarn: true
+  directories:
+    - node_modules
+before_install:
+  - npm update
+install:
+  - yarn
+script:
+  - yarn lint
+  - yarn build
+  - yarn test
