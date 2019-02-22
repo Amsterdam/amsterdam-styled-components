@@ -5,11 +5,12 @@
   "scripts": {
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "postinstall": "lerna link && lerna exec -- yarn build && npm link @amsterdam/asc-ui && npm link @amsterdam/asc-assets",
     "start": "react-scripts start",
     "test": "react-scripts test"
   },
   "dependencies": {
+    "@amsterdam/asc-assets": "file:../../packages/asc-assets",
+    "@amsterdam/asc-ui": "file:../../packages/asc-ui/lib",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-scripts": "2.1.5"

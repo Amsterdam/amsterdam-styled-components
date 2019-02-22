@@ -1,6 +1,6 @@
 import React from 'react'
 import { addDecorator, configure } from '@storybook/react'
-import { Button, GlobalStyle, ThemeProvider } from '@amsterdam/asc-ui'
+import { GlobalStyle, ThemeProvider } from '@amsterdam/asc-ui'
 import { HeavyFontEot, HeavyFontWoff2 } from '@amsterdam/asc-assets'
 
 // automatically import all files ending in *.stories.js
@@ -21,7 +21,6 @@ function withGlobalStyles(storyFn) {
   return (
     <ThemeProvider theme={extendedTheme}>
       <>
-        <Button>Hello</Button>
         <GlobalStyle />
         {storyFn()}
       </>

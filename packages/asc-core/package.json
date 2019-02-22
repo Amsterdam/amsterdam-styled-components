@@ -5,7 +5,6 @@
   "author": "Datapunt Amsterdam",
   "version": "0.2.1-alpha.0",
   "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
   "files": [
     "lib"
   ],
@@ -15,6 +14,7 @@
   "scripts": {
     "lint": "tslint -c tslint.json -p tsconfig.json"
   },
+  "typings": "lib/index.d.ts",
   "dependencies": {
     "@types/styled-components": "^4.1.1",
     "polished": "^2.3.3",
