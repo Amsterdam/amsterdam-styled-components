@@ -5,12 +5,11 @@
   "scripts": {
     "build": "react-scripts build",
     "eject": "react-scripts eject",
+    "postinstall": "../../scripts/link-packages.sh",
     "start": "react-scripts start",
     "test": "react-scripts test"
   },
   "dependencies": {
-    "@amsterdam/asc-assets": "file:../../packages/asc-assets",
-    "@amsterdam/asc-ui": "file:../../packages/asc-ui/lib",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-scripts": "2.1.5"

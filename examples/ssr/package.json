@@ -2,7 +2,8 @@
   "name": "ssr",
   "version": "1.0.0",
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node ./index.js",
+    "postinstall": "../../scripts/link-packages.sh"
   },
   "dependencies": {
     "express": "^4.16.4",
@@ -10,8 +11,6 @@
     "react-dom": "^16.8.2"
   },
   "devDependencies": {
-    "@amsterdam/asc-assets": "file:../../packages/asc-assets",
-    "@amsterdam/asc-ui": "file:../../packages/asc-ui/lib",
     "@babel/core": "^7.3.3",
     "@babel/plugin-transform-modules-commonjs": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
