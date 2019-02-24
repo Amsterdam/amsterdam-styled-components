@@ -3,18 +3,15 @@ import path from 'path'
 
 import React from 'react'
 import { renderToString } from 'react-dom/server'
-import { Button, StyledComponents, Theme, ThemeProvider } from '@amsterdam/asc-ui'
+import { StyledComponents } from '@amsterdam/asc-ui'
+import App from './App'
 
 const app = express()
 
 app.use(express.static(path.resolve(__dirname, '../dist')))
 
 const sheet = new StyledComponents.ServerStyleSheet()
-const jsx = sheet.collectStyles(
-  <ThemeProvider>
-    <Button color={Theme.TypeLevel.primary}>Hello</Button>
-  </ThemeProvider>,
-)
+const jsx = sheet.collectStyles(<App />)
 
 app.get('/*', (req, res) => {
   const reactDom = renderToString(jsx)
@@ -24,6 +21,7 @@ app.get('/*', (req, res) => {
   res.end(htmlTemplate(reactDom, styleTags))
 })
 
+console.log('Listening to port 1337')
 app.listen(1337)
 
 function htmlTemplate(reactDom, styleTags) {
@@ -38,7 +36,7 @@ function htmlTemplate(reactDom, styleTags) {
         
         <body>
             <div id="app">${reactDom}</div>
-            <!--<script src="./app.bundle.js"></script>-->
+            <script src="./app.bundle.js"></script>
         </body>
         </html>
     `

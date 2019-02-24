@@ -20,5 +20,5 @@ cd "$current_path"
 
 for package_name in "${PACKAGE_NAMES[@]}"
 do
-    npm link $package_name
+    yarn link $package_name
 done

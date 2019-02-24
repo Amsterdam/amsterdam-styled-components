@@ -2,8 +2,9 @@
   "name": "ssr",
   "version": "1.0.0",
   "scripts": {
-    "start": "node ./index.js",
-    "postinstall": "../../scripts/link-packages.sh"
+    "postinstall": "../../scripts/link-packages.sh",
+    "client": "webpack -w",
+    "start": "concurrently \"yarn client\" \"node ./index.js\""
   },
   "dependencies": {
     "express": "^4.16.4",
@@ -13,13 +14,14 @@
   "devDependencies": {
     "@babel/core": "^7.3.3",
     "@babel/plugin-transform-modules-commonjs": "^7.2.0",
-    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
-    "babel-loader": "^8.0.4",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-inline-react-svg": "^1.0.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "concurrently": "^4.1.0",
     "webpack": "^4.29.5",
-    "webpack-bundle-analyzer": "^3.0.4",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14"
   }
