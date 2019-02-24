@@ -53,11 +53,11 @@ The guidelines can be found here (TBD)
 ## Usage
 
 ##### Development
-To start watching files and start storybook, run `npm start`
+To start watching files and start storybook, run `yarn start`
 
 To test your components in other repo's, do the following:
 
-1. Run `npm run transpile:watch`, this will watch your files and transpile them to the package lib directory.
+1. Run `yarn build:watch`, this will watch your files and transpile them to the package lib directory.
 2. cd to the package you want to test and run `lerna link`.
 3. Go to the repo where you want to use your package and run `npm link <package-name>`. `<package-name>` can be found in the `package.json` you linked in step 2.
 
