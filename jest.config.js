@@ -4,14 +4,6 @@ module.exports = {
     '!packages/**/*.test.{js,jsx,ts,tsx}',
   ],
   coverageDirectory: '<rootDir>/coverage',
-  coverageThreshold: {
-    global: {
-      statements: 100,
-      branches: 100,
-      functions: 100,
-      lines: 100,
-    },
-  },
   moduleFileExtensions: [
     'ts',
     'tsx',

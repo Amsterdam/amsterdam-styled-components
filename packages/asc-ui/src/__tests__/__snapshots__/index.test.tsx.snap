@@ -4,7 +4,7 @@ exports[`Styled components should render buttons 1`] = `
 .c1 {
   border: none;
   color: #fff;
-  height: 38px;
+  min-height: 38px;
   cursor: pointer;
   font-size: 1em;
   line-height: 1em;
@@ -25,7 +25,7 @@ exports[`Styled components should render buttons 1`] = `
 .c2 {
   border: none;
   color: #fff;
-  height: 38px;
+  min-height: 38px;
   cursor: pointer;
   font-size: 1em;
   line-height: 1em;
@@ -143,7 +143,7 @@ exports[`Styled components should render buttons 1`] = `
   color: ",
                         [Function],
                         ";
-  height: 38px;
+  min-height: 38px;
   cursor: pointer;
   font-size: 1em;
   line-height: 1em;
@@ -213,7 +213,7 @@ exports[`Styled components should render buttons 1`] = `
   color: ",
                         [Function],
                         ";
-  height: 38px;
+  min-height: 38px;
   cursor: pointer;
   font-size: 1em;
   line-height: 1em;

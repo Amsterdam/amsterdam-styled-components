@@ -1,5 +1,12 @@
 # Amsterdam Styled Components
 
+[![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
+[![Storybook](https://github.com/storybooks/brand/blob/master/badge/badge-storybook.svg)](https://github.com/storybooks/storybook)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
+[![TypeScript](https://badges.frapsoft.com/typescript/version/typescript-next.svg?v=101)](https://github.com/ellerbrock/typescript-badges/)
+[![Build Status](https://travis-ci.org/amsterdam/amsterdam-styled-components.svg?branch=draft)](https://travis-ci.org/amsterdam/amsterdam-styled-components)
+[![Coverage Status](https://coveralls.io/repos/github/amsterdam/amsterdam-styled-components/badge.svg?branch=draft)](https://coveralls.io/github/amsterdam/amsterdam-styled-components?branch=draft)
+
 NOTE: this is a draft. We are still experimenting and configuring. Do not use in production.
 
 ## Vision

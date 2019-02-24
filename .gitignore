@@ -10,6 +10,8 @@ node_modules
 /packages/**/*.d.ts
 /packages/**/*.js.map
 /packages/**/*.js
+/storybook-static
+/examples/**/lib
 
 # misc
 .cache

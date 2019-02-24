@@ -5,7 +5,7 @@
   "scripts": {
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "postinstall": "lerna link && lerna exec -- yarn build && npm link @amsterdam/asc-ui && npm link @amsterdam/asc-assets",
+    "postinstall": "../../scripts/link-packages.sh",
     "start": "react-scripts start",
     "test": "react-scripts test"
   },
