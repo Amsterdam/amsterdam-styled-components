@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ButtonBarStyled, Theme } from '@amsterdam/asc-core'
+import { ButtonBarStyled, Theme } from '@datapunt/asc-core'
 import { mount } from 'enzyme'
 import ThemeProvider from '../ThemeProvider'
 import Button from '../components/Button'

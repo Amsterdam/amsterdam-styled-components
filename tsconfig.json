@@ -23,7 +23,7 @@
     ],
     "baseUrl": "./packages",
     "paths": {
-      "@amsterdam/*": [
+      "@datapunt/*": [
         "./*/src"
       ]
     },

@@ -1,4 +1,4 @@
-import { Theme } from '@amsterdam/asc-core'
+import { Theme } from '@datapunt/asc-core'
 
 const globalStyle: Theme.GlobalStyleType = ''
 

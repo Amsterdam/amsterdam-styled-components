@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Button, GlobalStyle, ThemeProvider } from '@amsterdam/asc-ui'
-import { ReactComponent as BackWhite } from '@amsterdam/asc-assets/Icons/back-white.svg'
-import { HeavyFontEot, HeavyFontWoff2 } from '@amsterdam/asc-assets'
+import { Button, GlobalStyle, ThemeProvider } from '@datapunt/asc-ui'
+import { ReactComponent as BackWhite } from '@datapunt/asc-assets/Icons/back-white.svg'
+import { HeavyFontEot, HeavyFontWoff2 } from '@datapunt/asc-assets'
 import logo from './logo.svg'
 import './App.css'
 

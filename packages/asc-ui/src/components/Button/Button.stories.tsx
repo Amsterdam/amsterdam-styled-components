@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
-import { ButtonBarStyled, ButtonStyled, Theme } from '@amsterdam/asc-core'
-import { ReactComponent as BackWhite } from '@amsterdam/asc-assets/Icons/back-white.svg'
+import { ButtonBarStyled, ButtonStyled, Theme } from '@datapunt/asc-core'
+import { ReactComponent as BackWhite } from '@datapunt/asc-assets/Icons/back-white.svg'
 import Button from './Button'
 
 storiesOf('Button', module).add('All buttons', () => (

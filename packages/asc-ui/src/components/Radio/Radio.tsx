@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { RadioItemStyled, RadioLabelStyled } from '@amsterdam/asc-core'
+import { RadioItemStyled, RadioLabelStyled } from '@datapunt/asc-core'
 
 interface Props {
   id: string

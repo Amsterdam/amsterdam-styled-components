@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { FormLabelStyled, InputStyled } from '@amsterdam/asc-core'
+import { FormLabelStyled, InputStyled } from '@datapunt/asc-core'
 
 interface Props {
   error?: boolean

@@ -1,5 +1,5 @@
 {
-  "name": "@amsterdam/asc-ui",
+  "name": "@datapunt/asc-ui",
   "description": "",
   "license": "MPL-2.0",
   "author": "Datapunt Amsterdam",
@@ -13,8 +13,8 @@
   },
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@amsterdam/asc-assets": "^0.2.1-alpha.0",
-    "@amsterdam/asc-core": "^0.2.1-alpha.0",
+    "@datapunt/asc-assets": "^0.2.1-alpha.0",
+    "@datapunt/asc-core": "^0.2.1-alpha.0",
     "@types/styled-components": "^4.1.1",
     "classnames": "^2.2.6"
   },

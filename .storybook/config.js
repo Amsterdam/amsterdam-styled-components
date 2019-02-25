@@ -1,7 +1,7 @@
 import React from 'react'
 import { addDecorator, configure } from '@storybook/react'
-import { GlobalStyle, ThemeProvider } from '@amsterdam/asc-ui'
-import { HeavyFontEot, HeavyFontWoff2 } from '@amsterdam/asc-assets'
+import { GlobalStyle, ThemeProvider } from '@datapunt/asc-ui'
+import { HeavyFontEot, HeavyFontWoff2 } from '@datapunt/asc-assets'
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../packages', true, /\.stories\.tsx$/)

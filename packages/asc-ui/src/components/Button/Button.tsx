@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ButtonStyled, Theme } from '@amsterdam/asc-core'
+import { ButtonStyled, Theme } from '@datapunt/asc-core'
 
 type Props = {
   color: Theme.Color,

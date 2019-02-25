@@ -1,4 +1,4 @@
-import { Theme } from '@amsterdam/asc-core'
+import { Theme } from '@datapunt/asc-core'
 
 const typography: Theme.TypographyInterface = {
   primary: 'AvenirNextLTW01-Regular, verdana, sans-serif',

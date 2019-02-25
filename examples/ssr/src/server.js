@@ -3,7 +3,7 @@ import path from 'path'
 
 import React from 'react'
 import { renderToString } from 'react-dom/server'
-import { StyledComponents } from '@amsterdam/asc-ui'
+import { StyledComponents } from '@datapunt/asc-ui'
 import App from './App'
 
 const app = express()

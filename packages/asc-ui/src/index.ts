@@ -1,4 +1,4 @@
-import { GlobalStyle, StyledComponents, Theme } from '@amsterdam/asc-core'
+import { GlobalStyle, StyledComponents, Theme } from '@datapunt/asc-core'
 
 // Components
 export { default as ThemeProvider } from './ThemeProvider'

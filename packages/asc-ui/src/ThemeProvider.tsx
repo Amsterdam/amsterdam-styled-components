@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StyledComponents, Theme } from '@amsterdam/asc-core'
+import { StyledComponents, Theme } from '@datapunt/asc-core'
 import defaultTheme from './config/theme'
 
 interface Props {
