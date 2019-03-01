@@ -23,8 +23,14 @@
     ],
     "baseUrl": "./packages",
     "paths": {
-      "@datapunt/*": [
-        "./*/src"
+      "@datapunt/asc-assets": [
+        "./asc-core/assets"
+      ],
+      "@datapunt/asc-core": [
+        "./asc-core/src"
+      ],
+      "@datapunt/asc-ui/": [
+        "./asc-ui/src"
       ]
     },
     "composite": true,

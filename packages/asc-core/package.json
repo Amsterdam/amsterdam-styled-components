@@ -11,9 +11,6 @@
   "directories": {
     "lib": "lib"
   },
-  "scripts": {
-    "lint": "tslint -c tslint.json -p tsconfig.json"
-  },
   "typings": "lib/index.d.ts",
   "dependencies": {
     "@types/styled-components": "^4.1.1",

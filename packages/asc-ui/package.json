@@ -8,9 +8,6 @@
   "directories": {
     "lib": "lib"
   },
-  "scripts": {
-    "lint": "tslint -c tslint.json -p tsconfig.json"
-  },
   "typings": "lib/index.d.ts",
   "dependencies": {
     "@datapunt/asc-assets": "^0.2.1-alpha.0",
