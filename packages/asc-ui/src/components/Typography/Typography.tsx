@@ -1,12 +1,12 @@
 import React from 'react'
-import { TypographyStyled } from '@datapunt/asc-core'
+import { AscCore } from '@datapunt/asc-core'
 
 type Props = {
-  element?: TypographyStyled.Variant,
+  element?: AscCore.Typography.Variant,
 }
 
 const Typography: React.FC<Props> = ({ children, element }) => {
-  const TypographyElement = TypographyStyled.default(element || 'p')
+  const TypographyElement = AscCore.Typography.default(element || 'p')
   return (
     <TypographyElement>{children}</TypographyElement>
   )

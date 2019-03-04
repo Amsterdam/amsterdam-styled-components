@@ -1,3 +1,3 @@
-import * as ButtonStyled from './Button'
+import * as Button from './Button'
 
-export default ButtonStyled
+export default Button

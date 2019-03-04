@@ -1,8 +1,8 @@
 import React from 'react'
-import { TopBarStyled } from '@datapunt/asc-core'
+import { AscCore } from '@datapunt/asc-core'
 
 const TopBar: React.FC<{}> = ({ children }) => (
-  <TopBarStyled>{children}</TopBarStyled>
+  <AscCore.TopBar>{children}</AscCore.TopBar>
 )
 
 export default TopBar

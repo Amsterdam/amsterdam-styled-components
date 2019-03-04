@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { ButtonStyled } from '@datapunt/asc-core'
+import { AscCore } from '@datapunt/asc-core'
 
-const Button: React.FC<ButtonStyled.Props> = ({ children, ...otherProps }) => (
-  <ButtonStyled.default {...otherProps}>
+const Button: React.FC<AscCore.Button.Props> = ({ children, ...otherProps }) => (
+  <AscCore.Button.default {...otherProps}>
     {children}
-  </ButtonStyled.default>
+  </AscCore.Button.default>
 )
 
 export default Button

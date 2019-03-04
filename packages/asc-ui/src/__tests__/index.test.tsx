@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ButtonBarStyled, Theme } from '@datapunt/asc-core'
+import { AscCore, Theme } from '@datapunt/asc-core'
 import { mount } from 'enzyme'
 import ThemeProvider from '../ThemeProvider'
 import Button from '../components/Button'
@@ -9,10 +9,10 @@ describe('Styled components', () => {
   it('should render buttons', () => {
     const component = mount(
       <ThemeProvider>
-        <ButtonBarStyled>
+        <AscCore.ButtonBar>
           <Button color={Theme.TypeLevel.primary}>Hello</Button>
           <Button color={Theme.TypeLevel.secondary}>World</Button>
-        </ButtonBarStyled>
+        </AscCore.ButtonBar>
       </ThemeProvider>,
     )
     expect(component).toMatchSnapshot()

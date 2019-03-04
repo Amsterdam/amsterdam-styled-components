@@ -4,7 +4,7 @@ import { Theme } from '../../theme'
 import styled from '../../styled-components'
 import getThemeColor from '../../utils/getThemeColor'
 
-export enum Size {
+export enum ButtonSize {
   normal,
   small,
 }
@@ -13,7 +13,7 @@ export type Props = {
   onClick?: MouseEventHandler<HTMLButtonElement>,
   color?: Theme.TypeLevel,
   shadow?: boolean,
-  size?: Size,
+  size?: ButtonSize,
   square?: boolean,
   href?: string,
   as?: keyof JSX.IntrinsicElements | ComponentType<any>,
@@ -47,4 +47,7 @@ const Button = styled.button<Props>`
     background-repeat: no-repeat;
   }
 `
+
+
+
 export default Button

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { FormLabelStyled, InputStyled } from '@datapunt/asc-core'
+import { AscCore } from '@datapunt/asc-core'
 
 interface Props {
   error?: boolean
@@ -9,8 +9,8 @@ const TextField = ({ error = false }: Props) => {
   const states = { error }
   return (
     <div>
-      <FormLabelStyled {...states}>Label!</FormLabelStyled>
-      <InputStyled />
+      <AscCore.FormLabel {...states}>Label!</AscCore.FormLabel>
+      <AscCore.Input />
     </div>
   )
 }
