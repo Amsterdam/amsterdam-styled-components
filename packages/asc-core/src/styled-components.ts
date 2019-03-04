@@ -11,6 +11,8 @@ const {
   StyleSheetManager,
 } = styledComponents as styledComponents.ThemedStyledComponentsModule<Theme.ThemeInterface>
 
-export { css, createGlobalStyle, keyframes, ThemeProvider, ServerStyleSheet, StyleSheetManager }
+export {
+  css, createGlobalStyle, keyframes, ThemeProvider, ServerStyleSheet, StyleSheetManager,
+}
 
 export default styled

@@ -9,6 +9,16 @@ const colors: Theme.ColorInterface = {
     main: '#ec0000',
     dark: '#bc0000',
   },
+  tint: {
+    level1: '#ffffff',
+    level2: '#fafafa',
+    level3: '#f6f6f6',
+    level4: '#eeeeee',
+    level5: '#cccccc',
+    level6: '#999999',
+    level7: '#666666',
+    level8: '#000000',
+  },
   bright: {
     main: '#ffffff',
   },

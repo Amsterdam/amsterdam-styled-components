@@ -1,16 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Styled components should render buttons 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+}
+
+.c0 > * {
+  margin-right: 5px;
+}
+
 .c1 {
   border: none;
   color: #fff;
-  min-height: 38px;
   cursor: pointer;
   font-size: 1em;
-  line-height: 1em;
   background: #004699;
   background-size: 100% 50%;
   background-repeat: no-repeat;
+  padding: 0 10px 0 10px;
+  min-height: 38px;
+  line-height: 1em;
   padding: 0 10px 0 10px;
   -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
   transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
@@ -25,13 +38,14 @@ exports[`Styled components should render buttons 1`] = `
 .c2 {
   border: none;
   color: #fff;
-  min-height: 38px;
   cursor: pointer;
   font-size: 1em;
-  line-height: 1em;
   background: #ec0000;
   background-size: 100% 50%;
   background-repeat: no-repeat;
+  padding: 0 10px 0 10px;
+  min-height: 38px;
+  line-height: 1em;
   padding: 0 10px 0 10px;
   -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
   transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
@@ -41,18 +55,6 @@ exports[`Styled components should render buttons 1`] = `
   background: #bc0000;
   background-size: 100% 50%;
   background-repeat: no-repeat;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 5px;
-}
-
-.c0 > * {
-  margin-right: 5px;
 }
 
 <ASCDefaultThemeProvider>
@@ -75,6 +77,16 @@ exports[`Styled components should render buttons 1`] = `
               "dark": "#bc0000",
               "main": "#ec0000",
             },
+            "tint": Object {
+              "level1": "#ffffff",
+              "level2": "#fafafa",
+              "level3": "#f6f6f6",
+              "level4": "#eeeeee",
+              "level5": "#cccccc",
+              "level6": "#999999",
+              "level7": "#666666",
+              "level8": "#000000",
+            },
           },
           "globalStyle": "",
           "typography": Object {
@@ -92,7 +104,7 @@ exports[`Styled components should render buttons 1`] = `
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "componentId": "sc-htpNat",
+              "componentId": "sc-bwzfXH",
               "isStatic": true,
               "lastClassName": "c0",
               "rules": Array [
@@ -109,7 +121,7 @@ exports[`Styled components should render buttons 1`] = `
             "displayName": "styled.div",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-htpNat",
+            "styledComponentId": "sc-bwzfXH",
             "target": "div",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -134,7 +146,7 @@ exports[`Styled components should render buttons 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-bdVaJa",
+                      "componentId": "sc-iwsKbI",
                       "isStatic": false,
                       "lastClassName": "c2",
                       "rules": Array [
@@ -143,16 +155,23 @@ exports[`Styled components should render buttons 1`] = `
   color: ",
                         [Function],
                         ";
-  min-height: 38px;
   cursor: pointer;
   font-size: 1em;
-  line-height: 1em;
   background: ",
                         [Function],
                         ";
   background-size: 100% 50%;
   background-repeat: no-repeat;
   padding: 0 10px 0 10px;
+  ",
+                        [Function],
+                        "
+  ",
+                        [Function],
+                        "
+  ",
+                        [Function],
+                        "
   ",
                         [Function],
                         "
@@ -173,7 +192,7 @@ exports[`Styled components should render buttons 1`] = `
                     "displayName": "styled.button",
                     "foldedComponentIds": Array [],
                     "render": [Function],
-                    "styledComponentId": "sc-bdVaJa",
+                    "styledComponentId": "sc-iwsKbI",
                     "target": "button",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -204,7 +223,7 @@ exports[`Styled components should render buttons 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-bdVaJa",
+                      "componentId": "sc-iwsKbI",
                       "isStatic": false,
                       "lastClassName": "c2",
                       "rules": Array [
@@ -213,16 +232,23 @@ exports[`Styled components should render buttons 1`] = `
   color: ",
                         [Function],
                         ";
-  min-height: 38px;
   cursor: pointer;
   font-size: 1em;
-  line-height: 1em;
   background: ",
                         [Function],
                         ";
   background-size: 100% 50%;
   background-repeat: no-repeat;
   padding: 0 10px 0 10px;
+  ",
+                        [Function],
+                        "
+  ",
+                        [Function],
+                        "
+  ",
+                        [Function],
+                        "
   ",
                         [Function],
                         "
@@ -243,7 +269,7 @@ exports[`Styled components should render buttons 1`] = `
                     "displayName": "styled.button",
                     "foldedComponentIds": Array [],
                     "render": [Function],
-                    "styledComponentId": "sc-bdVaJa",
+                    "styledComponentId": "sc-iwsKbI",
                     "target": "button",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],

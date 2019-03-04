@@ -5,6 +5,8 @@ export namespace Theme {
     primary = 'primary',
     secondary = 'secondary',
     bright = 'bright',
+    tint = 'tint',
+    none = 'none',
     default = 'default',
   }
 
@@ -18,10 +20,22 @@ export namespace Theme {
     main?: string,
   }
 
+  export type Tint = {
+    level1: string,
+    level2: string,
+    level3: string,
+    level4: string,
+    level5: string,
+    level6: string,
+    level7: string,
+    level8: string,
+  }
+
   export interface ColorInterface {
     primary: PaletteInterface,
     secondary: PaletteInterface,
     error: PaletteInterface,
+    tint: Tint,
     bright: PaletteInterface,
   }
 

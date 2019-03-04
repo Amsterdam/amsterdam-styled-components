@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { StyledComponents, Theme } from '@datapunt/asc-core'
-import defaultTheme from './config/theme'
+import defaultTheme from './config/theme/index'
 
 interface Props {
   theme?: Theme.ThemeInterface,

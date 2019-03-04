@@ -9,7 +9,7 @@ const Label = styled.label.attrs<Props>({
   htmlFor: ({ htmlFor }: Props) => htmlFor,
   disabled: ({ disabled }: Props) => disabled,
 })<Props>`
-  color: ${props => props.disabled ? '#bebebe' : '#434343'};
+  color: ${props => (props.disabled ? '#bebebe' : '#434343')};
   font-family: "AvenirNextLTW01-Regular", verdana, sans-serif;
   font-size: 16px;
   padding-left: 38px;
@@ -17,7 +17,7 @@ const Label = styled.label.attrs<Props>({
 
   &::before {
     border-radius: 50%;
-    border: ${props => props.disabled ? '1px solid #bebebe' : '1px solid #000'};
+    border: ${props => (props.disabled ? '1px solid #bebebe' : '1px solid #000')};
     content: "";
     height: calc(28px - 4px);
     left: 0;
@@ -31,7 +31,7 @@ const Label = styled.label.attrs<Props>({
     background-color: #0000;
     border: 6px solid;
     border-radius: 50%;
-    color: ${props => props.disabled ? '#bebebe' : '#000'};
+    color: ${props => (props.disabled ? '#bebebe' : '#000')};
     content: "";
     height: 0;
     left: 7px;

@@ -1,1 +1,3 @@
-export { default, Size } from './Button'
+import * as ButtonStyled from './Button'
+
+export default ButtonStyled

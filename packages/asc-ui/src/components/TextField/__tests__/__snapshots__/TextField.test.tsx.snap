@@ -39,6 +39,16 @@ exports[`<TextField /> should render 1`] = `
               "dark": "#bc0000",
               "main": "#ec0000",
             },
+            "tint": Object {
+              "level1": "#ffffff",
+              "level2": "#fafafa",
+              "level3": "#f6f6f6",
+              "level4": "#eeeeee",
+              "level5": "#cccccc",
+              "level6": "#999999",
+              "level7": "#666666",
+              "level8": "#000000",
+            },
           },
           "globalStyle": "",
           "typography": Object {
@@ -65,7 +75,7 @@ exports[`<TextField /> should render 1`] = `
                   },
                 ],
                 "componentStyle": ComponentStyle {
-                  "componentId": "sc-bxivhb",
+                  "componentId": "sc-htpNat",
                   "isStatic": false,
                   "lastClassName": "c0",
                   "rules": Array [
@@ -80,7 +90,7 @@ exports[`<TextField /> should render 1`] = `
                 "displayName": "styled.label",
                 "foldedComponentIds": Array [],
                 "render": [Function],
-                "styledComponentId": "sc-bxivhb",
+                "styledComponentId": "sc-htpNat",
                 "target": "label",
                 "toString": [Function],
                 "warnTooManyClasses": [Function],
@@ -108,7 +118,7 @@ exports[`<TextField /> should render 1`] = `
                   },
                 ],
                 "componentStyle": ComponentStyle {
-                  "componentId": "sc-bwzfXH",
+                  "componentId": "sc-bdVaJa",
                   "isStatic": true,
                   "lastClassName": "c1",
                   "rules": Array [
@@ -127,7 +137,7 @@ exports[`<TextField /> should render 1`] = `
                 "displayName": "styled.input",
                 "foldedComponentIds": Array [],
                 "render": [Function],
-                "styledComponentId": "sc-bwzfXH",
+                "styledComponentId": "sc-bdVaJa",
                 "target": "input",
                 "toString": [Function],
                 "warnTooManyClasses": [Function],

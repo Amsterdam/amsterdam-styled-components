@@ -8,7 +8,11 @@ storiesOf('Button', module).add('All buttons', () => (
   <>
     <ButtonBarStyled>
       <Button color={Theme.TypeLevel.primary} size={ButtonStyled.Size.small}>Versturen</Button>
-      <Button color={Theme.TypeLevel.secondary}><BackWhite /> With Button!</Button>
+      <Button color={Theme.TypeLevel.secondary}>
+        <BackWhite />
+        {' '}
+With Button!
+      </Button>
       <Button color={Theme.TypeLevel.bright}>Weergeven</Button>
     </ButtonBarStyled>
     <ButtonBarStyled>

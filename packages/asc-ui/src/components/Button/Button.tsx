@@ -1,13 +1,8 @@
 import * as React from 'react'
-import { ButtonStyled, Theme } from '@datapunt/asc-core'
+import { ButtonStyled } from '@datapunt/asc-core'
 
-type Props = {
-  color: Theme.Color,
-  size?: ButtonStyled.Size,
-}
-
-const Button: React.FC<Props> = ({ children, color, size }) => (
-  <ButtonStyled.default color={color} size={size}>
+const Button: React.FC<ButtonStyled.Props> = ({ children, ...otherProps }) => (
+  <ButtonStyled.default {...otherProps}>
     {children}
   </ButtonStyled.default>
 )

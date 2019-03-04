@@ -10,7 +10,9 @@ interface Props {
   disabled?: boolean
 }
 
-const Radio = ({ id, name, value, label, defaultChecked, disabled }: Props) => (
+const Radio = ({
+  id, name, value, label, defaultChecked, disabled,
+}: Props) => (
   <RadioItemStyled>
     <RadioLabelStyled
       htmlFor={id}

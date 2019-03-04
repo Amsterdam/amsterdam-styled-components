@@ -2,8 +2,8 @@
   "name": "ssr",
   "version": "1.0.0",
   "scripts": {
-    "postinstall": "../../scripts/link-packages.sh",
     "client": "webpack -w",
+    "postinstall": "../../scripts/link-packages.sh",
     "start": "concurrently \"yarn client\" \"node ./index.js\""
   },
   "dependencies": {

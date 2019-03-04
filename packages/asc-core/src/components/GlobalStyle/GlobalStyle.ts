@@ -1,5 +1,5 @@
-import { createGlobalStyle } from '../../styled-components'
 import { normalize } from 'polished'
+import { createGlobalStyle } from '../../styled-components'
 import { THEME_NAME } from '../../theme'
 
 export default createGlobalStyle`

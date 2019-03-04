@@ -8,7 +8,7 @@ const FormLabel = styled.label.attrs({
   type: 'text',
 })`
   margin-bottom: 5px;
-  color: ${(props: IProps) => props.error ? 'blue' : 'black'};
+  color: ${(props: IProps) => (props.error ? 'blue' : 'black')};
 `
 
 export default FormLabel

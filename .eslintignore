@@ -1,4 +1,4 @@
 packages/**/lib
 packages/asc-assets/*.js
-packages/asc-assets/*.d.ts
+*.d.ts
 node_modules
