@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { RadioItemStyled, RadioLabelStyled } from '@datapunt/asc-core'
+import { AscCore } from '@datapunt/asc-core'
 
 interface Props {
   id: string
@@ -13,14 +13,14 @@ interface Props {
 const Radio = ({
   id, name, value, label, defaultChecked, disabled,
 }: Props) => (
-  <RadioItemStyled>
-    <RadioLabelStyled
+  <AscCore.RadioItem>
+    <AscCore.RadioLabel
       htmlFor={id}
       disabled={disabled}
     >
       {label || value}
-    </RadioLabelStyled>
-  </RadioItemStyled>
+    </AscCore.RadioLabel>
+  </AscCore.RadioItem>
 )
 
 export default Radio

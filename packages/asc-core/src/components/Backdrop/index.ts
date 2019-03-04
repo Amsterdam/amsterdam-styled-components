@@ -1,3 +1,3 @@
-import * as BackdropStyled from './Backdrop'
+import * as Backdrop from './Backdrop'
 
-export default BackdropStyled
+export default Backdrop

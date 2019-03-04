@@ -1,8 +1,9 @@
-import { DividerStyled as Divider, IconStyled as Icon } from '@datapunt/asc-core'
+import { AscCore } from '@datapunt/asc-core'
 import Button from './Button'
 
+const {  Divider,  Icon} = AscCore;
 export {
   Divider,
   Icon,
-  Button,
+  Button
 }

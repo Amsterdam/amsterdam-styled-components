@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import { ReactComponent as BackWhite } from '@datapunt/asc-assets/Icons/back-white.svg'
-import { DividerStyled as Divider, ListItemStyled } from '@datapunt/asc-core'
+import { AscCore } from '@datapunt/asc-core'
 import Modal from './Modal'
 import TopBar from '../TopBar'
 import Typography from '../Typography'
@@ -41,23 +41,23 @@ class SimpleModal extends React.Component {
             </Typography>
           </TopBar>
 
-          <ListItemStyled>
+          <AscCore.ListItem>
             <Typography element="h6">Feedback</Typography>
             <Typography element="p">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Architecto, quisquam!
             </Typography>
             <Button>Aanmelden</Button>
-          </ListItemStyled>
-          <Divider gutter />
-          <ListItemStyled>
+          </AscCore.ListItem>
+          <AscCore.Divider gutter />
+          <AscCore.ListItem>
             <Typography element="h6">Feedback</Typography>
             <Typography element="p">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Architecto, quisquam!
             </Typography>
             <Button>Aanmelden</Button>
-          </ListItemStyled>
+          </AscCore.ListItem>
           <Button as="a" href="/">Hello</Button>
         </Modal>
       </>

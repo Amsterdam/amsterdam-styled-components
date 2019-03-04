@@ -1,5 +1,5 @@
 import React from 'react'
-import { BackdropStyled, ModalStyled } from '@datapunt/asc-core'
+import { AscCore } from '@datapunt/asc-core'
 import Portal from '../Portal/Portal'
 
 type Props = {
@@ -74,12 +74,12 @@ class Modal extends React.Component<Props, State> {
     return open ? (
       <Element>
         <div role="presentation" onKeyDown={this.handleKeyDown} ref={this.myRef} tabIndex={0}>
-          <ModalStyled.ModalContainer {...other}>
-            <BackdropStyled.default backdropOpacity={backdropOpacity} onClick={this.handleClose} />
-            <ModalStyled.default>
+          <AscCore.Modal.ModalContainer {...other}>
+            <AscCore.Backdrop.default backdropOpacity={backdropOpacity} onClick={this.handleClose} />
+            <AscCore.Modal.default>
               {children}
-            </ModalStyled.default>
-          </ModalStyled.ModalContainer>
+            </AscCore.Modal.default>
+          </AscCore.Modal.ModalContainer>
         </div>
       </Element>
     ) : null

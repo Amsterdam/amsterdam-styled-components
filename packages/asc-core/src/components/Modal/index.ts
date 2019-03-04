@@ -1,3 +1,3 @@
-import * as ModalStyled from './Modal'
+import * as Modal from './Modal'
 
-export default ModalStyled
+export default Modal
