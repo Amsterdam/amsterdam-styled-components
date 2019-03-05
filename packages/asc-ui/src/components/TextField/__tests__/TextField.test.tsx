@@ -1,7 +1,7 @@
 import { mount } from 'enzyme'
 import * as React from 'react'
 import TextField from '../TextField'
-import ThemeProvider from '../../../ThemeProvider'
+import { ThemeProvider } from '../../../index'
 import 'jest-styled-components'
 
 describe('<TextField />', () => {

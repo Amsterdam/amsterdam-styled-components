@@ -1,4 +1,4 @@
-import { Theme } from '@datapunt/asc-core'
+import { Theme } from '../index'
 
 const colors: Theme.ColorInterface = {
   primary: {

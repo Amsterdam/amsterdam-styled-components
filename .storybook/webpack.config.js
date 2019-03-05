@@ -6,9 +6,9 @@ const packages = readdirSync(basePath).filter((name) =>
   lstatSync(path.join(basePath, name)).isDirectory(),
 )
 
-module.exports = (baseConfig, mode, defaultConfig) => {
+module.exports = ({ config }) => {
   // Add typescript support
-  defaultConfig.module.rules.push({
+  config.module.rules.push({
     test: /\.(ts|tsx)$/,
     use: [{
       loader: require.resolve('awesome-typescript-loader'),
@@ -17,21 +17,22 @@ module.exports = (baseConfig, mode, defaultConfig) => {
       },
     }],
   })
-  defaultConfig.resolve.extensions.push('.ts', '.tsx')
+  config.resolve.extensions.push('.ts', '.tsx')
 
   // Resolve every package to it's src directory
-  Object.assign(defaultConfig.resolve.alias, {
+  Object.assign(config.resolve.alias, {
     ...packages.reduce((acc, name) => ({
       ...acc,
       [`@datapunt/${name}`]: path.join(basePath, name, name !== 'asc-assets' ? '/src' : ''),
     }), {}),
+    'typed-styled-components': path.join(basePath, 'asc-core', '/src/styled-components.ts'),
   })
 
-  // Since we use the react-scripts webpack defaultConfig, that only looks at the /src folder,
+  // Since we use the react-scripts webpack config, that only looks at the /src folder,
   // we need to add our ./package directory.
-  defaultConfig.module.rules = defaultConfig.module.rules.map((rule) => ({
+  config.module.rules = config.module.rules.map((rule) => ({
     ...rule,
     ...(Array.isArray(rule.include)) ? { include: [...rule.include, basePath] } : {},
   }))
-  return defaultConfig
+  return config
 }

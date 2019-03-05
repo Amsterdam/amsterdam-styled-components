@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button, GlobalStyle, ThemeProvider } from '@datapunt/asc-ui'
-import { ReactComponent as BackWhite } from '@datapunt/asc-assets/Icons/back-white.svg'
+import { ReactComponent as Alert } from '@datapunt/asc-assets/Icons/Alert.svg'
 import { HeavyFontEot, HeavyFontWoff2 } from '@datapunt/asc-assets'
 import logo from './logo.svg'
 import './App.css'
@@ -35,7 +35,7 @@ class App extends Component {
               >
                 Learn React
               </a>
-              <BackWhite />
+              <Alert />
               <Button color="secondary">Hello!</Button>
             </header>
           </div>

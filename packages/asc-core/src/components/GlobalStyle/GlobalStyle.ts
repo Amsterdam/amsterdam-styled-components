@@ -7,6 +7,6 @@ export default createGlobalStyle`
   ${({ theme }) => theme[THEME_NAME].globalStyle}
 
   body {
-    font-family: ${({ theme }) => theme[THEME_NAME].typography.primary};
+    font-family: ${({ theme }) => theme[THEME_NAME].typography.fontFamily};
   }
 `

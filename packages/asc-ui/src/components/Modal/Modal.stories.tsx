@@ -1,17 +1,16 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
-import { ReactComponent as BackWhite } from '@datapunt/asc-assets/Icons/back-white.svg'
-import { AscCore } from '@datapunt/asc-core'
+import { ReactComponent as Close } from '@datapunt/asc-assets/Icons/Close.svg'
 import Modal from './Modal'
 import TopBar from '../TopBar'
 import Typography from '../Typography'
 import IconButton from '../IconButton/IconButton'
-import { Theme } from '../../index'
 import { Button } from '../index'
+import { Divider, ListItem } from '../..'
 
 class SimpleModal extends React.Component {
   state = {
-    open: false,
+    open: true,
   }
 
   handleOpen = () => {
@@ -27,38 +26,46 @@ class SimpleModal extends React.Component {
 
     return (
       <>
-        <button type="button" onClick={this.handleOpen}>Open modal</button>
-        <Modal aria-labelledby="hioea" open={open} onClose={this.handleClose}>
+        <button type="button" onClick={this.handleOpen}>
+          Open modal
+        </button>
+        <Modal aria-labelledby="modal" open={open} onClose={this.handleClose}>
           <TopBar>
-            <Typography element="h5">
+            <Typography element="h4">
               Feedback
-              <IconButton
-                color={Theme.TypeLevel.secondary}
-                onClick={this.handleClose}
-              >
-                <BackWhite />
+              <IconButton onClick={this.handleClose}>
+                <Close />
               </IconButton>
             </Typography>
           </TopBar>
 
-          <AscCore.ListItem>
-            <Typography element="h6">Feedback</Typography>
-            <Typography element="p">
+          <ListItem>
+            <Typography gutterBottom element="h5">
+              Feedback
+            </Typography>
+            <Typography paragraph element="p" gutterBottom>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Architecto, quisquam!
             </Typography>
-            <Button>Aanmelden</Button>
-          </AscCore.ListItem>
-          <AscCore.Divider gutter />
-          <AscCore.ListItem>
-            <Typography element="h6">Feedback</Typography>
-            <Typography element="p">
+            <Button color="primary">Aanmelden</Button>
+          </ListItem>
+          <Divider gutter />
+          <ListItem>
+            <Typography gutterBottom element="h5">
+              Feedback
+            </Typography>
+            <Typography paragraph element="p" gutterBottom>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Architecto, quisquam!
             </Typography>
-            <Button>Aanmelden</Button>
-          </AscCore.ListItem>
-          <Button as="a" href="/">Hello</Button>
+            <Button color="primary">Aanmelden</Button>
+          </ListItem>
+          <Divider />
+          <ListItem>
+            <Typography element="a" href="/">
+              Hello
+            </Typography>
+          </ListItem>
         </Modal>
       </>
     )

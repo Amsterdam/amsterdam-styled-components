@@ -16,4 +16,3 @@ export {
 }
 
 export default styled
-

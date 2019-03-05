@@ -1,6 +1,7 @@
 import { Theme } from '../../theme'
 import styled from '../../styled-components'
 import getThemeColor from '../../utils/getThemeColor'
+import { readableColor } from 'polished'
 
 type Props = {
   color?: Theme.TypeLevel,
@@ -18,7 +19,7 @@ const Icon = styled.span<Props>`
   height: 16px;
     polygon,
     path {
-      fill: ${({ theme }) => getThemeColor(theme, Theme.TypeLevel.primary)};
+      fill: ${({ color, theme }) => readableColor(getThemeColor(theme, color))};
     }
   }
 `
