@@ -19,7 +19,7 @@ const extendedTheme = {
 
 function withGlobalStyles(storyFn) {
   return (
-    <ThemeProvider theme={extendedTheme}>
+    <ThemeProvider overrides={extendedTheme}>
       <>
         <GlobalStyle />
         {storyFn()}

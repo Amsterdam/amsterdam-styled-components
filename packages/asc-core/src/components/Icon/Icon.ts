@@ -1,22 +1,22 @@
+import { readableColor } from 'polished'
 import { Theme } from '../../theme'
 import styled from '../../styled-components'
 import getThemeColor from '../../utils/getThemeColor'
-import { readableColor } from 'polished'
 
 type Props = {
-  color?: Theme.TypeLevel,
-  iconUrl?: string,
+  color?: Theme.TypeLevel
+  iconUrl?: string
 }
 
 const Icon = styled.span<Props>`
   display: block;
   ${({ iconUrl }) => iconUrl && `background-image: ${iconUrl}`}
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
 
   & > svg {
-  width: 16px;
-  height: 16px;
+    width: 20px;
+    height: 20px;
     polygon,
     path {
       fill: ${({ color, theme }) => readableColor(getThemeColor(theme, color))};

@@ -1,17 +1,19 @@
 import React from 'react'
 import { AscCore } from '@datapunt/asc-core'
-import { Button, Icon } from '../';
+import { Icon } from '../..'
 
 type Props = {
-  onClick?: React.MouseEventHandler<HTMLButtonElement>,
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-const IconButton: React.FC<Props & AscCore.Button.Props> = ({ children, onClick, ...otherProps }) => (
-  <Button onClick={onClick} {...otherProps} square>
-    <Icon>
-      {children}
-    </Icon>
-  </Button>
+const IconButton: React.FC<Props & AscCore.Button.Props> = ({
+  children,
+  onClick,
+  ...otherProps
+}) => (
+  <AscCore.Button.default onClick={onClick} {...otherProps} square>
+    <Icon>{children}</Icon>
+  </AscCore.Button.default>
 )
 
 export default IconButton

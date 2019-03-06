@@ -9,10 +9,17 @@ const {
   ThemeProvider,
   ServerStyleSheet,
   StyleSheetManager,
-} = styledComponents as styledComponents.ThemedStyledComponentsModule<Theme.ThemeInterface>
+} = styledComponents as styledComponents.ThemedStyledComponentsModule<
+  Theme.ThemeInterface
+>
 
 export {
-  css, createGlobalStyle, keyframes, ThemeProvider, ServerStyleSheet, StyleSheetManager,
+  css,
+  createGlobalStyle,
+  keyframes,
+  ThemeProvider,
+  ServerStyleSheet,
+  StyleSheetManager,
 }
 
 export default styled

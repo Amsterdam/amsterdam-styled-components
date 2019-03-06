@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import { ReactComponent as Alert } from '@datapunt/asc-assets/Icons/Alert.svg'
-import Button from './Button'
-import { ButtonBar } from '../..'
+import { ButtonBar, Button } from '../..'
 
 storiesOf('Button', module).add('All buttons', () => (
   <>
@@ -10,7 +9,6 @@ storiesOf('Button', module).add('All buttons', () => (
       <Button color="primary">Versturen</Button>
       <Button color="secondary">
         <Alert />
-        {' '}
         With Button!
       </Button>
       <Button color="bright">Weergeven</Button>

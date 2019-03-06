@@ -1,8 +1,8 @@
 import styled from '../../styled-components'
 
 interface Props {
-  htmlFor: string,
-  disabled?: boolean,
+  htmlFor: string
+  disabled?: boolean
 }
 
 const Label = styled.label.attrs<Props>({
@@ -10,15 +10,16 @@ const Label = styled.label.attrs<Props>({
   disabled: ({ disabled }: Props) => disabled,
 })<Props>`
   color: ${props => (props.disabled ? '#bebebe' : '#434343')};
-  font-family: "AvenirNextLTW01-Regular", verdana, sans-serif;
+  font-family: 'AvenirNextLTW01-Regular', verdana, sans-serif;
   font-size: 16px;
   padding-left: 38px;
   line-height: 28px;
 
   &::before {
     border-radius: 50%;
-    border: ${props => (props.disabled ? '1px solid #bebebe' : '1px solid #000')};
-    content: "";
+    border: ${props =>
+      props.disabled ? '1px solid #bebebe' : '1px solid #000'};
+    content: '';
     height: calc(28px - 4px);
     left: 0;
     position: absolute;
@@ -32,7 +33,7 @@ const Label = styled.label.attrs<Props>({
     border: 6px solid;
     border-radius: 50%;
     color: ${props => (props.disabled ? '#bebebe' : '#000')};
-    content: "";
+    content: '';
     height: 0;
     left: 7px;
     opacity: 0;
@@ -42,7 +43,7 @@ const Label = styled.label.attrs<Props>({
     zoom: 1;
   }
 
-  input[type="radio"]:checked + &::after {
+  input[type='radio']:checked + &::after {
     opacity: 1;
     zoom: 1;
   }

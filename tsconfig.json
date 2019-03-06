@@ -44,6 +44,7 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
+    "esModuleInterop": true,
     "noImplicitAny": true,
     "declaration": true,
     "strictNullChecks": true,

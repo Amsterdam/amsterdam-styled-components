@@ -3,6 +3,7 @@ import { em, margin, shade } from 'polished'
 import styled, { css } from '../../styled-components'
 import getThemeColor from '../../utils/getThemeColor'
 import { THEME_NAME } from '../../theme'
+import focus from '../shared/focus'
 
 export type Props = {
   gutterBottom?: boolean
@@ -16,7 +17,7 @@ const headings = css`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  color: ${({ theme }) => getThemeColor(theme, 'tint', 'level8')};
+  color: ${({ theme }) => getThemeColor(theme, 'tint', 'level7')};
 `
 
 const extendedStyles = {
@@ -25,23 +26,21 @@ const extendedStyles = {
   h3: headings,
   h4: css`
     ${headings}
-    font-size: 18px;
   `,
   h5: css`
     ${headings}
-    font-size: 18px;
   `,
   h6: css`
     ${headings}
-    font-size: 16px;
   `,
   p: css`
-    font-size: 16px;
     line-height: 1.25;
   `,
   a: css`
     color: ${({ theme }) => getThemeColor(theme, 'primary')}
     display: inline-block;
+    
+    ${({ theme }) => focus(theme)}
     
     &:hover {
       color: ${({ theme }) => shade(0.2, getThemeColor(theme, 'primary'))}

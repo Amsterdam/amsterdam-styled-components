@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-constructor, no-empty-function */
 import { CSSProp } from 'styled-components'
 
 export const THEME_NAME = 'ascTheme'
@@ -9,6 +10,7 @@ export namespace Theme {
     | 'bright'
     | 'tint'
     | 'none'
+    | 'support'
     | 'default'
 
   export type Color = TypeLevel
@@ -29,7 +31,6 @@ export namespace Theme {
     level5: string
     level6: string
     level7: string
-    level8: string
   }
 
   export interface ColorInterface {
@@ -37,13 +38,18 @@ export namespace Theme {
     secondary: PaletteInterface | string
     error: PaletteInterface | string
     tint: Tint
+    support: {
+      valid: string
+      invalid: string
+      focus: string
+    }
     bright: PaletteInterface
   }
 
   type TypographyElementStyle = {
     color: CSSProp
     fontFamily: CSSProp
-    fontWeight: keyof TypographyWeights
+    fontWeight: 300 | 400 | 500 | 600 | 700 | 800 | 900 | 'bold' | 'normal'
     fontSize: CSSProp
     lineHeight: number | CSSProp
     letterSpacing: CSSProp
@@ -74,10 +80,10 @@ export namespace Theme {
     fontSize: string
   }
 
-  interface DefaultThemeInterface {
+  export interface DefaultThemeInterface {
+    globalStyle: GlobalStyleType
     colors: ColorInterface
     typography: TypographyInterface
-    globalStyle: GlobalStyleType
   }
 
   export interface ThemeInterface {
@@ -89,10 +95,8 @@ export namespace Theme {
       colors: ColorInterface,
       typography: TypographyInterface,
       globalStyle: GlobalStyleType,
-    ): ThemeInterface {
-      return {
-        [THEME_NAME]: new CreateTheme(colors, typography, globalStyle),
-      }
+    ): DefaultThemeInterface {
+      return new CreateTheme(colors, typography, globalStyle)
     }
 
     constructor(

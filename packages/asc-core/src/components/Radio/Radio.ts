@@ -1,11 +1,11 @@
 import styled from '../../styled-components'
 
 interface Props {
-  id: string,
-  name: string,
-  value: string,
-  defaultChecked: boolean,
-  disabled: boolean,
+  id: string
+  name: string
+  value: string
+  defaultChecked: boolean
+  disabled: boolean
 }
 
 const Radio = styled.input.attrs<Props>({

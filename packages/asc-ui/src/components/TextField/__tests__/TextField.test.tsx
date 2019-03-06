@@ -6,7 +6,11 @@ import 'jest-styled-components'
 
 describe('<TextField />', () => {
   it('should render', () => {
-    const component = mount(<ThemeProvider><TextField /></ThemeProvider>)
+    const component = mount(
+      <ThemeProvider>
+        <TextField />
+      </ThemeProvider>,
+    )
     expect(component).toMatchSnapshot()
   })
 })

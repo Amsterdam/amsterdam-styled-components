@@ -3,17 +3,13 @@ import { readableColor, transitions } from 'polished'
 import { Theme } from '../../theme'
 import styled from '../../styled-components'
 import getThemeColor from '../../utils/getThemeColor'
-
-export enum ButtonSize {
-  normal,
-  small,
-}
+import focus from '../shared/focus'
 
 export type Props = {
   onClick?: MouseEventHandler<HTMLButtonElement>
   color?: Theme.TypeLevel
   shadow?: boolean
-  size?: ButtonSize
+  size?: 'normal' | 'small'
   square?: boolean
   href?: string
   as?: keyof JSX.IntrinsicElements | ComponentType<any>
@@ -30,6 +26,9 @@ function getBackgroundColor(
 }
 
 const Button = styled.button<Props>`
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
   border: none;
   color: ${({ color, theme }) => readableColor(getThemeColor(theme, color))};
   cursor: pointer;
@@ -50,6 +49,8 @@ const Button = styled.button<Props>`
     background-size: 100% 50%;
     background-repeat: no-repeat;
   }
+  
+  ${({ theme }) => focus(theme)}
   
   & > svg {
     rect,

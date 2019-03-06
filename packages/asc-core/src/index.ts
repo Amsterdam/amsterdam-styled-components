@@ -1,7 +1,6 @@
+import * as AscCore from './components/index'
 import * as StyledComponents from './styled-components'
 import ASCDefaultThemeProvider from './theme/default'
-// Components
-import * as AscCore from './components/index'
 
 export { StyledComponents, ASCDefaultThemeProvider }
 

@@ -2,3 +2,5 @@ packages/**/lib
 packages/asc-assets/*.js
 *.d.ts
 node_modules
+examples
+config

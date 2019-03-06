@@ -5,20 +5,32 @@ import {
   Theme,
 } from '@datapunt/asc-core'
 
+import IconButton from './components/IconButton'
+import Modal from './components/Modal'
+import Portal from './components/Portal'
+import Typography from './components/Typography'
+import TopBar from './components/TopBar'
+import Button from './components/Button'
+import Radio from './components/Radio'
+import Focus from './components/Focus'
+
+const { Divider, Icon, ButtonBar, GlobalStyle, ListItem } = AscCore
+
 // Components
-export { default as Button } from './components/Button'
-const {
-  Icon, ListItem, Divider, ButtonBar,
-} = AscCore
 export {
-  Icon,
-  ListItem,
   Divider,
+  Icon,
+  Button,
   ButtonBar,
+  IconButton,
+  Modal,
+  Portal,
+  ListItem,
+  Typography,
+  Radio,
+  TopBar,
+  Focus,
 }
 
 // Non-components exports
-const { GlobalStyle } = AscCore
-export {
-  GlobalStyle, StyledComponents, Theme, ThemeProvider,
-}
+export { GlobalStyle, StyledComponents, Theme, ThemeProvider }

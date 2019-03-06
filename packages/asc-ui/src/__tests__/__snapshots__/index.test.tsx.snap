@@ -14,10 +14,21 @@ exports[`Styled components should render buttons 1`] = `
 }
 
 .c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   border: none;
   color: #fff;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 16px;
+  font-weight: normal;
   background: #004699;
   background-size: 100% 50%;
   background-repeat: no-repeat;
@@ -35,11 +46,34 @@ exports[`Styled components should render buttons 1`] = `
   background-repeat: no-repeat;
 }
 
+.c1:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: medium;
+}
+
+.c1 > svg rect,
+.c1 > svg polygon,
+.c1 > svg path {
+  fill: #fff;
+}
+
 .c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   border: none;
   color: #fff;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 16px;
+  font-weight: normal;
   background: #ec0000;
   background-size: 100% 50%;
   background-repeat: no-repeat;
@@ -55,6 +89,18 @@ exports[`Styled components should render buttons 1`] = `
   background: #bc0000;
   background-size: 100% 50%;
   background-repeat: no-repeat;
+}
+
+.c2:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: medium;
+}
+
+.c2 > svg rect,
+.c2 > svg polygon,
+.c2 > svg path {
+  fill: #fff;
 }
 
 <ASCDefaultThemeProvider>
@@ -77,21 +123,105 @@ exports[`Styled components should render buttons 1`] = `
               "dark": "#bc0000",
               "main": "#ec0000",
             },
+            "support": Object {
+              "focus": "#FEC813",
+              "invalid": "#EC0000",
+              "valid": "#00A03C",
+            },
             "tint": Object {
               "level1": "#ffffff",
-              "level2": "#fafafa",
-              "level3": "#f6f6f6",
-              "level4": "#eeeeee",
-              "level5": "#cccccc",
-              "level6": "#999999",
-              "level7": "#666666",
-              "level8": "#000000",
+              "level2": "#F5F5F5",
+              "level3": "#E6E6E6",
+              "level4": "#B4B4B4",
+              "level5": "#767676",
+              "level6": "#323232",
+              "level7": "#000000",
             },
           },
           "globalStyle": "",
           "typography": Object {
-            "primary": "AvenirNextLTW01-Regular, verdana, sans-serif",
-            "secondary": "AvenirNextLTW01-Regular, verdana, sans-serif",
+            "a": Object {
+              "color": "#000000",
+              "fontFamily": "inherit",
+              "fontSize": "1rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "fontFamily": "AvenirNextLTW01-Regular, verdana, sans-serif",
+            "fontSize": "16px",
+            "fontWeightHeavy": 900,
+            "fontWeightLight": 300,
+            "fontWeightMedium": 500,
+            "fontWeightRegular": 400,
+            "h1": Object {
+              "color": "#000000",
+              "fontFamily": "inherit",
+              "fontSize": "6rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "h2": Object {
+              "color": "#000000",
+              "fontFamily": "inherit",
+              "fontSize": "6rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "h3": Object {
+              "color": "#000000",
+              "fontFamily": "inherit",
+              "fontSize": "6rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "h4": Object {
+              "color": "#000000",
+              "fontFamily": "inherit",
+              "fontSize": Array [
+                "
+      ",
+                "1.125rem",
+                "
+    ",
+              ],
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "h5": Object {
+              "color": "#000000",
+              "fontFamily": "inherit",
+              "fontSize": Array [
+                "
+      ",
+                "1.125rem",
+                "
+    ",
+              ],
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "h6": Object {
+              "color": "#000000",
+              "fontFamily": "inherit",
+              "fontSize": "6rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "p": Object {
+              "color": "#000000",
+              "fontFamily": "inherit",
+              "fontSize": "1rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1.25,
+            },
           },
         },
       }
@@ -104,7 +234,7 @@ exports[`Styled components should render buttons 1`] = `
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "componentId": "sc-bwzfXH",
+              "componentId": "sc-EHOje",
               "isStatic": true,
               "lastClassName": "c0",
               "rules": Array [
@@ -121,7 +251,7 @@ exports[`Styled components should render buttons 1`] = `
             "displayName": "styled.div",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-bwzfXH",
+            "styledComponentId": "sc-EHOje",
             "target": "div",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -151,12 +281,16 @@ exports[`Styled components should render buttons 1`] = `
                       "lastClassName": "c2",
                       "rules": Array [
                         "
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
   border: none;
   color: ",
                         [Function],
                         ";
   cursor: pointer;
-  font-size: 1em;
+  font-size: 16px;
+  font-weight: normal;
   background: ",
                         [Function],
                         ";
@@ -186,6 +320,20 @@ exports[`Styled components should render buttons 1`] = `
     background-size: 100% 50%;
     background-repeat: no-repeat;
   }
+  
+  ",
+                        [Function],
+                        "
+  
+  & > svg {
+    rect,
+    polygon,
+    path {
+      fill: ",
+                        [Function],
+                        ";
+    } 
+  }
 ",
                       ],
                     },
@@ -205,7 +353,9 @@ exports[`Styled components should render buttons 1`] = `
                   className="c1"
                   color="primary"
                 >
-                  Hello
+                  <span>
+                    Hello
+                  </span>
                 </button>
               </StyledComponent>
             </styled.button>
@@ -228,12 +378,16 @@ exports[`Styled components should render buttons 1`] = `
                       "lastClassName": "c2",
                       "rules": Array [
                         "
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
   border: none;
   color: ",
                         [Function],
                         ";
   cursor: pointer;
-  font-size: 1em;
+  font-size: 16px;
+  font-weight: normal;
   background: ",
                         [Function],
                         ";
@@ -263,6 +417,20 @@ exports[`Styled components should render buttons 1`] = `
     background-size: 100% 50%;
     background-repeat: no-repeat;
   }
+  
+  ",
+                        [Function],
+                        "
+  
+  & > svg {
+    rect,
+    polygon,
+    path {
+      fill: ",
+                        [Function],
+                        ";
+    } 
+  }
 ",
                       ],
                     },
@@ -282,7 +450,9 @@ exports[`Styled components should render buttons 1`] = `
                   className="c2"
                   color="secondary"
                 >
-                  World
+                  <span>
+                    World
+                  </span>
                 </button>
               </StyledComponent>
             </styled.button>
