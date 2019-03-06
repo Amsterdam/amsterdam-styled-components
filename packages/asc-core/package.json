@@ -19,5 +19,8 @@
     "react": "^16.8.2",
     "styled-components": "^4.1.1"
   },
-  "gitHead": "41b05ad4fdf7d9e8ba0e834903c62c3e02e12f97"
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "1354a8ac6bbc9505cfb5ce9c819e06ba32aa93b7"
 }
