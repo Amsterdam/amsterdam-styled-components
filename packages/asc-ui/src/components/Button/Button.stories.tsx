@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
-import { ReactComponent as Alert } from '@datapunt/asc-assets/Icons/Alert.svg'
+import { ReactComponent as Alert } from '@datapunt/asc-assets/lib/Icons/Alert.svg'
 import { ButtonBar, Button } from '../..'
 
 storiesOf('Button', module).add('All buttons', () => (

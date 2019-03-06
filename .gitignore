@@ -7,9 +7,6 @@ node_modules
 # production
 /build
 /packages/**/lib
-/packages/**/*.d.ts
-/packages/**/*.js.map
-/packages/**/*.js
 /storybook-static
 /examples/**/lib
 

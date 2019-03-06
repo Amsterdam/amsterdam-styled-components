@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
-import { ReactComponent as Close } from '@datapunt/asc-assets/Icons/Close.svg'
+import { ReactComponent as Close } from '@datapunt/asc-assets/lib/Icons/Close.svg'
 import TopBar from '../TopBar'
 import Typography from '../Typography'
 import Modal from './Modal'

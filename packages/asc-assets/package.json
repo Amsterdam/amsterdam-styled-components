@@ -11,11 +11,14 @@
   "bugs": {
     "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
   },
-  "version": "0.3.0-alpha.0",
-  "main": "./index.js",
+  "version": "0.3.2-alpha.0",
+  "main": "src/index.js",
   "files": [
     "lib"
   ],
+  "scripts": {
+    "build": "mkdir -p lib && cp -R src/* lib/"
+  },
   "directories": {
     "assets": "assets"
   }

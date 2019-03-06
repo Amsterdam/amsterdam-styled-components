@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button, GlobalStyle, ThemeProvider } from '@datapunt/asc-ui'
-import { ReactComponent as Alert } from '@datapunt/asc-assets/Icons/Alert.svg'
+import { ReactComponent as Alert } from '@datapunt/asc-assets/lib/Icons/Alert.svg'
 import { HeavyFontEot, HeavyFontWoff2 } from '@datapunt/asc-assets'
 import logo from './logo.svg'
 import './App.css'

@@ -17,9 +17,10 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "tsc -b packages/asc-core packages/asc-assets packages/asc-ui",
+    "build": "yarn build:ts && lerna exec --scope @datapunt/asc-assets -- yarn build",
+    "build:ts": "tsc -b packages/asc-core packages/asc-ui",
     "build:storybook": "build-storybook",
-    "build:watch": "yarn build -w",
+    "build:watch": "yarn build:ts -w",
     "clean": "yarn clean:node_modules && yarn clean:build",
     "clean:build": "find ./packages -name lib -type d -exec rm -rf {} +",
     "clean:node_modules": "find ./packages -name node_modules -type d -exec rm -rf {} +",
