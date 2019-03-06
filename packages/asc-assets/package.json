@@ -1,8 +1,8 @@
 {
   "name": "@datapunt/asc-assets",
   "description": "> TODO: description",
-  "license": "ISC",
-  "author": "Chris van Mook <chris@chrisvanmook.com>",
+  "license": "MPL-2.0",
+  "author": "Datapunt Amsterdam",
   "homepage": "https://github.com/Amsterdam/amsterdam-styled-components/tree/master/packages/asc-assets#readme",
   "repository": {
     "type": "git",
