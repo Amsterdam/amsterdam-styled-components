@@ -24,8 +24,7 @@ module.exports = ({ config }) => {
     ...packages.reduce((acc, name) => ({
       ...acc,
       [`@datapunt/${name}`]: path.join(basePath, name, name !== 'asc-assets' ? '/src' : ''),
-    }), {}),
-    'typed-styled-components': path.join(basePath, 'asc-core', '/src/styled-components.ts'),
+    }), {})
   })
 
   // Since we use the react-scripts webpack config, that only looks at the /src folder,
