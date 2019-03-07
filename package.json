@@ -19,19 +19,15 @@
   "scripts": {
     "build": "yarn build:ts && lerna exec --scope @datapunt/asc-assets -- yarn build",
     "build:ts": "tsc -b packages/asc-core packages/asc-ui",
-    "build:storybook": "build-storybook",
     "build:watch": "yarn build:ts -w",
-    "clean": "yarn clean:node_modules && yarn clean:build",
-    "clean:build": "find ./packages -name lib -type d -exec rm -rf {} +",
-    "clean:node_modules": "find ./packages -name node_modules -type d -exec rm -rf {} +",
     "deploy-storybook": "storybook-to-ghpages",
-    "postinstall": "yarn clean && lerna link && lerna bootstrap",
+    "postinstall": "lerna link && lerna bootstrap",
     "lint": "yarn lint:js",
     "lint:css": "stylelint './packages/**/src/**/*.ts'",
     "lint:js": "eslint packages --ext ts,tsx",
-    "prepare": "yarn build",
+    "prepare": "yarn prettify:package && yarn build",
     "publish:packages": "lerna publish --contents lib",
-    "start": "yarn postinstall && yarn prettify:package && concurrently \"yarn build:watch\" \"yarn storybook\"",
+    "start": "concurrently \"yarn build:watch\" \"yarn storybook\"",
     "storybook": "start-storybook -p 6006",
     "test": "yarn jest",
     "test:watch": "yarn test -- --watch",
@@ -93,7 +89,7 @@
     "typescript": "^3.3.3"
   },
   "engines": {
-    "node": "^8 || ^10 || ^11"
+    "node": "^8 || ^10"
   },
   "precommit": [
     "lint",

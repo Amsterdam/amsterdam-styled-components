@@ -16,11 +16,11 @@
   "files": [
     "lib"
   ],
-  "scripts": {
-    "build": "mkdir -p lib && cp -R src/* lib/"
-  },
   "directories": {
     "assets": "assets"
+  },
+  "scripts": {
+    "build": "mkdir -p lib && cp -R src/* lib/"
   },
   "publishConfig": {
     "access": "public"
