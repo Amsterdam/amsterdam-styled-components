@@ -3,15 +3,15 @@
   "description": "",
   "license": "MPL-2.0",
   "author": "Datapunt Amsterdam",
-  "version": "0.4.0-alpha.0",
+  "version": "0.5.0-alpha.0",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib"
   },
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@datapunt/asc-assets": "^0.4.0-alpha.0",
-    "@datapunt/asc-core": "^0.4.0-alpha.0",
+    "@datapunt/asc-assets": "^0.5.0-alpha.0",
+    "@datapunt/asc-core": "^0.5.0-alpha.0",
     "@types/styled-components": "^4.1.1",
     "classnames": "^2.2.6"
   },
