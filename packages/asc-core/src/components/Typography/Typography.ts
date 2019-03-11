@@ -1,5 +1,5 @@
 import { StyledComponent } from 'styled-components'
-import { em, margin, shade } from 'polished'
+import { em, margin } from 'polished'
 import styled, { css } from '../../styled-components'
 import getThemeColor from '../../utils/getThemeColor'
 import { THEME_NAME } from '../../theme'
@@ -43,7 +43,7 @@ const extendedStyles = {
     ${({ theme }) => focus(theme)}
     
     &:hover {
-      color: ${({ theme }) => shade(0.2, getThemeColor(theme, 'primary'))}
+      color: ${({ theme }) => getThemeColor(theme, 'secondary')}
     }
   `,
 }

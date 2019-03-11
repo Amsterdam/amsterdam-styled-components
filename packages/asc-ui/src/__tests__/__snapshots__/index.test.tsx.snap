@@ -25,25 +25,17 @@ exports[`Styled components should render buttons 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border: none;
-  color: #fff;
   cursor: pointer;
   font-size: 16px;
   font-weight: normal;
-  background: #004699;
-  background-size: 100% 50%;
-  background-repeat: no-repeat;
-  padding: 0 10px 0 10px;
-  min-height: 38px;
-  line-height: 1em;
   padding: 0 10px 0 10px;
   -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
   transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
-}
-
-.c1:hover {
-  background: #00387a;
-  background-size: 100% 50%;
-  background-repeat: no-repeat;
+  background: #004699;
+  padding: 0 10px 0 10px;
+  min-height: 38px;
+  line-height: 1em;
+  color: #fff;
 }
 
 .c1:focus {
@@ -52,10 +44,19 @@ exports[`Styled components should render buttons 1`] = `
   outline-width: medium;
 }
 
-.c1 > svg rect,
-.c1 > svg polygon,
-.c1 > svg path {
+.c1:hover {
+  background: #00387a;
+}
+
+.c1 svg rect,
+.c1 svg polygon,
+.c1 svg path {
   fill: #fff;
+}
+
+.c1 svg {
+  width: 30px;
+  height: 30px;
 }
 
 .c2 {
@@ -70,25 +71,17 @@ exports[`Styled components should render buttons 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border: none;
-  color: #fff;
   cursor: pointer;
   font-size: 16px;
   font-weight: normal;
-  background: #ec0000;
-  background-size: 100% 50%;
-  background-repeat: no-repeat;
-  padding: 0 10px 0 10px;
-  min-height: 38px;
-  line-height: 1em;
   padding: 0 10px 0 10px;
   -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
   transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
-}
-
-.c2:hover {
-  background: #bc0000;
-  background-size: 100% 50%;
-  background-repeat: no-repeat;
+  background: #ec0000;
+  padding: 0 10px 0 10px;
+  min-height: 38px;
+  line-height: 1em;
+  color: #fff;
 }
 
 .c2:focus {
@@ -97,10 +90,19 @@ exports[`Styled components should render buttons 1`] = `
   outline-width: medium;
 }
 
-.c2 > svg rect,
-.c2 > svg polygon,
-.c2 > svg path {
+.c2:hover {
+  background: #bc0000;
+}
+
+.c2 svg rect,
+.c2 svg polygon,
+.c2 svg path {
   fill: #fff;
+}
+
+.c2 svg {
+  width: 30px;
+  height: 30px;
 }
 
 <ASCDefaultThemeProvider>
@@ -266,7 +268,7 @@ exports[`Styled components should render buttons 1`] = `
           <Button
             color="primary"
           >
-            <styled.button
+            <Styled(styled.button)
               color="primary"
             >
               <StyledComponent
@@ -276,7 +278,7 @@ exports[`Styled components should render buttons 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-iwsKbI",
+                      "componentId": "sc-gZMcBi",
                       "isStatic": false,
                       "lastClassName": "c2",
                       "rules": Array [
@@ -285,27 +287,10 @@ exports[`Styled components should render buttons 1`] = `
   align-items: center;
   text-decoration: none;
   border: none;
-  color: ",
-                        [Function],
-                        ";
   cursor: pointer;
   font-size: 16px;
   font-weight: normal;
-  background: ",
-                        [Function],
-                        ";
-  background-size: 100% 50%;
-  background-repeat: no-repeat;
   padding: 0 10px 0 10px;
-  ",
-                        [Function],
-                        "
-  ",
-                        [Function],
-                        "
-  ",
-                        [Function],
-                        "
   ",
                         [Function],
                         "
@@ -313,34 +298,57 @@ exports[`Styled components should render buttons 1`] = `
                         "transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;",
                         ";
 
+  background: ",
+                        [Function],
+                        ";
+
   &:hover {
     background: ",
                         [Function],
                         ";
-    background-size: 100% 50%;
-    background-repeat: no-repeat;
   }
-  
-  ",
-                        [Function],
-                        "
-  
-  & > svg {
+
+  & svg {
     rect,
     polygon,
     path {
       fill: ",
                         [Function],
                         ";
-    } 
+    }
+  }
+",
+                        "
+  padding: 0 10px 0 10px;
+  min-height: 38px;
+  line-height: 1em
+  color: ",
+                        [Function],
+                        ";
+
+  ",
+                        [Function],
+                        "
+    
+  &:hover {
+    ",
+                        [Function],
+                        "
+  }
+  
+  & svg {
+    width: 30px;
+    height: 30px;
   }
 ",
                       ],
                     },
-                    "displayName": "styled.button",
-                    "foldedComponentIds": Array [],
+                    "displayName": "Styled(styled.button)",
+                    "foldedComponentIds": Array [
+                      "sc-iwsKbI",
+                    ],
                     "render": [Function],
-                    "styledComponentId": "sc-iwsKbI",
+                    "styledComponentId": "sc-gZMcBi",
                     "target": "button",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -353,17 +361,15 @@ exports[`Styled components should render buttons 1`] = `
                   className="c1"
                   color="primary"
                 >
-                  <span>
-                    Hello
-                  </span>
+                  Hello
                 </button>
               </StyledComponent>
-            </styled.button>
+            </Styled(styled.button)>
           </Button>
           <Button
             color="secondary"
           >
-            <styled.button
+            <Styled(styled.button)
               color="secondary"
             >
               <StyledComponent
@@ -373,7 +379,7 @@ exports[`Styled components should render buttons 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-iwsKbI",
+                      "componentId": "sc-gZMcBi",
                       "isStatic": false,
                       "lastClassName": "c2",
                       "rules": Array [
@@ -382,27 +388,10 @@ exports[`Styled components should render buttons 1`] = `
   align-items: center;
   text-decoration: none;
   border: none;
-  color: ",
-                        [Function],
-                        ";
   cursor: pointer;
   font-size: 16px;
   font-weight: normal;
-  background: ",
-                        [Function],
-                        ";
-  background-size: 100% 50%;
-  background-repeat: no-repeat;
   padding: 0 10px 0 10px;
-  ",
-                        [Function],
-                        "
-  ",
-                        [Function],
-                        "
-  ",
-                        [Function],
-                        "
   ",
                         [Function],
                         "
@@ -410,34 +399,57 @@ exports[`Styled components should render buttons 1`] = `
                         "transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;",
                         ";
 
+  background: ",
+                        [Function],
+                        ";
+
   &:hover {
     background: ",
                         [Function],
                         ";
-    background-size: 100% 50%;
-    background-repeat: no-repeat;
   }
-  
-  ",
-                        [Function],
-                        "
-  
-  & > svg {
+
+  & svg {
     rect,
     polygon,
     path {
       fill: ",
                         [Function],
                         ";
-    } 
+    }
+  }
+",
+                        "
+  padding: 0 10px 0 10px;
+  min-height: 38px;
+  line-height: 1em
+  color: ",
+                        [Function],
+                        ";
+
+  ",
+                        [Function],
+                        "
+    
+  &:hover {
+    ",
+                        [Function],
+                        "
+  }
+  
+  & svg {
+    width: 30px;
+    height: 30px;
   }
 ",
                       ],
                     },
-                    "displayName": "styled.button",
-                    "foldedComponentIds": Array [],
+                    "displayName": "Styled(styled.button)",
+                    "foldedComponentIds": Array [
+                      "sc-iwsKbI",
+                    ],
                     "render": [Function],
-                    "styledComponentId": "sc-iwsKbI",
+                    "styledComponentId": "sc-gZMcBi",
                     "target": "button",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -450,12 +462,10 @@ exports[`Styled components should render buttons 1`] = `
                   className="c2"
                   color="secondary"
                 >
-                  <span>
-                    World
-                  </span>
+                  World
                 </button>
               </StyledComponent>
-            </styled.button>
+            </Styled(styled.button)>
           </Button>
         </div>
       </StyledComponent>

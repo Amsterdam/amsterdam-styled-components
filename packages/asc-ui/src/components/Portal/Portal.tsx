@@ -4,6 +4,7 @@ import ownerDocument from '../../utils/ownerDocument'
 
 export type Props = {
   element?: HTMLElement
+  blurredNode?: HTMLElement
 }
 
 type State = {}
@@ -25,15 +26,23 @@ class Portal extends React.Component<Props, State> {
   }
 
   componentWillUnmount(): void {
+    const { blurredNode } = this.props
     const el = this.element
     el.removeAttribute('style')
+    if (blurredNode) {
+      blurredNode.removeAttribute('style')
+    }
     el.removeChild(this.mountEl)
   }
 
   setMountNode() {
+    const { blurredNode } = this.props
     const el = this.element
     el.setAttribute('style', 'overflow: hidden;')
     el.appendChild(this.mountEl)
+    if (blurredNode) {
+      blurredNode.setAttribute('style', 'filter: blur(1px)')
+    }
   }
 
   get element() {

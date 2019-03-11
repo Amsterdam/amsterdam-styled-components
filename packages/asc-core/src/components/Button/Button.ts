@@ -8,57 +8,67 @@ import focus from '../shared/focus'
 export type Props = {
   onClick?: MouseEventHandler<HTMLButtonElement>
   color?: Theme.TypeLevel
-  shadow?: boolean
   size?: 'normal' | 'small'
   square?: boolean
   href?: string
   as?: keyof JSX.IntrinsicElements | ComponentType<any>
 }
 
-function getBackgroundColor(
-  hover: boolean,
-  theme: Theme.ThemeInterface,
-  color?: Theme.TypeLevel,
-) {
-  return hover
-    ? getThemeColor(theme, color, 'dark')
-    : getThemeColor(theme, color)
-}
-
-const Button = styled.button<Props>`
+const ButtonBase = styled.button<Props>`
   display: inline-flex;
   align-items: center;
   text-decoration: none;
   border: none;
-  color: ${({ color, theme }) => readableColor(getThemeColor(theme, color))};
   cursor: pointer;
   font-size: 16px;
   font-weight: normal;
-  background: ${({ color, theme }) => getBackgroundColor(false, theme, color)};
-  background-size: 100% 50%;
-  background-repeat: no-repeat;
   padding: 0 10px 0 10px;
-  ${({ square }) => !square && 'min-height: 38px;'}
-  ${({ square }) => !square && 'line-height: 1em;'}
-  ${({ square }) => (square ? 'padding: 5px' : 'padding: 0 10px 0 10px;')}
-  ${({ shadow }) => shadow && 'box-shadow: 1px 1px 1px #ccc;'}
+  ${({ theme }) => focus(theme)}
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')};
 
+  background: ${({ color, theme }) => getThemeColor(theme, color)};
+
   &:hover {
-    background: ${({ color, theme }) => getBackgroundColor(true, theme, color)};
-    background-size: 100% 50%;
-    background-repeat: no-repeat;
+    background: ${({ color, theme }) =>
+      color
+        ? getThemeColor(theme, color, 'dark')
+        : getThemeColor(theme, 'tint', 'level3')};
   }
-  
-  ${({ theme }) => focus(theme)}
-  
-  & > svg {
+
+  & svg {
     rect,
     polygon,
     path {
       fill: ${({ color, theme }) => readableColor(getThemeColor(theme, color))};
-    } 
+    }
   }
+`
+
+const Button = styled(ButtonBase)<Props>`
+  padding: 0 10px 0 10px;
+  min-height: 38px;
+  line-height: 1em
+  color: ${({ color, theme }) =>
+    color
+      ? readableColor(getThemeColor(theme, color))
+      : getThemeColor(theme, 'primary')};
+
+  ${({ theme, color }) =>
+    !color && `border: 1px solid ${getThemeColor(theme, 'primary')};`}
+    
+  &:hover {
+    ${({ theme, color }) =>
+      !color && `outline: 1px solid ${getThemeColor(theme, 'primary')};`}
+  }
+  
+  & svg {
+    width: 30px;
+    height: 30px;
+  }
+`
+
+export const IconButton = styled(ButtonBase)<Props>`
+  padding: 5px;
 `
 
 export default Button

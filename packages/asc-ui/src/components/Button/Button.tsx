@@ -5,9 +5,7 @@ const Button: React.FC<AscCore.Button.Props> = ({
   children,
   ...otherProps
 }) => (
-  <AscCore.Button.default {...otherProps}>
-    <span>{children}</span>
-  </AscCore.Button.default>
+  <AscCore.Button.default {...otherProps}>{children}</AscCore.Button.default>
 )
 
 export default Button

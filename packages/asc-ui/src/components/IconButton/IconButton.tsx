@@ -11,9 +11,9 @@ const IconButton: React.FC<Props & AscCore.Button.Props> = ({
   onClick,
   ...otherProps
 }) => (
-  <AscCore.Button.default onClick={onClick} {...otherProps} square>
+  <AscCore.Button.IconButton onClick={onClick} {...otherProps} square>
     <Icon>{children}</Icon>
-  </AscCore.Button.default>
+  </AscCore.Button.IconButton>
 )
 
 export default IconButton

@@ -28,14 +28,21 @@ class SimpleModal extends React.Component {
         <button type="button" onClick={this.handleOpen}>
           Open modal
         </button>
-        <Modal aria-labelledby="modal" open={open} onClose={this.handleClose}>
+        <Modal
+          blurredNode={
+            window.document.querySelector('#root') as HTMLInputElement
+          }
+          aria-labelledby="modal"
+          open={open}
+          onClose={this.handleClose}
+        >
           <TopBar>
-            <Typography element="h4">
+            <Typography style={{ flexGrow: 1 }} element="h4">
               Feedback
-              <IconButton onClick={this.handleClose}>
-                <Close />
-              </IconButton>
             </Typography>
+            <IconButton aria-label="Close" onClick={this.handleClose}>
+              <Close />
+            </IconButton>
           </TopBar>
           <Divider />
           <ListItem>
@@ -46,10 +53,7 @@ class SimpleModal extends React.Component {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Architecto, quisquam!
             </Typography>
-            <Button as="a" color="primary">
-              Aanmelden
-            </Button>
-            <Button color="primary">Aanmelden</Button>
+            <Button color="primary">Lorem ipsum.</Button>
           </ListItem>
         </Modal>
       </>

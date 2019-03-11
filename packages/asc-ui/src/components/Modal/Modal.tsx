@@ -9,6 +9,7 @@ type Props = {
   disablePortal?: boolean
   disableBackdrop?: boolean
   backdropOpacity?: number
+  blurredNode?: Element
 } & PortalProps
 
 type State = {}
@@ -17,7 +18,6 @@ class Modal extends React.Component<Props, State> {
   static defaultProps = {
     disablePortal: false,
     disableBackdrop: false,
-    backdropOpacity: 0.2,
   }
 
   renderedTimer: number = 0
@@ -67,12 +67,13 @@ class Modal extends React.Component<Props, State> {
       children,
       backdropOpacity,
       element,
+      blurredNode,
       ...other
     } = this.props
     const Element = disablePortal ? 'div' : Portal
 
     return open ? (
-      <Element element={element}>
+      <Element {...(!disablePortal ? { element, blurredNode } : {})}>
         <Focus onKeyDown={this.handleKeyDown}>
           <AscCore.Modal.ModalContainer {...other}>
             <AscCore.Backdrop.default
