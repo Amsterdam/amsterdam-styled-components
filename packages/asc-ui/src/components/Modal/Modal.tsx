@@ -3,11 +3,10 @@ import { AscCore } from '@datapunt/asc-core'
 import Portal, { Props as PortalProps } from '../Portal/Portal'
 import Focus from '../Focus'
 
-type Props = {
+export type Props = {
   open: boolean
   onClose?: Function
   disablePortal?: boolean
-  disableBackdrop?: boolean
   backdropOpacity?: number
   blurredNode?: Element
 } & PortalProps
@@ -17,7 +16,6 @@ type State = {}
 class Modal extends React.Component<Props, State> {
   static defaultProps = {
     disablePortal: false,
-    disableBackdrop: false,
   }
 
   renderedTimer: number = 0

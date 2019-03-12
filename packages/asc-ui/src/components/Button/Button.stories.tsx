@@ -7,7 +7,7 @@ storiesOf('Button', module)
   .add('Default', () => (
     <>
       <ButtonBar>
-        <Button>Weergeven</Button>
+        <Button>Default button</Button>
       </ButtonBar>
     </>
   ))

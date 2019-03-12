@@ -19,6 +19,16 @@ module.exports = ({ config }) => {
   })
   config.resolve.extensions.push('.ts', '.tsx')
 
+  config.module.rules.push({
+    test: /\.stories\.tsx?$/,
+    loaders: [{
+      loader: require.resolve('@storybook/addon-storysource/loader'),
+      options: { parser: 'typescript' },
+    }],
+    enforce: 'pre',
+  });
+
+
   // Resolve every package to it's src directory
   Object.assign(config.resolve.alias, {
     ...packages.reduce((acc, name) => ({
