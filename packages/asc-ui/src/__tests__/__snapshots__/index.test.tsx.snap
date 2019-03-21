@@ -48,6 +48,13 @@ exports[`Styled components should render buttons 1`] = `
   background: #00387a;
 }
 
+.c1:after {
+  content: '';
+  display: block;
+  min-height: inherit;
+  font-size: 0;
+}
+
 .c1 svg rect,
 .c1 svg polygon,
 .c1 svg path {
@@ -92,6 +99,13 @@ exports[`Styled components should render buttons 1`] = `
 
 .c2:hover {
   background: #bc0000;
+}
+
+.c2:after {
+  content: '';
+  display: block;
+  min-height: inherit;
+  font-size: 0;
 }
 
 .c2 svg rect,
@@ -308,6 +322,14 @@ exports[`Styled components should render buttons 1`] = `
                         ";
   }
 
+  // ie11 fix
+  &:after {
+    content: '';
+    display: block;
+    min-height: inherit;
+    font-size: 0;
+  }
+
   & svg {
     rect,
     polygon,
@@ -407,6 +429,14 @@ exports[`Styled components should render buttons 1`] = `
     background: ",
                         [Function],
                         ";
+  }
+
+  // ie11 fix
+  &:after {
+    content: '';
+    display: block;
+    min-height: inherit;
+    font-size: 0;
   }
 
   & svg {

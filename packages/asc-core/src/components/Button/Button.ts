@@ -35,6 +35,14 @@ const ButtonBase = styled.button<Props>`
         : getThemeColor(theme, 'tint', 'level3')};
   }
 
+  // ie11 fix
+  &:after {
+    content: '';
+    display: block;
+    min-height: inherit;
+    font-size: 0;
+  }
+
   & svg {
     rect,
     polygon,

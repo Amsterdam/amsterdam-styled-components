@@ -6,6 +6,7 @@ type Props = {
 
 const Modal = styled.div<Props>`
   background-color: #ffffff;
+  overflow: auto;
   z-index: 20;
   width: 100%;
   max-width: 620px;
