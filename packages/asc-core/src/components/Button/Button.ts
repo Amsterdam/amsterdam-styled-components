@@ -71,22 +71,17 @@ const Button = styled(ButtonBase)<Props>`
 
 export const IconButton = styled(ButtonBase)<Props>`
   padding: 5px;
-`
-
-export const SocialButton = styled(ButtonBase)<Props>`
-  padding: 0px;
   width: 30px;
   height: 30px;
+`
+
+export const SocialButton = styled(IconButton)<Props>`
+  padding: 0px;
   background: ${({ theme }) => getThemeColor(theme, 'tint', 'level5')}};
 
   &:focus,
   &:hover {
     background: ${({ theme }) => getThemeColor(theme, 'secondary')}};
-  }
-
-  & svg {
-    width: inherit;
-    height: inherit;
   }
 `
 
