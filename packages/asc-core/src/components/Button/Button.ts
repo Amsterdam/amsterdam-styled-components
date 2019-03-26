@@ -9,7 +9,7 @@ import focus from '../shared/focus'
 export type Props = {
   onClick?: MouseEventHandler<HTMLButtonElement>
   color?: Theme.TypeLevel
-  size?: 'normal' | 'small' | 30
+  size?: 'normal' | 'small'
   square?: boolean
   href?: string
   as?: keyof JSX.IntrinsicElements | ComponentType<any>
