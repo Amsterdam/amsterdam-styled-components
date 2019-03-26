@@ -292,7 +292,7 @@ exports[`Styled components should render buttons 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-gZMcBi",
+                      "componentId": "sc-gqjmRU",
                       "isStatic": false,
                       "lastClassName": "c2",
                       "rules": Array [
@@ -351,13 +351,13 @@ exports[`Styled components should render buttons 1`] = `
   ",
                         [Function],
                         "
-    
+
   &:hover {
     ",
                         [Function],
                         "
   }
-  
+
   & svg {
     width: 30px;
     height: 30px;
@@ -367,10 +367,10 @@ exports[`Styled components should render buttons 1`] = `
                     },
                     "displayName": "Styled(styled.button)",
                     "foldedComponentIds": Array [
-                      "sc-iwsKbI",
+                      "sc-gZMcBi",
                     ],
                     "render": [Function],
-                    "styledComponentId": "sc-gZMcBi",
+                    "styledComponentId": "sc-gqjmRU",
                     "target": "button",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -401,7 +401,7 @@ exports[`Styled components should render buttons 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-gZMcBi",
+                      "componentId": "sc-gqjmRU",
                       "isStatic": false,
                       "lastClassName": "c2",
                       "rules": Array [
@@ -460,13 +460,13 @@ exports[`Styled components should render buttons 1`] = `
   ",
                         [Function],
                         "
-    
+
   &:hover {
     ",
                         [Function],
                         "
   }
-  
+
   & svg {
     width: 30px;
     height: 30px;
@@ -476,10 +476,10 @@ exports[`Styled components should render buttons 1`] = `
                     },
                     "displayName": "Styled(styled.button)",
                     "foldedComponentIds": Array [
-                      "sc-iwsKbI",
+                      "sc-gZMcBi",
                     ],
                     "render": [Function],
-                    "styledComponentId": "sc-gZMcBi",
+                    "styledComponentId": "sc-gqjmRU",
                     "target": "button",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],

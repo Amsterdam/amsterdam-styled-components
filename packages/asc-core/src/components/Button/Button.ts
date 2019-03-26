@@ -63,12 +63,12 @@ const Button = styled(ButtonBase)<Props>`
 
   ${({ theme, color }) =>
     !color && `border: 1px solid ${getThemeColor(theme, 'primary')};`}
-    
+
   &:hover {
     ${({ theme, color }) =>
       !color && `outline: 1px solid ${getThemeColor(theme, 'primary')};`}
   }
-  
+
   & svg {
     width: 30px;
     height: 30px;
@@ -77,6 +77,22 @@ const Button = styled(ButtonBase)<Props>`
 
 export const IconButton = styled(ButtonBase)<Props>`
   padding: 5px;
+`
+
+export const SocialButton = styled(ButtonBase)<Props>`
+  padding: 0px;
+  width: 30px;
+  height: 30px;
+  background: ${({ theme }) => getThemeColor(theme, 'tint', 'level5')}};
+
+  &:hover {
+    background: ${({ theme }) => getThemeColor(theme, 'secondary')}};
+  }
+
+  & svg {
+    width: 30px;
+    height: 30px;
+  }
 `
 
 export default Button
