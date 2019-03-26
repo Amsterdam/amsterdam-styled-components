@@ -55,15 +55,15 @@ exports[`Styled components should render buttons 1`] = `
   font-size: 0;
 }
 
+.c1 svg {
+  width: 30px;
+  height: 30px;
+}
+
 .c1 svg rect,
 .c1 svg polygon,
 .c1 svg path {
   fill: #fff;
-}
-
-.c1 svg {
-  width: 30px;
-  height: 30px;
 }
 
 .c2 {
@@ -108,15 +108,15 @@ exports[`Styled components should render buttons 1`] = `
   font-size: 0;
 }
 
+.c2 svg {
+  width: 30px;
+  height: 30px;
+}
+
 .c2 svg rect,
 .c2 svg polygon,
 .c2 svg path {
   fill: #fff;
-}
-
-.c2 svg {
-  width: 30px;
-  height: 30px;
 }
 
 <ASCDefaultThemeProvider>
@@ -292,7 +292,7 @@ exports[`Styled components should render buttons 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-gqjmRU",
+                      "componentId": "sc-gZMcBi",
                       "isStatic": false,
                       "lastClassName": "c2",
                       "rules": Array [
@@ -329,16 +329,6 @@ exports[`Styled components should render buttons 1`] = `
     min-height: inherit;
     font-size: 0;
   }
-
-  & svg {
-    rect,
-    polygon,
-    path {
-      fill: ",
-                        [Function],
-                        ";
-    }
-  }
 ",
                         "
   padding: 0 10px 0 10px;
@@ -361,16 +351,19 @@ exports[`Styled components should render buttons 1`] = `
   & svg {
     width: 30px;
     height: 30px;
+    ",
+                        [Function],
+                        ";
   }
 ",
                       ],
                     },
                     "displayName": "Styled(styled.button)",
                     "foldedComponentIds": Array [
-                      "sc-gZMcBi",
+                      "sc-iwsKbI",
                     ],
                     "render": [Function],
-                    "styledComponentId": "sc-gqjmRU",
+                    "styledComponentId": "sc-gZMcBi",
                     "target": "button",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -401,7 +394,7 @@ exports[`Styled components should render buttons 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-gqjmRU",
+                      "componentId": "sc-gZMcBi",
                       "isStatic": false,
                       "lastClassName": "c2",
                       "rules": Array [
@@ -438,16 +431,6 @@ exports[`Styled components should render buttons 1`] = `
     min-height: inherit;
     font-size: 0;
   }
-
-  & svg {
-    rect,
-    polygon,
-    path {
-      fill: ",
-                        [Function],
-                        ";
-    }
-  }
 ",
                         "
   padding: 0 10px 0 10px;
@@ -470,16 +453,19 @@ exports[`Styled components should render buttons 1`] = `
   & svg {
     width: 30px;
     height: 30px;
+    ",
+                        [Function],
+                        ";
   }
 ",
                       ],
                     },
                     "displayName": "Styled(styled.button)",
                     "foldedComponentIds": Array [
-                      "sc-gZMcBi",
+                      "sc-iwsKbI",
                     ],
                     "render": [Function],
-                    "styledComponentId": "sc-gqjmRU",
+                    "styledComponentId": "sc-gZMcBi",
                     "target": "button",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],

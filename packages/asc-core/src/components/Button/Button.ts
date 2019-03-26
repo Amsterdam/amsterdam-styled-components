@@ -3,12 +3,13 @@ import { readableColor, transitions } from 'polished'
 import { Theme } from '../../theme'
 import styled from '../../styled-components'
 import getThemeColor from '../../utils/getThemeColor'
+import fillSVG from '../../utils/fillSVG'
 import focus from '../shared/focus'
 
 export type Props = {
   onClick?: MouseEventHandler<HTMLButtonElement>
   color?: Theme.TypeLevel
-  size?: 'normal' | 'small'
+  size?: 'normal' | 'small' | 30
   square?: boolean
   href?: string
   as?: keyof JSX.IntrinsicElements | ComponentType<any>
@@ -42,14 +43,6 @@ const ButtonBase = styled.button<Props>`
     min-height: inherit;
     font-size: 0;
   }
-
-  & svg {
-    rect,
-    polygon,
-    path {
-      fill: ${({ color, theme }) => readableColor(getThemeColor(theme, color))};
-    }
-  }
 `
 
 const Button = styled(ButtonBase)<Props>`
@@ -72,6 +65,7 @@ const Button = styled(ButtonBase)<Props>`
   & svg {
     width: 30px;
     height: 30px;
+    ${({ color, theme }) => fillSVG(theme, color)};
   }
 `
 
@@ -85,13 +79,14 @@ export const SocialButton = styled(ButtonBase)<Props>`
   height: 30px;
   background: ${({ theme }) => getThemeColor(theme, 'tint', 'level5')}};
 
+  &:focus,
   &:hover {
     background: ${({ theme }) => getThemeColor(theme, 'secondary')}};
   }
 
   & svg {
-    width: 30px;
-    height: 30px;
+    width: inherit;
+    height: inherit;
   }
 `
 

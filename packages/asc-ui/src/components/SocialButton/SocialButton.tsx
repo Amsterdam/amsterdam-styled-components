@@ -12,7 +12,7 @@ const SocialButton: React.FC<Props & AscCore.Button.Props> = ({
   ...otherProps
 }) => (
   <AscCore.Button.SocialButton onClick={onClick} {...otherProps} square>
-    <Icon color="primary" size={30}>
+    <Icon color="secondary" size={30}>
       {children}
     </Icon>
   </AscCore.Button.SocialButton>
