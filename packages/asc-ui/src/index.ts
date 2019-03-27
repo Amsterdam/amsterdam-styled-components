@@ -11,6 +11,7 @@ import Portal from './components/Portal'
 import Typography from './components/Typography'
 import TopBar from './components/TopBar'
 import ShareBar from './components/ShareBar'
+import ShareButton from './components/ShareButton'
 import Button from './components/Button'
 import Radio from './components/Radio'
 import Focus from './components/Focus'
@@ -31,6 +32,7 @@ export {
   Radio,
   TopBar,
   ShareBar,
+  ShareButton,
   Focus,
 }
 

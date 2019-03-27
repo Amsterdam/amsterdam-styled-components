@@ -1,6 +1,10 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
-import { ReactComponent as Calendar } from '@datapunt/asc-assets/lib/Icons/Calendar.svg'
+import { ReactComponent as Facebook } from '@datapunt/asc-assets/lib/Icons/Facebook.svg'
+import { ReactComponent as Twitter } from '@datapunt/asc-assets/lib/Icons/Twitter.svg'
+import { ReactComponent as Linkedin } from '@datapunt/asc-assets/lib/Icons/Linkedin.svg'
+import { ReactComponent as Email } from '@datapunt/asc-assets/lib/Icons/Email.svg'
+import { ReactComponent as Print } from '@datapunt/asc-assets/lib/Icons/Print.svg'
 import ShareBar from './ShareBar'
 import ShareButton from '../ShareButton'
 
@@ -14,8 +18,10 @@ const SimpleComponent: React.FC<{}> = ({ children }) => (
           '_blank',
         )
       }
-      type="Facebook"
-    />
+      hoverColor="#3b5999"
+    >
+      <Facebook />
+    </ShareButton>
     <ShareButton
       onClick={() =>
         window.open(
@@ -24,8 +30,10 @@ const SimpleComponent: React.FC<{}> = ({ children }) => (
           '_blank',
         )
       }
-      type="Twitter"
-    />
+      hoverColor="#55acee"
+    >
+      <Twitter />
+    </ShareButton>
     <ShareButton
       onClick={() =>
         window.open(
@@ -35,8 +43,10 @@ const SimpleComponent: React.FC<{}> = ({ children }) => (
           '_blank',
         )
       }
-      type="Linkedin"
-    />
+      hoverColor="#0077B5"
+    >
+      <Linkedin />
+    </ShareButton>
     <ShareButton
       onClick={() =>
         window.open(
@@ -44,19 +54,17 @@ const SimpleComponent: React.FC<{}> = ({ children }) => (
             `&title=${escape(window.location.href)}`,
         )
       }
-      type="Email"
-    />
-    <ShareButton onClick={() => window.print()} type="Print" />
+    >
+      <Email />
+    </ShareButton>
+    <ShareButton onClick={() => window.print()}>
+      <Print />
+    </ShareButton>
     {children}
   </ShareBar>
 )
 
-storiesOf('ShareBar', module)
-  .add('default state with predefined buttons', () => <SimpleComponent />)
-  .add('extended state with custom buttons', () => (
-    <SimpleComponent>
-      <ShareButton onClick={() => {}} aria-label="Calendar">
-        <Calendar />
-      </ShareButton>
-    </SimpleComponent>
-  ))
+storiesOf('ShareBar', module).add(
+  'default state with most used buttons',
+  () => <SimpleComponent />,
+)

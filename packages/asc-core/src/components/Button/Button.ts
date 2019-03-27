@@ -11,7 +11,7 @@ export type Props = {
   color?: Theme.TypeLevel
   size?: 'normal' | 'small'
   square?: boolean
-  type?: 'Facebook' | 'Twitter' | 'Linkedin' | 'Email' | 'Print'
+  hoverColor?: string
   href?: string
   as?: keyof JSX.IntrinsicElements | ComponentType<any>
 }
@@ -82,18 +82,9 @@ export const ShareButton = styled(IconButton)<Props>`
 
   &:focus,
   &:hover {
-    background: ${({ type, theme }) => {
-      switch (type) {
-        case 'Facebook':
-          return '#3b5999'
-        case 'Twitter':
-          return '#55acee'
-        case 'Linkedin':
-          return '#0077B5'
-        default:
-          return getThemeColor(theme, 'secondary')
-      }
-    }}
+    background: ${({ hoverColor, theme }) =>
+      hoverColor || getThemeColor(theme, 'secondary')};
+  }
 `
 
 export default Button
