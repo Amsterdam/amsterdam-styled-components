@@ -243,7 +243,9 @@ exports[`Styled components should render buttons 1`] = `
       }
     }
   >
-    <styled.div>
+    <styled.div
+      padding={5}
+    >
       <StyledComponent
         forwardedComponent={
           Object {
@@ -251,18 +253,23 @@ exports[`Styled components should render buttons 1`] = `
             "attrs": Array [],
             "componentStyle": ComponentStyle {
               "componentId": "sc-EHOje",
-              "isStatic": true,
+              "isStatic": false,
               "lastClassName": "c0",
               "rules": Array [
                 "
   display: flex;
-  padding: 5px;
+  ",
+                [Function],
+                "
 
   & > * {
     margin-right: 5px;
   }
 ",
               ],
+            },
+            "defaultProps": Object {
+              "padding": 5,
             },
             "displayName": "styled.div",
             "foldedComponentIds": Array [],
@@ -275,6 +282,7 @@ exports[`Styled components should render buttons 1`] = `
           }
         }
         forwardedRef={null}
+        padding={5}
       >
         <div
           className="c0"

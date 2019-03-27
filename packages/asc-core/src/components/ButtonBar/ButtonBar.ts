@@ -1,12 +1,20 @@
 import styled from '../../styled-components'
 
-const ButtonBar = styled.div`
+export type Props = {
+  padding?: number
+}
+
+const ButtonBar = styled.div<Props>`
   display: flex;
-  padding: 5px;
+  ${({ padding }) => `padding: ${padding}px;`}
 
   & > * {
     margin-right: 5px;
   }
 `
+
+ButtonBar.defaultProps = {
+  padding: 5,
+}
 
 export default ButtonBar
