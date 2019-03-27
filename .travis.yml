@@ -3,9 +3,6 @@ language: node_js
 node_js:
   - '10'
   - '8'
-branches:
-  only:
-    - draft
 cache:
   yarn: true
   directories:
