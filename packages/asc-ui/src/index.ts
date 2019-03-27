@@ -10,8 +10,7 @@ import Modal from './components/Modal'
 import Portal from './components/Portal'
 import Typography from './components/Typography'
 import TopBar from './components/TopBar'
-import SocialBar from './components/SocialBar'
-import SocialButton from './components/SocialButton'
+import ShareBar from './components/ShareBar'
 import Button from './components/Button'
 import Radio from './components/Radio'
 import Focus from './components/Focus'
@@ -31,8 +30,7 @@ export {
   Typography,
   Radio,
   TopBar,
-  SocialBar,
-  SocialButton,
+  ShareBar,
   Focus,
 }
 

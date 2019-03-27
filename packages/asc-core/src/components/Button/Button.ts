@@ -11,6 +11,7 @@ export type Props = {
   color?: Theme.TypeLevel
   size?: 'normal' | 'small'
   square?: boolean
+  type?: 'Facebook' | 'Twitter' | 'Linkedin' | 'Email' | 'Print'
   href?: string
   as?: keyof JSX.IntrinsicElements | ComponentType<any>
 }
@@ -75,14 +76,24 @@ export const IconButton = styled(ButtonBase)<Props>`
   height: 30px;
 `
 
-export const SocialButton = styled(IconButton)<Props>`
+export const ShareButton = styled(IconButton)<Props>`
   padding: 0px;
   background: ${({ theme }) => getThemeColor(theme, 'tint', 'level5')}};
 
   &:focus,
   &:hover {
-    background: ${({ theme }) => getThemeColor(theme, 'secondary')}};
-  }
+    background: ${({ type, theme }) => {
+      switch (type) {
+        case 'Facebook':
+          return '#3b5999'
+        case 'Twitter':
+          return '#55acee'
+        case 'Linkedin':
+          return '#0077B5'
+        default:
+          return getThemeColor(theme, 'secondary')
+      }
+    }}
 `
 
 export default Button
