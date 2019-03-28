@@ -15,8 +15,6 @@ const Icon = styled.span<Props>`
   height: 20px;
 
   & > svg {
-    width: 20px;
-    height: 20px;
     polygon,
     path {
       fill: ${({ color, theme }) => readableColor(getThemeColor(theme, color))};
