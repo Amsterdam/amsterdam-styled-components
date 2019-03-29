@@ -13,4 +13,5 @@ export { default as Modal } from './Modal'
 export { default as Typography } from './Typography'
 export { default as Divider } from './Divider'
 export { default as ListItem } from './ListItem'
+export { default as Select } from './Select'
 export { Radio }

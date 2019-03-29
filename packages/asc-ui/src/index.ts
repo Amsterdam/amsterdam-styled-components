@@ -15,8 +15,17 @@ import ShareButton from './components/ShareButton'
 import Button from './components/Button'
 import Radio from './components/Radio'
 import Focus from './components/Focus'
+import Select from './components/Select'
 
-const { Divider, Icon, ButtonBar, GlobalStyle, ListItem } = AscCore
+const {
+  Divider,
+  Icon,
+  ButtonBar,
+  GlobalStyle,
+  ListItem,
+  Select: AscSelection,
+} = AscCore
+const { Option } = AscSelection
 
 // Components
 export {
@@ -34,6 +43,8 @@ export {
   ShareBar,
   ShareButton,
   Focus,
+  Select,
+  Option,
 }
 
 // Non-components exports
