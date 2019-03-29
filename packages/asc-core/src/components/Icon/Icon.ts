@@ -3,6 +3,7 @@ import styled from '../../styled-components'
 import fillSVG from '../../utils/fillSVG'
 
 type Props = {
+  inline?: boolean
   color?: Theme.TypeLevel
   alignSelf?: 'top' | 'bottom' | 'left' | 'right'
   iconUrl?: string
@@ -10,7 +11,7 @@ type Props = {
 }
 
 const Icon = styled.span<Props>`
-  display: block;
+  display: ${({ inline }) => (inline ? 'inline-block' : 'block')};
   ${({ iconUrl }) => iconUrl && `background-image: ${iconUrl}`}
   ${({ size }) => `width: ${size}px; height: ${size}px;`}
   ${({ alignSelf }) => alignSelf && `position: absolute; ${[alignSelf]}: 0`};

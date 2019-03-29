@@ -9,4 +9,8 @@ export default createGlobalStyle`
   body {
     font-family: ${({ theme }) => theme[THEME_NAME].typography.fontFamily};
   }
+  
+  [aria-hidden="true"] {
+    display: none;
+  }
 `
