@@ -5,6 +5,7 @@ import styled from '../../styled-components'
 import getThemeColor from '../../utils/getThemeColor'
 import fillSVG from '../../utils/fillSVG'
 import focus from '../shared/focus'
+import { flexboxMinHeightFix } from '../shared/ie-fixes'
 
 export type Props = {
   onClick?: MouseEventHandler<HTMLButtonElement>
@@ -37,13 +38,7 @@ const ButtonBase = styled.button<Props>`
         : getThemeColor(theme, 'tint', 'level3')};
   }
 
-  // ie11 fix
-  &:after {
-    content: '';
-    display: block;
-    min-height: inherit;
-    font-size: 0;
-  }
+  ${flexboxMinHeightFix()}
 `
 
 const Button = styled(ButtonBase)<Props>`
