@@ -4,15 +4,17 @@ import { Icon } from '../..'
 
 type Props = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>
+  iconSize?: number
 }
 
 const ShareButton: React.FC<Props & AscCore.Button.Props> = ({
   children,
   onClick,
+  iconSize,
   ...otherProps
 }) => (
   <AscCore.Button.ShareButton onClick={onClick} {...otherProps} square>
-    <Icon color="secondary" size={30}>
+    <Icon color="secondary" size={iconSize}>
       {children}
     </Icon>
   </AscCore.Button.ShareButton>
