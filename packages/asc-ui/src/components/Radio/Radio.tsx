@@ -3,22 +3,23 @@ import { AscCore } from '@datapunt/asc-core'
 
 interface Props {
   id: string
-  name?: string
+  name: string
   label: string
   value?: string
   defaultChecked?: boolean
   disabled?: boolean
 }
-const { RadioGroup, RadioItem, RadioLabel } = AscCore.Radio
+const { Radio, RadioGroup, RadioItem, RadioLabel } = AscCore.Radio
 
-const Radio = ({ id, value, label, disabled }: Props) => (
+const RadioStyled = ({ id, name, value, label, disabled }: Props) => (
   <RadioItem>
+    <Radio id={id} name={name} disabled={disabled} />
     <RadioLabel htmlFor={id} disabled={disabled}>
       {label || value}
     </RadioLabel>
   </RadioItem>
 )
 
-export default Radio
+export default RadioStyled
 
 export { RadioGroup }
