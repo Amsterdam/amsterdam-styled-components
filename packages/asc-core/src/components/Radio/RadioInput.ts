@@ -1,6 +1,6 @@
 import styled from '../../styled-components'
 
-interface Props {
+type Props = {
   id: string
   name: string
   label: string
