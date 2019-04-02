@@ -9,14 +9,14 @@ type Props = {
   disabled?: boolean
 }
 
-const Radio = styled.input.attrs<Props>({
+const Radio = styled.input.attrs<Props>(props => ({
   type: 'radio',
-  id: ({ id }: Props) => id,
-  name: ({ name }: Props) => name,
-  value: ({ value }: Props) => value,
-  defaultChecked: ({ defaultChecked }: Props) => defaultChecked,
-  disabled: ({ disabled }: Props) => disabled,
-})`
+  id: props.id,
+  name: props.name,
+  value: props.value,
+  defaultChecked: props.defaultChecked,
+  disabled: props.disabled,
+}))`
   cursor: pointer;
   height: 28px;
   left: 0;

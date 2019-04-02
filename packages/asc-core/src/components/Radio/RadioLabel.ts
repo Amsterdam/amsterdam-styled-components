@@ -6,10 +6,10 @@ type Props = {
   disabled?: boolean
 }
 
-const Label = styled.label.attrs<Props>({
-  htmlFor: ({ htmlFor }: Props) => htmlFor,
-  disabled: ({ disabled }: Props) => disabled,
-})<Props>`
+const Label = styled.label.attrs<Props>(props => ({
+  htmlFor: props.htmlFor,
+  disabled: props.disabled,
+}))<Props>`
   color: ${({ theme, disabled }) =>
     disabled
       ? getThemeColor(theme, 'tint', 'level4')
