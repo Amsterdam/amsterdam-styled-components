@@ -18,8 +18,9 @@ const SimpleComponent: React.FC<{}> = ({ children }) => (
           '_blank',
         )
       }
-      iconSize={24}
       hoverColor="#3b5999"
+      iconSize={24}
+      alignIcon="bottom"
     >
       <Facebook />
     </ShareButton>
