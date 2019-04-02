@@ -78,6 +78,7 @@ export const IconButton = styled(ButtonBase)<Props>`
 
 export const ShareButton = styled(IconButton)<Props>`
   padding: 0px;
+  position: relative;
   justify-content: center;
   background: ${({ theme }) => getThemeColor(theme, 'tint', 'level5')}};
 
