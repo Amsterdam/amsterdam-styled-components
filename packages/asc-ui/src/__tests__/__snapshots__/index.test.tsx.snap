@@ -55,15 +55,15 @@ exports[`Styled components should render buttons 1`] = `
   font-size: 0;
 }
 
+.c1 svg {
+  width: 30px;
+  height: 30px;
+}
+
 .c1 svg rect,
 .c1 svg polygon,
 .c1 svg path {
   fill: #fff;
-}
-
-.c1 svg {
-  width: 30px;
-  height: 30px;
 }
 
 .c2 {
@@ -108,15 +108,15 @@ exports[`Styled components should render buttons 1`] = `
   font-size: 0;
 }
 
+.c2 svg {
+  width: 30px;
+  height: 30px;
+}
+
 .c2 svg rect,
 .c2 svg polygon,
 .c2 svg path {
   fill: #fff;
-}
-
-.c2 svg {
-  width: 30px;
-  height: 30px;
 }
 
 <ASCDefaultThemeProvider>
@@ -243,7 +243,9 @@ exports[`Styled components should render buttons 1`] = `
       }
     }
   >
-    <styled.div>
+    <styled.div
+      padding={5}
+    >
       <StyledComponent
         forwardedComponent={
           Object {
@@ -251,18 +253,23 @@ exports[`Styled components should render buttons 1`] = `
             "attrs": Array [],
             "componentStyle": ComponentStyle {
               "componentId": "sc-EHOje",
-              "isStatic": true,
+              "isStatic": false,
               "lastClassName": "c0",
               "rules": Array [
                 "
   display: flex;
-  padding: 5px;
+  ",
+                [Function],
+                "
 
   & > * {
     margin-right: 5px;
   }
 ",
               ],
+            },
+            "defaultProps": Object {
+              "padding": 5,
             },
             "displayName": "styled.div",
             "foldedComponentIds": Array [],
@@ -275,6 +282,7 @@ exports[`Styled components should render buttons 1`] = `
           }
         }
         forwardedRef={null}
+        padding={5}
       >
         <div
           className="c0"
@@ -329,16 +337,6 @@ exports[`Styled components should render buttons 1`] = `
     min-height: inherit;
     font-size: 0;
   }
-
-  & svg {
-    rect,
-    polygon,
-    path {
-      fill: ",
-                        [Function],
-                        ";
-    }
-  }
 ",
                         "
   padding: 0 10px 0 10px;
@@ -351,16 +349,19 @@ exports[`Styled components should render buttons 1`] = `
   ",
                         [Function],
                         "
-    
+
   &:hover {
     ",
                         [Function],
                         "
   }
-  
+
   & svg {
     width: 30px;
     height: 30px;
+    ",
+                        [Function],
+                        ";
   }
 ",
                       ],
@@ -438,16 +439,6 @@ exports[`Styled components should render buttons 1`] = `
     min-height: inherit;
     font-size: 0;
   }
-
-  & svg {
-    rect,
-    polygon,
-    path {
-      fill: ",
-                        [Function],
-                        ";
-    }
-  }
 ",
                         "
   padding: 0 10px 0 10px;
@@ -460,16 +451,19 @@ exports[`Styled components should render buttons 1`] = `
   ",
                         [Function],
                         "
-    
+
   &:hover {
     ",
                         [Function],
                         "
   }
-  
+
   & svg {
     width: 30px;
     height: 30px;
+    ",
+                        [Function],
+                        ";
   }
 ",
                       ],

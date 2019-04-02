@@ -1,25 +1,28 @@
-import { readableColor } from 'polished'
 import { Theme } from '../../theme'
 import styled from '../../styled-components'
-import getThemeColor from '../../utils/getThemeColor'
+import fillSVG from '../../utils/fillSVG'
 
 type Props = {
   color?: Theme.TypeLevel
+  alignSelf?: 'top' | 'bottom' | 'left' | 'right'
   iconUrl?: string
+  size?: number
 }
 
 const Icon = styled.span<Props>`
   display: block;
   ${({ iconUrl }) => iconUrl && `background-image: ${iconUrl}`}
-  width: 20px;
-  height: 20px;
+  ${({ size }) => `width: ${size}px; height: ${size}px;`}
+  ${({ alignSelf }) => alignSelf && `position: absolute; ${[alignSelf]}: 0`};
 
   & > svg {
-    polygon,
-    path {
-      fill: ${({ color, theme }) => readableColor(getThemeColor(theme, color))};
-    }
-  }
+    width: inherit;
+    height: inherit;
+    ${({ color, theme }) => fillSVG(theme, color)};
 `
+
+Icon.defaultProps = {
+  size: 20,
+}
 
 export default Icon
