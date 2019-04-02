@@ -28,7 +28,8 @@
     "prepare": "yarn prettify:package && yarn build",
     "publish:packages": "lerna publish",
     "start": "concurrently \"yarn build:watch\" \"yarn storybook\"",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./packages/asc-assets/lib -p 6006",
+    "storybook:build": "yarn build && build-storybook -c .storybook -o .sb -s ./packages/asc-assets/lib",
     "test": "yarn jest",
     "test:watch": "yarn test -- --watch",
     "prettify:package": "yarn prettier-package-json --write **/package.json"

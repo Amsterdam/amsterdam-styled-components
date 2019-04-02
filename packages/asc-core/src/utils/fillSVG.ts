@@ -1,6 +1,6 @@
 import { readableColor } from 'polished'
-import getThemeColor from './getThemeColor'
 import { Theme } from '../theme'
+import { getColor } from './themeUtils'
 
 function fillSVG(
   theme: Theme.ThemeInterface,
@@ -8,7 +8,7 @@ function fillSVG(
   variant: string = 'main',
 ) {
   if (colorType) {
-    let color = readableColor(getThemeColor(theme, colorType))
+    let color = readableColor(getColor(theme, colorType))
 
     if (color[variant]) {
       color = color[variant]

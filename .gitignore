@@ -9,6 +9,7 @@ node_modules
 /packages/**/lib
 /storybook-static
 /examples/**/lib
+.sb
 
 # misc
 .cache

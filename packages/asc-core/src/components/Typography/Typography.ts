@@ -1,9 +1,9 @@
 import { StyledComponent } from 'styled-components'
 import { em, margin } from 'polished'
 import styled, { css } from '../../styled-components'
-import getThemeColor from '../../utils/getThemeColor'
 import { THEME_NAME } from '../../theme'
 import focus from '../shared/focus'
+import { getColor } from '../../utils/themeUtils'
 
 export type Props = {
   gutterBottom?: boolean
@@ -17,7 +17,7 @@ const headings = css`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  color: ${({ theme }) => getThemeColor(theme, 'tint', 'level7')};
+  color: ${({ theme }) => getColor(theme, 'tint', 'level7')};
 `
 
 const extendedStyles = {
@@ -37,13 +37,13 @@ const extendedStyles = {
     line-height: 1.25;
   `,
   a: css`
-    color: ${({ theme }) => getThemeColor(theme, 'primary')}
+    color: ${({ theme }) => getColor(theme, 'primary')}
     display: inline-block;
     
     ${({ theme }) => focus(theme)}
     
     &:hover {
-      color: ${({ theme }) => getThemeColor(theme, 'secondary')}
+      color: ${({ theme }) => getColor(theme, 'secondary')}
     }
   `,
 }
@@ -52,9 +52,11 @@ export type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'a'
 
 const getProperty = <T, K extends keyof T>(obj: T, key: K) => obj[key]
 
-export default (element: Variant): StyledComponent<any, any> => styled(element)<
-  Props
->`
+export default (element: Variant): StyledComponent<any, any> => styled(
+  element,
+).attrs({
+  tabIndex: -1,
+})<Props>`
   ${getProperty(extendedStyles, element)}
   ${margin(0)};
   ${({ gutterBottom }) =>

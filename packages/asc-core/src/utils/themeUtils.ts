@@ -1,6 +1,14 @@
 import { Theme, THEME_NAME } from '../theme'
 
-function getThemeColor(
+function getTheme(theme: Theme.ThemeInterface) {
+  return theme[THEME_NAME]
+}
+
+export function getTypography(theme: Theme.ThemeInterface) {
+  return getTheme(theme).typography
+}
+
+export function getColor(
   theme: Theme.ThemeInterface,
   colorType?: Theme.TypeLevel,
   variant: string = 'main',
@@ -19,5 +27,3 @@ function getThemeColor(
 
   return 'rgba(255,255,255,0)'
 }
-
-export default getThemeColor

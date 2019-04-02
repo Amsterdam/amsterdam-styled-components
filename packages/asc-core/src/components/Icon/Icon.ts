@@ -1,5 +1,5 @@
 import { Theme } from '../../theme'
-import styled from '../../styled-components'
+import styled, { css } from '../../styled-components'
 import fillSVG from '../../utils/fillSVG'
 
 type Props = {
@@ -8,22 +8,25 @@ type Props = {
   alignSelf?: 'top' | 'bottom' | 'left' | 'right'
   iconUrl?: string
   size?: number
+  padding?: number
 }
 
 const Icon = styled.span<Props>`
   display: ${({ inline }) => (inline ? 'inline-block' : 'block')};
   ${({ iconUrl }) => iconUrl && `background-image: ${iconUrl}`}
-  ${({ size }) => `width: ${size}px; height: ${size}px;`}
+  ${({ size = 20, padding = 0 }) => css`
+    width: ${size - padding * 2}px;
+    height: ${size - padding * 2}px;
+  `}
   ${({ alignSelf }) => alignSelf && `position: absolute; ${[alignSelf]}: 0`};
-
+  padding: ${({ padding }) => `${padding}px`}
+  box-sizing: content-box;
+  
   & > svg {
     width: inherit;
     height: inherit;
     ${({ color, theme }) => fillSVG(theme, color)};
+  }
 `
-
-Icon.defaultProps = {
-  size: 20,
-}
 
 export default Icon

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu should render 1`] = `
+<styled.div
+  onBlur={[Function]}
+  onKeyDown={[Function]}
+>
+  <MenuButton
+    label="Click on me"
+    onClick={[Function]}
+    open={false}
+  />
+  <ForwardRef
+    onClose={[Function]}
+    open={false}
+    selectedChild={-1}
+  >
+    <MenuItem>
+      One
+    </MenuItem>
+    <MenuItem>
+      Two
+    </MenuItem>
+    <MenuItem>
+      Three
+    </MenuItem>
+  </ForwardRef>
+</styled.div>
+`;

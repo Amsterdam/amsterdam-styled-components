@@ -1,9 +1,9 @@
 import styled from '../../styled-components'
+import { WrapperProps } from './types'
 
-export type Props = {}
-
-const Wrapper = styled.div<Props>`
+const Wrapper = styled.div<WrapperProps>`
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
 `
 

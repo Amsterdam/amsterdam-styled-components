@@ -10,7 +10,11 @@ export default createGlobalStyle`
     font-family: ${({ theme }) => theme[THEME_NAME].typography.fontFamily};
   }
   
+  * {
+    box-sizing: border-box;
+  }
+  
   [aria-hidden="true"] {
-    display: none;
+    display: none !important;
   }
 `

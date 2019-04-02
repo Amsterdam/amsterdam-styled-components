@@ -2,10 +2,10 @@ import { ComponentType, MouseEventHandler } from 'react'
 import { readableColor, transitions } from 'polished'
 import { Theme } from '../../theme'
 import styled from '../../styled-components'
-import getThemeColor from '../../utils/getThemeColor'
 import fillSVG from '../../utils/fillSVG'
 import focus from '../shared/focus'
 import { flexboxMinHeightFix } from '../shared/ie-fixes'
+import { getColor } from '../../utils/themeUtils'
 
 export type Props = {
   onClick?: MouseEventHandler<HTMLButtonElement>
@@ -29,13 +29,13 @@ const ButtonBase = styled.button<Props>`
   ${({ theme }) => focus(theme)}
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')};
 
-  background: ${({ color, theme }) => getThemeColor(theme, color)};
+  background: ${({ color, theme }) => getColor(theme, color)};
 
   &:hover {
     background: ${({ color, theme }) =>
       color
-        ? getThemeColor(theme, color, 'dark')
-        : getThemeColor(theme, 'tint', 'level3')};
+        ? getColor(theme, color, 'dark')
+        : getColor(theme, 'tint', 'level3')};
   }
 
   ${flexboxMinHeightFix()}
@@ -46,16 +46,14 @@ const Button = styled(ButtonBase)<Props>`
   min-height: 38px;
   line-height: 1em
   color: ${({ color, theme }) =>
-    color
-      ? readableColor(getThemeColor(theme, color))
-      : getThemeColor(theme, 'primary')};
+    color ? readableColor(getColor(theme, color)) : getColor(theme, 'primary')};
 
   ${({ theme, color }) =>
-    !color && `border: 1px solid ${getThemeColor(theme, 'primary')};`}
+    !color && `border: 1px solid ${getColor(theme, 'primary')};`}
 
   &:hover {
     ${({ theme, color }) =>
-      !color && `outline: 1px solid ${getThemeColor(theme, 'primary')};`}
+      !color && `outline: 1px solid ${getColor(theme, 'primary')};`}
   }
 
   & svg {
@@ -75,12 +73,12 @@ export const ShareButton = styled(IconButton)<Props>`
   padding: 0px;
   position: relative;
   justify-content: center;
-  background: ${({ theme }) => getThemeColor(theme, 'tint', 'level5')}};
+  background: ${({ theme }) => getColor(theme, 'tint', 'level5')}};
 
   &:focus,
   &:hover {
     background: ${({ hoverColor, theme }) =>
-      hoverColor || getThemeColor(theme, 'secondary')};
+      hoverColor || getColor(theme, 'secondary')};
   }
 `
 
