@@ -1,6 +1,6 @@
 {
   "name": "@datapunt/asc-ui",
-  "description": "",
+  "description": "React Components that developers can reuse in multiple projects",
   "license": "MPL-2.0",
   "author": "Datapunt Amsterdam",
   "version": "0.6.1-alpha.0",
