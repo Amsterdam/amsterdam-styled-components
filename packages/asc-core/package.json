@@ -1,9 +1,9 @@
 {
   "name": "@datapunt/asc-core",
-  "description": "",
+  "description": "Stateless styled components according to the Amsterdam styleguide",
   "license": "MPL-2.0",
   "author": "Datapunt Amsterdam",
-  "version": "0.6.0-alpha.0",
+  "version": "0.6.2-alpha.0",
   "main": "lib/index.js",
   "files": [
     "lib"

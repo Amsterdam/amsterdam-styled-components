@@ -15,7 +15,7 @@ const ShareButton: React.FC<Props & AscCore.Button.Props> = ({
   alignIcon,
   ...otherProps
 }) => (
-  <AscCore.Button.ShareButton onClick={onClick} {...otherProps} square>
+  <AscCore.Button.ShareButton onClick={onClick} square {...otherProps}>
     <Icon alignSelf={alignIcon} color="secondary" size={iconSize}>
       {children}
     </Icon>

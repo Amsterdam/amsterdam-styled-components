@@ -61,3 +61,11 @@ To test your components in other repo's, do the following:
 3. Go to the repo where you want to use your package and run `npm link <package-name>`. `<package-name>` can be found in the `package.json` you linked in step 2.
 
 Now you can import the package like you would do like a normal npm dependency. Changes you will make in your package will be seen in your repo.
+
+##### Publishing
+
+To publish these packages to npm, do the following:
+
+1. Make sure you're logged in to npm, by running `npm login`
+2. Run `yarn publish:packages` to start lerna
+3. Select a version
