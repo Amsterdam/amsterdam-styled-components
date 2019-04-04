@@ -8,7 +8,7 @@
 
 NOTE: this is a draft. We are still experimenting and configuring. Do not use in production.
 
-[![Overview of the components](https://amsterdam.github.io/amsterdam-styled-components)](https://amsterdam.github.io/amsterdam-styled-components)
+[Demo site with the storybook of the components](https://amsterdam.github.io/amsterdam-styled-components)
 
 ## Vision
 
@@ -56,7 +56,6 @@ The guidelines can be found here (TBD)
 ### Development
 
 ```bash
-npm install -g lerna
 yarn install
 ```
 
@@ -65,8 +64,8 @@ To start watching files and start storybook, run `yarn start`
 To test your components in other repo's, do the following:
 
 1. Run `yarn build:watch`, this will watch your files and transpile them to the package lib directory.
-2. cd to the package you want to test, run `yarn install` and then run `lerna link`.
-3. Go to the repo where you want to use your package and run `npm link <package-name>`.`<package-name>` can be found in the `package.json` you linked in step 2.
+2. cd to the package you want to test, run `yarn link`.
+3. Go to the repo where you want to use your package and run `yarn link <package-name>`.`<package-name>` can be found in the `package.json` you linked in step 2.
 
 Now you can import the package like you would do like a normal npm dependency. Changes you will make in your package will be seen in your repo.
 
@@ -77,3 +76,12 @@ To publish these packages to npm, do the following:
 1. Make sure you're logged in to npm, by running `npm login`
 2. Run `yarn publish:packages` to start lerna
 3. Select a version
+
+### Known issues
+
+- When deploying to github pages with `npm run deploy-storybook` there are *.d definition files generated. These should not be checked in and can be discarded without problems.
+
+### References
+
+- [Material ui](https://material-ui.com/getting-started/installation/)
+- [styled-components](https://www.styled-components.com/)
