@@ -1,11 +1,11 @@
 import styled from '../../styled-components'
-import { MenuItemProps } from './types'
+import { Menu } from './types'
 import Icon from '../Icon'
 import { getColor, getTypography } from '../../utils/themeUtils'
 
-const MenuItem = styled.li.attrs<MenuItemProps>(({ role }) => ({
+const MenuItem = styled.li.attrs<Menu.MenuItemProps>(({ role }) => ({
   role,
-}))<MenuItemProps>`
+}))<Menu.MenuItemProps>`
   padding: 0;
   margin: 0;
   display: flex;

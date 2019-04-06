@@ -6,7 +6,7 @@ import { KeyboardKeys } from '../../types'
 import ownerDocument from '../../utils/ownerDocument'
 
 type Props = {
-  orientation?: 'top'
+  orientation?: AscCore.MenuTypes.Orientation
   label?: string
   icon?: React.ReactNode
 }

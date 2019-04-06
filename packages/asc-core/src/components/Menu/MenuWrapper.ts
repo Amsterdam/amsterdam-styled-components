@@ -1,7 +1,7 @@
 import styled from '../../styled-components'
-import { WrapperProps } from './types'
+import { Menu } from './types'
 
-const Wrapper = styled.div<WrapperProps>`
+const Wrapper = styled.div<Menu.WrapperProps>`
   display: flex;
   align-items: flex-start;
   flex-direction: column;

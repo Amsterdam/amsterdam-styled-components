@@ -1,4 +1,3 @@
-import * as Types from './types'
 import MenuWrapper from './MenuWrapper'
 import MenuButton from './MenuButton'
 import MenuList, { MenuListWrapper } from './MenuList'
@@ -10,5 +9,4 @@ export default {
   MenuListWrapper,
   MenuList,
   MenuItem,
-  Types,
 }

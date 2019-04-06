@@ -1,5 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { AscCore } from '@datapunt/asc-core'
 import { ReactComponent as Ellipsis } from '@datapunt/asc-assets/lib/Icons/Ellipsis.svg'
 import { ReactComponent as FacebookPadded } from '@datapunt/asc-assets/lib/Icons/FacebookPadded.svg'
 import { ReactComponent as Twitter } from '@datapunt/asc-assets/lib/Icons/Twitter.svg'
@@ -20,7 +21,7 @@ storiesOf('Menu', module)
     </Menu>
   ))
   .add('orientation top', () => (
-    <Menu orientation="top">
+    <Menu orientation={AscCore.MenuTypes.Orientation.top}>
       <MenuItem role="button" onClick={() => {}}>
         One
       </MenuItem>
@@ -41,7 +42,7 @@ storiesOf('Menu', module)
   ))
   .add('example of actual usage', () => (
     <Menu
-      orientation="top"
+      orientation={AscCore.MenuTypes.Orientation.top}
       icon={
         <Icon padding={4} inline size={24}>
           <Ellipsis />

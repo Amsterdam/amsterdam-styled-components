@@ -6,7 +6,7 @@ type Props = {
   id: string
   selectedChild: number
   onClose: Function
-  orientation?: 'top'
+  orientation?: AscCore.MenuTypes.Orientation
   label?: string
   icon?: React.ReactNode
 }
