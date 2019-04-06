@@ -4,7 +4,7 @@ import { ReactComponent as ChevronTop } from '@datapunt/asc-assets/lib/Icons/Che
 import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/Chevron-Down.svg'
 import { Icon } from '../..'
 
-const MenuButton = ({
+const ContextMenuButton = ({
   id,
   label,
   orientation,
@@ -15,14 +15,14 @@ const MenuButton = ({
   const arrowIconDown = !open ? <ChevronDown /> : <ChevronTop />
   const arrowIconTop = !open ? <ChevronTop /> : <ChevronDown />
   return (
-    <AscCore.Menu.MenuButton {...{ id }} {...otherProps}>
+    <AscCore.ContextMenu.MenuButton {...{ id }} {...otherProps}>
       {icon && icon}
       {label}
       <Icon inline size={24} padding={4}>
         {orientation === 'top' ? arrowIconTop : arrowIconDown}
       </Icon>
-    </AscCore.Menu.MenuButton>
+    </AscCore.ContextMenu.MenuButton>
   )
 }
 
-export default MenuButton
+export default ContextMenuButton

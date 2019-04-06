@@ -1,4 +1,4 @@
-export namespace Menu {
+export namespace ContextMenu {
   export type WrapperProps = {}
 
   export enum Orientation {
@@ -6,7 +6,7 @@ export namespace Menu {
     top = 'top',
   }
 
-  export type MenuItemProps = {
+  export type ContextMenuItemProps = {
     role?: string
     id: string
     label: string
@@ -14,13 +14,8 @@ export namespace Menu {
     divider?: boolean
   }
 
-  export type MenuListProps = {
+  export type ContextMenuListProps = {
     labelId?: string
     orientation?: Orientation
-  }
-
-  export type LabelProps = {
-    id: string
-    small?: boolean
   }
 }

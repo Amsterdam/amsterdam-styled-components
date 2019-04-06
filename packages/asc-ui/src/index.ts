@@ -15,8 +15,8 @@ import ShareButton from './components/ShareButton'
 import Button from './components/Button'
 import Radio from './components/Radio'
 import Focus from './components/Focus'
-import Menu from './components/Menu'
-import MenuItem from './components/Menu/MenuItem'
+import ContextMenu from './components/ContextMenu'
+import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
 
 const { Divider, Icon, ButtonBar, GlobalStyle, ListItem } = AscCore
 
@@ -36,8 +36,8 @@ export {
   ShareBar,
   ShareButton,
   Focus,
-  Menu,
-  MenuItem,
+  ContextMenu,
+  ContextMenuItem,
 }
 
 // Non-components exports

@@ -1,27 +1,27 @@
 import React from 'react'
-import { MenuItem } from '@datapunt/asc-ui/'
+import { ContextMenuItem } from '@datapunt/asc-ui/'
 import { shallow, ShallowWrapper } from 'enzyme'
-import Menu from '../Menu'
+import ContextMenu from '../ContextMenu'
 import { KeyboardKeys } from '../../../types'
 
 jest.useFakeTimers()
 
-describe('Menu', () => {
+describe('ContextMenu', () => {
   let component: ShallowWrapper<any, any>
   let instance: any
   let label: ShallowWrapper
   let wrapper: ShallowWrapper
 
   beforeEach(() => {
-    component = shallow<Menu>(
-      <Menu label="Click on me">
-        <MenuItem>One</MenuItem>
-        <MenuItem>Two</MenuItem>
-        <MenuItem>Three</MenuItem>
-      </Menu>,
+    component = shallow<ContextMenu>(
+      <ContextMenu label="Click on me">
+        <ContextMenuItem>One</ContextMenuItem>
+        <ContextMenuItem>Two</ContextMenuItem>
+        <ContextMenuItem>Three</ContextMenuItem>
+      </ContextMenu>,
     )
     instance = component.instance()
-    label = component.find('MenuButton')
+    label = component.find('ContextMenuButton')
     wrapper = component.at(0)
   })
 

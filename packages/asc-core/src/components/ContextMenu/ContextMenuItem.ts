@@ -1,11 +1,9 @@
 import styled from '../../styled-components'
-import { Menu } from './types'
+import { ContextMenu } from './types'
 import Icon from '../Icon'
 import { getColor, getTypography } from '../../utils/themeUtils'
 
-const MenuItem = styled.li.attrs<Menu.MenuItemProps>(({ role }) => ({
-  role,
-}))<Menu.MenuItemProps>`
+const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   padding: 0;
   margin: 0;
   display: flex;
@@ -30,4 +28,4 @@ const MenuItem = styled.li.attrs<Menu.MenuItemProps>(({ role }) => ({
   }
 `
 
-export default MenuItem
+export default ContextMenuItem

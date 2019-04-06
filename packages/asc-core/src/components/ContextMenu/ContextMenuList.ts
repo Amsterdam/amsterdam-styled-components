@@ -1,8 +1,8 @@
 import styled from '../../styled-components'
-import { Menu } from './types'
+import { ContextMenu } from './types'
 import { getColor } from '../../utils/themeUtils'
 
-const MenuList = styled.ul<Menu.MenuListProps>`
+const ContextMenuList = styled.ul<ContextMenu.ContextMenuListProps>`
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -12,12 +12,12 @@ const MenuList = styled.ul<Menu.MenuListProps>`
     outline: none;
   }
 `
-export default MenuList
+export default ContextMenuList
 
-export const MenuListWrapper = styled.div.attrs(() => ({
+export const ContextMenuListWrapper = styled.div.attrs(() => ({
   role: 'document',
   tabIndex: -1,
-}))<Menu.MenuListProps>`
+}))<ContextMenu.ContextMenuListProps>`
   order: ${({ orientation }) => (orientation === 'top' ? -1 : 0)};
   border: 1px solid ${({ theme }) => getColor(theme, 'tint', 'level7')};
   max-width: 250px;

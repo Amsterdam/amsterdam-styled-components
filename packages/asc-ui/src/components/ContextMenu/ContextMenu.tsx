@@ -1,12 +1,12 @@
 import React from 'react'
 import { AscCore } from '@datapunt/asc-core'
-import MenuButton from './MenuButton'
-import MenuList from './MenuList'
+import ContextMenuButton from './ContextMenuButton'
+import MenuList from './ContextMenuList'
 import { KeyboardKeys } from '../../types'
 import ownerDocument from '../../utils/ownerDocument'
 
 type Props = {
-  orientation?: AscCore.MenuTypes.Orientation
+  orientation?: AscCore.ContextMenuTypes.Orientation
   label?: string
   icon?: React.ReactNode
 }
@@ -15,7 +15,7 @@ type State = {}
 
 const selectedChildInitial = -1
 
-class Menu extends React.Component<Props, State> {
+class ContextMenu extends React.Component<Props, State> {
   state = {
     open: false,
     selectedChild: selectedChildInitial,
@@ -92,13 +92,13 @@ class Menu extends React.Component<Props, State> {
     const { open, selectedChild } = this.state
 
     return (
-      <AscCore.Menu.MenuWrapper
+      <AscCore.ContextMenu.MenuWrapper
         id={id}
         ref={this.root}
         onKeyDown={this.onKeyDown}
         onBlur={this.onClose}
       >
-        <MenuButton
+        <ContextMenuButton
           {...{
             icon,
             open,
@@ -119,9 +119,9 @@ class Menu extends React.Component<Props, State> {
         >
           {children}
         </MenuList>
-      </AscCore.Menu.MenuWrapper>
+      </AscCore.ContextMenu.MenuWrapper>
     )
   }
 }
 
-export default Menu
+export default ContextMenu

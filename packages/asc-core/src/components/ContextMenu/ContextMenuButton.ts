@@ -2,13 +2,7 @@ import styled from '../../styled-components'
 import focus from '../shared/focus'
 import { Icon } from '..'
 
-export type MenuButtonProps = {
-  id: string
-}
-
-const MenuButton = styled.button.attrs<MenuButtonProps>(() => ({
-  type: 'button',
-}))`
+const ContextMenuButton = styled.button`
   ${({ theme }) => focus(theme)}
   display: flex;
   align-items: center;
@@ -21,4 +15,4 @@ const MenuButton = styled.button.attrs<MenuButtonProps>(() => ({
   }
 `
 
-export default MenuButton
+export default ContextMenuButton

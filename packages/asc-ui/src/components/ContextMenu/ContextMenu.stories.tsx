@@ -7,49 +7,49 @@ import { ReactComponent as Twitter } from '@datapunt/asc-assets/lib/Icons/Twitte
 import { ReactComponent as Linkedin } from '@datapunt/asc-assets/lib/Icons/Linkedin.svg'
 import { ReactComponent as Email } from '@datapunt/asc-assets/lib/Icons/Email.svg'
 import { ReactComponent as Print } from '@datapunt/asc-assets/lib/Icons/Print.svg'
-import { Menu, MenuItem, Icon } from '../..'
+import { ContextMenu, ContextMenuItem, Icon } from '../..'
 
-storiesOf('Menu', module)
+storiesOf('ContextMenu', module)
   .add('default', () => (
-    <Menu>
-      <MenuItem role="button" onClick={() => {}}>
+    <ContextMenu>
+      <ContextMenuItem role="button" onClick={() => {}}>
         One
-      </MenuItem>
-      <MenuItem role="button" onClick={() => {}}>
+      </ContextMenuItem>
+      <ContextMenuItem role="button" onClick={() => {}}>
         Two
-      </MenuItem>
-    </Menu>
+      </ContextMenuItem>
+    </ContextMenu>
   ))
   .add('orientation top', () => (
-    <Menu orientation={AscCore.MenuTypes.Orientation.top}>
-      <MenuItem role="button" onClick={() => {}}>
+    <ContextMenu orientation={AscCore.ContextMenuTypes.Orientation.top}>
+      <ContextMenuItem role="button" onClick={() => {}}>
         One
-      </MenuItem>
-      <MenuItem role="button" onClick={() => {}}>
+      </ContextMenuItem>
+      <ContextMenuItem role="button" onClick={() => {}}>
         Two
-      </MenuItem>
-    </Menu>
+      </ContextMenuItem>
+    </ContextMenu>
   ))
   .add('with label', () => (
-    <Menu label="I'm a label!">
-      <MenuItem role="button" onClick={() => {}}>
+    <ContextMenu label="I'm a label!">
+      <ContextMenuItem role="button" onClick={() => {}}>
         One
-      </MenuItem>
-      <MenuItem role="button" onClick={() => {}}>
+      </ContextMenuItem>
+      <ContextMenuItem role="button" onClick={() => {}}>
         Two
-      </MenuItem>
-    </Menu>
+      </ContextMenuItem>
+    </ContextMenu>
   ))
   .add('example of actual usage', () => (
-    <Menu
-      orientation={AscCore.MenuTypes.Orientation.top}
+    <ContextMenu
+      orientation={AscCore.ContextMenuTypes.Orientation.top}
       icon={
         <Icon padding={4} inline size={24}>
           <Ellipsis />
         </Icon>
       }
     >
-      <MenuItem
+      <ContextMenuItem
         role="button"
         divider
         onClick={() => {
@@ -62,8 +62,8 @@ storiesOf('Menu', module)
         }
       >
         Printen
-      </MenuItem>
-      <MenuItem
+      </ContextMenuItem>
+      <ContextMenuItem
         role="button"
         onClick={() => {
           window.open(
@@ -79,8 +79,8 @@ storiesOf('Menu', module)
         }
       >
         Deel via Facebook
-      </MenuItem>
-      <MenuItem
+      </ContextMenuItem>
+      <ContextMenuItem
         role="button"
         onClick={() =>
           window.open(
@@ -96,8 +96,8 @@ storiesOf('Menu', module)
         }
       >
         Deel via Twitter
-      </MenuItem>
-      <MenuItem
+      </ContextMenuItem>
+      <ContextMenuItem
         role="button"
         onClick={() =>
           window.open(
@@ -114,8 +114,8 @@ storiesOf('Menu', module)
         }
       >
         Deel via Linkedin
-      </MenuItem>
-      <MenuItem
+      </ContextMenuItem>
+      <ContextMenuItem
         role="button"
         onClick={() => window.open(`mailto:mail@mail.com`, '_blank')}
         icon={
@@ -125,6 +125,6 @@ storiesOf('Menu', module)
         }
       >
         Deel via E-mail
-      </MenuItem>
-    </Menu>
+      </ContextMenuItem>
+    </ContextMenu>
   ))

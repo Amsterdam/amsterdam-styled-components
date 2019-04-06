@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Menu should render 1`] = `
+exports[`ContextMenu should render 1`] = `
 <styled.div
   onBlur={[Function]}
   onKeyDown={[Function]}
 >
-  <MenuButton
+  <ContextMenuButton
     label="Click on me"
     onClick={[Function]}
     open={false}
@@ -15,15 +15,15 @@ exports[`Menu should render 1`] = `
     open={false}
     selectedChild={-1}
   >
-    <MenuItem>
+    <ContextMenuItem>
       One
-    </MenuItem>
-    <MenuItem>
+    </ContextMenuItem>
+    <ContextMenuItem>
       Two
-    </MenuItem>
-    <MenuItem>
+    </ContextMenuItem>
+    <ContextMenuItem>
       Three
-    </MenuItem>
+    </ContextMenuItem>
   </ForwardRef>
 </styled.div>
 `;

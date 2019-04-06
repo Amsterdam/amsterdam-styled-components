@@ -6,7 +6,7 @@ type Props = {
   id: string
   selectedChild: number
   onClose: Function
-  orientation?: AscCore.MenuTypes.Orientation
+  orientation?: AscCore.ContextMenuTypes.Orientation
   label?: string
   icon?: React.ReactNode
 }
@@ -14,12 +14,12 @@ type Props = {
 type State = {}
 
 export default forwardRef((props: any, ref: React.Ref<any>) => (
-  <MenuList {...props} forwardedRef={ref}>
+  <ContextMenuList {...props} forwardedRef={ref}>
     {props.children}
-  </MenuList>
+  </ContextMenuList>
 ))
 
-class MenuList extends React.Component<Props, State> {
+class ContextMenuList extends React.Component<Props, State> {
   state = {}
 
   myRef = React.createRef<HTMLDivElement>()
@@ -45,14 +45,16 @@ class MenuList extends React.Component<Props, State> {
     })
 
     return (
-      <AscCore.Menu.MenuListWrapper
+      <AscCore.ContextMenu.MenuListWrapper
         ref={this.myRef}
         aria-hidden={!open}
         onBlur={() => onClose()}
         orientation={orientation}
       >
-        <AscCore.Menu.MenuList labelId={id}>{children}</AscCore.Menu.MenuList>
-      </AscCore.Menu.MenuListWrapper>
+        <AscCore.ContextMenu.MenuList labelId={id}>
+          {children}
+        </AscCore.ContextMenu.MenuList>
+      </AscCore.ContextMenu.MenuListWrapper>
     )
   }
 }

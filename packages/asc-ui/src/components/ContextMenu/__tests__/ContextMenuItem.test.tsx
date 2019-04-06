@@ -1,15 +1,15 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import MenuItem from '../MenuItem'
+import ContextMenuItem from '../ContextMenuItem'
 import { KeyboardKeys } from '../../../types'
 
 jest.useFakeTimers()
 
-describe('MenuItem', () => {
+describe('ContextMenuItem', () => {
   it('should trigger call onClick prop when pressing the enter key', () => {
     const mockFn = jest.fn()
-    const component = shallow<MenuItem>(
-      <MenuItem onClick={mockFn}>Foo</MenuItem>,
+    const component = shallow<ContextMenuItem>(
+      <ContextMenuItem onClick={mockFn}>Foo</ContextMenuItem>,
     )
 
     component.at(0).simulate('keydown', {

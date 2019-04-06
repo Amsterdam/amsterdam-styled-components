@@ -2,14 +2,15 @@ import React from 'react'
 import { AscCore } from '@datapunt/asc-core'
 import { KeyboardKeys } from '../../types'
 
-type Props =
-  | {
-      focused?: boolean
-      onClick?: Function
-    }
-  | any
+type Props = {
+  focused?: boolean
+  onClick?: Function
+  role?: string
+  icon?: React.ReactNode
+  divider?: boolean
+}
 
-class MenuItem extends React.Component<Props> {
+class ContextMenuItem extends React.Component<Props> {
   root = React.createRef<HTMLDivElement>()
 
   componentDidUpdate() {
@@ -45,7 +46,7 @@ class MenuItem extends React.Component<Props> {
   render() {
     const { as, children, focused, icon, ...otherProps }: any = this.props
     return (
-      <AscCore.Menu.MenuItem
+      <AscCore.ContextMenu.MenuItem
         ref={this.root}
         as={as}
         focused={focused}
@@ -56,9 +57,9 @@ class MenuItem extends React.Component<Props> {
       >
         {icon && icon}
         {children}
-      </AscCore.Menu.MenuItem>
+      </AscCore.ContextMenu.MenuItem>
     )
   }
 }
 
-export default MenuItem
+export default ContextMenuItem

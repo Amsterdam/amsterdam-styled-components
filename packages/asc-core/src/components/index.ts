@@ -13,6 +13,6 @@ export { default as Modal } from './Modal'
 export { default as Typography } from './Typography'
 export { default as Divider } from './Divider'
 export { default as ListItem } from './ListItem'
-export { default as Menu } from './Menu'
-export { Menu as MenuTypes } from './Menu/types'
+export { default as ContextMenu } from './ContextMenu'
+export { ContextMenu as ContextMenuTypes } from './ContextMenu/types'
 export { Radio }
