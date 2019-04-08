@@ -29,7 +29,7 @@ Our goal is to set up strict guidelines for development and limit the amount of 
 
 The guidelines can be found here (TBD)
 
-## Trade off
+## Tradeoff
 
 ### PROS
 
