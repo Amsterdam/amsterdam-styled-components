@@ -10,7 +10,7 @@ const ContextMenuButton = styled.button`
   padding: 0 4px;
   justify-content: space-between;
 
-  ${Icon}:not(:first-child):last-child {
+  ${Icon}:last-child:not(:first-child) {
     margin-left: 4px;
   }
 `

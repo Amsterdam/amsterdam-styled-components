@@ -1,7 +1,7 @@
 export namespace ContextMenu {
   export type WrapperProps = {}
 
-  export enum Orientation {
+  export enum Position {
     bottom = 'bottom',
     top = 'top',
   }
@@ -16,6 +16,6 @@ export namespace ContextMenu {
 
   export type ContextMenuListProps = {
     labelId?: string
-    orientation?: Orientation
+    position?: Position
   }
 }

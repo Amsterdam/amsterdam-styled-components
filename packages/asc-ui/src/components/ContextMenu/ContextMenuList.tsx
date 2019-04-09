@@ -1,3 +1,4 @@
+/* eslint-disable react/no-multi-comp */
 import React, { forwardRef } from 'react'
 import { AscCore } from '@datapunt/asc-core'
 
@@ -6,12 +7,10 @@ type Props = {
   id: string
   selectedChild: number
   onClose: Function
-  orientation?: AscCore.ContextMenuTypes.Orientation
+  position?: AscCore.ContextMenuTypes.Position
   label?: string
   icon?: React.ReactNode
 }
-
-type State = {}
 
 export default forwardRef((props: any, ref: React.Ref<any>) => (
   <ContextMenuList {...props} forwardedRef={ref}>
@@ -19,37 +18,37 @@ export default forwardRef((props: any, ref: React.Ref<any>) => (
   </ContextMenuList>
 ))
 
-class ContextMenuList extends React.Component<Props, State> {
+class ContextMenuList extends React.Component<Props> {
   state = {}
 
   myRef = React.createRef<HTMLDivElement>()
+
+  static defaultProps = {
+    position: AscCore.ContextMenuTypes.Position.top,
+  }
 
   render() {
     const {
       id,
       children: childrenProps,
-      orientation,
+      position,
       open,
       selectedChild,
       onClose,
     } = this.props
 
-    const children = React.Children.map(childrenProps, (child, index) => {
-      if (!React.isValidElement(child)) {
-        return null
-      }
-
-      return React.cloneElement(child as React.ReactElement<any>, {
+    const children = React.Children.map(childrenProps, (child, index) =>
+      React.cloneElement(child as React.ReactElement<any>, {
         focused: index === selectedChild,
-      })
-    })
+      }),
+    )
 
     return (
       <AscCore.ContextMenu.MenuListWrapper
         ref={this.myRef}
         aria-hidden={!open}
         onBlur={() => onClose()}
-        orientation={orientation}
+        position={position}
       >
         <AscCore.ContextMenu.MenuList labelId={id}>
           {children}
@@ -58,3 +57,4 @@ class ContextMenuList extends React.Component<Props, State> {
     )
   }
 }
+/* eslint-enable react/no-multi-comp */

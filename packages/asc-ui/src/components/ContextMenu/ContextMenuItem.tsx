@@ -44,11 +44,10 @@ class ContextMenuItem extends React.Component<Props> {
   }
 
   render() {
-    const { as, children, focused, icon, ...otherProps }: any = this.props
+    const { children, focused, icon, ...otherProps }: any = this.props
     return (
       <AscCore.ContextMenu.MenuItem
         ref={this.root}
-        as={as}
         focused={focused}
         onClick={this.onClick}
         onKeyDown={this.handleKeyPress}

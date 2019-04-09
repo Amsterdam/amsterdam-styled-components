@@ -20,8 +20,8 @@ storiesOf('ContextMenu', module)
       </ContextMenuItem>
     </ContextMenu>
   ))
-  .add('orientation top', () => (
-    <ContextMenu orientation={AscCore.ContextMenuTypes.Orientation.top}>
+  .add('position bottom', () => (
+    <ContextMenu position={AscCore.ContextMenuTypes.Position.bottom}>
       <ContextMenuItem role="button" onClick={() => {}}>
         One
       </ContextMenuItem>
@@ -42,7 +42,6 @@ storiesOf('ContextMenu', module)
   ))
   .add('example of actual usage', () => (
     <ContextMenu
-      orientation={AscCore.ContextMenuTypes.Orientation.top}
       icon={
         <Icon padding={4} inline size={24}>
           <Ellipsis />

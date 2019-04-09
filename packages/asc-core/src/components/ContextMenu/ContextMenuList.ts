@@ -15,10 +15,10 @@ const ContextMenuList = styled.ul<ContextMenu.ContextMenuListProps>`
 export default ContextMenuList
 
 export const ContextMenuListWrapper = styled.div.attrs(() => ({
-  role: 'document',
+  role: 'menu',
   tabIndex: -1,
 }))<ContextMenu.ContextMenuListProps>`
-  order: ${({ orientation }) => (orientation === 'top' ? -1 : 0)};
+  order: ${({ position }) => (position === 'top' ? -1 : 0)};
   border: 1px solid ${({ theme }) => getColor(theme, 'tint', 'level7')};
   max-width: 250px;
   width: 100%;

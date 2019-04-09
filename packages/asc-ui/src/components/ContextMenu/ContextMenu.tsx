@@ -6,7 +6,7 @@ import { KeyboardKeys } from '../../types'
 import ownerDocument from '../../utils/ownerDocument'
 
 type Props = {
-  orientation?: AscCore.ContextMenuTypes.Orientation
+  position?: AscCore.ContextMenuTypes.Position
   label?: string
   icon?: React.ReactNode
 }
@@ -88,7 +88,7 @@ class ContextMenu extends React.Component<Props, State> {
   }
 
   render() {
-    const { id, label, children, orientation, icon }: any = this.props
+    const { id, label, children, position, icon }: any = this.props
     const { open, selectedChild } = this.state
 
     return (
@@ -102,14 +102,14 @@ class ContextMenu extends React.Component<Props, State> {
           {...{
             icon,
             open,
-            orientation,
+            position,
             label,
           }}
           onClick={this.onToggle}
         />
         <MenuList
           {...{
-            orientation,
+            position,
             id,
             open,
             selectedChild,

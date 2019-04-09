@@ -3,16 +3,16 @@ import { ContextMenu } from './types'
 import Icon from '../Icon'
 import { getColor, getTypography } from '../../utils/themeUtils'
 
-const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
+export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 36px;
+  height: 34px;
   width: 100%;
   cursor: pointer;
-  font-size: ${({ theme }) => getTypography(theme).fontWeightRegular};
+  font-size: ${({ theme }) => getTypography(theme).fontSize};
 
   ${Icon} {
     margin: 5px 12px;
