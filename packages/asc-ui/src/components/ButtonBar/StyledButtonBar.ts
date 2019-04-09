@@ -1,10 +1,10 @@
-import styled from '../../styled-components'
+import styled from 'styled-components'
 
 export type Props = {
   padding?: number
 }
 
-const ButtonBar = styled.div<Props>`
+const StyledButtonBar = styled.div<Props>`
   display: flex;
   ${({ padding }) => `padding: ${padding}px;`}
 
@@ -13,8 +13,8 @@ const ButtonBar = styled.div<Props>`
   }
 `
 
-ButtonBar.defaultProps = {
+StyledButtonBar.defaultProps = {
   padding: 5,
 }
 
-export default ButtonBar
+export default StyledButtonBar

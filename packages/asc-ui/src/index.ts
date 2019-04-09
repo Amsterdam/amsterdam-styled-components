@@ -16,14 +16,13 @@ import Button from './components/Button'
 import Radio from './components/Radio'
 import Focus from './components/Focus'
 
-const { Divider, Icon, ButtonBar, GlobalStyle, ListItem } = AscCore
+const { Divider, Icon, GlobalStyle, ListItem } = AscCore
 
 // Components
 export {
   Divider,
   Icon,
   Button,
-  ButtonBar,
   IconButton,
   Modal,
   Portal,
