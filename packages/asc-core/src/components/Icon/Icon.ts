@@ -4,7 +4,6 @@ import fillSVG from '../../utils/fillSVG'
 
 type Props = {
   color?: Theme.TypeLevel
-  alignSelf?: 'top' | 'bottom' | 'left' | 'right'
   iconUrl?: string
   size?: number
 }
@@ -13,7 +12,6 @@ const Icon = styled.span<Props>`
   display: block;
   ${({ iconUrl }) => iconUrl && `background-image: ${iconUrl}`}
   ${({ size }) => `width: ${size}px; height: ${size}px;`}
-  ${({ alignSelf }) => alignSelf && `position: absolute; ${[alignSelf]}: 0`};
 
   & > svg {
     width: inherit;
