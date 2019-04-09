@@ -33,7 +33,7 @@ const SimpleModal: React.FC<Props> = props => (
   </div>
 )
 
-storiesOf('Modal', module)
+storiesOf('Composed/Modal', module)
   .addDecorator(withKnobs)
   .add('default state', () => <SimpleModal open />)
   .add('backdrop opacity', () => (
