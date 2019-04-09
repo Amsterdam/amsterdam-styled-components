@@ -1,8 +1,8 @@
 import React from 'react'
-import { AscCore } from '../../styles'
+import StyledTopBar, { Props } from './StyledTopBar'
 
-const TopBar: React.FC<{}> = ({ children }) => (
-  <AscCore.TopBar>{children}</AscCore.TopBar>
+const TopBar: React.FC<Props> = ({ children, ...otherProps }) => (
+  <StyledTopBar {...otherProps}>{children}</StyledTopBar>
 )
 
 export default TopBar
