@@ -55,7 +55,7 @@ storiesOf('Composed/Modal', module)
       onClose={action('close modal from escape button or click outside')}
       blurredNode={window.document.querySelector('#root') as HTMLInputElement}
     >
-      <TopBar backgroundColor={'lightgrey'}>
+      <TopBar backgroundColor="lightgrey">
         <Typography style={{ flexGrow: 1 }} element="h4">
           Feedback
           <IconButton onClick={action('close modal')}>
