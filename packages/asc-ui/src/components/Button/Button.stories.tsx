@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { ReactComponent as Alert } from '@datapunt/asc-assets/lib/Icons/Alert.svg'
 import { ButtonBar, Button } from '../..'
 
-storiesOf('Button', module)
+storiesOf('Atoms/Buttons', module)
   .add('Default', () => (
     <>
       <ButtonBar>
