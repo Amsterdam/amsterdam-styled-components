@@ -1,11 +1,15 @@
 import { Theme, THEME_NAME } from '../theme'
+import { fromTheme } from '.'
 
 function getTheme(theme: Theme.ThemeInterface) {
   return theme[THEME_NAME]
 }
 
-export function getTypography(theme: Theme.ThemeInterface) {
-  return getTheme(theme).typography
+export function getTypography(
+  theme: Theme.ThemeInterface,
+  attributeType: string,
+) {
+  return fromTheme(`typography.${[attributeType]}`)({ theme: getTheme(theme) })
 }
 
 export function getColor(
@@ -14,16 +18,17 @@ export function getColor(
   variant: string = 'main',
 ) {
   if (colorType) {
-    const color = theme[THEME_NAME].colors[colorType]
+    const color = fromTheme(`colors.${[colorType]}`)({ theme: getTheme(theme) })
 
     if (typeof color === 'string') {
       return color
     }
 
-    if (color[variant]) {
-      return color[variant]
+    if (variant) {
+      return fromTheme(`colors.${[colorType]}.${[variant]}`)({
+        theme: getTheme(theme),
+      })
     }
   }
-
   return 'rgba(255,255,255,0)'
 }

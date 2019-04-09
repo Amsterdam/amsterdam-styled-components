@@ -8,18 +8,14 @@ function fillSVG(
   variant: string = 'main',
 ) {
   if (colorType) {
-    let color = readableColor(getColor(theme, colorType))
-
-    if (color[variant]) {
-      color = color[variant]
-    }
+    const color = getColor(theme, colorType, variant)
 
     if (typeof color === 'string') {
       return `
         rect,
         polygon,
         path {
-          fill: ${color}
+          fill: ${readableColor(color)}
         }
       `
     }

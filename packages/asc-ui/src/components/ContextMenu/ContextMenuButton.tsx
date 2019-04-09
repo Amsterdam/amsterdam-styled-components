@@ -19,7 +19,11 @@ const ContextMenuButton = ({
         inline
         size={24}
         padding={4}
-        rotate={open || (position === 'bottom' && open) ? 180 : 0}
+        rotate={
+          (position === 'bottom' && !open) || (position !== 'bottom' && open)
+            ? 180
+            : 0
+        }
       >
         <ChevronDown />
       </Icon>

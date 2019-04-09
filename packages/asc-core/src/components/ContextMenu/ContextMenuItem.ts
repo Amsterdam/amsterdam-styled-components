@@ -12,7 +12,7 @@ export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   height: 34px;
   width: 100%;
   cursor: pointer;
-  font-size: ${({ theme }) => getTypography(theme).fontSize};
+  font-size: ${({ theme }) => getTypography(theme, 'fontSize')};
 
   ${Icon} {
     margin: 5px 12px;
