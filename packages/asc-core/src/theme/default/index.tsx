@@ -11,7 +11,7 @@ interface Props {
   children: any
 }
 
-const ASCDefaultThemeProvider = ({ overrides, children }: Props) => {
+const AscDefaultThemeProvider = ({ overrides, children }: Props) => {
   const namespacedTheme = {
     [THEME_NAME]: deepMerge(
       Theme.CreateTheme.getTheme(colors, typography, globalStyle),
@@ -25,4 +25,4 @@ const ASCDefaultThemeProvider = ({ overrides, children }: Props) => {
   )
 }
 
-export default ASCDefaultThemeProvider
+export default AscDefaultThemeProvider

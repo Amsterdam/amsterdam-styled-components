@@ -19,7 +19,7 @@ const SimpleComponent: React.FC<{}> = ({ children }) => (
         )
       }
       hoverColor="#3b5999"
-      iconSize={30}      
+      iconSize={30}
     >
       <Facebook />
     </ShareButton>

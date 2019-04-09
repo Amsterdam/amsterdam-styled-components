@@ -1,6 +1,6 @@
 import {
   AscCore,
-  ASCDefaultThemeProvider as ThemeProvider,
+  AscDefaultThemeProvider as ThemeProvider,
   StyledComponents,
   Theme,
 } from '@datapunt/asc-core'

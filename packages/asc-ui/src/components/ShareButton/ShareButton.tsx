@@ -1,5 +1,6 @@
 import React from 'react'
 import { AscCore } from '@datapunt/asc-core'
+import StyledShareButton from './StyledShareButton'
 import { Icon } from '../..'
 
 type Props = {
@@ -13,11 +14,11 @@ const ShareButton: React.FC<Props & AscCore.Button.Props> = ({
   iconSize,
   ...otherProps
 }) => (
-  <AscCore.Button.ShareButton onClick={onClick} square {...otherProps}>
+  <StyledShareButton onClick={onClick} square {...otherProps}>
     <Icon color="secondary" size={iconSize}>
       {children}
     </Icon>
-  </AscCore.Button.ShareButton>
+  </StyledShareButton>
 )
 
 export default ShareButton
