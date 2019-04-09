@@ -1,124 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Styled components should render buttons 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 5px;
-}
-
-.c0 > * {
-  margin-right: 5px;
-}
-
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: normal;
-  padding: 0 10px 0 10px;
-  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
-  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
-  background: #004699;
-  padding: 0 10px 0 10px;
-  min-height: 38px;
-  line-height: 1em;
-  color: #fff;
-}
-
-.c1:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: medium;
-}
-
-.c1:hover {
-  background: #00387a;
-}
-
-.c1:after {
-  content: '';
-  display: block;
-  min-height: inherit;
-  font-size: 0;
-}
-
-.c1 svg {
-  width: 30px;
-  height: 30px;
-}
-
-.c1 svg rect,
-.c1 svg polygon,
-.c1 svg path {
-  fill: #fff;
-}
-
-.c2 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: normal;
-  padding: 0 10px 0 10px;
-  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
-  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
-  background: #ec0000;
-  padding: 0 10px 0 10px;
-  min-height: 38px;
-  line-height: 1em;
-  color: #fff;
-}
-
-.c2:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: medium;
-}
-
-.c2:hover {
-  background: #bc0000;
-}
-
-.c2:after {
-  content: '';
-  display: block;
-  min-height: inherit;
-  font-size: 0;
-}
-
-.c2 svg {
-  width: 30px;
-  height: 30px;
-}
-
-.c2 svg rect,
-.c2 svg polygon,
-.c2 svg path {
-  fill: #fff;
-}
-
 <ASCDefaultThemeProvider>
   <ThemeProvider
     theme={
@@ -254,7 +136,7 @@ exports[`Styled components should render buttons 1`] = `
             "componentStyle": ComponentStyle {
               "componentId": "sc-EHOje",
               "isStatic": false,
-              "lastClassName": "c0",
+              "lastClassName": "drjHos",
               "rules": Array [
                 "
   display: flex;
@@ -285,7 +167,7 @@ exports[`Styled components should render buttons 1`] = `
         padding={5}
       >
         <div
-          className="c0"
+          className="sc-EHOje drjHos"
         >
           <Button
             color="primary"
@@ -300,9 +182,9 @@ exports[`Styled components should render buttons 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-gZMcBi",
+                      "componentId": "sc-iwsKbI",
                       "isStatic": false,
-                      "lastClassName": "c2",
+                      "lastClassName": "jTwdHk",
                       "rules": Array [
                         "
   display: inline-flex;
@@ -368,10 +250,10 @@ exports[`Styled components should render buttons 1`] = `
                     },
                     "displayName": "Styled(styled.button)",
                     "foldedComponentIds": Array [
-                      "sc-iwsKbI",
+                      "sc-dnqmqq",
                     ],
                     "render": [Function],
-                    "styledComponentId": "sc-gZMcBi",
+                    "styledComponentId": "sc-iwsKbI",
                     "target": "button",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -381,7 +263,7 @@ exports[`Styled components should render buttons 1`] = `
                 forwardedRef={null}
               >
                 <button
-                  className="c1"
+                  className="sc-dnqmqq sc-iwsKbI gOJUcA"
                   color="primary"
                 >
                   Hello
@@ -402,9 +284,9 @@ exports[`Styled components should render buttons 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-gZMcBi",
+                      "componentId": "sc-iwsKbI",
                       "isStatic": false,
-                      "lastClassName": "c2",
+                      "lastClassName": "jTwdHk",
                       "rules": Array [
                         "
   display: inline-flex;
@@ -470,10 +352,10 @@ exports[`Styled components should render buttons 1`] = `
                     },
                     "displayName": "Styled(styled.button)",
                     "foldedComponentIds": Array [
-                      "sc-iwsKbI",
+                      "sc-dnqmqq",
                     ],
                     "render": [Function],
-                    "styledComponentId": "sc-gZMcBi",
+                    "styledComponentId": "sc-iwsKbI",
                     "target": "button",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -483,7 +365,7 @@ exports[`Styled components should render buttons 1`] = `
                 forwardedRef={null}
               >
                 <button
-                  className="c2"
+                  className="sc-dnqmqq sc-iwsKbI jTwdHk"
                   color="secondary"
                 >
                   World

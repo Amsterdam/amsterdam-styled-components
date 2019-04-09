@@ -1,24 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TextField /> should render 1`] = `
-.c1 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  box-shadow: inset 0 0 0 1px;
-  font-size: 1rem;
-  border: 0;
-  border-radius: 0;
-  box-sizing: border-box;
-  padding: 11px 10px;
-  width: 100%;
-}
-
-.c0 {
-  margin-bottom: 5px;
-  color: black;
-}
-
 <ASCDefaultThemeProvider>
   <ThemeProvider
     theme={
@@ -161,7 +143,7 @@ exports[`<TextField /> should render 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-bZQynM",
                   "isStatic": false,
-                  "lastClassName": "c0",
+                  "lastClassName": "egVKGQ",
                   "rules": Array [
                     "
   margin-bottom: 5px;
@@ -184,7 +166,7 @@ exports[`<TextField /> should render 1`] = `
             forwardedRef={null}
           >
             <label
-              className="c0"
+              className="sc-bZQynM egVKGQ"
               type="text"
             >
               Label!
@@ -204,7 +186,7 @@ exports[`<TextField /> should render 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-ifAKCX",
                   "isStatic": true,
-                  "lastClassName": "c1",
+                  "lastClassName": "gNBkJw",
                   "rules": Array [
                     "
   appearance: none;
@@ -231,7 +213,7 @@ exports[`<TextField /> should render 1`] = `
             forwardedRef={null}
           >
             <input
-              className="c1"
+              className="sc-ifAKCX gNBkJw"
               type="text"
             />
           </StyledComponent>
