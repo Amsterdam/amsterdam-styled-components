@@ -6,7 +6,7 @@ import Typography from '../Typography'
 import IconButton from '../IconButton'
 
 const SimpleComponent: React.FC<{}> = () => (
-  <TopBar>
+  <TopBar backgroundColor={'grey'}>
     <Typography style={{ flexGrow: 1 }} element="h4">
       Lorem ipsum
     </Typography>
@@ -16,4 +16,4 @@ const SimpleComponent: React.FC<{}> = () => (
   </TopBar>
 )
 
-storiesOf('TopBar', module).add('default state', () => <SimpleComponent />)
+storiesOf('Atoms/TopBar', module).add('default state', () => <SimpleComponent />)

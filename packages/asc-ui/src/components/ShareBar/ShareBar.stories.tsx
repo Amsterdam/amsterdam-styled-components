@@ -66,7 +66,7 @@ const SimpleComponent: React.FC<{}> = ({ children }) => (
   </ShareBar>
 )
 
-storiesOf('ShareBar', module).add(
+storiesOf('Composed/ShareBar', module).add(
   'default state with most used buttons',
   () => <SimpleComponent />,
 )
