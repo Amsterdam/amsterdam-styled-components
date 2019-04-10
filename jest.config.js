@@ -4,12 +4,7 @@ module.exports = {
     '!packages/**/*.test.{js,jsx,ts,tsx}',
   ],
   coverageDirectory: '<rootDir>/coverage',
-  moduleFileExtensions: [
-    'ts',
-    'tsx',
-    'js',
-    'jsx',
-  ],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   moduleDirectories: ['node_modules', 'packages'],
   moduleNameMapper: {
     '.*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
