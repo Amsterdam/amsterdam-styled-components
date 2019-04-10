@@ -1,6 +1,5 @@
-import styled from 'styled-components'
-
-const defaultBackgroundColor = '#fff'
+import styled from '../../styled-components'
+import { getThemeColor } from '../../core/AscCoreUtils'
 
 export type Props = {
   backgroundColor?: string
@@ -13,8 +12,8 @@ const StyledTopBar = styled.header<Props>`
   z-index: 0;
   min-height: 54px;
   padding: 0 15px;
-  background-color: ${props =>
-    props.backgroundColor ? props.backgroundColor : defaultBackgroundColor}
+  background-color: ${({ backgroundColor, theme }) =>
+    backgroundColor || getThemeColor(theme, 'bright', 'main')}
   
   // ie11 fix
   &:after {

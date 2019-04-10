@@ -21,8 +21,12 @@ exports[`<TextField /> should render 1`] = `
   color: black;
 }
 
+<<<<<<< HEAD
 <ASCDefaultThemeProvider>
 >>>>>>> snapshot fixed with jest-styled-components
+=======
+<AscDefaultThemeProvider>
+>>>>>>> DP-6803 remarks Topbar implemented
   <ThemeProvider
     theme={
       Object {
@@ -240,4 +244,8 @@ exports[`<TextField /> should render 1`] = `
       </div>
     </TextField>
   </ThemeProvider>
+<<<<<<< HEAD
+=======
+</AscDefaultThemeProvider>
+>>>>>>> DP-6803 remarks Topbar implemented
 `;
