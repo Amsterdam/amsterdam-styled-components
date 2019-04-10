@@ -4,7 +4,7 @@ import {
   THEME_NAME,
   StyledComponents,
   Theme,
-} from '@datapunt/asc-core'
+} from './styles'
 
 import IconButton from './components/IconButton'
 import Modal from './components/Modal'

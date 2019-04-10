@@ -18,9 +18,10 @@
   ],
   "scripts": {
     "build": "yarn build:ts && lerna exec --scope @datapunt/asc-assets -- yarn build",
-    "build:ts": "tsc -b packages/asc-core packages/asc-ui",
+    "build:ts": "tsc -b packages/asc-ui",
     "build:watch": "yarn build:ts -w",
     "deploy-storybook": "storybook-to-ghpages",
+    "preinstall": "yarn symlink",
     "postinstall": "lerna link && lerna bootstrap",
     "lint": "yarn lint:js",
     "lint:css": "stylelint './packages/**/src/**/*.ts'",
@@ -29,6 +30,7 @@
     "publish:packages": "lerna publish",
     "start": "concurrently \"yarn build:watch\" \"yarn storybook\"",
     "storybook": "start-storybook -p 6006",
+    "symlink": "./scripts/link-core.sh",
     "test": "yarn jest",
     "test:watch": "yarn test -- --watch",
     "prettify:package": "yarn prettier-package-json --write **/package.json"
