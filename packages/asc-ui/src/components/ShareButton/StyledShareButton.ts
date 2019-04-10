@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { AscCore } from '@datapunt/asc-core'
+import styled from '../../styled-components'
 import { getThemeColor } from '../../core/AscCoreUtils'
 
 const StyledShareButton = styled(AscCore.Button.IconButton)<
