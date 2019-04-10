@@ -1,9 +1,8 @@
 import { ComponentType, MouseEventHandler } from 'react'
 import { readableColor, transitions } from 'polished'
-import { Theme } from '../../theme'
+import { Theme, THEME_NAME } from '../../theme'
 import styled from '../../styled-components'
-import getThemeColor from '../../utils/getThemeColor'
-import fillSVG from '../../utils/fillSVG'
+import { fillSVG, getColorFromTheme } from '../../utils'
 import focus from '../shared/focus'
 
 export type Props = {
@@ -28,13 +27,14 @@ const ButtonBase = styled.button<Props>`
   ${({ theme }) => focus(theme)}
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')};
 
-  background: ${({ color, theme }) => getThemeColor(theme, color)};
+  background: ${({ color, theme }) =>
+    getColorFromTheme(theme[THEME_NAME], color)};
 
   &:hover {
     background: ${({ color, theme }) =>
       color
-        ? getThemeColor(theme, color, 'dark')
-        : getThemeColor(theme, 'tint', 'level3')};
+        ? getColorFromTheme(theme[THEME_NAME], color, 'dark')
+        : getColorFromTheme(theme[THEME_NAME], 'tint', 'level3')};
   }
 
   // ie11 fix
@@ -52,21 +52,23 @@ const Button = styled(ButtonBase)<Props>`
   line-height: 1em
   color: ${({ color, theme }) =>
     color
-      ? readableColor(getThemeColor(theme, color))
-      : getThemeColor(theme, 'primary')};
+      ? readableColor(getColorFromTheme(theme[THEME_NAME], color))
+      : getColorFromTheme(theme[THEME_NAME], 'primary')};
 
   ${({ theme, color }) =>
-    !color && `border: 1px solid ${getThemeColor(theme, 'primary')};`}
+    !color &&
+    `border: 1px solid ${getColorFromTheme(theme[THEME_NAME], 'primary')};`}
 
   &:hover {
     ${({ theme, color }) =>
-      !color && `outline: 1px solid ${getThemeColor(theme, 'primary')};`}
+      !color &&
+      `outline: 1px solid ${getColorFromTheme(theme[THEME_NAME], 'primary')};`}
   }
 
   & svg {
     width: 30px;
     height: 30px;
-    ${({ color, theme }) => fillSVG(theme, color)};
+    ${({ color, theme }) => fillSVG(theme[THEME_NAME], color)};
   }
 `
 
@@ -80,12 +82,13 @@ export const ShareButton = styled(IconButton)<Props>`
   padding: 0px;
   position: relative;
   justify-content: center;
-  background: ${({ theme }) => getThemeColor(theme, 'tint', 'level5')}};
+  background: ${({ theme }) =>
+    getColorFromTheme(theme[THEME_NAME], 'tint', 'level5')}};
 
   &:focus,
   &:hover {
     background: ${({ hoverColor, theme }) =>
-      hoverColor || getThemeColor(theme, 'secondary')};
+      hoverColor || getColorFromTheme(theme[THEME_NAME], 'secondary')};
   }
 `
 
