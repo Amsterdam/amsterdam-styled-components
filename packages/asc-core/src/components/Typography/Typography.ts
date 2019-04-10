@@ -1,8 +1,9 @@
 import { StyledComponent } from 'styled-components'
 import { em, margin } from 'polished'
 import styled, { css } from '../../styled-components'
+import { THEME_NAME } from '../../theme'
+import { getColorFromTheme, getTypographyFromTheme } from '../../utils'
 import focus from '../shared/focus'
-import { getColor, getTypography } from '../../utils'
 
 export type Props = {
   gutterBottom?: boolean
@@ -16,7 +17,8 @@ const headings = css`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  color: ${({ theme }) => getColor(theme, 'tint', 'level7')};
+  color: ${({ theme }) =>
+    getColorFromTheme(theme[THEME_NAME], 'tint', 'level7')};
 `
 
 const extendedStyles = {
@@ -36,13 +38,13 @@ const extendedStyles = {
     line-height: 1.25;
   `,
   a: css`
-    color: ${({ theme }) => getColor(theme, 'primary')}
+    color: ${({ theme }) => getColorFromTheme(theme[THEME_NAME], 'primary')}
     display: inline-block;
 
     ${({ theme }) => focus(theme)}
 
     &:hover {
-      color: ${({ theme }) => getColor(theme, 'secondary')}
+      color: ${({ theme }) => getColorFromTheme(theme[THEME_NAME], 'secondary')}
     }
   `,
 }
@@ -75,7 +77,7 @@ export default (element: Variant): StyledComponent<any, any> => styled(
       fontFamily,
       letterSpacing,
       lineHeight,
-    } = getTypography(theme, element)
+    } = getTypographyFromTheme(theme[THEME_NAME], element)
     return css`
       font-family: ${fontFamily};
       font-weight: ${fontWeight};

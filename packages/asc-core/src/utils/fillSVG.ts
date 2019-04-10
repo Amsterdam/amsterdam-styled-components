@@ -1,14 +1,14 @@
 import { readableColor } from 'polished'
 import { Theme } from '../theme'
-import { getColor } from './themeUtils'
+import { getColorFromTheme } from './themeUtils'
 
 function fillSVG(
-  theme: Theme.ThemeInterface,
+  theme: Theme.DefaultThemeInterface,
   colorType?: Theme.TypeLevel,
   variant: string = 'main',
 ) {
   if (colorType) {
-    const color = getColor(theme, colorType, variant)
+    const color = getColorFromTheme(theme, colorType, variant)
 
     if (typeof color === 'string') {
       return `

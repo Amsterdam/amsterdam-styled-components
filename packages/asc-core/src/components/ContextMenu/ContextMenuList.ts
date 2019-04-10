@@ -1,6 +1,7 @@
 import styled from '../../styled-components'
 import { ContextMenu } from './types'
-import { getColor } from '../../utils/themeUtils'
+import { THEME_NAME } from '../../theme'
+import { getColorFromTheme } from '../../utils'
 
 const ContextMenuList = styled.ul<ContextMenu.ContextMenuListProps>`
   display: flex;
@@ -19,7 +20,8 @@ export const ContextMenuListWrapper = styled.div.attrs(() => ({
   tabIndex: -1,
 }))<ContextMenu.ContextMenuListProps>`
   order: ${({ position }) => (position === 'top' ? -1 : 0)};
-  border: 1px solid ${({ theme }) => getColor(theme, 'tint', 'level7')};
+  border: 1px solid
+    ${({ theme }) => getColorFromTheme(theme[THEME_NAME], 'tint', 'level7')};
   max-width: 250px;
   width: 100%;
   &:focus {
