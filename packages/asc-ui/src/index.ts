@@ -1,6 +1,7 @@
 import {
   AscCore,
-  ASCDefaultThemeProvider as ThemeProvider,
+  ascDefaultTheme,
+  THEME_NAME,
   StyledComponents,
   Theme,
 } from '@datapunt/asc-core'
@@ -15,6 +16,8 @@ import ShareButton from './components/ShareButton'
 import Button from './components/Button'
 import Radio from './components/Radio'
 import Focus from './components/Focus'
+
+import ThemeProvider from './theme/default'
 
 const { Divider, Icon, ButtonBar, GlobalStyle, ListItem } = AscCore
 
@@ -37,4 +40,11 @@ export {
 }
 
 // Non-components exports
-export { GlobalStyle, StyledComponents, Theme, ThemeProvider }
+export {
+  GlobalStyle,
+  StyledComponents,
+  Theme,
+  ThemeProvider,
+  ascDefaultTheme,
+  THEME_NAME,
+}
