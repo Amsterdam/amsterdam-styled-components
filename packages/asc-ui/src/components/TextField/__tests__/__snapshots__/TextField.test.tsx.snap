@@ -19,7 +19,7 @@ exports[`<TextField /> should render 1`] = `
   color: black;
 }
 
-<ASCDefaultThemeProvider>
+<AscDefaultThemeProvider>
   <ThemeProvider
     theme={
       Object {
@@ -239,5 +239,5 @@ exports[`<TextField /> should render 1`] = `
       </div>
     </TextField>
   </ThemeProvider>
-</ASCDefaultThemeProvider>
+</AscDefaultThemeProvider>
 `;

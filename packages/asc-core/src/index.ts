@@ -1,10 +1,15 @@
 import * as AscCore from './components/index'
+import * as AscCoreUtils from './utils/index'
 import * as StyledComponents from './styled-components'
-import ASCDefaultThemeProvider from './theme/default'
-
-export { StyledComponents, ASCDefaultThemeProvider }
+import AscDefaultThemeProvider, { ascDefaultTheme } from './theme/default'
 
 // Non-components exports
 export { Theme } from './theme'
 
-export { AscCore }
+export {
+  AscCore,
+  AscCoreUtils,
+  StyledComponents,
+  AscDefaultThemeProvider,
+  ascDefaultTheme,
+}

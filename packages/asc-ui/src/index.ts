@@ -1,7 +1,7 @@
 import {
   AscCore,
-  ASCDefaultThemeProvider as ThemeProvider,
-  StyledComponents,
+  AscDefaultThemeProvider as ThemeProvider,
+  ascDefaultTheme as defaultTheme,
   Theme,
 } from '@datapunt/asc-core'
 
@@ -37,4 +37,4 @@ export {
 }
 
 // Non-components exports
-export { GlobalStyle, StyledComponents, Theme, ThemeProvider }
+export { GlobalStyle, Theme, ThemeProvider, defaultTheme }
