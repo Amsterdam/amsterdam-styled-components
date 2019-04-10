@@ -1,4 +1,3 @@
-import { ComponentType, MouseEventHandler } from 'react'
 import { readableColor, transitions } from 'polished'
 import { Theme } from '../../theme'
 import styled from '../../styled-components'
@@ -8,13 +7,11 @@ import { flexboxMinHeightFix } from '../shared/ie-fixes'
 import { getColor } from '../../utils/themeUtils'
 
 export type Props = {
-  onClick?: MouseEventHandler<HTMLButtonElement>
   color?: Theme.TypeLevel
   size?: 'normal' | 'small'
   square?: boolean
   hoverColor?: string
   href?: string
-  as?: keyof JSX.IntrinsicElements | ComponentType<any>
 }
 
 const ButtonBase = styled.button<Props>`
