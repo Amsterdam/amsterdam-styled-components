@@ -1,8 +1,6 @@
 /* eslint-disable no-useless-constructor, no-empty-function */
 import { CSSProp } from 'styled-components'
 
-export const THEME_NAME = 'ascTheme'
-
 export namespace Theme {
   export type TypeLevel =
     | 'primary'
@@ -80,22 +78,18 @@ export namespace Theme {
     fontSize: string
   }
 
-  export interface DefaultThemeInterface {
+  export interface ThemeInterface {
     globalStyle: GlobalStyleType
     colors: ColorInterface
     typography: TypographyInterface
   }
 
-  export interface ThemeInterface {
-    [THEME_NAME]: DefaultThemeInterface
-  }
-
-  export class CreateTheme implements DefaultThemeInterface {
+  export class CreateTheme implements ThemeInterface {
     static getTheme(
       colors: ColorInterface,
       typography: TypographyInterface,
       globalStyle: GlobalStyleType,
-    ): DefaultThemeInterface {
+    ): ThemeInterface {
       return new CreateTheme(colors, typography, globalStyle)
     }
 

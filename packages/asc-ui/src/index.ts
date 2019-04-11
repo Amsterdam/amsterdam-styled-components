@@ -1,10 +1,4 @@
-import {
-  AscCore,
-  ascDefaultTheme,
-  THEME_NAME,
-  StyledComponents,
-  Theme,
-} from './styles'
+import { AscCore, ascDefaultTheme, StyledComponents, Theme } from './styles'
 
 import IconButton from './components/IconButton'
 import Modal from './components/Modal'
@@ -17,7 +11,7 @@ import Button from './components/Button'
 import Radio from './components/Radio'
 import Focus from './components/Focus'
 
-import ThemeProvider from './theme/default'
+import ThemeProvider from './theme'
 
 const { Divider, Icon, ButtonBar, GlobalStyle, ListItem } = AscCore
 
@@ -40,11 +34,4 @@ export {
 }
 
 // Non-components exports
-export {
-  GlobalStyle,
-  StyledComponents,
-  Theme,
-  ThemeProvider,
-  ascDefaultTheme,
-  THEME_NAME,
-}
+export { GlobalStyle, StyledComponents, Theme, ThemeProvider, ascDefaultTheme }

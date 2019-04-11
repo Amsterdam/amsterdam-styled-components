@@ -2,14 +2,14 @@ import { Theme } from '../theme'
 import { fromTheme } from '.'
 
 export function getTypographyFromTheme(
-  theme: Theme.DefaultThemeInterface,
+  theme: Theme.ThemeInterface,
   attributeType: string,
 ) {
   return fromTheme(`typography.${[attributeType]}`)({ theme })
 }
 
 export function getColorFromTheme(
-  theme: Theme.DefaultThemeInterface,
+  theme: Theme.ThemeInterface,
   colorType?: Theme.TypeLevel,
   variant: string = 'main',
 ) {
@@ -24,5 +24,5 @@ export function getColorFromTheme(
       return fromTheme(`colors.${[colorType]}.${[variant]}`)({ theme })
     }
   }
-  return fromTheme('colors.tint.level7')
+  return fromTheme('colors.tint.level1')
 }
