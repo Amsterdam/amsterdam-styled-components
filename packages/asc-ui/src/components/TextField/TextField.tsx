@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { AscCore } from '@datapunt/asc-core'
+import { AscCore } from '../../styles'
 
 interface Props {
   error?: boolean

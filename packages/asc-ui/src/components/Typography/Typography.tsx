@@ -1,5 +1,5 @@
 import React from 'react'
-import { AscCore } from '@datapunt/asc-core'
+import { AscCore } from '../../styles'
 
 const Typography: React.FC<
   AscCore.Typography.Props & { style?: React.CSSProperties }
