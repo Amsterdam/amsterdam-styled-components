@@ -24,5 +24,5 @@ export function getColorFromTheme(
       return fromTheme(`colors.${[colorType]}.${[variant]}`)({ theme })
     }
   }
-  return 'rgba(255,255,255,0)'
+  return fromTheme('colors.tint.level7')
 }
