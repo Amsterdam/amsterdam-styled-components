@@ -26,3 +26,6 @@ yarn-error.log*
 # IDE / Editors
 .idea
 .vscode
+
+# symlinks
+/packages/**/styles

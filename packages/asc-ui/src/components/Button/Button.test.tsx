@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { AscCore } from '@datapunt/asc-core'
 import { mount } from 'enzyme'
-import { ThemeProvider } from '../index'
-import Button from '../components/Button'
+import { AscCore } from '../../styles'
+import { ThemeProvider } from '../../index'
+import Button from './Button'
 import 'jest-styled-components'
 
 describe('Styled components', () => {

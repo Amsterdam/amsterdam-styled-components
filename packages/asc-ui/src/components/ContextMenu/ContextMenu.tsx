@@ -1,5 +1,5 @@
 import React from 'react'
-import { AscCore } from '@datapunt/asc-core'
+import { AscCore } from '../../styles'
 import ContextMenuButton from './ContextMenuButton'
 import MenuList from './ContextMenuList'
 import { KeyboardKeys } from '../../types'

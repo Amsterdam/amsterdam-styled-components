@@ -3,7 +3,7 @@ import { Theme } from '../theme'
 import { getColorFromTheme } from './themeUtils'
 
 function fillSVG(
-  theme: Theme.DefaultThemeInterface,
+  theme: Theme.ThemeInterface,
   colorType?: Theme.TypeLevel,
   variant: string = 'main',
 ) {

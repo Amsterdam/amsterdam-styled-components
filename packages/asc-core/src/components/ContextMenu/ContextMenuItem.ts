@@ -1,7 +1,6 @@
 import styled from '../../styled-components'
 import { ContextMenu } from './types'
 import Icon from '../Icon'
-import { THEME_NAME } from '../../theme'
 import { getColorFromTheme, getTypographyFromTheme } from '../../utils'
 
 export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
@@ -13,8 +12,7 @@ export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   height: 34px;
   width: 100%;
   cursor: pointer;
-  font-size: ${({ theme }) =>
-    getTypographyFromTheme(theme[THEME_NAME], 'fontSize')};
+  font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
 
   ${Icon} {
     margin: 5px 12px;
@@ -22,17 +20,13 @@ export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
 
   ${({ divider, theme }) =>
     divider &&
-    `border-bottom: 1px solid ${getColorFromTheme(
-      theme[THEME_NAME],
-      'tint',
-      'level4',
-    )}}`}
+    `border-bottom: 1px solid ${getColorFromTheme(theme, 'tint', 'level4')}}`}
 
   &:hover,
   &:focus {
     outline: none;
     background-color: ${({ theme }) =>
-      getColorFromTheme(theme[THEME_NAME], 'tint', 'level2')}};
+      getColorFromTheme(theme, 'tint', 'level2')}};
   }
 `
 

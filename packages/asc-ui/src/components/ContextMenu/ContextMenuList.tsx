@@ -1,6 +1,6 @@
 /* eslint-disable react/no-multi-comp */
 import React, { forwardRef } from 'react'
-import { AscCore } from '@datapunt/asc-core'
+import { AscCore } from '../../styles'
 
 type Props = {
   open: boolean

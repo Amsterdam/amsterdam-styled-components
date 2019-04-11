@@ -1,12 +1,12 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { AscCore } from '@datapunt/asc-core'
 import { ReactComponent as Ellipsis } from '@datapunt/asc-assets/lib/Icons/Ellipsis.svg'
 import { ReactComponent as FacebookPadded } from '@datapunt/asc-assets/lib/Icons/FacebookPadded.svg'
 import { ReactComponent as Twitter } from '@datapunt/asc-assets/lib/Icons/Twitter.svg'
 import { ReactComponent as Linkedin } from '@datapunt/asc-assets/lib/Icons/Linkedin.svg'
 import { ReactComponent as Email } from '@datapunt/asc-assets/lib/Icons/Email.svg'
 import { ReactComponent as Print } from '@datapunt/asc-assets/lib/Icons/Print.svg'
+import { AscCore } from '../../styles'
 import { ContextMenu, ContextMenuItem, Icon } from '../..'
 
 storiesOf('ContextMenu', module)

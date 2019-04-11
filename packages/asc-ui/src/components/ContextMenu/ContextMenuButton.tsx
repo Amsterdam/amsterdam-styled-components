@@ -1,6 +1,6 @@
 import React from 'react'
-import { AscCore } from '@datapunt/asc-core'
 import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/Chevron-Down.svg'
+import { AscCore } from '../../styles'
 import { Icon } from '../..'
 
 const ContextMenuButton = ({

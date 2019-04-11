@@ -1,4 +1,4 @@
-import { Theme, THEME_NAME } from '../../theme'
+import { Theme } from '../../theme'
 import styled from '../../styled-components'
 import fillSVG from '../../utils/fillSVG'
 
@@ -33,7 +33,7 @@ const Icon = styled.span<Props>`
   & > svg {
     width: inherit;
     height: inherit;
-    ${({ color, theme }) => fillSVG(theme[THEME_NAME], color)};
+    ${({ color, theme }) => fillSVG(theme, color)};
 `
 
 export default Icon
