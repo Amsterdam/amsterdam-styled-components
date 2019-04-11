@@ -1,4 +1,3 @@
-import { ComponentType, MouseEventHandler } from 'react'
 import { readableColor, transitions } from 'polished'
 import { Theme, THEME_NAME } from '../../theme'
 import styled from '../../styled-components'
@@ -6,13 +5,11 @@ import { fillSVG, getColorFromTheme } from '../../utils'
 import focus from '../shared/focus'
 
 export type Props = {
-  onClick?: MouseEventHandler<HTMLButtonElement>
   color?: Theme.TypeLevel
   size?: 'normal' | 'small'
   square?: boolean
   hoverColor?: string
   href?: string
-  as?: keyof JSX.IntrinsicElements | ComponentType<any>
 }
 
 const ButtonBase = styled.button<Props>`
