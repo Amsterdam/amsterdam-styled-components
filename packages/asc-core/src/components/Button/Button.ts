@@ -1,9 +1,9 @@
 import { readableColor, transitions } from 'polished'
 import { Theme } from '../../theme'
 import styled from '../../styled-components'
-import getThemeColor from '../../utils/getThemeColor'
-import fillSVG from '../../utils/fillSVG'
+import { fillSVG, getColorFromTheme } from '../../utils'
 import focus from '../shared/focus'
+import { flexboxMinHeightFix } from '../shared/ie-fixes'
 
 export type Props = {
   color?: Theme.TypeLevel
@@ -25,22 +25,16 @@ const ButtonBase = styled.button<Props>`
   ${({ theme }) => focus(theme)}
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')};
 
-  background: ${({ color, theme }) => getThemeColor(theme, color)};
+  background: ${({ color, theme }) => getColorFromTheme(theme, color)};
 
   &:hover {
     background: ${({ color, theme }) =>
       color
-        ? getThemeColor(theme, color, 'dark')
-        : getThemeColor(theme, 'tint', 'level3')};
+        ? getColorFromTheme(theme, color, 'dark')
+        : getColorFromTheme(theme, 'tint', 'level3')};
   }
 
-  // ie11 fix
-  &:after {
-    content: '';
-    display: block;
-    min-height: inherit;
-    font-size: 0;
-  }
+  ${flexboxMinHeightFix()}
 `
 
 const Button = styled(ButtonBase)<Props>`
@@ -49,15 +43,15 @@ const Button = styled(ButtonBase)<Props>`
   line-height: 1em
   color: ${({ color, theme }) =>
     color
-      ? readableColor(getThemeColor(theme, color))
-      : getThemeColor(theme, 'primary')};
+      ? readableColor(getColorFromTheme(theme, color))
+      : getColorFromTheme(theme, 'primary')};
 
   ${({ theme, color }) =>
-    !color && `border: 1px solid ${getThemeColor(theme, 'primary')};`}
+    !color && `border: 1px solid ${getColorFromTheme(theme, 'primary')};`}
 
   &:hover {
     ${({ theme, color }) =>
-      !color && `outline: 1px solid ${getThemeColor(theme, 'primary')};`}
+      !color && `outline: 1px solid ${getColorFromTheme(theme, 'primary')};`}
   }
 
   & svg {
@@ -77,12 +71,12 @@ export const ShareButton = styled(IconButton)<Props>`
   padding: 0px;
   position: relative;
   justify-content: center;
-  background: ${({ theme }) => getThemeColor(theme, 'tint', 'level5')}};
+  background: ${({ theme }) => getColorFromTheme(theme, 'tint', 'level5')}};
 
   &:focus,
   &:hover {
     background: ${({ hoverColor, theme }) =>
-      hoverColor || getThemeColor(theme, 'secondary')};
+      hoverColor || getColorFromTheme(theme, 'secondary')};
   }
 `
 

@@ -1,4 +1,5 @@
 import styled from '../../styled-components'
+import { flexboxMinHeightFix } from '../shared/ie-fixes'
 
 type Props = {}
 
@@ -10,13 +11,7 @@ const TopBar = styled.header<Props>`
   min-height: 54px;
   padding: 0 15px;
 
-  // ie11 fix
-  &:after {
-    content: '';
-    display: block;
-    min-height: inherit;
-    font-size: 0;
-  }
+  ${flexboxMinHeightFix()}
 `
 
 export default TopBar
