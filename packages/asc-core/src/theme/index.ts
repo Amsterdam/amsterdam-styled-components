@@ -84,13 +84,14 @@ export namespace Theme {
     typography: TypographyInterface
   }
 
-  export class CreateTheme implements ThemeInterface {
-    static getTheme(
-      colors: ColorInterface,
-      typography: TypographyInterface,
-      globalStyle: GlobalStyleType,
-    ): ThemeInterface {
-      return new CreateTheme(colors, typography, globalStyle)
+  export class ThemeFactory implements ThemeInterface {
+    static createTheme(themeName: string): ThemeInterface {
+      /* eslint-disable global-require, import/no-dynamic-require */
+      const colors = require(`./${themeName}/colors`).default
+      const typography = require(`./${themeName}/typography`).default
+      const globalStyle = require(`./${themeName}/globalStyle`).default
+      /* eslint-enable global-require, import/no-dynamic-require */
+      return new ThemeFactory(colors, typography, globalStyle)
     }
 
     constructor(
