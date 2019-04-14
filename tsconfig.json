@@ -26,9 +26,6 @@
       "@datapunt/asc-assets": [
         "./asc-assets/src"
       ],
-      "@datapunt/asc-core": [
-        "./asc-core/src"
-      ],
       "@datapunt/asc-ui/": [
         "./asc-ui/src"
       ]

@@ -37,6 +37,7 @@
   "rules": {
     "prettier/prettier": ["error"],
     "react/prop-types": 0,
+    "react/jsx-wrap-multilines": "off",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",

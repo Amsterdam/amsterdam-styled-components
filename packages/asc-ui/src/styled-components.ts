@@ -1,4 +1,4 @@
-import { StyledComponents } from '@datapunt/asc-core'
+import { StyledComponents } from './styles'
 
 const {
   default: styled,

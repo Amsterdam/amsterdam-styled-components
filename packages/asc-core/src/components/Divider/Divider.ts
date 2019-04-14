@@ -1,6 +1,6 @@
 import { margin } from 'polished'
 import styled, { css } from '../../styled-components'
-import getThemeColor from '../../utils/getThemeColor'
+import { getColorFromTheme } from '../../utils'
 
 type Props = {
   gutter?: boolean
@@ -19,7 +19,7 @@ const Divider = styled.hr<Props>`
   background-color: ${({ theme, transparent }) =>
     transparent
       ? 'background-color: transparent;'
-      : getThemeColor(theme, 'tint', 'level4')}
+      : getColorFromTheme(theme, 'tint', 'level4')}
   ;
 `
 

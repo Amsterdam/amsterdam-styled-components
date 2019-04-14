@@ -1,6 +1,6 @@
 import React from 'react'
-import { AscCore } from '@datapunt/asc-core'
 import StyledShareButton from './StyledShareButton'
+import { AscCore } from '../../styles'
 import { Icon } from '../..'
 
 type Props = {

@@ -1,5 +1,6 @@
 import styled from '../../styled-components'
-import { getThemeColor } from '../../core/AscCoreUtils'
+import { flexboxMinHeightFix } from '../shared/ie-fixes'
+import { getColorFromTheme } from '../../utils'
 
 export type Props = {
   backgroundColor?: string
@@ -13,15 +14,8 @@ const StyledTopBar = styled.header<Props>`
   min-height: 54px;
   padding: 0 15px;
   background-color: ${({ backgroundColor, theme }) =>
-    backgroundColor || getThemeColor(theme, 'bright', 'main')}
-  
-  // ie11 fix
-  &:after {
-    content: '';
-    display: block;
-    min-height: inherit;
-    font-size: 0;
-  }
+    backgroundColor || getColorFromTheme(theme, 'bright', 'main')};
+  ${flexboxMinHeightFix()};
 `
 
 export default StyledTopBar

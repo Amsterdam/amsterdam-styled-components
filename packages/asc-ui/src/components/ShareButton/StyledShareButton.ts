@@ -1,6 +1,6 @@
-import { AscCore } from '@datapunt/asc-core'
 import styled from '../../styled-components'
-import { getThemeColor } from '../../core/AscCoreUtils'
+import { AscCore } from '../..'
+import { getColorFromTheme } from '../../styles/utils'
 
 const StyledShareButton = styled(AscCore.Button.IconButton)<
   AscCore.Button.Props
@@ -8,12 +8,12 @@ const StyledShareButton = styled(AscCore.Button.IconButton)<
   padding: 0px;
   position: relative;
   justify-content: center;
-  background: ${({ theme }) => getThemeColor(theme, 'tint', 'level5')}};
+  background: ${({ theme }) => getColorFromTheme(theme, 'tint', 'level5')}};
 
   &:focus,
   &:hover {
     background: ${({ hoverColor, theme }) =>
-      hoverColor || getThemeColor(theme, 'secondary')};
+      hoverColor || getColorFromTheme(theme, 'secondary')};
   }
 `
 
