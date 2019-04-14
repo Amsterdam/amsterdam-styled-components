@@ -1,12 +1,6 @@
 import * as AscCore from './components/index'
-import * as AscCoreUtils from './utils/index'
 import * as StyledComponents from './styled-components'
+import * as ascDefaultTheme from './theme/default'
+import { Theme } from './theme'
 
-// Non-components exports
-export { Theme } from './theme'
-
-export {
-  AscCore,
-  AscCoreUtils,
-  StyledComponents
-}
+export { AscCore, StyledComponents, Theme, ascDefaultTheme }

@@ -1,8 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TextField /> should render 1`] = `
-<<<<<<< HEAD
-=======
 .c1 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -21,12 +19,7 @@ exports[`<TextField /> should render 1`] = `
   color: black;
 }
 
-<<<<<<< HEAD
-<ASCDefaultThemeProvider>
->>>>>>> snapshot fixed with jest-styled-components
-=======
-<AscDefaultThemeProvider>
->>>>>>> DP-6803 remarks Topbar implemented
+<ThemeProvider>
   <ThemeProvider
     theme={
       Object {
@@ -244,8 +237,5 @@ exports[`<TextField /> should render 1`] = `
       </div>
     </TextField>
   </ThemeProvider>
-<<<<<<< HEAD
-=======
-</AscDefaultThemeProvider>
->>>>>>> DP-6803 remarks Topbar implemented
+</ThemeProvider>
 `;

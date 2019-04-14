@@ -1,3 +1,4 @@
+import { AscCore, ascDefaultTheme, StyledComponents, Theme } from './styles'
 
 import IconButton from './components/IconButton'
 import Modal from './components/Modal'
@@ -13,7 +14,6 @@ import ContextMenu from './components/ContextMenu'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
 
 import ThemeProvider from './theme'
-import { AscCore } from './styles';
 
 const { Divider, Icon, ButtonBar, GlobalStyle, ListItem } = AscCore
 
@@ -38,4 +38,4 @@ export {
 }
 
 // Non-components exports
-export { GlobalStyle, ThemeProvider }
+export { GlobalStyle, StyledComponents, Theme, ThemeProvider, ascDefaultTheme }

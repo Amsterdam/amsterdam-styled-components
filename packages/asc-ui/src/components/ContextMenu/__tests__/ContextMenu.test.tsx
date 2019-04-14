@@ -1,7 +1,7 @@
 import React from 'react'
-import { ContextMenuItem } from '@datapunt/asc-ui/'
 import { shallow, ShallowWrapper } from 'enzyme'
 import ContextMenu from '../ContextMenu'
+import ContextMenuItem from '../ContextMenuItem'
 import { KeyboardKeys } from '../../../types'
 
 jest.useFakeTimers()

@@ -13,7 +13,7 @@ import {
   Divider,
   IconButton,
   TopBar,
-  defaultTheme,
+  ascDefaultTheme,
 } from '../..'
 
 const SimpleModal: React.FC<Props> = props => (
@@ -56,7 +56,7 @@ storiesOf('Composed/Modal', module)
       onClose={action('close modal from escape button or click outside')}
       blurredNode={window.document.querySelector('#root') as HTMLInputElement}
     >
-      <TopBar backgroundColor={defaultTheme.colors.tint.level3}>
+      <TopBar backgroundColor={ascDefaultTheme.colors.tint.level3}>
         <Typography style={{ flexGrow: 1 }} element="h4">
           Feedback
           <IconButton onClick={action('close modal')}>
