@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon } from '../..'
+import { IconStyle } from '../..'
 import ShareButtonStyle, {
   Props as ShareButtonProps,
 } from '../../styles/components/ShareButtonStyle'
@@ -16,9 +16,9 @@ const ShareButton: React.FC<Props> = ({
   ...otherProps
 }) => (
   <ShareButtonStyle onClick={onClick} square {...otherProps}>
-    <Icon color="secondary" size={iconSize}>
+    <IconStyle color="secondary" size={iconSize}>
       {children}
-    </Icon>
+    </IconStyle>
   </ShareButtonStyle>
 )
 

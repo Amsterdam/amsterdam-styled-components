@@ -1,7 +1,7 @@
 import styled from '../../styled-components'
 import focus from '../shared/focus'
 import { getColorFromTheme } from '../../utils'
-import { Icon } from '..'
+import IconStyle from '../IconStyle'
 
 const ContextMenuButton = styled.button`
   ${({ theme }) => focus(theme)}
@@ -13,7 +13,7 @@ const ContextMenuButton = styled.button`
   padding: 0 4px;
   justify-content: space-between;
 
-  ${Icon}:last-child:not(:first-child) {
+  ${IconStyle}:last-child:not(:first-child) {
     margin-left: 4px;
   }
 `

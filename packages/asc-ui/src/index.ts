@@ -15,12 +15,14 @@ import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
 
 import ThemeProvider from './theme'
 
-const { Divider, Icon, GlobalStyle, ListItem } = AscCore
+import IconStyle from './styles/components/IconStyle'
+
+const { Divider, GlobalStyle, ListItem } = AscCore
 
 // Components
 export {
   Divider,
-  Icon,
+  IconStyle,
   Button,
   IconButton,
   Modal,

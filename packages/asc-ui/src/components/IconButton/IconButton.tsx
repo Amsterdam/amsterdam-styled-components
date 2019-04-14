@@ -2,7 +2,7 @@ import React from 'react'
 import IconButtonStyle, {
   Props as IconButtonStyleProps,
 } from '../../styles/components/IconButtonStyle'
-import { Icon } from '../..'
+import { IconStyle } from '../..'
 
 type Props = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>
@@ -10,7 +10,7 @@ type Props = {
 
 const IconButton: React.FC<Props> = ({ children, onClick, ...otherProps }) => (
   <IconButtonStyle onClick={onClick} {...otherProps} square>
-    <Icon>{children}</Icon>
+    <IconStyle>{children}</IconStyle>
   </IconButtonStyle>
 )
 

@@ -2,7 +2,7 @@ import { Theme } from '../../theme'
 import styled from '../../styled-components'
 import fillSVG from '../../utils/fillSVG'
 
-type Props = {
+export type Props = {
   inline?: boolean
   color?: Theme.TypeLevel
   iconUrl?: string
@@ -17,7 +17,7 @@ const defaultProps = {
   rotate: 0,
 }
 
-const Icon = styled.span<Props>`
+const IconStyle = styled.span<Props>`
   display: ${({ inline }) => (inline ? 'inline-block' : 'block')};
   ${({ iconUrl }) => iconUrl && `background-image: ${iconUrl}`}
   ${({ size = defaultProps.size, padding = defaultProps.padding }) => `
@@ -34,4 +34,4 @@ const Icon = styled.span<Props>`
     ${({ color, theme }) => fillSVG(theme, color)};
 `
 
-export default Icon
+export default IconStyle
