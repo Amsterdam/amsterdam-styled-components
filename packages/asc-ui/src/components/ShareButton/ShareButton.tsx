@@ -1,14 +1,15 @@
 import React from 'react'
-import StyledShareButton from './StyledShareButton'
-import { AscCore } from '../../styles'
 import { Icon } from '../..'
+import StyledShareButton, {
+  Props as ShareButtonProps,
+} from '../../styles/components/StyledShareButton'
 
 type Props = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>
   iconSize?: number
-}
+} & ShareButtonProps
 
-const ShareButton: React.FC<Props & AscCore.Button.Props> = ({
+const ShareButton: React.FC<Props> = ({
   children,
   onClick,
   iconSize,

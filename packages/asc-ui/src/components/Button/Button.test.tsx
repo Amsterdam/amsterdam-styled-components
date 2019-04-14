@@ -1,18 +1,18 @@
 import * as React from 'react'
 import { mount } from 'enzyme'
-import { AscCore } from '../../styles'
 import { ThemeProvider } from '../../index'
 import Button from './Button'
+import ButtonBar from '../ButtonBar'
 import 'jest-styled-components'
 
 describe('Styled components', () => {
   it('should render buttons', () => {
     const component = mount(
       <ThemeProvider>
-        <AscCore.ButtonBar>
+        <ButtonBar>
           <Button color="primary">Hello</Button>
           <Button color="secondary">World</Button>
-        </AscCore.ButtonBar>
+        </ButtonBar>
       </ThemeProvider>,
     )
     expect(component).toMatchSnapshot()
