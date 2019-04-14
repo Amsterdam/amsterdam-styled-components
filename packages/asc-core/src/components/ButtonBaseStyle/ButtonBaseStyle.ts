@@ -1,7 +1,7 @@
-import { readableColor, transitions } from 'polished'
+import { transitions } from 'polished'
 import { Theme } from '../../theme'
 import styled from '../../styled-components'
-import { fillSVG, getColorFromTheme } from '../../utils'
+import { getColorFromTheme } from '../../utils'
 import focus from '../shared/focus'
 import { flexboxMinHeightFix } from '../shared/ie-fixes'
 
@@ -13,7 +13,7 @@ export type Props = {
   href?: string
 }
 
-const ButtonBase = styled.button<Props>`
+const ButtonBaseStyle = styled.button<Props>`
   display: inline-flex;
   align-items: center;
   text-decoration: none;
@@ -37,33 +37,4 @@ const ButtonBase = styled.button<Props>`
   ${flexboxMinHeightFix()}
 `
 
-const Button = styled(ButtonBase)<Props>`
-  padding: 0 10px 0 10px;
-  min-height: 38px;
-  line-height: 1em
-  color: ${({ color, theme }) =>
-    color
-      ? readableColor(getColorFromTheme(theme, color))
-      : getColorFromTheme(theme, 'primary')};
-
-  ${({ theme, color }) =>
-    !color && `border: 1px solid ${getColorFromTheme(theme, 'primary')};`}
-
-  &:hover {
-    ${({ theme, color }) =>
-      !color && `outline: 1px solid ${getColorFromTheme(theme, 'primary')};`}
-  }
-
-  & svg {
-    width: 30px;
-    height: 30px;
-    ${({ color, theme }) => fillSVG(theme, color)};
-  }
-`
-
-export const IconButton = styled(ButtonBase)<Props>`
-  padding: 5px;
-  width: 30px;
-  height: 30px;
-`
-export default Button
+export default ButtonBaseStyle

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { ReactComponent as Alert } from '@datapunt/asc-assets/lib/Icons/Alert.svg'
-import { Button } from '../../index'
+import Button from './Button'
 import ButtonBar from '../ButtonBar'
 
 storiesOf('Atoms/Buttons', module)

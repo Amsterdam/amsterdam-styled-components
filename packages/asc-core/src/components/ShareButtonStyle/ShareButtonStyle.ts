@@ -1,10 +1,12 @@
 import styled from '../../styled-components'
-import Button from '../Button'
+import IconButtonStyle, {
+  Props as IconButtonStyleProps,
+} from '../IconButtonStyle'
 import { getColorFromTheme } from '../../utils'
 
-export type Props = Button.Props
+export type Props = IconButtonStyleProps
 
-const ShareButtonStyle = styled(Button.IconButton)<Props>`
+const ShareButtonStyle = styled(IconButtonStyle)<Props>`
   padding: 0px;
   position: relative;
   justify-content: center;

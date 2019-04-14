@@ -1,16 +1,15 @@
 import * as React from 'react'
-import { AscCore } from '../../styles'
+import ButtonStyle, {
+  Props as ButtonStyleProps,
+} from '../../styles/components/ButtonStyle'
 
 type Props = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
-}
+} & ButtonStyleProps
 
-const Button: React.FC<Props & AscCore.Button.Props> = ({
-  children,
-  ...otherProps
-}) => (
-  <AscCore.Button.default {...otherProps}>{children}</AscCore.Button.default>
+const Button: React.FC<Props> = ({ children, ...otherProps }) => (
+  <ButtonStyle {...otherProps}>{children}</ButtonStyle>
 )
 
 export default Button
