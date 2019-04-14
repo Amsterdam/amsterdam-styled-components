@@ -4,7 +4,7 @@ import { getColorFromTheme } from '../../utils'
 
 export type Props = Button.Props
 
-const StyledShareButton = styled(Button.IconButton)<Props>`
+const ShareButtonStyle = styled(Button.IconButton)<Props>`
   padding: 0px;
   position: relative;
   justify-content: center;
@@ -17,4 +17,4 @@ const StyledShareButton = styled(Button.IconButton)<Props>`
   }
 `
 
-export default StyledShareButton
+export default ShareButtonStyle

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Icon } from '../..'
-import StyledShareButton, {
+import ShareButtonStyle, {
   Props as ShareButtonProps,
-} from '../../styles/components/StyledShareButton'
+} from '../../styles/components/ShareButtonStyle'
 
 type Props = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>
@@ -15,11 +15,11 @@ const ShareButton: React.FC<Props> = ({
   iconSize,
   ...otherProps
 }) => (
-  <StyledShareButton onClick={onClick} square {...otherProps}>
+  <ShareButtonStyle onClick={onClick} square {...otherProps}>
     <Icon color="secondary" size={iconSize}>
       {children}
     </Icon>
-  </StyledShareButton>
+  </ShareButtonStyle>
 )
 
 export default ShareButton

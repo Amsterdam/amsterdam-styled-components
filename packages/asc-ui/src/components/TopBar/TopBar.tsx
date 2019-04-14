@@ -1,8 +1,8 @@
 import React from 'react'
-import StyledTopBar, { Props } from '../../styles/components/StyledTopBar'
+import TopBarStyle, { Props } from '../../styles/components/TopBarStyle'
 
 const TopBar: React.FC<Props> = ({ children, ...otherProps }) => (
-  <StyledTopBar {...otherProps}>{children}</StyledTopBar>
+  <TopBarStyle {...otherProps}>{children}</TopBarStyle>
 )
 
 export default TopBar
