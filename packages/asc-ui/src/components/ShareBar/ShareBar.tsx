@@ -1,6 +1,7 @@
 import React from 'react'
-import ButtonBar from '../ButtonBar'
-import { Props } from '../ButtonBar/StyledButtonBar'
+import ButtonBar, { Props as ShareBarProps } from '../ButtonBar'
+
+type Props = ShareBarProps
 
 const ShareBar: React.FC<Props> = ({ children, ...otherProps }) => (
   <ButtonBar {...otherProps}>{children}</ButtonBar>

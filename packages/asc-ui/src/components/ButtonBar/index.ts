@@ -1,1 +1,1 @@
-export { default } from './ButtonBar'
+export { default, Props } from './ButtonBar'
