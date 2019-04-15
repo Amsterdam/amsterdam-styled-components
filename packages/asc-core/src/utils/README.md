@@ -1,6 +1,7 @@
-Styles utility functions
+# Styles utility functions
 
-### fromProps
+## fromProps
+
 Gets value from the props object. Useful for styled-components
 
 ```js static
@@ -14,7 +15,8 @@ const Div = styled.div`
 <Div display="flex" /> // styles: { display: 'flex' }
 ```
 
-### fromTheme
+## fromTheme
+
 Same as `fromProps`, but it will get a value from the (global) theme object. Useful for styled-components
 
 ```js static
@@ -42,7 +44,8 @@ const Div = styled.div`
 <Div theme={theme} /> // styles: { backgroundColor: '#f00', fontSize: '2em', padding: '8rem' }
 ```
 
-### getColorFromTheme
+## getColorFromTheme
+
 Extends `fromTheme`, but it's specified to the theme colors. Will return a default value if no colors are specified
 
 ```js static
@@ -67,7 +70,8 @@ const Button = styled.button`
 <Button theme={theme} /> // styles: { backgroundColor: '#000', color: '#fff' }
 ```
 
-### getTypographyFromTheme
+## getTypographyFromTheme
+
 Extends `fromTheme`, but it's specified to the theme typography.
 
 ```js static
@@ -87,5 +91,6 @@ const Title = styled.h1`
 <Title theme={theme} /> // styles: { font-size: '16px' }
 ```
 
-### fillSVG
+## fillSVG
+
 ...
