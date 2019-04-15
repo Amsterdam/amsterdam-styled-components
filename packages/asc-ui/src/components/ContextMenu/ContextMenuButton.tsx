@@ -1,5 +1,5 @@
 import React from 'react'
-import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/Chevron-Down.svg'
+import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
 import { AscCore } from '../../styles'
 import { Icon } from '../..'
 
