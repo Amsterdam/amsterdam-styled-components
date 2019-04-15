@@ -11,7 +11,7 @@ module.exports = {
       '<rootDir>/config/testing/mocks/image.ts',
     '^@datapunt/(.*)$': '<rootDir>/packages/$1/src',
   },
-  testPathIgnorePatterns: ['/node_modules/', '/lib/'],
+  testPathIgnorePatterns: ['/node_modules/', '/lib/', '/examples/'],
   setupFilesAfterEnv: ['<rootDir>/config/testing/test-bundler.ts'],
   transform: {
     '\\.(ts|tsx)$': 'ts-jest',
