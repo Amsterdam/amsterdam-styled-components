@@ -4,16 +4,32 @@ import { ReactComponent as Close } from '@datapunt/asc-assets/lib/Icons/Close.sv
 import TopBar from './TopBar'
 import Typography from '../Typography'
 import IconButton from '../IconButton'
+import { ThemeProvider, ascDefaultTheme } from '../../index'
 
 const SimpleComponent: React.FC<{}> = () => (
-  <TopBar>
-    <Typography style={{ flexGrow: 1 }} element="h4">
-      Lorem ipsum
-    </Typography>
-    <IconButton aria-label="Close">
-      <Close />
-    </IconButton>
-  </TopBar>
+  <ThemeProvider>
+    <React.Fragment>
+      <TopBar>
+        <Typography style={{ flexGrow: 1 }} element="h4">
+          TopBar - with default theme color
+        </Typography>
+        <IconButton aria-label="Close">
+          <Close />
+        </IconButton>
+      </TopBar>
+
+      <TopBar backgroundColor={`${ascDefaultTheme.colors.tint.level3}`}>
+        <Typography style={{ flexGrow: 1 }} element="h4">
+          TopBar - with backgroundColor property set
+        </Typography>
+        <IconButton aria-label="Close">
+          <Close />
+        </IconButton>
+      </TopBar>
+    </React.Fragment>
+  </ThemeProvider>
 )
 
-storiesOf('TopBar', module).add('default state', () => <SimpleComponent />)
+storiesOf('Atoms/TopBar', module).add('default state', () => (
+  <SimpleComponent />
+))

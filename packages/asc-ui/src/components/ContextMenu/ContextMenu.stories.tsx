@@ -9,7 +9,7 @@ import { ReactComponent as Print } from '@datapunt/asc-assets/lib/Icons/Print.sv
 import { AscCore } from '../../styles'
 import { ContextMenu, ContextMenuItem, Icon } from '../..'
 
-storiesOf('ContextMenu', module)
+storiesOf('Composed/ContextMenu', module)
   .add('default', () => (
     <ContextMenu>
       <ContextMenuItem role="button" onClick={() => {}}>
