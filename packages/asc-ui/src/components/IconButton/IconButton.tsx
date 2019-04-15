@@ -1,19 +1,17 @@
 import React from 'react'
-import { AscCore } from '../../styles'
+import IconButtonStyle, {
+  Props as IconButtonStyleProps,
+} from '../../styles/components/IconButtonStyle'
 import { Icon } from '../..'
 
 type Props = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>
-}
+} & IconButtonStyleProps
 
-const IconButton: React.FC<Props & AscCore.Button.Props> = ({
-  children,
-  onClick,
-  ...otherProps
-}) => (
-  <AscCore.Button.IconButton onClick={onClick} {...otherProps} square>
+const IconButton: React.FC<Props> = ({ children, onClick, ...otherProps }) => (
+  <IconButtonStyle onClick={onClick} {...otherProps} square>
     <Icon>{children}</Icon>
-  </AscCore.Button.IconButton>
+  </IconButtonStyle>
 )
 
 export default IconButton

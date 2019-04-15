@@ -1,6 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Styled components should render buttons 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0px;
+}
+
+.c0 > * {
+  margin-right: 5px;
+}
+
 .c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -105,18 +117,6 @@ exports[`Styled components should render buttons 1`] = `
 .c2 svg polygon,
 .c2 svg path {
   fill: #fff;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0px;
-}
-
-.c0 > * {
-  margin-right: 5px;
 }
 
 <ThemeProvider>
@@ -251,7 +251,7 @@ exports[`Styled components should render buttons 1`] = `
               "$$typeof": Symbol(react.forward_ref),
               "attrs": Array [],
               "componentStyle": ComponentStyle {
-                "componentId": "sc-kGXeez",
+                "componentId": "sc-kgoBCf",
                 "isStatic": false,
                 "lastClassName": "c0",
                 "rules": Array [
@@ -273,7 +273,7 @@ exports[`Styled components should render buttons 1`] = `
               "displayName": "styled.div",
               "foldedComponentIds": Array [],
               "render": [Function],
-              "styledComponentId": "sc-kGXeez",
+              "styledComponentId": "sc-kgoBCf",
               "target": "div",
               "toString": [Function],
               "warnTooManyClasses": [Function],
@@ -299,7 +299,7 @@ exports[`Styled components should render buttons 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
-                        "componentId": "sc-dnqmqq",
+                        "componentId": "sc-kpOJdX",
                         "isStatic": false,
                         "lastClassName": "c2",
                         "rules": Array [
@@ -370,10 +370,10 @@ exports[`Styled components should render buttons 1`] = `
                       },
                       "displayName": "Styled(styled.button)",
                       "foldedComponentIds": Array [
-                        "sc-htoDjs",
+                        "sc-cSHVUG",
                       ],
                       "render": [Function],
-                      "styledComponentId": "sc-dnqmqq",
+                      "styledComponentId": "sc-kpOJdX",
                       "target": "button",
                       "toString": [Function],
                       "warnTooManyClasses": [Function],
@@ -404,7 +404,7 @@ exports[`Styled components should render buttons 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
-                        "componentId": "sc-dnqmqq",
+                        "componentId": "sc-kpOJdX",
                         "isStatic": false,
                         "lastClassName": "c2",
                         "rules": Array [
@@ -475,10 +475,10 @@ exports[`Styled components should render buttons 1`] = `
                       },
                       "displayName": "Styled(styled.button)",
                       "foldedComponentIds": Array [
-                        "sc-htoDjs",
+                        "sc-cSHVUG",
                       ],
                       "render": [Function],
-                      "styledComponentId": "sc-dnqmqq",
+                      "styledComponentId": "sc-kpOJdX",
                       "target": "button",
                       "toString": [Function],
                       "warnTooManyClasses": [Function],
