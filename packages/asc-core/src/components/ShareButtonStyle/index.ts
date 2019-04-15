@@ -1,1 +1,1 @@
-export { default, Props } from './ShareButtonStyle'
+export { default, Props as ShareButtonStyleProps } from './ShareButtonStyle'

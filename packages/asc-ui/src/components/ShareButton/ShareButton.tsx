@@ -1,13 +1,13 @@
 import React from 'react'
 import { Icon } from '../..'
 import ShareButtonStyle, {
-  Props as ShareButtonProps,
+  ShareButtonStyleProps,
 } from '../../styles/components/ShareButtonStyle'
 
 type Props = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>
   iconSize?: number
-} & ShareButtonProps
+} & ShareButtonStyleProps
 
 const ShareButton: React.FC<Props> = ({
   children,
