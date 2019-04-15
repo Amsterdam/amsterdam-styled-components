@@ -1,7 +1,5 @@
 import styled from '../../styled-components'
-import IconButtonStyle, {
-  Props as IconButtonStyleProps,
-} from '../IconButtonStyle'
+import IconButtonStyle, { IconButtonStyleProps } from '../IconButtonStyle'
 import { getColorFromTheme } from '../../utils'
 
 export type Props = IconButtonStyleProps

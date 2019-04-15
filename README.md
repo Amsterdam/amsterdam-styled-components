@@ -69,6 +69,16 @@ To test your components in other repo's, do the following:
 
 Now you can import the package like you would do like a normal npm dependency. Changes you will make in your package will be seen in your repo.
 
+#### Development pattern for Components
+
+Follow the pattern found in:
+
+- asc-core/src/components/TopBarStyle/TopBarStyle.ts
+- asc-core/src/components/TopBarStyle/index.ts
+- asc-ui/src/components/TopBar/TopBar.tsx
+- asc-ui/src/components/TopBar/index.ts
+
+
 ### Publishing
 
 To publish these packages to npm, do the following:
@@ -84,23 +94,23 @@ These Component Library renders SVGs as Components, something that should be sup
 1. Run `npm install @svgr/webpack url-loader`
 2. In your `webpack.config.js` add:
 
-  ```js
-  {
-    test: /\.svg$/,
-    use: ['@svgr/webpack', 'url-loader'],
-  }
-  ```
+```js
+{
+  test: /\.svg$/,
+  use: ['@svgr/webpack', 'url-loader'],
+}
+```
 
 3. Integrate in your code:
 
-  ```js
-  import { ReactComponent as Close } from '@datapunt/asc-assets/lib/Icons/Close.svg'
-  const App = () => (
-    <div>
-      <Close />
-    </div>
-  )
-  ```
+```js
+import { ReactComponent as Close } from '@datapunt/asc-assets/lib/Icons/Close.svg'
+const App = () => (
+  <div>
+    <Close />
+  </div>
+)
+```
 
 ### Known issues
 

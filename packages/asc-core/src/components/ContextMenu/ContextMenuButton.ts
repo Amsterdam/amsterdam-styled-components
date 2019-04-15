@@ -11,7 +11,7 @@ const ContextMenuButton = styled.button`
   padding: 0 4px;
   justify-content: space-between;
 
-  & > span:last-child {
+  & > span:last-child:not(:first-child) {
     margin-left: 4px;
   }
 `

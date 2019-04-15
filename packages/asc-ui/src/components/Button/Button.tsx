@@ -1,6 +1,6 @@
 import * as React from 'react'
 import ButtonStyle, {
-  Props as ButtonStyleProps,
+  ButtonStyleProps,
 } from '../../styles/components/ButtonStyle'
 
 type Props = {

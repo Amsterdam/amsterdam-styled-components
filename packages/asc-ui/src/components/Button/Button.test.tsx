@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { mount } from 'enzyme'
+import { shallow } from 'enzyme'
 import { ThemeProvider } from '../../index'
 import Button from './Button'
 import ButtonBar from '../ButtonBar'
@@ -7,7 +7,7 @@ import 'jest-styled-components'
 
 describe('Styled components', () => {
   it('should render buttons', () => {
-    const component = mount(
+    const component = shallow(
       <ThemeProvider>
         <ButtonBar>
           <Button color="primary">Hello</Button>

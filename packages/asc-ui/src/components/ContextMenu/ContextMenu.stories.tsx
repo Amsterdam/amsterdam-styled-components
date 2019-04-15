@@ -7,7 +7,7 @@ import { ReactComponent as Linkedin } from '@datapunt/asc-assets/lib/Icons/Linke
 import { ReactComponent as Email } from '@datapunt/asc-assets/lib/Icons/Email.svg'
 import { ReactComponent as Print } from '@datapunt/asc-assets/lib/Icons/Print.svg'
 import { AscCore } from '../../styles'
-import { ContextMenu, ContextMenuItem, IconStyle } from '../..'
+import { ContextMenu, ContextMenuItem, Icon } from '../..'
 
 storiesOf('Composed/ContextMenu', module)
   .add('default', () => (
@@ -43,9 +43,9 @@ storiesOf('Composed/ContextMenu', module)
   .add('example of actual usage', () => (
     <ContextMenu
       icon={
-        <IconStyle padding={4} inline size={24}>
+        <Icon padding={4} inline size={24}>
           <Ellipsis />
-        </IconStyle>
+        </Icon>
       }
     >
       <ContextMenuItem
@@ -55,9 +55,9 @@ storiesOf('Composed/ContextMenu', module)
           window.print()
         }}
         icon={
-          <IconStyle padding={4} inline size={24}>
+          <Icon padding={4} inline size={24}>
             <Print />
-          </IconStyle>
+          </Icon>
         }
       >
         Printen
@@ -72,9 +72,9 @@ storiesOf('Composed/ContextMenu', module)
           )
         }}
         icon={
-          <IconStyle inline size={24}>
+          <Icon inline size={24}>
             <FacebookPadded />
-          </IconStyle>
+          </Icon>
         }
       >
         Deel via Facebook
@@ -89,9 +89,9 @@ storiesOf('Composed/ContextMenu', module)
           )
         }
         icon={
-          <IconStyle inline size={24} padding={4}>
+          <Icon inline size={24} padding={4}>
             <Twitter />
-          </IconStyle>
+          </Icon>
         }
       >
         Deel via Twitter
@@ -107,9 +107,9 @@ storiesOf('Composed/ContextMenu', module)
           )
         }
         icon={
-          <IconStyle inline size={24} padding={4}>
+          <Icon inline size={24} padding={4}>
             <Linkedin />
-          </IconStyle>
+          </Icon>
         }
       >
         Deel via Linkedin
@@ -118,9 +118,9 @@ storiesOf('Composed/ContextMenu', module)
         role="button"
         onClick={() => window.open(`mailto:mail@mail.com`, '_blank')}
         icon={
-          <IconStyle inline size={24} padding={4}>
+          <Icon inline size={24} padding={4}>
             <Email />
-          </IconStyle>
+          </Icon>
         }
       >
         Deel via E-mail

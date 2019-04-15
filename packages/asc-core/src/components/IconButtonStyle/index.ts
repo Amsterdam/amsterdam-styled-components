@@ -1,1 +1,1 @@
-export { default, Props } from './IconButtonStyle'
+export { default, Props as IconButtonStyleProps } from './IconButtonStyle'

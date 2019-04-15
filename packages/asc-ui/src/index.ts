@@ -1,6 +1,7 @@
 import { AscCore, ascDefaultTheme, StyledComponents, Theme } from './styles'
 
 import IconButton from './components/IconButton'
+import Icon from './components/Icon'
 import Modal from './components/Modal'
 import Portal from './components/Portal'
 import Typography from './components/Typography'
@@ -15,14 +16,12 @@ import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
 
 import ThemeProvider from './theme'
 
-import IconStyle from './styles/components/IconStyle'
-
 const { Divider, GlobalStyle, ListItem } = AscCore
 
 // Components
 export {
   Divider,
-  IconStyle,
+  Icon,
   Button,
   IconButton,
   Modal,

@@ -1,9 +1,9 @@
 import React from 'react'
 import ButtonBarStyle, {
-  Props as ButtonBarProps,
+  ButtonBarStyleProps,
 } from '../../styles/components/ButtonBarStyle'
 
-export type Props = ButtonBarProps
+export type Props = ButtonBarStyleProps
 
 const ButtonBar: React.FC<{}> = ({ children }) => (
   <ButtonBarStyle padding={0}>{children}</ButtonBarStyle>

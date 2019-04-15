@@ -35,13 +35,13 @@ const theme = {
   }
 }
 
-const Div = styled.div`
+const DivStyle = styled.div`
   background-color: ${fromTheme('colour.white')};
   font-size: ${fromTheme('fontSizes.title')}em;
   padding: ${fromTheme('spacing.max', spacing => spacing * 2)}rem;
 `
 
-<Div theme={theme} /> // styles: { backgroundColor: '#f00', fontSize: '2em', padding: '8rem' }
+<DivStyle theme={theme} /> // styles: { backgroundColor: '#f00', fontSize: '2em', padding: '8rem' }
 ```
 
 ## getColorFromTheme
@@ -62,12 +62,12 @@ const theme = {
   }
 }
 
-const Button = styled.button`
+const ButtonStyle = styled.button`
   background-color: ${theme => getColorFromTheme(theme, 'primary', 'dark')};
   color: ${theme => getColorFromTheme(theme, 'light')};
 `
 
-<Button theme={theme} /> // styles: { backgroundColor: '#000', color: '#fff' }
+<ButtonStyle theme={theme} /> // styles: { backgroundColor: '#000', color: '#fff' }
 ```
 
 ## getTypographyFromTheme
@@ -84,11 +84,11 @@ const theme = {
   }
 }
 
-const Title = styled.h1`
+const TitleStyle = styled.h1`
   font-size: ${theme => getTypographyFromTheme(theme, 'fontSize')};
 `
 
-<Title theme={theme} /> // styles: { font-size: '16px' }
+<TitleStyle theme={theme} /> // styles: { font-size: '16px' }
 ```
 
 ## fillSVG

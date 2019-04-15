@@ -1,1 +1,1 @@
-export { default, Props } from './IconStyle'
+export { default, Props as IconStyleProps } from './IconStyle'
