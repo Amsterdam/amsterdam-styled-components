@@ -1,3 +1,4 @@
+import { css } from '../styled-components'
 import { Theme } from '../theme'
 import { fromTheme } from '.'
 
@@ -26,3 +27,11 @@ export function getColorFromTheme(
   }
   return fromTheme('colors.tint.level1')
 }
+
+export const getFocusStyle = (theme: Theme.ThemeInterface) => css`
+  &:focus {
+    outline-color: ${getColorFromTheme(theme, 'support', 'focus')}
+    outline-style: solid;
+    outline-width: medium;
+  }
+`

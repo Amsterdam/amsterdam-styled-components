@@ -1,1 +1,1 @@
-export { default, Props } from './ButtonBaseStyle'
+export { default, Props as ButtonBaseStyleProps } from './ButtonBaseStyle'

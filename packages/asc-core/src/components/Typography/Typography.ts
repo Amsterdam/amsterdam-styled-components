@@ -1,8 +1,11 @@
 import { StyledComponent } from 'styled-components'
 import { em, margin } from 'polished'
 import styled, { css } from '../../styled-components'
-import { getColorFromTheme, getTypographyFromTheme } from '../../utils'
-import focus from '../shared/focus'
+import {
+  getColorFromTheme,
+  getTypographyFromTheme,
+  getFocusStyle,
+} from '../../utils'
 
 export type Props = {
   gutterBottom?: boolean
@@ -39,7 +42,7 @@ const extendedStyles = {
     color: ${({ theme }) => getColorFromTheme(theme, 'primary')}
     display: inline-block;
 
-    ${({ theme }) => focus(theme)}
+    ${({ theme }) => getFocusStyle(theme)}
 
     &:hover {
       color: ${({ theme }) => getColorFromTheme(theme, 'secondary')}
