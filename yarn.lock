@@ -12175,7 +12175,7 @@ polished@^2.3.3:
   dependencies:
     "@babel/runtime" "^7.2.0"
 
-polished@^3.0.3:
+polished@^3.0.3, polished@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/polished/-/polished-3.2.0.tgz#65045e080704a6ba524fb3f32eb99d4ed2e46c91"
   integrity sha512-uXIr2Nu5SU5khDa4JwWh8q5czi4GoJf+U1za5LN59Tk0mL/W3egZrPL0H0ADXeompCp0QhmiK9zs06gw0J5m4Q==
