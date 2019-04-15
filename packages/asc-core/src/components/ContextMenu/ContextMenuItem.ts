@@ -1,6 +1,5 @@
 import styled from '../../styled-components'
 import { ContextMenu } from './types'
-import IconStyle from '../IconStyle'
 import { getColorFromTheme, getTypographyFromTheme } from '../../utils'
 
 export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
@@ -14,7 +13,7 @@ export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   cursor: pointer;
   font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
 
-  ${IconStyle} {
+  & > span:first-child {
     margin: 5px 12px;
   }
 

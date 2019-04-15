@@ -3,6 +3,7 @@ import { shallow, ShallowWrapper } from 'enzyme'
 import ContextMenu from '../ContextMenu'
 import ContextMenuItem from '../ContextMenuItem'
 import { KeyboardKeys } from '../../../types'
+import 'jest-styled-components'
 
 jest.useFakeTimers()
 
