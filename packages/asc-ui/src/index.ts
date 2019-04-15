@@ -12,6 +12,9 @@ import Radio from './components/Radio'
 import Focus from './components/Focus'
 import ContextMenu from './components/ContextMenu'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
+import Menu from './components/Menu'
+import MenuItem from './components/Menu/MenuItem'
+import SubMenu from './components/Menu/SubMenu'
 
 import ThemeProvider from './theme'
 
@@ -35,6 +38,9 @@ export {
   Focus,
   ContextMenu,
   ContextMenuItem,
+  Menu,
+  MenuItem,
+  SubMenu,
 }
 
 // Non-components exports
