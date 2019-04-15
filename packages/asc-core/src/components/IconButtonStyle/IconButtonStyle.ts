@@ -1,7 +1,7 @@
 import styled from '../../styled-components'
-import ButtonBaseStyle, { Props as ButtonBaseProps } from '../ButtonBaseStyle'
+import ButtonBaseStyle, { ButtonBaseStyleProps } from '../ButtonBaseStyle'
 
-export type Props = ButtonBaseProps
+export type Props = ButtonBaseStyleProps
 
 export const IconButtonStyle = styled(ButtonBaseStyle)<Props>`
   padding: 5px;

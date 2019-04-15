@@ -1,1 +1,1 @@
-export { default, Props } from './TopBarStyle'
+export { default, Props as TopBarStyleProps } from './TopBarStyle'

@@ -1,9 +1,9 @@
 import { readableColor } from 'polished'
 import styled from '../../styled-components'
 import { fillSVG, getColorFromTheme } from '../../utils'
-import ButtonBaseStyle, { Props as ButtonBaseProps } from '../ButtonBaseStyle'
+import ButtonBaseStyle, { ButtonBaseStyleProps } from '../ButtonBaseStyle'
 
-export type Props = ButtonBaseProps
+export type Props = ButtonBaseStyleProps
 
 const ButtonStyle = styled(ButtonBaseStyle)<Props>`
   padding: 0 10px 0 10px;
