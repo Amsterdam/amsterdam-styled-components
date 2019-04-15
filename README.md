@@ -83,25 +83,28 @@ These Component Library renders SVGs as Components, something that should be sup
 
 1. Run `npm install @svgr/webpack url-loader`
 2. In your `webpack.config.js` add:
-```
-{
-  test: /\.svg$/,
-  use: ['@svgr/webpack', 'url-loader'],
-}
-```
+
+  ```js
+  {
+    test: /\.svg$/,
+    use: ['@svgr/webpack', 'url-loader'],
+  }
+  ```
+
 3. Integrate in your code:
- ```js
-import { ReactComponent as Close } from @datapunt/asc-assets/lib/Icons/Close.svg
-const App = () => (
-  <div>
-    <Close />
-  </div>
-)
-```
+
+  ```js
+  import { ReactComponent as Close } from '@datapunt/asc-assets/lib/Icons/Close.svg'
+  const App = () => (
+    <div>
+      <Close />
+    </div>
+  )
+  ```
 
 ### Known issues
 
-- When deploying to github pages with `npm run deploy-storybook` there are *.d definition files generated. These should not be checked in and can be discarded without problems.
+- When deploying to github pages with `npm run deploy-storybook` there are \*.d definition files generated. These should not be checked in and can be discarded without problems.
 
 ### References
 

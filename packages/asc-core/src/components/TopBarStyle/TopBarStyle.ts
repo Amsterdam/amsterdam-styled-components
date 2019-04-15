@@ -6,7 +6,7 @@ export type Props = {
   backgroundColor?: string
 }
 
-const StyledTopBar = styled.header<Props>`
+const TopBarStyle = styled.header<Props>`
   display: flex;
   position: relative;
   align-items: center;
@@ -18,4 +18,4 @@ const StyledTopBar = styled.header<Props>`
   ${flexboxMinHeightFix()};
 `
 
-export default StyledTopBar
+export default TopBarStyle

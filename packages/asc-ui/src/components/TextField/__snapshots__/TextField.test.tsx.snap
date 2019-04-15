@@ -157,7 +157,7 @@ exports[`<TextField /> should render 1`] = `
                   },
                 ],
                 "componentStyle": ComponentStyle {
-                  "componentId": "sc-bZQynM",
+                  "componentId": "sc-EHOje",
                   "isStatic": false,
                   "lastClassName": "c0",
                   "rules": Array [
@@ -172,7 +172,7 @@ exports[`<TextField /> should render 1`] = `
                 "displayName": "styled.label",
                 "foldedComponentIds": Array [],
                 "render": [Function],
-                "styledComponentId": "sc-bZQynM",
+                "styledComponentId": "sc-EHOje",
                 "target": "label",
                 "toString": [Function],
                 "warnTooManyClasses": [Function],

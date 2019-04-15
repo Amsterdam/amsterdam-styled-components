@@ -66,18 +66,4 @@ export const IconButton = styled(ButtonBase)<Props>`
   width: 30px;
   height: 30px;
 `
-
-export const ShareButton = styled(IconButton)<Props>`
-  padding: 0px;
-  position: relative;
-  justify-content: center;
-  background: ${({ theme }) => getColorFromTheme(theme, 'tint', 'level5')}};
-
-  &:focus,
-  &:hover {
-    background: ${({ hoverColor, theme }) =>
-      hoverColor || getColorFromTheme(theme, 'secondary')};
-  }
-`
-
 export default Button

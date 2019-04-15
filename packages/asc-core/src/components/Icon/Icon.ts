@@ -5,7 +5,6 @@ import fillSVG from '../../utils/fillSVG'
 type Props = {
   inline?: boolean
   color?: Theme.TypeLevel
-  alignSelf?: 'top' | 'bottom' | 'left' | 'right'
   iconUrl?: string
   size?: number
   padding?: number
@@ -25,7 +24,6 @@ const Icon = styled.span<Props>`
     width: ${size - padding * 2}px;
     height: ${size - padding * 2}px;
   `}
-  ${({ alignSelf }) => alignSelf && `position: absolute; ${[alignSelf]}: 0`};
   padding: ${({ padding }) => `${padding}px`};
   box-sizing: content-box;
   ${({ rotate = defaultProps.rotate }) => `transform: rotate(${rotate}deg)`};

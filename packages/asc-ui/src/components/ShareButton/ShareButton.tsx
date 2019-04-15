@@ -1,25 +1,25 @@
 import React from 'react'
-import { AscCore } from '../../styles'
 import { Icon } from '../..'
+import ShareButtonStyle, {
+  ShareButtonStyleProps,
+} from '../../styles/components/ShareButtonStyle'
 
 type Props = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>
-  alignIcon?: 'top' | 'bottom' | 'left' | 'right'
   iconSize?: number
-}
+} & ShareButtonStyleProps
 
-const ShareButton: React.FC<Props & AscCore.Button.Props> = ({
+const ShareButton: React.FC<Props> = ({
   children,
   onClick,
   iconSize,
-  alignIcon,
   ...otherProps
 }) => (
-  <AscCore.Button.ShareButton onClick={onClick} square {...otherProps}>
-    <Icon alignSelf={alignIcon} color="secondary" size={iconSize}>
+  <ShareButtonStyle onClick={onClick} square {...otherProps}>
+    <Icon color="secondary" size={iconSize}>
       {children}
     </Icon>
-  </AscCore.Button.ShareButton>
+  </ShareButtonStyle>
 )
 
 export default ShareButton

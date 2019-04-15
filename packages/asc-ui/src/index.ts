@@ -15,14 +15,13 @@ import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
 
 import ThemeProvider from './theme'
 
-const { Divider, Icon, ButtonBar, GlobalStyle, ListItem } = AscCore
+const { Divider, Icon, GlobalStyle, ListItem } = AscCore
 
 // Components
 export {
   Divider,
   Icon,
   Button,
-  ButtonBar,
   IconButton,
   Modal,
   Portal,
@@ -37,5 +36,11 @@ export {
   ContextMenuItem,
 }
 
-// Non-components exports
-export { GlobalStyle, StyledComponents, Theme, ThemeProvider, ascDefaultTheme }
+export {
+  AscCore,
+  GlobalStyle,
+  StyledComponents,
+  Theme,
+  ThemeProvider,
+  ascDefaultTheme,
+}
