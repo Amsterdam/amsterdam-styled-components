@@ -3,7 +3,7 @@ module.exports = {
   collectCoverageFrom: [
     'packages/asc-ui/src/**/*.{js,jsx,ts,tsx}',
     '!packages/asc-ui/src/styles/**/*.{js,jsx,ts,tsx}',
-    '!packages/**/*.test.{js,jsx,ts,tsx}',
+    '!packages/**/*.(test|stories).{js,jsx,ts,tsx}',
   ],
   coverageDirectory: '<rootDir>/coverage',
   coverageReporters: ['lcov', 'html'],
