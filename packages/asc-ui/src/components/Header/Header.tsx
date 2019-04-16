@@ -8,9 +8,9 @@ import {
   HeaderGridZone,
 } from '../../styles/components/HeaderStyle/HeaderStyle'
 import HeaderTitle from './HeaderTitle'
-import HeaderNav from './HeaderNav'
-import HeaderSearch from './HeaderSearch'
-import HeaderMenu from './HeaderMenu'
+// import HeaderNav from './HeaderNav'
+// import HeaderSearch from './HeaderSearch'
+// import HeaderMenu from './HeaderMenu'
 
 type Props = HeaderStyleProps
 
@@ -19,11 +19,11 @@ const Header: React.FC<Props> = ({ children, ...otherProps }) => (
     <HeaderGridContainer>
       <HeaderGridZone>
         <HeaderStyle {...otherProps}>
-          <HeaderTitle />
-          <HeaderNav>
+          <HeaderTitle title="Data en informatie" />
+          {/* <HeaderNav>
             <HeaderSearch />
             <HeaderMenu />
-          </HeaderNav>
+          </HeaderNav> */}
           {children}
         </HeaderStyle>
       </HeaderGridZone>
