@@ -1,5 +1,5 @@
 module.exports = {
-  collectCoverage: true,
+  collectCoverage: false,
   collectCoverageFrom: [
     'packages/asc-ui/src/**/*.{js,jsx,ts,tsx}',
     '!packages/asc-ui/src/styles/**/*.{js,jsx,ts,tsx}',
