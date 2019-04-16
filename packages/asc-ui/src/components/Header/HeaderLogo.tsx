@@ -7,12 +7,11 @@ type Props = {
 
 const HeaderLogoStyle = styled.a<{}>`
   float: left;
-  /* display: inline-block; */
   min-height: 68px;
   color: #767676;
   text-decoration: none;
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 1023px) {
     min-height: 50px;
     padding: 10px;
   }
@@ -45,7 +44,7 @@ const LogoSetStyle = styled.span<{}>`
     width: 0;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 1023px) {
     min-height: 50px;
   }
 
@@ -56,14 +55,14 @@ const LogoSetStyle = styled.span<{}>`
   & > img {
     height: 68px;
 
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 1023px) {
       height: 30px;
       padding-top: 10px;
     }
 
-    @media screen and (max-width: 539px) and (min-width: 361px) {
+    /* @media screen and (max-width: 539px) and (min-width: 361px) {
       height: 41px;
-    }
+    } */
   }
 `
 
@@ -79,15 +78,15 @@ const LogoTextStyle = styled.span`
     margin: 0 0 0 30px;
     padding: 0;
 
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 1023px) {
       font-size: 10px;
       margin: 0 0 0 11px;
     }
 
-    @media screen and (max-width: 539px) and (min-width: 361px) {
+    /* @media screen and (max-width: 539px) and (min-width: 361px) {
       font-size: 0.875rem;
       margin: 0 0 0 22px;
-    }
+    } */
   }
 `
 

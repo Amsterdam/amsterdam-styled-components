@@ -11,8 +11,7 @@ const HeaderStyle = styled.div<Props>`
 export const HeaderGridWrapper = styled.div<Props>`
   background-color: green;
   position: relative;
-  font-size: 100%;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   border: 0;
   vertical-align: baseline;
@@ -25,15 +24,15 @@ export const HeaderGridWrapper = styled.div<Props>`
 `
 export const HeaderGridContainer = styled.div<Props>`
   background-color: #fff222;
-  margin: 0 auto;
+  margin: 0;
   /* display: block; */
 
   @media screen and (max-width: 1023px) and (min-width: 540px) {
-    max-width: 480px;
+    /* max-width: 480px; */
   }
 
   @media screen and (min-width: 1024px) {
-    max-width: 960px;
+    /* max-width: 960px; */
   }
 `
 export const HeaderGridZone = styled.div<Props>`
