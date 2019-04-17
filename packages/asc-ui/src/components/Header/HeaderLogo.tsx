@@ -6,15 +6,9 @@ type Props = {
 }
 
 const HeaderLogoStyle = styled.a<{}>`
-  float: left;
-  min-height: 50px;
   color: #767676;
   text-decoration: none;
   padding: 10px;
-
-  @media screen and (max-width: 1023px) {
-    /* min-height: 50px; */
-  }
 `
 
 const LogoSetStyle = styled.span<{}>`

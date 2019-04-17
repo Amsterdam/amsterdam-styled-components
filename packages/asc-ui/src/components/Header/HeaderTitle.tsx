@@ -7,9 +7,13 @@ type Props = {
 }
 
 const HeaderTitleStyle = styled.div<{}>`
+  @media screen and (max-width: 540px) {
+    flex-grow: 1;
+  }
+
   & > h1 {
+    display: flex;
     margin: 0;
-    min-height: 50px;
     position: relative;
     font-size: 1.8125em;
     line-height: 1.37931em;
@@ -25,9 +29,9 @@ const HeaderTitleStyle = styled.div<{}>`
   }
 
   & > h1 > span {
-    display: block;
+    display: inline-block;
     line-height: 1.5625rem;
-    margin-left: 85px;
+    /* margin-left: 85px; */
     padding-top: 6px;
   }
 
