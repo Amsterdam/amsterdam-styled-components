@@ -3,6 +3,7 @@ import {
   getTypographyFromTheme,
   getFocusStyle,
   getBreakpointFromTheme,
+  fillSvgFromTheme,
 } from '../themeUtils'
 import breakpoints from '../../theme/default/breakpoints'
 import colors from '../../theme/default/colors'
@@ -66,9 +67,7 @@ describe('getFocusStyle', () => {
 
   it('should return the focusstyle from theme', () => {
     const result = getFocusStyle(theme)
-
-    // exception toMatchSnapshot, the generated output is difficutl to validate
-    expect(result).toMatchSnapshot()
+    expect(result).toContain('#abcde')
   })
 })
 
@@ -80,7 +79,7 @@ describe('getBreakpontFromTheme', () => {
     typography,
   }
 
-  it("should return null when the breakpoint doesn't exist", () => {
+  it("should return undefined when the breakpoint doesn't exist", () => {
     expect(
       getBreakpointFromTheme(theme, 'max-width', 'not-valid'),
     ).toBeUndefined()
@@ -93,5 +92,22 @@ describe('getBreakpontFromTheme', () => {
     expect(getBreakpointFromTheme(theme, 'min-width', 'mobileL')).toEqual(
       '(min-width: 425px)',
     )
+  })
+})
+
+describe('fillSvgFromTheme', () => {
+  const theme = {
+    breakpoints,
+    globalStyle,
+    colors,
+    typography,
+  }
+
+  it("should return een empty string when the color doesn't exist", () => {
+    expect(fillSvgFromTheme(theme)).toBe('')
+  })
+
+  it('should return the right fill color for the svg', () => {
+    expect(fillSvgFromTheme(theme, 'tint', 'level5')).toContain('fill: #000')
   })
 })

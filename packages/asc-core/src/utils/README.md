@@ -91,6 +91,6 @@ const TitleStyle = styled.h1`
 <TitleStyle theme={theme} /> // styles: { font-size: '16px' }
 ```
 
-## fillSVG
+## fillSvgFromTheme
 
 ...
