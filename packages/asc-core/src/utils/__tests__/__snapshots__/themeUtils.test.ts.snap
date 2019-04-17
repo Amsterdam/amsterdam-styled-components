@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getFocusStyle should return the focusstyle from theme 1`] = `
+Array [
+  "
+  &:focus {
+    outline-color: ",
+  "#abcde",
+  ";
+    outline-style: solid;
+    outline-width: medium;
+  }
+",
+]
+`;

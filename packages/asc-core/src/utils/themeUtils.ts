@@ -2,30 +2,21 @@ import { css } from '../styled-components'
 import { Theme } from '../theme'
 import { fromTheme } from '.'
 
-export function getTypographyFromTheme(
-  theme: Theme.ThemeInterface,
-  attributeType: string,
-) {
-  return fromTheme(`typography.${[attributeType]}`)({ theme })
-}
-
 export function getColorFromTheme(
   theme: Theme.ThemeInterface,
   colorType?: Theme.TypeLevel,
   variant: string = 'main',
 ) {
-  if (colorType) {
-    const color = fromTheme(`colors.${[colorType]}`)({ theme })
+  return colorType
+    ? fromTheme(`colors.${[colorType]}.${[variant]}`)({ theme })
+    : fromTheme('colors.tint.level1')({ theme })
+}
 
-    if (typeof color === 'string') {
-      return color
-    }
-
-    if (variant) {
-      return fromTheme(`colors.${[colorType]}.${[variant]}`)({ theme })
-    }
-  }
-  return fromTheme('colors.tint.level1')
+export function getTypographyFromTheme(
+  theme: Theme.ThemeInterface,
+  attributeType: string,
+) {
+  return fromTheme(`typography.${[attributeType]}`)({ theme })
 }
 
 export const getFocusStyle = (theme: Theme.ThemeInterface) => css`
@@ -45,6 +36,5 @@ export function getBreakpointFromTheme(
   )({
     theme,
   })
-  console.log(type, breakpoint(type))
   return breakpoint && breakpoint(type)
 }
