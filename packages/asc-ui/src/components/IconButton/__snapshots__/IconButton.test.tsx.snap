@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button should render the button 1`] = `
+exports[`IconButton should render the IconButton 1`] = `
 <StyledComponent
-  color="primary"
   forwardedComponent={
     Object {
       "$$typeof": Symbol(react.forward_ref),
@@ -49,30 +48,9 @@ exports[`Button should render the button 1`] = `
           "
 ",
           "
-  padding: 0 10px 0 10px;
-  min-height: 38px;
-  line-height: 1em
-  color: ",
-          [Function],
-          ";
-
-  ",
-          [Function],
-          "
-
-  &:hover {
-    ",
-          [Function],
-          "
-  }
-
-  & svg {
-    width: 30px;
-    height: 30px;
-    ",
-          [Function],
-          ";
-  }
+  padding: 5px;
+  width: 30px;
+  height: 30px;
 ",
         ],
       },
@@ -89,7 +67,11 @@ exports[`Button should render the button 1`] = `
     }
   }
   forwardedRef={null}
+  onClick={[MockFunction]}
+  square={true}
 >
-  Hello
+  <IconButton>
+    icon-content
+  </IconButton>
 </StyledComponent>
 `;
