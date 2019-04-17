@@ -5,7 +5,7 @@ import CenteredElement from '../../internals/CenteredElement/CenteredElement'
 type Props = {}
 
 const HeaderMenuStyle = styled.div`
-  background-color: cyan;
+  background-color: rgba(211, 128, 144, 0.1);
 
   @media screen and (max-width: 1023px) {
     width: 50px;

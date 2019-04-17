@@ -14,9 +14,10 @@ import HeaderMenu from './HeaderMenu'
 type Props = HeaderStyleProps
 
 const HeaderStyleLocal = styled(HeaderStyle)`
-  background-color: lightgrey;
+  background-color: #eee;
   width: 100%;
   flex-flow: no-wrap;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.04);
 
   @media screen and (max-width: 1023px) {
     position: fixed;

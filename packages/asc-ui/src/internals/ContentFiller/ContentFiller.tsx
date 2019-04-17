@@ -2,17 +2,31 @@ import * as React from 'react'
 import styled from '../../styled-components'
 import Typography from '../../components/Typography'
 
-const ContentFillerStyle = styled.div`
+type ContentFillerStyleProps = {
+  backgroundColor?: string
+  marginTop?: string
+  marginTopBorder?: string
+}
+
+const ContentFillerStyle = styled.div<ContentFillerStyleProps>`
   width: 100%;
   height: 2000px;
-  background-color: magenta;
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  margin-top: ${({ marginTopBorder }) => marginTopBorder};
 
   @media screen and (max-width: 1023px) {
-    margin-top: 50px;
+    margin-top: ${({ marginTop }) => marginTop};
   }
 `
+ContentFillerStyle.defaultProps = {
+  backgroundColor: 'rgba(211,211,211,.1)',
+  marginTop: '50px',
+  marginTopBorder: '-4px',
+}
 
-const ContentFiller: React.FC<{}> = ({ ...otherProps }) => (
+type ContentFillerProps = ContentFillerStyleProps
+
+const ContentFiller: React.FC<ContentFillerProps> = ({ ...otherProps }) => (
   <ContentFillerStyle {...otherProps}>
     <Typography element="h5">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

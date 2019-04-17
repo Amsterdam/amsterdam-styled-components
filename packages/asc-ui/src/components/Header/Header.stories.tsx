@@ -8,7 +8,7 @@ const SimpleComponent: React.FC<{}> = () => (
   <ThemeProvider themeName="default">
     <>
       <Header />
-      <ContentFiller />
+      <ContentFiller backgroundColor="#eee" />
     </>
   </ThemeProvider>
 )

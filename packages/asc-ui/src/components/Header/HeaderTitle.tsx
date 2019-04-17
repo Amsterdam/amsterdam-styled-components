@@ -9,17 +9,15 @@ type Props = {
 
 const HeaderTitleStyle = styled.div<{}>`
   @media screen and ${({ theme }) =>
-      getBreakpointFromTheme(theme, 'max-width', 'tablet')} {
+    getBreakpointFromTheme(theme, 'max-width', 'tablet')} {
     flex-grow: 1;
   }
 
   & > h1 {
     display: flex;
+    height: 100%
     margin: 0;
-    position: relative;
-    font-size: 1.8125em;
-    line-height: 1.37931em;
-    background-color: #ccc;
+    background-color: rgba(192, 192, 192, 0.1);
   }
 
   & > h1 > span {

@@ -6,7 +6,7 @@ import CenteredElement from '../../internals/CenteredElement/CenteredElement'
 type Props = {}
 
 const HeaderSearchStyle = styled.div`
-  background-color: blue;
+  background-color: rgba(128, 128, 128, 0.1);
   overflow: hidden;
 
   @media screen and ${({ theme }) =>
