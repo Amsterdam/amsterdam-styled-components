@@ -1,21 +1,20 @@
 import React from 'react'
 import MenuStyle, { MenuStyleProps } from '../../styles/components/MenuStyle'
-import MenuButton from './MenuButton'
 import MenuList from './MenuList'
 import { KeyboardKeys } from '../../types'
 import ownerDocument from '../../utils/ownerDocument'
 
 type Props = {
-  position?: MenuStyleProps.Position
+  focused?: boolean
+  onClick?: Function
+  role?: string
   label?: string
-  icon?: React.ReactNode
-}
-
-type State = {}
+  divider?: boolean
+} & MenuStyleProps.MenuItemStyleProps
 
 const selectedChildInitial = -1
 
-class Menu extends React.Component<Props, State> {
+class MenuItem extends React.Component<Props> {
   state = {
     open: false,
     selectedChild: selectedChildInitial,
@@ -24,23 +23,35 @@ class Menu extends React.Component<Props, State> {
   list = React.createRef<HTMLDivElement>()
   root = React.createRef<HTMLDivElement>()
 
+  componentDidUpdate() {
+    const { focused } = this.props
+    const ref = this.getReference('root')
+    if (ref && focused) {
+      ref.focus()
+    }
+  }
+
+  onClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    this.onToggle()
+  }
+
   onKeyDown = (event: React.KeyboardEvent) => {
     const { children } = this.props
     const { selectedChild, open } = this.state
 
-    const nrOfChildren = React.Children.count(children)
+    const nrOfChildren = React.Children.count(children) + 2
 
     if (!open) {
       return
     }
     const firstChild = 0
-    const lastChild = nrOfChildren - 1
+    const lastChild = nrOfChildren
 
-    if (event.key === KeyboardKeys.Tab) {
+    if (event.key === 'Arrow') {
       event.preventDefault()
       this.setState({
-        selectedChild:
-          selectedChild === lastChild ? firstChild : selectedChild + 1,
+        selectedChild: selectedChild + 1,
       })
     }
 
@@ -55,11 +66,11 @@ class Menu extends React.Component<Props, State> {
     }
   }
 
-  onToggle = () => {
-    const { open } = this.state
-    this.setState({
-      open: !open,
-    })
+  handleKeyPress = (e: React.KeyboardEvent) => {
+    console.log('selectedChildFunction', e)
+    if (e.key === KeyboardKeys.ArrowDown) {
+      this.onToggle()
+    }
   }
 
   onClose = () => {
@@ -77,6 +88,15 @@ class Menu extends React.Component<Props, State> {
     })
   }
 
+  onToggle = () => {
+    const { selectedChild } = this.state
+    console.log(selectedChild, selectedChild + 1, 'selectedChildFunction')
+    this.setState({
+      open: true,
+      selectedChild: selectedChild + 1
+    })
+  }
+
   getReference = (el: string) => {
     if (this[el].current) {
       return this[el].current
@@ -86,42 +106,33 @@ class Menu extends React.Component<Props, State> {
   }
 
   render() {
-    const { id, label, children, position, icon }: any = this.props
+    const { id, children, focused, label, ...otherProps }: any = this.props
     const { open, selectedChild } = this.state
-
-    console.log('selectedChild', children.length, selectedChild)
-
     return (
-      <MenuStyle.MenuWrapperStyle
-        id={id}
-        ref={this.root}
-        onKeyDown={this.onKeyDown}
-        onBlur={this.onClose}
-      >
-        <MenuButton
-          {...{
-            icon,
-            open,
-            position,
-            label,
-          }}
-          onClick={this.onToggle}
-        />
+      <>
+        <MenuStyle.MenuItemStyle
+          focused={focused}
+          onClick={this.onClick}
+          onKeyDown={this.handleKeyPress}
+          tabIndex={focused ? 0 : -1}
+          {...otherProps}
+        >
+          {label && label}
+        </MenuStyle.MenuItemStyle>
         <MenuList
           {...{
-            position,
             id,
             open,
             selectedChild,
           }}
-          onClose={this.onClose}
-          ref={this.list}
+          onClose={() => {}}
+          onKeyDown={this.onToggle}
         >
           {children}
-        </MenuList>
-      </MenuStyle.MenuWrapperStyle>
+          </MenuList>
+      </>
     )
   }
 }
 
-export default Menu
+export default MenuItem

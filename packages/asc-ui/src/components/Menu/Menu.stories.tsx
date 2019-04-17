@@ -4,19 +4,25 @@ import { Menu, MenuItem, SubMenu } from '../..'
 
 storiesOf('Composed/Menu', module).add('default', () => (
   <Menu label="Menu">
-    <MenuItem role="button" onClick={() => {}}>
+    <MenuItem onClick={() => {}}>
       One
     </MenuItem>
-    <MenuItem role="button" onClick={() => {}}>
+    <MenuItem onClick={() => {}}>
       Two
     </MenuItem>
-    <SubMenu label="Menu">
-      <MenuItem role="button" onClick={() => {}}>
+    <SubMenu label="SubMenu">
+      <MenuItem onClick={() => {}}>
         One
       </MenuItem>
-      <MenuItem role="button" onClick={() => {}}>
+      <MenuItem onClick={() => {}}>
         Two
       </MenuItem>
     </SubMenu>
+    <MenuItem onClick={() => {}}>
+      Three
+    </MenuItem>
+    <MenuItem onClick={() => {}}>
+      Four
+    </MenuItem>
   </Menu>
 ))

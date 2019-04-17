@@ -16,6 +16,7 @@ class MenuItem extends React.Component<Props> {
   componentDidUpdate() {
     const { focused } = this.props
     const ref = this.getReference('root')
+    console.log('selectedChildFocusMUSTTTT', focused, ref)
     if (ref && focused) {
       ref.focus()
     }
@@ -45,6 +46,9 @@ class MenuItem extends React.Component<Props> {
 
   render() {
     const { children, focused, icon, ...otherProps }: any = this.props
+
+console.log('selectedChildFocus', focused)
+
     return (
       <MenuStyle.MenuItemStyle
         ref={this.root}

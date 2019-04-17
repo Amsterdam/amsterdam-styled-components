@@ -14,7 +14,7 @@ import ContextMenu from './components/ContextMenu'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
 import Menu from './components/Menu'
 import MenuItem from './components/Menu/MenuItem'
-import SubMenu from './components/Menu/SubMenu'
+import SubMenu from './components/Menu/SubMenuTwo'
 
 import ThemeProvider from './theme'
 

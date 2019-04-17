@@ -20,7 +20,7 @@ export default forwardRef((props: any, ref: React.Ref<any>) => (
 class MenuList extends React.Component<Props> {
   state = {}
 
-  myRef = React.createRef<HTMLDivElement>()
+  list = React.createRef<HTMLDivElement>()
 
   static defaultProps = {
     position: MenuStyleProps.Position.top,
@@ -44,7 +44,7 @@ class MenuList extends React.Component<Props> {
 
     return (
       <MenuStyle.MenuListWrapperStyle
-        ref={this.myRef}
+        ref={this.list}
         aria-hidden={!open}
         onBlur={() => onClose()}
         position={position}
