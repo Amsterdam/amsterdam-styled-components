@@ -35,3 +35,16 @@ export const getFocusStyle = (theme: Theme.ThemeInterface) => css`
     outline-width: medium;
   }
 `
+export function getBreakpointFromTheme(
+  theme: Theme.ThemeInterface,
+  type: Theme.TypeBreakpoint,
+  variant: string,
+) {
+  const breakpoint: Theme.GetBreakpointFunc = fromTheme(
+    `breakpoints.${[variant]}`,
+  )({
+    theme,
+  })
+  console.log(type, breakpoint(type))
+  return breakpoint && breakpoint(type)
+}

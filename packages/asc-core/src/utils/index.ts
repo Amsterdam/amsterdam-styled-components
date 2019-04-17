@@ -4,4 +4,5 @@ export {
   getColorFromTheme,
   getTypographyFromTheme,
   getFocusStyle,
+  getBreakpointFromTheme,
 } from './themeUtils'

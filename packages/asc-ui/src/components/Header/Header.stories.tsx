@@ -6,10 +6,10 @@ import ContentFiller from '../../internals/ContentFiller/ContentFiller'
 
 const SimpleComponent: React.FC<{}> = () => (
   <ThemeProvider themeName="default">
-    <React.Fragment>
+    <>
       <Header />
       <ContentFiller />
-    </React.Fragment>
+    </>
   </ThemeProvider>
 )
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '../../styled-components'
+import CenteredElement from '../../internals/CenteredElement/CenteredElement'
 
 type Props = {}
 
@@ -16,7 +17,9 @@ const HeaderMenuStyle = styled.div`
 `
 
 const HeaderMenu: React.FC<Props> = ({ ...otherProps }) => (
-  <HeaderMenuStyle {...otherProps}>M</HeaderMenuStyle>
+  <HeaderMenuStyle {...otherProps}>
+    <CenteredElement> M </CenteredElement>
+  </HeaderMenuStyle>
 )
 
 export default HeaderMenu

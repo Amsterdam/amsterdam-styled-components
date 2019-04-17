@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from '../../styled-components'
+import { getBreakpointFromTheme } from '../../styles/utils'
+import CenteredElement from '../../internals/CenteredElement/CenteredElement'
 
 type Props = {}
 
@@ -7,17 +9,22 @@ const HeaderSearchStyle = styled.div`
   background-color: blue;
   overflow: hidden;
 
-  @media screen and (max-width: 540px) {
+  @media screen and ${({ theme }) =>
+      getBreakpointFromTheme(theme, 'max-width', 'tablet')} {
     width: 50px;
   }
 
-  @media screen and (min-width: 541px) {
+  @media screen and ${({ theme }) =>
+      getBreakpointFromTheme(theme, 'min-width', 'tablet')} {
     flex-grow: 1;
   }
 `
 
 const HeaderSearch: React.FC<Props> = ({ children, ...otherProps }) => (
-  <HeaderSearchStyle {...otherProps}>S{children}</HeaderSearchStyle>
+  <HeaderSearchStyle {...otherProps}>
+    <CenteredElement> S </CenteredElement>
+    {children}
+  </HeaderSearchStyle>
 )
 
 export default HeaderSearch

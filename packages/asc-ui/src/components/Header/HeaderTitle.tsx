@@ -1,13 +1,15 @@
 import React from 'react'
 import HeaderLogo from './HeaderLogo'
 import styled from '../../styled-components'
+import { getBreakpointFromTheme } from '../../styles/utils'
 
 type Props = {
   title: string
 }
 
 const HeaderTitleStyle = styled.div<{}>`
-  @media screen and (max-width: 540px) {
+  @media screen and ${({ theme }) =>
+      getBreakpointFromTheme(theme, 'max-width', 'tablet')} {
     flex-grow: 1;
   }
 
@@ -18,20 +20,11 @@ const HeaderTitleStyle = styled.div<{}>`
     font-size: 1.8125em;
     line-height: 1.37931em;
     background-color: #ccc;
-
-    @media screen and (max-width: 1023px) {
-      margin: 0px;
-    }
-
-    @media screen and (min-width: 1024px) {
-      margin: 0px;
-    }
   }
 
   & > h1 > span {
     display: inline-block;
     line-height: 1.5625rem;
-    /* margin-left: 85px; */
     padding-top: 6px;
   }
 

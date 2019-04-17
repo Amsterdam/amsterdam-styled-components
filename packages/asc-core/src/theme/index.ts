@@ -17,7 +17,7 @@ export namespace Theme {
 
   export type TypeBreakpoint = 'min-width' | 'max-width'
 
-  interface GetBreakpointFunc {
+  export interface GetBreakpointFunc {
     (type: Theme.TypeBreakpoint): string
   }
 
