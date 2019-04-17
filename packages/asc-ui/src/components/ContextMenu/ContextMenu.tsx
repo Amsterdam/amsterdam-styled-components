@@ -1,12 +1,12 @@
 import React from 'react'
-import { AscCore } from '../../styles'
+import ContextMenuStyle, { ContextMenuStyleProps } from '../../styles/components/ContextMenuStyle'
 import ContextMenuButton from './ContextMenuButton'
 import MenuList from './ContextMenuList'
 import { KeyboardKeys } from '../../types'
 import ownerDocument from '../../utils/ownerDocument'
 
 type Props = {
-  position?: AscCore.ContextMenuTypes.Position
+  position?: ContextMenuStyleProps.Position
   label?: string
   icon?: React.ReactNode
 }
@@ -92,7 +92,7 @@ class ContextMenu extends React.Component<Props, State> {
     const { open, selectedChild } = this.state
 
     return (
-      <AscCore.ContextMenu.MenuWrapper
+      <ContextMenuStyle.ContextMenuWrapperStyle
         id={id}
         ref={this.root}
         onKeyDown={this.onKeyDown}
@@ -119,7 +119,7 @@ class ContextMenu extends React.Component<Props, State> {
         >
           {children}
         </MenuList>
-      </AscCore.ContextMenu.MenuWrapper>
+      </ContextMenuStyle.ContextMenuWrapperStyle>
     )
   }
 }

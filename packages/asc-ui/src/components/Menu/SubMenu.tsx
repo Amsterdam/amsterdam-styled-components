@@ -1,48 +1,64 @@
-import React from 'react'
-import { MenuStyleProps } from '../../styles/components/MenuStyle'
-import MenuItem from './MenuItem'
+/* eslint-disable react/no-multi-comp */
+import React, { forwardRef } from 'react'
+import MenuStyle, { MenuStyleProps } from '../../styles/components/MenuStyle'
 import MenuList from './MenuList'
 import { KeyboardKeys } from '../../types'
 import ownerDocument from '../../utils/ownerDocument'
 
 type Props = {
-  position?: MenuStyleProps.Position
+  focused?: boolean
+  onClick?: Function
+  role?: string
   label?: string
-  icon?: React.ReactNode
-}
-
-type State = {}
+  divider?: boolean
+} & MenuStyleProps.MenuItemStyleProps
 
 const selectedChildInitial = -1
 
-class SubMenu extends React.Component<Props, State> {
+export default forwardRef((props: any, ref: React.Ref<any>) => (
+  <SubMenu {...props} forwardedRef={ref}>
+    {props.children}
+  </SubMenu>
+))
+
+class SubMenu extends React.Component<Props> {
   state = {
     open: false,
     selectedChild: selectedChildInitial,
   }
 
   list = React.createRef<HTMLDivElement>()
-
   root = React.createRef<HTMLDivElement>()
+
+  componentDidUpdate() {
+    const { focused } = this.props
+    const ref = this.getReference('root')
+    if (ref && focused) {
+      ref.focus()
+    }
+  }
+
+  onClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    this.onToggle()
+  }
 
   onKeyDown = (event: React.KeyboardEvent) => {
     const { children } = this.props
     const { selectedChild, open } = this.state
 
-    const nrOfChildren = React.Children.count(children)
+    const nrOfChildren = React.Children.count(children) + 2
 
     if (!open) {
       return
     }
-
     const firstChild = 0
-    const lastChild = nrOfChildren - 1
+    const lastChild = nrOfChildren
 
-    if (event.key === KeyboardKeys.ArrowDown) {
+    if (event.key === KeyboardKeys.ArrowUp) {
       event.preventDefault()
       this.setState({
-        selectedChild:
-          selectedChild === lastChild ? firstChild : selectedChild + 1,
+        selectedChild: selectedChild + 1,
       })
     }
 
@@ -57,11 +73,10 @@ class SubMenu extends React.Component<Props, State> {
     }
   }
 
-  onToggle = () => {
-    const { open } = this.state
-    this.setState({
-      open: !open,
-    })
+  handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === KeyboardKeys.Enter) {
+      this.onToggle()
+    }
   }
 
   onClose = () => {
@@ -79,6 +94,13 @@ class SubMenu extends React.Component<Props, State> {
     })
   }
 
+  onToggle = () => {
+    const { open } = this.state
+    this.setState({
+      open: !open,
+    })
+  }
+
   getReference = (el: string) => {
     if (this[el].current) {
       return this[el].current
@@ -88,38 +110,35 @@ class SubMenu extends React.Component<Props, State> {
   }
 
   render() {
-    const { id, label, children, position, icon }: any = this.props
+    const { id, children, focused, label, ...otherProps }: any = this.props
     const { open, selectedChild } = this.state
-
     return (
       <>
-        <MenuItem
-          role="button"
-          {...{
-            icon,
-            open,
-            position,
-            label,
-          }}
-          onClick={this.onToggle}
+        <MenuStyle.MenuItemStyle
+          focused={focused}
+          onClick={this.onClick}
+          onKeyDown={this.handleKeyPress}
+          tabIndex={-1}
+          ref={this.root}
+          {...otherProps}
         >
-          One
-        </MenuItem>
+          {label && label}
+        </MenuStyle.MenuItemStyle>
         <MenuList
           {...{
-            position,
             id,
             open,
             selectedChild,
           }}
-          onClose={this.onClose}
+          tabIndex={-1}
           ref={this.list}
+          onClose={() => {}}
+          onKeyDown={this.onToggle}
         >
           {children}
-        </MenuList>
+          </MenuList>
       </>
     )
   }
 }
-
-export default SubMenu
+/* eslint-enable react/no-multi-comp */

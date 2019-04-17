@@ -47,7 +47,7 @@ class MenuItem extends React.Component<Props> {
   render() {
     const { children, focused, icon, ...otherProps }: any = this.props
 
-console.log('selectedChildFocus', focused)
+console.log('selectedChildFocus', this.root)
 
     return (
       <MenuStyle.MenuItemStyle

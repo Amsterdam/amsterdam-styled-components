@@ -6,7 +6,7 @@ import { ReactComponent as Twitter } from '@datapunt/asc-assets/lib/Icons/Twitte
 import { ReactComponent as Linkedin } from '@datapunt/asc-assets/lib/Icons/Linkedin.svg'
 import { ReactComponent as Email } from '@datapunt/asc-assets/lib/Icons/Email.svg'
 import { ReactComponent as Print } from '@datapunt/asc-assets/lib/Icons/Print.svg'
-import { AscCore } from '../../styles'
+import { ContextMenuStyleProps } from '../../styles/components/ContextMenuStyle'
 import { ContextMenu, ContextMenuItem, Icon } from '../..'
 
 storiesOf('Composed/ContextMenu', module)
@@ -21,7 +21,7 @@ storiesOf('Composed/ContextMenu', module)
     </ContextMenu>
   ))
   .add('position bottom', () => (
-    <ContextMenu position={AscCore.ContextMenuTypes.Position.bottom}>
+    <ContextMenu position={ContextMenuStyleProps.Position.bottom}>
       <ContextMenuItem role="button" onClick={() => {}}>
         One
       </ContextMenuItem>

@@ -36,7 +36,7 @@ class Menu extends React.Component<Props, State> {
     const firstChild = 0
     const lastChild = nrOfChildren - 1
 
-    if (event.key === KeyboardKeys.Tab) {
+    if (event.key === KeyboardKeys.ArrowDown) {
       event.preventDefault()
       this.setState({
         selectedChild:
