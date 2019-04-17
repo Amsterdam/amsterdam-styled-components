@@ -8,7 +8,7 @@ type Props = {
 
 const HeaderTitleStyle = styled.div<{}>`
   & > h1 {
-    margin: 20px 0;
+    margin: 0;
     min-height: 50px;
     position: relative;
     font-size: 1.8125em;
@@ -19,43 +19,16 @@ const HeaderTitleStyle = styled.div<{}>`
       margin: 0px;
     }
 
-    /* @media screen and (max-width: 539px) and (min-width: 360px) {
-      margin-right: 15px;
-      margin: 10px 0;
-    }
-
-    @media screen and (max-width: 1023px) and (min-width: 540px) {
-      margin-left: -15px;
-      min-height: 68px;
-    }
- */
     @media screen and (min-width: 1024px) {
-      margin-left: -30px;
+      margin: 0px;
     }
   }
 
   & > h1 > span {
     display: block;
     line-height: 1.5625rem;
-
-    @media screen and (max-width: 1023px) {
-      margin-left: 85px;
-      padding-top: 6px;
-    }
-
-    /* @media screen and (max-width: 539px) and (min-width: 361px) {
-      margin-left: 120px;
-      margin-top: -6px;
-    }
-
-    @media screen and (min-width: 540px) {
-      margin-left: 140px;
-      margin-top: -3px;
-    } */
-    @media screen and (min-width: 1024px) {
-      margin-left: 140px;
-      margin-top: -3px;
-    }
+    margin-left: 85px;
+    padding-top: 6px;
   }
 
   & > h1 > span > a {
@@ -68,19 +41,10 @@ const HeaderTitleStyle = styled.div<{}>`
       font-size: 14px;
     }
 
-    @media screen and (max-width: 1023px) and (min-width: 361px) {
+    @media screen and (min-width: 361px) {
       line-height: 20px;
       font-size: 16px;
     }
-
-    /* @media screen and (max-width: 539px) and (min-width: 361) {
-      line-height: 1;
-      font-size: 16px;
-    }
-
-    @media screen and (min-width: 540px) {
-      font-size: 26px;
-    } */
   }
 `
 

@@ -2,11 +2,7 @@ import styled from '../../styled-components'
 
 export type Props = {}
 
-const HeaderStyle = styled.div<Props>`
-  // TODO remove when ready
-  /* display: flex; */
-  /* background-color: lightgrey; */
-`
+const HeaderStyle = styled.div<Props>``
 
 export const HeaderGridWrapper = styled.div<Props>`
   background-color: green;
@@ -18,8 +14,8 @@ export const HeaderGridWrapper = styled.div<Props>`
   font-family: 'AvenirNextLTW01-Regular', arial, sans-serif;
 
   @media screen and (min-width: 1024px) {
-    background-color: red;
-    max-width: 1400px;
+    /* background-color: red;
+    max-width: 1400px; */
   }
 `
 export const HeaderGridContainer = styled.div<Props>`

@@ -7,13 +7,13 @@ type Props = {
 
 const HeaderLogoStyle = styled.a<{}>`
   float: left;
-  min-height: 68px;
+  min-height: 50px;
   color: #767676;
   text-decoration: none;
+  padding: 10px;
 
   @media screen and (max-width: 1023px) {
-    min-height: 50px;
-    padding: 10px;
+    /* min-height: 50px; */
   }
 `
 
@@ -21,7 +21,7 @@ const LogoSetStyle = styled.span<{}>`
   position: absolute;
   top: 0;
   display: inline-block;
-  min-height: 68px;
+  min-height: 50px;
   font-size: 100%;
 
   &::before {
@@ -44,25 +44,11 @@ const LogoSetStyle = styled.span<{}>`
     width: 0;
   }
 
-  @media screen and (max-width: 1023px) {
-    min-height: 50px;
-  }
-
-  @media screen and (min-width: 1024px) {
-    top: 1px;
-  }
+  min-height: 50px;
 
   & > img {
-    height: 68px;
-
-    @media screen and (max-width: 1023px) {
-      height: 30px;
-      padding-top: 10px;
-    }
-
-    /* @media screen and (max-width: 539px) and (min-width: 361px) {
-      height: 41px;
-    } */
+    height: 30px;
+    padding-top: 10px;
   }
 `
 
@@ -78,15 +64,8 @@ const LogoTextStyle = styled.span`
     margin: 0 0 0 30px;
     padding: 0;
 
-    @media screen and (max-width: 1023px) {
-      font-size: 10px;
-      margin: 0 0 0 11px;
-    }
-
-    /* @media screen and (max-width: 539px) and (min-width: 361px) {
-      font-size: 0.875rem;
-      margin: 0 0 0 22px;
-    } */
+    font-size: 10px;
+    margin: 0 0 0 11px;
   }
 `
 
