@@ -30,7 +30,7 @@ export function getColorFromTheme(
 
 export const getFocusStyle = (theme: Theme.ThemeInterface) => css`
   &:focus {
-    outline-color: ${getColorFromTheme(theme, 'support', 'focus')}
+    outline-color: ${getColorFromTheme(theme, 'support', 'focus')};
     outline-style: solid;
     outline-width: medium;
   }

@@ -1,4 +1,5 @@
 import { getColorFromTheme, getTypographyFromTheme } from '../themeUtils'
+import breakpoints from '../../theme/default/breakpoints'
 import colors from '../../theme/default/colors'
 import globalStyle from '../../theme/default/globalStyle'
 import typography from '../../theme/default/typography'
@@ -6,6 +7,7 @@ import typography from '../../theme/default/typography'
 describe('getColorFromTheme', () => {
   it('should return the requested color from theme', () => {
     const theme = {
+      breakpoints,
       globalStyle,
       colors: {
         ...colors,
@@ -26,6 +28,7 @@ describe('getColorFromTheme', () => {
 describe('getTypographyFromTheme', () => {
   it('should return the requested typography from theme', () => {
     const theme = {
+      breakpoints,
       globalStyle,
       colors,
       typography: {

@@ -15,6 +15,23 @@ export namespace Theme {
 
   export type GlobalStyleType = string
 
+  export type TypeBreakpoint = 'min-width' | 'max-width'
+
+  interface GetBreakpointFunc {
+    (type: Theme.TypeBreakpoint): string
+  }
+
+  export interface BreakpointsInterface {
+    mobileS: GetBreakpointFunc
+    mobileM: GetBreakpointFunc
+    mobileL: GetBreakpointFunc
+    tablet: GetBreakpointFunc
+    laptop: GetBreakpointFunc
+    laptopL: GetBreakpointFunc
+    desktop: GetBreakpointFunc
+    desktopL: GetBreakpointFunc
+  }
+
   export interface PaletteInterface {
     light?: string
     dark?: string
@@ -79,25 +96,28 @@ export namespace Theme {
   }
 
   export interface ThemeInterface {
-    globalStyle: GlobalStyleType
+    breakpoints: BreakpointsInterface
     colors: ColorInterface
+    globalStyle: GlobalStyleType
     typography: TypographyInterface
   }
 
   export class ThemeFactory implements ThemeInterface {
     static createTheme(themeName: string): ThemeInterface {
       /* eslint-disable global-require, import/no-dynamic-require */
+      const breakpoints = require(`./${themeName}/breakpoints`).default
       const colors = require(`./${themeName}/colors`).default
-      const typography = require(`./${themeName}/typography`).default
       const globalStyle = require(`./${themeName}/globalStyle`).default
+      const typography = require(`./${themeName}/typography`).default
       /* eslint-enable global-require, import/no-dynamic-require */
-      return new ThemeFactory(colors, typography, globalStyle)
+      return new ThemeFactory(breakpoints, colors, globalStyle, typography)
     }
 
     constructor(
+      public breakpoints: BreakpointsInterface,
       public colors: ColorInterface,
-      public typography: TypographyInterface,
       public globalStyle: GlobalStyleType,
+      public typography: TypographyInterface,
     ) {}
   }
 }

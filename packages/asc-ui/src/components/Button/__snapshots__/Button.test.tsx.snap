@@ -4,6 +4,16 @@ exports[`Styled components should render buttons 1`] = `
 <ThemeProvider
   theme={
     Object {
+      "breakpoints": Object {
+        "desktop": [Function],
+        "desktopL": [Function],
+        "laptop": [Function],
+        "laptopL": [Function],
+        "mobileL": [Function],
+        "mobileM": [Function],
+        "mobileS": [Function],
+        "tablet": [Function],
+      },
       "colors": Object {
         "bright": Object {
           "main": "#ffffff",
