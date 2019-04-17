@@ -5,6 +5,7 @@ module.exports = {
     'packages/asc-core/src/utils/**/*.{js,jsx,ts,tsx}',
     '!packages/asc-ui/src/(styles|internals)/**/*.{js,jsx,ts,tsx}',
     '!packages/**/*.(test|stories).{js,jsx,ts,tsx}',
+    '!packages/**/(index).{js,jsx,ts,tsx}',
   ],
   coverageDirectory: '<rootDir>/coverage',
   coverageReporters: ['lcov'],
