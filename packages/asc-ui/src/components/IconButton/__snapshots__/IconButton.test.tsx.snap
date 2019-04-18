@@ -70,8 +70,8 @@ exports[`IconButton should render the IconButton 1`] = `
   onClick={[MockFunction]}
   square={true}
 >
-  <IconButton>
+  <Icon>
     icon-content
-  </IconButton>
+  </Icon>
 </StyledComponent>
 `;
