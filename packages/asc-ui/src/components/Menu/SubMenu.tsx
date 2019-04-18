@@ -1,5 +1,5 @@
 /* eslint-disable react/no-multi-comp */
-import React, { forwardRef } from 'react'
+import React from 'react'
 import MenuStyle, { MenuStyleProps } from '../../styles/components/MenuStyle'
 import MenuList from './MenuList'
 import { KeyboardKeys } from '../../types'
@@ -14,12 +14,6 @@ type Props = {
 } & MenuStyleProps.MenuItemStyleProps
 
 const selectedChildInitial = -1
-
-export default forwardRef((props: any, ref: React.Ref<any>) => (
-  <SubMenu {...props} forwardedRef={ref}>
-    {props.children}
-  </SubMenu>
-))
 
 class SubMenu extends React.Component<Props> {
   state = {
@@ -110,8 +104,11 @@ class SubMenu extends React.Component<Props> {
   }
 
   render() {
-    const { id, children, focused, label, ...otherProps }: any = this.props
+    const { id, children, focused, innerRef, label, ...otherProps }: any = this.props
     const { open, selectedChild } = this.state
+
+console.log(innerRef)
+
     return (
       <>
         <MenuStyle.MenuItemStyle
@@ -130,8 +127,8 @@ class SubMenu extends React.Component<Props> {
             open,
             selectedChild,
           }}
+          ref={innerRef}
           tabIndex={-1}
-          ref={this.list}
           onClose={() => {}}
           onKeyDown={this.onToggle}
         >
@@ -141,4 +138,7 @@ class SubMenu extends React.Component<Props> {
     )
   }
 }
+
+export default SubMenu
+
 /* eslint-enable react/no-multi-comp */

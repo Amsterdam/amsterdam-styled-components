@@ -9,7 +9,7 @@ type Props = {
   onClose: Function
   label?: string
   icon?: React.ReactNode
-  ref?: any
+  innerRef?: any
 } & MenuStyleProps.MenuListStyleProps
 
 export default forwardRef((props: any, ref: React.Ref<any>) => {
@@ -17,15 +17,13 @@ export default forwardRef((props: any, ref: React.Ref<any>) => {
   console.log('forwardedRef', ref)
 
   return (
-  <MenuList {...props} forwardedRef={ref}>
+  <MenuList {...props} innerRef={ref}>
     {props.children}
   </MenuList>
 )})
 
 class MenuList extends React.Component<Props> {
   state = {}
-
-  list = React.createRef<HTMLDivElement>()
 
   static defaultProps = {
     position: MenuStyleProps.Position.top,
@@ -37,7 +35,7 @@ class MenuList extends React.Component<Props> {
       children: childrenProps,
       position,
       open,
-      ref,
+      innerRef,
       selectedChild,
       onClose,
     } = this.props
@@ -47,12 +45,15 @@ class MenuList extends React.Component<Props> {
     const children = React.Children.map(childrenProps, (child, index) =>
       React.cloneElement(child as React.ReactElement<any>, {
         focused: index === selectedChild,
+        innerRef
       }),
     )
 
+    console.log('ref', innerRef)
+
     return (
       <MenuStyle.MenuListWrapperStyle
-        ref={ref ? ref : this.list}
+        ref={innerRef}
         aria-hidden={!open}
         onBlur={() => onClose()}
         position={position}

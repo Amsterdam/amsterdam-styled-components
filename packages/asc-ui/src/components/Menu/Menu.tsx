@@ -89,8 +89,6 @@ class Menu extends React.Component<Props, State> {
     const { id, label, children, position, icon }: any = this.props
     const { open, selectedChild } = this.state
 
-    console.log('selectedChild', children.length, selectedChild)
-
     return (
       <MenuStyle.MenuWrapperStyle
         id={id}
