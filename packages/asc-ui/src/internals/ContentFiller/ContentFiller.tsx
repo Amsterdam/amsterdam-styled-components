@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { getBreakpointFromTheme } from '../../styles/utils'
 import styled from '../../styled-components'
 import Typography from '../../components/Typography'
 
@@ -14,7 +15,8 @@ const ContentFillerStyle = styled.div<ContentFillerStyleProps>`
   background-color: ${({ backgroundColor }) => backgroundColor};
   margin-top: ${({ marginTopBorder }) => marginTopBorder};
 
-  @media screen and (max-width: 1023px) {
+  @media screen and ${({ theme }) =>
+      getBreakpointFromTheme(theme, 'max-width', 'laptop')} {
     margin-top: ${({ marginTop }) => marginTop};
   }
 `

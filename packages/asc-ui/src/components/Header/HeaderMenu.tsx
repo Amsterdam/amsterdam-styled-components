@@ -1,25 +1,20 @@
-import React from 'react'
+import * as React from 'react'
+import { getBreakpointFromTheme } from '../../styles/utils'
 import styled from '../../styled-components'
-import CenteredElement from '../../internals/CenteredElement/CenteredElement'
 
 type Props = {}
 
 const HeaderMenuStyle = styled.div`
   background-color: rgba(211, 128, 144, 0.1);
 
-  @media screen and (max-width: 1023px) {
+  @media screen and ${({ theme }) =>
+      getBreakpointFromTheme(theme, 'max-width', 'laptop')} {
     width: 50px;
-  }
-
-  @media screen and (min-width: 1024px) {
-    /* flex-grow: 1; */
   }
 `
 
-const HeaderMenu: React.FC<Props> = ({ ...otherProps }) => (
-  <HeaderMenuStyle {...otherProps}>
-    <CenteredElement> M </CenteredElement>
-  </HeaderMenuStyle>
+const HeaderMenu: React.FC<Props> = ({ children, ...otherProps }) => (
+  <HeaderMenuStyle {...otherProps}>{children}</HeaderMenuStyle>
 )
 
 export default HeaderMenu

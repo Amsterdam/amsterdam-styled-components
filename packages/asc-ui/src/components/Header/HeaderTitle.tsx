@@ -31,12 +31,14 @@ const HeaderTitleStyle = styled.div<{}>`
     text-decoration: none;
     line-height: 2.1875rem;
 
-    @media screen and (max-width: 360px) {
+    @media screen and ${({ theme }) =>
+      getBreakpointFromTheme(theme, 'max-width', 'mobileM')} {
       line-height: 18px;
       font-size: 14px;
     }
 
-    @media screen and (min-width: 361px) {
+    @media screen and ${({ theme }) =>
+      getBreakpointFromTheme(theme, 'min-width', 'mobileM')} {
       line-height: 20px;
       font-size: 16px;
     }

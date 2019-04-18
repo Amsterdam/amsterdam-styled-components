@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from '../../styled-components'
 import { getBreakpointFromTheme } from '../../styles/utils'
-import CenteredElement from '../../internals/CenteredElement/CenteredElement'
 
 type Props = {}
 
@@ -21,10 +20,7 @@ const HeaderSearchStyle = styled.div`
 `
 
 const HeaderSearch: React.FC<Props> = ({ children, ...otherProps }) => (
-  <HeaderSearchStyle {...otherProps}>
-    <CenteredElement> S </CenteredElement>
-    {children}
-  </HeaderSearchStyle>
+  <HeaderSearchStyle {...otherProps}>{children}</HeaderSearchStyle>
 )
 
 export default HeaderSearch
