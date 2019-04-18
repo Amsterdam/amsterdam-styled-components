@@ -6,7 +6,7 @@ import { ThemeProvider } from '../../index'
 import Header from './Header'
 import ContentFiller from '../../internals/ContentFiller/ContentFiller'
 
-const SimpleComponent: React.FC<{}> = () => (
+const HeaderStory: React.FC<{}> = () => (
   <ThemeProvider themeName="default">
     <>
       <BoxWrapper>
@@ -22,6 +22,4 @@ const SimpleComponent: React.FC<{}> = () => (
   </ThemeProvider>
 )
 
-storiesOf('Composed/Header', module).add('default state', () => (
-  <SimpleComponent />
-))
+storiesOf('Composed/Header', module).add('default state', () => <HeaderStory />)
