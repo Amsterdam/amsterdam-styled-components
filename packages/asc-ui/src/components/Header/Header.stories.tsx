@@ -11,6 +11,7 @@ const SimpleComponent: React.FC<{}> = () => (
     <>
       <BoxWrapper>
         <Header
+          title="Data en informatie"
           homeLink="http://data.amsterdam.nl"
           search={<CenteredElement> Search </CenteredElement>}
           menu={<CenteredElement> M </CenteredElement>}

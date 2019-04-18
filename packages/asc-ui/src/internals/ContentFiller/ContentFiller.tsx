@@ -1,29 +1,22 @@
 import * as React from 'react'
-import { getBreakpointFromTheme } from '../../styles/utils'
 import styled from '../../styled-components'
 import Typography from '../../components/Typography'
 
 type ContentFillerStyleProps = {
   backgroundColor?: string
   marginTop?: string
-  marginTopBorder?: string
 }
 
 const ContentFillerStyle = styled.div<ContentFillerStyleProps>`
   width: 100%;
   height: 2000px;
   background-color: ${({ backgroundColor }) => backgroundColor};
-  margin-top: ${({ marginTopBorder }) => marginTopBorder};
-
-  @media screen and ${({ theme }) =>
-      getBreakpointFromTheme(theme, 'max-width', 'laptop')} {
-    margin-top: ${({ marginTop }) => marginTop};
-  }
+  margin-top: ${({ marginTop }) => marginTop};
 `
+
 ContentFillerStyle.defaultProps = {
   backgroundColor: 'rgba(211,211,211,.1)',
   marginTop: '50px',
-  marginTopBorder: '-4px',
 }
 
 type ContentFillerProps = ContentFillerStyleProps

@@ -7,14 +7,21 @@ import HeaderSearch from './HeaderSearch'
 import HeaderMenu from './HeaderMenu'
 
 type Props = HeaderStyleProps & {
+  title: string
   homeLink: string
   search: React.ReactElement
   menu: React.ReactElement
 }
 
-const Header: React.FC<Props> = ({ search, menu, homeLink, ...otherProps }) => (
+const Header: React.FC<Props> = ({
+  search,
+  menu,
+  title,
+  homeLink,
+  ...otherProps
+}) => (
   <HeaderStyle {...otherProps}>
-    <HeaderTitle title="Data en informatie" homeLink={homeLink} />
+    <HeaderTitle title={title} homeLink={homeLink} />
     <HeaderSearch>{search}</HeaderSearch>
     <HeaderMenu>{menu}</HeaderMenu>
   </HeaderStyle>
