@@ -5,24 +5,43 @@ import MenuList from './ContextMenuList'
 import { KeyboardKeys } from '../../types'
 import ownerDocument from '../../utils/ownerDocument'
 
+const selectedChildInitial = -1
+
 type Props = {
   position?: AscCore.ContextMenuTypes.Position
   label?: string
   icon?: React.ReactNode
+  open?: boolean
 }
 
-type State = {}
-
-const selectedChildInitial = -1
+type State = {
+  open?: boolean
+  selectedChild: number
+}
 
 class ContextMenu extends React.Component<Props, State> {
-  state = {
+  static defaultProps = {
     open: false,
-    selectedChild: selectedChildInitial,
+  }
+
+  constructor(props: Props) {
+    super(props)
+
+    this.state = {
+      open: props.open,
+      selectedChild: selectedChildInitial,
+    }
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    const { open } = this.props;
+
+    if (prevProps.open !== open) {
+      this.setState({ open })
+    }
   }
 
   list = React.createRef<HTMLDivElement>()
-
   root = React.createRef<HTMLDivElement>()
 
   onKeyDown = (event: React.KeyboardEvent) => {
@@ -90,6 +109,8 @@ class ContextMenu extends React.Component<Props, State> {
   render() {
     const { id, label, children, position, icon }: any = this.props
     const { open, selectedChild } = this.state
+
+    console.log('open', open, this.props.open)
 
     return (
       <AscCore.ContextMenu.MenuWrapper
