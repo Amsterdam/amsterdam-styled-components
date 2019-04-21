@@ -14,6 +14,8 @@ export const HeaderLogoSetStyle = styled.span<{}>`
 
   & > svg {
     height: 30px;
+    width: 10px;
+    left: 0px;
   }
 `
 
