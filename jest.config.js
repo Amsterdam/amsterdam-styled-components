@@ -2,11 +2,13 @@ module.exports = {
   collectCoverage: false,
   collectCoverageFrom: [
     'packages/asc-ui/src/**/*.{js,jsx,ts,tsx}',
-    '!packages/asc-ui/src/styles/**/*.{js,jsx,ts,tsx}',
+    'packages/asc-core/src/utils/**/*.{js,jsx,ts,tsx}',
+    '!packages/asc-ui/src/(styles|internals)/**/*.{js,jsx,ts,tsx}',
     '!packages/**/*.(test|stories).{js,jsx,ts,tsx}',
+    '!packages/**/(index).{js,jsx,ts,tsx}',
   ],
   coverageDirectory: '<rootDir>/coverage',
-  coverageReporters: ['lcov', 'html'],
+  coverageReporters: ['lcov'],
   coverageThreshold: {
     global: {
       statements: 80,
@@ -30,8 +32,7 @@ module.exports = {
     '/package/',
     '/scripts/',
     '/packages/asc-assets/',
-    '/packages/asc-core/',
-    '/packages/asc-ui/src/style',
+    '/packages/asc-ui/src/internals',
   ],
   setupFilesAfterEnv: ['<rootDir>/config/testing/test-bundler.ts'],
   transform: {

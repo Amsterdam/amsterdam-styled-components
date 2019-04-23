@@ -8,7 +8,7 @@ import { ThemeProvider, ascDefaultTheme } from '../../index'
 
 const SimpleComponent: React.FC<{}> = () => (
   <ThemeProvider>
-    <React.Fragment>
+    <>
       <TopBar>
         <Typography style={{ flexGrow: 1 }} element="h4">
           TopBar - with default theme color
@@ -26,7 +26,7 @@ const SimpleComponent: React.FC<{}> = () => (
           <Close />
         </IconButton>
       </TopBar>
-    </React.Fragment>
+    </>
   </ThemeProvider>
 )
 
