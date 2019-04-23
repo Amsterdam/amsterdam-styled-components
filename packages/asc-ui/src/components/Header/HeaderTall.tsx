@@ -1,8 +1,9 @@
 import * as React from 'react'
+import { getBreakpointFromTheme } from '../../styles/utils'
 import { HeaderStyleProps } from '../../styles/components/HeaderStyle'
-// import HeaderSearch from './HeaderSearch'
-// import HeaderMenu from './HeaderMenu'
-// import HeaderTallTitle from './HeaderTallTitle'
+import HeaderSearch from './HeaderSearch'
+import HeaderMenu from './HeaderMenu'
+import HeaderTallTitle from './HeaderTallTitle'
 import styled from '../../styled-components'
 
 type Props = HeaderStyleProps & {
@@ -13,47 +14,41 @@ type Props = HeaderStyleProps & {
 }
 
 const HeaderTallStyleWrapper = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-  background-color: #aaa;
-  /* margin: 0 auto; */
-  /* max-width: 1600px; */
-  height: 100%;
-  align-content: stretch;
-`
-const HeaderFiller = styled.div`
-  background-color: blue;
-  height: 158px;
+  background-color: #fff;
+  margin: 0 auto;
+  max-width: 1600px;
+  height: 108px;
+  border-bottom: 50px solid #767676;
 
-  /* flex-grow: 1; */
+  @media screen and ${({ theme }) =>
+      getBreakpointFromTheme(theme, 'max-width', 'laptop')} {
+    display: none;
+  }
 `
-
 const HeaderTallStyle = styled.div`
-  /* display: flex;
-  flex-wrap: wrap; */
+  display: flex;
+  flex-wrap: wrap;
   min-height: 158px;
-  /* flex-grow: 1; */
-  background-color: #ccc;
-  /* margin: 0 auto; */
+  background-color: #fff;
+  margin: 0 auto;
   max-width: 1200px;
 
-  /* & > :first-child {
+  & > :first-child {
     height: 108px;
     width: 100%;
-    background-color: red;
   }
 
   & > :nth-child(2) {
     height: 50px;
     flex-grow: 1;
-    background-color: yellow;
+    background-color: #767676;
   }
 
   & > :nth-child(3) {
     height: 50px;
     min-width: 100px;
-    background-color: green;
-  } */
+    background-color: #767676;
+  }
 `
 
 const HeaderTall: React.FC<Props> = ({
@@ -64,14 +59,11 @@ const HeaderTall: React.FC<Props> = ({
   ...otherProps
 }) => (
   <HeaderTallStyleWrapper>
-    <HeaderFiller>A</HeaderFiller>
     <HeaderTallStyle {...otherProps}>
-      B
-      {/* <HeaderTallTitle title={title} homeLink={homeLink} />
+      <HeaderTallTitle title={title} homeLink={homeLink} />
       <HeaderSearch>{search}</HeaderSearch>
-      <HeaderMenu>{menu}</HeaderMenu> */}
+      <HeaderMenu>{menu}</HeaderMenu>
     </HeaderTallStyle>
-    <HeaderFiller>C </HeaderFiller>
   </HeaderTallStyleWrapper>
 )
 
