@@ -1,12 +1,12 @@
 import styled from '../../styled-components'
 import { getColorFromTheme } from '../../utils'
 
-const HeaderLogoStyle = styled.a<{}>`
+const HeaderLogoStyle = styled.a`
   text-decoration: none;
   padding: 10px;
 `
 
-export const HeaderLogoSetStyle = styled.span<{}>`
+export const HeaderLogoSetStyle = styled.span`
   position: absolute;
   display: inline-block;
   min-height: 50px;

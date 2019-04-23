@@ -1,6 +1,6 @@
 import React from 'react'
 import HeaderLogo from './HeaderLogo'
-import HeaderTitleStyle from '../../styles/components/HeaderStyle/HeaderTitleStyle'
+import HeaderTitleShortStyle from '../../styles/components/HeaderStyle/HeaderTitleShortStyle'
 
 type Props = {
   title: string
@@ -8,14 +8,14 @@ type Props = {
 }
 
 const HeaderTitle: React.FC<Props> = ({ title, homeLink, ...otherProps }) => (
-  <HeaderTitleStyle {...otherProps}>
+  <HeaderTitleShortStyle {...otherProps}>
     <h1>
       <HeaderLogo homeLink={homeLink} />
       <span>
         <a href={homeLink}>{title}</a>
       </span>
     </h1>
-  </HeaderTitleStyle>
+  </HeaderTitleShortStyle>
 )
 
 export default HeaderTitle
