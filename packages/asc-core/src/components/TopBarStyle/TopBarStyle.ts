@@ -14,7 +14,7 @@ const TopBarStyle = styled.header<Props>`
   min-height: 54px;
   padding: 0 15px;
   background-color: ${({ backgroundColor, theme }) =>
-    backgroundColor || getColorFromTheme(theme, 'bright', 'main')};
+    backgroundColor || getColorFromTheme(theme, 'tint', 'level1')};
   ${flexboxMinHeightFix()};
 `
 

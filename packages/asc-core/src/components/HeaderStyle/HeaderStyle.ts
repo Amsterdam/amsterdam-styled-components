@@ -10,7 +10,7 @@ const HeaderStyle = styled.div<Props>`
   min-height: 50px;
   width: 100%;
   flex-flow: no-wrap;
-  box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px rgba(0, 0, 0, 0.04);
   background-color: ${({ theme }) =>
     getColorFromTheme(theme, 'tint', 'level1')};
   position: fixed;

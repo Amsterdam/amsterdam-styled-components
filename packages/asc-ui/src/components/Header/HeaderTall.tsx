@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { getBreakpointFromTheme } from '../../styles/utils'
+import { getBreakpointFromTheme, getColorFromTheme } from '../../styles/utils'
 import { HeaderStyleProps } from '../../styles/components/HeaderStyle'
 import HeaderSearch from './HeaderSearch'
 import HeaderMenu from './HeaderMenu'
@@ -14,11 +14,13 @@ type Props = HeaderStyleProps & {
 }
 
 const HeaderTallStyleWrapper = styled.div`
-  background-color: #fff;
+  background-color: ${({ theme }) =>
+    getColorFromTheme(theme, 'tint', 'level1')};
   margin: 0 auto;
   max-width: 1800px;
   height: 108px;
-  border-bottom: 50px solid #767676;
+  border-bottom: 50px solid
+    ${({ theme }) => getColorFromTheme(theme, 'tint', 'level2')};
 
   @media screen and ${({ theme }) =>
       getBreakpointFromTheme(theme, 'max-width', 'laptop')} {
@@ -30,7 +32,8 @@ const HeaderTallStyle = styled.div`
   display: flex;
   flex-wrap: wrap;
   min-height: 158px;
-  background-color: #fff;
+  background-color: ${({ theme }) =>
+    getColorFromTheme(theme, 'tint', 'level1')};
   margin: 0 auto;
   max-width: 1600px;
 
@@ -42,13 +45,15 @@ const HeaderTallStyle = styled.div`
   & > :nth-child(2) {
     height: 50px;
     flex-grow: 1;
-    background-color: #767676;
+    background-color: ${({ theme }) =>
+      getColorFromTheme(theme, 'tint', 'level2')};
   }
 
   & > :nth-child(3) {
     height: 50px;
     min-width: 100px;
-    background-color: #767676;
+    background-color: ${({ theme }) =>
+      getColorFromTheme(theme, 'tint', 'level2')};
   }
 `
 

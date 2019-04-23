@@ -2,13 +2,13 @@ import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import CenteredElement from '../../internals/CenteredElement/CenteredElement'
 import BoxWrapper from '../../internals/Box/BoxWrapper'
-import { ThemeProvider } from '../../index'
+import { ThemeProvider, ascDefaultTheme } from '../../index'
 import Header from './Header'
 import ContentFiller from '../../internals/ContentFiller/ContentFiller'
 import HeaderTall from './HeaderTall'
 
-const outsideBackgoundColor = '#eee'
-const contentBackgrountColor = '#F5F5F5'
+const outsideBackgoundColor = ascDefaultTheme.colors.tint.level3
+const contentBackgrountColor = ascDefaultTheme.colors.tint.level1
 
 const HeaderStory: React.FC<{}> = () => (
   <ThemeProvider themeName="default">
@@ -19,6 +19,7 @@ const HeaderStory: React.FC<{}> = () => (
           homeLink="http://data.amsterdam.nl"
           search={<CenteredElement> Search </CenteredElement>}
           menu={<CenteredElement> M </CenteredElement>}
+          headerSize="short"
         />
       </BoxWrapper>
       <ContentFiller backgroundColor={contentBackgrountColor} />
@@ -43,8 +44,6 @@ const HeaderTallStory: React.FC<{}> = () => (
           menu={<CenteredElement> M </CenteredElement>}
           headerSize="tall"
         />
-      </BoxWrapper>
-      <BoxWrapper backgroundColor={outsideBackgoundColor}>
         <ContentFiller
           backgroundColor={contentBackgrountColor}
           maxWidth="1800px"

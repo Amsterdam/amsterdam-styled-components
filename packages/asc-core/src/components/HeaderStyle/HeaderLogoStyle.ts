@@ -1,4 +1,5 @@
 import styled from '../../styled-components'
+import { getColorFromTheme } from '../../utils'
 
 const HeaderLogoStyle = styled.a<{}>`
   text-decoration: none;
@@ -21,7 +22,7 @@ export const HeaderLogoSetStyle = styled.span<{}>`
 
 export const HeaderLogoTextStyle = styled.span`
   & > span {
-    color: #ec0000;
+    color: ${({ theme }) => getColorFromTheme(theme, 'secondary', 'main')};
     display: block;
     margin: 0 0 0 30px;
     padding: 0;
