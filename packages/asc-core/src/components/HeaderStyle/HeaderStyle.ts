@@ -1,7 +1,9 @@
 import styled from '../../styled-components'
-import { getColorFromTheme } from '../../utils'
+import { getColorFromTheme, getBreakpointFromTheme } from '../../utils'
 
-export type Props = {}
+export type Props = {
+  headerSize?: 'tall' | 'short'
+}
 
 const HeaderStyle = styled.div<Props>`
   display: flex;
@@ -13,6 +15,15 @@ const HeaderStyle = styled.div<Props>`
     getColorFromTheme(theme, 'tint', 'level1')};
   position: fixed;
   top: 0;
+
+  @media screen and ${({ theme }) =>
+      getBreakpointFromTheme(theme, 'min-width', 'laptop')} {
+    display: ${({ headerSize }) => (headerSize === 'short' ? 'flex' : 'none')};
+  }
 `
+
+HeaderStyle.defaultProps = {
+  headerSize: 'short',
+}
 
 export default HeaderStyle

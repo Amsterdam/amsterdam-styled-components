@@ -5,6 +5,7 @@ import BoxWrapper from '../../internals/Box/BoxWrapper'
 import { ThemeProvider } from '../../index'
 import ContentFiller from '../../internals/ContentFiller/ContentFiller'
 import HeaderTall from './HeaderTall'
+import Header from './Header'
 
 const HeaderTallStory: React.FC<{}> = () => (
   <ThemeProvider themeName="default">
@@ -16,8 +17,15 @@ const HeaderTallStory: React.FC<{}> = () => (
           search={<CenteredElement> Search </CenteredElement>}
           menu={<CenteredElement> M </CenteredElement>}
         />
+        <Header
+          title="Data en informatie"
+          homeLink="http://data.amsterdam.nl"
+          search={<CenteredElement> Search </CenteredElement>}
+          menu={<CenteredElement> M </CenteredElement>}
+          headerSize="tall"
+        />
       </BoxWrapper>
-      <ContentFiller backgroundColor="#eee" />
+      <ContentFiller backgroundColor="#eee" maxWidth="1800px" />
     </>
   </ThemeProvider>
 )

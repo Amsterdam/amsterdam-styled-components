@@ -5,18 +5,23 @@ import Typography from '../../components/Typography'
 type ContentFillerStyleProps = {
   backgroundColor?: string
   marginTop?: string
+  maxWidth?: string
 }
 
 const ContentFillerStyle = styled.div<ContentFillerStyleProps>`
   width: 100%;
   height: 2000px;
   background-color: ${({ backgroundColor }) => backgroundColor};
+  margin-left: auto;
+  margin-right: auto;
   margin-top: ${({ marginTop }) => marginTop};
+  max-width: ${({ maxWidth }) => maxWidth};
 `
 
 ContentFillerStyle.defaultProps = {
   backgroundColor: 'rgba(211,211,211,.1)',
   marginTop: '50px',
+  maxWidth: 'none',
 }
 
 type ContentFillerProps = ContentFillerStyleProps

@@ -16,7 +16,7 @@ type Props = HeaderStyleProps & {
 const HeaderTallStyleWrapper = styled.div`
   background-color: #fff;
   margin: 0 auto;
-  max-width: 1600px;
+  max-width: 1800px;
   height: 108px;
   border-bottom: 50px solid #767676;
 
@@ -25,13 +25,14 @@ const HeaderTallStyleWrapper = styled.div`
     display: none;
   }
 `
+
 const HeaderTallStyle = styled.div`
   display: flex;
   flex-wrap: wrap;
   min-height: 158px;
   background-color: #fff;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1600px;
 
   & > :first-child {
     height: 108px;

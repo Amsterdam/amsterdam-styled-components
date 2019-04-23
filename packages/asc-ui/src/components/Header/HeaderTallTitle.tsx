@@ -25,6 +25,7 @@ const HeaderTallTitleStyle = styled.div`
     text-decoration: none;
     line-height: 26px;
     font-size: 26px;
+    vertical-align: top;
   }
 `
 

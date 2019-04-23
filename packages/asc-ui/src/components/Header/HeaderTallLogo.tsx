@@ -8,13 +8,13 @@ type Props = {
 }
 
 const HeaderLogoStyleLocal = styled(HeaderLogoStyle)`
-  /* position: absolute; */
   display: inline-block;
   min-height: 108px;
+  padding: 20px 20px 20px 15px;
 
   & > svg {
-    height: 85px;
-    width: 68px;
+    height: 68px;
+    width: 85px;
   }
 `
 
