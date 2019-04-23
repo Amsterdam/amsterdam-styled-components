@@ -110,8 +110,6 @@ class ContextMenu extends React.Component<Props, State> {
     const { id, label, children, position, icon }: any = this.props
     const { open, selectedChild } = this.state
 
-    console.log('open', open, this.props.open)
-
     return (
       <AscCore.ContextMenu.MenuWrapper
         id={id}
