@@ -25,7 +25,11 @@ const HeaderTallStory: React.FC<{}> = () => (
           headerSize="tall"
         />
       </BoxWrapper>
-      <ContentFiller backgroundColor="#eee" maxWidth="1800px" />
+      <ContentFiller
+        backgroundColor="#eee"
+        maxWidth="1800px"
+        headerSize="tall"
+      />
     </>
   </ThemeProvider>
 )

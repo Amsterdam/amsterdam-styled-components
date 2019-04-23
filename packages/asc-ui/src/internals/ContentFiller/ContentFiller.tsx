@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { getBreakpointFromTheme } from '../../styles/utils'
 import styled from '../../styled-components'
 import Typography from '../../components/Typography'
 
@@ -6,6 +7,7 @@ type ContentFillerStyleProps = {
   backgroundColor?: string
   marginTop?: string
   maxWidth?: string
+  headerSize?: 'tall' | 'short'
 }
 
 const ContentFillerStyle = styled.div<ContentFillerStyleProps>`
@@ -16,12 +18,19 @@ const ContentFillerStyle = styled.div<ContentFillerStyleProps>`
   margin-right: auto;
   margin-top: ${({ marginTop }) => marginTop};
   max-width: ${({ maxWidth }) => maxWidth};
+
+  @media screen and ${({ theme }) =>
+      getBreakpointFromTheme(theme, 'min-width', 'laptop')} {
+    margin-top: ${({ headerSize, marginTop }) =>
+      headerSize === 'short' ? marginTop : '0px'};
+  }
 `
 
 ContentFillerStyle.defaultProps = {
   backgroundColor: 'rgba(211,211,211,.1)',
   marginTop: '50px',
   maxWidth: 'none',
+  headerSize: 'short',
 }
 
 type ContentFillerProps = ContentFillerStyleProps
