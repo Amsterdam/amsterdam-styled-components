@@ -20,6 +20,10 @@ type State = {
 }
 
 class ContextMenu extends React.Component<Props, State> {
+  wrapper = React.createRef<HTMLDivElement>()
+
+  list = React.createRef<HTMLDivElement>()
+
   static defaultProps = {
     open: false,
   }
@@ -34,15 +38,12 @@ class ContextMenu extends React.Component<Props, State> {
   }
 
   componentDidUpdate(prevProps: Props) {
-    const { open } = this.props;
+    const { open } = this.props
 
     if (prevProps.open !== open) {
-      this.setState({ open })
+      this.onToggle(open)
     }
   }
-
-  list = React.createRef<HTMLDivElement>()
-  root = React.createRef<HTMLDivElement>()
 
   onKeyDown = (event: React.KeyboardEvent) => {
     const { children } = this.props
@@ -76,16 +77,13 @@ class ContextMenu extends React.Component<Props, State> {
     }
   }
 
-  onToggle = () => {
-    const { open } = this.state
-    this.setState({
-      open: !open,
-    })
+  onToggle = (open: Props['open'] | State['open']) => {
+    this.setState({ open })
   }
 
   onClose = () => {
     setTimeout(() => {
-      const element = this.getReference('root') as HTMLInputElement
+      const element = this.getReference('wrapper') as HTMLInputElement
       if (element) {
         const currentFocus = ownerDocument(element).activeElement
         if (!element.contains(currentFocus)) {
@@ -113,7 +111,7 @@ class ContextMenu extends React.Component<Props, State> {
     return (
       <AscCore.ContextMenu.MenuWrapper
         id={id}
-        ref={this.root}
+        ref={this.wrapper}
         onKeyDown={this.onKeyDown}
         onBlur={this.onClose}
       >
@@ -124,7 +122,7 @@ class ContextMenu extends React.Component<Props, State> {
             position,
             label,
           }}
-          onClick={this.onToggle}
+          onClick={() => this.onToggle(!open)}
         />
         <MenuList
           {...{

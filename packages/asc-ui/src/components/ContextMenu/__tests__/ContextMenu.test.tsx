@@ -32,11 +32,16 @@ describe('ContextMenu', () => {
 
   describe('click and blur', () => {
     it('should toggle the open state', () => {
-      label.simulate('click')
-      expect(instance.state.open).toBe(true)
-
-      label.simulate('click')
       expect(instance.state.open).toBe(false)
+
+      label.at(0).simulate('click')
+      expect(instance.state.open).toBe(true)
+    })
+
+    it('should set the open state from props', () => {
+      component.setProps({ open: true })
+
+      expect(instance.state.open).toBe(true)
     })
 
     it('should set the open state to false and reset the selectedChild', () => {
