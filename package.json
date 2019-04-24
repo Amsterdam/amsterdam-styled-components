@@ -20,6 +20,7 @@
     "build": "yarn build:ts && lerna exec --scope @datapunt/asc-assets -- yarn build",
     "build:ts": "tsc -b packages/asc-ui",
     "build:watch": "yarn build:ts -w",
+    "build-storybook": "build-storybook -c .storybook -o .sb",
     "deploy-storybook": "storybook-to-ghpages",
     "preinstall": "yarn symlink",
     "postinstall": "lerna link && lerna bootstrap",
