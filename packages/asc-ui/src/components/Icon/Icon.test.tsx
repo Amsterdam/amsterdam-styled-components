@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { renderWithTheme } from 'asc-ui/src/utils/withTheme'
+import { renderWithTheme } from '../../utils/withTheme'
 import Icon from './Icon'
 import 'jest-styled-components'
 
