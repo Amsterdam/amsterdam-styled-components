@@ -1,6 +1,7 @@
 import { AscCore, ascDefaultTheme, StyledComponents, Theme } from './styles'
 
 import IconButton from './components/IconButton'
+import Icon from './components/Icon'
 import Modal from './components/Modal'
 import Portal from './components/Portal'
 import Typography from './components/Typography'
@@ -15,17 +16,17 @@ import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
 import Menu from './components/Menu'
 import MenuItem from './components/Menu/MenuItem'
 import SubMenu from './components/Menu/SubMenu'
+import Header from './components/Header/Header'
 
 import ThemeProvider from './theme'
 
-const { Divider, Icon, ButtonBar, GlobalStyle, ListItem } = AscCore
+const { Divider, GlobalStyle, ListItem } = AscCore
 
 // Components
 export {
   Divider,
   Icon,
   Button,
-  ButtonBar,
   IconButton,
   Modal,
   Portal,
@@ -41,7 +42,14 @@ export {
   Menu,
   MenuItem,
   SubMenu,
+  Header,
 }
 
-// Non-components exports
-export { GlobalStyle, StyledComponents, Theme, ThemeProvider, ascDefaultTheme }
+export {
+  AscCore,
+  GlobalStyle,
+  StyledComponents,
+  Theme,
+  ThemeProvider,
+  ascDefaultTheme,
+}

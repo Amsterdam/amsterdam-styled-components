@@ -69,6 +69,23 @@ To test your components in other repo's, do the following:
 
 Now you can import the package like you would do like a normal npm dependency. Changes you will make in your package will be seen in your repo.
 
+#### Development guidelines
+
+- The default export from a file matches the file name
+- The component styles are only placed in the `asc-core/src/components` folder.
+  Exception is the `asc-ui/src/internals` folder where the styles are allowed. The components from this folder are just for internal use in the stories.
+- The component style name follows the pattern `<ComponentName>Style/<ComponentName>Style.ts`
+- Pull request has tests (we are going for 100% coverage!)
+
+#### Development pattern for Components
+
+Follow the pattern found in:
+
+- asc-core/src/components/TopBarStyle/TopBarStyle.ts
+- asc-core/src/components/TopBarStyle/index.ts
+- asc-ui/src/components/TopBar/TopBar.tsx
+- asc-ui/src/components/TopBar/index.ts
+
 ### Publishing
 
 To publish these packages to npm, do the following:
@@ -83,15 +100,18 @@ These Component Library renders SVGs as Components, something that should be sup
 
 1. Run `npm install @svgr/webpack url-loader`
 2. In your `webpack.config.js` add:
-```
+
+```js
 {
   test: /\.svg$/,
   use: ['@svgr/webpack', 'url-loader'],
 }
 ```
+
 3. Integrate in your code:
- ```js
-import { ReactComponent as Close } from @datapunt/asc-assets/lib/Icons/Close.svg
+
+```js
+import { ReactComponent as Close } from '@datapunt/asc-assets/lib/Icons/Close.svg'
 const App = () => (
   <div>
     <Close />
@@ -101,7 +121,7 @@ const App = () => (
 
 ### Known issues
 
-- When deploying to github pages with `npm run deploy-storybook` there are *.d definition files generated. These should not be checked in and can be discarded without problems.
+- When deploying to github pages with `npm run deploy-storybook` there are \*.d definition files generated. These should not be checked in and can be discarded without problems.
 
 ### References
 

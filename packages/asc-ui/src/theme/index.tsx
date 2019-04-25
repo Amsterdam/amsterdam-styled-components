@@ -2,27 +2,26 @@ import * as React from 'react'
 import deepMerge from 'deepmerge'
 import { Theme, ascDefaultTheme, StyledComponents } from '..'
 
-const { DEFAULT_THEME_NAME, colors, typography, globalStyle } = ascDefaultTheme
+const { DEFAULT_THEME_NAME } = ascDefaultTheme
 
 interface Props {
   overrides?: Theme.ThemeInterface
-  theme?: string
+  themeName?: string
   children: any
 }
 
 const ThemeProvider = ({
-  theme = DEFAULT_THEME_NAME,
+  themeName = DEFAULT_THEME_NAME,
   overrides,
   children,
 }: Props) => {
-  const namespacedTheme: any = {
-    [DEFAULT_THEME_NAME]: deepMerge(
-      Theme.CreateTheme.getTheme(colors, typography, globalStyle),
-      overrides || {},
-    ),
-  }
+  const theme: Theme.ThemeInterface = deepMerge(
+    Theme.ThemeFactory.createTheme(themeName),
+    overrides || {},
+  )
+
   return (
-    <StyledComponents.ThemeProvider theme={namespacedTheme[theme]}>
+    <StyledComponents.ThemeProvider theme={theme}>
       {children}
     </StyledComponents.ThemeProvider>
   )

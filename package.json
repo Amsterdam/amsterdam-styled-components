@@ -33,7 +33,7 @@
     "symlink": "./scripts/link-core.sh",
     "test": "yarn jest",
     "test:coverage": "yarn jest --collect-coverage",
-    "test:watch": "yarn test -- --watch",
+    "test:watch": "cross-env NODE_ENV=test jest --watch --onlyChanged --collect-coverage --verbose true",
     "prettify:package": "yarn prettier-package-json --write **/package.json"
   },
   "devDependencies": {
@@ -73,6 +73,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.5",
     "concurrently": "^4.1.0",
+    "cross-env": "^5.2.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
     "enzyme-to-json": "^3.3.5",

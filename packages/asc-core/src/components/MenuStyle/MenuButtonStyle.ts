@@ -1,20 +1,18 @@
 import styled from '../../styled-components'
-import focus from '../shared/focus'
-import { getColorFromTheme } from '../../utils'
-import { Icon } from '..'
+import { getColorFromTheme, getFocusStyle } from '../../utils'
 
 const MenuButtonStyle = styled.button`
-  ${({ theme }) => focus(theme)}
+  ${({ theme }) => getFocusStyle(theme)}
   display: flex;
   background-color: ${({ theme }) =>
     getColorFromTheme(theme, 'tint', 'level1')};
   align-items: center;
   height: 32px;
-  padding: 0 4px;
+  padding: 0 6px;
   justify-content: space-between;
 
-  ${Icon}:last-child:not(:first-child) {
-    margin-left: 4px;
+  & > span:not(:last-child) {
+    margin-right: 6px;
   }
 `
 

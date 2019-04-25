@@ -1,3 +1,8 @@
 export { default as fromTheme } from './fromTheme'
-export { default as fillSVG } from './fillSVG'
-export { getColorFromTheme, getTypographyFromTheme } from './themeUtils'
+export {
+  getColorFromTheme,
+  getTypographyFromTheme,
+  getFocusStyle,
+  getBreakpointFromTheme,
+  fillSvgFromTheme,
+} from './themeUtils'

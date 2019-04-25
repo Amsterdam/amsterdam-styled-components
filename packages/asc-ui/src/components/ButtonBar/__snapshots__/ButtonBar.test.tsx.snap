@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonBar should render the buttons in the bar 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-htpNat",
+        "isStatic": false,
+        "rules": Array [
+          "
+  display: flex;
+  ",
+          [Function],
+          "
+
+  & > * {
+    margin-right: 5px;
+  }
+",
+        ],
+      },
+      "defaultProps": Object {
+        "padding": 5,
+      },
+      "displayName": "styled.div",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-htpNat",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+  padding={0}
+>
+  <Button
+    color="primary"
+  >
+    Hello
+  </Button>
+  <Button
+    color="secondary"
+  >
+    World
+  </Button>
+</StyledComponent>
+`;

@@ -14,7 +14,7 @@ const ContextMenuButton = ({
   return (
     <ContextMenuStyle.ContextMenuButtonStyle {...{ id }} {...otherProps}>
       {icon && icon}
-      {label}
+      {label && <span>{label}</span>}
       <Icon
         inline
         size={24}

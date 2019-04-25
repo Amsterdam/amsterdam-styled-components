@@ -1,6 +1,5 @@
 import styled from '../../styled-components'
 import { MenuStyleProps } from './types'
-import Icon from '../Icon'
 import { getColorFromTheme, getTypographyFromTheme } from '../../utils'
 
 export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
@@ -14,8 +13,8 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   cursor: pointer;
   font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
 
-  ${Icon} {
-    margin: 5px 12px;
+  & > span:first-child {
+    margin: 5px 6px;
   }
 
   ${({ divider, theme }) =>

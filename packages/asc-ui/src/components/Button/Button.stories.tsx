@@ -1,13 +1,15 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 import { ReactComponent as Alert } from '@datapunt/asc-assets/lib/Icons/Alert.svg'
-import { ButtonBar, Button } from '../..'
+import Button from './Button'
+import ButtonBar from '../ButtonBar'
 
 storiesOf('Atoms/Buttons', module)
   .add('Default', () => (
     <>
       <ButtonBar>
-        <Button>Default button</Button>
+        <Button onClick={action('click')}>Default button</Button>
       </ButtonBar>
     </>
   ))

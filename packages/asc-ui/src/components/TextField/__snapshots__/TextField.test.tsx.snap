@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextField /> should render 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "breakpoints": Object {
+        "desktop": [Function],
+        "desktopL": [Function],
+        "laptop": [Function],
+        "laptopL": [Function],
+        "mobileL": [Function],
+        "mobileM": [Function],
+        "mobileS": [Function],
+        "tablet": [Function],
+      },
+      "colors": Object {
+        "bright": Object {
+          "main": "#ffffff",
+        },
+        "error": Object {
+          "main": "#ec0000",
+        },
+        "primary": Object {
+          "dark": "#00387a",
+          "main": "#004699",
+        },
+        "secondary": Object {
+          "dark": "#bc0000",
+          "main": "#ec0000",
+        },
+        "support": Object {
+          "focus": "#FEC813",
+          "invalid": "#EC0000",
+          "valid": "#00A03C",
+        },
+        "tint": Object {
+          "level1": "#ffffff",
+          "level2": "#F5F5F5",
+          "level3": "#E6E6E6",
+          "level4": "#B4B4B4",
+          "level5": "#767676",
+          "level6": "#323232",
+          "level7": "#000000",
+        },
+      },
+      "globalStyle": "",
+      "typography": Object {
+        "a": Object {
+          "color": "#000000",
+          "fontFamily": "inherit",
+          "fontSize": "1rem",
+          "fontWeight": 300,
+          "letterSpacing": "-0.01562em",
+          "lineHeight": 1,
+        },
+        "fontFamily": "AvenirNextLTW01-Regular, verdana, sans-serif",
+        "fontSize": "16px",
+        "fontWeightHeavy": 900,
+        "fontWeightLight": 300,
+        "fontWeightMedium": 500,
+        "fontWeightRegular": 400,
+        "h1": Object {
+          "color": "#000000",
+          "fontFamily": "inherit",
+          "fontSize": "6rem",
+          "fontWeight": 300,
+          "letterSpacing": "-0.01562em",
+          "lineHeight": 1,
+        },
+        "h2": Object {
+          "color": "#000000",
+          "fontFamily": "inherit",
+          "fontSize": "6rem",
+          "fontWeight": 300,
+          "letterSpacing": "-0.01562em",
+          "lineHeight": 1,
+        },
+        "h3": Object {
+          "color": "#000000",
+          "fontFamily": "inherit",
+          "fontSize": "6rem",
+          "fontWeight": 300,
+          "letterSpacing": "-0.01562em",
+          "lineHeight": 1,
+        },
+        "h4": Object {
+          "color": "#000000",
+          "fontFamily": "inherit",
+          "fontSize": Array [
+            "
+      ",
+            "1.125rem",
+            "
+    ",
+          ],
+          "fontWeight": 300,
+          "letterSpacing": "-0.01562em",
+          "lineHeight": 1,
+        },
+        "h5": Object {
+          "color": "#000000",
+          "fontFamily": "inherit",
+          "fontSize": Array [
+            "
+      ",
+            "1.125rem",
+            "
+    ",
+          ],
+          "fontWeight": 300,
+          "letterSpacing": "-0.01562em",
+          "lineHeight": 1,
+        },
+        "h6": Object {
+          "color": "#000000",
+          "fontFamily": "inherit",
+          "fontSize": "6rem",
+          "fontWeight": 300,
+          "letterSpacing": "-0.01562em",
+          "lineHeight": 1,
+        },
+        "p": Object {
+          "color": "#000000",
+          "fontFamily": "inherit",
+          "fontSize": "1rem",
+          "fontWeight": 300,
+          "letterSpacing": "-0.01562em",
+          "lineHeight": 1.25,
+        },
+      },
+    }
+  }
+>
+  <TextField />
+</ThemeProvider>
+`;

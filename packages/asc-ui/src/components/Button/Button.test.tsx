@@ -1,20 +1,11 @@
 import * as React from 'react'
-import { mount } from 'enzyme'
-import { AscCore } from '../../styles'
-import { ThemeProvider } from '../../index'
+import { shallow } from 'enzyme'
 import Button from './Button'
 import 'jest-styled-components'
 
-describe('Styled components', () => {
-  it('should render buttons', () => {
-    const component = mount(
-      <ThemeProvider>
-        <AscCore.ButtonBar>
-          <Button color="primary">Hello</Button>
-          <Button color="secondary">World</Button>
-        </AscCore.ButtonBar>
-      </ThemeProvider>,
-    )
+describe('Button', () => {
+  it('should render the button', () => {
+    const component = shallow(<Button color="primary">Hello</Button>).dive()
     expect(component).toMatchSnapshot()
   })
 })
