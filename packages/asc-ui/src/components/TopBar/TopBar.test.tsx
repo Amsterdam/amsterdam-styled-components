@@ -1,17 +1,17 @@
-import React from 'react'
-import { shallow, ShallowWrapper } from 'enzyme'
-import 'jest-styled-components'
+import * as React from 'react'
 import TopBar from './TopBar'
+import { renderWithTheme } from '../../utils/withTheme'
+import 'jest-styled-components'
 
 jest.useFakeTimers()
 
 describe('TopBar', () => {
-  let component: ShallowWrapper
+  let component: Cheerio
 
   beforeEach(() => {
-    component = shallow(
+    component = renderWithTheme(
       <TopBar backgroundColor="red">topbar-content</TopBar>,
-    ).dive()
+    )
   })
 
   it('should render', () => {
