@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderTitleTallStyle from '../../styles/components/HeaderStyle/HeaderTitleTallStyle'
+import HeaderTallTitleStyle from '../../styles/components/HeaderStyle/HeaderTallTitleStyle'
 import HeaderTallLogo from './HeaderTallLogo'
 
 type Props = {
@@ -12,14 +12,14 @@ const HeaderTallTitle: React.FC<Props> = ({
   homeLink,
   ...otherProps
 }) => (
-  <HeaderTitleTallStyle {...otherProps}>
+  <HeaderTallTitleStyle {...otherProps}>
     <h1>
       <HeaderTallLogo homeLink={homeLink} />
       <span>
         <a href={homeLink}>{title}</a>
       </span>
     </h1>
-  </HeaderTitleTallStyle>
+  </HeaderTallTitleStyle>
 )
 
 export default HeaderTallTitle

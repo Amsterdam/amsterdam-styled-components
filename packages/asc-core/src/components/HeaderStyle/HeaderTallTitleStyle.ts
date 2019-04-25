@@ -1,7 +1,7 @@
 import styled from '../../styled-components'
 import HeaderTitleBaseStyle from './HeaderTitleBaseStyle'
 
-const HeaderTitleTallStyle = styled(HeaderTitleBaseStyle)`
+const HeaderTallTitleStyle = styled(HeaderTitleBaseStyle)`
   & > h1 > span {
     padding: 20px;
   }
@@ -13,4 +13,4 @@ const HeaderTitleTallStyle = styled(HeaderTitleBaseStyle)`
   }
 `
 
-export default HeaderTitleTallStyle
+export default HeaderTallTitleStyle
