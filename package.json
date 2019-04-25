@@ -20,7 +20,8 @@
     "build": "yarn build:ts && lerna exec --scope @datapunt/asc-assets -- yarn build",
     "build:ts": "tsc -b packages/asc-ui",
     "build:watch": "yarn build:ts -w",
-    "build-storybook": "build-storybook -c .storybook -o .sb",
+    "build:storybook": "build-storybook -c .storybook -o .sb && yarn clean:generated",
+    "clean:generated": "find ./packages -name \"*.d.ts\" -type f -delete",
     "deploy-storybook": "storybook-to-ghpages",
     "preinstall": "yarn symlink",
     "postinstall": "lerna link && lerna bootstrap",
@@ -28,14 +29,14 @@
     "lint:css": "stylelint './packages/**/src/**/*.ts'",
     "lint:js": "eslint packages --ext ts,tsx",
     "prepare": "yarn prettify:package && yarn build",
+    "prettify:package": "yarn prettier-package-json --write **/package.json",
     "publish:packages": "lerna publish",
     "start": "concurrently \"yarn build:watch\" \"yarn storybook\"",
     "storybook": "start-storybook -p 6006",
     "symlink": "./scripts/link-core.sh",
     "test": "yarn jest",
     "test:coverage": "yarn jest --collect-coverage",
-    "test:watch": "cross-env NODE_ENV=test jest --watch --onlyChanged --collect-coverage --verbose true",
-    "prettify:package": "yarn prettier-package-json --write **/package.json"
+    "test:watch": "cross-env NODE_ENV=test jest --watch --onlyChanged --collect-coverage --verbose true"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
