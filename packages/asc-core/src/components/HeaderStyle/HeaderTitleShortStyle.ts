@@ -8,11 +8,6 @@ const HeaderTitleShortStyle = styled(HeaderTitleBaseStyle)`
     flex-grow: 1;
   }
 
-  & > h1 > span {
-    line-height: 24px;
-    padding-top: 6px;
-  }
-
   & > h1 > span > a {
     @media screen and ${({ theme }) =>
         getBreakpointFromTheme(theme, 'max-width', 'mobileM')} {

@@ -5,6 +5,8 @@ const HeaderTitleBaseStyle = styled.div`
     display: flex;
     height: 100%;
     margin: 0;
+    font-family: 'AvenirNextLTW01-Demi';
+    font-weight: normal;
   }
 
   & > h1 > span {

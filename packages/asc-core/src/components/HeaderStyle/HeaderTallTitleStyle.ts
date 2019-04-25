@@ -7,8 +7,8 @@ const HeaderTallTitleStyle = styled(HeaderTitleBaseStyle)`
   }
 
   & > h1 > span > a {
-    line-height: 26px;
-    font-size: 26px;
+    line-height: 30px;
+    font-size: 30px;
     vertical-align: top;
   }
 `

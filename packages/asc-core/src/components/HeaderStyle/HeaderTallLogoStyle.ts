@@ -1,14 +1,13 @@
 import styled from '../../styled-components'
-import HeaderLogoStyle from './HeaderLogoStyle'
 
-const HeaderTallLogoStyle = styled(HeaderLogoStyle)`
+const HeaderTallLogoStyle = styled.a`
   display: inline-block;
   min-height: 108px;
   padding: 20px 20px 20px 15px;
 
   & > svg {
     height: 68px;
-    width: 85px;
+    width: 100px;
     left: 0px;
   }
 `
