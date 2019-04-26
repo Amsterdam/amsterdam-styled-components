@@ -8,12 +8,14 @@ type Props = {
 }
 
 const HeaderTitle: React.FC<Props> = ({ title, homeLink, ...otherProps }) => (
-  <HeaderTitleShortStyle {...otherProps}>
+  <HeaderTitleShortStyle href={homeLink} {...otherProps}> 
     <h1>
-      <HeaderLogo homeLink={homeLink} />
-      <span>
-        <a href={homeLink}>{title}</a>
-      </span>
+      <HeaderLogo />
+      <div>
+        <span>
+          {title}
+        </span>
+      </div>
     </h1>
   </HeaderTitleShortStyle>
 )

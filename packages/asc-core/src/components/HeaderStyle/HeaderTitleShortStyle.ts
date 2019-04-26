@@ -8,16 +8,16 @@ const HeaderTitleShortStyle = styled(HeaderTitleBaseStyle)`
     flex-grow: 1;
   }
 
-  & > h1 > span > a {
-    @media screen and ${({ theme }) =>
-        getBreakpointFromTheme(theme, 'max-width', 'mobileM')} {
-      line-height: 18px;
-      font-size: 14px;
-    }
+  & > h1 > div > span {
+    line-height: 50px;
 
     @media screen and ${({ theme }) =>
-        getBreakpointFromTheme(theme, 'min-width', 'mobileM')} {
-      line-height: 20px;
+    getBreakpointFromTheme(theme, 'max-width', 'mobileM')} {
+      font-size: 14px; 
+    }
+    
+    @media screen and ${({ theme }) =>
+    getBreakpointFromTheme(theme, 'min-width', 'mobileM')} {
       font-size: 16px;
     }
   }

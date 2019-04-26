@@ -8,7 +8,7 @@ const HeaderLogoStyle = styled.a`
 
   & > svg {
     height: 30px;
-    width: 68px;
+    width: 64px;
   }
 `
 

@@ -1,6 +1,9 @@
 import styled from '../../styled-components'
 
-const HeaderTitleBaseStyle = styled.div`
+const HeaderTitleBaseStyle = styled.a`
+  color: #000;
+  text-decoration: none;
+
   & > h1 {
     display: flex;
     height: 100%;
@@ -9,13 +12,8 @@ const HeaderTitleBaseStyle = styled.div`
     font-weight: normal;
   }
 
-  & > h1 > span {
+  & > h1 > div > span {
     display: inline-block;
-  }
-
-  & > h1 > span > a {
-    color: #000;
-    text-decoration: none;
   }
 `
 
