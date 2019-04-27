@@ -10,7 +10,7 @@ import HeaderTall from './HeaderTall'
 const outsideBackgoundColor = ascDefaultTheme.colors.tint.level3
 const contentBackgrountColor = ascDefaultTheme.colors.tint.level1
 
-const HeaderStory: React.FC<{}> = () => (
+const HeaderShortStory: React.FC<{}> = () => (
   <ThemeProvider themeName="default">
     <>
       <BoxWrapper backgroundColor={outsideBackgoundColor}>
@@ -23,6 +23,26 @@ const HeaderStory: React.FC<{}> = () => (
         />
       </BoxWrapper>
       <ContentFiller backgroundColor={contentBackgrountColor} />
+    </>
+  </ThemeProvider>
+)
+
+const HeaderShortContentStory: React.FC<{}> = () => (
+  <ThemeProvider themeName="default">
+    <>
+      <BoxWrapper backgroundColor={outsideBackgoundColor}>
+        <Header
+          title="Data en informatie"
+          homeLink="http://data.amsterdam.nl"
+          search={<CenteredElement> Search </CenteredElement>}
+          menu={<CenteredElement> M </CenteredElement>}
+          headerSize="short-content"
+        />
+      </BoxWrapper>
+      <ContentFiller
+        backgroundColor={contentBackgrountColor}
+        maxWidth="1800px"
+      />
     </>
   </ThemeProvider>
 )
@@ -55,5 +75,6 @@ const HeaderTallStory: React.FC<{}> = () => (
 )
 
 storiesOf('Composed/Header', module)
-  .add('Header short', () => <HeaderStory />)
+  .add('Header short', () => <HeaderShortStory />)
+  .add('Header short with content', () => <HeaderShortContentStory />)
   .add('Header tall', () => <HeaderTallStory />)

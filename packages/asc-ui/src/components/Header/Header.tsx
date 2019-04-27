@@ -1,16 +1,16 @@
 import * as React from 'react'
-import HeaderStyle, {
-  HeaderStyleProps,
-} from '../../styles/components/HeaderStyle'
+import HeaderStyle, { HeaderSize } from '../../styles/components/HeaderStyle'
+import HeaderShortWrapperStyle from '../../styles/components/HeaderStyle/HeaderShortWrapperStyle'
 import HeaderTitle from './HeaderTitle'
 import HeaderSearch from './HeaderSearch'
 import HeaderMenu from './HeaderMenu'
 
-type Props = HeaderStyleProps & {
-  title: string
-  homeLink: string
+type Props = {
   search: React.ReactElement
   menu: React.ReactElement
+  title: string
+  homeLink: string
+  headerSize?: HeaderSize
 }
 
 const Header: React.FC<Props> = ({
@@ -18,13 +18,16 @@ const Header: React.FC<Props> = ({
   menu,
   title,
   homeLink,
+  headerSize,
   ...otherProps
 }) => (
-  <HeaderStyle {...otherProps}>
-    <HeaderTitle title={title} homeLink={homeLink} />
-    <HeaderSearch>{search}</HeaderSearch>
-    <HeaderMenu>{menu}</HeaderMenu>
-  </HeaderStyle>
+  <HeaderShortWrapperStyle headerSize={headerSize}>
+    <HeaderStyle {...otherProps}>
+      <HeaderTitle title={title} homeLink={homeLink} />
+      <HeaderSearch>{search}</HeaderSearch>
+      <HeaderMenu>{menu}</HeaderMenu>
+    </HeaderStyle>
+  </HeaderShortWrapperStyle>
 )
 
 export default Header
