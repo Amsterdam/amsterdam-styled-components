@@ -12,12 +12,12 @@ const HeaderTallTitle: React.FC<Props> = ({
   homeLink,
   ...otherProps
 }) => (
-  <HeaderTallTitleStyle {...otherProps}>
+  <HeaderTallTitleStyle href={homeLink} {...otherProps}>
     <h1>
       <HeaderTallLogo homeLink={homeLink} />
-      <span>
-        <a href={homeLink}>{title}</a>
-      </span>
+      <div>
+        <span>{title}</span>
+      </div>
     </h1>
   </HeaderTallTitleStyle>
 )

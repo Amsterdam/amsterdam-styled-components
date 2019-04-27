@@ -12,12 +12,12 @@ const HeaderTitleShortStyle = styled(HeaderTitleBaseStyle)`
     line-height: 50px;
 
     @media screen and ${({ theme }) =>
-    getBreakpointFromTheme(theme, 'max-width', 'mobileM')} {
-      font-size: 14px; 
+        getBreakpointFromTheme(theme, 'max-width', 'mobileM')} {
+      font-size: 14px;
     }
-    
+
     @media screen and ${({ theme }) =>
-    getBreakpointFromTheme(theme, 'min-width', 'mobileM')} {
+        getBreakpointFromTheme(theme, 'min-width', 'mobileM')} {
       font-size: 16px;
     }
   }
