@@ -90,7 +90,7 @@ describe('getBreakpontFromTheme', () => {
       '(max-width: 2560px)',
     )
     expect(getBreakpointFromTheme(theme, 'min-width', 'mobileL')).toEqual(
-      '(min-width: 425px)',
+      '(min-width: 425.02px)',
     )
   })
 })

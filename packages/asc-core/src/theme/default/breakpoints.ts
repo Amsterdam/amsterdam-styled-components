@@ -1,16 +1,16 @@
 import { Theme } from '../index'
 
-const withTypeBreakpoint = (size: string) => (type: Theme.TypeBreakpoint) =>
-  `(${type}: ${size})`
+const withTypeBreakpoint = (size: number) => (type: Theme.TypeBreakpoint) =>
+  `(${type}: ${size + (type === 'min-width' ? 0.02 : 0)}px)`
 
 const sizes = {
-  mobileS: '320px',
-  mobileM: '375px',
-  mobileL: '425px',
-  tablet: '768px',
-  laptop: '1024px',
-  laptopL: '1440px',
-  desktop: '2560px',
+  mobileS: 320,
+  mobileM: 375,
+  mobileL: 425,
+  tablet: 768,
+  laptop: 1024,
+  laptopL: 1440,
+  desktop: 2560,
 }
 
 const breakpoints: Theme.BreakpointsInterface = {
