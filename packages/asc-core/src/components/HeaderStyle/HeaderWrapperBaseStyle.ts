@@ -1,6 +1,6 @@
 import styled from '../../styled-components'
 import { getColorFromTheme } from '../../utils'
-import { HeaderSize } from '.';
+import { HeaderSize } from '.'
 
 type Props = {
   headerSize?: HeaderSize
@@ -16,7 +16,5 @@ const HeaderWrapperBaseStyle = styled.div<Props>`
 HeaderWrapperBaseStyle.defaultProps = {
   headerSize: 'short',
 }
-
-
 
 export default HeaderWrapperBaseStyle

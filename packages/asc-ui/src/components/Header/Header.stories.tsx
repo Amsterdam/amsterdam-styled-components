@@ -21,8 +21,8 @@ const HeaderShortStory: React.FC<{}> = () => (
           menu={<CenteredElement> M </CenteredElement>}
           headerSize="short"
         />
+        <ContentFiller backgroundColor={contentBackgrountColor} />
       </BoxWrapper>
-      <ContentFiller backgroundColor={contentBackgrountColor} />
     </>
   </ThemeProvider>
 )
@@ -38,11 +38,11 @@ const HeaderShortContentStory: React.FC<{}> = () => (
           menu={<CenteredElement> M </CenteredElement>}
           headerSize="short-content"
         />
+        <ContentFiller
+          backgroundColor={contentBackgrountColor}
+          maxWidth="1800px"
+        />
       </BoxWrapper>
-      <ContentFiller
-        backgroundColor={contentBackgrountColor}
-        maxWidth="1800px"
-      />
     </>
   </ThemeProvider>
 )

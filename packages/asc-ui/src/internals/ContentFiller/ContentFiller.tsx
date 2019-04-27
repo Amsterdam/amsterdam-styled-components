@@ -5,7 +5,7 @@ import Typography from '../../components/Typography'
 
 type ContentFillerStyleProps = {
   backgroundColor?: string
-  marginTop?: string
+  paddingTop?: string
   maxWidth?: string
   headerSize?: 'tall' | 'short'
 }
@@ -16,19 +16,19 @@ const ContentFillerStyle = styled.div<ContentFillerStyleProps>`
   background-color: ${({ backgroundColor }) => backgroundColor};
   margin-left: auto;
   margin-right: auto;
-  margin-top: ${({ marginTop }) => marginTop};
+  padding-top: ${({ paddingTop }) => paddingTop};
   max-width: ${({ maxWidth }) => maxWidth};
 
   @media screen and ${({ theme }) =>
       getBreakpointFromTheme(theme, 'min-width', 'laptop')} {
-    margin-top: ${({ headerSize, marginTop }) =>
-      headerSize === 'short' ? marginTop : '0px'};
+    padding-top: ${({ headerSize, paddingTop }) =>
+      headerSize === 'tall' ? '0px' : paddingTop};
   }
 `
 
 ContentFillerStyle.defaultProps = {
   backgroundColor: 'rgba(211,211,211,.1)',
-  marginTop: '50px',
+  paddingTop: '50px',
   maxWidth: 'none',
   headerSize: 'short',
 }

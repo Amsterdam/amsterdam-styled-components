@@ -1,4 +1,3 @@
 export { default } from './HeaderStyle'
 
-type HeaderSize = 'tall' | 'short' | 'short-content'
-export { HeaderSize }
+export type HeaderSize = 'tall' | 'short' | 'short-content'

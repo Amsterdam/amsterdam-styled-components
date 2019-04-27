@@ -22,7 +22,7 @@ const Header: React.FC<Props> = ({
   ...otherProps
 }) => (
   <HeaderShortWrapperStyle headerSize={headerSize}>
-    <HeaderStyle {...otherProps}>
+    <HeaderStyle headerSize={headerSize} {...otherProps}>
       <HeaderTitle title={title} homeLink={homeLink} />
       <HeaderSearch>{search}</HeaderSearch>
       <HeaderMenu>{menu}</HeaderMenu>

@@ -1,6 +1,6 @@
 import styled from '../../styled-components'
 import { getColorFromTheme, getBreakpointFromTheme } from '../../utils'
-import HeaderWrapperBaseStyle from './HeaderWrapperBaseStyle';
+import HeaderWrapperBaseStyle from './HeaderWrapperBaseStyle'
 
 const HeaderTallWrapperStyle = styled(HeaderWrapperBaseStyle)`
   height: 108px;
