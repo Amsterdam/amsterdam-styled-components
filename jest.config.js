@@ -20,9 +20,11 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   moduleDirectories: ['node_modules', 'packages'],
   moduleNameMapper: {
-    '.*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+    '^@datapunt/asc-assets/.*\\.svg$':
+      '<rootDir>/config/testing/mocks/asc-assets-svg-mock.ts',
+    '.*\\.(jpg|jpeg|png|gif|eot|otf|webp|sv|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/config/testing/mocks/image.ts',
-    '^@datapunt/(.*)$': '<rootDir>/packages/$1/src',
+    '^@datapunt/(.*)$': '<rootDir>/packages/$1',
   },
   testPathIgnorePatterns: [
     '/node_modules/',

@@ -1,3 +1,4 @@
+require.extensions['.svg'] = () => {}
 import React from 'react'
 import { ReactComponent as LogoShort } from '@datapunt/asc-assets/lib/Icons/LogoShort.svg'
 import HeaderLogoStyle from '../../styles/components/HeaderStyle/HeaderLogoStyle'
@@ -8,7 +9,7 @@ type Props = {
 
 const HeaderLogo: React.FC<Props> = ({ homeLink }) => (
   <HeaderLogoStyle href={homeLink}>
-    <LogoShort />
+    {false ? '' : <LogoShort />}
   </HeaderLogoStyle>
 )
 

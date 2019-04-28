@@ -1,151 +1,487 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header short should render the Header short 1`] = `
-<ThemeProvider
-  theme={
-    Object {
-      "breakpoints": Object {
-        "desktop": [Function],
-        "desktopL": [Function],
-        "laptop": [Function],
-        "laptopL": [Function],
-        "mobileL": [Function],
-        "mobileM": [Function],
-        "mobileS": [Function],
-        "tablet": [Function],
-      },
-      "colors": Object {
-        "bright": Object {
-          "main": "#ffffff",
-        },
-        "error": Object {
-          "main": "#ec0000",
-        },
-        "primary": Object {
-          "dark": "#00387a",
-          "main": "#004699",
-        },
-        "secondary": Object {
-          "dark": "#bc0000",
-          "main": "#ec0000",
-        },
-        "support": Object {
-          "focus": "#FEC813",
-          "invalid": "#EC0000",
-          "valid": "#00A03C",
-        },
-        "tint": Object {
-          "level1": "#ffffff",
-          "level2": "#F5F5F5",
-          "level3": "#E6E6E6",
-          "level4": "#B4B4B4",
-          "level5": "#767676",
-          "level6": "#323232",
-          "level7": "#000000",
-        },
-      },
-      "globalStyle": "",
-      "typography": Object {
-        "a": Object {
-          "color": "#000000",
-          "fontFamily": "inherit",
-          "fontSize": "1rem",
-          "fontWeight": 300,
-          "letterSpacing": "-0.01562em",
-          "lineHeight": 1,
-        },
-        "fontFamily": "AvenirNextLTW01-Regular, verdana, sans-serif",
-        "fontSize": "16px",
-        "fontWeightHeavy": 900,
-        "fontWeightLight": 300,
-        "fontWeightMedium": 500,
-        "fontWeightRegular": 400,
-        "h1": Object {
-          "color": "#000000",
-          "fontFamily": "inherit",
-          "fontSize": "6rem",
-          "fontWeight": 300,
-          "letterSpacing": "-0.01562em",
-          "lineHeight": 1,
-        },
-        "h2": Object {
-          "color": "#000000",
-          "fontFamily": "inherit",
-          "fontSize": "6rem",
-          "fontWeight": 300,
-          "letterSpacing": "-0.01562em",
-          "lineHeight": 1,
-        },
-        "h3": Object {
-          "color": "#000000",
-          "fontFamily": "inherit",
-          "fontSize": "6rem",
-          "fontWeight": 300,
-          "letterSpacing": "-0.01562em",
-          "lineHeight": 1,
-        },
-        "h4": Object {
-          "color": "#000000",
-          "fontFamily": "inherit",
-          "fontSize": Array [
-            "
-      ",
-            "1.125rem",
-            "
-    ",
-          ],
-          "fontWeight": 300,
-          "letterSpacing": "-0.01562em",
-          "lineHeight": 1,
-        },
-        "h5": Object {
-          "color": "#000000",
-          "fontFamily": "inherit",
-          "fontSize": Array [
-            "
-      ",
-            "1.125rem",
-            "
-    ",
-          ],
-          "fontWeight": 300,
-          "letterSpacing": "-0.01562em",
-          "lineHeight": 1,
-        },
-        "h6": Object {
-          "color": "#000000",
-          "fontFamily": "inherit",
-          "fontSize": "6rem",
-          "fontWeight": 300,
-          "letterSpacing": "-0.01562em",
-          "lineHeight": 1,
-        },
-        "p": Object {
-          "color": "#000000",
-          "fontFamily": "inherit",
-          "fontSize": "1rem",
-          "fontWeight": 300,
-          "letterSpacing": "-0.01562em",
-          "lineHeight": 1.25,
-        },
-      },
-    }
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 50px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  max-width: none;
+}
+
+.c0 {
+  background-color: #ffffff;
+  margin: 0 auto;
+  max-width: 1800px;
+  height: 50px;
+  width: 100%;
+  box-shadow: 0 4px rgba(0,0,0,0.04);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: none;
+}
+
+.c3 {
+  display: inline-block;
+  min-height: 50px;
+  margin: 10px 10px -10px 10px;
+}
+
+.c3 > svg {
+  height: 30px;
+  width: 64px;
+}
+
+.c2 {
+  color: #000;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2 > h1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  margin: 0;
+  font-family: 'AvenirNextLTW01-Demi';
+  font-weight: normal;
+}
+
+.c2 > h1 > div > span {
+  display: inline-block;
+}
+
+.c2 > h1 > div > span {
+  line-height: 50px;
+}
+
+.c4 {
+  overflow: hidden;
+}
+
+@media screen and (min-width:1024.02px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
+}
+
+@media screen and (max-width:768px) {
+  .c2 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .c2 > h1 > div > span {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width:375.02px) {
+  .c2 > h1 > div > span {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .c4 {
+    width: 50px;
+  }
+}
+
+@media screen and (min-width:768.02px) {
+  .c4 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
+}
+
+@media screen and (max-width:1024px) {
+  .c5 {
+    width: 50px;
+  }
+}
+
+<div
+  class="c0"
 >
-  <Header
-    headerSize="short"
-    homeLink="http://data.amsterdam.nl"
-    menu={
+  <div
+    class="c1"
+  >
+    <a
+      class="c2"
+      href="http://data.amsterdam.nl"
+    />
+    <h1>
+      <a
+        class="c2"
+        href="http://data.amsterdam.nl"
+      />
+      <a
+        class="c3"
+      >
+        SVG_MOCK
+      </a>
       <div>
-         M 
+        <span>
+          Data en informatie
+        </span>
       </div>
-    }
-    search={
+    </h1>
+    <div
+      class="c4"
+    >
       <div>
          Search 
       </div>
-    }
-    title="Data en informatie"
-  />
-</ThemeProvider>
+    </div>
+    <div
+      class="c5"
+    >
+      <div>
+         M 
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Header short with content should render the Header short 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 50px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  max-width: 1600px;
+}
+
+.c0 {
+  background-color: #ffffff;
+  margin: 0 auto;
+  max-width: 1800px;
+  height: 50px;
+  width: 100%;
+  box-shadow: 0 4px rgba(0,0,0,0.04);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 1800px;
+}
+
+.c3 {
+  display: inline-block;
+  min-height: 50px;
+  margin: 10px 10px -10px 10px;
+}
+
+.c3 > svg {
+  height: 30px;
+  width: 64px;
+}
+
+.c2 {
+  color: #000;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2 > h1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  margin: 0;
+  font-family: 'AvenirNextLTW01-Demi';
+  font-weight: normal;
+}
+
+.c2 > h1 > div > span {
+  display: inline-block;
+}
+
+.c2 > h1 > div > span {
+  line-height: 50px;
+}
+
+.c4 {
+  overflow: hidden;
+}
+
+@media screen and (min-width:1024.02px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .c2 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .c2 > h1 > div > span {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width:375.02px) {
+  .c2 > h1 > div > span {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .c4 {
+    width: 50px;
+  }
+}
+
+@media screen and (min-width:768.02px) {
+  .c4 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
+}
+
+@media screen and (max-width:1024px) {
+  .c5 {
+    width: 50px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <a
+      class="c2"
+      href="http://data.amsterdam.nl"
+    />
+    <h1>
+      <a
+        class="c2"
+        href="http://data.amsterdam.nl"
+      />
+      <a
+        class="c3"
+      >
+        SVG_MOCK
+      </a>
+      <div>
+        <span>
+          Data en informatie
+        </span>
+      </div>
+    </h1>
+    <div
+      class="c4"
+    >
+      <div>
+         Search 
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div>
+         M 
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`HeaderTitle short should render the Header HeaderTitle short 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 50px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  max-width: 1600px;
+}
+
+.c0 {
+  background-color: #ffffff;
+  margin: 0 auto;
+  max-width: 1800px;
+  height: 50px;
+  width: 100%;
+  box-shadow: 0 4px rgba(0,0,0,0.04);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 1800px;
+}
+
+.c3 {
+  display: inline-block;
+  min-height: 50px;
+  margin: 10px 10px -10px 10px;
+}
+
+.c3 > svg {
+  height: 30px;
+  width: 64px;
+}
+
+.c2 {
+  color: #000;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2 > h1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  margin: 0;
+  font-family: 'AvenirNextLTW01-Demi';
+  font-weight: normal;
+}
+
+.c2 > h1 > div > span {
+  display: inline-block;
+}
+
+.c2 > h1 > div > span {
+  line-height: 50px;
+}
+
+.c4 {
+  overflow: hidden;
+}
+
+@media screen and (min-width:1024.02px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .c2 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .c2 > h1 > div > span {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width:375.02px) {
+  .c2 > h1 > div > span {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .c4 {
+    width: 50px;
+  }
+}
+
+@media screen and (min-width:768.02px) {
+  .c4 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
+}
+
+@media screen and (max-width:1024px) {
+  .c5 {
+    width: 50px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <a
+      class="c2"
+      href="http://data.amsterdam.nl"
+    />
+    <h1>
+      <a
+        class="c2"
+        href="http://data.amsterdam.nl"
+      />
+      <a
+        class="c3"
+      >
+        SVG_MOCK
+      </a>
+      <div>
+        <span>
+          Data en informatie
+        </span>
+      </div>
+    </h1>
+    <div
+      class="c4"
+    >
+      <div>
+         Search 
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div>
+         M 
+      </div>
+    </div>
+  </div>
+</div>
 `;
