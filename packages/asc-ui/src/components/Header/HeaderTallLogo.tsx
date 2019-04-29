@@ -1,13 +1,21 @@
 import React from 'react'
 import { ReactComponent as LogoTall } from '@datapunt/asc-assets/lib/Icons/LogoTall.svg'
-import HeaderTallLogoStyle from '../../styles/components/HeaderStyle/HeaderTallLogoStyle'
+// import HeaderTallLogoStyle from '../../styles/components/HeaderStyle/HeaderTallLogoStyle'
 
-type Props = {
-  homeLink?: string
-}
+import styled from '../../styled-components'
 
-const HeaderTallLogo: React.FC<Props> = ({ homeLink }) => (
-  <HeaderTallLogoStyle href={homeLink}>
+const HeaderTallLogoStyle = styled.span`
+  display: inline-block;
+  padding: 20px 40px 10px 15px;
+
+  & > svg {
+    height: 68px;
+    width: 100px;
+  }
+`
+
+const HeaderTallLogo: React.FC<{}> = () => (
+  <HeaderTallLogoStyle>
     <LogoTall />
   </HeaderTallLogoStyle>
 )

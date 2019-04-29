@@ -1,59 +1,23 @@
 @font-face {
   font-family: "AvenirNextLTW01-Regular";
-  src: url("Fonts/AvenirNextLTPro-Regular.eot");
-  /* IE9 Compat Modes */
-  src: url("Fonts/AvenirNextLTPro-Regular.eot?#iefix") format("embedded-opentype"),
-    /* IE6-IE8 */
-    url("Fonts/AvenirNextLTPro-Regular.otf") format("opentype"),
-    /* Open Type Font */
-    url("Fonts/AvenirNextLTPro-Regular.svg") format("svg"),
-    /* Legacy iOS */
-    url("Fonts/AvenirNextLTPro-Regular.ttf") format("truetype"),
-    /* Safari, Android, iOS */
-    url("Fonts/AvenirNextLTPro-Regular.woff") format("woff"),
-    /* Modern Browsers */
-    url("Fonts/AvenirNextLTPro-Regular.woff2") format("woff2");
-  /* Modern Browsers */
-  font-weight: normal;
   font-style: normal;
+  font-weight: 400;
+  src: url(Fonts/AvenirAll/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix);
+  src: url(Fonts/AvenirAll/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix) format("eot"),url(Fonts/AvenirAll/2cd55546-ec00-4af9-aeca-4a3cd186da53.woff2) format("woff2"),url(Fonts/AvenirAll/1e9892c0-6927-4412-9874-1b82801ba47a.woff) format("woff"),url(Fonts/AvenirAll/46cf1067-688d-4aab-b0f7-bd942af6efd8.ttf) format("truetype")
 }
 
 @font-face {
   font-family: "AvenirNextLTW01-Italic";
-  src: url("Fonts/AvenirNextLTPro-It.eot");
-  /* IE9 Compat Modes */
-  src: url("Fonts/AvenirNextLTPro-It.eot?#iefix") format("embedded-opentype"),
-    /* IE6-IE8 */
-    url("Fonts/AvenirNextLTPro-It.otf") format("opentype"),
-    /* Open Type Font */
-    url("Fonts/AvenirNextLTPro-It.svg") format("svg"),
-    /* Legacy iOS */
-    url("Fonts/AvenirNextLTPro-It.ttf") format("truetype"),
-    /* Safari, Android, iOS */
-    url("Fonts/AvenirNextLTPro-It.woff") format("woff"),
-    /* Modern Browsers */
-    url("Fonts/AvenirNextLTPro-It.woff2") format("woff2");
-  /* Modern Browsers */
-  font-weight: normal;
-  font-style: normal;
+  font-style: italic;
+  font-weight: 400;
+  src: url(Fonts/AvenirAll/d1fddef1-d940-4904-8f6c-17e809462301.eot?#iefix);
+  src: url(Fonts/AvenirAll/d1fddef1-d940-4904-8f6c-17e809462301.eot?#iefix) format("eot"),url(Fonts/AvenirAll/7377dbe6-f11a-4a05-b33c-bc8ce1f60f84.woff2) format("woff2"),url(Fonts/AvenirAll/92b66dbd-4201-4ac2-a605-4d4ffc8705cc.woff) format("woff"),url(Fonts/AvenirAll/18839597-afa8-4f0b-9abb-4a30262d0da8.ttf) format("truetype")
 }
 
 @font-face {
   font-family: "AvenirNextLTW01-Demi";
-  src: url("Fonts/AvenirNextLTPro-Demi.eot");
-  /* IE9 Compat Modes */
-  src: url("Fonts/AvenirNextLTPro-Demi.eot?#iefix") format("embedded-opentype"),
-    /* IE6-IE8 */
-    url("Fonts/AvenirNextLTPro-Demi.otf") format("opentype"),
-    /* Open Type Font */
-    url("Fonts/AvenirNextLTPro-Demi.svg") format("svg"),
-    /* Legacy iOS */
-    url("Fonts/AvenirNextLTPro-Demi.ttf") format("truetype"),
-    /* Safari, Android, iOS */
-    url("Fonts/AvenirNextLTPro-Demi.woff") format("woff"),
-    /* Modern Browsers */
-    url("Fonts/AvenirNextLTPro-Demi.woff2") format("woff2");
-  /* Modern Browsers */
-  font-weight: normal;
   font-style: normal;
+  font-weight: 700;
+  src: url(Fonts/AvenirAll/12d643f2-3899-49d5-a85b-ff430f5fad15.eot?#iefix);
+  src: url(Fonts/AvenirAll/12d643f2-3899-49d5-a85b-ff430f5fad15.eot?#iefix) format("eot"),url(Fonts/AvenirAll/aad99a1f-7917-4dd6-bbb5-b07cedbff64f.woff2) format("woff2"),url(Fonts/AvenirAll/91b50bbb-9aa1-4d54-9159-ec6f19d14a7c.woff) format("woff"),url(Fonts/AvenirAll/a0f4c2f9-8a42-4786-ad00-fce42b57b148.ttf) format("truetype")
 }
