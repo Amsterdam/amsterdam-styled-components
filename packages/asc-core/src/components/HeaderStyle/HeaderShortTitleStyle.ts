@@ -2,7 +2,7 @@ import styled from '../../styled-components'
 import { getBreakpointFromTheme } from '../../utils'
 import HeaderTitleBaseStyle from './HeaderTitleBaseStyle'
 
-const HeaderTitleShortStyle = styled(HeaderTitleBaseStyle)`
+const HeaderShortTitleStyle = styled(HeaderTitleBaseStyle)`
   @media screen and ${({ theme }) =>
       getBreakpointFromTheme(theme, 'max-width', 'tablet')} {
     flex-grow: 1;
@@ -22,4 +22,4 @@ const HeaderTitleShortStyle = styled(HeaderTitleBaseStyle)`
     }
   }
 `
-export default HeaderTitleShortStyle
+export default HeaderShortTitleStyle

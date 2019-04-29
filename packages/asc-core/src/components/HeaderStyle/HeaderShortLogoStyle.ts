@@ -1,8 +1,8 @@
 import styled from '../../styled-components'
 
-const HeaderLogoStyle = styled.a`
+const HeaderShortLogoStyle = styled.a`
   display: inline-block;
-  min-height: 50px;
+  /* min-height: 50px; */
 
   margin: 10px 10px -10px 10px;
 
@@ -12,4 +12,4 @@ const HeaderLogoStyle = styled.a`
   }
 `
 
-export default HeaderLogoStyle
+export default HeaderShortLogoStyle

@@ -6,7 +6,7 @@ type Props = {
   headerSize?: HeaderSize
 }
 
-const HeaderStyle = styled.div<Props>`
+const HeaderShortStyle = styled.div<Props>`
   display: flex;
   min-height: 50px;
   width: 100%;
@@ -19,4 +19,4 @@ const HeaderStyle = styled.div<Props>`
     headerSize === 'short-content' ? '1600px' : 'none'};
 `
 
-export default HeaderStyle
+export default HeaderShortStyle

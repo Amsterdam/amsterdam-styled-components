@@ -13,7 +13,7 @@ import Radio from './components/Radio'
 import Focus from './components/Focus'
 import ContextMenu from './components/ContextMenu'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
-import Header from './components/Header/Header'
+import HeaderShort from './components/Header/HeaderShort'
 
 import ThemeProvider from './theme'
 
@@ -36,7 +36,7 @@ export {
   Focus,
   ContextMenu,
   ContextMenuItem,
-  Header,
+  HeaderShort as Header,
 }
 
 export {

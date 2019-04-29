@@ -2,19 +2,19 @@ import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import CenteredElement from '../../internals/CenteredElement/CenteredElement'
 import BoxWrapper from '../../internals/Box/BoxWrapper'
-import { ThemeProvider, ascDefaultTheme } from '../../index'
-import Header from './Header'
+import { ThemeProvider } from '../../index'
+import HeaderShort from './HeaderShort'
 import ContentFiller from '../../internals/ContentFiller/ContentFiller'
 import HeaderTall from './HeaderTall'
 
-const outsideBackgoundColor = ascDefaultTheme.colors.tint.level3
-const contentBackgrountColor = ascDefaultTheme.colors.tint.level1
+const outsideBackgoundColor = '#E6E6E6'
+const contentBackgrountColor = '#ffffff'
 
 const HeaderShortStory: React.FC<{}> = () => (
   <ThemeProvider themeName="default">
     <>
       <BoxWrapper backgroundColor={outsideBackgoundColor}>
-        <Header
+        <HeaderShort
           title="Data en informatie"
           homeLink="http://data.amsterdam.nl"
           search={<CenteredElement> Search </CenteredElement>}
@@ -31,7 +31,7 @@ const HeaderShortContentStory: React.FC<{}> = () => (
   <ThemeProvider themeName="default">
     <>
       <BoxWrapper backgroundColor={outsideBackgoundColor}>
-        <Header
+        <HeaderShort
           title="Data en informatie"
           homeLink="http://data.amsterdam.nl"
           search={<CenteredElement> Search </CenteredElement>}
@@ -57,7 +57,7 @@ const HeaderTallStory: React.FC<{}> = () => (
           search={<CenteredElement> Search </CenteredElement>}
           menu={<CenteredElement> M </CenteredElement>}
         />
-        <Header
+        <HeaderShort
           title="Data en informatie"
           homeLink="http://data.amsterdam.nl"
           search={<CenteredElement> Search </CenteredElement>}
