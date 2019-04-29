@@ -21,7 +21,6 @@ export const SubMenuListWrapperStyle = styled.div.attrs(() => ({
   order: ${({ position }) => (position === 'bottom' ? -1 : 0)};
   background-color: ${({ theme }) =>
     getColorFromTheme(theme, 'tint', 'level1')};
-  border: 1px solid ${({ theme }) => getColorFromTheme(theme, 'tint', 'level7')};
   max-width: 250px;
   width: 100%;
   &:focus {

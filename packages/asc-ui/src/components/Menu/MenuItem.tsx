@@ -1,5 +1,6 @@
 import React from 'react'
 import MenuStyle, { MenuStyleProps } from '../../styles/components/MenuStyle'
+import { Icon } from '../..'
 import { KeyboardKeys } from '../../types'
 
 type Props = {
@@ -46,19 +47,18 @@ class MenuItem extends React.Component<Props> {
   render() {
     const { children, focused, icon, ...otherProps }: any = this.props
 
-    console.log('menuItem', this.props)
-
     return (
       <MenuStyle.MenuItemStyle
         ref={this.root}
+        key={Math.floor(Math.random() * 100)}
         focused={focused}
         onClick={this.onClick}
         onKeyDown={this.handleKeyPress}
         tabIndex={focused ? 0 : -1}
         {...otherProps}
       >
-        {icon && icon}
-        {children}
+        {icon && <Icon size={14}>{icon}</Icon>}
+        <span>{children}</span>
       </MenuStyle.MenuItemStyle>
     )
   }

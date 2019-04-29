@@ -1,9 +1,10 @@
-/* eslint-disable react/no-multi-comp */
 import React from 'react'
+import { ReactComponent as ChevronRight } from '@datapunt/asc-assets/lib/Icons/ChevronRight.svg'
 import MenuStyle, { MenuStyleProps } from '../../styles/components/MenuStyle'
-import MenuList from './MenuList'
+import ChevronDown from '../../internals/ChevronDown/ChevronDown'
 import { KeyboardKeys } from '../../types'
 import ownerDocument from '../../utils/ownerDocument'
+import { MenuContext } from './Menu'
 
 type Props = {
   focused?: boolean
@@ -11,6 +12,7 @@ type Props = {
   role?: string
   label?: string
   divider?: boolean
+  onOpenSubMenu?: Function
 } & MenuStyleProps.MenuItemStyleProps
 
 const selectedChildInitial = -1
@@ -22,38 +24,37 @@ class SubMenu extends React.Component<Props> {
   }
 
   list = React.createRef<HTMLDivElement>()
-  root = React.createRef<HTMLDivElement>()
 
   componentDidUpdate() {
     const { focused } = this.props
-    const ref = this.getReference('root')
+    const ref = this.getReference('list')
     if (ref && focused) {
       ref.focus()
     }
   }
 
-  onClick = (e: React.MouseEvent) => {
-    e.preventDefault()
-    this.onToggle()
-  }
-
-  onKeyDown = (event: React.KeyboardEvent) => {
+  onKeyDown = (event: React.KeyboardEvent, setOpenChild: Function) => {
     const { children } = this.props
     const { selectedChild, open } = this.state
 
-    const nrOfChildren = React.Children.count(children) + 2
+    const nrOfChildren = React.Children.count(children)
 
     if (!open) {
       return
     }
     const firstChild = 0
-    const lastChild = nrOfChildren
+    const lastChild = nrOfChildren - 1
 
-    if (event.key === KeyboardKeys.ArrowUp) {
+    if (event.key === KeyboardKeys.ArrowDown) {
       event.preventDefault()
-      this.setState({
-        selectedChild: selectedChild + 1,
-      })
+      if (selectedChild === lastChild) {
+        this.setState({ open: false, selectedChild: firstChild })
+        setOpenChild()
+      } else {
+        this.setState({
+          selectedChild: selectedChild + 1,
+        })
+      }
     }
 
     if (event.key === KeyboardKeys.ArrowUp) {
@@ -67,15 +68,21 @@ class SubMenu extends React.Component<Props> {
     }
   }
 
-  handleKeyPress = (e: React.KeyboardEvent) => {
+  onClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    this.onToggle()
+  }
+
+  handleKeyPress = (e: React.KeyboardEvent, setOpenChild: Function) => {
     if (e.key === KeyboardKeys.Enter) {
       this.onToggle()
+      setOpenChild()
     }
   }
 
   onClose = () => {
     setTimeout(() => {
-      const element = this.getReference('root') as HTMLInputElement
+      const element = this.getReference('list') as HTMLInputElement
       if (element) {
         const currentFocus = ownerDocument(element).activeElement
         if (!element.contains(currentFocus)) {
@@ -104,41 +111,53 @@ class SubMenu extends React.Component<Props> {
   }
 
   render() {
-    const { id, children, focused, innerRef, label, ...otherProps }: any = this.props
+    const {
+      id,
+      children: childrenProps,
+      focused,
+      label,
+      ...otherProps
+    }: any = this.props
     const { open, selectedChild } = this.state
 
-console.log(innerRef)
+    const children = React.Children.map(childrenProps, (child, index) =>
+      React.cloneElement(child as React.ReactElement<any>, {
+        focused: index === selectedChild,
+        icon: <ChevronRight />,
+      }),
+    )
 
     return (
-      <>
-        <MenuStyle.MenuItemStyle
-          focused={focused}
-          onClick={this.onClick}
-          onKeyDown={this.handleKeyPress}
-          tabIndex={-1}
-          ref={this.root}
-          {...otherProps}
-        >
-          {label && label}
-        </MenuStyle.MenuItemStyle>
-        <MenuList
-          {...{
-            id,
-            open,
-            selectedChild,
-          }}
-          ref={innerRef}
-          tabIndex={-1}
-          onClose={() => {}}
-          onKeyDown={this.onToggle}
-        >
-          {children}
-          </MenuList>
-      </>
+      <MenuContext.Consumer>
+        {(context: any) => (
+          <>
+            <MenuStyle.MenuItemStyle
+              focused={focused}
+              onKeyDown={
+                !open
+                  ? e => this.handleKeyPress(e, context.setOpenChild)
+                  : e => this.onKeyDown(e, context.setOpenChild)
+              }
+              tabIndex={focused ? 0 : -1}
+              ref={this.list}
+              {...otherProps}
+            >
+              {label && <span>{label}</span>}
+              <ChevronDown open={open} />
+            </MenuStyle.MenuItemStyle>
+            <MenuStyle.SubMenuListWrapperStyle
+              aria-hidden={!open}
+              onBlur={this.onClose}
+            >
+              <MenuStyle.SubMenuListStyle labelId={id}>
+                {children}
+              </MenuStyle.SubMenuListStyle>
+            </MenuStyle.SubMenuListWrapperStyle>
+          </>
+        )}
+      </MenuContext.Consumer>
     )
   }
 }
 
 export default SubMenu
-
-/* eslint-enable react/no-multi-comp */

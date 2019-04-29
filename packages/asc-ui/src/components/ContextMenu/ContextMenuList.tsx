@@ -1,6 +1,8 @@
 /* eslint-disable react/no-multi-comp */
 import React, { forwardRef } from 'react'
-import ContextMenuStyle, { ContextMenuStyleProps } from '../../styles/components/ContextMenuStyle'
+import ContextMenuStyle, {
+  ContextMenuStyleProps,
+} from '../../styles/components/ContextMenuStyle'
 
 type Props = {
   open: boolean

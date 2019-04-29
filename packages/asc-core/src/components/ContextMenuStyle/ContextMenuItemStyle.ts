@@ -1,5 +1,34 @@
-import MenuStyle from '../MenuStyle'
+import styled from '../../styled-components'
+import { ContextMenuStyleProps } from './types'
+import { getColorFromTheme, getTypographyFromTheme } from '../../utils'
 
-const ContextMenuItemStyle = MenuStyle.MenuButtonStyle
+export const ContextMenuItemStyle = styled.li<
+  ContextMenuStyleProps.ContextMenuItemStyleProps
+>`
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 34px;
+  width: 100%;
+  cursor: pointer;
+  font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
+
+  & > span:first-child {
+    margin: 5px 6px;
+  }
+
+  ${({ divider, theme }) =>
+    divider &&
+    `border-bottom: 1px solid ${getColorFromTheme(theme, 'tint', 'level4')}}`}
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: ${({ theme }) =>
+      getColorFromTheme(theme, 'tint', 'level2')}};
+  }
+`
 
 export default ContextMenuItemStyle

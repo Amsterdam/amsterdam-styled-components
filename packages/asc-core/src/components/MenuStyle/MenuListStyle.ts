@@ -20,8 +20,9 @@ export const MenuListWrapperStyle = styled.div.attrs(() => ({
 }))<MenuStyleProps.MenuListStyleProps>`
   order: ${({ position }) => (position === 'bottom' ? -1 : 0)};
   background-color: ${({ theme }) =>
-    getColorFromTheme(theme, 'tint', 'level1')};
-  border: 1px solid ${({ theme }) => getColorFromTheme(theme, 'tint', 'level7')};
+    getColorFromTheme(theme, 'tint', 'level2')};
+  border-bottom: 4px solid
+    ${({ theme }) => getColorFromTheme(theme, 'tint', 'level7')};
   max-width: 250px;
   width: 100%;
   &:focus {

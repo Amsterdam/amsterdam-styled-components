@@ -1,7 +1,9 @@
 import React from 'react'
-import ContextMenuStyle, { ContextMenuStyleProps } from '../../styles/components/ContextMenuStyle'
+import ContextMenuStyle, {
+  ContextMenuStyleProps,
+} from '../../styles/components/ContextMenuStyle'
 import ContextMenuButton from './ContextMenuButton'
-import MenuList from './ContextMenuList'
+import ContextMenuList from './ContextMenuList'
 import { KeyboardKeys } from '../../types'
 import ownerDocument from '../../utils/ownerDocument'
 
@@ -124,7 +126,7 @@ class ContextMenu extends React.Component<Props, State> {
           }}
           onClick={() => this.onToggle(!open)}
         />
-        <MenuList
+        <ContextMenuList
           {...{
             position,
             id,
@@ -135,7 +137,7 @@ class ContextMenu extends React.Component<Props, State> {
           ref={this.list}
         >
           {children}
-        </MenuList>
+        </ContextMenuList>
       </ContextMenuStyle.ContextMenuWrapperStyle>
     )
   }
