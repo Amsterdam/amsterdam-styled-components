@@ -1,13 +1,11 @@
 import styled from '../../styled-components'
-import HeaderTitleBaseStyle from './HeaderTitleBaseStyle'
+import HeaderTitleStyleBase from './HeaderTitleStyleBase'
 
-const HeaderTitleTallStyle = styled(HeaderTitleBaseStyle)`
+const HeaderTitleTallStyle = styled(HeaderTitleStyleBase)`
   & > h1 > a > div > span {
     line-height: 67px;
     font-size: 30px;
   }
 `
-
-
 
 export default HeaderTitleTallStyle

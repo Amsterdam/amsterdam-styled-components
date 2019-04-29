@@ -47,37 +47,38 @@ exports[`Header tall should render the Header tall 1`] = `
   overflow: hidden;
 }
 
-.c2 {
+.c2 > h1 {
+  height: 100%;
+  margin: 0;
+  font-family: 'AvenirNextLTW01-Demi';
+  font-weight: bold;
+}
+
+.c2 > h1 > a {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
   color: #000;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c2 > h1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  margin: 0;
-  font-family: 'AvenirNextLTW01-Demi';
-  font-weight: normal;
-}
-
 .c2 > h1 > div > span {
   display: inline-block;
 }
 
-.c2 > h1 > div > span {
-  margin-top: 2px;
-  line-height: 68px;
+.c2 > h1 > a > div > span {
+  line-height: 67px;
   font-size: 30px;
 }
 
 .c3 {
   display: inline-block;
-  min-height: 108px;
-  padding: 20px 40px 20px 15px;
+  margin: 20px 40px 10px 15px;
 }
 
 .c3 > svg {
@@ -118,27 +119,26 @@ exports[`Header tall should render the Header tall 1`] = `
   <div
     class="c1"
   >
-    <a
+    <div
       class="c2"
-      href="http://data.amsterdam.nl"
-    />
-    <h1>
-      <a
-        class="c2"
-        href="http://data.amsterdam.nl"
-      />
-      <a
-        class="c3"
-        href="http://data.amsterdam.nl"
-      >
-        SVG_MOCK
-      </a>
-      <div>
-        <span>
-          Data en informatie
-        </span>
-      </div>
-    </h1>
+    >
+      <h1>
+        <a
+          href="http://data.amsterdam.nl"
+        >
+          <span
+            class="c3"
+          >
+            SVG_MOCK
+          </span>
+          <div>
+            <span>
+              Data en informatie
+            </span>
+          </div>
+        </a>
+      </h1>
+    </div>
     <div
       class="c4"
     >

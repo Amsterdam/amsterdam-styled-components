@@ -4,7 +4,7 @@ import HeaderShortWrapperStyle from '../../styles/components/HeaderStyle/HeaderS
 import HeaderShortTitle from './HeaderShortTitle'
 import HeaderSearch from './HeaderSearch'
 import HeaderMenu from './HeaderMenu'
-import { HeaderSize } from '../../styles/components/HeaderStyle';
+import { HeaderSize } from '../../styles/components/HeaderStyle'
 
 type Props = {
   search: React.ReactElement
