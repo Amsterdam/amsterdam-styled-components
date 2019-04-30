@@ -11,6 +11,10 @@ const SubMenuListStyle = styled.ul<MenuStyleProps.MenuListStyleProps>`
   &:focus {
     outline: none;
   }
+
+  & > li > span:last-child {
+    position: relative;
+  }
 `
 export default SubMenuListStyle
 

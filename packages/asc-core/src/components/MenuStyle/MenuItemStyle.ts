@@ -1,6 +1,10 @@
 import styled from '../../styled-components'
 import { MenuStyleProps } from './types'
-import { getColorFromTheme, getTypographyFromTheme } from '../../utils'
+import {
+  fillSvgFromTheme,
+  getColorFromTheme,
+  getTypographyFromTheme,
+} from '../../utils'
 
 export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   padding: 10px 15px 10px 11px;
@@ -13,6 +17,7 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   cursor: pointer;
   box-sizing: border-box;
   font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
+  position: relative;
 
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -20,13 +25,16 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
     getColorFromTheme(theme, 'tint', 'level3')}};
 
   border-left-style: solid;
-  border-left-color: transparent;
+  border-left-color: ${({ theme }) =>
+    getColorFromTheme(theme, 'tint', 'level2')}};
   border-left-width: 4px;
 
   & > span:last-child {
     border-bottom-width: 2px;
     border-bottom-style: solid;
-    border-bottom-color: transparent;
+    border-bottom-color: ${({ theme, focused }) =>
+      focused ? getColorFromTheme(theme, 'secondary', 'main') : 'transparent'};
+    line-height: 22px;
   }
 
   & > span:first-child:not(:only-child) {
@@ -36,14 +44,15 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   &:hover,
   &:focus {
     outline: none;
-    color: ${({ theme }) => getColorFromTheme(theme, 'secondary', 'main')}};
-    border-left-color: ${({ theme, focused }) =>
-      focused && getColorFromTheme(theme, 'secondary', 'main')}};
 
-    &:hover > span:last-child,
-    &:focus > span:last-child {
+    & > span:last-child {
       border-bottom-color: ${({ theme }) =>
         getColorFromTheme(theme, 'secondary', 'main')}};
+      color: ${({ theme }) => getColorFromTheme(theme, 'secondary', 'main')}};
+    }
+
+    & > span > svg {
+      fill: ${({ theme }) => fillSvgFromTheme(theme, 'secondary', 'main')};
     }
   }
 

@@ -8,6 +8,7 @@ import ownerDocument from '../../utils/ownerDocument'
 type Props = {
   position?: MenuStyleProps.Position
   label?: string
+  mobile?: boolean
   icon?: React.ReactNode
 }
 
@@ -26,6 +27,10 @@ class Menu extends React.Component<Props, State> {
     open: false,
     openChild: false,
     selectedChild: selectedChildInitial,
+  }
+
+  static defaultProps = {
+    mobile: false,
   }
 
   wrapper = React.createRef<HTMLDivElement>()
@@ -99,7 +104,7 @@ class Menu extends React.Component<Props, State> {
   }
 
   render() {
-    const { id, label, children, position, icon }: any = this.props
+    const { id, label, children, mobile, position, icon }: any = this.props
     const { open, openChild, selectedChild } = this.state
 
     return (
@@ -108,6 +113,7 @@ class Menu extends React.Component<Props, State> {
           open,
           openChild,
           setOpenChild: this.setOpenChild,
+          mobile,
         }}
       >
         <MenuContext.Consumer>

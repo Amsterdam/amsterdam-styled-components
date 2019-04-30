@@ -10,7 +10,7 @@ const MenuButtonStyle = styled.button<MenuStyleProps.MenuButtonStyleProps>`
   border: 0px;
   align-items: center;
   height: 32px;
-  padding: 0 6px;
+  padding: 0 15px;
 `
 
 export default MenuButtonStyle

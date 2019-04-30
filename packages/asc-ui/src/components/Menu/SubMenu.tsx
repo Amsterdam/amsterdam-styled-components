@@ -15,15 +15,24 @@ type Props = {
   onOpenSubMenu?: Function
 } & MenuStyleProps.MenuItemStyleProps
 
+type State = {
+  open: boolean
+  selectedChild: number
+}
+
 const selectedChildInitial = -1
 
-class SubMenu extends React.Component<Props> {
-  state = {
-    open: false,
-    selectedChild: selectedChildInitial,
-  }
-
+class SubMenu extends React.Component<Props, State> {
   list = React.createRef<HTMLDivElement>()
+
+  constructor(props: Props) {
+    super(props)
+
+    this.state = {
+      open: false,
+      selectedChild: selectedChildInitial,
+    }
+  }
 
   componentDidUpdate() {
     const { focused } = this.props
@@ -68,8 +77,9 @@ class SubMenu extends React.Component<Props> {
     }
   }
 
-  onClick = (e: React.MouseEvent) => {
+  onClick = (e: React.MouseEvent, setOpenChild: Function) => {
     e.preventDefault()
+    setOpenChild()
     this.onToggle()
   }
 
@@ -123,7 +133,7 @@ class SubMenu extends React.Component<Props> {
     const children = React.Children.map(childrenProps, (child, index) =>
       React.cloneElement(child as React.ReactElement<any>, {
         focused: index === selectedChild,
-        icon: <ChevronRight />,
+        icon: child.props.icon ? child.props.icon : <ChevronRight />,
       }),
     )
 
@@ -131,8 +141,9 @@ class SubMenu extends React.Component<Props> {
       <MenuContext.Consumer>
         {(context: any) => (
           <>
-            <MenuStyle.MenuItemStyle
+            <MenuStyle.SubMenuButtonStyle
               focused={focused}
+              onClick={e => this.onClick(e, context.setOpenChild)}
               onKeyDown={
                 !open
                   ? e => this.handleKeyPress(e, context.setOpenChild)
@@ -143,10 +154,10 @@ class SubMenu extends React.Component<Props> {
               {...otherProps}
             >
               {label && <span>{label}</span>}
-              <ChevronDown open={open} />
-            </MenuStyle.MenuItemStyle>
+              {context.mobile && <ChevronDown open={open} />}
+            </MenuStyle.SubMenuButtonStyle>
             <MenuStyle.SubMenuListWrapperStyle
-              aria-hidden={!open}
+              aria-hidden={context.mobile ? !open : false}
               onBlur={this.onClose}
             >
               <MenuStyle.SubMenuListStyle labelId={id}>

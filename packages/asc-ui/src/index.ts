@@ -15,6 +15,7 @@ import ContextMenu from './components/ContextMenu'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
 import Menu from './components/Menu'
 import MenuItem from './components/Menu/MenuItem'
+import MenuLabel from './components/Menu/MenuLabel'
 import SubMenu from './components/Menu/SubMenu'
 import Header from './components/Header/Header'
 
@@ -41,6 +42,7 @@ export {
   ContextMenuItem,
   Menu,
   MenuItem,
+  MenuLabel,
   SubMenu,
   Header,
 }
