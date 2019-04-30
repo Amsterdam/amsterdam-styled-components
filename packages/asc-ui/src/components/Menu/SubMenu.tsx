@@ -12,7 +12,6 @@ type Props = {
   role?: string
   label?: string
   divider?: boolean
-  onOpenSubMenu?: Function
 } & MenuStyleProps.MenuItemStyleProps
 
 type State = {

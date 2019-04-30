@@ -8,9 +8,9 @@ type Props = {
   id: string
   selectedChild: number
   onClose: Function
-  onOpenSubMenu: Function
   label?: string
   innerRef?: any
+  mobile: boolean
 } & MenuStyleProps.MenuListStyleProps
 
 export default forwardRef((props: any, ref: React.Ref<any>) => {
@@ -37,14 +37,13 @@ class MenuList extends React.Component<Props> {
       innerRef,
       selectedChild,
       onClose,
-      onOpenSubMenu,
+      mobile
     } = this.props
 
     const children = React.Children.map(childrenProps, (child, index) =>
       React.cloneElement(child as React.ReactElement<any>, {
         focused: index === selectedChild,
-        icon: <ChevronRight />,
-        onOpenSubMenu,
+        icon: !mobile ? <ChevronRight /> : '',
         innerRef,
       }),
     )

@@ -141,6 +141,7 @@ class Menu extends React.Component<Props, State> {
                   selectedChild,
                 }}
                 onClose={this.onClose}
+                mobile={context.mobile}
                 ref={this.list}
               >
                 {children}
