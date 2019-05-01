@@ -27,7 +27,7 @@
     "lint:css": "stylelint './packages/**/src/**/*.ts'",
     "lint:js": "eslint packages --ext ts,tsx",
     "prepare": "yarn prettify:package && yarn build",
-    "publish:packages": "yarn link & yarn test & lerna publish",
+    "publish:packages": "yarn lint & yarn test & lerna publish",
     "start": "concurrently \"yarn build:watch\" \"yarn storybook\"",
     "storybook": "start-storybook -p 6006",
     "symlink": "./scripts/link-core.sh",
