@@ -1,5 +1,5 @@
 packages/**/lib
-packages/asc-assets/*.js
+*.min.js
 *.d.ts
 node_modules
 examples

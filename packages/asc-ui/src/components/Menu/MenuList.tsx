@@ -37,7 +37,7 @@ class MenuList extends React.Component<Props> {
       innerRef,
       selectedChild,
       onClose,
-      mobile
+      mobile,
     } = this.props
 
     const children = React.Children.map(childrenProps, (child, index) =>
@@ -62,4 +62,5 @@ class MenuList extends React.Component<Props> {
     )
   }
 }
+
 /* eslint-enable react/no-multi-comp */
