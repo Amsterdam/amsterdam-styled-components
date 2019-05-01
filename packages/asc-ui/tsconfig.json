@@ -4,13 +4,8 @@
     "rootDir": "./src",
     "outDir": "./lib"
   },
-  "include": [
-    "./src"
-  ],
+  "include": ["./src"],
   "references": [
-    {
-      "path": "../asc-core"
-    },
     {
       "path": "../asc-assets"
     }

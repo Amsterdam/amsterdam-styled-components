@@ -1,11 +1,7 @@
-import {
-  AscCore,
-  ASCDefaultThemeProvider as ThemeProvider,
-  StyledComponents,
-  Theme,
-} from '@datapunt/asc-core'
+import { AscCore, ascDefaultTheme, StyledComponents, Theme } from './styles'
 
 import IconButton from './components/IconButton'
+import Icon from './components/Icon'
 import Modal from './components/Modal'
 import Portal from './components/Portal'
 import Typography from './components/Typography'
@@ -15,15 +11,20 @@ import ShareButton from './components/ShareButton'
 import Button from './components/Button'
 import Radio from './components/Radio'
 import Focus from './components/Focus'
+import ContextMenu from './components/ContextMenu'
+import ContextMenuButton from './components/ContextMenu/ContextMenuButton'
+import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
+import Header from './components/Header/Header'
 
-const { Divider, Icon, ButtonBar, GlobalStyle, ListItem } = AscCore
+import ThemeProvider from './theme'
+
+const { Divider, GlobalStyle, ListItem } = AscCore
 
 // Components
 export {
   Divider,
   Icon,
   Button,
-  ButtonBar,
   IconButton,
   Modal,
   Portal,
@@ -34,7 +35,17 @@ export {
   ShareBar,
   ShareButton,
   Focus,
+  ContextMenu,
+  ContextMenuButton,
+  ContextMenuItem,
+  Header,
 }
 
-// Non-components exports
-export { GlobalStyle, StyledComponents, Theme, ThemeProvider }
+export {
+  AscCore,
+  GlobalStyle,
+  StyledComponents,
+  Theme,
+  ThemeProvider,
+  ascDefaultTheme,
+}

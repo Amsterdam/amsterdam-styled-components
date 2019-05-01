@@ -1,11 +1,15 @@
 import * as React from 'react'
-import { AscCore } from '@datapunt/asc-core'
+import ButtonStyle, {
+  ButtonStyleProps,
+} from '../../styles/components/ButtonStyle'
 
-const Button: React.FC<AscCore.Button.Props> = ({
-  children,
-  ...otherProps
-}) => (
-  <AscCore.Button.default {...otherProps}>{children}</AscCore.Button.default>
+type Props = {
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
+  as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+} & ButtonStyleProps
+
+const Button: React.FC<Props> = ({ children, ...otherProps }) => (
+  <ButtonStyle {...otherProps}>{children}</ButtonStyle>
 )
 
 export default Button

@@ -19,8 +19,7 @@ const SimpleComponent: React.FC<{}> = ({ children }) => (
         )
       }
       hoverColor="#3b5999"
-      iconSize={24}
-      alignIcon="bottom"
+      iconSize={30}
     >
       <Facebook />
     </ShareButton>
@@ -66,7 +65,7 @@ const SimpleComponent: React.FC<{}> = ({ children }) => (
   </ShareBar>
 )
 
-storiesOf('ShareBar', module).add(
+storiesOf('Composed/ShareBar', module).add(
   'default state with most used buttons',
   () => <SimpleComponent />,
 )

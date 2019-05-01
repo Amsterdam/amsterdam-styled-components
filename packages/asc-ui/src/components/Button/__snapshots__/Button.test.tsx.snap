@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render the button 1`] = `
+<StyledComponent
+  color="primary"
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bwzfXH",
+        "isStatic": false,
+        "rules": Array [
+          "
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 0 10px 0 10px;
+  ",
+          [Function],
+          "
+  ",
+          "transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;",
+          ";
+
+  background: ",
+          [Function],
+          ";
+
+  &:hover {
+    background: ",
+          [Function],
+          ";
+  }
+
+  ",
+          "
+  &:after {
+    content: '';
+    display: block;
+    min-height: inherit;
+    font-size: 0;
+  }
+",
+          "
+",
+          "
+  padding: 0 10px 0 10px;
+  min-height: 38px;
+  line-height: 1em
+  color: ",
+          [Function],
+          ";
+
+  ",
+          [Function],
+          "
+
+  &:hover {
+    ",
+          [Function],
+          "
+  }
+
+  & svg {
+    width: 30px;
+    height: 30px;
+    ",
+          [Function],
+          ";
+  }
+",
+        ],
+      },
+      "displayName": "Styled(styled.button)",
+      "foldedComponentIds": Array [
+        "sc-bdVaJa",
+      ],
+      "render": [Function],
+      "styledComponentId": "sc-bwzfXH",
+      "target": "button",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  Hello
+</StyledComponent>
+`;

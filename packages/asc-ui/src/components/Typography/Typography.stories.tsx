@@ -2,7 +2,7 @@ import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import Typography from './Typography'
 
-storiesOf('Typography', module)
+storiesOf('Atoms/Typography', module)
   .add('headings', () => (
     <>
       <Typography element="h1">Heading one</Typography>

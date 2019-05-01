@@ -8,13 +8,15 @@
 
 NOTE: this is a draft. We are still experimenting and configuring. Do not use in production.
 
+[Demo site with the storybook of the components](https://amsterdam.github.io/amsterdam-styled-components)
+
 ## Vision
 
 Consistency is always a painpoint in software engineering, especially when it comes to web styling and UX. That is why we think a component library who captures styling but also certain UX aspects, e.g. button loading state, is highly beneficial for organisations with large or multiple applications, such as Datapunt Amsterdam.
 
 We acknowledge that such a library entails some risks and pitfalls and we aim to cover these as much as possible. On the other hand we think that the benefits outweigh the downsides.
 
-##### Quality assurance and durable maintainability
+### Quality assurance and durable maintainability
 
 One of the biggest risks is the way a library needs be maintained in order to guarentee quality and keep developers motivated to continue using it. This is at risk when:
 
@@ -27,9 +29,9 @@ Our goal is to set up strict guidelines for development and limit the amount of 
 
 The guidelines can be found here (TBD)
 
-## Trade off
+## Tradeoff
 
-##### PROS:
+### PROS
 
 - Able to reuse components, this will not only save development time in the long term, but it also introduces consistency in design and code. No more copy-paste code.
 
@@ -39,9 +41,9 @@ The guidelines can be found here (TBD)
 
 - Great to be used in a living styleguide like Storybook
 
-- Attractive for the (internal) open source community; could even be used outside Datapunt in other departments within the Gemeente Amsterdam.
+- Attractive for the (internal) open source community; could even be used outside Datapunt in other departments within the Municipality of Amsterdam.
 
-##### CONS (& risks):
+### CONS (& risks)
 
 - Quality assurance; we need to set up some well founded contribution guidelines and make sure the repo doesn’t get polluted.
 
@@ -51,21 +53,77 @@ The guidelines can be found here (TBD)
 
 ## Usage
 
-##### Development
+### Development
+
+```bash
+yarn install
+```
+
 To start watching files and start storybook, run `yarn start`
 
 To test your components in other repo's, do the following:
 
 1. Run `yarn build:watch`, this will watch your files and transpile them to the package lib directory.
-2. cd to the package you want to test and run `lerna link`.
-3. Go to the repo where you want to use your package and run `npm link <package-name>`. `<package-name>` can be found in the `package.json` you linked in step 2.
+2. cd to the package you want to test, run `yarn link`.
+3. Go to the repo where you want to use your package and run `yarn link <package-name>`.`<package-name>` can be found in the `package.json` you linked in step 2.
 
 Now you can import the package like you would do like a normal npm dependency. Changes you will make in your package will be seen in your repo.
 
-##### Publishing
+#### Development guidelines
+
+- The default export from a file matches the file name
+- The component styles are only placed in the `asc-core/src/components` folder.
+  Exception is the `asc-ui/src/internals` folder where the styles are allowed. The components from this folder are just for internal use in the stories.
+- The component style name follows the pattern `<ComponentName>Style/<ComponentName>Style.ts`
+- Pull request has tests (we are going for 100% coverage!)
+
+#### Development pattern for Components
+
+Follow the pattern found in:
+
+- asc-core/src/components/TopBarStyle/TopBarStyle.ts
+- asc-core/src/components/TopBarStyle/index.ts
+- asc-ui/src/components/TopBar/TopBar.tsx
+- asc-ui/src/components/TopBar/index.ts
+
+### Publishing
 
 To publish these packages to npm, do the following:
 
 1. Make sure you're logged in to npm, by running `npm login`
 2. Run `yarn publish:packages` to start lerna
 3. Select a version
+
+### Using with Webpack
+
+These Component Library renders SVGs as Components, something that should be supported by your Webpack configuration. In case you run into any problems, consider the following steps:
+
+1. Run `npm install @svgr/webpack url-loader`
+2. In your `webpack.config.js` add:
+
+```js
+{
+  test: /\.svg$/,
+  use: ['@svgr/webpack', 'url-loader'],
+}
+```
+
+3. Integrate in your code:
+
+```js
+import { ReactComponent as Close } from '@datapunt/asc-assets/lib/Icons/Close.svg'
+const App = () => (
+  <div>
+    <Close />
+  </div>
+)
+```
+
+### Known issues
+
+- When deploying to github pages with `npm run deploy-storybook` there are \*.d definition files generated. These should not be checked in and can be discarded without problems.
+
+### References
+
+- [Material ui](https://material-ui.com/getting-started/installation/)
+- [styled-components](https://www.styled-components.com/)

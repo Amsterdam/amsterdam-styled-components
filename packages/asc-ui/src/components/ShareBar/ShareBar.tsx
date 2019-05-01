@@ -1,8 +1,10 @@
 import React from 'react'
-import { AscCore } from '@datapunt/asc-core'
+import ButtonBar, { Props as ShareBarProps } from '../ButtonBar'
 
-const ShareBar: React.FC<{}> = ({ children }) => (
-  <AscCore.ButtonBar padding={0}>{children}</AscCore.ButtonBar>
+type Props = ShareBarProps
+
+const ShareBar: React.FC<Props> = ({ children, ...otherProps }) => (
+  <ButtonBar {...otherProps}>{children}</ButtonBar>
 )
 
 export default ShareBar

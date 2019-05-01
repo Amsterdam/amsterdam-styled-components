@@ -9,6 +9,7 @@ node_modules
 /packages/**/lib
 /storybook-static
 /examples/**/lib
+.sb
 
 # misc
 .cache
@@ -25,3 +26,6 @@ yarn-error.log*
 # IDE / Editors
 .idea
 .vscode
+
+# symlinks
+/packages/**/styles
