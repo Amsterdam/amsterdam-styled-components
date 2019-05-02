@@ -14,7 +14,7 @@ const ContextMenuButton = ({
   return (
     <AscCore.ContextMenu.MenuButton {...{ id }} {...otherProps}>
       {icon && icon}
-      {label}
+      {label && <span>{label}</span>}
       <Icon
         inline
         size={24}

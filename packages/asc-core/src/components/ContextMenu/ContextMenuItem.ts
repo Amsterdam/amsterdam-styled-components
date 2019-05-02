@@ -14,7 +14,7 @@ export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
 
   & > span:first-child {
-    margin: 5px 12px;
+    margin: 5px 6px;
   }
 
   ${({ divider, theme }) =>

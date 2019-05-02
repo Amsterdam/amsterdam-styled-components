@@ -12,6 +12,7 @@ import Button from './components/Button'
 import Radio from './components/Radio'
 import Focus from './components/Focus'
 import ContextMenu from './components/ContextMenu'
+import ContextMenuButton from './components/ContextMenu/ContextMenuButton'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
 import HeaderShort from './components/Header/HeaderShort'
 
@@ -35,6 +36,7 @@ export {
   ShareButton,
   Focus,
   ContextMenu,
+  ContextMenuButton,
   ContextMenuItem,
   HeaderShort as Header,
 }
