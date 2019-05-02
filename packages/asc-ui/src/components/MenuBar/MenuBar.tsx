@@ -4,6 +4,7 @@ import {
   getColorFromTheme,
   getTypographyFromTheme,
   getFocusStyle,
+  getBreakpointFromTheme,
 } from '../../styles/utils'
 
 const MenuButtonStyle = styled.button<{}>`
@@ -78,6 +79,11 @@ const MenuBarStyle = styled.ul`
 
   &:focus {
     outline: none;
+  }
+
+  @media screen and ${({ theme }) =>
+      getBreakpointFromTheme(theme, 'max-width', 'laptop')} {
+    display: none;
   }
 `
 
