@@ -9,17 +9,16 @@ import {
 const MenuButtonStyle = styled.button<{}>`
   ${({ theme }) => getFocusStyle(theme)}
   display: flex;
-  background-color: 'transparent';
+  background-color: transparent;
   border: 0px;
   align-items: center;
-  height: 32px;
-  padding: 0 6px;
+  padding: 0;
 `
 
 const MenuButton = ({ id, label, ...otherProps }: any) => {
   return (
     <MenuButtonStyle {...{ id }} {...otherProps}>
-      {label && label}
+      <span>{label && label}</span>
     </MenuButtonStyle>
   )
 }
@@ -27,24 +26,22 @@ const MenuButton = ({ id, label, ...otherProps }: any) => {
 const MenuBarItemStyle = styled.li`
   padding: 15px;
 
-  & > button {
-    color: ${({ theme }) => getColorFromTheme(theme, 'tint', 'level6')};
-    line-height: 22px;
-    border: 0;
-    margin: 0;
-    border-bottom: 2px transparent solid;
-    background-color: ${({ theme }) =>
-      getColorFromTheme(theme, 'tint', 'level1')};
-
-    :hover,
-    :focus {
+  ${MenuButtonStyle} {
+    & > span {
       color: ${({ theme }) => getColorFromTheme(theme, 'tint', 'level6')};
       line-height: 22px;
-      border-bottom: 2px solid red;
-      outline: none;
-      background-color: ${({ theme }) =>
-        getColorFromTheme(theme, 'tint', 'level2')};
-    }
+      border: 0;
+      margin: 0;
+      border-bottom: 2px transparent solid;
+      background-color: transparent;
+
+      :hover,
+      :focus {
+        color: ${({ theme }) => getColorFromTheme(theme, 'tint', 'level6')};
+        line-height: 22px;
+        border-bottom: 2px solid red;
+        outline: none;
+      }
     }
   }
 
@@ -62,12 +59,7 @@ export const MenuBarItem: React.FC<{
   component?: React.Component
 }> = ({ label, onClick, component, ...otherProps }) => (
   <MenuBarItemStyle {...otherProps}>
-    {component || (
-      // <button type="button" onClick={onClick}>
-      //   {label}
-      // </button>
-      <MenuButton id="1" label={label} onClick={onClick} />
-    )}
+    {component || <MenuButton id="1" label={label} onClick={onClick} />}
   </MenuBarItemStyle>
 )
 
