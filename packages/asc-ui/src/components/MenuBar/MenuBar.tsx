@@ -1,6 +1,28 @@
 import React from 'react'
 import styled from '../../styled-components'
-import { getColorFromTheme, getTypographyFromTheme } from '../../styles/utils'
+import {
+  getColorFromTheme,
+  getTypographyFromTheme,
+  getFocusStyle,
+} from '../../styles/utils'
+
+const MenuButtonStyle = styled.button<{}>`
+  ${({ theme }) => getFocusStyle(theme)}
+  display: flex;
+  background-color: 'transparent';
+  border: 0px;
+  align-items: center;
+  height: 32px;
+  padding: 0 6px;
+`
+
+const MenuButton = ({ id, label, ...otherProps }: any) => {
+  return (
+    <MenuButtonStyle {...{ id }} {...otherProps}>
+      {label && label}
+    </MenuButtonStyle>
+  )
+}
 
 const MenuBarItemStyle = styled.li`
   padding: 15px;
@@ -41,9 +63,10 @@ export const MenuBarItem: React.FC<{
 }> = ({ label, onClick, component, ...otherProps }) => (
   <MenuBarItemStyle {...otherProps}>
     {component || (
-      <button type="button" onClick={onClick}>
-        {label}
-      </button>
+      // <button type="button" onClick={onClick}>
+      //   {label}
+      // </button>
+      <MenuButton id="1" label={label} onClick={onClick} />
     )}
   </MenuBarItemStyle>
 )

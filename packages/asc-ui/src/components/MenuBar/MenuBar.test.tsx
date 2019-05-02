@@ -1,5 +1,6 @@
 import * as React from 'react'
-import MenuBar from './MenuBar'
+import { action } from '@storybook/addon-actions'
+import MenuBar, { MenuBarItem } from './MenuBar'
 import { renderWithTheme } from '../../utils/withTheme'
 import 'jest-styled-components'
 
@@ -10,7 +11,10 @@ describe('MenuBar', () => {
 
   beforeEach(() => {
     component = renderWithTheme(
-      <MenuBar backgroundColor="red">MenuBar-content</MenuBar>,
+      <MenuBar>
+        <MenuBarItem label="Inhoud" onClick={action('click')} />
+        <MenuBarItem label="Over" onClick={action('click')} />
+      </MenuBar>,
     )
   })
 

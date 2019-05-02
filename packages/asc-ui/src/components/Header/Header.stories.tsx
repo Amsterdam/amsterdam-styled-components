@@ -70,13 +70,15 @@ const HeaderTallStory: React.FC<{}> = () => (
           title="Data en informatie"
           homeLink="http://data.amsterdam.nl"
           search={<CenteredElement> Search </CenteredElement>}
-          menu={<CenteredElement> M </CenteredElement>}
+          // menu={<CenteredElement> M </CenteredElement>}
+          menu={menu}
         />
         <HeaderShort
           title="Data en informatie"
           homeLink="http://data.amsterdam.nl"
           search={<CenteredElement> Search </CenteredElement>}
-          menu={<CenteredElement> M </CenteredElement>}
+          // menu={<CenteredElement> M </CenteredElement>}
+          menu={menu}
           headerSize="tall"
         />
         <ContentFiller
