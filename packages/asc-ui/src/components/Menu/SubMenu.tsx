@@ -1,5 +1,4 @@
 import React from 'react'
-import { ReactComponent as ChevronRight } from '@datapunt/asc-assets/lib/Icons/ChevronRight.svg'
 import MenuStyle, { MenuStyleProps } from '../../styles/components/MenuStyle'
 import ChevronDown from '../../internals/ChevronDown/ChevronDown'
 import { KeyboardKeys } from '../../types'
@@ -12,6 +11,7 @@ type Props = {
   role?: string
   label?: string
   divider?: boolean
+  mobile?: boolean
 } & MenuStyleProps.MenuItemStyleProps
 
 type State = {
@@ -125,6 +125,7 @@ class SubMenu extends React.Component<Props, State> {
       children: childrenProps,
       focused,
       label,
+      mobile,
       ...otherProps
     }: any = this.props
     const { open, selectedChild } = this.state
@@ -132,7 +133,7 @@ class SubMenu extends React.Component<Props, State> {
     const children = React.Children.map(childrenProps, (child, index) =>
       React.cloneElement(child as React.ReactElement<any>, {
         focused: index === selectedChild,
-        icon: child.props.icon ? child.props.icon : <ChevronRight />,
+        mobile,
       }),
     )
 

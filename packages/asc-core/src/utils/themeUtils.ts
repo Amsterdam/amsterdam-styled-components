@@ -1,4 +1,3 @@
-import { readableColor } from 'polished'
 import { css } from '../styled-components'
 import { Theme } from '../theme'
 import { fromTheme } from '.'
@@ -52,7 +51,7 @@ export const fillSvgFromTheme = (
         rect,
         polygon,
         path {
-          fill: ${readableColor(color)}
+          fill: ${color}
         }
       `
     }

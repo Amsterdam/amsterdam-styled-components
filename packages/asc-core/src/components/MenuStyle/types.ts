@@ -17,6 +17,7 @@ export namespace MenuStyleProps {
     focused?: boolean
     open?: boolean
     divider?: boolean
+    borderBottom?: boolean
   }
 
   export type MenuListStyleProps = {

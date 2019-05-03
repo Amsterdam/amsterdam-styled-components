@@ -1,6 +1,5 @@
 /* eslint-disable react/no-multi-comp */
 import React, { forwardRef } from 'react'
-import { ReactComponent as ChevronRight } from '@datapunt/asc-assets/lib/Icons/ChevronRight.svg'
 import MenuStyle, { MenuStyleProps } from '../../styles/components/MenuStyle'
 
 type Props = {
@@ -43,8 +42,7 @@ class MenuList extends React.Component<Props> {
     const children = React.Children.map(childrenProps, (child, index) =>
       React.cloneElement(child as React.ReactElement<any>, {
         focused: index === selectedChild,
-        icon: !mobile ? <ChevronRight /> : '',
-        innerRef,
+        mobile,
       }),
     )
 

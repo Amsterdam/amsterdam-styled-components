@@ -1,5 +1,6 @@
 import styled from '../../styled-components'
 import { MenuStyleProps } from './types'
+import IconStyle from '../IconStyle'
 import {
   fillSvgFromTheme,
   getColorFromTheme,
@@ -19,10 +20,13 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
   position: relative;
 
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: ${({ theme }) =>
-    getColorFromTheme(theme, 'tint', 'level3')}};
+  ${({ borderBottom, theme }) =>
+    borderBottom &&
+    `
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: ${getColorFromTheme(theme, 'tint', 'level3')};
+  `}};
 
   border-left-style: solid;
   border-left-color: ${({ theme }) =>
@@ -37,8 +41,14 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
     line-height: 22px;
   }
 
-  & > span:first-child:not(:only-child) {
-    margin-right: 5px;
+  ${IconStyle} {
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+
+    & > svg {
+      ${({ theme }) => fillSvgFromTheme(theme, 'tint', 'level7')};
+    }
   }
 
   &:hover,
@@ -51,8 +61,10 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
       color: ${({ theme }) => getColorFromTheme(theme, 'secondary', 'main')}};
     }
 
-    & > span > svg {
-      fill: ${({ theme }) => fillSvgFromTheme(theme, 'secondary', 'main')};
+    &:hover > ${IconStyle}, &:focus > ${IconStyle} {
+      & > svg {
+        ${({ theme }) => fillSvgFromTheme(theme, 'secondary', 'main')};
+      }
     }
   }
 

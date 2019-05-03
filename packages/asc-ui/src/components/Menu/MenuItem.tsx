@@ -50,7 +50,6 @@ class MenuItem extends React.Component<Props> {
     return (
       <MenuStyle.MenuItemStyle
         ref={this.root}
-        key={Math.floor(Math.random() * 100)}
         focused={focused}
         onClick={this.onClick}
         onKeyDown={this.handleKeyPress}
