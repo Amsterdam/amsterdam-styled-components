@@ -38,25 +38,12 @@ export const breakpoint = (type: Theme.TypeBreakpoint, variant: string) => ({
 }: {
   theme: Theme.ThemeInterface
 }) => {
-  const breakpoint: Theme.GetBreakpointFunc = fromTheme(
+  const breakpointFunc: Theme.GetBreakpointFunc = fromTheme(
     `breakpoints.${[variant]}`,
   )({
     theme,
   })
-  return breakpoint && breakpoint(type)
-}
-
-export const getBreakpointFromTheme = (
-  theme: Theme.ThemeInterface,
-  type: Theme.TypeBreakpoint,
-  variant: string,
-) => {
-  const breakpoint: Theme.GetBreakpointFunc = fromTheme(
-    `breakpoints.${[variant]}`,
-  )({
-    theme,
-  })
-  return breakpoint && breakpoint(type)
+  return breakpointFunc && breakpointFunc(type)
 }
 
 export const svgFill = (

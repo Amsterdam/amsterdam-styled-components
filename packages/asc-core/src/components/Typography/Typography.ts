@@ -67,22 +67,11 @@ export default (element: Variant): StyledComponent<any, any> => styled(
     css`
       margin-bottom: ${em('15px')};
     `}
-  ${({ theme }) => {
-    const {
-      fontWeight,
-      fontSize,
-      fontFamily,
-      letterSpacing,
-      lineHeight,
-    } = fromTheme(element)({ theme })
-    return css`
-      font-family: ${fontFamily};
-      font-weight: ${fontWeight};
-      font-size: ${fontSize};
-      letter-spacing: ${letterSpacing};
-      line-height: ${lineHeight};
-    `
-  }}
+  font-family: ${fromTheme('typography.fontFamily')};
+  font-weight: ${fromTheme('typography.fontWeight')};
+  font-size: ${fromTheme('typography.fontSize')};
+  letter-spacing: ${fromTheme('typography.letterSpacing')};
+  line-height: ${fromTheme('typography.lineHeight')};
   font-style: normal;
   font-stretch: normal;
   letter-spacing: normal;
