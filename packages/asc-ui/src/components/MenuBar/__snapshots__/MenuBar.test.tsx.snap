@@ -25,6 +25,10 @@ exports[`MenuBar should render 1`] = `
   padding: 15px;
 }
 
+.c1 .c2 {
+  font-family: 'AvenirNextLTW01-Medium';
+}
+
 .c1 .c2 > span {
   color: #323232;
   line-height: 22px;

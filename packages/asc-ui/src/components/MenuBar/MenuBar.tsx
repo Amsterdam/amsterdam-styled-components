@@ -28,6 +28,7 @@ const MenuBarItemStyle = styled.li`
   padding: 15px;
 
   ${MenuButtonStyle} {
+    font-family: 'AvenirNextLTW01-Medium';
     & > span {
       color: ${({ theme }) => getColorFromTheme(theme, 'tint', 'level6')};
       line-height: 22px;
