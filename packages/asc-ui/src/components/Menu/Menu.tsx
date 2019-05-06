@@ -14,8 +14,11 @@ type Props = {
 
 type State = {
   open: boolean
-  openChild: boolean
+  expandedChild: boolean
+  expandedChildIndex: number
   selectedChild: number
+  nrOfChildren: number
+  nrOfChildrenChild: number
 }
 
 const selectedChildInitial = -1
@@ -23,10 +26,15 @@ const selectedChildInitial = -1
 export const MenuContext = React.createContext({})
 
 class Menu extends React.Component<Props, State> {
+  nrOfChildrenInitial = React.Children.count(this.props.children)
+
   state = {
     open: false,
-    openChild: false,
+    expandedChild: false,
+    expandedChildIndex: -1,
     selectedChild: selectedChildInitial,
+    nrOfChildren: this.nrOfChildrenInitial,
+    nrOfChildrenChild: 0,
   }
 
   static defaultProps = {
@@ -35,15 +43,10 @@ class Menu extends React.Component<Props, State> {
 
   wrapper = React.createRef<HTMLDivElement>()
 
-  list = React.createRef<HTMLDivElement>()
-
   onKeyDown = (event: React.KeyboardEvent) => {
-    const { children } = this.props
-    const { selectedChild, open, openChild } = this.state
+    const { selectedChild, nrOfChildren, open, expandedChild } = this.state
 
-    const nrOfChildren = React.Children.count(children)
-
-    if (!open || openChild) {
+    if (!open) {
       return
     }
     const firstChild = 0
@@ -84,7 +87,7 @@ class Menu extends React.Component<Props, State> {
           this.setState({
             selectedChild: selectedChildInitial,
             open: false,
-            openChild: false,
+            expandedChild: false,
           })
         }
       }
@@ -99,56 +102,78 @@ class Menu extends React.Component<Props, State> {
     return null
   }
 
-  setOpenChild = () => {
-    this.setState(state => ({ openChild: !state.openChild }))
+  setOpenChild = (
+    nrOfChildren: number,
+    expandedChild: boolean,
+    expandedChildIndex: number,
+  ) => {
+    this.setState(state => ({
+      selectedChild: expandedChildIndex,
+      nrOfChildren: expandedChild
+        ? state.nrOfChildren + nrOfChildren
+        : this.nrOfChildrenInitial,
+      nrOfChildrenChild: nrOfChildren,
+      expandedChild,
+      expandedChildIndex,
+    }))
+  }
+
+  setSelectedChild = (index: number) => {
+    this.setState({ selectedChild: index })
   }
 
   render() {
     const { id, label, children, mobile, position, icon }: any = this.props
-    const { open, openChild, selectedChild } = this.state
+    const {
+      open,
+      expandedChild,
+      expandedChildIndex,
+      selectedChild,
+      nrOfChildren,
+      nrOfChildrenChild,
+    } = this.state
 
     return (
       <MenuContext.Provider
         value={{
           open,
-          openChild,
+          expandedChild,
+          expandedChildIndex,
+          selectedChild,
+          nrOfChildren,
+          setSelectedChild: this.setSelectedChild,
+          onKeyDown: this.onKeyDown,
           setOpenChild: this.setOpenChild,
+          nrOfChildrenChild,
           mobile,
         }}
       >
-        <MenuContext.Consumer>
-          {(context: any) => (
-            <MenuStyle.MenuWrapperStyle
-              id={id}
-              ref={this.wrapper}
-              onKeyDown={!context.openChild ? this.onKeyDown : () => {}}
-              onBlur={this.onClose}
-            >
-              <MenuButton
-                {...{
-                  icon,
-                  open,
-                  position,
-                  label,
-                }}
-                onClick={this.onToggle}
-              />
-              <MenuList
-                {...{
-                  position,
-                  id,
-                  open,
-                  selectedChild,
-                }}
-                onClose={this.onClose}
-                mobile={context.mobile}
-                ref={this.list}
-              >
-                {children}
-              </MenuList>
-            </MenuStyle.MenuWrapperStyle>
-          )}
-        </MenuContext.Consumer>
+        <MenuStyle.MenuWrapperStyle
+          id={id}
+          ref={this.wrapper}
+          onKeyDown={this.onKeyDown}
+          onBlur={this.onClose}
+        >
+          <MenuButton
+            {...{
+              icon,
+              open,
+              position,
+              label,
+            }}
+            onClick={this.onToggle}
+          />
+          <MenuList
+            {...{
+              position,
+              id,
+              open,
+            }}
+            onClose={this.onClose}
+          >
+            {children}
+          </MenuList>
+        </MenuStyle.MenuWrapperStyle>
       </MenuContext.Provider>
     )
   }

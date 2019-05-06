@@ -12,6 +12,7 @@ type Props = {
   label?: string
   divider?: boolean
   mobile?: boolean
+  index?: number
 } & MenuStyleProps.MenuItemStyleProps
 
 type State = {
@@ -41,51 +42,46 @@ class SubMenu extends React.Component<Props, State> {
     }
   }
 
-  onKeyDown = (event: React.KeyboardEvent, setOpenChild: Function) => {
-    const { children } = this.props
-    const { selectedChild, open } = this.state
-
-    const nrOfChildren = React.Children.count(children)
-
-    if (!open) {
-      return
-    }
-    const firstChild = 0
-    const lastChild = nrOfChildren - 1
-
-    if (event.key === KeyboardKeys.ArrowDown) {
-      event.preventDefault()
-      if (selectedChild === lastChild) {
-        this.setState({ open: false, selectedChild: firstChild })
-        setOpenChild()
-      } else {
-        this.setState({
-          selectedChild: selectedChild + 1,
-        })
-      }
-    }
-
-    if (event.key === KeyboardKeys.ArrowUp) {
-      event.preventDefault()
-      this.setState({
-        selectedChild:
-          selectedChild === firstChild || selectedChild === selectedChildInitial
-            ? lastChild
-            : selectedChild - 1,
-      })
+  onKeyDown = (
+    e: React.KeyboardEvent,
+    setOpenChild: Function,
+    onKeyDown: Function,
+  ) => {
+    if (e.key === KeyboardKeys.Enter) {
+      this.handleKeyPress(e, setOpenChild)
+    } else {
+      onKeyDown(e)
     }
   }
 
   onClick = (e: React.MouseEvent, setOpenChild: Function) => {
     e.preventDefault()
-    setOpenChild()
-    this.onToggle()
+    const { children, index } = this.props
+
+    const nrOfChildren = React.Children.count(children)
+    const { open } = this.state
+
+    this.setState(
+      {
+        open: !open,
+      },
+      () => setOpenChild(nrOfChildren, !open, this.props.index),
+    )
   }
 
   handleKeyPress = (e: React.KeyboardEvent, setOpenChild: Function) => {
     if (e.key === KeyboardKeys.Enter) {
-      this.onToggle()
-      setOpenChild()
+      const { children } = this.props
+      const nrOfChildren = React.Children.count(children)
+
+      const { open } = this.state
+
+      this.setState(
+        {
+          open: !open,
+        },
+        () => setOpenChild(nrOfChildren, !open, this.props.index),
+      )
     }
   }
 
@@ -122,20 +118,21 @@ class SubMenu extends React.Component<Props, State> {
   render() {
     const {
       id,
-      children: childrenProps,
+      children,
       focused,
       label,
       mobile,
+      index: currentIndex,
       ...otherProps
     }: any = this.props
     const { open, selectedChild } = this.state
 
-    const children = React.Children.map(childrenProps, (child, index) =>
-      React.cloneElement(child as React.ReactElement<any>, {
+    const clonedChildren = React.Children.map(children, (child, index) => {
+      return React.cloneElement(child as React.ReactElement<any>, {
         focused: index === selectedChild,
-        mobile,
-      }),
-    )
+        index: child.props.onClick ? currentIndex + 1 + index : null,
+      })
+    })
 
     return (
       <MenuContext.Consumer>
@@ -147,7 +144,8 @@ class SubMenu extends React.Component<Props, State> {
               onKeyDown={
                 !open
                   ? e => this.handleKeyPress(e, context.setOpenChild)
-                  : e => this.onKeyDown(e, context.setOpenChild)
+                  : e =>
+                      this.onKeyDown(e, context.setOpenChild, context.onKeyDown)
               }
               tabIndex={focused ? 0 : -1}
               ref={this.list}
@@ -161,7 +159,7 @@ class SubMenu extends React.Component<Props, State> {
               onBlur={this.onClose}
             >
               <MenuStyle.SubMenuListStyle labelId={id}>
-                {children}
+                {clonedChildren}
               </MenuStyle.SubMenuListStyle>
             </MenuStyle.SubMenuListWrapperStyle>
           </>

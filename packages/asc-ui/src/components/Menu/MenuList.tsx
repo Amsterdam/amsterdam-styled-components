@@ -1,64 +1,54 @@
-/* eslint-disable react/no-multi-comp */
-import React, { forwardRef } from 'react'
+import React from 'react'
 import MenuStyle, { MenuStyleProps } from '../../styles/components/MenuStyle'
+import { MenuContext } from './Menu'
 
 type Props = {
   open: boolean
   id: string
-  selectedChild: number
   onClose: Function
   label?: string
-  innerRef?: any
-  mobile: boolean
+  children?: any
 } & MenuStyleProps.MenuListStyleProps
 
-export default forwardRef((props: any, ref: React.Ref<any>) => {
-  return (
-    <MenuList {...props} innerRef={ref}>
-      {props.children}
-    </MenuList>
-  )
-})
+const MenuList = ({
+  id,
+  children,
+  position = MenuStyleProps.Position.top,
+  open,
+  onClose,
+}: Props) => {
+  const ref = React.useRef<HTMLDivElement>(null)
+  const {
+    mobile,
+    expandedChild,
+    expandedChildIndex,
+    selectedChild,
+    nrOfChildrenChild,
+  }: any = React.useContext(MenuContext)
 
-class MenuList extends React.Component<Props> {
-  state = {}
-
-  static defaultProps = {
-    position: MenuStyleProps.Position.top,
-  }
-
-  render() {
-    const {
-      id,
-      children: childrenProps,
-      position,
-      open,
-      innerRef,
-      selectedChild,
-      onClose,
+  const clonedChildren = React.Children.map(children, (child, index) => {
+    return React.cloneElement(child as React.ReactElement<any>, {
+      focused: index === selectedChild,
+      index:
+        expandedChild && index > expandedChildIndex
+          ? nrOfChildrenChild + expandedChildIndex + index - expandedChildIndex
+          : index,
       mobile,
-    } = this.props
+    })
+  })
 
-    const children = React.Children.map(childrenProps, (child, index) =>
-      React.cloneElement(child as React.ReactElement<any>, {
-        focused: index === selectedChild,
-        mobile,
-      }),
-    )
-
-    return (
-      <MenuStyle.MenuListWrapperStyle
-        ref={innerRef}
-        aria-hidden={!open}
-        onBlur={() => onClose()}
-        position={position}
-      >
-        <MenuStyle.MenuListStyle labelId={id}>
-          {children}
-        </MenuStyle.MenuListStyle>
-      </MenuStyle.MenuListWrapperStyle>
-    )
-  }
+  return (
+    <MenuStyle.MenuListWrapperStyle
+      ref={ref}
+      aria-hidden={!open}
+      onBlur={() => onClose()}
+      position={position}
+    >
+      <MenuStyle.MenuListStyle labelId={id}>
+        {clonedChildren}
+      </MenuStyle.MenuListStyle>
+    </MenuStyle.MenuListWrapperStyle>
+  )
 }
 
-/* eslint-enable react/no-multi-comp */
+export default MenuList
