@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShareButton should render the share button 1`] = `
+.c1 {
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: undefinedpx;
+  box-sizing: content-box;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c1 > svg {
+  width: inherit;
+  height: inherit;
+}
+
+.c1 > svg rect,
+.c1 > svg polygon,
+.c1 > svg path {
+  fill: #fff;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 0 10px 0 10px;
+  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background: #ffffff;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  position: relative;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: #767676;
+}
+
+.c0:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: medium;
+}
+
+.c0:hover {
+  background: #E6E6E6;
+}
+
+.c0:after {
+  content: '';
+  display: block;
+  min-height: inherit;
+  font-size: 0;
+}
+
+.c0:focus,
+.c0:hover {
+  background: #ec0000;
+}
+
+<button
+  class="c0"
+>
+  <span
+    class="c1"
+    color="secondary"
+  >
+    Hello
+  </span>
+</button>
+`;
