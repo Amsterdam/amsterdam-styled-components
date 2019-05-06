@@ -11,7 +11,7 @@ export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   height: 34px;
   width: 100%;
   cursor: pointer;
-  font-size: ${fromTheme(`typography.fontSize')};
+  font-size: ${fromTheme('typography.fontSize')};
 
   & > span:first-child {
     margin: 5px 6px;

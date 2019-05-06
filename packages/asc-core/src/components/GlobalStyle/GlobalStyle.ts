@@ -7,7 +7,7 @@ export default createGlobalStyle`
   ${({ theme }) => fromTheme('globalStyle')({ theme })}
 
   body {
-    font-family: ${fromTheme(`typography.fontFamily')};
+    font-family: ${fromTheme('typography.fontFamily')};
   }
 
   [aria-hidden="true"] {

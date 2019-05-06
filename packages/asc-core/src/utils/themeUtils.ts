@@ -3,6 +3,15 @@ import { css } from '../styled-components'
 import { Theme } from '../theme'
 import { fromTheme } from '.'
 
+export const color = (
+  colorType?: Theme.TypeLevel,
+  variant: string = 'main',
+) => ({ theme }: { theme: Theme.ThemeInterface }) => {
+  return colorType
+    ? fromTheme(`colors.${[colorType]}.${[variant]}`)({ theme })
+    : fromTheme('colors.tint.level1')({ theme })
+}
+
 export const getColorFromTheme = (
   theme: Theme.ThemeInterface,
   colorType?: Theme.TypeLevel,
@@ -13,13 +22,30 @@ export const getColorFromTheme = (
     : fromTheme('colors.tint.level1')({ theme })
 }
 
-export const getFocusStyle = (theme: Theme.ThemeInterface) => css`
+export const focusStyle = () => ({
+  theme,
+}: {
+  theme: Theme.ThemeInterface
+}) => css`
   &:focus {
-    outline-color: ${getColorFromTheme(theme, 'support', 'focus')};
+    outline-color: ${color('support', 'focus')({ theme })};
     outline-style: solid;
     outline-width: medium;
   }
 `
+export const breakpoint = (type: Theme.TypeBreakpoint, variant: string) => ({
+  theme,
+}: {
+  theme: Theme.ThemeInterface
+}) => {
+  const breakpoint: Theme.GetBreakpointFunc = fromTheme(
+    `breakpoints.${[variant]}`,
+  )({
+    theme,
+  })
+  return breakpoint && breakpoint(type)
+}
+
 export const getBreakpointFromTheme = (
   theme: Theme.ThemeInterface,
   type: Theme.TypeBreakpoint,
@@ -33,19 +59,18 @@ export const getBreakpointFromTheme = (
   return breakpoint && breakpoint(type)
 }
 
-export const fillSvgFromTheme = (
-  theme: Theme.ThemeInterface,
+export const svgFill = (
   colorType?: Theme.TypeLevel,
   variant: string = 'main',
-) => {
+) => ({ theme }: { theme: Theme.ThemeInterface }) => {
   if (colorType) {
-    const color = getColorFromTheme(theme, colorType, variant)
-    if (typeof color === 'string') {
+    const value = color(colorType, variant)({ theme })
+    if (typeof value === 'string') {
       return `
         rect,
         polygon,
         path {
-          fill: ${readableColor(color)}
+          fill: ${readableColor(value)}
         }
       `
     }

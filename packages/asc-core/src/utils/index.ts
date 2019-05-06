@@ -1,7 +1,8 @@
 export { default as fromTheme } from './fromTheme'
 export {
   getColorFromTheme,
-  getFocusStyle,
+  focusStyle,
   getBreakpointFromTheme,
-  fillSvgFromTheme,
+  breakpoint,
+  svgFill,
 } from './themeUtils'

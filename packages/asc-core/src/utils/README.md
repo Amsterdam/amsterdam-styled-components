@@ -70,6 +70,6 @@ const ButtonStyle = styled.button`
 <ButtonStyle theme={theme} /> // styles: { backgroundColor: '#000', color: '#fff' }
 ```
 
-## fillSvgFromTheme
+## svgFill
 
 ...
