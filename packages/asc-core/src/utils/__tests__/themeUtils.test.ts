@@ -66,7 +66,7 @@ describe('getFocusStyle', () => {
   }
 
   it('should return the focusstyle from theme', () => {
-    const result = getFocusStyle(theme)
+    const result = getFocusStyle()({ theme })
     expect(result).toContain('#abcde')
   })
 })

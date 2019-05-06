@@ -2,7 +2,7 @@ import styled from '../../styled-components'
 import { getColorFromTheme, getFocusStyle } from '../../utils'
 
 const ContextMenuButton = styled.button`
-  ${({ theme }) => getFocusStyle(theme)}
+  ${getFocusStyle()}
   display: flex;
   background-color: ${({ theme }) =>
     getColorFromTheme(theme, 'tint', 'level1')};

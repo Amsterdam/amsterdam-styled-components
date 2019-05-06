@@ -1,14 +1,9 @@
 import React from 'react'
 import styled from '../../styled-components'
-import {
-  getColorFromTheme,
-  getTypographyFromTheme,
-  getFocusStyle,
-  getBreakpointFromTheme,
-} from '../../styles/utils'
+import { color, breakpoint, getFocusStyle, fromTheme } from '../../styles/utils'
 
 const MenuButtonStyle = styled.button<{}>`
-  ${({ theme }) => getFocusStyle(theme)}
+  ${getFocusStyle()}
   display: flex;
   background-color: transparent;
   border: 0px;
@@ -25,33 +20,33 @@ const MenuButton = ({ id, label, ...otherProps }: any) => {
 }
 
 const MenuBarItemStyle = styled.li`
-  padding: 15px;
-
   ${MenuButtonStyle} {
     font-family: 'AvenirNextLTW01-Medium';
+    padding: 15px;
+    cursor: pointer;
+
     & > span {
-      color: ${({ theme }) => getColorFromTheme(theme, 'tint', 'level6')};
+      color: ${color('tint', 'level6')};
       line-height: 22px;
       border: 0;
       margin: 0;
       border-bottom: 2px transparent solid;
       background-color: transparent;
+    }
 
-      :hover,
-      :focus {
-        color: ${({ theme }) => getColorFromTheme(theme, 'tint', 'level6')};
-        line-height: 22px;
-        border-bottom: 2px solid red;
-        outline: none;
-      }
+    &:hover > span,
+    &:focus > span {
+      color: ${color('tint', 'level6')};
+      line-height: 22px;
+      border-bottom: 2px solid red;
+      outline: none;
     }
   }
 
   &:hover,
   &:focus {
     outline: none;
-    background-color: ${({ theme }) =>
-      getColorFromTheme(theme, 'tint', 'level2')};
+    background-color: ${color('tint', 'level2')};
   }
 `
 
@@ -75,15 +70,14 @@ const MenuBarStyle = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
-  cursor: pointer;
-  font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
+  font-size: ${fromTheme('typography.fontSize')};
+  /* cursor: pointer; */
 
   &:focus {
     outline: none;
   }
 
-  @media screen and ${({ theme }) =>
-      getBreakpointFromTheme(theme, 'max-width', 'laptop')} {
+  @media screen and ${breakpoint('max-width', 'laptop')} {
     display: none;
   }
 `

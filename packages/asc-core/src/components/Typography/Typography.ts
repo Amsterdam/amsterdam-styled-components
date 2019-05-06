@@ -42,7 +42,7 @@ const extendedStyles = {
     color: ${({ theme }) => getColorFromTheme(theme, 'primary')}
     display: inline-block;
 
-    ${({ theme }) => getFocusStyle(theme)}
+    ${getFocusStyle()}
 
     &:hover {
       color: ${({ theme }) => getColorFromTheme(theme, 'secondary')}

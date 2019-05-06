@@ -21,12 +21,10 @@ exports[`MenuBar should render 1`] = `
   outline-width: medium;
 }
 
-.c1 {
-  padding: 15px;
-}
-
 .c1 .c2 {
   font-family: 'AvenirNextLTW01-Medium';
+  padding: 15px;
+  cursor: pointer;
 }
 
 .c1 .c2 > span {
@@ -38,8 +36,8 @@ exports[`MenuBar should render 1`] = `
   background-color: transparent;
 }
 
-.c1 .c2 > span:hover,
-.c1 .c2 > span:focus {
+.c1 .c2:hover > span,
+.c1 .c2:focus > span {
   color: #323232;
   line-height: 22px;
   border-bottom: 2px solid red;
@@ -64,7 +62,6 @@ exports[`MenuBar should render 1`] = `
   margin: 0;
   padding: 0;
   list-style: none;
-  cursor: pointer;
   font-size: 16px;
 }
 

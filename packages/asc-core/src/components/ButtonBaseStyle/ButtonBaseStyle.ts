@@ -21,7 +21,7 @@ const ButtonBaseStyle = styled.button<Props>`
   font-size: 16px;
   font-weight: normal;
   padding: 0 10px 0 10px;
-  ${({ theme }) => getFocusStyle(theme)}
+  ${getFocusStyle()}
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')};
 
   background: ${({ color, theme }) => getColorFromTheme(theme, color)};
