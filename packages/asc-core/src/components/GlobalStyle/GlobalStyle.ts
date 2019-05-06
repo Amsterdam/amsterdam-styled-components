@@ -1,13 +1,13 @@
 import { normalize } from 'polished'
 import { createGlobalStyle } from '../../styled-components'
-import { fromTheme, getTypographyFromTheme } from '../../utils'
+import { fromTheme } from '../../utils'
 
 export default createGlobalStyle`
   ${normalize()}
   ${({ theme }) => fromTheme('globalStyle')({ theme })}
 
   body {
-    font-family: ${({ theme }) => getTypographyFromTheme(theme, 'fontFamily')};
+    font-family: ${fromTheme(`typography.fontFamily')};
   }
 
   [aria-hidden="true"] {

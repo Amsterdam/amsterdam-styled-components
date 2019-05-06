@@ -1,11 +1,7 @@
 import { StyledComponent } from 'styled-components'
 import { em, margin } from 'polished'
 import styled, { css } from '../../styled-components'
-import {
-  getColorFromTheme,
-  getTypographyFromTheme,
-  getFocusStyle,
-} from '../../utils'
+import { getColorFromTheme, getFocusStyle, fromTheme } from '../../utils'
 
 export type Props = {
   gutterBottom?: boolean
@@ -78,7 +74,7 @@ export default (element: Variant): StyledComponent<any, any> => styled(
       fontFamily,
       letterSpacing,
       lineHeight,
-    } = getTypographyFromTheme(theme, element)
+    } = fromTheme(element)({ theme })
     return css`
       font-family: ${fontFamily};
       font-weight: ${fontWeight};

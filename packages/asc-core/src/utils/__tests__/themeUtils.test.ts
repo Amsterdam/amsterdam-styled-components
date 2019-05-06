@@ -1,6 +1,5 @@
 import {
   getColorFromTheme,
-  getTypographyFromTheme,
   getFocusStyle,
   getBreakpointFromTheme,
   fillSvgFromTheme,
@@ -32,22 +31,6 @@ describe('getColorFromTheme', () => {
 
   it('should returen the default color when the colorType is not provided', () => {
     expect(getColorFromTheme(theme)).toBe('#ffffff')
-  })
-})
-
-describe('getTypographyFromTheme', () => {
-  it('should return the requested typography from theme', () => {
-    const theme = {
-      breakpoints,
-      globalStyle,
-      colors,
-      typography: {
-        ...typography,
-        fontSize: '16px',
-      },
-    }
-
-    expect(getTypographyFromTheme(theme, 'fontSize')).toBe('16px')
   })
 })
 
