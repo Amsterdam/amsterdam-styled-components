@@ -1,6 +1,6 @@
 import styled from '../../styled-components'
 import { ContextMenu } from './types'
-import { getColorFromTheme, fromTheme } from '../../utils'
+import { color, getColorFromTheme, fromTheme } from '../../utils'
 
 export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   padding: 0;
@@ -24,8 +24,7 @@ export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   &:hover,
   &:focus {
     outline: none;
-    background-color: ${({ theme }) =>
-      getColorFromTheme(theme, 'tint', 'level2')}};
+    background-color: ${color('tint', 'level2')}};
   }
 `
 

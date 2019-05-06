@@ -1,7 +1,7 @@
 import { transitions } from 'polished'
 import { Theme } from '../../theme'
 import styled from '../../styled-components'
-import { getColorFromTheme, focusStyle } from '../../utils'
+import { color as themeColor, focusStyle } from '../../utils'
 import { flexboxMinHeightFix } from '../shared/ie-fixes'
 
 export type Props = {
@@ -24,13 +24,13 @@ const ButtonBaseStyle = styled.button<Props>`
   ${focusStyle()}
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')};
 
-  background: ${({ color, theme }) => getColorFromTheme(theme, color)};
+  background: ${({ color, theme }) => themeColor(color)({ theme })};
 
   &:hover {
     background: ${({ color, theme }) =>
       color
-        ? getColorFromTheme(theme, color, 'dark')
-        : getColorFromTheme(theme, 'tint', 'level3')};
+        ? themeColor(color, 'dark')({ theme })
+        : themeColor('tint', 'level3')({ theme })};
   }
 
   ${flexboxMinHeightFix()}
