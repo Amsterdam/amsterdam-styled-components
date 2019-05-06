@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuBar should render 1`] = `
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: transparent;
+  border: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0;
+}
+
+.c3:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: medium;
+}
+
+.c1 {
+  padding: 15px;
+}
+
+.c1 .c2 > span {
+  color: #323232;
+  line-height: 22px;
+  border: 0;
+  margin: 0;
+  border-bottom: 2px transparent solid;
+  background-color: transparent;
+}
+
+.c1 .c2 > span:hover,
+.c1 .c2 > span:focus {
+  color: #323232;
+  line-height: 22px;
+  border-bottom: 2px solid red;
+  outline: none;
+}
+
+.c1:hover,
+.c1:focus {
+  outline: none;
+  background-color: #F5F5F5;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+@media screen and (max-width:1024px) {
+  .c0 {
+    display: none;
+  }
+}
+
+<ul
+  class="c0"
+>
+  <li
+    class="c1"
+  >
+    <button
+      class="c2 c3"
+      id="1"
+    >
+      <span>
+        Inhoud
+      </span>
+    </button>
+  </li>
+  <li
+    class="c1"
+  >
+    <button
+      class="c2 c3"
+      id="1"
+    >
+      <span>
+        Over
+      </span>
+    </button>
+  </li>
+</ul>
+`;
