@@ -1,5 +1,4 @@
 import React from 'react'
-import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
 import { AscCore } from '../../styles'
 import { Icon } from '../../index'
 
@@ -8,6 +7,7 @@ const ContextMenuButton = ({
   label,
   position,
   icon,
+  arrowIcon,
   open,
   ...otherProps
 }: any) => {
@@ -25,7 +25,7 @@ const ContextMenuButton = ({
             : 0
         }
       >
-        <ChevronDown />
+        {arrowIcon}
       </Icon>
     </AscCore.ContextMenu.MenuButton>
   )

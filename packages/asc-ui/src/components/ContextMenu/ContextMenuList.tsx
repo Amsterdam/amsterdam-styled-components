@@ -29,7 +29,6 @@ class ContextMenuList extends React.Component<Props> {
 
   render() {
     const {
-      id,
       children: childrenProps,
       position,
       open,
@@ -50,9 +49,7 @@ class ContextMenuList extends React.Component<Props> {
         onBlur={() => onClose()}
         position={position}
       >
-        <AscCore.ContextMenu.MenuList labelId={id}>
-          {children}
-        </AscCore.ContextMenu.MenuList>
+        <AscCore.ContextMenu.MenuList>{children}</AscCore.ContextMenu.MenuList>
       </AscCore.ContextMenu.MenuListWrapper>
     )
   }

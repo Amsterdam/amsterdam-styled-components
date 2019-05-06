@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow, ShallowWrapper } from 'enzyme'
+import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
 import ContextMenu from '../ContextMenu'
 import ContextMenuItem from '../ContextMenuItem'
 import { KeyboardKeys } from '../../../types'
@@ -15,7 +16,7 @@ describe('ContextMenu', () => {
 
   beforeEach(() => {
     component = shallow<ContextMenu>(
-      <ContextMenu label="Click on me">
+      <ContextMenu arrowIcon={<ChevronDown />} label="Click on me">
         <ContextMenuItem>One</ContextMenuItem>
         <ContextMenuItem>Two</ContextMenuItem>
         <ContextMenuItem>Three</ContextMenuItem>
