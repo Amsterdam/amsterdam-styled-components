@@ -2,46 +2,42 @@ import * as React from 'react'
 import Header from '../Header'
 import { renderWithTheme } from '../../../utils/withTheme'
 import 'jest-styled-components'
-import HeaderSearch from '../HeaderSearch'
-import CenteredElement from '../../../internals/CenteredElement/CenteredElement'
-import HeaderMenu from '../HeaderMenu'
+import Typography from '../../Typography'
 
-describe('Header short', () => {
-  it('should render the Header short', () => {
-    const component = renderWithTheme(
-      <Header
-        tall={false}
-        title="Data en informatie"
-        homeLink="http://data.amsterdam.nl"
-        fullWidth
-      >
-        <HeaderSearch>Search</HeaderSearch>
-        <HeaderMenu>
-          <CenteredElement> M </CenteredElement>
-        </HeaderMenu>
-      </Header>,
-    )
+const setup = (props = {}) =>
+  renderWithTheme(
+    <Header
+      title="Data en informatie"
+      homeLink="http://data.amsterdam.nl"
+      {...props}
+    >
+      <Typography element="p">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis,
+        dicta incidunt maxime necessitatibus voluptatibus.
+      </Typography>
+    </Header>,
+  )
+
+describe('Header', () => {
+  it('should render the short version', () => {
+    const component = setup()
+    expect(component).toMatchSnapshot()
+  })
+
+  it('should render the short version without the full width', () => {
+    const component = setup({ fullWidth: false })
+    expect(component).toMatchSnapshot()
+  })
+
+  it('should render the tall version', () => {
+    const component = setup({ tall: true })
+    expect(component).toMatchSnapshot()
+  })
+
+  it('should render the tall version without a title', () => {
+    const component = setup({ title: null })
     expect(component).toMatchSnapshot()
   })
 })
 
-describe('Header short with content', () => {
-  it('should render the Header short', () => {
-    const component = renderWithTheme(
-      <Header
-        tall={false}
-        title="Data en informatie"
-        homeLink="http://data.amsterdam.nl"
-        fullWidth={false}
-      >
-        <HeaderSearch>
-          <CenteredElement> Search </CenteredElement>
-        </HeaderSearch>
-        <HeaderMenu>
-          <CenteredElement> M </CenteredElement>
-        </HeaderMenu>
-      </Header>,
-    )
-    expect(component).toMatchSnapshot()
-  })
-})
+describe('Header short with content', () => {})

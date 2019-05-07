@@ -8,13 +8,17 @@ const HeaderTitleStyle = styled(Typography('a'))`
   color: #000;
   text-decoration: none;
 
+  &:hover {
+    color: inherit;
+  }
+
   @media screen and ${({ theme }) =>
       getBreakpointFromTheme(theme, 'max-width', 'mobileM')} {
     font-size: 14px;
   }
   @media screen and ${({ theme }) =>
       getBreakpointFromTheme(theme, 'max-width', 'mobileM')} {
-    font-size: 14px;
+    font-size: 16px;
   }
 `
 export default HeaderTitleStyle

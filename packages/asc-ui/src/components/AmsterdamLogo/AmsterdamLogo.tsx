@@ -5,11 +5,11 @@ import AmsterdamLogoStyle from '../../styles/components/AmsterdamLogo/AmsterdamL
 
 type Props = {
   tall?: boolean
-  tabindex?: number
+  href?: string
 }
 
 const AmsterdamLogo: React.FC<Props> = ({ tall, ...otherProps }) => (
-  <AmsterdamLogoStyle href="/" {...{ tall }} {...otherProps}>
+  <AmsterdamLogoStyle {...{ tall }} {...otherProps}>
     <LogoShort />
     <LogoTall />
   </AmsterdamLogoStyle>

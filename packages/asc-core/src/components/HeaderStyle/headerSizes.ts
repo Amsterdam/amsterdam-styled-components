@@ -1,3 +1,0 @@
-export const HEADER_SIZES = {
-  CONTENT_HEIGHT_TALL: 60,
-}

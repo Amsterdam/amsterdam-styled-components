@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header short should render the Header short 1`] = `
+exports[`Header should render the short version 1`] = `
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -14,9 +14,9 @@ exports[`Header short should render the Header short 1`] = `
   z-index: 0;
   padding: 0 15px;
   background-color: #ffffff;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
   max-width: none;
@@ -69,11 +69,36 @@ exports[`Header short should render the Header short 1`] = `
   color: #ec0000;
 }
 
-.c7 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+.c6:hover {
+  color: inherit;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+}
+
+.c4 {
+  display: inline-block;
+  height: 30px;
+  width: 64px;
+}
+
+.c4 > svg:last-child {
+  display: none;
+}
+
+.c4:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: 3px;
 }
 
 .c2 {
@@ -93,22 +118,13 @@ exports[`Header short should render the Header short 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
-.c4 {
-  display: inline-block;
-  height: 30px;
-  width: 64px;
-}
-
-.c4 > svg:last-child {
-  display: none;
-}
-
-.c4:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
+.c2 .c3 {
+  margin-right: 10px;
 }
 
 .c0 {
@@ -124,44 +140,38 @@ exports[`Header short should render the Header short 1`] = `
   transform: translateX(-50%);
 }
 
-.c0 .c9 {
+.c0 .c7 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-}
-
-.c0 .c3 {
-  margin-right: 10px;
+  margin-left: 15px;
 }
 
 .c0 .c5 {
   margin-top: -2px;
 }
 
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-}
-
-.c8 > div {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  text-align: center;
-}
-
-@media screen and (max-width:375px) {
-  .c6 {
-    font-size: 14px;
-  }
+.c9 {
+  line-height: 1.25;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 1rem;
+  -webkit-letter-spacing: -0.01562em;
+  -moz-letter-spacing: -0.01562em;
+  -ms-letter-spacing: -0.01562em;
+  letter-spacing: -0.01562em;
+  line-height: 1.25;
+  font-style: normal;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
 }
 
 @media screen and (max-width:375px) {
@@ -170,12 +180,15 @@ exports[`Header short should render the Header short 1`] = `
   }
 }
 
-@media screen and (max-width:768px) {
-  .c2 {
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
+@media screen and (max-width:375px) {
+  .c6 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width:1200.02px) {
+  .c2 .c3 {
+    margin-right: 40px;
   }
 }
 
@@ -190,7 +203,7 @@ exports[`Header short should render the Header short 1`] = `
     >
       <a
         class="c3 c4"
-        href="/"
+        href="http://data.amsterdam.nl"
       >
         SVG_MOCKSVG_MOCK
       </a>
@@ -202,26 +215,19 @@ exports[`Header short should render the Header short 1`] = `
       </a>
     </h1>
     <div
-      class="c7"
+      class="c7 c8"
     >
-      Search
-    </div>
-    <nav
-      class=""
-    >
-      <div
-        class="c8"
+      <p
+        class="c9"
       >
-        <div>
-           M 
-        </div>
-      </div>
-    </nav>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
+      </p>
+    </div>
   </header>
 </div>
 `;
 
-exports[`Header short with content should render the Header short 1`] = `
+exports[`Header should render the short version without the full width 1`] = `
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -235,12 +241,12 @@ exports[`Header short with content should render the Header short 1`] = `
   z-index: 0;
   padding: 0 15px;
   background-color: #ffffff;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
-  max-width: 1600px;
+  max-width: 1570px;
 }
 
 .c1:after {
@@ -290,11 +296,36 @@ exports[`Header short with content should render the Header short 1`] = `
   color: #ec0000;
 }
 
-.c7 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+.c6:hover {
+  color: inherit;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+}
+
+.c4 {
+  display: inline-block;
+  height: 30px;
+  width: 64px;
+}
+
+.c4 > svg:last-child {
+  display: none;
+}
+
+.c4:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: 3px;
 }
 
 .c2 {
@@ -314,29 +345,24 @@ exports[`Header short with content should render the Header short 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
-.c4 {
-  display: inline-block;
-  height: 30px;
-  width: 64px;
-}
-
-.c4 > svg:last-child {
-  display: none;
-}
-
-.c4:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
-}
-
-.c9 .c3 {
+.c2 .c3 {
   margin-right: 10px;
 }
 
-.c9 .c5 {
+.c10 .c7 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.c10 .c5 {
   margin-top: -2px;
 }
 
@@ -353,44 +379,38 @@ exports[`Header short with content should render the Header short 1`] = `
   transform: translateX(-50%);
 }
 
-.c0 .c10 {
+.c0 .c7 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-}
-
-.c0 .c3 {
-  margin-right: 10px;
+  margin-left: 15px;
 }
 
 .c0 .c5 {
   margin-top: -2px;
 }
 
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-}
-
-.c8 > div {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  text-align: center;
-}
-
-@media screen and (max-width:375px) {
-  .c6 {
-    font-size: 14px;
-  }
+.c9 {
+  line-height: 1.25;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 1rem;
+  -webkit-letter-spacing: -0.01562em;
+  -moz-letter-spacing: -0.01562em;
+  -ms-letter-spacing: -0.01562em;
+  letter-spacing: -0.01562em;
+  line-height: 1.25;
+  font-style: normal;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
 }
 
 @media screen and (max-width:375px) {
@@ -399,12 +419,15 @@ exports[`Header short with content should render the Header short 1`] = `
   }
 }
 
-@media screen and (max-width:768px) {
-  .c2 {
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
+@media screen and (max-width:375px) {
+  .c6 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width:1200.02px) {
+  .c2 .c3 {
+    margin-right: 40px;
   }
 }
 
@@ -419,7 +442,7 @@ exports[`Header short with content should render the Header short 1`] = `
     >
       <a
         class="c3 c4"
-        href="/"
+        href="http://data.amsterdam.nl"
       >
         SVG_MOCKSVG_MOCK
       </a>
@@ -431,27 +454,545 @@ exports[`Header short with content should render the Header short 1`] = `
       </a>
     </h1>
     <div
-      class="c7"
+      class="c7 c8"
     >
-      <div
-        class="c8"
+      <p
+        class="c9"
       >
-        <div>
-           Search 
-        </div>
-      </div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
+      </p>
     </div>
-    <nav
-      class=""
+  </header>
+</div>
+`;
+
+exports[`Header should render the tall version 1`] = `
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 0;
+  padding: 0 15px;
+  background-color: #ffffff;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  height: 100%;
+  margin: 0 auto;
+  max-width: none;
+}
+
+.c3:after {
+  content: '';
+  display: block;
+  min-height: inherit;
+  font-size: 0;
+}
+
+.c9 {
+  color: #004699;
+  display: inline-block;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 1rem;
+  -webkit-letter-spacing: -0.01562em;
+  -moz-letter-spacing: -0.01562em;
+  -ms-letter-spacing: -0.01562em;
+  letter-spacing: -0.01562em;
+  line-height: 1;
+  font-style: normal;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  margin: 0px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: #000;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c9:focus {
+  outline: none;
+  background-color: #FEC813;
+}
+
+.c9:hover {
+  color: #ec0000;
+}
+
+.c9:hover {
+  color: inherit;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+}
+
+.c7 {
+  display: inline-block;
+  height: 30px;
+  width: 64px;
+}
+
+.c7 > svg:last-child {
+  display: none;
+}
+
+.c7:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: 3px;
+}
+
+.c5 {
+  height: 50px;
+  margin: 0;
+  font-family: 'AvenirNextLTW01-Demi';
+  font-weight: bold;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: normal;
+  -webkit-justify-content: normal;
+  -ms-flex-pack: normal;
+  justify-content: normal;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c5 .c6 {
+  margin-right: 10px;
+}
+
+.c13 .c10 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.c13 .c8 {
+  margin-top: -2px;
+}
+
+.c14 .c10 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.c14 .c8 {
+  margin-top: -2px;
+}
+
+.c0 {
+  background-color: #ffffff;
+  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  box-shadow: 0 4px rgba(0,0,0,0.04);
+}
+
+.c0 .c10 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.c12 {
+  line-height: 1.25;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 1rem;
+  -webkit-letter-spacing: -0.01562em;
+  -moz-letter-spacing: -0.01562em;
+  -ms-letter-spacing: -0.01562em;
+  letter-spacing: -0.01562em;
+  line-height: 1.25;
+  font-style: normal;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+}
+
+@media screen and (max-width:375px) {
+  .c9 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .c9 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width:1200.02px) {
+  .c7 {
+    height: 68px;
+    width: 100px;
+  }
+
+  .c7 > svg:first-child {
+    display: none;
+  }
+
+  .c7 > svg:last-child {
+    display: block;
+  }
+}
+
+@media screen and (min-width:1200.02px) {
+  .c5 .c6 {
+    margin-right: 40px;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .c0 {
+    position: fixed;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  .c0 .c8 {
+    margin-top: -2px;
+  }
+}
+
+@media screen and (min-width:1200.02px) {
+  .c0 {
+    box-shadow: none;
+    position: relative;
+  }
+
+  .c0:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50px;
+    margin-top: -50px;
+    background-color: #F5F5F5;
+  }
+
+  .c0 .c2 {
+    z-index: 100;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .c0 .c1 {
+    background-color: transparent;
+  }
+
+  .c0 .c8 {
+    margin-top: 0px;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    line-height: 38px;
+    font-size: 30px;
+  }
+
+  .c0 .c4 {
+    height: 78px;
+    padding: 15px 0;
+  }
+
+  .c0 .c10 {
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    margin-left: 25px;
+    margin-right: 25px;
+    height: 50px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <header
+    class="c1 c2 c3"
+  >
+    <h1
+      class="c4 c5"
     >
-      <div
-        class="c8"
+      <a
+        class="c6 c7"
+        href="http://data.amsterdam.nl"
       >
-        <div>
-           M 
-        </div>
-      </div>
-    </nav>
+        SVG_MOCKSVG_MOCK
+      </a>
+      <a
+        class="c8 c9"
+        href="http://data.amsterdam.nl"
+      >
+        Data en informatie
+      </a>
+    </h1>
+    <div
+      class="c10 c11"
+    >
+      <p
+        class="c12"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
+      </p>
+    </div>
+  </header>
+</div>
+`;
+
+exports[`Header should render the tall version without a title 1`] = `
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 0;
+  padding: 0 15px;
+  background-color: #ffffff;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  height: 100%;
+  margin: 0 auto;
+  max-width: none;
+}
+
+.c3:after {
+  content: '';
+  display: block;
+  min-height: inherit;
+  font-size: 0;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+}
+
+.c7 {
+  display: inline-block;
+  height: 30px;
+  width: 64px;
+}
+
+.c7 > svg:last-child {
+  display: none;
+}
+
+.c7:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: 3px;
+}
+
+.c5 {
+  height: 50px;
+  margin: 0;
+  font-family: 'AvenirNextLTW01-Demi';
+  font-weight: bold;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: normal;
+  -webkit-justify-content: normal;
+  -ms-flex-pack: normal;
+  justify-content: normal;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c5 .c6 {
+  margin-right: 10px;
+}
+
+.c0 {
+  background-color: #ffffff;
+  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  box-shadow: 0 4px rgba(0,0,0,0.04);
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.c0 .c8 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.c0 .c13 {
+  margin-top: -2px;
+}
+
+.c11 .c8 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.c12 .c8 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.c10 {
+  line-height: 1.25;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 1rem;
+  -webkit-letter-spacing: -0.01562em;
+  -moz-letter-spacing: -0.01562em;
+  -ms-letter-spacing: -0.01562em;
+  letter-spacing: -0.01562em;
+  line-height: 1.25;
+  font-style: normal;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+}
+
+@media screen and (min-width:1200.02px) {
+  .c5 .c6 {
+    margin-right: 40px;
+  }
+}
+
+@media screen and (min-width:1200.02px) {
+  .c12 .c2 {
+    z-index: 100;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .c12 .c1 {
+    background-color: transparent;
+  }
+
+  .c12 .c4 {
+    height: 78px;
+    padding: 15px 0;
+  }
+
+  .c12 .c8 {
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    margin-left: 25px;
+    margin-right: 25px;
+    height: 50px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <header
+    class="c1 c2 c3"
+  >
+    <h1
+      class="c4 c5"
+    >
+      <a
+        class="c6 c7"
+        href="http://data.amsterdam.nl"
+      >
+        SVG_MOCKSVG_MOCK
+      </a>
+    </h1>
+    <div
+      class="c8 c9"
+    >
+      <p
+        class="c10"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
+      </p>
+    </div>
   </header>
 </div>
 `;
