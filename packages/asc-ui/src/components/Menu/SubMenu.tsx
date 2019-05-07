@@ -12,7 +12,6 @@ type Props = {
   index?: number
 } & MenuStyleProps.MenuItemStyleProps
 
-
 const SubMenu: React.FC<Props> = ({
   id,
   children,
@@ -26,13 +25,18 @@ const SubMenu: React.FC<Props> = ({
     expandedChild,
     expandedChildIndex,
     nrOfChildrenChild,
-    setOpenChild,
-    onKeyDown,
-    mobile
+    setExpandedChild,
+    handleOnKeyDown,
+    mobile,
   }: any = React.useContext(MenuContext)
 
   const hasFocus = React.useCallback(() => {
-    return currentIndex === selectedChild || currentIndex === expandedChildIndex && (selectedChild > expandedChildIndex && selectedChild < expandedChildIndex + nrOfChildrenChild + 1)
+    return (
+      currentIndex === selectedChild ||
+      (currentIndex === expandedChildIndex &&
+        (selectedChild > expandedChildIndex &&
+          selectedChild < expandedChildIndex + nrOfChildrenChild + 1))
+    )
   }, [selectedChild])
 
   React.useEffect(() => {
@@ -49,14 +53,14 @@ const SubMenu: React.FC<Props> = ({
     e.preventDefault()
     const nrOfChildren = React.Children.count(children)
 
-    setOpenChild(nrOfChildren, !expandedChild, currentIndex)
+    setExpandedChild(nrOfChildren, !expandedChild, currentIndex)
   }
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === KeyboardKeys.Enter) {
       handleOnClick(e)
     } else {
-      onKeyDown(e)
+      handleOnKeyDown(e)
     }
   }
 
@@ -67,28 +71,26 @@ const SubMenu: React.FC<Props> = ({
   })
 
   return (
-
-        <>
-          <MenuStyle.SubMenuButtonStyle
-            focused={hasFocus()}
-            onClick={handleOnClick}
-            onKeyDown={handleKeyPress}
-            tabIndex={hasFocus() ? 0 : -1}
-            ref={subMenuRef}
-            {...otherProps}
-          >
-            {label && <span>{label}</span>}
-            {mobile && <ChevronDown open={expandedChild} />}
-          </MenuStyle.SubMenuButtonStyle>
-          <MenuStyle.SubMenuListWrapperStyle
-            aria-hidden={mobile ? !expandedChild : false}
-          >
-            <MenuStyle.SubMenuListStyle labelId={id}>
-              {clonedChildren}
-            </MenuStyle.SubMenuListStyle>
-          </MenuStyle.SubMenuListWrapperStyle>
-        </>
-
+    <>
+      <MenuStyle.SubMenuButtonStyle
+        focused={hasFocus()}
+        onClick={handleOnClick}
+        onKeyDown={handleKeyPress}
+        tabIndex={hasFocus() ? 0 : -1}
+        ref={subMenuRef}
+        {...otherProps}
+      >
+        {label && <span>{label}</span>}
+        {mobile && <ChevronDown open={expandedChild} />}
+      </MenuStyle.SubMenuButtonStyle>
+      <MenuStyle.SubMenuListWrapperStyle
+        aria-hidden={mobile ? !expandedChild : false}
+      >
+        <MenuStyle.SubMenuListStyle labelId={id}>
+          {clonedChildren}
+        </MenuStyle.SubMenuListStyle>
+      </MenuStyle.SubMenuListWrapperStyle>
+    </>
   )
 }
 

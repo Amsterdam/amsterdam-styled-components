@@ -13,23 +13,16 @@ type Props = {
   index?: number
 } & MenuStyleProps.MenuItemStyleProps
 
-const MenuItem = ({
-  children,
-  icon,
-  index,
-  onClick,
-  ...otherProps
-}: Props) => {
-  const ref = React.useRef<HTMLLIElement>(null)
+const MenuItem = ({ children, icon, index, onClick, ...otherProps }: Props) => {
+  const menuItemRef = React.useRef<HTMLLIElement>(null)
 
   const { selectedChild }: any = React.useContext(MenuContext)
 
   const focused = index === selectedChild
 
   React.useEffect(() => {
-    if (ref && ref.current && focused) {
-      console.log('focus other element')
-      ref.current.focus()
+    if (menuItemRef && menuItemRef.current && focused) {
+      menuItemRef.current.focus()
     }
   }, [focused])
 
@@ -48,7 +41,7 @@ const MenuItem = ({
 
   return (
     <MenuStyle.MenuItemStyle
-      ref={ref}
+      ref={menuItemRef}
       focused={focused}
       onClick={handleOnClick}
       onKeyDown={handleKeyPress}

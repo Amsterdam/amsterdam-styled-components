@@ -1,54 +1,77 @@
 import React from 'react'
+import ownerDocument from '../../utils/ownerDocument'
 import MenuStyle, { MenuStyleProps } from '../../styles/components/MenuStyle'
 import MenuButton from './MenuButton'
 import MenuList from './MenuList'
 import { KeyboardKeys } from '../../types'
-import ownerDocument from '../../utils/ownerDocument'
 
 type Props = {
   position?: MenuStyleProps.Position
   label?: string
   mobile?: boolean
   icon?: React.ReactNode
+  id?: any
 }
-
-type State = {
-  open: boolean
-  expandedChild: boolean
-  expandedChildIndex: number
-  selectedChild: number
-  nrOfChildren: number
-  nrOfChildrenChild: number
-}
-
-const selectedChildInitial = -1
 
 export const MenuContext = React.createContext({})
 
-const initialState = {
-  open: false,
-  expandedChild: false,
-  expandedChildIndex: -1,
-  selectedChild: selectedChildInitial,
-  nrOfChildrenChild: 0,
-}
+const Menu2: React.FC<Props> = ({
+  id,
+  label,
+  children,
+  mobile,
+  position,
+  icon,
+}) => {
+  const menuRef = React.useRef<HTMLDivElement>(null)
 
-class Menu extends React.Component<Props, State> {
-  nrOfChildrenInitial = React.Children.count(this.props.children)
-
-  state = {
-    ...initialState,
-    nrOfChildren: this.nrOfChildrenInitial,
+  const initialState = {
+    open: false,
+    mobile,
+    expandedChild: false,
+    expandedChildIndex: -1,
+    selectedChild: -1,
+    nrOfChildren: React.Children.count(children),
+    nrOfChildrenChild: 0,
   }
 
-  static defaultProps = {
-    mobile: false,
+  const reducer = (state: any, action: any) => {
+    switch (action.type) {
+      case 'setSelectedChild':
+        return {
+          ...state,
+          selectedChild: action.payload,
+        }
+      case 'setChildrenCount':
+        return {
+          ...state,
+          nrOfChildren: action.payload,
+        }
+      case 'expandChild':
+        return {
+          ...state,
+          nrOfChildrenChild: action.payload.nrOfChildren,
+          expandedChild: action.payload.expandedChild,
+          expandedChildIndex: action.payload.expandedChildIndex,
+        }
+      case 'toggleMenu':
+        return {
+          ...state,
+          open: !state.open,
+        }
+      case 'resetMenu':
+        return {
+          ...initialState,
+        }
+      default:
+        return state
+    }
   }
 
-  wrapper = React.createRef<HTMLDivElement>()
+  const [state, dispatch] = React.useReducer(reducer, { ...initialState })
 
-  onKeyDown = (event: React.KeyboardEvent) => {
-    const { selectedChild, nrOfChildren, open } = this.state
+  const handleOnKeyDown = (event: React.KeyboardEvent) => {
+    const { selectedChild, nrOfChildren, open } = state
 
     if (!open) {
       return
@@ -58,128 +81,103 @@ class Menu extends React.Component<Props, State> {
 
     if (event.key === KeyboardKeys.ArrowDown) {
       event.preventDefault()
-      this.setState({
-        selectedChild:
-          selectedChild === lastChild ? firstChild : selectedChild + 1,
+      dispatch({
+        type: 'setSelectedChild',
+        payload: selectedChild === lastChild ? firstChild : selectedChild + 1,
       })
     }
 
     if (event.key === KeyboardKeys.ArrowUp) {
       event.preventDefault()
-      this.setState({
-        selectedChild:
-          selectedChild === firstChild || selectedChild === selectedChildInitial
+      dispatch({
+        type: 'setSelectedChild',
+        payload:
+          selectedChild === firstChild || selectedChild === nrOfChildren
             ? lastChild
             : selectedChild - 1,
       })
     }
   }
 
-  onToggle = () => {
-    const { open } = this.state
-    this.setState({
-      open: !open,
-    })
+  const handleOnClick = () => {
+    dispatch({ type: 'toggleMenu' })
   }
 
-  onClose = () => {
+  const handleOnClose = () => {
     setTimeout(() => {
-      const element = this.getReference('wrapper') as HTMLInputElement
-      if (element) {
-        const currentFocus = ownerDocument(element).activeElement
-        if (!element.contains(currentFocus)) {
-          this.setState({
-            ...initialState,
-            nrOfChildren: this.nrOfChildrenInitial,
-          })
-        }
+      const element = menuRef && (menuRef.current as HTMLInputElement)
+      const currentFocus = ownerDocument(element).activeElement
+      if (!element.contains(currentFocus)) {
+        dispatch({ type: 'resetMenu' })
       }
     })
   }
 
-  getReference = (el: string) => {
-    if (this[el].current) {
-      return this[el].current
-    }
-
-    return null
-  }
-
-  setOpenChild = (
+  const setExpandedChild = (
     nrOfChildren: number,
     expandedChild: boolean,
     expandedChildIndex: number,
   ) => {
-    this.setState(state => ({
-      selectedChild: expandedChildIndex,
-      nrOfChildren: expandedChild
+    dispatch({ type: 'setSelectedChild', payload: expandedChildIndex })
+    dispatch({
+      type: 'setChildrenCount',
+      payload: expandedChild
         ? state.nrOfChildren + nrOfChildren
         : state.nrOfChildren - nrOfChildren,
-      nrOfChildrenChild: nrOfChildren,
-      expandedChild,
-      expandedChildIndex: expandedChild ? expandedChildIndex : -1,
-    }))
+    })
+    dispatch({
+      type: 'expandChild',
+      payload: {
+        nrOfChildren,
+        expandedChild,
+        expandedChildIndex: expandedChild ? expandedChildIndex : -1,
+      },
+    })
   }
 
-  setSelectedChild = (index: number) => {
-    this.setState({ selectedChild: index })
+  const setSelectedChild = (index: number) => {
+    dispatch({ type: 'setSelectedChild', payload: index })
   }
 
-  render() {
-    const { id, label, children, mobile, position, icon }: any = this.props
-    const {
-      open,
-      expandedChild,
-      expandedChildIndex,
-      selectedChild,
-      nrOfChildren,
-      nrOfChildrenChild,
-    } = this.state
+  const { open } = state
 
-    return (
-      <MenuContext.Provider
-        value={{
-          open,
-          expandedChild,
-          expandedChildIndex,
-          selectedChild,
-          nrOfChildren,
-          setSelectedChild: this.setSelectedChild,
-          onKeyDown: this.onKeyDown,
-          setOpenChild: this.setOpenChild,
-          nrOfChildrenChild,
-          mobile,
-        }}
+  return (
+    <MenuContext.Provider
+      value={{
+        ...state,
+        setSelectedChild,
+        handleOnKeyDown,
+        setExpandedChild,
+      }}
+    >
+      <MenuStyle.MenuWrapperStyle
+        id={id}
+        ref={menuRef}
+        onKeyDown={handleOnKeyDown}
+        onBlur={handleOnClose}
       >
-        <MenuStyle.MenuWrapperStyle
-          id={id}
-          ref={this.wrapper}
-          onKeyDown={this.onKeyDown}
-          onBlur={this.onClose}
+        <MenuButton
+          {...{
+            icon,
+            open,
+            position,
+            label,
+          }}
+          onClick={handleOnClick}
+        />
+        <MenuList
+          {...{
+            position,
+            id,
+            open,
+          }}
+          onClose={handleOnClose}
         >
-          <MenuButton
-            {...{
-              icon,
-              open,
-              position,
-              label,
-            }}
-            onClick={this.onToggle}
-          />
-          <MenuList
-            {...{
-              position,
-              id,
-              open,
-            }}
-            onClose={this.onClose}
-          >
-            {children}
-          </MenuList>
-        </MenuStyle.MenuWrapperStyle>
-      </MenuContext.Provider>
-    )
-  }
+          {children}
+        </MenuList>
+      </MenuStyle.MenuWrapperStyle>
+    </MenuContext.Provider>
+  )
 }
 
-export default Menu
+export default Menu2
