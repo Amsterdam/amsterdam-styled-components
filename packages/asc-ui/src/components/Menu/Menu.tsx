@@ -25,16 +25,20 @@ const selectedChildInitial = -1
 
 export const MenuContext = React.createContext({})
 
+const initialState = {
+  open: false,
+  expandedChild: false,
+  expandedChildIndex: -1,
+  selectedChild: selectedChildInitial,
+  nrOfChildrenChild: 0,
+}
+
 class Menu extends React.Component<Props, State> {
   nrOfChildrenInitial = React.Children.count(this.props.children)
 
   state = {
-    open: false,
-    expandedChild: false,
-    expandedChildIndex: -1,
-    selectedChild: selectedChildInitial,
+    ...initialState,
     nrOfChildren: this.nrOfChildrenInitial,
-    nrOfChildrenChild: 0,
   }
 
   static defaultProps = {
@@ -44,7 +48,7 @@ class Menu extends React.Component<Props, State> {
   wrapper = React.createRef<HTMLDivElement>()
 
   onKeyDown = (event: React.KeyboardEvent) => {
-    const { selectedChild, nrOfChildren, open, expandedChild } = this.state
+    const { selectedChild, nrOfChildren, open } = this.state
 
     if (!open) {
       return
@@ -85,9 +89,8 @@ class Menu extends React.Component<Props, State> {
         const currentFocus = ownerDocument(element).activeElement
         if (!element.contains(currentFocus)) {
           this.setState({
-            selectedChild: selectedChildInitial,
-            open: false,
-            expandedChild: false,
+            ...initialState,
+            nrOfChildren: this.nrOfChildrenInitial,
           })
         }
       }
@@ -111,7 +114,7 @@ class Menu extends React.Component<Props, State> {
       selectedChild: expandedChildIndex,
       nrOfChildren: expandedChild
         ? state.nrOfChildren + nrOfChildren
-        : this.nrOfChildrenInitial,
+        : state.nrOfChildren - nrOfChildren,
       nrOfChildrenChild: nrOfChildren,
       expandedChild,
       expandedChildIndex,

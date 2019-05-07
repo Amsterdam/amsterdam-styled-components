@@ -57,9 +57,7 @@ const MenuItem = ({
       {icon && <Icon size={14}>{icon}</Icon>}
       <span>
         {children}
-{' '}
--
-{index}
+        {` - ${index}`}
       </span>
     </MenuStyle.MenuItemStyle>
   )

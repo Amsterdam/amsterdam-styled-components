@@ -2,7 +2,6 @@ import React from 'react'
 import MenuStyle, { MenuStyleProps } from '../../styles/components/MenuStyle'
 import ChevronDown from '../../internals/ChevronDown/ChevronDown'
 import { KeyboardKeys } from '../../types'
-import ownerDocument from '../../utils/ownerDocument'
 import { MenuContext } from './Menu'
 
 type Props = {
@@ -15,24 +14,8 @@ type Props = {
   index?: number
 } & MenuStyleProps.MenuItemStyleProps
 
-type State = {
-  open: boolean
-  selectedChild: number
-}
-
-const selectedChildInitial = -1
-
-class SubMenu extends React.Component<Props, State> {
+class SubMenu extends React.Component<Props> {
   list = React.createRef<HTMLDivElement>()
-
-  constructor(props: Props) {
-    super(props)
-
-    this.state = {
-      open: false,
-      selectedChild: selectedChildInitial,
-    }
-  }
 
   componentDidUpdate() {
     const { focused } = this.props
@@ -44,67 +27,33 @@ class SubMenu extends React.Component<Props, State> {
 
   onKeyDown = (
     e: React.KeyboardEvent,
+    expandedChild: boolean,
     setOpenChild: Function,
     onKeyDown: Function,
   ) => {
     if (e.key === KeyboardKeys.Enter) {
-      this.handleKeyPress(e, setOpenChild)
+      this.handleKeyPress(e, expandedChild, setOpenChild)
     } else {
       onKeyDown(e)
     }
   }
 
-  onClick = (e: React.MouseEvent, setOpenChild: Function) => {
+  handleOnClick = (
+    e: React.KeyboardEvent | React.MouseEvent,
+    expandedChild: boolean,
+    setOpenChild: Function,
+  ) => {
     e.preventDefault()
     const { children, index } = this.props
-
     const nrOfChildren = React.Children.count(children)
-    const { open } = this.state
 
-    this.setState(
-      {
-        open: !open,
-      },
-      () => setOpenChild(nrOfChildren, !open, this.props.index),
-    )
+    setOpenChild(nrOfChildren, !expandedChild, index)
   }
 
-  handleKeyPress = (e: React.KeyboardEvent, setOpenChild: Function) => {
+  handleKeyPress = (e: React.KeyboardEvent, expandedChild: boolean, setOpenChild: Function) => {
     if (e.key === KeyboardKeys.Enter) {
-      const { children } = this.props
-      const nrOfChildren = React.Children.count(children)
-
-      const { open } = this.state
-
-      this.setState(
-        {
-          open: !open,
-        },
-        () => setOpenChild(nrOfChildren, !open, this.props.index),
-      )
+      this.handleOnClick(e, expandedChild, setOpenChild)
     }
-  }
-
-  onClose = () => {
-    setTimeout(() => {
-      const element = this.getReference('list') as HTMLInputElement
-      if (element) {
-        const currentFocus = ownerDocument(element).activeElement
-        if (!element.contains(currentFocus)) {
-          this.setState({
-            selectedChild: selectedChildInitial,
-            open: false,
-          })
-        }
-      }
-    })
-  }
-
-  onToggle = () => {
-    const { open } = this.state
-    this.setState({
-      open: !open,
-    })
   }
 
   getReference = (el: string) => {
@@ -125,11 +74,9 @@ class SubMenu extends React.Component<Props, State> {
       index: currentIndex,
       ...otherProps
     }: any = this.props
-    const { open, selectedChild } = this.state
 
     const clonedChildren = React.Children.map(children, (child, index) => {
       return React.cloneElement(child as React.ReactElement<any>, {
-        focused: index === selectedChild,
         index: child.props.onClick ? currentIndex + 1 + index : null,
       })
     })
@@ -140,23 +87,22 @@ class SubMenu extends React.Component<Props, State> {
           <>
             <MenuStyle.SubMenuButtonStyle
               focused={focused}
-              onClick={e => this.onClick(e, context.setOpenChild)}
+              onClick={e => this.handleOnClick(e, context.expandedChild, context.setOpenChild)}
               onKeyDown={
-                !open
-                  ? e => this.handleKeyPress(e, context.setOpenChild)
+                !context.expandedChild
+                  ? e => this.handleKeyPress(e, context.expandedChild, context.setOpenChild)
                   : e =>
-                      this.onKeyDown(e, context.setOpenChild, context.onKeyDown)
+                      this.onKeyDown(e, context.expandedChild, context.setOpenChild, context.onKeyDown)
               }
               tabIndex={focused ? 0 : -1}
               ref={this.list}
               {...otherProps}
             >
               {label && <span>{label}</span>}
-              {context.mobile && <ChevronDown open={open} />}
+              {context.mobile && <ChevronDown open={context.expandedChild} />}
             </MenuStyle.SubMenuButtonStyle>
             <MenuStyle.SubMenuListWrapperStyle
-              aria-hidden={context.mobile ? !open : false}
-              onBlur={this.onClose}
+              aria-hidden={context.mobile ? !context.expandedChild : false}
             >
               <MenuStyle.SubMenuListStyle labelId={id}>
                 {clonedChildren}
