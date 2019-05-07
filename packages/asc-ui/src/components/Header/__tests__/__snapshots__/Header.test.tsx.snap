@@ -1,0 +1,457 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header short should render the Header short 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 0;
+  padding: 0 15px;
+  background-color: #ffffff;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  height: 100%;
+  margin: 0 auto;
+  max-width: none;
+}
+
+.c1:after {
+  content: '';
+  display: block;
+  min-height: inherit;
+  font-size: 0;
+}
+
+.c6 {
+  color: #004699;
+  display: inline-block;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 1rem;
+  -webkit-letter-spacing: -0.01562em;
+  -moz-letter-spacing: -0.01562em;
+  -ms-letter-spacing: -0.01562em;
+  letter-spacing: -0.01562em;
+  line-height: 1;
+  font-style: normal;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  margin: 0px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: #000;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c6:focus {
+  outline: none;
+  background-color: #FEC813;
+}
+
+.c6:hover {
+  color: #ec0000;
+}
+
+.c7 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c2 {
+  height: 50px;
+  margin: 0;
+  font-family: 'AvenirNextLTW01-Demi';
+  font-weight: bold;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: normal;
+  -webkit-justify-content: normal;
+  -ms-flex-pack: normal;
+  justify-content: normal;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  display: inline-block;
+  height: 30px;
+  width: 64px;
+}
+
+.c4 > svg:last-child {
+  display: none;
+}
+
+.c4:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: 3px;
+}
+
+.c0 {
+  background-color: #ffffff;
+  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  box-shadow: 0 4px rgba(0,0,0,0.04);
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.c0 .c9 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c0 .c3 {
+  margin-right: 10px;
+}
+
+.c0 .c5 {
+  margin-top: -2px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.c8 > div {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+@media screen and (max-width:375px) {
+  .c6 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .c6 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .c2 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
+}
+
+<div
+  class="c0"
+>
+  <header
+    class="c1"
+  >
+    <h1
+      class="c2"
+    >
+      <a
+        class="c3 c4"
+        href="/"
+      >
+        SVG_MOCKSVG_MOCK
+      </a>
+      <a
+        class="c5 c6"
+        href="http://data.amsterdam.nl"
+      >
+        Data en informatie
+      </a>
+    </h1>
+    <div
+      class="c7"
+    >
+      Search
+    </div>
+    <nav
+      class=""
+    >
+      <div
+        class="c8"
+      >
+        <div>
+           M 
+        </div>
+      </div>
+    </nav>
+  </header>
+</div>
+`;
+
+exports[`Header short with content should render the Header short 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 0;
+  padding: 0 15px;
+  background-color: #ffffff;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+.c1:after {
+  content: '';
+  display: block;
+  min-height: inherit;
+  font-size: 0;
+}
+
+.c6 {
+  color: #004699;
+  display: inline-block;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 1rem;
+  -webkit-letter-spacing: -0.01562em;
+  -moz-letter-spacing: -0.01562em;
+  -ms-letter-spacing: -0.01562em;
+  letter-spacing: -0.01562em;
+  line-height: 1;
+  font-style: normal;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  margin: 0px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: #000;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c6:focus {
+  outline: none;
+  background-color: #FEC813;
+}
+
+.c6:hover {
+  color: #ec0000;
+}
+
+.c7 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c2 {
+  height: 50px;
+  margin: 0;
+  font-family: 'AvenirNextLTW01-Demi';
+  font-weight: bold;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: normal;
+  -webkit-justify-content: normal;
+  -ms-flex-pack: normal;
+  justify-content: normal;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  display: inline-block;
+  height: 30px;
+  width: 64px;
+}
+
+.c4 > svg:last-child {
+  display: none;
+}
+
+.c4:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: 3px;
+}
+
+.c9 .c3 {
+  margin-right: 10px;
+}
+
+.c9 .c5 {
+  margin-top: -2px;
+}
+
+.c0 {
+  background-color: #ffffff;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1800px;
+  box-shadow: 0 4px rgba(0,0,0,0.04);
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.c0 .c10 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c0 .c3 {
+  margin-right: 10px;
+}
+
+.c0 .c5 {
+  margin-top: -2px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.c8 > div {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+@media screen and (max-width:375px) {
+  .c6 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .c6 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .c2 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
+}
+
+<div
+  class="c0"
+>
+  <header
+    class="c1"
+  >
+    <h1
+      class="c2"
+    >
+      <a
+        class="c3 c4"
+        href="/"
+      >
+        SVG_MOCKSVG_MOCK
+      </a>
+      <a
+        class="c5 c6"
+        href="http://data.amsterdam.nl"
+      >
+        Data en informatie
+      </a>
+    </h1>
+    <div
+      class="c7"
+    >
+      <div
+        class="c8"
+      >
+        <div>
+           Search 
+        </div>
+      </div>
+    </div>
+    <nav
+      class=""
+    >
+      <div
+        class="c8"
+      >
+        <div>
+           M 
+        </div>
+      </div>
+    </nav>
+  </header>
+</div>
+`;

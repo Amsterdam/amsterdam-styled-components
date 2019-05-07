@@ -24,7 +24,7 @@ export const getFocusStyle = (theme: Theme.ThemeInterface) => css`
   &:focus {
     outline-color: ${getColorFromTheme(theme, 'support', 'focus')};
     outline-style: solid;
-    outline-width: medium;
+    outline-width: 3px;
   }
 `
 export const getBreakpointFromTheme = (
@@ -52,7 +52,7 @@ export const fillSvgFromTheme = (
         rect,
         polygon,
         path {
-          fill: ${readableColor(color)}
+          fill: ${readableColor(color)};
         }
       `
     }

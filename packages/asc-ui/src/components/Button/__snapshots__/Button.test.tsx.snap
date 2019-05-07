@@ -29,7 +29,7 @@ exports[`Button should render the button 1`] = `
 .c0:focus {
   outline-color: #FEC813;
   outline-style: solid;
-  outline-width: medium;
+  outline-width: 3px;
 }
 
 .c0:hover {

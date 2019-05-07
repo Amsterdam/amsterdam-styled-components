@@ -2,6 +2,7 @@ import * as React from 'react'
 import { getBreakpointFromTheme } from '../../styles/utils'
 import styled from '../../styled-components'
 import Typography from '../../components/Typography'
+import { HEADER_SIZES } from '../../styles/components/HeaderStyle/headerSizes'
 
 type ContentFillerStyleProps = {
   backgroundColor?: string
@@ -28,7 +29,7 @@ const ContentFillerStyle = styled.div<ContentFillerStyleProps>`
 
 ContentFillerStyle.defaultProps = {
   backgroundColor: 'rgba(211,211,211,.1)',
-  paddingTop: '50px',
+  paddingTop: `${HEADER_SIZES.CONTENT_HEIGHT_TALL}px`,
   maxWidth: 'none',
   headerSize: 'short',
 }

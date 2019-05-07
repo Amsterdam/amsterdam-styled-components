@@ -1,16 +1,13 @@
 import { StyledComponent } from 'styled-components'
 import { em, margin } from 'polished'
 import styled, { css } from '../../styled-components'
-import {
-  getColorFromTheme,
-  getTypographyFromTheme,
-  getFocusStyle,
-} from '../../utils'
+import { getColorFromTheme, getTypographyFromTheme } from '../../utils'
 
 export type Props = {
   gutterBottom?: boolean
   paragraph?: boolean
   href?: string
+  tabindex?: number
   element?: Variant
 }
 const headings = css`
@@ -39,13 +36,18 @@ const extendedStyles = {
     line-height: 1.25;
   `,
   a: css`
-    color: ${({ theme }) => getColorFromTheme(theme, 'primary')}
+    color: ${({ theme }) => getColorFromTheme(theme, 'primary')};
     display: inline-block;
 
-    ${({ theme }) => getFocusStyle(theme)}
+    &:focus {
+      outline: none;
+      color: ${({ theme }) => getColorFromTheme(theme, 'tint', 'level0')};
+      background-color: ${({ theme }) =>
+        getColorFromTheme(theme, 'support', 'focus')};
+    }
 
     &:hover {
-      color: ${({ theme }) => getColorFromTheme(theme, 'secondary')}
+      color: ${({ theme }) => getColorFromTheme(theme, 'secondary')};
     }
   `,
 }
@@ -56,9 +58,7 @@ const getProperty = <T, K extends keyof T>(obj: T, key: K) => obj[key]
 
 export default (element: Variant): StyledComponent<any, any> => styled(
   element,
-).attrs({
-  tabIndex: -1,
-})<Props>`
+)<Props>`
   ${getProperty(extendedStyles, element)}
   ${margin(0)};
   ${({ gutterBottom }) =>

@@ -9,6 +9,7 @@ exports[`<TextField /> should render 1`] = `
         "desktopL": [Function],
         "laptop": [Function],
         "laptopL": [Function],
+        "laptopM": [Function],
         "mobileL": [Function],
         "mobileM": [Function],
         "mobileS": [Function],

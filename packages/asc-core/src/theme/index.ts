@@ -27,6 +27,7 @@ export namespace Theme {
     mobileL: GetBreakpointFunc
     tablet: GetBreakpointFunc
     laptop: GetBreakpointFunc
+    laptopM: GetBreakpointFunc
     laptopL: GetBreakpointFunc
     desktop: GetBreakpointFunc
     desktopL: GetBreakpointFunc

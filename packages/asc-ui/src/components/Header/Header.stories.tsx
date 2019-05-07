@@ -2,76 +2,75 @@ import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import CenteredElement from '../../internals/CenteredElement/CenteredElement'
 import BoxWrapper from '../../internals/Box/BoxWrapper'
-import { ThemeProvider } from '../../index'
-import HeaderShort from './HeaderShort'
+import Header from './Header'
 import ContentFiller from '../../internals/ContentFiller/ContentFiller'
-import HeaderTall from './HeaderTall'
+import HeaderSearch from './HeaderSearch'
+import HeaderMenu from './HeaderMenu'
+import HeaderContent from './HeaderContent'
 
 const outsideBackgoundColor = '#E6E6E6'
 const contentBackgrountColor = '#ffffff'
 
 const HeaderShortStory: React.FC<{}> = () => (
-  <ThemeProvider themeName="default">
-    <>
-      <BoxWrapper backgroundColor={outsideBackgoundColor}>
-        <HeaderShort
-          title="Data en informatie"
-          homeLink="http://data.amsterdam.nl"
-          search={<CenteredElement> Search </CenteredElement>}
-          menu={<CenteredElement> M </CenteredElement>}
-          headerSize="short"
-        />
-        <ContentFiller backgroundColor={contentBackgrountColor} />
-      </BoxWrapper>
-    </>
-  </ThemeProvider>
+  <BoxWrapper backgroundColor={outsideBackgoundColor}>
+    <Header
+      tall={false}
+      title="Data en informatie"
+      homeLink="http://data.amsterdam.nl"
+      fullWidth
+    >
+      <HeaderContent>
+        <HeaderSearch>
+          <CenteredElement> Search </CenteredElement>
+        </HeaderSearch>
+        <HeaderMenu>
+          <CenteredElement> M </CenteredElement>
+        </HeaderMenu>
+      </HeaderContent>
+    </Header>
+    <ContentFiller backgroundColor={contentBackgrountColor} />
+  </BoxWrapper>
 )
 
 const HeaderShortContentStory: React.FC<{}> = () => (
-  <ThemeProvider themeName="default">
-    <>
-      <BoxWrapper backgroundColor={outsideBackgoundColor}>
-        <HeaderShort
-          title="Data en informatie"
-          homeLink="http://data.amsterdam.nl"
-          search={<CenteredElement> Search </CenteredElement>}
-          menu={<CenteredElement> M </CenteredElement>}
-          headerSize="short-content"
-        />
-        <ContentFiller
-          backgroundColor={contentBackgrountColor}
-          maxWidth="1800px"
-        />
-      </BoxWrapper>
-    </>
-  </ThemeProvider>
+  <BoxWrapper backgroundColor={outsideBackgoundColor}>
+    <Header
+      tall={false}
+      title="Data en informatie"
+      homeLink="http://data.amsterdam.nl"
+      fullWidth={false}
+    >
+      <HeaderContent>
+        <HeaderSearch>
+          <CenteredElement> Search </CenteredElement>
+        </HeaderSearch>
+        <HeaderMenu>
+          <CenteredElement> M </CenteredElement>
+        </HeaderMenu>
+      </HeaderContent>
+    </Header>
+    <ContentFiller backgroundColor={contentBackgrountColor} maxWidth="1800px" />
+  </BoxWrapper>
 )
 
 const HeaderTallStory: React.FC<{}> = () => (
-  <ThemeProvider themeName="default">
-    <>
-      <BoxWrapper backgroundColor={outsideBackgoundColor}>
-        <HeaderTall
-          title="Data en informatie"
-          homeLink="http://data.amsterdam.nl"
-          search={<CenteredElement> Search </CenteredElement>}
-          menu={<CenteredElement> M </CenteredElement>}
-        />
-        <HeaderShort
-          title="Data en informatie"
-          homeLink="http://data.amsterdam.nl"
-          search={<CenteredElement> Search </CenteredElement>}
-          menu={<CenteredElement> M </CenteredElement>}
-          headerSize="tall"
-        />
-        <ContentFiller
-          backgroundColor={contentBackgrountColor}
-          maxWidth="1800px"
-          headerSize="tall"
-        />
-      </BoxWrapper>
-    </>
-  </ThemeProvider>
+  <BoxWrapper backgroundColor={outsideBackgoundColor}>
+    <Header tall title="Data en informatie" homeLink="http://data.amsterdam.nl">
+      <HeaderContent>
+        <HeaderSearch>
+          <CenteredElement> Search </CenteredElement>
+        </HeaderSearch>
+        <HeaderMenu>
+          <CenteredElement> M </CenteredElement>
+        </HeaderMenu>
+      </HeaderContent>
+    </Header>
+    <ContentFiller
+      backgroundColor={contentBackgrountColor}
+      maxWidth="1800px"
+      headerSize="tall"
+    />
+  </BoxWrapper>
 )
 
 storiesOf('Composed/Header', module)

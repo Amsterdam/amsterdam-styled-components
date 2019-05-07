@@ -14,7 +14,7 @@ import Focus from './components/Focus'
 import ContextMenu from './components/ContextMenu'
 import ContextMenuButton from './components/ContextMenu/ContextMenuButton'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
-import HeaderShort from './components/Header/HeaderShort'
+import Header from './components/Header/Header'
 
 import ThemeProvider from './theme'
 
@@ -38,7 +38,7 @@ export {
   ContextMenu,
   ContextMenuButton,
   ContextMenuItem,
-  HeaderShort as Header,
+  Header,
 }
 
 export {

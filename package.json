@@ -29,15 +29,15 @@
     "lint:css": "stylelint './packages/**/src/**/*.ts'",
     "lint:js": "eslint packages --ext ts,tsx",
     "prepare": "yarn prettify:package && yarn build",
-    "verify-integrity": "yarn lint & yarn test",
     "publish:packages": "yarn verify-integrity && lerna publish",
     "start": "concurrently \"yarn build:watch\" \"yarn storybook\"",
-    "storybook": "start-storybook -p 6006 -c .storybook -s ./packages/asc-assets/lib",
+    "storybook": "start-storybook -p 6006 -c .storybook -s ./packages/asc-assets/src",
     "symlink": "./scripts/link-core.sh",
     "test": "yarn jest",
     "test:coverage": "yarn jest --collect-coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watch --onlyChanged --collect-coverage --verbose true",
-    "prettify:package": "yarn prettier-package-json --write **/package.json"
+    "prettify:package": "yarn prettier-package-json --write **/package.json",
+    "verify-integrity": "yarn lint & yarn test"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
