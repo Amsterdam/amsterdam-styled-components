@@ -5,7 +5,6 @@ import { KeyboardKeys } from '../../types'
 import { MenuContext } from './Menu'
 
 type Props = {
-  focused?: boolean
   onClick?: Function
   role?: string
   icon?: React.ReactNode
@@ -16,7 +15,6 @@ type Props = {
 
 const MenuItem = ({
   children,
-  focused,
   icon,
   index,
   onClick,
@@ -26,9 +24,12 @@ const MenuItem = ({
 
   const { selectedChild }: any = React.useContext(MenuContext)
 
+  const focused = index === selectedChild
+
   React.useEffect(() => {
     if (ref && ref.current && focused) {
-      ref.current.focus
+      console.log('focus other element')
+      ref.current.focus()
     }
   }, [focused])
 
@@ -48,10 +49,10 @@ const MenuItem = ({
   return (
     <MenuStyle.MenuItemStyle
       ref={ref}
-      focused={index === selectedChild}
+      focused={focused}
       onClick={handleOnClick}
       onKeyDown={handleKeyPress}
-      tabIndex={index === selectedChild ? 0 : -1}
+      tabIndex={focused ? 0 : -1}
       {...otherProps}
     >
       {icon && <Icon size={14}>{icon}</Icon>}

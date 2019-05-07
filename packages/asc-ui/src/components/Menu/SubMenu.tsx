@@ -5,8 +5,6 @@ import { KeyboardKeys } from '../../types'
 import { MenuContext } from './Menu'
 
 type Props = {
-  focused?: boolean
-  onClick?: Function
   role?: string
   label?: string
   divider?: boolean
@@ -14,105 +12,84 @@ type Props = {
   index?: number
 } & MenuStyleProps.MenuItemStyleProps
 
-class SubMenu extends React.Component<Props> {
-  list = React.createRef<HTMLDivElement>()
 
-  componentDidUpdate() {
-    const { focused } = this.props
-    const ref = this.getReference('list')
-    if (ref && focused) {
-      ref.focus()
+const SubMenu: React.FC<Props> = ({
+  id,
+  children,
+  label,
+  index: currentIndex,
+  ...otherProps
+}) => {
+  const subMenuRef = React.useRef<HTMLLIElement>(null)
+  const {
+    selectedChild,
+    expandedChild,
+    expandedChildIndex,
+    nrOfChildrenChild,
+    setOpenChild,
+    onKeyDown,
+    mobile
+  }: any = React.useContext(MenuContext)
+
+  const hasFocus = React.useCallback(() => {
+    return currentIndex === selectedChild || currentIndex === expandedChildIndex && (selectedChild > expandedChildIndex && selectedChild < expandedChildIndex + nrOfChildrenChild + 1)
+  }, [selectedChild])
+
+  React.useEffect(() => {
+    if (subMenuRef && subMenuRef.current) {
+      if (hasFocus()) {
+        subMenuRef.current.focus()
+      } else {
+        subMenuRef.current.blur()
+      }
     }
+  }, [selectedChild])
+
+  const handleOnClick = (e: React.KeyboardEvent | React.MouseEvent) => {
+    e.preventDefault()
+    const nrOfChildren = React.Children.count(children)
+
+    setOpenChild(nrOfChildren, !expandedChild, currentIndex)
   }
 
-  onKeyDown = (
-    e: React.KeyboardEvent,
-    expandedChild: boolean,
-    setOpenChild: Function,
-    onKeyDown: Function,
-  ) => {
+  const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === KeyboardKeys.Enter) {
-      this.handleKeyPress(e, expandedChild, setOpenChild)
+      handleOnClick(e)
     } else {
       onKeyDown(e)
     }
   }
 
-  handleOnClick = (
-    e: React.KeyboardEvent | React.MouseEvent,
-    expandedChild: boolean,
-    setOpenChild: Function,
-  ) => {
-    e.preventDefault()
-    const { children, index } = this.props
-    const nrOfChildren = React.Children.count(children)
-
-    setOpenChild(nrOfChildren, !expandedChild, index)
-  }
-
-  handleKeyPress = (e: React.KeyboardEvent, expandedChild: boolean, setOpenChild: Function) => {
-    if (e.key === KeyboardKeys.Enter) {
-      this.handleOnClick(e, expandedChild, setOpenChild)
-    }
-  }
-
-  getReference = (el: string) => {
-    if (this[el].current) {
-      return this[el].current
-    }
-
-    return null
-  }
-
-  render() {
-    const {
-      id,
-      children,
-      focused,
-      label,
-      mobile,
-      index: currentIndex,
-      ...otherProps
-    }: any = this.props
-
-    const clonedChildren = React.Children.map(children, (child, index) => {
-      return React.cloneElement(child as React.ReactElement<any>, {
-        index: child.props.onClick ? currentIndex + 1 + index : null,
-      })
+  const clonedChildren = React.Children.map(children, (child, index) => {
+    return React.cloneElement(child as React.ReactElement<any>, {
+      index: currentIndex && currentIndex + index + 1,
     })
+  })
 
-    return (
-      <MenuContext.Consumer>
-        {(context: any) => (
-          <>
-            <MenuStyle.SubMenuButtonStyle
-              focused={focused}
-              onClick={e => this.handleOnClick(e, context.expandedChild, context.setOpenChild)}
-              onKeyDown={
-                !context.expandedChild
-                  ? e => this.handleKeyPress(e, context.expandedChild, context.setOpenChild)
-                  : e =>
-                      this.onKeyDown(e, context.expandedChild, context.setOpenChild, context.onKeyDown)
-              }
-              tabIndex={focused ? 0 : -1}
-              ref={this.list}
-              {...otherProps}
-            >
-              {label && <span>{label}</span>}
-              {context.mobile && <ChevronDown open={context.expandedChild} />}
-            </MenuStyle.SubMenuButtonStyle>
-            <MenuStyle.SubMenuListWrapperStyle
-              aria-hidden={context.mobile ? !context.expandedChild : false}
-            >
-              <MenuStyle.SubMenuListStyle labelId={id}>
-                {clonedChildren}
-              </MenuStyle.SubMenuListStyle>
-            </MenuStyle.SubMenuListWrapperStyle>
-          </>
-        )}
-      </MenuContext.Consumer>
-    )
-  }
+  return (
+
+        <>
+          <MenuStyle.SubMenuButtonStyle
+            focused={hasFocus()}
+            onClick={handleOnClick}
+            onKeyDown={handleKeyPress}
+            tabIndex={hasFocus() ? 0 : -1}
+            ref={subMenuRef}
+            {...otherProps}
+          >
+            {label && <span>{label}</span>}
+            {mobile && <ChevronDown open={expandedChild} />}
+          </MenuStyle.SubMenuButtonStyle>
+          <MenuStyle.SubMenuListWrapperStyle
+            aria-hidden={mobile ? !expandedChild : false}
+          >
+            <MenuStyle.SubMenuListStyle labelId={id}>
+              {clonedChildren}
+            </MenuStyle.SubMenuListStyle>
+          </MenuStyle.SubMenuListWrapperStyle>
+        </>
+
+  )
 }
 
 export default SubMenu

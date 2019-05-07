@@ -117,7 +117,7 @@ class Menu extends React.Component<Props, State> {
         : state.nrOfChildren - nrOfChildren,
       nrOfChildrenChild: nrOfChildren,
       expandedChild,
-      expandedChildIndex,
+      expandedChildIndex: expandedChild ? expandedChildIndex : -1,
     }))
   }
 

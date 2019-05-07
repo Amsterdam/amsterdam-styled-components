@@ -19,21 +19,17 @@ const MenuList = ({
 }: Props) => {
   const ref = React.useRef<HTMLDivElement>(null)
   const {
-    mobile,
     expandedChild,
     expandedChildIndex,
-    selectedChild,
     nrOfChildrenChild,
   }: any = React.useContext(MenuContext)
 
   const clonedChildren = React.Children.map(children, (child, index) => {
     return React.cloneElement(child as React.ReactElement<any>, {
-      focused: index === selectedChild,
       index:
         expandedChild && index > expandedChildIndex
           ? nrOfChildrenChild + expandedChildIndex + index - expandedChildIndex
           : index,
-      mobile,
     })
   })
 
