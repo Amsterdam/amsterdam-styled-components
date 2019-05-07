@@ -4,10 +4,11 @@ import HeaderWrapperStyle, {
   Props as HeaderWrapperProps,
 } from '../../styles/components/HeaderStyle/HeaderWrapperStyle'
 import HeaderLogoText from './HeaderLogoText'
+import HeaderContent from './HeaderContent'
 
 type Props = {
-  title: string
   homeLink: string
+  title?: string
 } & HeaderWrapperProps
 
 const Header: React.FC<Props> = ({
@@ -21,7 +22,7 @@ const Header: React.FC<Props> = ({
   <HeaderWrapperStyle {...{ tall, fullWidth }}>
     <HeaderStyle {...{ fullWidth, ...otherProps }}>
       <HeaderLogoText {...{ tall, title, homeLink }} />
-      {children}
+      <HeaderContent>{children}</HeaderContent>
     </HeaderStyle>
   </HeaderWrapperStyle>
 )

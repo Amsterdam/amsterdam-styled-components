@@ -4,6 +4,7 @@ import HeaderSearchStyle from './HeaderSearchStyle'
 
 const HeaderContentStyle = styled.div`
   display: flex;
+  align-items: center;
   height: 100%;
   @media screen and ${({ theme }) =>
       getBreakpointFromTheme(theme, 'max-width', 'tablet')} {

@@ -22,7 +22,7 @@ const tallStyle = css`
   }
 `
 
-const AmsterdamLogo = styled.a<Props>`
+const AmsterdamLogoStyle = styled.a<Props>`
   display: inline-block;
   height: 30px;
   width: 64px;
@@ -35,4 +35,4 @@ const AmsterdamLogo = styled.a<Props>`
   ${({ tall }) => tall && tallStyle}
 `
 
-export default AmsterdamLogo
+export default AmsterdamLogoStyle

@@ -14,9 +14,9 @@ exports[`Header short should render the Header short 1`] = `
   z-index: 0;
   padding: 0 15px;
   background-color: #ffffff;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
   max-width: none;
@@ -69,11 +69,43 @@ exports[`Header short should render the Header short 1`] = `
   color: #ec0000;
 }
 
-.c7 {
+.c6:hover {
+  color: inherit;
+}
+
+.c10 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+}
+
+.c4 {
+  display: inline-block;
+  height: 30px;
+  width: 64px;
+}
+
+.c4 > svg:last-child {
+  display: none;
+}
+
+.c4:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: 3px;
 }
 
 .c2 {
@@ -93,22 +125,13 @@ exports[`Header short should render the Header short 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
-.c4 {
-  display: inline-block;
-  height: 30px;
-  width: 64px;
-}
-
-.c4 > svg:last-child {
-  display: none;
-}
-
-.c4:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
+.c2 .c3 {
+  margin-right: 10px;
 }
 
 .c0 {
@@ -124,22 +147,19 @@ exports[`Header short should render the Header short 1`] = `
   transform: translateX(-50%);
 }
 
-.c0 .c9 {
+.c0 .c7 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-}
-
-.c0 .c3 {
-  margin-right: 10px;
+  margin-left: 15px;
 }
 
 .c0 .c5 {
   margin-top: -2px;
 }
 
-.c8 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -147,7 +167,7 @@ exports[`Header short should render the Header short 1`] = `
   height: 100%;
 }
 
-.c8 > div {
+.c11 > div {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -166,16 +186,25 @@ exports[`Header short should render the Header short 1`] = `
 
 @media screen and (max-width:375px) {
   .c6 {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
 @media screen and (max-width:768px) {
-  .c2 {
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
+  .c8 .c9 {
+    display: none;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .c8 > div:last-child {
+    display: none;
+  }
+}
+
+@media screen and (min-width:1200.02px) {
+  .c2 .c3 {
+    margin-right: 40px;
   }
 }
 
@@ -190,7 +219,7 @@ exports[`Header short should render the Header short 1`] = `
     >
       <a
         class="c3 c4"
-        href="/"
+        href="http://data.amsterdam.nl"
       >
         SVG_MOCKSVG_MOCK
       </a>
@@ -202,21 +231,25 @@ exports[`Header short should render the Header short 1`] = `
       </a>
     </h1>
     <div
-      class="c7"
-    >
-      Search
-    </div>
-    <nav
-      class=""
+      class="c7 c8"
     >
       <div
-        class="c8"
+        class="c9 c10"
       >
-        <div>
-           M 
-        </div>
+        Search
       </div>
-    </nav>
+      <nav
+        class=""
+      >
+        <div
+          class="c11"
+        >
+          <div>
+             M 
+          </div>
+        </div>
+      </nav>
+    </div>
   </header>
 </div>
 `;
@@ -235,12 +268,12 @@ exports[`Header short with content should render the Header short 1`] = `
   z-index: 0;
   padding: 0 15px;
   background-color: #ffffff;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
-  max-width: 1600px;
+  max-width: 1570px;
 }
 
 .c1:after {
@@ -290,11 +323,43 @@ exports[`Header short with content should render the Header short 1`] = `
   color: #ec0000;
 }
 
-.c7 {
+.c6:hover {
+  color: inherit;
+}
+
+.c10 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+}
+
+.c4 {
+  display: inline-block;
+  height: 30px;
+  width: 64px;
+}
+
+.c4 > svg:last-child {
+  display: none;
+}
+
+.c4:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: 3px;
 }
 
 .c2 {
@@ -314,29 +379,24 @@ exports[`Header short with content should render the Header short 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
-.c4 {
-  display: inline-block;
-  height: 30px;
-  width: 64px;
-}
-
-.c4 > svg:last-child {
-  display: none;
-}
-
-.c4:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
-}
-
-.c9 .c3 {
+.c2 .c3 {
   margin-right: 10px;
 }
 
-.c9 .c5 {
+.c12 .c7 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.c12 .c5 {
   margin-top: -2px;
 }
 
@@ -353,22 +413,19 @@ exports[`Header short with content should render the Header short 1`] = `
   transform: translateX(-50%);
 }
 
-.c0 .c10 {
+.c0 .c7 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-}
-
-.c0 .c3 {
-  margin-right: 10px;
+  margin-left: 15px;
 }
 
 .c0 .c5 {
   margin-top: -2px;
 }
 
-.c8 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -376,7 +433,7 @@ exports[`Header short with content should render the Header short 1`] = `
   height: 100%;
 }
 
-.c8 > div {
+.c11 > div {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -395,16 +452,25 @@ exports[`Header short with content should render the Header short 1`] = `
 
 @media screen and (max-width:375px) {
   .c6 {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
 @media screen and (max-width:768px) {
-  .c2 {
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
+  .c8 .c9 {
+    display: none;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .c8 > div:last-child {
+    display: none;
+  }
+}
+
+@media screen and (min-width:1200.02px) {
+  .c2 .c3 {
+    margin-right: 40px;
   }
 }
 
@@ -419,7 +485,7 @@ exports[`Header short with content should render the Header short 1`] = `
     >
       <a
         class="c3 c4"
-        href="/"
+        href="http://data.amsterdam.nl"
       >
         SVG_MOCKSVG_MOCK
       </a>
@@ -431,27 +497,31 @@ exports[`Header short with content should render the Header short 1`] = `
       </a>
     </h1>
     <div
-      class="c7"
+      class="c7 c8"
     >
       <div
-        class="c8"
+        class="c9 c10"
       >
-        <div>
-           Search 
+        <div
+          class="c11"
+        >
+          <div>
+             Search 
+          </div>
         </div>
       </div>
+      <nav
+        class=""
+      >
+        <div
+          class="c11"
+        >
+          <div>
+             M 
+          </div>
+        </div>
+      </nav>
     </div>
-    <nav
-      class=""
-    >
-      <div
-        class="c8"
-      >
-        <div>
-           M 
-        </div>
-      </div>
-    </nav>
   </header>
 </div>
 `;
