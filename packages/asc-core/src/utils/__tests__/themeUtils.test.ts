@@ -1,4 +1,10 @@
-import { color, focusStyle, breakpoint, svgFill } from '../themeUtils'
+import {
+  color,
+  focusStyle,
+  breakpoint,
+  svgFill,
+  getTypographyFromTheme,
+} from '../themeUtils'
 import breakpoints from '../../theme/default/breakpoints'
 import colors from '../../theme/default/colors'
 import globalStyle from '../../theme/default/globalStyle'
@@ -29,6 +35,22 @@ describe('getColorFromTheme', () => {
   })
 })
 
+describe('getTypographyFromTheme', () => {
+  it('should return the requested typography from theme', () => {
+    const theme = {
+      breakpoints,
+      globalStyle,
+      colors,
+      typography: {
+        ...typography,
+        fontSize: '16px',
+      },
+    }
+
+    expect(getTypographyFromTheme(theme, 'fontSize')).toBe('16px')
+  })
+})
+
 describe('focusStyle', () => {
   const theme = {
     breakpoints,
@@ -49,7 +71,7 @@ describe('focusStyle', () => {
   })
 })
 
-describe('getBreakpontFromTheme', () => {
+describe('breakpoint', () => {
   const theme = {
     breakpoints,
     globalStyle,
