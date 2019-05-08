@@ -1,36 +1,22 @@
 import styled from '../../styled-components'
+import Typography from '../Typography/Typography'
 import { breakpoint } from '../../utils'
 
-const HeaderTitleStyle = styled.div<{}>`
-  @media screen and ${breakpoint('max-width', 'tablet')} {
-    flex-grow: 1;
+const HeaderTitleStyle = styled(Typography('a'))`
+  margin: ${({ tall }) => (tall ? '0px' : '0px')};
+  display: inline-flex;
+  color: #000;
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
   }
 
-  & > h1 {
-    display: flex;
-    height: 100%;
-    margin: 0;
+  @media screen and ${breakpoint('max-width', 'mobileM')} {
+    font-size: 14px;
   }
-
-  & > h1 > span {
-    display: inline-block;
-    line-height: 24px;
-    padding-top: 6px;
-  }
-
-  & > h1 > span > a {
-    color: #000;
-    text-decoration: none;
-
-    @media screen and ${breakpoint('max-width', 'mobileM')} {
-      line-height: 18px;
-      font-size: 14px;
-    }
-
-    @media screen and ${breakpoint('min-width', 'mobileM')} {
-      line-height: 20px;
-      font-size: 16px;
-    }
+  @media screen and ${breakpoint('max-width', 'mobileM')} {
+    font-size: 16px;
   }
 `
 export default HeaderTitleStyle

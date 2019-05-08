@@ -1,17 +1,17 @@
 import styled from '../../styled-components'
-import { color } from '../../utils'
+import TopBarStyle from '../TopBarStyle'
+import { HEADER_MAX_WIDTH } from './sizes'
 
-export type Props = {}
+export type HeaderStyleProps = {
+  fullWidth?: boolean
+}
 
-const HeaderStyle = styled.div<Props>`
-  display: flex;
-  min-height: 50px;
-  width: 100%;
-  flex-flow: no-wrap;
-  box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.4);
-  background-color: ${color('tint', 'level1')};
-  position: fixed;
-  top: 0;
+const HeaderStyle = styled(TopBarStyle)<HeaderStyleProps>`
+  flex-wrap: nowrap;
+  height: 100%;
+  margin: 0 auto;
+  max-width: ${({ fullWidth }) =>
+    !fullWidth ? `${HEADER_MAX_WIDTH - 15 * 2}px` : 'none'};
 `
 
 export default HeaderStyle

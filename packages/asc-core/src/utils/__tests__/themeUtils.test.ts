@@ -79,16 +79,12 @@ describe('breakpoint', () => {
     typography,
   }
 
-  it("should return undefined when the breakpoint doesn't exist", () => {
-    expect(breakpoint('max-width', 'not-valid')({ theme })).toBeUndefined()
-  })
-
   it('should return the right breakpoint', () => {
     expect(breakpoint('max-width', 'desktop')({ theme })).toEqual(
       '(max-width: 2560px)',
     )
     expect(breakpoint('min-width', 'mobileL')({ theme })).toEqual(
-      '(min-width: 425px)',
+      '(min-width: 425.02px)',
     )
   })
 })
