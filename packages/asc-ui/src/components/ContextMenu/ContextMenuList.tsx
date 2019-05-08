@@ -1,15 +1,13 @@
 /* eslint-disable react/no-multi-comp */
 import React, { forwardRef } from 'react'
-import ContextMenuStyle, {
-  ContextMenuStyleProps,
-} from '../../styles/components/ContextMenuStyle'
+import { AscCore } from '../../styles'
 
 type Props = {
   open: boolean
   id: string
   selectedChild: number
   onClose: Function
-  position?: ContextMenuStyleProps.Position
+  position?: AscCore.ContextMenuTypes.Position
   label?: string
   icon?: React.ReactNode
 }
@@ -26,12 +24,11 @@ class ContextMenuList extends React.Component<Props> {
   myRef = React.createRef<HTMLDivElement>()
 
   static defaultProps = {
-    position: ContextMenuStyleProps.Position.top,
+    position: AscCore.ContextMenuTypes.Position.top,
   }
 
   render() {
     const {
-      id,
       children: childrenProps,
       position,
       open,
@@ -46,16 +43,14 @@ class ContextMenuList extends React.Component<Props> {
     )
 
     return (
-      <ContextMenuStyle.ContextMenuListWrapperStyle
+      <AscCore.ContextMenu.MenuListWrapper
         ref={this.myRef}
         aria-hidden={!open}
         onBlur={() => onClose()}
         position={position}
       >
-        <ContextMenuStyle.ContextMenuListStyle labelId={id}>
-          {children}
-        </ContextMenuStyle.ContextMenuListStyle>
-      </ContextMenuStyle.ContextMenuListWrapperStyle>
+        <AscCore.ContextMenu.MenuList>{children}</AscCore.ContextMenu.MenuList>
+      </AscCore.ContextMenu.MenuListWrapper>
     )
   }
 }

@@ -1,7 +1,7 @@
 import styled from '../../styled-components'
 import { getColorFromTheme, getFocusStyle } from '../../utils'
 
-const ContextMenuButtonStyle = styled.button`
+const ContextMenuButton = styled.button`
   ${({ theme }) => getFocusStyle(theme)}
   display: flex;
   background-color: ${({ theme }) =>
@@ -10,10 +10,9 @@ const ContextMenuButtonStyle = styled.button`
   height: 32px;
   padding: 0 6px;
   justify-content: space-between;
-
   & > span:not(:last-child) {
     margin-right: 6px;
   }
 `
 
-export default ContextMenuButtonStyle
+export default ContextMenuButton

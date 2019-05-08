@@ -1,16 +1,14 @@
 import React from 'react'
-import ContextMenuStyle, {
-  ContextMenuStyleProps,
-} from '../../styles/components/ContextMenuStyle'
+import { AscCore } from '../../styles'
 import ContextMenuButton from './ContextMenuButton'
-import ContextMenuList from './ContextMenuList'
+import MenuList from './ContextMenuList'
 import { KeyboardKeys } from '../../types'
 import ownerDocument from '../../utils/ownerDocument'
 
 const selectedChildInitial = -1
 
 type Props = {
-  position?: ContextMenuStyleProps.Position
+  position?: AscCore.ContextMenuTypes.Position
   label?: string
   icon?: React.ReactNode
   open?: boolean
@@ -111,7 +109,7 @@ class ContextMenu extends React.Component<Props, State> {
     const { open, selectedChild } = this.state
 
     return (
-      <ContextMenuStyle.ContextMenuWrapperStyle
+      <AscCore.ContextMenu.MenuWrapper
         id={id}
         ref={this.wrapper}
         onKeyDown={this.onKeyDown}
@@ -126,7 +124,7 @@ class ContextMenu extends React.Component<Props, State> {
           }}
           onClick={() => this.onToggle(!open)}
         />
-        <ContextMenuList
+        <MenuList
           {...{
             position,
             id,
@@ -137,8 +135,8 @@ class ContextMenu extends React.Component<Props, State> {
           ref={this.list}
         >
           {children}
-        </ContextMenuList>
-      </ContextMenuStyle.ContextMenuWrapperStyle>
+        </MenuList>
+      </AscCore.ContextMenu.MenuWrapper>
     )
   }
 }

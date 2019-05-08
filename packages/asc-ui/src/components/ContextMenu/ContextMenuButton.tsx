@@ -1,6 +1,7 @@
 import React from 'react'
-import ChevronDown from '../../internals/ChevronDown/ChevronDown'
-import ContextMenuStyle from '../../styles/components/ContextMenuStyle'
+import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
+import { AscCore } from '../../styles'
+import { Icon } from '../../index'
 
 const ContextMenuButton = ({
   id,
@@ -11,11 +12,22 @@ const ContextMenuButton = ({
   ...otherProps
 }: any) => {
   return (
-    <ContextMenuStyle.ContextMenuButtonStyle {...{ id }} {...otherProps}>
+    <AscCore.ContextMenu.MenuButton {...{ id }} {...otherProps}>
       {icon && icon}
       {label && <span>{label}</span>}
-      <ChevronDown open={open} position={position} />
-    </ContextMenuStyle.ContextMenuButtonStyle>
+      <Icon
+        inline
+        size={24}
+        padding={4}
+        rotate={
+          (position === 'bottom' && !open) || (position !== 'bottom' && open)
+            ? 180
+            : 0
+        }
+      >
+        <ChevronDown />
+      </Icon>
+    </AscCore.ContextMenu.MenuButton>
   )
 }
 

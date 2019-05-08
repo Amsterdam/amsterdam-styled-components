@@ -1,10 +1,8 @@
 import styled from '../../styled-components'
-import { ContextMenuStyleProps } from './types'
+import { ContextMenu } from './types'
 import { getColorFromTheme, getTypographyFromTheme } from '../../utils'
 
-export const ContextMenuItemStyle = styled.li<
-  ContextMenuStyleProps.ContextMenuItemStyleProps
->`
+export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   padding: 0;
   margin: 0;
   display: flex;
@@ -14,15 +12,12 @@ export const ContextMenuItemStyle = styled.li<
   width: 100%;
   cursor: pointer;
   font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
-
   & > span:first-child {
     margin: 5px 6px;
   }
-
   ${({ divider, theme }) =>
     divider &&
     `border-bottom: 1px solid ${getColorFromTheme(theme, 'tint', 'level4')}}`}
-
   &:hover,
   &:focus {
     outline: none;
@@ -31,4 +26,4 @@ export const ContextMenuItemStyle = styled.li<
   }
 `
 
-export default ContextMenuItemStyle
+export default ContextMenuItem

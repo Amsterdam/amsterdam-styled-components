@@ -1,25 +1,22 @@
 import styled from '../../styled-components'
-import { ContextMenuStyleProps } from './types'
+import { ContextMenu } from './types'
 import { getColorFromTheme } from '../../utils'
 
-const ContextMenuListStyle = styled.ul<
-  ContextMenuStyleProps.ContextMenuListStyleProps
->`
+const ContextMenuList = styled.ul<ContextMenu.ContextMenuListProps>`
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
-
   &:focus {
     outline: none;
   }
 `
-export default ContextMenuListStyle
+export default ContextMenuList
 
-export const ContextMenuListWrapperStyle = styled.div.attrs(() => ({
+export const ContextMenuListWrapper = styled.div.attrs(() => ({
   role: 'menu',
   tabIndex: -1,
-}))<ContextMenuStyleProps.ContextMenuListStyleProps>`
+}))<ContextMenu.ContextMenuListProps>`
   order: ${({ position }) => (position === 'bottom' ? -1 : 0)};
   background-color: ${({ theme }) =>
     getColorFromTheme(theme, 'tint', 'level1')};
