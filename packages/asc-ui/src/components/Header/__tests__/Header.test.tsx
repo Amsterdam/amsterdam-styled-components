@@ -31,11 +31,12 @@ describe('Header', () => {
 
   it('should render the tall version', () => {
     const component = setup({ tall: true })
+    console.log(component)
     expect(component).toMatchSnapshot()
   })
 
   it('should render the tall version without a title', () => {
-    const component = setup({ title: null })
+    const component = setup({ tall: true, title: null })
     expect(component).toMatchSnapshot()
   })
 })

@@ -29,7 +29,7 @@ exports[`Header should render the short version 1`] = `
   font-size: 0;
 }
 
-.c6 {
+.c7 {
   color: #004699;
   display: inline-block;
   margin-top: 0;
@@ -60,20 +60,20 @@ exports[`Header should render the short version 1`] = `
   text-decoration: none;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   background-color: #FEC813;
 }
 
-.c6:hover {
+.c7:hover {
   color: #ec0000;
 }
 
-.c6:hover {
+.c7:hover {
   color: inherit;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -85,14 +85,20 @@ exports[`Header should render the short version 1`] = `
   height: 100%;
 }
 
+.c5 {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-image: url("-react-component: function () {        return 'SVG_MOCK';
+}
+
+;");}
+
 .c4 {
   display: inline-block;
   height: 30px;
   width: 64px;
-}
-
-.c4 > svg:last-child {
-  display: none;
 }
 
 .c4:focus {
@@ -140,7 +146,7 @@ exports[`Header should render the short version 1`] = `
   transform: translateX(-50%);
 }
 
-.c0 .c7 {
+.c0 .c8 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -148,11 +154,11 @@ exports[`Header should render the short version 1`] = `
   margin-left: 15px;
 }
 
-.c0 .c5 {
+.c0 .c6 {
   margin-top: -2px;
 }
 
-.c9 {
+.c10 {
   line-height: 1.25;
   margin-top: 0;
   margin-right: 0;
@@ -175,13 +181,13 @@ exports[`Header should render the short version 1`] = `
 }
 
 @media screen and (max-width:375px) {
-  .c6 {
+  .c7 {
     font-size: 14px;
   }
 }
 
 @media screen and (max-width:375px) {
-  .c6 {
+  .c7 {
     font-size: 16px;
   }
 }
@@ -205,20 +211,22 @@ exports[`Header should render the short version 1`] = `
         class="c3 c4"
         href="http://data.amsterdam.nl"
       >
-        SVG_MOCKSVG_MOCK
+        <span
+          class="c5"
+        />
       </a>
       <a
-        class="c5 c6"
+        class="c6 c7"
         href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
     </h1>
     <div
-      class="c7 c8"
+      class="c8 c9"
     >
       <p
-        class="c9"
+        class="c10"
       >
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
       </p>
@@ -256,7 +264,7 @@ exports[`Header should render the short version without the full width 1`] = `
   font-size: 0;
 }
 
-.c6 {
+.c7 {
   color: #004699;
   display: inline-block;
   margin-top: 0;
@@ -287,20 +295,20 @@ exports[`Header should render the short version without the full width 1`] = `
   text-decoration: none;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   background-color: #FEC813;
 }
 
-.c6:hover {
+.c7:hover {
   color: #ec0000;
 }
 
-.c6:hover {
+.c7:hover {
   color: inherit;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -312,14 +320,20 @@ exports[`Header should render the short version without the full width 1`] = `
   height: 100%;
 }
 
+.c5 {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-image: url("-react-component: function () {        return 'SVG_MOCK';
+}
+
+;");}
+
 .c4 {
   display: inline-block;
   height: 30px;
   width: 64px;
-}
-
-.c4 > svg:last-child {
-  display: none;
 }
 
 .c4:focus {
@@ -354,7 +368,7 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-right: 10px;
 }
 
-.c10 .c7 {
+.c11 .c8 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -362,7 +376,7 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-left: 15px;
 }
 
-.c10 .c5 {
+.c11 .c6 {
   margin-top: -2px;
 }
 
@@ -379,7 +393,7 @@ exports[`Header should render the short version without the full width 1`] = `
   transform: translateX(-50%);
 }
 
-.c0 .c7 {
+.c0 .c8 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -387,11 +401,11 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-left: 15px;
 }
 
-.c0 .c5 {
+.c0 .c6 {
   margin-top: -2px;
 }
 
-.c9 {
+.c10 {
   line-height: 1.25;
   margin-top: 0;
   margin-right: 0;
@@ -414,13 +428,13 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 @media screen and (max-width:375px) {
-  .c6 {
+  .c7 {
     font-size: 14px;
   }
 }
 
 @media screen and (max-width:375px) {
-  .c6 {
+  .c7 {
     font-size: 16px;
   }
 }
@@ -444,20 +458,22 @@ exports[`Header should render the short version without the full width 1`] = `
         class="c3 c4"
         href="http://data.amsterdam.nl"
       >
-        SVG_MOCKSVG_MOCK
+        <span
+          class="c5"
+        />
       </a>
       <a
-        class="c5 c6"
+        class="c6 c7"
         href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
     </h1>
     <div
-      class="c7 c8"
+      class="c8 c9"
     >
       <p
-        class="c9"
+        class="c10"
       >
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
       </p>
@@ -495,7 +511,7 @@ exports[`Header should render the tall version 1`] = `
   font-size: 0;
 }
 
-.c9 {
+.c10 {
   color: #004699;
   display: inline-block;
   margin-top: 0;
@@ -526,20 +542,20 @@ exports[`Header should render the tall version 1`] = `
   text-decoration: none;
 }
 
-.c9:focus {
+.c10:focus {
   outline: none;
   background-color: #FEC813;
 }
 
-.c9:hover {
+.c10:hover {
   color: #ec0000;
 }
 
-.c9:hover {
+.c10:hover {
   color: inherit;
 }
 
-.c11 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -551,14 +567,18 @@ exports[`Header should render the tall version 1`] = `
   height: 100%;
 }
 
+.c8 {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-image: url("-react-component: function () {        return 'SVG_MOCK';
+}
+
 .c7 {
   display: inline-block;
   height: 30px;
   width: 64px;
-}
-
-.c7 > svg:last-child {
-  display: none;
 }
 
 .c7:focus {
@@ -593,7 +613,7 @@ exports[`Header should render the tall version 1`] = `
   margin-right: 10px;
 }
 
-.c13 .c10 {
+.c14 .c11 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -601,11 +621,11 @@ exports[`Header should render the tall version 1`] = `
   margin-left: 15px;
 }
 
-.c13 .c8 {
+.c14 .c9 {
   margin-top: -2px;
 }
 
-.c14 .c10 {
+.c15 .c11 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -613,7 +633,7 @@ exports[`Header should render the tall version 1`] = `
   margin-left: 15px;
 }
 
-.c14 .c8 {
+.c15 .c9 {
   margin-top: -2px;
 }
 
@@ -625,7 +645,7 @@ exports[`Header should render the tall version 1`] = `
   box-shadow: 0 4px rgba(0,0,0,0.04);
 }
 
-.c0 .c10 {
+.c0 .c11 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -633,7 +653,7 @@ exports[`Header should render the tall version 1`] = `
   margin-left: 15px;
 }
 
-.c12 {
+.c13 {
   line-height: 1.25;
   margin-top: 0;
   margin-right: 0;
@@ -656,13 +676,13 @@ exports[`Header should render the tall version 1`] = `
 }
 
 @media screen and (max-width:375px) {
-  .c9 {
+  .c10 {
     font-size: 14px;
   }
 }
 
 @media screen and (max-width:375px) {
-  .c9 {
+  .c10 {
     font-size: 16px;
   }
 }
@@ -671,14 +691,6 @@ exports[`Header should render the tall version 1`] = `
   .c7 {
     height: 68px;
     width: 100px;
-  }
-
-  .c7 > svg:first-child {
-    display: none;
-  }
-
-  .c7 > svg:last-child {
-    display: block;
   }
 }
 
@@ -697,7 +709,7 @@ exports[`Header should render the tall version 1`] = `
     transform: translateX(-50%);
   }
 
-  .c0 .c8 {
+  .c0 .c9 {
     margin-top: -2px;
   }
 }
@@ -730,7 +742,7 @@ exports[`Header should render the tall version 1`] = `
     background-color: transparent;
   }
 
-  .c0 .c8 {
+  .c0 .c9 {
     margin-top: 0px;
     -webkit-align-self: flex-start;
     -ms-flex-item-align: start;
@@ -744,7 +756,7 @@ exports[`Header should render the tall version 1`] = `
     padding: 15px 0;
   }
 
-  .c0 .c10 {
+  .c0 .c11 {
     -webkit-flex-basis: 100%;
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
@@ -767,20 +779,22 @@ exports[`Header should render the tall version 1`] = `
         class="c6 c7"
         href="http://data.amsterdam.nl"
       >
-        SVG_MOCKSVG_MOCK
+        <span
+          class="c8"
+        />
       </a>
       <a
-        class="c8 c9"
+        class="c9 c10"
         href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
     </h1>
     <div
-      class="c10 c11"
+      class="c11 c12"
     >
       <p
-        class="c12"
+        class="c13"
       >
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
       </p>
@@ -818,7 +832,7 @@ exports[`Header should render the tall version without a title 1`] = `
   font-size: 0;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -830,14 +844,18 @@ exports[`Header should render the tall version without a title 1`] = `
   height: 100%;
 }
 
+.c8 {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-image: url("-react-component: function () {        return 'SVG_MOCK';
+}
+
 .c7 {
   display: inline-block;
   height: 30px;
   width: 64px;
-}
-
-.c7 > svg:last-child {
-  display: none;
 }
 
 .c7:focus {
@@ -872,20 +890,31 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-right: 10px;
 }
 
+.c12 .c9 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.c13 .c9 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
 .c0 {
   background-color: #ffffff;
   margin: 0 auto;
   width: 100%;
   max-width: none;
   box-shadow: 0 4px rgba(0,0,0,0.04);
-  position: fixed;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
 }
 
-.c0 .c8 {
+.c0 .c9 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -893,27 +922,7 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-left: 15px;
 }
 
-.c0 .c13 {
-  margin-top: -2px;
-}
-
-.c11 .c8 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c12 .c8 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c10 {
+.c11 {
   line-height: 1.25;
   margin-top: 0;
   margin-right: 0;
@@ -936,29 +945,75 @@ exports[`Header should render the tall version without a title 1`] = `
 }
 
 @media screen and (min-width:1200.02px) {
+  .c7 {
+    height: 68px;
+    width: 100px;
+  }
+}
+
+@media screen and (min-width:1200.02px) {
   .c5 .c6 {
     margin-right: 40px;
   }
 }
 
+@media screen and (max-width:1200px) {
+  .c0 {
+    position: fixed;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  .c0 .sc-bxivhb {
+    margin-top: -2px;
+  }
+}
+
 @media screen and (min-width:1200.02px) {
-  .c12 .c2 {
+  .c0 {
+    box-shadow: none;
+    position: relative;
+  }
+
+  .c0:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50px;
+    margin-top: -50px;
+    background-color: #F5F5F5;
+  }
+
+  .c0 .c2 {
     z-index: 100;
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
 
-  .c12 .c1 {
+  .c0 .c1 {
     background-color: transparent;
   }
 
-  .c12 .c4 {
+  .c0 .sc-bxivhb {
+    margin-top: 0px;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    line-height: 38px;
+    font-size: 30px;
+  }
+
+  .c0 .c4 {
     height: 78px;
     padding: 15px 0;
   }
 
-  .c12 .c8 {
+  .c0 .c9 {
     -webkit-flex-basis: 100%;
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
@@ -981,14 +1036,16 @@ exports[`Header should render the tall version without a title 1`] = `
         class="c6 c7"
         href="http://data.amsterdam.nl"
       >
-        SVG_MOCKSVG_MOCK
+        <span
+          class="c8"
+        />
       </a>
     </h1>
     <div
-      class="c8 c9"
+      class="c9 c10"
     >
       <p
-        class="c10"
+        class="c11"
       >
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
       </p>
