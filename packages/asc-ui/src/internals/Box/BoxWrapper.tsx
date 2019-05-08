@@ -1,7 +1,9 @@
 import * as React from 'react'
 import styled from '../../styled-components'
 
-export type Props = {}
+export type Props = {
+  backgroundColor?: string
+}
 
 export const BoxWrapperStyle = styled.div`
   position: relative;
@@ -12,14 +14,20 @@ export const BoxWrapperStyle = styled.div`
   font-family: 'AvenirNextLTW01-Regular', arial, sans-serif;
 `
 
-export const BoxContainerStyle = styled.div`
-  background-color: rgba(255, 255, 0, 0.1);
+export const BoxContainerStyle = styled.div<Props>`
+  background-color: ${({ backgroundColor }) => backgroundColor};
   margin: 0;
 `
 
-const BoxWrapper: React.FC<{}> = ({ children }) => (
+BoxContainerStyle.defaultProps = {
+  backgroundColor: 'rgba(192, 192, 192, 0.5)',
+}
+
+const BoxWrapper: React.FC<Props> = ({ children, backgroundColor }) => (
   <BoxWrapperStyle>
-    <BoxContainerStyle>{children}</BoxContainerStyle>
+    <BoxContainerStyle backgroundColor={backgroundColor}>
+      {children}
+    </BoxContainerStyle>
   </BoxWrapperStyle>
 )
 

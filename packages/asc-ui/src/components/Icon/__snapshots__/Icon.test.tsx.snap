@@ -1,57 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Icon should render the icon 1`] = `
-<StyledComponent
-  forwardedComponent={
-    Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "attrs": Array [],
-      "componentStyle": ComponentStyle {
-        "componentId": "sc-bdVaJa",
-        "isStatic": false,
-        "rules": Array [
-          "
-  display: ",
-          [Function],
-          ";
-  ",
-          [Function],
-          "
-  ",
-          [Function],
-          "
-  padding: ",
-          [Function],
-          ";
+.c0 {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  padding: 4px;
   box-sizing: content-box;
-  ",
-          [Function],
-          ";
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
 
-  & > svg {
-    width: inherit;
-    height: inherit;
-    ",
-          [Function],
-          ";
-",
-        ],
-      },
-      "displayName": "styled.span",
-      "foldedComponentIds": Array [],
-      "render": [Function],
-      "styledComponentId": "sc-bdVaJa",
-      "target": "span",
-      "toString": [Function],
-      "warnTooManyClasses": [Function],
-      "withComponent": [Function],
-    }
-  }
-  forwardedRef={null}
-  inline={true}
-  padding={4}
-  size={24}
+.c0 > svg {
+  width: inherit;
+  height: inherit;
+}
+
+<span
+  class="c0"
+  size="24"
 >
   icon-content
-</StyledComponent>
+</span>
 `;

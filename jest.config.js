@@ -11,18 +11,19 @@ module.exports = {
   coverageReporters: ['lcov'],
   coverageThreshold: {
     global: {
-      statements: 80,
-      branches: 80,
-      functions: 80,
-      lines: 80,
+      statements: 61,
+      branches: 46,
+      functions: 62,
+      lines: 43,
     },
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   moduleDirectories: ['node_modules', 'packages'],
   moduleNameMapper: {
-    '.*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+    '^@datapunt/asc-assets/.*\\.svg$': '<rootDir>/config/testing/mocks/svg.ts',
+    '.*\\.(jpg|jpeg|png|gif|eot|otf|webp|sv|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/config/testing/mocks/image.ts',
-    '^@datapunt/(.*)$': '<rootDir>/packages/$1/src',
+    '^@datapunt/(.*)$': '<rootDir>/packages/$1',
   },
   testPathIgnorePatterns: [
     '/node_modules/',

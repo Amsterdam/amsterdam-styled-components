@@ -20,7 +20,8 @@
     "assets": "assets"
   },
   "scripts": {
-    "build": "mkdir -p lib && cp -R src/* lib/ && svgo --config=.svgo.yml -f ./src/Icons/ -o ./lib/Icons"
+    "prebuild": "rm -rf lib && mkdir lib",
+    "build": "cp -R src/* lib/ && svgo --config=.svgo.yml -f ./src/Icons/ -o ./lib/Icons"
   },
   "publishConfig": {
     "access": "public"

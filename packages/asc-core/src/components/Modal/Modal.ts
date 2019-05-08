@@ -1,4 +1,5 @@
 import styled from '../../styled-components'
+import TopBarStyle from '../TopBarStyle'
 
 type Props = {
   attributes?: object
@@ -15,6 +16,10 @@ const Modal = styled.div<Props>`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  ${TopBarStyle} {
+    min-height: 54px;
+  }
 `
 
 export const ModalContainer = styled.div.attrs(props => ({
