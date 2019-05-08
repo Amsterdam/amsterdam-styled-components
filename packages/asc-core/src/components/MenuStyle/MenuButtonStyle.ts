@@ -1,12 +1,12 @@
 import styled from '../../styled-components'
 import { MenuStyleProps } from './types'
-import { getColorFromTheme, getFocusStyle } from '../../utils'
+import { color, focusStyle } from '../../utils'
 
 const MenuButtonStyle = styled.button<MenuStyleProps.MenuButtonStyleProps>`
-  ${({ theme }) => getFocusStyle(theme)}
+  ${focusStyle()}
   display: flex;
-  background-color: ${({ theme, open }) =>
-    open ? getColorFromTheme(theme, 'tint', 'level2') : 'transparent'};
+  background-color: ${({ open }) =>
+    open ? color('tint', 'level2') : 'transparent'};
   border: 0px;
   align-items: center;
   height: 32px;

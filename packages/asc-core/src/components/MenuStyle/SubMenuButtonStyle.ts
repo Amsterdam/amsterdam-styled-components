@@ -1,7 +1,7 @@
 import styled from '../../styled-components'
 import { MenuStyleProps } from './types'
 import MenuItemStyle from './MenuItemStyle'
-import { getColorFromTheme, fillSvgFromTheme } from '../../utils'
+import { color, svgFill } from '../../utils'
 
 const SubMenuButtonStyle = styled(MenuItemStyle)<
   MenuStyleProps.MenuButtonStyleProps
@@ -14,17 +14,16 @@ const SubMenuButtonStyle = styled(MenuItemStyle)<
 
   &:hover,
   &:focus {
-    border-left-color: ${({ theme, focused }) =>
-      focused && getColorFromTheme(theme, 'secondary', 'main')}};
+    border-left-color: ${({ focused }) =>
+      focused && color('secondary', 'main')}};
 
     & > span:first-child,
     & > span:first-child {
-      border-bottom-color: ${({ theme }) =>
-        getColorFromTheme(theme, 'secondary', 'main')}};
+      border-bottom-color: ${color('secondary', 'main')};
     }
 
     & > span > svg {
-      fill: ${({ theme }) => fillSvgFromTheme(theme, 'secondary', 'main')};
+      fill: ${svgFill('secondary', 'main')};
     }
   }
 `

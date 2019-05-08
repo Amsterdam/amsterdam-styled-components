@@ -1,6 +1,6 @@
 import { Theme } from '../../theme'
 import styled from '../../styled-components'
-import { fillSvgFromTheme } from '../../utils'
+import { svgFill } from '../../utils'
 
 export type Props = {
   inline?: boolean
@@ -31,7 +31,7 @@ const IconStyle = styled.span<Props>`
   & > svg {
     width: inherit;
     height: inherit;
-    ${({ color, theme }) => fillSvgFromTheme(theme, color)};
+    ${({ color, theme }) => svgFill(color)({ theme })};
 `
 
 export default IconStyle

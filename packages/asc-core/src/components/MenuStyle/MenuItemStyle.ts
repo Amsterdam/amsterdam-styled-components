@@ -1,11 +1,7 @@
 import styled from '../../styled-components'
 import { MenuStyleProps } from './types'
 import IconStyle from '../IconStyle'
-import {
-  fillSvgFromTheme,
-  getColorFromTheme,
-  getTypographyFromTheme,
-} from '../../utils'
+import { svgFill, color, getTypographyFromTheme } from '../../utils'
 
 export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   padding: 10px 15px 10px 11px;
@@ -20,24 +16,23 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
   position: relative;
 
-  ${({ borderBottom, theme }) =>
+  ${({ borderBottom }) =>
     borderBottom &&
     `
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-bottom-color: ${getColorFromTheme(theme, 'tint', 'level3')};
+    border-bottom-color: ${color('tint', 'level3')};
   `}};
 
   border-left-style: solid;
-  border-left-color: ${({ theme }) =>
-    getColorFromTheme(theme, 'tint', 'level2')}};
+  border-left-color: ${color('tint', 'level2')};
   border-left-width: 4px;
 
   & > span:last-child {
     border-bottom-width: 2px;
     border-bottom-style: solid;
-    border-bottom-color: ${({ theme, focused }) =>
-      focused ? getColorFromTheme(theme, 'secondary', 'main') : 'transparent'};
+    border-bottom-color: ${({ focused }) =>
+      focused ? color('secondary', 'main') : 'transparent'};
     line-height: 22px;
   }
 
@@ -47,7 +42,7 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
     }
 
     & > svg {
-      ${({ theme }) => fillSvgFromTheme(theme, 'tint', 'level7')};
+      ${svgFill('tint', 'level7')};
     }
   }
 
@@ -56,14 +51,13 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
     outline: none;
 
     & > span:last-child {
-      border-bottom-color: ${({ theme }) =>
-        getColorFromTheme(theme, 'secondary', 'main')}};
-      color: ${({ theme }) => getColorFromTheme(theme, 'secondary', 'main')}};
+      border-bottom-color: ${color('secondary', 'main')};
+      color: ${color('secondary', 'main')};
     }
 
     &:hover > ${IconStyle}, &:focus > ${IconStyle} {
       & > svg {
-        ${({ theme }) => fillSvgFromTheme(theme, 'secondary', 'main')};
+        ${svgFill('secondary', 'main')};
       }
     }
   }

@@ -1,6 +1,6 @@
 import styled from '../../styled-components'
 import { MenuStyleProps } from './types'
-import { getColorFromTheme } from '../../utils'
+import { color } from '../../utils'
 
 const MenuListStyle = styled.ul<MenuStyleProps.MenuListStyleProps>`
   display: flex;
@@ -19,10 +19,8 @@ export const MenuListWrapperStyle = styled.div.attrs(() => ({
   tabIndex: -1,
 }))<MenuStyleProps.MenuListStyleProps>`
   order: ${({ position }) => (position === 'bottom' ? -1 : 0)};
-  background-color: ${({ theme }) =>
-    getColorFromTheme(theme, 'tint', 'level2')};
-  border-bottom: 4px solid
-    ${({ theme }) => getColorFromTheme(theme, 'tint', 'level7')};
+  background-color: ${color('tint', 'level2')};
+  border-bottom: 4px solid ${color('tint', 'level7')};
   max-width: 250px;
   width: 100%;
   &:focus {

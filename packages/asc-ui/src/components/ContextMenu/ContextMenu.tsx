@@ -11,6 +11,7 @@ type Props = {
   position?: AscCore.ContextMenuTypes.Position
   label?: string
   icon?: React.ReactNode
+  arrowIcon: React.ReactNode
   open?: boolean
 }
 
@@ -105,12 +106,11 @@ class ContextMenu extends React.Component<Props, State> {
   }
 
   render() {
-    const { id, label, children, position, icon }: any = this.props
+    const { label, children, position, icon, arrowIcon } = this.props
     const { open, selectedChild } = this.state
 
     return (
       <AscCore.ContextMenu.MenuWrapper
-        id={id}
         ref={this.wrapper}
         onKeyDown={this.onKeyDown}
         onBlur={this.onClose}
@@ -121,13 +121,13 @@ class ContextMenu extends React.Component<Props, State> {
             open,
             position,
             label,
+            arrowIcon,
           }}
           onClick={() => this.onToggle(!open)}
         />
         <MenuList
           {...{
             position,
-            id,
             open,
             selectedChild,
           }}

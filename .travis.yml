@@ -10,6 +10,5 @@ cache:
 install:
   - yarn
 script:
-  - yarn lint
+  - yarn verify-integrity
   - yarn build
-  - yarn test

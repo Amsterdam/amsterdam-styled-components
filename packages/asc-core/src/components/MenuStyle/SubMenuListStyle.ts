@@ -1,6 +1,6 @@
 import styled from '../../styled-components'
 import { MenuStyleProps } from './types'
-import { getColorFromTheme } from '../../utils'
+import { color } from '../../utils'
 
 const SubMenuListStyle = styled.ul<MenuStyleProps.MenuListStyleProps>`
   display: flex;
@@ -23,8 +23,7 @@ export const SubMenuListWrapperStyle = styled.div.attrs(() => ({
   tabIndex: -1,
 }))<MenuStyleProps.MenuListStyleProps>`
   order: ${({ position }) => (position === 'bottom' ? -1 : 0)};
-  background-color: ${({ theme }) =>
-    getColorFromTheme(theme, 'tint', 'level1')};
+  background-color: ${color('tint', 'level1')};
   max-width: 250px;
   width: 100%;
   &:focus {

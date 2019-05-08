@@ -1,9 +1,8 @@
 import styled from '../../styled-components'
-import { getBreakpointFromTheme } from '../../utils'
+import { breakpoint } from '../../utils'
 
 const HeaderTitleStyle = styled.div<{}>`
-  @media screen and ${({ theme }) =>
-      getBreakpointFromTheme(theme, 'max-width', 'tablet')} {
+  @media screen and ${breakpoint('max-width', 'tablet')} {
     flex-grow: 1;
   }
 
@@ -23,14 +22,12 @@ const HeaderTitleStyle = styled.div<{}>`
     color: #000;
     text-decoration: none;
 
-    @media screen and ${({ theme }) =>
-        getBreakpointFromTheme(theme, 'max-width', 'mobileM')} {
+    @media screen and ${breakpoint('max-width', 'mobileM')} {
       line-height: 18px;
       font-size: 14px;
     }
 
-    @media screen and ${({ theme }) =>
-        getBreakpointFromTheme(theme, 'min-width', 'mobileM')} {
+    @media screen and ${breakpoint('min-width', 'mobileM')} {
       line-height: 20px;
       font-size: 16px;
     }

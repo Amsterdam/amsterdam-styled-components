@@ -27,7 +27,8 @@
     "lint:css": "stylelint './packages/**/src/**/*.ts'",
     "lint:js": "eslint packages --ext ts,tsx",
     "prepare": "yarn prettify:package && yarn build",
-    "publish:packages": "yarn lint & yarn test & lerna publish",
+    "verify-integrity": "yarn lint & yarn test",
+    "publish:packages": "yarn verify-integrity && lerna publish",
     "start": "concurrently \"yarn build:watch\" \"yarn storybook\"",
     "storybook": "start-storybook -p 6006",
     "symlink": "./scripts/link-core.sh",
@@ -109,5 +110,7 @@
   "engines": {
     "node": "^8 || ^10"
   },
-  "precommit": []
+  "precommit": [
+    "verify-integrity"
+  ]
 }
