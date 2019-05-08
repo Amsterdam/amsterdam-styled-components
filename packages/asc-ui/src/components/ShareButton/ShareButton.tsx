@@ -16,9 +16,7 @@ const ShareButton: React.FC<Props> = ({
   ...otherProps
 }) => (
   <ShareButtonStyle onClick={onClick} square {...otherProps}>
-    <Icon color="secondary" size={iconSize}>
-      {children}
-    </Icon>
+    <Icon size={iconSize}>{children}</Icon>
   </ShareButtonStyle>
 )
 

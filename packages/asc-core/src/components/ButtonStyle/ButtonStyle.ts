@@ -8,12 +8,11 @@ export type Props = ButtonBaseStyleProps
 const ButtonStyle = styled(ButtonBaseStyle)<Props>`
   padding: 0 10px 0 10px;
   min-height: 38px;
-  line-height: 1em
+  line-height: 1em;
   color: ${({ color, theme }) =>
     color
       ? readableColor(getColorFromTheme(theme, color))
       : getColorFromTheme(theme, 'primary')};
-
   ${({ theme, color }) =>
     !color && `border: 1px solid ${getColorFromTheme(theme, 'primary')};`}
 
@@ -25,7 +24,7 @@ const ButtonStyle = styled(ButtonBaseStyle)<Props>`
   & svg {
     width: 30px;
     height: 30px;
-    ${({ color, theme }) => svgFill(color)({ theme })};
+    ${({ theme }) => svgFill('tint', 'level1')({ theme })};
   }
 `
 

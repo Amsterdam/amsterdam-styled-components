@@ -71,23 +71,23 @@ export default (element: Variant): StyledComponent<any, any> => styled(element)<
     css`
       margin-bottom: ${em('15px')};
     `}
-    ${({ theme }) => {
-      const {
-        fontWeight,
-        fontSize,
-        fontFamily,
-        letterSpacing,
-        lineHeight,
-      } = getTypographyFromTheme(theme, element)
-      return css`
-        font-family: ${fontFamily};
-        font-weight: ${fontWeight};
-        font-size: ${fontSize};
-        letter-spacing: ${letterSpacing};
-        line-height: ${lineHeight};
-      `
-    }}
-    font-style: normal;
+  ${({ theme }) => {
+    const {
+      fontWeight,
+      fontSize,
+      fontFamily,
+      letterSpacing,
+      lineHeight,
+    } = getTypographyFromTheme(theme, element)
+    return css`
+      font-family: ${fontFamily};
+      font-weight: ${fontWeight};
+      font-size: ${fontSize};
+      letter-spacing: ${letterSpacing};
+      line-height: ${lineHeight};
+    `
+  }}
+  font-style: normal;
   font-stretch: normal;
   letter-spacing: normal;
 `

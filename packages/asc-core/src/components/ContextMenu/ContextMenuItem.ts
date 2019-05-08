@@ -23,7 +23,7 @@ export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   &:hover,
   &:focus {
     outline: none;
-    background-color: ${color('tint', 'level2')}};
+    background-color: ${color('tint', 'level2')};
   }
 `
 

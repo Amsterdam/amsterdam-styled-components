@@ -21,9 +21,10 @@ const ButtonBaseStyle = styled.button<Props>`
   font-size: 16px;
   font-weight: normal;
   padding: 0 10px 0 10px;
-  ${focusStyle()}
-  ${transitions(['color', 'background-color'], '0.1s ease-in-out')};
 
+  ${focusStyle()}
+
+  ${transitions(['color', 'background-color'], '0.1s ease-in-out')};
   background: ${({ color, theme }) => themeColor(color)({ theme })};
 
   &:hover {
