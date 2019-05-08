@@ -24,7 +24,7 @@ const MenuItem = ({ children, icon, index, onClick, ...otherProps }: Props) => {
     if (menuItemRef && menuItemRef.current && focused) {
       menuItemRef.current.focus()
     }
-  }, [focused])
+  }, [selectedChild])
 
   const handleOnClick = (e: React.KeyboardEvent | React.MouseEvent) => {
     e.preventDefault()
@@ -49,10 +49,7 @@ const MenuItem = ({ children, icon, index, onClick, ...otherProps }: Props) => {
       {...otherProps}
     >
       {icon && <Icon size={14}>{icon}</Icon>}
-      <span>
-        {children}
-        {` - ${index}`}
-      </span>
+      <MenuStyle.MenuItemLabelStyle>{children}</MenuStyle.MenuItemLabelStyle>
     </MenuStyle.MenuItemStyle>
   )
 }

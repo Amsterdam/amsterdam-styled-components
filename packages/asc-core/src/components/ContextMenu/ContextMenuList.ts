@@ -7,6 +7,7 @@ const ContextMenuList = styled.ul<ContextMenu.ContextMenuListProps>`
   flex-direction: column;
   margin: 0;
   padding: 0;
+
   &:focus {
     outline: none;
   }

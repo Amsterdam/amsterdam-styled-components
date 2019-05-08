@@ -3,6 +3,16 @@ import { MenuStyleProps } from './types'
 import IconStyle from '../IconStyle'
 import { svgFill, color, getTypographyFromTheme } from '../../utils'
 
+export const MenuItemLabelStyle = styled.span<
+  MenuStyleProps.MenuItemStyleProps
+>`
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: ${({ focused }) =>
+    focused ? color('secondary', 'main') : 'transparent'};
+  line-height: 22px;
+`
+
 export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   padding: 10px 15px 10px 11px;
   margin: 0;
@@ -28,21 +38,13 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   border-left-color: ${color('tint', 'level2')};
   border-left-width: 4px;
 
-  & > span:last-child {
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: ${({ focused }) =>
-      focused ? color('secondary', 'main') : 'transparent'};
-    line-height: 22px;
-  }
-
   ${IconStyle} {
     &:not(:last-child) {
       margin-right: 5px;
     }
 
-    & > svg {
-      ${svgFill('tint', 'level7')};
+    & svg {
+      ${({ theme }) => svgFill('tint', 'level7')({ theme })};
     }
   }
 
@@ -50,14 +52,14 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   &:focus {
     outline: none;
 
-    & > span:last-child {
+    ${MenuItemLabelStyle} {
       border-bottom-color: ${color('secondary', 'main')};
       color: ${color('secondary', 'main')};
     }
 
     &:hover > ${IconStyle}, &:focus > ${IconStyle} {
-      & > svg {
-        ${svgFill('secondary', 'main')};
+      & svg {
+        ${({ theme }) => svgFill('secondary')({ theme })};
       }
     }
   }

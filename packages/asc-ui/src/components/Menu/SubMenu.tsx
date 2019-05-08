@@ -1,8 +1,8 @@
 import React from 'react'
 import MenuStyle, { MenuStyleProps } from '../../styles/components/MenuStyle'
-import ChevronDown from '../../internals/ChevronDown/ChevronDown'
 import { KeyboardKeys } from '../../types'
 import { MenuContext } from './Menu'
+import { Icon } from '../../index'
 
 type Props = {
   role?: string
@@ -10,10 +10,12 @@ type Props = {
   divider?: boolean
   mobile?: boolean
   index?: number
+  arrowIcon?: React.ReactNode
 } & MenuStyleProps.MenuItemStyleProps
 
 const SubMenu: React.FC<Props> = ({
   id,
+  arrowIcon,
   children,
   label,
   index: currentIndex,
@@ -81,7 +83,11 @@ const SubMenu: React.FC<Props> = ({
         {...otherProps}
       >
         {label && <span>{label}</span>}
-        {mobile && <ChevronDown open={expandedChild} />}
+        {mobile && (
+          <Icon inline size={24} padding={4} rotate={expandedChild ? 180 : 0}>
+            {arrowIcon}
+          </Icon>
+        )}
       </MenuStyle.SubMenuButtonStyle>
       <MenuStyle.SubMenuListWrapperStyle
         aria-hidden={mobile ? !expandedChild : false}

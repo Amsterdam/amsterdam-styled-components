@@ -9,6 +9,7 @@ const ContextMenuButton = styled.button`
   height: 32px;
   padding: 0 6px;
   justify-content: space-between;
+
   & > span:not(:last-child) {
     margin-right: 6px;
   }

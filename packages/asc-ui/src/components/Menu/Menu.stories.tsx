@@ -1,6 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { ReactComponent as ChevronRight } from '@datapunt/asc-assets/lib/Icons/ChevronRight.svg'
+import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
 import { ReactComponent as ExternalLink } from '@datapunt/asc-assets/lib/Icons/ExternalLink.svg'
 import { Menu, MenuItem, MenuLabel, SubMenu } from '../..'
 
@@ -43,7 +44,7 @@ storiesOf('Composed/Menu', module)
     <Menu label="Menu" mobile>
       <MenuItem onClick={() => {}}>One</MenuItem>
       <MenuItem onClick={() => {}}>Two</MenuItem>
-      <SubMenu label="SubMenu">
+      <SubMenu label="SubMenu" arrowIcon={<ChevronDown />}>
         <MenuItem icon={<ChevronRight />} onClick={() => {}}>
           One
         </MenuItem>

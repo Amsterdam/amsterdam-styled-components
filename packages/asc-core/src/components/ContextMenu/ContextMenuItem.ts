@@ -16,9 +16,11 @@ export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   & > span:first-child {
     margin: 5px 6px;
   }
+
   ${({ divider, theme }) =>
     divider &&
     `border-bottom: 1px solid ${getColorFromTheme(theme, 'tint', 'level4')}}`}
+
   &:hover,
   &:focus {
     outline: none;
