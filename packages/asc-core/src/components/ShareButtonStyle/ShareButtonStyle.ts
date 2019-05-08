@@ -12,8 +12,7 @@ const ShareButtonStyle = styled(IconButtonStyle)<Props>`
 
   &:focus,
   &:hover {
-    background: ${({ hoverColor }) =>
-      hoverColor || color('secondary')};
+    background: ${({ hoverColor }) => hoverColor || color('secondary')};
   }
 `
 

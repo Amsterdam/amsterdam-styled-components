@@ -18,8 +18,7 @@ export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   }
 
   ${({ divider }) =>
-    divider &&
-    `border-bottom: 1px solid ${color('tint', 'level4')}}`}
+    divider && `border-bottom: 1px solid ${color('tint', 'level4')}}`}
 
   &:hover,
   &:focus {
