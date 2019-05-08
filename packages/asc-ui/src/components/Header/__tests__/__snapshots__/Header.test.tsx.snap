@@ -90,10 +90,8 @@ exports[`Header should render the short version 1`] = `
   height: 100%;
   width: 100%;
   background-size: cover;
-  background-image: url("-react-component: function () {        return 'SVG_MOCK';
+  background-image: url("SVG_MOCK");
 }
-
-;");}
 
 .c4 {
   display: inline-block;
@@ -325,10 +323,8 @@ exports[`Header should render the short version without the full width 1`] = `
   height: 100%;
   width: 100%;
   background-size: cover;
-  background-image: url("-react-component: function () {        return 'SVG_MOCK';
+  background-image: url("SVG_MOCK");
 }
-
-;");}
 
 .c4 {
   display: inline-block;
@@ -511,7 +507,7 @@ exports[`Header should render the tall version 1`] = `
   font-size: 0;
 }
 
-.c10 {
+.c11 {
   color: #004699;
   display: inline-block;
   margin-top: 0;
@@ -542,20 +538,20 @@ exports[`Header should render the tall version 1`] = `
   text-decoration: none;
 }
 
-.c10:focus {
+.c11:focus {
   outline: none;
   background-color: #FEC813;
 }
 
-.c10:hover {
+.c11:hover {
   color: #ec0000;
 }
 
-.c10:hover {
+.c11:hover {
   color: inherit;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -567,12 +563,12 @@ exports[`Header should render the tall version 1`] = `
   height: 100%;
 }
 
-.c8 {
+.c9 {
   display: block;
   height: 100%;
   width: 100%;
   background-size: cover;
-  background-image: url("-react-component: function () {        return 'SVG_MOCK';
+  background-image: url("SVG_MOCK");
 }
 
 .c7 {
@@ -613,7 +609,7 @@ exports[`Header should render the tall version 1`] = `
   margin-right: 10px;
 }
 
-.c14 .c11 {
+.c15 .c12 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -621,11 +617,11 @@ exports[`Header should render the tall version 1`] = `
   margin-left: 15px;
 }
 
-.c14 .c9 {
+.c15 .c10 {
   margin-top: -2px;
 }
 
-.c15 .c11 {
+.c16 .c12 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -633,7 +629,7 @@ exports[`Header should render the tall version 1`] = `
   margin-left: 15px;
 }
 
-.c15 .c9 {
+.c16 .c10 {
   margin-top: -2px;
 }
 
@@ -645,7 +641,7 @@ exports[`Header should render the tall version 1`] = `
   box-shadow: 0 4px rgba(0,0,0,0.04);
 }
 
-.c0 .c11 {
+.c0 .c12 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -653,7 +649,7 @@ exports[`Header should render the tall version 1`] = `
   margin-left: 15px;
 }
 
-.c13 {
+.c14 {
   line-height: 1.25;
   margin-top: 0;
   margin-right: 0;
@@ -676,13 +672,13 @@ exports[`Header should render the tall version 1`] = `
 }
 
 @media screen and (max-width:375px) {
-  .c10 {
+  .c11 {
     font-size: 14px;
   }
 }
 
 @media screen and (max-width:375px) {
-  .c10 {
+  .c11 {
     font-size: 16px;
   }
 }
@@ -691,6 +687,10 @@ exports[`Header should render the tall version 1`] = `
   .c7 {
     height: 68px;
     width: 100px;
+  }
+
+  .c7 .c8 {
+    background-image: url("SVG_MOCK");
   }
 }
 
@@ -709,7 +709,7 @@ exports[`Header should render the tall version 1`] = `
     transform: translateX(-50%);
   }
 
-  .c0 .c9 {
+  .c0 .c10 {
     margin-top: -2px;
   }
 }
@@ -742,7 +742,7 @@ exports[`Header should render the tall version 1`] = `
     background-color: transparent;
   }
 
-  .c0 .c9 {
+  .c0 .c10 {
     margin-top: 0px;
     -webkit-align-self: flex-start;
     -ms-flex-item-align: start;
@@ -756,7 +756,7 @@ exports[`Header should render the tall version 1`] = `
     padding: 15px 0;
   }
 
-  .c0 .c11 {
+  .c0 .c12 {
     -webkit-flex-basis: 100%;
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
@@ -780,21 +780,21 @@ exports[`Header should render the tall version 1`] = `
         href="http://data.amsterdam.nl"
       >
         <span
-          class="c8"
+          class="c8 c9"
         />
       </a>
       <a
-        class="c9 c10"
+        class="c10 c11"
         href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
     </h1>
     <div
-      class="c11 c12"
+      class="c12 c13"
     >
       <p
-        class="c13"
+        class="c14"
       >
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
       </p>
@@ -832,7 +832,7 @@ exports[`Header should render the tall version without a title 1`] = `
   font-size: 0;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -844,12 +844,12 @@ exports[`Header should render the tall version without a title 1`] = `
   height: 100%;
 }
 
-.c8 {
+.c9 {
   display: block;
   height: 100%;
   width: 100%;
   background-size: cover;
-  background-image: url("-react-component: function () {        return 'SVG_MOCK';
+  background-image: url("SVG_MOCK");
 }
 
 .c7 {
@@ -890,7 +890,7 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-right: 10px;
 }
 
-.c12 .c9 {
+.c13 .c10 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -898,7 +898,7 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-left: 15px;
 }
 
-.c13 .c9 {
+.c14 .c10 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -914,7 +914,7 @@ exports[`Header should render the tall version without a title 1`] = `
   box-shadow: 0 4px rgba(0,0,0,0.04);
 }
 
-.c0 .c9 {
+.c0 .c10 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -922,7 +922,7 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-left: 15px;
 }
 
-.c11 {
+.c12 {
   line-height: 1.25;
   margin-top: 0;
   margin-right: 0;
@@ -948,6 +948,10 @@ exports[`Header should render the tall version without a title 1`] = `
   .c7 {
     height: 68px;
     width: 100px;
+  }
+
+  .c7 .c8 {
+    background-image: url("SVG_MOCK");
   }
 }
 
@@ -1013,7 +1017,7 @@ exports[`Header should render the tall version without a title 1`] = `
     padding: 15px 0;
   }
 
-  .c0 .c9 {
+  .c0 .c10 {
     -webkit-flex-basis: 100%;
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
@@ -1037,15 +1041,15 @@ exports[`Header should render the tall version without a title 1`] = `
         href="http://data.amsterdam.nl"
       >
         <span
-          class="c8"
+          class="c8 c9"
         />
       </a>
     </h1>
     <div
-      class="c9 c10"
+      class="c10 c11"
     >
       <p
-        class="c11"
+        class="c12"
       >
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
       </p>

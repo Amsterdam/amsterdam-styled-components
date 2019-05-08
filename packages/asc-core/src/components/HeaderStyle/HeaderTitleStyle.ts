@@ -1,6 +1,6 @@
 import styled from '../../styled-components'
-import { getBreakpointFromTheme } from '../../utils'
 import Typography from '../Typography/Typography'
+import { breakpoint } from '../../utils'
 
 const HeaderTitleStyle = styled(Typography('a'))`
   margin: ${({ tall }) => (tall ? '0px' : '0px')};
@@ -12,12 +12,10 @@ const HeaderTitleStyle = styled(Typography('a'))`
     color: inherit;
   }
 
-  @media screen and ${({ theme }) =>
-      getBreakpointFromTheme(theme, 'max-width', 'mobileM')} {
+  @media screen and ${breakpoint('max-width', 'mobileM')} {
     font-size: 14px;
   }
-  @media screen and ${({ theme }) =>
-      getBreakpointFromTheme(theme, 'max-width', 'mobileM')} {
+  @media screen and ${breakpoint('max-width', 'mobileM')} {
     font-size: 16px;
   }
 `

@@ -3,6 +3,8 @@ import { css } from '../styled-components'
 import { Theme } from '../theme'
 import { fromTheme } from '.'
 
+import BreakpointsInterface = Theme.BreakpointsInterface
+
 export const color = (
   colorType?: Theme.TypeLevel,
   variant: string = 'main',
@@ -40,11 +42,10 @@ export const focusStyle = () => ({
     outline-width: 3px;
   }
 `
-export const breakpoint = (type: Theme.TypeBreakpoint, variant: string) => ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}) => {
+export const breakpoint = (
+  type: Theme.TypeBreakpoint,
+  variant: keyof BreakpointsInterface,
+) => ({ theme }: { theme: Theme.ThemeInterface }) => {
   const breakpointFunc: Theme.GetBreakpointFunc = fromTheme(
     `breakpoints.${[variant]}`,
   )({

@@ -1,11 +1,7 @@
 import { StyledComponent } from 'styled-components'
 import { em, margin } from 'polished'
 import styled, { css } from '../../styled-components'
-import {
-  focusStyle,
-  getTypographyFromTheme
-  color,
-} from '../../utils'
+import { getTypographyFromTheme, color, getColorFromTheme } from '../../utils'
 
 export type Props = {
   gutterBottom?: boolean
@@ -60,9 +56,9 @@ export type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'a'
 
 const getProperty = <T, K extends keyof T>(obj: T, key: K) => obj[key]
 
-export default (element: Variant): StyledComponent<any, any> => styled(
-  element,
-)<Props>`
+export default (element: Variant): StyledComponent<any, any> => styled(element)<
+  Props
+>`
   ${getProperty(extendedStyles, element)}
   ${margin(0)};
   ${({ gutterBottom }) =>

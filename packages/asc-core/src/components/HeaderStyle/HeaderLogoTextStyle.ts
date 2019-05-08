@@ -1,6 +1,6 @@
 import styled from '../../styled-components'
-import { getBreakpointFromTheme } from '../../utils'
 import AmsterdamLogoStyle from '../AmsterdamLogo/AmsterdamLogoStyle'
+import { breakpoint } from '../../utils'
 
 type Props = {
   tabindex?: number
@@ -20,8 +20,7 @@ const HeaderLogoTextStyle = styled.h1<Props>`
     margin-right: 10px;
   }
 
-  @media screen and ${({ theme }) =>
-      getBreakpointFromTheme(theme, 'min-width', 'laptopM')} {
+  @media screen and ${breakpoint('min-width', 'laptopM')} {
     ${AmsterdamLogoStyle} {
       margin-right: 40px;
     }

@@ -1,8 +1,8 @@
 import * as React from 'react'
 import Header from '../Header'
 import { renderWithTheme } from '../../../utils/withTheme'
-import 'jest-styled-components'
 import Typography from '../../Typography'
+import 'jest-styled-components'
 
 const setup = (props = {}) =>
   renderWithTheme(
@@ -31,7 +31,6 @@ describe('Header', () => {
 
   it('should render the tall version', () => {
     const component = setup({ tall: true })
-    console.log(component)
     expect(component).toMatchSnapshot()
   })
 

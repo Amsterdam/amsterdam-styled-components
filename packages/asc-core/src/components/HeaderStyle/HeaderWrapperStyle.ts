@@ -1,5 +1,5 @@
 import styled, { css } from '../../styled-components'
-import { getBreakpointFromTheme, getColorFromTheme } from '../../utils'
+import { breakpoint, getColorFromTheme } from '../../utils'
 import HeaderTitleStyle from './HeaderTitleStyle'
 import HeaderContentStyle from './HeaderContentStyle'
 import HeaderLogoTextStyle from './HeaderLogoTextStyle'
@@ -40,12 +40,10 @@ const HeaderWrapperStyle = styled.div<Props>`
   ${({ tall }) =>
     tall
       ? css`
-          @media screen and ${({ theme }) =>
-              getBreakpointFromTheme(theme, 'max-width', 'laptopM')} {
+          @media screen and ${breakpoint('max-width', 'laptopM')} {
             ${shortStyle}
           }
-          @media screen and ${({ theme }) =>
-              getBreakpointFromTheme(theme, 'min-width', 'laptopM')} {
+          @media screen and ${breakpoint('min-width', 'laptopM')} {
             box-shadow: none;
             position: relative;
 

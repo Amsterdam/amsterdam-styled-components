@@ -6,7 +6,7 @@ exports[`ContextMenu should render 1`] = `
   onKeyDown={[Function]}
 >
   <ContextMenuButton
-    arrowIcon={<ReactComponent />}
+    arrowIcon={<UNDEFINED />}
     label="Click on me"
     onClick={[Function]}
     open={false}

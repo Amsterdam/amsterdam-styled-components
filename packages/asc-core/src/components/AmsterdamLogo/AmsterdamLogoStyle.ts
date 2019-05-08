@@ -1,7 +1,7 @@
 import LogoShort from '@datapunt/asc-assets/lib/Icons/LogoShort.svg'
 import LogoTall from '@datapunt/asc-assets/lib/Icons/LogoTall.svg'
 import styled, { css } from '../../styled-components'
-import { getBreakpointFromTheme, getFocusStyle } from '../../utils'
+import { breakpoint, focusStyle } from '../../utils'
 
 export type Props = {
   tall?: boolean
@@ -17,8 +17,7 @@ export const LogoStyle = styled.span`
 `
 
 const tallStyle = css`
-@media screen and ${({ theme }) =>
-  getBreakpointFromTheme(theme, 'min-width', 'laptopM')} {
+  @media screen and ${breakpoint('min-width', 'laptopM')} {
     height: 68px;
     width: 100px;
 
@@ -28,12 +27,14 @@ const tallStyle = css`
   }
 `
 
+console.log(tallStyle)
+
 const AmsterdamLogoStyle = styled.a<Props>`
   display: inline-block;
   height: 30px;
   width: 64px;
 
-  ${({ theme }) => getFocusStyle(theme)}
+  ${focusStyle()}
   ${({ tall }) => tall && tallStyle}
 `
 
