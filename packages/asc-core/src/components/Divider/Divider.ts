@@ -16,11 +16,11 @@ const Divider = styled.hr<Props>`
     css`
       ${margin(0, '15px')}
     `}
-  background-color: ${({ theme, transparent }) =>
-    transparent
-      ? 'background-color: transparent;'
-      : getColorFromTheme(theme, 'tint', 'level4')}
-  ;
+  background-color:
+    ${({ theme, transparent }) =>
+      transparent
+        ? 'background-color: transparent;'
+        : getColorFromTheme(theme, 'tint', 'level4')};
 `
 
 export default Divider

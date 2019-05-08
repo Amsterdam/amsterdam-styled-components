@@ -1,6 +1,6 @@
 import styled from '../../styled-components'
 import { ContextMenu } from './types'
-import { color, getColorFromTheme, fromTheme } from '../../utils'
+import { color, fromTheme } from '../../utils'
 
 export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   padding: 0;
@@ -17,14 +17,13 @@ export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
     margin: 5px 6px;
   }
 
-  ${({ divider, theme }) =>
-    divider &&
-    `border-bottom: 1px solid ${getColorFromTheme(theme, 'tint', 'level4')}}`}
+  ${({ divider }) =>
+    divider && `border-bottom: 1px solid ${color('tint', 'level4')}}`}
 
   &:hover,
   &:focus {
     outline: none;
-    background-color: ${color('tint', 'level2')}};
+    background-color: ${color('tint', 'level2')};
   }
 `
 
