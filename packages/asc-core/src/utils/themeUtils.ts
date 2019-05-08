@@ -1,4 +1,3 @@
-import { readableColor } from 'polished'
 import { css } from '../styled-components'
 import { Theme } from '../theme'
 import { fromTheme } from '.'
@@ -64,7 +63,7 @@ export const svgFill = (
         rect,
         polygon,
         path {
-          fill: ${readableColor(value)}
+          fill: ${value}
         }
       `
     }
