@@ -1,6 +1,6 @@
 import { readableColor } from 'polished'
 import styled from '../../styled-components'
-import { fillSvgFromTheme, getColorFromTheme } from '../../utils'
+import { svgFill, getColorFromTheme } from '../../utils'
 import ButtonBaseStyle, { ButtonBaseStyleProps } from '../ButtonBaseStyle'
 
 export type Props = ButtonBaseStyleProps
@@ -25,7 +25,7 @@ const ButtonStyle = styled(ButtonBaseStyle)<Props>`
   & svg {
     width: 30px;
     height: 30px;
-    ${({ color, theme }) => fillSvgFromTheme(theme, color)};
+    ${({ color, theme }) => svgFill(color)({ theme })};
   }
 `
 

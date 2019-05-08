@@ -1,11 +1,7 @@
 import { StyledComponent } from 'styled-components'
 import { em, margin } from 'polished'
 import styled, { css } from '../../styled-components'
-import {
-  getColorFromTheme,
-  getTypographyFromTheme,
-  getFocusStyle,
-} from '../../utils'
+import { color, focusStyle, getTypographyFromTheme } from '../../utils'
 
 export type Props = {
   gutterBottom?: boolean
@@ -19,7 +15,7 @@ const headings = css`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  color: ${({ theme }) => getColorFromTheme(theme, 'tint', 'level7')};
+  color: ${color('tint', 'level7')};
 `
 
 const extendedStyles = {
@@ -39,13 +35,13 @@ const extendedStyles = {
     line-height: 1.25;
   `,
   a: css`
-    color: ${({ theme }) => getColorFromTheme(theme, 'primary')}
+    color: ${color('primary')};
     display: inline-block;
 
-    ${({ theme }) => getFocusStyle(theme)}
+    ${focusStyle()}
 
     &:hover {
-      color: ${({ theme }) => getColorFromTheme(theme, 'secondary')}
+      color: ${color('secondary')};
     }
   `,
 }
@@ -71,23 +67,23 @@ export default (element: Variant): StyledComponent<any, any> => styled(
     css`
       margin-bottom: ${em('15px')};
     `}
-  ${({ theme }) => {
-    const {
-      fontWeight,
-      fontSize,
-      fontFamily,
-      letterSpacing,
-      lineHeight,
-    } = getTypographyFromTheme(theme, element)
-    return css`
-      font-family: ${fontFamily};
-      font-weight: ${fontWeight};
-      font-size: ${fontSize};
-      letter-spacing: ${letterSpacing};
-      line-height: ${lineHeight};
-    `
-  }}
-  font-style: normal;
+    ${({ theme }) => {
+      const {
+        fontWeight,
+        fontSize,
+        fontFamily,
+        letterSpacing,
+        lineHeight,
+      } = getTypographyFromTheme(theme, element)
+      return css`
+        font-family: ${fontFamily};
+        font-weight: ${fontWeight};
+        font-size: ${fontSize};
+        letter-spacing: ${letterSpacing};
+        line-height: ${lineHeight};
+      `
+    }}
+    font-style: normal;
   font-stretch: normal;
   letter-spacing: normal;
 `

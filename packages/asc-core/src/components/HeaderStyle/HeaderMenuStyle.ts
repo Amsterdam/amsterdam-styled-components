@@ -1,9 +1,8 @@
 import styled from '../../styled-components'
-import { getBreakpointFromTheme } from '../../utils'
+import { breakpoint } from '../../utils'
 
 const HeaderMenuStyle = styled.div`
-  @media screen and ${({ theme }) =>
-      getBreakpointFromTheme(theme, 'max-width', 'laptop')} {
+  @media screen and ${breakpoint('max-width', 'laptop')} {
     width: 50px;
   }
 `
