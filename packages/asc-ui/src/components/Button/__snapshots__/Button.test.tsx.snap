@@ -1,95 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button should render the button 1`] = `
-<StyledComponent
-  color="primary"
-  forwardedComponent={
-    Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "attrs": Array [],
-      "componentStyle": ComponentStyle {
-        "componentId": "sc-bwzfXH",
-        "isStatic": false,
-        "rules": Array [
-          "
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-text-decoration: none;
   text-decoration: none;
   border: none;
   cursor: pointer;
   font-size: 16px;
   font-weight: normal;
   padding: 0 10px 0 10px;
-  ",
-          [Function],
-          "
-  ",
-          "transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;",
-          ";
-
-  background: ",
-          [Function],
-          ";
-
-  &:hover {
-    background: ",
-          [Function],
-          ";
-  }
-
-  ",
-          "
-  &:after {
-    content: '';
-    display: block;
-    min-height: inherit;
-    font-size: 0;
-  }
-",
-          "
-",
-          "
+  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background: #004699;
   padding: 0 10px 0 10px;
   min-height: 38px;
-  line-height: 1em
-  color: ",
-          [Function],
-          ";
+  line-height: 1em;
+  color: #fff;
+}
 
-  ",
-          [Function],
-          "
+.c0:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: 3px;
+}
 
-  &:hover {
-    ",
-          [Function],
-          "
-  }
+.c0:hover {
+  background: #00387a;
+}
 
-  & svg {
-    width: 30px;
-    height: 30px;
-    ",
-          [Function],
-          ";
-  }
-",
-        ],
-      },
-      "displayName": "Styled(styled.button)",
-      "foldedComponentIds": Array [
-        "sc-bdVaJa",
-      ],
-      "render": [Function],
-      "styledComponentId": "sc-bwzfXH",
-      "target": "button",
-      "toString": [Function],
-      "warnTooManyClasses": [Function],
-      "withComponent": [Function],
-    }
-  }
-  forwardedRef={null}
+.c0:after {
+  content: '';
+  display: block;
+  min-height: inherit;
+  font-size: 0;
+}
+
+.c0 svg {
+  width: 30px;
+  height: 30px;
+}
+
+.c0 svg rect,
+.c0 svg polygon,
+.c0 svg path {
+  fill: #004699;
+}
+
+<button
+  class="c0"
+  color="primary"
 >
   Hello
-</StyledComponent>
+</button>
 `;

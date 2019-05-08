@@ -1,8 +1,7 @@
 import React from 'react'
 import { addDecorator, configure } from '@storybook/react'
 import { GlobalStyle, ThemeProvider } from '@datapunt/asc-ui'
-import { HeavyFontEot, HeavyFontWoff2 } from '@datapunt/asc-assets'
-import { withA11y } from '@storybook/addon-a11y';
+import { withA11y } from '@storybook/addon-a11y'
 
 addDecorator(withA11y)
 
@@ -11,13 +10,7 @@ const req = require.context('../packages', true, /\.stories\.tsx$/)
 
 const extendedTheme = {
   globalStyle: `
-        @font-face {
-          font-family: 'AvenirNextLTW01-Regular';
-          src: url('${HeavyFontEot}');
-          src: url('${HeavyFontEot}?#iefix') format('embedded-opentype'),
-               url('${HeavyFontWoff2}') format('woff2')
-        }
-      `,
+  `,
 }
 
 function withGlobalStyles(storyFn) {

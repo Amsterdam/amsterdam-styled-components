@@ -1,6 +1,9 @@
-packages/**/lib
-*.min.js
+packages/**/lib/
+packages/**/node_modules/
+packages/asc-assets/*.js
+packages/asc-ui/**/styles/
 *.d.ts
-node_modules
-examples
-config
+node_modules/
+examples/
+config/
+coverage/

@@ -1,22 +1,36 @@
 import * as React from 'react'
 import styled from '../../styled-components'
 import Typography from '../../components/Typography'
+import { CONTENT_HEIGHT_TALL } from '../../styles/components/HeaderStyle/sizes'
+import { breakpoint } from '../../styles/utils'
 
 type ContentFillerStyleProps = {
   backgroundColor?: string
-  marginTop?: string
+  paddingTop?: string
+  maxWidth?: string
+  headerSize?: 'tall' | 'short'
 }
 
 const ContentFillerStyle = styled.div<ContentFillerStyleProps>`
   width: 100%;
   height: 2000px;
   background-color: ${({ backgroundColor }) => backgroundColor};
-  margin-top: ${({ marginTop }) => marginTop};
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: ${({ paddingTop }) => paddingTop};
+  max-width: ${({ maxWidth }) => maxWidth};
+
+  @media screen and ${breakpoint('min-width', 'laptop')} {
+    padding-top: ${({ headerSize, paddingTop }) =>
+      headerSize === 'tall' ? '0px' : paddingTop};
+  }
 `
 
 ContentFillerStyle.defaultProps = {
   backgroundColor: 'rgba(211,211,211,.1)',
-  marginTop: '50px',
+  paddingTop: `${CONTENT_HEIGHT_TALL}px`,
+  maxWidth: 'none',
+  headerSize: 'short',
 }
 
 type ContentFillerProps = ContentFillerStyleProps
