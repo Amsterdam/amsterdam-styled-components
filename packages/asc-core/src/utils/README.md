@@ -70,27 +70,6 @@ const ButtonStyle = styled.button`
 <ButtonStyle theme={theme} /> // styles: { backgroundColor: '#000', color: '#fff' }
 ```
 
-## getTypographyFromTheme
-
-Extends `fromTheme`, but it's specified to the theme typography.
-
-```js static
-import styled from 'styled-components'
-import { getTypographyFromTheme } from './utils'
-
-const theme = {
-  typography: {
-    fontSize: '16px'
-  }
-}
-
-const TitleStyle = styled.h1`
-  font-size: ${theme => getTypographyFromTheme(theme, 'fontSize')};
-`
-
-<TitleStyle theme={theme} /> // styles: { font-size: '16px' }
-```
-
-## fillSvgFromTheme
+## svgFill
 
 ...

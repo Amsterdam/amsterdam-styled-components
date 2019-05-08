@@ -1,6 +1,6 @@
 import styled from '../../styled-components'
 import { ContextMenu } from './types'
-import { getColorFromTheme, getTypographyFromTheme } from '../../utils'
+import { color, getColorFromTheme, fromTheme } from '../../utils'
 
 export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   padding: 0;
@@ -11,7 +11,7 @@ export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   height: 34px;
   width: 100%;
   cursor: pointer;
-  font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
+  font-size: ${fromTheme('typography.fontSize')};
 
   & > span:first-child {
     margin: 5px 6px;
@@ -24,8 +24,7 @@ export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   &:hover,
   &:focus {
     outline: none;
-    background-color: ${({ theme }) =>
-      getColorFromTheme(theme, 'tint', 'level2')}};
+    background-color: ${color('tint', 'level2')}};
   }
 `
 
