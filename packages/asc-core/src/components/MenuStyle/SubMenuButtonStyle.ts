@@ -9,7 +9,8 @@ export const SubMenuButtonLabelStyle = MenuItemLabelStyle
 const SubMenuButtonStyle = styled(MenuItemStyle)<
   MenuStyleProps.MenuButtonStyleProps
 >`
-  border-left-color: ${({ focused, theme }) => focused && color('secondary')({ theme })};
+  border-left-color: ${({ focused, theme }) =>
+    focused && color('secondary')({ theme })};
   justify-content: space-between;
 
   &:hover,
