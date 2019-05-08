@@ -1,6 +1,6 @@
 import styled from '../../styled-components'
 import IconButtonStyle, { IconButtonStyleProps } from '../IconButtonStyle'
-import { color, getColorFromTheme } from '../../utils'
+import { color } from '../../utils'
 
 export type Props = IconButtonStyleProps
 
@@ -13,7 +13,7 @@ const ShareButtonStyle = styled(IconButtonStyle)<Props>`
   &:focus,
   &:hover {
     background: ${({ hoverColor, theme }) =>
-      hoverColor || getColorFromTheme(theme, 'secondary')};
+      hoverColor || color(theme, 'secondary')};
   }
 `
 
