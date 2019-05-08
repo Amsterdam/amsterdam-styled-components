@@ -106,6 +106,6 @@ describe('svgFill', () => {
   })
 
   it('should return the right fill color for the svg', () => {
-    expect(svgFill('tint', 'level5')({ theme })).toContain('fill: #000')
+    expect(svgFill('tint', 'level5')({ theme })).toContain('fill: #767676')
   })
 })
