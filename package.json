@@ -39,6 +39,7 @@
     "prettify:package": "yarn prettier-package-json --write **/package.json",
     "verify-integrity": "yarn lint && yarn test"
   },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@storybook/addon-a11y": "^5.0.5",
@@ -97,6 +98,7 @@
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",
     "prettier-package-json": "^2.1.0",
+    "prettier-stylelint": "^0.4.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-scripts": "^2.1.8",
