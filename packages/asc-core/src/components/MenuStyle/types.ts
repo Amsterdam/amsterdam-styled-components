@@ -1,5 +1,5 @@
 export namespace MenuStyleProps {
-  export type WrapperStyleProps = {}
+  export type MenuWrapperStyleProps = {}
 
   export enum Position {
     bottom = 'bottom',

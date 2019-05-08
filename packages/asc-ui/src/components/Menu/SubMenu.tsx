@@ -26,28 +26,18 @@ const SubMenu: React.FC<Props> = ({
     selectedChild,
     expandedChild,
     expandedChildIndex,
-    nrOfChildrenChild,
     setExpandedChild,
+    resetExpandedChild,
     handleOnKeyDown,
     mobile,
   }: any = React.useContext(MenuContext)
 
-  const hasFocus = React.useCallback(() => {
-    return (
-      currentIndex === selectedChild ||
-      (currentIndex === expandedChildIndex &&
-        (selectedChild > expandedChildIndex &&
-          selectedChild < expandedChildIndex + nrOfChildrenChild + 1))
-    )
-  }, [selectedChild])
+  const expanded = mobile && expandedChild && currentIndex === expandedChildIndex
+  const focused = currentIndex === selectedChild
 
   React.useEffect(() => {
-    if (subMenuRef && subMenuRef.current) {
-      if (hasFocus()) {
-        subMenuRef.current.focus()
-      } else {
-        subMenuRef.current.blur()
-      }
+    if (subMenuRef && subMenuRef.current && focused) {
+      subMenuRef.current.focus()
     }
   }, [selectedChild])
 
@@ -55,7 +45,13 @@ const SubMenu: React.FC<Props> = ({
     e.preventDefault()
     const nrOfChildren = React.Children.count(children)
 
-    setExpandedChild(nrOfChildren, !expandedChild, currentIndex)
+    if (expandedChild) {
+      resetExpandedChild()
+    }
+
+    if (!expandedChild || expandedChildIndex !== currentIndex) {
+      setExpandedChild(nrOfChildren, currentIndex)
+    }
   }
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -75,22 +71,22 @@ const SubMenu: React.FC<Props> = ({
   return (
     <>
       <MenuStyle.SubMenuButtonStyle
-        focused={hasFocus()}
+        focused={focused || expanded}
         onClick={handleOnClick}
         onKeyDown={handleKeyPress}
-        tabIndex={hasFocus() ? 0 : -1}
+        tabIndex={focused ? 0 : -1}
         ref={subMenuRef}
         {...otherProps}
       >
-        {label && <span>{label}</span>}
+        {label && <MenuStyle.SubMenuButtonLabelStyle>{label}</MenuStyle.SubMenuButtonLabelStyle>}
         {mobile && (
-          <Icon inline size={24} padding={4} rotate={expandedChild ? 180 : 0}>
+          <Icon inline size={24} padding={4} rotate={expanded ? 180 : 0}>
             {arrowIcon}
           </Icon>
         )}
       </MenuStyle.SubMenuButtonStyle>
       <MenuStyle.SubMenuListWrapperStyle
-        aria-hidden={mobile ? !expandedChild : false}
+        aria-hidden={expanded ? false : true}
       >
         <MenuStyle.SubMenuListStyle labelId={id}>
           {clonedChildren}

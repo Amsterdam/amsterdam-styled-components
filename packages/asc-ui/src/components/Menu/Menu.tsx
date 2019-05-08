@@ -15,7 +15,7 @@ type Props = {
 
 export const MenuContext = React.createContext({})
 
-const Menu2: React.FC<Props> = ({
+const Menu: React.FC<Props> = ({
   id,
   label,
   children,
@@ -42,17 +42,22 @@ const Menu2: React.FC<Props> = ({
           ...state,
           selectedChild: action.payload,
         }
-      case 'setChildrenCount':
+      case 'setExpandedChild':
         return {
           ...state,
-          nrOfChildren: action.payload,
-        }
-      case 'expandChild':
-        return {
-          ...state,
+          nrOfChildren: state.nrOfChildren + action.payload.nrOfChildren,
           nrOfChildrenChild: action.payload.nrOfChildren,
-          expandedChild: action.payload.expandedChild,
+          expandedChild: true,
           expandedChildIndex: action.payload.expandedChildIndex,
+          selectedChild: action.payload.expandedChildIndex,
+        }
+      case 'resetExpandedChild':
+        return {
+          ...state,
+          nrOfChildren: initialState.nrOfChildren,
+          nrOfChildrenChild: initialState.nrOfChildrenChild,
+          expandedChild: initialState.expandedChild,
+          expandedChildIndex: initialState.expandedChildIndex,
         }
       case 'toggleMenu':
         return {
@@ -115,28 +120,23 @@ const Menu2: React.FC<Props> = ({
 
   const setExpandedChild = (
     nrOfChildren: number,
-    expandedChild: boolean,
     expandedChildIndex: number,
   ) => {
-    dispatch({ type: 'setSelectedChild', payload: expandedChildIndex })
-    dispatch({
-      type: 'setChildrenCount',
-      payload: expandedChild
-        ? state.nrOfChildren + nrOfChildren
-        : state.nrOfChildren - nrOfChildren,
-    })
-    dispatch({
-      type: 'expandChild',
-      payload: {
-        nrOfChildren,
-        expandedChild,
-        expandedChildIndex: expandedChild ? expandedChildIndex : -1,
-      },
-    })
+      dispatch({
+        type: 'setExpandedChild',
+        payload: {
+          nrOfChildren,
+          expandedChildIndex: (expandedChildIndex > state.expandedChildIndex && state.expandedChildIndex > -1) ? expandedChildIndex - state.nrOfChildrenChild : expandedChildIndex
+        },
+      })
   }
 
   const setSelectedChild = (index: number) => {
     dispatch({ type: 'setSelectedChild', payload: index })
+  }
+
+  const resetExpandedChild = () => {
+    dispatch({ type: 'resetExpandedChild' })
   }
 
   const { open } = state
@@ -148,6 +148,7 @@ const Menu2: React.FC<Props> = ({
         setSelectedChild,
         handleOnKeyDown,
         setExpandedChild,
+        resetExpandedChild,
       }}
     >
       <MenuStyle.MenuWrapperStyle
@@ -163,6 +164,7 @@ const Menu2: React.FC<Props> = ({
             position,
             label,
           }}
+          onMouseOver={() => setTimeout(handleOnClick, 200)}
           onClick={handleOnClick}
         />
         <MenuList
@@ -180,4 +182,4 @@ const Menu2: React.FC<Props> = ({
   )
 }
 
-export default Menu2
+export default Menu

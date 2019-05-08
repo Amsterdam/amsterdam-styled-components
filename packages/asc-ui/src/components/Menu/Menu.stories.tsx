@@ -64,5 +64,13 @@ storiesOf('Composed/Menu', module)
       </SubMenu>
       <MenuItem onClick={() => {}}>Three</MenuItem>
       <MenuItem onClick={() => {}}>Four</MenuItem>
+      <SubMenu label="SubMenu" arrowIcon={<ChevronDown />}>
+        <MenuItem icon={<ChevronRight />} onClick={() => {}}>
+          One
+        </MenuItem>
+        <MenuItem icon={<ChevronRight />} onClick={() => {}}>
+          Two
+        </MenuItem>
+      </SubMenu>
     </Menu>
   ))

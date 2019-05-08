@@ -4,23 +4,26 @@ import MenuItemStyle, { MenuItemLabelStyle } from './MenuItemStyle'
 import IconStyle from '../IconStyle'
 import { color, svgFill } from '../../utils'
 
+export const SubMenuButtonLabelStyle = MenuItemLabelStyle
+
 const SubMenuButtonStyle = styled(MenuItemStyle)<
   MenuStyleProps.MenuButtonStyleProps
 >`
+  border-left-color: ${({ focused, theme }) => focused && color('secondary')({ theme })};
   justify-content: space-between;
 
   &:hover,
   &:focus {
-    border-left-color: ${({ focused }) =>
-      focused && color('secondary', 'main')}};
+    border-left-color: ${color('secondary')};
 
-    ${MenuItemLabelStyle} {
-      border-bottom-color: ${color('secondary', 'main')};
+    ${SubMenuButtonLabelStyle} {
+      border-bottom-color: ${color('secondary')};
+      color: ${color('secondary')};
     }
 
     ${IconStyle} {
       & > svg {
-        fill: ${svgFill('secondary', 'main')};
+        fill: ${svgFill('secondary')};
       }
     }
   }

@@ -1,6 +1,6 @@
 import MenuWrapperStyle from './MenuWrapperStyle'
 import MenuButtonStyle from './MenuButtonStyle'
-import SubMenuButtonStyle from './SubMenuButtonStyle'
+import SubMenuButtonStyle, { SubMenuButtonLabelStyle } from './SubMenuButtonStyle'
 import MenuListStyle, { MenuListWrapperStyle } from './MenuListStyle'
 import SubMenuListStyle, { SubMenuListWrapperStyle } from './SubMenuListStyle'
 import MenuItemStyle, { MenuItemLabelStyle } from './MenuItemStyle'
@@ -17,4 +17,5 @@ export default {
   SubMenuListWrapperStyle,
   SubMenuListStyle,
   SubMenuButtonStyle,
+  SubMenuButtonLabelStyle
 }
