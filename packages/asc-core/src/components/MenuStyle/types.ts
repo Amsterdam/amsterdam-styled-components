@@ -8,6 +8,8 @@ export namespace MenuStyleProps {
 
   export type MenuButtonStyleProps = {
     open?: boolean
+    height?: number
+    square?: boolean
   }
 
   export type MenuItemStyleProps = {

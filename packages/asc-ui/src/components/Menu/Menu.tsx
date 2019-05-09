@@ -10,6 +10,7 @@ type Props = {
   label?: string
   mobile?: boolean
   icon?: React.ReactNode
+  menuButton?: React.ReactNode
   id?: any
 }
 
@@ -20,6 +21,7 @@ const Menu: React.FC<Props> = ({
   label,
   children,
   mobile,
+  menuButton,
   position,
   icon,
 }) => {
@@ -156,15 +158,17 @@ const Menu: React.FC<Props> = ({
         ref={menuRef}
         onKeyDown={handleOnKeyDown}
         onBlur={handleOnClose}
+        onMouseLeave={() => setTimeout(handleOnClick, 200)}
       >
         <MenuButton
           {...{
             icon,
             open,
             position,
+            square: mobile,
             label,
           }}
-          onMouseOver={() => setTimeout(handleOnClick, 200)}
+          onMouseOut={() => !open && setTimeout(handleOnClick, 200)}
           onClick={handleOnClick}
         />
         <MenuList
