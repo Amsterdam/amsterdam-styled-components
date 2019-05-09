@@ -2,9 +2,9 @@ import React from 'react'
 import { AscCore } from '../../styles'
 
 const Typography: React.FC<
-  AscCore.Typography.Props & { style?: React.CSSProperties }
+  AscCore.TypographyStyle.Props & { style?: React.CSSProperties }
 > = ({ children, element, ...otherProps }) => {
-  const TypographyElement = AscCore.Typography.default(element || 'p')
+  const TypographyElement = AscCore.TypographyStyle.default(element || 'p')
 
   return <TypographyElement {...otherProps}>{children}</TypographyElement>
 }

@@ -18,17 +18,17 @@ import Header from './components/Header/Header'
 
 import ThemeProvider from './theme'
 
-const { Divider, GlobalStyle, ListItem } = AscCore
+const { DividerStyle, GlobalStyle, ListItemStyle } = AscCore
 
 // Components
 export {
-  Divider,
+  DividerStyle,
   Icon,
   Button,
   IconButton,
   Modal,
   Portal,
-  ListItem,
+  ListItemStyle,
   Typography,
   Radio,
   TopBar,

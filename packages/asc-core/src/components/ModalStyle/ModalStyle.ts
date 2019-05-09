@@ -5,7 +5,7 @@ type Props = {
   attributes?: object
 }
 
-const Modal = styled.div<Props>`
+const ModalStyle = styled.div<Props>`
   background-color: #ffffff;
   overflow: auto;
   z-index: 20;
@@ -22,7 +22,7 @@ const Modal = styled.div<Props>`
   }
 `
 
-export const ModalContainer = styled.div.attrs(props => ({
+export const ModalStyleContainer = styled.div.attrs(props => ({
   ...props,
 }))`
   display: grid;
@@ -31,4 +31,4 @@ export const ModalContainer = styled.div.attrs(props => ({
   place-items: center center;
 `
 
-export default Modal
+export default ModalStyle

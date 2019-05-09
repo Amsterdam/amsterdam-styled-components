@@ -73,13 +73,13 @@ class Modal extends React.Component<Props, State> {
     return open ? (
       <Element {...(!disablePortal ? { element, blurredNode } : {})}>
         <Focus onKeyDown={this.handleKeyDown}>
-          <AscCore.Modal.ModalContainer {...other}>
-            <AscCore.Backdrop.default
+          <AscCore.ModalStyle.ModalStyleContainer {...other}>
+            <AscCore.BackDropStyle
               backdropOpacity={backdropOpacity}
               onClick={this.handleClose}
             />
-            <AscCore.Modal.default>{children}</AscCore.Modal.default>
-          </AscCore.Modal.ModalContainer>
+            <AscCore.ModalStyle.default>{children}</AscCore.ModalStyle.default>
+          </AscCore.ModalStyle.ModalStyleContainer>
         </Focus>
       </Element>
     ) : null

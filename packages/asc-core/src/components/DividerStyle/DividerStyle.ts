@@ -7,7 +7,7 @@ type Props = {
   transparent?: boolean
 }
 
-const Divider = styled.hr<Props>`
+const DividerStyle = styled.hr<Props>`
   height: 1px;
   margin: 0;
   border: none;
@@ -23,4 +23,4 @@ const Divider = styled.hr<Props>`
   ;
 `
 
-export default Divider
+export default DividerStyle

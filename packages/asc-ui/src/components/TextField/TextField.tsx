@@ -9,8 +9,8 @@ const TextField = ({ error = false }: Props) => {
   const states = { error }
   return (
     <div>
-      <AscCore.FormLabel {...states}>Label!</AscCore.FormLabel>
-      <AscCore.Input />
+      <AscCore.FormLabelStyle {...states}>Label!</AscCore.FormLabelStyle>
+      <AscCore.InputStyle />
     </div>
   )
 }

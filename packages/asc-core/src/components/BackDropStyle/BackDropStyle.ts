@@ -5,7 +5,7 @@ type Props = {
   backdropOpacity?: number
 }
 
-const BackDrop = styled.div<Props>`
+const BackDropStyle = styled.div<Props>`
   display: block;
   ${position('fixed', 0, 0, 0, 0)};
   background-color: ${props =>
@@ -13,4 +13,4 @@ const BackDrop = styled.div<Props>`
   z-index: 10;
 `
 
-export default BackDrop
+export default BackDropStyle

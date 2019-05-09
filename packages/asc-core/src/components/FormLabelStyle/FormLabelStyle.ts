@@ -4,11 +4,11 @@ interface IProps {
   error: boolean
 }
 
-const FormLabel = styled.label.attrs({
+const FormLabelStyle = styled.label.attrs({
   type: 'text',
 })`
   margin-bottom: 5px;
   color: ${(props: IProps) => (props.error ? 'blue' : 'black')};
 `
 
-export default FormLabel
+export default FormLabelStyle

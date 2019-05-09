@@ -1,5 +1,5 @@
 import styled from '../../styled-components'
-import AmsterdamLogoStyle from '../AmsterdamLogo/AmsterdamLogoStyle'
+import AmsterdamLogoStyle from '../AmsterdamLogoStyle/AmsterdamLogoStyle'
 import { breakpoint } from '../../utils'
 
 type Props = {
