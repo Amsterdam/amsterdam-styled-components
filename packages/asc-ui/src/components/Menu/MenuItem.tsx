@@ -6,6 +6,7 @@ import { MenuContext } from './Menu'
 
 type Props = {
   onClick?: Function
+  onKeyDown?: any
   role?: string
   icon?: React.ReactNode
   divider?: boolean
