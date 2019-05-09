@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { AscCore } from '../../styles'
+import { FormLabelStyle, InputStyle } from '../../styles/components';
 
 interface Props {
   error?: boolean
@@ -9,8 +9,8 @@ const TextField = ({ error = false }: Props) => {
   const states = { error }
   return (
     <div>
-      <AscCore.FormLabel {...states}>Label!</AscCore.FormLabel>
-      <AscCore.Input />
+      <FormLabelStyle {...states}>Label!</FormLabelStyle>
+      <InputStyle />
     </div>
   )
 }

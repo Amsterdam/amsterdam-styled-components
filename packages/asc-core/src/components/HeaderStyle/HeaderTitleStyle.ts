@@ -1,8 +1,8 @@
 import styled from '../../styled-components'
-import Typography from '../Typography/Typography'
 import { breakpoint } from '../../utils'
+import TypographyStyle from '../TypographyStyle/TypographyStyle'
 
-const HeaderTitleStyle = styled(Typography('a'))`
+const HeaderTitleStyle = styled(TypographyStyle('a'))`
   margin: ${({ tall }) => (tall ? '0px' : '0px')};
   display: inline-flex;
   color: #000;
@@ -16,7 +16,7 @@ const HeaderTitleStyle = styled(Typography('a'))`
     font-size: 14px;
   }
 
-  @media screen and ${breakpoint('max-width', 'mobileM')} {
+  @media screen and ${breakpoint('min-width', 'mobileM')} {
     font-size: 16px;
   }
 `

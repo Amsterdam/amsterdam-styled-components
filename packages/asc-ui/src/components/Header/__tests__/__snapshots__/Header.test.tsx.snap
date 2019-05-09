@@ -90,13 +90,13 @@ exports[`Header should render the short version 1`] = `
   height: 100%;
   width: 100%;
   background-size: cover;
-  background-image: url("SVG_MOCK");
+  background-image: url("-react-component: svg-mock;");
 }
 
 .c4 {
   display: inline-block;
   height: 30px;
-  width: 64px;
+  width: 68px;
 }
 
 .c4:focus {
@@ -184,7 +184,7 @@ exports[`Header should render the short version 1`] = `
   }
 }
 
-@media screen and (max-width:375px) {
+@media screen and (min-width:375.02px) {
   .c7 {
     font-size: 16px;
   }
@@ -323,13 +323,13 @@ exports[`Header should render the short version without the full width 1`] = `
   height: 100%;
   width: 100%;
   background-size: cover;
-  background-image: url("SVG_MOCK");
+  background-image: url("-react-component: svg-mock;");
 }
 
 .c4 {
   display: inline-block;
   height: 30px;
-  width: 64px;
+  width: 68px;
 }
 
 .c4:focus {
@@ -429,7 +429,7 @@ exports[`Header should render the short version without the full width 1`] = `
   }
 }
 
-@media screen and (max-width:375px) {
+@media screen and (min-width:375.02px) {
   .c7 {
     font-size: 16px;
   }
@@ -568,13 +568,13 @@ exports[`Header should render the tall version 1`] = `
   height: 100%;
   width: 100%;
   background-size: cover;
-  background-image: url("SVG_MOCK");
+  background-image: url("-react-component: svg-mock;");
 }
 
 .c7 {
   display: inline-block;
   height: 30px;
-  width: 64px;
+  width: 68px;
 }
 
 .c7:focus {
@@ -677,7 +677,7 @@ exports[`Header should render the tall version 1`] = `
   }
 }
 
-@media screen and (max-width:375px) {
+@media screen and (min-width:375.02px) {
   .c11 {
     font-size: 16px;
   }
@@ -690,7 +690,7 @@ exports[`Header should render the tall version 1`] = `
   }
 
   .c7 .c8 {
-    background-image: url("SVG_MOCK");
+    background-image: url("-react-component: svg-mock;");
   }
 }
 
@@ -849,13 +849,13 @@ exports[`Header should render the tall version without a title 1`] = `
   height: 100%;
   width: 100%;
   background-size: cover;
-  background-image: url("SVG_MOCK");
+  background-image: url("-react-component: svg-mock;");
 }
 
 .c7 {
   display: inline-block;
   height: 30px;
-  width: 64px;
+  width: 68px;
 }
 
 .c7:focus {
@@ -951,7 +951,7 @@ exports[`Header should render the tall version without a title 1`] = `
   }
 
   .c7 .c8 {
-    background-image: url("SVG_MOCK");
+    background-image: url("-react-component: svg-mock;");
   }
 }
 

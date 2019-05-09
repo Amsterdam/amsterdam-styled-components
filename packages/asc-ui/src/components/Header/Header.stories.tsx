@@ -38,6 +38,7 @@ const HeaderTallStory: React.FC<{}> = () => (
       tall
       title="Data en informatie"
       homeLink="http://data.amsterdam.nl"
+      fullWidth={false}
     />
     <ContentFiller
       backgroundColor={contentBackgrountColor}
@@ -49,7 +50,12 @@ const HeaderTallStory: React.FC<{}> = () => (
 
 const HeaderTallWithContentStory: React.FC<{}> = () => (
   <BoxWrapper backgroundColor={outsideBackgoundColor}>
-    <Header tall title="Data en informatie" homeLink="http://data.amsterdam.nl">
+    <Header
+      tall
+      title="Data en informatie"
+      homeLink="http://data.amsterdam.nl"
+      fullWidth={false}
+    >
       <Typography element="p">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis,
         dicta incidunt maxime necessitatibus voluptatibus.
