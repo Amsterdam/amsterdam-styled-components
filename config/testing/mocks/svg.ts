@@ -1,1 +1,3 @@
-module.exports = 'SVG_MOCK'
+module.exports = {
+  ReactComponent: 'SVG_MOCK'
+}
