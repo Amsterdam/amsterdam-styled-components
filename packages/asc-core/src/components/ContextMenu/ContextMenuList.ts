@@ -23,6 +23,7 @@ export const ContextMenuListWrapper = styled.div.attrs(() => ({
   border: 1px solid ${color('tint', 'level7')};
   max-width: 250px;
   width: 100%;
+
   &:focus {
     outline: none;
   }

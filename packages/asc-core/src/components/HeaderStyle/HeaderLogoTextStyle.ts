@@ -9,7 +9,7 @@ type Props = {
 const HeaderLogoTextStyle = styled.h1<Props>`
   height: 50px;
   margin: 0;
-  font-family: 'AvenirNextLTW01-Demi';
+  font-family: 'AvenirNextLTW01-Demi', sans-serif;
   font-weight: bold;
   display: flex;
   justify-content: normal;

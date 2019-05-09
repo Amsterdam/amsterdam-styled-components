@@ -108,7 +108,7 @@ exports[`Header should render the short version 1`] = `
 .c2 {
   height: 50px;
   margin: 0;
-  font-family: 'AvenirNextLTW01-Demi';
+  font-family: 'AvenirNextLTW01-Demi',sans-serif;
   font-weight: bold;
   display: -webkit-box;
   display: -webkit-flex;
@@ -341,7 +341,7 @@ exports[`Header should render the short version without the full width 1`] = `
 .c2 {
   height: 50px;
   margin: 0;
-  font-family: 'AvenirNextLTW01-Demi';
+  font-family: 'AvenirNextLTW01-Demi',sans-serif;
   font-weight: bold;
   display: -webkit-box;
   display: -webkit-flex;
@@ -586,7 +586,7 @@ exports[`Header should render the tall version 1`] = `
 .c5 {
   height: 50px;
   margin: 0;
-  font-family: 'AvenirNextLTW01-Demi';
+  font-family: 'AvenirNextLTW01-Demi',sans-serif;
   font-weight: bold;
   display: -webkit-box;
   display: -webkit-flex;
@@ -867,7 +867,7 @@ exports[`Header should render the tall version without a title 1`] = `
 .c5 {
   height: 50px;
   margin: 0;
-  font-family: 'AvenirNextLTW01-Demi';
+  font-family: 'AvenirNextLTW01-Demi',sans-serif;
   font-weight: bold;
   display: -webkit-box;
   display: -webkit-flex;
