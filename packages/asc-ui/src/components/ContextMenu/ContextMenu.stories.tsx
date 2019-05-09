@@ -7,8 +7,8 @@ import { ReactComponent as Linkedin } from '@datapunt/asc-assets/lib/Icons/Linke
 import { ReactComponent as Email } from '@datapunt/asc-assets/lib/Icons/Email.svg'
 import { ReactComponent as Print } from '@datapunt/asc-assets/lib/Icons/Print.svg'
 import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
-import { AscCore } from '../../styles'
 import { ContextMenu, ContextMenuItem, Icon } from '../..'
+import { Position } from '../../styles/components/ContextMenuStyle/types'
 
 storiesOf('Composed/ContextMenu', module)
   .add('default', () => (
@@ -22,10 +22,7 @@ storiesOf('Composed/ContextMenu', module)
     </ContextMenu>
   ))
   .add('position bottom', () => (
-    <ContextMenu
-      arrowIcon={<ChevronDown />}
-      position={AscCore.ContextMenuTypes.Position.bottom}
-    >
+    <ContextMenu arrowIcon={<ChevronDown />} position={Position.bottom}>
       <ContextMenuItem role="button" onClick={() => {}}>
         One
       </ContextMenuItem>
