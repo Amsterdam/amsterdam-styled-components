@@ -1,8 +1,8 @@
 import styled from '../../styled-components'
-import { ContextMenu } from './types'
+import { ContextMenuItemProps } from './types'
 import { color, fromTheme } from '../../utils'
 
-export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
+export const ContextMenuItemStyle = styled.li<ContextMenuItemProps>`
   padding: 0;
   margin: 0;
   display: flex;
@@ -27,4 +27,4 @@ export const ContextMenuItem = styled.li<ContextMenu.ContextMenuItemProps>`
   }
 `
 
-export default ContextMenuItem
+export default ContextMenuItemStyle

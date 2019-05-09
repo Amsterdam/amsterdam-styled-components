@@ -1,7 +1,7 @@
 import styled from '../../styled-components'
-import { ContextMenu } from './types'
+import { ContextMenuWrapperStyleProps } from './types'
 
-const Wrapper = styled.div<ContextMenu.WrapperProps>`
+const ContextMenuWrapperStyle = styled.div<ContextMenuWrapperStyleProps>`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -11,4 +11,4 @@ const Wrapper = styled.div<ContextMenu.WrapperProps>`
   }
 `
 
-export default Wrapper
+export default ContextMenuWrapperStyle

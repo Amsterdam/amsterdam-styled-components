@@ -1,6 +1,6 @@
 import React from 'react'
-import { AscCore } from '../../styles'
 import { Icon } from '../../index'
+import ContextMenuButtonStyle from '../../styles/components/ContextMenuStyle/ContextMenuButtonStyle';
 
 const ContextMenuButton = ({
   id,
@@ -12,7 +12,7 @@ const ContextMenuButton = ({
   ...otherProps
 }: any) => {
   return (
-    <AscCore.ContextMenu.MenuButton {...{ id }} {...otherProps}>
+    <ContextMenuButtonStyle {...{ id }} {...otherProps}>
       {icon && icon}
       {label && <span>{label}</span>}
       <Icon
@@ -27,7 +27,7 @@ const ContextMenuButton = ({
       >
         {arrowIcon}
       </Icon>
-    </AscCore.ContextMenu.MenuButton>
+    </ContextMenuButtonStyle>
   )
 }
 

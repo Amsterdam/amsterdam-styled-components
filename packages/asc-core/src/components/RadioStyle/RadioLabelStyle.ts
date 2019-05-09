@@ -5,7 +5,7 @@ interface Props {
   disabled?: boolean
 }
 
-const Label = styled.label.attrs<Props>({
+const RasdioLabelStyle = styled.label.attrs<Props>({
   htmlFor: ({ htmlFor }: Props) => htmlFor,
   disabled: ({ disabled }: Props) => disabled,
 })<Props>`
@@ -48,4 +48,4 @@ const Label = styled.label.attrs<Props>({
     zoom: 1;
   }
 `
-export default Label
+export default RasdioLabelStyle

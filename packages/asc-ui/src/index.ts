@@ -1,4 +1,4 @@
-import { AscCore, ascDefaultTheme, StyledComponents, Theme } from './styles'
+import { ascDefaultTheme, StyledComponents, Theme } from './styles'
 
 import IconButton from './components/IconButton'
 import Icon from './components/Icon'
@@ -18,7 +18,7 @@ import Header from './components/Header/Header'
 
 import ThemeProvider from './theme'
 
-const { DividerStyle, GlobalStyle, ListItemStyle } = AscCore
+import { DividerStyle, GlobalStyle, ListItemStyle } from './styles/components'
 
 // Components
 export {
@@ -41,11 +41,4 @@ export {
   Header,
 }
 
-export {
-  AscCore,
-  GlobalStyle,
-  StyledComponents,
-  Theme,
-  ThemeProvider,
-  ascDefaultTheme,
-}
+export { GlobalStyle, StyledComponents, Theme, ThemeProvider, ascDefaultTheme }

@@ -1,7 +1,7 @@
 import styled from '../../styled-components'
 import { color, focusStyle } from '../../utils'
 
-const ContextMenuButton = styled.button`
+const ContextMenuButtonStyle = styled.button`
   ${focusStyle()}
   display: flex;
   background-color: ${color('tint', 'level1')};
@@ -15,4 +15,4 @@ const ContextMenuButton = styled.button`
   }
 `
 
-export default ContextMenuButton
+export default ContextMenuButtonStyle

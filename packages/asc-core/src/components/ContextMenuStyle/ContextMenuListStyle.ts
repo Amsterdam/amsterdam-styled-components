@@ -1,8 +1,8 @@
 import styled from '../../styled-components'
-import { ContextMenu } from './types'
 import { color } from '../../utils'
+import { ContextMenuListProps } from './types'
 
-const ContextMenuList = styled.ul<ContextMenu.ContextMenuListProps>`
+const ContextMenuListStyle = styled.ul<ContextMenuListProps>`
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -12,12 +12,12 @@ const ContextMenuList = styled.ul<ContextMenu.ContextMenuListProps>`
     outline: none;
   }
 `
-export default ContextMenuList
+export default ContextMenuListStyle
 
-export const ContextMenuListWrapper = styled.div.attrs(() => ({
+export const ContextMenuListWrapperStyle = styled.div.attrs(() => ({
   role: 'menu',
   tabIndex: -1,
-}))<ContextMenu.ContextMenuListProps>`
+}))<ContextMenuListProps>`
   order: ${({ position }) => (position === 'bottom' ? -1 : 0)};
   background-color: ${color('tint', 'level1')};
   border: 1px solid ${color('tint', 'level7')};

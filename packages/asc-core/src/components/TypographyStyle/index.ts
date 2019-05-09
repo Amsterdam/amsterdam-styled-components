@@ -1,3 +1,1 @@
-import * as TypographyStyle from './TypographyStyle'
-
-export default TypographyStyle
+export { default, Props as TypographyStyleProps } from './TypographyStyle'

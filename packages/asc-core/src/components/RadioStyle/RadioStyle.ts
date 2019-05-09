@@ -8,7 +8,7 @@ interface Props {
   disabled: boolean
 }
 
-const Radio = styled.input.attrs<Props>({
+const RadioStyle = styled.input.attrs<Props>({
   type: 'radio',
   id: ({ id }: Props) => id,
   name: ({ name }: Props) => name,
@@ -26,4 +26,4 @@ const Radio = styled.input.attrs<Props>({
   width: 28px;
   zoom: 1;
 `
-export default Radio
+export default RadioStyle

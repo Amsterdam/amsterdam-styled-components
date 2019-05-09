@@ -1,7 +1,10 @@
 import React from 'react'
-import { AscCore } from '../../styles'
 import Portal, { Props as PortalProps } from '../Portal/Portal'
 import Focus from '../Focus'
+import ModalStyle, {
+  ModalStyleContainer,
+} from '../../styles/components/ModalStyle/ModalStyle'
+import BackDropStyle from '../../styles/components/BackDropStyle/BackDropStyle'
 
 export type Props = {
   open: boolean
@@ -73,13 +76,13 @@ class Modal extends React.Component<Props, State> {
     return open ? (
       <Element {...(!disablePortal ? { element, blurredNode } : {})}>
         <Focus onKeyDown={this.handleKeyDown}>
-          <AscCore.ModalStyle.ModalStyleContainer {...other}>
-            <AscCore.BackDropStyle
+          <ModalStyleContainer {...other}>
+            <BackDropStyle
               backdropOpacity={backdropOpacity}
               onClick={this.handleClose}
             />
-            <AscCore.ModalStyle.default>{children}</AscCore.ModalStyle.default>
-          </AscCore.ModalStyle.ModalStyleContainer>
+            <ModalStyle>{children}</ModalStyle>
+          </ModalStyleContainer>
         </Focus>
       </Element>
     ) : null

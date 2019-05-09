@@ -1,6 +1,6 @@
 import styled from '../../styled-components'
 
-const RadioItem = styled.div`
+const RadioItemStyle = styled.div`
   position: relative;
 `
-export default RadioItem
+export default RadioItemStyle

@@ -1,12 +1,12 @@
 import styled from '../../styled-components'
-import RadioItem from './RadioItem'
+import RadioItemStyle from './RadioItemStyle'
 
 type Props = {
   orientation?: string
 }
 
-const RadioGroup = styled.div<Props>`
-  ${RadioItem} {
+const RadioGroupStyle = styled.div<Props>`
+  ${RadioItemStyle} {
     display: ${props =>
       props.orientation === 'horizontal' ? 'inline-block' : 'block'};
     margin-right: ${props =>
@@ -14,4 +14,4 @@ const RadioGroup = styled.div<Props>`
   }
 `
 
-export default RadioGroup
+export default RadioGroupStyle

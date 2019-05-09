@@ -1,5 +1,9 @@
 import * as React from 'react'
-import { AscCore } from '../../styles'
+import {
+  RadioGroupStyle,
+  RadioLabelStyle,
+  RadioItemStyle,
+} from '../../styles/components/RadioStyle'
 
 interface Props {
   id: string
@@ -9,16 +13,17 @@ interface Props {
   defaultChecked?: boolean
   disabled?: boolean
 }
-const { RadioGroup, RadioItem, RadioLabel } = AscCore.Radio
 
 const Radio = ({ id, value, label, disabled }: Props) => (
-  <RadioItem>
-    <RadioLabel htmlFor={id} disabled={disabled}>
+  <RadioItemStyle>
+    <RadioLabelStyle htmlFor={id} disabled={disabled}>
       {label || value}
-    </RadioLabel>
-  </RadioItem>
+    </RadioLabelStyle>
+  </RadioItemStyle>
 )
 
 export default Radio
 
-export { RadioGroup }
+export const RadioGroup: React.FC<{}> = ({ children, ...otherProps }) => (
+  <RadioGroupStyle {...otherProps}>{children}</RadioGroupStyle>
+)
