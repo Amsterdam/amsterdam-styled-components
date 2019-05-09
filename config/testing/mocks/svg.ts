@@ -1,3 +1,3 @@
 module.exports = {
-  ReactComponent: 'SVG_MOCK'
+  ReactComponent: 'svg-mock'
 }

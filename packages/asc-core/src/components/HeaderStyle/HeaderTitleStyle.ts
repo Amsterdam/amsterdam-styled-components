@@ -16,7 +16,7 @@ const HeaderTitleStyle = styled(TypographyStyle('a'))`
     font-size: 14px;
   }
 
-  @media screen and ${breakpoint('max-width', 'mobileM')} {
+  @media screen and ${breakpoint('min-width', 'mobileM')} {
     font-size: 16px;
   }
 `
