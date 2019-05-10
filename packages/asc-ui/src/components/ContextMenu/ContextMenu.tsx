@@ -4,7 +4,7 @@ import MenuList from './ContextMenuList'
 import { KeyboardKeys } from '../../types'
 import ownerDocument from '../../utils/ownerDocument'
 import { Position } from '../../styles/components/ContextMenuStyle/types'
-import ContextMenuWrapperStyle from '../../styles/components/ContextMenuStyle/ContextMenuWrapperStyle';
+import ContextMenuWrapperStyle from '../../styles/components/ContextMenuStyle/ContextMenuWrapperStyle'
 
 const selectedChildInitial = -1
 
