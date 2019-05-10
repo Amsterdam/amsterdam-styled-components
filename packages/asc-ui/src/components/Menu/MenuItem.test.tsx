@@ -8,38 +8,31 @@ describe('MenuItem', () => {
   it('should render the item with a label', () => {
     const children = 'Click me'
 
-    const component = shallow(
-      <MenuItem>
-        {children}
-      </MenuItem>,
-    )
+    const component = shallow(<MenuItem>{children}</MenuItem>)
 
-    expect(component.find(MenuStyle.MenuItemLabelStyle).props().children).toEqual(children);
+    expect(
+      component.find(MenuStyle.MenuItemLabelStyle).props().children,
+    ).toEqual(children)
   })
 
   it('should render the button with an icon', () => {
     const mockIcon = { mockIcon: 'mockIcon' }
 
-    const component = shallow(
-      <MenuItem icon={mockIcon} />,
-    )
+    const component = shallow(<MenuItem icon={mockIcon} />)
 
-    expect(component.find(Icon).props().children).toEqual(mockIcon);
+    expect(component.find(Icon).props().children).toEqual(mockIcon)
   })
 
   it('should handle the onClick event', () => {
     const mockOnClick = jest.fn()
 
-    const component = shallow(
-      <MenuItem onClick={mockOnClick} />,
-    )
+    const component = shallow(<MenuItem onClick={mockOnClick} />)
 
     component.simulate('click', {
-      preventDefault: () => {}
+      preventDefault: () => {},
     })
 
     expect(mockOnClick).toHaveBeenCalled()
-
   })
 
   it('should handle the onKeyDown event', () => {
@@ -50,7 +43,7 @@ describe('MenuItem', () => {
       <MenuItem onClick={mockOnClick} onKeyDown={mockOnKeyDown} />,
     )
 
-    component.simulate('keydown', {key: 'Enter'})
+    component.simulate('keydown', { key: 'Enter' })
 
     expect(mockOnKeyDown).toHaveBeenCalled()
   })

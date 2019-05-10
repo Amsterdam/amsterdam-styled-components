@@ -8,6 +8,8 @@ type Props = {
   onClose: Function
   label?: string
   children?: any
+  index?: number
+  arrowIcon?: React.ReactNode
 } & MenuStyleProps.MenuListStyleProps
 
 const MenuList = ({

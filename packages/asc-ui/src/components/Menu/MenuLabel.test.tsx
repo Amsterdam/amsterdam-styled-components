@@ -6,12 +6,8 @@ describe('MenuLabel', () => {
   it('should render the label', () => {
     const children = 'This is a label'
 
-    const component = shallow(
-      <MenuLabel>
-        {children}
-      </MenuLabel>,
-    )
+    const component = shallow(<MenuLabel>{children}</MenuLabel>)
 
-    expect(component.props().children).toEqual(children);
+    expect(component.props().children).toEqual(children)
   })
 })

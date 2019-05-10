@@ -8,20 +8,18 @@ describe('MenuButton', () => {
   it('should render the button with a label', () => {
     const label = 'This is a button'
 
-    const component = shallow(
-      <MenuButton label={label} />,
-    )
+    const component = shallow(<MenuButton label={label} />)
 
-    expect(component.find(MenuStyle.MenuItemLabelStyle).props().children).toEqual(label);
+    expect(
+      component.find(MenuStyle.MenuItemLabelStyle).props().children,
+    ).toEqual(label)
   })
 
   it('should render the button with an icon', () => {
     const mockIcon = { mockIcon: 'mockIcon' }
 
-    const component = shallow(
-      <MenuButton icon={mockIcon} />,
-    )
+    const component = shallow(<MenuButton icon={mockIcon} />)
 
-    expect(component.find(Icon).props().children).toEqual(mockIcon);
+    expect(component.find(Icon).props().children).toEqual(mockIcon)
   })
 })
