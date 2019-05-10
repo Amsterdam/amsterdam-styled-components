@@ -3,7 +3,7 @@
   "description": "Stateless styled components according to the Amsterdam styleguide",
   "license": "MPL-2.0",
   "author": "Datapunt Amsterdam",
-  "version": "0.6.3",
+  "version": "0.6.6",
   "main": "lib/index.js",
   "files": [
     "lib"
@@ -13,7 +13,7 @@
   },
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@datapunt/asc-assets": "^0.6.3",
+    "@datapunt/asc-assets": "^0.6.6",
     "@types/styled-components": "^4.1.12",
     "polished": "^3.0.3",
     "styled-components": "^4.1.3"
