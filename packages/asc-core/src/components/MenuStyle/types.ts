@@ -10,6 +10,7 @@ export namespace MenuStyleProps {
     open?: boolean
     height?: number
     square?: boolean
+    borderBottom?: boolean
   }
 
   export type MenuItemStyleProps = {

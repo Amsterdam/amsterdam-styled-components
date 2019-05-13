@@ -24,6 +24,7 @@ const MenuList = ({
     expandedChild,
     expandedChildIndex,
     nrOfChildrenChild,
+    mobile
   }: any = React.useContext(MenuContext)
 
   const clonedChildren = React.Children.map(children, (child, index) => {
@@ -32,6 +33,7 @@ const MenuList = ({
         expandedChild && index > expandedChildIndex
           ? nrOfChildrenChild + expandedChildIndex + index - expandedChildIndex
           : index,
+      borderBottom: mobile,
     })
   })
 

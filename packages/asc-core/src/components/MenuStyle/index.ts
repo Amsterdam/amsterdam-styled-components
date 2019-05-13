@@ -6,6 +6,7 @@ import SubMenuButtonStyle, {
 import MenuListStyle, { MenuListWrapperStyle } from './MenuListStyle'
 import SubMenuListStyle, { SubMenuListWrapperStyle } from './SubMenuListStyle'
 import MenuItemStyle, { MenuItemLabelStyle } from './MenuItemStyle'
+import MenuLabelStyle from './MenuLabelStyle'
 
 export { MenuStyleProps } from './types'
 
@@ -16,6 +17,7 @@ export default {
   MenuListStyle,
   MenuItemStyle,
   MenuItemLabelStyle,
+  MenuLabelStyle,
   SubMenuListWrapperStyle,
   SubMenuListStyle,
   SubMenuButtonStyle,

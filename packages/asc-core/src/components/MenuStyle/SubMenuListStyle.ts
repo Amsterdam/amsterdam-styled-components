@@ -1,5 +1,6 @@
 import styled from '../../styled-components'
 import { MenuStyleProps } from './types'
+import MenuItemStyle from './MenuItemStyle'
 import { color } from '../../utils'
 
 const SubMenuListStyle = styled.ul<MenuStyleProps.MenuListStyleProps>`
@@ -10,6 +11,12 @@ const SubMenuListStyle = styled.ul<MenuStyleProps.MenuListStyleProps>`
 
   &:focus {
     outline: none;
+  }
+
+  ${MenuItemStyle} {
+    border-left-style: solid;
+    border-left-color: ${color('tint', 'level3')};
+    border-left-width: 4px;
   }
 `
 export default SubMenuListStyle
@@ -22,6 +29,7 @@ export const SubMenuListWrapperStyle = styled.div.attrs(() => ({
   background-color: ${color('tint', 'level1')};
   max-width: 250px;
   width: 100%;
+
   &:focus {
     outline: none;
   }

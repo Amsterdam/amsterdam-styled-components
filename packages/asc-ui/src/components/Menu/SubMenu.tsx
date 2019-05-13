@@ -65,6 +65,7 @@ const SubMenu: React.FC<Props> = ({
   const clonedChildren = React.Children.map(children, (child, index) => {
     return React.cloneElement(child as React.ReactElement<any>, {
       index: currentIndex && currentIndex + index + 1,
+      borderBottom: mobile
     })
   })
 

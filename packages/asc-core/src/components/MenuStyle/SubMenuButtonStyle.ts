@@ -13,6 +13,15 @@ const SubMenuButtonStyle = styled(MenuItemStyle)<
     focused && color('secondary')({ theme })};
   justify-content: space-between;
 
+  ${({ borderBottom }) =>
+    borderBottom &&
+    `
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+  `}};
+
+  border-bottom-color: ${color('tint', 'level3')};
+
   &:hover,
   &:focus {
     border-left-color: ${color('secondary')};

@@ -9,6 +9,7 @@ const MenuButtonStyle = styled.button<MenuStyleProps.MenuButtonStyleProps>`
   background-color: ${({ open }) =>
     open ? color('tint', 'level2') : 'transparent'};
   border: 0px;
+  font-family: 'AvenirNextLTW01-Medium';
   align-items: center;
   height: ${({ height }) => `${height}px`};
   padding: ${({ square }) => (square ? '15px' : '0 15px')};

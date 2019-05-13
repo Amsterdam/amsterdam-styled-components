@@ -11,6 +11,8 @@ export const MenuItemLabelStyle = styled.span<
   border-bottom-color: ${({ focused }) =>
     focused ? color('secondary', 'main') : 'transparent'};
   line-height: 22px;
+  font-family: 'AvenirNextLTW01-Medium';
+  color: ${color('tint', 'level6')};
 `
 
 export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
@@ -31,12 +33,9 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
     `
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-bottom-color: ${color('tint', 'level3')};
   `}};
 
-  border-left-style: solid;
-  border-left-color: ${color('tint', 'level2')};
-  border-left-width: 4px;
+  border-bottom-color: ${color('tint', 'level3')};
 
   ${IconStyle} {
     &:not(:last-child) {
