@@ -14,6 +14,11 @@ import Focus from './components/Focus'
 import ContextMenu from './components/ContextMenu'
 import ContextMenuButton from './components/ContextMenu/ContextMenuButton'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
+import Menu from './components/Menu'
+import MenuButton from './components/Menu/MenuButton'
+import MenuItem from './components/Menu/MenuItem'
+import MenuLabel from './components/Menu/MenuLabel'
+import SubMenu from './components/Menu/SubMenu'
 import Header from './components/Header/Header'
 
 import ThemeProvider from './theme'
@@ -38,6 +43,11 @@ export {
   ContextMenu,
   ContextMenuButton,
   ContextMenuItem,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuLabel,
+  SubMenu,
   Header,
 }
 
