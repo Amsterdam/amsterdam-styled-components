@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from '../../styled-components'
-import { color, breakpoint, getFocusStyle, fromTheme } from '../../styles/utils'
+import { color, breakpoint, focusStyle, fromTheme } from '../../styles/utils'
 
 const MenuButtonStyle = styled.button<{}>`
-  ${getFocusStyle()}
+  ${focusStyle()}
   display: flex;
   background-color: transparent;
   border: 0px;

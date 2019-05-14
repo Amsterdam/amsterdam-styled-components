@@ -1,20 +1,20 @@
 import React from 'react'
-import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
-import { AscCore } from '../../styles'
 import { Icon } from '../../index'
+import ContextMenuButtonStyle from '../../styles/components/ContextMenuStyle/ContextMenuButtonStyle';
 
 const ContextMenuButton = ({
   id,
   label,
   position,
   icon,
+  arrowIcon,
   open,
   ...otherProps
 }: any) => {
   return (
-    <AscCore.ContextMenu.MenuButton {...{ id }} {...otherProps}>
+    <ContextMenuButtonStyle {...{ id }} {...otherProps}>
       {icon && icon}
-      {label}
+      {label && <span>{label}</span>}
       <Icon
         inline
         size={24}
@@ -25,9 +25,9 @@ const ContextMenuButton = ({
             : 0
         }
       >
-        <ChevronDown />
+        {arrowIcon}
       </Icon>
-    </AscCore.ContextMenu.MenuButton>
+    </ContextMenuButtonStyle>
   )
 }
 

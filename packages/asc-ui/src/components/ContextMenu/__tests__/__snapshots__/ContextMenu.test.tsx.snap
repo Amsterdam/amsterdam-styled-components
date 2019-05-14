@@ -6,6 +6,7 @@ exports[`ContextMenu should render 1`] = `
   onKeyDown={[Function]}
 >
   <ContextMenuButton
+    arrowIcon={<svg-mock />}
     label="Click on me"
     onClick={[Function]}
     open={false}

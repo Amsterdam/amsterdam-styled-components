@@ -1,9 +1,9 @@
 import {
-  getColorFromTheme,
+  color,
+  focusStyle,
+  breakpoint,
+  svgFill,
   getTypographyFromTheme,
-  getFocusStyle,
-  getBreakpointFromTheme,
-  fillSvgFromTheme,
 } from '../themeUtils'
 import breakpoints from '../../theme/default/breakpoints'
 import colors from '../../theme/default/colors'
@@ -25,13 +25,13 @@ describe('getColorFromTheme', () => {
   }
 
   it('should return the requested color from theme', () => {
-    expect(getColorFromTheme(theme, 'primary', 'main')).toBe('#fff')
-    expect(getColorFromTheme(theme, 'primary', 'dark')).toBe('#000')
-    expect(getColorFromTheme(theme, 'primary')).toBe('#fff')
+    expect(color('primary', 'main')({ theme })).toBe('#fff')
+    expect(color('primary', 'dark')({ theme })).toBe('#000')
+    expect(color('primary')({ theme })).toBe('#fff')
   })
 
   it('should returen the default color when the colorType is not provided', () => {
-    expect(getColorFromTheme(theme)).toBe('#ffffff')
+    expect(color()({ theme })).toBe('#ffffff')
   })
 })
 
@@ -51,7 +51,7 @@ describe('getTypographyFromTheme', () => {
   })
 })
 
-describe('getFocusStyle', () => {
+describe('focusStyle', () => {
   const theme = {
     breakpoints,
     globalStyle,
@@ -66,12 +66,12 @@ describe('getFocusStyle', () => {
   }
 
   it('should return the focusstyle from theme', () => {
-    const result = getFocusStyle()({ theme })
+    const result = focusStyle()({ theme })
     expect(result).toContain('#abcde')
   })
 })
 
-describe('getBreakpontFromTheme', () => {
+describe('breakpoint', () => {
   const theme = {
     breakpoints,
     globalStyle,
@@ -79,23 +79,17 @@ describe('getBreakpontFromTheme', () => {
     typography,
   }
 
-  it("should return undefined when the breakpoint doesn't exist", () => {
-    expect(
-      getBreakpointFromTheme(theme, 'max-width', 'not-valid'),
-    ).toBeUndefined()
-  })
-
   it('should return the right breakpoint', () => {
-    expect(getBreakpointFromTheme(theme, 'max-width', 'desktop')).toEqual(
+    expect(breakpoint('max-width', 'desktop')({ theme })).toEqual(
       '(max-width: 2560px)',
     )
-    expect(getBreakpointFromTheme(theme, 'min-width', 'mobileL')).toEqual(
+    expect(breakpoint('min-width', 'mobileL')({ theme })).toEqual(
       '(min-width: 425.02px)',
     )
   })
 })
 
-describe('fillSvgFromTheme', () => {
+describe('svgFill', () => {
   const theme = {
     breakpoints,
     globalStyle,
@@ -104,10 +98,10 @@ describe('fillSvgFromTheme', () => {
   }
 
   it("should return een empty string when the color doesn't exist", () => {
-    expect(fillSvgFromTheme(theme)).toBe('')
+    expect(svgFill()({ theme })).toBe('')
   })
 
   it('should return the right fill color for the svg', () => {
-    expect(fillSvgFromTheme(theme, 'tint', 'level5')).toContain('fill: #000')
+    expect(svgFill('tint', 'level5')({ theme })).toContain('fill: #767676')
   })
 })

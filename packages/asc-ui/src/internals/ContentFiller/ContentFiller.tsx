@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { getBreakpointFromTheme } from '../../styles/utils'
 import styled from '../../styled-components'
 import Typography from '../../components/Typography'
+import { CONTENT_HEIGHT_TALL } from '../../styles/components/HeaderStyle/sizes'
+import { breakpoint } from '../../styles/utils'
 
 type ContentFillerStyleProps = {
   backgroundColor?: string
@@ -19,8 +20,7 @@ const ContentFillerStyle = styled.div<ContentFillerStyleProps>`
   padding-top: ${({ paddingTop }) => paddingTop};
   max-width: ${({ maxWidth }) => maxWidth};
 
-  @media screen and ${({ theme }) =>
-      getBreakpointFromTheme(theme, 'min-width', 'laptop')} {
+  @media screen and ${breakpoint('min-width', 'laptop')} {
     padding-top: ${({ headerSize, paddingTop }) =>
       headerSize === 'tall' ? '0px' : paddingTop};
   }
@@ -28,7 +28,7 @@ const ContentFillerStyle = styled.div<ContentFillerStyleProps>`
 
 ContentFillerStyle.defaultProps = {
   backgroundColor: 'rgba(211,211,211,.1)',
-  paddingTop: '50px',
+  paddingTop: `${CONTENT_HEIGHT_TALL}px`,
   maxWidth: 'none',
   headerSize: 'short',
 }

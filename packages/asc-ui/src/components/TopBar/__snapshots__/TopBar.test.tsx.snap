@@ -12,7 +12,6 @@ exports[`TopBar should render 1`] = `
   -ms-flex-align: center;
   align-items: center;
   z-index: 0;
-  min-height: 54px;
   padding: 0 15px;
   background-color: red;
 }

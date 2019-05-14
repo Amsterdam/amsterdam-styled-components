@@ -1,4 +1,4 @@
-import { AscCore, ascDefaultTheme, StyledComponents, Theme } from './styles'
+import { ascDefaultTheme, StyledComponents, Theme } from './styles'
 
 import IconButton from './components/IconButton'
 import Icon from './components/Icon'
@@ -12,22 +12,23 @@ import Button from './components/Button'
 import Radio from './components/Radio'
 import Focus from './components/Focus'
 import ContextMenu from './components/ContextMenu'
+import ContextMenuButton from './components/ContextMenu/ContextMenuButton'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
-import HeaderShort from './components/Header/HeaderShort'
+import Header from './components/Header/Header'
 
 import ThemeProvider from './theme'
 
-const { Divider, GlobalStyle, ListItem } = AscCore
+import { DividerStyle, GlobalStyle, ListItemStyle } from './styles/components'
 
 // Components
 export {
-  Divider,
+  DividerStyle,
   Icon,
   Button,
   IconButton,
   Modal,
   Portal,
-  ListItem,
+  ListItemStyle,
   Typography,
   Radio,
   TopBar,
@@ -35,15 +36,9 @@ export {
   ShareButton,
   Focus,
   ContextMenu,
+  ContextMenuButton,
   ContextMenuItem,
-  HeaderShort as Header,
+  Header,
 }
 
-export {
-  AscCore,
-  GlobalStyle,
-  StyledComponents,
-  Theme,
-  ThemeProvider,
-  ascDefaultTheme,
-}
+export { GlobalStyle, StyledComponents, Theme, ThemeProvider, ascDefaultTheme }

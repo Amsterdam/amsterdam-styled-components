@@ -44,7 +44,7 @@ const DivStyle = styled.div`
 <DivStyle theme={theme} /> // styles: { backgroundColor: '#f00', fontSize: '2em', padding: '8rem' }
 ```
 
-## getColorFromTheme
+## getColorFromTheme and color
 
 Extends `fromTheme`, but it's specified to the theme colors. Will return a default value if no colors are specified
 
@@ -62,35 +62,35 @@ const theme = {
   }
 }
 
+// with getColorFromTheme
 const ButtonStyle = styled.button`
   background-color: ${theme => getColorFromTheme(theme, 'primary', 'dark')};
   color: ${theme => getColorFromTheme(theme, 'light')};
 `
 
+// with color (prefered)
+const ButtonStyle = styled.button`
+  background-color: ${color('primary', 'dark')};
+  color: ${color('light')};
+`
+
+
 <ButtonStyle theme={theme} /> // styles: { backgroundColor: '#000', color: '#fff' }
 ```
 
-## getTypographyFromTheme
-
-Extends `fromTheme`, but it's specified to the theme typography.
+## breakpoint
+Extenstion of fromTheme to retrieve the media query breakpoints as specified for the current theme.
 
 ```js static
-import styled from 'styled-components'
-import { getTypographyFromTheme } from './utils'
-
-const theme = {
-  typography: {
-    fontSize: '16px'
+const HeaderSearchStyle = styled.div`
+  @media screen and ${breakpoint('max-width', 'tablet')} {
+    width: 50px;
   }
-}
-
-const TitleStyle = styled.h1`
-  font-size: ${theme => getTypographyFromTheme(theme, 'fontSize')};
 `
-
-<TitleStyle theme={theme} /> // styles: { font-size: '16px' }
+<HeaderSearchStyle theme={theme} />
 ```
 
-## fillSvgFromTheme
+
+## svgFill
 
 ...

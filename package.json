@@ -25,19 +25,21 @@
     "deploy-storybook": "storybook-to-ghpages",
     "preinstall": "yarn symlink",
     "postinstall": "lerna link && lerna bootstrap",
-    "lint": "yarn lint:js",
-    "lint:css": "stylelint './packages/**/src/**/*.ts'",
-    "lint:js": "eslint packages --ext ts,tsx",
+    "lint": "yarn lint:css && yarn lint:js",
+    "lint:css": "prettier-stylelint --write './packages/asc-core/src/**/*.ts'",
+    "lint:js": "prettier-eslint --write './packages/**/src/**/*.{ts, tsx}'",
     "prepare": "yarn prettify:package && yarn build",
-    "publish:packages": "lerna publish",
+    "publish:packages": "yarn verify-integrity && lerna publish",
     "start": "concurrently \"yarn build:watch\" \"yarn storybook\"",
-    "storybook": "start-storybook -p 6006 -c .storybook -s ./packages/asc-assets/lib",
+    "storybook": "start-storybook -p 6006 -c .storybook -s ./packages/asc-assets/src",
     "symlink": "./scripts/link-core.sh",
     "test": "yarn jest",
     "test:coverage": "yarn jest --collect-coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watch --onlyChanged --collect-coverage --verbose true",
-    "prettify:package": "yarn prettier-package-json --write **/package.json"
+    "prettify:package": "yarn prettier-package-json --write **/package.json",
+    "verify-integrity": "yarn lint && yarn test"
   },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@storybook/addon-a11y": "^5.0.5",
@@ -93,7 +95,10 @@
     "jest-styled-components": "^6.3.1",
     "lerna": "^3.13.1",
     "prettier": "^1.16.4",
+    "prettier-eslint": "^8.8.2",
+    "prettier-eslint-cli": "^4.7.1",
     "prettier-package-json": "^2.1.0",
+    "prettier-stylelint": "^0.4.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-scripts": "^2.1.8",
@@ -111,7 +116,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn lint && yarn test"
+      "pre-push": "yarn verify-integrity"
     }
   }
 }

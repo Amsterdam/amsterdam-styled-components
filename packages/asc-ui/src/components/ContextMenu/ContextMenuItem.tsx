@@ -1,6 +1,6 @@
 import React from 'react'
-import { AscCore } from '../../styles'
 import { KeyboardKeys } from '../../types'
+import ContextMenuItemStyle from '../../styles/components/ContextMenuStyle/ContextMenuItemStyle';
 
 type Props = {
   focused?: boolean
@@ -46,7 +46,7 @@ class ContextMenuItem extends React.Component<Props> {
   render() {
     const { children, focused, icon, ...otherProps }: any = this.props
     return (
-      <AscCore.ContextMenu.MenuItem
+      <ContextMenuItemStyle
         ref={this.root}
         focused={focused}
         onClick={this.onClick}
@@ -56,7 +56,7 @@ class ContextMenuItem extends React.Component<Props> {
       >
         {icon && icon}
         {children}
-      </AscCore.ContextMenu.MenuItem>
+      </ContextMenuItemStyle>
     )
   }
 }

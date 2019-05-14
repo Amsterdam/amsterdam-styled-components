@@ -11,7 +11,6 @@ const TopBarStyle = styled.header<Props>`
   position: relative;
   align-items: center;
   z-index: 0;
-  min-height: 54px;
   padding: 0 15px;
   background-color: ${({ backgroundColor, theme }) =>
     backgroundColor || getColorFromTheme(theme, 'tint', 'level1')};

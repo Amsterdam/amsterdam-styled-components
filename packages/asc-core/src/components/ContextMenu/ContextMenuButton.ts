@@ -1,8 +1,8 @@
 import styled from '../../styled-components'
-import { getColorFromTheme, getFocusStyle } from '../../utils'
+import { getColorFromTheme, focusStyle } from '../../utils'
 
 const ContextMenuButton = styled.button`
-  ${getFocusStyle()}
+  ${focusStyle()}
   display: flex;
   background-color: ${({ theme }) =>
     getColorFromTheme(theme, 'tint', 'level1')};

@@ -1,7 +1,8 @@
-import { readableColor } from 'polished'
 import { css } from '../styled-components'
 import { Theme } from '../theme'
 import { fromTheme } from '.'
+
+import BreakpointsInterface = Theme.BreakpointsInterface
 
 export const getColorFromTheme = (
   theme: Theme.ThemeInterface,
@@ -16,7 +17,7 @@ export const getColorFromTheme = (
 export const color = (
   colorType?: Theme.TypeLevel,
   variant: string = 'main',
-): any => ({ theme }: { theme: Theme.ThemeInterface }) => {
+) => ({ theme }: { theme: Theme.ThemeInterface }) => {
   return colorType
     ? fromTheme(`colors.${[colorType]}.${[variant]}`)({ theme })
     : fromTheme('colors.tint.level1')({ theme })
@@ -29,55 +30,41 @@ export const getTypographyFromTheme = (
   return fromTheme(`typography.${[attributeType]}`)({ theme })
 }
 
-export const getFocusStyle = () => ({
+export const focusStyle = () => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
 }) => css`
   &:focus {
-    outline-color: ${getColorFromTheme(theme, 'support', 'focus')};
+    outline-color: ${color('support', 'focus')({ theme })};
     outline-style: solid;
-    outline-width: medium;
+    outline-width: 3px;
   }
 `
-export const getBreakpointFromTheme = (
-  theme: Theme.ThemeInterface,
-  type: Theme.TypeBreakpoint,
-  variant: string,
-) => {
-  const breakpoint: Theme.GetBreakpointFunc = fromTheme(
-    `breakpoints.${[variant]}`,
-  )({
-    theme,
-  })
-  return breakpoint && breakpoint(type)
-}
-
 export const breakpoint = (
   type: Theme.TypeBreakpoint,
-  variant: string,
-): any => ({ theme }: { theme: Theme.ThemeInterface }) => {
-  const themeBreakpoint: Theme.GetBreakpointFunc = fromTheme(
+  variant: keyof BreakpointsInterface,
+) => ({ theme }: { theme: Theme.ThemeInterface }) => {
+  const breakpointFunc: Theme.GetBreakpointFunc = fromTheme(
     `breakpoints.${[variant]}`,
   )({
     theme,
   })
-  return themeBreakpoint && themeBreakpoint(type)
+  return breakpointFunc && breakpointFunc(type)
 }
 
-export const fillSvgFromTheme = (
-  theme: Theme.ThemeInterface,
+export const svgFill = (
   colorType?: Theme.TypeLevel,
   variant: string = 'main',
-) => {
+) => ({ theme }: { theme: Theme.ThemeInterface }) => {
   if (colorType) {
-    const selectedColor = getColorFromTheme(theme, colorType, variant)
-    if (typeof selectedColor === 'string') {
+    const value = color(colorType, variant)({ theme })
+    if (typeof value === 'string') {
       return `
         rect,
         polygon,
         path {
-          fill: ${readableColor(selectedColor)}
+          fill: ${value}
         }
       `
     }

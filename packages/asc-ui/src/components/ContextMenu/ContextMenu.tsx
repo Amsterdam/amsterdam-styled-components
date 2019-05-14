@@ -1,29 +1,51 @@
 import React from 'react'
-import { AscCore } from '../../styles'
 import ContextMenuButton from './ContextMenuButton'
 import MenuList from './ContextMenuList'
 import { KeyboardKeys } from '../../types'
 import ownerDocument from '../../utils/ownerDocument'
-
-type Props = {
-  position?: AscCore.ContextMenuTypes.Position
-  label?: string
-  icon?: React.ReactNode
-}
-
-type State = {}
+import { Position } from '../../styles/components/ContextMenuStyle/types'
+import ContextMenuWrapperStyle from '../../styles/components/ContextMenuStyle/ContextMenuWrapperStyle';
 
 const selectedChildInitial = -1
 
+type Props = {
+  position?: Position
+  label?: string
+  icon?: React.ReactNode
+  arrowIcon: React.ReactNode
+  open?: boolean
+}
+
+type State = {
+  open?: boolean
+  selectedChild: number
+}
+
 class ContextMenu extends React.Component<Props, State> {
-  state = {
-    open: false,
-    selectedChild: selectedChildInitial,
-  }
+  wrapper = React.createRef<HTMLDivElement>()
 
   list = React.createRef<HTMLDivElement>()
 
-  root = React.createRef<HTMLDivElement>()
+  static defaultProps = {
+    open: false,
+  }
+
+  constructor(props: Props) {
+    super(props)
+
+    this.state = {
+      open: props.open,
+      selectedChild: selectedChildInitial,
+    }
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    const { open } = this.props
+
+    if (prevProps.open !== open) {
+      this.onToggle(open)
+    }
+  }
 
   onKeyDown = (event: React.KeyboardEvent) => {
     const { children } = this.props
@@ -57,16 +79,13 @@ class ContextMenu extends React.Component<Props, State> {
     }
   }
 
-  onToggle = () => {
-    const { open } = this.state
-    this.setState({
-      open: !open,
-    })
+  onToggle = (open: Props['open'] | State['open']) => {
+    this.setState({ open })
   }
 
   onClose = () => {
     setTimeout(() => {
-      const element = this.getReference('root') as HTMLInputElement
+      const element = this.getReference('wrapper') as HTMLInputElement
       if (element) {
         const currentFocus = ownerDocument(element).activeElement
         if (!element.contains(currentFocus)) {
@@ -88,13 +107,12 @@ class ContextMenu extends React.Component<Props, State> {
   }
 
   render() {
-    const { id, label, children, position, icon }: any = this.props
+    const { label, children, position, icon, arrowIcon } = this.props
     const { open, selectedChild } = this.state
 
     return (
-      <AscCore.ContextMenu.MenuWrapper
-        id={id}
-        ref={this.root}
+      <ContextMenuWrapperStyle
+        ref={this.wrapper}
         onKeyDown={this.onKeyDown}
         onBlur={this.onClose}
       >
@@ -104,13 +122,13 @@ class ContextMenu extends React.Component<Props, State> {
             open,
             position,
             label,
+            arrowIcon,
           }}
-          onClick={this.onToggle}
+          onClick={() => this.onToggle(!open)}
         />
         <MenuList
           {...{
             position,
-            id,
             open,
             selectedChild,
           }}
@@ -119,7 +137,7 @@ class ContextMenu extends React.Component<Props, State> {
         >
           {children}
         </MenuList>
-      </AscCore.ContextMenu.MenuWrapper>
+      </ContextMenuWrapperStyle>
     )
   }
 }

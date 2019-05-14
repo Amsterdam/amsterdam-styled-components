@@ -6,11 +6,11 @@ import { action } from '@storybook/addon-actions'
 import { ReactComponent as Close } from '@datapunt/asc-assets/lib/Icons/Close.svg'
 import { Props } from './Modal'
 import {
-  ListItem,
+  ListItemStyle,
   Modal,
   Typography,
   Button,
-  Divider,
+  DividerStyle,
   IconButton,
   TopBar,
   ascDefaultTheme,
@@ -24,12 +24,12 @@ const SimpleModal: React.FC<Props> = props => (
       {...props}
       onClose={linkTo('Modal', 'closed state')}
     >
-      <ListItem>
+      <ListItemStyle>
         <Typography paragraph element="p" gutterBottom>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto,
           quisquam!
         </Typography>
-      </ListItem>
+      </ListItemStyle>
     </Modal>
   </div>
 )
@@ -64,8 +64,8 @@ storiesOf('Composed/Modal', module)
           </IconButton>
         </Typography>
       </TopBar>
-      <Divider />
-      <ListItem>
+      <DividerStyle />
+      <ListItemStyle>
         <Typography gutterBottom element="h5">
           Onjuiste of ontbrekende gegevens?
         </Typography>
@@ -73,12 +73,12 @@ storiesOf('Composed/Modal', module)
           Geef aan welke gegevens onjuist zijn of ontbreken. Ook als je weet wat
           het wel moet zijn. We horen het graag.
         </Typography>
-        <Button as="a" color="primary" onClick={action('click')}>
+        <Button color="primary" onClick={action('click')}>
           Terugmelden
         </Button>
-      </ListItem>
-      <Divider gutter />
-      <ListItem>
+      </ListItemStyle>
+      <DividerStyle gutter />
+      <ListItemStyle>
         <Typography gutterBottom element="h5">
           Vraag of een klacht?
         </Typography>
@@ -86,16 +86,16 @@ storiesOf('Composed/Modal', module)
           Als iets op deze pagina niet goed werkt, onduidelijk is of vragen
           oproept, geef het aan ons door.
         </Typography>
-        <Button as="a" color="primary" onClick={action('click')}>
+        <Button color="primary" onClick={action('click')}>
           Probleem melden
         </Button>
-      </ListItem>
-      <Divider transparent />
-      <ListItem>
+      </ListItemStyle>
+      <DividerStyle transparent />
+      <ListItemStyle>
         <Typography element="a" href="#">
           Hulp nodig?
         </Typography>
-      </ListItem>
+      </ListItemStyle>
     </Modal>
   ))
   .add('with blurred background', () => (
