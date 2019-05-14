@@ -5,6 +5,7 @@ import IconButton from '../IconButton'
 import { InputStyle } from '../../styles/components'
 import IconButtonStyle from '../../styles/components/IconButtonStyle'
 import { svgFill } from '../../styles/utils'
+import { KeyboardKeys } from '../../types'
 
 declare global {
   namespace JSX {
@@ -17,6 +18,7 @@ declare global {
 type InputProps = {
   placeholder?: string
   onChange: any
+  onKeyDown: any
   inputRef: any
 }
 
@@ -54,94 +56,65 @@ const SearchBarStyle = styled.div`
   }
 `
 
-type Props = {
+type SearchBarProps = {
   minWidth?: string
   maxWidth?: string
   padding?: string
   styledComponent?: any
-  onClick: any
-  onChange: any
+  placeholder?: string
+  onTextChanged: any
+  onSubmit?: any
 }
 
-export const SearchBarContext = React.createContext({})
-
-const SearchBar: React.FC<Props> = ({
+const SearchBar: React.FC<SearchBarProps> = ({
   children,
   styledComponent,
-  onClick,
-  onChange,
+  placeholder,
+  onTextChanged,
+  onSubmit,
   ...otherProps
 }) => {
-  const ON_TEXT_CHANGED = 'onTextChanged'
-  const ON_SUBMIT = 'onSubmit'
   const Style = styled(styledComponent)``
   const inputRef = React.useRef<HTMLInputElement>(null)
 
-  const initialState = {
-    text: '',
+  const inputValue = () =>
+    inputRef && inputRef.current && inputRef.current.value
+
+  const handleTextChanged = () => {
+    console.log('handleChanged', inputValue())
+    onTextChanged(inputValue())
   }
 
-  const reducer = (state: any, action: any) => {
-    console.log('TCL: reducer -> action', action)
-    switch (action.type) {
-      case ON_TEXT_CHANGED:
-        return {
-          ...state,
-          text: action.payload,
-        }
-      case ON_SUBMIT:
-        return {
-          ...state,
-        }
-      default:
-        return state
+  const handleSubmit = () => {
+    console.log('handleSubmit', inputValue())
+    onSubmit(inputValue())
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === KeyboardKeys.Enter) {
+      handleSubmit()
     }
   }
 
-  const [state, dispatch] = React.useReducer(reducer, { ...initialState })
-
-  const handleTextChanged = (event: Event) => {
-    console.log('handleChanged', event.target)
-  }
-  
-  const handleSubmit = () => {
-    console.log('handleSubmit')
-    
-    dispatch({
-      type: '',
-      payload: null,
-    })
-    // event.on({ type: ON_SUBMIT, payload: state.text })
-  }
-
   return (
-    <SearchBarContext.Provider
-      value={{
-        ...state,
-        handleTextChanged,
-        handleSubmit,
-      }}
-    >
-      <Style {...otherProps}>
-        <Input
-          onChange={handleTextChanged}
-          inputRef={inputRef}
-        />
-        <IconButton
-          aria-label="Search"
-          color="secondary"
-          onClick={handleSubmit}
-        >
-          <Search />
-        </IconButton>
-        {children}
-      </Style>
-    </SearchBarContext.Provider>
+    <Style {...otherProps}>
+      <Input
+        placeholder={placeholder}
+        onChange={handleTextChanged}
+        onKeyDown={handleKeyDown}
+        inputRef={inputRef}
+      />
+      <IconButton aria-label="Search" color="secondary" onClick={handleSubmit}>
+        <Search />
+      </IconButton>
+      {children}
+    </Style>
   )
 }
 
 SearchBar.defaultProps = {
   styledComponent: SearchBarStyle,
+  placeholder: 'Search...',
 }
 
 export default SearchBar

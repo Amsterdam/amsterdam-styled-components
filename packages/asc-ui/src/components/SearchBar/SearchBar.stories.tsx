@@ -8,8 +8,9 @@ import { svgFill } from '../../styles/utils'
 const SearchBarStory: React.FC<{}> = () => (
   <>
     <SearchBar
-      onClick={action('button clicked')}
-      onChange={action('key pressed')}
+      placeholder="Enter the search text"
+      onTextChanged={(text: string) => action(`text changed: ${text}`)}
+      onSubmit={(text: string) => action(`button clicked: ${text}`)}
     />
   </>
 )
@@ -34,8 +35,8 @@ const SearchBarStoryWithChangedStyle: React.FC<{}> = () => {
     <>
       <SearchBar
         styledComponent={ChangedSearchBarStyle}
-        onClick={action('button clicked')}
-        onChange={action('key pressed')}
+        onTextChanged={(text: string) => action(`text changed: ${text}`)}
+        onSubmit={(text: string) => action(`button clicked: ${text}`)}
       />
     </>
   )
