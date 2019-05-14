@@ -10,9 +10,8 @@ describe('Input', () => {
 
   beforeEach(() => {
     const mockFn = jest.fn()
-    const inputRef = React.createRef()
     component = renderWithTheme(
-      <Input onChange={mockFn} onKeyDown={mockFn} inputRef={inputRef} />,
+      <Input onChange={mockFn} onKeyDown={mockFn} value="test-value" />,
     )
   })
 

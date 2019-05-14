@@ -1,6 +1,5 @@
 import React from 'react'
 import { ReactComponent as Search } from '@datapunt/asc-assets/lib/Icons/Search.svg'
-import styled from '../../styled-components'
 import IconButton from '../IconButton'
 import { InputStyle } from '../../styles/components'
 import IconButtonStyle from '../../styles/components/IconButtonStyle'
@@ -26,21 +25,22 @@ const SearchBar: React.FC<SearchBarProps> = ({
   onSearch,
   ...otherProps
 }) => {
-  const Style = styled(styledComponent)``
-  const inputRef = React.useRef<HTMLInputElement>(null)
+  const ExtendedSearchBarStyle = styledComponent
 
-  const inputValue = () =>
-    inputRef && inputRef.current && inputRef.current.value
+  const [state, setState] = React.useState({
+    text: '',
+  })
 
-  const handleTextChanged = () => {
-    console.log('handleChanged', inputValue())
-    onTextChanged(inputValue())
+  const handleTextChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setState({
+      text: e.target.value,
+    })
+    onTextChanged(state.text)
   }
 
   const handleSubmit = (e: React.KeyboardEvent | React.MouseEvent) => {
-    console.log('handleSubmit', inputValue())
     e.preventDefault()
-    onSearch(inputValue())
+    onSearch(state.text)
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -50,19 +50,19 @@ const SearchBar: React.FC<SearchBarProps> = ({
   }
 
   return (
-    <Style {...otherProps}>
+    <ExtendedSearchBarStyle {...otherProps}>
       <Input
         aria-label={placeholder}
         placeholder={placeholder}
         onChange={handleTextChanged}
         onKeyDown={handleKeyDown}
-        inputRef={inputRef}
+        value={state.text}
       />
       <IconButton aria-label="Search" color="secondary" onClick={handleSubmit}>
         <Search />
       </IconButton>
       {children}
-    </Style>
+    </ExtendedSearchBarStyle>
   )
 }
 
