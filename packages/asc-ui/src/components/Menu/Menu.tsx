@@ -1,16 +1,14 @@
 import React from 'react'
 import ownerDocument from '../../utils/ownerDocument'
-import MenuStyle, { MenuStyleProps } from '../../styles/components/MenuStyle'
-import MenuButton from './MenuButton'
-import MenuList from './MenuList'
+import { MenuStyleProps } from '../../styles/components/MenuStyle'
+import MenuBar from './MenuBar'
+import MenuDropDown from './MenuDropDown'
 import { KeyboardKeys } from '../../types'
-
 type Props = {
   position?: MenuStyleProps.Position
-  label?: string
   mobile?: boolean
   icon?: React.ReactNode
-  menuButton?: React.ReactNode
+  buttonHeight?: number
   id?: any
 }
 
@@ -18,10 +16,9 @@ export const MenuContext = React.createContext({})
 
 const Menu: React.FC<Props> = ({
   id,
-  label,
   children,
   mobile,
-  menuButton,
+  buttonHeight,
   position,
   icon,
 }) => {
@@ -58,8 +55,9 @@ const Menu: React.FC<Props> = ({
           ...state,
           nrOfChildren: initialState.nrOfChildren,
           nrOfChildrenChild: initialState.nrOfChildrenChild,
-          expandedChild: initialState.expandedChild,
+          expandedChild: false,
           expandedChildIndex: initialState.expandedChildIndex,
+          selectedChild: state.expandedChildIndex,
         }
       case 'toggleMenu':
         return {
@@ -72,42 +70,49 @@ const Menu: React.FC<Props> = ({
         }
       default:
         return state
+
     }
   }
 
-  const [state, dispatch] = React.useReducer(reducer, { ...initialState })
+  const [state, dispatch] = React.useReducer(reducer, initialState)
 
   const handleOnKeyDown = (event: React.KeyboardEvent) => {
-    const { selectedChild, nrOfChildren, open } = state
+    const { selectedChild, nrOfChildren, nrOfChildrenChild, open, expandedChild, expandedChildIndex } = state
 
-    if (!open) {
+    if (!open && !expandedChild) {
       return
     }
     const firstChild = 0
-    const lastChild = nrOfChildren - 1
+    const lastChild = (expandedChild) ? expandedChild + nrOfChildrenChild : nrOfChildren - 1
 
     if (event.key === KeyboardKeys.ArrowDown) {
       event.preventDefault()
-      dispatch({
+      if (selectedChild === lastChild) {
+        resetExpandedChild()
+      } else {
+        dispatch({
         type: 'setSelectedChild',
         payload: selectedChild === lastChild ? firstChild : selectedChild + 1,
       })
     }
+    }
 
     if (event.key === KeyboardKeys.ArrowUp) {
       event.preventDefault()
-      dispatch({
-        type: 'setSelectedChild',
-        payload:
-          selectedChild === firstChild || selectedChild === nrOfChildren
-            ? lastChild
-            : selectedChild - 1,
-      })
+
+        dispatch({
+          type: 'setSelectedChild',
+          payload:
+            selectedChild === firstChild
+              ? expandedChildIndex
+              : selectedChild - 1,
+        })
     }
   }
 
   const handleOnClick = () => {
     dispatch({ type: 'toggleMenu' })
+    setSelectedChild(initialState.selectedChild)
   }
 
   const handleOnClose = () => {
@@ -141,49 +146,44 @@ const Menu: React.FC<Props> = ({
     dispatch({ type: 'resetExpandedChild' })
   }
 
-  const { open } = state
+
+
+  const clonedChildren = React.Children.map(children, (child, index) => {
+    const { expandedChild, expandedChildIndex, nrOfChildrenChild } = state
+    return React.cloneElement(child as React.ReactElement<any>, {
+      index:
+        expandedChild && index > expandedChildIndex
+          ? nrOfChildrenChild + expandedChildIndex + index - expandedChildIndex
+          : index,
+    })
+  })
 
   return (
+    <MenuBar>
     <MenuContext.Provider
       value={{
         ...state,
         setSelectedChild,
-        handleOnKeyDown,
+        onKeyDown: handleOnKeyDown,
+        onClick: handleOnClick,
+        onClose: handleOnClose,
         setExpandedChild,
         resetExpandedChild,
       }}
     >
-      <MenuStyle.MenuWrapperStyle
-        id={id}
-        ref={menuRef}
-        onKeyDown={handleOnKeyDown}
-        onBlur={handleOnClose}
-        onMouseLeave={() => setTimeout(handleOnClick, 200)}
-      >
-        <MenuButton
-          {...{
-            icon,
-            open,
-            position,
-            square: mobile,
-            label,
-          }}
-          onMouseOut={() => !open && setTimeout(handleOnClick, 200)}
-          onClick={handleOnClick}
-        />
-        <MenuList
-          {...{
-            position,
-            id,
-            open,
-          }}
-          onClose={handleOnClose}
-        >
-          {children}
-        </MenuList>
-      </MenuStyle.MenuWrapperStyle>
+      {
+        mobile ? (
+          <MenuDropDown icon={icon}>
+            {clonedChildren}
+          </MenuDropDown>
+        ) : clonedChildren
+      }
     </MenuContext.Provider>
-  )
+  </MenuBar>)
+}
+
+Menu.defaultProps = {
+  buttonHeight: 50
 }
 
 export default Menu

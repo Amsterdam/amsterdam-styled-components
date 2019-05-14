@@ -3,7 +3,7 @@ import { MenuStyleProps } from './types'
 import { MenuItemLabelStyle } from './MenuItemStyle'
 import { color, focusStyle } from '../../utils'
 
-const MenuButtonStyle = styled.button<MenuStyleProps.MenuButtonStyleProps>`
+const MenuButtonStyle = styled.li<MenuStyleProps.MenuButtonStyleProps>`
   ${focusStyle()}
   display: flex;
   background-color: ${({ open }) =>

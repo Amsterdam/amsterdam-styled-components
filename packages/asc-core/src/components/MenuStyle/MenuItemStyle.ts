@@ -21,8 +21,7 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 42px;
-  width: 100%;
+  height: ${({ height }) => `${height}px`};
   cursor: pointer;
   box-sizing: border-box;
   font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
@@ -43,7 +42,7 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
     }
 
     & svg {
-      ${({ theme }) => svgFill('tint', 'level7')({ theme })};
+      ${svgFill('tint', 'level7')};
     }
   }
 
@@ -58,7 +57,7 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
 
     &:hover > ${IconStyle}, &:focus > ${IconStyle} {
       & svg {
-        ${({ theme }) => svgFill('secondary')({ theme })};
+        ${svgFill('secondary')};
       }
     }
   }

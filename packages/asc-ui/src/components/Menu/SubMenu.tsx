@@ -4,6 +4,8 @@ import { KeyboardKeys } from '../../types'
 import { MenuContext } from './Menu'
 import { Icon } from '../../index'
 
+const { SubMenuWrapperStyle, SubMenuButtonStyle, MenuItemStyle, SubMenuListWrapperStyle, MenuListWrapperStyle, SubMenuListStyle, MenuListStyle } = MenuStyle
+
 type Props = {
   role?: string
   label?: string
@@ -21,18 +23,19 @@ const SubMenu: React.FC<Props> = ({
   index: currentIndex,
   ...otherProps
 }) => {
-  const subMenuRef = React.useRef<HTMLLIElement>(null)
   const {
     selectedChild,
     expandedChild,
     expandedChildIndex,
     setExpandedChild,
     resetExpandedChild,
-    handleOnKeyDown,
+    onKeyDown,
     mobile,
   }: any = React.useContext(MenuContext)
 
-  const expanded = mobile && expandedChild && currentIndex === expandedChildIndex
+  const subMenuRef = React.useRef<HTMLDivElement>(null)
+
+  const expanded = expandedChild && currentIndex === expandedChildIndex
   const focused = currentIndex === selectedChild
 
   React.useEffect(() => {
@@ -43,40 +46,42 @@ const SubMenu: React.FC<Props> = ({
 
   const handleOnClick = (e: React.KeyboardEvent | React.MouseEvent) => {
     e.preventDefault()
-    const nrOfChildren = React.Children.count(children)
 
-    if (expandedChild) {
-      resetExpandedChild()
-    }
+      const nrOfChildren = React.Children.count(children)
 
-    if (!expandedChild || expandedChildIndex !== currentIndex) {
-      setExpandedChild(nrOfChildren, currentIndex)
-    }
+      if (expandedChild) {
+        resetExpandedChild()
+      }
+      if (!expandedChild || expandedChildIndex !== currentIndex) {
+        setExpandedChild(nrOfChildren, currentIndex)
+      }
   }
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === KeyboardKeys.Enter) {
       handleOnClick(e)
     } else {
-      handleOnKeyDown(e)
+      onKeyDown(e)
     }
   }
 
   const clonedChildren = React.Children.map(children, (child, index) => {
+    console.log('handle', currentIndex, index)
     return React.cloneElement(child as React.ReactElement<any>, {
       index: currentIndex && currentIndex + index + 1,
       borderBottom: mobile
     })
   })
 
+  const SubMenuButton = mobile ? SubMenuButtonStyle : MenuItemStyle
+  const SubMenuListWrapper = mobile ? SubMenuListWrapperStyle : MenuListWrapperStyle
+  const SubMenuList = mobile ? SubMenuListStyle : MenuListStyle
+
   return (
-    <>
-      <MenuStyle.SubMenuButtonStyle
+    <SubMenuWrapperStyle tabIndex={0} ref={subMenuRef} onClick={handleOnClick}
+    onKeyDown={handleKeyPress}>
+      <SubMenuButton
         focused={focused || expanded}
-        onClick={handleOnClick}
-        onKeyDown={handleKeyPress}
-        tabIndex={focused ? 0 : -1}
-        ref={subMenuRef}
         {...otherProps}
       >
         {label && <MenuStyle.SubMenuButtonLabelStyle>{label}</MenuStyle.SubMenuButtonLabelStyle>}
@@ -85,15 +90,15 @@ const SubMenu: React.FC<Props> = ({
             {arrowIcon}
           </Icon>
         )}
-      </MenuStyle.SubMenuButtonStyle>
-      <MenuStyle.SubMenuListWrapperStyle
+      </SubMenuButton>
+      <SubMenuListWrapper
         aria-hidden={expanded ? false : true}
       >
-        <MenuStyle.SubMenuListStyle labelId={id}>
+        <SubMenuList labelId={id}>
           {clonedChildren}
-        </MenuStyle.SubMenuListStyle>
-      </MenuStyle.SubMenuListWrapperStyle>
-    </>
+        </SubMenuList>
+      </SubMenuListWrapper>
+    </SubMenuWrapperStyle>
   )
 }
 

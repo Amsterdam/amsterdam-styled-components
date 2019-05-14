@@ -2,6 +2,8 @@ import React from 'react'
 import MenuStyle, { MenuStyleProps } from '../../styles/components/MenuStyle'
 import { MenuContext } from './Menu'
 
+const { MenuListWrapperStyle, MenuListStyle } = MenuStyle
+
 type Props = {
   open: boolean
   id: string
@@ -15,9 +17,9 @@ type Props = {
 const MenuList = ({
   id,
   children,
-  position = MenuStyleProps.Position.top,
   open,
   onClose,
+  ...otherProps
 }: Props) => {
   const ref = React.useRef<HTMLDivElement>(null)
   const {
@@ -38,17 +40,22 @@ const MenuList = ({
   })
 
   return (
-    <MenuStyle.MenuListWrapperStyle
+    <MenuListWrapperStyle
       ref={ref}
       aria-hidden={!open}
       onBlur={() => onClose()}
-      position={position}
+      {...otherProps}
     >
-      <MenuStyle.MenuListStyle labelId={id}>
+      <MenuListStyle labelId={id}>
         {clonedChildren}
-      </MenuStyle.MenuListStyle>
-    </MenuStyle.MenuListWrapperStyle>
+      </MenuListStyle>
+    </MenuListWrapperStyle>
   )
+}
+
+MenuList.defaultProps = {
+  position: MenuStyleProps.Position.top,
+  top: 0
 }
 
 export default MenuList

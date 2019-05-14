@@ -1,7 +1,28 @@
 import styled from '../../styled-components'
 import { MenuStyleProps } from './types'
-import MenuItemStyle from './MenuItemStyle'
-import { color } from '../../utils'
+import MenuItemStyle, { MenuItemLabelStyle } from './MenuItemStyle'
+import IconStyle from '../IconStyle'
+import { color, svgFill } from '../../utils'
+
+export const SubMenuButtonLabelStyle = MenuItemLabelStyle
+
+export const SubMenuWrapperStyle = styled.div`
+  &:focus,
+  &:hover {
+    outline: none;
+
+    ${SubMenuButtonLabelStyle} {
+      border-bottom-color: ${color('secondary')};
+      color: ${color('secondary')};
+    }
+
+    ${IconStyle} {
+      & > svg {
+        fill: ${svgFill('secondary')};
+      }
+    }
+  }
+`
 
 const SubMenuListStyle = styled.ul<MenuStyleProps.MenuListStyleProps>`
   display: flex;

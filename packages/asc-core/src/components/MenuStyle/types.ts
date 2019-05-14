@@ -21,10 +21,12 @@ export namespace MenuStyleProps {
     open?: boolean
     divider?: boolean
     borderBottom?: boolean
+    height?: number
   }
 
   export type MenuListStyleProps = {
     labelId?: string
     position?: Position
+    top?: number
   }
 }

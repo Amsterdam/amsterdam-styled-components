@@ -4,22 +4,30 @@ import SubMenuButtonStyle, {
   SubMenuButtonLabelStyle,
 } from './SubMenuButtonStyle'
 import MenuListStyle, { MenuListWrapperStyle } from './MenuListStyle'
-import SubMenuListStyle, { SubMenuListWrapperStyle } from './SubMenuListStyle'
+import SubMenuListStyle, {
+  SubMenuWrapperStyle,
+  SubMenuListWrapperStyle,
+} from './SubMenuListStyle'
 import MenuItemStyle, { MenuItemLabelStyle } from './MenuItemStyle'
 import MenuLabelStyle from './MenuLabelStyle'
+import MenuBarStyle from './MenuBarStyle'
 
 export { MenuStyleProps } from './types'
 
-export default {
+const MenuStyle = {
   MenuWrapperStyle,
+  MenuBarStyle,
   MenuButtonStyle,
   MenuListWrapperStyle,
   MenuListStyle,
   MenuItemStyle,
   MenuItemLabelStyle,
   MenuLabelStyle,
+  SubMenuWrapperStyle,
   SubMenuListWrapperStyle,
   SubMenuListStyle,
   SubMenuButtonStyle,
   SubMenuButtonLabelStyle,
 }
+
+export default MenuStyle

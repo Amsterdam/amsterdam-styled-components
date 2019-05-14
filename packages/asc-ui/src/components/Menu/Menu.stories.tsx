@@ -1,51 +1,45 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 import { ReactComponent as ChevronRight } from '@datapunt/asc-assets/lib/Icons/ChevronRight.svg'
 import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
 import { ReactComponent as ExternalLink } from '@datapunt/asc-assets/lib/Icons/ExternalLink.svg'
 import { ReactComponent as MenuIcon } from '@datapunt/asc-assets/lib/Icons/Menu.svg'
-import { Menu, MenuItem, MenuLabel, SubMenu } from '../..'
+import { Menu, MenuBar, MenuItem, MenuLabel, SubMenu } from '../..'
 
 storiesOf('Composed/Menu', module)
   .add('default', () => (
-    <Menu label="Menu">
-      <MenuItem icon={<ChevronRight />} onClick={() => {}}>
-        One
-      </MenuItem>
-      <MenuItem icon={<ChevronRight />} onClick={() => {}}>
-        Two
-      </MenuItem>
-      <MenuItem icon={<ChevronRight />} onClick={() => {}}>
-        Three
-      </MenuItem>
-      <MenuItem icon={<ChevronRight />} onClick={() => {}}>
-        Four
-      </MenuItem>
+    <Menu>
+    <MenuItem onClick={action('click')}>
+      One
+    </MenuItem>
+    <MenuItem onClick={action('click')}>
+      Two
+    </MenuItem>
+    <MenuItem onClick={action('click')}>
+      Three
+    </MenuItem>
     </Menu>
   ))
-  .add('default with labels', () => (
-    <Menu label="Menu">
-      <MenuLabel>First two</MenuLabel>
-      <MenuItem icon={<ChevronRight />} onClick={() => {}}>
+  .add('default 2', () => (
+    <MenuBar>
+    <MenuItem onClick={action('click')}>
+      One
+    </MenuItem>
+    <MenuItem onClick={action('click')}>
+      Two
+    </MenuItem>
+    <MenuItem onClick={action('click')}>
+      Three
+    </MenuItem>
+    </MenuBar>
+  ))
+  .add('default with dropdown', () => (
+    <Menu>
+      <MenuItem onClick={action('click')}>
         One
       </MenuItem>
-      <MenuItem icon={<ChevronRight />} onClick={() => {}}>
-        Two
-      </MenuItem>
-      <MenuLabel>Another two</MenuLabel>
-      <MenuItem icon={<ChevronRight />} onClick={() => {}}>
-        Three
-      </MenuItem>
-      <MenuItem icon={<ChevronRight />} onClick={() => {}}>
-        Four
-      </MenuItem>
-    </Menu>
-  ))
-  .add('default mobile', () => (
-    <Menu icon={<MenuIcon />} mobile>
-      <MenuItem onClick={() => {}}>One</MenuItem>
-      <MenuItem onClick={() => {}}>Two</MenuItem>
-      <SubMenu label="SubMenu" arrowIcon={<ChevronDown />}>
+      <SubMenu label="Two">
         <MenuItem icon={<ChevronRight />} onClick={() => {}}>
           One
         </MenuItem>
@@ -63,15 +57,36 @@ storiesOf('Composed/Menu', module)
           Show more
         </MenuItem>
       </SubMenu>
-      <MenuItem onClick={() => {}}>Three</MenuItem>
-      <MenuItem onClick={() => {}}>Four</MenuItem>
-      <SubMenu label="SubMenu" arrowIcon={<ChevronDown />}>
+    <MenuItem onClick={action('click')}>
+      Three
+    </MenuItem>
+  </Menu>
+  ))
+  .add('default mobile', () => (
+    <Menu icon={<MenuIcon />} mobile>
+      <MenuItem onClick={action('click')}>
+        One
+      </MenuItem>
+      <SubMenu arrowIcon={<ChevronDown />} label="Two">
         <MenuItem icon={<ChevronRight />} onClick={() => {}}>
           One
         </MenuItem>
         <MenuItem icon={<ChevronRight />} onClick={() => {}}>
           Two
         </MenuItem>
+        <MenuLabel>Two</MenuLabel>
+        <MenuItem icon={<ChevronRight />} onClick={() => {}}>
+          One
+        </MenuItem>
+        <MenuItem icon={<ChevronRight />} onClick={() => {}}>
+          Two
+        </MenuItem>
+        <MenuItem icon={<ExternalLink />} onClick={() => {}}>
+          Show more
+        </MenuItem>
       </SubMenu>
-    </Menu>
+    <MenuItem onClick={action('click')}>
+      Three
+    </MenuItem>
+  </Menu>
   ))

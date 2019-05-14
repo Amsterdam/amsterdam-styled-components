@@ -23,6 +23,8 @@ export const MenuListWrapperStyle = styled.div.attrs(() => ({
   border-bottom: 4px solid ${color('tint', 'level7')};
   max-width: 250px;
   width: 100%;
+  position: absolute;
+  top: ${({ top }) => `${top}px`};
   &:focus {
     outline: none;
   }

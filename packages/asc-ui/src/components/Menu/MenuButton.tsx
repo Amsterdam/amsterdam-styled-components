@@ -2,17 +2,15 @@ import React from 'react'
 import MenuStyle from '../../styles/components/MenuStyle'
 import { Icon } from '../..'
 
+const { MenuButtonStyle, MenuItemLabelStyle } = MenuStyle
+
 const MenuButton = ({ id, label, icon, ...otherProps }: any) => {
   return (
-    <MenuStyle.MenuButtonStyle {...{ id }} {...otherProps}>
+    <MenuButtonStyle {...{ id }} {...otherProps}>
       {icon && <Icon>{icon}</Icon>}
-      {label && <MenuStyle.MenuItemLabelStyle>{label}</MenuStyle.MenuItemLabelStyle>}
-    </MenuStyle.MenuButtonStyle>
+      {label && <MenuItemLabelStyle>{label}</MenuItemLabelStyle>}
+    </MenuButtonStyle>
   )
-}
-
-MenuButton.defaultProps = {
-  height: 50
 }
 
 export default MenuButton

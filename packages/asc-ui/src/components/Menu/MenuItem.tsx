@@ -4,6 +4,8 @@ import { Icon } from '../..'
 import { KeyboardKeys } from '../../types'
 import { MenuContext } from './Menu'
 
+const { MenuItemStyle, MenuItemLabelStyle } = MenuStyle
+
 type Props = {
   onClick?: Function
   role?: string
@@ -19,6 +21,8 @@ const MenuItem = ({ children, icon, index, onClick, ...otherProps }: Props) => {
   const { selectedChild }: any = React.useContext(MenuContext)
 
   const focused = index === selectedChild
+
+  console.log(selectedChild, index)
 
   React.useEffect(() => {
     if (menuItemRef && menuItemRef.current && focused) {
@@ -39,19 +43,25 @@ const MenuItem = ({ children, icon, index, onClick, ...otherProps }: Props) => {
     }
   }
 
+  console.log(index)
+
   return (
-    <MenuStyle.MenuItemStyle
+    <MenuItemStyle
       ref={menuItemRef}
       focused={focused}
       onClick={handleOnClick}
       onKeyDown={handleKeyPress}
-      tabIndex={focused ? 0 : -1}
+      tabIndex={0}
       {...otherProps}
     >
       {icon && <Icon size={14}>{icon}</Icon>}
-      <MenuStyle.MenuItemLabelStyle>{children}</MenuStyle.MenuItemLabelStyle>
-    </MenuStyle.MenuItemStyle>
+      <MenuItemLabelStyle>{children} + {index}</MenuItemLabelStyle>
+    </MenuItemStyle>
   )
+}
+
+MenuItem.defaultProps = {
+  height: 50
 }
 
 export default MenuItem
