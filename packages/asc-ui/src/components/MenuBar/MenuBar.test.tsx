@@ -1,24 +1,30 @@
 import * as React from 'react'
-import { action } from '@storybook/addon-actions'
+import { shallow } from 'enzyme'
 import MenuBar, { MenuBarItem } from './MenuBar'
-import { renderWithTheme } from '../../utils/withTheme'
-import 'jest-styled-components'
-
-jest.useFakeTimers()
 
 describe('MenuBar', () => {
-  let component: Cheerio
+  const mockOnClick = jest.fn()
+  const children = (
+    <>
+      <MenuBarItem label="Inhoud" onClick={mockOnClick} />
+      <MenuBarItem label="Over" onClick={mockOnClick} />
+    </>
+  )
+  const component = shallow(<MenuBar>{children}</MenuBar>)
+  const menuBarItem = component.find(MenuBarItem)
 
-  beforeEach(() => {
-    component = renderWithTheme(
-      <MenuBar>
-        <MenuBarItem label="Inhoud" onClick={action('click')} />
-        <MenuBarItem label="Over" onClick={action('click')} />
-      </MenuBar>,
-    )
+  it('should render with the correct children', () => {
+    expect(component.props().children).toBe(children)
   })
 
-  it('should render', () => {
-    expect(component).toMatchSnapshot()
+  it('should render with the correct label', () => {
+    expect(menuBarItem.at(0).props().label).toBe('Inhoud')
+    expect(menuBarItem.at(1).props().label).toBe('Over')
+  })
+
+  it('should handle the onclick event', () => {
+    menuBarItem.at(0).simulate('click')
+
+    expect(mockOnClick).toHaveBeenCalled()
   })
 })
