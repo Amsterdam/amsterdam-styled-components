@@ -19,6 +19,12 @@ exports[`IconButton should render the IconButton 1`] = `
   font-size: 16px;
   font-weight: normal;
   padding: 0 10px 0 10px;
+  ",
+          [Function],
+          "
+  ",
+          "transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;",
+          ";
 
   ",
           [Function],

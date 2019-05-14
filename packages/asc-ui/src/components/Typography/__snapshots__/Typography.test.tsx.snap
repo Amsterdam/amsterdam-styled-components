@@ -42,7 +42,6 @@ Array [
 
 <h1
     class="c0"
-    tabindex="-1"
   >
     Heading one
   </h1>,
@@ -86,7 +85,6 @@ Array [
 
 <h2
     class="c0"
-    tabindex="-1"
   >
     Heading two
   </h2>,
@@ -130,7 +128,6 @@ Array [
 
 <h3
     class="c0"
-    tabindex="-1"
   >
     Heading three
   </h3>,
@@ -174,7 +171,6 @@ Array [
 
 <h4
     class="c0"
-    tabindex="-1"
   >
     Heading four
   </h4>,
@@ -218,7 +214,6 @@ Array [
 
 <h5
     class="c0"
-    tabindex="-1"
   >
     Heading five
   </h5>,
@@ -262,7 +257,6 @@ Array [
 
 <h6
     class="c0"
-    tabindex="-1"
   >
     Heading six
   </h6>,
@@ -292,7 +286,7 @@ Array [
 .c0:focus {
   outline-color: #FEC813;
   outline-style: solid;
-  outline-width: medium;
+  outline-width: 3px;
 }
 
 .c0:hover {
@@ -302,7 +296,6 @@ Array [
 <a
     class="c0"
     href="/"
-    tabindex="-1"
   >
     I am a link!
   </a>,
@@ -354,7 +347,7 @@ Array [
 .c1:focus {
   outline-color: #FEC813;
   outline-style: solid;
-  outline-width: medium;
+  outline-width: 3px;
 }
 
 .c1:hover {
@@ -363,13 +356,11 @@ Array [
 
 <p
     class="c0"
-    tabindex="-1"
   >
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor dolorem esse illum magni 
     <a
       class="c1"
       href="/"
-      tabindex="-1"
     >
       I am a link!
     </a>

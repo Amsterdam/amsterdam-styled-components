@@ -19,11 +19,19 @@ exports[`Button should render the button 1`] = `
   padding: 0 10px 0 10px;
   -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
   transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
   background: #004699;
   padding: 0 10px 0 10px;
   min-height: 38px;
   line-height: 1em;
   color: #fff;
+}
+
+.c0:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: 3px;
 }
 
 .c0:focus {
