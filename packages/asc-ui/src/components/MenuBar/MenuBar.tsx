@@ -14,39 +14,35 @@ const MenuButtonStyle = styled.button<{}>`
 const MenuButton = ({ id, label, ...otherProps }: any) => {
   return (
     <MenuButtonStyle {...{ id }} {...otherProps}>
-      <span>{label && label}</span>
+      {label && <MenuButtonLabelStyle>{label}</MenuButtonLabelStyle>}
     </MenuButtonStyle>
   )
 }
 
+const MenuButtonLabelStyle = styled.span`
+  color: ${color('tint', 'level6')};
+  line-height: 22px;
+  border: 0;
+  margin: 0;
+  border-bottom-width: 2px;
+  border-bottom-color: transparent;
+  border-bottom-style: solid;
+  background-color: transparent;
+  font-family: 'AvenirNextLTW01-Medium';
+  cursor: pointer;
+`
+
 const MenuBarItemStyle = styled.li`
-  ${MenuButtonStyle} {
-    font-family: 'AvenirNextLTW01-Medium';
-    padding: 15px;
-    cursor: pointer;
-
-    & > span {
-      color: ${color('tint', 'level6')};
-      line-height: 22px;
-      border: 0;
-      margin: 0;
-      border-bottom: 2px transparent solid;
-      background-color: transparent;
-    }
-
-    &:hover > span,
-    &:focus > span {
-      color: ${color('tint', 'level6')};
-      line-height: 22px;
-      border-bottom: 2px solid red;
-      outline: none;
-    }
-  }
-
+  padding: 15px;
   &:hover,
   &:focus {
     outline: none;
     background-color: ${color('tint', 'level2')};
+
+    ${MenuButtonLabelStyle} {
+      border-bottom-color: ${color('secondary')};
+      outline: none;
+    }
   }
 `
 
