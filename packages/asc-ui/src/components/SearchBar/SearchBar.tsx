@@ -4,57 +4,9 @@ import styled from '../../styled-components'
 import IconButton from '../IconButton'
 import { InputStyle } from '../../styles/components'
 import IconButtonStyle from '../../styles/components/IconButtonStyle'
-import { svgFill } from '../../styles/utils'
+import SearchBarStyle from '../../styles/components/SearchBarStyle'
 import { KeyboardKeys } from '../../types'
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      styledComponent: any
-    }
-  }
-}
-
-type InputProps = {
-  placeholder?: string
-  onChange: any
-  onKeyDown: any
-  inputRef: any
-}
-
-const Input: React.FC<InputProps> = ({
-  placeholder,
-  onChange,
-  inputRef,
-  ...otherProps
-}) => {
-  return (
-    <InputStyle
-      placeholder={placeholder}
-      onChange={onChange}
-      ref={inputRef}
-      {...otherProps}
-    />
-  )
-}
-
-const SearchBarStyle = styled.div`
-  display: flex;
-
-  ${InputStyle} {
-    width: 500px;
-  }
-
-  ${IconButtonStyle} {
-    margin-left: 5px;
-    padding: 10px;
-    width: 40px;
-    height: 40px;
-    & svg {
-      ${svgFill('tint', 'level1')};
-    }
-  }
-`
+import Input from '../Input'
 
 type SearchBarProps = {
   minWidth?: string
@@ -63,7 +15,7 @@ type SearchBarProps = {
   styledComponent?: any
   placeholder?: string
   onTextChanged: any
-  onSubmit?: any
+  onSearch?: any
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -71,7 +23,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   styledComponent,
   placeholder,
   onTextChanged,
-  onSubmit,
+  onSearch,
   ...otherProps
 }) => {
   const Style = styled(styledComponent)``
@@ -85,14 +37,15 @@ const SearchBar: React.FC<SearchBarProps> = ({
     onTextChanged(inputValue())
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.KeyboardEvent | React.MouseEvent) => {
     console.log('handleSubmit', inputValue())
-    onSubmit(inputValue())
+    e.preventDefault()
+    onSearch(inputValue())
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === KeyboardKeys.Enter) {
-      handleSubmit()
+      handleSubmit(e)
     }
   }
 

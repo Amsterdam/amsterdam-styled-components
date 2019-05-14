@@ -10,7 +10,7 @@ const SearchBarStory: React.FC<{}> = () => (
     <SearchBar
       placeholder="Enter the search text"
       onTextChanged={(text: string) => action(`text changed: ${text}`)}
-      onSubmit={(text: string) => action(`button clicked: ${text}`)}
+      onSearch={(text: string) => action(`button clicked: ${text}`)}
     />
   </>
 )
@@ -36,7 +36,7 @@ const SearchBarStoryWithChangedStyle: React.FC<{}> = () => {
       <SearchBar
         styledComponent={ChangedSearchBarStyle}
         onTextChanged={(text: string) => action(`text changed: ${text}`)}
-        onSubmit={(text: string) => action(`button clicked: ${text}`)}
+        onSearch={(text: string) => action(`button clicked: ${text}`)}
       />
     </>
   )
