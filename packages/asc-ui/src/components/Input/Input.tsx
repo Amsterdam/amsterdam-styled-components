@@ -5,14 +5,13 @@ type InputProps = {
   placeholder?: string
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   onKeyDown: (event: React.KeyboardEvent<HTMLInputElement>) => void
-  inputRef?: any
+  value: string
 }
 
 const Input: React.FC<InputProps> = ({
   placeholder,
   onChange,
   onKeyDown,
-  inputRef,
   ...otherProps
 }) => {
   return (
@@ -20,7 +19,6 @@ const Input: React.FC<InputProps> = ({
       placeholder={placeholder}
       onChange={onChange}
       onKeyDown={onKeyDown}
-      ref={inputRef}
       {...otherProps}
     />
   )

@@ -17,5 +17,6 @@ exports[`Input should render 1`] = `
 <input
   class="c0"
   type="text"
+  value="test-value"
 />
 `;
