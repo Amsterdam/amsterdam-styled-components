@@ -14,8 +14,8 @@ type SearchBarProps = {
   padding?: string
   styledComponent?: any
   placeholder?: string
-  onTextChanged: any
-  onSearch?: any
+  onTextChanged: Function
+  onSearch: Function
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -52,6 +52,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   return (
     <Style {...otherProps}>
       <Input
+        aria-label={placeholder}
         placeholder={placeholder}
         onChange={handleTextChanged}
         onKeyDown={handleKeyDown}

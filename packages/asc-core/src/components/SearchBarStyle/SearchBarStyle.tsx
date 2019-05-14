@@ -7,7 +7,7 @@ const SearchBarStyle = styled.div`
   display: flex;
 
   ${InputStyle} {
-    width: 500px;
+    flex-grow: 1;
   }
 
   ${IconButtonStyle} {

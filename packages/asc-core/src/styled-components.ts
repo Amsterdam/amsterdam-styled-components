@@ -1,14 +1,6 @@
 import * as styledComponents from 'styled-components'
 import { Theme } from './theme'
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      styledComponent: any
-    }
-  }
-}
-
 const {
   default: styled,
   css,
