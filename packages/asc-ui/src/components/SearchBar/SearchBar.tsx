@@ -27,20 +27,16 @@ const SearchBar: React.FC<SearchBarProps> = ({
 }) => {
   const ExtendedSearchBarStyle = styledComponent
 
-  const [state, setState] = React.useState({
-    text: '',
-  })
+  const [text, setText] = React.useState('')
 
   const handleTextChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setState({
-      text: e.target.value,
-    })
-    onTextChanged(state.text)
+    setText(e.target.value)
+    onTextChanged(text)
   }
 
   const handleSubmit = (e: React.KeyboardEvent | React.MouseEvent) => {
     e.preventDefault()
-    onSearch(state.text)
+    onSearch(text)
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -56,7 +52,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
         placeholder={placeholder}
         onChange={handleTextChanged}
         onKeyDown={handleKeyDown}
-        value={state.text}
+        value={text}
       />
       <IconButton aria-label="Search" color="secondary" onClick={handleSubmit}>
         <Search />
