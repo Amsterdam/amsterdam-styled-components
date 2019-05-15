@@ -1,5 +1,5 @@
 import styled from '../../styled-components'
-import { breakpoint, fromTheme } from '../../utils'
+import { fromTheme } from '../../utils'
 
 const MenuBarStyle = styled.ul`
   display: flex;
@@ -13,10 +13,6 @@ const MenuBarStyle = styled.ul`
   &:focus,
   &:hover {
     outline: none;
-  }
-
-  @media screen and ${breakpoint('max-width', 'laptop')} {
-    display: none;
   }
 `
 

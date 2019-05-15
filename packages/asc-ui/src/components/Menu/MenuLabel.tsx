@@ -3,8 +3,8 @@ import MenuStyle from '../../styles/components/MenuStyle'
 
 const { MenuLabelStyle } = MenuStyle
 
-const MenuLabel = ({ children, borderBottom }: any) => (
-  <MenuLabelStyle borderBottom={borderBottom}>{children}</MenuLabelStyle>
+const MenuLabel = ({ children }: any) => (
+  <MenuLabelStyle>{children}</MenuLabelStyle>
 )
 
 export default MenuLabel

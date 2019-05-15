@@ -1,16 +1,13 @@
 export namespace MenuStyleProps {
-  export type MenuWrapperStyleProps = {}
-
   export enum Position {
     bottom = 'bottom',
     top = 'top',
   }
 
   export type MenuButtonStyleProps = {
-    open?: boolean
+    focused?: boolean
+    mobile?: boolean
     height?: number
-    square?: boolean
-    borderBottom?: boolean
   }
 
   export type MenuItemStyleProps = {
@@ -20,7 +17,6 @@ export namespace MenuStyleProps {
     focused?: boolean
     open?: boolean
     divider?: boolean
-    borderBottom?: boolean
     height?: number
   }
 
@@ -28,5 +24,10 @@ export namespace MenuStyleProps {
     labelId?: string
     position?: Position
     top?: number
+    focused?: boolean
+  }
+
+  export type MenuWrapperStyleProps = {
+    focused?: boolean
   }
 }

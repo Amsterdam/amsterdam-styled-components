@@ -1,11 +1,11 @@
 import React from 'react'
 import MenuStyle, { MenuStyleProps } from '../../styles/components/MenuStyle'
-import MenuButton from './MenuButton'
 import MenuList from './MenuList'
 import { MenuContext } from './Menu'
+import { Icon } from '../..'
 import { KeyboardKeys } from '../../types'
 
-const { MenuWrapperStyle } = MenuStyle
+const { MenuDropDownStyle, MenuDropDownButtonStyle } = MenuStyle
 
 type Props = {
   position?: MenuStyleProps.Position
@@ -29,7 +29,7 @@ const MenuDropDown: React.FC<Props> = ({
 }) => {
   const menuRef = React.useRef<HTMLDivElement>(null)
 
-  const { open, mobile, onKeyDown, onClose, onClick }: any = React.useContext(MenuContext)
+  const { open, onKeyDown, onClose, onClick }: any = React.useContext(MenuContext)
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === KeyboardKeys.Enter) {
@@ -39,16 +39,14 @@ const MenuDropDown: React.FC<Props> = ({
     }
   }
 
-
-  const clonedChildren = React.Children.map(children, (child, index) => {
-    return React.cloneElement(child as React.ReactElement<any>, {
+  const clonedChildren = React.Children.map(children, (child, index) =>
+    React.cloneElement(child as React.ReactElement<any>, {
       index: currentIndex && currentIndex + index + 1,
-      borderBottom: mobile
     })
-  })
+  )
 
   return (
-      <MenuWrapperStyle
+      <MenuDropDownStyle
         id={id}
         ref={menuRef}
         onKeyDown={handleKeyPress}
@@ -56,18 +54,16 @@ const MenuDropDown: React.FC<Props> = ({
         onMouseLeave={() => setTimeout(onClick, 200)}
         tabIndex={0}
       >
-        <MenuButton
+        <MenuDropDownButtonStyle
           {...{
-            icon,
-            open,
-            position,
-            label,
-            square: mobile,
+            focused: open,
             height: buttonHeight,
           }}
           onMouseOut={() => !open && setTimeout(onClick, 200)}
           onClick={onClick}
-        />
+        >
+        {icon && <Icon>{icon}</Icon>}
+        </MenuDropDownButtonStyle>
         <MenuList
           {...{
             position,
@@ -79,7 +75,7 @@ const MenuDropDown: React.FC<Props> = ({
         >
           {clonedChildren}
         </MenuList>
-      </MenuWrapperStyle>
+      </MenuDropDownStyle>
   )
 }
 

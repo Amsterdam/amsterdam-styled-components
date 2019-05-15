@@ -1,42 +1,17 @@
 import styled from '../../styled-components'
 import { MenuStyleProps } from './types'
-import MenuItemStyle, { MenuItemLabelStyle } from './MenuItemStyle'
-import IconStyle from '../IconStyle'
-import { color, svgFill } from '../../utils'
+import MenuButtonStyle, { MenuButtonLabelStyle } from './MenuButtonStyle'
+import { color } from '../../utils'
 
-export const SubMenuButtonLabelStyle = MenuItemLabelStyle
+export const SubMenuButtonLabelStyle = MenuButtonLabelStyle
 
-const SubMenuButtonStyle = styled(MenuItemStyle)<
+const SubMenuButtonStyle = styled(MenuButtonStyle)<
   MenuStyleProps.MenuButtonStyleProps
 >`
-  border-left-color: ${({ focused, theme }) =>
-    focused && color('secondary')({ theme })};
   justify-content: space-between;
 
-  ${({ borderBottom }) =>
-    borderBottom &&
-    `
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-  `}};
-
-  border-bottom-color: ${color('tint', 'level3')};
-
-  &:hover,
-  &:focus {
-    border-left-color: ${color('secondary')};
-
-    ${SubMenuButtonLabelStyle} {
-      border-bottom-color: ${color('secondary')};
-      color: ${color('secondary')};
-    }
-
-    ${IconStyle} {
-      & > svg {
-        fill: ${svgFill('secondary')};
-      }
-    }
-  }
+  border-left-color: ${({ theme, focused }) =>
+    focused ? color('secondary')({ theme }) : 'transparent'};
 `
 
 export default SubMenuButtonStyle

@@ -21,12 +21,11 @@ const MenuList = ({
   onClose,
   ...otherProps
 }: Props) => {
-  const ref = React.useRef<HTMLDivElement>(null)
+  const menuListRef = React.useRef<HTMLDivElement>(null)
   const {
     expandedChild,
     expandedChildIndex,
     nrOfChildrenChild,
-    mobile
   }: any = React.useContext(MenuContext)
 
   const clonedChildren = React.Children.map(children, (child, index) => {
@@ -35,15 +34,14 @@ const MenuList = ({
         expandedChild && index > expandedChildIndex
           ? nrOfChildrenChild + expandedChildIndex + index - expandedChildIndex
           : index,
-      borderBottom: mobile,
     })
   })
 
   return (
     <MenuListWrapperStyle
-      ref={ref}
+      ref={menuListRef}
       aria-hidden={!open}
-      onBlur={() => onClose()}
+      onBlur={() => onClose(menuListRef)}
       {...otherProps}
     >
       <MenuListStyle labelId={id}>

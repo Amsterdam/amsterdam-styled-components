@@ -4,7 +4,7 @@ import { KeyboardKeys } from '../../types'
 import { MenuContext } from './Menu'
 import { Icon } from '../../index'
 
-const { SubMenuWrapperStyle, SubMenuButtonStyle, MenuItemStyle, SubMenuListWrapperStyle, MenuListWrapperStyle, SubMenuListStyle, MenuListStyle } = MenuStyle
+const { MenuButtonStyle, SubMenuButtonStyle, SubMenuWrapperStyle, SubMenuListWrapperStyle, MenuListWrapperStyle, SubMenuListStyle, MenuListStyle } = MenuStyle
 
 type Props = {
   role?: string
@@ -13,6 +13,7 @@ type Props = {
   mobile?: boolean
   index?: number
   arrowIcon?: React.ReactNode
+  buttonHeight?: number
 } & MenuStyleProps.MenuItemStyleProps
 
 const SubMenu: React.FC<Props> = ({
@@ -21,6 +22,7 @@ const SubMenu: React.FC<Props> = ({
   children,
   label,
   index: currentIndex,
+  buttonHeight,
   ...otherProps
 }) => {
   const {
@@ -30,6 +32,7 @@ const SubMenu: React.FC<Props> = ({
     setExpandedChild,
     resetExpandedChild,
     onKeyDown,
+    onClose,
     mobile,
   }: any = React.useContext(MenuContext)
 
@@ -65,23 +68,29 @@ const SubMenu: React.FC<Props> = ({
     }
   }
 
-  const clonedChildren = React.Children.map(children, (child, index) => {
-    console.log('handle', currentIndex, index)
-    return React.cloneElement(child as React.ReactElement<any>, {
-      index: currentIndex && currentIndex + index + 1,
-      borderBottom: mobile
-    })
-  })
+  const handleOnClose = () => {
+    setTimeout(onClose(subMenuRef), 300)
+  }
 
-  const SubMenuButton = mobile ? SubMenuButtonStyle : MenuItemStyle
+  const clonedChildren = React.Children.map(children, (child, index) =>
+    React.cloneElement(child as React.ReactElement<any>, {
+      index: currentIndex && currentIndex + index + 1,
+      height: 44
+    }),
+  )
+
+  const SubMenuButton = mobile ? SubMenuButtonStyle : MenuButtonStyle
   const SubMenuListWrapper = mobile ? SubMenuListWrapperStyle : MenuListWrapperStyle
   const SubMenuList = mobile ? SubMenuListStyle : MenuListStyle
 
+  console.log('handlesubmenu', expanded)
+
   return (
     <SubMenuWrapperStyle tabIndex={0} ref={subMenuRef} onClick={handleOnClick}
-    onKeyDown={handleKeyPress}>
+    onKeyDown={handleKeyPress} focused={expanded} onMouseLeave={handleOnClose} onMouseOver={handleOnClick}>
       <SubMenuButton
-        focused={focused || expanded}
+        focused={expanded}
+        height={buttonHeight}
         {...otherProps}
       >
         {label && <MenuStyle.SubMenuButtonLabelStyle>{label}</MenuStyle.SubMenuButtonLabelStyle>}
@@ -94,12 +103,16 @@ const SubMenu: React.FC<Props> = ({
       <SubMenuListWrapper
         aria-hidden={expanded ? false : true}
       >
-        <SubMenuList labelId={id}>
+        <SubMenuList top={buttonHeight} labelId={id}>
           {clonedChildren}
         </SubMenuList>
       </SubMenuListWrapper>
     </SubMenuWrapperStyle>
   )
+}
+
+SubMenu.defaultProps = {
+  buttonHeight: 50
 }
 
 export default SubMenu

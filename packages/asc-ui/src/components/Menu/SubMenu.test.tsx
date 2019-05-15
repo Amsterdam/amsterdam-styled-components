@@ -12,7 +12,7 @@ describe('SubMenu', () => {
   const mockIcon = <ChevronDown />
   const mockSetExpandedChild = jest.fn()
   const mockResetExpandedChild = jest.fn()
-  const mockHandleOnKeyDown = jest.fn()
+  const mockOnKeyDown = jest.fn()
 
   describe('In closed state', () => {
     const mockContext = {
@@ -21,7 +21,7 @@ describe('SubMenu', () => {
       mobile: true,
       setExpandedChild: mockSetExpandedChild,
       resetExpandedChild: mockResetExpandedChild,
-      handleOnKeyDown: mockHandleOnKeyDown,
+      onKeyDown: mockOnKeyDown,
     }
 
     const component = mount(
@@ -62,7 +62,7 @@ describe('SubMenu', () => {
       mobile: true,
       setExpandedChild: mockSetExpandedChild,
       resetExpandedChild: mockResetExpandedChild,
-      handleOnKeyDown: mockHandleOnKeyDown,
+      onKeyDown: mockOnKeyDown,
     }
 
     const component = mount(
@@ -101,7 +101,7 @@ describe('SubMenu', () => {
 
       menuButton.simulate('keydown', { key: 'ArrowDown' })
 
-      expect(mockHandleOnKeyDown).toHaveBeenCalled()
+      expect(mockOnKeyDown).toHaveBeenCalled()
     })
   })
 })

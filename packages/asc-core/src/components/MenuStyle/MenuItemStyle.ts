@@ -16,7 +16,7 @@ export const MenuItemLabelStyle = styled.span<
 `
 
 export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
-  padding: 10px 15px 10px 11px;
+  padding: 10px 15px 10px 7px;
   margin: 0;
   display: flex;
   flex-direction: row;
@@ -27,21 +27,16 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
   position: relative;
 
-  ${({ borderBottom }) =>
-    borderBottom &&
-    `
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-  `}};
-
-  border-bottom-color: ${color('tint', 'level3')};
+  border-left-style: solid;
+  border-left-width: 8px;
+  border-left-color: transparent;
 
   ${IconStyle} {
     &:not(:last-child) {
       margin-right: 5px;
     }
 
-    & svg {
+    & > svg {
       ${svgFill('tint', 'level7')};
     }
   }
@@ -49,21 +44,15 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   &:hover,
   &:focus {
     outline: none;
-
-    ${MenuItemLabelStyle} {
+    background-color: ${color('tint', 'level2')} ${MenuItemLabelStyle} {
       border-bottom-color: ${color('secondary', 'main')};
-      color: ${color('secondary', 'main')};
     }
 
-    &:hover > ${IconStyle}, &:focus > ${IconStyle} {
-      & svg {
+    ${IconStyle} {
+      & > svg {
         ${svgFill('secondary')};
       }
     }
-  }
-
-  &:last-of-type {
-    border-bottom-width: 0px;
   }
 `
 

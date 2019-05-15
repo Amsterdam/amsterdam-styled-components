@@ -17,7 +17,6 @@ import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
 import Menu from './components/Menu'
 import MenuBar from './components/Menu/MenuBar'
 import MenuDropDown from './components/Menu/MenuDropDown'
-import MenuButton from './components/Menu/MenuButton'
 import MenuItem from './components/Menu/MenuItem'
 import MenuLabel from './components/Menu/MenuLabel'
 import SubMenu from './components/Menu/SubMenu'
@@ -47,7 +46,6 @@ export {
   ContextMenuItem,
   Menu,
   MenuBar,
-  MenuButton,
   MenuDropDown,
   MenuItem,
   MenuLabel,

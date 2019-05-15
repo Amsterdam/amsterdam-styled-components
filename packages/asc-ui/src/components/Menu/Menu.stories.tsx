@@ -9,84 +9,57 @@ import { Menu, MenuBar, MenuItem, MenuLabel, SubMenu } from '../..'
 
 storiesOf('Composed/Menu', module)
   .add('default', () => (
-    <Menu>
-    <MenuItem onClick={action('click')}>
-      One
-    </MenuItem>
-    <MenuItem onClick={action('click')}>
-      Two
-    </MenuItem>
-    <MenuItem onClick={action('click')}>
-      Three
-    </MenuItem>
-    </Menu>
-  ))
-  .add('default 2', () => (
     <MenuBar>
-    <MenuItem onClick={action('click')}>
-      One
-    </MenuItem>
-    <MenuItem onClick={action('click')}>
-      Two
-    </MenuItem>
-    <MenuItem onClick={action('click')}>
-      Three
-    </MenuItem>
+      <MenuItem onClick={action('click')}>One</MenuItem>
+      <MenuItem onClick={action('click')}>Two</MenuItem>
+      <MenuItem onClick={action('click')}>Three</MenuItem>
     </MenuBar>
   ))
   .add('default with dropdown', () => (
     <Menu>
-      <MenuItem onClick={action('click')}>
-        One
-      </MenuItem>
+      <MenuItem onClick={action('click')}>One</MenuItem>
       <SubMenu label="Two">
-        <MenuItem icon={<ChevronRight />} onClick={() => {}}>
+        <MenuItem icon={<ChevronRight />} onClick={action('click')}>
           One
         </MenuItem>
-        <MenuItem icon={<ChevronRight />} onClick={() => {}}>
+        <MenuItem icon={<ChevronRight />} onClick={action('click')}>
           Two
         </MenuItem>
         <MenuLabel>Two</MenuLabel>
-        <MenuItem icon={<ChevronRight />} onClick={() => {}}>
+        <MenuItem icon={<ChevronRight />} onClick={action('click')}>
           One
         </MenuItem>
-        <MenuItem icon={<ChevronRight />} onClick={() => {}}>
+        <MenuItem icon={<ChevronRight />} onClick={action('click')}>
           Two
         </MenuItem>
-        <MenuItem icon={<ExternalLink />} onClick={() => {}}>
+        <MenuItem icon={<ExternalLink />} onClick={action('click')}>
           Show more
         </MenuItem>
       </SubMenu>
-    <MenuItem onClick={action('click')}>
-      Three
-    </MenuItem>
-  </Menu>
+      <MenuItem onClick={action('click')}>Three</MenuItem>
+    </Menu>
   ))
   .add('default mobile', () => (
     <Menu icon={<MenuIcon />} mobile>
-      <MenuItem onClick={action('click')}>
-        One
-      </MenuItem>
+      <MenuItem onClick={action('click')}>One</MenuItem>
       <SubMenu arrowIcon={<ChevronDown />} label="Two">
-        <MenuItem icon={<ChevronRight />} onClick={() => {}}>
+        <MenuItem icon={<ChevronRight />} onClick={action('click')}>
           One
         </MenuItem>
-        <MenuItem icon={<ChevronRight />} onClick={() => {}}>
+        <MenuItem icon={<ChevronRight />} onClick={action('click')}>
           Two
         </MenuItem>
         <MenuLabel>Two</MenuLabel>
-        <MenuItem icon={<ChevronRight />} onClick={() => {}}>
+        <MenuItem icon={<ChevronRight />} onClick={action('click')}>
           One
         </MenuItem>
-        <MenuItem icon={<ChevronRight />} onClick={() => {}}>
+        <MenuItem icon={<ChevronRight />} onClick={action('click')}>
           Two
         </MenuItem>
-        <MenuItem icon={<ExternalLink />} onClick={() => {}}>
+        <MenuItem icon={<ExternalLink />} onClick={action('click')}>
           Show more
         </MenuItem>
       </SubMenu>
-    <MenuItem onClick={action('click')}>
-      Three
-    </MenuItem>
-  </Menu>
+      <MenuItem onClick={action('click')}>Three</MenuItem>
+    </Menu>
   ))

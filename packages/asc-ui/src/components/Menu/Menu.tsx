@@ -22,8 +22,6 @@ const Menu: React.FC<Props> = ({
   position,
   icon,
 }) => {
-  const menuRef = React.useRef<HTMLDivElement>(null)
-
   const initialState = {
     open: false,
     mobile,
@@ -57,7 +55,7 @@ const Menu: React.FC<Props> = ({
           nrOfChildrenChild: initialState.nrOfChildrenChild,
           expandedChild: false,
           expandedChildIndex: initialState.expandedChildIndex,
-          selectedChild: state.expandedChildIndex,
+          selectedChild: action.payload,
         }
       case 'toggleMenu':
         return {
@@ -115,9 +113,9 @@ const Menu: React.FC<Props> = ({
     setSelectedChild(initialState.selectedChild)
   }
 
-  const handleOnClose = () => {
+  const handleOnClose = (ref: any) => {
     setTimeout(() => {
-      const element = menuRef && (menuRef.current as HTMLInputElement)
+      const element = ref && (ref.current as HTMLInputElement)
       const currentFocus = ownerDocument(element).activeElement
       if (!element.contains(currentFocus)) {
         dispatch({ type: 'resetMenu' })
@@ -143,7 +141,7 @@ const Menu: React.FC<Props> = ({
   }
 
   const resetExpandedChild = () => {
-    dispatch({ type: 'resetExpandedChild' })
+    dispatch({ type: 'resetExpandedChild', payload: state.expandedChildIndex })
   }
 
 

@@ -22,8 +22,6 @@ const MenuItem = ({ children, icon, index, onClick, ...otherProps }: Props) => {
 
   const focused = index === selectedChild
 
-  console.log(selectedChild, index)
-
   React.useEffect(() => {
     if (menuItemRef && menuItemRef.current && focused) {
       menuItemRef.current.focus()
@@ -43,8 +41,6 @@ const MenuItem = ({ children, icon, index, onClick, ...otherProps }: Props) => {
     }
   }
 
-  console.log(index)
-
   return (
     <MenuItemStyle
       ref={menuItemRef}
@@ -55,7 +51,7 @@ const MenuItem = ({ children, icon, index, onClick, ...otherProps }: Props) => {
       {...otherProps}
     >
       {icon && <Icon size={14}>{icon}</Icon>}
-      <MenuItemLabelStyle>{children} + {index}</MenuItemLabelStyle>
+      <MenuItemLabelStyle>{children}</MenuItemLabelStyle>
     </MenuItemStyle>
   )
 }
