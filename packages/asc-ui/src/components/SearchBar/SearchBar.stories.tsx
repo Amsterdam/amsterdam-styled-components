@@ -6,19 +6,15 @@ import styled from '../../styled-components'
 import { svgFill } from '../../styles/utils'
 
 const SearchBarStory: React.FC<{}> = () => (
-  <>
-    <SearchBar
-      placeholder="Enter the search text"
-      onTextChanged={(text: string) => {
-        console.log('TCL: text', text)
-        action(`text changed: ${text}`)
-      }}
-      onSearch={(text: string) => {
-        console.log('TCL: text', text)
-        action(`button clicked: ${text}`)
-      }}
-    />
-  </>
+  <SearchBar
+    placeholder="Enter the search text"
+    onTextChanged={(text: string) => {
+      action(`text changed: ${text}`)
+    }}
+    onSearch={(text: string) => {
+      action(`button clicked: ${text}`)
+    }}
+  />
 )
 
 const SearchBarStoryWithChangedStyle: React.FC<{}> = () => {
@@ -38,13 +34,11 @@ const SearchBarStoryWithChangedStyle: React.FC<{}> = () => {
   `
 
   return (
-    <>
-      <SearchBar
-        styledComponent={ChangedSearchBarStyle}
-        onTextChanged={(text: string) => action(`text changed: ${text}`)}
-        onSearch={(text: string) => action(`button clicked: ${text}`)}
-      />
-    </>
+    <SearchBar
+      styledComponent={ChangedSearchBarStyle}
+      onTextChanged={(text: string) => action(`text changed: ${text}`)}
+      onSearch={(text: string) => action(`button clicked: ${text}`)}
+    />
   )
 }
 

@@ -13,15 +13,13 @@ const Input: React.FC<InputProps> = ({
   onChange,
   onKeyDown,
   ...otherProps
-}) => {
-  return (
-    <InputStyle
-      placeholder={placeholder}
-      onChange={onChange}
-      onKeyDown={onKeyDown}
-      {...otherProps}
-    />
-  )
-}
+}) => (
+  <InputStyle
+    placeholder={placeholder}
+    onChange={onChange}
+    onKeyDown={onKeyDown}
+    {...otherProps}
+  />
+)
 
 export default Input
