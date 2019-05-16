@@ -1,25 +1,18 @@
 import React from 'react'
 import InputStyle from '../../styles/components/InputStyle'
 
-type InputProps = {
+export interface InputProps {
+  id: string
   placeholder?: string
+  onBlur: any
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  onFocus: any
   onKeyDown: (event: React.KeyboardEvent<HTMLInputElement>) => void
   value: string
 }
 
-const Input: React.FC<InputProps> = ({
-  placeholder,
-  onChange,
-  onKeyDown,
-  ...otherProps
-}) => (
-  <InputStyle
-    placeholder={placeholder}
-    onChange={onChange}
-    onKeyDown={onKeyDown}
-    {...otherProps}
-  />
+const Input: React.FC<InputProps> = ({ ...props }: InputProps) => (
+  <InputStyle {...props} />
 )
 
 export default Input

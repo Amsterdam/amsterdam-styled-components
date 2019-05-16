@@ -5,14 +5,15 @@ import { InputStyle } from '../../styles/components'
 import IconButtonStyle from '../../styles/components/IconButtonStyle'
 import SearchBarStyle from '../../styles/components/SearchBarStyle'
 import { KeyboardKeys } from '../../types'
-import Input from '../Input'
+import TextField from '../TextField/TextField'
 
-type SearchBarProps = {
+interface SearchBarProps {
   minWidth?: string
   maxWidth?: string
   padding?: string
   styledComponent?: any
   placeholder?: string
+  label?: string
   onTextChanged: Function
   onSearch: Function
 }
@@ -45,12 +46,21 @@ const SearchBar: React.FC<SearchBarProps> = ({
     }
   }
 
+  const handleBlur = () => {}
+
+  const handleFocus = () => {}
+
   return (
     <ExtendedSearchBarStyle {...otherProps}>
-      <Input
+      <TextField
+        id="search-bar-id"
+        srOnly
+        label={placeholder}
         aria-label={placeholder}
         placeholder={placeholder}
+        onBlur={handleBlur}
         onChange={handleTextChanged}
+        onFocus={handleFocus}
         onKeyDown={handleKeyDown}
         value={text}
       />

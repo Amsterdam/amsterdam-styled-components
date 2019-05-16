@@ -20,8 +20,18 @@ const keyEvent = (value: KeyboardKeys | number) => {
 }
 
 describe('Input', () => {
+  const onBlurMockFn = jest.fn()
   const onChangeMockFn = jest.fn()
+  const onFocusMockFn = jest.fn()
   const onKeyDownMockFn = jest.fn()
+  const props = {
+    id: 'id',
+    onBlur: onBlurMockFn,
+    onChange: onChangeMockFn,
+    onFocus: onFocusMockFn,
+    onKeyDown: onKeyDownMockFn,
+    value: 'test-value',
+  }
 
   afterEach(() => {
     jest.resetAllMocks()
@@ -30,13 +40,7 @@ describe('Input', () => {
   describe('component structure', () => {
     let component: Cheerio
     beforeEach(() => {
-      component = renderWithTheme(
-        <Input
-          onChange={onChangeMockFn}
-          onKeyDown={onKeyDownMockFn}
-          value="test-value"
-        />,
-      )
+      component = renderWithTheme(<Input {...props} />)
     })
 
     it('should render', () => {
@@ -49,13 +53,7 @@ describe('Input', () => {
     let input: any
 
     beforeEach(() => {
-      component = mount(
-        <Input
-          onChange={onChangeMockFn}
-          onKeyDown={onKeyDownMockFn}
-          value="test-value"
-        />,
-      )
+      component = mount(<Input {...props} />)
       input = component.find('input')
     })
 

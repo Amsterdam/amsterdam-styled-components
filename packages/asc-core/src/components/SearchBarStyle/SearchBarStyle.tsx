@@ -1,16 +1,25 @@
 import styled from '../../styled-components'
-import InputStyle from '../InputStyle'
 import IconButtonStyle from '../IconButtonStyle'
 import { svgFill } from '../../utils'
+
+export const TextFieldStyle = styled.div`
+  position: relative;
+
+  & > ${IconButtonStyle} {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+`
 
 const SearchBarStyle = styled.div`
   display: flex;
 
-  ${InputStyle} {
+  ${TextFieldStyle} {
     flex-grow: 1;
   }
 
-  ${IconButtonStyle} {
+  & > ${IconButtonStyle} {
     margin-left: 5px;
     padding: 10px;
     width: 40px;

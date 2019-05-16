@@ -1,18 +1,32 @@
 import * as React from 'react'
-import { FormLabelStyle, InputStyle } from '../../styles/components';
+import { ReactComponent as Close } from '@datapunt/asc-assets/lib/Icons/Close.svg'
+import { FormLabelStyle } from '../../styles/components'
+import Input, { InputProps } from '../Input/Input'
+import { TextFieldStyle } from '../../styles/components/SearchBarStyle/SearchBarStyle'
+import IconButton from '../IconButton'
 
-interface Props {
-  error?: boolean
+export interface TextFieldProps extends InputProps {
+  id: string
+  label?: string
+  srOnly: boolean
 }
 
-const TextField = ({ error = false }: Props) => {
-  const states = { error }
+const TextField = ({ id, label, srOnly, ...otherProps }: TextFieldProps) => {
   return (
-    <div>
-      <FormLabelStyle {...states}>Label!</FormLabelStyle>
-      <InputStyle />
-    </div>
+    <TextFieldStyle>
+      <FormLabelStyle htmlFor={id} srOnly={srOnly}>
+        {label}
+      </FormLabelStyle>
+      <Input id={id} {...otherProps} />
+      <IconButton aria-label="Close">
+        <Close />
+      </IconButton>
+    </TextFieldStyle>
   )
+}
+
+TextField.defaultProps = {
+  srOnly: false,
 }
 
 export default TextField

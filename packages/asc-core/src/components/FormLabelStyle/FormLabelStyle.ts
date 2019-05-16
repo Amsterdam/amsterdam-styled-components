@@ -1,14 +1,16 @@
 import styled from '../../styled-components'
+import { srOnlyStyle } from '../../utils'
 
 interface IProps {
-  error: boolean
+  htmlFor?: string
+  srOnly: boolean
 }
 
-const FormLabelStyle = styled.label.attrs({
+const FormLabelStyle = styled.label.attrs<IProps>({
   type: 'text',
-})`
-  margin-bottom: 5px;
-  color: ${(props: IProps) => (props.error ? 'blue' : 'black')};
+  htmlFor: ({ htmlFor }: IProps) => htmlFor,
+})<IProps>`
+  ${srOnlyStyle()}
 `
 
 export default FormLabelStyle
