@@ -13,6 +13,7 @@ describe('SubMenu', () => {
   const mockSetExpandedChild = jest.fn()
   const mockResetExpandedChild = jest.fn()
   const mockOnKeyDown = jest.fn()
+  const mockOnClose = jest.fn()
 
   describe('In closed state', () => {
     const mockContext = {
@@ -22,6 +23,7 @@ describe('SubMenu', () => {
       setExpandedChild: mockSetExpandedChild,
       resetExpandedChild: mockResetExpandedChild,
       onKeyDown: mockOnKeyDown,
+      onClose: mockOnClose,
     }
 
     const component = mount(
@@ -50,6 +52,28 @@ describe('SubMenu', () => {
 
     it('should handle the onKeyDown event', () => {
       menuButton.simulate('keydown', { key: 'Enter' })
+
+      expect(mockSetExpandedChild).toHaveBeenCalled()
+
+      menuButton.simulate('keydown', { key: 'ArrowDown' })
+
+      expect(mockOnKeyDown).toHaveBeenCalled()
+    })
+
+    it('should handle the onBlur event', () => {
+      menuButton.simulate('blur')
+
+      expect(mockOnClose).toHaveBeenCalled()
+    })
+
+    it('should handle the onMouseOver event', () => {
+      menuButton.simulate('mouseover')
+
+      expect(mockSetExpandedChild).toHaveBeenCalled()
+    })
+
+    it('should handle the onMouseLeave event', () => {
+      component.simulate('mouseleave')
 
       expect(mockSetExpandedChild).toHaveBeenCalled()
     })

@@ -29,7 +29,9 @@ const MenuDropDown: React.FC<Props> = ({
 }) => {
   const menuRef = React.useRef<HTMLDivElement>(null)
 
-  const { open, onKeyDown, onClose, onClick }: any = React.useContext(MenuContext)
+  const { open, onKeyDown, onClose, onClick }: any = React.useContext(
+    MenuContext,
+  )
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === KeyboardKeys.Enter) {
@@ -42,45 +44,46 @@ const MenuDropDown: React.FC<Props> = ({
   const clonedChildren = React.Children.map(children, (child, index) =>
     React.cloneElement(child as React.ReactElement<any>, {
       index: currentIndex && currentIndex + index + 1,
-    })
+    }),
   )
 
   return (
-      <MenuDropDownStyle
-        id={id}
-        ref={menuRef}
-        onKeyDown={handleKeyPress}
-        onBlur={onClose}
-        onMouseLeave={() => setTimeout(onClick, 200)}
-        tabIndex={0}
+    <MenuDropDownStyle
+      id={id}
+      ref={menuRef}
+      onKeyDown={handleKeyPress}
+      onBlur={onClose}
+      onMouseLeave={() => setTimeout(onClick, 200)}
+      onMouseOver={() => !open && setTimeout(onClick, 200)}
+      tabIndex={0}
+    >
+      <MenuDropDownButtonStyle
+        {...{
+          focused: open,
+          height: buttonHeight,
+        }}
+        onMouseLeave={() => !open && setTimeout(onClick, 200)}
+        onClick={onClick}
       >
-        <MenuDropDownButtonStyle
-          {...{
-            focused: open,
-            height: buttonHeight,
-          }}
-          onMouseOut={() => !open && setTimeout(onClick, 200)}
-          onClick={onClick}
-        >
         {icon && <Icon>{icon}</Icon>}
-        </MenuDropDownButtonStyle>
-        <MenuList
-          {...{
-            position,
-            id,
-            open,
-            top: buttonHeight,
-          }}
-          onClose={onClose}
-        >
-          {clonedChildren}
-        </MenuList>
-      </MenuDropDownStyle>
+      </MenuDropDownButtonStyle>
+      <MenuList
+        {...{
+          position,
+          id,
+          open,
+          top: buttonHeight,
+        }}
+        onClose={onClose}
+      >
+        {clonedChildren}
+      </MenuList>
+    </MenuDropDownStyle>
   )
 }
 
 MenuDropDown.defaultProps = {
-  buttonHeight: 50
+  buttonHeight: 50,
 }
 
 export default MenuDropDown

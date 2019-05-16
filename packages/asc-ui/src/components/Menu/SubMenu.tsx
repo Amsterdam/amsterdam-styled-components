@@ -4,7 +4,15 @@ import { KeyboardKeys } from '../../types'
 import { MenuContext } from './Menu'
 import { Icon } from '../../index'
 
-const { MenuButtonStyle, SubMenuButtonStyle, SubMenuWrapperStyle, SubMenuListWrapperStyle, MenuListWrapperStyle, SubMenuListStyle, MenuListStyle } = MenuStyle
+const {
+  MenuButtonStyle,
+  SubMenuButtonStyle,
+  SubMenuWrapperStyle,
+  SubMenuListWrapperStyle,
+  MenuListWrapperStyle,
+  SubMenuListStyle,
+  MenuListStyle,
+} = MenuStyle
 
 type Props = {
   role?: string
@@ -74,7 +82,9 @@ const SubMenu: React.FC<Props> = ({
   )
 
   const SubMenuButton = mobile ? SubMenuButtonStyle : MenuButtonStyle
-  const SubMenuListWrapper = mobile ? SubMenuListWrapperStyle : MenuListWrapperStyle
+  const SubMenuListWrapper = mobile
+    ? SubMenuListWrapperStyle
+    : MenuListWrapperStyle
   const SubMenuList = mobile ? SubMenuListStyle : MenuListStyle
 
   return (
@@ -83,26 +93,28 @@ const SubMenu: React.FC<Props> = ({
       ref={subMenuRef}
       focused={expanded}
       onKeyDown={handleKeyPress}
-      onBlur={() => setTimeout(onClose(subMenuRef), 600)}
-      onMouseLeave={() => !mobile && setTimeout(handleOnClick(true), 600)}
+      onBlur={() => setTimeout(onClose(subMenuRef), 200)}
+      onMouseLeave={() => !mobile && setTimeout(handleOnClick(true), 200)}
     >
       <SubMenuButton
         focused={expanded}
         height={buttonHeight}
-        onMouseOver={() => !mobile && setTimeout(handleOnClick, 300)}
+        onMouseOver={() => !mobile && setTimeout(handleOnClick, 200)}
         onClick={() => handleOnClick()}
         {...otherProps}
       >
-        {label && <MenuStyle.SubMenuButtonLabelStyle>{label}</MenuStyle.SubMenuButtonLabelStyle>}
+        {label && (
+          <MenuStyle.SubMenuButtonLabelStyle>
+            {label}
+          </MenuStyle.SubMenuButtonLabelStyle>
+        )}
         {mobile && (
           <Icon inline size={24} padding={4} rotate={expanded ? 180 : 0}>
             {arrowIcon}
           </Icon>
         )}
       </SubMenuButton>
-      <SubMenuListWrapper
-        aria-hidden={expanded ? false : true}
-      >
+      <SubMenuListWrapper aria-hidden={expanded ? false : true}>
         <SubMenuList top={buttonHeight} labelId={id}>
           {clonedChildren}
         </SubMenuList>
@@ -112,7 +124,7 @@ const SubMenu: React.FC<Props> = ({
 }
 
 SubMenu.defaultProps = {
-  buttonHeight: 50
+  buttonHeight: 50,
 }
 
 export default SubMenu
