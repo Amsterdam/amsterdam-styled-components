@@ -1,4 +1,4 @@
-import { ascDefaultTheme, StyledComponents, Theme } from './styles'
+import { ServerStyleSheet, Theme, ascDefaultTheme } from '@datapunt/asc-core'
 
 import IconButton from './components/IconButton'
 import Icon from './components/Icon'
@@ -15,14 +15,11 @@ import ContextMenu from './components/ContextMenu'
 import ContextMenuButton from './components/ContextMenu/ContextMenuButton'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
 import Header from './components/Header/Header'
+import Divider from './components/Divider'
+import ListItem from './components/ListItem'
+import GlobalStyle from './components/GlobalStyle'
 
 import ThemeProvider from './theme'
-
-import {
-  DividerStyle as Divider,
-  GlobalStyle,
-  ListItemStyle as ListItem,
-} from './styles/components'
 
 // Components
 export {
@@ -45,4 +42,4 @@ export {
   Header,
 }
 
-export { GlobalStyle, StyledComponents, Theme, ThemeProvider, ascDefaultTheme }
+export { GlobalStyle, ServerStyleSheet, Theme, ThemeProvider, ascDefaultTheme }

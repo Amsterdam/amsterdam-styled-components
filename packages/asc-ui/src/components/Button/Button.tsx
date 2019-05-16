@@ -1,7 +1,5 @@
 import * as React from 'react'
-import ButtonStyle, {
-  ButtonStyleProps,
-} from '../../styles/components/ButtonStyle'
+import ButtonStyle, { Props as ButtonStyleProps } from './ButtonStyle'
 
 type Props = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>

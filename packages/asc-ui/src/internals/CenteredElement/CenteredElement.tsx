@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styled from '../../styled-components'
+import styled from '@datapunt/asc-core'
 
 const CenteredElementStyle = styled.div`
   display: flex;

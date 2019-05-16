@@ -1,9 +1,7 @@
 import * as React from 'react'
-import {
-  RadioGroupStyle,
-  RadioLabelStyle,
-  RadioItemStyle,
-} from '../../styles/components/RadioStyle'
+import RadioItemStyle from './RadioItemStyle'
+import RadioLabelStyle from './RadioLabelStyle'
+import RadioGroupStyle from './RadioGroupStyle'
 
 interface Props {
   id: string

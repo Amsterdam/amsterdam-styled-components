@@ -7,10 +7,5 @@
   "baseUrl": "./src",
   "include": [
     "./src"
-  ],
-  "paths": {
-    "@datapunt/asc-core/components": [
-      "./asc-core/src/components"
-    ]
-  }
+  ]
 }

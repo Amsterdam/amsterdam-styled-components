@@ -1,7 +1,5 @@
 import React from 'react'
-import ButtonBarStyle, {
-  ButtonBarStyleProps,
-} from '../../styles/components/ButtonBarStyle'
+import ButtonBarStyle, { Props as ButtonBarStyleProps } from './ButtonBarStyle'
 
 export type Props = ButtonBarStyleProps
 

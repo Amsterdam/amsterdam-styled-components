@@ -1,7 +1,7 @@
 import React from 'react'
-import HeaderLogoTextStyle from '../../styles/components/HeaderStyle/HeaderLogoTextStyle'
+import HeaderLogoTextStyle from './HeaderLogoTextStyle'
 import AmsterdamLogo from '../AmsterdamLogo/AmsterdamLogo'
-import HeaderTitleStyle from '../../styles/components/HeaderStyle/HeaderTitleStyle'
+import HeaderTitleStyle from './HeaderTitleStyle'
 
 type Props = {
   homeLink: string
