@@ -4,20 +4,20 @@ import { fromTheme } from '.'
 
 import BreakpointsInterface = Theme.BreakpointsInterface
 
-export const color = (
-  colorType?: Theme.TypeLevel,
-  variant: string = 'main',
-) => ({ theme }: { theme: Theme.ThemeInterface }) => {
-  return colorType
-    ? fromTheme(`colors.${[colorType]}.${[variant]}`)({ theme })
-    : fromTheme('colors.tint.level1')({ theme })
-}
-
 export const getColorFromTheme = (
   theme: Theme.ThemeInterface,
   colorType?: Theme.TypeLevel,
   variant: string = 'main',
 ) => {
+  return colorType
+    ? fromTheme(`colors.${[colorType]}.${[variant]}`)({ theme })
+    : fromTheme('colors.tint.level1')({ theme })
+}
+
+export const color = (
+  colorType?: Theme.TypeLevel,
+  variant: string = 'main',
+) => ({ theme }: { theme: Theme.ThemeInterface }) => {
   return colorType
     ? fromTheme(`colors.${[colorType]}.${[variant]}`)({ theme })
     : fromTheme('colors.tint.level1')({ theme })
