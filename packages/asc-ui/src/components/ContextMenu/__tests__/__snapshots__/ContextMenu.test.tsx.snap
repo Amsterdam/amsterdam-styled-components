@@ -4,6 +4,7 @@ exports[`ContextMenu should render 1`] = `
 <styled.div
   onBlur={[Function]}
   onKeyDown={[Function]}
+  open={false}
 >
   <ContextMenuButton
     arrowIcon={<svg-mock />}

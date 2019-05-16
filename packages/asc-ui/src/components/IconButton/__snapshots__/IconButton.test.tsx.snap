@@ -7,7 +7,7 @@ exports[`IconButton should render the IconButton 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-bwzfXH",
+        "componentId": "sc-htpNat",
         "isStatic": false,
         "rules": Array [
           "
@@ -19,14 +19,12 @@ exports[`IconButton should render the IconButton 1`] = `
   font-size: 16px;
   font-weight: normal;
   padding: 0 10px 0 10px;
-
   ",
           [Function],
           "
-
   ",
           "transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;",
-          ";
+          "
   background: ",
           [Function],
           ";
@@ -49,9 +47,21 @@ exports[`IconButton should render the IconButton 1`] = `
           "
 ",
           "
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 5px;
-  width: 30px;
-  height: 30px;
+  ",
+          [Function],
+          "
+
+  ",
+          ".sc-bwzfXH",
+          " {
+    ",
+          [Function],
+          "
+  }
 ",
         ],
       },
@@ -60,7 +70,7 @@ exports[`IconButton should render the IconButton 1`] = `
         "sc-bdVaJa",
       ],
       "render": [Function],
-      "styledComponentId": "sc-bwzfXH",
+      "styledComponentId": "sc-htpNat",
       "target": "button",
       "toString": [Function],
       "warnTooManyClasses": [Function],

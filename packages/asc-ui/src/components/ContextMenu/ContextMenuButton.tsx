@@ -1,6 +1,6 @@
 import React from 'react'
 import { Icon } from '../../index'
-import ContextMenuButtonStyle from '../../styles/components/ContextMenuStyle/ContextMenuButtonStyle';
+import ContextMenuButtonStyle from '../../styles/components/ContextMenuStyle/ContextMenuButtonStyle'
 
 const ContextMenuButton = ({
   id,

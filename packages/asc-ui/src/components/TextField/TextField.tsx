@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { FormLabelStyle, InputStyle } from '../../styles/components';
+import { FormLabelStyle, InputStyle } from '../../styles/components'
 
 interface Props {
   error?: boolean
