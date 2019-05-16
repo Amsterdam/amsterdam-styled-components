@@ -7,6 +7,7 @@ import { svgFill } from '../../styles/utils'
 
 const SearchBarStory: React.FC<{}> = () => (
   <SearchBar
+    maxWidth="1400px"
     placeholder="Enter the search text"
     onTextChanged={(text: string) => {
       console.log('TCL: text', text)

@@ -3,7 +3,14 @@ import IconButtonStyle from '../IconButtonStyle'
 import { svgFill } from '../../utils'
 import TextFieldStyle from '../TextFieldStyle'
 
-const SearchBarStyle = styled.div`
+interface Props {
+  minWidth: string
+  maxWidth: string
+}
+
+const SearchBarStyle = styled.div<Props>`
+  min-width: ${({minWidth}) => minWidth};
+  max-width: ${({maxWidth}) => maxWidth};
   display: flex;
 
   ${TextFieldStyle} {
