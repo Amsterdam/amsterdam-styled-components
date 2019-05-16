@@ -18,7 +18,7 @@ const defaultProps = {
 }
 
 const IconStyle = styled.span<Props>`
-  display: ${({ inline }) => (inline ? 'inline-block' : 'block')};
+  display: ${({ inline }) => (inline ? 'inline-flex' : 'flex')};
   ${({ iconUrl }) => iconUrl && `background-image: ${iconUrl}`}
   ${({ size = defaultProps.size, padding = defaultProps.padding }) => `
     width: ${size - padding * 2}px;
