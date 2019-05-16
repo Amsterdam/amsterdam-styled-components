@@ -1,6 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchBar should render 1`] = `
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  padding: undefinedpx;
+  box-sizing: content-box;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c5 > svg {
+  width: inherit;
+  height: inherit;
+}
+
 .c4 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -20,6 +39,18 @@ exports[`SearchBar should render 1`] = `
   -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
   transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
   background: #ec0000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding: 5px;
   width: 30px;
   height: 30px;
@@ -40,22 +71,6 @@ exports[`SearchBar should render 1`] = `
   display: block;
   min-height: inherit;
   font-size: 0;
-}
-
-.c5 {
-  display: block;
-  width: 20px;
-  height: 20px;
-  padding: undefinedpx;
-  box-sizing: content-box;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-.c5 > svg {
-  width: inherit;
-  height: inherit;
 }
 
 .c2 {
