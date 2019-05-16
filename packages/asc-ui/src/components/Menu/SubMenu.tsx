@@ -47,35 +47,29 @@ const SubMenu: React.FC<Props> = ({
     }
   }, [selectedChild])
 
-  const handleOnClick = (e: React.KeyboardEvent | React.MouseEvent) => {
-    e.preventDefault()
+  const handleOnClick = (collapse: boolean = false): any => {
+    const nrOfChildren = React.Children.count(children)
 
-      const nrOfChildren = React.Children.count(children)
-
-      if (expandedChild) {
-        resetExpandedChild()
-      }
-      if (!expandedChild || expandedChildIndex !== currentIndex) {
-        setExpandedChild(nrOfChildren, currentIndex)
-      }
+    if (collapse) {
+      resetExpandedChild()
+    }
+    if (!expandedChild || expandedChildIndex !== currentIndex) {
+      setExpandedChild(nrOfChildren, currentIndex)
+    }
   }
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === KeyboardKeys.Enter) {
-      handleOnClick(e)
+      handleOnClick()
     } else {
       onKeyDown(e)
     }
   }
 
-  const handleOnClose = () => {
-    setTimeout(onClose(subMenuRef), 300)
-  }
-
   const clonedChildren = React.Children.map(children, (child, index) =>
     React.cloneElement(child as React.ReactElement<any>, {
       index: currentIndex && currentIndex + index + 1,
-      height: 44
+      height: 44,
     }),
   )
 
@@ -83,14 +77,20 @@ const SubMenu: React.FC<Props> = ({
   const SubMenuListWrapper = mobile ? SubMenuListWrapperStyle : MenuListWrapperStyle
   const SubMenuList = mobile ? SubMenuListStyle : MenuListStyle
 
-  console.log('handlesubmenu', expanded)
-
   return (
-    <SubMenuWrapperStyle tabIndex={0} ref={subMenuRef} onClick={handleOnClick}
-    onKeyDown={handleKeyPress} focused={expanded} onMouseLeave={handleOnClose} onMouseOver={handleOnClick}>
+    <SubMenuWrapperStyle
+      tabIndex={0}
+      ref={subMenuRef}
+      focused={expanded}
+      onKeyDown={handleKeyPress}
+      onBlur={() => setTimeout(onClose(subMenuRef), 600)}
+      onMouseLeave={() => !mobile && setTimeout(handleOnClick(true), 600)}
+    >
       <SubMenuButton
         focused={expanded}
         height={buttonHeight}
+        onMouseOver={() => !mobile && setTimeout(handleOnClick, 300)}
+        onClick={() => handleOnClick()}
         {...otherProps}
       >
         {label && <MenuStyle.SubMenuButtonLabelStyle>{label}</MenuStyle.SubMenuButtonLabelStyle>}

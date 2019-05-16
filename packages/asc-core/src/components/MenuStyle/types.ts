@@ -1,3 +1,5 @@
+import { Theme } from '../../theme'
+
 export namespace MenuStyleProps {
   export enum Position {
     bottom = 'bottom',
@@ -6,7 +8,6 @@ export namespace MenuStyleProps {
 
   export type MenuButtonStyleProps = {
     focused?: boolean
-    mobile?: boolean
     height?: number
   }
 
@@ -18,6 +19,7 @@ export namespace MenuStyleProps {
     open?: boolean
     divider?: boolean
     height?: number
+    hoverColor?: Theme.TypeLevel
   }
 
   export type MenuListStyleProps = {

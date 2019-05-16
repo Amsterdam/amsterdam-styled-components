@@ -3,7 +3,7 @@ import { MenuStyleProps } from './types'
 import MenuItemStyle from './MenuItemStyle'
 import IconStyle from '../IconStyle'
 import MenuButtonStyle, { MenuButtonLabelStyle } from './MenuButtonStyle'
-import SubMenuButtonStyle from './SubMenuButtonStyle'
+import SubMenuButtonStyle, { SubMenuButtonLabelStyle } from './SubMenuButtonStyle'
 import { color, svgFill } from '../../utils'
 
 export const SubMenuWrapperStyle = styled.div<
@@ -20,7 +20,9 @@ export const SubMenuWrapperStyle = styled.div<
       }
     }
     ${SubMenuButtonStyle} {
-      border-left-color: ${color('secondary')}
+      ${SubMenuButtonLabelStyle}:first-of-type  {
+        color: ${color('secondary')};
+      }
 
       ${IconStyle} {
         & > svg {
@@ -33,17 +35,22 @@ export const SubMenuWrapperStyle = styled.div<
     background-color: ${({ theme, focused }) =>
       focused ? color('tint', 'level2')({ theme }) : 'transparent'}
 
-    ${MenuButtonLabelStyle} {
+    ${MenuButtonLabelStyle}:first-of-type {
       border-bottom-color: ${({ theme, focused }) =>
         focused ? color('secondary')({ theme }) : 'transparent'}
-      color: ${({ theme, focused }) =>
-        focused ? color('secondary')({ theme }) : 'inherit'}
     }
 
     ${IconStyle} {
       & > svg {
         ${({ theme, focused }) => focused && svgFill('secondary')({ theme })};
       }
+    }
+  }
+
+  ${SubMenuButtonStyle} {
+    ${SubMenuButtonLabelStyle}:first-of-type  {
+      color: ${({ theme, focused }) =>
+        focused ? color('secondary')({ theme }) : 'inherit'}
     }
   }
 `
@@ -63,7 +70,6 @@ const SubMenuListStyle = styled.ul<MenuStyleProps.MenuListStyleProps>`
     &:hover,
     &:focus {
       background-color: transparent;
-      color: ${color('secondary')};
     }
   }
 `

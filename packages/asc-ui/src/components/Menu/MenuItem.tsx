@@ -13,12 +13,13 @@ type Props = {
   divider?: boolean
   children?: any
   index?: number
+  hoverColor?: string
 } & MenuStyleProps.MenuItemStyleProps
 
-const MenuItem = ({ children, icon, index, onClick, ...otherProps }: Props) => {
+const MenuItem = ({ children, icon, index, onClick, hoverColor, ...otherProps }: Props) => {
   const menuItemRef = React.useRef<HTMLLIElement>(null)
 
-  const { selectedChild }: any = React.useContext(MenuContext)
+  const { selectedChild, expandedChild }: any = React.useContext(MenuContext)
 
   const focused = index === selectedChild
 
@@ -45,6 +46,7 @@ const MenuItem = ({ children, icon, index, onClick, ...otherProps }: Props) => {
     <MenuItemStyle
       ref={menuItemRef}
       focused={focused}
+      hoverColor={expandedChild ? 'secondary' : hoverColor}
       onClick={handleOnClick}
       onKeyDown={handleKeyPress}
       tabIndex={0}
@@ -57,7 +59,8 @@ const MenuItem = ({ children, icon, index, onClick, ...otherProps }: Props) => {
 }
 
 MenuItem.defaultProps = {
-  height: 50
+  height: 50,
+  hoverColor: 'none'
 }
 
 export default MenuItem

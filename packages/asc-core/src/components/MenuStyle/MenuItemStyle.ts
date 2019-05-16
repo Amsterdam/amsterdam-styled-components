@@ -44,13 +44,16 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   &:hover,
   &:focus {
     outline: none;
-    background-color: ${color('tint', 'level2')} ${MenuItemLabelStyle} {
+    background-color: ${color('tint', 'level2')};
+
+    ${MenuItemLabelStyle} {
       border-bottom-color: ${color('secondary', 'main')};
+      color: ${({ theme, hoverColor}) => hoverColor ? color(hoverColor)({ theme }) : 'inherit'};
     }
 
     ${IconStyle} {
       & > svg {
-        ${svgFill('secondary')};
+        ${({ theme, hoverColor}) => svgFill(hoverColor)({ theme })};
       }
     }
   }
