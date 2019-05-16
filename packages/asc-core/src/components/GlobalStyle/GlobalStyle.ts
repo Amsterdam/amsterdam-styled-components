@@ -13,4 +13,8 @@ export default createGlobalStyle`
   [aria-hidden="true"] {
     display: none;
   }
+  
+  *:focus{
+    outline: none;
+  }
 `

@@ -6,10 +6,10 @@ import { flexboxMinHeightFix } from '../shared/ie-fixes'
 
 export type Props = {
   color?: Theme.TypeLevel
-  size?: 'normal' | 'small'
   square?: boolean
   hoverColor?: string
   href?: string
+  size?: number
 }
 
 const ButtonBaseStyle = styled.button<Props>`
@@ -21,10 +21,8 @@ const ButtonBaseStyle = styled.button<Props>`
   font-size: 16px;
   font-weight: normal;
   padding: 0 10px 0 10px;
-
   ${focusStyle()}
-
-  ${transitions(['color', 'background-color'], '0.1s ease-in-out')};
+  ${transitions(['color', 'background-color'], '0.1s ease-in-out')}
   background: ${({ color, theme }) => themeColor(color)({ theme })};
 
   &:hover {
