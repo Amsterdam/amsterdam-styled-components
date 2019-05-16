@@ -48,12 +48,13 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
 
     ${MenuItemLabelStyle} {
       border-bottom-color: ${color('secondary', 'main')};
-      color: ${({ theme, hoverColor}) => hoverColor ? color(hoverColor)({ theme }) : 'inherit'};
+      color: ${({ theme, hoverColor }) =>
+        hoverColor ? color(hoverColor)({ theme }) : 'inherit'};
     }
 
     ${IconStyle} {
       & > svg {
-        ${({ theme, hoverColor}) => svgFill(hoverColor)({ theme })};
+        ${({ theme, hoverColor }) => svgFill(hoverColor)({ theme })};
       }
     }
   }

@@ -50,7 +50,7 @@ const SubMenu: React.FC<Props> = ({
   const handleOnClick = (collapse: boolean = false): any => {
     const nrOfChildren = React.Children.count(children)
 
-    if (collapse) {
+    if (collapse || expandedChild) {
       resetExpandedChild()
     }
     if (!expandedChild || expandedChildIndex !== currentIndex) {
