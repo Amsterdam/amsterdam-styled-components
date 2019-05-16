@@ -27,6 +27,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   ...otherProps
 }) => {
   const ExtendedSearchBarStyle = styledComponent
+  const inputRef = React.useRef<HTMLInputElement>(null)
 
   const [text, setText] = React.useState('')
 
@@ -48,6 +49,12 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
   const handleBlur = () => {}
 
+  const handleTextClear = () => {
+    setText('')
+    onTextChanged(text)
+    if (inputRef && inputRef.current) inputRef.current.focus()
+  }
+
   const handleFocus = () => {}
 
   return (
@@ -60,8 +67,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
         placeholder={placeholder}
         onBlur={handleBlur}
         onChange={handleTextChanged}
+        onClear={handleTextClear}
         onFocus={handleFocus}
         onKeyDown={handleKeyDown}
+        inputRef={inputRef}
         value={text}
       />
       <IconButton aria-label="Search" color="secondary" onClick={handleSubmit}>

@@ -8,11 +8,12 @@ export interface InputProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   onFocus: any
   onKeyDown: (event: React.KeyboardEvent<HTMLInputElement>) => void
+  inputRef?: any
   value: string
 }
 
-const Input: React.FC<InputProps> = ({ ...props }: InputProps) => (
-  <InputStyle {...props} />
+const Input: React.FC<InputProps> = ({ inputRef, ...props }: InputProps) => (
+  <InputStyle {...props} ref={inputRef} />
 )
 
 export default Input

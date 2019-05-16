@@ -24,7 +24,7 @@ const SearchBarStoryWithChangedStyle: React.FC<{}> = () => {
   const ChangedSearchBarStyle = styled(SearchBarStyle)`
     align-content: flex-start;
 
-    ${IconButtonStyle} {
+    & > ${IconButtonStyle} {
       order: -1;
       margin-left: 0px;
       margin-right: 5px;

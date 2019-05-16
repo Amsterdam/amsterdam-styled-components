@@ -16,6 +16,7 @@ describe('<TextField />', () => {
           value="test-value"
           onBlur={mockFn}
           onChange={mockFn}
+          onClear={mockFn}
           onFocus={mockFn}
           onKeyDown={mockFn}
         />

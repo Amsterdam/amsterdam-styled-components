@@ -3,29 +3,21 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import TextField from './TextField'
 
-const TextFieldComponent: React.FC<{}> = () => (
-  <TextField
-    id="test-id"
-    label="description"
-    onBlur={action('onBlur')}
-    onChange={action('onChange')}
-    onFocus={action('onFocus')}
-    onKeyDown={action('onKeyDown')}
-    value=""
-  />
-)
+const props = {
+  id: 'test-id',
+  label: 'description',
+  onBlur: action('onBlur'),
+  onChange: action('onChange'),
+  onClear: action('onClear'),
+  onFocus: action('onFocus'),
+  onKeyDown: action('onKeyDown'),
+  value: '',
+}
+
+const TextFieldComponent: React.FC<{}> = () => <TextField {...props} />
 
 const TextFieldSrOnlyComponent: React.FC<{}> = () => (
-  <TextField
-    id="test-id"
-    label="description"
-    srOnly
-    onBlur={action('onBlur')}
-    onChange={action('onChange')}
-    onFocus={action('onFocus')}
-    onKeyDown={action('onKeyDown')}
-    value=""
-  />
+  <TextField {...props} srOnly />
 )
 
 storiesOf('Atoms/TextField', module)

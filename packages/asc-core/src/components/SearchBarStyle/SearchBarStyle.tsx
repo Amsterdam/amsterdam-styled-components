@@ -1,16 +1,7 @@
 import styled from '../../styled-components'
 import IconButtonStyle from '../IconButtonStyle'
 import { svgFill } from '../../utils'
-
-export const TextFieldStyle = styled.div`
-  position: relative;
-
-  & > ${IconButtonStyle} {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-  }
-`
+import TextFieldStyle from '../TextFieldStyle'
 
 const SearchBarStyle = styled.div`
   display: flex;

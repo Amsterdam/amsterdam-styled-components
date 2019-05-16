@@ -15,6 +15,7 @@ import ContextMenu from './components/ContextMenu'
 import ContextMenuButton from './components/ContextMenu/ContextMenuButton'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
 import Header from './components/Header/Header'
+import SearchBar from './components/SearchBar/SearchBar'
 
 import ThemeProvider from './theme'
 
@@ -39,6 +40,7 @@ export {
   ContextMenuButton,
   ContextMenuItem,
   Header,
+  SearchBar,
 }
 
 export { GlobalStyle, StyledComponents, Theme, ThemeProvider, ascDefaultTheme }
