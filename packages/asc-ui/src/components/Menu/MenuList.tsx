@@ -1,5 +1,5 @@
 import React from 'react'
-import MenuStyle, { MenuStyleProps } from '../../styles/components/MenuStyle'
+import MenuStyle, { MenuStyleProps } from './index'
 import { MenuContext } from './Menu'
 
 const { MenuListWrapperStyle, MenuListStyle } = MenuStyle
@@ -14,13 +14,7 @@ type Props = {
   arrowIcon?: React.ReactNode
 } & MenuStyleProps.MenuListStyleProps
 
-const MenuList = ({
-  id,
-  children,
-  open,
-  onClose,
-  ...otherProps
-}: Props) => {
+const MenuList = ({ id, children, open, onClose, ...otherProps }: Props) => {
   const menuListRef = React.useRef<HTMLDivElement>(null)
   const {
     expandedChild,
@@ -44,16 +38,14 @@ const MenuList = ({
       onBlur={() => onClose(menuListRef)}
       {...otherProps}
     >
-      <MenuListStyle labelId={id}>
-        {clonedChildren}
-      </MenuListStyle>
+      <MenuListStyle labelId={id}>{clonedChildren}</MenuListStyle>
     </MenuListWrapperStyle>
   )
 }
 
 MenuList.defaultProps = {
   position: MenuStyleProps.Position.top,
-  top: 0
+  top: 0,
 }
 
 export default MenuList

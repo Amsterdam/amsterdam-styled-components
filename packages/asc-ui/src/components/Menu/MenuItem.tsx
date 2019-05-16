@@ -1,5 +1,5 @@
 import React from 'react'
-import MenuStyle, { MenuStyleProps } from '../../styles/components/MenuStyle'
+import MenuStyle, { MenuStyleProps } from './index'
 import { Icon } from '../..'
 import { KeyboardKeys } from '../../types'
 import { MenuContext } from './Menu'
@@ -16,7 +16,14 @@ type Props = {
   hoverColor?: string
 } & MenuStyleProps.MenuItemStyleProps
 
-const MenuItem = ({ children, icon, index, onClick, hoverColor, ...otherProps }: Props) => {
+const MenuItem = ({
+  children,
+  icon,
+  index,
+  onClick,
+  hoverColor,
+  ...otherProps
+}: Props) => {
   const menuItemRef = React.useRef<HTMLLIElement>(null)
 
   const { selectedChild, expandedChild }: any = React.useContext(MenuContext)
@@ -60,7 +67,7 @@ const MenuItem = ({ children, icon, index, onClick, hoverColor, ...otherProps }:
 
 MenuItem.defaultProps = {
   height: 50,
-  hoverColor: 'none'
+  hoverColor: 'none',
 }
 
 export default MenuItem

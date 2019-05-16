@@ -1,5 +1,5 @@
 import React from 'react'
-import ContextMenuButton from './ContextMenuButton'
+import ContextMenuButtonStyle from './ContextMenuButton'
 import MenuList from './ContextMenuList'
 import { KeyboardKeys } from '../../types'
 import ownerDocument from '../../utils/ownerDocument'
@@ -124,7 +124,7 @@ class ContextMenu extends React.Component<Props, State> {
         onBlur={this.onClose}
         {...otherProps}
       >
-        <ContextMenuButton
+        <ContextMenuButtonStyle
           {...{
             icon,
             open,

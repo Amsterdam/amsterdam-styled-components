@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
-import MenuBar from './MenuBar'
-import MenuItem from './MenuItem'
+import MenuBar from '../MenuBar'
+import MenuItem from '../MenuItem'
 
 describe('MenuBar', () => {
   const mockOnClick = jest.fn()

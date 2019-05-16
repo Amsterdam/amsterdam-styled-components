@@ -1,9 +1,8 @@
 import * as React from 'react'
 import { mount } from 'enzyme'
-import Menu from './Menu'
-import MenuItem from './MenuItem'
-import { MenuContext } from './Menu'
-import MenuDropDown from './MenuDropDown'
+import MenuItem from '../MenuItem'
+import Menu, { MenuContext } from '../Menu'
+import MenuDropDown from '../MenuDropDown'
 
 describe('Menu', () => {
   const mockOnClick = jest.fn()

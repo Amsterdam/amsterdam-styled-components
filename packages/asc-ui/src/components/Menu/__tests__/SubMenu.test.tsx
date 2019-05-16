@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { mount } from 'enzyme'
 import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
-import SubMenu from './SubMenu'
-import MenuItem from './MenuItem'
-import { MenuContext } from './Menu'
-import MenuStyle from '../../styles/components/MenuStyle'
-import { Icon } from '../..'
+import SubMenu from '../SubMenu'
+import MenuItem from '../MenuItem'
+import { MenuContext } from '../Menu'
+import MenuStyle from '../index'
+import { Icon } from '../../..'
 
 describe('SubMenu', () => {
   const label = 'This is a button'

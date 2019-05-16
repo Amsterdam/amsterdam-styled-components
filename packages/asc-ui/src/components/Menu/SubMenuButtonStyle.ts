@@ -1,4 +1,4 @@
-import styled from '../../styled-components'
+import styled from '@datapunt/asc-core'
 import { MenuStyleProps } from './types'
 import MenuButtonStyle, { MenuButtonLabelStyle } from './MenuButtonStyle'
 import { color } from '../../utils'

@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
-import MenuItem from './MenuItem'
-import MenuStyle from '../../styles/components/MenuStyle'
-import { Icon } from '../..'
+import MenuItem from '../MenuItem'
+import MenuStyle from '../index'
+import { Icon } from '../../..'
 
 describe('MenuItem', () => {
   const children = 'Click me'

@@ -1,6 +1,6 @@
-import styled from '../../styled-components'
+import styled from '@datapunt/asc-core'
 import { MenuStyleProps } from './types'
-import IconStyle from '../IconStyle'
+import IconStyle from '../Icon/IconStyle'
 import { svgFill, color, getTypographyFromTheme } from '../../utils'
 
 export const MenuItemLabelStyle = styled.span<

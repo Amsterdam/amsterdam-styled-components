@@ -1,4 +1,4 @@
-import { Theme } from '../../theme'
+import { Theme } from '@datapunt/asc-core'
 
 export namespace MenuStyleProps {
   export enum Position {

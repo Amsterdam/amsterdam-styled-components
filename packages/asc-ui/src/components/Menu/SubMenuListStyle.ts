@@ -1,7 +1,7 @@
-import styled from '../../styled-components'
+import styled from '@datapunt/asc-core'
 import { MenuStyleProps } from './types'
 import MenuItemStyle from './MenuItemStyle'
-import IconStyle from '../IconStyle'
+import IconStyle from '../Icon/IconStyle'
 import MenuButtonStyle, { MenuButtonLabelStyle } from './MenuButtonStyle'
 import SubMenuButtonStyle, {
   SubMenuButtonLabelStyle,

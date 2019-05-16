@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
-import MenuLabel from './MenuLabel'
+import MenuLabel from '../MenuLabel'
 
 describe('MenuLabel', () => {
   it('should render the label', () => {

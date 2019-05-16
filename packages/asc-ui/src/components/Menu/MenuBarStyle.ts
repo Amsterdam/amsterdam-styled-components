@@ -1,4 +1,4 @@
-import styled from '../../styled-components'
+import styled from '@datapunt/asc-core'
 import { fromTheme } from '../../utils'
 
 const MenuBarStyle = styled.ul`

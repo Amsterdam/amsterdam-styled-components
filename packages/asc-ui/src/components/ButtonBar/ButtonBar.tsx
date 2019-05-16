@@ -7,13 +7,12 @@ export type Props = {
 
 const ButtonBar: React.FC<Props> = ({ children, styledComponent }) => {
   const ExtendedButtonBarStyle = styledComponent
-  return (
-  <ExtendedButtonBarStyle padding={0}>{children}</ExtendedButtonBarStyle>
-)}
+  return <ExtendedButtonBarStyle padding={0}>{children}</ExtendedButtonBarStyle>
+}
 
 ButtonBar.defaultProps = {
-  styledComponent: ButtonBarStyle
+  styledComponent: ButtonBarStyle,
 }
 
 export default ButtonBar
-export {ButtonBarStyle}
+export { ButtonBarStyle }

@@ -6,6 +6,7 @@ import {
   svgFill,
   getTypographyFromTheme,
 } from '../themeUtils'
+
 const { breakpoints, colors, globalStyle, typography } = ascDefaultTheme
 
 describe('getColorFromTheme', () => {

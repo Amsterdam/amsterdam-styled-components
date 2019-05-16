@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { mount, shallow } from 'enzyme'
-import MenuList from './MenuList'
-import MenuItem from './MenuItem'
-import { MenuContext } from './Menu'
+import MenuList from '../MenuList'
+import MenuItem from '../MenuItem'
+import { MenuContext } from '../Menu'
 
 describe('MenuList', () => {
   it('should clone the children with the correct index', () => {
