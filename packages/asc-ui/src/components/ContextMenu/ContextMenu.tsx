@@ -4,7 +4,7 @@ import MenuList from './ContextMenuList'
 import { KeyboardKeys } from '../../types'
 import ownerDocument from '../../utils/ownerDocument'
 import { Position } from '../../styles/components/ContextMenuStyle/types'
-import ContextMenuWrapperStyle from '../../styles/components/ContextMenuStyle/ContextMenuWrapperStyle';
+import ContextMenuWrapperStyle from '../../styles/components/ContextMenuStyle/ContextMenuWrapperStyle'
 
 const selectedChildInitial = -1
 
@@ -107,7 +107,14 @@ class ContextMenu extends React.Component<Props, State> {
   }
 
   render() {
-    const { label, children, position, icon, arrowIcon } = this.props
+    const {
+      label,
+      children,
+      position,
+      icon,
+      arrowIcon,
+      ...otherProps
+    } = this.props
     const { open, selectedChild } = this.state
 
     return (
@@ -115,6 +122,7 @@ class ContextMenu extends React.Component<Props, State> {
         ref={this.wrapper}
         onKeyDown={this.onKeyDown}
         onBlur={this.onClose}
+        {...otherProps}
       >
         <ContextMenuButton
           {...{

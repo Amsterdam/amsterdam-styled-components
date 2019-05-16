@@ -19,17 +19,21 @@ import SearchBar from './components/SearchBar/SearchBar'
 
 import ThemeProvider from './theme'
 
-import { DividerStyle, GlobalStyle, ListItemStyle } from './styles/components'
+import {
+  DividerStyle as Divider,
+  GlobalStyle,
+  ListItemStyle as ListItem,
+} from './styles/components'
 
 // Components
 export {
-  DividerStyle,
+  Divider,
   Icon,
   Button,
   IconButton,
   Modal,
   Portal,
-  ListItemStyle,
+  ListItem,
   Typography,
   Radio,
   TopBar,

@@ -1,6 +1,6 @@
 import React from 'react'
 import { KeyboardKeys } from '../../types'
-import ContextMenuItemStyle from '../../styles/components/ContextMenuStyle/ContextMenuItemStyle';
+import ContextMenuItemStyle from '../../styles/components/ContextMenuStyle/ContextMenuItemStyle'
 
 type Props = {
   focused?: boolean
