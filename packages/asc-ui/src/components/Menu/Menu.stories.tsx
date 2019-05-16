@@ -5,15 +5,15 @@ import { ReactComponent as ChevronRight } from '@datapunt/asc-assets/lib/Icons/C
 import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
 import { ReactComponent as ExternalLink } from '@datapunt/asc-assets/lib/Icons/ExternalLink.svg'
 import { ReactComponent as MenuIcon } from '@datapunt/asc-assets/lib/Icons/Menu.svg'
-import { Menu, MenuBar, MenuItem, MenuLabel, SubMenu } from '../..'
+import { Menu, MenuItem, MenuLabel, SubMenu } from '../..'
 
 storiesOf('Composed/Menu', module)
   .add('default', () => (
-    <MenuBar>
+    <Menu>
       <MenuItem onClick={action('click')}>One</MenuItem>
       <MenuItem onClick={action('click')}>Two</MenuItem>
       <MenuItem onClick={action('click')}>Three</MenuItem>
-    </MenuBar>
+    </Menu>
   ))
   .add('default with dropdown', () => (
     <Menu>

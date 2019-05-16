@@ -3,9 +3,7 @@ import { MenuStyleProps } from './types'
 import MenuItemStyle from './MenuItemStyle'
 import IconStyle from '../IconStyle'
 import MenuButtonStyle, { MenuButtonLabelStyle } from './MenuButtonStyle'
-import SubMenuButtonStyle, {
-  SubMenuButtonLabelStyle,
-} from './SubMenuButtonStyle'
+import SubMenuButtonStyle, { SubMenuButtonLabelStyle } from './SubMenuButtonStyle'
 import { color, svgFill } from '../../utils'
 
 export const SubMenuWrapperStyle = styled.div<
@@ -17,12 +15,12 @@ export const SubMenuWrapperStyle = styled.div<
 
     ${MenuButtonStyle} {
       background-color: ${color('tint', 'level2')}
-        ${MenuButtonLabelStyle}:first-of-type {
+      ${MenuButtonLabelStyle}:first-of-type  {
         border-bottom-color: ${color('secondary')};
       }
     }
     ${SubMenuButtonStyle} {
-      ${SubMenuButtonLabelStyle}:first-of-type {
+      ${SubMenuButtonLabelStyle}:first-of-type  {
         color: ${color('secondary')};
       }
 
@@ -33,12 +31,14 @@ export const SubMenuWrapperStyle = styled.div<
       }
     }
   }
+
   ${MenuButtonStyle} {
     background-color: ${({ theme, focused }) =>
-        focused ? color('tint', 'level2')({ theme }) : 'transparent'}
-      ${MenuButtonLabelStyle}:first-of-type {
+      focused ? color('tint', 'level2')({ theme }) : 'transparent'}
+
+    ${MenuButtonLabelStyle}:first-of-type {
       border-bottom-color: ${({ theme, focused }) =>
-        focused ? color('secondary')({ theme }) : 'transparent'};
+        focused ? color('secondary')({ theme }) : 'transparent'}
     }
 
     ${IconStyle} {
@@ -49,9 +49,9 @@ export const SubMenuWrapperStyle = styled.div<
   }
 
   ${SubMenuButtonStyle} {
-    ${SubMenuButtonLabelStyle}:first-of-type {
+    ${SubMenuButtonLabelStyle}:first-of-type  {
       color: ${({ theme, focused }) =>
-        focused ? color('secondary')({ theme }) : 'inherit'};
+        focused ? color('secondary')({ theme }) : 'inherit'}
     }
   }
 `
@@ -82,7 +82,7 @@ export const SubMenuListWrapperStyle = styled.div.attrs(() => ({
 }))<MenuStyleProps.MenuListStyleProps>`
   order: ${({ position }) => (position === 'bottom' ? -1 : 0)};
   background-color: ${color('tint', 'level1')};
-  max-width: 278px;
+  width: 278px;
   width: 100%;
 
   &:focus {
