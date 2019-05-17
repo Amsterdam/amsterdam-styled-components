@@ -19,7 +19,7 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   moduleDirectories: ['node_modules', 'packages'],
   moduleNameMapper: {
-    '^@datapunt/asc-assets/.*\\.svg$': '<rootDir>/config/testing/mocks/ svg.ts',
+    '^@datapunt/asc-assets/.*\\.svg$': '<rootDir>/config/testing/mocks/svg.ts',
     '.*\\.(jpg|jpeg|png|gif|eot|otf|webp|sv|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/config/testing/mocks/image.ts',
     '^@datapunt/asc-ui': '<rootDir>/packages/asc-ui/src',
