@@ -1,8 +1,8 @@
 {
   "name": "@datapunt/asc-core",
-  "description": "> TODO: description",
-  "license": "ISC",
-  "author": "Chris van Mook <chris@chrisvanmook.com>",
+  "description": "Contains the re-exported typed styled-component lib and theme",
+  "license": "MPL-2.0",
+  "author": "Datapunt Amsterdam",
   "homepage": "https://github.com/Amsterdam/amsterdam-styled-components/tree/master/packages/asc-core#readme",
   "repository": {
     "type": "git",
@@ -12,7 +12,7 @@
     "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
   },
   "version": "0.6.5",
-  "main": "lib/styled-components/index.js",
+  "main": "lib/index.js",
   "files": [
     "lib"
   ],

@@ -30,7 +30,7 @@
         "./asc-ui/src"
       ],
       "@datapunt/asc-core": [
-        "./asc-core/src/styled-components-react"
+        "./asc-core/src"
       ]
     },
     "composite": true,

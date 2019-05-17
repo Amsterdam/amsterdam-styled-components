@@ -31,7 +31,7 @@ module.exports = ({ config }) => {
   // Resolve every package to it's src directory
   Object.assign(config.resolve.alias, {
     '@datapunt/asc-assets': path.join(basePath, 'asc-assets', ''),
-    '@datapunt/asc-core': path.join(basePath, 'asc-core', '/src/styled-components-react'),
+    '@datapunt/asc-core': path.join(basePath, 'asc-core', '/src'),
     '@datapunt/asc-ui': path.join(basePath, 'asc-ui', '/src'),
   })
 

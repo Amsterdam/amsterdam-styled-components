@@ -54,6 +54,9 @@ export {
   SubMenu,
   Header,
   SearchBar,
+  GlobalStyle,
+  ServerStyleSheet,
+  Theme,
+  ThemeProvider,
+  ascDefaultTheme,
 }
-
-export { GlobalStyle, ServerStyleSheet, Theme, ThemeProvider, ascDefaultTheme }

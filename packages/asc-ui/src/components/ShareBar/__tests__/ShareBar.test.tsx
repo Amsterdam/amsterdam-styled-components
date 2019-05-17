@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
-import ShareBar from './ShareBar'
-import ShareButton from '../ShareButton'
+import ShareBar from '../ShareBar'
+import ShareButton from '../../ShareButton'
 
 describe('ShareBar', () => {
   const mockOnClick = jest.fn()
