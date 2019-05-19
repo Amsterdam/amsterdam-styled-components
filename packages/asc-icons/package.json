@@ -1,25 +1,24 @@
 {
   "name": "@datapunt/asc-icons",
-  "version": "0.0.1",
   "description": "Datapunt Icons Generator",
-  "module": "lib/index.es.js",
-  "main": "lib/index.js",
-  "sideEffects": false,
-  "repository": "https://github.com/Amsterdam/",
-  "files": [
-    "lib",
-    "svg",
-    "inline-svg"
-  ],
   "license": "MIT",
+  "repository": "https://github.com/Amsterdam/",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "module": "lib/index.es.js",
+  "files": [
+    "inline-svg",
+    "lib",
+    "svg"
+  ],
   "scripts": {
     "prebuild": "cross-env NODE_ENV=production rimraf lib",
     "build": "cross-env NODE_ENV=production tsc --project ./tsconfig.json --outDir lib",
-    "generate": "cross-env TS_NODE_PROJECT=build/tsconfig.json node --require ts-node/register build/index.ts",
     "clean": "cross-env TS_NODE_PROJECT=build/tsconfig.json node --require ts-node/register build/scripts/clean.ts",
-    "test": "jest",
+    "generate": "cross-env TS_NODE_PROJECT=build/tsconfig.json node --require ts-node/register build/index.ts",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}' 'site/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
-    "prepublish": "yarn lint && yarn test && yarn generate && yarn build"
+    "prepublish": "yarn lint && yarn test && yarn generate && yarn build",
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -89,5 +88,6 @@
       "<rootDir>/node_modules/",
       "<rootDir>/.cache/"
     ]
-  }
+  },
+  "sideEffects": false
 }
