@@ -9,13 +9,13 @@
     "lib": [
       "esnext",
       "dom"
-    ]
+    ],
+    "types": ["react", "jest"]
   },
   "include": [
     "src"
   ],
   "exclude": [
-    "site",
     "node_modules"
   ]
 }

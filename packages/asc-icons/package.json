@@ -1,14 +1,11 @@
 {
-  "name": "@ant-design/icons",
-  "version": "2.0.0",
-  "description": "Ant Design Icons",
+  "name": "@datapunt/asc-icons",
+  "version": "0.0.1",
+  "description": "Datapunt Icons Generator",
   "module": "lib/index.es.js",
   "main": "lib/index.js",
   "sideEffects": false,
-  "repository": "https://github.com/ant-design/ant-design-icons",
-  "contributors": [
-    "HeskeyBaozi <hezhiyu233@foxmail.com>"
-  ],
+  "repository": "https://github.com/Amsterdam/",
   "files": [
     "lib",
     "svg",
@@ -16,18 +13,13 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "npm run build:lib && npm run build:index-es &&  npm run build:umd",
-    "build:lib": "cross-env NODE_ENV=production rimraf lib && tsc --project ./tsconfig.json --outDir lib",
-    "build:index-es": "cross-env NODE_ENV=production rimraf lib/index.es.js && babel --extensions '.ts' --presets @babel/preset-typescript src/index.ts --out-file lib/index.es.js",
+    "prebuild": "cross-env NODE_ENV=production rimraf lib",
+    "build": "cross-env NODE_ENV=production tsc --project ./tsconfig.json --outDir lib",
     "generate": "cross-env TS_NODE_PROJECT=build/tsconfig.json node --require ts-node/register build/index.ts",
-    "clean:src": "cross-env TS_NODE_PROJECT=build/tsconfig.json node --require ts-node/register build/scripts/clean.ts",
-    "test": "npm run test:unit",
-    "test:unit": "jest",
+    "clean": "cross-env TS_NODE_PROJECT=build/tsconfig.json node --require ts-node/register build/scripts/clean.ts",
+    "test": "jest",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}' 'site/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
-    "clean:build": "rimraf .cache es lib",
-    "start": "gatsby develop",
-    "build:umd": "webpack --config umd.webpack.config.js -p",
-    "prepublish": "npm run lint && npm run test && npm run generate && npm run build"
+    "prepublish": "yarn lint && yarn test && yarn generate && yarn build"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -53,35 +45,24 @@
     "@types/react-router": "3.0.15",
     "@types/rimraf": "^2.0.2",
     "@types/svgo": "^1.0.1",
-    "antd": "^3.8.2",
     "babel-core": "^6.26.3",
     "babel-jest": "^23.4.2",
-    "babel-plugin-macros": "^2.4.0",
     "chalk": "^2.4.1",
     "cross-env": "^5.2.0",
     "fs-extra": "^7.0.0",
-    "gatsby": "^2.4.2",
-    "gatsby-plugin-page-creator": "^2.0.12",
-    "gatsby-plugin-typescript": "^2.0.13",
-    "globby": "^8.0.1",
     "jest": "^23.4.2",
     "lodash": "^4.17.10",
-    "mobx": "^5.0.4",
-    "mobx-react": "^5.2.5",
-    "parse5": "^5.1.0",
     "prettier": "1.14.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "rimraf": "^2.6.2",
     "rxjs": "^6.2.2",
-    "styled-components": "^3.4.4",
     "svgo": "^1.0.5",
     "ts-jest": "^23.1.0",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
     "typescript": "^3.0.1",
-    "webpack-cli": "^3.1.0",
-    "webpackbar": "^2.6.1"
+    "webpack-cli": "^3.1.0"
   },
   "jest": {
     "transform": {
@@ -108,6 +89,5 @@
       "<rootDir>/node_modules/",
       "<rootDir>/.cache/"
     ]
-  },
-  "gitHead": "225d4d2189720ee3b7e4a4d7a6d80e076fa15cbc"
+  }
 }
