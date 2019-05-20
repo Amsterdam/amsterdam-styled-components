@@ -1,9 +1,9 @@
 /* eslint-disable react/no-multi-comp */
 import React, { forwardRef } from 'react'
-import { Position } from '../../styles/components/ContextMenuStyle/types'
+import { Position } from './types'
 import ContextMenuListStyle, {
   ContextMenuListWrapperStyle,
-} from '../../styles/components/ContextMenuStyle/ContextMenuListStyle'
+} from './ContextMenuListStyle'
 
 type Props = {
   open: boolean
@@ -57,4 +57,5 @@ class ContextMenuList extends React.Component<Props> {
     )
   }
 }
+
 /* eslint-enable react/no-multi-comp */

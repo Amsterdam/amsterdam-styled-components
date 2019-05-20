@@ -28,13 +28,11 @@ module.exports = ({ config }) => {
     enforce: 'pre',
   });
 
-
   // Resolve every package to it's src directory
   Object.assign(config.resolve.alias, {
-    ...packages.reduce((acc, name) => ({
-      ...acc,
-      [`@datapunt/${name}`]: path.join(basePath, name, name !== 'asc-assets' ? '/src' : ''),
-    }), {})
+    '@datapunt/asc-assets': path.join(basePath, 'asc-assets', ''),
+    '@datapunt/asc-core': path.join(basePath, 'asc-core', '/src'),
+    '@datapunt/asc-ui': path.join(basePath, 'asc-ui', '/src'),
   })
 
   // Since we use the react-scripts webpack config, that only looks at the /src folder,

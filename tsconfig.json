@@ -28,6 +28,9 @@
       ],
       "@datapunt/asc-ui/": [
         "./asc-ui/src"
+      ],
+      "@datapunt/asc-core": [
+        "./asc-core/src"
       ]
     },
     "composite": true,

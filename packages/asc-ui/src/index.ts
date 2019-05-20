@@ -1,4 +1,4 @@
-import { ascDefaultTheme, StyledComponents, Theme } from './styles'
+import { ServerStyleSheet, Theme, ascDefaultTheme } from '@datapunt/asc-core'
 
 import IconButton from './components/IconButton'
 import Icon from './components/Icon'
@@ -12,23 +12,21 @@ import Button from './components/Button'
 import Radio from './components/Radio'
 import Focus from './components/Focus'
 import ContextMenu from './components/ContextMenu'
-import ContextMenuButton from './components/ContextMenu/ContextMenuButton'
+import ContextMenuButtonStyle from './components/ContextMenu/ContextMenuButton'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
-import Menu from './components/Menu'
+import Menu from './components/Menu/Menu'
 import MenuBar from './components/Menu/MenuBar'
 import MenuDropDown from './components/Menu/MenuDropDown'
 import MenuItem from './components/Menu/MenuItem'
 import MenuLabel from './components/Menu/MenuLabel'
 import SubMenu from './components/Menu/SubMenu'
 import Header from './components/Header/Header'
+import Divider from './components/Divider'
+import ListItem from './components/ListItem'
+import SearchBar from './components/SearchBar'
+import GlobalStyle from './components/GlobalStyle'
 
 import ThemeProvider from './theme'
-
-import {
-  DividerStyle as Divider,
-  GlobalStyle,
-  ListItemStyle as ListItem,
-} from './styles/components'
 
 // Components
 export {
@@ -46,7 +44,7 @@ export {
   ShareButton,
   Focus,
   ContextMenu,
-  ContextMenuButton,
+  ContextMenuButtonStyle,
   ContextMenuItem,
   Menu,
   MenuBar,
@@ -55,6 +53,10 @@ export {
   MenuLabel,
   SubMenu,
   Header,
+  SearchBar,
+  GlobalStyle,
+  ServerStyleSheet,
+  Theme,
+  ThemeProvider,
+  ascDefaultTheme,
 }
-
-export { GlobalStyle, StyledComponents, Theme, ThemeProvider, ascDefaultTheme }

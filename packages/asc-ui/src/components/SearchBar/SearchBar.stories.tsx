@@ -2,8 +2,8 @@ import * as React from 'react'
 import { storiesOf } from '@storybook/react/'
 import { action } from '@storybook/addon-actions'
 import SearchBar, { SearchBarStyle, IconButtonStyle } from './SearchBar'
-import styled from '../../styled-components'
-import { svgFill } from '../../styles/utils'
+import styled from '@datapunt/asc-core'
+import { svgFill } from '../../utils'
 
 const SearchBarStory: React.FC<{}> = () => (
   <SearchBar

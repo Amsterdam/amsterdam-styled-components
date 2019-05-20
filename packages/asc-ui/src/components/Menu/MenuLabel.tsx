@@ -1,5 +1,5 @@
 import React from 'react'
-import MenuStyle from '../../styles/components/MenuStyle'
+import MenuStyle from './index'
 
 const { MenuLabelStyle } = MenuStyle
 

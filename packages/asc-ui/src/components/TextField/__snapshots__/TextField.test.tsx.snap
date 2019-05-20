@@ -88,13 +88,7 @@ exports[`<TextField /> should render 1`] = `
         "h4": Object {
           "color": "#000000",
           "fontFamily": "inherit",
-          "fontSize": Array [
-            "
-      ",
-            "1.125rem",
-            "
-    ",
-          ],
+          "fontSize": "1.125rem",
           "fontWeight": 300,
           "letterSpacing": "-0.01562em",
           "lineHeight": 1,
@@ -102,13 +96,7 @@ exports[`<TextField /> should render 1`] = `
         "h5": Object {
           "color": "#000000",
           "fontFamily": "inherit",
-          "fontSize": Array [
-            "
-      ",
-            "1.125rem",
-            "
-    ",
-          ],
+          "fontSize": "1.125rem",
           "fontWeight": 300,
           "letterSpacing": "-0.01562em",
           "lineHeight": 1,
