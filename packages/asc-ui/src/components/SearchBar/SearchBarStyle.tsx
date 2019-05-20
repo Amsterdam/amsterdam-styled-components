@@ -1,7 +1,7 @@
 import styled from '@datapunt/asc-core'
 import IconButtonStyle from '../IconButton/IconButtonStyle'
 import { svgFill } from '../../utils'
-import TextFieldStyle from '../TextFieldStyle'
+import TextFieldStyle from '../TextField/TextFieldStyle'
 
 interface Props {
   minWidth: string
