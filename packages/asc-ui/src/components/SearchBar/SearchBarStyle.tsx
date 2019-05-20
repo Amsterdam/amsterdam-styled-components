@@ -1,16 +1,23 @@
 import styled from '@datapunt/asc-core'
-import InputStyle from '../Input/InputStyle'
 import IconButtonStyle from '../IconButton/IconButtonStyle'
 import { svgFill } from '../../utils'
+import TextFieldStyle from '../TextField/TextFieldStyle'
 
-const SearchBarStyle = styled.div`
+interface Props {
+  minWidth: string
+  maxWidth: string
+}
+
+const SearchBarStyle = styled.div<Props>`
+  min-width: ${({ minWidth }) => minWidth};
+  max-width: ${({ maxWidth }) => maxWidth};
   display: flex;
 
-  ${InputStyle} {
+  ${TextFieldStyle} {
     flex-grow: 1;
   }
 
-  ${IconButtonStyle} {
+  & > ${IconButtonStyle} {
     margin-left: 5px;
     padding: 10px;
     width: 40px;

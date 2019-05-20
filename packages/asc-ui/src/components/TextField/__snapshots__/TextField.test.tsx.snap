@@ -121,6 +121,17 @@ exports[`<TextField /> should render 1`] = `
     }
   }
 >
-  <TextField />
+  <TextField
+    canClear={true}
+    id="test-id"
+    label="description"
+    onBlur={[MockFunction]}
+    onChange={[MockFunction]}
+    onClear={[MockFunction]}
+    onFocus={[MockFunction]}
+    onKeyDown={[MockFunction]}
+    srOnly={false}
+    value="test-value"
+  />
 </ThemeProvider>
 `;

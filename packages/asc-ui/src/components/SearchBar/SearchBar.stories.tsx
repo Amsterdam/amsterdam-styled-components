@@ -7,11 +7,15 @@ import { svgFill } from '../../utils'
 
 const SearchBarStory: React.FC<{}> = () => (
   <SearchBar
+    maxWidth="1400px"
     placeholder="Enter the search text"
     onTextChanged={(text: string) => {
+      console.log('TCL: text', text)
+
       action(`text changed: ${text}`)
     }}
     onSearch={(text: string) => {
+      console.log('TCL: text', text)
       action(`button clicked: ${text}`)
     }}
   />
@@ -21,7 +25,7 @@ const SearchBarStoryWithChangedStyle: React.FC<{}> = () => {
   const ChangedSearchBarStyle = styled(SearchBarStyle)`
     align-content: flex-start;
 
-    ${IconButtonStyle} {
+    & > ${IconButtonStyle} {
       order: -1;
       margin-left: 0px;
       margin-right: 5px;
