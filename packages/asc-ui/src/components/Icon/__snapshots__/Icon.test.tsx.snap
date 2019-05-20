@@ -2,7 +2,10 @@
 
 exports[`Icon should render the icon 1`] = `
 .c0 {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   width: 16px;
   height: 16px;
   padding: 4px;
