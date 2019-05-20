@@ -1,4 +1,3 @@
-'use strict';
 import fs = require('fs-extra');
 import _ = require('lodash');
 import parse5 = require('parse5');
@@ -6,6 +5,7 @@ import path = require('path');
 import Prettier = require('prettier');
 import { from, Observable, of, Subscription } from 'rxjs';
 import { concat, filter, map, mergeMap, reduce } from 'rxjs/operators';
+
 import SVGO = require('svgo');
 import {
   EXPORT_DEFAULT_COMPONENT_FROM_DIR,
@@ -113,27 +113,26 @@ export async function build(env: Environment) {
     mergeMap<Observable<BuildTimeIconMetaData>, any>(
       (metaData$: any) => metaData$
     ),
-    map<any, BuildTimeIconMetaData>(
-      ({ identifier, icon }) => {
-        icon = _.cloneDeep(icon);
-        if (typeof icon.icon !== 'function') {
-          if (!oldIcons.includes(icon.name)) {
-            icon.icon.attrs.viewBox = '64 64 896 896';
-          }
-          if (icon.icon.attrs.class) {
-            icon.icon.attrs = _.omit(icon.icon.attrs, ['class']);
-          }
+    map<any, BuildTimeIconMetaData>(({ identifier, icon }) => {
+      icon = _.cloneDeep(icon);
+      if (typeof icon.icon !== 'function') {
+        if (!oldIcons.includes(icon.name)) {
+          icon.icon.attrs.viewBox = '0 0 32 32';
+          // icon.icon.attrs.viewBox = '64 64 896 896'
         }
-        if (icon.theme === 'twotone') {
-          if (typeof icon.icon !== 'function' && icon.icon.children) {
-            icon.icon.children.forEach((pathElment: any) => {
-              pathElment.attrs.fill = pathElment.attrs.fill || '#333';
-            });
-          }
+        if (icon.icon.attrs.class) {
+          icon.icon.attrs = _.omit(icon.icon.attrs, ['class']);
         }
-        return { identifier, icon };
       }
-    )
+      if (icon.theme === 'twotone') {
+        if (typeof icon.icon !== 'function' && icon.icon.children) {
+          icon.icon.children.forEach((pathElment: any) => {
+            pathElment.attrs.fill = pathElment.attrs.fill || '#333';
+          });
+        }
+      }
+      return { identifier, icon };
+    })
   );
 
   // Inline SVG files content flow.
@@ -207,8 +206,7 @@ export async function build(env: Environment) {
     ),
     reduce<any, string>(
       (acc, { identifier, icon }) =>
-        acc +
-        `export { default as ${identifier} } from './${
+        `${acc}export { default as ${identifier} } from './${
           icon.theme
         }/${identifier}';\n`,
       ''
@@ -279,27 +277,25 @@ export async function build(env: Environment) {
             { ...env.options.prettier, parser: 'typescript' }
           );
         }
-      } else {
-        if (typeof icon.icon !== 'function') {
-          const paths = (icon.icon.children || [])
-            .filter(({ attrs }) => typeof attrs.d === 'string')
-            .map(({ attrs }) => {
-              const { fill, d } = attrs;
+      } else if (typeof icon.icon !== 'function') {
+        const paths = (icon.icon.children || [])
+          .filter(({ attrs }) => typeof attrs.d === 'string')
+          .map(({ attrs }) => {
+            const { fill, d } = attrs
               if (fill && d) {
-                return `['${fill}', '${d}']`;
+              return `['${fill}', '${d}']`
               }
-              return `'${d}'`;
+            return `'${d}'`
             })
-            .join(',');
+          .join(',')
           content = Prettier.format(
-            `export const ${identifier}: IconDefinition = ` +
-              `getIcon('${icon.name}', '${icon.theme}', ` +
-              `getNode('${icon.icon.attrs.viewBox}', ${paths})` +
-              `);`,
-            env.options.prettier
-          );
+          `export const ${identifier}: IconDefinition = ` +
+            `getIcon('${icon.name}', '${icon.theme}', ` +
+            `getNode('${icon.icon.attrs.viewBox}', ${paths})` +
+            `);`,
+          env.options.prettier
+        )
         }
-      }
       content = content
         .replace(NORMAL_VIEWBOX, 'normalViewBox')
         .replace(NEW_VIEWBOX, 'newViewBox')

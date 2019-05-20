@@ -17,9 +17,10 @@
     "packages/*"
   ],
   "scripts": {
+    "prebuild": "lerna exec --scope @datapunt/asc-icons -- yarn generate && lerna exec --scope @datapunt/asc-icons -- yarn build ",
     "build": "yarn build:ts && lerna exec --scope @datapunt/asc-assets -- yarn build",
     "build:storybook": "build-storybook -c .storybook -s ./packages/asc-assets/lib -o .sb && yarn clean:generated",
-    "build:ts": "tsc -b packages/asc-core packages/asc-ui",
+    "build:ts": "tsc -b packages/asc-icons packages/asc-core packages/asc-ui",
     "build:watch": "yarn build:ts -w",
     "clean:generated": "find ./packages -name \"*.d.ts\" -type f -delete",
     "deploy-storybook": "storybook-to-ghpages",

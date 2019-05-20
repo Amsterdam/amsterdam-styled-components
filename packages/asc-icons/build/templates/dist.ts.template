@@ -4,7 +4,7 @@
 import { IconDefinition, AbstractNode } from './types';
 
 const normalViewBox = '0 0 1024 1024';
-const newViewBox = '64 64 896 896';
+const newViewBox = '0 0 32 32';
 
 const fill = 'fill';
 const outline = 'outline';

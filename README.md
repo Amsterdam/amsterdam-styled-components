@@ -70,6 +70,14 @@ To test your components in other repo's, do the following:
 
 Now you can import the package like you would do like a normal npm dependency. Changes you will make in your package will be seen in your repo.
 
+- There is a known issue when developing with `yarn link` and using Hooks [click her for details](https://reactjs.org/warnings/invalid-hook-call-warning.html). The cause is that 2 React instances are used when using link. 
+- To solve this problem for the `./examples/create-react-app`, run
+```bash
+npm link ./examples/create-react-app/node-modules/react
+```
+from the root folder to use the same React version in the component lib as in the application.
+
+
 #### Development guidelines
 
 - The default export from a file matches the file name
@@ -114,6 +122,8 @@ const App = () => (
 ### Known issues
 
 - When deploying to github pages with `npm run deploy-storybook` there are \*.d definition files generated. These should not be checked in and can be discarded without problems.
+- When 
+
 
 ### References
 
