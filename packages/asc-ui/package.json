@@ -10,7 +10,8 @@
   },
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@datapunt/asc-assets": "^0.6.3",
+    "@datapunt/asc-assets": "^0.6.6",
+    "@datapunt/asc-core": "^0.6.5",
     "@types/styled-components": "^4.1.1",
     "classnames": "^2.2.6",
     "deepmerge": "^3.2.0",

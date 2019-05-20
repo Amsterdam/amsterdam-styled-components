@@ -15,6 +15,14 @@
 }
 
 @font-face {
+  font-family: "AvenirNextLTW01-Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url(Fonts/AvenirAll/1a7c9181-cd24-4943-a9d9-d033189524e0.eot?#iefix);
+  src: url(Fonts/AvenirAll/1a7c9181-cd24-4943-a9d9-d033189524e0.eot?#iefix) format("eot"), url(Fonts/AvenirAll/627fbb5a-3bae-4cd9-b617-2f923e29d55e.woff2) format("woff2"), url(Fonts/AvenirAll/f26faddb-86cc-4477-a253-1e1287684336.woff) format("woff"), url(Fonts/AvenirAll/63a74598-733c-4d0c-bd91-b01bffcd6e69.ttf) format("truetype")
+}
+
+@font-face {
   font-family: "AvenirNextLTW01-Demi";
   font-style: normal;
   font-weight: 700;

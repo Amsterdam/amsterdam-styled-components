@@ -1,8 +1,8 @@
 import * as React from 'react'
-import HeaderStyle from '../../styles/components/HeaderStyle/HeaderStyle'
+import HeaderStyle from './HeaderStyle'
 import HeaderWrapperStyle, {
   Props as HeaderWrapperProps,
-} from '../../styles/components/HeaderStyle/HeaderWrapperStyle'
+} from './HeaderWrapperStyle'
 import HeaderLogoText from './HeaderLogoText'
 import HeaderContent from './HeaderContent'
 

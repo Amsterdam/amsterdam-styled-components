@@ -1,7 +1,7 @@
 import React from 'react'
 import IconButtonStyle, {
-  IconButtonStyleProps,
-} from '../../styles/components/IconButtonStyle'
+  Props as IconButtonStyleProps,
+} from './IconButtonStyle'
 import { Icon } from '../..'
 
 type Props = {

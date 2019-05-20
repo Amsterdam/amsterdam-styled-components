@@ -1,7 +1,6 @@
 import { rem } from 'polished'
 import { Theme } from '../index'
 import colors from './colors'
-import { css } from '../../styled-components'
 
 const defaultFontFamily = 'AvenirNextLTW01-Regular, verdana, sans-serif'
 
@@ -39,9 +38,7 @@ const typography: Theme.TypographyInterface = {
   h4: {
     fontFamily: 'inherit',
     color: colors.tint.level7,
-    fontSize: css`
-      ${rem(18)}
-    `,
+    fontSize: rem(18),
     fontWeight: 300,
     letterSpacing: '-0.01562em',
     lineHeight: 1,
@@ -49,9 +46,7 @@ const typography: Theme.TypographyInterface = {
   h5: {
     fontFamily: 'inherit',
     color: colors.tint.level7,
-    fontSize: css`
-      ${rem(18)}
-    `,
+    fontSize: rem(18),
     fontWeight: 300,
     letterSpacing: '-0.01562em',
     lineHeight: 1,

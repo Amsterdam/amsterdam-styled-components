@@ -4,6 +4,7 @@ enum Keys {
   ArrowDown = 'ArrowDown',
   Escape = 'Escape',
   Enter = 'Enter',
+  Tab = 'Tab',
 }
 
 export default Keys

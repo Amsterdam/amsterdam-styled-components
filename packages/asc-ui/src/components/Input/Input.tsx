@@ -1,5 +1,5 @@
 import React from 'react'
-import InputStyle from '../../styles/components/InputStyle'
+import InputStyle from './InputStyle'
 
 export interface InputProps {
   id: string

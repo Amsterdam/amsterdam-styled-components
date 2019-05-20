@@ -1,6 +1,6 @@
 import * as React from 'react'
 import deepMerge from 'deepmerge'
-import { Theme, ascDefaultTheme, StyledComponents } from '..'
+import { Theme, ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 
 const { DEFAULT_THEME_NAME } = ascDefaultTheme
 
@@ -10,7 +10,7 @@ interface Props {
   children: any
 }
 
-const ThemeProvider = ({
+const DefaultThemeProvider = ({
   themeName = DEFAULT_THEME_NAME,
   overrides,
   children,
@@ -20,11 +20,7 @@ const ThemeProvider = ({
     overrides || {},
   )
 
-  return (
-    <StyledComponents.ThemeProvider theme={theme}>
-      {children}
-    </StyledComponents.ThemeProvider>
-  )
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>
 }
 
-export default ThemeProvider
+export default DefaultThemeProvider

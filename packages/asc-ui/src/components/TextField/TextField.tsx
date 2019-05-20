@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { ReactComponent as Close } from '@datapunt/asc-assets/lib/Icons/Close.svg'
-import { FormLabelStyle } from '../../styles/components'
-import Input, { InputProps } from '../Input/Input'
+import FormLabelStyle from '../FormLabelStyle'
 import IconButton from '../IconButton'
 import TextFieldStyle from '../../styles/components/TextFieldStyle'
+import Input from '../Input'
 
 export interface TextFieldProps extends InputProps {
   id: string

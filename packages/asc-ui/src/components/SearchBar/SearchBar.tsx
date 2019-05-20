@@ -1,9 +1,9 @@
 import React from 'react'
 import { ReactComponent as Search } from '@datapunt/asc-assets/lib/Icons/Search.svg'
-import IconButton from '../IconButton'
-import { InputStyle } from '../../styles/components'
-import IconButtonStyle from '../../styles/components/IconButtonStyle'
-import SearchBarStyle from '../../styles/components/SearchBarStyle'
+import IconButton from '../IconButton/IconButton'
+import InputStyle from '../Input/InputStyle'
+import IconButtonStyle from '../IconButton/IconButtonStyle'
+import SearchBarStyle from './SearchBarStyle'
 import { KeyboardKeys } from '../../types'
 import TextField from '../TextField/TextField'
 
