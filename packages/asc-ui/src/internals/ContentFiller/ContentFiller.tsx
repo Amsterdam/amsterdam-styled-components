@@ -1,8 +1,8 @@
 import * as React from 'react'
-import styled from '../../styled-components'
+import styled from '@datapunt/asc-core'
 import Typography from '../../components/Typography'
-import { CONTENT_HEIGHT_TALL } from '../../styles/components/HeaderStyle/sizes'
-import { breakpoint } from '../../styles/utils'
+import { CONTENT_HEIGHT_TALL } from '../../components/Header/sizes'
+import { breakpoint } from '../../utils'
 
 type ContentFillerStyleProps = {
   backgroundColor?: string

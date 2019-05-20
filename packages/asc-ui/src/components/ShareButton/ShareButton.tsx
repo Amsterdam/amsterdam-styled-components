@@ -1,8 +1,8 @@
 import React from 'react'
 import { Icon } from '../..'
 import ShareButtonStyle, {
-  ShareButtonStyleProps,
-} from '../../styles/components/ShareButtonStyle'
+  Props as ShareButtonStyleProps,
+} from './ShareButtonStyle'
 
 type Props = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>

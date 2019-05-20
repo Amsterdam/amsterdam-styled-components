@@ -1,9 +1,10 @@
 import React from 'react'
 import ownerDocument from '../../utils/ownerDocument'
-import { MenuStyleProps } from '../../styles/components/MenuStyle'
+import { MenuStyleProps } from './index'
 import MenuBar from './MenuBar'
 import MenuDropDown from './MenuDropDown'
 import { KeyboardKeys } from '../../types'
+
 type Props = {
   position?: MenuStyleProps.Position
   mobile?: boolean
@@ -68,20 +69,28 @@ const Menu: React.FC<Props> = ({
         }
       default:
         return state
-
     }
   }
 
   const [state, dispatch] = React.useReducer(reducer, initialState)
 
   const handleOnKeyDown = (event: React.KeyboardEvent) => {
-    const { selectedChild, nrOfChildren, nrOfChildrenChild, open, expandedChild, expandedChildIndex } = state
+    const {
+      selectedChild,
+      nrOfChildren,
+      nrOfChildrenChild,
+      open,
+      expandedChild,
+      expandedChildIndex,
+    } = state
 
     if (!open && !expandedChild) {
       return
     }
     const firstChild = 0
-    const lastChild = (expandedChild) ? expandedChild + nrOfChildrenChild : nrOfChildren - 1
+    const lastChild = expandedChild
+      ? expandedChild + nrOfChildrenChild
+      : nrOfChildren - 1
 
     if (event.key === KeyboardKeys.ArrowDown) {
       event.preventDefault()
@@ -89,22 +98,20 @@ const Menu: React.FC<Props> = ({
         resetExpandedChild()
       } else {
         dispatch({
-        type: 'setSelectedChild',
-        payload: selectedChild === lastChild ? firstChild : selectedChild + 1,
-      })
-    }
+          type: 'setSelectedChild',
+          payload: selectedChild === lastChild ? firstChild : selectedChild + 1,
+        })
+      }
     }
 
     if (event.key === KeyboardKeys.ArrowUp) {
       event.preventDefault()
 
-        dispatch({
-          type: 'setSelectedChild',
-          payload:
-            selectedChild === firstChild
-              ? expandedChildIndex
-              : selectedChild - 1,
-        })
+      dispatch({
+        type: 'setSelectedChild',
+        payload:
+          selectedChild === firstChild ? expandedChildIndex : selectedChild - 1,
+      })
     }
   }
 
@@ -127,13 +134,17 @@ const Menu: React.FC<Props> = ({
     nrOfChildren: number,
     expandedChildIndex: number,
   ) => {
-      dispatch({
-        type: 'setExpandedChild',
-        payload: {
-          nrOfChildren,
-          expandedChildIndex: (expandedChildIndex > state.expandedChildIndex && state.expandedChildIndex > -1) ? expandedChildIndex - state.nrOfChildrenChild : expandedChildIndex
-        },
-      })
+    dispatch({
+      type: 'setExpandedChild',
+      payload: {
+        nrOfChildren,
+        expandedChildIndex:
+          expandedChildIndex > state.expandedChildIndex &&
+          state.expandedChildIndex > -1
+            ? expandedChildIndex - state.nrOfChildrenChild
+            : expandedChildIndex,
+      },
+    })
   }
 
   const setSelectedChild = (index: number) => {
@@ -143,8 +154,6 @@ const Menu: React.FC<Props> = ({
   const resetExpandedChild = () => {
     dispatch({ type: 'resetExpandedChild', payload: state.expandedChildIndex })
   }
-
-
 
   const clonedChildren = React.Children.map(children, (child, index) => {
     const { expandedChild, expandedChildIndex, nrOfChildrenChild } = state
@@ -158,30 +167,29 @@ const Menu: React.FC<Props> = ({
 
   return (
     <MenuBar>
-    <MenuContext.Provider
-      value={{
-        ...state,
-        setSelectedChild,
-        onKeyDown: handleOnKeyDown,
-        onClick: handleOnClick,
-        onClose: handleOnClose,
-        setExpandedChild,
-        resetExpandedChild,
-      }}
-    >
-      {
-        mobile ? (
-          <MenuDropDown icon={icon}>
-            {clonedChildren}
-          </MenuDropDown>
-        ) : clonedChildren
-      }
-    </MenuContext.Provider>
-  </MenuBar>)
+      <MenuContext.Provider
+        value={{
+          ...state,
+          setSelectedChild,
+          onKeyDown: handleOnKeyDown,
+          onClick: handleOnClick,
+          onClose: handleOnClose,
+          setExpandedChild,
+          resetExpandedChild,
+        }}
+      >
+        {mobile ? (
+          <MenuDropDown icon={icon}>{clonedChildren}</MenuDropDown>
+        ) : (
+          clonedChildren
+        )}
+      </MenuContext.Provider>
+    </MenuBar>
+  )
 }
 
 Menu.defaultProps = {
-  buttonHeight: 50
+  buttonHeight: 50,
 }
 
 export default Menu

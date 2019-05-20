@@ -2,7 +2,6 @@ module.exports = {
   collectCoverage: false,
   collectCoverageFrom: [
     'packages/asc-ui/src/**/*.{js,jsx,ts,tsx}',
-    'packages/asc-core/src/utils/**/*.{js,jsx,ts,tsx}',
     '!packages/asc-ui/src/(styles|internals)/**/*.{js,jsx,ts,tsx}',
     '!packages/**/*.(test|stories).{js,jsx,ts,tsx}',
     '!packages/**/(index).{js,jsx,ts,tsx}',
@@ -23,7 +22,8 @@ module.exports = {
     '^@datapunt/asc-assets/.*\\.svg$': '<rootDir>/config/testing/mocks/svg.ts',
     '.*\\.(jpg|jpeg|png|gif|eot|otf|webp|sv|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/config/testing/mocks/image.ts',
-    '^@datapunt/(.*)$': '<rootDir>/packages/$1',
+    '^@datapunt/asc-ui': '<rootDir>/packages/asc-ui/src',
+    '^@datapunt/asc-core': '<rootDir>/packages/asc-core/src',
   },
   testPathIgnorePatterns: [
     '/node_modules/',

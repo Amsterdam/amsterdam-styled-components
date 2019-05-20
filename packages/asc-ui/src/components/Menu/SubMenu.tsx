@@ -1,5 +1,5 @@
 import React from 'react'
-import MenuStyle, { MenuStyleProps } from '../../styles/components/MenuStyle'
+import MenuStyle, { MenuStyleProps } from './index'
 import { KeyboardKeys } from '../../types'
 import { MenuContext } from './Menu'
 import { Icon } from '../../index'
