@@ -43,7 +43,6 @@ export async function build(env: Environment) {
   await clear(env)
 
   const svgBasicNames = await normalize(env)
-  console.log('TCL: build -> svgBasicNames', svgBasicNames)
 
   // SVG Meta Data Flow
   const svgMetaDataWithTheme$ = from<string[]>(['fill']).pipe(
@@ -204,9 +203,6 @@ export async function build(env: Environment) {
     concat(types$),
     concat(helpers$),
   )
-
-  console.log('iconFiles')
-  files$.forEach(a => console.log(a.path))
 
   return new Promise<Subscription>((resolve, reject) => {
     const subscription = files$

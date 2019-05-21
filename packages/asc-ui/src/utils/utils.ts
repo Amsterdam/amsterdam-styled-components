@@ -3,7 +3,7 @@ import * as React from 'react'
 
 export function log(message: string) {
   if (!(process && process.env && process.env.NODE_ENV === 'production')) {
-    console.error(`[@ant-design/icons-react]: ${message}.`)
+    console.error(`[icons-react]: ${message}.`)
   }
 }
 
@@ -11,8 +11,7 @@ export function isIconDefinition(target: any): target is IconDefinition {
   return (
     typeof target === 'object' &&
     typeof target.name === 'string' &&
-    typeof target.theme === 'string' &&
-    (typeof target.icon === 'object' || typeof target.icon === 'function')
+    typeof target.icon === 'object'
   )
 }
 
@@ -89,19 +88,4 @@ export function generate(
       generate(child, `${key}-${node.tag}-${index}`),
     ),
   )
-}
-
-export function getSecondaryColor(primaryColor: string): string {
-  // choose the second color
-  // return generateColor(primaryColor)[0];
-  return '#eee'
-}
-
-export function withSuffix(name: string, theme: 'fill') {
-  switch (theme) {
-    case 'fill':
-      return `${name}-fill`
-    default:
-      throw new TypeError(`Unknown theme type: ${theme}, name: ${name}`)
-  }
 }

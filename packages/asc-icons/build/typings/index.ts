@@ -3,7 +3,7 @@ import { IconDefinition } from './types'
 import Prettier = require('prettier')
 import SVGO = require('svgo')
 
-export { AbstractNode, IconDefinition, ThemeType } from './types'
+export { AbstractNode, IconDefinition } from './types'
 
 export interface Node {
   nodeName: string

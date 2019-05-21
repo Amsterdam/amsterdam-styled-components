@@ -1,6 +1,5 @@
 import React from 'react'
-// import { ReactComponent as Search } from '@datapunt/asc-assets/lib/Icons/Search.svg'
-import { SearchFill } from '@datapunt/asc-icons'
+import Icons from '@datapunt/asc-icons'
 import IconButton from '../IconButton/IconButton'
 import InputStyle from '../Input/InputStyle'
 import IconButtonStyle from '../IconButton/IconButtonStyle'
@@ -9,7 +8,7 @@ import { KeyboardKeys } from '../../types'
 import TextField from '../TextField/TextField'
 import ReactIcon from '../ReactIcon/Icon'
 
-ReactIcon.add(SearchFill)
+ReactIcon.add(Icons.Search)
 
 interface SearchBarProps {
   minWidth?: string
@@ -78,11 +77,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
         value={text}
       />
       <IconButton aria-label="Search" color="secondary" onClick={handleSubmit}>
-        <ReactIcon type={SearchFill} />
+        <ReactIcon type={Icons.Search} />
       </IconButton>
-      {/* <IconButton aria-label="Search" color="secondary" onClick={handleSubmit}>
-        <Search />
-      </IconButton> */}
       {children}
     </ExtendedSearchBarStyle>
   )

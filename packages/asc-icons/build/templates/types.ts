@@ -11,9 +11,6 @@ export interface IconDefinition {
   icon: AbstractNode
 }
 
-// svg folder names
-export type ThemeType = 'fill'
-
 export interface HelperRenderOptions {
   placeholders?: {
     primaryColor?: string

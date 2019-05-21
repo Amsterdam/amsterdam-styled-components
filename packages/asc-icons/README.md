@@ -1,39 +1,19 @@
-<h1 align="center">
-Ant Design Icons
-</h1>
-
-<p align="center">
-⭐ The abstract trees of the Ant Design SVG icons.
-</p>
-
-<div align="center">
-
-[![NPM version](https://img.shields.io/npm/v/@ant-design/icons.svg?style=flat)](https://npmjs.org/package/@ant-design/icons)
-[![NPM downloads](http://img.shields.io/npm/dm/@ant-design/icons.svg?style=flat)](https://npmjs.org/package/@ant-design/icons)
-
-</div>
 
 ## Install
 
 ```bash
-yarn add @ant-design/icons # or npm install @ant-design/icons --save
+yarn add @datapunt/asc-icons # or npm install @datapunt/asc-icons --save
 ```
-
-## Use Library Adapter
-
-- React: See [@ant-design/icons-react](../icons-react) to learn about detail usage.
 
 ## Basic Usage
 
 ```ts
-import { AlertOutline } from '@ant-design/icons';
-// or import AlertOutline from '@ant-design/icons/lib/outline/AlertOutline';
+import Icons from '@datapunt/asc-icons';
 
-console.log(AlertOutline);
+console.log(Icons.Alert);
 // Output:
 // {
 //     name: 'alert',
-//     theme: 'outline',
 //     icon: {
 //         tag: 'svg',
 //         attrs: { viewBox: '64 64 896 896' },
@@ -64,20 +44,17 @@ interface AbstractNode {
 
 interface IconDefinition {
   name: string; // kebab-case-style
-  theme: ThemeType;
-  icon:
-    | ((primaryColor: string, secondaryColor: string) => AbstractNode)
-    | AbstractNode;
+  icon: AbstractNode;
 }
 ```
 
 ## Render Helpers
 ```ts
-import { AccountBookFill } from '@ant-design/icons';
-import { renderIconDefinitionToSVGElement } from '@ant-design/icons/lib/helpers';
+import { Alert } from '@datapunt/asc-icons';
+import { renderIconDefinitionToSVGElement } from '@datapunt/asc-icons/lib/utils/icons/helpers';
 
 const svgHTMLString = renderIconDefinitionToSVGElement(
-  AccountBookFill,
+  Alert,
   { extraSVGAttrs: { width: '1em', height: '1em', fill: 'currentColor' } }
 );
 
@@ -92,10 +69,6 @@ console.log(svgHTMLString);
 declare function renderIconDefinitionToSVGElement(icon: IconDefinition, options?: HelperRenderOptions): string;
 
 interface HelperRenderOptions {
-  placeholders?: {
-    primaryColor?: string; // default #333
-    secondaryColor?: string; // default #E6E6E6
-  };
   extraSVGAttrs?: {
     [key: string]: string;
   };
@@ -104,6 +77,7 @@ interface HelperRenderOptions {
 
 ## Build Project
 ```bash
+npm run clean # Clear generated files 
 npm run generate # Generate files to ./src
 npm run build # Build library
 npm run test # Runing Test

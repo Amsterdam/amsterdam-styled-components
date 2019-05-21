@@ -20,23 +20,19 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 
-# rollup cache
-.rpt2_cache
-
 # auto generated
-_site/
 .cache
 public
 
 # auto src generated
-src/**/*.ts
+src/utils/icons/**/*.ts
 
 # test generated
 test/root/src/**/*.ts
 test/root/src/**/*.svg
 
 # inline generated
-src/Icons/svg/**/*.svg
+src/svg/*.svg
 
 # publish
 *.tgz
