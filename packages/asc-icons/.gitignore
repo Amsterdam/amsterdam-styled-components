@@ -25,14 +25,14 @@ yarn.lock
 public
 
 # auto src generated
-src/utils/icons/**/*.ts
+src/Icons/**/*.ts
 
 # test generated
 test/root/src/**/*.ts
 test/root/src/**/*.svg
 
 # inline generated
-src/svg/*.svg
+svg/*.svg
 
 # publish
 *.tgz

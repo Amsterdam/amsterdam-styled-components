@@ -3,7 +3,6 @@ import { AbstractNode, Environment, Node } from '../typings'
 
 import assert = require('assert')
 import fs = require('fs-extra')
-import _ = require('lodash')
 import path = require('path')
 import rimraf = require('rimraf')
 

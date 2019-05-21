@@ -10,11 +10,14 @@ export const environment: Environment = {
     INDEX_TEMPLATE: path.resolve(__dirname, './templates/index.ts.template'),
     INDEX_OUTPUT: path.resolve(__dirname, '../src/Icons/index.ts'),
     DIST_TEMPLATE: path.resolve(__dirname, './templates/dist.ts.template'),
-    DIST_OUTPUT: path.resolve(__dirname, '../src/utils/icons/dist.ts'),
+    DIST_OUTPUT: path.resolve(__dirname, '../src/Icons/service/dist.ts'),
     TYPES_TEMPLATE: path.resolve(__dirname, './templates/types.ts'),
-    TYPES_OUTPUT: path.resolve(__dirname, '../src/utils/icons/types.ts'),
-    HELPERS_TEMPLATE: path.resolve(__dirname, './templates/helpers.ts'),
-    HELPERS_OUTPUT: path.resolve(__dirname, '../src/utils/icons/helpers.ts'),
+    TYPES_OUTPUT: path.resolve(__dirname, '../src/Icons/types.ts'),
+    HELPERS_TEMPLATE: path.resolve(
+      __dirname,
+      './templates/helpers.ts.template',
+    ),
+    HELPERS_OUTPUT: path.resolve(__dirname, '../src/Icons/service/helpers.ts'),
 
     ICON_OUTPUT_DIR: path.resolve(__dirname, '../src/Icons/'),
     THEME_FILL_OUTPUT: path.resolve(__dirname, '../src/Icons/*.ts'),

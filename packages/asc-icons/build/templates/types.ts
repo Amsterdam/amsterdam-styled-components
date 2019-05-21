@@ -12,10 +12,6 @@ export interface IconDefinition {
 }
 
 export interface HelperRenderOptions {
-  placeholders?: {
-    primaryColor?: string
-    secondaryColor?: string
-  }
   extraSVGAttrs?: {
     [key: string]: string
   }

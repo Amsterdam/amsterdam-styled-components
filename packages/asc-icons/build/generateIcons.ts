@@ -6,7 +6,6 @@ import {
   EXPORT_DIST,
   ICON_IDENTIFIER,
   ICON_JSON,
-  oldIcons,
 } from './constants'
 import { renderIconDefinitionToSVGElement } from './templates/helpers'
 import {
@@ -27,7 +26,6 @@ import path = require('path')
 import Prettier = require('prettier')
 
 import SVGO = require('svgo')
-import console = require('console')
 
 export async function build(env: Environment) {
   const svgo = new SVGO(env.options.svgo)

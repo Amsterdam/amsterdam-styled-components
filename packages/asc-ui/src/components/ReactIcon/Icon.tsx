@@ -1,9 +1,12 @@
 import * as React from 'react'
-import { AbstractNode, IconDefinition } from '@datapunt/asc-icons/lib/types'
+import {
+  AbstractNode,
+  IconDefinition,
+} from '@datapunt/asc-icons/lib/Icons/types'
 import { generate, isIconDefinition, log, MiniMap } from '../../utils/utils'
 
 export interface IconProps {
-  type: string | IconDefinition
+  type: IconDefinition
   className?: string
   onClick?: React.MouseEventHandler<SVGSVGElement>
   style?: React.CSSProperties

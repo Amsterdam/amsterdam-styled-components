@@ -1,4 +1,5 @@
-import { AbstractNode, HelperRenderOptions, IconDefinition } from './types'
+
+import { AbstractNode, HelperRenderOptions, IconDefinition } from '../types'
 
 export function renderIconDefinitionToSVGElement(
   icon: IconDefinition,

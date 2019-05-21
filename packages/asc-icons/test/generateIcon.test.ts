@@ -8,7 +8,7 @@ import path = require('path')
 describe('build/generateIcon.ts', () => {
   const env: Environment = {
     paths: {
-      SVG_DIR: path.resolve(__dirname, './root/svg'),
+      SVG_DIR: path.resolve(__dirname, './root/svg-source'),
       ICON_TEMPLATE: path.resolve(
         __dirname,
         '../build/templates/icon.ts.template',
@@ -24,19 +24,16 @@ describe('build/generateIcon.ts', () => {
       ),
       DIST_OUTPUT: path.resolve(__dirname, './root/src/dist.ts'),
       TYPES_TEMPLATE: path.resolve(__dirname, '../build/templates/types.ts'),
-      TYPES_OUTPUT: path.resolve(__dirname, './root/src/types.ts'),
+      TYPES_OUTPUT: path.resolve(__dirname, './root/src/Icons/types.ts'),
       HELPERS_TEMPLATE: path.resolve(
         __dirname,
         '../build/templates/helpers.ts',
       ),
       HELPERS_OUTPUT: path.resolve(__dirname, './root/src/helpers.ts'),
-      ICON_OUTPUT_DIR: path.resolve(__dirname, './root/src/'),
+      ICON_OUTPUT_DIR: path.resolve(__dirname, './root/src/Icons'),
       THEME_FILL_OUTPUT: path.resolve(__dirname, './root/src/Icons/*.ts'),
-      INLINE_SVG_OUTPUT_DIR: path.resolve(__dirname, './root/src/Icons/svg/'),
-      INLINE_SVG_THEME_FILL_OUTPUT: path.resolve(
-        __dirname,
-        './root/src/Icons/svg/*.svg',
-      ),
+      INLINE_SVG_OUTPUT_DIR: path.resolve(__dirname, './root/svg/'),
+      INLINE_SVG_THEME_FILL_OUTPUT: path.resolve(__dirname, './root/svg/*.svg'),
     },
     base: path.resolve(__dirname, './'),
     options: {
@@ -55,7 +52,7 @@ describe('build/generateIcon.ts', () => {
   it('should work.', async () => {
     await build(env)
     const outlineString = await fs.readFile(
-      `${env.paths.ICON_OUTPUT_DIR}/CloseOutline.ts`,
+      `${env.paths.ICON_OUTPUT_DIR}/Close.ts`,
       'utf8',
     )
     expect(outlineString).toContain(closePath)
