@@ -8,7 +8,6 @@ export interface AbstractNode {
 
 export interface IconDefinition {
   name: string // kebab-case-style
-  theme: ThemeType
   icon: AbstractNode
 }
 

@@ -1,5 +1,6 @@
 import chalk from 'chalk'
 import { AbstractNode, Environment, Node, ThemeType } from '../typings'
+
 import assert = require('assert')
 import fs = require('fs-extra')
 import _ = require('lodash')
@@ -65,17 +66,6 @@ export const log = {
   notice(message: string) {
     return console.log(chalk.blueBright(`🌟 [Notice] ${message}`))
   },
-}
-
-export function getIdentifier(identifier: string, theme: ThemeType) {
-  switch (theme) {
-    case 'fill':
-      return `${identifier}Fill`
-    default:
-      throw new TypeError(
-        `Unknown theme type: ${theme}, identifier: ${identifier}`,
-      )
-  }
 }
 
 export function withSuffix(name: string, theme: ThemeType) {

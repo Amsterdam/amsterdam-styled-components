@@ -29,10 +29,9 @@ function getNode(viewBox: string, ...paths: PathArgs[]): AbstractNode {
   };
 }
 
-function getIcon(name: string, theme: 'fill', icon: any): IconDefinition {
+function getIcon(name: string, icon: any): IconDefinition {
   return {
     name,
-    theme,
     icon
   };
 }

@@ -15,17 +15,9 @@ import {
   IconDefinition,
   NameAndPath,
   Node,
-  ThemeType,
   WriteFileMetaData,
 } from './typings'
-import {
-  clear,
-  generateAbstractTree,
-  getIdentifier,
-  isAccessable,
-  log,
-  replaceFillColor,
-} from './utils'
+import { clear, generateAbstractTree, isAccessable, log } from './utils'
 import { normalize } from './utils/normalizeNames'
 
 import fs = require('fs-extra')
@@ -35,10 +27,10 @@ import path = require('path')
 import Prettier = require('prettier')
 
 import SVGO = require('svgo')
+import console = require('console')
 
 export async function build(env: Environment) {
   const svgo = new SVGO(env.options.svgo)
-  const singleType: ThemeType[] = ['fill']
   const svgoForSingleIcon = new SVGO({
     ...env.options.svgo,
     plugins: [
@@ -51,40 +43,32 @@ export async function build(env: Environment) {
   await clear(env)
 
   const svgBasicNames = await normalize(env)
+  console.log('TCL: build -> svgBasicNames', svgBasicNames)
 
   // SVG Meta Data Flow
-  const svgMetaDataWithTheme$ = from<ThemeType[]>(['fill']).pipe(
-    map<ThemeType, Observable<any>>(theme =>
+  const svgMetaDataWithTheme$ = from<string[]>(['fill']).pipe(
+    map<string, Observable<any>>(item =>
       from(svgBasicNames).pipe(
         map<string, NameAndPath>(kebabCaseName => {
-          const identifier = getIdentifier(
-            _.upperFirst(_.camelCase(kebabCaseName)),
-            theme,
-          )
+          const identifier = _.upperFirst(_.camelCase(kebabCaseName))
           return { kebabCaseName, identifier }
         }),
         filter(({ kebabCaseName }) =>
-          isAccessable(
-            path.resolve(env.paths.SVG_DIR, theme, `${kebabCaseName}.svg`),
-          ),
+          isAccessable(path.resolve(env.paths.SVG_DIR, `${kebabCaseName}.svg`)),
         ),
         mergeMap<NameAndPath, any>(
           async ({ kebabCaseName, identifier }: any) => {
             const tryUrl = path.resolve(
               env.paths.SVG_DIR,
-              theme,
               `${kebabCaseName}.svg`,
             )
             let optimizer = svgo
-            if (singleType.includes(theme)) {
-              optimizer = svgoForSingleIcon
-            }
+            optimizer = svgoForSingleIcon
             const { data } = await optimizer.optimize(
               await fs.readFile(tryUrl, 'utf8'),
             )
             const icon: IconDefinition = {
               name: kebabCaseName,
-              theme,
               icon: {
                 ...generateAbstractTree(
                   (parse5.parseFragment(data) as any).childNodes[0] as Node,
@@ -106,22 +90,6 @@ export async function build(env: Environment) {
     ),
     map<any, BuildTimeIconMetaData>(({ identifier, icon }) => {
       icon = _.cloneDeep(icon)
-      if (typeof icon.icon !== 'function') {
-        if (!oldIcons.includes(icon.name)) {
-          icon.icon.attrs.viewBox = '0 0 32 32'
-          // icon.icon.attrs.viewBox = '64 64 896 896'
-        }
-        if (icon.icon.attrs.class) {
-          icon.icon.attrs = _.omit(icon.icon.attrs, ['class'])
-        }
-      }
-      if (icon.theme === 'twotone') {
-        if (typeof icon.icon !== 'function' && icon.icon.children) {
-          icon.icon.children.forEach((pathElment: any) => {
-            pathElment.attrs.fill = pathElment.attrs.fill || '#333'
-          })
-        }
-      }
       return { identifier, icon }
     }),
   )
@@ -132,7 +100,6 @@ export async function build(env: Environment) {
       return {
         path: path.resolve(
           env.paths.INLINE_SVG_OUTPUT_DIR,
-          icon.theme,
           `./${icon.name}.svg`,
         ),
         content: renderIconDefinitionToSVGElement(icon),
@@ -143,63 +110,34 @@ export async function build(env: Environment) {
   // Icon files content flow.
   const iconTsTemplate = await fs.readFile(env.paths.ICON_TEMPLATE, 'utf8')
   const iconFiles$ = BuildTimeIconMetaData$.pipe(
-    map<
-      BuildTimeIconMetaData,
-      { identifier: string; content: string; theme: ThemeType }
-    >(({ identifier, icon }) => {
-      return {
-        identifier,
-        theme: icon.theme,
-        content:
-          icon.theme === 'twotone'
-            ? Prettier.format(
-                iconTsTemplate
-                  .replace(ICON_IDENTIFIER, identifier)
-                  .replace(
-                    ICON_JSON,
-                    JSON.stringify({ ...icon, icon: 'FUNCTION' }).replace(
-                      `"FUNCTION"`,
-                      `function (primaryColor: string, secondaryColor: string) {` +
-                        ` return ${replaceFillColor(
-                          JSON.stringify(icon.icon),
-                        )};` +
-                        ` }`,
-                    ),
-                  ),
-                { ...env.options.prettier, parser: 'typescript' },
-              )
-            : Prettier.format(
-                iconTsTemplate
-                  .replace(ICON_IDENTIFIER, identifier)
-                  .replace(ICON_JSON, JSON.stringify(icon)),
-                env.options.prettier,
-              ),
-      }
-    }),
-    map<
-      { identifier: string; content: string; theme: ThemeType },
-      WriteFileMetaData
-    >(({ identifier, content, theme }) => ({
-      path: path.resolve(
-        env.paths.ICON_OUTPUT_DIR,
-        theme,
-        `./${identifier}.ts`,
-      ),
-      content,
-    })),
+    map<BuildTimeIconMetaData, { identifier: string; content: string }>(
+      ({ identifier, icon }) => {
+        return {
+          identifier,
+          content: Prettier.format(
+            iconTsTemplate
+              .replace(ICON_IDENTIFIER, identifier)
+              .replace(ICON_JSON, JSON.stringify(icon)),
+            env.options.prettier,
+          ),
+        }
+      },
+    ),
+    map<{ identifier: string; content: string }, WriteFileMetaData>(
+      ({ identifier, content }) => ({
+        path: path.resolve(env.paths.ICON_OUTPUT_DIR, `./${identifier}.ts`),
+        content,
+      }),
+    ),
   )
 
   // Index File content flow
   const indexTsTemplate = await fs.readFile(env.paths.INDEX_TEMPLATE, 'utf8')
   const indexFile$ = svgMetaDataWithTheme$.pipe(
-    mergeMap<Observable<BuildTimeIconMetaData>, any>(
-      (metaData$: any) => metaData$,
-    ),
+    mergeMap<any, any>((metaData$: any) => metaData$),
     reduce<any, string>(
-      (acc, { identifier, icon }) =>
-        `${acc}export { default as ${identifier} } from './${
-          icon.theme
-        }/${identifier}';\n`,
+      (acc, { identifier }) =>
+        `${acc}export { default as ${identifier} } from './${identifier}';\n`,
       '',
     ),
     map<string, WriteFileMetaData>(content => ({
@@ -216,46 +154,23 @@ export async function build(env: Environment) {
   const dist$ = BuildTimeIconMetaData$.pipe(
     map<BuildTimeIconMetaData, string>(({ identifier, icon }) => {
       let content = ''
-      if (icon.theme === 'twotone') {
-        if (typeof icon.icon !== 'function') {
-          const paths = (icon.icon.children || [])
-            .filter(({ attrs }) => typeof attrs.d === 'string') // fix the <defs> element in the top level children
-            .map(({ attrs }) => {
-              const { fill, d } = attrs
-              if (fill && d) {
-                return `['${fill}', '${d}']`
-              }
-              return `'${d}'`
-            })
-            .join(',')
-          content = Prettier.format(
-            `export const ${identifier}: IconDefinition = ` +
-              `getIcon('${icon.name}', '${icon.theme}', ${replaceFillColor(
-                `function (primaryColor: string, secondaryColor: string) {` +
-                  ` return getNode('${icon.icon.attrs.viewBox}', ${paths}) }`,
-              )})`,
-            { ...env.options.prettier, parser: 'typescript' },
-          )
-        }
-      } else if (typeof icon.icon !== 'function') {
-        const paths = (icon.icon.children || [])
-          .filter(({ attrs }) => typeof attrs.d === 'string')
-          .map(({ attrs }) => {
-            const { fill, d } = attrs
-            if (fill && d) {
-              return `['${fill}', '${d}']`
-            }
-            return `'${d}'`
-          })
-          .join(',')
-        content = Prettier.format(
-          `export const ${identifier}: IconDefinition = ` +
-            `getIcon('${icon.name}', '${icon.theme}', ` +
-            `getNode('${icon.icon.attrs.viewBox}', ${paths})` +
-            `);`,
-          env.options.prettier,
-        )
-      }
+      const paths = (icon.icon.children || [])
+        .filter(({ attrs }) => typeof attrs.d === 'string')
+        .map(({ attrs }) => {
+          const { fill, d } = attrs
+          if (fill && d) {
+            return `['${fill}', '${d}']`
+          }
+          return `'${d}'`
+        })
+        .join(',')
+      content = Prettier.format(
+        `export const ${identifier}: IconDefinition = ` +
+          `getIcon('${icon.name}', ` +
+          `getNode('${icon.icon.attrs.viewBox}', ${paths})` +
+          `);`,
+        env.options.prettier,
+      )
       return content
     }),
     reduce<string, string>((acc, nextContent) => acc + nextContent, ''),
@@ -289,6 +204,9 @@ export async function build(env: Environment) {
     concat(types$),
     concat(helpers$),
   )
+
+  console.log('iconFiles')
+  files$.forEach(a => console.log(a.path))
 
   return new Promise<Subscription>((resolve, reject) => {
     const subscription = files$

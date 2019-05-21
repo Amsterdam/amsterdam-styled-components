@@ -17,7 +17,7 @@ describe('build/generateIcon.ts', () => {
         __dirname,
         '../build/templates/index.ts.template',
       ),
-      INDEX_OUTPUT: path.resolve(__dirname, './root/src/index.ts'),
+      INDEX_OUTPUT: path.resolve(__dirname, './root/src/Icons/index.ts'),
       DIST_TEMPLATE: path.resolve(
         __dirname,
         '../build/templates/dist.ts.template',
@@ -32,10 +32,10 @@ describe('build/generateIcon.ts', () => {
       HELPERS_OUTPUT: path.resolve(__dirname, './root/src/helpers.ts'),
       ICON_OUTPUT_DIR: path.resolve(__dirname, './root/src/'),
       THEME_FILL_OUTPUT: path.resolve(__dirname, './root/src/Icons/*.ts'),
-      INLINE_SVG_OUTPUT_DIR: path.resolve(__dirname, './root/src/'),
+      INLINE_SVG_OUTPUT_DIR: path.resolve(__dirname, './root/src/Icons/svg/'),
       INLINE_SVG_THEME_FILL_OUTPUT: path.resolve(
         __dirname,
-        './root/src/IconsRaw/*.svg',
+        './root/src/Icons/svg/*.svg',
       ),
     },
     base: path.resolve(__dirname, './'),
@@ -55,7 +55,7 @@ describe('build/generateIcon.ts', () => {
   it('should work.', async () => {
     await build(env)
     const outlineString = await fs.readFile(
-      `${env.paths.ICON_OUTPUT_DIR}/Icons/CloseOutline.ts`,
+      `${env.paths.ICON_OUTPUT_DIR}/CloseOutline.ts`,
       'utf8',
     )
     expect(outlineString).toContain(closePath)
