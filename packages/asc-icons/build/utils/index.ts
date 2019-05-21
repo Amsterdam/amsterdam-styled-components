@@ -102,15 +102,21 @@ export function getRollbackTheme(
  */
 export async function clear(env: Environment) {
   log.notice(`Clear folders.`)
-  return Promise.all(
-    (Object.keys(env.paths) as Array<keyof typeof env.paths>)
+
+  return Promise.all([
+    ...(Object.keys(env.paths) as Array<keyof typeof env.paths>)
       .filter(key => key.endsWith('OUTPUT')) // DO NOT DELETE THIS LINE!!!
       .map(key => {
         // This is evil. Make sure you just delete the OUTPUT.
         log.notice(`Delete ${path.relative(env.base, env.paths[key])}.`)
         return new Promise(resolve => rimraf(env.paths[key], resolve))
       }),
-  )
+    new Promise(resolve => {
+      const filename = './tsconfig.tsbuildinfo'
+      log.notice(`Delete ${path.relative(env.base, filename)}.`)
+      rimraf(filename, resolve)
+    }),
+  ])
 }
 
 export function isAccessable(url: string) {

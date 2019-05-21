@@ -1,6 +1,12 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "strict": true,
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "removeComments": true,
     "rootDir": "./src",
     "outDir": "./lib"
   },

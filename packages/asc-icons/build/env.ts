@@ -5,7 +5,7 @@ import path = require('path')
 // eslint-disable-next-line import/prefer-default-export
 export const environment: Environment = {
   paths: {
-    SVG_DIR: path.resolve(__dirname, '../svg'),
+    SVG_DIR: path.resolve(__dirname, '../svg-source'),
     ICON_TEMPLATE: path.resolve(__dirname, './templates/icon.ts.template'),
     INDEX_TEMPLATE: path.resolve(__dirname, './templates/index.ts.template'),
     INDEX_OUTPUT: path.resolve(__dirname, '../src/Icons/index.ts'),
@@ -18,11 +18,8 @@ export const environment: Environment = {
 
     ICON_OUTPUT_DIR: path.resolve(__dirname, '../src/Icons/'),
     THEME_FILL_OUTPUT: path.resolve(__dirname, '../src/Icons/*.ts'),
-    INLINE_SVG_OUTPUT_DIR: path.resolve(__dirname, '../src/Icons/svg/'),
-    INLINE_SVG_THEME_FILL_OUTPUT: path.resolve(
-      __dirname,
-      '../src/Icons/svg/*.svg',
-    ),
+    INLINE_SVG_OUTPUT_DIR: path.resolve(__dirname, '../svg/'),
+    INLINE_SVG_THEME_FILL_OUTPUT: path.resolve(__dirname, '../svg/*.svg'),
   },
   base: path.resolve(__dirname, '../'),
   options: {
