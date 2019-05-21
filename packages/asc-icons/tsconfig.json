@@ -1,21 +1,10 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "strict": true,
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "declaration": true,
-    "removeComments": true,
-    "lib": [
-      "esnext",
-      "dom"
-    ],
-    "types": ["react", "jest"]
+    "rootDir": "./src",
+    "outDir": "./lib"
   },
   "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules"
+    "./src"
   ]
 }

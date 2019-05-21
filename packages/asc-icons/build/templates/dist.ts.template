@@ -3,13 +3,6 @@
 
 import { IconDefinition, AbstractNode } from './types';
 
-const normalViewBox = '0 0 1024 1024';
-const newViewBox = '0 0 32 32';
-
-const fill = 'fill';
-const outline = 'outline';
-const twotone = 'twotone';
-
 type PathArgs = string | ([string, string]);
 
 function getNode(viewBox: string, ...paths: PathArgs[]): AbstractNode {
@@ -36,7 +29,7 @@ function getNode(viewBox: string, ...paths: PathArgs[]): AbstractNode {
   };
 }
 
-function getIcon(name: string, theme: 'fill' | 'outline'| 'twotone', icon: any): IconDefinition {
+function getIcon(name: string, theme: 'fill', icon: any): IconDefinition {
   return {
     name,
     theme,

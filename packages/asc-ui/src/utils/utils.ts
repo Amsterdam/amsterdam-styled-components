@@ -97,17 +97,10 @@ export function getSecondaryColor(primaryColor: string): string {
   return '#eee'
 }
 
-export function withSuffix(
-  name: string,
-  theme: 'fill' | 'outline' | 'twotone',
-) {
+export function withSuffix(name: string, theme: 'fill') {
   switch (theme) {
     case 'fill':
       return `${name}-fill`
-    case 'outline':
-      return `${name}-o`
-    case 'twotone':
-      return `${name}-twotone`
     default:
       throw new TypeError(`Unknown theme type: ${theme}, name: ${name}`)
   }

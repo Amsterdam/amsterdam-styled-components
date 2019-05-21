@@ -1,34 +1,26 @@
 export interface AbstractNode {
-  tag: string;
+  tag: string
   attrs: {
-    [key: string]: string;
-  };
-  children?: AbstractNode[];
+    [key: string]: string
+  }
+  children?: AbstractNode[]
 }
 
 export interface IconDefinition {
-  name: string; // kebab-case-style
-  theme: ThemeType;
-  icon:
-    | ((primaryColor: string, secondaryColor: string) => AbstractNode)
-    | AbstractNode;
+  name: string // kebab-case-style
+  theme: ThemeType
+  icon: AbstractNode
 }
 
 // svg folder names
-export type ThemeType = 'fill' | 'outline' | 'twotone';
-
-export interface Manifest {
-  fill: string[];
-  outline: string[];
-  twotone: string[];
-}
+export type ThemeType = 'fill'
 
 export interface HelperRenderOptions {
   placeholders?: {
-    primaryColor?: string;
-    secondaryColor?: string;
-  };
+    primaryColor?: string
+    secondaryColor?: string
+  }
   extraSVGAttrs?: {
-    [key: string]: string;
-  };
+    [key: string]: string
+  }
 }

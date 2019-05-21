@@ -1,4 +1,4 @@
-import { environment } from './env';
-import { build } from './generateIcons';
+import { environment } from './env'
+import { build } from './generateIcons'
 
-build(environment);
+build(environment)

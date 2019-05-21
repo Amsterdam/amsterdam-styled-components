@@ -25,12 +25,12 @@
     "react": "16.8.6",
     "react-dom": "16.8.6"
   },
-  "resolutions": {
-    "react": "16.8.6",
-    "react-dom": "16.8.6"
-  },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "1354a8ac6bbc9505cfb5ce9c819e06ba32aa93b7"
+  "gitHead": "1354a8ac6bbc9505cfb5ce9c819e06ba32aa93b7",
+  "resolutions": {
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+  }
 }
