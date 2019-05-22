@@ -60,9 +60,11 @@ export function generateAbstractTree(
 
 export const log = {
   info(message: string) {
+    // eslint-disable-next-line no-console
     return console.log(chalk.green(`🌟 [Generate] ${message}`))
   },
   notice(message: string) {
+    // eslint-disable-next-line no-console
     return console.log(chalk.blueBright(`🌟 [Notice] ${message}`))
   },
 }
@@ -98,12 +100,4 @@ export function isAccessable(url: string) {
     accessable = false
   }
   return accessable
-}
-
-export function replaceFillColor(raw: string): string {
-  return raw
-    .replace(/['"]#333['"]/g, 'primaryColor')
-    .replace(/['"]#E6E6E6['"]/g, 'secondaryColor')
-    .replace(/['"]#D9D9D9['"]/g, 'secondaryColor')
-    .replace(/['"]#D8D8D8['"]/g, 'secondaryColor')
 }

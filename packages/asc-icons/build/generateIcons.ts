@@ -33,8 +33,7 @@ export async function build(env: Environment) {
     ...env.options.svgo,
     plugins: [
       ...env.options.svgo.plugins!,
-      // single color should remove the `fill` attribute.
-      { removeAttrs: { attrs: ['fill'] } },
+      { removeAttrs: { attrs: ['fill', 'fill-rule'] } },
     ],
   })
 
@@ -43,41 +42,33 @@ export async function build(env: Environment) {
   const svgBasicNames = await normalize(env)
 
   // SVG Meta Data Flow
-  const svgMetaDataWithTheme$ = from<string[]>(['fill']).pipe(
-    map<string, Observable<any>>(item =>
-      from(svgBasicNames).pipe(
-        map<string, NameAndPath>(kebabCaseName => {
-          const identifier = _.upperFirst(_.camelCase(kebabCaseName))
-          return { kebabCaseName, identifier }
-        }),
-        filter(({ kebabCaseName }) =>
-          isAccessable(path.resolve(env.paths.SVG_DIR, `${kebabCaseName}.svg`)),
-        ),
-        mergeMap<NameAndPath, any>(
-          async ({ kebabCaseName, identifier }: any) => {
-            const tryUrl = path.resolve(
-              env.paths.SVG_DIR,
-              `${kebabCaseName}.svg`,
-            )
-            let optimizer = svgo
-            optimizer = svgoForSingleIcon
-            const { data } = await optimizer.optimize(
-              await fs.readFile(tryUrl, 'utf8'),
-            )
-            const icon: IconDefinition = {
-              name: kebabCaseName,
-              icon: {
-                ...generateAbstractTree(
-                  (parse5.parseFragment(data) as any).childNodes[0] as Node,
-                  kebabCaseName,
-                ),
-              },
-            }
-            return { identifier, icon }
-          },
-        ),
-      ),
+  const svgMetaDataWithTheme$ = from(svgBasicNames).pipe(
+    map<string, NameAndPath>(kebabCaseName => {
+      const identifier = _.upperFirst(_.camelCase(kebabCaseName))
+      return { kebabCaseName, identifier }
+    }),
+    filter(({ kebabCaseName }) =>
+      isAccessable(path.resolve(env.paths.SVG_DIR, `${kebabCaseName}.svg`)),
     ),
+    mergeMap<NameAndPath, any>(async ({ kebabCaseName, identifier }: any) => {
+      const tryUrl = path.resolve(env.paths.SVG_DIR, `${kebabCaseName}.svg`)
+      let optimizer = svgo
+      optimizer = svgoForSingleIcon
+      const { data } = await optimizer.optimize(
+        await fs.readFile(tryUrl, 'utf8'),
+      )
+      const icon: IconDefinition = {
+        name: kebabCaseName,
+        icon: {
+          ...generateAbstractTree(
+            (parse5.parseFragment(data) as any).childNodes[0] as Node,
+            kebabCaseName,
+          ),
+        },
+      }
+      return { identifier, icon }
+    }),
+    map<any, Observable<BuildTimeIconMetaData>>(item => of(item)),
   )
 
   // Nomalized build time icon meta data
@@ -121,10 +112,12 @@ export async function build(env: Environment) {
       },
     ),
     map<{ identifier: string; content: string }, WriteFileMetaData>(
-      ({ identifier, content }) => ({
-        path: path.resolve(env.paths.ICON_OUTPUT_DIR, `./${identifier}.ts`),
-        content,
-      }),
+      ({ identifier, content }) => {
+        return {
+          path: path.resolve(env.paths.ICON_OUTPUT_DIR, `./${identifier}.ts`),
+          content,
+        }
+      },
     ),
   )
 
