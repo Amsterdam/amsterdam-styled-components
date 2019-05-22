@@ -1,4 +1,4 @@
-import styled, { Theme } from '@datapunt/asc-core'
+import styled, { css, Theme } from '@datapunt/asc-core'
 import { svgFill } from '../../utils'
 
 export type Props = {
@@ -23,7 +23,11 @@ const IconStyle = styled.span<Props>`
     width: ${size - padding * 2}px;
     height: ${size - padding * 2}px;
   `}
-  padding: ${({ padding }) => `${padding}px`};
+  ${({ padding }) =>
+    padding &&
+    css`
+      padding: ${padding}px;
+    `};
   box-sizing: content-box;
   ${({ rotate = defaultProps.rotate }) => `transform: rotate(${rotate}deg)`};
 

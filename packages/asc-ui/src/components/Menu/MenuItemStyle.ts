@@ -11,7 +11,7 @@ export const MenuItemLabelStyle = styled.span<
   border-bottom-color: ${({ focused }) =>
     focused ? color('secondary', 'main') : 'transparent'};
   line-height: 22px;
-  font-family: 'AvenirNextLTW01-Medium';
+  font-weight: 400;
   color: ${color('tint', 'level6')};
 `
 

@@ -8,7 +8,6 @@ exports[`SearchBar should render 1`] = `
   display: flex;
   width: 20px;
   height: 20px;
-  padding: undefinedpx;
   box-sizing: content-box;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);

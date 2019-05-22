@@ -11,7 +11,7 @@ export const MenuDropDownButtonStyle = styled.li<
   background-color: ${({ focused }) =>
     focused ? color('tint', 'level2') : 'transparent'};
   border: 0px;
-  font-family: 'AvenirNextLTW01-Medium';
+  font-weight: 500;
   align-items: center;
   height: ${({ height }) => `${height}px`};
   padding: 15px;

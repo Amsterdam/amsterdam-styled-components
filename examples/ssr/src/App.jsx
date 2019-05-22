@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Theme, ThemeProvider } from '@datapunt/asc-ui'
-import SVG from '@datapunt/asc-assets/Icons/back-white.svg'
+import Close from '@datapunt/asc-assets/Icons/Close.svg'
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
           An html button with an onclick event, click me!
         </button>
         <Button color={Theme.TypeLevel.primary}>
-          <SVG />Hello
+          <Close />Hello
         </Button>
       </>
     </ThemeProvider>

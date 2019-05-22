@@ -10,7 +10,8 @@ class App extends Component {
     const extendedTheme = {
       globalStyle: `
         @font-face {
-          font-family: 'AvenirNextLTW01-Regular';
+          font-family: 'Avenir Next';
+          font-weight: 700;
           src: url('${HeavyFontEot}');
           src: url('${HeavyFontEot}?#iefix') format('embedded-opentype'),
                url('${HeavyFontWoff2}') format('woff2')
