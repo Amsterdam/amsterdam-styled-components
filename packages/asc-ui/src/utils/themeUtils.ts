@@ -71,3 +71,29 @@ export const svgFill = (
 
   return ''
 }
+
+export const mapToBreakpoints = (
+  sizes: any,
+  propertyName: string,
+  theme: Theme.ThemeInterface,
+) => {
+  const breakpointVariants = Object.keys(theme.breakpoints) as Array<
+    keyof BreakpointsInterface
+  >
+  return css`
+    ${sizes
+      .map((value: number, index: number) =>
+        index === 0
+          ? `${propertyName}: ${value};`
+          : breakpointVariants[index] &&
+            `
+        @media screen and ${breakpoint('min-width', breakpointVariants[index])({
+          theme,
+        })} {
+          ${propertyName}: ${value};
+        }
+      `,
+      )
+      .join('')}
+  `
+}

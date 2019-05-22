@@ -3,7 +3,7 @@ import MenuItemStyle from './MenuItemStyle'
 import { color } from '../../utils'
 
 export const MenuLabelStyle = styled(MenuItemStyle)`
-  font-family: 'AvenirNextLTW01-Demi';
+  font-weight: 700;
   color: ${color('tint', 'level7')};
 `
 

@@ -10,7 +10,7 @@ const RasdioLabelStyle = styled.label.attrs<Props>({
   disabled: ({ disabled }: Props) => disabled,
 })<Props>`
   color: ${props => (props.disabled ? '#bebebe' : '#434343')};
-  font-family: 'AvenirNextLTW01-Regular', verdana, sans-serif;
+  font-weight: 400;
   font-size: 16px;
   padding-left: 38px;
   line-height: 28px;

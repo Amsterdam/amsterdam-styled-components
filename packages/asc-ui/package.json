@@ -10,15 +10,13 @@
   },
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@datapunt/asc-assets": "^0.6.6",
+    "@datapunt/asc-assets": "^0.6.3",
     "@datapunt/asc-core": "^0.6.5",
-    "@types/styled-components": "^4.1.1",
     "classnames": "^2.2.6",
     "deepmerge": "^3.2.0",
     "enzyme": "^3.9.0",
     "jest-styled-components": "^6.3.1",
-    "polished": "^3.2.0",
-    "styled-components": "^4.2.0"
+    "polished": "^3.2.0"
   },
   "peerDependencies": {
     "react": "^16.8.4",

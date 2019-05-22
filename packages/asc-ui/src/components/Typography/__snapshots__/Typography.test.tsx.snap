@@ -3,7 +3,6 @@
 exports[`Typography should render the typography types 1`] = `
 Array [
   .c0 {
-  font-weight: 900;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -19,20 +18,18 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  color: #000000;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-family: inherit;
-  font-weight: 300;
-  font-size: 6rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1;
-  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  line-height: 38px;
+  color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -46,7 +43,6 @@ Array [
     Heading one
   </h1>,
   .c0 {
-  font-weight: 900;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -62,20 +58,18 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  color: #000000;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-family: inherit;
-  font-weight: 300;
-  font-size: 6rem;
+  font-weight: 700;
+  font-size: 24px;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1;
-  font-style: normal;
+  color: #ec0000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -89,7 +83,6 @@ Array [
     Heading two
   </h2>,
   .c0 {
-  font-weight: 900;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -105,20 +98,18 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  color: #000000;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-family: inherit;
-  font-weight: 300;
-  font-size: 6rem;
+  font-weight: 700;
+  font-size: 20px;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1;
-  font-style: normal;
+  color: #ec0000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -132,7 +123,6 @@ Array [
     Heading three
   </h3>,
   .c0 {
-  font-weight: 900;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -148,20 +138,18 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  color: #000000;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.125rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1;
-  font-style: normal;
+  color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -175,7 +163,6 @@ Array [
     Heading four
   </h4>,
   .c0 {
-  font-weight: 900;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -191,20 +178,18 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  color: #000000;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.125rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1;
-  font-style: normal;
+  color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -218,7 +203,6 @@ Array [
     Heading five
   </h5>,
   .c0 {
-  font-weight: 900;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -234,20 +218,18 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  color: #000000;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 6rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1;
-  font-style: normal;
+  color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -267,15 +249,14 @@ Array [
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1;
-  font-style: normal;
+  color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -305,15 +286,14 @@ Array [
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1.25;
-  font-style: normal;
+  color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -328,15 +308,14 @@ Array [
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1;
-  font-style: normal;
+  color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;

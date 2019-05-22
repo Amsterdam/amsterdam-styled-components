@@ -23,7 +23,7 @@ const ButtonStyle = styled(ButtonBaseStyle)<Props>`
       !color && `outline: 1px solid ${getColorFromTheme(theme, 'primary')};`}
   }
 
-  & svg {
+  & > svg {
     width: 30px;
     height: 30px;
     ${({ theme }) => svgFill('tint', 'level1')({ theme })};

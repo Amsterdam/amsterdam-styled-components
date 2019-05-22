@@ -25,18 +25,18 @@ export namespace Theme {
     mobileS: GetBreakpointFunc
     mobileM: GetBreakpointFunc
     mobileL: GetBreakpointFunc
-    tablet: GetBreakpointFunc
+    tabletS: GetBreakpointFunc
+    tabletM: GetBreakpointFunc
     laptop: GetBreakpointFunc
     laptopM: GetBreakpointFunc
     laptopL: GetBreakpointFunc
     desktop: GetBreakpointFunc
-    desktopL: GetBreakpointFunc
   }
 
   export interface PaletteInterface {
     light?: string
     dark?: string
-    main?: string
+    main: string
   }
 
   export type Tint = {
@@ -50,9 +50,9 @@ export namespace Theme {
   }
 
   export interface ColorInterface {
-    primary: PaletteInterface | string
-    secondary: PaletteInterface | string
-    error: PaletteInterface | string
+    primary: PaletteInterface
+    secondary: PaletteInterface
+    error: PaletteInterface
     tint: Tint
     support: {
       valid: string
@@ -64,18 +64,10 @@ export namespace Theme {
 
   type TypographyElementStyle = {
     color: CSSProp
-    fontFamily: CSSProp
-    fontWeight: 300 | 400 | 500 | 600 | 700 | 800 | 900 | 'bold' | 'normal'
+    fontWeight: 400 | 500 | 700
     fontSize: CSSProp
     lineHeight: number | CSSProp
     letterSpacing: CSSProp
-  }
-
-  type TypographyWeights = {
-    fontWeightLight: number
-    fontWeightRegular: number
-    fontWeightMedium: number
-    fontWeightHeavy: number
   }
 
   export type TypographyElements = {
@@ -87,11 +79,10 @@ export namespace Theme {
     h6: TypographyElementStyle
     p: TypographyElementStyle
     a: TypographyElementStyle
+    em: TypographyElementStyle
   }
 
-  export interface TypographyInterface
-    extends TypographyWeights,
-      TypographyElements {
+  export interface TypographyInterface extends TypographyElements {
     fontFamily: string
     fontSize: string
   }

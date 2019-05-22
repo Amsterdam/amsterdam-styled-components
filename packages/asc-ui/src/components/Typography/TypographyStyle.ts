@@ -1,6 +1,5 @@
-import { StyledComponent } from 'styled-components'
+import styled, { css, StyledComponent, Theme } from '@datapunt/asc-core'
 import { em, margin } from 'polished'
-import styled, { css } from '@datapunt/asc-core'
 import { getTypographyFromTheme, color, focusStyle } from '../../utils'
 
 export type Props = {
@@ -9,14 +8,13 @@ export type Props = {
   href?: string
   tabindex?: number
   element?: Variant
+  color?: Theme.TypeLevel
 }
 const headings = css`
-  font-weight: 900;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  color: ${color('tint', 'level7')};
 `
 
 const extendedStyles = {
@@ -45,9 +43,12 @@ const extendedStyles = {
       color: ${color('secondary')};
     }
   `,
+  em: css`
+    font-style: italic;
+  `,
 }
 
-export type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'a'
+export type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'a' | 'em'
 
 const getProperty = <T, K extends keyof T>(obj: T, key: K) => obj[key]
 
@@ -70,19 +71,18 @@ export default (element: Variant): StyledComponent<any, any> => styled(element)<
     const {
       fontWeight,
       fontSize,
-      fontFamily,
       letterSpacing,
       lineHeight,
+      color: colorProp,
     } = getTypographyFromTheme(theme, element)
     return css`
-      font-family: ${fontFamily};
       font-weight: ${fontWeight};
       font-size: ${fontSize};
       letter-spacing: ${letterSpacing};
       line-height: ${lineHeight};
+      color: ${colorProp};
     `
   }}
-  font-style: normal;
   font-stretch: normal;
   letter-spacing: normal;
 `

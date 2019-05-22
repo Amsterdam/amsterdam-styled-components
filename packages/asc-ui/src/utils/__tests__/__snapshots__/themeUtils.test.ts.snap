@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mapToBreakpoints should return a style with 3 breakpoints and corresponding values 1`] = `
+Array [
+  "
+    ",
+  "width: 100px;
+        @media screen and (min-width: 375.02px) {
+          width: 70px;
+        }
+      
+        @media screen and (min-width: 425.02px) {
+          width: 50px;
+        }
+      ",
+  "
+  ",
+]
+`;
+
+exports[`mapToBreakpoints should return a style with 3 breakpoints and corresponding values 2`] = `
+Array [
+  "
+    ",
+  "flex-basis: 500px;
+        @media screen and (min-width: 375.02px) {
+          flex-basis: 600px;
+        }
+      
+        @media screen and (min-width: 425.02px) {
+          flex-basis: 200px;
+        }
+      ",
+  "
+  ",
+]
+`;
+
+exports[`mapToBreakpoints should return only return the possible results if the limit has reached 1`] = `
+Array [
+  "
+    ",
+  "width: 100px;
+        @media screen and (min-width: 375.02px) {
+          width: 70px;
+        }
+      
+        @media screen and (min-width: 425.02px) {
+          width: 50px;
+        }
+      
+        @media screen and (min-width: 540.02px) {
+          width: 100px;
+        }
+      
+        @media screen and (min-width: 768.02px) {
+          width: 70px;
+        }
+      
+        @media screen and (min-width: 1024.02px) {
+          width: 50px;
+        }
+      
+        @media screen and (min-width: 1200.02px) {
+          width: 100px;
+        }
+      
+        @media screen and (min-width: 1440.02px) {
+          width: 70px;
+        }
+      
+        @media screen and (min-width: 2560.02px) {
+          width: 50px;
+        }
+      ",
+  "
+  ",
+]
+`;
