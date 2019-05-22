@@ -19,6 +19,10 @@ interface SearchBarProps {
   label?: string
   onTextChanged: Function
   onSearch: Function
+  onBlur?: Function
+  onFocus?: Function
+  onKeyDown?: Function
+  text?: string
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -27,16 +31,17 @@ const SearchBar: React.FC<SearchBarProps> = ({
   placeholder,
   onTextChanged,
   onSearch,
+  onBlur,
+  onFocus,
+  onKeyDown,
+  text,
   ...otherProps
 }) => {
   const ExtendedSearchBarStyle = styledComponent
   const inputRef = React.useRef<HTMLInputElement>(null)
 
-  const [text, setText] = React.useState('')
-
   const handleTextChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setText(e.target.value)
-    onTextChanged(text)
+    onTextChanged(e.target.value)
   }
 
   const handleSubmit = (e: React.KeyboardEvent | React.MouseEvent) => {
@@ -45,20 +50,17 @@ const SearchBar: React.FC<SearchBarProps> = ({
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (onKeyDown) onKeyDown(e, inputRef.current)
+
     if (e.key === KeyboardKeys.Enter) {
       handleSubmit(e)
     }
   }
 
-  const handleBlur = () => {}
-
   const handleTextClear = () => {
-    setText('')
-    onTextChanged(text)
     if (inputRef && inputRef.current) inputRef.current.focus()
+    onTextChanged('')
   }
-
-  const handleFocus = () => {}
 
   return (
     <ExtendedSearchBarStyle {...otherProps}>
@@ -68,13 +70,13 @@ const SearchBar: React.FC<SearchBarProps> = ({
         label={placeholder}
         aria-label={placeholder}
         placeholder={placeholder}
-        onBlur={handleBlur}
+        onBlur={onBlur}
         onChange={handleTextChanged}
         onClear={handleTextClear}
-        onFocus={handleFocus}
+        onFocus={onFocus}
         onKeyDown={handleKeyDown}
         inputRef={inputRef}
-        value={text}
+        value={text || ''}
       />
       <IconButton aria-label="Search" color="secondary" onClick={handleSubmit}>
         <ReactIcon type={Icons.Search} />
@@ -87,6 +89,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
 SearchBar.defaultProps = {
   styledComponent: SearchBarStyle,
   placeholder: 'Search...',
+  onBlur: () => {},
+  onFocus: () => {},
+  onKeyDown: () => {},
+  text: '',
 }
 
 export default SearchBar

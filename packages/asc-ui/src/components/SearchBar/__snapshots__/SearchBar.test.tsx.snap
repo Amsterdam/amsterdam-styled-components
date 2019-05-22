@@ -149,9 +149,13 @@ exports[`SearchBar should render 1`] = `
     </label>
     <input
       aria-label="Search..."
+      autocapitalize="off"
+      autocomplete="off"
+      autocorrect="off"
       class="c4"
       id="search-bar-id"
       placeholder="Search..."
+      spellcheck="false"
       type="text"
       value=""
     />

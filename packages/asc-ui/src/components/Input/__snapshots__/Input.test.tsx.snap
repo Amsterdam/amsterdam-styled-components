@@ -14,8 +14,12 @@ exports[`Input component structure should render 1`] = `
 }
 
 <input
+  autocapitalize="off"
+  autocomplete="off"
+  autocorrect="off"
   class="c0"
   id="id"
+  spellcheck="false"
   type="text"
   value="test-value"
 />
