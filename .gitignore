@@ -10,7 +10,8 @@ node_modules
 /storybook-static
 /examples/**/lib
 .sb
-*.d.ts
+packages/**/*.d.ts
+*.tsbuildinfo
 
 # misc
 .cache

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styled from '../../styled-components'
+import styled from '@datapunt/asc-core'
 
 export type Props = {
   backgroundColor?: string
@@ -11,7 +11,7 @@ export const BoxWrapperStyle = styled.div`
   padding: 0;
   border: 0;
   vertical-align: baseline;
-  font-family: 'AvenirNextLTW01-Regular', arial, sans-serif;
+  font-weight: 700;
 `
 
 export const BoxContainerStyle = styled.div<Props>`

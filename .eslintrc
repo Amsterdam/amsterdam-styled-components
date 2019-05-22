@@ -51,9 +51,7 @@
       1,
       {
         "extensions": [
-          ".js",
           ".ts",
-          ".jsx",
           ".tsx"
         ]
       }

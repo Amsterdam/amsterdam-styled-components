@@ -36,15 +36,14 @@ exports[`Header should render the short version 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1;
-  font-style: normal;
+  color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -61,8 +60,9 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c7:focus {
-  outline: none;
-  background-color: #FEC813;
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: 3px;
 }
 
 .c7:hover {
@@ -108,8 +108,7 @@ exports[`Header should render the short version 1`] = `
 .c2 {
   height: 50px;
   margin: 0;
-  font-family: 'AvenirNextLTW01-Demi',sans-serif;
-  font-weight: bold;
+  font-weight: 700;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -162,15 +161,14 @@ exports[`Header should render the short version 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1.25;
-  font-style: normal;
+  color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -269,15 +267,14 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1;
-  font-style: normal;
+  color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -294,8 +291,9 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c7:focus {
-  outline: none;
-  background-color: #FEC813;
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: 3px;
 }
 
 .c7:hover {
@@ -341,8 +339,7 @@ exports[`Header should render the short version without the full width 1`] = `
 .c2 {
   height: 50px;
   margin: 0;
-  font-family: 'AvenirNextLTW01-Demi',sans-serif;
-  font-weight: bold;
+  font-weight: 700;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -407,15 +404,14 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1.25;
-  font-style: normal;
+  color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -514,15 +510,14 @@ exports[`Header should render the tall version 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1;
-  font-style: normal;
+  color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -539,8 +534,9 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c11:focus {
-  outline: none;
-  background-color: #FEC813;
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: 3px;
 }
 
 .c11:hover {
@@ -586,8 +582,7 @@ exports[`Header should render the tall version 1`] = `
 .c5 {
   height: 50px;
   margin: 0;
-  font-family: 'AvenirNextLTW01-Demi',sans-serif;
-  font-weight: bold;
+  font-weight: 700;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -655,15 +650,14 @@ exports[`Header should render the tall version 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1.25;
-  font-style: normal;
+  color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -867,8 +861,7 @@ exports[`Header should render the tall version without a title 1`] = `
 .c5 {
   height: 50px;
   margin: 0;
-  font-family: 'AvenirNextLTW01-Demi',sans-serif;
-  font-weight: bold;
+  font-weight: 700;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -928,15 +921,14 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1.25;
-  font-style: normal;
+  color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;

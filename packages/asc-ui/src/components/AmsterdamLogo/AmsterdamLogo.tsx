@@ -1,7 +1,5 @@
 import React from 'react'
-import AmsterdamLogoStyle, {
-  LogoStyle,
-} from '../../styles/components/AmsterdamLogoStyle/AmsterdamLogoStyle'
+import AmsterdamLogoStyle, { LogoStyle } from './AmsterdamLogoStyle'
 
 type Props = {
   tall?: boolean

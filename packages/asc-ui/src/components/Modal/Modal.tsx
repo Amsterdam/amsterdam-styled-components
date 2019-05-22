@@ -1,10 +1,8 @@
 import React from 'react'
 import Portal, { Props as PortalProps } from '../Portal/Portal'
 import Focus from '../Focus'
-import ModalStyle, {
-  ModalStyleContainer,
-} from '../../styles/components/ModalStyle/ModalStyle'
-import BackDropStyle from '../../styles/components/BackDropStyle/BackDropStyle'
+import ModalStyle, { ModalStyleContainer } from './ModalStyle'
+import BackDropStyle from '../BackDrop/BackDropStyle'
 
 export type Props = {
   open: boolean

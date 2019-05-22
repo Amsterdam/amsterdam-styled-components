@@ -1,25 +1,31 @@
 {
   "name": "@datapunt/asc-core",
-  "description": "Stateless styled components according to the Amsterdam styleguide",
+  "description": "Contains the re-exported typed styled-component lib and theme",
   "license": "MPL-2.0",
   "author": "Datapunt Amsterdam",
-  "version": "0.6.6",
+  "homepage": "https://github.com/Amsterdam/amsterdam-styled-components/tree/master/packages/asc-core#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amsterdam/amsterdam-styled-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
+  },
+  "version": "0.6.5",
   "main": "lib/index.js",
   "files": [
     "lib"
   ],
   "directories": {
-    "lib": "lib"
+    "lib": "lib",
+    "test": "__tests__"
   },
-  "typings": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
   "dependencies": {
-    "@datapunt/asc-assets": "^0.6.6",
-    "@types/styled-components": "^4.1.12",
-    "polished": "^3.0.3",
-    "styled-components": "^4.1.3"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "gitHead": "1354a8ac6bbc9505cfb5ce9c819e06ba32aa93b7"
+    "@types/styled-components": "^4.1.15",
+    "polished": "^3.3.0",
+    "styled-components": "^4.2.0"
+  }
 }

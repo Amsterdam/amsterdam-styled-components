@@ -1,5 +1,5 @@
 import React from 'react'
-import IconStyle, { IconStyleProps } from '../../styles/components/IconStyle'
+import IconStyle, { Props as IconStyleProps } from './IconStyle'
 
 type Props = IconStyleProps
 

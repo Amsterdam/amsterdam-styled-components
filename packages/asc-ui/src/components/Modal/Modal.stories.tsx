@@ -6,14 +6,13 @@ import { action } from '@storybook/addon-actions'
 import { ReactComponent as Close } from '@datapunt/asc-assets/lib/Icons/Close.svg'
 import { Props } from './Modal'
 import {
-  ListItemStyle,
+  ListItem,
   Modal,
   Typography,
   Button,
-  DividerStyle,
+  Divider,
   IconButton,
   TopBar,
-  ascDefaultTheme,
 } from '../..'
 
 const SimpleModal: React.FC<Props> = props => (
@@ -24,12 +23,12 @@ const SimpleModal: React.FC<Props> = props => (
       {...props}
       onClose={linkTo('Modal', 'closed state')}
     >
-      <ListItemStyle>
+      <ListItem>
         <Typography paragraph element="p" gutterBottom>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto,
           quisquam!
         </Typography>
-      </ListItemStyle>
+      </ListItem>
     </Modal>
   </div>
 )
@@ -56,7 +55,7 @@ storiesOf('Composed/Modal', module)
       onClose={action('close modal from escape button or click outside')}
       blurredNode={window.document.querySelector('#root') as HTMLInputElement}
     >
-      <TopBar backgroundColor={ascDefaultTheme.colors.tint.level3}>
+      <TopBar>
         <Typography style={{ flexGrow: 1 }} element="h4">
           Feedback
           <IconButton onClick={action('close modal')}>
@@ -64,8 +63,8 @@ storiesOf('Composed/Modal', module)
           </IconButton>
         </Typography>
       </TopBar>
-      <DividerStyle />
-      <ListItemStyle>
+      <Divider />
+      <ListItem>
         <Typography gutterBottom element="h5">
           Onjuiste of ontbrekende gegevens?
         </Typography>
@@ -76,9 +75,9 @@ storiesOf('Composed/Modal', module)
         <Button color="primary" onClick={action('click')}>
           Terugmelden
         </Button>
-      </ListItemStyle>
-      <DividerStyle gutter />
-      <ListItemStyle>
+      </ListItem>
+      <Divider gutter />
+      <ListItem>
         <Typography gutterBottom element="h5">
           Vraag of een klacht?
         </Typography>
@@ -89,13 +88,13 @@ storiesOf('Composed/Modal', module)
         <Button color="primary" onClick={action('click')}>
           Probleem melden
         </Button>
-      </ListItemStyle>
-      <DividerStyle transparent />
-      <ListItemStyle>
+      </ListItem>
+      <Divider transparent />
+      <ListItem>
         <Typography element="a" href="#">
           Hulp nodig?
         </Typography>
-      </ListItemStyle>
+      </ListItem>
     </Modal>
   ))
   .add('with blurred background', () => (

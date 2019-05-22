@@ -8,7 +8,7 @@ import { ReactComponent as Email } from '@datapunt/asc-assets/lib/Icons/Email.sv
 import { ReactComponent as Print } from '@datapunt/asc-assets/lib/Icons/Print.svg'
 import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
 import { ContextMenu, ContextMenuItem, Icon } from '../..'
-import { Position } from '../../styles/components/ContextMenuStyle/types'
+import { Position } from './types'
 
 storiesOf('Composed/ContextMenu', module)
   .add('default', () => (

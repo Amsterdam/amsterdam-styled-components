@@ -1,7 +1,5 @@
 import React from 'react'
-import TopBarStyle, {
-  TopBarStyleProps,
-} from '../../styles/components/TopBarStyle'
+import TopBarStyle, { Props as TopBarStyleProps } from './TopBarStyle'
 
 type Props = TopBarStyleProps
 
