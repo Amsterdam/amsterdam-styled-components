@@ -11,9 +11,6 @@ import ReactIcon from '../ReactIcon/Icon'
 ReactIcon.add(Icons.Search)
 
 interface SearchBarProps {
-  minWidth?: string
-  maxWidth?: string
-  padding?: string
   styledComponent?: any
   placeholder?: string
   label?: string

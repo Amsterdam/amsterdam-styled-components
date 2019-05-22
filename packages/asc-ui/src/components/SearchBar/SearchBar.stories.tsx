@@ -11,7 +11,6 @@ const SearchBarStory: React.FC<{}> = () => {
   return (
     <>
       <SearchBar
-        maxWidth="1400px"
         placeholder="Enter the search text"
         onTextChanged={(text: string) => {
           console.log('TCL: text', text)
@@ -34,15 +33,19 @@ const SearchBarStory: React.FC<{}> = () => {
 
 const ChangedSearchBarStyle = styled(SearchBarStyle)`
   align-content: flex-start;
+  flex-direction: column;
+  max-width: 600px;
+  padding: 10px;
 
   & > ${IconButtonStyle} {
-    order: -1;
     margin-left: 0px;
-    margin-right: 5px;
+    margin-top: 5px;
     padding: 10px;
+    width: 100%;
+    max-width: 600px;
 
     & svg {
-      ${svgFill('tint', 'level5')};
+      ${svgFill('tint', 'level4')};
     }
   }
 `
