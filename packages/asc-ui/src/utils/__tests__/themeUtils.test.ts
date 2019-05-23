@@ -1,10 +1,13 @@
+// @ts-ignore
 import { ascDefaultTheme } from '@datapunt/asc-core'
+import 'jest-styled-components'
 import {
   color,
   focusStyle,
   breakpoint,
   svgFill,
   getTypographyFromTheme,
+  mapToBreakpoints,
 } from '../themeUtils'
 
 const { breakpoints, colors, globalStyle, typography } = ascDefaultTheme
@@ -102,5 +105,45 @@ describe('svgFill', () => {
 
   it('should return the right fill color for the svg', () => {
     expect(svgFill('tint', 'level5')({ theme })).toContain('fill: #767676')
+  })
+})
+
+// Todo: use serializer: https://github.com/styled-components/jest-styled-components
+describe('mapToBreakpoints', () => {
+  const theme = {
+    breakpoints,
+    globalStyle,
+    colors,
+    typography,
+  }
+
+  it('should return a style with 3 breakpoints and corresponding values', () => {
+    expect(
+      mapToBreakpoints(['100px', '70px', '50px'], 'width', theme),
+    ).toMatchSnapshot()
+    expect(
+      mapToBreakpoints(['500px', '600px', '200px'], 'flex-basis', theme),
+    ).toMatchSnapshot()
+  })
+
+  it('should return only return the possible results if the limit has reached', () => {
+    const result = mapToBreakpoints(
+      [
+        '100px',
+        '70px',
+        '50px',
+        '100px',
+        '70px',
+        '50px',
+        '100px',
+        '70px',
+        '50px',
+        '50px',
+        '50px',
+      ], // 2 too many...
+      'width',
+      theme,
+    )
+    expect(result).toMatchSnapshot()
   })
 })

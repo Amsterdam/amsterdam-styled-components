@@ -7,7 +7,8 @@ const sizes = {
   mobileS: 320,
   mobileM: 375,
   mobileL: 425,
-  tablet: 768,
+  tabletS: 540,
+  tabletM: 768,
   laptop: 1024,
   laptopM: 1200,
   laptopL: 1440,
@@ -18,12 +19,12 @@ const breakpoints: Theme.BreakpointsInterface = {
   mobileS: withTypeBreakpoint(sizes.mobileS),
   mobileM: withTypeBreakpoint(sizes.mobileM),
   mobileL: withTypeBreakpoint(sizes.mobileL),
-  tablet: withTypeBreakpoint(sizes.tablet),
+  tabletS: withTypeBreakpoint(sizes.tabletS),
+  tabletM: withTypeBreakpoint(sizes.tabletM),
   laptop: withTypeBreakpoint(sizes.laptop),
   laptopM: withTypeBreakpoint(sizes.laptopM),
   laptopL: withTypeBreakpoint(sizes.laptopL),
   desktop: withTypeBreakpoint(sizes.desktop),
-  desktopL: withTypeBreakpoint(sizes.desktop),
 }
 
 export default breakpoints

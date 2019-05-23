@@ -1,4 +1,6 @@
+/* eslint-disable import/no-duplicates */
 import * as styledComponents from 'styled-components'
+import { StyledComponent } from 'styled-components'
 import { Theme } from './theme'
 import * as ascDefaultTheme from './theme/default'
 
@@ -16,6 +18,7 @@ const {
 
 export {
   css,
+  StyledComponent,
   createGlobalStyle,
   keyframes,
   ThemeProvider,

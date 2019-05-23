@@ -968,11 +968,6 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@datapunt/asc-assets@^0.6.6":
-  version "0.6.6"
-  resolved "https://registry.yarnpkg.com/@datapunt/asc-assets/-/asc-assets-0.6.6.tgz#b6f3eada4478771598732ab96000ccdf022b1e18"
-  integrity sha512-uw16QleZbVQIPq8HrOTumxJQQaeT/pVFBhyENtarWf+ZXqQliGZkK27ihtmir76EY2+exqRhPGEfHmTTM4IXEw==
-
 "@emotion/babel-utils@^0.6.4":
   version "0.6.10"
   resolved "https://registry.yarnpkg.com/@emotion/babel-utils/-/babel-utils-0.6.10.tgz#83dbf3dfa933fae9fc566e54fbb45f14674c6ccc"
@@ -2840,7 +2835,7 @@
     "@types/react" "*"
     "@types/webpack-env" "*"
 
-"@types/styled-components@^4.1.1", "@types/styled-components@^4.1.15":
+"@types/styled-components@^4.1.15":
   version "4.1.15"
   resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.1.15.tgz#532b6738ec633b2911e0470522c23e3c658952f2"
   integrity sha512-DMr4Kq3i5Em2K1ThlqZlC8nrsiO3VaiQS2M+7cOPnseHLtfDUrDjHx6Jv11V6uVIoK8ERYhmfn42RvSIg47rnA==
