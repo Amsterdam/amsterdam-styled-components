@@ -25,7 +25,7 @@ import Divider from './components/Divider'
 import ListItem from './components/ListItem'
 import SearchBar from './components/SearchBar'
 import GlobalStyle from './components/GlobalStyle'
-import { Flex, FlexItem, FlexRow } from './components/Flex'
+import { GridContainer, GridItem } from './components/Grid'
 
 import ThemeProvider from './theme'
 
@@ -59,8 +59,7 @@ export {
   ServerStyleSheet,
   Theme,
   ThemeProvider,
-  Flex,
-  FlexItem,
-  FlexRow,
+  GridContainer,
+  GridItem,
   ascDefaultTheme,
 }

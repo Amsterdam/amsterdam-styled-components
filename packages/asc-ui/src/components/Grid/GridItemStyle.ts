@@ -5,7 +5,7 @@ type Props = {
   width?: number | Array<Number>
 }
 
-const FlexItemStyle = styled.div<Props>`
+const GridItemStyle = styled.div<Props>`
   position: relative;
   ${({ width, theme }) =>
     width &&
@@ -19,4 +19,4 @@ const FlexItemStyle = styled.div<Props>`
         `)}
 `
 
-export default FlexItemStyle
+export default GridItemStyle
