@@ -13,12 +13,10 @@ const SearchBarStory: React.FC<{}> = () => {
       <SearchBar
         placeholder="Enter the search text"
         onTextChanged={(text: string) => {
-          console.log('TCL: text', text)
           setText(text)
           action(`text changed: ${searchText}`)
         }}
-        onSearch={(text: string) => {
-          console.log('TCL: text', text)
+        onSearch={() => {
           action(`button clicked: ${searchText}`)
         }}
         text={searchText}
