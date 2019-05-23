@@ -3,12 +3,15 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import styled from '@datapunt/asc-core'
 import { ReactComponent as ChevronRight } from '@datapunt/asc-assets/lib/Icons/ChevronRight.svg'
+import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
 import { ReactComponent as ExternalLink } from '@datapunt/asc-assets/lib/Icons/ExternalLink.svg'
+import { ReactComponent as MenuIcon } from '@datapunt/asc-assets/lib/Icons/Menu.svg'
 import BoxWrapper from '../../internals/Box/BoxWrapper'
 import Header, {
   HeaderWrapperStyle,
   SearchBarStyle,
   MenuBarStyle,
+  MenuDropDownStyle,
 } from './Header'
 import ContentFiller from '../../internals/ContentFiller/ContentFiller'
 import Typography from '../Typography'
@@ -97,12 +100,100 @@ const DataportaalHeaderWrapperStyle = styled(HeaderWrapperStyle)`
   }
 
   ${MenuBarStyle} {
+    @media screen and ${breakpoint('max-width', 'tablet')} {
+      display: none;
+    }
+  }
+
+  ${MenuDropDownStyle} {
+    @media screen and ${breakpoint('min-width', 'tablet')} {
+      display: none;
+    }
   }
 `
 
-const HeaderTallDataportaalStory: React.FC<{}> = () => {
-  const [searchText, setText] = React.useState('')
+const MenuDesktop = (
+  <Menu>
+    <MenuItem onClick={action('click')}>One</MenuItem>
+    <SubMenu label="Two">
+      <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+        One
+      </MenuItem>
+      <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+        Two
+      </MenuItem>
+      <MenuLabel>Two</MenuLabel>
+      <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+        One
+      </MenuItem>
+      <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+        Two
+      </MenuItem>
+      <MenuItem icon={<ExternalLink />} onClick={action('click')}>
+        Show more
+      </MenuItem>
+    </SubMenu>
+    <MenuItem onClick={action('click')}>Three</MenuItem>
+  </Menu>
+)
 
+const MenuMobile = (
+  <Menu icon={<MenuIcon />} mobile>
+    <MenuItem onClick={action('click')}>One</MenuItem>
+    <SubMenu arrowIcon={<ChevronDown />} label="Two">
+      <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+        One
+      </MenuItem>
+      <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+        Two
+      </MenuItem>
+      <MenuLabel>Two</MenuLabel>
+      <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+        One
+      </MenuItem>
+      <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+        Two
+      </MenuItem>
+      <MenuItem icon={<ExternalLink />} onClick={action('click')}>
+        Show more
+      </MenuItem>
+    </SubMenu>
+    <MenuItem onClick={action('click')}>Three</MenuItem>
+  </Menu>
+)
+
+const SearchBarDesktop: React.FC<{}> = () => {
+  const [searchText, setText] = React.useState('')
+  return (
+    <SearchBar
+      placeholder="Enter the search text"
+      onTextChanged={(text: string) => {
+        setText(text)
+        action(`text changed: ${searchText}`)
+      }}
+      onSearch={() => {
+        action(`button clicked: ${searchText}`)
+      }}
+      text={searchText}
+    />
+  )
+}
+
+// const SearchBarMobile = (
+//   <SearchBar
+//     placeholder="Enter the search text"
+//     onTextChanged={(text: string) => {
+//       setText(text)
+//       action(`text changed: ${searchText}`)
+//     }}
+//     onSearch={() => {
+//       action(`button clicked: ${searchText}`)
+//     }}
+//     text={searchText}
+//   />
+// )
+
+const HeaderTallDataportaalStory: React.FC<{}> = () => {
   return (
     <BoxWrapper backgroundColor={outsideBackgoundColor}>
       <Header
@@ -112,39 +203,9 @@ const HeaderTallDataportaalStory: React.FC<{}> = () => {
         fullWidth={false}
         styledComponent={DataportaalHeaderWrapperStyle}
       >
-        <SearchBar
-          placeholder="Enter the search text"
-          onTextChanged={(text: string) => {
-            setText(text)
-            action(`text changed: ${searchText}`)
-          }}
-          onSearch={(text: string) => {
-            action(`button clicked: ${searchText}`)
-          }}
-          text={searchText}
-        />
-        <Menu>
-          <MenuItem onClick={action('click')}>One</MenuItem>
-          <SubMenu label="Two">
-            <MenuItem icon={<ChevronRight />} onClick={action('click')}>
-              One
-            </MenuItem>
-            <MenuItem icon={<ChevronRight />} onClick={action('click')}>
-              Two
-            </MenuItem>
-            <MenuLabel>Two</MenuLabel>
-            <MenuItem icon={<ChevronRight />} onClick={action('click')}>
-              One
-            </MenuItem>
-            <MenuItem icon={<ChevronRight />} onClick={action('click')}>
-              Two
-            </MenuItem>
-            <MenuItem icon={<ExternalLink />} onClick={action('click')}>
-              Show more
-            </MenuItem>
-          </SubMenu>
-          <MenuItem onClick={action('click')}>Three</MenuItem>
-        </Menu>
+        <SearchBarDesktop />
+        {MenuDesktop}
+        {MenuMobile}
       </Header>
       <ContentFiller
         backgroundColor={contentBackgrountColor}

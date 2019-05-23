@@ -72,18 +72,6 @@ exports[`SearchBar should render 1`] = `
   font-size: 0;
 }
 
-.c4 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  font-size: 1rem;
-  border: solid 1px #767676;
-  border-radius: 0;
-  box-sizing: border-box;
-  padding: 10px 10px;
-  width: 100%;
-}
-
 .c2 {
   position: relative;
 }
@@ -119,6 +107,18 @@ exports[`SearchBar should render 1`] = `
 .c0 > .c5 svg polygon,
 .c0 > .c5 svg path {
   fill: #ffffff;
+}
+
+.c4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 1rem;
+  border: solid 1px #767676;
+  border-radius: 0;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  width: 100%;
 }
 
 .c3 {

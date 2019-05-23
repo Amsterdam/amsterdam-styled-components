@@ -166,25 +166,23 @@ const Menu: React.FC<Props> = ({
   })
 
   return (
-    <MenuBar>
-      <MenuContext.Provider
-        value={{
-          ...state,
-          setSelectedChild,
-          onKeyDown: handleOnKeyDown,
-          onClick: handleOnClick,
-          onClose: handleOnClose,
-          setExpandedChild,
-          resetExpandedChild,
-        }}
-      >
-        {mobile ? (
-          <MenuDropDown icon={icon}>{clonedChildren}</MenuDropDown>
-        ) : (
-          clonedChildren
-        )}
-      </MenuContext.Provider>
-    </MenuBar>
+    <MenuContext.Provider
+      value={{
+        ...state,
+        setSelectedChild,
+        onKeyDown: handleOnKeyDown,
+        onClick: handleOnClick,
+        onClose: handleOnClose,
+        setExpandedChild,
+        resetExpandedChild,
+      }}
+    >
+      {mobile ? (
+        <MenuDropDown icon={icon}>{clonedChildren}</MenuDropDown>
+      ) : (
+        <MenuBar>{clonedChildren}</MenuBar>
+      )}
+    </MenuContext.Provider>
   )
 }
 
