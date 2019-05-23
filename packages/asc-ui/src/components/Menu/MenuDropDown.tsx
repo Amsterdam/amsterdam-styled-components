@@ -26,6 +26,7 @@ const MenuDropDown: React.FC<Props> = ({
   position,
   icon,
   index: currentIndex,
+  mobile,
 }) => {
   const menuRef = React.useRef<HTMLDivElement>(null)
 
@@ -47,14 +48,17 @@ const MenuDropDown: React.FC<Props> = ({
     }),
   )
 
+  const click = () => !mobile && setTimeout(onClick, 200)
+  const clickWhenClosed = () => !mobile && !open && setTimeout(onClick, 200)
+
   return (
     <MenuDropDownStyle
       id={id}
       ref={menuRef}
       onKeyDown={handleKeyPress}
       onBlur={onClose}
-      onMouseLeave={() => setTimeout(onClick, 200)}
-      onMouseOver={() => !open && setTimeout(onClick, 200)}
+      onMouseLeave={click}
+      onMouseOver={clickWhenClosed}
       tabIndex={0}
     >
       <MenuDropDownButtonStyle
@@ -62,7 +66,7 @@ const MenuDropDown: React.FC<Props> = ({
           focused: open,
           height: buttonHeight,
         }}
-        onMouseLeave={() => !open && setTimeout(onClick, 200)}
+        onMouseLeave={clickWhenClosed}
         onClick={onClick}
       >
         {icon && <Icon>{icon}</Icon>}

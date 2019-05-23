@@ -178,7 +178,9 @@ const Menu: React.FC<Props> = ({
       }}
     >
       {mobile ? (
-        <MenuDropDown icon={icon}>{clonedChildren}</MenuDropDown>
+        <MenuDropDown icon={icon} mobile>
+          {clonedChildren}
+        </MenuDropDown>
       ) : (
         <MenuBar>{clonedChildren}</MenuBar>
       )}
