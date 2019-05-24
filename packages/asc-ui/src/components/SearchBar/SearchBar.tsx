@@ -1,5 +1,5 @@
 import React from 'react'
-import Icons from '@datapunt/asc-icons'
+import Icons from '@datapunt/asc-assets'
 import IconButton from '../IconButton/IconButton'
 import InputStyle from '../Input/InputStyle'
 import IconButtonStyle from '../IconButton/IconButtonStyle'

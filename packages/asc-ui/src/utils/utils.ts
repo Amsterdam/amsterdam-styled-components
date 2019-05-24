@@ -1,7 +1,7 @@
 import {
   AbstractNode,
   IconDefinition,
-} from '@datapunt/asc-icons/lib/Icons/types'
+} from '@datapunt/asc-assets/lib/Icons/types'
 import * as React from 'react'
 
 export function log(message: string) {

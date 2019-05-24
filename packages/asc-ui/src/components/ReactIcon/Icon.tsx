@@ -2,7 +2,7 @@ import * as React from 'react'
 import {
   AbstractNode,
   IconDefinition,
-} from '@datapunt/asc-icons/lib/Icons/types'
+} from '@datapunt/asc-assets/lib/Icons/types'
 import { generate, isIconDefinition, log, MiniMap } from '../../utils/utils'
 
 export interface IconProps {
