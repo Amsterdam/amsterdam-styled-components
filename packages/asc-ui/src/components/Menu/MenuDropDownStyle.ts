@@ -10,7 +10,7 @@ export const MenuDropDownButtonStyle = styled.li<
   display: flex;
   background-color: ${({ focused }) =>
     focused ? color('tint', 'level2') : 'transparent'};
-  border: 0px;
+  border: 0;
   font-weight: 500;
   align-items: center;
   height: ${({ height }) => `${height}px`};

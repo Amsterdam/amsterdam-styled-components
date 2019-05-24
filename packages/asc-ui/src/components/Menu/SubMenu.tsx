@@ -100,6 +100,7 @@ const SubMenu: React.FC<Props> = ({
         focused={expanded}
         height={buttonHeight}
         onMouseOver={() => !mobile && setTimeout(handleOnClick, 200)}
+        onFocus={() => !mobile && setTimeout(handleOnClick, 200)}
         onClick={() => handleOnClick()}
         {...otherProps}
       >
@@ -114,7 +115,7 @@ const SubMenu: React.FC<Props> = ({
           </Icon>
         )}
       </SubMenuButton>
-      <SubMenuListWrapper aria-hidden={expanded ? false : true}>
+      <SubMenuListWrapper aria-hidden={!expanded}>
         <SubMenuList top={buttonHeight} labelId={id}>
           {clonedChildren}
         </SubMenuList>
