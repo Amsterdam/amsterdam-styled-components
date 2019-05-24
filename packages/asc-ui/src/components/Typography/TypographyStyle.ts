@@ -36,7 +36,6 @@ const extendedStyles = {
   a: css`
     color: ${color('primary')};
     display: inline-block;
-
     ${focusStyle()}
 
     &:hover {

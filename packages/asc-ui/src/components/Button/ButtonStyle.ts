@@ -1,5 +1,5 @@
+import styled, { css } from '@datapunt/asc-core'
 import { readableColor } from 'polished'
-import styled from '@datapunt/asc-core'
 import { svgFill, getColorFromTheme } from '../../utils'
 import ButtonBaseStyle, {
   Props as ButtonBaseStyleProps,
@@ -16,11 +16,17 @@ const ButtonStyle = styled(ButtonBaseStyle)<Props>`
       ? readableColor(getColorFromTheme(theme, color))
       : getColorFromTheme(theme, 'primary')};
   ${({ theme, color }) =>
-    !color && `border: 1px solid ${getColorFromTheme(theme, 'primary')};`}
+    !color &&
+    css`
+      border: 1px solid ${getColorFromTheme(theme, 'primary')};
+    `}
 
   &:hover {
     ${({ theme, color }) =>
-      !color && `outline: 1px solid ${getColorFromTheme(theme, 'primary')};`}
+      !color &&
+      css`
+        outline: 1px solid ${getColorFromTheme(theme, 'primary')};
+      `}
   }
 
   & > svg {
