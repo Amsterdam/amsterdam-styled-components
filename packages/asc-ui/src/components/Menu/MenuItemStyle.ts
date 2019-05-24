@@ -26,7 +26,6 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   box-sizing: border-box;
   font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
   position: relative;
-
   border-left-style: solid;
   border-left-width: 8px;
   border-left-color: transparent;

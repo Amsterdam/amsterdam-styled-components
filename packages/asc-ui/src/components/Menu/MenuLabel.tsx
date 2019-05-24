@@ -3,7 +3,7 @@ import MenuStyle from './index'
 
 const { MenuLabelStyle } = MenuStyle
 
-const MenuLabel = ({ children }: any) => (
+const MenuLabel: React.FC<{}> = ({ children }) => (
   <MenuLabelStyle>{children}</MenuLabelStyle>
 )
 
