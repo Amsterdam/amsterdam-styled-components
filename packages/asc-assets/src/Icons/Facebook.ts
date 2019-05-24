@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Facebook: IconDefinition = {
-  name: 'facebook',
+  name: 'Facebook',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 30 30' },

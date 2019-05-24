@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Print: IconDefinition = {
-  name: 'print',
+  name: 'Print',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 32 32' },

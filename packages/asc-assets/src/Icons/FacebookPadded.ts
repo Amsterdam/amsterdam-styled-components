@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const FacebookPadded: IconDefinition = {
-  name: 'facebook-padded',
+  name: 'FacebookPadded',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 1024 1024' },

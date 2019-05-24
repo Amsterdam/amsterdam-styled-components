@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Minimise: IconDefinition = {
-  name: 'minimise',
+  name: 'Minimise',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 32 32' },

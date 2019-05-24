@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const OpeningHours: IconDefinition = {
-  name: 'opening-hours',
+  name: 'OpeningHours',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 36 36' },

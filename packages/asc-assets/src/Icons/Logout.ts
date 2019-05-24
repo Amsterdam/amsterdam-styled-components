@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Logout: IconDefinition = {
-  name: 'logout',
+  name: 'Logout',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 36 36' },

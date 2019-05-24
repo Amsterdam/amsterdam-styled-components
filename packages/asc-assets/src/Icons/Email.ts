@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Email: IconDefinition = {
-  name: 'email',
+  name: 'Email',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 32 32' },

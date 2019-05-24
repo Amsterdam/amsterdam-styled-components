@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const TrashBin: IconDefinition = {
-  name: 'trash-bin',
+  name: 'TrashBin',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 36 36' },

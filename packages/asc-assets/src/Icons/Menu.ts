@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Menu: IconDefinition = {
-  name: 'menu',
+  name: 'Menu',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 32 32' },

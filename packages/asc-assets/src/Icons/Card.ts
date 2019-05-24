@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Card: IconDefinition = {
-  name: 'card',
+  name: 'Card',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 36 36' },

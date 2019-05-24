@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Twitter: IconDefinition = {
-  name: 'twitter',
+  name: 'Twitter',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 32 32' },

@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Embed: IconDefinition = {
-  name: 'embed',
+  name: 'Embed',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 32 32' },

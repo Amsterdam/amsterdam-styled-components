@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Close: IconDefinition = {
-  name: 'close',
+  name: 'Close',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 32 32' },

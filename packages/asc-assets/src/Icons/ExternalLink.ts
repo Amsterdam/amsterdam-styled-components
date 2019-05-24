@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const ExternalLink: IconDefinition = {
-  name: 'external-link',
+  name: 'ExternalLink',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 32 32' },

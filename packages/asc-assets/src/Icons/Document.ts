@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Document: IconDefinition = {
-  name: 'document',
+  name: 'Document',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 36 36' },

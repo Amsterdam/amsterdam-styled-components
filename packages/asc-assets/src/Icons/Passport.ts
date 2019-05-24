@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Passport: IconDefinition = {
-  name: 'passport',
+  name: 'Passport',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 36 36' },

@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Checkmark: IconDefinition = {
-  name: 'checkmark',
+  name: 'Checkmark',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 32 32' },

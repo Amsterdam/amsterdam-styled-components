@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Search: IconDefinition = {
-  name: 'search',
+  name: 'Search',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 32 32' },

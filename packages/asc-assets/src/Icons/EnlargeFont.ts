@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const EnlargeFont: IconDefinition = {
-  name: 'enlarge-font',
+  name: 'EnlargeFont',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 36 36' },

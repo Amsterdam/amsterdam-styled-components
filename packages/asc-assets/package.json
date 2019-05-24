@@ -21,18 +21,13 @@
   "scripts": {
     "prebuild": "cross-env NODE_ENV=production rimraf lib",
     "build": "cross-env NODE_ENV=production tsc --project ./tsconfig.json --outDir lib",
-    "postbuild": "cp -R assets/* lib/",
+    "postbuild": "cross-env cp -R assets/* lib/",
     "clean": "cross-env TS_NODE_PROJECT=build/tsconfig.json node --require ts-node/register build/scripts/clean.ts",
     "generate": "cross-env TS_NODE_PROJECT=build/tsconfig.json node --require ts-node/register build/index.ts",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}' 'site/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
     "prepublish": "yarn lint && yarn test && yarn generate && yarn build",
     "test": "jest"
-
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "gitHead": "1354a8ac6bbc9505cfb5ce9c819e06ba32aa93b7",
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
@@ -76,6 +71,10 @@
     "typescript": "^3.0.1",
     "webpack-cli": "^3.1.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "1354a8ac6bbc9505cfb5ce9c819e06ba32aa93b7",
   "jest": {
     "transform": {
       "^.+\\.tsx?$": "ts-jest"

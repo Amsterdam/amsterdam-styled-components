@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Download: IconDefinition = {
-  name: 'download',
+  name: 'Download',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 32 32' },

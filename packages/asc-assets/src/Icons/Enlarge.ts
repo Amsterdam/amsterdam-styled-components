@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Enlarge: IconDefinition = {
-  name: 'enlarge',
+  name: 'Enlarge',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 32 32' },

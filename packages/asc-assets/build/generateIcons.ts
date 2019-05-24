@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import { from, Observable, of, Subscription } from 'rxjs'
 import { concat, filter, map, mergeMap, reduce } from 'rxjs/operators'
+
 import {
   EXPORT_DEFAULT_COMPONENT_FROM_DIR,
   EXPORT_DIST,
@@ -17,7 +18,8 @@ import {
   WriteFileMetaData,
 } from './typings'
 import { clear, generateAbstractTree, isAccessable, log } from './utils'
-import { normalize } from './utils/normalizeNames'
+
+import globby = require('globby')
 
 import fs = require('fs-extra')
 import _ = require('lodash')
@@ -26,6 +28,21 @@ import path = require('path')
 import Prettier = require('prettier')
 
 import SVGO = require('svgo')
+
+async function svgFileNames(env: Environment) {
+  const dir = path.join(env.paths.SVG_DIR)
+  log.notice(`Read svg from ${dir}`)
+
+  const listNames = _.uniq(
+    _.flatten(
+      await globby(['*.svg'], {
+        cwd: env.paths.SVG_DIR,
+        deep: false,
+      }),
+    ),
+  ).map(name => name.replace(/\.svg$/, ''))
+  return listNames
+}
 
 export async function build(env: Environment) {
   const svgo = new SVGO(env.options.svgo)
@@ -39,7 +56,7 @@ export async function build(env: Environment) {
 
   await clear(env)
 
-  const svgBasicNames = await normalize(env)
+  const svgBasicNames = await svgFileNames(env)
 
   // SVG Meta Data Flow
   const svgMetaDataWithTheme$ = from(svgBasicNames).pipe(

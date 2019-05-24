@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Linkedin: IconDefinition = {
-  name: 'linkedin',
+  name: 'Linkedin',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 32 32' },

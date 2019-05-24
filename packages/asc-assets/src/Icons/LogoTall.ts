@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const LogoTall: IconDefinition = {
-  name: 'logo-tall',
+  name: 'LogoTall',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 100 68' },

@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const ChevronRight: IconDefinition = {
-  name: 'chevron-right',
+  name: 'ChevronRight',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 32 32' },

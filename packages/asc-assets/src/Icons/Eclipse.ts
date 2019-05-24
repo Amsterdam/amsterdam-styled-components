@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Eclipse: IconDefinition = {
-  name: 'eclipse',
+  name: 'Eclipse',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 1024 1024' },

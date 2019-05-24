@@ -4,7 +4,7 @@
 import { IconDefinition } from './types';
 
 const Quote: IconDefinition = {
-  name: 'quote',
+  name: 'Quote',
   icon: {
     tag: 'svg',
     attrs: { viewBox: '0 0 32 32' },

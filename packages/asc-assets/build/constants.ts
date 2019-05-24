@@ -7,8 +7,3 @@ export const EXPORT_DEFAULT_COMPONENT_FROM_DIR = /<% EXPORT_DEFAULT_COMPONENT_FR
 export const EXPORT_DEFAULT_MANIFEST = /<% EXPORT_DEFAULT_MANIFEST %>/g
 export const EXPORT_DEFAULT_MAPPER = /<% EXPORT_DEFAULT_MAPPER %>/g
 export const EXPORT_DIST = /<% EXPORT_DIST %>/g
-
-// rename mapper
-export const renameMapper: { [key: string]: string | undefined } = {
-  alert: 'alert',
-}
