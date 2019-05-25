@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import { Button, GlobalStyle, ThemeProvider } from '@datapunt/asc-ui'
-import { ReactComponent as Alert } from '@datapunt/asc-assets/lib/Icons/Alert.svg'
+import { GlobalStyle, ThemeProvider, SearchBar } from '@datapunt/asc-ui'
 import { HeavyFontEot, HeavyFontWoff2 } from '@datapunt/asc-assets'
-import logo from './logo.svg'
 import './App.css'
 
+const action = console.log
 class App extends Component {
   render() {
     const extendedTheme = {
@@ -23,22 +22,16 @@ class App extends Component {
         <>
           <GlobalStyle />
           <div className="App">
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <p>
-                Edit <code>src/App.js</code> and save to reload.
-              </p>
-              <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learn React
-              </a>
-              <Alert />
-              <Button color="secondary">Hello!</Button>
-            </header>
+            Test search bar
+            <SearchBar
+              placeholder="Enter the search text"
+              onTextChanged={(text: string) => {
+      action(`text changed: ${text}`)
+    }}
+              onSearch={(text: string) => {
+      action(`button clicked: ${text}`)
+    }}
+            />
           </div>
         </>
       </ThemeProvider>

@@ -5,7 +5,10 @@ import Input from './Input'
 
 const InputComponent: React.FC<{}> = () => (
   <Input
+    id="test-id"
+    onBlur={action('onBlur')}
     onChange={action('onChange')}
+    onFocus={action('onFocus')}
     onKeyDown={action('onKeyDown')}
     value=""
   />

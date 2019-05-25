@@ -1,18 +1,22 @@
 import React from 'react'
-import { ReactComponent as Search } from '@datapunt/asc-assets/lib/Icons/Search.svg'
+import Icons from '@datapunt/asc-assets'
 import IconButton from '../IconButton/IconButton'
 import InputStyle from '../Input/InputStyle'
 import IconButtonStyle from '../IconButton/IconButtonStyle'
 import SearchBarStyle from './SearchBarStyle'
 import { KeyboardKeys } from '../../types'
-import Input from '../Input'
+import TextField from '../TextField/TextField'
+import ReactIcon from '../ReactIcon/Icon'
 
-type SearchBarProps = {
+ReactIcon.add(Icons.Search)
+
+interface SearchBarProps {
   minWidth?: string
   maxWidth?: string
   padding?: string
   styledComponent?: any
   placeholder?: string
+  label?: string
   onTextChanged: Function
   onSearch: Function
 }
@@ -26,6 +30,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   ...otherProps
 }) => {
   const ExtendedSearchBarStyle = styledComponent
+  const inputRef = React.useRef<HTMLInputElement>(null)
 
   const [text, setText] = React.useState('')
 
@@ -45,17 +50,34 @@ const SearchBar: React.FC<SearchBarProps> = ({
     }
   }
 
+  const handleBlur = () => {}
+
+  const handleTextClear = () => {
+    setText('')
+    onTextChanged(text)
+    if (inputRef && inputRef.current) inputRef.current.focus()
+  }
+
+  const handleFocus = () => {}
+
   return (
     <ExtendedSearchBarStyle {...otherProps}>
-      <Input
+      <TextField
+        id="search-bar-id"
+        srOnly
+        label={placeholder}
         aria-label={placeholder}
         placeholder={placeholder}
+        onBlur={handleBlur}
         onChange={handleTextChanged}
+        onClear={handleTextClear}
+        onFocus={handleFocus}
         onKeyDown={handleKeyDown}
+        inputRef={inputRef}
         value={text}
       />
       <IconButton aria-label="Search" color="secondary" onClick={handleSubmit}>
-        <Search />
+        <ReactIcon type={Icons.Search} />
       </IconButton>
       {children}
     </ExtendedSearchBarStyle>

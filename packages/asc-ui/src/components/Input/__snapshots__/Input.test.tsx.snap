@@ -5,17 +5,17 @@ exports[`Input component structure should render 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  box-shadow: inset 0 0 0 1px;
   font-size: 1rem;
-  border: 0;
+  border: solid 1px #767676;
   border-radius: 0;
   box-sizing: border-box;
-  padding: 11px 10px;
+  padding: 10px 10px;
   width: 100%;
 }
 
 <input
   class="c0"
+  id="id"
   type="text"
   value="test-value"
 />
