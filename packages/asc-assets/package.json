@@ -15,17 +15,15 @@
   "main": "lib/index.js",
   "module": "lib/index.es.js",
   "files": [
-    "lib",
-    "svg"
+    "lib"
   ],
   "scripts": {
     "prebuild": "cross-env NODE_ENV=production rimraf lib",
     "build": "cross-env NODE_ENV=production tsc --project ./tsconfig.json --outDir lib",
-    "postbuild": "cross-env cp -R assets/* lib/",
+    "postbuild": "cross-env cp -R assets/* lib/ && cross-env cp -R src/Icons/*.svg lib//Icons",
     "clean": "cross-env TS_NODE_PROJECT=build/tsconfig.json node --require ts-node/register build/scripts/clean.ts",
     "generate": "cross-env TS_NODE_PROJECT=build/tsconfig.json node --require ts-node/register build/index.ts",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}' 'site/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
-    "prepublish": "yarn lint && yarn test && yarn generate && yarn build",
     "test": "jest"
   },
   "devDependencies": {
