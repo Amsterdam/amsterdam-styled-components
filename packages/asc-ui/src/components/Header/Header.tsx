@@ -5,8 +5,6 @@ import HeaderWrapperStyle, {
 } from './HeaderWrapperStyle'
 import HeaderLogoText from './HeaderLogoText'
 import HeaderContent from './HeaderContent'
-import MenuBarStyle from '../Menu/MenuBarStyle'
-import MenuDropDownStyle from '../Menu/MenuDropDownStyle'
 
 type Props = {
   homeLink: string
@@ -42,4 +40,3 @@ Header.defaultProps = {
 }
 
 export default Header
-export { HeaderWrapperStyle, MenuBarStyle, MenuDropDownStyle }

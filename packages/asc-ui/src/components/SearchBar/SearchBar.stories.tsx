@@ -2,9 +2,12 @@ import * as React from 'react'
 import { storiesOf } from '@storybook/react/'
 import { action } from '@storybook/addon-actions'
 import styled from '@datapunt/asc-core'
-import SearchBar, { SearchBarStyle, IconButtonStyle } from './SearchBar'
+import SearchBar from './SearchBar'
 import { svgFill } from '../../utils'
-import SearchBarMobile, { SearchBarMobileStyle } from './SearchBarMobile'
+import SearchBarMobile from './SearchBarMobile'
+import IconButtonStyle from '../IconButton/IconButtonStyle'
+import SearchBarStyle from './SearchBarStyle'
+import SearchBarMobileStyle from './SearchBarMobileStyle'
 
 const SearchBarStory: React.FC<{}> = () => {
   const [searchText, setText] = React.useState('')

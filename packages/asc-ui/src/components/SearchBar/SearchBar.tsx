@@ -1,8 +1,6 @@
 import React from 'react'
 import Icons from '@datapunt/asc-assets'
 import IconButton from '../IconButton/IconButton'
-import InputStyle from '../Input/InputStyle'
-import IconButtonStyle from '../IconButton/IconButtonStyle'
 import SearchBarStyle from './SearchBarStyle'
 import { KeyboardKeys } from '../../types'
 import TextField from '../TextField/TextField'
@@ -93,4 +91,3 @@ SearchBar.defaultProps = {
 }
 
 export default SearchBar
-export { SearchBarStyle, InputStyle, IconButtonStyle }

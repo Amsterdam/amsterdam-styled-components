@@ -1,7 +1,5 @@
 import React from 'react'
 import Icons from '@datapunt/asc-assets'
-import InputStyle from '../Input/InputStyle'
-import IconButtonStyle from '../IconButton/IconButtonStyle'
 import SearchBar from './SearchBar'
 import ReactIcon from '../ReactIcon/Icon'
 import { MenuItem, Menu } from '../..'
@@ -47,4 +45,3 @@ SearchBarMobile.defaultProps = {
 }
 
 export default SearchBarMobile
-export { SearchBarMobileStyle, InputStyle, IconButtonStyle }
