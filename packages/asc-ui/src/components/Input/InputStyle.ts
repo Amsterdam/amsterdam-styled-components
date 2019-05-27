@@ -3,6 +3,10 @@ import { color } from '../../utils'
 
 const InputStyle = styled.input.attrs({
   type: 'text',
+  autoCapitalize: 'off',
+  autoComplete: 'off',
+  autoCorrect: 'off',
+  spellCheck: false,
 })`
   appearance: none;
   font-size: 1rem;
