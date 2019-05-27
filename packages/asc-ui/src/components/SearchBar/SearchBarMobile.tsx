@@ -5,11 +5,11 @@ import IconButtonStyle from '../IconButton/IconButtonStyle'
 import SearchBar from './SearchBar'
 import ReactIcon from '../ReactIcon/Icon'
 import { MenuItem, Menu } from '../..'
-import SearchBarStyle from './SearchBarStyle'
+import SearchBarMobileStyle from './SearchBarMobileStyle'
 
 ReactIcon.add(Icons.Search)
 
-interface SearchBarProps {
+interface SearchBarMobileProps {
   styledComponent?: any
   placeholder?: string
   label?: string
@@ -21,7 +21,7 @@ interface SearchBarProps {
   text?: string
 }
 
-const SearchBarMobile: React.FC<SearchBarProps> = ({
+const SearchBarMobile: React.FC<SearchBarMobileProps> = ({
   children,
   styledComponent,
   ...otherProps
@@ -38,7 +38,7 @@ const SearchBarMobile: React.FC<SearchBarProps> = ({
 }
 
 SearchBarMobile.defaultProps = {
-  styledComponent: SearchBarStyle,
+  styledComponent: SearchBarMobileStyle,
   placeholder: 'Search...',
   onBlur: () => {},
   onFocus: () => {},
@@ -47,4 +47,4 @@ SearchBarMobile.defaultProps = {
 }
 
 export default SearchBarMobile
-export { SearchBarStyle, InputStyle, IconButtonStyle }
+export { SearchBarMobileStyle, InputStyle, IconButtonStyle }

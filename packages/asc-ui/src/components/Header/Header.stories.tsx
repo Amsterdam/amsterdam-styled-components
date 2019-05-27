@@ -9,17 +9,19 @@ import { ReactComponent as MenuIcon } from '@datapunt/asc-assets/lib/Icons/Menu.
 import BoxWrapper from '../../internals/Box/BoxWrapper'
 import Header, {
   HeaderWrapperStyle,
-  SearchBarStyle,
   MenuBarStyle,
   MenuDropDownStyle,
 } from './Header'
 import ContentFiller from '../../internals/ContentFiller/ContentFiller'
 import Typography from '../Typography'
-import SearchBar from '../SearchBar'
+import SearchBar from '../SearchBar/SearchBar'
+import SearchBarMobile from '../SearchBar/SearchBarMobile'
 import Menu from '../Menu/Menu'
 import { MenuItem, MenuLabel } from '../..'
 import SubMenu from '../Menu/SubMenu'
 import { breakpoint } from '../../utils'
+import SearchBarStyle from '../SearchBar/SearchBarStyle'
+import SearchBarMobileStyle from '../SearchBar/SearchBarMobileStyle'
 
 const outsideBackgoundColor = '#E6E6E6'
 const contentBackgrountColor = '#ffffff'
@@ -86,16 +88,25 @@ const HeaderTallWithContentStory: React.FC<{}> = () => (
 )
 
 const DataportaalHeaderWrapperStyle = styled(HeaderWrapperStyle)`
+  ${SearchBarMobileStyle} {
+    @media screen and ${breakpoint('min-width', 'tabletM')} {
+      display: none;
+    }
+    & > div {
+    }
+  }
+
   ${SearchBarStyle} {
+    @media screen and ${breakpoint('max-width', 'tabletM')} {
+      display: none;
+    }
+
     flex-grow: 1;
+
     & > div {
       flex-grow: 0;
       width: 100%;
       max-width: 430px;
-
-      @media screen and ${breakpoint('max-width', 'mobileM')} {
-        max-width: 245px;
-      }
     }
   }
 
@@ -179,19 +190,22 @@ const SearchBarDesktop: React.FC<{}> = () => {
   )
 }
 
-// const SearchBarMobile = (
-//   <SearchBar
-//     placeholder="Enter the search text"
-//     onTextChanged={(text: string) => {
-//       setText(text)
-//       action(`text changed: ${searchText}`)
-//     }}
-//     onSearch={() => {
-//       action(`button clicked: ${searchText}`)
-//     }}
-//     text={searchText}
-//   />
-// )
+const SearchBarMobileLocal: React.FC<{}> = () => {
+  const [searchText, setText] = React.useState('')
+  return (
+    <SearchBarMobile
+      placeholder="Enter the search text"
+      onTextChanged={(text: string) => {
+        setText(text)
+        action(`text changed: ${searchText}`)
+      }}
+      onSearch={() => {
+        action(`button clicked: ${searchText}`)
+      }}
+      text={searchText}
+    />
+  )
+}
 
 const HeaderTallDataportaalStory: React.FC<{}> = () => {
   return (
@@ -204,6 +218,7 @@ const HeaderTallDataportaalStory: React.FC<{}> = () => {
         styledComponent={DataportaalHeaderWrapperStyle}
       >
         <SearchBarDesktop />
+        <SearchBarMobileLocal />
         {MenuDesktop}
         {MenuMobile}
       </Header>

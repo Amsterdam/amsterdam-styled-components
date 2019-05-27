@@ -5,7 +5,6 @@ import HeaderWrapperStyle, {
 } from './HeaderWrapperStyle'
 import HeaderLogoText from './HeaderLogoText'
 import HeaderContent from './HeaderContent'
-import SearchBarStyle from '../SearchBar/SearchBarStyle'
 import MenuBarStyle from '../Menu/MenuBarStyle'
 import MenuDropDownStyle from '../Menu/MenuDropDownStyle'
 
@@ -43,4 +42,4 @@ Header.defaultProps = {
 }
 
 export default Header
-export { HeaderWrapperStyle, SearchBarStyle, MenuBarStyle, MenuDropDownStyle }
+export { HeaderWrapperStyle, MenuBarStyle, MenuDropDownStyle }

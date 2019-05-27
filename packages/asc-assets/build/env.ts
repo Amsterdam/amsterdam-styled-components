@@ -71,6 +71,8 @@ export const environment: Environment = {
     },
     prettier: {
       parser: 'babylon',
+      trailingComma: 'all',
+      semi: false,
       singleQuote: true,
     },
   },

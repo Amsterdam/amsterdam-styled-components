@@ -1,4 +1,3 @@
-
 import { AbstractNode, HelperRenderOptions, IconDefinition } from '../types'
 
 function renderAbstractNodeToSVGElement(
@@ -29,7 +28,6 @@ function renderAbstractNodeToSVGElement(
     .join('')
   return `${container[0]}${children}${container[1]}`
 }
-
 
 export default function renderIconDefinitionToSVGElement(
   icon: IconDefinition,

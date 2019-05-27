@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 import styled from '@datapunt/asc-core'
 import SearchBar, { SearchBarStyle, IconButtonStyle } from './SearchBar'
 import { svgFill } from '../../utils'
-import SearchBarMobile from './SearchBarMobile'
+import SearchBarMobile, { SearchBarMobileStyle } from './SearchBarMobile'
 
 const SearchBarStory: React.FC<{}> = () => {
   const [searchText, setText] = React.useState('')
@@ -71,7 +71,7 @@ const SearchBarStoryWithChangedStyle: React.FC<{}> = () => {
   )
 }
 
-const ChangedSearchBarMobileStyle = styled(SearchBarStyle)`
+const ChangedSearchBarMobileStyle = styled(SearchBarMobileStyle)`
   /* align-content: flex-start;
   flex-direction: column;
   max-width: 600px;
