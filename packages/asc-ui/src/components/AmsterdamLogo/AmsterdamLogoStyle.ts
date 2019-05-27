@@ -18,9 +18,6 @@ const tallStyle = css`
   @media screen and ${breakpoint('min-width', 'laptopM')} {
     height: 68px;
     width: 100px;
-
-    ${LogoStyle} {
-    }
   }
 `
 
