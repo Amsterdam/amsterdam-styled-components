@@ -12,6 +12,8 @@ import Header, {
   MenuBarStyle,
   MenuDropDownStyle,
 } from './Header'
+
+import HeaderContentStyle from './HeaderContentStyle'
 import ContentFiller from '../../internals/ContentFiller/ContentFiller'
 import Typography from '../Typography'
 import SearchBar from '../SearchBar/SearchBar'
@@ -88,6 +90,10 @@ const HeaderTallWithContentStory: React.FC<{}> = () => (
 )
 
 const DataportaalHeaderWrapperStyle = styled(HeaderWrapperStyle)`
+  ${HeaderContentStyle} {
+    justify-content: flex-end;
+  }
+
   ${SearchBarMobileStyle} {
     @media screen and ${breakpoint('min-width', 'tabletM')} {
       display: none;
