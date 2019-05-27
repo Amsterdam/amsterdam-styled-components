@@ -1,14 +1,12 @@
 import React from 'react'
-import Icons from '@datapunt/asc-assets'
 import IconButton from '../IconButton/IconButton'
 import InputStyle from '../Input/InputStyle'
 import IconButtonStyle from '../IconButton/IconButtonStyle'
 import SearchBarStyle from './SearchBarStyle'
 import { KeyboardKeys } from '../../types'
 import TextField from '../TextField/TextField'
-import ReactIcon from '../ReactIcon/Icon'
 
-ReactIcon.add(Icons.Search)
+import { Search } from '@datapunt/asc-assets'
 
 interface SearchBarProps {
   styledComponent?: any
@@ -76,7 +74,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
         value={text || ''}
       />
       <IconButton aria-label="Search" color="secondary" onClick={handleSubmit}>
-        <ReactIcon type={Icons.Search} />
+        <Search />
       </IconButton>
       {children}
     </ExtendedSearchBarStyle>

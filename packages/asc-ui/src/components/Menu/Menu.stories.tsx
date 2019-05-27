@@ -1,10 +1,10 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { ReactComponent as ChevronRight } from '@datapunt/asc-assets/lib/Icons/ChevronRight.svg'
-import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
-import { ReactComponent as ExternalLink } from '@datapunt/asc-assets/lib/Icons/ExternalLink.svg'
-import { ReactComponent as MenuIcon } from '@datapunt/asc-assets/lib/Icons/Menu.svg'
+import { ChevronRight } from '@datapunt/asc-assets'
+import { ChevronDown } from '@datapunt/asc-assets'
+import { ExternalLink } from '@datapunt/asc-assets'
+import { Menu as MenuIcon } from '@datapunt/asc-assets'
 import { Menu, MenuItem, MenuLabel, SubMenu } from '../..'
 
 storiesOf('Composed/Menu', module)
