@@ -9,7 +9,6 @@ const SubMenuButtonStyle = styled(MenuButtonStyle)<
   MenuStyleProps.MenuButtonStyleProps
 >`
   justify-content: space-between;
-
   border-left-color: ${({ theme, focused }) =>
     focused ? color('secondary')({ theme }) : 'transparent'};
 `

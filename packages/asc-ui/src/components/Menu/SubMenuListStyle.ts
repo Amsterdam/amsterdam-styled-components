@@ -8,6 +8,25 @@ import SubMenuButtonStyle, {
 } from './SubMenuButtonStyle'
 import { color, svgFill } from '../../utils'
 
+const SubMenuListStyle = styled.ul<MenuStyleProps.MenuListStyleProps>`
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+
+  ${MenuItemStyle} {
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+
+    border-left-style: solid;
+    border-left-color: ${color('tint', 'level3')};
+    border-left-width: 8px;
+    justify-content: flex-start;
+  }
+`
+
 export const SubMenuWrapperStyle = styled.div<
   MenuStyleProps.MenuWrapperStyleProps
 >`
@@ -16,13 +35,15 @@ export const SubMenuWrapperStyle = styled.div<
     outline: none;
 
     ${MenuButtonStyle} {
-      background-color: ${color('tint', 'level2')}
-        ${MenuButtonLabelStyle}:first-of-type {
+      background-color: ${color('tint', 'level2')};
+
+      ${/* sc-selector */ MenuButtonLabelStyle}:first-of-type {
         border-bottom-color: ${color('secondary')};
       }
     }
+
     ${SubMenuButtonStyle} {
-      ${SubMenuButtonLabelStyle}:first-of-type {
+      ${/* sc-selector */ SubMenuButtonLabelStyle}:first-of-type {
         color: ${color('secondary')};
       }
 
@@ -36,13 +57,14 @@ export const SubMenuWrapperStyle = styled.div<
 
   ${MenuButtonStyle} {
     background-color: ${({ theme, focused }) =>
-        focused ? color('tint', 'level2')({ theme }) : 'transparent'}
-      ${MenuButtonLabelStyle}:first-of-type {
+      focused ? color('tint', 'level2')({ theme }) : 'transparent'};
+    ${/* sc-selector */ MenuButtonLabelStyle}:first-of-type {
       border-bottom-color: ${({ theme, focused }) =>
         focused ? color('secondary')({ theme }) : 'transparent'};
     }
 
     ${IconStyle} {
+      /* stylelint-disable-next-line no-descending-specificity */
       & > svg {
         ${({ theme, focused }) => focused && svgFill('secondary')({ theme })};
       }
@@ -50,28 +72,9 @@ export const SubMenuWrapperStyle = styled.div<
   }
 
   ${SubMenuButtonStyle} {
-    ${SubMenuButtonLabelStyle}:first-of-type {
+    ${/* sc-selector */ SubMenuButtonLabelStyle}:first-of-type {
       color: ${({ theme, focused }) =>
         focused ? color('secondary')({ theme }) : 'inherit'};
-    }
-  }
-`
-
-const SubMenuListStyle = styled.ul<MenuStyleProps.MenuListStyleProps>`
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-
-  ${MenuItemStyle} {
-    border-left-style: solid;
-    border-left-color: ${color('tint', 'level3')};
-    border-left-width: 8px;
-    justify-content: flex-start;
-
-    &:hover,
-    &:focus {
-      background-color: transparent;
     }
   }
 `

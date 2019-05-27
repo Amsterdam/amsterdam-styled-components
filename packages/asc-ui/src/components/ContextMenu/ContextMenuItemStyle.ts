@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled, { css } from '@datapunt/asc-core'
 import { ContextMenuItemProps } from './types'
 import { color, fromTheme } from '../../utils'
 
@@ -18,7 +18,10 @@ export const ContextMenuItemStyle = styled.li<ContextMenuItemProps>`
   }
 
   ${({ divider }) =>
-    divider && `border-bottom: 1px solid ${color('tint', 'level4')}}`}
+    divider &&
+    css`
+      border-bottom: 1px solid ${color('tint', 'level4')};
+    `}
 
   &:hover,
   &:focus {
