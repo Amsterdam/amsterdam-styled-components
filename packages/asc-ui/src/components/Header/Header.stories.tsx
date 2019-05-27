@@ -100,13 +100,13 @@ const DataportaalHeaderWrapperStyle = styled(HeaderWrapperStyle)`
   }
 
   ${MenuBarStyle} {
-    @media screen and ${breakpoint('max-width', 'tablet')} {
+    @media screen and ${breakpoint('max-width', 'tabletM')} {
       display: none;
     }
   }
 
   ${MenuDropDownStyle} {
-    @media screen and ${breakpoint('min-width', 'tablet')} {
+    @media screen and ${breakpoint('min-width', 'tabletM')} {
       display: none;
     }
   }
