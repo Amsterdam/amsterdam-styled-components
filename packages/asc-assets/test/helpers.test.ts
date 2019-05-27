@@ -1,4 +1,4 @@
-import { renderIconDefinitionToSVGElement } from '../build/templates/helpers'
+import renderIconDefinitionToSVGElement from '../build/templates/helpers'
 import { IconDefinition } from '../build/typings/types'
 
 describe('renderIconDefinitionToSVGElement', () => {

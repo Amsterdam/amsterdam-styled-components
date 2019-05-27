@@ -6,6 +6,7 @@ import * as React from 'react'
 
 export function log(message: string) {
   if (!(process && process.env && process.env.NODE_ENV === 'production')) {
+    // eslint-disable-next-line no-console
     console.error(`[icons-react]: ${message}.`)
   }
 }

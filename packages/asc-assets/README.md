@@ -51,7 +51,7 @@ interface IconDefinition {
 ## Render Helpers
 ```ts
 import { Alert } from '@datapunt/asc-assets';
-import { renderIconDefinitionToSVGElement } from '@datapunt/asc-assets/lib/Icons/service/helpers';
+import renderIconDefinitionToSVGElement from '@datapunt/asc-assets/lib/Icons/service/helpers';
 
 const svgHTMLString = renderIconDefinitionToSVGElement(
   Alert,

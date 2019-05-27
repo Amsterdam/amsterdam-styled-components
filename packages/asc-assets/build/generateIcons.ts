@@ -8,7 +8,7 @@ import {
   ICON_IDENTIFIER,
   ICON_JSON,
 } from './constants'
-import { renderIconDefinitionToSVGElement } from './templates/helpers'
+import renderIconDefinitionToSVGElement from './templates/helpers'
 import {
   BuildTimeIconMetaData,
   Environment,

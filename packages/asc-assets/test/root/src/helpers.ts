@@ -1,12 +1,5 @@
 import { AbstractNode, HelperRenderOptions, IconDefinition } from './types'
 
-export function renderIconDefinitionToSVGElement(
-  icon: IconDefinition,
-  options: HelperRenderOptions = {},
-): string {
-  return renderAbstractNodeToSVGElement(icon.icon, options)
-}
-
 function renderAbstractNodeToSVGElement(
   node: AbstractNode,
   options: HelperRenderOptions,
@@ -34,4 +27,11 @@ function renderAbstractNodeToSVGElement(
     .map(child => renderAbstractNodeToSVGElement(child, options))
     .join('')
   return `${container[0]}${children}${container[1]}`
+}
+
+export default function renderIconDefinitionToSVGElement(
+  icon: IconDefinition,
+  options: HelperRenderOptions = {},
+): string {
+  return renderAbstractNodeToSVGElement(icon.icon, options)
 }
