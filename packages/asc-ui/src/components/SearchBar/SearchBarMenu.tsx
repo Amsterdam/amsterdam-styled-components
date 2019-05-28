@@ -21,7 +21,6 @@ interface SearchBarMenuProps {
 interface Props extends SearchBarMenuProps {
   open?: boolean
 }
-
 const SearchBarMenu: React.FC<Props> = ({
   children,
   styledComponent,
@@ -30,19 +29,7 @@ const SearchBarMenu: React.FC<Props> = ({
   const ExtendedSearchBarMenuStyle = styledComponent
   const wrapper = React.useRef<HTMLDivElement>(null)
 
-  const inputRef = React.useRef<HTMLInputElement>(null)
-
   const [open, setOpen] = React.useState(false)
-
-  const onToggle = () => {
-    console.log('onToggle', inputRef.current)
-    console.log('TCL: onToggle -> open', open)
-    setOpen(!open)
-    console.log('TCL: onToggle -> open', open)
-    setTimeout(() => {
-      if (open && inputRef && inputRef.current) inputRef.current.focus()
-    })
-  }
 
   const onClose = () => {
     setTimeout(() => {
@@ -66,7 +53,9 @@ const SearchBarMenu: React.FC<Props> = ({
     >
       <IconButton
         aria-label="Search"
-        onClick={() => onToggle()}
+        onClick={() => {
+          setOpen(!open)
+        }}
         {...otherProps}
         iconSize={open ? 16 : 20}
       >
@@ -77,11 +66,7 @@ const SearchBarMenu: React.FC<Props> = ({
         )}
       </IconButton>
 
-      {open && (
-        <SearchBar upperRef={inputRef} {...otherProps}>
-          {children}
-        </SearchBar>
-      )}
+      {open && <SearchBar {...otherProps}>{children}</SearchBar>}
     </ExtendedSearchBarMenuStyle>
   )
 }

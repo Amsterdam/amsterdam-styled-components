@@ -8,6 +8,7 @@ import Input, { InputProps } from '../Input/Input'
 export interface TextFieldProps extends InputProps {
   id: string
   label?: string
+  focusOnRender?: boolean
   srOnly: boolean
   canClear: boolean
   onClear: any
@@ -22,6 +23,7 @@ const TextField = ({
   onClear,
   value,
   inputRef,
+  focusOnRender,
   ...otherProps
 }: TextFieldProps) => {
   return (
@@ -29,7 +31,13 @@ const TextField = ({
       <FormLabelStyle htmlFor={id} srOnly={srOnly}>
         {label}
       </FormLabelStyle>
-      <Input id={id} value={value} {...otherProps} inputRef={inputRef} />
+      <Input
+        focusOnRender={focusOnRender}
+        id={id}
+        value={value}
+        inputRef={inputRef}
+        {...otherProps}
+      />
       {canClear && value && (
         <IconButton aria-label="Close" onClick={onClear}>
           <Close />

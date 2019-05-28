@@ -66,6 +66,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
       <TextField
         id="search-bar-id"
         srOnly
+        focusOnRender
         label={placeholder}
         aria-label={placeholder}
         placeholder={placeholder}
