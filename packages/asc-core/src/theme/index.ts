@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-useless-constructor, no-empty-function */
+/* eslint-disable no-useless-constructor, no-empty-function */
 import { CSSProp } from 'styled-components'
 
 export namespace Theme {
@@ -110,11 +110,6 @@ export namespace Theme {
       public colors: ColorInterface,
       public globalStyle: GlobalStyleType,
       public typography: TypographyInterface,
-    ) {
-      this.breakpoints = breakpoints
-      this.colors = colors
-      this.globalStyle = globalStyle
-      this.typography = typography
-    }
+    ) {}
   }
 }
