@@ -4,12 +4,11 @@ import { action } from '@storybook/addon-actions'
 import styled from '@datapunt/asc-core'
 import SearchBar from './SearchBar'
 import { svgFill } from '../../utils'
-import SearchBarMobile from './SearchBarMobile'
 import IconButtonStyle from '../IconButton/IconButtonStyle'
 import SearchBarStyle from './SearchBarStyle'
-import SearchBarMobileStyle from './SearchBarMobileStyle'
 
 import SearchBarMenu from './SearchBarMenu'
+import SearchBarMenuStyle from './SearchBarMenuStyle'
 
 const SearchBarStory: React.FC<{}> = () => {
   const [searchText, setText] = React.useState('')
@@ -76,32 +75,21 @@ const SearchBarStoryWithChangedStyle: React.FC<{}> = () => {
   )
 }
 
-const ChangedSearchBarMobileStyle = styled(SearchBarMobileStyle)`
-  /* align-content: flex-start;
-  flex-direction: column;
-  max-width: 600px;
-  padding: 10px; */
-
+const ChangedSearchBarMenuStyle = styled(SearchBarMenuStyle)`
   & > ${IconButtonStyle} {
-    /* margin-left: 0px;
-    margin-top: 5px;
-    padding: 10px;
-    width: 100%;
-    max-width: 600px; */
-
     & svg {
-      ${svgFill('tint', 'level1')};
+      ${svgFill('tint', 'level3')};
     }
   }
 `
 
-const SearchBarMobileStory: React.FC<{}> = () => {
+const ChangedSearchBarMenuStory: React.FC<{}> = () => {
   const [searchText, setText] = React.useState('')
 
   return (
     <>
-      <SearchBarMobile
-        styledComponent={ChangedSearchBarMobileStyle}
+      <SearchBarMenu
+        styledComponent={ChangedSearchBarMenuStyle}
         onTextChanged={(text: string) => {
           setText(text)
           action(`text changed: ${searchText}`)
@@ -145,5 +133,5 @@ const SearchBarMenuStory: React.FC<{}> = () => {
 storiesOf('Composed/SearchBar', module)
   .add('default state', () => <SearchBarStory />)
   .add('with changed style', () => <SearchBarStoryWithChangedStyle />)
-  .add('mobile with changed style', () => <SearchBarMobileStory />)
+  .add('mobile with changed style', () => <ChangedSearchBarMenuStory />)
   .add('example searchbar menu', () => <SearchBarMenuStory />)

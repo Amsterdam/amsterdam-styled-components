@@ -27,6 +27,7 @@ const SearchBarMenu: React.FC<Props> = ({
   styledComponent,
   ...otherProps
 }) => {
+  const ExtendedSearchBarMenuStyle = styledComponent
   const wrapper = React.useRef<HTMLDivElement>(null)
 
   const inputRef = React.useRef<HTMLInputElement>(null)
@@ -56,7 +57,7 @@ const SearchBarMenu: React.FC<Props> = ({
   }
 
   return (
-    <SearchBarMenuStyle
+    <ExtendedSearchBarMenuStyle
       ref={wrapper}
       onBlur={onClose}
       {...{
@@ -67,6 +68,7 @@ const SearchBarMenu: React.FC<Props> = ({
         aria-label="Search"
         onClick={() => onToggle()}
         {...otherProps}
+        iconSize={open ? 16 : 20}
       >
         {open ? (
           <ReactIcon type={Icons.Close} />
@@ -76,16 +78,21 @@ const SearchBarMenu: React.FC<Props> = ({
       </IconButton>
 
       {open && (
-        <SearchBar
-          styledComponent={styledComponent}
-          upperRef={inputRef}
-          {...otherProps}
-        >
+        <SearchBar upperRef={inputRef} {...otherProps}>
           {children}
         </SearchBar>
       )}
-    </SearchBarMenuStyle>
+    </ExtendedSearchBarMenuStyle>
   )
+}
+
+SearchBarMenu.defaultProps = {
+  styledComponent: SearchBarMenuStyle,
+  placeholder: 'Search...',
+  onBlur: () => {},
+  onFocus: () => {},
+  onKeyDown: () => {},
+  text: '',
 }
 
 export default SearchBarMenu

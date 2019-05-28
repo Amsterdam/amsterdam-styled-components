@@ -18,9 +18,9 @@ import MenuBarStyle from '../../Menu/MenuBarStyle'
 import MenuDropDownStyle from '../../Menu/MenuDropDownStyle'
 import HeaderWrapperStyle from '../HeaderWrapperStyle'
 import SearchBarStyle from '../../SearchBar/SearchBarStyle'
-import SearchBarMobile from '../../SearchBar/SearchBarMobile'
+import SearchBarMenu from '../../SearchBar/SearchBarMenu'
 import SearchBar from '../../SearchBar'
-import SearchBarMobileStyle from '../../SearchBar/SearchBarMobileStyle'
+import SearchBarMenuStyle from '../../SearchBar/SearchBarMenuStyle'
 
 const outsideBackgoundColor = '#E6E6E6'
 const contentBackgrountColor = '#ffffff'
@@ -30,7 +30,7 @@ const DataportaalHeaderWrapperStyle = styled(HeaderWrapperStyle)`
     justify-content: flex-end;
   }
 
-  ${SearchBarMobileStyle} {
+  ${SearchBarMenuStyle} {
     @media screen and ${breakpoint('min-width', 'tabletM')} {
       display: none;
     }
@@ -84,7 +84,7 @@ const DesktopSearchBar: React.FC<{}> = () => {
 const MobileSearchBar: React.FC<{}> = () => {
   const [searchText, setText] = React.useState('')
   return (
-    <SearchBarMobile
+    <SearchBarMenu
       placeholder="Enter the search text"
       onTextChanged={(text: string) => {
         setText(text)
