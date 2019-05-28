@@ -8,7 +8,6 @@ export type SearchBarMenuStyleProps = {
 }
 
 const SearchBarMenuStyle = styled.div<SearchBarMenuStyleProps>`
-  position: relative;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -21,9 +20,9 @@ const SearchBarMenuStyle = styled.div<SearchBarMenuStyleProps>`
     position: absolute;
     top: 50px;
     right: 0;
-    left: -500px;
+    left: 0;
     padding: 15px;
-    width: 500px;
+    width: calc(100% - 30px);
     background-color: ${color('tint', 'level2')};
   }
 
