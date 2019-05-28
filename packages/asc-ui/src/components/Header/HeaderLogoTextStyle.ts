@@ -14,6 +14,7 @@ const HeaderLogoTextStyle = styled.h1<Props>`
   justify-content: normal;
   align-items: center;
   flex-shrink: 0;
+  box-sizing: content-box;
 
   ${AmsterdamLogoStyle} {
     margin-right: 10px;

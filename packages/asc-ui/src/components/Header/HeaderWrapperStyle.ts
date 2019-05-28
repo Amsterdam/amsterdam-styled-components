@@ -13,10 +13,6 @@ export type Props = {
 }
 
 const shortStyle = css`
-  position: fixed; /* Unfortunately no sticky because IE11 */
-  left: 50%;
-  transform: translateX(-50%);
-
   ${HeaderTitleStyle} {
     margin-top: -2px; /* hack to align text with logo */
   }
@@ -30,6 +26,11 @@ const HeaderWrapperStyle = styled.div<Props>`
   max-width: ${({ fullWidth }) =>
     fullWidth ? 'none' : `${WRAPPER_MAX_WIDTH}px`};
   box-shadow: 0 4px rgba(0, 0, 0, 0.04);
+  box-sizing: content-box;
+  position: fixed; /* Unfortunately no sticky because IE11 */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2; /* Orders the header higher than the content */
 
   ${HeaderContentStyle} {
     flex-grow: 1;
@@ -44,7 +45,6 @@ const HeaderWrapperStyle = styled.div<Props>`
           }
           @media screen and ${breakpoint('min-width', 'laptopM')} {
             box-shadow: none;
-            position: relative;
 
             &:after {
               content: '';
