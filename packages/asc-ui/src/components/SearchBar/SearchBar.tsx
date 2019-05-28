@@ -18,6 +18,7 @@ interface SearchBarProps {
   onFocus?: Function
   onKeyDown?: Function
   text?: string
+  upperRef?: any
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -30,10 +31,13 @@ const SearchBar: React.FC<SearchBarProps> = ({
   onFocus,
   onKeyDown,
   text,
+  upperRef,
   ...otherProps
 }) => {
   const ExtendedSearchBarStyle = styledComponent
-  const inputRef = React.useRef<HTMLInputElement>(null)
+  console.log('TCL: upperRef', upperRef)
+  const inputRef = upperRef // || React.useRef<HTMLInputElement>(null)
+  console.log('TCL: inputRef', inputRef)
 
   const handleTextChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
     onTextChanged(e.target.value)
@@ -88,6 +92,7 @@ SearchBar.defaultProps = {
   onFocus: () => {},
   onKeyDown: () => {},
   text: '',
+  upperRef: null,
 }
 
 export default SearchBar

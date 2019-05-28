@@ -9,6 +9,8 @@ import IconButtonStyle from '../IconButton/IconButtonStyle'
 import SearchBarStyle from './SearchBarStyle'
 import SearchBarMobileStyle from './SearchBarMobileStyle'
 
+import SearchBarMenu from './SearchBarMenu'
+
 const SearchBarStory: React.FC<{}> = () => {
   const [searchText, setText] = React.useState('')
 
@@ -115,7 +117,33 @@ const SearchBarMobileStory: React.FC<{}> = () => {
   )
 }
 
+const SearchBarMenuStory: React.FC<{}> = () => {
+  const [searchText, setText] = React.useState('')
+
+  return (
+    <>
+      <SearchBarMenu
+        placeholder="Enter the search text"
+        onTextChanged={(text: string) => {
+          setText(text)
+          action(`text changed: ${searchText}`)
+        }}
+        onSearch={() => {
+          action(`button clicked: ${searchText}`)
+        }}
+        text={searchText}
+      />
+
+      <p>
+        <span>Searching for:</span>
+        {searchText}
+      </p>
+    </>
+  )
+}
+
 storiesOf('Composed/SearchBar', module)
   .add('default state', () => <SearchBarStory />)
   .add('with changed style', () => <SearchBarStoryWithChangedStyle />)
   .add('mobile with changed style', () => <SearchBarMobileStory />)
+  .add('example searchbar menu', () => <SearchBarMenuStory />)
