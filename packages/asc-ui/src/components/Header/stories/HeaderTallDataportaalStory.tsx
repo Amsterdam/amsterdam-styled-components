@@ -32,7 +32,7 @@ const DataportaalHeaderWrapperStyle = styled(HeaderWrapperStyle)`
 
   ${SearchBarMenuStyle} {
     @media screen and ${breakpoint('min-width', 'tabletM')} {
-      display: none;
+      /* display: none; */
     }
     & > div {
     }
@@ -40,7 +40,7 @@ const DataportaalHeaderWrapperStyle = styled(HeaderWrapperStyle)`
 
   ${SearchBarStyle} {
     @media screen and ${breakpoint('max-width', 'tabletM')} {
-      display: none;
+      /* display: none; */
     }
 
     flex-grow: 1;
@@ -158,7 +158,7 @@ const HeaderTallDataportaalStory: React.FC<{}> = () => {
         fullWidth={false}
         styledComponent={DataportaalHeaderWrapperStyle}
       >
-        <DesktopSearchBar />
+        {false && <DesktopSearchBar />}
         <MobileSearchBar />
         {MenuDesktop}
         {MenuMobile}
