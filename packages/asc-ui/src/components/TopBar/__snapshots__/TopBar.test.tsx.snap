@@ -1,30 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TopBar should render 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  z-index: 0;
-  padding: 0 15px;
-  background-color: red;
-}
-
-.c0:after {
-  content: '';
-  display: block;
-  min-height: inherit;
-  font-size: 0;
-}
-
 <header
-  class="c0"
+  class="ehdvSW"
 >
   topbar-content
 </header>

@@ -1,231 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header should render the short version 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  z-index: 0;
-  padding: 0 15px;
-  background-color: #ffffff;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  height: 100%;
-  margin: 0 auto;
-  max-width: none;
-}
-
-.c1:after {
-  content: '';
-  display: block;
-  min-height: inherit;
-  font-size: 0;
-}
-
-.c7 {
-  color: #004699;
-  display: inline-block;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  font-weight: 400;
-  font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1;
-  color: #000000;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
-  margin: 0px;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  color: #000;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c7:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
-}
-
-.c7:hover {
-  color: #ec0000;
-}
-
-.c7:hover {
-  color: inherit;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 100%;
-}
-
-.c5 {
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-image: url("-react-component: svg-mock;");
-}
-
-.c4 {
-  display: inline-block;
-  height: 30px;
-  width: 68px;
-}
-
-.c4:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
-}
-
-.c2 {
-  height: 50px;
-  margin: 0;
-  font-weight: 700;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: normal;
-  -webkit-justify-content: normal;
-  -ms-flex-pack: normal;
-  justify-content: normal;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  box-sizing: content-box;
-}
-
-.c2 .c3 {
-  margin-right: 10px;
-}
-
-.c0 {
-  background-color: #ffffff;
-  margin: 0 auto;
-  width: 100%;
-  max-width: none;
-  box-shadow: 0 4px rgba(0,0,0,0.04);
-  box-sizing: content-box;
-  position: fixed;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.c0 .c8 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c0 .c6 {
-  margin-top: -2px;
-}
-
-.c10 {
-  line-height: 1.25;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  font-weight: 400;
-  font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1.25;
-  color: #000000;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
-}
-
-@media screen and (max-width:375px) {
-  .c7 {
-    font-size: 14px;
-  }
-}
-
-@media screen and (min-width:375.02px) {
-  .c7 {
-    font-size: 16px;
-  }
-}
-
-@media screen and (min-width:1200.02px) {
-  .c2 .c3 {
-    margin-right: 40px;
-  }
-}
-
 <div
-  class="c0"
+  class="ceNfgA"
 >
   <header
-    class="c1"
+    class="jqIeQP"
   >
     <h1
-      class="c2"
+      class="fUOwIt"
     >
       <a
-        class="c3 c4"
+        class="cNDnBw"
         href="http://data.amsterdam.nl"
       >
         <span
-          class="c5"
+          class="dhaUoM"
         />
       </a>
       <a
-        class="c6 c7"
+        class="erGoLP"
         href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
     </h1>
     <div
-      class="c8 c9"
+      class="AcJgs"
     >
       <p
-        class="c10"
+        class="sc-jhAzac bYXyyr"
       >
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
       </p>
@@ -235,243 +39,35 @@ exports[`Header should render the short version 1`] = `
 `;
 
 exports[`Header should render the short version without the full width 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  z-index: 0;
-  padding: 0 15px;
-  background-color: #ffffff;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  height: 100%;
-  margin: 0 auto;
-  max-width: 1570px;
-}
-
-.c1:after {
-  content: '';
-  display: block;
-  min-height: inherit;
-  font-size: 0;
-}
-
-.c7 {
-  color: #004699;
-  display: inline-block;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  font-weight: 400;
-  font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1;
-  color: #000000;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
-  margin: 0px;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  color: #000;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c7:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
-}
-
-.c7:hover {
-  color: #ec0000;
-}
-
-.c7:hover {
-  color: inherit;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 100%;
-}
-
-.c5 {
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-image: url("-react-component: svg-mock;");
-}
-
-.c4 {
-  display: inline-block;
-  height: 30px;
-  width: 68px;
-}
-
-.c4:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
-}
-
-.c2 {
-  height: 50px;
-  margin: 0;
-  font-weight: 700;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: normal;
-  -webkit-justify-content: normal;
-  -ms-flex-pack: normal;
-  justify-content: normal;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  box-sizing: content-box;
-}
-
-.c2 .c3 {
-  margin-right: 10px;
-}
-
-.c11 .c8 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c11 .c6 {
-  margin-top: -2px;
-}
-
-.c0 {
-  background-color: #ffffff;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 1800px;
-  box-shadow: 0 4px rgba(0,0,0,0.04);
-  box-sizing: content-box;
-  position: fixed;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.c0 .c8 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c0 .c6 {
-  margin-top: -2px;
-}
-
-.c10 {
-  line-height: 1.25;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  font-weight: 400;
-  font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1.25;
-  color: #000000;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
-}
-
-@media screen and (max-width:375px) {
-  .c7 {
-    font-size: 14px;
-  }
-}
-
-@media screen and (min-width:375.02px) {
-  .c7 {
-    font-size: 16px;
-  }
-}
-
-@media screen and (min-width:1200.02px) {
-  .c2 .c3 {
-    margin-right: 40px;
-  }
-}
-
 <div
-  class="c0"
+  class="bfoEIs"
 >
   <header
-    class="c1"
+    class="kXgeVV"
   >
     <h1
-      class="c2"
+      class="fUOwIt"
     >
       <a
-        class="c3 c4"
+        class="cNDnBw"
         href="http://data.amsterdam.nl"
       >
         <span
-          class="c5"
+          class="dhaUoM"
         />
       </a>
       <a
-        class="c6 c7"
+        class="erGoLP"
         href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
     </h1>
     <div
-      class="c8 c9"
+      class="AcJgs"
     >
       <p
-        class="c10"
+        class="sc-fBuWsC iAOzqM"
       >
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
       </p>
@@ -481,319 +77,35 @@ exports[`Header should render the short version without the full width 1`] = `
 `;
 
 exports[`Header should render the tall version 1`] = `
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  z-index: 0;
-  padding: 0 15px;
-  background-color: #ffffff;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  height: 100%;
-  margin: 0 auto;
-  max-width: none;
-}
-
-.c3:after {
-  content: '';
-  display: block;
-  min-height: inherit;
-  font-size: 0;
-}
-
-.c11 {
-  color: #004699;
-  display: inline-block;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  font-weight: 400;
-  font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1;
-  color: #000000;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
-  margin: 0px;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  color: #000;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c11:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
-}
-
-.c11:hover {
-  color: #ec0000;
-}
-
-.c11:hover {
-  color: inherit;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 100%;
-}
-
-.c9 {
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-image: url("-react-component: svg-mock;");
-}
-
-.c7 {
-  display: inline-block;
-  height: 30px;
-  width: 68px;
-}
-
-.c7:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
-}
-
-.c5 {
-  height: 50px;
-  margin: 0;
-  font-weight: 700;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: normal;
-  -webkit-justify-content: normal;
-  -ms-flex-pack: normal;
-  justify-content: normal;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  box-sizing: content-box;
-}
-
-.c5 .c6 {
-  margin-right: 10px;
-}
-
-.c15 .c12 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c15 .c10 {
-  margin-top: -2px;
-}
-
-.c16 .c12 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c16 .c10 {
-  margin-top: -2px;
-}
-
-.c0 {
-  background-color: #ffffff;
-  margin: 0 auto;
-  width: 100%;
-  max-width: none;
-  box-shadow: 0 4px rgba(0,0,0,0.04);
-  box-sizing: content-box;
-  position: fixed;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.c0 .c12 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c14 {
-  line-height: 1.25;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  font-weight: 400;
-  font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1.25;
-  color: #000000;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
-}
-
-@media screen and (max-width:375px) {
-  .c11 {
-    font-size: 14px;
-  }
-}
-
-@media screen and (min-width:375.02px) {
-  .c11 {
-    font-size: 16px;
-  }
-}
-
-@media screen and (min-width:1200.02px) {
-  .c7 {
-    height: 68px;
-    width: 100px;
-  }
-
-  .c7 .c8 {
-    background-image: url("-react-component: svg-mock;");
-  }
-}
-
-@media screen and (min-width:1200.02px) {
-  .c5 .c6 {
-    margin-right: 40px;
-  }
-}
-
-@media screen and (max-width:1200px) {
-  .c0 .c10 {
-    margin-top: -2px;
-  }
-}
-
-@media screen and (min-width:1200.02px) {
-  .c0 {
-    box-shadow: none;
-  }
-
-  .c0:after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 50px;
-    margin-top: -50px;
-    background-color: #F5F5F5;
-  }
-
-  .c0 .c2 {
-    z-index: 100;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-  }
-
-  .c0 .c1 {
-    background-color: transparent;
-  }
-
-  .c0 .c10 {
-    margin-top: 0px;
-    -webkit-align-self: flex-start;
-    -ms-flex-item-align: start;
-    align-self: flex-start;
-    line-height: 38px;
-    font-size: 30px;
-  }
-
-  .c0 .c4 {
-    height: 78px;
-    padding: 15px 0;
-  }
-
-  .c0 .c12 {
-    -webkit-flex-basis: 100%;
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
-    margin-left: 25px;
-    margin-right: 25px;
-    height: 50px;
-  }
-}
-
 <div
-  class="c0"
+  class="EorMi"
 >
   <header
-    class="c1 c2 c3"
+    class="jqIeQP"
   >
     <h1
-      class="c4 c5"
+      class="fUOwIt"
     >
       <a
-        class="c6 c7"
+        class="jYwlpc"
         href="http://data.amsterdam.nl"
       >
         <span
-          class="c8 c9"
+          class="dhaUoM"
         />
       </a>
       <a
-        class="c10 c11"
+        class="erGoLP"
         href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
     </h1>
     <div
-      class="c12 c13"
+      class="AcJgs"
     >
       <p
-        class="c14"
+        class="sc-fMiknA ktjjkD"
       >
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
       </p>
@@ -803,249 +115,29 @@ exports[`Header should render the tall version 1`] = `
 `;
 
 exports[`Header should render the tall version without a title 1`] = `
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  z-index: 0;
-  padding: 0 15px;
-  background-color: #ffffff;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  height: 100%;
-  margin: 0 auto;
-  max-width: none;
-}
-
-.c3:after {
-  content: '';
-  display: block;
-  min-height: inherit;
-  font-size: 0;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 100%;
-}
-
-.c9 {
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-image: url("-react-component: svg-mock;");
-}
-
-.c7 {
-  display: inline-block;
-  height: 30px;
-  width: 68px;
-}
-
-.c7:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
-}
-
-.c5 {
-  height: 50px;
-  margin: 0;
-  font-weight: 700;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: normal;
-  -webkit-justify-content: normal;
-  -ms-flex-pack: normal;
-  justify-content: normal;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  box-sizing: content-box;
-}
-
-.c5 .c6 {
-  margin-right: 10px;
-}
-
-.c13 .c10 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c14 .c10 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c0 {
-  background-color: #ffffff;
-  margin: 0 auto;
-  width: 100%;
-  max-width: none;
-  box-shadow: 0 4px rgba(0,0,0,0.04);
-  box-sizing: content-box;
-  position: fixed;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.c0 .c10 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c12 {
-  line-height: 1.25;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  font-weight: 400;
-  font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1.25;
-  color: #000000;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
-}
-
-@media screen and (min-width:1200.02px) {
-  .c7 {
-    height: 68px;
-    width: 100px;
-  }
-
-  .c7 .c8 {
-    background-image: url("-react-component: svg-mock;");
-  }
-}
-
-@media screen and (min-width:1200.02px) {
-  .c5 .c6 {
-    margin-right: 40px;
-  }
-}
-
-@media screen and (max-width:1200px) {
-  .c0 .sc-bxivhb {
-    margin-top: -2px;
-  }
-}
-
-@media screen and (min-width:1200.02px) {
-  .c0 {
-    box-shadow: none;
-  }
-
-  .c0:after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 50px;
-    margin-top: -50px;
-    background-color: #F5F5F5;
-  }
-
-  .c0 .c2 {
-    z-index: 100;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-  }
-
-  .c0 .c1 {
-    background-color: transparent;
-  }
-
-  .c0 .sc-bxivhb {
-    margin-top: 0px;
-    -webkit-align-self: flex-start;
-    -ms-flex-item-align: start;
-    align-self: flex-start;
-    line-height: 38px;
-    font-size: 30px;
-  }
-
-  .c0 .c4 {
-    height: 78px;
-    padding: 15px 0;
-  }
-
-  .c0 .c10 {
-    -webkit-flex-basis: 100%;
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
-    margin-left: 25px;
-    margin-right: 25px;
-    height: 50px;
-  }
-}
-
 <div
-  class="c0"
+  class="EorMi"
 >
   <header
-    class="c1 c2 c3"
+    class="jqIeQP"
   >
     <h1
-      class="c4 c5"
+      class="fUOwIt"
     >
       <a
-        class="c6 c7"
+        class="jYwlpc"
         href="http://data.amsterdam.nl"
       >
         <span
-          class="c8 c9"
+          class="dhaUoM"
         />
       </a>
     </h1>
     <div
-      class="c10 c11"
+      class="AcJgs"
     >
       <p
-        class="c12"
+        class="sc-dVhcbM cMYCyS"
       >
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
       </p>
