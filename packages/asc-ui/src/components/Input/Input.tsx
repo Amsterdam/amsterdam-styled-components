@@ -18,7 +18,7 @@ const Input: React.FC<InputProps> = ({
   focusOnRender,
   ...props
 }: InputProps) => {
-  const ref: any = React.useRef(null)
+  const ref = React.useRef<HTMLInputElement>(null)
   if (focusOnRender) {
     useFocusOnRender(ref)
   }
