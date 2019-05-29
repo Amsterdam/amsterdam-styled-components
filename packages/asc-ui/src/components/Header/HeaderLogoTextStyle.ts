@@ -21,6 +21,8 @@ const HeaderLogoTextStyle = styled.h1<Props>`
   }
 
   @media screen and ${breakpoint('min-width', 'laptopM')} {
+    width: 30%;
+
     ${AmsterdamLogoStyle} {
       margin-right: 40px;
     }

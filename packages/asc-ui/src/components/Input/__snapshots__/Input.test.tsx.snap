@@ -1,11 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input component structure should render 1`] = `
+.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 1rem;
+  border: solid 1px #767676;
+  border-radius: 0;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  width: 100%;
+}
+
 <input
   autocapitalize="off"
   autocomplete="off"
   autocorrect="off"
-  class="bianDr"
+  class="c0"
   id="id"
   spellcheck="false"
   type="text"
