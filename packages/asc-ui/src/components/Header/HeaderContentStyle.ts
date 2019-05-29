@@ -8,7 +8,6 @@ const HeaderContentStyle = styled.div`
   font-weight: 700;
   width: 70%;
   display: flex;
-  justify-content: normal;
   align-self: flex-start;
   justify-content: flex-end;
   align-items: center;
