@@ -1,4 +1,5 @@
-// import { LogoShort, LogoTall } from '@datapunt/asc-assets'
+import LogoShort from '@datapunt/asc-assets/lib/Icons/LogoShort.svg'
+import LogoTall from '@datapunt/asc-assets/lib/Icons/LogoTall.svg'
 import styled, { css } from '@datapunt/asc-core'
 import { breakpoint, focusStyle } from '../../utils'
 
@@ -12,12 +13,17 @@ export const LogoStyle = styled.span`
   height: 100%;
   width: 100%;
   background-size: cover;
+  background-image: url("${LogoShort}");
 `
 
 const tallStyle = css`
   @media screen and ${breakpoint('min-width', 'laptopM')} {
     height: 68px;
     width: 100px;
+
+    ${LogoStyle} {
+      background-image: url("${LogoTall}");
+    }
   }
 `
 

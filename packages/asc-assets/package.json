@@ -18,7 +18,7 @@
     "lib"
   ],
   "scripts": {
-    "build": "npx @svgr/cli -d src/assets/Icons src/assets/Icons --template src/utils/generateIconReact.js --ext tsx"
+    "generate": "npx @svgr/cli -d src/Icons src/assets/Icons --template src/utils/generateIconReact.js --ext tsx"
   },
   "dependencies": {
     "@svgr/cli": "^4.2.0",
