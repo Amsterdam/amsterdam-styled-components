@@ -1,9 +1,9 @@
 import styled from '@datapunt/asc-core'
 
-const HeaderContentStyle = styled.div`
+const HeaderNavigationStyle = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
 `
 
-export default HeaderContentStyle
+export default HeaderNavigationStyle

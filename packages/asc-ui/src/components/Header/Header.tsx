@@ -4,12 +4,13 @@ import HeaderWrapperStyle, {
   Props as HeaderWrapperProps,
 } from './HeaderWrapperStyle'
 import HeaderLogoText from './HeaderLogoText'
-import HeaderContent from './HeaderContent'
+import HeaderNavigation from './HeaderNavigation'
 
 type Props = {
   homeLink: string
   title?: string
   styledComponent?: any
+  navigation?: React.ReactNode
 } & HeaderWrapperProps
 
 const Header: React.FC<Props> = ({
@@ -19,6 +20,7 @@ const Header: React.FC<Props> = ({
   fullWidth,
   tall,
   children,
+  navigation,
   ...otherProps
 }) => {
   const ExtendedHeaderWrapperStyle = styledComponent
@@ -27,7 +29,7 @@ const Header: React.FC<Props> = ({
     <ExtendedHeaderWrapperStyle {...{ tall, fullWidth }}>
       <HeaderStyle {...{ fullWidth, ...otherProps }}>
         <HeaderLogoText {...{ tall, title, homeLink }} />
-        <HeaderContent>{children}</HeaderContent>
+        <HeaderNavigation>{navigation}</HeaderNavigation>
       </HeaderStyle>
     </ExtendedHeaderWrapperStyle>
   )

@@ -8,7 +8,7 @@ import { ReactComponent as MenuIcon } from '@datapunt/asc-assets/lib/Icons/Menu.
 import BoxWrapper from '../../../internals/Box/BoxWrapper'
 import Header from '../Header'
 
-import HeaderContentStyle from '../HeaderContentStyle'
+import HeaderNavigationStyle from '../HeaderNavigationStyle'
 import ContentFiller from '../../../internals/ContentFiller/ContentFiller'
 import Menu from '../../Menu/Menu'
 import { MenuItem, MenuLabel } from '../../..'
@@ -26,7 +26,7 @@ const outsideBackgoundColor = '#E6E6E6'
 const contentBackgrountColor = '#ffffff'
 
 const DataportaalHeaderWrapperStyle = styled(HeaderWrapperStyle)`
-  ${HeaderContentStyle} {
+  ${HeaderNavigationStyle} {
     justify-content: flex-end;
   }
 
@@ -157,12 +157,15 @@ const HeaderTallDataportaalStory: React.FC<{}> = () => {
         homeLink="http://data.amsterdam.nl"
         fullWidth={false}
         styledComponent={DataportaalHeaderWrapperStyle}
-      >
-        <DesktopSearchBar />
-        <MobileSearchBar />
-        {MenuDesktop}
-        {MenuMobile}
-      </Header>
+        navigation={
+          <>
+            <DesktopSearchBar />
+            <MobileSearchBar />
+            {MenuDesktop}
+            {MenuMobile}
+          </>
+        }
+      />
       <ContentFiller
         backgroundColor={contentBackgrountColor}
         maxWidth="1800px"

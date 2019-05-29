@@ -1,7 +1,7 @@
 import styled, { css } from '@datapunt/asc-core'
 import { breakpoint, getColorFromTheme } from '../../utils'
 import HeaderTitleStyle from './HeaderTitleStyle'
-import HeaderContentStyle from './HeaderContentStyle'
+import HeaderNavigationStyle from './HeaderNavigationStyle'
 import HeaderLogoTextStyle from './HeaderLogoTextStyle'
 import TopBarStyle from '../TopBar/TopBarStyle'
 import HeaderStyle from './HeaderStyle'
@@ -32,7 +32,7 @@ const HeaderWrapperStyle = styled.div<Props>`
   transform: translateX(-50%);
   z-index: 2; /* Orders the header higher than the content */
 
-  ${HeaderContentStyle} {
+  ${HeaderNavigationStyle} {
     flex-grow: 1;
     margin-left: 15px;
   }
@@ -79,7 +79,7 @@ const HeaderWrapperStyle = styled.div<Props>`
               padding: 15px 0;
             }
 
-            ${HeaderContentStyle} {
+            ${HeaderNavigationStyle} {
               flex-basis: 100%;
               margin-left: 25px;
               margin-right: 25px;
