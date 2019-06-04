@@ -14707,6 +14707,11 @@ react-transition-group@^2.2.1:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
+react-uid@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-uid/-/react-uid-2.2.0.tgz#0f77e1e0594fbf29fc4fe528cc9aa415c5bf9159"
+  integrity sha512-z+g5+hFOQ08hCfrGcJ1PNs+cmvH8Uq2CVzCmPeWBsUi5A4W4NWXR5jouledzy3oSKGMU9HOzf8zFuGi15TXJoQ==
+
 react@^16.8.1, react@^16.8.6:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.6.tgz#ad6c3a9614fd3a4e9ef51117f54d888da01f2bbe"
@@ -17228,6 +17233,11 @@ typescript-eslint-parser@^16.0.0:
   dependencies:
     lodash.unescape "4.0.1"
     semver "5.5.0"
+
+typescript-plugin-styled-components@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/typescript-plugin-styled-components/-/typescript-plugin-styled-components-1.4.3.tgz#7f87ce0194e7841aa121174089dddff9f40bb0fb"
+  integrity sha512-/n6+nwtYRJwj/uJdiMNrjsfy2V34uGDeBuY3WaL3a1lc+aaYyfxHLvRdV3W44O+ewijJrFcEHKYAJdYq4wxXlQ==
 
 typescript@^2.5.1:
   version "2.9.2"
