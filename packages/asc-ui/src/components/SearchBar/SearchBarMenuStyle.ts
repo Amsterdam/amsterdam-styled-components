@@ -1,10 +1,11 @@
-import styled from '@datapunt/asc-core'
+import styled, { css } from '@datapunt/asc-core'
 import IconButtonStyle from '../IconButton/IconButtonStyle'
 import { color } from '../../utils'
 import SearchBarStyle from './SearchBarStyle'
 
 export type SearchBarMenuStyleProps = {
   open: boolean
+  css?: string
 }
 
 const SearchBarMenuStyle = styled.div<SearchBarMenuStyleProps>`
@@ -32,6 +33,12 @@ const SearchBarMenuStyle = styled.div<SearchBarMenuStyleProps>`
     background-color: ${({ open, theme }) =>
       color('tint', open ? 'level2' : 'level1')({ theme })};
   }
+
+  ${props =>
+    props.css &&
+    css`
+      ${props.css}
+    `}
 `
 
 export default SearchBarMenuStyle

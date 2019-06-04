@@ -17,7 +17,8 @@
     "deepmerge": "^3.2.0",
     "enzyme": "^3.9.0",
     "jest-styled-components": "^6.3.1",
-    "polished": "^3.2.0"
+    "polished": "^3.2.0",
+    "react-uid": "^2.2.0"
   },
   "peerDependencies": {
     "react": "16.8.6",

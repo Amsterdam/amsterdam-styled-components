@@ -5,7 +5,7 @@ import MenuBar from './MenuBar'
 import MenuDropDown from './MenuDropDown'
 import { KeyboardKeys } from '../../types'
 
-type Props = {
+export type Props = {
   position?: MenuStyleProps.Position
   mobile?: boolean
   icon?: React.ReactNode

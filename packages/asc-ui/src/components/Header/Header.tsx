@@ -9,34 +9,29 @@ import HeaderContent from './HeaderContent'
 type Props = {
   homeLink: string
   title?: string
-  styledComponent?: any
+  css?: any
 } & HeaderWrapperProps
 
 const Header: React.FC<Props> = ({
-  styledComponent,
+  css,
   title,
   homeLink,
   fullWidth,
   tall,
   children,
   ...otherProps
-}) => {
-  const ExtendedHeaderWrapperStyle = styledComponent
-
-  return (
-    <ExtendedHeaderWrapperStyle {...{ tall, fullWidth }}>
-      <HeaderStyle {...{ fullWidth, ...otherProps }}>
-        <HeaderLogoText {...{ tall, title, homeLink }} />
-        <HeaderContent>{children}</HeaderContent>
-      </HeaderStyle>
-    </ExtendedHeaderWrapperStyle>
-  )
-}
+}) => (
+  <HeaderWrapperStyle {...{ css, tall, fullWidth }} id="header">
+    <HeaderStyle {...{ fullWidth, ...otherProps }}>
+      <HeaderLogoText {...{ tall, title, homeLink }} />
+      <HeaderContent>{children}</HeaderContent>
+    </HeaderStyle>
+  </HeaderWrapperStyle>
+)
 
 Header.defaultProps = {
   tall: false,
   fullWidth: true,
-  styledComponent: HeaderWrapperStyle,
 }
 
 export default Header

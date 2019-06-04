@@ -10,7 +10,6 @@ describe('<TextField />', () => {
     const component = shallow(
       <ThemeProvider>
         <TextField
-          id="test-id"
           label="description"
           srOnly={false}
           value="test-value"

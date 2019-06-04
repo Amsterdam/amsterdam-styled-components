@@ -5,35 +5,27 @@ import SearchBarMenuStyle from './SearchBarMenuStyle'
 import SearchBar from './SearchBar'
 import IconButton from '../IconButton/IconButton'
 import ReactIcon from '../ReactIcon/Icon'
+import { InputMethods } from '../Input'
+import useActionOnEscape from '../../utils/useActionOnEscape'
 
-interface SearchBarMenuProps {
-  styledComponent?: any
+interface SearchBarMenuProps extends InputMethods {
+  css?: any
   placeholder?: string
   label?: string
-  onTextChanged: Function
-  onSearch: Function
-  onBlur?: Function
-  onFocus?: Function
-  onKeyDown?: Function
-  text?: string
+  onSubmit?: Function
 }
 
 interface Props extends SearchBarMenuProps {
   open?: boolean
 }
-const SearchBarMenu: React.FC<Props> = ({
-  children,
-  styledComponent,
-  ...otherProps
-}) => {
-  const ExtendedSearchBarMenuStyle = styledComponent
-  const wrapper = React.useRef<HTMLDivElement>(null)
-
+const SearchBarMenu: React.FC<Props> = ({ children, css, ...otherProps }) => {
+  const ref = React.useRef<HTMLDivElement>(null)
   const [open, setOpen] = React.useState(false)
+  const { onKeyDown } = useActionOnEscape(() => setOpen(false))
 
   const onClose = () => {
     setTimeout(() => {
-      const element = wrapper.current as HTMLInputElement
+      const element = ref.current as HTMLInputElement
       if (element) {
         const currentFocus = ownerDocument(element).activeElement
         if (!element.contains(currentFocus)) {
@@ -44,40 +36,33 @@ const SearchBarMenu: React.FC<Props> = ({
   }
 
   return (
-    <ExtendedSearchBarMenuStyle
-      ref={wrapper}
-      onBlur={onClose}
+    <SearchBarMenuStyle
       {...{
+        onKeyDown,
+        css,
+        ref,
         open,
       }}
+      onBlur={onClose}
     >
       <IconButton
         aria-label="Search"
         onClick={() => {
           setOpen(!open)
         }}
-        {...otherProps}
         iconSize={open ? 16 : 20}
       >
-        {open ? (
-          <ReactIcon type={Icons.Close} />
-        ) : (
-          <ReactIcon type={Icons.Search} />
-        )}
+        <ReactIcon type={open ? Icons.Close : Icons.Search} />
       </IconButton>
 
       {open && <SearchBar {...otherProps}>{children}</SearchBar>}
-    </ExtendedSearchBarMenuStyle>
+    </SearchBarMenuStyle>
   )
 }
 
 SearchBarMenu.defaultProps = {
-  styledComponent: SearchBarMenuStyle,
+  css: '',
   placeholder: 'Search...',
-  onBlur: () => {},
-  onFocus: () => {},
-  onKeyDown: () => {},
-  text: '',
 }
 
 export default SearchBarMenu

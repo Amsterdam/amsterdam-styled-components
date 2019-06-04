@@ -12,7 +12,7 @@ exports[`TopBar should render 1`] = `
   -ms-flex-align: center;
   align-items: center;
   z-index: 0;
-  padding: 0 15px;
+  padding: 0 10px;
   background-color: red;
 }
 
@@ -21,6 +21,12 @@ exports[`TopBar should render 1`] = `
   display: block;
   min-height: inherit;
   font-size: 0;
+}
+
+@media screen and (min-width:540.02px) {
+  .c0 {
+    padding: 0 15px;
+  }
 }
 
 <header

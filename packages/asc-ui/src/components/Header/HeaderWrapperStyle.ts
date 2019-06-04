@@ -10,6 +10,7 @@ import { CONTENT_HEIGHT_TALL, WRAPPER_MAX_WIDTH } from './sizes'
 export type Props = {
   tall?: boolean
   fullWidth?: boolean
+  css?: any
 }
 
 const shortStyle = css`
@@ -88,6 +89,12 @@ const HeaderWrapperStyle = styled.div<Props>`
           }
         `
       : shortStyle}
+
+  ${props =>
+    props.css &&
+    css`
+      ${props.css}
+    `}
 `
 
 export default HeaderWrapperStyle

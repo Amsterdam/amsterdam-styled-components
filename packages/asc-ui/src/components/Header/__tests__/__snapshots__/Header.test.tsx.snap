@@ -12,7 +12,7 @@ exports[`Header should render the short version 1`] = `
   -ms-flex-align: center;
   align-items: center;
   z-index: 0;
-  padding: 0 15px;
+  padding: 0 10px;
   background-color: #ffffff;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
@@ -36,7 +36,7 @@ exports[`Header should render the short version 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-weight: 400;
+  font-weight: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
@@ -121,9 +121,9 @@ exports[`Header should render the short version 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
 }
 
 .c2 .c3 {
@@ -176,6 +176,12 @@ exports[`Header should render the short version 1`] = `
   letter-spacing: normal;
 }
 
+@media screen and (min-width:540.02px) {
+  .c1 {
+    padding: 0 15px;
+  }
+}
+
 @media screen and (max-width:375px) {
   .c7 {
     font-size: 14px;
@@ -196,6 +202,7 @@ exports[`Header should render the short version 1`] = `
 
 <div
   class="c0"
+  id="header"
 >
   <header
     class="c1"
@@ -243,7 +250,7 @@ exports[`Header should render the short version without the full width 1`] = `
   -ms-flex-align: center;
   align-items: center;
   z-index: 0;
-  padding: 0 15px;
+  padding: 0 10px;
   background-color: #ffffff;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
@@ -267,7 +274,7 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-weight: 400;
+  font-weight: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
@@ -352,9 +359,9 @@ exports[`Header should render the short version without the full width 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
 }
 
 .c2 .c3 {
@@ -419,6 +426,12 @@ exports[`Header should render the short version without the full width 1`] = `
   letter-spacing: normal;
 }
 
+@media screen and (min-width:540.02px) {
+  .c1 {
+    padding: 0 15px;
+  }
+}
+
 @media screen and (max-width:375px) {
   .c7 {
     font-size: 14px;
@@ -439,6 +452,7 @@ exports[`Header should render the short version without the full width 1`] = `
 
 <div
   class="c0"
+  id="header"
 >
   <header
     class="c1"
@@ -486,7 +500,7 @@ exports[`Header should render the tall version 1`] = `
   -ms-flex-align: center;
   align-items: center;
   z-index: 0;
-  padding: 0 15px;
+  padding: 0 10px;
   background-color: #ffffff;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
@@ -510,7 +524,7 @@ exports[`Header should render the tall version 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-weight: 400;
+  font-weight: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
@@ -595,9 +609,9 @@ exports[`Header should render the tall version 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
 }
 
 .c5 .c6 {
@@ -663,6 +677,12 @@ exports[`Header should render the tall version 1`] = `
   -moz-letter-spacing: normal;
   -ms-letter-spacing: normal;
   letter-spacing: normal;
+}
+
+@media screen and (min-width:540.02px) {
+  .c3 {
+    padding: 0 15px;
+  }
 }
 
 @media screen and (max-width:375px) {
@@ -762,6 +782,7 @@ exports[`Header should render the tall version 1`] = `
 
 <div
   class="c0"
+  id="header"
 >
   <header
     class="c1 c2 c3"
@@ -809,7 +830,7 @@ exports[`Header should render the tall version without a title 1`] = `
   -ms-flex-align: center;
   align-items: center;
   z-index: 0;
-  padding: 0 15px;
+  padding: 0 10px;
   background-color: #ffffff;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
@@ -874,9 +895,9 @@ exports[`Header should render the tall version without a title 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
 }
 
 .c5 .c6 {
@@ -934,6 +955,12 @@ exports[`Header should render the tall version without a title 1`] = `
   -moz-letter-spacing: normal;
   -ms-letter-spacing: normal;
   letter-spacing: normal;
+}
+
+@media screen and (min-width:540.02px) {
+  .c3 {
+    padding: 0 15px;
+  }
 }
 
 @media screen and (min-width:1200.02px) {
@@ -1021,6 +1048,7 @@ exports[`Header should render the tall version without a title 1`] = `
 
 <div
   class="c0"
+  id="header"
 >
   <header
     class="c1 c2 c3"

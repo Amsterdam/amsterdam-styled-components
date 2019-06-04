@@ -2,83 +2,94 @@ import React from 'react'
 import Icons from '@datapunt/asc-assets'
 import IconButton from '../IconButton/IconButton'
 import SearchBarStyle from './SearchBarStyle'
-import { KeyboardKeys } from '../../types'
 import TextField from '../TextField/TextField'
 import ReactIcon from '../ReactIcon/Icon'
+import InputContext from '../Input/InputContext'
+import { InputProps } from '../Input'
+import { KeyboardKeys } from '../../types'
 
 ReactIcon.add(Icons.Search)
 
-interface SearchBarProps {
+export interface SearchBarProps extends InputProps {
   styledComponent?: any
   placeholder?: string
   label?: string
-  onTextChanged: Function
-  onSearch: Function
-  onBlur?: Function
-  onFocus?: Function
-  onKeyDown?: Function
-  text?: string
-  upperRef?: any
+  onSubmit?: Function
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
   children,
   styledComponent,
   placeholder,
-  onTextChanged,
-  onSearch,
+  onSubmit,
   onBlur,
+  onChange,
   onFocus,
-  onKeyDown,
-  text,
-  upperRef,
+  onWatchValue,
+  value,
+  label,
   ...otherProps
 }) => {
   const ExtendedSearchBarStyle = styledComponent
-  console.log('TCL: upperRef', upperRef)
-  const inputRef = upperRef // || React.useRef<HTMLInputElement>(null)
-  console.log('TCL: inputRef', inputRef)
+  const [inputValue, setInputValue] = React.useState(value || '')
 
-  const handleTextChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onTextChanged(e.target.value)
+  const onClear = () => {
+    setInputValue('')
   }
 
-  const handleSubmit = (e: React.KeyboardEvent | React.MouseEvent) => {
-    e.preventDefault()
-    onSearch(text)
-  }
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (onKeyDown) onKeyDown(e, inputRef.current)
-
-    if (e.key === KeyboardKeys.Enter) {
-      handleSubmit(e)
+  const handleOnSubmit = () => {
+    if (onSubmit) {
+      onSubmit(inputValue)
     }
   }
 
-  const handleTextClear = () => {
-    if (inputRef && inputRef.current) inputRef.current.focus()
-    onTextChanged('')
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === KeyboardKeys.Enter) {
+      handleOnSubmit()
+    }
   }
+
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value)
+    if (onChange) {
+      onChange(e)
+    }
+  }
+
+  // Since the user is able to clear the field, this will not trigger the onChange event,
+  // so we need to manually trigger our self-made onWatchValue
+  React.useEffect(() => {
+    if (onWatchValue) {
+      onWatchValue(inputValue)
+    }
+  }, [inputValue])
 
   return (
     <ExtendedSearchBarStyle {...otherProps}>
-      <TextField
-        id="search-bar-id"
-        srOnly
-        focusOnRender
-        label={placeholder}
-        aria-label={placeholder}
-        placeholder={placeholder}
-        onBlur={onBlur}
-        onChange={handleTextChanged}
-        onClear={handleTextClear}
-        onFocus={onFocus}
-        onKeyDown={handleKeyDown}
-        inputRef={inputRef}
-        value={text || ''}
-      />
-      <IconButton aria-label="Search" color="secondary" onClick={handleSubmit}>
+      <InputContext.Provider
+        value={{
+          onBlur,
+          onFocus,
+          onChange: handleOnChange,
+          onKeyDown,
+          placeholder,
+        }}
+      >
+        <TextField
+          srOnly
+          keepFocus
+          blurOnEscape
+          onClear={onClear}
+          label={label}
+          aria-label={label}
+          value={inputValue}
+        />
+      </InputContext.Provider>
+      <IconButton
+        aria-label="Search"
+        color="secondary"
+        onClick={handleOnSubmit}
+      >
         <ReactIcon type={Icons.Search} />
       </IconButton>
       {children}
@@ -89,11 +100,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 SearchBar.defaultProps = {
   styledComponent: SearchBarStyle,
   placeholder: 'Search...',
-  onBlur: () => {},
-  onFocus: () => {},
-  onKeyDown: () => {},
-  text: '',
-  upperRef: null,
+  value: '',
 }
 
 export default SearchBar

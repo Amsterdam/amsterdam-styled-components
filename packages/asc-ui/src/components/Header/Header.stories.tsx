@@ -7,11 +7,10 @@ import ContentFiller from '../../internals/ContentFiller/ContentFiller'
 import Typography from '../Typography'
 import HeaderTallDataportaalStory from './stories/HeaderTallDataportaalStory'
 
-const outsideBackgoundColor = '#E6E6E6'
 const contentBackgrountColor = '#ffffff'
 
 const HeaderShortStory: React.FC<{}> = () => (
-  <BoxWrapper backgroundColor={outsideBackgoundColor}>
+  <>
     <Header
       tall={false}
       title="Data en informatie"
@@ -19,11 +18,11 @@ const HeaderShortStory: React.FC<{}> = () => (
       fullWidth
     />
     <ContentFiller backgroundColor={contentBackgrountColor} />
-  </BoxWrapper>
+  </>
 )
 
 const HeaderShortContentStory: React.FC<{}> = () => (
-  <BoxWrapper backgroundColor={outsideBackgoundColor}>
+  <>
     <Header
       tall={false}
       title="Data en informatie"
@@ -31,11 +30,11 @@ const HeaderShortContentStory: React.FC<{}> = () => (
       fullWidth={false}
     />
     <ContentFiller backgroundColor={contentBackgrountColor} maxWidth="1800px" />
-  </BoxWrapper>
+  </>
 )
 
 const HeaderTallStory: React.FC<{}> = () => (
-  <BoxWrapper backgroundColor={outsideBackgoundColor}>
+  <>
     <Header
       tall
       title="Data en informatie"
@@ -47,11 +46,11 @@ const HeaderTallStory: React.FC<{}> = () => (
       maxWidth="1800px"
       headerSize="tall"
     />
-  </BoxWrapper>
+  </>
 )
 
 const HeaderTallWithContentStory: React.FC<{}> = () => (
-  <BoxWrapper backgroundColor={outsideBackgoundColor}>
+  <>
     <Header
       tall
       title="Data en informatie"
@@ -68,10 +67,13 @@ const HeaderTallWithContentStory: React.FC<{}> = () => (
       maxWidth="1800px"
       headerSize="tall"
     />
-  </BoxWrapper>
+  </>
 )
 
 storiesOf('Composed/Header', module)
+  .addDecorator(storyFn => (
+    <BoxWrapper backgroundColor="#E6E6E6">{storyFn()}</BoxWrapper>
+  ))
   .add('Header short', () => <HeaderShortContentStory />)
   .add('Header short, full width', () => <HeaderShortStory />)
   .add('Header tall', () => <HeaderTallStory />)
