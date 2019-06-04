@@ -1,0 +1,8 @@
+packages/**/lib/
+packages/**/node_modules/
+packages/asc-assets/src/Icons/
+*.d.ts
+node_modules/
+examples/
+config/
+coverage/

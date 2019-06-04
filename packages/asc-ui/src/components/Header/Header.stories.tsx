@@ -56,12 +56,13 @@ const HeaderTallWithContentStory: React.FC<{}> = () => (
       title="Data en informatie"
       homeLink="http://data.amsterdam.nl"
       fullWidth={false}
-    >
-      <Typography element="p">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis,
-        dicta incidunt maxime necessitatibus voluptatibus.
-      </Typography>
-    </Header>
+      navigation={
+        <Typography element="p">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis,
+          dicta incidunt maxime necessitatibus voluptatibus.
+        </Typography>
+      }
+    />
     <ContentFiller
       backgroundColor={contentBackgrountColor}
       maxWidth="1800px"

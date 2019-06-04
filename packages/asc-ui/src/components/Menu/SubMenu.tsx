@@ -94,12 +94,12 @@ const SubMenu: React.FC<Props> = ({
       focused={expanded}
       onKeyDown={handleKeyPress}
       onBlur={() => setTimeout(onClose(subMenuRef), 200)}
-      onMouseLeave={() => !mobile && setTimeout(handleOnClick(true), 200)}
+      onMouseEnter={() => !mobile && setTimeout(handleOnClick, 200)}
+      onMouseLeave={() => !mobile && setTimeout(handleOnClick, 200)}
     >
       <SubMenuButton
         focused={expanded}
         height={buttonHeight}
-        onMouseOver={() => !mobile && setTimeout(handleOnClick, 200)}
         onFocus={() => !mobile && setTimeout(handleOnClick, 200)}
         onClick={() => handleOnClick()}
         {...otherProps}
