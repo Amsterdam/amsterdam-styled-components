@@ -20,6 +20,7 @@ const TextField = ({
   value,
   keepFocus,
   blurOnEscape,
+  focusOnRender,
   ...otherProps
 }: TextFieldProps) => {
   const uid = useUID()
@@ -28,7 +29,11 @@ const TextField = ({
       <FormLabelStyle htmlFor={uid} srOnly={srOnly}>
         {label}
       </FormLabelStyle>
-      <Input {...{ keepFocus, value, blurOnEscape }} {...otherProps} id={uid} />
+      <Input
+        {...{ keepFocus, value, blurOnEscape, focusOnRender }}
+        {...otherProps}
+        id={uid}
+      />
       {onClear && value && (
         <IconButton aria-label="Close" onClick={() => onClear()}>
           <Close />

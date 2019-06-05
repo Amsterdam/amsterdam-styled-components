@@ -1,63 +1,53 @@
-import * as React from 'react'
+import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { css } from '@datapunt/asc-core'
 import { ReactComponent as ChevronRight } from '@datapunt/asc-assets/lib/Icons/ChevronRight.svg'
 import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
 import { ReactComponent as ExternalLink } from '@datapunt/asc-assets/lib/Icons/ExternalLink.svg'
 import { ReactComponent as MenuIcon } from '@datapunt/asc-assets/lib/Icons/Menu.svg'
+import { MenuItem, MenuLabel, Header, SubMenu, styles } from '../../../index'
 import BoxWrapper from '../../../internals/Box/BoxWrapper'
-import Header from '../Header'
-
 import ContentFiller from '../../../internals/ContentFiller/ContentFiller'
 import Menu, { Props } from '../../Menu/Menu'
-import { MenuItem, MenuLabel } from '../../..'
-import SubMenu from '../../Menu/SubMenu'
 import { breakpoint } from '../../../utils'
-import MenuBarStyle from '../../Menu/MenuBarStyle'
-import MenuDropDownStyle from '../../Menu/MenuDropDownStyle'
-import SearchBarStyle from '../../SearchBar/SearchBarStyle'
-// import SearchBarMenu from '../../InputWrapper/SearchBarMenu'
-// import InputWrapper from '../../InputWrapper'
-import SearchBarMenuStyle from '../../SearchBar/SearchBarMenuStyle'
 import HeaderSearchBar from '../HeaderSearchBar'
-import HeaderContentStyle from '../HeaderContentStyle'
-import TextFieldStyle from '../../TextField/TextFieldStyle'
 
 const outsideBackgoundColor = '#E6E6E6'
 const contentBackgrountColor = '#ffffff'
 
+console.log(styles)
 const DataportaalHeaderWrapperStyle = css`
-  ${HeaderContentStyle} {
+  ${styles.HeaderContentStyle} {
     justify-content: flex-end;
   }
 
-  ${SearchBarMenuStyle} {
+  ${styles.SearchBarMenuStyle} {
     @media screen and ${breakpoint('min-width', 'tabletM')} {
       display: none;
     }
   }
 
-  ${HeaderContentStyle} > ${SearchBarStyle} {
+  ${styles.HeaderNavigationStyle} > ${styles.SearchBarStyle} {
     @media screen and ${breakpoint('max-width', 'tabletM')} {
       display: none;
     }
 
     flex-grow: 1;
 
-    ${TextFieldStyle} {
+    ${styles.TextFieldStyle} {
       flex-grow: 0;
       width: 100%;
       max-width: 430px;
     }
   }
 
-  ${MenuBarStyle} {
+  ${styles.MenuBarStyle} {
     @media screen and ${breakpoint('max-width', 'tabletM')} {
       display: none;
     }
   }
 
-  ${MenuDropDownStyle} {
+  ${styles.MenuDropDownStyle} {
     @media screen and ${breakpoint('min-width', 'tabletM')} {
       display: none;
     }
@@ -100,19 +90,22 @@ const HeaderTallDataportaalStory: React.FC<{}> = () => {
         homeLink="http://data.amsterdam.nl"
         fullWidth={false}
         css={DataportaalHeaderWrapperStyle}
-      >
-        <HeaderSearchBar
-          placeholder="Enter the search text"
-          onChange={() => {
-            action(`text changed`)
-          }}
-          onSubmit={() => {
-            action(`button clicked`)
-          }}
-        />
-        <MenuDefault />
-        <MenuMobile />
-      </Header>
+        navigation={
+          <>
+            <HeaderSearchBar
+              placeholder="Enter the search text"
+              onChange={() => {
+                action(`text changed`)
+              }}
+              onSubmit={() => {
+                action(`button clicked`)
+              }}
+            />
+            <MenuDefault />
+            <MenuMobile />
+          </>
+        }
+      />
       <ContentFiller
         backgroundColor={contentBackgrountColor}
         maxWidth="1800px"

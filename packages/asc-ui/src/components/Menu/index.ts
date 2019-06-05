@@ -14,7 +14,7 @@ import MenuBarStyle from './MenuBarStyle'
 
 export { MenuStyleProps } from './types'
 
-const MenuStyle = {
+export const MenuStyle = {
   MenuDropDownStyle,
   MenuDropDownButtonStyle,
   MenuBarStyle,

@@ -11,7 +11,7 @@ import { KeyboardKeys } from '../../types'
 ReactIcon.add(Icons.Search)
 
 export interface SearchBarProps extends InputProps {
-  styledComponent?: any
+  css?: string
   placeholder?: string
   label?: string
   onSubmit?: Function
@@ -19,21 +19,25 @@ export interface SearchBarProps extends InputProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({
   children,
-  styledComponent,
+  css,
   placeholder,
   onSubmit,
   onBlur,
   onChange,
   onFocus,
   onWatchValue,
+  focusOnRender,
   value,
   label,
   ...otherProps
 }) => {
-  const ExtendedSearchBarStyle = styledComponent
+  let inputRef: React.RefObject<HTMLInputElement> | null = null
   const [inputValue, setInputValue] = React.useState(value || '')
 
   const onClear = () => {
+    if (inputRef && inputRef.current) {
+      inputRef.current.focus()
+    }
     setInputValue('')
   }
 
@@ -64,8 +68,14 @@ const SearchBar: React.FC<SearchBarProps> = ({
     }
   }, [inputValue])
 
+  React.useEffect(() => {
+    if (typeof value !== 'undefined') {
+      setInputValue(value)
+    }
+  }, [value])
+
   return (
-    <ExtendedSearchBarStyle {...otherProps}>
+    <SearchBarStyle {...otherProps} css={css}>
       <InputContext.Provider
         value={{
           onBlur,
@@ -73,6 +83,9 @@ const SearchBar: React.FC<SearchBarProps> = ({
           onChange: handleOnChange,
           onKeyDown,
           placeholder,
+          setInputRef: (ref: React.RefObject<HTMLInputElement>) => {
+            inputRef = ref
+          },
         }}
       >
         <TextField
@@ -80,9 +93,12 @@ const SearchBar: React.FC<SearchBarProps> = ({
           keepFocus
           blurOnEscape
           onClear={onClear}
-          label={label}
           aria-label={label}
           value={inputValue}
+          {...{
+            focusOnRender,
+            label,
+          }}
         />
       </InputContext.Provider>
       <IconButton
@@ -93,12 +109,11 @@ const SearchBar: React.FC<SearchBarProps> = ({
         <ReactIcon type={Icons.Search} />
       </IconButton>
       {children}
-    </ExtendedSearchBarStyle>
+    </SearchBarStyle>
   )
 }
 
 SearchBar.defaultProps = {
-  styledComponent: SearchBarStyle,
   placeholder: 'Search...',
   value: '',
 }

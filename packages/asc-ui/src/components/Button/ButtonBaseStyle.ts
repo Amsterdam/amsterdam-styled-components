@@ -1,6 +1,6 @@
 import { transitions } from 'polished'
 import styled, { Theme } from '@datapunt/asc-core'
-import { color as themeColor, focusStyle } from '../../utils'
+import { color as themeColor, focusStyleOutline } from '../../utils'
 import { flexboxMinHeightFix } from '../shared/ie-fixes'
 
 export type Props = {
@@ -20,7 +20,7 @@ const ButtonBaseStyle = styled.button<Props>`
   font-size: 16px;
   font-weight: normal;
   padding: 0 10px 0 10px;
-  ${focusStyle()}
+  ${focusStyleOutline()}
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')}
   background: ${({ color, theme }) => themeColor(color)({ theme })};
 

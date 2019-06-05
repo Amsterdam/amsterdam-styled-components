@@ -265,9 +265,7 @@ Array [
 }
 
 .c0:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
+  background-color: #FEC813;
 }
 
 .c0:hover {
@@ -324,9 +322,7 @@ Array [
 }
 
 .c1:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
+  background-color: #FEC813;
 }
 
 .c1:hover {

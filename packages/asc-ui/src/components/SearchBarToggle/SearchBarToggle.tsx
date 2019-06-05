@@ -1,8 +1,8 @@
 import React from 'react'
 import Icons from '@datapunt/asc-assets'
 import ownerDocument from '../../utils/ownerDocument'
-import SearchBarMenuStyle from './SearchBarMenuStyle'
-import SearchBar from './SearchBar'
+import SearchBarToggleStyle from './SearchBarToggleStyle'
+import SearchBar from '../SearchBar'
 import IconButton from '../IconButton/IconButton'
 import ReactIcon from '../ReactIcon/Icon'
 import { InputMethods } from '../Input'
@@ -36,7 +36,7 @@ const SearchBarMenu: React.FC<Props> = ({ children, css, ...otherProps }) => {
   }
 
   return (
-    <SearchBarMenuStyle
+    <SearchBarToggleStyle
       {...{
         onKeyDown,
         css,
@@ -55,8 +55,12 @@ const SearchBarMenu: React.FC<Props> = ({ children, css, ...otherProps }) => {
         <ReactIcon type={open ? Icons.Close : Icons.Search} />
       </IconButton>
 
-      {open && <SearchBar {...otherProps}>{children}</SearchBar>}
-    </SearchBarMenuStyle>
+      {open && (
+        <SearchBar focusOnRender {...otherProps}>
+          {children}
+        </SearchBar>
+      )}
+    </SearchBarToggleStyle>
   )
 }
 

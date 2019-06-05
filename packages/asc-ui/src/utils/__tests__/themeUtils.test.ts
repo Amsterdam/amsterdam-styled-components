@@ -3,7 +3,7 @@ import { ascDefaultTheme } from '@datapunt/asc-core'
 import 'jest-styled-components'
 import {
   color,
-  focusStyle,
+  focusStyleOutline,
   breakpoint,
   svgFill,
   getTypographyFromTheme,
@@ -53,7 +53,7 @@ describe('getTypographyFromTheme', () => {
   })
 })
 
-describe('focusStyle', () => {
+describe('focusStyleOutline', () => {
   const theme = {
     breakpoints,
     globalStyle,
@@ -68,7 +68,7 @@ describe('focusStyle', () => {
   }
 
   it('should return the focusstyle from theme', () => {
-    const result = focusStyle()({ theme })
+    const result = focusStyleOutline()({ theme })
     expect(result).toContain('#abcde')
   })
 })

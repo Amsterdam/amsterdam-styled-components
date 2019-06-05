@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 import { css } from '@datapunt/asc-core'
 import SearchBar from './SearchBar'
 
-import SearchBarMenu from './SearchBarMenu'
+import SearchBarToggle from '../SearchBarToggle/SearchBarToggle'
 
 const ControlledSearchBarStory: React.FC<{}> = () => {
   const [searchText, setText] = React.useState('')
@@ -47,7 +47,7 @@ storiesOf('Composed/SearchBar', module)
   ))
   .add('default controlled', () => <ControlledSearchBarStory />)
   .add('menu version', () => (
-    <SearchBarMenu
+    <SearchBarToggle
       css={css`
         position: relative;
       `}

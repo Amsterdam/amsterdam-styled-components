@@ -58,8 +58,8 @@ const HeaderTallWithContentStory: React.FC<{}> = () => (
       fullWidth={false}
       navigation={
         <Typography element="p">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis,
-          dicta incidunt maxime necessitatibus voluptatibus.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          debitis, dicta incidunt maxime necessitatibus voluptatibus.
         </Typography>
       }
     />

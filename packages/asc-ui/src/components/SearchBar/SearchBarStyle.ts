@@ -1,9 +1,11 @@
-import styled from '@datapunt/asc-core'
+import styled, { css } from '@datapunt/asc-core'
 import IconButtonStyle from '../IconButton/IconButtonStyle'
 import { svgFill } from '../../utils'
 import TextFieldStyle from '../TextField/TextFieldStyle'
 
-interface Props {}
+type Props = {
+  css?: string
+}
 
 const SearchBarStyle = styled.div<Props>`
   display: flex;
@@ -21,6 +23,12 @@ const SearchBarStyle = styled.div<Props>`
       ${svgFill('tint', 'level1')};
     }
   }
+
+  ${props =>
+    props.css &&
+    css`
+      ${props.css}
+    `}
 `
 
 export default SearchBarStyle

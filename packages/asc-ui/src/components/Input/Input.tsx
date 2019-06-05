@@ -1,16 +1,16 @@
 import React from 'react'
 import InputStyle from './InputStyle'
 import InputContext from './InputContext'
-import useKeepFocus from '../../utils/useKeepFocus'
 import useFocusOnRender from '../../utils/useFocusOnRender'
 import useActionOnEscape from '../../utils/useActionOnEscape'
 
 export interface InputMethods {
-  onBlur?: any
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void
   onWatchValue?: (value: string) => void
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
   onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void
-  onFocus?: any
+  onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void
+  setInputRef?: (ref: React.RefObject<HTMLInputElement>) => void
 }
 
 export interface InputProps extends InputMethods {
@@ -19,32 +19,31 @@ export interface InputProps extends InputMethods {
   id?: string
   keepFocus?: boolean
   blurOnEscape?: boolean
+  focusOnRender?: boolean
 }
 
 export interface Shared {}
 
 const Input: React.FC<InputProps> = ({
-  keepFocus,
   blurOnEscape,
+  focusOnRender,
   value,
   ...props
 }: InputProps) => {
   const ref = React.useRef(null)
-  if (keepFocus) {
-    if (ref) {
-      useKeepFocus(ref, value)
-      useFocusOnRender(ref)
-    }
-  }
-
   let { onKeyDown } = props
 
-  if (blurOnEscape && ref) {
-    // @ts-ignore
-    ;({ onKeyDown } = useActionOnEscape(() => {
+  if (ref) {
+    if (focusOnRender) {
+      useFocusOnRender(ref)
+    }
+    if (blurOnEscape) {
       // @ts-ignore
-      ref.current.blur()
-    }))
+      ;({ onKeyDown } = useActionOnEscape(() => {
+        // @ts-ignore
+        ref.current.blur()
+      }))
+    }
   }
 
   const handleOnKeyDown = (
@@ -62,6 +61,9 @@ const Input: React.FC<InputProps> = ({
   return (
     <InputContext.Consumer>
       {(context: InputMethods) => {
+        if (context.setInputRef) {
+          context.setInputRef(ref)
+        }
         return (
           <InputStyle
             ref={ref}
