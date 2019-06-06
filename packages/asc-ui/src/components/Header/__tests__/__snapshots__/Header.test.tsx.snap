@@ -71,7 +71,7 @@ exports[`Header should render the short version 1`] = `
   color: inherit;
 }
 
-.c11 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -151,7 +151,7 @@ exports[`Header should render the short version 1`] = `
   z-index: 2;
 }
 
-.c0 .c10 {
+.c0 .c8 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -163,52 +163,8 @@ exports[`Header should render the short version 1`] = `
   margin-top: -2px;
 }
 
-.c8 {
-  height: 50px;
-  margin: 0;
-  padding: 15px 25px 0 0;
-  font-weight: 700;
-  width: 70%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  box-sizing: border-box;
-}
-
-.c9 {
-  line-height: 1.25;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  font-weight: 400;
-  font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1.25;
-  color: #000000;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
+.c0 .c8 {
+  margin-right: -15px;
 }
 
 @media screen and (min-width:540.02px) {
@@ -230,18 +186,8 @@ exports[`Header should render the short version 1`] = `
 }
 
 @media screen and (min-width:1200.02px) {
-  .c2 {
-    width: 30%;
-  }
-
   .c2 .c3 {
     margin-right: 40px;
-  }
-}
-
-@media screen and (max-width:1200px) {
-  .c8 {
-    display: none;
   }
 }
 
@@ -271,16 +217,7 @@ exports[`Header should render the short version 1`] = `
       </a>
     </h1>
     <div
-      class="c8"
-    >
-      <p
-        class="c9"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
-      </p>
-    </div>
-    <div
-      class="c10 c11"
+      class="c8 c9"
     />
   </header>
 </div>
@@ -357,7 +294,7 @@ exports[`Header should render the short version without the full width 1`] = `
   color: inherit;
 }
 
-.c11 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -422,7 +359,7 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-right: 10px;
 }
 
-.c12 .c10 {
+.c10 .c8 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -430,8 +367,12 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-left: 15px;
 }
 
-.c12 .c6 {
+.c10 .c6 {
   margin-top: -2px;
+}
+
+.c10 .c8 {
+  margin-right: -15px;
 }
 
 .c0 {
@@ -449,7 +390,7 @@ exports[`Header should render the short version without the full width 1`] = `
   z-index: 2;
 }
 
-.c0 .c10 {
+.c0 .c8 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -461,52 +402,8 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-top: -2px;
 }
 
-.c8 {
-  height: 50px;
-  margin: 0;
-  padding: 15px 25px 0 0;
-  font-weight: 700;
-  width: 70%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  box-sizing: border-box;
-}
-
-.c9 {
-  line-height: 1.25;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  font-weight: 400;
-  font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1.25;
-  color: #000000;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
+.c0 .c8 {
+  margin-right: -15px;
 }
 
 @media screen and (min-width:540.02px) {
@@ -528,18 +425,8 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 @media screen and (min-width:1200.02px) {
-  .c2 {
-    width: 30%;
-  }
-
   .c2 .c3 {
     margin-right: 40px;
-  }
-}
-
-@media screen and (max-width:1200px) {
-  .c8 {
-    display: none;
   }
 }
 
@@ -569,16 +456,7 @@ exports[`Header should render the short version without the full width 1`] = `
       </a>
     </h1>
     <div
-      class="c8"
-    >
-      <p
-        class="c9"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
-      </p>
-    </div>
-    <div
-      class="c10 c11"
+      class="c8 c9"
     />
   </header>
 </div>
@@ -655,338 +533,6 @@ exports[`Header should render the tall version 1`] = `
   color: inherit;
 }
 
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  height: 100%;
-}
-
-.c9 {
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-image: url("-react-component: svg-mock;");
-}
-
-.c7 {
-  display: inline-block;
-  height: 30px;
-  width: 68px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c7:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
-}
-
-.c5 {
-  height: 50px;
-  margin: 0;
-  font-weight: 700;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: normal;
-  -webkit-justify-content: normal;
-  -ms-flex-pack: normal;
-  justify-content: normal;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  box-sizing: content-box;
-}
-
-.c5 .c6 {
-  margin-right: 10px;
-}
-
-.c16 .c14 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c16 .c10 {
-  margin-top: -2px;
-}
-
-.c17 .c14 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c17 .c10 {
-  margin-top: -2px;
-}
-
-.c0 {
-  background-color: #ffffff;
-  margin: 0 auto;
-  width: 100%;
-  max-width: none;
-  box-shadow: 0 4px rgba(0,0,0,0.04);
-  box-sizing: content-box;
-  position: fixed;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.c0 .c14 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c12 {
-  height: 50px;
-  margin: 0;
-  padding: 15px 25px 0 0;
-  font-weight: 700;
-  width: 70%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  box-sizing: border-box;
-}
-
-.c13 {
-  line-height: 1.25;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  font-weight: 400;
-  font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1.25;
-  color: #000000;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
-}
-
-@media screen and (min-width:540.02px) {
-  .c3 {
-    padding: 0 15px;
-  }
-}
-
-@media screen and (max-width:375px) {
-  .c11 {
-    font-size: 14px;
-  }
-}
-
-@media screen and (min-width:375.02px) {
-  .c11 {
-    font-size: 16px;
-  }
-}
-
-@media screen and (min-width:1200.02px) {
-  .c7 {
-    height: 68px;
-    width: 100px;
-  }
-
-  .c7 .c8 {
-    background-image: url("-react-component: svg-mock;");
-  }
-}
-
-@media screen and (min-width:1200.02px) {
-  .c5 {
-    width: 30%;
-  }
-
-  .c5 .c6 {
-    margin-right: 40px;
-  }
-}
-
-@media screen and (max-width:1200px) {
-  .c0 .c10 {
-    margin-top: -2px;
-  }
-}
-
-@media screen and (min-width:1200.02px) {
-  .c0 {
-    box-shadow: none;
-  }
-
-  .c0:after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 50px;
-    margin-top: -50px;
-    background-color: #F5F5F5;
-  }
-
-  .c0 .c2 {
-    z-index: 100;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-  }
-
-  .c0 .c1 {
-    background-color: transparent;
-  }
-
-  .c0 .c10 {
-    margin-top: 0px;
-    -webkit-align-self: flex-start;
-    -ms-flex-item-align: start;
-    align-self: flex-start;
-    line-height: 38px;
-    font-size: 30px;
-  }
-
-  .c0 .c4 {
-    height: 78px;
-    padding: 15px 0;
-  }
-
-  .c0 .c14 {
-    -webkit-flex-basis: 100%;
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
-    margin-left: 25px;
-    margin-right: 25px;
-    height: 50px;
-  }
-}
-
-@media screen and (max-width:1200px) {
-  .c12 {
-    display: none;
-  }
-}
-
-<div
-  class="c0"
-  id="header"
->
-  <header
-    class="c1 c2 c3"
-  >
-    <h1
-      class="c4 c5"
-    >
-      <a
-        class="c6 c7"
-        href="http://data.amsterdam.nl"
-      >
-        <span
-          class="c8 c9"
-        />
-      </a>
-      <a
-        class="c10 c11"
-        href="http://data.amsterdam.nl"
-      >
-        Data en informatie
-      </a>
-    </h1>
-    <div
-      class="c12"
-    >
-      <p
-        class="c13"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
-      </p>
-    </div>
-    <div
-      class="c14 c15"
-    />
-  </header>
-</div>
-`;
-
-exports[`Header should render the tall version without a title 1`] = `
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  z-index: 0;
-  padding: 0 10px;
-  background-color: #ffffff;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  height: 100%;
-  margin: 0 auto;
-  max-width: none;
-}
-
-.c3:after {
-  content: '';
-  display: block;
-  min-height: inherit;
-  font-size: 0;
-}
-
 .c13 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1060,12 +606,28 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-left: 15px;
 }
 
+.c14 .c10 {
+  margin-top: -2px;
+}
+
+.c14 .c12 {
+  margin-right: -15px;
+}
+
 .c15 .c12 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
   margin-left: 15px;
+}
+
+.c15 .c10 {
+  margin-top: -2px;
+}
+
+.c15 .c12 {
+  margin-right: -15px;
 }
 
 .c0 {
@@ -1091,52 +653,273 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-left: 15px;
 }
 
-.c10 {
-  height: 50px;
-  margin: 0;
-  padding: 15px 25px 0 0;
-  font-weight: 700;
-  width: 70%;
+@media screen and (min-width:540.02px) {
+  .c3 {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .c11 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width:375.02px) {
+  .c11 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width:1200.02px) {
+  .c7 {
+    height: 68px;
+    width: 100px;
+  }
+
+  .c7 .c8 {
+    background-image: url("-react-component: svg-mock;");
+  }
+}
+
+@media screen and (min-width:1200.02px) {
+  .c5 .c6 {
+    margin-right: 40px;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .c0 .c10 {
+    margin-top: -2px;
+  }
+
+  .c0 .c12 {
+    margin-right: -15px;
+  }
+}
+
+@media screen and (min-width:1200.02px) {
+  .c0 {
+    box-shadow: none;
+  }
+
+  .c0:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50px;
+    margin-top: -50px;
+    background-color: #F5F5F5;
+  }
+
+  .c0 .c2 {
+    z-index: 100;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .c0 .c1 {
+    background-color: transparent;
+  }
+
+  .c0 .c10 {
+    margin-top: 0px;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    line-height: 38px;
+    font-size: 30px;
+  }
+
+  .c0 .c4 {
+    height: 78px;
+    padding: 15px 0;
+  }
+
+  .c0 .c12 {
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    margin-left: 25px;
+    margin-right: 25px;
+    height: 50px;
+  }
+}
+
+<div
+  class="c0"
+  id="header"
+>
+  <header
+    class="c1 c2 c3"
+  >
+    <h1
+      class="c4 c5"
+    >
+      <a
+        class="c6 c7"
+        href="http://data.amsterdam.nl"
+      >
+        <span
+          class="c8 c9"
+        />
+      </a>
+      <a
+        class="c10 c11"
+        href="http://data.amsterdam.nl"
+      >
+        Data en informatie
+      </a>
+    </h1>
+    <div
+      class="c12 c13"
+    />
+  </header>
+</div>
+`;
+
+exports[`Header should render the tall version without a title 1`] = `
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  position: relative;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  box-sizing: border-box;
+  z-index: 0;
+  padding: 0 10px;
+  background-color: #ffffff;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  height: 100%;
+  margin: 0 auto;
+  max-width: none;
+}
+
+.c3:after {
+  content: '';
+  display: block;
+  min-height: inherit;
+  font-size: 0;
 }
 
 .c11 {
-  line-height: 1.25;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  font-weight: 400;
-  font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1.25;
-  color: #000000;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.c9 {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-image: url("-react-component: svg-mock;");
+}
+
+.c7 {
+  display: inline-block;
+  height: 30px;
+  width: 68px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c7:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: 3px;
+}
+
+.c5 {
+  height: 50px;
+  margin: 0;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: normal;
+  -webkit-justify-content: normal;
+  -ms-flex-pack: normal;
+  justify-content: normal;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  box-sizing: content-box;
+}
+
+.c5 .c6 {
+  margin-right: 10px;
+}
+
+.c12 .c10 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.c12 .c10 {
+  margin-right: -15px;
+}
+
+.c13 .c10 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.c13 .c10 {
+  margin-right: -15px;
+}
+
+.c0 {
+  background-color: #ffffff;
+  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  box-shadow: 0 4px rgba(0,0,0,0.04);
+  box-sizing: content-box;
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.c0 .c10 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
 }
 
 @media screen and (min-width:540.02px) {
@@ -1157,10 +940,6 @@ exports[`Header should render the tall version without a title 1`] = `
 }
 
 @media screen and (min-width:1200.02px) {
-  .c5 {
-    width: 30%;
-  }
-
   .c5 .c6 {
     margin-right: 40px;
   }
@@ -1169,6 +948,10 @@ exports[`Header should render the tall version without a title 1`] = `
 @media screen and (max-width:1200px) {
   .c0 .sc-bxivhb {
     margin-top: -2px;
+  }
+
+  .c0 .c10 {
+    margin-right: -15px;
   }
 }
 
@@ -1213,19 +996,13 @@ exports[`Header should render the tall version without a title 1`] = `
     padding: 15px 0;
   }
 
-  .c0 .c12 {
+  .c0 .c10 {
     -webkit-flex-basis: 100%;
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
     margin-left: 25px;
     margin-right: 25px;
     height: 50px;
-  }
-}
-
-@media screen and (max-width:1200px) {
-  .c10 {
-    display: none;
   }
 }
 
@@ -1249,16 +1026,7 @@ exports[`Header should render the tall version without a title 1`] = `
       </a>
     </h1>
     <div
-      class="c10"
-    >
-      <p
-        class="c11"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
-      </p>
-    </div>
-    <div
-      class="c12 c13"
+      class="c10 c11"
     />
   </header>
 </div>

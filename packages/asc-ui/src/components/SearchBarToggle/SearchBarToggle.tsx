@@ -46,6 +46,7 @@ const SearchBarMenu: React.FC<Props> = ({ children, css, ...otherProps }) => {
       onBlur={onClose}
     >
       <IconButton
+        type="button"
         aria-label="Search"
         onClick={() => {
           setOpen(!open)

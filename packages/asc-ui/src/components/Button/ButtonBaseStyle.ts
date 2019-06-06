@@ -8,6 +8,7 @@ export type Props = {
   square?: boolean
   hoverColor?: string
   href?: string
+  type?: 'button' | 'reset' | 'submit'
   size?: number
 }
 
