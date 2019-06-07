@@ -1,6 +1,6 @@
 import React from 'react'
 import InputStyle from './InputStyle'
-import InputContext from './InputContext'
+import InputContext from './InputMethodsContext'
 import useFocusOnRender from '../../utils/useFocusOnRender'
 import useActionOnEscape from '../../utils/useActionOnEscape'
 

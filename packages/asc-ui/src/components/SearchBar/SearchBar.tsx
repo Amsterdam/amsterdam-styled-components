@@ -4,7 +4,7 @@ import IconButton from '../IconButton/IconButton'
 import SearchBarStyle from './SearchBarStyle'
 import TextField from '../TextField/TextField'
 import ReactIcon from '../ReactIcon/Icon'
-import InputContext from '../Input/InputContext'
+import InputContext from '../Input/InputMethodsContext'
 import { InputProps } from '../Input'
 import { KeyboardKeys } from '../../types'
 
