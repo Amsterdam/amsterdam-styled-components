@@ -5,6 +5,9 @@ exports[`ButtonBar should render the buttons in the bar 1`] = `
   forwardedComponent={
     Object {
       "$$typeof": Symbol(react.forward_ref),
+      "_foldedDefaultProps": Object {
+        "padding": 5,
+      },
       "attrs": Array [],
       "componentStyle": ComponentStyle {
         "componentId": "sc-htpNat",
@@ -21,9 +24,6 @@ exports[`ButtonBar should render the buttons in the bar 1`] = `
   }
 ",
         ],
-      },
-      "defaultProps": Object {
-        "padding": 5,
       },
       "displayName": "styled.div",
       "foldedComponentIds": Array [],
