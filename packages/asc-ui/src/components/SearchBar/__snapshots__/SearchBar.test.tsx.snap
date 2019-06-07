@@ -58,6 +58,7 @@ exports[`SearchBar should render 1`] = `
 .c6:focus {
   outline-color: #FEC813;
   outline-style: solid;
+  outline-offset: 0px;
   outline-width: 3px;
 }
 
@@ -80,8 +81,19 @@ exports[`SearchBar should render 1`] = `
   border: solid 1px #767676;
   border-radius: 0;
   box-sizing: border-box;
-  padding: 10px 10px;
+  padding: 9px 9px 11px;
   width: 100%;
+}
+
+.c4:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-offset: 0.5px;
+  outline-width: 2px;
+}
+
+.c4:hover {
+  border-color: #323232;
 }
 
 .c2 {

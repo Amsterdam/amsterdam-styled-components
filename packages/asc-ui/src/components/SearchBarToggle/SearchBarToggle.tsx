@@ -23,12 +23,14 @@ const SearchBarMenu: React.FC<Props> = ({ children, css, ...otherProps }) => {
   const [open, setOpen] = React.useState(false)
   const { onKeyDown } = useActionOnEscape(() => setOpen(false))
 
-  const onClose = () => {
+  const onBlurHandler = () => {
     setTimeout(() => {
       const element = ref.current as HTMLInputElement
       if (element) {
         const currentFocus = ownerDocument(element).activeElement
+        console.log(ownerDocument(element).activeElement)
         if (!element.contains(currentFocus)) {
+          console.log('que')
           setOpen(false)
         }
       }
@@ -43,7 +45,10 @@ const SearchBarMenu: React.FC<Props> = ({ children, css, ...otherProps }) => {
         ref,
         open,
       }}
-      onBlur={onClose}
+      onClick={e => {
+        e.stopPropagation()
+      }}
+      onBlur={onBlurHandler}
     >
       <IconButton
         type="button"
