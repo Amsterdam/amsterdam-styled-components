@@ -1,7 +1,7 @@
 import LogoShort from '@datapunt/asc-assets/lib/Icons/LogoShort.svg'
 import LogoTall from '@datapunt/asc-assets/lib/Icons/LogoTall.svg'
 import styled, { css } from '@datapunt/asc-core'
-import { breakpoint, focusStyle } from '../../utils'
+import { breakpoint, focusStyleOutline } from '../../utils'
 
 export type Props = {
   tall?: boolean
@@ -31,7 +31,8 @@ const AmsterdamLogoStyle = styled.a<Props>`
   display: inline-block;
   height: 30px;
   width: 68px;
-  ${focusStyle()}
+  flex-shrink: 0;
+  ${focusStyleOutline()}
   ${({ tall }) => tall && tallStyle}
 `
 

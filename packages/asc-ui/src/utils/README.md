@@ -5,7 +5,7 @@
 Gets value from the props object. Useful for styled-components
 
 ```js static
-import styled from 'styled-components'
+import styled from '@datapunt/asc-core'
 import { fromProps } from './utils/fromTheme'
 
 const Div = styled.div`
@@ -20,7 +20,7 @@ const Div = styled.div`
 Same as `fromProps`, but it will get a value from the (global) theme object. Useful for styled-components
 
 ```js static
-import styled from 'styled-components'
+import styled from '@datapunt/asc-core'
 import fromTheme from './utils'
 
 const theme = {
@@ -49,7 +49,7 @@ const DivStyle = styled.div`
 Extends `fromTheme`, but it's specified to the theme colors. Will return a default value if no colors are specified
 
 ```js static
-import styled from 'styled-components'
+import styled from '@datapunt/asc-core'
 import { getColorFromTheme } from './utils'
 
 const theme = {

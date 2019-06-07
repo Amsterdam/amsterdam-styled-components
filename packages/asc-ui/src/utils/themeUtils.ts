@@ -29,7 +29,7 @@ export const getTypographyFromTheme = (
   return fromTheme(`typography.${[attributeType]}`)({ theme })
 }
 
-export const focusStyle = () => ({
+export const focusStyleOutline = (width: number = 3, offset: number = 0) => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
@@ -37,7 +37,18 @@ export const focusStyle = () => ({
   &:focus {
     outline-color: ${color('support', 'focus')({ theme })};
     outline-style: solid;
-    outline-width: 3px;
+    outline-offset: ${offset}px;
+    outline-width: ${width}px;
+  }
+`
+
+export const focusStyleText = () => ({
+  theme,
+}: {
+  theme: Theme.ThemeInterface
+}) => css`
+  &:focus {
+    background-color: ${color('support', 'focus')({ theme })};
   }
 `
 

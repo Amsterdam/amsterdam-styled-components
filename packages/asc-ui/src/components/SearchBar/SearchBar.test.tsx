@@ -11,7 +11,7 @@ describe('SearchBar', () => {
   beforeEach(() => {
     const fn = jest.fn()
     component = renderWithTheme(
-      <SearchBar onSearch={fn} onTextChanged={fn}>
+      <SearchBar onSubmit={fn} onChange={fn}>
         searchbar-content
       </SearchBar>,
     )

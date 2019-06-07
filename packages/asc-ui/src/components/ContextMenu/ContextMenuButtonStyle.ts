@@ -1,8 +1,8 @@
 import styled from '@datapunt/asc-core'
-import { color, focusStyle } from '../../utils'
+import { color, focusStyleOutline } from '../../utils'
 
 const ContextMenuButtonStyle = styled.button`
-  ${focusStyle()}
+  ${focusStyleOutline()}
   display: flex;
   background-color: ${color('tint', 'level1')};
   align-items: center;

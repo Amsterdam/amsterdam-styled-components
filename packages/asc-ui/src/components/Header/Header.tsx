@@ -5,42 +5,34 @@ import HeaderWrapperStyle, {
 } from './HeaderWrapperStyle'
 import HeaderLogoText from './HeaderLogoText'
 import HeaderNavigation from './HeaderNavigation'
-import HeaderContent from './HeaderContent'
 
 type Props = {
   homeLink: string
   title?: string
-  styledComponent?: any
+  css?: any
   navigation?: React.ReactNode
 } & HeaderWrapperProps
 
 const Header: React.FC<Props> = ({
-  styledComponent,
+  css,
   title,
   homeLink,
   fullWidth,
   tall,
-  children,
   navigation,
   ...otherProps
-}) => {
-  const ExtendedHeaderWrapperStyle = styledComponent
-
-  return (
-    <ExtendedHeaderWrapperStyle {...{ tall, fullWidth }}>
-      <HeaderStyle {...{ fullWidth, ...otherProps }}>
-        <HeaderLogoText {...{ tall, title, homeLink }} />
-        <HeaderContent>{children}</HeaderContent>
-        <HeaderNavigation>{navigation}</HeaderNavigation>
-      </HeaderStyle>
-    </ExtendedHeaderWrapperStyle>
-  )
-}
+}) => (
+  <HeaderWrapperStyle {...{ css, tall, fullWidth }} id="header">
+    <HeaderStyle {...{ fullWidth, ...otherProps }}>
+      <HeaderLogoText {...{ tall, title, homeLink }} />
+      <HeaderNavigation>{navigation}</HeaderNavigation>
+    </HeaderStyle>
+  </HeaderWrapperStyle>
+)
 
 Header.defaultProps = {
   tall: false,
   fullWidth: true,
-  styledComponent: HeaderWrapperStyle,
 }
 
 export default Header

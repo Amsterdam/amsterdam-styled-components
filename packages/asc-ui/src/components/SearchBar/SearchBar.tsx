@@ -2,92 +2,120 @@ import React from 'react'
 import Icons from '@datapunt/asc-assets'
 import IconButton from '../IconButton/IconButton'
 import SearchBarStyle from './SearchBarStyle'
-import { KeyboardKeys } from '../../types'
 import TextField from '../TextField/TextField'
 import ReactIcon from '../ReactIcon/Icon'
+import InputContext from '../Input/InputMethodsContext'
+import { InputProps } from '../Input'
+import { KeyboardKeys } from '../../types'
 
 ReactIcon.add(Icons.Search)
 
-interface SearchBarProps {
-  styledComponent?: any
+export interface SearchBarProps extends InputProps {
+  css?: string
   placeholder?: string
   label?: string
-  onTextChanged: Function
-  onSearch: Function
-  onBlur?: Function
-  onFocus?: Function
-  onKeyDown?: Function
-  text?: string
+  onSubmit?: Function
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
   children,
-  styledComponent,
+  css,
   placeholder,
-  onTextChanged,
-  onSearch,
+  onSubmit,
   onBlur,
+  onChange,
   onFocus,
-  onKeyDown,
-  text,
+  onWatchValue,
+  focusOnRender,
+  value,
+  label,
   ...otherProps
 }) => {
-  const ExtendedSearchBarStyle = styledComponent
-  const inputRef = React.useRef<HTMLInputElement>(null)
+  let inputRef: React.RefObject<HTMLInputElement> | null = null
+  const [inputValue, setInputValue] = React.useState(value || '')
 
-  const handleTextChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onTextChanged(e.target.value)
+  const onClear = () => {
+    if (inputRef && inputRef.current) {
+      inputRef.current.focus()
+    }
+    setInputValue('')
   }
 
-  const handleSubmit = (e: React.KeyboardEvent | React.MouseEvent) => {
-    e.preventDefault()
-    onSearch(text)
-  }
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (onKeyDown) onKeyDown(e, inputRef.current)
-
-    if (e.key === KeyboardKeys.Enter) {
-      handleSubmit(e)
+  const handleOnSubmit = () => {
+    if (onSubmit) {
+      onSubmit(inputValue)
     }
   }
 
-  const handleTextClear = () => {
-    if (inputRef && inputRef.current) inputRef.current.focus()
-    onTextChanged('')
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === KeyboardKeys.Enter) {
+      handleOnSubmit()
+    }
   }
 
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value)
+    if (onChange) {
+      onChange(e)
+    }
+  }
+
+  // Since the user is able to clear the field, this will not trigger the onChange event,
+  // so we need to manually trigger our self-made onWatchValue
+  React.useEffect(() => {
+    if (onWatchValue) {
+      onWatchValue(inputValue)
+    }
+  }, [inputValue])
+
+  React.useEffect(() => {
+    if (typeof value !== 'undefined') {
+      setInputValue(value)
+    }
+  }, [value])
+
   return (
-    <ExtendedSearchBarStyle {...otherProps}>
-      <TextField
-        id="search-bar-id"
-        srOnly
-        label={placeholder}
-        aria-label={placeholder}
-        placeholder={placeholder}
-        onBlur={onBlur}
-        onChange={handleTextChanged}
-        onClear={handleTextClear}
-        onFocus={onFocus}
-        onKeyDown={handleKeyDown}
-        inputRef={inputRef}
-        value={text || ''}
-      />
-      <IconButton aria-label="Search" color="secondary" onClick={handleSubmit}>
+    <SearchBarStyle {...otherProps} css={css}>
+      <InputContext.Provider
+        value={{
+          onBlur,
+          onFocus,
+          onChange: handleOnChange,
+          onKeyDown,
+          placeholder,
+          setInputRef: (ref: React.RefObject<HTMLInputElement>) => {
+            inputRef = ref
+          },
+        }}
+      >
+        <TextField
+          srOnly
+          keepFocus
+          blurOnEscape
+          onClear={onClear}
+          aria-label={label}
+          value={inputValue}
+          {...{
+            focusOnRender,
+            label,
+          }}
+        />
+      </InputContext.Provider>
+      <IconButton
+        aria-label="Search"
+        color="secondary"
+        onClick={handleOnSubmit}
+      >
         <ReactIcon type={Icons.Search} />
       </IconButton>
       {children}
-    </ExtendedSearchBarStyle>
+    </SearchBarStyle>
   )
 }
 
 SearchBar.defaultProps = {
-  styledComponent: SearchBarStyle,
   placeholder: 'Search...',
-  onBlur: () => {},
-  onFocus: () => {},
-  onKeyDown: () => {},
-  text: '',
+  value: '',
 }
 
 export default SearchBar

@@ -1,6 +1,7 @@
 import styled, { css, StyledComponent, Theme } from '@datapunt/asc-core'
 import { em, margin } from 'polished'
-import { getTypographyFromTheme, color, focusStyle } from '../../utils'
+import { getTypographyFromTheme, color } from '../../utils'
+import { focusStyleText } from '../../utils/themeUtils'
 
 export type Props = {
   gutterBottom?: boolean
@@ -36,7 +37,7 @@ const extendedStyles = {
   a: css`
     color: ${color('primary')};
     display: inline-block;
-    ${focusStyle()}
+    ${focusStyleText()}
 
     &:hover {
       color: ${color('secondary')};

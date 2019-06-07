@@ -10,11 +10,16 @@ import { CONTENT_HEIGHT_TALL, WRAPPER_MAX_WIDTH } from './sizes'
 export type Props = {
   tall?: boolean
   fullWidth?: boolean
+  css?: any
 }
 
 const shortStyle = css`
   ${HeaderTitleStyle} {
     margin-top: -2px; /* hack to align text with logo */
+  }
+
+  ${HeaderNavigationStyle} {
+    margin-right: -15px; /* collapse to the right side to align navigation items to the edge */
   }
 `
 
@@ -88,6 +93,12 @@ const HeaderWrapperStyle = styled.div<Props>`
           }
         `
       : shortStyle}
+
+  ${props =>
+    props.css &&
+    css`
+      ${props.css}
+    `}
 `
 
 export default HeaderWrapperStyle

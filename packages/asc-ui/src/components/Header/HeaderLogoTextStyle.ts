@@ -13,7 +13,7 @@ const HeaderLogoTextStyle = styled.h1<Props>`
   display: flex;
   justify-content: normal;
   align-items: center;
-  flex-shrink: 0;
+  flex-shrink: 1;
   box-sizing: content-box;
 
   ${AmsterdamLogoStyle} {
@@ -21,8 +21,6 @@ const HeaderLogoTextStyle = styled.h1<Props>`
   }
 
   @media screen and ${breakpoint('min-width', 'laptopM')} {
-    width: 30%;
-
     ${AmsterdamLogoStyle} {
       margin-right: 40px;
     }

@@ -64,7 +64,7 @@ export namespace Theme {
 
   type TypographyElementStyle = {
     color: CSSProp
-    fontWeight: 400 | 500 | 700
+    fontWeight: 400 | 500 | 700 | 'inherit'
     fontSize: CSSProp
     lineHeight: number | CSSProp
     letterSpacing: CSSProp

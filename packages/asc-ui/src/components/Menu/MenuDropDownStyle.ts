@@ -1,7 +1,6 @@
 import styled from '@datapunt/asc-core'
 import { MenuStyleProps } from './types'
 import MenuItemStyle, { MenuItemLabelStyle } from './MenuItemStyle'
-// import SubMenuButtonStyle, { SubMenuButtonLabelStyle } from './SubMenuButtonStyle'
 import { color } from '../../utils'
 
 export const MenuDropDownButtonStyle = styled.li<

@@ -3,7 +3,7 @@ export {
   color,
   getColorFromTheme,
   getTypographyFromTheme,
-  focusStyle,
+  focusStyleOutline,
   srOnlyStyle,
   breakpoint,
   svgFill,

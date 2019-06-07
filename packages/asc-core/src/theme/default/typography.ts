@@ -2,7 +2,7 @@ import { rem } from 'polished'
 import { Theme } from '../index'
 import colors from './colors'
 
-const defaultFontFamily = 'AvenirNextLT, Arial, sans-serif'
+const defaultFontFamily = 'Avenir Next, Arial, sans-serif'
 
 const typography: Theme.TypographyInterface = {
   fontFamily: defaultFontFamily,
@@ -52,7 +52,7 @@ const typography: Theme.TypographyInterface = {
   a: {
     color: colors.tint.level7,
     fontSize: '1rem',
-    fontWeight: 400,
+    fontWeight: 'inherit',
     letterSpacing: '-0.01562em',
     lineHeight: 1,
   },
