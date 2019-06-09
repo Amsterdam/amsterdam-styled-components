@@ -1,5 +1,5 @@
-import LogoShort from '@datapunt/asc-assets/lib/Icons/LogoShort.svg'
-import LogoTall from '@datapunt/asc-assets/lib/Icons/LogoTall.svg'
+import LogoShort from '../../../../asc-assets/src/assets/Icons/LogoShort.svg'
+import LogoTall from '../../../../asc-assets/src/assets/Icons/LogoTall.svg'
 import styled, { css } from '@datapunt/asc-core'
 import { breakpoint, focusStyle } from '../../utils'
 
