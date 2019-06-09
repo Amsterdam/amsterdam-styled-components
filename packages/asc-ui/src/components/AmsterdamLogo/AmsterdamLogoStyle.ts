@@ -1,6 +1,6 @@
+import styled, { css } from '@datapunt/asc-core'
 import LogoShort from '../../../../asc-assets/src/assets/Icons/LogoShort.svg'
 import LogoTall from '../../../../asc-assets/src/assets/Icons/LogoTall.svg'
-import styled, { css } from '@datapunt/asc-core'
 import { breakpoint, focusStyle } from '../../utils'
 
 export type Props = {
