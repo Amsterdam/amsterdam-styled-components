@@ -14,7 +14,18 @@ return (
   <IconName />
 )
 ```
+
+## Optimized SVGs
+
+```ts
+import IconName from '@datapunt/asc-assets/lib/Icons/IconName.svg';
+
+return (
+  <img src={IconName} />
+)
+```
+
 ## Build Project
 ```bash
-yarn build # generates JSX components using the SVG icons
+yarn build # generates JSX components using the optimized SVG icons
 ```
