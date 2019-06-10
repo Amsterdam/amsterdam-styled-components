@@ -5,8 +5,8 @@ type Props = {
   children: ReactNode
 }
 
-const HeaderLogoText: React.FC<Props> = ({ children }) => (
+const HeaderContent: React.FC<Props> = ({ children }) => (
   <HeaderContentStyle>{children}</HeaderContentStyle>
 )
 
-export default HeaderLogoText
+export default HeaderContent
