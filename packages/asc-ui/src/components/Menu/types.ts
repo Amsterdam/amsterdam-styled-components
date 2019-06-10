@@ -6,6 +6,11 @@ export namespace MenuStyleProps {
     top = 'top',
   }
 
+  export enum Align {
+    left = 'left',
+    right = 'right',
+  }
+
   export type MenuButtonStyleProps = {
     focused?: boolean
     height?: number
@@ -27,6 +32,7 @@ export namespace MenuStyleProps {
     position?: Position
     top?: number
     focused?: boolean
+    alignRight?: boolean
   }
 
   export type MenuWrapperStyleProps = {

@@ -9,19 +9,19 @@ import { MenuItem, MenuLabel, Header, SubMenu, styles } from '../../../index'
 import BoxWrapper from '../../../internals/Box/BoxWrapper'
 import ContentFiller from '../../../internals/ContentFiller/ContentFiller'
 import Menu, { Props } from '../../Menu/Menu'
+import { MenuStyleProps } from '../../Menu/types'
 import { breakpoint } from '../../../utils'
 import HeaderSearchBar from '../HeaderSearchBar'
 
 const outsideBackgoundColor = '#E6E6E6'
 const contentBackgrountColor = '#ffffff'
 
-console.log(styles)
 const DataportaalHeaderWrapperStyle = css`
   ${styles.HeaderContentStyle} {
     justify-content: flex-end;
   }
 
-  ${styles.SearchBarMenuStyle} {
+  ${styles.SearchBarToggleStyle} {
     @media screen and ${breakpoint('min-width', 'tabletM')} {
       display: none;
     }
@@ -79,7 +79,18 @@ const MenuDefault = (props: Props) => (
   </Menu>
 )
 
-const MenuMobile = () => <MenuDefault mobile icon={<MenuIcon />} />
+const MenuMobile = () => <MenuDefault mobile align={MenuStyleProps.Align.right} icon={<MenuIcon />} />
+
+const HeaderLinksMenu = () => (
+  <Menu>
+    <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+      One
+    </MenuItem>
+    <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+      Two
+    </MenuItem>
+  </Menu>
+)
 
 const HeaderTallDataportaalStory: React.FC<{}> = () => {
   return (
@@ -105,6 +116,7 @@ const HeaderTallDataportaalStory: React.FC<{}> = () => {
             <MenuMobile />
           </>
         }
+        links={<HeaderLinksMenu />}
       />
       <ContentFiller
         backgroundColor={contentBackgrountColor}

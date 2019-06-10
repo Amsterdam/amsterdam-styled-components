@@ -24,13 +24,17 @@ type Props = {
   buttonHeight?: number
 } & MenuStyleProps.MenuItemStyleProps
 
+const defaultProps = {
+  buttonHeight: 50
+}
+
 const SubMenu: React.FC<Props> = ({
   id,
   arrowIcon,
   children,
   label,
   index: currentIndex,
-  buttonHeight,
+  buttonHeight = defaultProps.buttonHeight,
   ...otherProps
 }) => {
   const {
@@ -40,7 +44,6 @@ const SubMenu: React.FC<Props> = ({
     setExpandedChild,
     resetExpandedChild,
     onKeyDown,
-    onClose,
     mobile,
   }: any = React.useContext(MenuContext)
 
@@ -61,7 +64,7 @@ const SubMenu: React.FC<Props> = ({
     if (collapse || expandedChild) {
       resetExpandedChild()
     }
-    if (!expandedChild || expandedChildIndex !== currentIndex) {
+    if (!collapse && (!expandedChild || expandedChildIndex !== currentIndex)) {
       setExpandedChild(nrOfChildren, currentIndex)
     }
   }
@@ -93,15 +96,13 @@ const SubMenu: React.FC<Props> = ({
       ref={subMenuRef}
       focused={expanded}
       onKeyDown={handleKeyPress}
-      onBlur={() => setTimeout(onClose(subMenuRef), 200)}
+      onClick={() => handleOnClick()}
       onMouseEnter={() => !mobile && setTimeout(handleOnClick, 200)}
-      onMouseLeave={() => !mobile && setTimeout(handleOnClick, 200)}
+      onMouseLeave={() => !mobile && setTimeout(handleOnClick(true), 200)}
     >
       <SubMenuButton
         focused={expanded}
         height={buttonHeight}
-        onFocus={() => !mobile && setTimeout(handleOnClick, 200)}
-        onClick={() => handleOnClick()}
         {...otherProps}
       >
         {label && (
@@ -122,10 +123,6 @@ const SubMenu: React.FC<Props> = ({
       </SubMenuListWrapper>
     </SubMenuWrapperStyle>
   )
-}
-
-SubMenu.defaultProps = {
-  buttonHeight: 50,
 }
 
 export default SubMenu

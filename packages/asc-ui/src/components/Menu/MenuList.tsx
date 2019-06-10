@@ -11,12 +11,14 @@ type Props = {
   label?: string
   children?: any
   index?: number
+  top?: number
   arrowIcon?: React.ReactNode
 } & MenuStyleProps.MenuListStyleProps
 
-const MenuList = ({ id, children, open, onClose, ...otherProps }: Props) => {
+const MenuList = ({ id, children, open, onClose, top, ...otherProps }: Props) => {
   const menuListRef = React.useRef<HTMLDivElement>(null)
   const {
+    align,
     expandedChild,
     expandedChildIndex,
     nrOfChildrenChild,
@@ -36,6 +38,8 @@ const MenuList = ({ id, children, open, onClose, ...otherProps }: Props) => {
       ref={menuListRef}
       aria-hidden={!open}
       onBlur={() => onClose(menuListRef)}
+      alignRight={ align === MenuStyleProps.Align.right ? true : false }
+      top={top}
       {...otherProps}
     >
       <MenuListStyle labelId={id}>{clonedChildren}</MenuListStyle>
@@ -45,7 +49,7 @@ const MenuList = ({ id, children, open, onClose, ...otherProps }: Props) => {
 
 MenuList.defaultProps = {
   position: MenuStyleProps.Position.top,
-  top: 0,
+  top: 0
 }
 
 export default MenuList

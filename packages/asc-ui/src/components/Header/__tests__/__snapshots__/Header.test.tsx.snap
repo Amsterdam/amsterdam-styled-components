@@ -168,6 +168,56 @@ exports[`Header should render the short version 1`] = `
   margin-right: -15px;
 }
 
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 17px;
+  right: 45px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c10 .c12 {
+  height: 17px;
+  padding: 0;
+}
+
+.c10 .c12:not(:last-child) {
+  margin-right: 30px;
+}
+
+.c10 .c12:focus,
+.c10 .c12:hover {
+  background-color: transparent;
+}
+
+.c10 .c12:focus .c11,
+.c10 .c12:hover .c11 {
+  color: #ec0000;
+}
+
+.c10 .c12:focus svg rect,
+.c10 .c12:hover svg rect,
+.c10 .c12:focus svg polygon,
+.c10 .c12:hover svg polygon,
+.c10 .c12:focus svg path,
+.c10 .c12:hover svg path {
+  fill: #ec0000;
+}
+
+.c10 .c12 .c11 {
+  line-height: 17px;
+}
+
 @media screen and (min-width:540.02px) {
   .c1 {
     padding: 0 15px;
@@ -189,6 +239,12 @@ exports[`Header should render the short version 1`] = `
 @media screen and (min-width:1200.02px) {
   .c2 .c3 {
     margin-right: 40px;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .c10 {
+    display: none;
   }
 }
 
@@ -219,6 +275,9 @@ exports[`Header should render the short version 1`] = `
     </h1>
     <div
       class="c8 c9"
+    />
+    <div
+      class="c10"
     />
   </header>
 </div>
@@ -361,7 +420,7 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-right: 10px;
 }
 
-.c10 .c8 {
+.c11 .c8 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -369,11 +428,11 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-left: 15px;
 }
 
-.c10 .c6 {
+.c11 .c6 {
   margin-top: -2px;
 }
 
-.c10 .c8 {
+.c11 .c8 {
   margin-right: -15px;
 }
 
@@ -408,6 +467,56 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-right: -15px;
 }
 
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 17px;
+  right: 45px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c10 .c13 {
+  height: 17px;
+  padding: 0;
+}
+
+.c10 .c13:not(:last-child) {
+  margin-right: 30px;
+}
+
+.c10 .c13:focus,
+.c10 .c13:hover {
+  background-color: transparent;
+}
+
+.c10 .c13:focus .c12,
+.c10 .c13:hover .c12 {
+  color: #ec0000;
+}
+
+.c10 .c13:focus svg rect,
+.c10 .c13:hover svg rect,
+.c10 .c13:focus svg polygon,
+.c10 .c13:hover svg polygon,
+.c10 .c13:focus svg path,
+.c10 .c13:hover svg path {
+  fill: #ec0000;
+}
+
+.c10 .c13 .c12 {
+  line-height: 17px;
+}
+
 @media screen and (min-width:540.02px) {
   .c1 {
     padding: 0 15px;
@@ -429,6 +538,12 @@ exports[`Header should render the short version without the full width 1`] = `
 @media screen and (min-width:1200.02px) {
   .c2 .c3 {
     margin-right: 40px;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .c10 {
+    display: none;
   }
 }
 
@@ -459,6 +574,9 @@ exports[`Header should render the short version without the full width 1`] = `
     </h1>
     <div
       class="c8 c9"
+    />
+    <div
+      class="c10"
     />
   </header>
 </div>
@@ -601,22 +719,6 @@ exports[`Header should render the tall version 1`] = `
   margin-right: 10px;
 }
 
-.c14 .c12 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c14 .c10 {
-  margin-top: -2px;
-}
-
-.c14 .c12 {
-  margin-right: -15px;
-}
-
 .c15 .c12 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -630,6 +732,22 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c15 .c12 {
+  margin-right: -15px;
+}
+
+.c16 .c12 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.c16 .c10 {
+  margin-top: -2px;
+}
+
+.c16 .c12 {
   margin-right: -15px;
 }
 
@@ -654,6 +772,56 @@ exports[`Header should render the tall version 1`] = `
   -ms-flex-positive: 1;
   flex-grow: 1;
   margin-left: 15px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 17px;
+  right: 45px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c14 .c18 {
+  height: 17px;
+  padding: 0;
+}
+
+.c14 .c18:not(:last-child) {
+  margin-right: 30px;
+}
+
+.c14 .c18:focus,
+.c14 .c18:hover {
+  background-color: transparent;
+}
+
+.c14 .c18:focus .c17,
+.c14 .c18:hover .c17 {
+  color: #ec0000;
+}
+
+.c14 .c18:focus svg rect,
+.c14 .c18:hover svg rect,
+.c14 .c18:focus svg polygon,
+.c14 .c18:hover svg polygon,
+.c14 .c18:focus svg path,
+.c14 .c18:hover svg path {
+  fill: #ec0000;
+}
+
+.c14 .c18 .c17 {
+  line-height: 17px;
 }
 
 @media screen and (min-width:540.02px) {
@@ -752,6 +920,12 @@ exports[`Header should render the tall version 1`] = `
   }
 }
 
+@media screen and (max-width:1200px) {
+  .c14 {
+    display: none;
+  }
+}
+
 <div
   class="c0"
   id="header"
@@ -779,6 +953,9 @@ exports[`Header should render the tall version 1`] = `
     </h1>
     <div
       class="c12 c13"
+    />
+    <div
+      class="c14"
     />
   </header>
 </div>
@@ -879,7 +1056,7 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-right: 10px;
 }
 
-.c12 .c10 {
+.c13 .c10 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -887,11 +1064,11 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-left: 15px;
 }
 
-.c12 .c10 {
+.c13 .c10 {
   margin-right: -15px;
 }
 
-.c13 .c10 {
+.c14 .c10 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -899,7 +1076,7 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-left: 15px;
 }
 
-.c13 .c10 {
+.c14 .c10 {
   margin-right: -15px;
 }
 
@@ -924,6 +1101,56 @@ exports[`Header should render the tall version without a title 1`] = `
   -ms-flex-positive: 1;
   flex-grow: 1;
   margin-left: 15px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 17px;
+  right: 45px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c12 .c16 {
+  height: 17px;
+  padding: 0;
+}
+
+.c12 .c16:not(:last-child) {
+  margin-right: 30px;
+}
+
+.c12 .c16:focus,
+.c12 .c16:hover {
+  background-color: transparent;
+}
+
+.c12 .c16:focus .c15,
+.c12 .c16:hover .c15 {
+  color: #ec0000;
+}
+
+.c12 .c16:focus svg rect,
+.c12 .c16:hover svg rect,
+.c12 .c16:focus svg polygon,
+.c12 .c16:hover svg polygon,
+.c12 .c16:focus svg path,
+.c12 .c16:hover svg path {
+  fill: #ec0000;
+}
+
+.c12 .c16 .c15 {
+  line-height: 17px;
 }
 
 @media screen and (min-width:540.02px) {
@@ -1010,6 +1237,12 @@ exports[`Header should render the tall version without a title 1`] = `
   }
 }
 
+@media screen and (max-width:1200px) {
+  .c12 {
+    display: none;
+  }
+}
+
 <div
   class="c0"
   id="header"
@@ -1031,6 +1264,9 @@ exports[`Header should render the tall version without a title 1`] = `
     </h1>
     <div
       class="c10 c11"
+    />
+    <div
+      class="c12"
     />
   </header>
 </div>

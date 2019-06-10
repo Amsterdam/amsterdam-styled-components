@@ -5,12 +5,14 @@ import HeaderWrapperStyle, {
 } from './HeaderWrapperStyle'
 import HeaderLogoText from './HeaderLogoText'
 import HeaderNavigation from './HeaderNavigation'
+import HeaderLinks from './HeaderLinks'
 
 type Props = {
   homeLink: string
   title?: string
   css?: any
   navigation?: React.ReactNode
+  links?: React.ReactNode
 } & HeaderWrapperProps
 
 const Header: React.FC<Props> = ({
@@ -20,12 +22,14 @@ const Header: React.FC<Props> = ({
   fullWidth,
   tall,
   navigation,
+  links,
   ...otherProps
 }) => (
   <HeaderWrapperStyle {...{ css, tall, fullWidth }} id="header">
     <HeaderStyle {...{ fullWidth, ...otherProps }}>
       <HeaderLogoText {...{ tall, title, homeLink }} />
       <HeaderNavigation>{navigation}</HeaderNavigation>
+      <HeaderLinks>{links}</HeaderLinks>
     </HeaderStyle>
   </HeaderWrapperStyle>
 )
