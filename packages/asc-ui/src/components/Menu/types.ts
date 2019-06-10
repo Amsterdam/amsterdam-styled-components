@@ -25,6 +25,7 @@ export namespace MenuStyleProps {
   export type MenuListStyleProps = {
     labelId?: string
     position?: Position
+    right?: number
     top?: number
     focused?: boolean
   }

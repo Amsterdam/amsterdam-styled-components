@@ -24,9 +24,13 @@ export const MenuListWrapperStyle = styled.div.attrs(() => ({
   max-width: 250px;
   width: 100%;
   position: absolute;
-  right: 0;
+  right: ${({ right }) => (right ? `${right}px` : '')};
   top: ${({ top }) => `${top}px`};
   &:focus {
     outline: none;
   }
 `
+
+MenuListWrapperStyle.defaultProps = {
+  top: 50,
+}

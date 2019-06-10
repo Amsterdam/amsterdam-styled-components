@@ -6,6 +6,7 @@ import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/Ch
 import { ReactComponent as ExternalLink } from '@datapunt/asc-assets/lib/Icons/ExternalLink.svg'
 import { ReactComponent as MenuIcon } from '@datapunt/asc-assets/lib/Icons/Menu.svg'
 import { Menu, MenuItem, MenuLabel, SubMenu } from '../..'
+import HeaderNavigation from '../Header/HeaderNavigation'
 
 storiesOf('Composed/Menu', module)
   .add('default', () => (
@@ -16,28 +17,31 @@ storiesOf('Composed/Menu', module)
     </Menu>
   ))
   .add('default with dropdown', () => (
-    <Menu>
-      <MenuItem onClick={action('click')}>One</MenuItem>
-      <SubMenu label="Two">
-        <MenuItem icon={<ChevronRight />} onClick={action('click')}>
-          One
-        </MenuItem>
-        <MenuItem icon={<ChevronRight />} onClick={action('click')}>
-          Two
-        </MenuItem>
-        <MenuLabel>Two</MenuLabel>
-        <MenuItem icon={<ChevronRight />} onClick={action('click')}>
-          One
-        </MenuItem>
-        <MenuItem icon={<ChevronRight />} onClick={action('click')}>
-          Two
-        </MenuItem>
-        <MenuItem icon={<ExternalLink />} onClick={action('click')}>
-          Show more
-        </MenuItem>
-      </SubMenu>
-      <MenuItem onClick={action('click')}>Three</MenuItem>
-    </Menu>
+    <HeaderNavigation>
+      <Menu>
+        <MenuItem onClick={action('click')}>One</MenuItem>
+        <SubMenu label="Two">
+          <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+            One
+          </MenuItem>
+          <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+            Two
+          </MenuItem>
+          <MenuLabel>Two</MenuLabel>
+          <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+            One
+          </MenuItem>
+          <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+            Two
+          </MenuItem>
+          <MenuItem icon={<ExternalLink />} onClick={action('click')}>
+            Show more
+          </MenuItem>
+        </SubMenu>
+        <MenuItem onClick={action('click')}>Three</MenuItem>
+        <MenuItem onClick={action('click')}>Four</MenuItem>
+      </Menu>
+    </HeaderNavigation>
   ))
   .add('default mobile', () => (
     <Menu icon={<MenuIcon />} mobile>
