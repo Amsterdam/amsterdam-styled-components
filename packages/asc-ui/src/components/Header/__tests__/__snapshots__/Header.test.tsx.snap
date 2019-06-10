@@ -105,6 +105,7 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c4:focus {
+  z-index: 10;
   outline-color: #FEC813;
   outline-style: solid;
   outline-offset: 0px;
@@ -388,6 +389,7 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c4:focus {
+  z-index: 10;
   outline-color: #FEC813;
   outline-style: solid;
   outline-offset: 0px;
@@ -687,6 +689,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c7:focus {
+  z-index: 10;
   outline-color: #FEC813;
   outline-style: solid;
   outline-offset: 0px;
@@ -1024,6 +1027,7 @@ exports[`Header should render the tall version without a title 1`] = `
 }
 
 .c7:focus {
+  z-index: 10;
   outline-color: #FEC813;
   outline-style: solid;
   outline-offset: 0px;

@@ -62,6 +62,7 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
       }
     }
   }
+
   ${focusStyleOutline()}
 `
 
