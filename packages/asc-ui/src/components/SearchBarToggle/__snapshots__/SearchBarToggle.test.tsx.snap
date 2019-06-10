@@ -55,6 +55,7 @@ exports[`SearchBarToggle should render 1`] = `
 }
 
 .c2:focus {
+  z-index: 10;
   outline-style: solid;
   outline-offset: 0px;
   outline-width: 3px;
@@ -233,6 +234,7 @@ exports[`SearchBarToggle should render 1`] = `
 }
 
 .c2:focus {
+  z-index: 10;
   outline-style: solid;
   outline-offset: 0px;
   outline-width: 3px;

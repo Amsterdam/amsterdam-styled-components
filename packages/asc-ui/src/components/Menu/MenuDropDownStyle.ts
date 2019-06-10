@@ -40,6 +40,16 @@ const MenuDropDownStyle = styled.div<MenuStyleProps.MenuListStyleProps>`
     }
   }
 
+  &:focus {
+    ${MenuDropDownButtonStyle} {
+      z-index: 10;
+      outline-style: solid;
+      outline-offset: 0;
+      outline-width: 3px;
+      outline-color: ${color('support', 'focus')};
+    }
+  }
+
   ${MenuItemStyle} {
     border-bottom-style: solid;
     border-bottom-width: 1px;

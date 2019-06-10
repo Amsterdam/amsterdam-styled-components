@@ -47,7 +47,6 @@ export const SubMenuWrapperStyle = styled.li<
   &:focus,
   &:hover {
     outline: none;
-
     background-color: ${color('tint', 'level2')};
 
     ${/* sc-selector */ MenuButtonLabelStyle}:first-of-type {
@@ -66,6 +65,7 @@ export const SubMenuWrapperStyle = styled.li<
       }
     }
   }
+
   ${focusStyleOutline()}
 
   ${MenuButtonStyle} {
