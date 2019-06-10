@@ -1,5 +1,7 @@
 /* eslint-disable import/prefer-default-export */
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { from, Observable, of, Subscription } from 'rxjs'
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { concat, filter, map, mergeMap, reduce } from 'rxjs/operators'
 
 import {
@@ -94,6 +96,7 @@ export async function build(env: Environment) {
       (metaData$: any) => metaData$,
     ),
     map<any, BuildTimeIconMetaData>(({ identifier, icon }) => {
+      // eslint-disable-next-line no-param-reassign
       icon = _.cloneDeep(icon)
       return { identifier, icon }
     }),
