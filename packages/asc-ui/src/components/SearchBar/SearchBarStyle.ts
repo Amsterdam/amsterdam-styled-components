@@ -1,9 +1,9 @@
 import styled, { css } from '@datapunt/asc-core'
 import IconButtonStyle from '../IconButton/IconButtonStyle'
-import { svgFill } from '../../utils'
+import { showHide, ShowHideTypes, svgFill } from '../../utils'
 import TextFieldStyle from '../TextField/TextFieldStyle'
 
-type Props = {
+export interface Props extends ShowHideTypes {
   css?: string
 }
 
@@ -24,6 +24,7 @@ const SearchBarStyle = styled.div<Props>`
     }
   }
 
+  ${showHide()}
   ${props =>
     props.css &&
     css`

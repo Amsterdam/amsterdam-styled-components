@@ -1,10 +1,10 @@
 import styled, { css } from '@datapunt/asc-core'
 import IconButtonStyle from '../IconButton/IconButtonStyle'
-import { color } from '../../utils'
+import { color, showHide, ShowHideTypes } from '../../utils'
 import SearchBarStyle from '../SearchBar/SearchBarStyle'
 
-export type SearchBarMenuStyleProps = {
-  open: boolean
+export interface SearchBarMenuStyleProps extends ShowHideTypes {
+  open?: boolean
   css?: string
 }
 
@@ -34,6 +34,7 @@ const SearchBarMenuStyle = styled.div<SearchBarMenuStyleProps>`
       color('tint', open ? 'level2' : 'level1')({ theme })};
   }
 
+  ${showHide()}
   ${props =>
     props.css &&
     css`

@@ -1,6 +1,6 @@
 import React from 'react'
 import HeaderLogoTextStyle from './HeaderLogoTextStyle'
-import AmsterdamLogo from '../AmsterdamLogo/AmsterdamLogo'
+import AmsterdamLogo from '../AmsterdamLogo'
 import HeaderTitleStyle from './HeaderTitleStyle'
 
 type Props = {

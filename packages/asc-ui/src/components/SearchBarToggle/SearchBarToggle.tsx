@@ -1,24 +1,29 @@
 import React from 'react'
 import Icons from '@datapunt/asc-assets'
 import ownerDocument from '../../utils/ownerDocument'
-import SearchBarToggleStyle from './SearchBarToggleStyle'
+import SearchBarToggleStyle, {
+  SearchBarMenuStyleProps,
+} from './SearchBarToggleStyle'
 import SearchBar from '../SearchBar'
 import IconButton from '../IconButton/IconButton'
 import ReactIcon from '../ReactIcon/Icon'
 import { InputMethods } from '../Input'
 import useActionOnEscape from '../../utils/useActionOnEscape'
 
-interface SearchBarMenuProps extends InputMethods {
+interface SearchBarMenuProps extends SearchBarMenuStyleProps, InputMethods {
   css?: any
   placeholder?: string
   label?: string
   onSubmit?: Function
 }
 
-interface Props extends SearchBarMenuProps {
-  open?: boolean
-}
-const SearchBarMenu: React.FC<Props> = ({ children, css, ...otherProps }) => {
+const SearchBarMenu: React.FC<SearchBarMenuProps> = ({
+  children,
+  css,
+  hideAt,
+  showAt,
+  ...otherProps
+}) => {
   const ref = React.useRef<HTMLDivElement>(null)
   const [open, setOpen] = React.useState(false)
   const { onKeyDown } = useActionOnEscape(() => setOpen(false))
@@ -28,9 +33,7 @@ const SearchBarMenu: React.FC<Props> = ({ children, css, ...otherProps }) => {
       const element = ref.current as HTMLInputElement
       if (element) {
         const currentFocus = ownerDocument(element).activeElement
-        console.log(ownerDocument(element).activeElement)
         if (!element.contains(currentFocus)) {
-          console.log('que')
           setOpen(false)
         }
       }
@@ -44,6 +47,8 @@ const SearchBarMenu: React.FC<Props> = ({ children, css, ...otherProps }) => {
         css,
         ref,
         open,
+        hideAt,
+        showAt,
       }}
       onClick={e => {
         e.stopPropagation()
