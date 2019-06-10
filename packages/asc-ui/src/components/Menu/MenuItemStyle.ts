@@ -1,7 +1,12 @@
 import styled from '@datapunt/asc-core'
 import { MenuStyleProps } from './types'
 import IconStyle from '../Icon/IconStyle'
-import { svgFill, color, getTypographyFromTheme } from '../../utils'
+import {
+  svgFill,
+  color,
+  getTypographyFromTheme,
+  focusStyleOutline,
+} from '../../utils'
 
 export const MenuItemLabelStyle = styled.span<
   MenuStyleProps.MenuItemStyleProps
@@ -57,6 +62,7 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
       }
     }
   }
+  ${focusStyleOutline()}
 `
 
 export default MenuItemStyle

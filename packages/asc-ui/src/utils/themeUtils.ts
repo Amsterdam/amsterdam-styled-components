@@ -35,6 +35,7 @@ export const focusStyleOutline = (width: number = 3, offset: number = 0) => ({
   theme: Theme.ThemeInterface
 }) => css`
   &:focus {
+    z-index: 10;
     outline-color: ${color('support', 'focus')({ theme })};
     outline-style: solid;
     outline-offset: ${offset}px;

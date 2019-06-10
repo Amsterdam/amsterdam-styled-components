@@ -5,8 +5,6 @@ import { MenuContext } from './Menu'
 import { Icon } from '../../index'
 
 const {
-  MenuButtonStyle,
-  SubMenuButtonStyle,
   SubMenuWrapperStyle,
   SubMenuListWrapperStyle,
   MenuListWrapperStyle,
@@ -25,7 +23,7 @@ type Props = {
 } & MenuStyleProps.MenuItemStyleProps
 
 const defaultProps = {
-  buttonHeight: 50
+  buttonHeight: 50,
 }
 
 const SubMenu: React.FC<Props> = ({
@@ -47,7 +45,7 @@ const SubMenu: React.FC<Props> = ({
     mobile,
   }: any = React.useContext(MenuContext)
 
-  const subMenuRef = React.useRef<HTMLDivElement>(null)
+  const subMenuRef = React.useRef<HTMLLIElement>(null)
 
   const expanded = expandedChild && currentIndex === expandedChildIndex
   const focused = currentIndex === selectedChild
@@ -84,7 +82,6 @@ const SubMenu: React.FC<Props> = ({
     }),
   )
 
-  const SubMenuButton = mobile ? SubMenuButtonStyle : MenuButtonStyle
   const SubMenuListWrapper = mobile
     ? SubMenuListWrapperStyle
     : MenuListWrapperStyle
@@ -96,26 +93,22 @@ const SubMenu: React.FC<Props> = ({
       ref={subMenuRef}
       focused={expanded}
       onKeyDown={handleKeyPress}
+      onBlur={() => setTimeout(onClose(subMenuRef), 200)}
+      onMouseEnter={() => !mobile && setTimeout(() => handleOnClick(true), 200)}
+      onMouseLeave={() => !mobile && setTimeout(handleOnClick, 200)}
       onClick={() => handleOnClick()}
-      onMouseEnter={() => !mobile && setTimeout(handleOnClick, 200)}
-      onMouseLeave={() => !mobile && setTimeout(handleOnClick(true), 200)}
+      {...otherProps}
     >
-      <SubMenuButton
-        focused={expanded}
-        height={buttonHeight}
-        {...otherProps}
-      >
-        {label && (
-          <MenuStyle.SubMenuButtonLabelStyle>
-            {label}
-          </MenuStyle.SubMenuButtonLabelStyle>
-        )}
-        {mobile && (
-          <Icon inline size={24} padding={4} rotate={expanded ? 180 : 0}>
-            {arrowIcon}
-          </Icon>
-        )}
-      </SubMenuButton>
+      {label && (
+        <MenuStyle.SubMenuButtonLabelStyle>
+          {label}
+        </MenuStyle.SubMenuButtonLabelStyle>
+      )}
+      {mobile && (
+        <Icon inline size={24} padding={4} rotate={expanded ? 180 : 0}>
+          {arrowIcon}
+        </Icon>
+      )}
       <SubMenuListWrapper aria-hidden={!expanded}>
         <SubMenuList top={buttonHeight} labelId={id}>
           {clonedChildren}
