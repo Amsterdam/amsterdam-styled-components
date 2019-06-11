@@ -36,7 +36,12 @@ storiesOf('Composed/Menu', module)
           Show more
         </MenuItem>
       </SubMenu>
-      <MenuItem onClick={action('click')}>Three</MenuItem>
+      <SubMenu label="Three">
+        <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+          One
+        </MenuItem>
+        </SubMenu>
+      <MenuItem onClick={action('click')}>Four</MenuItem>
     </Menu>
   ))
   .add('default mobile', () => (
