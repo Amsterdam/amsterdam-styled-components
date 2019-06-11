@@ -1,5 +1,7 @@
 import { ServerStyleSheet, Theme, ascDefaultTheme } from '@datapunt/asc-core'
 
+import AmsterdamLogo, { AmsterdamLogoStyles } from './components/AmsterdamLogo'
+import BackDrop, { BackDropStyles } from './components/BackDrop'
 import IconButton from './components/IconButton'
 import Icon from './components/Icon'
 import Input, { InputStyles } from './components/Input'
@@ -37,6 +39,8 @@ import ThemeProvider from './theme'
 export { breakpoint } from './utils'
 
 export const styles = {
+  ...AmsterdamLogoStyles,
+  ...BackDropStyles,
   ...HeaderStyles,
   ...SearchBarStyles,
   ...TextFieldStyles,
@@ -48,6 +52,8 @@ export const styles = {
 
 // Components
 export {
+  AmsterdamLogo,
+  BackDrop,
   Divider,
   Icon,
   Button,

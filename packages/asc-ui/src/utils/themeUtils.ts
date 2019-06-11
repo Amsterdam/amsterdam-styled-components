@@ -3,6 +3,10 @@ import { fromTheme } from '.'
 
 import BreakpointsInterface = Theme.BreakpointsInterface
 
+type ThemeProp = {
+  theme: Theme.ThemeInterface
+}
+
 export const getColorFromTheme = (
   theme: Theme.ThemeInterface,
   colorType?: Theme.TypeLevel,
@@ -16,7 +20,7 @@ export const getColorFromTheme = (
 export const color = (
   colorType?: Theme.TypeLevel,
   variant: string = 'main',
-) => ({ theme }: { theme: Theme.ThemeInterface }) => {
+) => ({ theme }: ThemeProp) => {
   return colorType
     ? fromTheme(`colors.${[colorType]}.${[variant]}`)({ theme })
     : fromTheme('colors.tint.level1')({ theme })
@@ -70,7 +74,7 @@ export const srOnlyStyle = () => ({ srOnly }: { srOnly: boolean }) =>
 export const breakpoint = (
   type: Theme.TypeBreakpoint,
   variant: keyof BreakpointsInterface,
-) => ({ theme }: { theme: Theme.ThemeInterface }) => {
+) => ({ theme }: ThemeProp) => {
   const breakpointFunc: Theme.GetBreakpointFunc = fromTheme(
     `breakpoints.${[variant]}`,
   )({
@@ -82,7 +86,7 @@ export const breakpoint = (
 export const svgFill = (
   colorType?: Theme.TypeLevel,
   variant: string = 'main',
-) => ({ theme }: { theme: Theme.ThemeInterface }) => {
+) => ({ theme }: ThemeProp) => {
   if (colorType) {
     const value = color(colorType, variant)({ theme })
     if (typeof value === 'string') {
@@ -122,5 +126,35 @@ export const mapToBreakpoints = (
       `,
       )
       .join('')}
+  `
+}
+
+export interface ShowHideTypes {
+  showAt?: keyof BreakpointsInterface
+  hideAt?: keyof BreakpointsInterface
+}
+
+type ShowHideProps = ThemeProp & ShowHideTypes
+
+export const showHide = () => ({ hideAt, showAt, theme }: ShowHideProps) => {
+  const hideAtCss = hideAt
+    ? `
+    @media screen and ${breakpoint('min-width', hideAt)({ theme })} {
+      display: none;
+    }
+`
+    : ''
+
+  const showAtCss = showAt
+    ? `
+    @media screen and ${breakpoint('max-width', showAt)({ theme })} {
+      display: none;
+    }
+`
+    : ''
+
+  return css`
+    ${showAtCss}
+    ${hideAtCss}
   `
 }

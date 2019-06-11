@@ -76,7 +76,7 @@ const MenuDropDown: React.FC<Props> = ({
           position,
           id,
           open,
-          top: buttonHeight
+          top: buttonHeight,
         }}
         onClose={onClose}
       >
