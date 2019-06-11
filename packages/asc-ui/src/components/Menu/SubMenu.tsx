@@ -3,6 +3,7 @@ import MenuStyle, { MenuStyleProps } from './index'
 import { KeyboardKeys } from '../../types'
 import { MenuContext } from './Menu'
 import { Icon } from '../../index'
+import { SubMenuItemStyle } from './MenuItemStyle'
 
 const {
   SubMenuWrapperStyle,
@@ -82,6 +83,40 @@ const SubMenu: React.FC<Props> = ({
     }),
   )
 
+  const css = mobile
+    ? `
+    padding: 0;
+    flex-direction: column;
+    border: 0;
+
+    & > ${SubMenuItemStyle} {
+      width: 100%;
+      flex-direction: row;
+    }
+    `
+    : ''
+
+  const SubMenuButton = (
+    <>
+      {label && (
+        <MenuStyle.SubMenuButtonLabelStyle>
+          {label}
+        </MenuStyle.SubMenuButtonLabelStyle>
+      )}
+      {mobile && (
+        <Icon inline size={24} padding={4} rotate={expanded ? 180 : 0}>
+          {arrowIcon}
+        </Icon>
+      )}
+    </>
+  )
+
+  const SubMenuItem = mobile ? (
+    <SubMenuItemStyle>{SubMenuButton}</SubMenuItemStyle>
+  ) : (
+    SubMenuButton
+  )
+
   const SubMenuListWrapper = mobile
     ? SubMenuListWrapperStyle
     : MenuListWrapperStyle
@@ -93,22 +128,16 @@ const SubMenu: React.FC<Props> = ({
       ref={subMenuRef}
       focused={expanded}
       onKeyDown={handleKeyPress}
-      onBlur={() => setTimeout(onClose(subMenuRef), 200)}
-      onMouseEnter={() => !mobile && setTimeout(() => handleOnClick(true), 200)}
+      onBlur={() => setTimeout(handleOnClick, 200)}
+      onMouseEnter={() =>
+        !mobile && setTimeout(() => handleOnClick(false), 200)
+      }
       onMouseLeave={() => !mobile && setTimeout(handleOnClick, 200)}
       onClick={() => handleOnClick()}
+      css={css}
       {...otherProps}
     >
-      {label && (
-        <MenuStyle.SubMenuButtonLabelStyle>
-          {label}
-        </MenuStyle.SubMenuButtonLabelStyle>
-      )}
-      {mobile && (
-        <Icon inline size={24} padding={4} rotate={expanded ? 180 : 0}>
-          {arrowIcon}
-        </Icon>
-      )}
+      {SubMenuItem}
       <SubMenuListWrapper aria-hidden={!expanded}>
         <SubMenuList top={buttonHeight} labelId={id}>
           {clonedChildren}

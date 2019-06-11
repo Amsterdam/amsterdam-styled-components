@@ -66,4 +66,50 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   ${focusStyleOutline()}
 `
 
+export const SubMenuItemStyle = styled.div<MenuStyleProps.MenuItemStyleProps>`
+  padding: 10px 15px 10px 7px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: ${({ height }) => `${height}px`};
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
+  position: relative;
+  border-left-style: solid;
+  border-left-width: 8px;
+  border-left-color: transparent;
+
+  ${IconStyle} {
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+
+    & > svg {
+      ${svgFill('tint', 'level7')};
+    }
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: ${color('tint', 'level2')};
+
+    ${MenuItemLabelStyle} {
+      border-bottom-color: ${color('secondary', 'main')};
+      color: ${({ theme, hoverColor }) =>
+        hoverColor ? color(hoverColor)({ theme }) : 'inherit'};
+    }
+
+    ${IconStyle} {
+      & > svg {
+        ${({ theme, hoverColor }) => svgFill(hoverColor)({ theme })};
+      }
+    }
+  }
+
+  ${focusStyleOutline()}
+`
+
 export default MenuItemStyle

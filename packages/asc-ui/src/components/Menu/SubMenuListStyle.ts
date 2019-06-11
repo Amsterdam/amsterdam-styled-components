@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled, { css } from '@datapunt/asc-core'
 import { MenuStyleProps } from './types'
 import MenuItemStyle from './MenuItemStyle'
 import IconStyle from '../Icon/IconStyle'
@@ -90,10 +90,17 @@ export const SubMenuWrapperStyle = styled.li<
         focused ? color('secondary')({ theme }) : 'inherit'};
     }
   }
+
+  ${props =>
+    props.css &&
+    css`
+      ${props.css}
+    `}
 `
+
 export default SubMenuListStyle
 
-export const SubMenuListWrapperStyle = styled.li.attrs(() => ({
+export const SubMenuListWrapperStyle = styled.div.attrs(() => ({
   role: 'submenu',
   tabIndex: -1,
 }))<MenuStyleProps.MenuListStyleProps>`

@@ -33,9 +33,11 @@ export namespace MenuStyleProps {
     top?: number
     focused?: boolean
     alignRight?: boolean
+    css?: string
   }
 
   export type MenuWrapperStyleProps = {
     focused?: boolean
+    css?: string
   }
 }
