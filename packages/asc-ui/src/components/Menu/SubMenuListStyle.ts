@@ -100,7 +100,7 @@ export const SubMenuWrapperStyle = styled.li<
 
 export default SubMenuListStyle
 
-export const SubMenuListWrapperStyle = styled.div.attrs(() => ({
+export const SubMenuListWrapperStyle = styled.li.attrs(() => ({
   role: 'submenu',
   tabIndex: -1,
 }))<MenuStyleProps.MenuListStyleProps>`

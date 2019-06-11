@@ -128,7 +128,6 @@ const SubMenu: React.FC<Props> = ({
       ref={subMenuRef}
       focused={expanded}
       onKeyDown={handleKeyPress}
-      onBlur={() => setTimeout(handleOnClick, 200)}
       onMouseEnter={() =>
         !mobile && setTimeout(() => handleOnClick(false), 200)
       }
