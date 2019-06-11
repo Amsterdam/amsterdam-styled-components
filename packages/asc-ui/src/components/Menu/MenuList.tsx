@@ -45,7 +45,7 @@ const MenuList = ({
       ref={menuListRef}
       aria-hidden={!open}
       onBlur={() => onClose(menuListRef)}
-      alignRight={align === MenuStyleProps.Align.right ? true : false}
+      alignRight={align === MenuStyleProps.Align.right}
       top={top}
       {...otherProps}
     >

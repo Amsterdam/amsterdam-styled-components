@@ -34,7 +34,7 @@ describe('Menu', () => {
   it('should render the component for the mobile menu', () => {
     const component = mount(
       <MenuContext.Provider value={mockContext}>
-        <Menu mobile={true}>{children}</Menu>
+        <Menu mobile>{children}</Menu>
       </MenuContext.Provider>,
     )
 

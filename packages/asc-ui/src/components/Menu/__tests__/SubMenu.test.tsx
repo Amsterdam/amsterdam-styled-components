@@ -26,7 +26,7 @@ describe('SubMenu', () => {
 
     const component = mount(
       <MenuContext.Provider value={mockContext}>
-        <SubMenu label={label} arrowIcon={mockIcon} open={true}>
+        <SubMenu label={label} arrowIcon={mockIcon} open>
           <MenuItem />
           <MenuItem />
         </SubMenu>
@@ -83,7 +83,7 @@ describe('SubMenu', () => {
 
     const component = mount(
       <MenuContext.Provider value={mockContext}>
-        <SubMenu index={3} label={label} arrowIcon={mockIcon} open={true}>
+        <SubMenu index={3} label={label} arrowIcon={mockIcon} open>
           <MenuItem />
           <MenuItem />
         </SubMenu>

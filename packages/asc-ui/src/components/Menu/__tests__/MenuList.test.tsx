@@ -6,7 +6,7 @@ import { MenuContext } from '../Menu'
 
 describe('MenuList', () => {
   it('should clone the children with the correct index', () => {
-    let mockContext = {
+    const mockContext = {
       expandedChild: true,
       expandedChildIndex: 2,
       nrOfChildrenChild: 4,
@@ -14,7 +14,7 @@ describe('MenuList', () => {
 
     const component = mount(
       <MenuContext.Provider value={mockContext}>
-        <MenuList open={true} id="id" onClose={jest.fn()}>
+        <MenuList open id="id" onClose={jest.fn()}>
           <MenuItem />
           <MenuItem />
           <MenuItem />
@@ -40,9 +40,7 @@ describe('MenuList', () => {
   it('should handle the onBlur event', () => {
     const mockOnBlur = jest.fn()
 
-    const component = shallow(
-      <MenuList open={true} id="id" onClose={mockOnBlur} />,
-    )
+    const component = shallow(<MenuList open id="id" onClose={mockOnBlur} />)
 
     component.simulate('blur')
 

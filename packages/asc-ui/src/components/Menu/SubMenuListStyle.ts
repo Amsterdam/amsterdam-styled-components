@@ -49,7 +49,7 @@ export const SubMenuWrapperStyle = styled.li<
     outline: none;
     background-color: ${color('tint', 'level2')};
 
-    ${/* sc-selector */ MenuButtonLabelStyle}:first-of-type {
+    & > ${/* sc-selector */ MenuButtonLabelStyle}:first-of-type {
       border-bottom-color: ${color('secondary')};
     }
 

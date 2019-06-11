@@ -32,7 +32,6 @@ const Menu: React.FC<Props> = ({ children, mobile, onExpand, align, icon }) => {
   const reducer = (state: any, action: any) => {
     switch (action.type) {
       case 'setSelectedChild':
-        console.log(action.payload)
         return {
           ...state,
           selectedChild: action.payload,
@@ -70,6 +69,31 @@ const Menu: React.FC<Props> = ({ children, mobile, onExpand, align, icon }) => {
   }
 
   const [state, dispatch] = React.useReducer(reducer, initialState)
+
+  const setExpandedChild = (
+    nrOfChildren: number,
+    expandedChildIndex: number,
+  ) => {
+    dispatch({
+      type: 'setExpandedChild',
+      payload: {
+        nrOfChildren,
+        expandedChildIndex:
+          expandedChildIndex > state.expandedChildIndex &&
+          state.expandedChildIndex > -1
+            ? expandedChildIndex - state.nrOfChildrenChild
+            : expandedChildIndex,
+      },
+    })
+  }
+
+  const setSelectedChild = (index: number) => {
+    dispatch({ type: 'setSelectedChild', payload: index })
+  }
+
+  const resetExpandedChild = () => {
+    dispatch({ type: 'resetExpandedChild', payload: state.expandedChildIndex })
+  }
 
   const handleOnKeyDown = (event: React.KeyboardEvent) => {
     const {
@@ -127,31 +151,6 @@ const Menu: React.FC<Props> = ({ children, mobile, onExpand, align, icon }) => {
     })
   }
 
-  const setExpandedChild = (
-    nrOfChildren: number,
-    expandedChildIndex: number,
-  ) => {
-    dispatch({
-      type: 'setExpandedChild',
-      payload: {
-        nrOfChildren,
-        expandedChildIndex:
-          expandedChildIndex > state.expandedChildIndex &&
-          state.expandedChildIndex > -1
-            ? expandedChildIndex - state.nrOfChildrenChild
-            : expandedChildIndex,
-      },
-    })
-  }
-
-  const setSelectedChild = (index: number) => {
-    dispatch({ type: 'setSelectedChild', payload: index })
-  }
-
-  const resetExpandedChild = () => {
-    dispatch({ type: 'resetExpandedChild', payload: state.expandedChildIndex })
-  }
-
   const clonedChildren = React.Children.map(children, (child, index) => {
     const { expandedChild, expandedChildIndex, nrOfChildrenChild } = state
     return React.cloneElement(child as React.ReactElement<any>, {
@@ -163,9 +162,8 @@ const Menu: React.FC<Props> = ({ children, mobile, onExpand, align, icon }) => {
   })
 
   React.useEffect(() => {
-    if (onExpand && state.expandedChild) {
-      console.log(state.expandedChild)
-      onExpand()
+    if (onExpand) {
+      onExpand(state.expandedChild)
     }
   }, [state.expandedChild])
 

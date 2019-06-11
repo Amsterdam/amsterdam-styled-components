@@ -26,7 +26,7 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: ${({ height }) => `${height}px`};
+  min-height: ${({ height }) => `${height}px`};
   cursor: pointer;
   box-sizing: border-box;
   font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
