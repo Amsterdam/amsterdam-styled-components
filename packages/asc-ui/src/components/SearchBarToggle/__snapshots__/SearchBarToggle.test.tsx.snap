@@ -96,7 +96,6 @@ exports[`SearchBarToggle should render 1`] = `
   right: 0;
   left: 0;
   padding: 15px;
-  width: 100%;
 }
 
 .c0 > .c1 {
@@ -145,7 +144,6 @@ exports[`SearchBarToggle should render 1`] = `
     right: 0;
     left: 0;
     padding: 15px;
-    width: 100%;
     background-color: ",
               [Function],
               ";
@@ -274,7 +272,6 @@ exports[`SearchBarToggle should render 1`] = `
   right: 0;
   left: 0;
   padding: 15px;
-  width: 100%;
 }
 
 .c0 > .c1 {

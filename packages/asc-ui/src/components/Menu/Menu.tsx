@@ -7,6 +7,7 @@ import { KeyboardKeys } from '../../types'
 
 export type Props = {
   position?: MenuStyleProps.Position
+  align?: MenuStyleProps.Align,
   mobile?: boolean
   icon?: React.ReactNode
   buttonHeight?: number
@@ -21,10 +22,12 @@ const Menu: React.FC<Props> = ({
   mobile,
   buttonHeight,
   position,
+  align,
   icon,
 }) => {
   const initialState = {
     open: false,
+    align,
     mobile,
     expandedChild: false,
     expandedChildIndex: -1,
@@ -36,6 +39,7 @@ const Menu: React.FC<Props> = ({
   const reducer = (state: any, action: any) => {
     switch (action.type) {
       case 'setSelectedChild':
+        console.log(action.payload)
         return {
           ...state,
           selectedChild: action.payload,
@@ -190,6 +194,7 @@ const Menu: React.FC<Props> = ({
 
 Menu.defaultProps = {
   buttonHeight: 50,
+  align: MenuStyleProps.Align.left,
 }
 
 export default Menu

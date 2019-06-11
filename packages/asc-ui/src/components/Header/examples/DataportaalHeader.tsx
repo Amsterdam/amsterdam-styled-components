@@ -66,6 +66,17 @@ const MenuDefault = (props: Props) => (
 
 const MenuMobile = () => <MenuDefault mobile icon={<MenuIcon />} />
 
+const HeaderLinksMenu = () => (
+  <Menu>
+    <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+      One
+    </MenuItem>
+    <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+      Two
+    </MenuItem>
+  </Menu>
+)
+
 const DataportaalHeader: React.FC<{}> = () => (
     <Header
       tall
@@ -73,6 +84,7 @@ const DataportaalHeader: React.FC<{}> = () => (
       homeLink="http://data.amsterdam.nl"
       fullWidth={false}
       css={DataportaalHeaderWrapperStyle}
+      links={<HeaderLinksMenu />}
       navigation={
         <>
           <SearchBar
