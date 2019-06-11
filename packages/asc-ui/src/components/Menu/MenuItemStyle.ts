@@ -81,16 +81,18 @@ export const SubMenuItemStyle = styled.div<MenuStyleProps.MenuItemStyleProps>`
   border-left-width: 8px;
   border-left-color: transparent;
 
+  /* stylelint-disable-next-line no-descending-specificity */
   ${IconStyle} {
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+
     &:last-child {
       position: absolute;
       right: 15px;
     }
 
-    &:not(:last-child) {
-      margin-right: 5px;
-    }
-
+    /* stylelint-disable-next-line no-descending-specificity */
     & > svg {
       ${svgFill('tint', 'level7')};
     }
