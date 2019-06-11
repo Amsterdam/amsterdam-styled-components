@@ -75,7 +75,15 @@ const MenuDefault = (props: Props) => (
         Show more
       </MenuItem>
     </SubMenu>
-    <MenuItem onClick={action('click')}>Three</MenuItem>
+    <SubMenu arrowIcon={<ChevronDown />} label="Three">
+      <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+        One
+      </MenuItem>
+      <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+        Two
+      </MenuItem>
+    </SubMenu>
+    <MenuItem onClick={action('click')}>Four</MenuItem>
   </Menu>
 )
 

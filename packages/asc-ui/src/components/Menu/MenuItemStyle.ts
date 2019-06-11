@@ -82,6 +82,11 @@ export const SubMenuItemStyle = styled.div<MenuStyleProps.MenuItemStyleProps>`
   border-left-color: transparent;
 
   ${IconStyle} {
+    &:last-child {
+      position: absolute;
+      right: 15px;
+    }
+
     &:not(:last-child) {
       margin-right: 5px;
     }

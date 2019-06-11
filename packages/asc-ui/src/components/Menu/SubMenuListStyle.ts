@@ -41,7 +41,7 @@ export const SubMenuWrapperStyle = styled.li<
   border-left: solid 8px transparent;
 
   ${/* sc-selector */ MenuListWrapperStyle}:first-of-type {
-    right: 0;
+    margin-left: -15px;
   }
 
   &:focus,
@@ -100,7 +100,7 @@ export const SubMenuWrapperStyle = styled.li<
 
 export default SubMenuListStyle
 
-export const SubMenuListWrapperStyle = styled.li.attrs(() => ({
+export const SubMenuListWrapperStyle = styled.div.attrs(() => ({
   role: 'submenu',
   tabIndex: -1,
 }))<MenuStyleProps.MenuListStyleProps>`
