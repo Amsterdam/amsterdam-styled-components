@@ -40,7 +40,7 @@ storiesOf('Composed/Menu', module)
         <MenuItem icon={<ChevronRight />} onClick={action('click')}>
           One
         </MenuItem>
-        </SubMenu>
+      </SubMenu>
       <MenuItem onClick={action('click')}>Four</MenuItem>
     </Menu>
   ))

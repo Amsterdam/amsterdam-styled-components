@@ -7,6 +7,7 @@ import { KeyboardKeys } from '../../types'
 
 export type Props = {
   position?: MenuStyleProps.Position
+  onExpand?: Function
   align?: MenuStyleProps.Align
   mobile?: boolean
   icon?: React.ReactNode
@@ -16,15 +17,7 @@ export type Props = {
 
 export const MenuContext = React.createContext({})
 
-const Menu: React.FC<Props> = ({
-  id,
-  children,
-  mobile,
-  buttonHeight,
-  position,
-  align,
-  icon,
-}) => {
+const Menu: React.FC<Props> = ({ children, mobile, onExpand, align, icon }) => {
   const initialState = {
     open: false,
     align,
@@ -168,6 +161,13 @@ const Menu: React.FC<Props> = ({
           : index,
     })
   })
+
+  React.useEffect(() => {
+    if (onExpand && state.expandedChild) {
+      console.log(state.expandedChild)
+      onExpand()
+    }
+  }, [state.expandedChild])
 
   return (
     <MenuContext.Provider

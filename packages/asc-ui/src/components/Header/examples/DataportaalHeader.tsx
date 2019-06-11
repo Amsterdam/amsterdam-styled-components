@@ -10,6 +10,7 @@ import Menu, { Props } from '../../Menu/Menu'
 import { breakpoint } from '../../../utils'
 import SearchBar from '../../SearchBar'
 import SearchBarToggle from '../../SearchBarToggle/SearchBarToggle'
+import { MenuStyleProps } from '../../Menu'
 
 const DataportaalHeaderWrapperStyle = css`
   ${styles.HeaderContentStyle} {
@@ -72,7 +73,9 @@ const MenuDefault = (props: Props) => (
   </Menu>
 )
 
-const MenuMobile = () => <MenuDefault mobile icon={<MenuIcon />} />
+const MenuMobile = () => (
+  <MenuDefault mobile align={MenuStyleProps.Align.right} icon={<MenuIcon />} />
+)
 
 const HeaderLinksMenu = () => (
   <Menu>
