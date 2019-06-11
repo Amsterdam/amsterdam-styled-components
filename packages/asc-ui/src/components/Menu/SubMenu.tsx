@@ -25,7 +25,7 @@ type Props = {
 } & MenuStyleProps.MenuItemStyleProps
 
 const defaultProps = {
-  buttonHeight: 50
+  buttonHeight: 50,
 }
 
 const SubMenu: React.FC<Props> = ({
@@ -100,11 +100,7 @@ const SubMenu: React.FC<Props> = ({
       onMouseEnter={() => !mobile && setTimeout(handleOnClick, 200)}
       onMouseLeave={() => !mobile && setTimeout(handleOnClick(true), 200)}
     >
-      <SubMenuButton
-        focused={expanded}
-        height={buttonHeight}
-        {...otherProps}
-      >
+      <SubMenuButton focused={expanded} height={buttonHeight} {...otherProps}>
         {label && (
           <MenuStyle.SubMenuButtonLabelStyle>
             {label}
