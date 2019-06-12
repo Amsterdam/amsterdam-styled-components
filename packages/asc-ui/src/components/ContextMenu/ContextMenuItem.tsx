@@ -22,9 +22,9 @@ class ContextMenuItem extends React.Component<Props> {
   }
 
   onClick = (e: React.KeyboardEvent | React.MouseEvent) => {
-    e.preventDefault()
     const { onClick } = this.props
     if (onClick) {
+      e.preventDefault()
       onClick(e)
     }
   }

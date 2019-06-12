@@ -5,6 +5,7 @@ import { KeyboardKeys } from '../../types'
 import ownerDocument from '../../utils/ownerDocument'
 import { Position } from './types'
 import ContextMenuWrapperStyle from './ContextMenuWrapperStyle'
+import ContextMenuItem from './ContextMenuItem'
 
 const selectedChildInitial = -1
 
@@ -37,6 +38,18 @@ class ContextMenu extends React.Component<Props, State> {
       open: props.open,
       selectedChild: selectedChildInitial,
     }
+  }
+
+  componentDidMount(): void {
+    const { children } = this.props
+    React.Children.toArray(children).forEach(child => {
+      // @ts-ignore
+      if (child && child.type !== ContextMenuItem) {
+        console.warn(
+          'Warning: you are rendering a different component type in <ContextMenu /> other than <ContextMenuItem />.',
+        )
+      }
+    })
   }
 
   componentDidUpdate(prevProps: Props) {

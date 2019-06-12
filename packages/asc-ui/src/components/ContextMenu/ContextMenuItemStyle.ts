@@ -3,7 +3,7 @@ import { ContextMenuItemProps } from './types'
 import { color, fromTheme } from '../../utils'
 
 export const ContextMenuItemStyle = styled.li<ContextMenuItemProps>`
-  padding: 0;
+  padding: 0 15px 0 0;
   margin: 0;
   display: flex;
   flex-direction: row;
@@ -12,6 +12,8 @@ export const ContextMenuItemStyle = styled.li<ContextMenuItemProps>`
   width: 100%;
   cursor: pointer;
   font-size: ${fromTheme('typography.fontSize')};
+  text-decoration: none;
+  color: ${color('tint', 'level7')};
 
   & > span:first-child {
     margin: 5px 6px;
