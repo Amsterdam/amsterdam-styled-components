@@ -4,6 +4,7 @@ import MenuItemStyle, {
   MenuItemLabelStyle,
   SubMenuItemStyle,
 } from './MenuItemStyle'
+import { SubMenuWrapperStyle } from './SubMenuListStyle'
 import { color, svgFill } from '../../utils'
 
 export const MenuDropDownButtonStyle = styled.button<
@@ -68,6 +69,14 @@ const MenuDropDownStyle = styled.div<MenuStyleProps.MenuListStyleProps>`
 
       & svg {
         ${svgFill('secondary')};
+      }
+    }
+  }
+  ${SubMenuWrapperStyle} {
+    ${MenuItemStyle} {
+      &:focus,
+      &:hover {
+        border-left-color: ${color('secondary', 'main')};
       }
     }
   }
