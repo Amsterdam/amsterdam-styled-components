@@ -25,6 +25,7 @@ type Props = {
 
 const defaultProps = {
   buttonHeight: 50,
+  currentIndex: 1,
 }
 
 const SubMenu: React.FC<Props> = ({
@@ -32,7 +33,7 @@ const SubMenu: React.FC<Props> = ({
   arrowIcon,
   children,
   label,
-  index: currentIndex,
+  index: currentIndex = defaultProps.currentIndex,
   buttonHeight = defaultProps.buttonHeight,
   ...otherProps
 }) => {
@@ -84,7 +85,7 @@ const SubMenu: React.FC<Props> = ({
 
   const clonedChildren = React.Children.map(children, (child, index) =>
     React.cloneElement(child as React.ReactElement<any>, {
-      index: currentIndex && currentIndex + index + 1,
+      index: currentIndex + index + 1,
       height: 44,
     }),
   )
