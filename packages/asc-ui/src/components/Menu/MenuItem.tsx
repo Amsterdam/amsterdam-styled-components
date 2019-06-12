@@ -39,7 +39,6 @@ const MenuItem = ({
   }, [selectedChild])
 
   const handleOnClick = (e: React.KeyboardEvent | React.MouseEvent) => {
-    e.preventDefault()
     if (onClick) {
       onClick(e)
     }
