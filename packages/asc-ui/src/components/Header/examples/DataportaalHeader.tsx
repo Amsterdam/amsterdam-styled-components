@@ -6,32 +6,17 @@ import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/Ch
 import { ReactComponent as ExternalLink } from '@datapunt/asc-assets/lib/Icons/ExternalLink.svg'
 import { ReactComponent as MenuIcon } from '@datapunt/asc-assets/lib/Icons/Menu.svg'
 import { MenuItem, MenuLabel, Header, SubMenu, styles } from '../../../index'
-import BoxWrapper from '../../../internals/Box/BoxWrapper'
-import ContentFiller from '../../../internals/ContentFiller/ContentFiller'
 import Menu, { Props } from '../../Menu/Menu'
-import { MenuStyleProps } from '../../Menu/types'
 import { breakpoint } from '../../../utils'
-import HeaderSearchBar from '../HeaderSearchBar'
-
-const outsideBackgoundColor = '#E6E6E6'
-const contentBackgrountColor = '#ffffff'
+import SearchBar from '../../SearchBar'
+import SearchBarToggle from '../../SearchBarToggle/SearchBarToggle'
 
 const DataportaalHeaderWrapperStyle = css`
   ${styles.HeaderContentStyle} {
     justify-content: flex-end;
   }
 
-  ${styles.SearchBarToggleStyle} {
-    @media screen and ${breakpoint('min-width', 'tabletM')} {
-      display: none;
-    }
-  }
-
   ${styles.HeaderNavigationStyle} > ${styles.SearchBarStyle} {
-    @media screen and ${breakpoint('max-width', 'tabletM')} {
-      display: none;
-    }
-
     flex-grow: 1;
 
     ${styles.TextFieldStyle} {
@@ -79,7 +64,7 @@ const MenuDefault = (props: Props) => (
   </Menu>
 )
 
-const MenuMobile = () => <MenuDefault mobile align={MenuStyleProps.Align.right} icon={<MenuIcon />} />
+const MenuMobile = () => <MenuDefault mobile icon={<MenuIcon />} />
 
 const HeaderLinksMenu = () => (
   <Menu>
@@ -92,39 +77,41 @@ const HeaderLinksMenu = () => (
   </Menu>
 )
 
-const HeaderTallDataportaalStory: React.FC<{}> = () => {
-  return (
-    <BoxWrapper backgroundColor={outsideBackgoundColor}>
-      <Header
-        tall
-        title="Data en informatie"
-        homeLink="http://data.amsterdam.nl"
-        fullWidth={false}
-        css={DataportaalHeaderWrapperStyle}
-        navigation={
-          <>
-            <HeaderSearchBar
-              placeholder="Enter the search text"
-              onChange={() => {
-                action(`text changed`)
-              }}
-              onSubmit={() => {
-                action(`button clicked`)
-              }}
-            />
-            <MenuDefault />
-            <MenuMobile />
-          </>
-        }
-        links={<HeaderLinksMenu />}
-      />
-      <ContentFiller
-        backgroundColor={contentBackgrountColor}
-        maxWidth="1800px"
-        headerSize="tall"
-      />
-    </BoxWrapper>
-  )
-}
+const DataportaalHeader: React.FC<{}> = () => (
+    <Header
+      tall
+      title="Data en informatie"
+      homeLink="http://data.amsterdam.nl"
+      fullWidth={false}
+      css={DataportaalHeaderWrapperStyle}
+      links={<HeaderLinksMenu />}
+      navigation={
+        <>
+          <SearchBar
+            showAt="tabletM"
+            placeholder="Enter the search text"
+            onChange={() => {
+              action(`text changed`)
+            }}
+            onSubmit={() => {
+              action(`button clicked`)
+            }}
+          />
+          <SearchBarToggle
+            hideAt="tabletM"
+            placeholder="Enter the search text"
+            onChange={() => {
+              action(`text changed`)
+            }}
+            onSubmit={() => {
+              action(`button clicked`)
+            }}
+          />
+          <MenuDefault />
+          <MenuMobile />
+        </>
+      }
+    />
+)
 
-export default HeaderTallDataportaalStory
+export default DataportaalHeader

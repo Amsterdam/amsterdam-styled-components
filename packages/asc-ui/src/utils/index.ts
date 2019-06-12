@@ -7,4 +7,6 @@ export {
   srOnlyStyle,
   breakpoint,
   svgFill,
+  showHide,
+  ShowHideTypes,
 } from './themeUtils'

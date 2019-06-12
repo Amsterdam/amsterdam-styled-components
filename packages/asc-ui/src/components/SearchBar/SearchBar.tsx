@@ -1,7 +1,7 @@
 import React from 'react'
 import Icons from '@datapunt/asc-assets'
 import IconButton from '../IconButton/IconButton'
-import SearchBarStyle from './SearchBarStyle'
+import SearchBarStyle, { Props as SearchBarStyleProps } from './SearchBarStyle'
 import TextField from '../TextField/TextField'
 import ReactIcon from '../ReactIcon/Icon'
 import InputContext from '../Input/InputMethodsContext'
@@ -10,8 +10,7 @@ import { KeyboardKeys } from '../../types'
 
 ReactIcon.add(Icons.Search)
 
-export interface SearchBarProps extends InputProps {
-  css?: string
+export interface SearchBarProps extends InputProps, SearchBarStyleProps {
   placeholder?: string
   label?: string
   onSubmit?: Function
@@ -29,6 +28,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
   focusOnRender,
   value,
   label,
+  hideAt,
+  showAt,
   ...otherProps
 }) => {
   let inputRef: React.RefObject<HTMLInputElement> | null = null
@@ -75,7 +76,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   }, [value])
 
   return (
-    <SearchBarStyle {...otherProps} css={css}>
+    <SearchBarStyle {...otherProps} {...{ hideAt, showAt, css }}>
       <InputContext.Provider
         value={{
           onBlur,

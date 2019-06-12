@@ -7,7 +7,7 @@ import { KeyboardKeys } from '../../types'
 
 export type Props = {
   position?: MenuStyleProps.Position
-  align?: MenuStyleProps.Align,
+  align?: MenuStyleProps.Align
   mobile?: boolean
   icon?: React.ReactNode
   buttonHeight?: number

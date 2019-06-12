@@ -17,7 +17,7 @@ storiesOf('Composed/SearchBarToggle', module)
         action(`input value changed: ${value}`)
       }}
       onSubmit={() => {
-        console.log('submit!')
+        action('submit')
       }}
     />
   ))
