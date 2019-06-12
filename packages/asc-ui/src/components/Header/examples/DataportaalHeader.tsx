@@ -42,34 +42,34 @@ const DataportaalHeaderWrapperStyle = css`
 
 const MenuDefault = (props: Props) => (
   <Menu {...props}>
-    <MenuItem onClick={action('click')}>One</MenuItem>
+    <MenuItem href="#one" onClick={action('click')}>One</MenuItem>
     <SubMenu arrowIcon={<ChevronDown />} label="Two">
-      <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+      <MenuItem icon={<ChevronRight />} href="#one" onClick={action('click')}>
         One
       </MenuItem>
-      <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+      <MenuItem icon={<ChevronRight />} href="#two" onClick={action('click')}>
         Two
       </MenuItem>
       <MenuLabel>Two</MenuLabel>
-      <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+      <MenuItem icon={<ChevronRight />} href="#one" onClick={action('click')}>
         One
       </MenuItem>
-      <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+      <MenuItem icon={<ChevronRight />} href="#two" onClick={action('click')}>
         Two
       </MenuItem>
-      <MenuItem icon={<ExternalLink />} onClick={action('click')}>
+      <MenuItem icon={<ExternalLink />} href="#more" onClick={action('click')}>
         Show more
       </MenuItem>
     </SubMenu>
     <SubMenu arrowIcon={<ChevronDown />} label="Three">
-      <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+      <MenuItem icon={<ChevronRight />} href="#one" onClick={action('click')}>
         One
       </MenuItem>
-      <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+      <MenuItem icon={<ChevronRight />} href="#two" onClick={action('click')}>
         Two
       </MenuItem>
     </SubMenu>
-    <MenuItem onClick={action('click')}>Four</MenuItem>
+    <MenuItem href="#four" onClick={action('click')}>Four</MenuItem>
   </Menu>
 )
 
@@ -79,10 +79,10 @@ const MenuMobile = () => (
 
 const HeaderLinksMenu = () => (
   <Menu>
-    <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+    <MenuItem icon={<ChevronRight />} href="#one" onClick={action('click')}>
       One
     </MenuItem>
-    <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+    <MenuItem icon={<ChevronRight />} href="#two" onClick={action('click')}>
       Two
     </MenuItem>
   </Menu>

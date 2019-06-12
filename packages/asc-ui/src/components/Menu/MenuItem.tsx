@@ -4,7 +4,7 @@ import { Icon } from '../..'
 import { KeyboardKeys } from '../../types'
 import { MenuContext } from './Menu'
 
-const { MenuItemStyle, MenuItemLabelStyle } = MenuStyle
+const { MenuItemStyle, MenuItemLabelStyle, MenuItemHrefStyle } = MenuStyle
 
 type Props = {
   onClick?: Function
@@ -14,6 +14,7 @@ type Props = {
   children?: any
   index?: number
   hoverColor?: string
+  href?: string
 } & MenuStyleProps.MenuItemStyleProps
 
 const MenuItem = ({
@@ -22,6 +23,7 @@ const MenuItem = ({
   index,
   onClick,
   hoverColor,
+  href,
   ...otherProps
 }: Props) => {
   const menuItemRef = React.useRef<HTMLLIElement>(null)
@@ -54,13 +56,15 @@ const MenuItem = ({
       ref={menuItemRef}
       focused={focused}
       hoverColor={expandedChild ? 'secondary' : hoverColor}
-      onClick={handleOnClick}
       onKeyDown={handleKeyPress}
       tabIndex={0}
       {...otherProps}
     >
-      {icon && <Icon size={14}>{icon}</Icon>}
-      <MenuItemLabelStyle>{children}</MenuItemLabelStyle>
+      <MenuItemHrefStyle tabIndex={-1} onClick={handleOnClick} {...{ href }} />
+      <>
+        {icon && <Icon size={14}>{icon}</Icon>}
+        <MenuItemLabelStyle>{children}</MenuItemLabelStyle>
+      </>
     </MenuItemStyle>
   )
 }

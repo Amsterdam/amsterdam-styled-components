@@ -66,6 +66,16 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   ${focusStyleOutline()}
 `
 
+export const MenuItemHrefStyle = styled.a`
+  color: inherit;
+  text-decoration: none;
+  width: auto;
+  height: 100%;
+  left: -8px;
+  right: 0;
+  position: absolute;
+`
+
 export const SubMenuItemStyle = styled.div<MenuStyleProps.MenuItemStyleProps>`
   padding: 10px 15px 10px 7px;
   margin: 0;
