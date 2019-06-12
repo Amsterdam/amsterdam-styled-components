@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
-import ShareButton from '../ShareButton'
+import ShareButton from '.'
 import { Icon } from '../..'
 
 describe('ShareButton', () => {

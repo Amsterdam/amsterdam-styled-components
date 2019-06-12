@@ -30,12 +30,15 @@ export namespace MenuStyleProps {
   export type MenuListStyleProps = {
     labelId?: string
     position?: Position
+    right?: number
     top?: number
     focused?: boolean
     alignRight?: boolean
+    css?: string
   }
 
   export type MenuWrapperStyleProps = {
     focused?: boolean
+    css?: string
   }
 }

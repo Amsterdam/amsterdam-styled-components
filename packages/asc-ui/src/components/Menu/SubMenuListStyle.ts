@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled, { css } from '@datapunt/asc-core'
 import { MenuStyleProps } from './types'
 import MenuItemStyle from './MenuItemStyle'
 import IconStyle from '../Icon/IconStyle'
@@ -6,7 +6,8 @@ import MenuButtonStyle, { MenuButtonLabelStyle } from './MenuButtonStyle'
 import SubMenuButtonStyle, {
   SubMenuButtonLabelStyle,
 } from './SubMenuButtonStyle'
-import { color, svgFill } from '../../utils'
+import { color, svgFill, focusStyleOutline } from '../../utils'
+import { MenuListWrapperStyle } from './MenuListStyle'
 
 const SubMenuListStyle = styled.ul<MenuStyleProps.MenuListStyleProps>`
   display: flex;
@@ -27,19 +28,29 @@ const SubMenuListStyle = styled.ul<MenuStyleProps.MenuListStyleProps>`
   }
 `
 
-export const SubMenuWrapperStyle = styled.div<
+export const SubMenuWrapperStyle = styled.li<
   MenuStyleProps.MenuWrapperStyleProps
 >`
+  padding: 10px 15px 10px 7px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-left: solid 8px transparent;
+
+  ${/* sc-selector */ MenuListWrapperStyle}:first-of-type {
+    margin-left: -15px;
+  }
+
   &:focus,
   &:hover {
     outline: none;
+    background-color: ${color('tint', 'level2')};
 
-    ${MenuButtonStyle} {
-      background-color: ${color('tint', 'level2')};
-
-      ${/* sc-selector */ MenuButtonLabelStyle}:first-of-type {
-        border-bottom-color: ${color('secondary')};
-      }
+    & > ${/* sc-selector */ MenuButtonLabelStyle}:first-of-type {
+      border-bottom-color: ${color('secondary')};
     }
 
     ${SubMenuButtonStyle} {
@@ -53,7 +64,16 @@ export const SubMenuWrapperStyle = styled.div<
         }
       }
     }
+
+    ${MenuItemStyle} {
+      &:focus,
+      &:hover {
+        border-left-color: ${color('secondary', 'main')};
+      }
+    }
   }
+
+  ${focusStyleOutline()}
 
   ${MenuButtonStyle} {
     background-color: ${({ theme, focused }) =>
@@ -77,7 +97,14 @@ export const SubMenuWrapperStyle = styled.div<
         focused ? color('secondary')({ theme }) : 'inherit'};
     }
   }
+
+  ${props =>
+    props.css &&
+    css`
+      ${props.css}
+    `}
 `
+
 export default SubMenuListStyle
 
 export const SubMenuListWrapperStyle = styled.div.attrs(() => ({

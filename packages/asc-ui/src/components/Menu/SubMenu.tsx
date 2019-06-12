@@ -3,10 +3,9 @@ import MenuStyle, { MenuStyleProps } from './index'
 import { KeyboardKeys } from '../../types'
 import { MenuContext } from './Menu'
 import { Icon } from '../../index'
+import { SubMenuItemStyle } from './MenuItemStyle'
 
 const {
-  MenuButtonStyle,
-  SubMenuButtonStyle,
   SubMenuWrapperStyle,
   SubMenuListWrapperStyle,
   MenuListWrapperStyle,
@@ -47,13 +46,19 @@ const SubMenu: React.FC<Props> = ({
     mobile,
   }: any = React.useContext(MenuContext)
 
-  const subMenuRef = React.useRef<HTMLDivElement>(null)
+  const subMenuRef = React.useRef<HTMLLIElement>(null)
 
   const expanded = expandedChild && currentIndex === expandedChildIndex
   const focused = currentIndex === selectedChild
 
   React.useEffect(() => {
     if (subMenuRef && subMenuRef.current && focused) {
+      subMenuRef.current.focus()
+    }
+  }, [])
+
+  React.useEffect(() => {
+    if (subMenuRef && subMenuRef.current && focused && mobile) {
       subMenuRef.current.focus()
     }
   }, [selectedChild])
@@ -84,7 +89,40 @@ const SubMenu: React.FC<Props> = ({
     }),
   )
 
-  const SubMenuButton = mobile ? SubMenuButtonStyle : MenuButtonStyle
+  const css = mobile
+    ? `
+    padding: 0;
+    flex-direction: column;
+    border: 0;
+
+    & > ${SubMenuItemStyle} {
+      width: 100%;
+      flex-direction: row;
+    }
+    `
+    : ''
+
+  const SubMenuButton = (
+    <>
+      {label && (
+        <MenuStyle.SubMenuButtonLabelStyle>
+          {label}
+        </MenuStyle.SubMenuButtonLabelStyle>
+      )}
+      {mobile && (
+        <Icon inline size={24} padding={4} rotate={expanded ? 180 : 0}>
+          {arrowIcon}
+        </Icon>
+      )}
+    </>
+  )
+
+  const SubMenuItem = mobile ? (
+    <SubMenuItemStyle>{SubMenuButton}</SubMenuItemStyle>
+  ) : (
+    SubMenuButton
+  )
+
   const SubMenuListWrapper = mobile
     ? SubMenuListWrapperStyle
     : MenuListWrapperStyle
@@ -97,21 +135,12 @@ const SubMenu: React.FC<Props> = ({
       focused={expanded}
       onKeyDown={handleKeyPress}
       onClick={() => handleOnClick()}
-      onMouseEnter={() => !mobile && setTimeout(handleOnClick, 200)}
-      onMouseLeave={() => !mobile && setTimeout(handleOnClick(true), 200)}
+      onMouseEnter={() => !mobile && !expanded && handleOnClick()}
+      onMouseLeave={() => !mobile && handleOnClick(true)}
+      css={css}
+      {...otherProps}
     >
-      <SubMenuButton focused={expanded} height={buttonHeight} {...otherProps}>
-        {label && (
-          <MenuStyle.SubMenuButtonLabelStyle>
-            {label}
-          </MenuStyle.SubMenuButtonLabelStyle>
-        )}
-        {mobile && (
-          <Icon inline size={24} padding={4} rotate={expanded ? 180 : 0}>
-            {arrowIcon}
-          </Icon>
-        )}
-      </SubMenuButton>
+      {SubMenuItem}
       <SubMenuListWrapper aria-hidden={!expanded}>
         <SubMenuList top={buttonHeight} labelId={id}>
           {clonedChildren}

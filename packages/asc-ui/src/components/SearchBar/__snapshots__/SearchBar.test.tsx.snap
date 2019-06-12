@@ -56,6 +56,7 @@ exports[`SearchBar should render 1`] = `
 }
 
 .c6:focus {
+  z-index: 10;
   outline-color: #FEC813;
   outline-style: solid;
   outline-offset: 0px;
@@ -86,6 +87,7 @@ exports[`SearchBar should render 1`] = `
 }
 
 .c4:focus {
+  z-index: 10;
   outline-color: #FEC813;
   outline-style: solid;
   outline-offset: 0.5px;

@@ -7,6 +7,7 @@ import { KeyboardKeys } from '../../types'
 
 export type Props = {
   position?: MenuStyleProps.Position
+  onExpand?: Function
   align?: MenuStyleProps.Align
   mobile?: boolean
   icon?: React.ReactNode
@@ -16,15 +17,7 @@ export type Props = {
 
 export const MenuContext = React.createContext({})
 
-const Menu: React.FC<Props> = ({
-  id,
-  children,
-  mobile,
-  buttonHeight,
-  position,
-  align,
-  icon,
-}) => {
+const Menu: React.FC<Props> = ({ children, mobile, onExpand, align, icon }) => {
   const initialState = {
     open: false,
     align,
@@ -39,7 +32,6 @@ const Menu: React.FC<Props> = ({
   const reducer = (state: any, action: any) => {
     switch (action.type) {
       case 'setSelectedChild':
-        console.log(action.payload)
         return {
           ...state,
           selectedChild: action.payload,
@@ -77,6 +69,31 @@ const Menu: React.FC<Props> = ({
   }
 
   const [state, dispatch] = React.useReducer(reducer, initialState)
+
+  const setExpandedChild = (
+    nrOfChildren: number,
+    expandedChildIndex: number,
+  ) => {
+    dispatch({
+      type: 'setExpandedChild',
+      payload: {
+        nrOfChildren,
+        expandedChildIndex:
+          expandedChildIndex > state.expandedChildIndex &&
+          state.expandedChildIndex > -1
+            ? expandedChildIndex - state.nrOfChildrenChild
+            : expandedChildIndex,
+      },
+    })
+  }
+
+  const setSelectedChild = (index: number) => {
+    dispatch({ type: 'setSelectedChild', payload: index })
+  }
+
+  const resetExpandedChild = () => {
+    dispatch({ type: 'resetExpandedChild', payload: state.expandedChildIndex })
+  }
 
   const handleOnKeyDown = (event: React.KeyboardEvent) => {
     const {
@@ -134,31 +151,6 @@ const Menu: React.FC<Props> = ({
     })
   }
 
-  const setExpandedChild = (
-    nrOfChildren: number,
-    expandedChildIndex: number,
-  ) => {
-    dispatch({
-      type: 'setExpandedChild',
-      payload: {
-        nrOfChildren,
-        expandedChildIndex:
-          expandedChildIndex > state.expandedChildIndex &&
-          state.expandedChildIndex > -1
-            ? expandedChildIndex - state.nrOfChildrenChild
-            : expandedChildIndex,
-      },
-    })
-  }
-
-  const setSelectedChild = (index: number) => {
-    dispatch({ type: 'setSelectedChild', payload: index })
-  }
-
-  const resetExpandedChild = () => {
-    dispatch({ type: 'resetExpandedChild', payload: state.expandedChildIndex })
-  }
-
   const clonedChildren = React.Children.map(children, (child, index) => {
     const { expandedChild, expandedChildIndex, nrOfChildrenChild } = state
     return React.cloneElement(child as React.ReactElement<any>, {
@@ -168,6 +160,12 @@ const Menu: React.FC<Props> = ({
           : index,
     })
   })
+
+  React.useEffect(() => {
+    if (onExpand) {
+      onExpand(state.expandedChild)
+    }
+  }, [state.expandedChild])
 
   return (
     <MenuContext.Provider

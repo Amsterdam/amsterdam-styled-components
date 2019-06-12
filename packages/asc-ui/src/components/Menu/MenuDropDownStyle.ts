@@ -1,9 +1,12 @@
 import styled from '@datapunt/asc-core'
 import { MenuStyleProps } from './types'
-import MenuItemStyle, { MenuItemLabelStyle } from './MenuItemStyle'
-import { color } from '../../utils'
+import MenuItemStyle, {
+  MenuItemLabelStyle,
+  SubMenuItemStyle,
+} from './MenuItemStyle'
+import { color, svgFill } from '../../utils'
 
-export const MenuDropDownButtonStyle = styled.li<
+export const MenuDropDownButtonStyle = styled.button<
   MenuStyleProps.MenuButtonStyleProps
 >`
   display: flex;
@@ -40,6 +43,17 @@ const MenuDropDownStyle = styled.div<MenuStyleProps.MenuListStyleProps>`
     }
   }
 
+  &:focus {
+    ${MenuDropDownButtonStyle} {
+      z-index: 10;
+      outline-style: solid;
+      outline-offset: 0;
+      outline-width: 3px;
+      outline-color: ${color('support', 'focus')};
+    }
+  }
+
+  ${SubMenuItemStyle},
   ${MenuItemStyle} {
     border-bottom-style: solid;
     border-bottom-width: 1px;
@@ -50,6 +64,10 @@ const MenuDropDownStyle = styled.div<MenuStyleProps.MenuListStyleProps>`
     &:hover {
       ${MenuItemLabelStyle} {
         color: ${color('secondary')};
+      }
+
+      & svg {
+        ${svgFill('secondary')};
       }
     }
   }

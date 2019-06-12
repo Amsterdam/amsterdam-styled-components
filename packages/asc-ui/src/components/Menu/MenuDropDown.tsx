@@ -20,7 +20,6 @@ type Props = {
 
 const MenuDropDown: React.FC<Props> = ({
   id,
-  label,
   children,
   buttonHeight,
   position,
@@ -36,7 +35,9 @@ const MenuDropDown: React.FC<Props> = ({
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === KeyboardKeys.Enter) {
-      !open && onClick()
+      if (!open) {
+        onClick()
+      }
     } else {
       onKeyDown(e)
     }
@@ -59,6 +60,7 @@ const MenuDropDown: React.FC<Props> = ({
       onBlur={onClose}
       onMouseLeave={click}
       onMouseOver={clickWhenClosed}
+      onFocus={clickWhenClosed}
       tabIndex={0}
     >
       <MenuDropDownButtonStyle

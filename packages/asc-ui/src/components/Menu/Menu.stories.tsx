@@ -10,9 +10,15 @@ import { Menu, MenuItem, MenuLabel, SubMenu } from '../..'
 storiesOf('Composed/Menu', module)
   .add('default', () => (
     <Menu>
-      <MenuItem onClick={action('click')}>One</MenuItem>
-      <MenuItem onClick={action('click')}>Two</MenuItem>
-      <MenuItem onClick={action('click')}>Three</MenuItem>
+      <MenuItem href="#one" onClick={action('click')}>
+        One
+      </MenuItem>
+      <MenuItem href="#two" onClick={action('click')}>
+        Two
+      </MenuItem>
+      <MenuItem href="#three" onClick={action('click')}>
+        Three
+      </MenuItem>
     </Menu>
   ))
   .add('default with dropdown', () => (
@@ -36,7 +42,12 @@ storiesOf('Composed/Menu', module)
           Show more
         </MenuItem>
       </SubMenu>
-      <MenuItem onClick={action('click')}>Three</MenuItem>
+      <SubMenu label="Three">
+        <MenuItem icon={<ChevronRight />} onClick={action('click')}>
+          One
+        </MenuItem>
+      </SubMenu>
+      <MenuItem onClick={action('click')}>Four</MenuItem>
     </Menu>
   ))
   .add('default mobile', () => (

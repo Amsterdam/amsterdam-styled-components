@@ -30,3 +30,7 @@ export const MenuListWrapperStyle = styled.div.attrs(() => ({
     outline: none;
   }
 `
+
+MenuListWrapperStyle.defaultProps = {
+  top: 50,
+}

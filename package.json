@@ -27,7 +27,7 @@
     "postinstall": "lerna link && lerna bootstrap",
     "lint": "yarn lint:css & yarn lint:js",
     "lint:css": "stylelint './packages/**/*Style.ts'",
-    "lint:js": "eslint './packages/**/*.{ts, tsx}'",
+    "lint:js": "eslint ./packages/** --ext ts,tsx",
     "prepare": "yarn prettify:package && yarn build",
     "publish:packages": "yarn verify-integrity && lerna publish",
     "start": "yarn build:watch & yarn storybook",
