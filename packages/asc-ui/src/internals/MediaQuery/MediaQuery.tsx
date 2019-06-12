@@ -29,7 +29,6 @@ export const hideAt = (breakpoints: any) => {
 
 export const MediaQuery = ({ min, max, children }: IBreakpointParams) => {
   const css = hideAt({ min, max })
-  console.log(css)
   const Component = styled('div')`
     ${css}
   `

@@ -64,6 +64,13 @@ export const SubMenuWrapperStyle = styled.li<
         }
       }
     }
+
+    ${MenuItemStyle} {
+      &:focus,
+      &:hover {
+        border-left-color: ${color('secondary', 'main')};
+      }
+    }
   }
 
   ${focusStyleOutline()}
