@@ -45,6 +45,16 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
     }
   }
 
+  & > a {
+    color: inherit;
+    text-decoration: none;
+    width: auto;
+    height: 100%;
+    left: -8px;
+    right: 0;
+    position: absolute;
+  }
+
   &:hover,
   &:focus {
     outline: none;
@@ -64,16 +74,6 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   }
 
   ${focusStyleOutline()}
-`
-
-export const MenuItemHrefStyle = styled.a`
-  color: inherit;
-  text-decoration: none;
-  width: auto;
-  height: 100%;
-  left: -8px;
-  right: 0;
-  position: absolute;
 `
 
 export const SubMenuItemStyle = styled.div<MenuStyleProps.MenuItemStyleProps>`
