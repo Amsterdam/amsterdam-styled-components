@@ -162,10 +162,16 @@ const Menu: React.FC<Props> = ({ children, mobile, onExpand, align, icon }) => {
   })
 
   React.useEffect(() => {
-    if (onExpand) {
+    if (onExpand && !mobile) {
       onExpand(state.expandedChild)
     }
   }, [state.expandedChild])
+
+  React.useEffect(() => {
+    if (onExpand && mobile) {
+      onExpand(state.open)
+    }
+  }, [state.open])
 
   return (
     <MenuContext.Provider
