@@ -33,17 +33,15 @@ const Input: React.FC<InputProps> = ({
   const ref = React.useRef<HTMLInputElement>(null)
   let { onKeyDown } = props
 
-  if (ref && ref.current) {
-    if (focusOnRender) {
-      useFocusOnRender(ref)
-    }
-    if (blurOnEscape) {
-      ;({ onKeyDown } = useActionOnEscape(() => {
-        if (ref.current) {
-          ref.current.blur()
-        }
-      }))
-    }
+  if (focusOnRender) {
+    useFocusOnRender(ref)
+  }
+  if (blurOnEscape) {
+    ;({ onKeyDown } = useActionOnEscape(() => {
+      if (ref.current) {
+        ref.current.blur()
+      }
+    }))
   }
 
   const handleOnKeyDown = (
