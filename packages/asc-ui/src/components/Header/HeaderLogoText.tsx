@@ -15,7 +15,7 @@ const HeaderLogoText: React.FC<Props> = ({
   tall,
   ...otherProps
 }) => (
-  <HeaderLogoTextStyle {...otherProps}>
+  <HeaderLogoTextStyle tall={tall} {...otherProps}>
     <AmsterdamLogo href={homeLink} {...{ tall }} />
     {title && <HeaderTitleStyle href={homeLink}>{title}</HeaderTitleStyle>}
   </HeaderLogoTextStyle>

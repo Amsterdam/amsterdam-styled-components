@@ -1,17 +1,19 @@
 import styled, { css } from '@datapunt/asc-core'
 import { MenuStyleProps } from './types'
-import MenuItemStyle from './MenuItemStyle'
+import MenuItemStyle, { MenuItemLabelStyle } from './MenuItemStyle'
 import IconStyle from '../Icon/IconStyle'
 import MenuButtonStyle, { MenuButtonLabelStyle } from './MenuButtonStyle'
 import SubMenuButtonStyle, {
   SubMenuButtonLabelStyle,
 } from './SubMenuButtonStyle'
-import { color, svgFill, focusStyleOutline } from '../../utils'
+import { color, svgFill } from '../../utils'
 import { MenuListWrapperStyle } from './MenuListStyle'
+import { SharedMenuItemStyle } from './SharedMenuItemStyle'
 
 const SubMenuListStyle = styled.ul<MenuStyleProps.MenuListStyleProps>`
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 0;
   padding: 0;
 
@@ -28,17 +30,10 @@ const SubMenuListStyle = styled.ul<MenuStyleProps.MenuListStyleProps>`
   }
 `
 
-export const SubMenuWrapperStyle = styled.li<
+export const SubMenuWrapperStyle = styled(SharedMenuItemStyle)<
   MenuStyleProps.MenuWrapperStyleProps
 >`
-  padding: 10px 15px 10px 7px;
-  margin: 0;
-  display: flex;
   flex-direction: row;
-  align-items: center;
-  cursor: pointer;
-  box-sizing: border-box;
-  border-left: solid 8px transparent;
 
   ${/* sc-selector */ MenuListWrapperStyle}:first-of-type {
     margin-left: -15px;
@@ -46,8 +41,9 @@ export const SubMenuWrapperStyle = styled.li<
 
   &:focus,
   &:hover {
-    outline: none;
-    background-color: ${color('tint', 'level2')};
+    & > ${MenuItemLabelStyle} {
+      color: ${color('secondary', 'main')};
+    }
 
     & > ${/* sc-selector */ MenuButtonLabelStyle}:first-of-type {
       border-bottom-color: ${color('secondary')};
@@ -65,8 +61,6 @@ export const SubMenuWrapperStyle = styled.li<
       }
     }
   }
-
-  ${focusStyleOutline()}
 
   ${MenuButtonStyle} {
     background-color: ${({ theme, focused }) =>

@@ -10,13 +10,11 @@ type Props = {
   onClick?: Function
   role?: string
   icon?: React.ReactNode
-  divider?: boolean
   children?: any
   index?: number
   hoverColor?: string
   href?: string
-  linkEl?: React.FC
-  linkElProp?: Object
+  title?: string
 } & MenuStyleProps.MenuItemStyleProps
 
 const MenuItem = ({
@@ -26,11 +24,11 @@ const MenuItem = ({
   onClick,
   hoverColor,
   href,
-  linkEl,
-  linkElProp,
+  title,
   ...otherProps
 }: Props) => {
   const menuItemRef = React.useRef<HTMLLIElement>(null)
+  const linkRef = React.useRef<HTMLAnchorElement>(null)
 
   const { selectedChild, expandedChild }: any = React.useContext(MenuContext)
 
@@ -54,8 +52,6 @@ const MenuItem = ({
     }
   }
 
-  const LinkElement = linkEl || 'a'
-
   return (
     <MenuItemStyle
       ref={menuItemRef}
@@ -65,16 +61,19 @@ const MenuItem = ({
       tabIndex={0}
       {...otherProps}
     >
-      <LinkElement
+      <a
+        role="link"
+        ref={linkRef}
         tabIndex={-1}
         onClick={handleOnClick}
-        {...{ href }}
-        {...linkElProp}
-      />
-      <>
+        onKeyDown={handleKeyPress}
+        {...{ href, title }}
+      >
         {icon && <Icon size={14}>{icon}</Icon>}
-        <MenuItemLabelStyle>{children}</MenuItemLabelStyle>
-      </>
+        <span>
+          <MenuItemLabelStyle>{children}</MenuItemLabelStyle>
+        </span>
+      </a>
     </MenuItemStyle>
   )
 }

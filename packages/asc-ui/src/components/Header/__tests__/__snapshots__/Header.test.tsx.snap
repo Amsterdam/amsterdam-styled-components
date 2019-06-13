@@ -237,12 +237,6 @@ exports[`Header should render the short version 1`] = `
   }
 }
 
-@media screen and (min-width:1200.02px) {
-  .c2 .c3 {
-    margin-right: 40px;
-  }
-}
-
 @media screen and (max-width:1200px) {
   .c10 {
     display: none;
@@ -303,7 +297,7 @@ exports[`Header should render the short version without the full width 1`] = `
   flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
-  max-width: 1570px;
+  max-width: 1600px;
 }
 
 .c1:after {
@@ -537,12 +531,6 @@ exports[`Header should render the short version without the full width 1`] = `
   }
 }
 
-@media screen and (min-width:1200.02px) {
-  .c2 .c3 {
-    margin-right: 40px;
-  }
-}
-
 @media screen and (max-width:1200px) {
   .c10 {
     display: none;
@@ -696,6 +684,10 @@ exports[`Header should render the tall version 1`] = `
   outline-width: 3px;
 }
 
+.c15 .c6 {
+  margin-right: 10px;
+}
+
 .c5 {
   height: 50px;
   margin: 0;
@@ -722,22 +714,6 @@ exports[`Header should render the tall version 1`] = `
   margin-right: 10px;
 }
 
-.c15 .c12 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c15 .c10 {
-  margin-top: -2px;
-}
-
-.c15 .c12 {
-  margin-right: -15px;
-}
-
 .c16 .c12 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -751,6 +727,22 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c16 .c12 {
+  margin-right: -15px;
+}
+
+.c17 .c12 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.c17 .c10 {
+  margin-top: -2px;
+}
+
+.c17 .c12 {
   margin-right: -15px;
 }
 
@@ -795,35 +787,35 @@ exports[`Header should render the tall version 1`] = `
   justify-content: flex-end;
 }
 
-.c14 .c18 {
+.c14 .c19 {
   height: 17px;
   padding: 0;
 }
 
-.c14 .c18:not(:last-child) {
+.c14 .c19:not(:last-child) {
   margin-right: 30px;
 }
 
-.c14 .c18:focus,
-.c14 .c18:hover {
+.c14 .c19:focus,
+.c14 .c19:hover {
   background-color: transparent;
 }
 
-.c14 .c18:focus .c17,
-.c14 .c18:hover .c17 {
+.c14 .c19:focus .c18,
+.c14 .c19:hover .c18 {
   color: #ec0000;
 }
 
-.c14 .c18:focus svg rect,
-.c14 .c18:hover svg rect,
-.c14 .c18:focus svg polygon,
-.c14 .c18:hover svg polygon,
-.c14 .c18:focus svg path,
-.c14 .c18:hover svg path {
+.c14 .c19:focus svg rect,
+.c14 .c19:hover svg rect,
+.c14 .c19:focus svg polygon,
+.c14 .c19:hover svg polygon,
+.c14 .c19:focus svg path,
+.c14 .c19:hover svg path {
   fill: #ec0000;
 }
 
-.c14 .c18 .c17 {
+.c14 .c19 .c18 {
   line-height: 17px;
 }
 
@@ -1034,6 +1026,10 @@ exports[`Header should render the tall version without a title 1`] = `
   outline-width: 3px;
 }
 
+.c13 .c6 {
+  margin-right: 10px;
+}
+
 .c5 {
   height: 50px;
   margin: 0;
@@ -1060,7 +1056,7 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-right: 10px;
 }
 
-.c13 .c10 {
+.c14 .c10 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -1068,11 +1064,11 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-left: 15px;
 }
 
-.c13 .c10 {
+.c14 .c10 {
   margin-right: -15px;
 }
 
-.c14 .c10 {
+.c15 .c10 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -1080,7 +1076,7 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-left: 15px;
 }
 
-.c14 .c10 {
+.c15 .c10 {
   margin-right: -15px;
 }
 
@@ -1125,35 +1121,35 @@ exports[`Header should render the tall version without a title 1`] = `
   justify-content: flex-end;
 }
 
-.c12 .c16 {
+.c12 .c17 {
   height: 17px;
   padding: 0;
 }
 
-.c12 .c16:not(:last-child) {
+.c12 .c17:not(:last-child) {
   margin-right: 30px;
 }
 
-.c12 .c16:focus,
-.c12 .c16:hover {
+.c12 .c17:focus,
+.c12 .c17:hover {
   background-color: transparent;
 }
 
-.c12 .c16:focus .c15,
-.c12 .c16:hover .c15 {
+.c12 .c17:focus .c16,
+.c12 .c17:hover .c16 {
   color: #ec0000;
 }
 
-.c12 .c16:focus svg rect,
-.c12 .c16:hover svg rect,
-.c12 .c16:focus svg polygon,
-.c12 .c16:hover svg polygon,
-.c12 .c16:focus svg path,
-.c12 .c16:hover svg path {
+.c12 .c17:focus svg rect,
+.c12 .c17:hover svg rect,
+.c12 .c17:focus svg polygon,
+.c12 .c17:hover svg polygon,
+.c12 .c17:focus svg path,
+.c12 .c17:hover svg path {
   fill: #ec0000;
 }
 
-.c12 .c16 .c15 {
+.c12 .c17 .c16 {
   line-height: 17px;
 }
 

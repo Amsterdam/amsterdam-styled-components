@@ -82,6 +82,7 @@ exports[`SearchBar should render 1`] = `
   border: solid 1px #767676;
   border-radius: 0;
   box-sizing: border-box;
+  line-height: 18px;
   padding: 9px 9px 11px;
   width: 100%;
 }
@@ -174,6 +175,7 @@ exports[`SearchBar should render 1`] = `
     aria-label="Search"
     class="c5 c6"
     color="secondary"
+    type="submit"
   >
     <span
       class="c7"

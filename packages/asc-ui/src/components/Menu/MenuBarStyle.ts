@@ -3,6 +3,7 @@ import { fromTheme } from '../../utils'
 
 const MenuBarStyle = styled.ul`
   display: flex;
+  flex-shrink: 0;
   flex-direction: row;
   height: 100%;
   margin: 0;

@@ -35,7 +35,7 @@ const TextField = ({
         id={uid}
       />
       {onClear && value && (
-        <IconButton aria-label="Close" onClick={() => onClear()}>
+        <IconButton type="button" aria-label="Close" onClick={() => onClear()}>
           <Close />
         </IconButton>
       )}

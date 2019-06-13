@@ -11,21 +11,21 @@ export namespace MenuStyleProps {
     right = 'right',
   }
 
-  export type MenuButtonStyleProps = {
+  export type SharedStyleProps = {
     focused?: boolean
     height?: number
   }
+
+  export type MenuButtonStyleProps = {} & SharedStyleProps
 
   export type MenuItemStyleProps = {
     role?: string
     id?: string
     label?: string
-    focused?: boolean
     open?: boolean
     divider?: boolean
-    height?: number
     hoverColor?: Theme.TypeLevel
-  }
+  } & SharedStyleProps
 
   export type MenuListStyleProps = {
     labelId?: string
@@ -38,7 +38,6 @@ export namespace MenuStyleProps {
   }
 
   export type MenuWrapperStyleProps = {
-    focused?: boolean
     css?: string
-  }
+  } & SharedStyleProps
 }

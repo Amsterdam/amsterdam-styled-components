@@ -1,12 +1,8 @@
 import styled from '@datapunt/asc-core'
 import { MenuStyleProps } from './types'
 import IconStyle from '../Icon/IconStyle'
-import {
-  svgFill,
-  color,
-  getTypographyFromTheme,
-  focusStyleOutline,
-} from '../../utils'
+import { svgFill, color, getTypographyFromTheme } from '../../utils'
+import { SharedMenuItemStyle } from './SharedMenuItemStyle'
 
 export const MenuItemLabelStyle = styled.span<
   MenuStyleProps.MenuItemStyleProps
@@ -20,22 +16,18 @@ export const MenuItemLabelStyle = styled.span<
   color: ${color('tint', 'level6')};
 `
 
-export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
-  padding: 10px 15px 10px 7px;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  min-height: ${({ height }) => `${height}px`};
-  cursor: pointer;
-  box-sizing: border-box;
+export const MenuItemStyle = styled(SharedMenuItemStyle)<
+  MenuStyleProps.MenuItemStyleProps
+>`
   font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
   position: relative;
-  border-left-style: solid;
-  border-left-width: 8px;
-  border-left-color: transparent;
+  min-height: ${({ height }) => `${height}px`};
+  flex-direction: row;
 
   ${IconStyle} {
+    transform: translateY(3px);
+    align-self: flex-start;
+
     &:not(:last-child) {
       margin-right: 5px;
     }
@@ -46,24 +38,16 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
   }
 
   & > a {
-    color: inherit;
+    display: flex;
     text-decoration: none;
-    width: auto;
-    height: 100%;
-    left: -8px;
-    right: 0;
-    position: absolute;
+    width: 100%;
   }
 
   &:hover,
   &:focus {
-    outline: none;
-    background-color: ${color('tint', 'level2')};
-
     ${MenuItemLabelStyle} {
       border-bottom-color: ${color('secondary', 'main')};
-      color: ${({ theme, hoverColor }) =>
-        hoverColor ? color(hoverColor)({ theme }) : 'inherit'};
+      color: ${color('secondary', 'main')};
     }
 
     ${IconStyle} {
@@ -72,24 +56,14 @@ export const MenuItemStyle = styled.li<MenuStyleProps.MenuItemStyleProps>`
       }
     }
   }
-
-  ${focusStyleOutline()}
 `
 
-export const SubMenuItemStyle = styled.div<MenuStyleProps.MenuItemStyleProps>`
-  padding: 10px 15px 10px 7px;
-  margin: 0;
-  display: flex;
+export const SubMenuItemStyle = styled(SharedMenuItemStyle)<
+  MenuStyleProps.MenuItemStyleProps
+>`
   flex-direction: column;
-  align-items: center;
-  height: ${({ height }) => `${height}px`};
-  cursor: pointer;
-  box-sizing: border-box;
   font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
   position: relative;
-  border-left-style: solid;
-  border-left-width: 8px;
-  border-left-color: transparent;
 
   /* stylelint-disable-next-line no-descending-specificity */
   ${IconStyle} {
@@ -110,13 +84,8 @@ export const SubMenuItemStyle = styled.div<MenuStyleProps.MenuItemStyleProps>`
 
   &:hover,
   &:focus {
-    outline: none;
-    background-color: ${color('tint', 'level2')};
-
     ${MenuItemLabelStyle} {
       border-bottom-color: ${color('secondary', 'main')};
-      color: ${({ theme, hoverColor }) =>
-        hoverColor ? color(hoverColor)({ theme }) : 'inherit'};
     }
 
     ${IconStyle} {
@@ -125,8 +94,6 @@ export const SubMenuItemStyle = styled.div<MenuStyleProps.MenuItemStyleProps>`
       }
     }
   }
-
-  ${focusStyleOutline()}
 `
 
 export default MenuItemStyle

@@ -36,6 +36,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   const [inputValue, setInputValue] = React.useState(value || '')
 
   const onClear = () => {
+    console.log('onClear?')
     if (inputRef && inputRef.current) {
       inputRef.current.focus()
     }
@@ -105,6 +106,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
       <IconButton
         aria-label="Search"
         color="secondary"
+        type="submit"
         onClick={handleOnSubmit}
       >
         <ReactIcon type={Icons.Search} />

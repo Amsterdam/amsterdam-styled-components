@@ -1,9 +1,9 @@
-import styled from '@datapunt/asc-core'
+import styled, { css } from '@datapunt/asc-core'
 import AmsterdamLogoStyle from '../AmsterdamLogo/AmsterdamLogoStyle'
 import { breakpoint } from '../../utils'
 
 type Props = {
-  tabindex?: number
+  tall?: boolean
 }
 
 const HeaderLogoTextStyle = styled.h1<Props>`
@@ -20,10 +20,14 @@ const HeaderLogoTextStyle = styled.h1<Props>`
     margin-right: 10px;
   }
 
-  @media screen and ${breakpoint('min-width', 'laptopM')} {
-    ${AmsterdamLogoStyle} {
-      margin-right: 40px;
-    }
-  }
+  ${({ tall }) =>
+    tall &&
+    css`
+      @media screen and ${breakpoint('min-width', 'laptopM')} {
+        ${AmsterdamLogoStyle} {
+          margin-right: 40px;
+        }
+      }
+    `}
 `
 export default HeaderLogoTextStyle

@@ -11,7 +11,7 @@ const HeaderStyle = styled(TopBarStyle)<HeaderStyleProps>`
   height: 100%;
   margin: 0 auto;
   max-width: ${({ fullWidth }) =>
-    !fullWidth ? `${HEADER_MAX_WIDTH - 15 * 2}px` : 'none'};
+    !fullWidth ? `${HEADER_MAX_WIDTH}px` : 'none'};
 `
 
 export default HeaderStyle

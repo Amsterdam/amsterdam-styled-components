@@ -16,7 +16,6 @@ const {
 type Props = {
   role?: string
   label?: string
-  divider?: boolean
   mobile?: boolean
   index?: number
   arrowIcon?: React.ReactNode
@@ -119,7 +118,7 @@ const SubMenu: React.FC<Props> = ({
   )
 
   const SubMenuItem = mobile ? (
-    <SubMenuItemStyle>{SubMenuButton}</SubMenuItemStyle>
+    <SubMenuItemStyle as="div">{SubMenuButton}</SubMenuItemStyle>
   ) : (
     SubMenuButton
   )

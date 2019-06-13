@@ -14,7 +14,11 @@ export default createGlobalStyle`
     display: none;
   }
   
-  *:focus{
+  * {
+    box-sizing: border-box;
+  }
+  
+  *:focus {
     outline: none;
   }
 `
