@@ -36,7 +36,6 @@ const SearchBar: React.FC<SearchBarProps> = ({
   const [inputValue, setInputValue] = React.useState(value || '')
 
   const onClear = () => {
-    console.log('onClear?')
     if (inputRef && inputRef.current) {
       inputRef.current.focus()
     }

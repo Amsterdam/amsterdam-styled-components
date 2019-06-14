@@ -4,7 +4,6 @@ import { css } from '@datapunt/asc-core'
 import { ReactComponent as ChevronRight } from '@datapunt/asc-assets/lib/Icons/ChevronRight.svg'
 import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
 import { ReactComponent as ExternalLink } from '@datapunt/asc-assets/lib/Icons/ExternalLink.svg'
-import { ReactComponent as MenuIcon } from '@datapunt/asc-assets/lib/Icons/Menu.svg'
 import { MenuItem, MenuLabel, Header, SubMenu, styles } from '../../../index'
 import Menu, { Props } from '../../Menu/Menu'
 import { breakpoint } from '../../../utils'
@@ -74,7 +73,7 @@ const MenuDefault = (props: Props) => (
 )
 
 const MenuMobile = () => (
-  <MenuDefault mobile align={MenuStyleProps.Align.right} icon={<MenuIcon />} />
+  <MenuDefault mobile align={MenuStyleProps.Align.right} />
 )
 
 const HeaderLinksMenu = () => (
