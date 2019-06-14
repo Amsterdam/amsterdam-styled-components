@@ -1,15 +1,12 @@
 import * as React from 'react'
 import { mount } from 'enzyme'
-import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
 import SubMenu from '../SubMenu'
 import MenuItem from '../MenuItem'
 import { MenuContext } from '../Menu'
 import MenuStyle from '../index'
-import { Icon } from '../../..'
 
 describe('SubMenu', () => {
   const label = 'This is a button'
-  const mockIcon = <ChevronDown />
   const mockSetExpandedChild = jest.fn()
   const mockResetExpandedChild = jest.fn()
   const mockOnKeyDown = jest.fn()
@@ -26,7 +23,7 @@ describe('SubMenu', () => {
 
     const component = mount(
       <MenuContext.Provider value={mockContext}>
-        <SubMenu label={label} arrowIcon={mockIcon} open>
+        <SubMenu label={label} open>
           <MenuItem />
           <MenuItem />
         </SubMenu>
@@ -36,7 +33,6 @@ describe('SubMenu', () => {
     const menuButton = component.find(MenuStyle.SubMenuButtonLabelStyle).at(0)
 
     it('should render the button with a label and an icon', () => {
-      expect(component.find(Icon).props().children).toEqual(mockIcon)
       expect(menuButton.props().children).toEqual(label)
     })
 
@@ -83,7 +79,7 @@ describe('SubMenu', () => {
 
     const component = mount(
       <MenuContext.Provider value={mockContext}>
-        <SubMenu index={3} label={label} arrowIcon={mockIcon} open>
+        <SubMenu index={3} label={label} open>
           <MenuItem />
           <MenuItem />
         </SubMenu>

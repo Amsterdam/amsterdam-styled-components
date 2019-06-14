@@ -10,14 +10,13 @@ export type Props = {
   onExpand?: Function
   align?: MenuStyleProps.Align
   mobile?: boolean
-  icon?: React.ReactNode
   buttonHeight?: number
   id?: any
 }
 
 export const MenuContext = React.createContext({})
 
-const Menu: React.FC<Props> = ({ children, mobile, onExpand, align, icon }) => {
+const Menu: React.FC<Props> = ({ children, mobile, onExpand, align }) => {
   const initialState = {
     open: false,
     align,
@@ -186,9 +185,7 @@ const Menu: React.FC<Props> = ({ children, mobile, onExpand, align, icon }) => {
       }}
     >
       {mobile ? (
-        <MenuDropDown icon={icon} mobile>
-          {clonedChildren}
-        </MenuDropDown>
+        <MenuDropDown mobile>{clonedChildren}</MenuDropDown>
       ) : (
         <MenuBar>{clonedChildren}</MenuBar>
       )}

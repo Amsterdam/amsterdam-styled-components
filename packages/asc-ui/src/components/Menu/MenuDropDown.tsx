@@ -1,8 +1,10 @@
 import React from 'react'
+import Icons from '@datapunt/asc-assets'
 import MenuStyle, { MenuStyleProps } from './index'
 import MenuList from './MenuList'
 import { MenuContext } from './Menu'
 import { Icon } from '../..'
+import ReactIcon from '../ReactIcon/Icon'
 import { KeyboardKeys } from '../../types'
 
 const { MenuDropDownStyle, MenuDropDownButtonStyle } = MenuStyle
@@ -11,8 +13,6 @@ type Props = {
   position?: MenuStyleProps.Position
   label?: string
   mobile?: boolean
-  icon?: React.ReactNode
-  arrowIcon?: React.ReactNode
   buttonHeight?: number
   id?: any
   index?: number
@@ -23,7 +23,6 @@ const MenuDropDown: React.FC<Props> = ({
   children,
   buttonHeight,
   position,
-  icon,
   index: currentIndex,
   mobile,
 }) => {
@@ -57,7 +56,7 @@ const MenuDropDown: React.FC<Props> = ({
       id={id}
       ref={menuRef}
       onKeyDown={handleKeyPress}
-      onBlur={onClose}
+      onBlur={() => onClose(menuRef)}
       onMouseLeave={click}
       onMouseOver={clickWhenClosed}
       onFocus={clickWhenClosed}
@@ -71,7 +70,9 @@ const MenuDropDown: React.FC<Props> = ({
         onMouseLeave={clickWhenClosed}
         onClick={onClick}
       >
-        {icon && <Icon>{icon}</Icon>}
+        <Icon>
+          <ReactIcon type={open ? Icons.Close : Icons.Menu} />
+        </Icon>
       </MenuDropDownButtonStyle>
       <MenuList
         {...{

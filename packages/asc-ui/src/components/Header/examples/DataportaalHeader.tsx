@@ -2,9 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { css } from '@datapunt/asc-core'
 import { ReactComponent as ChevronRight } from '@datapunt/asc-assets/lib/Icons/ChevronRight.svg'
-import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
 import { ReactComponent as ExternalLink } from '@datapunt/asc-assets/lib/Icons/ExternalLink.svg'
-import { ReactComponent as MenuIcon } from '@datapunt/asc-assets/lib/Icons/Menu.svg'
 import { MenuItem, MenuLabel, Header, SubMenu, styles } from '../../../index'
 import Menu, { Props } from '../../Menu/Menu'
 import { breakpoint } from '../../../utils'
@@ -43,7 +41,7 @@ const DataportaalHeaderWrapperStyle = css`
 const MenuDefault = (props: Props) => (
   <Menu {...props}>
     <MenuItem href="#one" onClick={action('click')}>One</MenuItem>
-    <SubMenu arrowIcon={<ChevronDown />} label="Two">
+    <SubMenu label="Two">
       <MenuItem icon={<ChevronRight />} href="#one" onClick={action('click')}>
         One
       </MenuItem>
@@ -61,7 +59,7 @@ const MenuDefault = (props: Props) => (
         Show more
       </MenuItem>
     </SubMenu>
-    <SubMenu arrowIcon={<ChevronDown />} label="Three">
+    <SubMenu label="Three">
       <MenuItem icon={<ChevronRight />} href="#one" onClick={action('click')}>
         One
       </MenuItem>
@@ -74,7 +72,7 @@ const MenuDefault = (props: Props) => (
 )
 
 const MenuMobile = () => (
-  <MenuDefault mobile align={MenuStyleProps.Align.right} icon={<MenuIcon />} />
+  <MenuDefault mobile align={MenuStyleProps.Align.right} />
 )
 
 const HeaderLinksMenu = () => (

@@ -1,13 +1,11 @@
 import * as React from 'react'
 import { mount } from 'enzyme'
-import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
 import MenuDropDown from '../MenuDropDown'
 import MenuItem from '../MenuItem'
 import { MenuContext } from '../Menu'
 
 describe('MenuDropDown', () => {
   const label = 'This is a button'
-  const mockIcon = <ChevronDown />
   const mockOnClick = jest.fn()
   const mockOnKeyDown = jest.fn()
 
@@ -19,7 +17,7 @@ describe('MenuDropDown', () => {
 
   const component = mount(
     <MenuContext.Provider value={mockContext}>
-      <MenuDropDown label={label} icon={mockIcon}>
+      <MenuDropDown label={label}>
         <MenuItem />
         <MenuItem />
       </MenuDropDown>

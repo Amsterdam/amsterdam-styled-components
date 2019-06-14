@@ -12,7 +12,6 @@ type Props = {
   children?: any
   index?: number
   top?: number
-  arrowIcon?: React.ReactNode
 } & MenuStyleProps.MenuListStyleProps
 
 const MenuList = ({
