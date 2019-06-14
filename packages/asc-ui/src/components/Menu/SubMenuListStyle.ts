@@ -34,9 +34,10 @@ export const SubMenuWrapperStyle = styled(SharedMenuItemStyle)<
   MenuStyleProps.MenuWrapperStyleProps
 >`
   flex-direction: row;
+  position: relative;
 
   ${/* sc-selector */ MenuListWrapperStyle}:first-of-type {
-    margin-left: -15px;
+    left: -8px;
   }
 
   &:focus,
