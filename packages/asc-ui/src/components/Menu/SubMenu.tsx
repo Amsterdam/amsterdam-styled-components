@@ -1,8 +1,10 @@
 import React from 'react'
+import Icons from '@datapunt/asc-assets'
 import MenuStyle, { MenuStyleProps } from './index'
 import { KeyboardKeys } from '../../types'
 import { MenuContext } from './Menu'
 import { Icon } from '../../index'
+import ReactIcon from '../ReactIcon/Icon'
 import { SubMenuItemStyle } from './MenuItemStyle'
 
 const {
@@ -18,7 +20,6 @@ type Props = {
   label?: string
   mobile?: boolean
   index?: number
-  arrowIcon?: React.ReactNode
   buttonHeight?: number
 } & MenuStyleProps.MenuItemStyleProps
 
@@ -29,7 +30,6 @@ const defaultProps = {
 
 const SubMenu: React.FC<Props> = ({
   id,
-  arrowIcon,
   children,
   label,
   index: currentIndex = defaultProps.currentIndex,
@@ -111,7 +111,7 @@ const SubMenu: React.FC<Props> = ({
       )}
       {mobile && (
         <Icon inline size={24} padding={4} rotate={expanded ? 180 : 0}>
-          {arrowIcon}
+          <ReactIcon type={Icons.ChevronDown} />
         </Icon>
       )}
     </>

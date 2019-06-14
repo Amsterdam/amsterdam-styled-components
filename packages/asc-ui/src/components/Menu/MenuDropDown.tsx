@@ -13,7 +13,6 @@ type Props = {
   position?: MenuStyleProps.Position
   label?: string
   mobile?: boolean
-  arrowIcon?: React.ReactNode
   buttonHeight?: number
   id?: any
   index?: number

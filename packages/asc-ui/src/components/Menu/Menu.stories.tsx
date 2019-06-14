@@ -2,7 +2,6 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { ReactComponent as ChevronRight } from '@datapunt/asc-assets/lib/Icons/ChevronRight.svg'
-import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
 import { ReactComponent as ExternalLink } from '@datapunt/asc-assets/lib/Icons/ExternalLink.svg'
 import { Menu, MenuItem, MenuLabel, SubMenu } from '../..'
 
@@ -52,7 +51,7 @@ storiesOf('Composed/Menu', module)
   .add('default mobile', () => (
     <Menu mobile>
       <MenuItem onClick={action('click')}>One</MenuItem>
-      <SubMenu arrowIcon={<ChevronDown />} label="Two">
+      <SubMenu label="Two">
         <MenuItem icon={<ChevronRight />} onClick={action('click')}>
           One
         </MenuItem>
