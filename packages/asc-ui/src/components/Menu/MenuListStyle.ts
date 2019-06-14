@@ -21,8 +21,7 @@ export const MenuListWrapperStyle = styled.div.attrs(() => ({
   order: ${({ position }) => (position === 'bottom' ? -1 : 0)};
   background-color: ${color('tint', 'level2')};
   border-bottom: 4px solid ${color('tint', 'level7')};
-  max-width: 250px;
-  width: 100%;
+  width: 250px;
   position: absolute;
   top: ${({ top }) => `${top}px`};
   ${({ alignRight }) => alignRight && 'right: 0'}
