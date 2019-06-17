@@ -1,12 +1,14 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { ReactComponent as Ellipsis } from '@datapunt/asc-assets/lib/Icons/Ellipsis.svg'
-import { ReactComponent as FacebookPadded } from '@datapunt/asc-assets/lib/Icons/FacebookPadded.svg'
-import { ReactComponent as Twitter } from '@datapunt/asc-assets/lib/Icons/Twitter.svg'
-import { ReactComponent as Linkedin } from '@datapunt/asc-assets/lib/Icons/Linkedin.svg'
-import { ReactComponent as Email } from '@datapunt/asc-assets/lib/Icons/Email.svg'
-import { ReactComponent as Print } from '@datapunt/asc-assets/lib/Icons/Print.svg'
-import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
+import {
+  ChevronDown,
+  Print,
+  Email,
+  Linkedin,
+  FacebookPadded,
+  Ellipsis,
+  Twitter,
+} from '@datapunt/asc-assets'
 import { ContextMenu, ContextMenuItem, Icon } from '../..'
 import { Position } from './types'
 

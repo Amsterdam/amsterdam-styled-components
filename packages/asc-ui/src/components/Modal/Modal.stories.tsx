@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { linkTo } from '@storybook/addon-links'
 import { withKnobs, number } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
-import { ReactComponent as Close } from '@datapunt/asc-assets/lib/Icons/Close.svg'
+import { Close } from '@datapunt/asc-assets'
 import { Props } from './Modal'
 import {
   ListItem,

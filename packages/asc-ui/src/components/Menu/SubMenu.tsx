@@ -1,10 +1,9 @@
 import React from 'react'
-import Icons from '@datapunt/asc-assets'
+import { ChevronDown } from '@datapunt/asc-assets'
 import MenuStyle, { MenuStyleProps } from './index'
 import { KeyboardKeys } from '../../types'
 import { MenuContext } from './Menu'
 import { Icon } from '../../index'
-import ReactIcon from '../ReactIcon/Icon'
 import { SubMenuItemStyle } from './MenuItemStyle'
 
 const {
@@ -111,7 +110,7 @@ const SubMenu: React.FC<Props> = ({
       )}
       {mobile && (
         <Icon inline size={24} padding={4} rotate={expanded ? 180 : 0}>
-          <ReactIcon type={Icons.ChevronDown} />
+          <ChevronDown />
         </Icon>
       )}
     </>

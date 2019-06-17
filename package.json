@@ -17,7 +17,6 @@
     "packages/*"
   ],
   "scripts": {
-    "prebuild": "lerna exec --scope @datapunt/asc-assets -- yarn generate ",
     "build": "lerna exec --scope @datapunt/asc-assets -- yarn build && yarn build:ts",
     "build:storybook": "build-storybook -c .storybook -s ./packages/asc-assets/lib -o .sb && yarn clean:generated",
     "build:ts": "tsc -b packages/asc-core packages/asc-ui",
@@ -31,7 +30,7 @@
     "prepare": "yarn prettify:package && yarn build",
     "publish:packages": "yarn verify-integrity && lerna publish",
     "start": "yarn build:watch & yarn storybook",
-    "storybook": "start-storybook -p 6006 -c .storybook -s ./packages/asc-assets/assets",
+    "storybook": "start-storybook -p 6006 -c .storybook -s ./packages/asc-assets/lib/assets",
     "test": "yarn jest",
     "test:coverage": "yarn jest --collect-coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watch --onlyChanged --collect-coverage --verbose true",

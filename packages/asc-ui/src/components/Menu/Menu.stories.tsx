@@ -1,8 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { ReactComponent as ChevronRight } from '@datapunt/asc-assets/lib/Icons/ChevronRight.svg'
-import { ReactComponent as ExternalLink } from '@datapunt/asc-assets/lib/Icons/ExternalLink.svg'
+import { ChevronRight, ExternalLink } from '@datapunt/asc-assets'
 import { Menu, MenuItem, MenuLabel, SubMenu } from '../..'
 
 storiesOf('Composed/Menu', module)

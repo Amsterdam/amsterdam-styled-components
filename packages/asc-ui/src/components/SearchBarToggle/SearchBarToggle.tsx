@@ -1,12 +1,11 @@
 import React from 'react'
-import Icons from '@datapunt/asc-assets'
+import { Close, Search } from '@datapunt/asc-assets'
 import ownerDocument from '../../utils/ownerDocument'
 import SearchBarToggleStyle, {
   SearchBarMenuStyleProps,
 } from './SearchBarToggleStyle'
 import SearchBar from '../SearchBar'
 import IconButton from '../IconButton/IconButton'
-import ReactIcon from '../ReactIcon/Icon'
 import { InputMethods } from '../Input'
 import useActionOnEscape from '../../utils/useActionOnEscape'
 
@@ -63,7 +62,7 @@ const SearchBarMenu: React.FC<SearchBarMenuProps> = ({
         }}
         iconSize={open ? 16 : 20}
       >
-        <ReactIcon type={open ? Icons.Close : Icons.Search} />
+        {open ? <Close /> : <Search />}
       </IconButton>
 
       {open && (

@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, ShallowWrapper } from 'enzyme'
-import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
+import { ChevronDown } from '@datapunt/asc-assets'
 import ContextMenu from '../ContextMenu'
 import ContextMenuItem from '../ContextMenuItem'
 import { KeyboardKeys } from '../../../types'

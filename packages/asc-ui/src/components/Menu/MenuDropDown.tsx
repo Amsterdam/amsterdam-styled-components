@@ -1,10 +1,9 @@
 import React from 'react'
-import Icons from '@datapunt/asc-assets'
+import { Close, Menu } from '@datapunt/asc-assets'
 import MenuStyle, { MenuStyleProps } from './index'
 import MenuList from './MenuList'
 import { MenuContext } from './Menu'
 import { Icon } from '../..'
-import ReactIcon from '../ReactIcon/Icon'
 import { KeyboardKeys } from '../../types'
 
 const { MenuDropDownStyle, MenuDropDownButtonStyle } = MenuStyle
@@ -70,9 +69,7 @@ const MenuDropDown: React.FC<Props> = ({
         onMouseLeave={clickWhenClosed}
         onClick={onClick}
       >
-        <Icon>
-          <ReactIcon type={open ? Icons.Close : Icons.Menu} />
-        </Icon>
+        <Icon>{open ? <Close /> : <Menu />}</Icon>
       </MenuDropDownButtonStyle>
       <MenuList
         {...{

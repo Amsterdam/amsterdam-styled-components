@@ -1,10 +1,6 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
-import { ReactComponent as Facebook } from '@datapunt/asc-assets/lib/Icons/Facebook.svg'
-import { ReactComponent as Twitter } from '@datapunt/asc-assets/lib/Icons/Twitter.svg'
-import { ReactComponent as Linkedin } from '@datapunt/asc-assets/lib/Icons/Linkedin.svg'
-import { ReactComponent as Email } from '@datapunt/asc-assets/lib/Icons/Email.svg'
-import { ReactComponent as Print } from '@datapunt/asc-assets/lib/Icons/Print.svg'
+import { Facebook, Twitter, Linkedin, Email, Print } from '@datapunt/asc-assets'
 import ShareBar from './ShareBar'
 import ShareButton from '../ShareButton'
 
