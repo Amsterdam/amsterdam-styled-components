@@ -1,3 +1,183 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchBar should render 1`] = `undefined`;
+exports[`SearchBar should render 1`] = `
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  box-sizing: content-box;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c7 > svg {
+  width: inherit;
+  height: inherit;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 0 10px 0 10px;
+  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background: #ec0000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.c6:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-width: 3px;
+}
+
+.c6:hover {
+  background: #bc0000;
+}
+
+.c6:after {
+  content: '';
+  display: block;
+  min-height: inherit;
+  font-size: 0;
+}
+
+.c4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 1rem;
+  border: solid 1px #767676;
+  border-radius: 0;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  width: 100%;
+}
+
+.c2 {
+  position: relative;
+}
+
+.c2 > .c5 {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 .c1 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c0 > .c5 {
+  margin-left: 5px;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.c0 > .c5 svg rect,
+.c0 > .c5 svg polygon,
+.c0 > .c5 svg path {
+  fill: #ffffff;
+}
+
+.c3 {
+  border-width: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 c2"
+  >
+    <label
+      class="c3"
+      for="search-bar-id"
+      type="text"
+    >
+      Search...
+    </label>
+    <input
+      aria-label="Search..."
+      autocapitalize="off"
+      autocomplete="off"
+      autocorrect="off"
+      class="c4"
+      id="search-bar-id"
+      placeholder="Search..."
+      spellcheck="false"
+      type="text"
+      value=""
+    />
+  </div>
+  <button
+    aria-label="Search"
+    class="c5 c6"
+    color="secondary"
+  >
+    <span
+      class="c7"
+    >
+      <svg
+        viewBox="0 0 32 32"
+      >
+        <path
+          d="M32 29.119l-9.825-9.825a12.217 12.217 0 1 0-2.88 2.881L29.118 32 32 29.119zm-19.771-8.746a8.145 8.145 0 1 1 0-16.289 8.145 8.145 0 0 1 0 16.29z"
+          fill="#000"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </span>
+  </button>
+  searchbar-content
+</div>
+`;
