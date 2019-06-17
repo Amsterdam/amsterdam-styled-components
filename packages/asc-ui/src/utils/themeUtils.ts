@@ -40,6 +40,21 @@ export const focusStyle = () => ({
     outline-width: 3px;
   }
 `
+
+export const srOnlyStyle = () => ({ srOnly }: { srOnly: boolean }) =>
+  srOnly
+    ? css`
+        border-width: 0;
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      `
+    : ''
+
 export const breakpoint = (
   type: Theme.TypeBreakpoint,
   variant: keyof BreakpointsInterface,

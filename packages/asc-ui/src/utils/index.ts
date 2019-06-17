@@ -4,6 +4,7 @@ export {
   getColorFromTheme,
   getTypographyFromTheme,
   focusStyle,
+  srOnlyStyle,
   breakpoint,
   svgFill,
 } from './themeUtils'

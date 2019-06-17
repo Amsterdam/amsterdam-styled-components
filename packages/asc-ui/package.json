@@ -12,18 +12,24 @@
   "dependencies": {
     "@datapunt/asc-assets": "^0.7.0-alpha.0",
     "@datapunt/asc-core": "^0.7.0-alpha.0",
+    "@types/styled-components": "^4.1.1",
     "classnames": "^2.2.6",
     "deepmerge": "^3.2.0",
     "enzyme": "^3.9.0",
     "jest-styled-components": "^6.3.1",
-    "polished": "^3.2.0"
+    "polished": "^3.2.0",
+    "styled-components": "^4.2.0"
   },
   "peerDependencies": {
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "1354a8ac6bbc9505cfb5ce9c819e06ba32aa93b7"
+  "gitHead": "1354a8ac6bbc9505cfb5ce9c819e06ba32aa93b7",
+  "resolutions": {
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+  }
 }

@@ -1,14 +1,16 @@
 import styled from '@datapunt/asc-core'
+import { srOnlyStyle } from '../../utils'
 
-type Props = {
-  error: boolean
+interface IProps {
+  htmlFor?: string
+  srOnly: boolean
 }
 
-const FormLabelStyle = styled.label.attrs({
+const FormLabelStyle = styled.label.attrs<IProps>({
   type: 'text',
-})<Props>`
-  margin-bottom: 5px;
-  color: ${props => (props.error ? 'blue' : 'black')};
+  htmlFor: ({ htmlFor }: IProps) => htmlFor,
+})<IProps>`
+  ${srOnlyStyle()}
 `
 
 export default FormLabelStyle

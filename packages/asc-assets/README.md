@@ -1,11 +1,31 @@
-# `asc-assets`
 
-> TODO: description
+## Install
 
-## Usage
-
+```bash
+yarn add @datapunt/asc-assets # or npm install @datapunt/asc-assets --save
 ```
-const ascAssets = require('asc-assets');
 
-// TODO: DEMONSTRATE API
+## Basic Usage
+
+```ts
+import { IconName } from '@datapunt/asc-assets';
+
+return (
+  <IconName />
+)
+```
+
+## Optimized SVGs
+
+```ts
+import IconName from '@datapunt/asc-assets/lib/Icons/IconName.svg';
+
+return (
+  <img src={IconName} />
+)
+```
+
+## Build Project
+```bash
+yarn build # generates JSX components using the optimized SVG icons
 ```
