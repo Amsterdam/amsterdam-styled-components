@@ -69,6 +69,10 @@ Array [
           width: 70px;
         }
       
+        @media screen and (min-width: 1920.02px) {
+          width: 50px;
+        }
+      
         @media screen and (min-width: 2560.02px) {
           width: 50px;
         }

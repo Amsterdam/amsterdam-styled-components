@@ -12,7 +12,8 @@ const sizes = {
   laptop: 1024,
   laptopM: 1200,
   laptopL: 1440,
-  desktop: 2560,
+  desktop: 1920,
+  desktopL: 2560,
 }
 
 const breakpoints: Theme.BreakpointsInterface = {
@@ -25,6 +26,7 @@ const breakpoints: Theme.BreakpointsInterface = {
   laptopM: withTypeBreakpoint(sizes.laptopM),
   laptopL: withTypeBreakpoint(sizes.laptopL),
   desktop: withTypeBreakpoint(sizes.desktop),
+  desktopL: withTypeBreakpoint(sizes.desktopL),
 }
 
 export default breakpoints
