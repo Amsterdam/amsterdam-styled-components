@@ -18,9 +18,9 @@
     "lib"
   ],
   "scripts": {
-    "generate": "npx @svgr/cli -d src/Icons src/assets/Icons --template src/utils/generateIconReact.js --ext tsx",
     "prebuild": "mkdir -p lib && cp -R src/* lib/ && svgo --config=.svgo.yml -f ./src/assets/Icons/ -o ./lib/Icons",
-    "build": "yarn generate"
+    "build": "yarn generate",
+    "generate": "svgr -d src/Icons src/assets/Icons --template src/utils/generateIconReact.js --ext tsx"
   },
   "dependencies": {
     "@svgr/cli": "^4.2.0",

@@ -1,10 +1,6 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
-import { Facebook } from '@datapunt/asc-assets'
-import { Twitter } from '@datapunt/asc-assets'
-import { Linkedin } from '@datapunt/asc-assets'
-import { Email } from '@datapunt/asc-assets'
-import { Print } from '@datapunt/asc-assets'
+import { Facebook, Twitter, Linkedin, Email, Print } from '@datapunt/asc-assets'
 import ShareBar from './ShareBar'
 import ShareButton from '../ShareButton'
 
