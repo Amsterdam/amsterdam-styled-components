@@ -46,7 +46,9 @@ export function generateAbstractTree(
     .map(str => Number.parseInt(str, 10))
   assert(
     size.length === 2,
-    `The size tuple should be [ width, height ], but got [ ${size[0]}, ${size[1]} ] [${debugName}]`,
+    `The size tuple should be [ width, height ], but got [ ${size[0]}, ${
+      size[1]
+    } ] [${debugName}]`,
   )
   const oneLevelPathNodes = node.childNodes.filter(
     ({ nodeName, childNodes }) =>
