@@ -31,6 +31,7 @@ export namespace Theme {
     laptopM: GetBreakpointFunc
     laptopL: GetBreakpointFunc
     desktop: GetBreakpointFunc
+    desktopL: GetBreakpointFunc
   }
 
   export interface PaletteInterface {
