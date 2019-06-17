@@ -6,6 +6,7 @@ exports[`<TextField /> should render 1`] = `
     Object {
       "breakpoints": Object {
         "desktop": [Function],
+        "desktopL": [Function],
         "laptop": [Function],
         "laptopL": [Function],
         "laptopM": [Function],
