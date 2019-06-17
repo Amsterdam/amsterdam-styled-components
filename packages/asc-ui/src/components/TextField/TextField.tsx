@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ReactComponent as Close } from '@datapunt/asc-assets/lib/Icons/Close.svg'
+import { Close } from '@datapunt/asc-assets'
 import FormLabelStyle from '../FormLabelStyle'
 import IconButton from '../IconButton'
 import TextFieldStyle from './TextFieldStyle'

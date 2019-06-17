@@ -17,7 +17,6 @@
     "packages/*"
   ],
   "scripts": {
-    "prebuild": "lerna exec --scope @datapunt/asc-assets -- yarn generate ",
     "build": "lerna exec --scope @datapunt/asc-assets -- yarn build && yarn build:ts",
     "build:storybook": "build-storybook -c .storybook -s ./packages/asc-assets/lib -o .sb && yarn clean:generated",
     "build:ts": "tsc -b packages/asc-core packages/asc-ui",

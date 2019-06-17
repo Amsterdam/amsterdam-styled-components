@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { mount } from 'enzyme'
-import { ReactComponent as ChevronDown } from '@datapunt/asc-assets/lib/Icons/ChevronDown.svg'
+import { ChevronDown } from '@datapunt/asc-assets'
 import MenuDropDown from '../MenuDropDown'
 import MenuItem from '../MenuItem'
 import { MenuContext } from '../Menu'
