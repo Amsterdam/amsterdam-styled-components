@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header should render the short version 1`] = `
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -26,14 +26,14 @@ exports[`Header should render the short version 1`] = `
   max-width: none;
 }
 
-.c1:after {
+.c2:after {
   content: '';
   display: block;
   min-height: inherit;
   font-size: 0;
 }
 
-.c7 {
+.c8 {
   color: #004699;
   display: inline-block;
   margin-top: 0;
@@ -63,19 +63,19 @@ exports[`Header should render the short version 1`] = `
   text-decoration: none;
 }
 
-.c7:focus {
+.c8:focus {
   background-color: #FEC813;
 }
 
-.c7:hover {
+.c8:hover {
   color: #ec0000;
 }
 
-.c7:hover {
+.c8:hover {
   color: inherit;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -91,7 +91,7 @@ exports[`Header should render the short version 1`] = `
   height: 100%;
 }
 
-.c5 {
+.c6 {
   display: block;
   height: 100%;
   width: 100%;
@@ -99,7 +99,7 @@ exports[`Header should render the short version 1`] = `
   background-image: url("-react-component: svg-mock;");
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   height: 30px;
   width: 68px;
@@ -108,7 +108,7 @@ exports[`Header should render the short version 1`] = `
   flex-shrink: 0;
 }
 
-.c4:focus {
+.c5:focus {
   z-index: 10;
   outline-color: #FEC813;
   outline-style: solid;
@@ -116,7 +116,7 @@ exports[`Header should render the short version 1`] = `
   outline-width: 3px;
 }
 
-.c2 {
+.c3 {
   margin: 0;
   font-weight: 700;
   display: -webkit-box;
@@ -137,7 +137,7 @@ exports[`Header should render the short version 1`] = `
   box-sizing: content-box;
 }
 
-.c2 .c3 {
+.c3 .c4 {
   margin-right: 10px;
 }
 
@@ -156,7 +156,7 @@ exports[`Header should render the short version 1`] = `
   z-index: 2;
 }
 
-.c0 .c8 {
+.c0 .c9 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -164,15 +164,15 @@ exports[`Header should render the short version 1`] = `
   margin-left: 15px;
 }
 
-.c0 .c6 {
+.c0 .c7 {
   margin-top: -2px;
 }
 
-.c0 .c8 {
-  margin-right: -15px;
+.c0 .c1 {
+  padding-right: 0;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -190,58 +190,58 @@ exports[`Header should render the short version 1`] = `
   justify-content: flex-end;
 }
 
-.c10 .c12 {
+.c11 .c13 {
   height: 17px;
   padding: 0;
 }
 
-.c10 .c12:not(:last-child) {
+.c11 .c13:not(:last-child) {
   margin-right: 30px;
 }
 
-.c10 .c12:focus,
-.c10 .c12:hover {
+.c11 .c13:focus,
+.c11 .c13:hover {
   background-color: transparent;
 }
 
-.c10 .c12:focus .c11,
-.c10 .c12:hover .c11 {
+.c11 .c13:focus .c12,
+.c11 .c13:hover .c12 {
   color: #ec0000;
 }
 
-.c10 .c12:focus svg rect,
-.c10 .c12:hover svg rect,
-.c10 .c12:focus svg polygon,
-.c10 .c12:hover svg polygon,
-.c10 .c12:focus svg path,
-.c10 .c12:hover svg path {
+.c11 .c13:focus svg rect,
+.c11 .c13:hover svg rect,
+.c11 .c13:focus svg polygon,
+.c11 .c13:hover svg polygon,
+.c11 .c13:focus svg path,
+.c11 .c13:hover svg path {
   fill: #ec0000;
 }
 
-.c10 .c12 .c11 {
+.c11 .c13 .c12 {
   line-height: 17px;
 }
 
 @media screen and (min-width:540.02px) {
-  .c1 {
+  .c2 {
     padding: 0 15px;
   }
 }
 
 @media screen and (max-width:375px) {
-  .c7 {
+  .c8 {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width:375.02px) {
-  .c7 {
+  .c8 {
     font-size: 16px;
   }
 }
 
 @media screen and (max-width:1200px) {
-  .c10 {
+  .c11 {
     display: none;
   }
 }
@@ -251,38 +251,38 @@ exports[`Header should render the short version 1`] = `
   id="header"
 >
   <header
-    class="c1"
+    class="c1 c2"
   >
     <h1
-      class="c2"
+      class="c3"
     >
       <a
-        class="c3 c4"
+        class="c4 c5"
         href="http://data.amsterdam.nl"
       >
         <span
-          class="c5"
+          class="c6"
         />
       </a>
       <a
-        class="c6 c7"
+        class="c7 c8"
         href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
     </h1>
     <nav
-      class="c8 c9"
+      class="c9 c10"
     />
     <div
-      class="c10"
+      class="c11"
     />
   </header>
 </div>
 `;
 
 exports[`Header should render the short version without the full width 1`] = `
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -307,14 +307,14 @@ exports[`Header should render the short version without the full width 1`] = `
   max-width: 1600px;
 }
 
-.c1:after {
+.c2:after {
   content: '';
   display: block;
   min-height: inherit;
   font-size: 0;
 }
 
-.c7 {
+.c8 {
   color: #004699;
   display: inline-block;
   margin-top: 0;
@@ -344,19 +344,19 @@ exports[`Header should render the short version without the full width 1`] = `
   text-decoration: none;
 }
 
-.c7:focus {
+.c8:focus {
   background-color: #FEC813;
 }
 
-.c7:hover {
+.c8:hover {
   color: #ec0000;
 }
 
-.c7:hover {
+.c8:hover {
   color: inherit;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -372,7 +372,7 @@ exports[`Header should render the short version without the full width 1`] = `
   height: 100%;
 }
 
-.c5 {
+.c6 {
   display: block;
   height: 100%;
   width: 100%;
@@ -380,7 +380,7 @@ exports[`Header should render the short version without the full width 1`] = `
   background-image: url("-react-component: svg-mock;");
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   height: 30px;
   width: 68px;
@@ -389,7 +389,7 @@ exports[`Header should render the short version without the full width 1`] = `
   flex-shrink: 0;
 }
 
-.c4:focus {
+.c5:focus {
   z-index: 10;
   outline-color: #FEC813;
   outline-style: solid;
@@ -397,7 +397,7 @@ exports[`Header should render the short version without the full width 1`] = `
   outline-width: 3px;
 }
 
-.c2 {
+.c3 {
   margin: 0;
   font-weight: 700;
   display: -webkit-box;
@@ -418,11 +418,11 @@ exports[`Header should render the short version without the full width 1`] = `
   box-sizing: content-box;
 }
 
-.c2 .c3 {
+.c3 .c4 {
   margin-right: 10px;
 }
 
-.c11 .c8 {
+.c12 .c9 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -430,12 +430,12 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-left: 15px;
 }
 
-.c11 .c6 {
+.c12 .c7 {
   margin-top: -2px;
 }
 
-.c11 .c8 {
-  margin-right: -15px;
+.c12 .c1 {
+  padding-right: 0;
 }
 
 .c0 {
@@ -453,7 +453,7 @@ exports[`Header should render the short version without the full width 1`] = `
   z-index: 2;
 }
 
-.c0 .c8 {
+.c0 .c9 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -461,15 +461,15 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-left: 15px;
 }
 
-.c0 .c6 {
+.c0 .c7 {
   margin-top: -2px;
 }
 
-.c0 .c8 {
-  margin-right: -15px;
+.c0 .c1 {
+  padding-right: 0;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -487,58 +487,58 @@ exports[`Header should render the short version without the full width 1`] = `
   justify-content: flex-end;
 }
 
-.c10 .c13 {
+.c11 .c14 {
   height: 17px;
   padding: 0;
 }
 
-.c10 .c13:not(:last-child) {
+.c11 .c14:not(:last-child) {
   margin-right: 30px;
 }
 
-.c10 .c13:focus,
-.c10 .c13:hover {
+.c11 .c14:focus,
+.c11 .c14:hover {
   background-color: transparent;
 }
 
-.c10 .c13:focus .c12,
-.c10 .c13:hover .c12 {
+.c11 .c14:focus .c13,
+.c11 .c14:hover .c13 {
   color: #ec0000;
 }
 
-.c10 .c13:focus svg rect,
-.c10 .c13:hover svg rect,
-.c10 .c13:focus svg polygon,
-.c10 .c13:hover svg polygon,
-.c10 .c13:focus svg path,
-.c10 .c13:hover svg path {
+.c11 .c14:focus svg rect,
+.c11 .c14:hover svg rect,
+.c11 .c14:focus svg polygon,
+.c11 .c14:hover svg polygon,
+.c11 .c14:focus svg path,
+.c11 .c14:hover svg path {
   fill: #ec0000;
 }
 
-.c10 .c13 .c12 {
+.c11 .c14 .c13 {
   line-height: 17px;
 }
 
 @media screen and (min-width:540.02px) {
-  .c1 {
+  .c2 {
     padding: 0 15px;
   }
 }
 
 @media screen and (max-width:375px) {
-  .c7 {
+  .c8 {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width:375.02px) {
-  .c7 {
+  .c8 {
     font-size: 16px;
   }
 }
 
 @media screen and (max-width:1200px) {
-  .c10 {
+  .c11 {
     display: none;
   }
 }
@@ -548,31 +548,31 @@ exports[`Header should render the short version without the full width 1`] = `
   id="header"
 >
   <header
-    class="c1"
+    class="c1 c2"
   >
     <h1
-      class="c2"
+      class="c3"
     >
       <a
-        class="c3 c4"
+        class="c4 c5"
         href="http://data.amsterdam.nl"
       >
         <span
-          class="c5"
+          class="c6"
         />
       </a>
       <a
-        class="c6 c7"
+        class="c7 c8"
         href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
     </h1>
     <nav
-      class="c8 c9"
+      class="c9 c10"
     />
     <div
-      class="c10"
+      class="c11"
     />
   </header>
 </div>
@@ -735,8 +735,8 @@ exports[`Header should render the tall version 1`] = `
   margin-top: -2px;
 }
 
-.c16 .c12 {
-  margin-right: -15px;
+.c16 .c2 {
+  padding-right: 0;
 }
 
 .c17 .c12 {
@@ -751,8 +751,8 @@ exports[`Header should render the tall version 1`] = `
   margin-top: -2px;
 }
 
-.c17 .c12 {
-  margin-right: -15px;
+.c17 .c2 {
+  padding-right: 0;
 }
 
 .c0 {
@@ -868,8 +868,8 @@ exports[`Header should render the tall version 1`] = `
     margin-top: -2px;
   }
 
-  .c0 .c12 {
-    margin-right: -15px;
+  .c0 .c2 {
+    padding-right: 0;
   }
 }
 
@@ -1076,8 +1076,8 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-left: 15px;
 }
 
-.c14 .c10 {
-  margin-right: -15px;
+.c14 .c2 {
+  padding-right: 0;
 }
 
 .c15 .c10 {
@@ -1088,8 +1088,8 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-left: 15px;
 }
 
-.c15 .c10 {
-  margin-right: -15px;
+.c15 .c2 {
+  padding-right: 0;
 }
 
 .c0 {
@@ -1193,8 +1193,8 @@ exports[`Header should render the tall version without a title 1`] = `
     margin-top: -2px;
   }
 
-  .c0 .c10 {
-    margin-right: -15px;
+  .c0 .c2 {
+    padding-right: 0;
   }
 }
 

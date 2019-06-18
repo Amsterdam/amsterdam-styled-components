@@ -14,6 +14,8 @@ interface SearchBarMenuProps extends SearchBarMenuStyleProps, InputMethods {
   placeholder?: string
   label?: string
   onSubmit?: Function
+  onOpen?: Function
+  open?: boolean
 }
 
 const SearchBarMenu: React.FC<SearchBarMenuProps> = ({
@@ -21,6 +23,8 @@ const SearchBarMenu: React.FC<SearchBarMenuProps> = ({
   css,
   hideAt,
   showAt,
+  open: controlledOpen,
+  onOpen,
   ...otherProps
 }) => {
   const ref = React.useRef<HTMLDivElement>(null)
@@ -38,6 +42,19 @@ const SearchBarMenu: React.FC<SearchBarMenuProps> = ({
       }
     })
   }
+
+  React.useEffect(() => {
+    if (onOpen) {
+      onOpen(open)
+    }
+  }, [open])
+
+  // Useful if parent needs to take over control the open state
+  React.useEffect(() => {
+    if (typeof controlledOpen === 'boolean') {
+      setOpen(controlledOpen)
+    }
+  }, [controlledOpen])
 
   return (
     <SearchBarToggleStyle
