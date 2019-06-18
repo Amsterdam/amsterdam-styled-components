@@ -8,7 +8,10 @@ import SubMenuButtonStyle, {
   SubMenuButtonLabelStyle,
 } from './SubMenuButtonStyle'
 import MenuButtonStyle from './MenuButtonStyle'
-import MenuItemStyle, { MenuItemLabelStyle } from './MenuItemStyle'
+import MenuItemStyle, {
+  MenuItemWrapperStyle,
+  MenuItemLabelStyle,
+} from './MenuItemStyle'
 import MenuLabelStyle from './MenuLabelStyle'
 import MenuBarStyle from './MenuBarStyle'
 
@@ -23,6 +26,7 @@ export const MenuStyle = {
   MenuItemStyle,
   MenuButtonStyle,
   MenuItemLabelStyle,
+  MenuItemWrapperStyle,
   MenuLabelStyle,
   SubMenuWrapperStyle,
   SubMenuListWrapperStyle,

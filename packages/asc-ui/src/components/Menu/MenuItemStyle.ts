@@ -58,11 +58,14 @@ export const MenuItemStyle = styled(SharedMenuItemStyle)<
   }
 `
 
+export const MenuItemWrapperStyle = styled.li``
+
 export const SubMenuItemStyle = styled(SharedMenuItemStyle)<
   MenuStyleProps.MenuItemStyleProps
 >`
   flex-direction: column;
   font-size: ${({ theme }) => getTypographyFromTheme(theme, 'fontSize')};
+  min-height: ${({ height }) => `${height}px`};
   position: relative;
 
   /* stylelint-disable-next-line no-descending-specificity */

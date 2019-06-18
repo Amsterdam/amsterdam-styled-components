@@ -26,7 +26,7 @@ describe('MenuItem', () => {
   })
 
   it('should handle the onClick and onKeyDown event', () => {
-    const componentHref = component.find('a')
+    const componentHref = component.find(MenuStyle.MenuItemStyle)
     componentHref.simulate('click', {
       preventDefault: () => {},
     })

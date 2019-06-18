@@ -45,7 +45,7 @@ const SubMenu: React.FC<Props> = ({
     mobile,
   }: any = React.useContext(MenuContext)
 
-  const subMenuRef = React.useRef<HTMLLIElement>(null)
+  const subMenuRef = React.useRef<HTMLAnchorElement>(null)
 
   const expanded = expandedChild && currentIndex === expandedChildIndex
   const focused = currentIndex === selectedChild
@@ -102,7 +102,7 @@ const SubMenu: React.FC<Props> = ({
     : ''
 
   const SubMenuButton = (
-    <>
+    <span>
       {label && (
         <MenuStyle.SubMenuButtonLabelStyle>
           {label}
@@ -113,11 +113,13 @@ const SubMenu: React.FC<Props> = ({
           <ChevronDown />
         </Icon>
       )}
-    </>
+    </span>
   )
 
   const SubMenuItem = mobile ? (
-    <SubMenuItemStyle as="div">{SubMenuButton}</SubMenuItemStyle>
+    <SubMenuItemStyle as="div" height={buttonHeight}>
+      {SubMenuButton}
+    </SubMenuItemStyle>
   ) : (
     SubMenuButton
   )
@@ -128,24 +130,26 @@ const SubMenu: React.FC<Props> = ({
   const SubMenuList = mobile ? SubMenuListStyle : MenuListStyle
 
   return (
-    <SubMenuWrapperStyle
-      tabIndex={0}
-      ref={subMenuRef}
-      focused={expanded}
-      onKeyDown={handleKeyPress}
-      onClick={() => handleOnClick()}
-      onMouseEnter={() => !mobile && !expanded && handleOnClick()}
-      onMouseLeave={() => !mobile && handleOnClick(true)}
-      css={css}
-      {...otherProps}
-    >
-      {SubMenuItem}
-      <SubMenuListWrapper aria-hidden={!expanded}>
-        <SubMenuList top={buttonHeight} labelId={id}>
-          {clonedChildren}
-        </SubMenuList>
-      </SubMenuListWrapper>
-    </SubMenuWrapperStyle>
+    <li tabIndex={-1}>
+      <SubMenuWrapperStyle
+        tabIndex={0}
+        ref={subMenuRef}
+        focused={expanded}
+        css={css}
+        onKeyDown={handleKeyPress}
+        onClick={() => handleOnClick()}
+        onMouseEnter={() => !mobile && !expanded && handleOnClick()}
+        onMouseLeave={() => !mobile && handleOnClick(true)}
+        {...otherProps}
+      >
+        {SubMenuItem}
+        <SubMenuListWrapper aria-hidden={!expanded}>
+          <SubMenuList top={buttonHeight} labelId={id}>
+            {clonedChildren}
+          </SubMenuList>
+        </SubMenuListWrapper>
+      </SubMenuWrapperStyle>
+    </li>
   )
 }
 

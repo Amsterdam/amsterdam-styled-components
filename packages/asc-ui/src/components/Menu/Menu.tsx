@@ -108,12 +108,17 @@ const Menu: React.FC<Props> = ({ children, mobile, onExpand, align }) => {
       return
     }
     const firstChild = 0
+
     const lastChild = expandedChild
-      ? expandedChild + nrOfChildrenChild
+      ? expandedChildIndex + nrOfChildrenChild
       : nrOfChildren - 1
 
-    if (event.key === KeyboardKeys.ArrowDown) {
+    if (
+      event.key === KeyboardKeys.ArrowDown ||
+      event.key === KeyboardKeys.Tab
+    ) {
       event.preventDefault()
+
       if (selectedChild === lastChild) {
         resetExpandedChild()
       } else {

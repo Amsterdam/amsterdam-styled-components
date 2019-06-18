@@ -1,6 +1,9 @@
 import styled, { css } from '@datapunt/asc-core'
 import { MenuStyleProps } from './types'
-import MenuItemStyle, { MenuItemLabelStyle } from './MenuItemStyle'
+import MenuItemStyle, {
+  MenuItemWrapperStyle,
+  MenuItemLabelStyle,
+} from './MenuItemStyle'
 import IconStyle from '../Icon/IconStyle'
 import MenuButtonStyle, { MenuButtonLabelStyle } from './MenuButtonStyle'
 import SubMenuButtonStyle, {
@@ -14,8 +17,13 @@ const SubMenuListStyle = styled.ul<MenuStyleProps.MenuListStyleProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
+  list-style: none;
   margin: 0;
   padding: 0;
+
+  ${MenuItemWrapperStyle} {
+    width: 100%;
+  }
 
   ${MenuItemStyle} {
     &:hover,
@@ -34,6 +42,7 @@ export const SubMenuWrapperStyle = styled(SharedMenuItemStyle)<
   MenuStyleProps.MenuWrapperStyleProps
 >`
   flex-direction: row;
+  height: ${({ height }) => `${height}px`};
   position: relative;
 
   ${/* sc-selector */ MenuListWrapperStyle}:first-of-type {
@@ -42,12 +51,14 @@ export const SubMenuWrapperStyle = styled(SharedMenuItemStyle)<
 
   &:focus,
   &:hover {
-    & > ${MenuItemLabelStyle} {
-      color: ${color('secondary', 'main')};
-    }
+    ${MenuItemWrapperStyle} {
+      & > ${MenuItemLabelStyle} {
+        color: ${color('secondary', 'main')};
+      }
 
-    & > ${/* sc-selector */ MenuButtonLabelStyle}:first-of-type {
-      border-bottom-color: ${color('secondary')};
+      & > ${/* sc-selector */ MenuButtonLabelStyle}:first-of-type {
+        border-bottom-color: ${color('secondary')};
+      }
     }
 
     ${SubMenuButtonStyle} {

@@ -4,7 +4,7 @@ import { Icon } from '../..'
 import { KeyboardKeys } from '../../types'
 import { MenuContext } from './Menu'
 
-const { MenuItemStyle, MenuItemLabelStyle } = MenuStyle
+const { MenuItemStyle, MenuItemWrapperStyle, MenuItemLabelStyle } = MenuStyle
 
 type Props = {
   onClick?: Function
@@ -27,8 +27,7 @@ const MenuItem = ({
   title,
   ...otherProps
 }: Props) => {
-  const menuItemRef = React.useRef<HTMLLIElement>(null)
-  const linkRef = React.useRef<HTMLAnchorElement>(null)
+  const menuItemRef = React.useRef<HTMLAnchorElement>(null)
 
   const { selectedChild, expandedChild }: any = React.useContext(MenuContext)
 
@@ -53,28 +52,24 @@ const MenuItem = ({
   }
 
   return (
-    <MenuItemStyle
-      ref={menuItemRef}
-      focused={focused}
-      hoverColor={expandedChild ? 'secondary' : hoverColor}
-      onKeyDown={handleKeyPress}
-      tabIndex={0}
-      {...otherProps}
-    >
-      <a
+    <MenuItemWrapperStyle onKeyDown={handleKeyPress} tabIndex={-1}>
+      <MenuItemStyle
         role="link"
-        ref={linkRef}
-        tabIndex={-1}
+        ref={menuItemRef}
+        tabIndex={0}
         onClick={handleOnClick}
+        hoverColor={expandedChild ? 'secondary' : hoverColor}
         onKeyDown={handleKeyPress}
+        focused={focused}
         {...{ href, title }}
+        {...otherProps}
       >
         {icon && <Icon size={14}>{icon}</Icon>}
         <span>
           <MenuItemLabelStyle>{children}</MenuItemLabelStyle>
         </span>
-      </a>
-    </MenuItemStyle>
+      </MenuItemStyle>
+    </MenuItemWrapperStyle>
   )
 }
 

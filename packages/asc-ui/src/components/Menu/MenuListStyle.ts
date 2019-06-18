@@ -5,6 +5,7 @@ import { color } from '../../utils'
 const MenuListStyle = styled.ul<MenuStyleProps.MenuListStyleProps>`
   display: flex;
   flex-direction: column;
+  list-style: none;
   margin: 0;
   padding: 0;
 
