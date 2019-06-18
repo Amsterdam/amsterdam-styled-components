@@ -3,11 +3,19 @@ import { shallow } from 'enzyme'
 import MenuItem from '../MenuItem'
 import MenuStyle from '../index'
 import { Icon } from '../../..'
+import * as Menu from '../Menu'
 
 describe('MenuItem', () => {
   const children = 'Click me'
   const mockIcon = { mockIcon: 'mockIcon' }
   const mockOnClick = jest.fn()
+  const mockOnClickAction = jest.fn()
+
+  const contextValues = { onClick: mockOnClickAction }
+  jest
+    // @ts-ignore
+    .spyOn(Menu, 'useMenuContext')
+    .mockImplementation(() => contextValues)
 
   const component = shallow(
     <MenuItem icon={mockIcon} onClick={mockOnClick}>
@@ -32,6 +40,7 @@ describe('MenuItem', () => {
     })
 
     expect(mockOnClick).toHaveBeenCalled()
+    expect(mockOnClickAction).toHaveBeenCalled()
 
     component.simulate('keydown', { key: 'Enter', preventDefault: () => {} })
 
