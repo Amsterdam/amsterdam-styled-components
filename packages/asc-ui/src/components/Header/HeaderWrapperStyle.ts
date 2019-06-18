@@ -18,8 +18,8 @@ const shortStyle = css`
     margin-top: -2px; /* hack to align text with logo */
   }
 
-  ${HeaderNavigationStyle} {
-    margin-right: -15px; /* collapse to the right side to align navigation items to the edge */
+  ${HeaderStyle} {
+    padding-right: 0; /* collapse to the right side to align navigation items to the edge */
   }
 `
 
