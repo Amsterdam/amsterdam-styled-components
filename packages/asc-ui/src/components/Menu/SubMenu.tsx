@@ -132,6 +132,7 @@ const SubMenu: React.FC<Props> = ({
   return (
     <li tabIndex={-1}>
       <SubMenuWrapperStyle
+        as="div"
         tabIndex={0}
         ref={subMenuRef}
         focused={expanded}

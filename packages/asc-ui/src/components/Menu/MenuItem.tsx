@@ -2,7 +2,7 @@ import React from 'react'
 import MenuStyle, { MenuStyleProps } from './index'
 import { Icon } from '../..'
 import { KeyboardKeys } from '../../types'
-import { MenuContext } from './Menu'
+import { useMenuContext } from './Menu'
 
 const { MenuItemStyle, MenuItemWrapperStyle, MenuItemLabelStyle } = MenuStyle
 
@@ -29,7 +29,11 @@ const MenuItem = ({
 }: Props) => {
   const menuItemRef = React.useRef<HTMLAnchorElement>(null)
 
-  const { selectedChild, expandedChild }: any = React.useContext(MenuContext)
+  const {
+    selectedChild,
+    onClick: onClickAction,
+    expandedChild,
+  }: any = useMenuContext()
 
   const focused = index === selectedChild
 
@@ -41,6 +45,7 @@ const MenuItem = ({
 
   const handleOnClick = (e: React.KeyboardEvent | React.MouseEvent) => {
     if (onClick) {
+      onClickAction()
       onClick(e)
     }
   }
@@ -65,6 +70,8 @@ const MenuItem = ({
         {...otherProps}
       >
         {icon && <Icon size={14}>{icon}</Icon>}
+        {/* CSS trick: we add an extra element span here so that MenuItemLabelStyle's
+        border-bottom will underline overflowing text, since it's parent has display: flex */}
         <span>
           <MenuItemLabelStyle>{children}</MenuItemLabelStyle>
         </span>

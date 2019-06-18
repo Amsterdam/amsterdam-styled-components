@@ -10,6 +10,7 @@ const HeaderStyle = styled(TopBarStyle)<HeaderStyleProps>`
   flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
+  align-items: stretch;
   max-width: ${({ fullWidth }) =>
     !fullWidth ? `${HEADER_MAX_WIDTH}px` : 'none'};
 `

@@ -15,6 +15,7 @@ export type Props = {
 }
 
 export const MenuContext = React.createContext({})
+export const useMenuContext = () => React.useContext(MenuContext)
 
 const Menu: React.FC<Props> = ({ children, mobile, onExpand, align }) => {
   const initialState = {

@@ -7,7 +7,6 @@ type Props = {
 }
 
 const HeaderLogoTextStyle = styled.h1<Props>`
-  height: 50px;
   margin: 0;
   font-weight: 700;
   display: flex;
