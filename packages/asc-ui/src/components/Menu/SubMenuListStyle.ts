@@ -49,6 +49,15 @@ export const SubMenuWrapperStyle = styled(SharedMenuItemStyle)<
     left: -8px;
   }
 
+  ${({ theme, focused }) =>
+    focused &&
+    `
+    & > span > ${MenuItemLabelStyle} {
+      border-bottom-color: ${color('secondary', 'main')({ theme })};
+      color: ${color('secondary', 'main')({ theme })};
+    }
+  `}
+
   &:focus,
   &:hover {
     & > span > ${MenuItemLabelStyle} {
@@ -58,6 +67,7 @@ export const SubMenuWrapperStyle = styled(SharedMenuItemStyle)<
 
     ${MenuItemWrapperStyle} {
       & > ${MenuItemLabelStyle} {
+        border-bottom-color: ${color('secondary', 'main')};
         color: ${color('secondary', 'main')};
       }
 

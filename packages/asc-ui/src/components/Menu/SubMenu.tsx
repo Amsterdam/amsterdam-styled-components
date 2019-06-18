@@ -57,7 +57,7 @@ const SubMenu: React.FC<Props> = ({
   }, [])
 
   React.useEffect(() => {
-    if (subMenuRef && subMenuRef.current && focused && mobile) {
+    if (subMenuRef && subMenuRef.current && focused) {
       subMenuRef.current.focus()
     }
   }, [selectedChild])

@@ -30,14 +30,14 @@ const MenuList = ({
     nrOfChildrenChild,
   }: any = React.useContext(MenuContext)
 
-  const clonedChildren = React.Children.map(children, (child, index) => {
-    return React.cloneElement(child as React.ReactElement<any>, {
+  const clonedChildren = React.Children.map(children, (child, index) =>
+    React.cloneElement(child as React.ReactElement<any>, {
       index:
         expandedChild && index > expandedChildIndex
           ? nrOfChildrenChild + expandedChildIndex + index - expandedChildIndex
           : index,
-    })
-  })
+    }),
+  )
 
   return (
     <MenuListWrapperStyle
