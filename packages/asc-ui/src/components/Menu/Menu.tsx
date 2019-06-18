@@ -118,21 +118,24 @@ const Menu: React.FC<Props> = ({ children, mobile, onExpand, align }) => {
       event.key === KeyboardKeys.ArrowDown ||
       event.key === KeyboardKeys.Tab
     ) {
-      event.preventDefault()
+      dispatch({
+        type: 'setSelectedChild',
+        payload: selectedChild + 1,
+      })
 
       if (selectedChild === lastChild) {
         resetExpandedChild()
-      } else {
-        dispatch({
-          type: 'setSelectedChild',
-          payload: selectedChild === lastChild ? firstChild : selectedChild + 1,
-        })
+
+        if (event.key === KeyboardKeys.Tab) {
+          dispatch({
+            type: 'setSelectedChild',
+            payload: expandedChildIndex + 1,
+          })
+        }
       }
     }
 
     if (event.key === KeyboardKeys.ArrowUp) {
-      event.preventDefault()
-
       dispatch({
         type: 'setSelectedChild',
         payload:
