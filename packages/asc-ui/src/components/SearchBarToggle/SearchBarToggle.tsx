@@ -77,7 +77,7 @@ const SearchBarMenu: React.FC<SearchBarMenuProps> = ({
         onClick={() => {
           setOpen(!open)
         }}
-        iconSize={open ? 16 : 20}
+        iconSize={20}
       >
         {open ? <Close /> : <Search />}
       </IconButton>

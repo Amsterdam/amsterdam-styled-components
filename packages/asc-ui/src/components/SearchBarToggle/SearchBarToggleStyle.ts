@@ -24,6 +24,7 @@ const SearchBarMenuStyle = styled.div<SearchBarMenuStyleProps>`
     left: 0;
     padding: 15px;
     background-color: ${color('tint', 'level2')};
+    border-bottom: 5px solid;
   }
 
   & > ${IconButtonStyle} {
