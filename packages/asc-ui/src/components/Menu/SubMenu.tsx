@@ -135,6 +135,7 @@ const SubMenu: React.FC<Props> = ({
         tabIndex={0}
         ref={subMenuRef}
         focused={expanded}
+        height={buttonHeight}
         css={css}
         onKeyDown={handleKeyPress}
         onClick={() => handleOnClick()}
