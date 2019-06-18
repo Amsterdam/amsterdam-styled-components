@@ -65,6 +65,8 @@ const MenuItem = ({
         {...otherProps}
       >
         {icon && <Icon size={14}>{icon}</Icon>}
+        {/* CSS trick: we add an extra element span here so that MenuItemLabelStyle's
+        border-bottom will underline overflowing text, since it's parent has display: flex */}
         <span>
           <MenuItemLabelStyle>{children}</MenuItemLabelStyle>
         </span>

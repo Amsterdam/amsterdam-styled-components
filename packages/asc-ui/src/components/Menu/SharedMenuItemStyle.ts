@@ -14,6 +14,7 @@ export const SharedMenuItemStyle = styled.a<SharedStyleProps>`
   box-sizing: border-box;
   border-left: solid 8px transparent;
   text-decoration: none;
+  height: 100%;
 
   &:hover,
   &:focus {

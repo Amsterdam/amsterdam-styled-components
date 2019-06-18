@@ -51,6 +51,11 @@ export const SubMenuWrapperStyle = styled(SharedMenuItemStyle)<
 
   &:focus,
   &:hover {
+    & > span > ${MenuItemLabelStyle} {
+      border-bottom-color: ${color('secondary', 'main')};
+      color: ${color('secondary', 'main')};
+    }
+
     ${MenuItemWrapperStyle} {
       & > ${MenuItemLabelStyle} {
         color: ${color('secondary', 'main')};

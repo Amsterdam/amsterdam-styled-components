@@ -19,6 +19,10 @@ exports[`Header should render the short version 1`] = `
   flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   max-width: none;
 }
 
@@ -113,7 +117,6 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c2 {
-  height: 50px;
   margin: 0;
   font-weight: 700;
   display: -webkit-box;
@@ -297,6 +300,10 @@ exports[`Header should render the short version without the full width 1`] = `
   flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   max-width: 1600px;
 }
 
@@ -391,7 +398,6 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c2 {
-  height: 50px;
   margin: 0;
   font-weight: 700;
   display: -webkit-box;
@@ -591,6 +597,10 @@ exports[`Header should render the tall version 1`] = `
   flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   max-width: none;
 }
 
@@ -689,7 +699,6 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c5 {
-  height: 50px;
   margin: 0;
   font-weight: 700;
   display: -webkit-box;
@@ -975,6 +984,10 @@ exports[`Header should render the tall version without a title 1`] = `
   flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   max-width: none;
 }
 
@@ -1031,7 +1044,6 @@ exports[`Header should render the tall version without a title 1`] = `
 }
 
 .c5 {
-  height: 50px;
   margin: 0;
   font-weight: 700;
   display: -webkit-box;
