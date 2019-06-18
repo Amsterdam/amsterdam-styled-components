@@ -42,10 +42,12 @@ const SubMenu: React.FC<Props> = ({
     setExpandedChild,
     resetExpandedChild,
     onKeyDown,
+    onClose,
     mobile,
   }: any = React.useContext(MenuContext)
 
   const subMenuRef = React.useRef<HTMLAnchorElement>(null)
+  const subMenuListRef = React.useRef<HTMLDivElement>(null)
 
   const expanded = expandedChild && currentIndex === expandedChildIndex
   const focused = currentIndex === selectedChild
@@ -57,7 +59,7 @@ const SubMenu: React.FC<Props> = ({
   }, [])
 
   React.useEffect(() => {
-    if (subMenuRef && subMenuRef.current && focused) {
+    if (subMenuRef && subMenuRef.current && focused && mobile) {
       subMenuRef.current.focus()
     }
   }, [selectedChild])
@@ -138,14 +140,18 @@ const SubMenu: React.FC<Props> = ({
         focused={expanded}
         css={css}
         onKeyDown={handleKeyPress}
-        onClick={() => handleOnClick()}
+        onClick={() => !expanded && handleOnClick()}
         onFocus={() => !mobile && !expanded && handleOnClick()}
         onMouseEnter={() => !mobile && !expanded && handleOnClick()}
         onMouseLeave={() => !mobile && handleOnClick(true)}
         {...otherProps}
       >
         {SubMenuItem}
-        <SubMenuListWrapper aria-hidden={!expanded}>
+        <SubMenuListWrapper
+          aria-hidden={!expanded}
+          ref={subMenuListRef}
+          onBlur={() => onClose(subMenuListRef)}
+        >
           <SubMenuList top={buttonHeight} labelId={id}>
             {clonedChildren}
           </SubMenuList>

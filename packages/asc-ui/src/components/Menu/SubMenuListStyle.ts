@@ -52,6 +52,8 @@ export const SubMenuWrapperStyle = styled(SharedMenuItemStyle)<
   ${({ theme, focused }) =>
     focused &&
     `
+    background-color: ${color('tint', 'level2')({ theme })};
+
     & > span > ${MenuItemLabelStyle} {
       border-bottom-color: ${color('secondary', 'main')({ theme })};
       color: ${color('secondary', 'main')({ theme })};
@@ -103,6 +105,10 @@ export const SubMenuWrapperStyle = styled(SharedMenuItemStyle)<
         ${({ theme, focused }) => focused && svgFill('secondary')({ theme })};
       }
     }
+  }
+
+  &:hover {
+    outline: 0; /* makes sure the outline is only visible on focus */
   }
 
   ${SubMenuButtonStyle} {
