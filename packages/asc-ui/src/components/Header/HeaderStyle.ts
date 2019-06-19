@@ -1,4 +1,5 @@
 import styled from '@datapunt/asc-core'
+import { breakpoint } from '../../utils'
 import TopBarStyle from '../TopBar/TopBarStyle'
 import { HEADER_MAX_WIDTH } from './sizes'
 
@@ -13,6 +14,10 @@ const HeaderStyle = styled(TopBarStyle)<HeaderStyleProps>`
   align-items: stretch;
   max-width: ${({ fullWidth }) =>
     !fullWidth ? `${HEADER_MAX_WIDTH}px` : 'none'};
+
+  @media screen and ${breakpoint('max-width', 'laptopM')} {
+    padding: 0 10px;
+  }
 `
 
 export default HeaderStyle

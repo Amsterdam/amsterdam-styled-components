@@ -1,5 +1,6 @@
 import styled from '@datapunt/asc-core'
 import { fromTheme } from '../../utils'
+import { MenuItemLabelStyle, MenuItemWrapperStyle } from './MenuItemStyle'
 
 const MenuBarStyle = styled.ul`
   display: flex;
@@ -16,6 +17,12 @@ const MenuBarStyle = styled.ul`
   &:focus,
   &:hover {
     outline: none;
+  }
+
+  & > ${MenuItemWrapperStyle} {
+    ${MenuItemLabelStyle} {
+      font-weight: 500;
+    }
   }
 `
 

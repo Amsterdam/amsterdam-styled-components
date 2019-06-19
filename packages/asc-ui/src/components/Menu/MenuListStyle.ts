@@ -1,6 +1,7 @@
 import styled from '@datapunt/asc-core'
 import { MenuStyleProps } from './types'
 import { color } from '../../utils'
+import { MenuItemLabelStyle } from './MenuItemStyle'
 
 const MenuListStyle = styled.ul<MenuStyleProps.MenuListStyleProps>`
   display: flex;
@@ -22,12 +23,18 @@ export const MenuListWrapperStyle = styled.div.attrs(() => ({
   order: ${({ position }) => (position === 'bottom' ? -1 : 0)};
   background-color: ${color('tint', 'level2')};
   border-bottom: 4px solid ${color('tint', 'level7')};
-  width: 250px;
+  width: 278px;
   position: absolute;
   top: ${({ top }) => `${top}px`};
   ${({ alignRight }) => alignRight && 'right: 0'}
-  &:focus {
+
+  &:focus,
+   &:active {
     outline: none;
+
+    ${MenuItemLabelStyle} {
+      color: purple;
+    }
   }
 `
 

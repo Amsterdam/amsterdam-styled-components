@@ -14,7 +14,7 @@ const InputStyle = styled.input.attrs({
   border-radius: 0;
   box-sizing: border-box;
   line-height: 18px;
-  padding: 9px 9px 11px;
+  padding: 10px;
   width: 100%;
   ${focusStyleOutline(2, 0.5)}
 

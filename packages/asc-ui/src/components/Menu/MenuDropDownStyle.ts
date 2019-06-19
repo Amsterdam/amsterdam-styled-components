@@ -2,10 +2,12 @@ import styled from '@datapunt/asc-core'
 import { MenuStyleProps } from './types'
 import MenuItemStyle, {
   MenuItemLabelStyle,
+  MenuItemWrapperStyle,
   SubMenuItemStyle,
 } from './MenuItemStyle'
 import { SubMenuWrapperStyle } from './SubMenuListStyle'
 import { color, svgFill } from '../../utils'
+import MenuListStyle from './MenuListStyle'
 
 export const MenuDropDownButtonStyle = styled.button<
   MenuStyleProps.MenuButtonStyleProps
@@ -72,8 +74,20 @@ const MenuDropDownStyle = styled.div<MenuStyleProps.MenuListStyleProps>`
       }
     }
   }
+
+  ${MenuListStyle} {
+    & > ${MenuItemWrapperStyle} {
+      ${MenuItemLabelStyle} {
+        font-weight: 500;
+      }
+    }
+  }
   ${SubMenuWrapperStyle} {
     ${MenuItemStyle} {
+      ${MenuItemLabelStyle} {
+        font-weight: 400;
+      }
+
       &:focus,
       &:hover {
         border-left-color: ${color('secondary', 'main')};

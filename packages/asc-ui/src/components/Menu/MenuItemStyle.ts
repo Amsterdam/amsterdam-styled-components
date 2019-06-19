@@ -12,7 +12,7 @@ export const MenuItemLabelStyle = styled.span<
   border-bottom-color: ${({ focused }) =>
     focused ? color('secondary', 'main') : 'transparent'};
   line-height: 22px;
-  font-weight: 400;
+  font-weight: 500;
   color: ${color('tint', 'level6')};
 `
 
@@ -25,7 +25,7 @@ export const MenuItemStyle = styled(SharedMenuItemStyle)<
   flex-direction: row;
 
   ${IconStyle} {
-    transform: translateY(3px);
+    transform: translateY(4px);
     align-self: flex-start;
 
     &:not(:last-child) {
@@ -58,7 +58,11 @@ export const MenuItemStyle = styled(SharedMenuItemStyle)<
   }
 `
 
-export const MenuItemWrapperStyle = styled.li``
+export const MenuItemWrapperStyle = styled.li`
+  ${MenuItemLabelStyle} {
+    font-weight: 400;
+  }
+`
 
 export const SubMenuItemStyle = styled(SharedMenuItemStyle)<
   MenuStyleProps.MenuItemStyleProps

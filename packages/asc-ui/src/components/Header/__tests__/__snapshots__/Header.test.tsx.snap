@@ -228,6 +228,12 @@ exports[`Header should render the short version 1`] = `
   }
 }
 
+@media screen and (max-width:1200px) {
+  .c2 {
+    padding: 0 10px;
+  }
+}
+
 @media screen and (max-width:375px) {
   .c8 {
     font-size: 14px;
@@ -522,6 +528,12 @@ exports[`Header should render the short version without the full width 1`] = `
 @media screen and (min-width:540.02px) {
   .c2 {
     padding: 0 15px;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .c2 {
+    padding: 0 10px;
   }
 }
 
@@ -831,6 +843,12 @@ exports[`Header should render the tall version 1`] = `
 @media screen and (min-width:540.02px) {
   .c3 {
     padding: 0 15px;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .c3 {
+    padding: 0 10px;
   }
 }
 
@@ -1168,6 +1186,12 @@ exports[`Header should render the tall version without a title 1`] = `
 @media screen and (min-width:540.02px) {
   .c3 {
     padding: 0 15px;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .c3 {
+    padding: 0 10px;
   }
 }
 
