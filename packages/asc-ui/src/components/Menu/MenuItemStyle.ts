@@ -58,6 +58,7 @@ export const MenuItemStyle = styled(SharedMenuItemStyle)<
   }
 `
 
+// noinspection Stylelint
 export const MenuItemWrapperStyle = styled.li`
   ${MenuItemLabelStyle} {
     font-weight: 400;
