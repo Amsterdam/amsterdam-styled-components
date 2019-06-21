@@ -1,5 +1,4 @@
 import styled, { css } from '@datapunt/asc-core'
-import IconButtonStyle from '../IconButton/IconButtonStyle'
 import { color, showHide, ShowHideTypes } from '../../utils'
 import SearchBarStyle from '../SearchBar/SearchBarStyle'
 
@@ -13,10 +12,6 @@ const SearchBarMenuStyle = styled.div<SearchBarMenuStyleProps>`
   align-items: flex-start;
   flex-direction: column;
 
-  [aria-hidden='true'] {
-    display: none;
-  }
-
   & > ${SearchBarStyle} {
     position: absolute;
     top: 50px;
@@ -25,13 +20,6 @@ const SearchBarMenuStyle = styled.div<SearchBarMenuStyleProps>`
     padding: 15px;
     background-color: ${color('tint', 'level2')};
     border-bottom: 4px solid;
-  }
-
-  & > ${IconButtonStyle} {
-    height: 50px;
-    width: 50px;
-    background-color: ${({ open, theme }) =>
-      color('tint', open ? 'level2' : 'level1')({ theme })};
   }
 
   ${showHide()}

@@ -17,13 +17,6 @@ import Focus from './components/Focus'
 import ContextMenu from './components/ContextMenu'
 import ContextMenuButtonStyle from './components/ContextMenu/ContextMenuButton'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
-import Menu from './components/Menu/Menu'
-import { MenuStyle } from './components/Menu'
-import MenuBar from './components/Menu/MenuBar'
-import MenuDropDown from './components/Menu/MenuDropDown'
-import MenuItem from './components/Menu/MenuItem'
-import MenuLabel from './components/Menu/MenuLabel'
-import SubMenu from './components/Menu/SubMenu'
 import Header, { HeaderStyles } from './components/Header'
 import Divider from './components/Divider'
 import ListItem from './components/ListItem'
@@ -34,6 +27,16 @@ import SearchBarToggle, {
 import TextField, { TextFieldStyles } from './components/TextField'
 import GlobalStyle from './components/GlobalStyle'
 import { GridContainer, GridItem } from './components/Grid'
+import {
+  MenuItemTitle,
+  MenuWrapper,
+  MenuItemLink,
+  MenuItemLabel,
+  MenuItem,
+  MenuFlyOut,
+  Menu,
+  MenuStyles,
+} from './components/NewMenu'
 import ThemeProvider from './theme'
 
 export { breakpoint } from './utils'
@@ -44,10 +47,10 @@ export const styles = {
   ...HeaderStyles,
   ...SearchBarStyles,
   ...TextFieldStyles,
-  ...MenuStyle,
   ...TopBarStyles,
   ...InputStyles,
   ...SearchBarToggleStyles,
+  ...MenuStyles,
 }
 
 // Components
@@ -73,12 +76,13 @@ export {
   ContextMenu,
   ContextMenuButtonStyle,
   ContextMenuItem,
-  Menu,
-  MenuBar,
-  MenuDropDown,
+  MenuWrapper,
+  MenuItemTitle,
+  MenuItemLink,
+  MenuItemLabel,
   MenuItem,
-  MenuLabel,
-  SubMenu,
+  MenuFlyOut,
+  Menu,
   Header,
   SearchBar,
   GlobalStyle,

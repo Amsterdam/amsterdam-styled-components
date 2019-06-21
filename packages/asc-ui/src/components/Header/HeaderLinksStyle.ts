@@ -1,6 +1,7 @@
 import styled from '@datapunt/asc-core'
-import MenuStyle from '../Menu'
 import { color, breakpoint, svgFill } from '../../utils'
+import { MenuItemStyle } from '../NewMenu/MenuItem'
+import { MenuItemLabelStyle } from '../NewMenu/MenuItemLabel'
 
 const HeaderLinksStyle = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ const HeaderLinksStyle = styled.div`
   align-items: center;
   justify-content: flex-end;
 
-  ${MenuStyle.MenuItemStyle} {
+  ${MenuItemStyle} {
     height: 17px;
     padding: 0;
 
@@ -22,7 +23,7 @@ const HeaderLinksStyle = styled.div`
     &:hover {
       background-color: transparent;
 
-      ${MenuStyle.MenuItemLabelStyle} {
+      ${MenuItemLabelStyle} {
         color: ${color('secondary')};
       }
 
@@ -31,7 +32,7 @@ const HeaderLinksStyle = styled.div`
       }
     }
 
-    ${MenuStyle.MenuItemLabelStyle} {
+    ${MenuItemLabelStyle} {
       line-height: 17px;
     }
   }

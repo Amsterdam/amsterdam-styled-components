@@ -4,6 +4,7 @@ import { Position } from './types'
 import ContextMenuListStyle, {
   ContextMenuListWrapperStyle,
 } from './ContextMenuListStyle'
+import usePassPropsToChildren from '../../utils/usePassPropsToChildren'
 
 type Props = {
   open: boolean
@@ -39,11 +40,9 @@ class ContextMenuList extends React.Component<Props> {
       onClose,
     } = this.props
 
-    const children = React.Children.map(childrenProps, (child, index) =>
-      React.cloneElement(child as React.ReactElement<any>, {
-        focused: index === selectedChild,
-      }),
-    )
+    const { children } = usePassPropsToChildren(childrenProps, index => ({
+      focused: index === selectedChild,
+    }))
 
     return (
       <ContextMenuListWrapperStyle

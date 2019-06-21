@@ -31,18 +31,15 @@ const Input: React.FC<InputProps> = ({
   ...props
 }: InputProps) => {
   const ref = React.useRef<HTMLInputElement>(null)
-  let { onKeyDown } = props
+  const { onKeyDown } = props
 
-  if (focusOnRender) {
-    useFocusOnRender(ref)
-  }
-  if (blurOnEscape) {
-    ;({ onKeyDown } = useActionOnEscape(() => {
-      if (ref.current) {
-        ref.current.blur()
-      }
-    }))
-  }
+  useFocusOnRender(ref, focusOnRender)
+
+  const { onKeyDown: onKeyDownHook } = useActionOnEscape(() => {
+    if (ref.current) {
+      ref.current.blur()
+    }
+  })
 
   const handleOnKeyDown = (
     e: React.KeyboardEvent<HTMLInputElement>,
@@ -50,6 +47,9 @@ const Input: React.FC<InputProps> = ({
   ) => {
     if (onKeyDown) {
       onKeyDown(e)
+    }
+    if (blurOnEscape) {
+      onKeyDownHook(e)
     }
     if (context.onKeyDown) {
       context.onKeyDown(e)

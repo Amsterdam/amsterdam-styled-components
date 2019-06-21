@@ -11,7 +11,7 @@ export default createGlobalStyle`
   }
 
   [aria-hidden="true"] {
-    display: none;
+    display: none !important;
   }
   
   * {

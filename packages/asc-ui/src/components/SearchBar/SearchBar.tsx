@@ -64,13 +64,13 @@ const SearchBar: React.FC<SearchBarProps> = ({
     if (onWatchValue) {
       onWatchValue(inputValue)
     }
-  }, [inputValue])
+  }, [inputValue, onWatchValue])
 
   React.useEffect(() => {
     if (typeof value !== 'undefined') {
       setInputValue(value)
     }
-  }, [value])
+  }, [value, setInputValue])
 
   return (
     <SearchBarStyle {...otherProps} {...{ hideAt, showAt, css }}>

@@ -5,9 +5,10 @@ import SearchBarToggleStyle, {
   SearchBarMenuStyleProps,
 } from './SearchBarToggleStyle'
 import SearchBar from '../SearchBar'
-import IconButton from '../IconButton/IconButton'
+import ButtonToggle from '../ButtonToggle'
 import { InputMethods } from '../Input'
 import useActionOnEscape from '../../utils/useActionOnEscape'
+import Icon from '../Icon'
 
 interface SearchBarMenuProps extends SearchBarMenuStyleProps, InputMethods {
   css?: any
@@ -47,7 +48,7 @@ const SearchBarMenu: React.FC<SearchBarMenuProps> = ({
     if (onOpen) {
       onOpen(open)
     }
-  }, [open])
+  }, [open, onOpen])
 
   // Useful if parent needs to take over control the open state
   React.useEffect(() => {
@@ -71,16 +72,17 @@ const SearchBarMenu: React.FC<SearchBarMenuProps> = ({
       }}
       onBlur={onBlurHandler}
     >
-      <IconButton
+      <ButtonToggle
         type="button"
         aria-label="Search"
+        open={open}
         onClick={() => {
           setOpen(!open)
         }}
         iconSize={20}
       >
-        {open ? <Close /> : <Search />}
-      </IconButton>
+        <Icon>{open ? <Close /> : <Search />}</Icon>
+      </ButtonToggle>
 
       {open && (
         <SearchBar focusOnRender {...otherProps}>

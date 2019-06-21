@@ -1,14 +1,14 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { css } from '@datapunt/asc-core'
-import { ReactComponent as ChevronRight } from '@datapunt/asc-assets/lib/Icons/ChevronRight.svg'
-import { ReactComponent as ExternalLink } from '@datapunt/asc-assets/lib/Icons/ExternalLink.svg'
-import { MenuItem, MenuLabel, Header, SubMenu, styles } from '../../../index'
-import Menu, { Props } from '../../Menu/Menu'
+import { Header, styles } from '../../../index'
 import { breakpoint } from '../../../utils'
 import SearchBar from '../../SearchBar'
 import SearchBarToggle from '../../SearchBarToggle/SearchBarToggle'
-import { MenuStyleProps } from '../../Menu'
+import Menu from '../../NewMenu/Menu'
+import MenuItem from '../../NewMenu/MenuItem'
+import MenuItemLink from '../../NewMenu/MenuItemLink'
+import MenuFlyOut from '../../NewMenu/MenuFlyOut'
 
 const DataportaalHeaderWrapperStyle = css`
   ${styles.HeaderContentStyle} {
@@ -25,66 +25,51 @@ const DataportaalHeaderWrapperStyle = css`
     }
   }
 
-  ${styles.MenuBarStyle} {
-    @media screen and ${breakpoint('max-width', 'tabletM')} {
-      display: none;
-    }
-  }
+  // ${styles.MenuSt} {
+  //   @media screen and ${breakpoint('max-width', 'tabletM')} {
+  //     display: none;
+  //   }
+  // }
 
-  ${styles.MenuDropDownStyle} {
+  ${styles.MenuFlyOutStyle} {
     @media screen and ${breakpoint('min-width', 'tabletM')} {
       display: none;
     }
   }
 `
 
-const MenuDefault = (props: Props) => (
+const MenuDefault = (props: any) => (
   <Menu {...props}>
-    <MenuItem href="#one" onClick={action('click')}>One</MenuItem>
-    <SubMenu label="Two">
-      <MenuItem icon={<ChevronRight />} href="#one" onClick={action('click')}>
-        One
-      </MenuItem>
-      <MenuItem icon={<ChevronRight />} href="#two" onClick={action('click')}>
-        Two
-      </MenuItem>
-      <MenuLabel>Two</MenuLabel>
-      <MenuItem icon={<ChevronRight />} href="#one" onClick={action('click')}>
-        One
-      </MenuItem>
-      <MenuItem icon={<ChevronRight />} href="#two" onClick={action('click')}>
-        Two
-      </MenuItem>
-      <MenuItem icon={<ExternalLink />} href="#more" onClick={action('click')}>
-        Show more
-      </MenuItem>
-    </SubMenu>
-    <SubMenu label="Three">
-      <MenuItem icon={<ChevronRight />} href="#one" onClick={action('click')}>
-        One
-      </MenuItem>
-      <MenuItem icon={<ChevronRight />} href="#two" onClick={action('click')}>
-        Two
-      </MenuItem>
-    </SubMenu>
-    <MenuItem href="#four" onClick={action('click')}>Four</MenuItem>
+    <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
+    <MenuFlyOut label="Two">
+      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
+      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
+      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
+      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
+    </MenuFlyOut>
+    <MenuFlyOut label="Three">
+      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
+      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
+      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
+    </MenuFlyOut>
+    <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
   </Menu>
 )
 
 const MenuMobile = () => (
-  <MenuDefault mobile align={MenuStyleProps.Align.right} />
+  <MenuDefault toggle />
 )
-
-const HeaderLinksMenu = () => (
-  <Menu>
-    <MenuItem icon={<ChevronRight />} href="#one" onClick={action('click')}>
-      One
-    </MenuItem>
-    <MenuItem icon={<ChevronRight />} href="#two" onClick={action('click')}>
-      Two
-    </MenuItem>
-  </Menu>
-)
+//
+// const HeaderLinksMenu = () => (
+//   <Menu>
+//     <MenuItem icon={<ChevronRight />} href="#one" onClick={action('click')}>
+//       One
+//     </MenuItem>
+//     <MenuItem icon={<ChevronRight />} href="#two" onClick={action('click')}>
+//       Two
+//     </MenuItem>
+//   </Menu>
+// )
 
 const DataportaalHeader: React.FC<{}> = () => (
     <Header
@@ -93,7 +78,6 @@ const DataportaalHeader: React.FC<{}> = () => (
       homeLink="http://data.amsterdam.nl"
       fullWidth={false}
       css={DataportaalHeaderWrapperStyle}
-      links={<HeaderLinksMenu />}
       navigation={
         <>
           <SearchBar
