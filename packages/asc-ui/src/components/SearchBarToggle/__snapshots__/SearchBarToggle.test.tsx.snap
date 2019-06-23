@@ -118,7 +118,7 @@ exports[`SearchBarToggle should render 1`] = `
           "$$typeof": Symbol(react.forward_ref),
           "attrs": Array [],
           "componentStyle": ComponentStyle {
-            "componentId": "sc-EHOje",
+            "componentId": "sc-jWBwVP",
             "isStatic": false,
             "lastClassName": "c0",
             "rules": Array [
@@ -153,7 +153,7 @@ exports[`SearchBarToggle should render 1`] = `
           "displayName": "styled.div",
           "foldedComponentIds": Array [],
           "render": [Function],
-          "styledComponentId": "sc-EHOje",
+          "styledComponentId": "sc-jWBwVP",
           "target": "div",
           "toString": [Function],
           "warnTooManyClasses": [Function],
@@ -311,7 +311,7 @@ exports[`SearchBarToggle should render 1`] = `
                 "$$typeof": Symbol(react.forward_ref),
                 "attrs": Array [],
                 "componentStyle": ComponentStyle {
-                  "componentId": "sc-csuQGl",
+                  "componentId": "sc-brqgnP",
                   "isStatic": false,
                   "lastClassName": "c1",
                   "rules": Array [
@@ -387,7 +387,7 @@ exports[`SearchBarToggle should render 1`] = `
                   "sc-htpNat",
                 ],
                 "render": [Function],
-                "styledComponentId": "sc-csuQGl",
+                "styledComponentId": "sc-brqgnP",
                 "target": "button",
                 "toString": [Function],
                 "warnTooManyClasses": [Function],

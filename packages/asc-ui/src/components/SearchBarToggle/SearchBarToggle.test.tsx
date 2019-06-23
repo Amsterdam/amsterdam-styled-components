@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { mount } from 'enzyme'
+import SearchBar from '../SearchBar'
 import SearchBarToggle from './SearchBarToggle'
+import ButtonToggle from '../ButtonToggle'
 import 'jest-styled-components'
 
 jest.useFakeTimers()
@@ -22,8 +24,8 @@ describe('SearchBarToggle', () => {
   })
 
   it('it should show the searchbar when clicking on the button', () => {
-    expect(component.find('SearchBar').exists()).toBe(false)
-    component.find('IconButton').simulate('click')
-    expect(component.find('SearchBar').exists()).toBe(true)
+    expect(component.find(SearchBar).exists()).toBe(false)
+    component.find(ButtonToggle).simulate('click')
+    expect(component.find(SearchBar).exists()).toBe(true)
   })
 })

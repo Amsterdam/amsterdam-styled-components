@@ -11,6 +11,8 @@ import MenuFlyOutStyle from './MenuFlyOutStyle'
 import Icon from '../../Icon'
 
 const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
+  const { hasToggle, setActiveToggleChild } = useMenuContext()
+
   const ref = React.useRef<HTMLLIElement>(null)
   const [isOpen, setOpen] = React.useState(false)
   const [linkRef, setLinkRef] = React.useState(null)
@@ -18,7 +20,6 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
   const [activeChild, setActiveChild] = React.useState(0)
   const flyOutOpen = isOpen || isOpenOnClick
 
-  const { hasToggle } = useMenuContext()
   const { children, filteredChildren } = useFocussedChildren(childrenProps)
   const { onKeyDown } = useKeysToFocus(
     filteredChildren,
@@ -31,9 +32,15 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
 
   const onClick = (e: React.MouseEvent) => {
     e.preventDefault()
-    setOpen(hasToggle && isOpen ? false : isOpen)
-    setOpenOnClick(hasToggle ? !isOpenOnClick : true)
-    setActiveChild(0)
+    if (hasToggle) {
+      setOpen(isOpen ? false : isOpen)
+      setOpenOnClick(!isOpenOnClick)
+
+      // @ts-ignore
+      setActiveToggleChild(linkIndex)
+    } else {
+      setOpenOnClick(true)
+    }
   }
 
   const onBlurHandler = () => {
@@ -56,8 +63,6 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
         onMouseOut: () => setOpen(false),
       }
     : {}
-
-  console.log('activeChild', activeChild)
 
   return (
     <MenuFlyOutStyle

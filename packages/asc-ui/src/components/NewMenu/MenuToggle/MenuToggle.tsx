@@ -17,7 +17,10 @@ const MenuToggle: React.FC<Props> = ({
   const [activeChild, setActiveChild] = React.useState(0)
   const ref = React.useRef(null)
   const { children, filteredChildren } = useFocussedChildren(childrenProps)
-  const toggleMenu = () => setMenuOpen(!menuOpen)
+  const toggleMenu = () => {
+    setActiveChild(0)
+    setMenuOpen(!menuOpen)
+  }
 
   const { onKeyDown } = useKeysToFocus(
     filteredChildren,
@@ -44,7 +47,7 @@ const MenuToggle: React.FC<Props> = ({
     <MenuContext.Provider
       value={{
         activeChild,
-        setActiveChild,
+        setActiveToggleChild: setActiveChild,
         underFlyOutMenu: false,
         hasToggle: true,
       }}
