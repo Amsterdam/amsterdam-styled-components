@@ -11,16 +11,12 @@ export default styled.li`
 export const MenuItemSharedStyle = css`
   position: relative;
   line-height: 1.5;
-  background-color: ${color('tint', 'level2')};
-  border-color: ${color('tint', 'level2')};
   padding: 10px 15px 10px 7px;
   margin: 0;
   display: flex;
   align-items: center;
   cursor: pointer;
   box-sizing: border-box;
-  border-left-style: solid;
-  border-left-width: 8px;
   text-decoration: none;
   height: 100%;
   flex-direction: row;
@@ -41,6 +37,8 @@ export const MenuItemSharedStyle = css`
 
   &:hover,
   &:focus {
+    background-color: ${color('tint', 'level2')};
+
     ${MenuItemLabelStyle} {
       border-bottom: 2px solid ${color('secondary')};
       color: ${color('secondary')};

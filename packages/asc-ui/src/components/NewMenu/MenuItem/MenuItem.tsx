@@ -8,7 +8,7 @@ export default React.forwardRef<HTMLLIElement, any>(function MenuItem(
 ) {
   const { children } = usePassPropsToChildren(childrenProps, { linkIndex })
   return (
-    <MenuItemStyle ref={ref} {...otherProps}>
+    <MenuItemStyle ref={ref} tabIndex={-1} {...otherProps}>
       {children}
     </MenuItemStyle>
   )

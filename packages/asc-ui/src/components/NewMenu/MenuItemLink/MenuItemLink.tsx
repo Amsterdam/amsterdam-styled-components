@@ -55,6 +55,7 @@ const MenuItemLink: React.FC<Props> = ({
       // @ts-ignore
       ref={ref}
       isActive={isActive}
+      tabIndex={0}
       {...(element ? { as: element } : {})}
       {...{ isToggleActive, underFlyOutMenu }}
       {...otherProps}
