@@ -1,9 +1,10 @@
 import styled from '@datapunt/asc-core'
+import { color } from '../../../utils'
 import { MenuItemLinkStyle } from '../MenuItemLink'
+import { MenuItemTitleStyle } from '../MenuItemTitle'
 import { MenuListStyle } from '../MenuList'
 import { MenuFlyOutStyle } from '../MenuFlyOut'
 import { TOGGLE_BUTTON_SIZE, FLY_OUT_WIDTH } from '../constants'
-import { color } from '../../../utils'
 
 export type Props = {
   align?: 'left' | 'right'
@@ -16,11 +17,11 @@ export default styled.div<Props>`
   align-items: flex-end;
 
   ${MenuListStyle} {
+    background-color: ${color('tint', 'level2')};
     position: absolute;
     width: ${FLY_OUT_WIDTH}px;
     flex-direction: column;
     top: ${TOGGLE_BUTTON_SIZE}px;
-
 
     ${({ align }) => 
       (align === 'left')
@@ -31,11 +32,13 @@ export default styled.div<Props>`
 
   ${MenuFlyOutStyle} {
     ${MenuItemLinkStyle} {
-      border-left-style: solid;
-      border-left-width: 8px;
+      border-color: ${color('tint', 'level2')};
+    }
+    ${MenuItemTitleStyle} {
       border-color: ${color('tint', 'level2')};
     }
     ${MenuListStyle} {
+      background-color: #ffffff;
       position: relative;
       top: 0;
     }

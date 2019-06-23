@@ -22,6 +22,10 @@ export const MenuItemSharedStyle = css`
   flex-direction: row;
   color: ${color('tint', 'level7')};
 
+  border-left-style: solid;
+  border-left-width: 8px;
+  border-color: transparent;
+
   ${IconStyle} {
     margin-right: 5px;
 

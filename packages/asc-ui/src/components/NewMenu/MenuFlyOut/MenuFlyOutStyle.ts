@@ -1,4 +1,5 @@
 import styled, { css } from '@datapunt/asc-core'
+import { color } from '../../../utils'
 import { MenuItemStyle } from '../MenuItem'
 import MenuListStyle from '../MenuList/MenuListStyle'
 import { MenuItemLinkStyle } from '../MenuItemLink'
@@ -11,7 +12,7 @@ type Props = {
 export default styled(MenuItemStyle)<Props>`
   ${MenuListStyle} {
     order: 0;
-    background-color: #f5f5f5;
+    background-color: ${color('tint', 'level7')};
     position: absolute;
     text-align: left;
     flex-direction: column;
