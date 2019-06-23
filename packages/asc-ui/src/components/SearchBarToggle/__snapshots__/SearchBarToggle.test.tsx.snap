@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchBarToggle should render 1`] = `
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -14,12 +14,35 @@ exports[`SearchBarToggle should render 1`] = `
   transform: rotate(0deg);
 }
 
-.c4 > svg {
+.c3 > svg {
   width: inherit;
   height: inherit;
 }
 
-.c2 {
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c0 > .c4 {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  left: 0;
+  padding: 15px;
+  border-bottom: 4px solid;
+}
+
+.c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -52,57 +75,27 @@ exports[`SearchBarToggle should render 1`] = `
   padding: 5px;
   width: 30px;
   height: 30px;
+  height: 50px;
+  width: 50px;
 }
 
-.c2:focus {
+.c1:focus {
   z-index: 10;
   outline-style: solid;
   outline-offset: 0px;
   outline-width: 3px;
 }
 
-.c2:after {
+.c1:after {
   content: '';
   display: block;
   min-height: inherit;
   font-size: 0;
 }
 
-.c2 .c3 {
+.c1 .c2 {
   height: 20px;
   width: 20px;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c0 [aria-hidden='true'] {
-  display: none;
-}
-
-.c0 > .c5 {
-  position: absolute;
-  top: 50px;
-  right: 0;
-  left: 0;
-  padding: 15px;
-  border-bottom: 4px solid;
-}
-
-.c0 > .c1 {
-  height: 50px;
-  width: 50px;
 }
 
 <SearchBarMenu
@@ -134,12 +127,8 @@ exports[`SearchBarToggle should render 1`] = `
   align-items: flex-start;
   flex-direction: column;
 
-  [aria-hidden='true'] {
-    display: none;
-  }
-
   & > ",
-              ".c5",
+              ".c4",
               " {
     position: absolute;
     top: 50px;
@@ -150,16 +139,6 @@ exports[`SearchBarToggle should render 1`] = `
               [Function],
               ";
     border-bottom: 4px solid;
-  }
-
-  & > ",
-              ".c1",
-              " {
-    height: 50px;
-    width: 50px;
-    background-color: ",
-              [Function],
-              ";
   }
 
   ",
@@ -183,7 +162,7 @@ exports[`SearchBarToggle should render 1`] = `
       }
       forwardedRef={
         Object {
-          "current": .c4 {
+          "current": .c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -196,12 +175,35 @@ exports[`SearchBarToggle should render 1`] = `
   transform: rotate(0deg);
 }
 
-.c4 > svg {
+.c3 > svg {
   width: inherit;
   height: inherit;
 }
 
-.c2 {
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c0 > .c4 {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  left: 0;
+  padding: 15px;
+  border-bottom: 4px solid;
+}
+
+.c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -234,57 +236,27 @@ exports[`SearchBarToggle should render 1`] = `
   padding: 5px;
   width: 30px;
   height: 30px;
+  height: 50px;
+  width: 50px;
 }
 
-.c2:focus {
+.c1:focus {
   z-index: 10;
   outline-style: solid;
   outline-offset: 0px;
   outline-width: 3px;
 }
 
-.c2:after {
+.c1:after {
   content: '';
   display: block;
   min-height: inherit;
   font-size: 0;
 }
 
-.c2 .c3 {
+.c1 .c2 {
   height: 20px;
   width: 20px;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c0 [aria-hidden='true'] {
-  display: none;
-}
-
-.c0 > .c5 {
-  position: absolute;
-  top: 50px;
-  right: 0;
-  left: 0;
-  padding: 15px;
-  border-bottom: 4px solid;
-}
-
-.c0 > .c1 {
-  height: 50px;
-  width: 50px;
 }
 
 <div
@@ -292,13 +264,14 @@ exports[`SearchBarToggle should render 1`] = `
           >
             <button
               aria-label="Search"
-              class="c1 c2"
+              class="c1"
               type="button"
             >
               <span
-                class="c3 c4"
+                class="c2 c3"
               >
                 <svg
+                  focusable="false"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -324,31 +297,25 @@ exports[`SearchBarToggle should render 1`] = `
         onKeyDown={[Function]}
         open={false}
       >
-        <IconButton
+        <Styled(Styled(styled.button))
           aria-label="Search"
           iconSize={20}
           onClick={[Function]}
+          open={false}
           type="button"
         >
-          <Styled(styled.button)
+          <StyledComponent
             aria-label="Search"
-            iconSize={20}
-            onClick={[Function]}
-            square={true}
-            type="button"
-          >
-            <StyledComponent
-              aria-label="Search"
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "c1",
-                    "isStatic": false,
-                    "lastClassName": "c2",
-                    "rules": Array [
-                      "
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-csuQGl",
+                  "isStatic": false,
+                  "lastClassName": "c1",
+                  "rules": Array [
+                    "
   display: inline-flex;
   align-items: center;
   text-decoration: none;
@@ -358,23 +325,23 @@ exports[`SearchBarToggle should render 1`] = `
   font-weight: normal;
   padding: 0 10px 0 10px;
   ",
-                      [Function],
-                      "
+                    [Function],
+                    "
   ",
-                      "transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;",
-                      "
+                    "transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;",
+                    "
   background: ",
-                      [Function],
-                      ";
+                    [Function],
+                    ";
 
   &:hover {
     background: ",
-                      [Function],
-                      ";
+                    [Function],
+                    ";
   }
 
   ",
-                      "
+                    "
   &:after {
     content: '';
     display: block;
@@ -382,125 +349,138 @@ exports[`SearchBarToggle should render 1`] = `
     font-size: 0;
   }
 ",
-                      "
+                    "
 ",
-                      "
+                    "
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 5px;
   ",
-                      [Function],
-                      "
+                    [Function],
+                    "
 
   ",
-                      ".c3",
-                      " {
+                    ".c2",
+                    " {
     ",
-                      [Function],
-                      "
+                    [Function],
+                    "
   }
 ",
-                    ],
-                  },
-                  "displayName": "Styled(styled.button)",
-                  "foldedComponentIds": Array [
-                    "sc-bdVaJa",
+                    "
+  height: ",
+                    [Function],
+                    ";
+  width: ",
+                    [Function],
+                    ";
+  background-color: ",
+                    [Function],
+                    ";
+",
                   ],
-                  "render": [Function],
-                  "styledComponentId": "c1",
-                  "target": "button",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                }
+                },
+                "displayName": "Styled(Styled(styled.button))",
+                "foldedComponentIds": Array [
+                  "sc-bdVaJa",
+                  "sc-htpNat",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-csuQGl",
+                "target": "button",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
               }
-              forwardedRef={null}
-              iconSize={20}
+            }
+            forwardedRef={null}
+            iconSize={20}
+            onClick={[Function]}
+            open={false}
+            type="button"
+          >
+            <button
+              aria-label="Search"
+              className="c1"
               onClick={[Function]}
-              square={true}
+              open={false}
               type="button"
             >
-              <button
-                aria-label="Search"
-                className="c1 c2"
-                onClick={[Function]}
-                type="button"
-              >
-                <Icon>
-                  <styled.span>
-                    <StyledComponent
-                      forwardedComponent={
-                        Object {
-                          "$$typeof": Symbol(react.forward_ref),
-                          "attrs": Array [],
-                          "componentStyle": ComponentStyle {
-                            "componentId": "c3",
-                            "isStatic": false,
-                            "lastClassName": "c4",
-                            "rules": Array [
-                              "
+              <Icon>
+                <styled.span>
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "c2",
+                          "isStatic": false,
+                          "lastClassName": "c3",
+                          "rules": Array [
+                            "
   display: ",
-                              [Function],
-                              ";
+                            [Function],
+                            ";
   ",
-                              [Function],
-                              "
+                            [Function],
+                            "
   ",
-                              [Function],
-                              "
+                            [Function],
+                            "
   ",
-                              [Function],
-                              ";
+                            [Function],
+                            ";
   box-sizing: content-box;
   ",
-                              [Function],
-                              ";
+                            [Function],
+                            ";
 
   & > svg {
     width: inherit;
     height: inherit;
     ",
-                              [Function],
-                              ";
+                            [Function],
+                            ";
   }
 ",
-                            ],
-                          },
-                          "displayName": "styled.span",
-                          "foldedComponentIds": Array [],
-                          "render": [Function],
-                          "styledComponentId": "c3",
-                          "target": "span",
-                          "toString": [Function],
-                          "warnTooManyClasses": [Function],
-                          "withComponent": [Function],
-                        }
+                          ],
+                        },
+                        "displayName": "styled.span",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "c2",
+                        "target": "span",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
                       }
-                      forwardedRef={null}
+                    }
+                    forwardedRef={null}
+                  >
+                    <span
+                      className="c2 c3"
                     >
-                      <span
-                        className="c3 c4"
-                      >
-                        <SvgSearch>
-                          <svg
-                            viewBox="0 0 32 32"
-                          >
-                            <path
-                              d="M32 29.119l-9.825-9.825a12.217 12.217 0 1 0-2.88 2.881L29.118 32 32 29.119zm-19.771-8.746a8.145 8.145 0 1 1 0-16.289 8.145 8.145 0 0 1 0 16.29z"
-                              fill="#000"
-                              fillRule="evenodd"
-                            />
-                          </svg>
-                        </SvgSearch>
-                      </span>
-                    </StyledComponent>
-                  </styled.span>
-                </Icon>
-              </button>
-            </StyledComponent>
-          </Styled(styled.button)>
-        </IconButton>
+                      <SvgSearch>
+                        <svg
+                          focusable={false}
+                          viewBox="0 0 32 32"
+                        >
+                          <path
+                            d="M32 29.119l-9.825-9.825a12.217 12.217 0 1 0-2.88 2.881L29.118 32 32 29.119zm-19.771-8.746a8.145 8.145 0 1 1 0-16.289 8.145 8.145 0 0 1 0 16.29z"
+                            fill="#000"
+                            fillRule="evenodd"
+                          />
+                        </svg>
+                      </SvgSearch>
+                    </span>
+                  </StyledComponent>
+                </styled.span>
+              </Icon>
+            </button>
+          </StyledComponent>
+        </Styled(Styled(styled.button))>
       </div>
     </StyledComponent>
   </styled.div>
