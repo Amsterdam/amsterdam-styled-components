@@ -1,15 +1,17 @@
 import React from 'react'
 import { Close, Menu } from '@datapunt/asc-assets'
-import MenuWrapper from '../MenuWrapper/MenuWrapper'
+import MenuList from '../MenuList/MenuList'
 import MenuContext from '../MenuContext'
 import useFocussedChildren from '../useFocussedChildren'
 import useKeysToFocus from '../useKeysToFocus'
 import ownerDocument from '../../../utils/ownerDocument'
-import MenuToggleStyle from './MenuToggleStyle'
+import MenuToggleStyle, {
+  Props
+} from './MenuToggleStyle'
 import ButtonToggle from '../../ButtonToggle'
 import Icon from '../../Icon'
 
-const MenuToggle: React.FC<{}> = ({ children: childrenProps }) => {
+const MenuToggle: React.FC<Props> = ({ children: childrenProps, align = 'left' }) => {
   const [menuOpen, setMenuOpen] = React.useState(false)
   const [activeChild, setActiveChild] = React.useState(0)
   const ref = React.useRef(null)
@@ -46,14 +48,18 @@ const MenuToggle: React.FC<{}> = ({ children: childrenProps }) => {
         isToggleActive: true,
       }}
     >
-      <MenuToggleStyle ref={ref} onKeyDown={onKeyDown} onBlur={onClose}>
+      <MenuToggleStyle ref={ref} onKeyDown={onKeyDown} onBlur={onClose} align={align}>
         <ButtonToggle open={menuOpen} onClick={toggleMenu}>
           <Icon>{menuOpen ? <Close /> : <Menu />}</Icon>
         </ButtonToggle>
-        <MenuWrapper aria-hidden={!menuOpen}>{children}</MenuWrapper>
+        <MenuList aria-hidden={!menuOpen}>{children}</MenuList>
       </MenuToggleStyle>
     </MenuContext.Provider>
   )
+}
+
+MenuToggle.defaultProps = {
+  align: 'left'
 }
 
 export default MenuToggle

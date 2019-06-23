@@ -4,7 +4,7 @@ import MenuItem, { MenuItemStyle, MenuItemSharedStyle } from './MenuItem'
 import MenuItemLabel, { MenuItemLabelStyle } from './MenuItemLabel'
 import MenuItemLink, { MenuItemLinkStyle } from './MenuItemLink'
 import MenuItemTitle, { MenuItemTitleStyle } from './MenuItemTitle'
-import MenuWrapper, { MenuWrapperStyle } from './MenuWrapper'
+import MenuList, { MenuListStyle } from './MenuList'
 
 export const MenuStyles = {
   MenuFlyOutStyle,
@@ -13,12 +13,12 @@ export const MenuStyles = {
   MenuItemLinkStyle,
   MenuItemTitleStyle,
   MenuItemSharedStyle,
-  MenuWrapperStyle,
+  MenuListStyle,
 }
 
 export {
   Menu,
-  MenuWrapper,
+  MenuList,
   MenuFlyOut,
   MenuItem,
   MenuItemLabel,

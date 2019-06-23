@@ -2,13 +2,15 @@ import styled from '@datapunt/asc-core'
 import IconButtonStyle from '../IconButton/IconButtonStyle'
 import { color } from '../../utils'
 
+const BUTTON_SIZE = 50
+
 type Props = {
   open: boolean
+  size?: number
 }
-
 export default styled(IconButtonStyle)<Props>`
-  height: 50px;
-  width: 50px;
+  height: ${({ size = BUTTON_SIZE }) => `${size}px`};
+  width: ${({ size = BUTTON_SIZE }) => `${size}px`};
   background-color: ${({ open, theme }) =>
     color('tint', open ? 'level2' : 'level1')({ theme })};
 `

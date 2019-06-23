@@ -29,7 +29,7 @@ import GlobalStyle from './components/GlobalStyle'
 import { GridContainer, GridItem } from './components/Grid'
 import {
   MenuItemTitle,
-  MenuWrapper,
+  MenuList,
   MenuItemLink,
   MenuItemLabel,
   MenuItem,
@@ -76,7 +76,7 @@ export {
   ContextMenu,
   ContextMenuButtonStyle,
   ContextMenuItem,
-  MenuWrapper,
+  MenuList,
   MenuItemTitle,
   MenuItemLink,
   MenuItemLabel,

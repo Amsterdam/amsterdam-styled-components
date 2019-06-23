@@ -1,6 +1,6 @@
 import styled, { css } from '@datapunt/asc-core'
 import { MenuItemStyle } from '../MenuItem'
-import MenuWrapperStyle from '../MenuWrapper/MenuWrapperStyle'
+import MenuListStyle from '../MenuList/MenuListStyle'
 import { MenuItemLinkStyle } from '../MenuItemLink'
 import { MenuItemLabelStyle } from '../MenuItemLabel'
 
@@ -9,7 +9,7 @@ type Props = {
 }
 
 export default styled(MenuItemStyle)<Props>`
-  ${MenuWrapperStyle} {
+  ${MenuListStyle} {
     order: 0;
     background-color: #f5f5f5;
     position: absolute;
@@ -27,7 +27,7 @@ export default styled(MenuItemStyle)<Props>`
   }
 
   &[aria-hidden='false'] {
-    ${MenuWrapperStyle} {
+    ${MenuListStyle} {
       display: block;
     }
 

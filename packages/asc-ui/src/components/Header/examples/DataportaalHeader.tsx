@@ -57,7 +57,7 @@ const MenuDefault = (props: any) => (
 )
 
 const MenuMobile = () => (
-  <MenuDefault toggle />
+  <MenuDefault toggle align="right" />
 )
 //
 // const HeaderLinksMenu = () => (

@@ -1,7 +1,7 @@
 import React from 'react'
 import { ChevronDown, ChevronUp } from '@datapunt/asc-assets'
 import MenuItemLink from '../MenuItemLink/MenuItemLink'
-import MenuWrapper from '../MenuWrapper/MenuWrapper'
+import MenuList from '../MenuList/MenuList'
 import MenuContext, { useMenuContext } from '../MenuContext'
 import useMenuFocus from '../useMenuFocus'
 import useFocussedChildren from '../useFocussedChildren'
@@ -89,7 +89,7 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
           isToggleActive,
         }}
       >
-        <MenuWrapper aria-hidden={!flyOutOpen}>{children}</MenuWrapper>
+        <MenuList aria-hidden={!flyOutOpen}>{children}</MenuList>
       </MenuContext.Provider>
     </MenuFlyOutStyle>
   )

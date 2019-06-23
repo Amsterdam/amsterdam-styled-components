@@ -1,21 +1,34 @@
 import styled from '@datapunt/asc-core'
-import { MenuWrapperStyle } from '../MenuWrapper'
+import { MenuListStyle } from '../MenuList'
 import { MenuFlyOutStyle } from '../MenuFlyOut'
-import { FLY_OUT_WIDTH } from '../constants'
+import { TOGGLE_BUTTON_SIZE, FLY_OUT_WIDTH } from '../constants'
 
-export default styled.div`
+export type Props = {
+  align?: 'left' | 'right'
+}
+
+export default styled.div<Props>`
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  width: ${FLY_OUT_WIDTH}px;
 
-  ${MenuWrapperStyle} {
+  ${MenuListStyle} {
+    position: absolute;
+    width: ${FLY_OUT_WIDTH}px;
     flex-direction: column;
+    top: ${TOGGLE_BUTTON_SIZE}px;
+
+
+    ${({ align }) => 
+      (align === 'left')
+        ? `left: 0;`
+        : `right: 0;`
+    }
   }
 
   ${MenuFlyOutStyle} {
-    ${MenuWrapperStyle} {
+    ${MenuListStyle} {
       position: relative;
       top: 0;
     }
