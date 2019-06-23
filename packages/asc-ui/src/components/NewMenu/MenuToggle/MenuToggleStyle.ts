@@ -22,23 +22,26 @@ export default styled.div<Props>`
     width: ${FLY_OUT_WIDTH}px;
     flex-direction: column;
     top: ${TOGGLE_BUTTON_SIZE}px;
+    ${({ align }) => (align === 'left' ? `left: 0;` : `right: 0;`)}
+  }
 
-    ${({ align }) => 
-      (align === 'left')
-        ? `left: 0;`
-        : `right: 0;`
-    }
+  ${MenuItemLinkStyle} {
+    border-bottom: 1px solid ${color('tint', 'level3')};
   }
 
   ${MenuFlyOutStyle} {
     ${MenuItemLinkStyle} {
-      border-color: ${color('tint', 'level2')};
+      &:hover,
+      &:focus {
+        background-color: inherit;
+      }
     }
     ${MenuItemTitleStyle} {
-      border-color: ${color('tint', 'level2')};
+      border-bottom: 1px solid ${color('tint', 'level3')};
+      border-left-color: ${color('tint', 'level2')};
     }
     ${MenuListStyle} {
-      background-color: #ffffff;
+      background-color: #fff;
       position: relative;
       top: 0;
     }

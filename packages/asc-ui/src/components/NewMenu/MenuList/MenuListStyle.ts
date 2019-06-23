@@ -1,6 +1,6 @@
 import styled from '@datapunt/asc-core'
 import { MenuItemStyle } from '../MenuItem'
-import { FLY_OUT_WIDTH } from '../constants'
+import { MENU_ITEM_SIZE, FLY_OUT_WIDTH } from '../constants'
 
 export default styled.ul`
   width: 100%;
@@ -17,6 +17,6 @@ export default styled.ul`
 
   & & {
     width: ${FLY_OUT_WIDTH}px;
-    top: 44px;
+    top: ${MENU_ITEM_SIZE}px;
   }
 `

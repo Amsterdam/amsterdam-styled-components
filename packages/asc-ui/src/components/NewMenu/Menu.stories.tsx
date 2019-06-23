@@ -1,6 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import Menu from './Menu'
+import MenuInline from './MenuInline'
+import MenuToggle from './MenuToggle'
 import MenuItem from './MenuItem'
 import MenuItemLink from './MenuItemLink'
 import MenuFlyOut from './MenuFlyOut'
@@ -8,12 +9,12 @@ import MenuTitle from './MenuItemTitle'
 
 storiesOf('Composed/NewMenu', module)
   .add('default', () => (
-    <Menu>
+    <MenuInline>
       <MenuItem>
         <MenuItemLink href="/">Home</MenuItemLink>
       </MenuItem>
       <MenuItem>
-        <MenuItemLink href="/">Shop</MenuItemLink>
+        <MenuItemLink>Shop</MenuItemLink>
       </MenuItem>
       <MenuFlyOut label="Submenu!">
         <MenuItem>
@@ -45,10 +46,10 @@ storiesOf('Composed/NewMenu', module)
           <MenuItemLink href="/">Space Bear 7</MenuItemLink>
         </MenuItem>
       </MenuFlyOut>
-    </Menu>
+    </MenuInline>
   ))
   .add('toggle', () => (
-    <Menu toggle>
+    <MenuToggle>
       <MenuItem>
         <MenuItemLink href="/">Home</MenuItemLink>
       </MenuItem>
@@ -85,5 +86,5 @@ storiesOf('Composed/NewMenu', module)
           <MenuItemLink href="/">Space Bear 7</MenuItemLink>
         </MenuItem>
       </MenuFlyOut>
-    </Menu>
+    </MenuToggle>
   ))

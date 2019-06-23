@@ -3,6 +3,19 @@ import { color, focusStyleOutline, svgFill } from '../../../utils'
 import IconStyle from '../../Icon/IconStyle'
 import { MenuItemLabelStyle } from '../MenuItemLabel'
 
+export const activeStyle = css`
+  ${MenuItemLabelStyle} {
+    border-bottom: 2px solid ${color('secondary')};
+    color: ${color('secondary')};
+  }
+
+  ${IconStyle} {
+    & > svg {
+      ${svgFill('secondary')};
+    }
+  }
+`
+
 export default styled.li`
   display: flex;
   flex-direction: column;
@@ -21,7 +34,6 @@ export const MenuItemSharedStyle = css`
   height: 100%;
   flex-direction: row;
   color: ${color('tint', 'level7')};
-
   border-left-style: solid;
   border-left-width: 8px;
   border-color: transparent;
@@ -42,16 +54,6 @@ export const MenuItemSharedStyle = css`
   &:hover,
   &:focus {
     background-color: ${color('tint', 'level2')};
-
-    ${MenuItemLabelStyle} {
-      border-bottom: 2px solid ${color('secondary')};
-      color: ${color('secondary')};
-    }
-
-    ${IconStyle} {
-      & > svg {
-        ${svgFill('secondary')};
-      }
-    }
+    ${activeStyle}
   }
 `

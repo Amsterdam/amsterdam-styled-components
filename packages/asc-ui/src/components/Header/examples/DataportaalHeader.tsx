@@ -5,7 +5,8 @@ import { Header, styles } from '../../../index'
 import { breakpoint } from '../../../utils'
 import SearchBar from '../../SearchBar'
 import SearchBarToggle from '../../SearchBarToggle/SearchBarToggle'
-import Menu from '../../NewMenu/Menu'
+import MenuInline from '../../NewMenu/MenuInline'
+import MenuToggle from '../../NewMenu/MenuToggle'
 import MenuItem from '../../NewMenu/MenuItem'
 import MenuItemLink from '../../NewMenu/MenuItemLink'
 import MenuFlyOut from '../../NewMenu/MenuFlyOut'
@@ -38,8 +39,8 @@ const DataportaalHeaderWrapperStyle = css`
   }
 `
 
-const MenuDefault = (props: any) => (
-  <Menu {...props}>
+const menuChildren = (
+  <>
     <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
     <MenuFlyOut label="Two">
       <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
@@ -53,11 +54,19 @@ const MenuDefault = (props: any) => (
       <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
     </MenuFlyOut>
     <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
-  </Menu>
+    </>
+)
+
+const MenuDefault = () => (
+  <MenuInline>
+{menuChildren}
+    </MenuInline>
 )
 
 const MenuMobile = () => (
-  <MenuDefault toggle align="right" />
+  <MenuToggle align="right">
+{menuChildren}
+    </MenuToggle>
 )
 //
 // const HeaderLinksMenu = () => (

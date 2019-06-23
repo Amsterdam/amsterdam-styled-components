@@ -18,7 +18,7 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
   const [activeChild, setActiveChild] = React.useState(0)
   const flyOutOpen = isOpen || isOpenOnClick
 
-  const { isToggleActive } = useMenuContext()
+  const { hasToggle } = useMenuContext()
   const { children, filteredChildren } = useFocussedChildren(childrenProps)
   const { onKeyDown } = useKeysToFocus(
     filteredChildren,
@@ -28,6 +28,13 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
     linkRef,
   )
   useMenuFocus(linkRef, linkIndex)
+
+  const onClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setOpen(hasToggle && isOpen ? false : isOpen)
+    setOpenOnClick(hasToggle ? !isOpenOnClick : true)
+    setActiveChild(0)
+  }
 
   const onBlurHandler = () => {
     setTimeout(() => {
@@ -43,24 +50,27 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
     })
   }
 
-  const extraEvents = !isToggleActive
+  const extraEvents = !hasToggle
     ? {
         onMouseOver: () => setOpen(true),
         onMouseOut: () => setOpen(false),
       }
     : {}
+
+  console.log('activeChild', activeChild)
+
   return (
     <MenuFlyOutStyle
       ref={ref}
       onBlur={onBlurHandler}
       onKeyDown={onKeyDown}
-      isToggleActive={isToggleActive}
+      hasToggle={hasToggle}
       {...extraEvents}
     >
       <MenuItemLink
         element="span"
         iconRight={
-          isToggleActive ? (
+          hasToggle ? (
             <Icon size={14}>
               {flyOutOpen ? <ChevronUp /> : <ChevronDown />}
             </Icon>
@@ -72,10 +82,7 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
         isActive={flyOutOpen}
         setCurrentLinkRef={setLinkRef}
         onFocus={() => setOpen(true)}
-        onClick={(e: React.MouseEvent) => {
-          e.preventDefault()
-          setOpenOnClick(isToggleActive ? !isOpenOnClick : true)
-        }}
+        onClick={onClick}
         aria-haspopup="true"
         aria-expanded={flyOutOpen}
       >
@@ -86,7 +93,7 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
           activeChild,
           setActiveChild,
           underFlyOutMenu: true,
-          isToggleActive,
+          hasToggle,
         }}
       >
         <MenuList aria-hidden={!flyOutOpen}>{children}</MenuList>

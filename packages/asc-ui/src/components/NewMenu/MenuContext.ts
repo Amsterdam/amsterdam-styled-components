@@ -4,14 +4,14 @@ export type ContextValueTypes = {
   activeChild?: number
   setActiveChild?: Function
   underFlyOutMenu?: boolean
-  isToggleActive?: boolean
+  hasToggle?: boolean
 }
 
 const initialValues: ContextValueTypes = {
   activeChild: 0,
   setActiveChild: () => {},
   underFlyOutMenu: false,
-  isToggleActive: false,
+  hasToggle: false,
 }
 
 const MenuContext = React.createContext(initialValues)

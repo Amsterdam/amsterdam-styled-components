@@ -1,16 +1,30 @@
 import styled, { css } from '@datapunt/asc-core'
 import { color } from '../../../utils'
-import { MenuItemSharedStyle } from '../MenuItem'
+import {
+  MenuItemSharedStyle,
+  activeStyle as menuItemActiveStyle,
+} from '../MenuItem'
+import { MENU_ITEM_SIZE } from '../constants'
 
 export type Props = {
   isActive?: boolean
-  isToggleActive?: boolean
+  hasToggle?: boolean
   underFlyOutMenu?: boolean
   hasCustomIcon?: boolean
 }
 
 const activeStyle = css`
+  ${menuItemActiveStyle}
   background-color: ${color('tint', 'level2')};
+`
+
+const activeToggleStyle = css`
+  ${activeStyle}
+  border-left-color: ${color('secondary')};
+`
+
+const toggleStyle = css`
+  border-left-color: ${color('tint', 'level2')};
 `
 
 const noToggleAndFlyOutStyle = css`
@@ -20,39 +34,19 @@ const noToggleAndFlyOutStyle = css`
   }
 `
 
-const toggleAndFlyOutStyle = css`
-  background-color: ${color('tint', 'level1')};
-
-  &:hover {
-    color: ${color('secondary')};
-    border-left-color: ${color('secondary')};
-  }
-`
-
-const toggleStyle = css`
-  border-bottom: 1px solid ${color('tint', 'level3')};
-
-  &:hover,
-  &:focus {
-    border-left-color: ${color('secondary')};
-  }
-`
-
 export default styled.a.attrs<Props>({
   ...({ underFlyOutMenu }: Props) => (!underFlyOutMenu ? { tabIndex: 0 } : {}),
 })<Props>`
   ${MenuItemSharedStyle}
+  height: ${MENU_ITEM_SIZE}px;
   ${({ hasCustomIcon }) =>
     hasCustomIcon &&
     css`
       justify-content: space-between;
     `}
   ${({ isActive }) => isActive && activeStyle}
-  ${({ isToggleActive, underFlyOutMenu }) =>
-    isToggleActive && underFlyOutMenu && toggleAndFlyOutStyle}
-    
-  ${({ isToggleActive, underFlyOutMenu }) =>
-    !isToggleActive && underFlyOutMenu && noToggleAndFlyOutStyle}
-    
-  ${({ isToggleActive }) => isToggleActive && toggleStyle}
+  ${({ hasToggle }) => hasToggle && toggleStyle}
+  ${({ hasToggle, underFlyOutMenu }) =>
+    !hasToggle && underFlyOutMenu && noToggleAndFlyOutStyle}
+  ${({ isActive, hasToggle }) => hasToggle && isActive && activeToggleStyle}
 `

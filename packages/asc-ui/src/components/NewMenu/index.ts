@@ -1,4 +1,5 @@
-import Menu from './Menu'
+import MenuInline from './MenuInline'
+import MenuToggle from './MenuToggle'
 import MenuFlyOut, { MenuFlyOutStyle } from './MenuFlyOut'
 import MenuItem, { MenuItemStyle, MenuItemSharedStyle } from './MenuItem'
 import MenuItemLabel, { MenuItemLabelStyle } from './MenuItemLabel'
@@ -17,7 +18,8 @@ export const MenuStyles = {
 }
 
 export {
-  Menu,
+  MenuInline,
+  MenuToggle,
   MenuList,
   MenuFlyOut,
   MenuItem,

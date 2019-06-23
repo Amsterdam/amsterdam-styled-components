@@ -14,7 +14,7 @@ export default (
         case 'ArrowDown':
           if (activeChild !== nrOrfChildren) {
             event.stopPropagation()
-            console.log('he?')
+            console.log('he?', activeChild)
             setActiveChild(activeChild + 1)
           }
 

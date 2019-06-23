@@ -5,13 +5,14 @@ import MenuContext from '../MenuContext'
 import useFocussedChildren from '../useFocussedChildren'
 import useKeysToFocus from '../useKeysToFocus'
 import ownerDocument from '../../../utils/ownerDocument'
-import MenuToggleStyle, {
-  Props
-} from './MenuToggleStyle'
+import MenuToggleStyle, { Props } from './MenuToggleStyle'
 import ButtonToggle from '../../ButtonToggle'
 import Icon from '../../Icon'
 
-const MenuToggle: React.FC<Props> = ({ children: childrenProps, align = 'left' }) => {
+const MenuToggle: React.FC<Props> = ({
+  children: childrenProps,
+  align = 'left',
+}) => {
   const [menuOpen, setMenuOpen] = React.useState(false)
   const [activeChild, setActiveChild] = React.useState(0)
   const ref = React.useRef(null)
@@ -45,10 +46,15 @@ const MenuToggle: React.FC<Props> = ({ children: childrenProps, align = 'left' }
         activeChild,
         setActiveChild,
         underFlyOutMenu: false,
-        isToggleActive: true,
+        hasToggle: true,
       }}
     >
-      <MenuToggleStyle ref={ref} onKeyDown={onKeyDown} onBlur={onClose} align={align}>
+      <MenuToggleStyle
+        ref={ref}
+        onKeyDown={onKeyDown}
+        onBlur={onClose}
+        align={align}
+      >
         <ButtonToggle open={menuOpen} onClick={toggleMenu}>
           <Icon>{menuOpen ? <Close /> : <Menu />}</Icon>
         </ButtonToggle>
@@ -59,7 +65,7 @@ const MenuToggle: React.FC<Props> = ({ children: childrenProps, align = 'left' }
 }
 
 MenuToggle.defaultProps = {
-  align: 'left'
+  align: 'left',
 }
 
 export default MenuToggle

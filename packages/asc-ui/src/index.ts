@@ -34,7 +34,8 @@ import {
   MenuItemLabel,
   MenuItem,
   MenuFlyOut,
-  Menu,
+  MenuInline,
+  MenuToggle,
   MenuStyles,
 } from './components/NewMenu'
 import ThemeProvider from './theme'
@@ -82,7 +83,8 @@ export {
   MenuItemLabel,
   MenuItem,
   MenuFlyOut,
-  Menu,
+  MenuInline,
+  MenuToggle,
   Header,
   SearchBar,
   GlobalStyle,
