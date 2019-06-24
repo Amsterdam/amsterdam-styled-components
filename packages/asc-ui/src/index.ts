@@ -29,7 +29,6 @@ import GlobalStyle from './components/GlobalStyle'
 import { GridContainer, GridItem } from './components/Grid'
 import {
   MenuItemTitle,
-  MenuList,
   MenuItemLink,
   MenuItemLabel,
   MenuItem,
@@ -54,8 +53,6 @@ export const styles = {
   ...MenuStyles,
 }
 
-console.log(styles)
-
 // Components
 export {
   AmsterdamLogo,
@@ -79,7 +76,6 @@ export {
   ContextMenu,
   ContextMenuButtonStyle,
   ContextMenuItem,
-  MenuList,
   MenuItemTitle,
   MenuItemLink,
   MenuItemLabel,

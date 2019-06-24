@@ -25,73 +25,72 @@ const DataportaalHeaderWrapperStyle = css`
   }
 `
 
-const menuChildren = (
-  <>
-    <MenuFlyOut label="Categorieën">
-      <MenuItem
-        title="Kaart"
-      >
-        Kaart
-      </MenuItem>
-      <MenuItem
-        title="Panoramabeelden"
-      >
-        Panoramabeelden
-      </MenuItem>
-      <MenuItem
-        title="Datasets"
-      >
-        Datasets
-      </MenuItem>
-      <MenuItem
-        title="Data services"
-      >
-        Data services
-      </MenuItem>
-    </MenuFlyOut>
-    <MenuFlyOut label="Over">
-      <MenuItem
-        title="Privacy en informatiebeveiliging"
-      >
-        Privacy en informatiebeveiliging
-      </MenuItem>
-      <MenuItem
-        title="Beschikbaarheid en kwaliteit data"
-      >
-        Beschikbaarheid en kwaliteit data
-      </MenuItem>
-      <MenuItem
-        title="Technisch beheer en werkwijze"
-      >
-        Technisch beheer en werkwijze
-      </MenuItem>
-      <MenuItem
-        title="Contact"
-        href="mailto:datapunt@amsterdam.nl"
-      >
-        Contact
-      </MenuItem>
-    </MenuFlyOut>
-    <MenuItem onClick={() => action('Show feedback form')}>Feedback</MenuItem>
-    <MenuItem href="/help">Help</MenuItem>
-    <MenuFlyOut label="Jon Doe">
-      <MenuItem onClick={() => action('Log out')}>Uitloggen</MenuItem>
-    </MenuFlyOut>
-  </>
-)
+// MenuToggle should take an array of children, wrapping components in Fragments will return a string.. 
+const menuChildren = [
+  <MenuFlyOut label="Categorieën">
+    <MenuItem
+      title="Kaart"
+    >
+      Kaart
+    </MenuItem>
+    <MenuItem
+      title="Panoramabeelden"
+    >
+      Panoramabeelden
+    </MenuItem>
+    <MenuItem
+      title="Datasets"
+    >
+      Datasets
+    </MenuItem>
+    <MenuItem
+      title="Data services"
+    >
+      Data services
+    </MenuItem>
+  </MenuFlyOut>,
+  <MenuFlyOut label="Over">
+    <MenuItem
+      title="Privacy en informatiebeveiliging"
+    >
+      Privacy en informatiebeveiliging
+    </MenuItem>
+    <MenuItem
+      title="Beschikbaarheid en kwaliteit data"
+    >
+      Beschikbaarheid en kwaliteit data
+    </MenuItem>
+    <MenuItem
+      title="Technisch beheer en werkwijze"
+    >
+      Technisch beheer en werkwijze
+    </MenuItem>
+    <MenuItem
+      title="Contact"
+      href="mailto:datapunt@amsterdam.nl"
+    >
+      Contact
+    </MenuItem>
+  </MenuFlyOut>,
+  <MenuItem onClick={() => action('Show feedback form')}>Feedback</MenuItem>,
+  <MenuItem href="/help">Help</MenuItem>,
+  <MenuFlyOut label="Jon Doe">
+    <MenuItem onClick={() => action('Log out')}>Uitloggen</MenuItem>
+  </MenuFlyOut>
+]
 
 const MenuDefault = (props: any) => (
   <MenuInline {...props}>
-{menuChildren}
-    </MenuInline>
+    {menuChildren}
+  </MenuInline>
 )
 
 const MenuMobile = (props: any) => (
   <MenuToggle {...props} align="right">
-{menuChildren}
-    </MenuToggle>
+    {menuChildren}
+  </MenuToggle>
 )
-//
+
 // const HeaderLinksMenu = () => (
 //   <Menu>
 //     <MenuItem href="#one" onClick={action('click')}>
