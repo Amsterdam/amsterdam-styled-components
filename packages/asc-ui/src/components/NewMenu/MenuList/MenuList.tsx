@@ -1,8 +1,14 @@
 import React from 'react'
-import MenuListStyle from './MenuListStyle'
+import MenuListStyle, { Props } from './MenuListStyle'
 
-const MenuList: React.FC<{}> = ({ children, ...otherProps }) => (
-  <MenuListStyle {...otherProps}>{children}</MenuListStyle>
-)
-
-export default MenuList
+export default React.forwardRef<
+  HTMLElement,
+  React.HTMLProps<HTMLElement> & Props
+>(function MenuList({ children, edgeDetection, ...otherProps }, ref) {
+  return (
+    // @ts-ignore
+    <MenuListStyle {...{ edgeDetection, ref }} {...otherProps}>
+      {children}
+    </MenuListStyle>
+  )
+}) as any

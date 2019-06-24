@@ -12,6 +12,7 @@ import Icon from '../../Icon'
 const MenuToggle: React.FC<Props> = ({
   children: childrenProps,
   align = 'left',
+  ...otherProps
 }) => {
   const [menuOpen, setMenuOpen] = React.useState(false)
   const [activeChild, setActiveChild] = React.useState(0)
@@ -57,6 +58,7 @@ const MenuToggle: React.FC<Props> = ({
         onKeyDown={onKeyDown}
         onBlur={onClose}
         align={align}
+        {...otherProps}
       >
         <ButtonToggle open={menuOpen} onClick={toggleMenu}>
           <Icon>{menuOpen ? <Close /> : <Menu />}</Icon>

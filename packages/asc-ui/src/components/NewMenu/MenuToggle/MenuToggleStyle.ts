@@ -1,5 +1,5 @@
 import styled from '@datapunt/asc-core'
-import { color } from '../../../utils'
+import { color, showHide, ShowHideTypes } from '../../../utils'
 import { MenuItemLinkStyle } from '../MenuItemLink'
 import { MenuItemTitleStyle } from '../MenuItemTitle'
 import { MenuListStyle } from '../MenuList'
@@ -8,13 +8,13 @@ import { TOGGLE_BUTTON_SIZE, FLY_OUT_WIDTH } from '../constants'
 
 export type Props = {
   align?: 'left' | 'right'
-}
+} & ShowHideTypes
 
 export default styled.div<Props>`
-  position: absolute;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: ${({ align }) => (align === 'left' ? 'flex-start' : `flex-end`)};
+  max-width: ${FLY_OUT_WIDTH}px;
 
   ${MenuListStyle} {
     background-color: ${color('tint', 'level2')};
@@ -22,7 +22,6 @@ export default styled.div<Props>`
     width: ${FLY_OUT_WIDTH}px;
     flex-direction: column;
     top: ${TOGGLE_BUTTON_SIZE}px;
-    ${({ align }) => (align === 'left' ? `left: 0;` : `right: 0;`)}
   }
 
   ${MenuItemLinkStyle} {
@@ -46,4 +45,6 @@ export default styled.div<Props>`
       top: 0;
     }
   }
+
+  ${showHide()}
 `

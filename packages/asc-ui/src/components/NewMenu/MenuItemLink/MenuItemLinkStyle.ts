@@ -14,12 +14,12 @@ export type Props = {
 }
 
 const activeStyle = css`
-  ${menuItemActiveStyle}
+  ${menuItemActiveStyle};
   background-color: ${color('tint', 'level2')};
 `
 
 const activeToggleStyle = css`
-  ${activeStyle}
+  ${activeStyle};
   border-left-color: ${color('secondary')};
 `
 
@@ -37,8 +37,8 @@ const noToggleAndFlyOutStyle = css`
 export default styled.a.attrs<Props>({
   ...({ underFlyOutMenu }: Props) => (!underFlyOutMenu ? { tabIndex: 0 } : {}),
 })<Props>`
-  ${MenuItemSharedStyle}
-  height: ${MENU_ITEM_SIZE}px;
+  ${MenuItemSharedStyle};
+  min-height: ${MENU_ITEM_SIZE}px;
   ${({ hasCustomIcon }) =>
     hasCustomIcon &&
     css`

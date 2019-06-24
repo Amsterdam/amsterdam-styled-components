@@ -9,12 +9,15 @@ import useKeysToFocus from '../useKeysToFocus'
 import ownerDocument from '../../../utils/ownerDocument'
 import MenuFlyOutStyle from './MenuFlyOutStyle'
 import Icon from '../../Icon'
+import useEdgeDetection from '../../../utils/useEdgeDetection'
+import useDebounce from '../../../utils/useDebounce'
 
 const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
   const { hasToggle, setActiveToggleChild } = useMenuContext()
 
   const ref = React.useRef<HTMLLIElement>(null)
-  const [isOpen, setOpen] = React.useState(false)
+  const [isOpen, setOpenFn] = React.useState(false)
+  const setOpen = useDebounce(setOpenFn, 0)
   const [linkRef, setLinkRef] = React.useState(null)
   const [isOpenOnClick, setOpenOnClick] = React.useState(false)
   const [activeChild, setActiveChild] = React.useState(0)
@@ -43,19 +46,17 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
     }
   }
 
-  const onBlurHandler = () => {
-    setTimeout(() => {
-      const element = ref && (ref.current as HTMLLIElement)
-      if (element) {
-        const currentFocus = ownerDocument(element).activeElement
-        if (!element.contains(currentFocus)) {
-          setOpen(false)
-          setOpenOnClick(false)
-          setActiveChild(0)
-        }
+  const onBlurHandler = useDebounce(() => {
+    const element = ref && (ref.current as HTMLLIElement)
+    if (element) {
+      const currentFocus = ownerDocument(element).activeElement
+      if (!element.contains(currentFocus)) {
+        setOpen(false)
+        setOpenOnClick(false)
+        setActiveChild(0)
       }
-    })
-  }
+    }
+  })
 
   const extraEvents = !hasToggle
     ? {
@@ -64,12 +65,15 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
       }
     : {}
 
+  const [listRef, edgeDetection] = useEdgeDetection([flyOutOpen])
+
   return (
     <MenuFlyOutStyle
       ref={ref}
       onBlur={onBlurHandler}
       onKeyDown={onKeyDown}
       hasToggle={hasToggle}
+      tabIndex={-1}
       {...extraEvents}
     >
       <MenuItemLink
@@ -101,7 +105,13 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
           hasToggle,
         }}
       >
-        <MenuList aria-hidden={!flyOutOpen}>{children}</MenuList>
+        <MenuList
+          ref={listRef}
+          edgeDetection={edgeDetection}
+          aria-hidden={!flyOutOpen}
+        >
+          {children}
+        </MenuList>
       </MenuContext.Provider>
     </MenuFlyOutStyle>
   )

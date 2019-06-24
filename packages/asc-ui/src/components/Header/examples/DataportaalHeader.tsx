@@ -2,7 +2,6 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { css } from '@datapunt/asc-core'
 import { Header, styles } from '../../../index'
-import { breakpoint } from '../../../utils'
 import SearchBar from '../../SearchBar'
 import SearchBarToggle from '../../SearchBarToggle/SearchBarToggle'
 import MenuInline from '../../NewMenu/MenuInline'
@@ -22,18 +21,6 @@ const DataportaalHeaderWrapperStyle = css`
       flex-grow: 0;
       width: 100%;
       max-width: 430px;
-    }
-  }
-
-  ${styles.MenuInlineStyle} {
-    @media screen and ${breakpoint('max-width', 'tabletM')} {
-      display: none;
-    }
-  }
-
-  ${styles.MenuToggleStyle} {
-    @media screen and ${breakpoint('min-width', 'tabletM')} {
-      display: none;
     }
   }
 `
@@ -93,14 +80,14 @@ const menuChildren = (
   </>
 )
 
-const MenuDefault = () => (
-  <MenuInline>
+const MenuDefault = (props: any) => (
+  <MenuInline {...props}>
 {menuChildren}
     </MenuInline>
 )
 
-const MenuMobile = () => (
-  <MenuToggle align="right">
+const MenuMobile = (props: any) => (
+  <MenuToggle {...props} align="right">
 {menuChildren}
     </MenuToggle>
 )
@@ -126,7 +113,7 @@ const DataportaalHeader: React.FC<{}> = () => (
       navigation={
         <>
           <SearchBar
-            showAt="tabletM"
+
             placeholder="Enter the search text"
             onChange={() => {
               action(`text changed`)
@@ -145,8 +132,8 @@ const DataportaalHeader: React.FC<{}> = () => (
               action(`button clicked`)
             }}
           />
-          <MenuDefault />
-          <MenuMobile />
+          <MenuDefault showAt="tabletM" />
+          <MenuMobile hideAt="tabletM" />
         </>
       }
     />
