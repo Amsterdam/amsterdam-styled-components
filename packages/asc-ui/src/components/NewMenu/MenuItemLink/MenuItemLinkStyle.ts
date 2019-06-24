@@ -1,10 +1,9 @@
 import styled, { css } from '@datapunt/asc-core'
 import { color } from '../../../utils'
-import {
-  MenuItemSharedStyle,
-  activeStyle as menuItemActiveStyle,
-} from '../MenuItem'
+import { MenuItemSharedStyle } from '../MenuItem'
 import { MENU_ITEM_SIZE } from '../constants'
+import IconStyle from '../../Icon/IconStyle'
+import { MenuItemLabelStyle } from '../MenuItemLabel'
 
 export type Props = {
   isActive?: boolean
@@ -13,13 +12,7 @@ export type Props = {
   hasCustomIcon?: boolean
 }
 
-const activeStyle = css`
-  ${menuItemActiveStyle};
-  background-color: ${color('tint', 'level2')};
-`
-
 const activeToggleStyle = css`
-  ${activeStyle};
   border-left-color: ${color('secondary')};
 `
 
@@ -28,9 +21,9 @@ const toggleStyle = css`
 `
 
 const noToggleAndFlyOutStyle = css`
-  &:hover,
-  &:focus {
-    ${activeStyle}
+  ${IconStyle} {
+    transform: translateY(4px);
+    align-self: flex-start;
   }
 `
 
@@ -44,7 +37,13 @@ export default styled.a.attrs<Props>({
     css`
       justify-content: space-between;
     `}
-  ${({ isActive }) => isActive && activeStyle}
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      ${MenuItemLabelStyle} {
+        border-bottom: 2px solid ${color('secondary')};
+      }
+    `}
   ${({ hasToggle }) => hasToggle && toggleStyle}
   ${({ hasToggle, underFlyOutMenu }) =>
     !hasToggle && underFlyOutMenu && noToggleAndFlyOutStyle}

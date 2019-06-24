@@ -21,7 +21,6 @@ const MenuItemStyle = styled.li`
   display: flex;
   flex-direction: column;
   position: relative;
-  flex-shrink: 0;
 `
 
 export const MenuItemSharedStyle = css`
@@ -36,15 +35,14 @@ export const MenuItemSharedStyle = css`
   text-decoration: none;
   height: 100%;
   flex-direction: row;
-  color: ${color('tint', 'level7')};
+  color: ${color('tint', 'level6')};
   border-left-style: solid;
   border-left-width: 8px;
   border-color: transparent;
+  white-space: nowrap;
 
   ${IconStyle} {
     margin-right: 5px;
-    transform: translateY(4px);
-    align-self: flex-start;
 
     &:last-child {
       margin-left: auto;
@@ -58,7 +56,6 @@ export const MenuItemSharedStyle = css`
 
   &:hover,
   &:focus {
-    background-color: ${color('tint', 'level2')};
     ${activeStyle}
   }
 `

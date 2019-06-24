@@ -29,12 +29,6 @@ export default styled.div<Props>`
   }
 
   ${MenuFlyOutStyle} {
-    ${MenuItemLinkStyle} {
-      &:hover,
-      &:focus {
-        background-color: inherit;
-      }
-    }
     ${MenuItemTitleStyle} {
       border-bottom: 1px solid ${color('tint', 'level3')};
       border-left-color: ${color('tint', 'level2')};
