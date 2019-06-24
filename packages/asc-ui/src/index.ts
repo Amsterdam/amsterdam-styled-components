@@ -54,6 +54,8 @@ export const styles = {
   ...MenuStyles,
 }
 
+console.log(styles)
+
 // Components
 export {
   AmsterdamLogo,

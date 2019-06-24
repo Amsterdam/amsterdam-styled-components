@@ -8,7 +8,6 @@ import SearchBarToggle from '../../SearchBarToggle/SearchBarToggle'
 import MenuInline from '../../NewMenu/MenuInline'
 import MenuToggle from '../../NewMenu/MenuToggle'
 import MenuItem from '../../NewMenu/MenuItem'
-import MenuItemLink from '../../NewMenu/MenuItemLink'
 import MenuFlyOut from '../../NewMenu/MenuFlyOut'
 
 const DataportaalHeaderWrapperStyle = css`
@@ -26,13 +25,13 @@ const DataportaalHeaderWrapperStyle = css`
     }
   }
 
-  // ${styles.MenuSt} {
-  //   @media screen and ${breakpoint('max-width', 'tabletM')} {
-  //     display: none;
-  //   }
-  // }
+  ${styles.MenuInlineStyle} {
+    @media screen and ${breakpoint('max-width', 'tabletM')} {
+      display: none;
+    }
+  }
 
-  ${styles.MenuFlyOutStyle} {
+  ${styles.MenuToggleStyle} {
     @media screen and ${breakpoint('min-width', 'tabletM')} {
       display: none;
     }
@@ -41,20 +40,57 @@ const DataportaalHeaderWrapperStyle = css`
 
 const menuChildren = (
   <>
-    <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
-    <MenuFlyOut label="Two">
-      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
-      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
-      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
-      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
+    <MenuFlyOut label="Categorieën">
+      <MenuItem
+        title="Kaart"
+      >
+        Kaart
+      </MenuItem>
+      <MenuItem
+        title="Panoramabeelden"
+      >
+        Panoramabeelden
+      </MenuItem>
+      <MenuItem
+        title="Datasets"
+      >
+        Datasets
+      </MenuItem>
+      <MenuItem
+        title="Data services"
+      >
+        Data services
+      </MenuItem>
     </MenuFlyOut>
-    <MenuFlyOut label="Three">
-      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
-      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
-      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
+    <MenuFlyOut label="Over">
+      <MenuItem
+        title="Privacy en informatiebeveiliging"
+      >
+        Privacy en informatiebeveiliging
+      </MenuItem>
+      <MenuItem
+        title="Beschikbaarheid en kwaliteit data"
+      >
+        Beschikbaarheid en kwaliteit data
+      </MenuItem>
+      <MenuItem
+        title="Technisch beheer en werkwijze"
+      >
+        Technisch beheer en werkwijze
+      </MenuItem>
+      <MenuItem
+        title="Contact"
+        href="mailto:datapunt@amsterdam.nl"
+      >
+        Contact
+      </MenuItem>
     </MenuFlyOut>
-    <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
-    </>
+    <MenuItem onClick={() => action('Show feedback form')}>Feedback</MenuItem>
+    <MenuItem href="/help">Help</MenuItem>
+    <MenuFlyOut label="Jon Doe">
+      <MenuItem onClick={() => action('Log out')}>Uitloggen</MenuItem>
+    </MenuFlyOut>
+  </>
 )
 
 const MenuDefault = () => (
@@ -71,10 +107,10 @@ const MenuMobile = () => (
 //
 // const HeaderLinksMenu = () => (
 //   <Menu>
-//     <MenuItem icon={<ChevronRight />} href="#one" onClick={action('click')}>
+//     <MenuItem href="#one" onClick={action('click')}>
 //       One
 //     </MenuItem>
-//     <MenuItem icon={<ChevronRight />} href="#two" onClick={action('click')}>
+//     <MenuItem href="#two" onClick={action('click')}>
 //       Two
 //     </MenuItem>
 //   </Menu>

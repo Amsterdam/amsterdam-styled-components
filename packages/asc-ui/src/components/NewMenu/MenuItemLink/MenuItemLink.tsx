@@ -8,7 +8,7 @@ import MenuItemLinkStyle, {
 } from './MenuItemLinkStyle'
 import Icon from '../../Icon'
 
-type Props = {
+export type Props = {
   element?: keyof JSX.IntrinsicElements
   linkIndex?: number
   onFocus?: (e: React.FocusEvent) => void

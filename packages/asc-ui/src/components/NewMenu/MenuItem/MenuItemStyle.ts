@@ -16,7 +16,8 @@ export const activeStyle = css`
   }
 `
 
-export default styled.li`
+const MenuItemStyle = styled.li`
+  user-select: none;
   display: flex;
   flex-direction: column;
 `
@@ -57,3 +58,5 @@ export const MenuItemSharedStyle = css`
     ${activeStyle}
   }
 `
+
+export default MenuItemStyle

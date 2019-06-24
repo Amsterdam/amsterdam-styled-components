@@ -1,8 +1,8 @@
 import React from 'react'
-import MenuList from './MenuList/MenuList'
+import MenuInlineStyle from './MenuInlineStyle'
 
 const MenuInline: React.FC<{}> = ({ children }) => (
-  <MenuList>{children}</MenuList>
+  <MenuInlineStyle>{children}</MenuInlineStyle>
 )
 
 export default MenuInline
