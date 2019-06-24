@@ -11,6 +11,7 @@ import MenuFlyOutStyle from './MenuFlyOutStyle'
 import Icon from '../../Icon'
 import useEdgeDetection from '../../../utils/useEdgeDetection'
 import useDebounce from '../../../utils/useDebounce'
+import { KeyboardKeys } from '../../../types/index'
 
 const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
   const { hasToggle, setActiveToggleChild } = useMenuContext()
@@ -33,7 +34,7 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
   )
   useMenuFocus(linkRef, linkIndex)
 
-  const onClick = (e: React.MouseEvent) => {
+  const onHandleToggle = (e: React.MouseEvent | React.KeyboardEvent) => {
     e.preventDefault()
     if (hasToggle) {
       setOpen(isOpen ? false : isOpen)
@@ -43,6 +44,12 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
       setActiveToggleChild(linkIndex)
     } else {
       setOpenOnClick(true)
+    }
+  }
+
+  const onHandleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === KeyboardKeys.Enter || event.key === KeyboardKeys.Space) {
+      onHandleToggle(event)
     }
   }
 
@@ -91,7 +98,8 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
         isActive={flyOutOpen}
         setCurrentLinkRef={setLinkRef}
         onFocus={() => setOpen(true)}
-        onClick={onClick}
+        onClick={onHandleToggle}
+        onKeyDown={onHandleKeyDown}
         aria-haspopup="true"
         aria-expanded={flyOutOpen}
       >
