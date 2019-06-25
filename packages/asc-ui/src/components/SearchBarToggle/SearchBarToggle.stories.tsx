@@ -10,6 +10,7 @@ storiesOf('Composed/SearchBarToggle', module)
   ))
   .add('default', () => (
     <SearchBarToggle
+      align="left"
       css={css`
         position: relative;
       `}

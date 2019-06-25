@@ -2,6 +2,7 @@ import styled, { css } from '@datapunt/asc-core'
 import { color, focusStyleOutline, svgFill } from '../../../utils'
 import IconStyle from '../../Icon/IconStyle'
 import { MenuItemLabelStyle } from '../MenuItemLabel'
+import { MENU_ITEM_SIZE } from '../constants'
 
 export const activeStyle = css`
   ${MenuItemLabelStyle} {
@@ -39,11 +40,9 @@ export const MenuItemSharedStyle = css`
   border-left-style: solid;
   border-left-width: 8px;
   border-color: transparent;
-  white-space: nowrap;
+  min-height: ${MENU_ITEM_SIZE}px;
 
   ${IconStyle} {
-    margin-right: 5px;
-
     &:last-child {
       margin-left: auto;
       align-self: center;

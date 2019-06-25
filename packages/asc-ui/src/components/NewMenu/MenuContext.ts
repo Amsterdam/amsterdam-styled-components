@@ -6,6 +6,7 @@ export type ContextValueTypes = {
   setActiveToggleChild?: Function
   underFlyOutMenu?: boolean
   hasToggle?: boolean
+  onExpand?: Function
 }
 
 const initialValues: ContextValueTypes = {

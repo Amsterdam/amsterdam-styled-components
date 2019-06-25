@@ -8,6 +8,7 @@ import { TOGGLE_BUTTON_SIZE, FLY_OUT_WIDTH } from '../constants'
 
 export type Props = {
   align?: 'left' | 'right'
+  onExpand?: Function
 } & ShowHideTypes
 
 export default styled.div<Props>`
@@ -16,8 +17,11 @@ export default styled.div<Props>`
   align-items: ${({ align }) => (align === 'left' ? 'flex-start' : `flex-end`)};
   max-width: ${FLY_OUT_WIDTH}px;
 
+  & > ${MenuListStyle} {
+    border-bottom: 5px solid ${color('tint', 'level7')};
+  }
+
   ${MenuListStyle} {
-    background-color: ${color('tint', 'level2')};
     position: absolute;
     width: ${FLY_OUT_WIDTH}px;
     flex-direction: column;
@@ -34,7 +38,7 @@ export default styled.div<Props>`
       border-left-color: ${color('tint', 'level2')};
     }
     ${MenuListStyle} {
-      background-color: #fff;
+      background-color: ${color('tint', 'level1')};
       position: relative;
       top: 0;
     }

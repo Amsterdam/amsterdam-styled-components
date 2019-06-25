@@ -14,7 +14,7 @@ import useDebounce from '../../../utils/useDebounce'
 import { KeyboardKeys } from '../../../types/index'
 
 const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
-  const { hasToggle, setActiveToggleChild } = useMenuContext()
+  const { hasToggle, setActiveToggleChild, onExpand } = useMenuContext()
 
   const ref = React.useRef<HTMLLIElement>(null)
   const [isOpen, setOpenFn] = React.useState(false)
@@ -73,6 +73,12 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
     : {}
 
   const [listRef, edgeDetection] = useEdgeDetection([flyOutOpen])
+
+  React.useEffect(() => {
+    if (onExpand) {
+      onExpand(flyOutOpen)
+    }
+  }, [onExpand, flyOutOpen])
 
   return (
     <MenuFlyOutStyle

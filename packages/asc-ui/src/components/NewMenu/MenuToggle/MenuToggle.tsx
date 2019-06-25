@@ -1,22 +1,19 @@
 import React from 'react'
-import { Close, Menu } from '@datapunt/asc-assets'
 import MenuList from '../MenuList/MenuList'
 import MenuContext from '../MenuContext'
 import useFocussedChildren from '../useFocussedChildren'
 import useKeysToFocus from '../useKeysToFocus'
-import ownerDocument from '../../../utils/ownerDocument'
 import MenuToggleStyle, { Props } from './MenuToggleStyle'
-import ButtonToggle from '../../ButtonToggle'
-import Icon from '../../Icon'
+import Toggle from '../../Toggle/Toggle'
 
 const MenuToggle: React.FC<Props> = ({
   children: childrenProps,
+  onExpand,
   align = 'left',
   ...otherProps
 }) => {
   const [menuOpen, setMenuOpen] = React.useState(false)
   const [activeChild, setActiveChild] = React.useState(0)
-  const ref = React.useRef(null)
   const { children, filteredChildren } = useFocussedChildren(childrenProps)
   const toggleMenu = () => {
     setActiveChild(0)
@@ -31,18 +28,15 @@ const MenuToggle: React.FC<Props> = ({
   )
 
   const onClose = () => {
-    setTimeout(() => {
-      const element = ref.current
-      if (element) {
-        const currentFocus = ownerDocument(element).activeElement
-        // @ts-ignore
-        if (!element.contains(currentFocus)) {
-          setActiveChild(0)
-          setMenuOpen(false)
-        }
-      }
-    })
+    setActiveChild(0)
+    setMenuOpen(false)
   }
+
+  React.useEffect(() => {
+    if (onExpand) {
+      onExpand(menuOpen)
+    }
+  }, [menuOpen])
 
   return (
     <MenuContext.Provider
@@ -53,18 +47,17 @@ const MenuToggle: React.FC<Props> = ({
         hasToggle: true,
       }}
     >
-      <MenuToggleStyle
-        ref={ref}
+      <Toggle
+        as={MenuToggleStyle}
+        onClose={onClose}
+        onClick={toggleMenu}
         onKeyDown={onKeyDown}
-        onBlur={onClose}
         align={align}
+        open={menuOpen}
         {...otherProps}
       >
-        <ButtonToggle open={menuOpen} onClick={toggleMenu}>
-          <Icon>{menuOpen ? <Close /> : <Menu />}</Icon>
-        </ButtonToggle>
-        <MenuList aria-hidden={!menuOpen}>{children}</MenuList>
-      </MenuToggleStyle>
+        <MenuList>{children}</MenuList>
+      </Toggle>
     </MenuContext.Provider>
   )
 }

@@ -1,7 +1,6 @@
 import styled, { css } from '@datapunt/asc-core'
 import { color } from '../../../utils'
 import { MenuItemSharedStyle } from '../MenuItem'
-import { MENU_ITEM_SIZE } from '../constants'
 import IconStyle from '../../Icon/IconStyle'
 import { MenuItemLabelStyle } from '../MenuItemLabel'
 
@@ -20,10 +19,23 @@ const toggleStyle = css`
   border-left-color: ${color('tint', 'level2')};
 `
 
-const noToggleAndFlyOutStyle = css`
+const flyOutStyle = css`
   ${IconStyle} {
-    transform: translateY(4px);
+    margin-right: 5px;
+  }
+`
+
+const noToggleDirectMenuItem = css`
+  ${MenuItemLabelStyle} {
+    white-space: nowrap;
+  }
+`
+
+const toggleAndFlyOutStyle = css`
+  background-color: ${color('tint', 'level1')};
+  ${IconStyle} {
     align-self: flex-start;
+    transform: translateY(4px);
   }
 `
 
@@ -31,7 +43,6 @@ export default styled.a.attrs<Props>({
   ...({ underFlyOutMenu }: Props) => (!underFlyOutMenu ? { tabIndex: 0 } : {}),
 })<Props>`
   ${MenuItemSharedStyle};
-  min-height: ${MENU_ITEM_SIZE}px;
   ${({ hasCustomIcon }) =>
     hasCustomIcon &&
     css`
@@ -45,7 +56,11 @@ export default styled.a.attrs<Props>({
       }
     `}
   ${({ hasToggle }) => hasToggle && toggleStyle}
+  ${({ underFlyOutMenu }) => underFlyOutMenu && flyOutStyle} 
   ${({ hasToggle, underFlyOutMenu }) =>
-    !hasToggle && underFlyOutMenu && noToggleAndFlyOutStyle}
+    !hasToggle && !underFlyOutMenu && noToggleDirectMenuItem}
+    
+  ${({ hasToggle, underFlyOutMenu }) =>
+    hasToggle && underFlyOutMenu && toggleAndFlyOutStyle}
   ${({ isActive, hasToggle }) => hasToggle && isActive && activeToggleStyle}
 `

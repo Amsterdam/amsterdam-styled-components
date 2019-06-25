@@ -112,7 +112,7 @@ const DataportaalHeader: React.FC<{}> = () => (
       navigation={
         <>
           <SearchBar
-
+            showAt="tabletM"
             placeholder="Enter the search text"
             onChange={() => {
               action(`text changed`)
@@ -122,6 +122,7 @@ const DataportaalHeader: React.FC<{}> = () => (
             }}
           />
           <SearchBarToggle
+            align="left"
             hideAt="tabletM"
             placeholder="Enter the search text"
             onChange={() => {

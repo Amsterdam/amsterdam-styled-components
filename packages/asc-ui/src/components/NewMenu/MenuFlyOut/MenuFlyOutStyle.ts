@@ -1,5 +1,4 @@
 import styled, { css } from '@datapunt/asc-core'
-import { color } from '../../../utils'
 import { MenuItemStyle } from '../MenuItem'
 import MenuListStyle from '../MenuList/MenuListStyle'
 import { FLY_OUT_WIDTH, MENU_ITEM_SIZE } from '../constants'
@@ -13,7 +12,6 @@ export default styled(MenuItemStyle)<Props>`
     width: ${FLY_OUT_WIDTH}px;
     top: ${MENU_ITEM_SIZE}px;
     order: 0;
-    background-color: ${color('tint', 'level2')};
     position: absolute;
     text-align: left;
     flex-direction: column;
