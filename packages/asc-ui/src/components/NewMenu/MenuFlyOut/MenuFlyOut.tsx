@@ -117,6 +117,7 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
           setActiveChild,
           underFlyOutMenu: true,
           hasToggle,
+          setOpenToggle: setOpen,
         }}
       >
         <MenuList

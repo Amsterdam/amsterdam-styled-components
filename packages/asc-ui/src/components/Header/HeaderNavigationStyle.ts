@@ -5,6 +5,7 @@ const HeaderNavigationStyle = styled.nav`
   align-items: center;
   justify-content: flex-end;
   height: 100%;
+  position: relative;
 `
 
 export default HeaderNavigationStyle

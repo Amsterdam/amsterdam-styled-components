@@ -27,10 +27,11 @@ const MenuItemLink: React.FC<Props> = ({
   iconRight,
   isActive,
   iconLeft,
+  onClick,
   ...otherProps
 }) => {
   const ref = React.useRef<HTMLAnchorElement>(null!)
-  const { setActiveChild, underFlyOutMenu, hasToggle } = useMenuContext()
+  const { setActiveChild, underFlyOutMenu, hasToggle, setOpenToggle } = useMenuContext()
 
   useMenuFocus(ref, linkIndex)
 
@@ -49,6 +50,12 @@ const MenuItemLink: React.FC<Props> = ({
     }
   }
 
+  const handleOnClick = () => {
+    if (setOpenToggle) (
+      setOpenToggle(false)
+    )
+  }
+
   return (
     <MenuItemLinkStyle
       onFocus={handleOnFocus}
@@ -56,6 +63,7 @@ const MenuItemLink: React.FC<Props> = ({
       ref={ref}
       isActive={isActive}
       tabIndex={0}
+      onClick={handleOnClick}
       {...(element ? { as: element } : {})}
       {...{ hasToggle, underFlyOutMenu }}
       {...otherProps}
