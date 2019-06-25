@@ -78,7 +78,7 @@ const Toggle: React.FC<Props> = ({
   React.useEffect(() => {
     handleOnOpen(open)
   }, [handleOnOpen, open])
-
+  
   const ClosedIcon = icon || <Menu />
 
   const conditionalRenderedChildren = open ? children : null
