@@ -33,7 +33,7 @@ export default React.forwardRef<HTMLLIElement, Props>(function MenuItem(
           iconRight,
           isActive,
           iconLeft,
-          href
+          href,
         }}
       >
         {children}

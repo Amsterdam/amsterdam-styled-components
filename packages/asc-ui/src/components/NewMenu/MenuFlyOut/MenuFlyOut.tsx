@@ -78,7 +78,7 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
     if (onExpand) {
       onExpand(flyOutOpen)
     }
-  }, [flyOutOpen])
+  }, [flyOutOpen, onExpand])
 
   return (
     <MenuFlyOutStyle

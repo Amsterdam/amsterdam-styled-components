@@ -73,7 +73,7 @@ const Toggle: React.FC<Props> = ({
     if (onOpen) {
       onOpen(open)
     }
-  }, [open])
+  }, [onOpen, open])
 
   const ClosedIcon = icon || <Menu />
 

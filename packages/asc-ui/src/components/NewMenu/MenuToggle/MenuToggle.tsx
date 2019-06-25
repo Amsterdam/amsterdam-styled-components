@@ -38,7 +38,7 @@ const MenuToggle: React.FC<Props> = ({
     if (onExpand) {
       onExpand(menuOpen)
     }
-  }, [menuOpen])
+  }, [menuOpen, onExpand])
 
   return (
     <MenuContext.Provider
