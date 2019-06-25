@@ -1,20 +1,24 @@
 import React from 'react'
-import { Close, Menu } from '@datapunt/asc-assets'
-import MenuWrapper from '../MenuWrapper/MenuWrapper'
+import MenuList from '../MenuList/MenuList'
 import MenuContext from '../MenuContext'
 import useFocussedChildren from '../useFocussedChildren'
 import useKeysToFocus from '../useKeysToFocus'
-import ownerDocument from '../../../utils/ownerDocument'
-import MenuToggleStyle from './MenuToggleStyle'
-import ButtonToggle from '../../ButtonToggle'
-import Icon from '../../Icon'
+import MenuToggleStyle, { Props } from './MenuToggleStyle'
+import Toggle from '../../Toggle/Toggle'
 
-const MenuToggle: React.FC<{}> = ({ children: childrenProps }) => {
+const MenuToggle: React.FC<Props> = ({
+  children: childrenProps,
+  onExpand,
+  align = 'left',
+  ...otherProps
+}) => {
   const [menuOpen, setMenuOpen] = React.useState(false)
   const [activeChild, setActiveChild] = React.useState(0)
-  const ref = React.useRef(null)
   const { children, filteredChildren } = useFocussedChildren(childrenProps)
-  const toggleMenu = () => setMenuOpen(!menuOpen)
+  const toggleMenu = () => {
+    setActiveChild(0)
+    setMenuOpen(!menuOpen)
+  }
 
   const { onKeyDown } = useKeysToFocus(
     filteredChildren,
@@ -24,36 +28,42 @@ const MenuToggle: React.FC<{}> = ({ children: childrenProps }) => {
   )
 
   const onClose = () => {
-    setTimeout(() => {
-      const element = ref.current
-      if (element) {
-        const currentFocus = ownerDocument(element).activeElement
-        // @ts-ignore
-        if (!element.contains(currentFocus)) {
-          setActiveChild(0)
-          setMenuOpen(false)
-        }
-      }
-    })
+    setActiveChild(0)
+    setMenuOpen(false)
   }
+
+  React.useEffect(() => {
+    if (onExpand) {
+      onExpand(menuOpen)
+    }
+  }, [menuOpen])
 
   return (
     <MenuContext.Provider
       value={{
         activeChild,
-        setActiveChild,
+        setActiveToggleChild: setActiveChild,
         underFlyOutMenu: false,
-        isToggleActive: true,
+        hasToggle: true,
       }}
     >
-      <MenuToggleStyle ref={ref} onKeyDown={onKeyDown} onBlur={onClose}>
-        <ButtonToggle open={menuOpen} onClick={toggleMenu}>
-          <Icon>{menuOpen ? <Close /> : <Menu />}</Icon>
-        </ButtonToggle>
-        <MenuWrapper aria-hidden={!menuOpen}>{children}</MenuWrapper>
-      </MenuToggleStyle>
+      <Toggle
+        as={MenuToggleStyle}
+        onClose={onClose}
+        onClick={toggleMenu}
+        onKeyDown={onKeyDown}
+        align={align}
+        open={menuOpen}
+        {...otherProps}
+      >
+        <MenuList>{children}</MenuList>
+      </Toggle>
     </MenuContext.Provider>
   )
+}
+
+MenuToggle.defaultProps = {
+  align: 'left',
 }
 
 export default MenuToggle

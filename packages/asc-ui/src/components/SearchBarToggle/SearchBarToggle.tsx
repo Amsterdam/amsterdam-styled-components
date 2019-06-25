@@ -1,14 +1,12 @@
 import React from 'react'
-import { Close, Search } from '@datapunt/asc-assets'
-import ownerDocument from '../../utils/ownerDocument'
+import { Search } from '@datapunt/asc-assets'
 import SearchBarToggleStyle, {
   SearchBarMenuStyleProps,
 } from './SearchBarToggleStyle'
 import SearchBar from '../SearchBar'
-import ButtonToggle from '../ButtonToggle'
 import { InputMethods } from '../Input'
-import useActionOnEscape from '../../utils/useActionOnEscape'
-import Icon from '../Icon'
+import Toggle, { Props as ToggleProps } from '../Toggle/Toggle'
+import { SearchBarProps } from '../SearchBar/SearchBar'
 
 interface SearchBarMenuProps extends SearchBarMenuStyleProps, InputMethods {
   css?: any
@@ -17,81 +15,35 @@ interface SearchBarMenuProps extends SearchBarMenuStyleProps, InputMethods {
   onSubmit?: Function
   onOpen?: Function
   open?: boolean
+  searchBarProps?: SearchBarProps
 }
 
-const SearchBarMenu: React.FC<SearchBarMenuProps> = ({
+const SearchBarMenu: React.FC<SearchBarMenuProps & ToggleProps> = ({
   children,
-  css,
   hideAt,
   showAt,
-  open: controlledOpen,
-  onOpen,
+  searchBarProps,
+  css,
   ...otherProps
-}) => {
-  const ref = React.useRef<HTMLDivElement>(null)
-  const [open, setOpen] = React.useState(false)
-  const { onKeyDown } = useActionOnEscape(() => setOpen(false))
-
-  const onBlurHandler = () => {
-    setTimeout(() => {
-      const element = ref.current as HTMLInputElement
-      if (element) {
-        const currentFocus = ownerDocument(element).activeElement
-        if (!element.contains(currentFocus)) {
-          setOpen(false)
-        }
-      }
-    })
-  }
-
-  React.useEffect(() => {
-    if (onOpen) {
-      onOpen(open)
-    }
-  }, [open, onOpen])
-
-  // Useful if parent needs to take over control the open state
-  React.useEffect(() => {
-    if (typeof controlledOpen === 'boolean') {
-      setOpen(controlledOpen)
-    }
-  }, [controlledOpen])
-
-  return (
-    <SearchBarToggleStyle
-      {...{
-        onKeyDown,
-        css,
-        ref,
-        open,
-        hideAt,
-        showAt,
-      }}
-      onClick={e => {
-        e.stopPropagation()
-      }}
-      onBlur={onBlurHandler}
-    >
-      <ButtonToggle
-        type="button"
-        aria-label="Search"
-        open={open}
-        onClick={() => {
-          setOpen(!open)
-        }}
-        iconSize={20}
-      >
-        <Icon>{open ? <Close /> : <Search />}</Icon>
-      </ButtonToggle>
-
-      {open && (
-        <SearchBar focusOnRender {...otherProps}>
-          {children}
-        </SearchBar>
-      )}
-    </SearchBarToggleStyle>
-  )
-}
+}) => (
+  <Toggle
+    as={SearchBarToggleStyle}
+    {...{
+      hideAt,
+      showAt,
+      css,
+    }}
+    onClick={e => {
+      e.stopPropagation()
+    }}
+    icon={<Search />}
+    {...otherProps}
+  >
+    <SearchBar focusOnRender {...searchBarProps}>
+      {children}
+    </SearchBar>
+  </Toggle>
+)
 
 SearchBarMenu.defaultProps = {
   css: '',

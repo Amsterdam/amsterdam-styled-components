@@ -29,12 +29,12 @@ import GlobalStyle from './components/GlobalStyle'
 import { GridContainer, GridItem } from './components/Grid'
 import {
   MenuItemTitle,
-  MenuWrapper,
   MenuItemLink,
   MenuItemLabel,
   MenuItem,
   MenuFlyOut,
-  Menu,
+  MenuInline,
+  MenuToggle,
   MenuStyles,
 } from './components/NewMenu'
 import ThemeProvider from './theme'
@@ -76,13 +76,13 @@ export {
   ContextMenu,
   ContextMenuButtonStyle,
   ContextMenuItem,
-  MenuWrapper,
   MenuItemTitle,
   MenuItemLink,
   MenuItemLabel,
   MenuItem,
   MenuFlyOut,
-  Menu,
+  MenuInline,
+  MenuToggle,
   Header,
   SearchBar,
   GlobalStyle,

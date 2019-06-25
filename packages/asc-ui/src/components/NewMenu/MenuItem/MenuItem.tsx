@@ -1,15 +1,41 @@
 import React from 'react'
 import MenuItemStyle from './MenuItemStyle'
-import usePassPropsToChildren from '../../../utils/usePassPropsToChildren'
+import { Props as MenuItemLinkProps } from '../MenuItemLink/MenuItemLink'
+import MenuItemLink from '../MenuItemLink'
 
-export default React.forwardRef<HTMLLIElement, any>(function MenuItem(
-  { children: childrenProps, linkIndex, ...otherProps },
+type Props = {} & MenuItemLinkProps & React.HTMLProps<HTMLElement>
+
+export default React.forwardRef<HTMLLIElement, Props>(function MenuItem(
+  {
+    children,
+    linkIndex,
+    element,
+    onFocus,
+    setCurrentLinkRef,
+    iconRight,
+    isActive,
+    iconLeft,
+    ...otherProps
+  },
   ref,
 ) {
-  const { children } = usePassPropsToChildren(childrenProps, { linkIndex })
   return (
-    <MenuItemStyle ref={ref} {...otherProps}>
-      {children}
+    // @ts-ignore
+    <MenuItemStyle ref={ref} tabIndex={-1} {...otherProps}>
+      <MenuItemLink
+        {...{
+          element,
+          linkIndex,
+          onFocus,
+          setCurrentLinkRef,
+          children,
+          iconRight,
+          isActive,
+          iconLeft,
+        }}
+      >
+        {children}
+      </MenuItemLink>
     </MenuItemStyle>
   )
-}) as React.RefForwardingComponent<{}>
+})

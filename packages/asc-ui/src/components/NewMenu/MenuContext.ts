@@ -3,15 +3,18 @@ import React from 'react'
 export type ContextValueTypes = {
   activeChild?: number
   setActiveChild?: Function
+  setActiveToggleChild?: Function
   underFlyOutMenu?: boolean
-  isToggleActive?: boolean
+  hasToggle?: boolean
+  onExpand?: Function
 }
 
 const initialValues: ContextValueTypes = {
   activeChild: 0,
   setActiveChild: () => {},
+  setActiveToggleChild: () => {},
   underFlyOutMenu: false,
-  isToggleActive: false,
+  hasToggle: false,
 }
 
 const MenuContext = React.createContext(initialValues)

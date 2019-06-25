@@ -2,12 +2,11 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { css } from '@datapunt/asc-core'
 import { Header, styles } from '../../../index'
-import { breakpoint } from '../../../utils'
 import SearchBar from '../../SearchBar'
 import SearchBarToggle from '../../SearchBarToggle/SearchBarToggle'
-import Menu from '../../NewMenu/Menu'
+import MenuInline from '../../NewMenu/MenuInline'
+import MenuToggle from '../../NewMenu/MenuToggle'
 import MenuItem from '../../NewMenu/MenuItem'
-import MenuItemLink from '../../NewMenu/MenuItemLink'
 import MenuFlyOut from '../../NewMenu/MenuFlyOut'
 
 const DataportaalHeaderWrapperStyle = css`
@@ -24,48 +23,66 @@ const DataportaalHeaderWrapperStyle = css`
       max-width: 430px;
     }
   }
-
-  // ${styles.MenuSt} {
-  //   @media screen and ${breakpoint('max-width', 'tabletM')} {
-  //     display: none;
-  //   }
-  // }
-
-  ${styles.MenuFlyOutStyle} {
-    @media screen and ${breakpoint('min-width', 'tabletM')} {
-      display: none;
-    }
-  }
 `
 
+// MenuToggle should take an array of children, wrapping components in Fragments will return a string.. 
+const menuChildren = [
+  <MenuFlyOut label="Categorieën">
+    <MenuItem href="#" onClick={() => action('redux')}>
+      Kaart
+    </MenuItem>
+    <MenuItem href="#" onClick={() => action('redux')}>
+      Panoramabeelden
+    </MenuItem>
+    <MenuItem href="#" onClick={() => action('redux')}>
+      Datasets
+    </MenuItem>
+    <MenuItem href="#" onClick={() => action('redux')}>
+      Data services
+    </MenuItem>
+  </MenuFlyOut>,
+  <MenuFlyOut label="Over">
+    <MenuItem href="#" onClick={() => action('redux')}>
+      Privacy en informatiebeveiliging
+    </MenuItem>
+    <MenuItem href="#" onClick={() => action('redux')}>
+      Beschikbaarheid en kwaliteit data
+    </MenuItem>
+    <MenuItem href="#" onClick={() => action('redux')}>
+      Technisch beheer en werkwijze
+    </MenuItem>
+    <MenuItem
+      title="Contact"
+      href="mailto:datapunt@amsterdam.nl"
+    >
+      Contact
+    </MenuItem>
+  </MenuFlyOut>,
+  <MenuItem onClick={() => action('Show feedback form')}>Feedback</MenuItem>,
+  <MenuItem href="/help">Help</MenuItem>,
+  <MenuFlyOut label="Jon Doe">
+    <MenuItem onClick={() => action('Log out')}>Uitloggen</MenuItem>
+  </MenuFlyOut>
+]
+
 const MenuDefault = (props: any) => (
-  <Menu {...props}>
-    <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
-    <MenuFlyOut label="Two">
-      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
-      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
-      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
-      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
-    </MenuFlyOut>
-    <MenuFlyOut label="Three">
-      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
-      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
-      <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
-    </MenuFlyOut>
-    <MenuItem><MenuItemLink>One</MenuItemLink></MenuItem>
-  </Menu>
+  <MenuInline {...props}>
+    {menuChildren}
+  </MenuInline>
 )
 
-const MenuMobile = () => (
-  <MenuDefault toggle />
+const MenuMobile = (props: any) => (
+  <MenuToggle {...props} align="right">
+    {menuChildren}
+  </MenuToggle>
 )
-//
+
 // const HeaderLinksMenu = () => (
 //   <Menu>
-//     <MenuItem icon={<ChevronRight />} href="#one" onClick={action('click')}>
+//     <MenuItem href="#one" onClick={action('click')}>
 //       One
 //     </MenuItem>
-//     <MenuItem icon={<ChevronRight />} href="#two" onClick={action('click')}>
+//     <MenuItem href="#two" onClick={action('click')}>
 //       Two
 //     </MenuItem>
 //   </Menu>
@@ -91,6 +108,7 @@ const DataportaalHeader: React.FC<{}> = () => (
             }}
           />
           <SearchBarToggle
+            align="left"
             hideAt="tabletM"
             placeholder="Enter the search text"
             onChange={() => {
@@ -100,8 +118,8 @@ const DataportaalHeader: React.FC<{}> = () => (
               action(`button clicked`)
             }}
           />
-          <MenuDefault />
-          <MenuMobile />
+          <MenuDefault showAt="tabletM" />
+          <MenuMobile hideAt="tabletM" />
         </>
       }
     />

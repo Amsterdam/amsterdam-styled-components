@@ -1,58 +1,68 @@
 import styled, { css } from '@datapunt/asc-core'
 import { color } from '../../../utils'
 import { MenuItemSharedStyle } from '../MenuItem'
+import IconStyle from '../../Icon/IconStyle'
+import { MenuItemLabelStyle } from '../MenuItemLabel'
 
 export type Props = {
   isActive?: boolean
-  isToggleActive?: boolean
+  hasToggle?: boolean
   underFlyOutMenu?: boolean
   hasCustomIcon?: boolean
 }
 
 const activeStyle = css`
   background-color: ${color('tint', 'level2')};
+
+  ${MenuItemLabelStyle} {
+    border-bottom: 2px solid ${color('secondary')};
+  }
 `
 
-const noToggleAndFlyOutStyle = css`
-  &:hover,
-  &:focus {
-    ${activeStyle}
+const activeToggleStyle = css`
+  border-left-color: ${color('secondary')};
+`
+
+const toggleStyle = css`
+  border-left-color: ${color('tint', 'level2')};
+`
+
+const flyOutStyle = css`
+  ${IconStyle} {
+    margin-right: 5px;
+  }
+`
+
+const noToggleDirectMenuItem = css`
+  ${MenuItemLabelStyle} {
+    white-space: nowrap;
   }
 `
 
 const toggleAndFlyOutStyle = css`
   background-color: ${color('tint', 'level1')};
-
-  &:hover {
-    color: ${color('secondary')};
-    border-left-color: ${color('secondary')};
-  }
-`
-
-const toggleStyle = css`
-  border-bottom: 1px solid ${color('tint', 'level3')};
-
-  &:hover,
-  &:focus {
-    border-left-color: ${color('secondary')};
+  ${IconStyle} {
+    align-self: flex-start;
+    transform: translateY(4px);
   }
 `
 
 export default styled.a.attrs<Props>({
   ...({ underFlyOutMenu }: Props) => (!underFlyOutMenu ? { tabIndex: 0 } : {}),
 })<Props>`
-  ${MenuItemSharedStyle}
+  ${MenuItemSharedStyle};
   ${({ hasCustomIcon }) =>
     hasCustomIcon &&
     css`
       justify-content: space-between;
     `}
   ${({ isActive }) => isActive && activeStyle}
-  ${({ isToggleActive, underFlyOutMenu }) =>
-    isToggleActive && underFlyOutMenu && toggleAndFlyOutStyle}
+  ${({ hasToggle }) => hasToggle && toggleStyle}
+  ${({ underFlyOutMenu }) => underFlyOutMenu && flyOutStyle} 
+  ${({ hasToggle, underFlyOutMenu }) =>
+    !hasToggle && !underFlyOutMenu && noToggleDirectMenuItem}
     
-  ${({ isToggleActive, underFlyOutMenu }) =>
-    !isToggleActive && underFlyOutMenu && noToggleAndFlyOutStyle}
-    
-  ${({ isToggleActive }) => isToggleActive && toggleStyle}
+  ${({ hasToggle, underFlyOutMenu }) =>
+    hasToggle && underFlyOutMenu && toggleAndFlyOutStyle}
+  ${({ isActive, hasToggle }) => hasToggle && isActive && activeToggleStyle}
 `

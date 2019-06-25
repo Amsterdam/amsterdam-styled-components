@@ -1,10 +1,11 @@
-import Menu from './Menu'
+import MenuToggle, { MenuToggleStyle } from './MenuToggle'
 import MenuFlyOut, { MenuFlyOutStyle } from './MenuFlyOut'
 import MenuItem, { MenuItemStyle, MenuItemSharedStyle } from './MenuItem'
 import MenuItemLabel, { MenuItemLabelStyle } from './MenuItemLabel'
 import MenuItemLink, { MenuItemLinkStyle } from './MenuItemLink'
 import MenuItemTitle, { MenuItemTitleStyle } from './MenuItemTitle'
-import MenuWrapper, { MenuWrapperStyle } from './MenuWrapper'
+import MenuList, { MenuListStyle } from './MenuList'
+import MenuInline, { MenuInlineStyle } from './MenuInline'
 
 export const MenuStyles = {
   MenuFlyOutStyle,
@@ -13,12 +14,15 @@ export const MenuStyles = {
   MenuItemLinkStyle,
   MenuItemTitleStyle,
   MenuItemSharedStyle,
-  MenuWrapperStyle,
+  MenuListStyle,
+  MenuInlineStyle,
+  MenuToggleStyle,
 }
 
 export {
-  Menu,
-  MenuWrapper,
+  MenuInline,
+  MenuToggle,
+  MenuList,
   MenuFlyOut,
   MenuItem,
   MenuItemLabel,

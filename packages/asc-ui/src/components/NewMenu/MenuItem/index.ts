@@ -1,4 +1,7 @@
-import MenuItemStyle, { MenuItemSharedStyle } from './MenuItemStyle'
+import MenuItemStyle, {
+  MenuItemSharedStyle,
+  activeStyle,
+} from './MenuItemStyle'
 
 export { default } from './MenuItem'
-export { MenuItemStyle, MenuItemSharedStyle }
+export { MenuItemStyle, MenuItemSharedStyle, activeStyle }

@@ -8,7 +8,7 @@ import MenuItemLinkStyle, {
 } from './MenuItemLinkStyle'
 import Icon from '../../Icon'
 
-type Props = {
+export type Props = {
   element?: keyof JSX.IntrinsicElements
   linkIndex?: number
   onFocus?: (e: React.FocusEvent) => void
@@ -30,7 +30,7 @@ const MenuItemLink: React.FC<Props> = ({
   ...otherProps
 }) => {
   const ref = React.useRef<HTMLAnchorElement>(null!)
-  const { setActiveChild, underFlyOutMenu, isToggleActive } = useMenuContext()
+  const { setActiveChild, underFlyOutMenu, hasToggle } = useMenuContext()
 
   useMenuFocus(ref, linkIndex)
 
@@ -48,15 +48,15 @@ const MenuItemLink: React.FC<Props> = ({
       setActiveChild(linkIndex)
     }
   }
-
   return (
     <MenuItemLinkStyle
       onFocus={handleOnFocus}
       // @ts-ignore
       ref={ref}
       isActive={isActive}
+      tabIndex={0}
       {...(element ? { as: element } : {})}
-      {...{ isToggleActive, underFlyOutMenu }}
+      {...{ hasToggle, underFlyOutMenu }}
       {...otherProps}
     >
       {!iconLeft && underFlyOutMenu && (

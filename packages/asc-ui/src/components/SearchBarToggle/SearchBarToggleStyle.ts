@@ -1,13 +1,14 @@
 import styled, { css } from '@datapunt/asc-core'
 import { color, showHide, ShowHideTypes } from '../../utils'
 import SearchBarStyle from '../SearchBar/SearchBarStyle'
+import ToggleStyle from '../Toggle/ToggleStyle'
 
 export interface SearchBarMenuStyleProps extends ShowHideTypes {
   open?: boolean
   css?: string
 }
 
-const SearchBarMenuStyle = styled.div<SearchBarMenuStyleProps>`
+const SearchBarMenuStyle = styled(ToggleStyle)<SearchBarMenuStyleProps>`
   display: flex;
   align-items: flex-start;
   flex-direction: column;

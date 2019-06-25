@@ -1,89 +1,49 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import Menu from './Menu'
+import MenuInline from './MenuInline/MenuInline'
+import MenuToggle from './MenuToggle'
 import MenuItem from './MenuItem'
-import MenuItemLink from './MenuItemLink'
 import MenuFlyOut from './MenuFlyOut'
 import MenuTitle from './MenuItemTitle'
 
 storiesOf('Composed/NewMenu', module)
   .add('default', () => (
-    <Menu>
-      <MenuItem>
-        <MenuItemLink href="/">Home</MenuItemLink>
-      </MenuItem>
-      <MenuItem>
-        <MenuItemLink href="/">Shop</MenuItemLink>
-      </MenuItem>
+    <MenuInline>
+      <MenuItem href="/">Home</MenuItem>
+      <MenuItem href="/">Shop</MenuItem>
       <MenuFlyOut label="Submenu!">
-        <MenuItem>
-          <MenuItemLink href="/">Space Bear 6</MenuItemLink>
-        </MenuItem>
-        <MenuItem>
-          <MenuItemLink href="/">Space Bear 6 Plus</MenuItemLink>
-        </MenuItem>
+        <MenuItem href="/">Space Bear 6</MenuItem>
+        <MenuItem href="/">Space Bear 6 Plus</MenuItem>
         <MenuTitle>Just a menu title</MenuTitle>
-        <MenuItem>
-          <MenuItemLink href="/">Space Bear 7</MenuItemLink>
-        </MenuItem>
+        <MenuItem href="/">Space Bear 7</MenuItem>
       </MenuFlyOut>
-      <MenuItem>
-        <MenuItemLink href="/">Mars Cars</MenuItemLink>
-      </MenuItem>
-      <MenuItem>
-        <MenuItemLink href="/">Contact</MenuItemLink>
-      </MenuItem>
+      <MenuItem href="/">Mars Cars</MenuItem>
+      <MenuItem href="/">Contact</MenuItem>
       <MenuFlyOut label="Another one!">
-        <MenuItem>
-          <MenuItemLink href="/">Space Bear 6</MenuItemLink>
-        </MenuItem>
-        <MenuItem>
-          <MenuItemLink href="/">Space Bear 6 Plus</MenuItemLink>
-        </MenuItem>
+        <MenuItem href="/">Space Bear 6</MenuItem>
+        <MenuItem href="/">Space Bear 6 Plus</MenuItem>
         <MenuTitle>Just a menu title</MenuTitle>
-        <MenuItem>
-          <MenuItemLink href="/">Space Bear 7</MenuItemLink>
-        </MenuItem>
+        <MenuItem href="/">Space Bear 7</MenuItem>
       </MenuFlyOut>
-    </Menu>
+    </MenuInline>
   ))
   .add('toggle', () => (
-    <Menu toggle>
-      <MenuItem>
-        <MenuItemLink href="/">Home</MenuItemLink>
-      </MenuItem>
-      <MenuItem>
-        <MenuItemLink href="/">Shop</MenuItemLink>
-      </MenuItem>
+    <MenuToggle>
+      <MenuItem href="/">Home</MenuItem>
+      <MenuItem href="/">Shop</MenuItem>
       <MenuFlyOut label="Submenu!">
-        <MenuItem>
-          <MenuItemLink href="/">Space Bear 6</MenuItemLink>
-        </MenuItem>
-        <MenuItem>
-          <MenuItemLink href="/">Space Bear 6 Plus</MenuItemLink>
-        </MenuItem>
+        <MenuItem href="/">Space Bear 6</MenuItem>
+        <MenuItem href="/">Space Bear 6 Plus</MenuItem>
         <MenuTitle>Just a menu title</MenuTitle>
-        <MenuItem>
-          <MenuItemLink href="/">Space Bear 7</MenuItemLink>
-        </MenuItem>
+        <MenuItem href="/">Space Bear 7</MenuItem>
       </MenuFlyOut>
-      <MenuItem>
-        <MenuItemLink href="/">Mars Cars</MenuItemLink>
-      </MenuItem>
-      <MenuItem>
-        <MenuItemLink href="/">Contact</MenuItemLink>
-      </MenuItem>
+      <MenuItem href="/">Mars Cars</MenuItem>
+      <MenuItem href="/">Contact</MenuItem>
       <MenuFlyOut label="Another one!">
-        <MenuItem>
-          <MenuItemLink href="/">Space Bear 6</MenuItemLink>
-        </MenuItem>
-        <MenuItem>
-          <MenuItemLink href="/">Space Bear 6 Plus</MenuItemLink>
-        </MenuItem>
+        <MenuItem href="/">Space Bear 6</MenuItem>
+        <MenuItem href="/">Space Bear 6 Plus</MenuItem>
         <MenuTitle>Just a menu title</MenuTitle>
-        <MenuItem>
-          <MenuItemLink href="/">Space Bear 7</MenuItemLink>
-        </MenuItem>
+        <MenuItem href="/">Space Bear 7</MenuItem>
       </MenuFlyOut>
-    </Menu>
+    </MenuToggle>
   ))

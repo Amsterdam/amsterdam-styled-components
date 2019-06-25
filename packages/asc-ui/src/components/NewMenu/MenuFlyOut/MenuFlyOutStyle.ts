@@ -1,40 +1,44 @@
 import styled, { css } from '@datapunt/asc-core'
 import { MenuItemStyle } from '../MenuItem'
-import MenuWrapperStyle from '../MenuWrapper/MenuWrapperStyle'
-import { MenuItemLinkStyle } from '../MenuItemLink'
-import { MenuItemLabelStyle } from '../MenuItemLabel'
+import MenuListStyle from '../MenuList/MenuListStyle'
+import MenuItemTitleStyle from '../MenuItemTitle/MenuItemTitleStyle'
+import {
+  FLY_OUT_WIDTH,
+  MENU_ITEM_SIZE,
+  MENU_ITEM_FLYOUT_SIZE,
+} from '../constants'
 
 type Props = {
-  isToggleActive?: boolean
+  hasToggle?: boolean
 }
 
 export default styled(MenuItemStyle)<Props>`
-  ${MenuWrapperStyle} {
+  ${MenuListStyle} {
+    width: ${FLY_OUT_WIDTH}px;
+    top: ${MENU_ITEM_SIZE}px;
     order: 0;
-    background-color: #f5f5f5;
     position: absolute;
     text-align: left;
     flex-direction: column;
-    ${({ isToggleActive }) =>
-      !isToggleActive &&
+    ${({ hasToggle }) =>
+      !hasToggle &&
       css`
         border-bottom: 4px solid #000;
       `}
 
     & > ${MenuItemStyle} {
+      height: ${MENU_ITEM_FLYOUT_SIZE}px;
       font-weight: 400;
+    }
+
+    & > ${MenuItemTitleStyle} {
+      height: ${MENU_ITEM_FLYOUT_SIZE}px;
     }
   }
 
   &[aria-hidden='false'] {
-    ${MenuWrapperStyle} {
+    ${MenuListStyle} {
       display: block;
     }
-
-    ${MenuItemLinkStyle} {
-      ${MenuItemLabelStyle} {
-        border-bottom: 2px solid red;
-      }
-    }
-  }
+  } 
 `
