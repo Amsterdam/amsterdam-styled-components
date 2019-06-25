@@ -89,6 +89,7 @@ exports[`Header should render the short version 1`] = `
   -ms-flex-pack: end;
   justify-content: flex-end;
   height: 100%;
+  position: relative;
 }
 
 .c6 {
@@ -376,6 +377,7 @@ exports[`Header should render the short version without the full width 1`] = `
   -ms-flex-pack: end;
   justify-content: flex-end;
   height: 100%;
+  position: relative;
 }
 
 .c6 {
@@ -679,6 +681,7 @@ exports[`Header should render the tall version 1`] = `
   -ms-flex-pack: end;
   justify-content: flex-end;
   height: 100%;
+  position: relative;
 }
 
 .c9 {
@@ -1030,6 +1033,7 @@ exports[`Header should render the tall version without a title 1`] = `
   -ms-flex-pack: end;
   justify-content: flex-end;
   height: 100%;
+  position: relative;
 }
 
 .c9 {

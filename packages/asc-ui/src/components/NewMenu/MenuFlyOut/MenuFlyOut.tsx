@@ -56,6 +56,8 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
   const onBlurHandler = useDebounce(() => {
     const element = ref && (ref.current as HTMLLIElement)
     if (element) {
+      const currentFocus = ownerDocument(element).activeElement
+
       if (!element.contains(currentFocus)) {
         setOpen(false)
         setOpenOnClick(false)
