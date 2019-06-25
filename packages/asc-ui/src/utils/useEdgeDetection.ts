@@ -32,6 +32,7 @@ export default (dependencies: Array<any> = []) => {
         left: bounding.left < 0,
       })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, dependencies)
 
   return [ref, edgeDetection]

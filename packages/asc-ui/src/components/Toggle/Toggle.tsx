@@ -69,11 +69,15 @@ const Toggle: React.FC<Props> = ({
     }
   }, [openProp])
 
+  const handleOnOpen = React.useCallback(
+    openParam => onOpen && onOpen(openParam),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  )
+
   React.useEffect(() => {
-    if (onOpen) {
-      onOpen(open)
-    }
-  }, [open])
+    handleOnOpen(open)
+  }, [handleOnOpen, open])
 
   const ClosedIcon = icon || <Menu />
 

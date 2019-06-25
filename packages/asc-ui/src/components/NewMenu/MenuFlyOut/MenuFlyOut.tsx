@@ -75,11 +75,15 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
 
   const [listRef, edgeDetection] = useEdgeDetection([flyOutOpen])
 
+  const handleOnExpand = React.useCallback(
+    open => onExpand && onExpand(open),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  )
+
   React.useEffect(() => {
-    if (onExpand) {
-      onExpand(flyOutOpen)
-    }
-  }, [flyOutOpen])
+    handleOnExpand(flyOutOpen)
+  }, [flyOutOpen, handleOnExpand])
 
   return (
     <MenuFlyOutStyle

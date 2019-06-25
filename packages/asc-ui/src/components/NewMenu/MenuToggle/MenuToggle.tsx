@@ -34,11 +34,15 @@ const MenuToggle: React.FC<Props> = ({
     }
   }
 
+  const handleOnExpand = React.useCallback(
+    open => onExpand && onExpand(open),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  )
+
   React.useEffect(() => {
-    if (onExpand) {
-      onExpand(menuOpen)
-    }
-  }, [menuOpen])
+    handleOnExpand(menuOpen)
+  }, [handleOnExpand, menuOpen])
 
   return (
     <MenuContext.Provider
