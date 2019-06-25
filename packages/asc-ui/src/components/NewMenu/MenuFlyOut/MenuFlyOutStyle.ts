@@ -27,12 +27,12 @@ export default styled(MenuItemStyle)<Props>`
       `}
 
     & > ${MenuItemStyle} {
-      height: ${MENU_ITEM_FLYOUT_SIZE}px;
+      min-height: ${MENU_ITEM_FLYOUT_SIZE}px;
       font-weight: 400;
     }
 
     & > ${MenuItemTitleStyle} {
-      height: ${MENU_ITEM_FLYOUT_SIZE}px;
+      min-height: ${MENU_ITEM_FLYOUT_SIZE}px;
     }
   }
 

@@ -3,6 +3,7 @@ import { color } from '../../../utils'
 import { MenuItemSharedStyle } from '../MenuItem'
 import IconStyle from '../../Icon/IconStyle'
 import { MenuItemLabelStyle } from '../MenuItemLabel'
+import { MENU_ITEM_SIZE } from '../constants'
 
 export type Props = {
   isActive?: boolean
@@ -30,10 +31,13 @@ const toggleStyle = css`
 const flyOutStyle = css`
   ${IconStyle} {
     margin-right: 5px;
+    align-self: flex-start;
+    transform: translateY(4px);
   }
 `
 
 const noToggleDirectMenuItem = css`
+  min-height: ${MENU_ITEM_SIZE}px;
   ${MenuItemLabelStyle} {
     white-space: nowrap;
   }
@@ -41,10 +45,6 @@ const noToggleDirectMenuItem = css`
 
 const toggleAndFlyOutStyle = css`
   background-color: ${color('tint', 'level1')};
-  ${IconStyle} {
-    align-self: flex-start;
-    transform: translateY(4px);
-  }
 `
 
 export default styled.a.attrs<Props>({

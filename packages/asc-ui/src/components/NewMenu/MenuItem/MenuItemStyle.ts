@@ -2,7 +2,6 @@ import styled, { css } from '@datapunt/asc-core'
 import { color, focusStyleOutline, svgFill } from '../../../utils'
 import IconStyle from '../../Icon/IconStyle'
 import { MenuItemLabelStyle } from '../MenuItemLabel'
-import { MENU_ITEM_SIZE } from '../constants'
 
 export const activeStyle = css`
   ${MenuItemLabelStyle} {
@@ -40,7 +39,6 @@ export const MenuItemSharedStyle = css`
   border-left-style: solid;
   border-left-width: 8px;
   border-color: transparent;
-  min-height: ${MENU_ITEM_SIZE}px;
 
   ${IconStyle} {
     &:last-child {
