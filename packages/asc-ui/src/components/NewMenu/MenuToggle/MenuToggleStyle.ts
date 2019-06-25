@@ -32,6 +32,10 @@ export default styled.div<Props>`
     border-bottom: 1px solid ${color('tint', 'level3')};
   }
 
+  ${MenuListStyle} {
+    background-color: ${color('tint', 'level2')};
+  }
+
   ${MenuFlyOutStyle} {
     ${MenuItemTitleStyle} {
       border-bottom: 1px solid ${color('tint', 'level3')};

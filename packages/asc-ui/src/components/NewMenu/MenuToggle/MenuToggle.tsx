@@ -27,9 +27,11 @@ const MenuToggle: React.FC<Props> = ({
     setMenuOpen,
   )
 
-  const onClose = () => {
-    setActiveChild(0)
-    setMenuOpen(false)
+  const onOpen = (open: boolean) => {
+    if (!open) {
+      setActiveChild(0)
+      setMenuOpen(false)
+    }
   }
 
   React.useEffect(() => {
@@ -49,7 +51,7 @@ const MenuToggle: React.FC<Props> = ({
     >
       <Toggle
         as={MenuToggleStyle}
-        onClose={onClose}
+        onOpen={onOpen}
         onClick={toggleMenu}
         onKeyDown={onKeyDown}
         align={align}

@@ -13,6 +13,7 @@ export default (
       switch (event.key) {
         case 'ArrowDown':
           if (activeChild !== nrOrfChildren) {
+            event.preventDefault()
             event.stopPropagation()
             setActiveChild(activeChild + 1)
           }
@@ -21,6 +22,7 @@ export default (
 
         case 'ArrowUp':
           if (activeChild !== 1 && activeChild !== 0) {
+            event.preventDefault()
             event.stopPropagation()
             setActiveChild(activeChild - 1)
           }

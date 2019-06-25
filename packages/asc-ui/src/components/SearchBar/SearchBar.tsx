@@ -10,6 +10,7 @@ import { KeyboardKeys } from '../../types'
 export interface SearchBarProps extends InputProps, SearchBarStyleProps {
   placeholder?: string
   label?: string
+  inputProps?: InputProps
   onSubmit?: Function
 }
 
@@ -27,6 +28,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   label,
   hideAt,
   showAt,
+  inputProps,
   ...otherProps
 }) => {
   let inputRef: React.RefObject<HTMLInputElement> | null = null
@@ -84,6 +86,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           setInputRef: (ref: React.RefObject<HTMLInputElement>) => {
             inputRef = ref
           },
+          ...inputProps,
         }}
       >
         <TextField
@@ -95,6 +98,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           value={inputValue}
           {...{
             focusOnRender,
+            inputProps,
             label,
           }}
         />

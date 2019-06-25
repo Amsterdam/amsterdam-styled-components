@@ -4,7 +4,7 @@ import SearchBarToggleStyle, {
   SearchBarMenuStyleProps,
 } from './SearchBarToggleStyle'
 import SearchBar from '../SearchBar'
-import { InputMethods } from '../Input'
+import { InputMethods, InputProps } from '../Input'
 import Toggle, { Props as ToggleProps } from '../Toggle/Toggle'
 import { SearchBarProps } from '../SearchBar/SearchBar'
 
@@ -15,6 +15,7 @@ interface SearchBarMenuProps extends SearchBarMenuStyleProps, InputMethods {
   onSubmit?: Function
   onOpen?: Function
   open?: boolean
+  inputProps?: InputProps
   searchBarProps?: SearchBarProps
 }
 
@@ -23,6 +24,7 @@ const SearchBarMenu: React.FC<SearchBarMenuProps & ToggleProps> = ({
   hideAt,
   showAt,
   searchBarProps,
+  inputProps,
   css,
   ...otherProps
 }) => (
@@ -33,13 +35,11 @@ const SearchBarMenu: React.FC<SearchBarMenuProps & ToggleProps> = ({
       showAt,
       css,
     }}
-    onClick={e => {
-      e.stopPropagation()
-    }}
+    render={false}
     icon={<Search />}
     {...otherProps}
   >
-    <SearchBar focusOnRender {...searchBarProps}>
+    <SearchBar inputProps={inputProps} focusOnRender {...searchBarProps}>
       {children}
     </SearchBar>
   </Toggle>

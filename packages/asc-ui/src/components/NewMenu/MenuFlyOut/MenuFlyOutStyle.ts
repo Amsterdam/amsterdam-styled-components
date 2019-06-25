@@ -7,6 +7,7 @@ import {
   MENU_ITEM_SIZE,
   MENU_ITEM_FLYOUT_SIZE,
 } from '../constants'
+import { color } from '../../../utils'
 
 type Props = {
   hasToggle?: boolean
@@ -14,6 +15,7 @@ type Props = {
 
 export default styled(MenuItemStyle)<Props>`
   ${MenuListStyle} {
+    background-color: ${color('tint', 'level2')};
     width: ${FLY_OUT_WIDTH}px;
     top: ${MENU_ITEM_SIZE}px;
     order: 0;

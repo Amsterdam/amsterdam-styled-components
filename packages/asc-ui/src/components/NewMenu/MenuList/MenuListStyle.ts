@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from '@datapunt/asc-core'
 import { MenuItemStyle } from '../MenuItem'
 import { EdgeDetectionTypes } from '../../../utils/useEdgeDetection'
-import { color, showHide } from '../../../utils'
+import { showHide } from '../../../utils'
 
 export type Props = {
   edgeDetection?: EdgeDetectionTypes
@@ -26,7 +26,7 @@ export default styled.ul<Props>`
   flex-direction: row;
   font-weight: 400;
   animation: ${show} 0.1s linear;
-  background-color: ${color('tint', 'level2')};
+  background-color: inherit;
 
   & > ${MenuItemStyle} {
     font-weight: 500;

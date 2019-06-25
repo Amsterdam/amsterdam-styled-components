@@ -10,7 +10,7 @@ import useActionOnEscape from '../../utils/useActionOnEscape'
 export type Props = {
   icon?: React.ReactElement
   open?: boolean
-  onClose?: Function
+  render?: boolean
   onOpen?: Function
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
 } & React.HTMLProps<HTMLElement> &
@@ -19,11 +19,11 @@ export type Props = {
 const Toggle: React.FC<Props> = ({
   children: childrenProps,
   onClick,
-  onClose,
   open: openProp,
   onKeyDown,
   onOpen,
   css,
+  render,
   icon,
   ...otherProps
 }) => {
@@ -39,9 +39,6 @@ const Toggle: React.FC<Props> = ({
         // @ts-ignore
         if (!element.contains(currentFocus)) {
           setOpen(false)
-          if (onClose) {
-            onClose()
-          }
         }
       }
     })
@@ -67,7 +64,6 @@ const Toggle: React.FC<Props> = ({
 
   // Useful if parent needs to take over control the open state
   React.useEffect(() => {
-    console.log(openProp)
     if (openProp) {
       setOpen(openProp)
     }
@@ -77,9 +73,11 @@ const Toggle: React.FC<Props> = ({
     if (onOpen) {
       onOpen(open)
     }
-  }, [open, onOpen])
+  }, [open])
 
   const ClosedIcon = icon || <Menu />
+
+  const conditionalRenderedChildren = open ? children : null
 
   return (
     <ToggleStyle
@@ -93,9 +91,13 @@ const Toggle: React.FC<Props> = ({
       <ButtonToggle open={open} onClick={handleOnClick}>
         <Icon>{open ? <Close /> : ClosedIcon}</Icon>
       </ButtonToggle>
-      {children}
+      {render ? children : conditionalRenderedChildren}
     </ToggleStyle>
   )
+}
+
+Toggle.defaultProps = {
+  render: true,
 }
 
 export default Toggle
