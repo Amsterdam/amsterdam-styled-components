@@ -11,6 +11,14 @@ export type Props = {
   hasCustomIcon?: boolean
 }
 
+const activeStyle = css`
+  background-color: ${color('tint', 'level2')};
+
+  ${MenuItemLabelStyle} {
+    border-bottom: 2px solid ${color('secondary')};
+  }
+`
+
 const activeToggleStyle = css`
   border-left-color: ${color('secondary')};
 `
@@ -48,13 +56,7 @@ export default styled.a.attrs<Props>({
     css`
       justify-content: space-between;
     `}
-  ${({ isActive }) =>
-    isActive &&
-    css`
-      ${MenuItemLabelStyle} {
-        border-bottom: 2px solid ${color('secondary')};
-      }
-    `}
+  ${({ isActive }) => isActive && activeStyle}
   ${({ hasToggle }) => hasToggle && toggleStyle}
   ${({ underFlyOutMenu }) => underFlyOutMenu && flyOutStyle} 
   ${({ hasToggle, underFlyOutMenu }) =>

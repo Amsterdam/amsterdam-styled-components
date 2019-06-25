@@ -28,41 +28,27 @@ const DataportaalHeaderWrapperStyle = css`
 // MenuToggle should take an array of children, wrapping components in Fragments will return a string.. 
 const menuChildren = [
   <MenuFlyOut label="Categorieën">
-    <MenuItem
-      title="Kaart"
-    >
+    <MenuItem href="#" onClick={() => action('redux')}>
       Kaart
     </MenuItem>
-    <MenuItem
-      title="Panoramabeelden"
-    >
+    <MenuItem href="#" onClick={() => action('redux')}>
       Panoramabeelden
     </MenuItem>
-    <MenuItem
-      title="Datasets"
-    >
+    <MenuItem href="#" onClick={() => action('redux')}>
       Datasets
     </MenuItem>
-    <MenuItem
-      title="Data services"
-    >
+    <MenuItem href="#" onClick={() => action('redux')}>
       Data services
     </MenuItem>
   </MenuFlyOut>,
   <MenuFlyOut label="Over">
-    <MenuItem
-      title="Privacy en informatiebeveiliging"
-    >
+    <MenuItem href="#" onClick={() => action('redux')}>
       Privacy en informatiebeveiliging
     </MenuItem>
-    <MenuItem
-      title="Beschikbaarheid en kwaliteit data"
-    >
+    <MenuItem href="#" onClick={() => action('redux')}>
       Beschikbaarheid en kwaliteit data
     </MenuItem>
-    <MenuItem
-      title="Technisch beheer en werkwijze"
-    >
+    <MenuItem href="#" onClick={() => action('redux')}>
       Technisch beheer en werkwijze
     </MenuItem>
     <MenuItem
