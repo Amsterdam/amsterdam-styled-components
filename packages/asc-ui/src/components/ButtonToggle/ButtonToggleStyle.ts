@@ -13,4 +13,9 @@ export default styled(IconButtonStyle)<Props>`
   width: ${({ size = BUTTON_SIZE }) => `${size}px`};
   background-color: ${({ open, theme }) =>
     color('tint', open ? 'level2' : 'level1')({ theme })};
+
+  &:hover,
+  &:focus {
+    background-color: ${color('tint', 'level2')};
+  }
 `

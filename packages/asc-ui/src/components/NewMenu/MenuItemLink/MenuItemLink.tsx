@@ -48,6 +48,7 @@ const MenuItemLink: React.FC<Props> = ({
       setActiveChild(linkIndex)
     }
   }
+
   return (
     <MenuItemLinkStyle
       onFocus={handleOnFocus}
