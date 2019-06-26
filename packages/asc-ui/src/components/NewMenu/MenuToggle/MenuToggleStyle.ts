@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled, { css } from '@datapunt/asc-core'
 import { color, showHide, ShowHideTypes } from '../../../utils'
 import { MenuItemLinkStyle } from '../MenuItemLink'
 import { MenuItemTitleStyle } from '../MenuItemTitle'
@@ -26,6 +26,14 @@ export default styled.div<Props>`
     width: ${FLY_OUT_WIDTH}px;
     flex-direction: column;
     top: ${TOGGLE_BUTTON_SIZE}px;
+    ${({ align }) =>
+      align === 'left'
+        ? css`
+            left: 0;
+          `
+        : css`
+            right: 0;
+          `};
   }
 
   ${MenuItemLinkStyle} {
@@ -33,6 +41,7 @@ export default styled.div<Props>`
   }
 
   ${MenuListStyle} {
+    flex-shrink: 0;
     background-color: ${color('tint', 'level2')};
   }
 
