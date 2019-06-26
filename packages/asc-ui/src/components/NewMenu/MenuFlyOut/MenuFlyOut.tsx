@@ -111,6 +111,7 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
         onFocus={() => setOpen(true)}
         onClick={onHandleToggle}
         onKeyDown={onHandleKeyDown}
+        ignoreCloseOnClick
         aria-haspopup="true"
         aria-expanded={flyOutOpen}
       >
@@ -122,7 +123,10 @@ const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
           setActiveChild,
           underFlyOutMenu: true,
           hasToggle,
-          setOpenToggle: setOpen,
+          setOpenToggle: (val: boolean) => {
+            setOpen(val)
+            setOpenOnClick(val)
+          },
         }}
       >
         <MenuList

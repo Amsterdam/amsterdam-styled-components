@@ -11,6 +11,7 @@ import Icon from '../../Icon'
 export type Props = {
   element?: keyof JSX.IntrinsicElements
   linkIndex?: number
+  ignoreCloseOnClick?: boolean
   onFocus?: (e: React.FocusEvent) => void
   setCurrentLinkRef?: Function
   iconRight?: React.ReactElement
@@ -23,10 +24,12 @@ const MenuItemLink: React.FC<Props> = ({
   linkIndex,
   onFocus,
   setCurrentLinkRef,
+  ignoreCloseOnClick,
   children,
   iconRight,
   isActive,
   iconLeft,
+  onClick,
   ...otherProps
 }) => {
   const ref = React.useRef<HTMLAnchorElement>(null!)
@@ -54,8 +57,11 @@ const MenuItemLink: React.FC<Props> = ({
     }
   }
 
-  const handleOnClick = () => {
-    if (setOpenToggle) setOpenToggle(false)
+  const handleOnClick = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
+    if (!ignoreCloseOnClick) {
+      if (setOpenToggle) setOpenToggle(false)
+    }
+    if (onClick) onClick(e)
   }
 
   return (
@@ -65,10 +71,10 @@ const MenuItemLink: React.FC<Props> = ({
       ref={ref}
       isActive={isActive}
       tabIndex={0}
-      onClick={handleOnClick}
       {...(element ? { as: element } : {})}
       {...{ hasToggle, underFlyOutMenu }}
       {...otherProps}
+      onClick={handleOnClick}
     >
       {!iconLeft && underFlyOutMenu && (
         <Icon size={14}>

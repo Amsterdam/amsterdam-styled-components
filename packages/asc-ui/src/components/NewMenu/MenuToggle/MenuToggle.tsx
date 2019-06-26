@@ -51,6 +51,10 @@ const MenuToggle: React.FC<Props> = ({
         setActiveToggleChild: setActiveChild,
         underFlyOutMenu: false,
         hasToggle: true,
+        setOpenToggle: () => {
+          setActiveChild(0)
+          setMenuOpen(false)
+        },
       }}
     >
       <Toggle

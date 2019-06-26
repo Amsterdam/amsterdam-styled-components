@@ -15,6 +15,7 @@ export default React.forwardRef<HTMLLIElement, Props>(function MenuItem(
     iconRight,
     isActive,
     iconLeft,
+    onClick,
     href,
     ...otherProps
   },
@@ -28,6 +29,7 @@ export default React.forwardRef<HTMLLIElement, Props>(function MenuItem(
           element,
           linkIndex,
           onFocus,
+          onClick,
           setCurrentLinkRef,
           children,
           iconRight,

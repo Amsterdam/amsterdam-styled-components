@@ -9,7 +9,6 @@ export type Props = {
 } & ShowHideTypes
 
 const MenuInlineStyle = styled(MenuListStyle)<Props>`
-  color: palegoldenrod !important;
   ${showHide()}
 
   & > ${MenuItemStyle} {

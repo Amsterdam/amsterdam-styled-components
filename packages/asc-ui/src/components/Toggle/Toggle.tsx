@@ -64,7 +64,7 @@ const Toggle: React.FC<Props> = ({
 
   // Useful if parent needs to take over control the open state
   React.useEffect(() => {
-    if (openProp) {
+    if (typeof openProp !== 'undefined') {
       setOpen(openProp)
     }
   }, [openProp])
