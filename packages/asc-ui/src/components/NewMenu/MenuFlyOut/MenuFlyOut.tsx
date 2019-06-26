@@ -13,15 +13,22 @@ import useEdgeDetection from '../../../utils/useEdgeDetection'
 import useDebounce from '../../../utils/useDebounce'
 import { KeyboardKeys } from '../../../types/index'
 
-const MenuFlyOut = ({ children: childrenProps, label, linkIndex }: any) => {
+const MenuFlyOut: React.FC<any> = ({
+  children: childrenProps,
+  label,
+  linkIndex,
+}) => {
   const { hasToggle, setActiveToggleChild, onExpand } = useMenuContext()
 
   const ref = React.useRef<HTMLLIElement>(null)
+
   const [isOpen, setOpenFn] = React.useState(false)
-  const setOpen = useDebounce(setOpenFn, 0)
   const [linkRef, setLinkRef] = React.useState(null)
   const [isOpenOnClick, setOpenOnClick] = React.useState(false)
   const [activeChild, setActiveChild] = React.useState(0)
+
+  const setOpen = useDebounce(setOpenFn, 0)
+
   const flyOutOpen = isOpen || isOpenOnClick
 
   const { children, filteredChildren } = useFocussedChildren(childrenProps)

@@ -22,6 +22,7 @@ export default styled.ul<Props>`
   padding: 0;
   list-style: none;
   display: flex;
+  flex-shrink: 0;
   justify-content: flex-start;
   flex-direction: row;
   font-weight: 400;
