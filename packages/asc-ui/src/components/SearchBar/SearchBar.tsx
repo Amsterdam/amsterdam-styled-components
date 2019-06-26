@@ -34,11 +34,18 @@ const SearchBar: React.FC<SearchBarProps> = ({
   let inputRef: React.RefObject<HTMLInputElement> | null = null
   const [inputValue, setInputValue] = React.useState(value || '')
 
+  const triggerOnChange = (val: string) => {
+    setInputValue(val)
+    // @ts-ignore
+    onChange(val)
+  }
+
   const onClear = () => {
     if (inputRef && inputRef.current) {
       inputRef.current.focus()
     }
     setInputValue('')
+    triggerOnChange('')
   }
 
   const handleOnSubmit = () => {
@@ -54,10 +61,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   }
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value)
-    if (onChange) {
-      onChange(e)
-    }
+    triggerOnChange(e.target.value)
   }
 
   // Since the user is able to clear the field, this will not trigger the onChange event,
