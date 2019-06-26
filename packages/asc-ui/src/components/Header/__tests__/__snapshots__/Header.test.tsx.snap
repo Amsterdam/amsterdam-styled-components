@@ -19,11 +19,13 @@ exports[`Header should render the short version 1`] = `
   flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
+  padding: 0 10px;
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
   max-width: none;
+  padding-left: 10px !important;
 }
 
 .c2:after {
@@ -228,12 +230,6 @@ exports[`Header should render the short version 1`] = `
   }
 }
 
-@media screen and (max-width:1200px) {
-  .c2 {
-    padding: 0 10px;
-  }
-}
-
 @media screen and (max-width:375px) {
   .c8 {
     font-size: 14px;
@@ -306,6 +302,7 @@ exports[`Header should render the short version without the full width 1`] = `
   flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
+  padding: 0 10px;
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
@@ -531,12 +528,6 @@ exports[`Header should render the short version without the full width 1`] = `
   }
 }
 
-@media screen and (max-width:1200px) {
-  .c2 {
-    padding: 0 10px;
-  }
-}
-
 @media screen and (max-width:375px) {
   .c8 {
     font-size: 14px;
@@ -609,11 +600,13 @@ exports[`Header should render the tall version 1`] = `
   flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
+  padding: 0 10px;
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
   max-width: none;
+  padding-left: 10px !important;
 }
 
 .c3:after {
@@ -846,12 +839,6 @@ exports[`Header should render the tall version 1`] = `
   }
 }
 
-@media screen and (max-width:1200px) {
-  .c3 {
-    padding: 0 10px;
-  }
-}
-
 @media screen and (max-width:375px) {
   .c11 {
     font-size: 14px;
@@ -1002,11 +989,13 @@ exports[`Header should render the tall version without a title 1`] = `
   flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
+  padding: 0 10px;
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
   max-width: none;
+  padding-left: 10px !important;
 }
 
 .c3:after {
@@ -1186,12 +1175,6 @@ exports[`Header should render the tall version without a title 1`] = `
 @media screen and (min-width:540.02px) {
   .c3 {
     padding: 0 15px;
-  }
-}
-
-@media screen and (max-width:1200px) {
-  .c3 {
-    padding: 0 10px;
   }
 }
 

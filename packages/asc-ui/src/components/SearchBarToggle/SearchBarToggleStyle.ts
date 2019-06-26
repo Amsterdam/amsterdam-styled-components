@@ -10,7 +10,7 @@ export interface SearchBarMenuStyleProps extends ShowHideTypes {
 
 const SearchBarMenuStyle = styled(ToggleStyle)<SearchBarMenuStyleProps>`
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   flex-direction: column;
 
   & > ${SearchBarStyle} {
