@@ -1,8 +1,4 @@
-function template(
-  { template },
-  opts,
-  { imports, componentName, props, jsx, exports }
-) {
+function iconTemplate({ template }, opts, { componentName, jsx }) {
   const typeScriptTpl = template.smart({ plugins: ['typescript'] })
   return typeScriptTpl.ast`
     import * as React from 'react';
@@ -10,4 +6,5 @@ function template(
     export default ${componentName};
   `
 }
-module.exports = template
+
+module.exports = iconTemplate

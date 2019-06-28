@@ -1,14 +1,13 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { css } from '@datapunt/asc-core'
-import { ReactComponent as ChevronRight } from '@datapunt/asc-assets/lib/Icons/ChevronRight.svg'
-import { ReactComponent as ExternalLink } from '@datapunt/asc-assets/lib/Icons/ExternalLink.svg'
-import { MenuItem, MenuLabel, Header, SubMenu, styles } from '../../../index'
-import Menu, { Props } from '../../Menu/Menu'
-import { breakpoint } from '../../../utils'
+import { Header, styles } from '../../../index'
 import SearchBar from '../../SearchBar'
 import SearchBarToggle from '../../SearchBarToggle/SearchBarToggle'
-import { MenuStyleProps } from '../../Menu'
+import MenuInline from '../../NewMenu/MenuInline'
+import MenuToggle from '../../NewMenu/MenuToggle'
+import MenuItem from '../../NewMenu/MenuItem'
+import MenuFlyOut from '../../NewMenu/MenuFlyOut'
 
 const DataportaalHeaderWrapperStyle = css`
   ${styles.HeaderContentStyle} {
@@ -24,67 +23,70 @@ const DataportaalHeaderWrapperStyle = css`
       max-width: 430px;
     }
   }
-
-  ${styles.MenuBarStyle} {
-    @media screen and ${breakpoint('max-width', 'tabletM')} {
-      display: none;
-    }
-  }
-
-  ${styles.MenuDropDownStyle} {
-    @media screen and ${breakpoint('min-width', 'tabletM')} {
-      display: none;
-    }
-  }
 `
 
-const MenuDefault = (props: Props) => (
-  <Menu {...props}>
-    <MenuItem href="#one" onClick={action('click')}>One</MenuItem>
-    <SubMenu label="Two">
-      <MenuItem icon={<ChevronRight />} href="#one" onClick={action('click')}>
-        One
-      </MenuItem>
-      <MenuItem icon={<ChevronRight />} href="#two" onClick={action('click')}>
-        Two
-      </MenuItem>
-      <MenuLabel>Two</MenuLabel>
-      <MenuItem icon={<ChevronRight />} href="#one" onClick={action('click')}>
-        One
-      </MenuItem>
-      <MenuItem icon={<ChevronRight />} href="#two" onClick={action('click')}>
-        Two
-      </MenuItem>
-      <MenuItem icon={<ExternalLink />} href="#more" onClick={action('click')}>
-        Show more
-      </MenuItem>
-    </SubMenu>
-    <SubMenu label="Three">
-      <MenuItem icon={<ChevronRight />} href="#one" onClick={action('click')}>
-        One
-      </MenuItem>
-      <MenuItem icon={<ChevronRight />} href="#two" onClick={action('click')}>
-        Two
-      </MenuItem>
-    </SubMenu>
-    <MenuItem href="#four" onClick={action('click')}>Four</MenuItem>
-  </Menu>
+// MenuToggle should take an array of children, wrapping components in Fragments will return a string.. 
+const menuChildren = [
+  <MenuFlyOut label="Categorieën">
+    <MenuItem href="#" onClick={() => action('redux')}>
+      Kaart
+    </MenuItem>
+    <MenuItem href="#" onClick={() => action('redux')}>
+      Panoramabeelden
+    </MenuItem>
+    <MenuItem href="#" onClick={() => action('redux')}>
+      Datasets
+    </MenuItem>
+    <MenuItem href="#" onClick={() => action('redux')}>
+      Data services
+    </MenuItem>
+  </MenuFlyOut>,
+  <MenuFlyOut label="Over">
+    <MenuItem href="#" onClick={() => action('redux')}>
+      Privacy en informatiebeveiliging
+    </MenuItem>
+    <MenuItem href="#" onClick={() => action('redux')}>
+      Beschikbaarheid en kwaliteit data
+    </MenuItem>
+    <MenuItem href="#" onClick={() => action('redux')}>
+      Technisch beheer en werkwijze
+    </MenuItem>
+    <MenuItem
+      title="Contact"
+      href="mailto:datapunt@amsterdam.nl"
+    >
+      Contact
+    </MenuItem>
+  </MenuFlyOut>,
+  <MenuItem onClick={() => action('Show feedback form')}>Feedback</MenuItem>,
+  <MenuItem href="/help">Help</MenuItem>,
+  <MenuFlyOut label="Jon Doe">
+    <MenuItem onClick={() => action('Log out')}>Uitloggen</MenuItem>
+  </MenuFlyOut>
+]
+
+const MenuDefault = (props: any) => (
+  <MenuInline {...props}>
+    {menuChildren}
+  </MenuInline>
 )
 
-const MenuMobile = () => (
-  <MenuDefault mobile align={MenuStyleProps.Align.right} />
+const MenuMobile = (props: any) => (
+  <MenuToggle {...props} align="right">
+    {menuChildren}
+  </MenuToggle>
 )
 
-const HeaderLinksMenu = () => (
-  <Menu>
-    <MenuItem icon={<ChevronRight />} href="#one" onClick={action('click')}>
-      One
-    </MenuItem>
-    <MenuItem icon={<ChevronRight />} href="#two" onClick={action('click')}>
-      Two
-    </MenuItem>
-  </Menu>
-)
+// const HeaderLinksMenu = () => (
+//   <Menu>
+//     <MenuItem href="#one" onClick={action('click')}>
+//       One
+//     </MenuItem>
+//     <MenuItem href="#two" onClick={action('click')}>
+//       Two
+//     </MenuItem>
+//   </Menu>
+// )
 
 const DataportaalHeader: React.FC<{}> = () => (
     <Header
@@ -93,7 +95,6 @@ const DataportaalHeader: React.FC<{}> = () => (
       homeLink="http://data.amsterdam.nl"
       fullWidth={false}
       css={DataportaalHeaderWrapperStyle}
-      links={<HeaderLinksMenu />}
       navigation={
         <>
           <SearchBar
@@ -107,6 +108,7 @@ const DataportaalHeader: React.FC<{}> = () => (
             }}
           />
           <SearchBarToggle
+            align="left"
             hideAt="tabletM"
             placeholder="Enter the search text"
             onChange={() => {
@@ -116,8 +118,8 @@ const DataportaalHeader: React.FC<{}> = () => (
               action(`button clicked`)
             }}
           />
-          <MenuDefault />
-          <MenuMobile />
+          <MenuDefault showAt="tabletM" />
+          <MenuMobile hideAt="tabletM" />
         </>
       }
     />

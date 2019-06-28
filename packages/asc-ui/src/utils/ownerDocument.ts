@@ -1,4 +1,4 @@
-function ownerDocument(node: HTMLInputElement) {
+function ownerDocument(node: HTMLElement) {
   return (node && node.ownerDocument) || window.document
 }
 

@@ -10,6 +10,7 @@ import { KeyboardKeys } from '../../types'
 export interface SearchBarProps extends InputProps, SearchBarStyleProps {
   placeholder?: string
   label?: string
+  inputProps?: InputProps
   onSubmit?: Function
 }
 
@@ -27,16 +28,24 @@ const SearchBar: React.FC<SearchBarProps> = ({
   label,
   hideAt,
   showAt,
+  inputProps,
   ...otherProps
 }) => {
   let inputRef: React.RefObject<HTMLInputElement> | null = null
   const [inputValue, setInputValue] = React.useState(value || '')
+
+  const triggerOnChange = (val: string) => {
+    setInputValue(val)
+    // @ts-ignore
+    onChange(val)
+  }
 
   const onClear = () => {
     if (inputRef && inputRef.current) {
       inputRef.current.focus()
     }
     setInputValue('')
+    triggerOnChange('')
   }
 
   const handleOnSubmit = () => {
@@ -52,10 +61,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   }
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value)
-    if (onChange) {
-      onChange(e)
-    }
+    triggerOnChange(e.target.value)
   }
 
   // Since the user is able to clear the field, this will not trigger the onChange event,
@@ -64,13 +70,13 @@ const SearchBar: React.FC<SearchBarProps> = ({
     if (onWatchValue) {
       onWatchValue(inputValue)
     }
-  }, [inputValue])
+  }, [inputValue, onWatchValue])
 
   React.useEffect(() => {
     if (typeof value !== 'undefined') {
       setInputValue(value)
     }
-  }, [value])
+  }, [value, setInputValue])
 
   return (
     <SearchBarStyle {...otherProps} {...{ hideAt, showAt, css }}>
@@ -84,6 +90,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           setInputRef: (ref: React.RefObject<HTMLInputElement>) => {
             inputRef = ref
           },
+          ...inputProps,
         }}
       >
         <TextField
@@ -95,6 +102,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           value={inputValue}
           {...{
             focusOnRender,
+            inputProps,
             label,
           }}
         />
