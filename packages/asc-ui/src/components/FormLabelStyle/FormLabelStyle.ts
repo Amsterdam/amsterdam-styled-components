@@ -6,10 +6,12 @@ interface IProps {
   srOnly: boolean
 }
 
-const FormLabelStyle = styled.label.attrs<IProps>({
-  type: 'text',
-  htmlFor: ({ htmlFor }: IProps) => htmlFor,
-})<IProps>`
+const FormLabelStyle = styled.label.attrs<IProps>(({ htmlFor }: IProps) => {
+  return {
+    type: 'text',
+    htmlFor,
+  }
+})`
   ${srOnlyStyle()}
 `
 

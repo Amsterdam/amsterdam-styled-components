@@ -11,10 +11,14 @@ export default createGlobalStyle`
   }
 
   [aria-hidden="true"] {
-    display: none;
+    display: none !important;
   }
   
-  *:focus{
+  * {
+    box-sizing: border-box;
+  }
+  
+  *:focus {
     outline: none;
   }
 `

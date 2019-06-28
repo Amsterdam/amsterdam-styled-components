@@ -1,37 +1,41 @@
 import * as React from 'react'
+import { useUID } from 'react-uid'
 import { Close } from '@datapunt/asc-assets'
 import FormLabelStyle from '../FormLabelStyle'
 import IconButton from '../IconButton'
 import TextFieldStyle from './TextFieldStyle'
-import Input, { InputProps } from '../Input/Input'
+import Input, { InputProps } from '../Input'
 
 export interface TextFieldProps extends InputProps {
-  id: string
   label?: string
+  keepFocus?: boolean
   srOnly: boolean
-  canClear: boolean
-  onClear: any
-  inputRef?: any
+  onClear?: Function
 }
 
 const TextField = ({
-  id,
   label,
   srOnly,
-  canClear,
   onClear,
   value,
-  inputRef,
+  keepFocus,
+  blurOnEscape,
+  focusOnRender,
   ...otherProps
 }: TextFieldProps) => {
+  const uid = useUID()
   return (
     <TextFieldStyle>
-      <FormLabelStyle htmlFor={id} srOnly={srOnly}>
+      <FormLabelStyle htmlFor={uid} srOnly={srOnly}>
         {label}
       </FormLabelStyle>
-      <Input id={id} value={value} {...otherProps} inputRef={inputRef} />
-      {canClear && value && (
-        <IconButton aria-label="Close" onClick={onClear}>
+      <Input
+        {...{ keepFocus, value, blurOnEscape, focusOnRender }}
+        {...otherProps}
+        id={uid}
+      />
+      {onClear && value && (
+        <IconButton type="button" aria-label="Close" onClick={() => onClear()}>
           <Close />
         </IconButton>
       )}

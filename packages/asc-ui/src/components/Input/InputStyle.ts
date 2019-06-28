@@ -1,5 +1,5 @@
 import styled from '@datapunt/asc-core'
-import { color } from '../../utils'
+import { color, focusStyleOutline } from '../../utils'
 
 const InputStyle = styled.input.attrs({
   type: 'text',
@@ -13,8 +13,14 @@ const InputStyle = styled.input.attrs({
   border: solid 1px ${color('tint', 'level5')};
   border-radius: 0;
   box-sizing: border-box;
-  padding: 10px 10px;
+  line-height: 18px;
+  padding: 10px;
   width: 100%;
+  ${focusStyleOutline(2, 0.5)}
+
+  &:hover {
+    border-color: ${color('tint', 'level6')};
+  }
 `
 
 export default InputStyle

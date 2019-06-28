@@ -249,7 +249,7 @@ Array [
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-weight: 400;
+  font-weight: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
@@ -265,9 +265,7 @@ Array [
 }
 
 .c0:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
+  background-color: #FEC813;
 }
 
 .c0:hover {
@@ -308,7 +306,7 @@ Array [
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-weight: 400;
+  font-weight: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
@@ -324,9 +322,7 @@ Array [
 }
 
 .c1:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
+  background-color: #FEC813;
 }
 
 .c1:hover {

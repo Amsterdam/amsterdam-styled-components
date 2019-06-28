@@ -27,8 +27,10 @@ exports[`Button should render the button 1`] = `
 }
 
 .c0:focus {
+  z-index: 10;
   outline-color: #FEC813;
   outline-style: solid;
+  outline-offset: 0px;
   outline-width: 3px;
 }
 

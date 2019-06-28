@@ -45,6 +45,7 @@ class ContextMenu extends React.Component<Props, State> {
     React.Children.toArray(children).forEach(child => {
       // @ts-ignore
       if (child && child.type !== ContextMenuItem) {
+        // eslint-disable-next-line no-console
         console.warn(
           'Warning: you are rendering a different component type in <ContextMenu /> other than <ContextMenuItem />.',
         )

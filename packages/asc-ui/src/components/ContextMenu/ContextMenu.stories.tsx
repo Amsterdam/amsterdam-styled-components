@@ -1,12 +1,14 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { Ellipsis } from '@datapunt/asc-assets'
-import { FacebookPadded } from '@datapunt/asc-assets'
-import { Twitter } from '@datapunt/asc-assets'
-import { Linkedin } from '@datapunt/asc-assets'
-import { Email } from '@datapunt/asc-assets'
-import { Print } from '@datapunt/asc-assets'
-import { ChevronDown } from '@datapunt/asc-assets'
+import {
+  ChevronDown,
+  Print,
+  Email,
+  Linkedin,
+  FacebookPadded,
+  Ellipsis,
+  Twitter,
+} from '@datapunt/asc-assets'
 import { ContextMenu, ContextMenuItem, Icon } from '../..'
 import { Position } from './types'
 

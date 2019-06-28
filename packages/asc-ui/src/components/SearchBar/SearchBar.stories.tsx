@@ -1,68 +1,26 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react/'
 import { action } from '@storybook/addon-actions'
-import styled from '@datapunt/asc-core'
-import SearchBar, { SearchBarStyle, IconButtonStyle } from './SearchBar'
-import { svgFill } from '../../utils'
+import { css } from '@datapunt/asc-core'
+import SearchBar from './SearchBar'
 
-const SearchBarStory: React.FC<{}> = () => {
+import SearchBarToggle from '../SearchBarToggle/SearchBarToggle'
+
+const ControlledSearchBarStory: React.FC<{}> = () => {
   const [searchText, setText] = React.useState('')
 
   return (
     <>
       <SearchBar
         placeholder="Enter the search text"
-        onTextChanged={(text: string) => {
-          console.log('TCL: text', text)
-          setText(text)
+        onWatchValue={value => {
+          setText(value)
           action(`text changed: ${searchText}`)
         }}
-        onSearch={(text: string) => {
-          console.log('TCL: text', text)
+        onSubmit={() => {
           action(`button clicked: ${searchText}`)
         }}
-        text={searchText}
-      />
-      <p>
-        <span>Searching for:</span>
-        {searchText}
-      </p>
-    </>
-  )
-}
-
-const ChangedSearchBarStyle = styled(SearchBarStyle)`
-  align-content: flex-start;
-  flex-direction: column;
-  max-width: 600px;
-  padding: 10px;
-
-  & > ${IconButtonStyle} {
-    margin-left: 0px;
-    margin-top: 5px;
-    padding: 10px;
-    width: 100%;
-    max-width: 600px;
-
-    & svg {
-      ${svgFill('tint', 'level4')};
-    }
-  }
-`
-
-const SearchBarStoryWithChangedStyle: React.FC<{}> = () => {
-  const [searchText, setText] = React.useState('')
-
-  return (
-    <>
-      <SearchBar
-        styledComponent={ChangedSearchBarStyle}
-        onTextChanged={(text: string) => {
-          setText(text)
-          action(`text changed: ${searchText}`)
-        }}
-        onSearch={() => action(`button clicked: ${searchText}`)}
-        text={searchText}
+        value={searchText}
       />
       <p>
         <span>Searching for:</span>
@@ -73,5 +31,29 @@ const SearchBarStoryWithChangedStyle: React.FC<{}> = () => {
 }
 
 storiesOf('Composed/SearchBar', module)
-  .add('default state', () => <SearchBarStory />)
-  .add('with changed style', () => <SearchBarStoryWithChangedStyle />)
+  .addDecorator(storyFn => (
+    <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
+  ))
+  .add('default', () => (
+    <SearchBar
+      placeholder="Enter the search text"
+      onChange={() => {
+        action('input changed')
+      }}
+      onSubmit={() => {
+        action('input submitted')
+      }}
+    />
+  ))
+  .add('default controlled', () => <ControlledSearchBarStory />)
+  .add('menu version', () => (
+    <SearchBarToggle
+      css={css`
+        position: relative;
+      `}
+      onWatchValue={value => {
+        action(`input value changed: ${value}`)
+      }}
+      onSubmit={() => action('input submitted')}
+    />
+  ))

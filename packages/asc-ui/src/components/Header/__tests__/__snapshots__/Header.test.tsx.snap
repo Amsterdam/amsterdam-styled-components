@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header should render the short version 1`] = `
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -12,31 +12,37 @@ exports[`Header should render the short version 1`] = `
   -ms-flex-align: center;
   align-items: center;
   z-index: 0;
-  padding: 0 15px;
+  padding: 0 10px;
   background-color: #ffffff;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
+  padding: 0 10px;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   max-width: none;
+  padding-left: 10px !important;
 }
 
-.c1:after {
+.c2:after {
   content: '';
   display: block;
   min-height: inherit;
   font-size: 0;
 }
 
-.c7 {
+.c8 {
   color: #004699;
   display: inline-block;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-weight: 400;
+  font-weight: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
@@ -59,21 +65,19 @@ exports[`Header should render the short version 1`] = `
   text-decoration: none;
 }
 
-.c7:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
+.c8:focus {
+  background-color: #FEC813;
 }
 
-.c7:hover {
+.c8:hover {
   color: #ec0000;
 }
 
-.c7:hover {
+.c8:hover {
   color: inherit;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -82,10 +86,14 @@ exports[`Header should render the short version 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   height: 100%;
 }
 
-.c5 {
+.c6 {
   display: block;
   height: 100%;
   width: 100%;
@@ -93,20 +101,24 @@ exports[`Header should render the short version 1`] = `
   background-image: url("-react-component: svg-mock;");
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   height: 30px;
   width: 68px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
-.c4:focus {
+.c5:focus {
+  z-index: 10;
   outline-color: #FEC813;
   outline-style: solid;
+  outline-offset: 0px;
   outline-width: 3px;
 }
 
-.c2 {
-  height: 50px;
+.c3 {
   margin: 0;
   font-weight: 700;
   display: -webkit-box;
@@ -121,12 +133,13 @@ exports[`Header should render the short version 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  box-sizing: content-box;
 }
 
-.c2 .c3 {
+.c3 .c4 {
   margin-right: 10px;
 }
 
@@ -136,14 +149,16 @@ exports[`Header should render the short version 1`] = `
   width: 100%;
   max-width: none;
   box-shadow: 0 4px rgba(0,0,0,0.04);
+  box-sizing: content-box;
   position: fixed;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+  z-index: 2;
 }
 
-.c0 .c8 {
+.c0 .c9 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -151,88 +166,125 @@ exports[`Header should render the short version 1`] = `
   margin-left: 15px;
 }
 
-.c0 .c6 {
+.c0 .c7 {
   margin-top: -2px;
 }
 
-.c10 {
-  line-height: 1.25;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  font-weight: 400;
-  font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1.25;
-  color: #000000;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
+.c0 .c1 {
+  padding-right: 0;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 17px;
+  right: 45px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c11 .c13 {
+  height: 17px;
+  padding: 0;
+}
+
+.c11 .c13:not(:last-child) {
+  margin-right: 30px;
+}
+
+.c11 .c13:focus,
+.c11 .c13:hover {
+  background-color: transparent;
+}
+
+.c11 .c13:focus .c12,
+.c11 .c13:hover .c12 {
+  color: #ec0000;
+}
+
+.c11 .c13:focus svg rect,
+.c11 .c13:hover svg rect,
+.c11 .c13:focus svg polygon,
+.c11 .c13:hover svg polygon,
+.c11 .c13:focus svg path,
+.c11 .c13:hover svg path {
+  fill: #ec0000;
+}
+
+.c11 .c13 .c12 {
+  line-height: 17px;
+}
+
+@media screen and (min-width:540.02px) {
+  .c2 {
+    padding: 0 15px;
+  }
 }
 
 @media screen and (max-width:375px) {
-  .c7 {
+  .c8 {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width:375.02px) {
-  .c7 {
+  .c8 {
     font-size: 16px;
   }
 }
 
-@media screen and (min-width:1200.02px) {
-  .c2 .c3 {
-    margin-right: 40px;
+@media screen and (max-width:1200px) {
+  .c11 {
+    display: none;
   }
 }
 
 <div
   class="c0"
+  id="header"
 >
   <header
-    class="c1"
+    class="c1 c2"
   >
     <h1
-      class="c2"
+      class="c3"
     >
       <a
-        class="c3 c4"
+        class="c4 c5"
         href="http://data.amsterdam.nl"
       >
         <span
-          class="c5"
+          class="c6"
         />
       </a>
       <a
-        class="c6 c7"
+        class="c7 c8"
         href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
     </h1>
+    <nav
+      class="c9 c10"
+    />
     <div
-      class="c8 c9"
-    >
-      <p
-        class="c10"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
-      </p>
-    </div>
+      class="c11"
+    />
   </header>
 </div>
 `;
 
 exports[`Header should render the short version without the full width 1`] = `
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -243,31 +295,36 @@ exports[`Header should render the short version without the full width 1`] = `
   -ms-flex-align: center;
   align-items: center;
   z-index: 0;
-  padding: 0 15px;
+  padding: 0 10px;
   background-color: #ffffff;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
-  max-width: 1570px;
+  padding: 0 10px;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  max-width: 1600px;
 }
 
-.c1:after {
+.c2:after {
   content: '';
   display: block;
   min-height: inherit;
   font-size: 0;
 }
 
-.c7 {
+.c8 {
   color: #004699;
   display: inline-block;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-weight: 400;
+  font-weight: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
@@ -290,21 +347,19 @@ exports[`Header should render the short version without the full width 1`] = `
   text-decoration: none;
 }
 
-.c7:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
+.c8:focus {
+  background-color: #FEC813;
 }
 
-.c7:hover {
+.c8:hover {
   color: #ec0000;
 }
 
-.c7:hover {
+.c8:hover {
   color: inherit;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -313,10 +368,14 @@ exports[`Header should render the short version without the full width 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   height: 100%;
 }
 
-.c5 {
+.c6 {
   display: block;
   height: 100%;
   width: 100%;
@@ -324,20 +383,24 @@ exports[`Header should render the short version without the full width 1`] = `
   background-image: url("-react-component: svg-mock;");
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   height: 30px;
   width: 68px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
-.c4:focus {
+.c5:focus {
+  z-index: 10;
   outline-color: #FEC813;
   outline-style: solid;
+  outline-offset: 0px;
   outline-width: 3px;
 }
 
-.c2 {
-  height: 50px;
+.c3 {
   margin: 0;
   font-weight: 700;
   display: -webkit-box;
@@ -352,16 +415,17 @@ exports[`Header should render the short version without the full width 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  box-sizing: content-box;
 }
 
-.c2 .c3 {
+.c3 .c4 {
   margin-right: 10px;
 }
 
-.c11 .c8 {
+.c12 .c9 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -369,8 +433,12 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-left: 15px;
 }
 
-.c11 .c6 {
+.c12 .c7 {
   margin-top: -2px;
+}
+
+.c12 .c1 {
+  padding-right: 0;
 }
 
 .c0 {
@@ -379,14 +447,16 @@ exports[`Header should render the short version without the full width 1`] = `
   width: 100%;
   max-width: 1800px;
   box-shadow: 0 4px rgba(0,0,0,0.04);
+  box-sizing: content-box;
   position: fixed;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+  z-index: 2;
 }
 
-.c0 .c8 {
+.c0 .c9 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -394,82 +464,119 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-left: 15px;
 }
 
-.c0 .c6 {
+.c0 .c7 {
   margin-top: -2px;
 }
 
-.c10 {
-  line-height: 1.25;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  font-weight: 400;
-  font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1.25;
-  color: #000000;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
+.c0 .c1 {
+  padding-right: 0;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 17px;
+  right: 45px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c11 .c14 {
+  height: 17px;
+  padding: 0;
+}
+
+.c11 .c14:not(:last-child) {
+  margin-right: 30px;
+}
+
+.c11 .c14:focus,
+.c11 .c14:hover {
+  background-color: transparent;
+}
+
+.c11 .c14:focus .c13,
+.c11 .c14:hover .c13 {
+  color: #ec0000;
+}
+
+.c11 .c14:focus svg rect,
+.c11 .c14:hover svg rect,
+.c11 .c14:focus svg polygon,
+.c11 .c14:hover svg polygon,
+.c11 .c14:focus svg path,
+.c11 .c14:hover svg path {
+  fill: #ec0000;
+}
+
+.c11 .c14 .c13 {
+  line-height: 17px;
+}
+
+@media screen and (min-width:540.02px) {
+  .c2 {
+    padding: 0 15px;
+  }
 }
 
 @media screen and (max-width:375px) {
-  .c7 {
+  .c8 {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width:375.02px) {
-  .c7 {
+  .c8 {
     font-size: 16px;
   }
 }
 
-@media screen and (min-width:1200.02px) {
-  .c2 .c3 {
-    margin-right: 40px;
+@media screen and (max-width:1200px) {
+  .c11 {
+    display: none;
   }
 }
 
 <div
   class="c0"
+  id="header"
 >
   <header
-    class="c1"
+    class="c1 c2"
   >
     <h1
-      class="c2"
+      class="c3"
     >
       <a
-        class="c3 c4"
+        class="c4 c5"
         href="http://data.amsterdam.nl"
       >
         <span
-          class="c5"
+          class="c6"
         />
       </a>
       <a
-        class="c6 c7"
+        class="c7 c8"
         href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
     </h1>
+    <nav
+      class="c9 c10"
+    />
     <div
-      class="c8 c9"
-    >
-      <p
-        class="c10"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
-      </p>
-    </div>
+      class="c11"
+    />
   </header>
 </div>
 `;
@@ -486,14 +593,20 @@ exports[`Header should render the tall version 1`] = `
   -ms-flex-align: center;
   align-items: center;
   z-index: 0;
-  padding: 0 15px;
+  padding: 0 10px;
   background-color: #ffffff;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
+  padding: 0 10px;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   max-width: none;
+  padding-left: 10px !important;
 }
 
 .c3:after {
@@ -510,7 +623,7 @@ exports[`Header should render the tall version 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-weight: 400;
+  font-weight: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
@@ -534,9 +647,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c11:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-width: 3px;
+  background-color: #FEC813;
 }
 
 .c11:hover {
@@ -556,6 +667,10 @@ exports[`Header should render the tall version 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   height: 100%;
 }
 
@@ -571,16 +686,24 @@ exports[`Header should render the tall version 1`] = `
   display: inline-block;
   height: 30px;
   width: 68px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .c7:focus {
+  z-index: 10;
   outline-color: #FEC813;
   outline-style: solid;
+  outline-offset: 0px;
   outline-width: 3px;
 }
 
+.c15 .c6 {
+  margin-right: 10px;
+}
+
 .c5 {
-  height: 50px;
   margin: 0;
   font-weight: 700;
   display: -webkit-box;
@@ -595,25 +718,14 @@ exports[`Header should render the tall version 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  box-sizing: content-box;
 }
 
 .c5 .c6 {
   margin-right: 10px;
-}
-
-.c15 .c12 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c15 .c10 {
-  margin-top: -2px;
 }
 
 .c16 .c12 {
@@ -628,12 +740,39 @@ exports[`Header should render the tall version 1`] = `
   margin-top: -2px;
 }
 
+.c16 .c2 {
+  padding-right: 0;
+}
+
+.c17 .c12 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.c17 .c10 {
+  margin-top: -2px;
+}
+
+.c17 .c2 {
+  padding-right: 0;
+}
+
 .c0 {
   background-color: #ffffff;
   margin: 0 auto;
   width: 100%;
   max-width: none;
   box-shadow: 0 4px rgba(0,0,0,0.04);
+  box-sizing: content-box;
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
 .c0 .c12 {
@@ -645,24 +784,59 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c14 {
-  line-height: 1.25;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  font-weight: 400;
-  font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1.25;
-  color: #000000;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 17px;
+  right: 45px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c14 .c19 {
+  height: 17px;
+  padding: 0;
+}
+
+.c14 .c19:not(:last-child) {
+  margin-right: 30px;
+}
+
+.c14 .c19:focus,
+.c14 .c19:hover {
+  background-color: transparent;
+}
+
+.c14 .c19:focus .c18,
+.c14 .c19:hover .c18 {
+  color: #ec0000;
+}
+
+.c14 .c19:focus svg rect,
+.c14 .c19:hover svg rect,
+.c14 .c19:focus svg polygon,
+.c14 .c19:hover svg polygon,
+.c14 .c19:focus svg path,
+.c14 .c19:hover svg path {
+  fill: #ec0000;
+}
+
+.c14 .c19 .c18 {
+  line-height: 17px;
+}
+
+@media screen and (min-width:540.02px) {
+  .c3 {
+    padding: 0 15px;
+  }
 }
 
 @media screen and (max-width:375px) {
@@ -695,23 +869,18 @@ exports[`Header should render the tall version 1`] = `
 }
 
 @media screen and (max-width:1200px) {
-  .c0 {
-    position: fixed;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-
   .c0 .c10 {
     margin-top: -2px;
+  }
+
+  .c0 .c2 {
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:1200.02px) {
   .c0 {
     box-shadow: none;
-    position: relative;
   }
 
   .c0:after {
@@ -760,8 +929,15 @@ exports[`Header should render the tall version 1`] = `
   }
 }
 
+@media screen and (max-width:1200px) {
+  .c14 {
+    display: none;
+  }
+}
+
 <div
   class="c0"
+  id="header"
 >
   <header
     class="c1 c2 c3"
@@ -784,15 +960,12 @@ exports[`Header should render the tall version 1`] = `
         Data en informatie
       </a>
     </h1>
-    <div
+    <nav
       class="c12 c13"
-    >
-      <p
-        class="c14"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
-      </p>
-    </div>
+    />
+    <div
+      class="c14"
+    />
   </header>
 </div>
 `;
@@ -809,14 +982,20 @@ exports[`Header should render the tall version without a title 1`] = `
   -ms-flex-align: center;
   align-items: center;
   z-index: 0;
-  padding: 0 15px;
+  padding: 0 10px;
   background-color: #ffffff;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
   margin: 0 auto;
+  padding: 0 10px;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   max-width: none;
+  padding-left: 10px !important;
 }
 
 .c3:after {
@@ -835,6 +1014,10 @@ exports[`Header should render the tall version without a title 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   height: 100%;
 }
 
@@ -850,16 +1033,24 @@ exports[`Header should render the tall version without a title 1`] = `
   display: inline-block;
   height: 30px;
   width: 68px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .c7:focus {
+  z-index: 10;
   outline-color: #FEC813;
   outline-style: solid;
+  outline-offset: 0px;
   outline-width: 3px;
 }
 
+.c13 .c6 {
+  margin-right: 10px;
+}
+
 .c5 {
-  height: 50px;
   margin: 0;
   font-weight: 700;
   display: -webkit-box;
@@ -874,21 +1065,14 @@ exports[`Header should render the tall version without a title 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  box-sizing: content-box;
 }
 
 .c5 .c6 {
   margin-right: 10px;
-}
-
-.c13 .c10 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
 }
 
 .c14 .c10 {
@@ -899,12 +1083,35 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-left: 15px;
 }
 
+.c14 .c2 {
+  padding-right: 0;
+}
+
+.c15 .c10 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.c15 .c2 {
+  padding-right: 0;
+}
+
 .c0 {
   background-color: #ffffff;
   margin: 0 auto;
   width: 100%;
   max-width: none;
   box-shadow: 0 4px rgba(0,0,0,0.04);
+  box-sizing: content-box;
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
 .c0 .c10 {
@@ -916,24 +1123,59 @@ exports[`Header should render the tall version without a title 1`] = `
 }
 
 .c12 {
-  line-height: 1.25;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  font-weight: 400;
-  font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1.25;
-  color: #000000;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 17px;
+  right: 45px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c12 .c17 {
+  height: 17px;
+  padding: 0;
+}
+
+.c12 .c17:not(:last-child) {
+  margin-right: 30px;
+}
+
+.c12 .c17:focus,
+.c12 .c17:hover {
+  background-color: transparent;
+}
+
+.c12 .c17:focus .c16,
+.c12 .c17:hover .c16 {
+  color: #ec0000;
+}
+
+.c12 .c17:focus svg rect,
+.c12 .c17:hover svg rect,
+.c12 .c17:focus svg polygon,
+.c12 .c17:hover svg polygon,
+.c12 .c17:focus svg path,
+.c12 .c17:hover svg path {
+  fill: #ec0000;
+}
+
+.c12 .c17 .c16 {
+  line-height: 17px;
+}
+
+@media screen and (min-width:540.02px) {
+  .c3 {
+    padding: 0 15px;
+  }
 }
 
 @media screen and (min-width:1200.02px) {
@@ -954,23 +1196,18 @@ exports[`Header should render the tall version without a title 1`] = `
 }
 
 @media screen and (max-width:1200px) {
-  .c0 {
-    position: fixed;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-
   .c0 .sc-bxivhb {
     margin-top: -2px;
+  }
+
+  .c0 .c2 {
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:1200.02px) {
   .c0 {
     box-shadow: none;
-    position: relative;
   }
 
   .c0:after {
@@ -1019,8 +1256,15 @@ exports[`Header should render the tall version without a title 1`] = `
   }
 }
 
+@media screen and (max-width:1200px) {
+  .c12 {
+    display: none;
+  }
+}
+
 <div
   class="c0"
+  id="header"
 >
   <header
     class="c1 c2 c3"
@@ -1037,15 +1281,12 @@ exports[`Header should render the tall version without a title 1`] = `
         />
       </a>
     </h1>
-    <div
+    <nav
       class="c10 c11"
-    >
-      <p
-        class="c12"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis, dicta incidunt maxime necessitatibus voluptatibus.
-      </p>
-    </div>
+    />
+    <div
+      class="c12"
+    />
   </header>
 </div>
 `;

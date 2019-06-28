@@ -9,8 +9,21 @@ exports[`Input component structure should render 1`] = `
   border: solid 1px #767676;
   border-radius: 0;
   box-sizing: border-box;
-  padding: 10px 10px;
+  line-height: 18px;
+  padding: 10px;
   width: 100%;
+}
+
+.c0:focus {
+  z-index: 10;
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-offset: 0.5px;
+  outline-width: 2px;
+}
+
+.c0:hover {
+  border-color: #323232;
 }
 
 <input

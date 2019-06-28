@@ -3,6 +3,7 @@ import Portal, { Props as PortalProps } from '../Portal/Portal'
 import Focus from '../Focus'
 import ModalStyle, { ModalStyleContainer } from './ModalStyle'
 import BackDropStyle from '../BackDrop/BackDropStyle'
+import { KeyboardKeys } from '../../types'
 
 export type Props = {
   open: boolean
@@ -43,7 +44,7 @@ class Modal extends React.Component<Props, State> {
   }
 
   handleKeyDown = (event: React.KeyboardEvent) => {
-    if (event.key === 'Escape') {
+    if (event.key === KeyboardKeys.Escape) {
       event.stopPropagation()
       this.handleClose()
     }

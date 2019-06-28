@@ -5,9 +5,11 @@ interface Props {
   disabled?: boolean
 }
 
-const RasdioLabelStyle = styled.label.attrs<Props>({
-  htmlFor: ({ htmlFor }: Props) => htmlFor,
-  disabled: ({ disabled }: Props) => disabled,
+const RasdioLabelStyle = styled.label.attrs<Props>(({ htmlFor, disabled }) => {
+  return {
+    htmlFor,
+    disabled,
+  }
 })<Props>`
   color: ${props => (props.disabled ? '#bebebe' : '#434343')};
   font-weight: 400;

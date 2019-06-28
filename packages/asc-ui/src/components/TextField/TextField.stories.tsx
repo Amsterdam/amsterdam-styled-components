@@ -4,7 +4,6 @@ import { action } from '@storybook/addon-actions'
 import TextField from './TextField'
 
 const props = {
-  id: 'test-id',
   label: 'description',
   onBlur: action('onBlur'),
   onChange: action('onChange'),

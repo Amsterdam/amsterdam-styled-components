@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import HeaderContentStyle from './HeaderContentStyle'
 
-const HeaderContent: React.FC<{}> = ({ children }) => (
+type Props = {
+  children: ReactNode
+}
+
+const HeaderContent: React.FC<Props> = ({ children }) => (
   <HeaderContentStyle>{children}</HeaderContentStyle>
 )
 

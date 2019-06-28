@@ -51,7 +51,7 @@ exports[`<TextField /> should render 1`] = `
         "a": Object {
           "color": "#000000",
           "fontSize": "1rem",
-          "fontWeight": 400,
+          "fontWeight": "inherit",
           "letterSpacing": "-0.01562em",
           "lineHeight": 1,
         },
@@ -62,7 +62,7 @@ exports[`<TextField /> should render 1`] = `
           "letterSpacing": "-0.01562em",
           "lineHeight": 1.25,
         },
-        "fontFamily": "AvenirNextLT, Arial, sans-serif",
+        "fontFamily": "Avenir Next, Arial, sans-serif",
         "fontSize": "16px",
         "h1": Object {
           "color": "#000000",
@@ -119,7 +119,6 @@ exports[`<TextField /> should render 1`] = `
 >
   <TextField
     canClear={true}
-    id="test-id"
     label="description"
     onBlur={[MockFunction]}
     onChange={[MockFunction]}

@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
   },
-  "version": "0.7.0-alpha.0",
+  "version": "0.7.1-beta.2",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
   "files": [
@@ -20,7 +20,7 @@
   "scripts": {
     "prebuild": "mkdir -p lib && cp -R src/* lib/ && svgo --config=.svgo.yml -f ./src/assets/Icons/ -o ./lib/Icons",
     "build": "yarn generate",
-    "generate": "svgr -d src/Icons src/assets/Icons --template src/utils/generateIconReact.js --ext tsx"
+    "generate": "svgr -d src/Icons src/assets/Icons --template src/utils/generateIconReact.js --svg-props focusable={false} --ext tsx"
   },
   "dependencies": {
     "@svgr/cli": "^4.2.0",
