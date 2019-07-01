@@ -38,6 +38,7 @@ import {
   MenuStyles,
 } from './components/NewMenu'
 import ThemeProvider from './theme'
+import Spinner from './components/Spinner/Spinner'
 
 export { breakpoint } from './utils'
 
@@ -87,6 +88,7 @@ export {
   SearchBar,
   GlobalStyle,
   ServerStyleSheet,
+  Spinner,
   Theme,
   ThemeProvider,
   GridContainer,
