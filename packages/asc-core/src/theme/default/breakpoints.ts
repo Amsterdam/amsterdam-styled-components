@@ -3,7 +3,7 @@ import { Theme } from '../index'
 const withTypeBreakpoint = (size: number) => (type: Theme.TypeBreakpoint) =>
   `(${type}: ${size + (type === 'min-width' ? 0.02 : 0)}px)`
 
-const sizes = {
+export const sizes = {
   mobileS: 320,
   mobileM: 375,
   mobileL: 425,
