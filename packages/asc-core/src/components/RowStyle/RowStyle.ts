@@ -3,9 +3,23 @@ import styled, { css } from '../../styled-components'
 import { fromTheme, valueFromObject } from '../../utils'
 import { Theme } from '../../theme'
 import layouts from '../../theme/default/layouts'
-import { mediaQuery, min, max, margin, columns, spacerWidth, gutter } from '../../utils/grid'
+import {
+  mediaQuery,
+  min,
+  max,
+  margin,
+  columns,
+  spacerWidth,
+  gutter,
+} from '../../utils/grid'
 
-type FlexJustify = 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly'
+type FlexJustify =
+  | 'flex-start'
+  | 'flex-end'
+  | 'center'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
 type FlexAlign = 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'
 
 export type TypeProps = {
@@ -41,40 +55,62 @@ const RowStyle = styled.div<TypeProps>`
     height: 20px;
   }
 
-  ${({ debug }) => debug && css`
-    position: relative;
-  `};
+  ${({ debug }) =>
+    debug &&
+    css`
+      position: relative;
+    `};
 
-  ${({ debug, debugColor, hasMargin, theme }) => Object.keys(layouts).map(id => {
-    const layoutId = id as Theme.TypeLayout
+  ${({ debug, debugColor, hasMargin, theme }) =>
+    Object.keys(layouts).map(id => {
+      const layoutId = id as Theme.TypeLayout
 
-    return css`
+      return css`
       @media ${mediaQuery(layoutId)} {
-        ${debug && css`
+        ${debug &&
+          css`
           .layout-label:before {
-            content: '${layoutId} (${(min(layoutId)({ theme }) || 0)} - ${(max(layoutId)({ theme }) || '∞')})';
+            content: '${layoutId} (${min(layoutId)({ theme }) || 0} - ${max(
+            layoutId,
+          )({ theme }) || '∞'})';
           }
 
           background-image: repeating-linear-gradient(
             to right,
             ${debugColor},
-            ${debugColor} calc((100% - ${spacerWidth(layoutId, true)}) / ${columns(layoutId)}),
-            transparent calc((100% - ${spacerWidth(layoutId, true)}) / ${columns(layoutId)}),
-            transparent calc(((100% - ${spacerWidth(layoutId, true)}) / ${columns(layoutId)}) + ${gutter(layoutId, true)})
+            ${debugColor} calc((100% - ${spacerWidth(
+            layoutId,
+            true,
+          )}) / ${columns(layoutId)}),
+            transparent calc((100% - ${spacerWidth(
+              layoutId,
+              true,
+            )}) / ${columns(layoutId)}),
+            transparent calc(((100% - ${spacerWidth(
+              layoutId,
+              true,
+            )}) / ${columns(layoutId)}) + ${gutter(layoutId, true)})
           );
           background-clip: content-box;
         `};
 
-        ${valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 && hasMargin && css`
-          padding-left: ${margin(layoutId, true)};
-          padding-right: ${margin(layoutId, true)};
-        `}
+        ${valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 &&
+          hasMargin &&
+          css`
+            padding-left: ${margin(layoutId, true)};
+            padding-right: ${margin(layoutId, true)};
+          `}
 
-        ${debug && valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 && css`
-          background-position: ${margin(layoutId)}px;
-        `}
+        ${debug &&
+          valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 &&
+          css`
+            background-position: ${margin(layoutId)}px;
+          `}
 
-        ${debug && valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 && hasMargin && css`
+        ${debug &&
+          valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 &&
+          hasMargin &&
+          css`
           &:before, &:after {
             box-sizing: border-box;
             position: absolute;
@@ -101,8 +137,8 @@ const RowStyle = styled.div<TypeProps>`
           }
         `}
       }
-    `}
-  )}
+    `
+    })}
 `
 
 export default RowStyle

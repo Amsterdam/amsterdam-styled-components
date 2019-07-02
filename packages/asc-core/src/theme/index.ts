@@ -130,9 +130,12 @@ export namespace Theme {
       const globalStyle = require(`./${themeName}/globalStyle`).default
       const typography = require(`./${themeName}/typography`).default
       const layouts = require(`./${themeName}/layouts`).default
-      const maxGridWidth = require(`./${themeName}/layouts`).maxGridWidth
+      const { maxGridWidth } = require(`./${themeName}/layouts`)
       /* eslint-enable global-require, import/no-dynamic-require */
-      return new ThemeFactory(breakpoints, colors, globalStyle, typography, { ...layouts, maxGridWidth })
+      return new ThemeFactory(breakpoints, colors, globalStyle, typography, {
+        ...layouts,
+        maxGridWidth,
+      })
     }
 
     constructor(
@@ -140,7 +143,7 @@ export namespace Theme {
       public colors: ColorInterface,
       public globalStyle: GlobalStyleType,
       public typography: TypographyInterface,
-      public layouts: LayoutInterface
+      public layouts: LayoutInterface,
     ) {}
   }
 }

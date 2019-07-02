@@ -33,17 +33,20 @@ const ColumnStyle = styled.div<TypeProps>`
   align-self: ${({ alignSelf }) => alignSelf};
   justify-content: space-between;
 
-  ${({ order }) => order && typeof order !== 'number' ? Object.keys(order).map(id => {
-    const layoutId = id as Theme.TypeLayout
+  ${({ order }) =>
+    order && typeof order !== 'number'
+      ? Object.keys(order).map(id => {
+          const layoutId = id as Theme.TypeLayout
 
-      return css`
-        @media ${mediaQuery(layoutId)} {
-          order: ${order[layoutId]};
-        }
-      `
-  }) : css`
-    order: ${order};
-  `}
+          return css`
+            @media ${mediaQuery(layoutId)} {
+              order: ${order[layoutId]};
+            }
+          `
+        })
+      : css`
+          order: ${order};
+        `}
 
   ${({
     debug,
@@ -67,7 +70,8 @@ const ColumnStyle = styled.div<TypeProps>`
 
       return css`
         @media ${mediaQuery(layoutId)} {
-          ${debug && css`
+          ${debug &&
+            css`
             &:before {
               content: 'span ${spanCount}';
             }
@@ -75,15 +79,17 @@ const ColumnStyle = styled.div<TypeProps>`
 
           max-width: ${spanWidth({ layoutId, span, parentSpan })};
 
-          ${pushCount > 0 && css`
-            margin-left: ${pushWidth({ layoutId, push, parentSpan })};
-          `}
+          ${pushCount > 0 &&
+            css`
+              margin-left: ${pushWidth({ layoutId, push, parentSpan })};
+            `}
         }
       `
     })};
 
   ${({ debug, debugColor }) =>
-    debug && css`
+    debug &&
+    css`
       position: relative;
       border: 1px solid;
       border-color: ${debugColor};
@@ -97,7 +103,7 @@ const ColumnStyle = styled.div<TypeProps>`
         border: 1px solid ${debugColor};
         font: 12px sans-serif;
       }
-  `}
+    `}
 `
 
 ColumnStyle.defaultProps = {
