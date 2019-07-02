@@ -226,6 +226,27 @@ export const colCount = (
 /**
  * Get the width of a column, or a set of columns, as a calc() rule
  */
+export const spanWidth = ({
+  layoutId,
+  span,
+  parentSpan,
+}: {
+  layoutId: Theme.TypeLayout
+  parentSpan?: Theme.TypeSpan
+  span: Theme.TypeSpan
+}) => ({ theme }: { theme: Theme.ThemeInterface }): string => {
+  const spanCols = colCount(span, layoutId)
+
+  if (spanCols > 0 && spanCols >= columns(layoutId)({ theme })) {
+    return '100%'
+  }
+
+  return colWidthCalc({ layoutId, span: spanCols, parentSpan })({ theme })
+}
+
+/**
+ * Get the width of a column, or a set of columns, as a calc() rule
+ */
 export const colWidthCalc = ({
   layoutId,
   span = 1,
@@ -298,27 +319,6 @@ export const pushWidth = ({
   })({
     theme,
   })
-}
-
-/**
- * Get the width of a column, or a set of columns, as a calc() rule
- */
-export const spanWidth = ({
-  layoutId,
-  span,
-  parentSpan,
-}: {
-  layoutId: Theme.TypeLayout
-  parentSpan?: Theme.TypeSpan
-  span: Theme.TypeSpan
-}) => ({ theme }: { theme: Theme.ThemeInterface }): string => {
-  const spanCols = colCount(span, layoutId)
-
-  if (spanCols > 0 && spanCols >= columns(layoutId)({ theme })) {
-    return '100%'
-  }
-
-  return colWidthCalc({ layoutId, span: spanCols, parentSpan })({ theme })
 }
 
 /**

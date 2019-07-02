@@ -1,12 +1,11 @@
 import React from 'react'
-import { Color } from 'csstype'
 import ColumnStyle from './ColumnStyle'
 import { Theme } from '../../styles'
 
 type Props = {
   children: React.ReactNode
   debug?: boolean
-  debugColor?: Color
+  debugColor?: string
   id?: keyof Theme.GridInterface
   order?: Theme.TypeSpan
   push?: Theme.TypeSpan

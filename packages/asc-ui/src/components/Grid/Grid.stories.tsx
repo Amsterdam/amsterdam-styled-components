@@ -3,13 +3,12 @@ import { storiesOf } from '@storybook/react'
 import Column from './Column'
 import Row from './Row'
 
-
 const ColumnStory: React.FC<{}> = () => (
   <>
-    <br /><br />
+    <br />
+    <br />
     <Row debug>
       <Column
-
         order={{ small: 2, medium: 1, big: 1, large: 1 }}
         span={{ small: 4, medium: 4, big: 2, large: 2 }}
       >
@@ -35,7 +34,8 @@ const ColumnStory: React.FC<{}> = () => (
 
 const NestedColumnsStory: React.FC<{}> = () => (
   <>
-    <br /><br />
+    <br />
+    <br />
     <Row debug>
       <Column span={{ small: 4, medium: 4, big: 2, large: 2 }}>
         <pre>Left sidebar</pre>
@@ -47,8 +47,7 @@ const NestedColumnsStory: React.FC<{}> = () => (
             Center #1
           </pre>
         </Column>
-        <Column span={{ small: 2, medium: 4, big: 4, large: 6 }} debug
-        >
+        <Column span={{ small: 2, medium: 4, big: 4, large: 6 }} debug>
           <pre style={{ backgroundColor: 'silver', width: 'inherit' }}>
             Center #2
           </pre>

@@ -1,4 +1,3 @@
-import { Color } from 'csstype'
 import styled, { Theme, css, ascDefaultTheme } from '@datapunt/asc-core'
 import { fromTheme, valueFromObject } from '../../utils'
 import {
@@ -10,7 +9,7 @@ import {
   spacerWidth,
   gutter,
 } from '../../utils/grid'
-import { TypeFlexPosition } from './'
+import { TypeFlexPosition } from '.'
 
 const { layouts } = ascDefaultTheme
 
@@ -26,7 +25,7 @@ export type TypeProps = {
   children: React.ReactNode
   className?: string
   debug?: boolean
-  debugColor?: Color
+  debugColor?: string
   halign?: FlexJustify
   hasMargin?: boolean
   valign?: TypeFlexPosition
@@ -55,42 +54,61 @@ const RowStyle = styled.div<TypeProps>`
     height: 20px;
   }
 
-  ${({ debug }) => debug && css`
-    position: relative;
-  `};
+  ${({ debug }) =>
+    debug &&
+    css`
+      position: relative;
+    `};
   ${({ debug, debugColor, hasMargin, theme }) =>
     Object.keys(layouts).map(id => {
       const layoutId = id as Theme.TypeLayout
 
       return css`
         @media ${mediaQuery(layoutId)} {
-          ${debug && css`
+          ${debug &&
+            css`
             .layout-label::before {
-              content: '${layoutId} (${min(layoutId)({ theme }) || 0} - ${max(layoutId)({ theme }) || '∞'})';
+              content: '${layoutId} (${min(layoutId)({ theme }) || 0} - ${max(
+              layoutId,
+            )({ theme }) || '∞'})';
             }
 
             background-image: repeating-linear-gradient(
               to right,
               ${debugColor},
-              ${debugColor} calc((100% - ${spacerWidth(layoutId, true)}) / ${columns(layoutId)}),
-              transparent calc((100% - ${spacerWidth(layoutId, true)}) / ${columns(layoutId)}),
-              transparent calc(((100% - ${spacerWidth(layoutId, true)}) / ${columns(layoutId)}) + ${gutter(layoutId, true)})
+              ${debugColor} calc((100% - ${spacerWidth(
+              layoutId,
+              true,
+            )}) / ${columns(layoutId)}),
+              transparent calc((100% - ${spacerWidth(
+                layoutId,
+                true,
+              )}) / ${columns(layoutId)}),
+              transparent calc(((100% - ${spacerWidth(
+                layoutId,
+                true,
+              )}) / ${columns(layoutId)}) + ${gutter(layoutId, true)})
             );
             background-clip: content-box;
           `};
 
           ${valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 &&
-            hasMargin && css`
+            hasMargin &&
+            css`
               padding-left: ${margin(layoutId, true)};
               padding-right: ${margin(layoutId, true)};
-            `
-          }
+            `}
 
-          ${debug && valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 && css`
-            background-position: ${margin(layoutId)}px;
-          `}
+          ${debug &&
+            valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 &&
+            css`
+              background-position: ${margin(layoutId)}px;
+            `}
 
-          ${debug && valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 && hasMargin && css`
+          ${debug &&
+            valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 &&
+            hasMargin &&
+            css`
             &::before, &::after {
               box-sizing: border-box;
               position: absolute;
@@ -116,8 +134,7 @@ const RowStyle = styled.div<TypeProps>`
           `}
         }
       `
-    }
-  )}
+    })}
 `
 
 export default RowStyle

@@ -1,8 +1,7 @@
 import React from 'react'
-import { Color } from 'csstype'
 import styled, { Theme, css, ascDefaultTheme } from '@datapunt/asc-core'
 import { mediaQuery, colCount, spanWidth, pushWidth } from '../../utils/grid'
-import { TypeFlexPosition } from './'
+import { TypeFlexPosition } from '.'
 
 const { layouts } = ascDefaultTheme
 
@@ -11,7 +10,7 @@ export type TypeProps = {
   children: React.ReactNode
   className?: string
   debug?: boolean
-  debugColor?: Color
+  debugColor?: string
   id?: Theme.TypeLayout
   order?: Theme.TypeSpan
   parentSpan?: Theme.TypeSpan
