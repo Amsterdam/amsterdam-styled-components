@@ -1,10 +1,9 @@
 import React from 'react'
 import RowStyle, { TypeProps } from './RowStyle'
 
-/* eslint-disable react/destructuring-assignmen */
-const Container: React.FC<TypeProps> = ({ children, ...props }) => (
-  <RowStyle {...props}>
-    {props.debug && (
+const Container: React.FC<TypeProps> = ({ children, debug, ...props }) => (
+  <RowStyle {...props} debug={debug}>
+    {debug && (
       <span className="layout-label">
         <span />
       </span>
