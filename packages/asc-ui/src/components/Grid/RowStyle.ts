@@ -58,7 +58,6 @@ const RowStyle = styled.div<TypeProps>`
   ${({ debug }) => debug && css`
     position: relative;
   `};
-
   ${({ debug, debugColor, hasMargin, theme }) =>
     Object.keys(layouts).map(id => {
       const layoutId = id as Theme.TypeLayout
