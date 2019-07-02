@@ -25,7 +25,6 @@ const ColumnStyle = styled.div<TypeProps>`
   display: flex;
   align-self: ${({ alignSelf }) => alignSelf};
   justify-content: space-between;
-
   ${({ order }) =>
     order && typeof order !== 'number'
       ? Object.keys(order).map(id => {
@@ -73,7 +72,6 @@ const ColumnStyle = styled.div<TypeProps>`
         }
       `
     })};
-
   ${({ debug, debugColor }) =>
     debug &&
     css`

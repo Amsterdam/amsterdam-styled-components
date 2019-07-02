@@ -47,7 +47,7 @@ const RowStyle = styled.div<TypeProps>`
     width: 100%;
   }
 
-  .layout-label:before {
+  .layout-label::before {
     position: absolute;
     padding: 2px 4px;
     font: 12px sans-serif;
@@ -66,7 +66,7 @@ const RowStyle = styled.div<TypeProps>`
       return css`
         @media ${mediaQuery(layoutId)} {
           ${debug && css`
-            .layout-label:before {
+            .layout-label::before {
               content: '${layoutId} (${min(layoutId)({ theme }) || 0} - ${max(layoutId)({ theme }) || '∞'})';
             }
 
@@ -92,7 +92,7 @@ const RowStyle = styled.div<TypeProps>`
           `}
 
           ${debug && valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 && hasMargin && css`
-            &:before, &:after {
+            &::before, &::after {
               box-sizing: border-box;
               position: absolute;
               top: 0;
@@ -106,11 +106,11 @@ const RowStyle = styled.div<TypeProps>`
               justify-content: center;
               align-items: center;
             }
-            &:before {
+            &::before {
               left: 0;
               border-right: 1px solid white;
             }
-            &:after {
+            &::after {
               right: 0;
               border-left: 1px solid white;
             }
