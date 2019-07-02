@@ -1,4 +1,4 @@
-export { default as fromTheme } from './fromTheme'
+export { default as fromTheme, valueFromObject } from './fromTheme'
 export {
   color,
   getColorFromTheme,

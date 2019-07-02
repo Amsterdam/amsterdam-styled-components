@@ -1,6 +1,3 @@
-import ColumnStyle, { TypeProps } from './ColumnStyle';
+import ColumnStyle, { TypeProps } from './ColumnStyle'
 
-export {
-  ColumnStyle as default,
-  TypeProps
-}
+export { ColumnStyle as default, TypeProps }

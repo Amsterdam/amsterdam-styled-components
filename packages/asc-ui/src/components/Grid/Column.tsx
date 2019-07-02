@@ -8,9 +8,10 @@ type Props = {
   debug?: boolean
   debugColor?: Color
   id?: keyof Theme.GridInterface
-  order?: number
+  order?: Theme.TypeSpan
   push?: Theme.TypeSpan
   span: Theme.TypeSpan
+  styles?: any
 }
 
 type Context = {
@@ -20,12 +21,14 @@ type Context = {
 const ParentContext = React.createContext<Context>({})
 
 const Column: React.FC<Props> = ({ children, span, id, ...props }) => {
-  const { parentSpan } = React.useContext(ParentContext)
+  const { parentSpan } = React.useContext<Context>(ParentContext)
 
   return (
-    <ColumnStyle parentSpan={parentSpan} span={span} id={id} {...props}>
-      {children}
-    </ColumnStyle>
+    <ParentContext.Provider value={{ parentSpan: span }}>
+      <ColumnStyle parentSpan={parentSpan} span={span} id={id} {...props}>
+        {children}
+      </ColumnStyle>
+    </ParentContext.Provider>
   )
 }
 
