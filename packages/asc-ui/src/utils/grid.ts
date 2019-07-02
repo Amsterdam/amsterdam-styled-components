@@ -109,6 +109,33 @@ export const max = (
 }
 
 /**
+ * Get the sum of the gutters for the entire grid
+ */
+export const gridGutterWidth = (
+  layoutId: Theme.TypeLayout,
+  withUnit = false,
+) => ({
+  theme,
+}: {
+  theme: Theme.ThemeInterface
+}): string | number | undefined => {
+  const cols = columns(layoutId)({ theme })
+  const gutterWidthValue = <number>gutter(layoutId)({ theme })
+
+  if (cols > 0 && gutterWidthValue >= 0) {
+    const value = (cols - 1) * gutterWidthValue
+
+    if (withUnit) {
+      return `${value}px`
+    }
+
+    return value
+  }
+
+  return undefined
+}
+
+/**
  * Get the width of all gutters in a set of columns
  */
 const gutterWidth = ({
@@ -226,27 +253,6 @@ export const colCount = (
 /**
  * Get the width of a column, or a set of columns, as a calc() rule
  */
-export const spanWidth = ({
-  layoutId,
-  span,
-  parentSpan,
-}: {
-  layoutId: Theme.TypeLayout
-  parentSpan?: Theme.TypeSpan
-  span: Theme.TypeSpan
-}) => ({ theme }: { theme: Theme.ThemeInterface }): string => {
-  const spanCols = colCount(span, layoutId)
-
-  if (spanCols > 0 && spanCols >= columns(layoutId)({ theme })) {
-    return '100%'
-  }
-
-  return colWidthCalc({ layoutId, span: spanCols, parentSpan })({ theme })
-}
-
-/**
- * Get the width of a column, or a set of columns, as a calc() rule
- */
 export const colWidthCalc = ({
   layoutId,
   span = 1,
@@ -283,15 +289,25 @@ export const colWidthCalc = ({
   return `calc(((${columnWidth}) * ${spanCols}) + ${spanGutters})`
 }
 
-export const columnPlusGutterwith = (layoutId: Theme.TypeLayout) => ({
-  theme,
+/**
+ * Get the width of a column, or a set of columns, as a calc() rule
+ */
+export const spanWidth = ({
+  layoutId,
+  span,
+  parentSpan,
 }: {
-  theme: Theme.ThemeInterface
-}): string => {
-  const columnWidth = `((100% - ${gridGutterWidth(layoutId, true)({
-    theme,
-  })}) / ${columns(layoutId)({ theme })})`
-  return `calc(${columnWidth} + ${gutter(layoutId, true)({ theme })})`
+  layoutId: Theme.TypeLayout
+  parentSpan?: Theme.TypeSpan
+  span: Theme.TypeSpan
+}) => ({ theme }: { theme: Theme.ThemeInterface }): string => {
+  const spanCols = colCount(span, layoutId)
+
+  if (spanCols > 0 && spanCols >= columns(layoutId)({ theme })) {
+    return '100%'
+  }
+
+  return colWidthCalc({ layoutId, span: spanCols, parentSpan })({ theme })
 }
 
 /**
@@ -319,33 +335,6 @@ export const pushWidth = ({
   })({
     theme,
   })
-}
-
-/**
- * Get the sum of the gutters for the entire grid
- */
-export const gridGutterWidth = (
-  layoutId: Theme.TypeLayout,
-  withUnit = false,
-) => ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}): string | number | undefined => {
-  const cols = columns(layoutId)({ theme })
-  const gutterWidthValue = <number>gutter(layoutId)({ theme })
-
-  if (cols > 0 && gutterWidthValue >= 0) {
-    const value = (cols - 1) * gutterWidthValue
-
-    if (withUnit) {
-      return `${value}px`
-    }
-
-    return value
-  }
-
-  return undefined
 }
 
 /**
