@@ -1,6 +1,6 @@
 import React from 'react'
+import { Theme } from '@datapunt/asc-core'
 import ColumnStyle from './ColumnStyle'
-import { Theme } from '../../styles'
 
 type Props = {
   children: React.ReactNode

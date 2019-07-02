@@ -60,6 +60,6 @@ const NestedColumnsStory: React.FC<{}> = () => (
   </>
 )
 
-storiesOf('Atoms/Column', module)
+storiesOf('Atoms/Grid', module)
   .add('Column', () => <ColumnStory />)
   .add('Nested Columns', () => <NestedColumnsStory />)
