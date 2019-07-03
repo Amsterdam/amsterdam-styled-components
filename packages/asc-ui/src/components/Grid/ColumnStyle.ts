@@ -16,6 +16,7 @@ export type TypeProps = {
   parentSpan?: Theme.TypeSpan
   push?: Theme.TypeSpan
   span: Theme.TypeSpan
+  wrap?: boolean
 }
 
 const ColumnStyle = styled.div<TypeProps>`
@@ -24,6 +25,11 @@ const ColumnStyle = styled.div<TypeProps>`
   display: flex;
   align-self: ${({ alignSelf }) => alignSelf};
   justify-content: space-between;
+  ${({ wrap }) =>
+    wrap &&
+    css`
+      flex-wrap: wrap;
+    `}
   ${({ order }) =>
     order && typeof order !== 'number'
       ? Object.keys(order).map(id => {

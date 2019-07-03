@@ -10,7 +10,7 @@ type Props = {
   order?: Theme.TypeSpan
   push?: Theme.TypeSpan
   span: Theme.TypeSpan
-  styles?: any
+  wrap?: boolean
 }
 
 type Context = {
@@ -37,6 +37,7 @@ Column.defaultProps = {
   order: 0,
   push: 0,
   span: 1,
+  wrap: false
 }
 
 export default Column
