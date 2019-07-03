@@ -21,6 +21,10 @@ export namespace Theme {
     (type: Theme.TypeBreakpoint): string
   }
 
+  export type TypeLayout = keyof GridInterface
+
+  export type TypeSpan = { [s in TypeLayout]: number } | number
+
   export interface BreakpointsInterface {
     mobileS: GetBreakpointFunc
     mobileM: GetBreakpointFunc
@@ -32,6 +36,21 @@ export namespace Theme {
     laptopL: GetBreakpointFunc
     desktop: GetBreakpointFunc
     desktopL: GetBreakpointFunc
+  }
+
+  export interface LayoutInterface {
+    min?: number
+    max?: number
+    gutter: number
+    columns: number
+    margin: number
+  }
+
+  export interface GridInterface {
+    large: LayoutInterface
+    big: LayoutInterface
+    medium: LayoutInterface
+    small: LayoutInterface
   }
 
   export interface PaletteInterface {
@@ -102,8 +121,13 @@ export namespace Theme {
       const colors = require(`./${themeName}/colors`).default
       const globalStyle = require(`./${themeName}/globalStyle`).default
       const typography = require(`./${themeName}/typography`).default
+      const layouts = require(`./${themeName}/layouts`).default
+      const { maxGridWidth } = require(`./${themeName}/layouts`)
       /* eslint-enable global-require, import/no-dynamic-require */
-      return new ThemeFactory(breakpoints, colors, globalStyle, typography)
+      return new ThemeFactory(breakpoints, colors, globalStyle, typography, {
+        ...layouts,
+        maxGridWidth,
+      })
     }
 
     constructor(
@@ -111,6 +135,7 @@ export namespace Theme {
       public colors: ColorInterface,
       public globalStyle: GlobalStyleType,
       public typography: TypographyInterface,
+      public layouts: LayoutInterface,
     ) {}
   }
 }
