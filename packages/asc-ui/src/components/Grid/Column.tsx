@@ -37,7 +37,7 @@ Column.defaultProps = {
   order: 0,
   push: 0,
   span: 1,
-  wrap: false
+  wrap: false,
 }
 
 export default Column

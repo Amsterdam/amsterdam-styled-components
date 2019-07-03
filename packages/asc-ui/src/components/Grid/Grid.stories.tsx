@@ -65,14 +65,18 @@ const NestedPushedColumnsStory: React.FC<{}> = () => (
     <br />
     <br />
     <Row debug>
-      <Column wrap span={{ small: 4, medium: 8, big: 10, large: 14 }} push={{ small: 0, medium: 0, big: 1, large: 2 }}>
+      <Column
+        wrap
+        span={{ small: 4, medium: 8, big: 10, large: 14 }}
+        push={{ small: 0, medium: 0, big: 1, large: 2 }}
+      >
         <Column span={{ small: 2, medium: 4, big: 10, large: 9 }} debug>
           <pre style={{ backgroundColor: 'gold', width: 'inherit' }}>
             Center #1
           </pre>
         </Column>
         <Column span={{ small: 2, medium: 4, big: 10, large: 5 }} debug>
-          <pre style={{ backgroundColor: 'silver', width: 'inherit'}}>
+          <pre style={{ backgroundColor: 'silver', width: 'inherit' }}>
             Center #2
             <br />
             <br />
