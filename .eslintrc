@@ -3,7 +3,9 @@
   "extends": [
     "airbnb",
     "plugin:jsx-a11y/recommended",
-    "prettier"
+    "plugin:prettier/recommended",
+    "prettier/react",
+    "prettier/standard",
   ],
   "plugins": [
     "jest",

@@ -23,22 +23,21 @@
     "build:watch": "yarn build:ts -w",
     "clean:generated": "find ./packages -name \"*.d.ts\" -type f -delete && find ./packages -name \"*.tsbuildinfo\" -type f -delete",
     "deploy-storybook": "storybook-to-ghpages",
-    "postinstall": "lerna link && lerna bootstrap",
+    "preinstall": "lerna link && yarn clean:generated",
     "lint": "yarn lint:css & yarn lint:js",
     "lint:css": "stylelint './packages/**/*Style.ts'",
     "lint:js": "eslint ./packages/** --ext ts,tsx",
-    "prepare": "yarn prettify:package && yarn build",
-    "publish:packages": "yarn verify-integrity && lerna publish",
+    "prepare": "yarn build",
+    "publish:packages": "yarn lint && yarn test && lerna publish",
     "start": "yarn build:watch & yarn storybook",
     "storybook": "start-storybook -p 6006 -c .storybook -s ./packages/asc-assets/lib/assets",
     "test": "yarn jest",
     "test:coverage": "yarn jest --collect-coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watch --onlyChanged --collect-coverage --verbose true",
-    "prettier": "yarn prettier:css & yarn prettier:js",
-    "prettier:css": "prettier-stylelint --write './packages/**/*.ts'",
+    "stylelint": "stylelint ./packages/**/*Style.ts",
+    "prettier": "yarn prettier:js & yarn prettier:package",
     "prettier:js": "prettier-eslint --write './packages/**/**/*.{ts, tsx}'",
-    "prettify:package": "yarn prettier-package-json --write **/package.json",
-    "verify-integrity": "yarn lint && yarn test"
+    "prettier:package": "yarn prettier-package-json --write **/package.json"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -60,7 +59,6 @@
     "@types/eslint-plugin-prettier": "^2.2.0",
     "@types/jest": "^24.0.13",
     "@types/node": "^12.0.7",
-    "@types/prettier": "^1.16.4",
     "@types/react": "^16.8.6",
     "@types/react-dom": "^16.8.4",
     "@types/storybook__addon-a11y": "^5.0.0",
@@ -95,11 +93,11 @@
     "jest-cli": "^24.8.0",
     "jest-styled-components": "^6.3.1",
     "lerna": "^3.15.0",
-    "prettier": "^1.18.0",
+    "lint-staged": "^9.0.2",
+    "prettier": "^1.18.2",
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",
     "prettier-package-json": "^2.1.0",
-    "prettier-stylelint": "^0.4.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^2.1.8",
@@ -108,6 +106,7 @@
     "stylelint-config-prettier": "^5.2.0",
     "stylelint-config-standard": "^18.3.0",
     "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-prettier": "^1.1.1",
     "stylelint-processor-styled-components": "^1.8.0",
     "svgo": "^1.2.2",
     "ts-jest": "^24.0.2",
@@ -119,7 +118,19 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn verify-integrity"
+      "pre-push": "yarn test",
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.tsx": [
+      "prettier-eslint --write",
+      "git add"
+    ],
+    "*.ts": [
+      "prettier-eslint --write",
+      "yarn stylelint",
+      "git add"
+    ]
   }
 }
