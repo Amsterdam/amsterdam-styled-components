@@ -4,6 +4,7 @@ import ColumnStyle from './ColumnStyle'
 
 type Props = {
   children: React.ReactNode
+  className?: string
   debug?: boolean
   debugColor?: string
   id?: keyof Theme.GridInterface
@@ -19,12 +20,12 @@ type Context = {
 
 const ParentContext = React.createContext<Context>({})
 
-const Column: React.FC<Props> = ({ children, span, id, ...props }) => {
+const Column: React.FC<Props> = ({ children, span, ...props }) => {
   const { parentSpan } = React.useContext<Context>(ParentContext)
 
   return (
     <ParentContext.Provider value={{ parentSpan: span }}>
-      <ColumnStyle parentSpan={parentSpan} span={span} id={id} {...props}>
+      <ColumnStyle parentSpan={parentSpan} span={span} {...props}>
         {children}
       </ColumnStyle>
     </ParentContext.Provider>
@@ -33,7 +34,7 @@ const Column: React.FC<Props> = ({ children, span, id, ...props }) => {
 
 Column.defaultProps = {
   debug: false,
-  debugColor: 'rgba(51,102,153,1)',
+  debugColor: 'rgba(51,102,153,0.5)',
   order: 0,
   push: 0,
   span: 1,

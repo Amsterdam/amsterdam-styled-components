@@ -8,34 +8,56 @@ export const maxWidth = (withUnit = false) => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
-}): number | string | undefined => {
-  const gridWidthValue = fromTheme('layouts.maxGridWidth')({ theme })
+}): number | string => {
+  const gridWidthValue = fromTheme('maxGridWidth')({ theme })
 
-  if (gridWidthValue) {
-    return gridWidthValue + (withUnit && 'px')
+  if (Number.isNaN(parseInt(gridWidthValue, 10))) {
+    throw new Error(
+      "Your theme configuration does not seem to have a value for 'maxGridWidth'",
+    )
   }
 
-  return undefined
+  if (withUnit) {
+    return `${gridWidthValue}px`
+  }
+
+  return gridWidthValue
 }
 
 /**
  * Get the amount of column for a specific layout
  */
-export const columns = (layoutId: Theme.TypeLayout) => ({
+export const columns = (layoutId: string) => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
-}): number => fromTheme(`layouts.${layoutId}.columns`)({ theme })
+}): number => {
+  const columns = fromTheme(`layouts.${layoutId}.columns`)({ theme })
+
+  if (Number.isNaN(parseInt(columns, 10))) {
+    throw new Error(
+      `Requesting a value from layout '${layoutId}' that is not defined or doesn't have a 'columns' prop`,
+    )
+  }
+
+  return columns
+}
 
 /**
  * Get the gutter width for a specific layout
  */
-export const gutter = <T>(layoutId: Theme.TypeLayout, withUnit = false) => ({
+export const gutter = (layoutId: string, withUnit = false) => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
 }): string | number => {
   const gutterValue = fromTheme(`layouts.${layoutId}.gutter`)({ theme })
+
+  if (Number.isNaN(parseInt(gutterValue, 10))) {
+    throw new Error(
+      `Requesting a value from layout '${layoutId}' that is not defined or doesn't have a 'gutter' prop`,
+    )
+  }
 
   if (withUnit) {
     return `${gutterValue}px`
@@ -47,12 +69,12 @@ export const gutter = <T>(layoutId: Theme.TypeLayout, withUnit = false) => ({
 /**
  * Get the margin width for a specific layout
  */
-export const margin = (layoutId: Theme.TypeLayout, withUnit = false) => ({
+export const margin = (layoutId: string, withUnit = false) => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
 }): string | number => {
-  const marginValue = fromTheme(`layouts.${layoutId}.margin`)({ theme })
+  const marginValue = fromTheme(`layouts.${layoutId}.margin`)({ theme }) || 0
 
   if (withUnit) {
     return `${marginValue}px`
@@ -64,7 +86,7 @@ export const margin = (layoutId: Theme.TypeLayout, withUnit = false) => ({
 /**
  * Get the min-width breakpoint value for a specific layout
  */
-export const min = (layoutId: Theme.TypeLayout, withUnit = false) => ({
+export const min = (layoutId: string, withUnit = false) => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
@@ -86,7 +108,7 @@ export const min = (layoutId: Theme.TypeLayout, withUnit = false) => ({
  * Get the max-width breakpoint value for a specific layout
  */
 export const max = (
-  layoutId: Theme.TypeLayout,
+  layoutId: string,
   withUnit = false,
   noConflict = false,
 ) => ({
@@ -111,69 +133,65 @@ export const max = (
 /**
  * Get the sum of the gutters for the entire grid
  */
-export const gridGutterWidth = (
-  layoutId: Theme.TypeLayout,
-  withUnit = false,
-) => ({
+export const gridGutterWidth = (layoutId: string, withUnit = false) => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
-}): string | number | undefined => {
+}): string | number => {
   const cols = columns(layoutId)({ theme })
   const gutterWidthValue = <number>gutter(layoutId)({ theme })
+  const value = (cols - 1) * gutterWidthValue
 
-  if (cols > 0 && gutterWidthValue >= 0) {
-    const value = (cols - 1) * gutterWidthValue
-
-    if (withUnit) {
-      return `${value}px`
-    }
-
-    return value
+  if (withUnit) {
+    return `${value}px`
   }
 
-  return undefined
+  return value
 }
 
 /**
  * Get the width of all gutters in a set of columns
  */
-const gutterWidth = ({
-  layoutId,
-  span,
-  withUnit = false,
-  calculateAsPush = false,
-}: {
-  layoutId: Theme.TypeLayout
-  span: number
-  withUnit: boolean
-  calculateAsPush?: boolean
-}) => ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}): number | string | undefined => {
+export const spanGutterWidth = (
+  layoutId: string,
+  span: number,
+  withUnit?: boolean,
+) => ({ theme }: { theme: Theme.ThemeInterface }): number | string => {
   const gutterWidthValue = <number>gutter(layoutId)({ theme })
 
-  if (gutterWidthValue >= 0) {
-    let value = (span - 1) * gutterWidthValue
-    value += calculateAsPush ? gutterWidthValue : 0
+  const value = (span - 1) * gutterWidthValue
 
-    if (withUnit) {
-      return `${value}px`
-    }
-
-    return value
+  if (withUnit) {
+    return `${value}px`
   }
 
-  return undefined
+  return value
+}
+
+/**
+ * Get the width of all gutters in a set of columns
+ */
+export const pushGutterWidth = (
+  layoutId: string,
+  push: number,
+  withUnit?: boolean,
+) => ({ theme }: { theme: Theme.ThemeInterface }): number | string => {
+  const gutterWidthValue = <number>gutter(layoutId)({ theme })
+
+  const value = (push - 1) * gutterWidthValue + gutterWidthValue
+
+  if (withUnit) {
+    return `${value}px`
+  }
+
+  return value
 }
 
 /**
  * Get the mediaquery with min- and max-width values for a specific layout
  */
 export const mediaQuery = (
-  layoutId: Theme.TypeLayout,
+  layoutId: string,
   noConflict = true,
   fromMin = true,
   toMax = true,
@@ -188,11 +206,9 @@ export const mediaQuery = (
     mediaParts.push(`(max-width:${maxQuery})`)
 
   if (mediaParts.length === 0) {
-    if (fromMin && !minQuery) {
+    if (!toMax && !minQuery) {
       throw new Error(`Layout '${layoutId}' has no 'min' value`)
-    }
-
-    if (toMax && !maxQuery) {
+    } else {
       throw new Error(`Layout '${layoutId}' has no 'max' value`)
     }
   }
@@ -203,7 +219,7 @@ export const mediaQuery = (
 /**
  * Get the mediaquery with only its min-width value for a specific layout
  */
-export const minMediaQuery = (layoutId: Theme.TypeLayout) => ({
+export const minMediaQuery = (layoutId: string) => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
@@ -212,7 +228,7 @@ export const minMediaQuery = (layoutId: Theme.TypeLayout) => ({
 /**
  * Get the mediaquery with only its max-width value for a specific layout
  */
-export const maxMediaQuery = (layoutId: Theme.TypeLayout) => ({
+export const maxMediaQuery = (layoutId: string) => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
@@ -227,11 +243,9 @@ export const defaultParentSpan = (
   const layouts = fromTheme('layouts')({ theme })
   const defaults = <Theme.TypeSpan>{}
 
-  Object.keys(layouts)
-    .filter(id => !!layouts[id].columns)
-    .forEach(id => {
-      defaults[id] = layouts[id].columns
-    })
+  Object.keys(layouts).forEach(layoutId => {
+    defaults[layoutId] = columns(layoutId)({ theme })
+  })
 
   return defaults
 }
@@ -239,10 +253,7 @@ export const defaultParentSpan = (
 /**
  * Get the amount of columns to span from a passed property
  */
-export const colCount = (
-  span: Theme.TypeSpan,
-  layoutId: Theme.TypeLayout,
-): number => {
+export const colCount = (span: Theme.TypeSpan, layoutId: string): number => {
   if (typeof span === 'number') {
     return span
   }
@@ -259,7 +270,7 @@ export const colWidthCalc = ({
   parentSpan,
   calculateAsPush = false,
 }: {
-  layoutId: Theme.TypeLayout
+  layoutId: string
   span?: Theme.TypeSpan
   parentSpan?: Theme.TypeSpan
   calculateAsPush?: boolean
@@ -272,18 +283,9 @@ export const colWidthCalc = ({
   const parentCols = colCount(parentSpans, layoutId)
 
   // get unit values for gutters
-  const spanGutters = gutterWidth({
-    layoutId,
-    span: spanCols,
-    withUnit: true,
-    calculateAsPush,
-  })({ theme })
-
-  const parentGutters = gutterWidth({
-    layoutId,
-    span: parentCols,
-    withUnit: true,
-  })({ theme })
+  const spanGutters = spanGutterWidth(layoutId, spanCols, true)({ theme })
+  const pushGutters = pushGutterWidth(layoutId, parentCols, true)({ theme })
+  const parentGutters = calculateAsPush ? spanGutters : pushGutters
 
   const columnWidth = `(100% - ${parentGutters}) / ${parentCols}`
   return `calc(((${columnWidth}) * ${spanCols}) + ${spanGutters})`
@@ -297,7 +299,7 @@ export const spanWidth = ({
   span,
   parentSpan,
 }: {
-  layoutId: Theme.TypeLayout
+  layoutId: string
   parentSpan?: Theme.TypeSpan
   span: Theme.TypeSpan
 }) => ({ theme }: { theme: Theme.ThemeInterface }): string => {
@@ -318,7 +320,7 @@ export const pushWidth = ({
   push,
   parentSpan,
 }: {
-  layoutId: Theme.TypeLayout
+  layoutId: string
   parentSpan?: Theme.TypeSpan
   push: Theme.TypeSpan
 }) => ({ theme }: { theme: Theme.ThemeInterface }): string => {
@@ -340,7 +342,7 @@ export const pushWidth = ({
 /**
  * Get the sum of all gutters and margins for the entire grid of a specific layout
  */
-export const spacerWidth = (layoutId: Theme.TypeLayout, withUnit = false) => ({
+export const spacerWidth = (layoutId: string, withUnit = false) => ({
   theme,
 }: {
   theme: Theme.ThemeInterface

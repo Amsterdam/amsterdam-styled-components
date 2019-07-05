@@ -11,7 +11,7 @@ export type TypeProps = {
   className?: string
   debug?: boolean
   debugColor?: string
-  id?: Theme.TypeLayout
+  id?: string
   order?: Theme.TypeSpan
   parentSpan?: Theme.TypeSpan
   push?: Theme.TypeSpan
@@ -19,7 +19,20 @@ export type TypeProps = {
   wrap?: boolean
 }
 
-const ColumnStyle = styled.div<TypeProps>`
+const ColumnStyle = styled(({ className, children, id, ...rest }) => {
+  const dataProps = {}
+  Object.keys(rest)
+    .filter(key => key.startsWith('data-') || key.startsWith('aria-'))
+    .forEach(key => {
+      dataProps[key] = rest[key]
+    })
+
+  return (
+    <div className={className} id={id} {...dataProps}>
+      {children}
+    </div>
+  )
+})`
   box-sizing: border-box;
   width: 100%;
   display: flex;
@@ -32,14 +45,13 @@ const ColumnStyle = styled.div<TypeProps>`
     `}
   ${({ order }) =>
     order && typeof order !== 'number'
-      ? Object.keys(order).map(id => {
-          const layoutId = id as Theme.TypeLayout
-          return css`
+      ? Object.keys(order).map(
+          layoutId => css`
             @media ${mediaQuery(layoutId)} {
               order: ${order[layoutId]};
             }
-          `
-        })
+          `,
+        )
       : css`
           order: ${order};
         `}
@@ -54,26 +66,27 @@ const ColumnStyle = styled.div<TypeProps>`
     span: Theme.TypeSpan
     push?: Theme.TypeSpan
   }) =>
-    Object.keys(layouts).map(id => {
-      const layoutId = id as Theme.TypeLayout
+    Object.keys(layouts).map(layoutId => {
       const spanCount = colCount(span, layoutId)
       const pushCount = colCount(push, layoutId)
+
       if (spanCount < 1 || pushCount < 0) {
         return null
       }
+
       return css`
         @media ${mediaQuery(layoutId)} {
           ${debug &&
             css`
-            &:before {
-              content: 'span ${spanCount}';
-            }
-          `}
-          max-width: ${spanWidth({ layoutId, span, parentSpan })};
+              &::before {
+                content: 'span ${spanCount}';
+              }
+            `}
           ${pushCount > 0 &&
             css`
               margin-left: ${pushWidth({ layoutId, push, parentSpan })};
             `}
+          max-width: ${spanWidth({ layoutId, span, parentSpan })};
         }
       `
     })};
@@ -84,7 +97,7 @@ const ColumnStyle = styled.div<TypeProps>`
       border: 1px solid;
       border-color: ${debugColor};
 
-      &:before {
+      &::before {
         background: white;
         position: absolute;
         top: -12px;
