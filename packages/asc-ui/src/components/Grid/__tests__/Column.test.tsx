@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import 'jest-styled-components'
-import { Theme, ascDefaultTheme } from '@datapunt/asc-core'
+import { ascDefaultTheme } from '@datapunt/asc-core'
 import { mount } from 'enzyme'
 import Row from '../Row'
 import Column from '../Column'
@@ -9,7 +9,7 @@ import ColumnStyle from '../ColumnStyle'
 import { ThemeProvider } from '../../../index'
 import { mediaQuery } from '../../../utils/grid'
 
-const mq = (layoutId: Theme.TypeLayout) =>
+const mq = (layoutId: string) =>
   mediaQuery(layoutId)({ theme: ascDefaultTheme })
 
 describe('Column', () => {
