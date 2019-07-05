@@ -61,7 +61,6 @@ exports[`<TextField /> should render 1`] = `
           "margin": 60,
           "min": 1440,
         },
-        "maxGridWidth": 2560,
         "medium": Object {
           "columns": 8,
           "gutter": 20,
