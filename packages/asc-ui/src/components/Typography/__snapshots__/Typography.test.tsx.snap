@@ -3,33 +3,18 @@
 exports[`Typography should render the typography types 1`] = `
 Array [
   .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+  color: #000000;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 1.875rem;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   line-height: 38px;
-  color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -43,33 +28,18 @@ Array [
     Heading one
   </h1>,
   .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+  color: #000000;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 1.5rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
-  line-height: 1;
-  color: #ec0000;
+  line-height: 28px;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -83,33 +53,18 @@ Array [
     Heading two
   </h2>,
   .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+  color: #000000;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.25rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
-  line-height: 1;
-  color: #ec0000;
+  line-height: 28px;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -123,33 +78,18 @@ Array [
     Heading three
   </h3>,
   .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+  color: #000000;
   font-weight: 400;
   font-size: 1.125rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
-  line-height: 1;
-  color: #000000;
+  line-height: 25px;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -163,25 +103,11 @@ Array [
     Heading four
   </h4>,
   .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+  color: #000000;
   font-weight: 400;
   font-size: 1.125rem;
   -webkit-letter-spacing: -0.01562em;
@@ -189,7 +115,6 @@ Array [
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1;
-  color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -203,33 +128,18 @@ Array [
     Heading five
   </h5>,
   .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+  color: #000000;
   font-weight: 400;
-  font-size: 6rem;
+  font-size: 1.125rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1;
-  color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -243,33 +153,23 @@ Array [
     Heading six
   </h6>,
   .c0 {
-  color: #004699;
-  display: inline-block;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+  color: #000000;
   font-weight: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
-  line-height: 1;
-  color: #000000;
+  line-height: 1.25;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
   -ms-letter-spacing: normal;
   letter-spacing: normal;
-}
-
-.c0:focus {
-  background-color: #FEC813;
-}
-
-.c0:hover {
-  color: #ec0000;
 }
 
 <a
@@ -278,42 +178,19 @@ Array [
   >
     I am a link!
   </a>,
-  .c0 {
-  line-height: 1.25;
+  .c1 {
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-weight: 400;
-  font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1.25;
   color: #000000;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
-}
-
-.c1 {
-  color: #004699;
-  display: inline-block;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
   font-weight: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
-  line-height: 1;
-  color: #000000;
+  line-height: 1.25;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -321,12 +198,24 @@ Array [
   letter-spacing: normal;
 }
 
-.c1:focus {
-  background-color: #FEC813;
-}
-
-.c1:hover {
-  color: #ec0000;
+.c0 {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  color: #000000;
+  font-weight: 400;
+  font-size: 1rem;
+  -webkit-letter-spacing: -0.01562em;
+  -moz-letter-spacing: -0.01562em;
+  -ms-letter-spacing: -0.01562em;
+  letter-spacing: -0.01562em;
+  line-height: 22px;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
 }
 
 <p

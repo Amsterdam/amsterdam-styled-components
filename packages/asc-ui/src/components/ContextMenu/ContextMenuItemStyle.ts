@@ -15,7 +15,7 @@ export const ContextMenuItemStyle = styled.li<ContextMenuItemProps>`
   text-decoration: none;
   color: ${color('tint', 'level7')};
 
-  & > span:first-child {
+  & > span:first-of-type {
     margin: 5px 6px;
   }
 

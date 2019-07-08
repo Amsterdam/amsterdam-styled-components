@@ -7,19 +7,19 @@ describe('Typography', () => {
   it('should render the typography types', () => {
     const component = renderWithTheme(
       <>
-        <Typography element="h1">Heading one</Typography>
-        <Typography element="h2">Heading two</Typography>
-        <Typography element="h3">Heading three</Typography>
-        <Typography element="h4">Heading four</Typography>
-        <Typography element="h5">Heading five</Typography>
-        <Typography element="h6">Heading six</Typography>
-        <Typography element="a" href="/">
+        <Typography as="h1">Heading one</Typography>
+        <Typography as="h2">Heading two</Typography>
+        <Typography as="h3">Heading three</Typography>
+        <Typography as="h4">Heading four</Typography>
+        <Typography as="h5">Heading five</Typography>
+        <Typography as="h6">Heading six</Typography>
+        <Typography as="a" href="/">
           I am a link!
         </Typography>
-        <Typography element="p">
+        <Typography as="p">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor
           dolorem esse illum magni&nbsp;
-          <Typography element="a" href="/">
+          <Typography as="a" href="/">
             I am a link!
           </Typography>
           &nbsp; optio porro qui ratione vitae?

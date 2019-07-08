@@ -11,7 +11,7 @@ export const sizes = {
   tabletM: 768,
   laptop: 1024,
   laptopM: 1200,
-  laptopL: 1440,
+  laptopL: 1430,
   desktop: 1920,
   desktopL: 2560,
 }

@@ -45,11 +45,10 @@ describe('getTypographyFromTheme', () => {
       colors,
       typography: {
         ...typography,
-        fontSize: '16px',
       },
     }
 
-    expect(getTypographyFromTheme(theme, 'fontSize')).toBe('16px')
+    expect(getTypographyFromTheme()({ as: 'p', theme })).toMatchSnapshot()
   })
 })
 

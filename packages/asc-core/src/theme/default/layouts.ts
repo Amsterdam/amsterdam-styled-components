@@ -1,31 +1,31 @@
 import { sizes } from './breakpoints'
 
-export const maxGridWidth = 2560
+export const maxGridWidth = sizes.laptopL
 
 const layouts = {
   large: {
-    columns: 18,
-    margin: 60,
-    gutter: 34,
+    columns: 12,
+    margin: 50,
+    gutter: 32,
     min: sizes.laptopL,
   },
   big: {
     columns: 12,
-    margin: 40,
+    margin: 24,
     gutter: 24,
     max: sizes.laptopL,
     min: sizes.laptop,
   },
   medium: {
     columns: 8,
-    margin: 20,
-    gutter: 20,
+    margin: 24,
+    gutter: 24,
     max: sizes.laptop,
     min: sizes.tabletM,
   },
   small: {
     columns: 4,
-    margin: 0,
+    margin: 20,
     gutter: 12,
     max: sizes.tabletM,
   },

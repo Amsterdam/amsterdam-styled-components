@@ -1,5 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`getTypographyFromTheme should return the requested typography from theme 1`] = `
+Array [
+  "
+    color: ",
+  "#000000",
+  ";
+    font-weight: ",
+  "400",
+  ";
+    font-size: ",
+  "1rem",
+  ";
+    letter-spacing: ",
+  "-0.01562em",
+  ";
+    line-height: ",
+  "22px",
+  ";
+  ",
+]
+`;
+
 exports[`mapToBreakpoints should return a style with 3 breakpoints and corresponding values 1`] = `
 Array [
   "
@@ -65,7 +87,7 @@ Array [
           width: 100px;
         }
       
-        @media screen and (min-width: 1440.02px) {
+        @media screen and (min-width: 1430.02px) {
           width: 70px;
         }
       

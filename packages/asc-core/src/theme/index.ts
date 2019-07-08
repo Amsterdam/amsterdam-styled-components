@@ -83,7 +83,7 @@ export namespace Theme {
   }
 
   type TypographyElementStyle = {
-    color: CSSProp
+    defaultColor: CSSProp
     fontWeight: 400 | 500 | 700 | 'inherit'
     fontSize: CSSProp
     lineHeight: number | CSSProp
@@ -100,6 +100,7 @@ export namespace Theme {
     p: TypographyElementStyle
     a: TypographyElementStyle
     em: TypographyElementStyle
+    small: TypographyElementStyle
   }
 
   export interface TypographyInterface extends TypographyElements {

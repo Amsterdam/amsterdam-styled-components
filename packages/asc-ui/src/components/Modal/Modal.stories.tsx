@@ -14,6 +14,7 @@ import {
   IconButton,
   TopBar,
 } from '../..'
+import Link from '../Typography/Link'
 
 const SimpleModal: React.FC<Props> = props => (
   <div>
@@ -24,7 +25,7 @@ const SimpleModal: React.FC<Props> = props => (
       onClose={linkTo('Modal', 'closed state')}
     >
       <ListItem>
-        <Typography paragraph element="p" gutterBottom>
+        <Typography as="p" gutterBottom={8}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto,
           quisquam!
         </Typography>
@@ -56,7 +57,7 @@ storiesOf('Composed/Modal', module)
       blurredNode={window.document.querySelector('#root') as HTMLInputElement}
     >
       <TopBar>
-        <Typography style={{ flexGrow: 1 }} element="h4">
+        <Typography style={{ flexGrow: 1 }} as="h4">
           Feedback
           <IconButton onClick={action('close modal')}>
             <Close />
@@ -65,10 +66,10 @@ storiesOf('Composed/Modal', module)
       </TopBar>
       <Divider />
       <ListItem>
-        <Typography gutterBottom element="h5">
+        <Typography gutterBottom={8} as="h5">
           Onjuiste of ontbrekende gegevens?
         </Typography>
-        <Typography paragraph element="p" gutterBottom>
+        <Typography as="p" gutterBottom={8}>
           Geef aan welke gegevens onjuist zijn of ontbreken. Ook als je weet wat
           het wel moet zijn. We horen het graag.
         </Typography>
@@ -78,10 +79,10 @@ storiesOf('Composed/Modal', module)
       </ListItem>
       <Divider gutter />
       <ListItem>
-        <Typography gutterBottom element="h5">
+        <Typography gutterBottom={8} as="h5">
           Vraag of een klacht?
         </Typography>
-        <Typography paragraph element="p" gutterBottom>
+        <Typography as="p" gutterBottom={8}>
           Als iets op deze pagina niet goed werkt, onduidelijk is of vragen
           oproept, geef het aan ons door.
         </Typography>
@@ -91,9 +92,7 @@ storiesOf('Composed/Modal', module)
       </ListItem>
       <Divider transparent />
       <ListItem>
-        <Typography element="a" href="#">
-          Hulp nodig?
-        </Typography>
+        <Link href="/help">Hulp nodig?</Link>
       </ListItem>
     </Modal>
   ))

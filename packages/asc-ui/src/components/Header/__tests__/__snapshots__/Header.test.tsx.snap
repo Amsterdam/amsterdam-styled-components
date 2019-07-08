@@ -36,20 +36,18 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c8 {
-  color: #004699;
-  display: inline-block;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+  color: #000000;
   font-weight: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
-  line-height: 1;
-  color: #000000;
+  line-height: 1.25;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -63,14 +61,6 @@ exports[`Header should render the short version 1`] = `
   color: #000;
   -webkit-text-decoration: none;
   text-decoration: none;
-}
-
-.c8:focus {
-  background-color: #FEC813;
-}
-
-.c8:hover {
-  color: #ec0000;
 }
 
 .c8:hover {
@@ -147,7 +137,7 @@ exports[`Header should render the short version 1`] = `
   background-color: #ffffff;
   margin: 0 auto;
   width: 100%;
-  max-width: none;
+  max-width: nonepx;
   box-shadow: 0 4px rgba(0,0,0,0.04);
   box-sizing: content-box;
   position: fixed;
@@ -268,7 +258,6 @@ exports[`Header should render the short version 1`] = `
       </a>
       <a
         class="c7 c8"
-        href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
@@ -318,20 +307,18 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c8 {
-  color: #004699;
-  display: inline-block;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+  color: #000000;
   font-weight: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
-  line-height: 1;
-  color: #000000;
+  line-height: 1.25;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -345,14 +332,6 @@ exports[`Header should render the short version without the full width 1`] = `
   color: #000;
   -webkit-text-decoration: none;
   text-decoration: none;
-}
-
-.c8:focus {
-  background-color: #FEC813;
-}
-
-.c8:hover {
-  color: #ec0000;
 }
 
 .c8:hover {
@@ -445,7 +424,7 @@ exports[`Header should render the short version without the full width 1`] = `
   background-color: #ffffff;
   margin: 0 auto;
   width: 100%;
-  max-width: 1800px;
+  max-width: 1430px;
   box-shadow: 0 4px rgba(0,0,0,0.04);
   box-sizing: content-box;
   position: fixed;
@@ -566,7 +545,6 @@ exports[`Header should render the short version without the full width 1`] = `
       </a>
       <a
         class="c7 c8"
-        href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
@@ -617,20 +595,18 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c11 {
-  color: #004699;
-  display: inline-block;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+  color: #000000;
   font-weight: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
-  line-height: 1;
-  color: #000000;
+  line-height: 1.25;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -644,14 +620,6 @@ exports[`Header should render the tall version 1`] = `
   color: #000;
   -webkit-text-decoration: none;
   text-decoration: none;
-}
-
-.c11:focus {
-  background-color: #FEC813;
-}
-
-.c11:hover {
-  color: #ec0000;
 }
 
 .c11:hover {
@@ -764,7 +732,7 @@ exports[`Header should render the tall version 1`] = `
   background-color: #ffffff;
   margin: 0 auto;
   width: 100%;
-  max-width: none;
+  max-width: nonepx;
   box-shadow: 0 4px rgba(0,0,0,0.04);
   box-sizing: content-box;
   position: fixed;
@@ -955,7 +923,6 @@ exports[`Header should render the tall version 1`] = `
       </a>
       <a
         class="c10 c11"
-        href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
@@ -1103,7 +1070,7 @@ exports[`Header should render the tall version without a title 1`] = `
   background-color: #ffffff;
   margin: 0 auto;
   width: 100%;
-  max-width: none;
+  max-width: nonepx;
   box-shadow: 0 4px rgba(0,0,0,0.04);
   box-sizing: content-box;
   position: fixed;

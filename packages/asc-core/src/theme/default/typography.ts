@@ -1,6 +1,6 @@
 import { rem } from 'polished'
 import { Theme } from '../index'
-import colors from './colors'
+import { colors } from './index'
 
 const defaultFontFamily = 'Avenir Next, Arial, sans-serif'
 
@@ -8,67 +8,74 @@ const typography: Theme.TypographyInterface = {
   fontFamily: defaultFontFamily,
   fontSize: '16px',
   h1: {
-    color: colors.tint.level7,
-    fontSize: '30px',
+    defaultColor: colors.tint.level7,
+    fontSize: rem(30),
     fontWeight: 700,
     letterSpacing: 'inherit',
     lineHeight: '38px',
   },
   h2: {
-    color: colors.secondary.main,
-    fontSize: '24px',
+    defaultColor: colors.tint.level7,
+    fontSize: rem(24),
     fontWeight: 700,
     letterSpacing: '-0.01562em',
-    lineHeight: 1,
+    lineHeight: '28px',
   },
   h3: {
-    color: colors.secondary.main,
-    fontSize: '20px',
+    defaultColor: colors.tint.level7,
+    fontSize: rem(20),
     fontWeight: 700,
     letterSpacing: '-0.01562em',
-    lineHeight: 1,
+    lineHeight: '28px',
   },
   h4: {
-    color: colors.tint.level7,
+    defaultColor: colors.tint.level7,
     fontSize: rem(18),
     fontWeight: 400,
     letterSpacing: '-0.01562em',
-    lineHeight: 1,
+    lineHeight: '25px',
   },
   h5: {
-    color: colors.tint.level7,
+    defaultColor: colors.tint.level7,
     fontSize: rem(18),
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: 1,
   },
   h6: {
-    color: colors.tint.level7,
-    fontSize: '6rem',
+    defaultColor: colors.tint.level7,
+    fontSize: rem(18),
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: 1,
   },
   a: {
-    color: colors.tint.level7,
+    defaultColor: colors.tint.level7,
     fontSize: '1rem',
     fontWeight: 'inherit',
     letterSpacing: '-0.01562em',
-    lineHeight: 1,
+    lineHeight: 1.25,
   },
   p: {
-    color: colors.tint.level7,
-    fontSize: '1rem',
+    defaultColor: colors.tint.level7,
+    fontSize: rem(16),
+    fontWeight: 400,
+    letterSpacing: '-0.01562em',
+    lineHeight: '22px',
+  },
+  em: {
+    defaultColor: colors.tint.level7,
+    fontSize: rem(16),
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: 1.25,
   },
-  em: {
-    color: colors.tint.level5,
-    fontSize: '1rem',
+  small: {
+    defaultColor: colors.tint.level7,
+    fontSize: rem(14),
     fontWeight: 400,
     letterSpacing: '-0.01562em',
-    lineHeight: 1.25,
+    lineHeight: '18px',
   },
 }
 

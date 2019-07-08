@@ -26,11 +26,21 @@ export const color = (
     : fromTheme('colors.tint.level1')({ theme })
 }
 
-export const getTypographyFromTheme = (
-  theme: Theme.ThemeInterface,
-  attributeType: string,
-) => {
-  return fromTheme(`typography.${[attributeType]}`)({ theme })
+export const getTypographyFromTheme = () => ({ as = 'p', theme }: any) => {
+  const {
+    defaultColor,
+    fontWeight,
+    fontSize,
+    letterSpacing,
+    lineHeight,
+  } = fromTheme(`typography.${[as]}`)({ theme })
+  return css`
+    color: ${defaultColor};
+    font-weight: ${fontWeight};
+    font-size: ${fontSize};
+    letter-spacing: ${letterSpacing};
+    line-height: ${lineHeight};
+  `
 }
 
 export const focusStyleOutline = (width: number = 3, offset: number = 0) => ({
