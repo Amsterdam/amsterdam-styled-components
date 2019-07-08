@@ -130,7 +130,7 @@ exports[`<TextField /> should render 1`] = `
         },
         "h6": Object {
           "color": "#000000",
-          "fontSize": "6rem",
+          "fontSize": "1rem",
           "fontWeight": 400,
           "letterSpacing": "-0.01562em",
           "lineHeight": 1,
