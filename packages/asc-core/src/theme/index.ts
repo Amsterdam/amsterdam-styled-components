@@ -47,6 +47,7 @@ export namespace Theme {
   }
 
   export interface GridInterface {
+    xLarge: LayoutInterface
     large: LayoutInterface
     big: LayoutInterface
     medium: LayoutInterface
