@@ -18,10 +18,10 @@ storiesOf('Composed/Article', module)
       <Row>
         <Column
           wrap
-          span={{ small: 4, medium: 8, big: 11, large: 10 }}
-          push={{ small: 0, medium: 0, big: 1, large: 2 }}
+          span={{ small: 1, medium: 2, big: 5, large: 11, xLarge: 11 }}
+          push={{ small: 0, medium: 0, big: 1, large: 1, xLarge: 1 }}
         >
-          <Column span={{ small: 4, medium: 8, big: 7, large: 6 }}>
+          <Column span={{ small: 1, medium: 2, big: 4, large: 7, xLarge: 7 }}>
             <ArticleContent>
               <ArticleHeader title={articleJSON.title}>
                 <ArticleMetaList
@@ -40,8 +40,8 @@ storiesOf('Composed/Article', module)
             </ArticleContent>
           </Column>
           <Column
-            span={{ small: 4, medium: 8, big: 3, large: 3 }}
-            push={{ small: 0, medium: 0, big: 1, large: 1 }}
+            span={{ small: 1, medium: 2, big: 2, large: 3, xLarge: 3 }}
+            push={{ small: 0, medium: 0, big: 1, large: 1, xLarge: 1 }}
           >
             <ArticleSidebar>
               <Heading as="h2">Links</Heading>
@@ -63,10 +63,10 @@ storiesOf('Composed/Article', module)
       <Row>
         <Column
           wrap
-          span={{ small: 4, medium: 8, big: 11, large: 10 }}
-          push={{ small: 0, medium: 0, big: 1, large: 2 }}
+          span={{ small: 1, medium: 2, big: 5, large: 11, xLarge: 11 }}
+          push={{ small: 0, medium: 0, big: 1, large: 1, xLarge: 1 }}
         >
-          <Column span={{ small: 4, medium: 8, big: 7, large: 6 }}>
+          <Column span={{ small: 1, medium: 2, big: 4, large: 7, xLarge: 7 }}>
             <ArticleContent>
               <ArticleHeader title={articleJSON.title}>
                 <ArticleMetaList
@@ -85,8 +85,8 @@ storiesOf('Composed/Article', module)
             </ArticleContent>
           </Column>
           <Column
-            span={{ small: 4, medium: 8, big: 3, large: 3 }}
-            push={{ small: 0, medium: 0, big: 1, large: 1 }}
+            span={{ small: 1, medium: 2, big: 2, large: 3, xLarge: 3 }}
+            push={{ small: 0, medium: 0, big: 1, large: 1, xLarge: 1 }}
           >
             <ArticleSidebar>
               <Heading as="h2">Downloads</Heading>
