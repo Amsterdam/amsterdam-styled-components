@@ -59,6 +59,12 @@ export namespace Theme {
     main: string
   }
 
+  export interface SupportPaletteInterface {
+    valid: string
+    invalid: string
+    focus: string
+  }
+
   export type Tint = {
     level1: string
     level2: string
@@ -74,11 +80,7 @@ export namespace Theme {
     secondary: PaletteInterface
     error: PaletteInterface
     tint: Tint
-    support: {
-      valid: string
-      invalid: string
-      focus: string
-    }
+    support: SupportPaletteInterface
     bright: PaletteInterface
   }
 

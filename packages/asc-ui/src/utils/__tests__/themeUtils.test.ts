@@ -85,7 +85,7 @@ describe('breakpoint', () => {
       '(max-width: 2560px)',
     )
     expect(breakpoint('min-width', 'mobileL')({ theme })).toEqual(
-      '(min-width: 425.02px)',
+      '(min-width: 414.02px)',
     )
   })
 })

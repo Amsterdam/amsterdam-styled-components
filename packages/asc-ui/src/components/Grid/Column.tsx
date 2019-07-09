@@ -19,12 +19,12 @@ type Context = {
 
 const ParentContext = React.createContext<Context>({})
 
-const Column: React.FC<Props> = ({ children, span, id, ...props }) => {
+const Column: React.FC<Props> = ({ children, wrap, span, id, ...props }) => {
   const { parentSpan } = React.useContext<Context>(ParentContext)
 
   return (
     <ParentContext.Provider value={{ parentSpan: span }}>
-      <ColumnStyle parentSpan={parentSpan} span={span} id={id} {...props}>
+      <ColumnStyle {...{ wrap, id, span, parentSpan }} {...props}>
         {children}
       </ColumnStyle>
     </ParentContext.Provider>
