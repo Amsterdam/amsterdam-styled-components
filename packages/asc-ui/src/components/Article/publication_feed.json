@@ -1,0 +1,118 @@
+    {
+      "type": "node--publication",
+      "id": "91a9d190-8ec6-4a8f-ba9c-cf854f5a8019",
+      "attributes": {
+        "drupal_internal__nid": 3,
+        "drupal_internal__vid": 4,
+        "langcode": "en",
+        "revision_timestamp": "2019-06-24T08:13:30+00:00",
+        "revision_log": null,
+        "status": true,
+        "title": "Fact sheet Jeugdwerkloosheid",
+        "created": "2019-06-24T08:11:15+00:00",
+        "changed": "2019-07-07T13:21:02+00:00",
+        "promote": true,
+        "sticky": false,
+        "default_langcode": true,
+        "revision_translation_affected": true,
+        "path": {
+          "alias": null,
+          "pid": null,
+          "langcode": "en"
+        },
+        "body": {
+          "value": "<p>De afgelopen jaren heeft de gemeente Amsterdam fors ingezet op het terugdringen van de jeugdwerkloosheid. Nu de aanpak jeugdwerkloosheid is afgelopen en de nieuwe cijfers over 2018 beschikbaar zijn gekomen, brengt OIS in deze factsheet in beeld wat de ontwikkelingen zijn geweest en hoe het er nu voor staat met de Amsterdamse jongeren op de arbeidsmarkt.</p>\r\n",
+          "format": "basic_html",
+          "processed": "<p>De afgelopen jaren heeft de gemeente Amsterdam fors ingezet op het terugdringen van de jeugdwerkloosheid. Nu de aanpak jeugdwerkloosheid is afgelopen en de nieuwe cijfers over 2018 beschikbaar zijn gekomen, brengt OIS in deze factsheet in beeld wat de ontwikkelingen zijn geweest en hoe het er nu voor staat met de Amsterdamse jongeren op de arbeidsmarkt.</p>",
+          "summary": ""
+        },
+        "field_file_size": "4 MB",
+        "field_file_type": "pdf",
+        "field_pub": null,
+        "field_publication_month": null,
+        "field_publication_source": null,
+        "field_publication_year": null
+      },
+      "relationships": {
+        "node_type": {
+          "data": {
+            "type": "node_type--node_type",
+            "id": "e3dedc05-1de6-4e25-b6dc-37197d73ad96"
+          },
+          "links": {
+            "self": {
+              "href": "http://acc.cms.data.amsterdam.nl/jsonapi/node/publication/91a9d190-8ec6-4a8f-ba9c-cf854f5a8019/relationships/node_type?resourceVersion=id%3A4"
+            },
+            "related": {
+              "href": "http://acc.cms.data.amsterdam.nl/jsonapi/node/publication/91a9d190-8ec6-4a8f-ba9c-cf854f5a8019/node_type?resourceVersion=id%3A4"
+            }
+          }
+        },
+        "revision_uid": {
+          "data": {
+            "type": "user--user",
+            "id": "44418b09-7bfb-43ef-a488-7a03211bf407"
+          },
+          "links": {
+            "self": {
+              "href": "http://acc.cms.data.amsterdam.nl/jsonapi/node/publication/91a9d190-8ec6-4a8f-ba9c-cf854f5a8019/relationships/revision_uid?resourceVersion=id%3A4"
+            },
+            "related": {
+              "href": "http://acc.cms.data.amsterdam.nl/jsonapi/node/publication/91a9d190-8ec6-4a8f-ba9c-cf854f5a8019/revision_uid?resourceVersion=id%3A4"
+            }
+          }
+        },
+        "uid": {
+          "data": {
+            "type": "user--user",
+            "id": "44418b09-7bfb-43ef-a488-7a03211bf407"
+          },
+          "links": {
+            "self": {
+              "href": "http://acc.cms.data.amsterdam.nl/jsonapi/node/publication/91a9d190-8ec6-4a8f-ba9c-cf854f5a8019/relationships/uid?resourceVersion=id%3A4"
+            },
+            "related": {
+              "href": "http://acc.cms.data.amsterdam.nl/jsonapi/node/publication/91a9d190-8ec6-4a8f-ba9c-cf854f5a8019/uid?resourceVersion=id%3A4"
+            }
+          }
+        },
+        "field_cover": {
+          "data": null,
+          "links": {
+            "self": {
+              "href": "http://acc.cms.data.amsterdam.nl/jsonapi/node/publication/91a9d190-8ec6-4a8f-ba9c-cf854f5a8019/relationships/field_cover?resourceVersion=id%3A4"
+            },
+            "related": {
+              "href": "http://acc.cms.data.amsterdam.nl/jsonapi/node/publication/91a9d190-8ec6-4a8f-ba9c-cf854f5a8019/field_cover?resourceVersion=id%3A4"
+            }
+          }
+        },
+        "field_cover_image": {
+          "data": null,
+          "links": {
+            "self": {
+              "href": "http://acc.cms.data.amsterdam.nl/jsonapi/node/publication/91a9d190-8ec6-4a8f-ba9c-cf854f5a8019/relationships/field_cover_image?resourceVersion=id%3A4"
+            },
+            "related": {
+              "href": "http://acc.cms.data.amsterdam.nl/jsonapi/node/publication/91a9d190-8ec6-4a8f-ba9c-cf854f5a8019/field_cover_image?resourceVersion=id%3A4"
+            }
+          }
+        },
+        "field_publication_file": {
+          "data": null,
+          "links": {
+            "self": {
+              "href": "http://acc.cms.data.amsterdam.nl/jsonapi/node/publication/91a9d190-8ec6-4a8f-ba9c-cf854f5a8019/relationships/field_publication_file?resourceVersion=id%3A4"
+            },
+            "related": {
+              "href": "http://acc.cms.data.amsterdam.nl/jsonapi/node/publication/91a9d190-8ec6-4a8f-ba9c-cf854f5a8019/field_publication_file?resourceVersion=id%3A4"
+            }
+          }
+        }
+      },
+      "links": {
+        "self": {
+          "href": "http://acc.cms.data.amsterdam.nl/jsonapi/node/publication/91a9d190-8ec6-4a8f-ba9c-cf854f5a8019?resourceVersion=id%3A4"
+        }
+      }
+    }

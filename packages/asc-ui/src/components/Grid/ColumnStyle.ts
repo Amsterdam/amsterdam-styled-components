@@ -8,7 +8,7 @@ const { layouts } = ascDefaultTheme
 export type TypeProps = {
   alignSelf?: TypeFlexPosition
   children: React.ReactNode
-  className?: string
+  ç?: string
   debug?: boolean
   debugColor?: string
   id?: Theme.TypeLayout
