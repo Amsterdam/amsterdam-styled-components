@@ -34,7 +34,13 @@ import SearchBarToggle, {
 } from './components/SearchBarToggle'
 import TextField, { TextFieldStyles } from './components/TextField'
 import GlobalStyle from './components/GlobalStyle'
-import { GridContainer, GridItem, Column, Row } from './components/Grid'
+import {
+  GridContainer,
+  GridItem,
+  Column,
+  Row,
+  Container,
+} from './components/Grid'
 import Article, {
   ArticleStyles,
   ArticleMetaList,
@@ -86,6 +92,7 @@ export {
   ContextMenuItem,
   Focus,
   GlobalStyle,
+  Container,
   GridContainer,
   GridItem,
   Header,

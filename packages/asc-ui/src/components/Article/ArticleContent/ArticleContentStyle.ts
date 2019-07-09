@@ -7,7 +7,7 @@ export default styled.div`
   background-color: white;
   width: 100%;
 
-  @media screen and ${breakpoint('min-width', 'laptop')} {
+  @media screen and ${breakpoint('min-width', 'tabletM')} {
     padding: 32px 24px;
   }
 `

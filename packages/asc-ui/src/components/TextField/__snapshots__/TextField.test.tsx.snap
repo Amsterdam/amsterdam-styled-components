@@ -49,31 +49,38 @@ exports[`<TextField /> should render 1`] = `
       "globalStyle": "",
       "layouts": Object {
         "big": Object {
-          "columns": 12,
-          "gutter": 24,
-          "margin": 24,
-          "max": 1430,
-          "min": 1024,
-        },
-        "large": Object {
-          "columns": 12,
-          "gutter": 32,
-          "margin": 50,
-          "min": 1430,
-        },
-        "maxGridWidth": 1430,
-        "medium": Object {
-          "columns": 8,
+          "columns": 6,
           "gutter": 24,
           "margin": 24,
           "max": 1024,
           "min": 768,
         },
-        "small": Object {
-          "columns": 4,
-          "gutter": 12,
+        "large": Object {
+          "columns": 12,
+          "gutter": 24,
+          "margin": 32,
+          "max": 1200,
+          "min": 1024,
+        },
+        "maxGridWidth": 1430,
+        "medium": Object {
+          "columns": 2,
+          "gutter": 20,
           "margin": 20,
           "max": 768,
+          "min": 414,
+        },
+        "small": Object {
+          "columns": 1,
+          "gutter": 12,
+          "margin": 20,
+          "max": 414,
+        },
+        "xLarge": Object {
+          "columns": 12,
+          "gutter": 24,
+          "margin": 44,
+          "min": 1200,
         },
       },
       "typography": Object {

@@ -19,7 +19,7 @@ export default styled.article<Props>`
   }
 
   ${ArticleContentStyle} {
-    @media screen and ${breakpoint('min-width', 'laptop')} {
+    @media screen and ${breakpoint('min-width', 'tabletM')} {
       ${({ image }) =>
         image &&
         css`
