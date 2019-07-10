@@ -5,7 +5,7 @@ import 'jest-styled-components'
 
 jest.useFakeTimers()
 
-describe('TopBar', () => {
+describe('Downloader', () => {
   let component: Cheerio
 
   beforeEach(() => {

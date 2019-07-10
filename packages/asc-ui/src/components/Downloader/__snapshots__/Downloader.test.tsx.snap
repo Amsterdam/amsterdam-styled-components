@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TopBar should render 1`] = `
+exports[`Downloader should render 1`] = `
 .c0 {
+  width: 100%;
   background-color: red;
 }
 
@@ -19,19 +20,6 @@ exports[`TopBar should render 1`] = `
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
-  position: relative;
-  border: 1px solid;
-  border-color: rgba(51,102,153,1);
-}
-
-.c2:before {
-  background: white;
-  position: absolute;
-  top: -12px;
-  left: 4px;
-  padding: 2px 4px;
-  border: 1px solid rgba(51,102,153,1);
-  font: 12px sans-serif;
 }
 
 .c1 {
@@ -149,19 +137,11 @@ exports[`TopBar should render 1`] = `
   .c2 {
     max-width: 100%;
   }
-
-  .c2:before {
-    content: 'span 12';
-  }
 }
 
 @media (min-width:1024px) and (max-width:1199px) {
   .c2 {
     max-width: 100%;
-  }
-
-  .c2:before {
-    content: 'span 12';
   }
 }
 
@@ -169,29 +149,17 @@ exports[`TopBar should render 1`] = `
   .c2 {
     max-width: 100%;
   }
-
-  .c2:before {
-    content: 'span 6';
-  }
 }
 
 @media (min-width:414px) and (max-width:767px) {
   .c2 {
     max-width: 100%;
   }
-
-  .c2:before {
-    content: 'span 2';
-  }
 }
 
 @media (max-width:413px) {
   .c2 {
     max-width: 100%;
-  }
-
-  .c2:before {
-    content: 'span 1';
   }
 }
 
@@ -238,7 +206,7 @@ exports[`TopBar should render 1`] = `
 
 @media screen and (max-width:540px) {
   .c3 > .c4 {
-    margin: 20px 0;
+    margin-bottom: 20px;
   }
 }
 
