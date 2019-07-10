@@ -6,7 +6,7 @@ import Downloader from './Downloader'
 const DownloaderComponent: React.FC<{}> = () => (
   <>
     <Downloader
-      imageSrc="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
+      imageSrc="https://acc.cms.data.amsterdam.nl/sites/default/files/images/2019-factsheet-jeugdwerkloosheid-2014-2018.png"
       onClick={action('click')}
       description="Download PDF (12MB)"
     ></Downloader>

@@ -6,7 +6,7 @@ import ArticleHeader from '../Article/ArticleHeader/ArticleHeader'
 import publicationJSON from './publication_feed.json'
 import Downloader from '../Downloader'
 import PublicationContent from './PublicationContent'
-import Publication from './Publication';
+import Publication from './Publication'
 
 storiesOf('Composed/Publication', module).add('with image', () => {
   const {
@@ -41,7 +41,7 @@ storiesOf('Composed/Publication', module).add('with image', () => {
             </Column>
             <Column span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}>
               <Downloader
-                imageSrc="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
+                imageSrc="https://acc.cms.data.amsterdam.nl/sites/default/files/images/2019-factsheet-jeugdwerkloosheid-2014-2018.png"
                 description={`Download PDF (${fileSize})`}
                 onClick={() => console.log('download')}
               />
