@@ -12,10 +12,6 @@ export default styled.div`
     margin: 20px auto;
   }
 
-  & > img {
-    margin: 0;
-  }
-
   & > ${ImageStyle} {
     margin-bottom: 32px;
     width: 100%;

@@ -1,22 +1,12 @@
 import React from 'react'
-import styled from '@datapunt/asc-core'
 import { storiesOf } from '@storybook/react/'
-import Article from './Article'
 import { Column, CustomHTMLBlock, Row, ArticleMetaList } from '../../index'
 import Summary from '../Typography/Summary'
-import ArticleHeader from './ArticleHeader/ArticleHeader'
+import ArticleHeader from '../Article/ArticleHeader/ArticleHeader'
 import publicationJSON from './publication_feed.json'
 import Downloader from '../Downloader'
-import SummaryStyle from '../Typography/SummaryStyle'
-
-const PublicationContentStyle = styled.div`
-  & > ${SummaryStyle} {
-    margin: 0;
-  }
-`
-const PublicationContent: React.FC<{}> = ({ children }) => (
-  <PublicationContentStyle>{children}</PublicationContentStyle>
-)
+import PublicationContent from './PublicationContent'
+import Publication from './Publication';
 
 storiesOf('Composed/Publication', module).add('with image', () => {
   const {
@@ -30,7 +20,7 @@ storiesOf('Composed/Publication', module).add('with image', () => {
     <>
       <br />
       <br />
-      <Article>
+      <Publication>
         <Row>
           <Column
             wrap
@@ -49,20 +39,14 @@ storiesOf('Composed/Publication', module).add('with image', () => {
                 ></ArticleMetaList>
               </PublicationContent>
             </Column>
-            <Column
-              debug
-              span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}
-            >
+            <Column span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}>
               <Downloader
                 imageSrc="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
                 description={`Download PDF (${fileSize})`}
                 onClick={() => console.log('download')}
               />
             </Column>
-            <Column
-              debug
-              span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}
-            >
+            <Column span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}>
               <PublicationContent>
                 <Summary>
                   Optioneel hier kan een kleine omschrijving komen. Van de
@@ -79,7 +63,7 @@ storiesOf('Composed/Publication', module).add('with image', () => {
             </Column>
           </Column>
         </Row>
-      </Article>
+      </Publication>
     </>
   )
 })
