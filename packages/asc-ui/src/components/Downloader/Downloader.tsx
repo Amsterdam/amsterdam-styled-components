@@ -20,10 +20,10 @@ const Downloader: React.FC<Props> = ({
 }) => (
   <DownloaderStyle {...otherProps}>
     <Row>
-      <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
+      <Column span={{ small: 1, medium: 4, big: 6, large: 12, xLarge: 12 }}>
         <Column
           span={{ small: 1, medium: 2, big: 4, large: 10, xLarge: 10 }}
-          push={{ small: 0, medium: 0, big: 1, large: 1, xLarge: 1 }}
+          push={{ small: 0, medium: 1, big: 1, large: 1, xLarge: 1 }}
         >
           <DownloaderContent>
             <Image src={imageSrc} alt=""></Image>

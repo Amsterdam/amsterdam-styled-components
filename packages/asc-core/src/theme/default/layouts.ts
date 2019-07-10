@@ -24,7 +24,7 @@ const layouts = {
     min: sizes.tabletM,
   },
   medium: {
-    columns: 2,
+    columns: 4,
     margin: 20,
     gutter: 20,
     max: sizes.tabletM,

@@ -24,10 +24,10 @@ storiesOf('Composed/Publication', module).add('with image', () => {
         <Row>
           <Column
             wrap
-            span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}
+            span={{ small: 1, medium: 4, big: 6, large: 12, xLarge: 12 }}
           >
             <Column
-              span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}
+              span={{ small: 1, medium: 4, big: 6, large: 12, xLarge: 12 }}
             >
               <PublicationContent>
                 <ArticleHeader title={title}></ArticleHeader>
@@ -39,14 +39,14 @@ storiesOf('Composed/Publication', module).add('with image', () => {
                 ></ArticleMetaList>
               </PublicationContent>
             </Column>
-            <Column span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}>
+            <Column span={{ small: 1, medium: 4, big: 3, large: 6, xLarge: 6 }}>
               <Downloader
                 imageSrc="https://acc.cms.data.amsterdam.nl/sites/default/files/images/2019-factsheet-jeugdwerkloosheid-2014-2018.png"
                 description={`Download PDF (${fileSize})`}
                 onClick={() => console.log('download')}
               />
             </Column>
-            <Column span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}>
+            <Column span={{ small: 1, medium: 4, big: 3, large: 6, xLarge: 6 }}>
               <PublicationContent>
                 <Summary>
                   Optioneel hier kan een kleine omschrijving komen. Van de
