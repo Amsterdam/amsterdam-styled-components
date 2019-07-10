@@ -1,17 +1,14 @@
 import styled from '@datapunt/asc-core'
-import { breakpoint, getColorFromTheme } from '../../utils'
+import { getColorFromTheme } from '../../utils'
 
 export interface DownloaderStyleProps {
   backgroundColor?: string
 }
 
 const DownloaderStyle = styled.div<DownloaderStyleProps>`
+  width: 100%;
   background-color: ${({ backgroundColor, theme }) =>
-    backgroundColor || getColorFromTheme(theme, 'tint', 'level3')};
-
-  @media screen and ${breakpoint('min-width', 'tabletS')} {
-    padding: 0 15px;
-  }
+    backgroundColor || getColorFromTheme(theme, 'tint', 'level2')};
 `
 
 export default DownloaderStyle

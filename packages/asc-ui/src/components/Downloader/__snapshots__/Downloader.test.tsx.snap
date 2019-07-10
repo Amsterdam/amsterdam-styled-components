@@ -1,0 +1,281 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopBar should render 1`] = `
+.c0 {
+  background-color: red;
+}
+
+.c2 {
+  box-sizing: border-box;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  position: relative;
+  border: 1px solid;
+  border-color: rgba(51,102,153,1);
+}
+
+.c2:before {
+  background: white;
+  position: absolute;
+  top: -12px;
+  left: 4px;
+  padding: 2px 4px;
+  border: 1px solid rgba(51,102,153,1);
+  font: 12px sans-serif;
+}
+
+.c1 {
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  max-width: 1430px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c1 .layout-label {
+  position: absolute;
+  top: -20px;
+  width: 100%;
+}
+
+.c1 .layout-label::before {
+  position: absolute;
+  padding: 2px 4px;
+  font: 12px sans-serif;
+  background: white;
+  height: 20px;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 0 10px 0 10px;
+  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background: #004699;
+  padding: 0 10px 0 10px;
+  min-height: 38px;
+  line-height: 1em;
+  color: #fff;
+}
+
+.c6:focus {
+  z-index: 10;
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-offset: 0px;
+  outline-width: 3px;
+}
+
+.c6:hover {
+  background: #00387a;
+}
+
+.c6:after {
+  content: '';
+  display: block;
+  min-height: inherit;
+  font-size: 0;
+}
+
+.c6 > svg {
+  width: 30px;
+  height: 30px;
+}
+
+.c6 > svg rect,
+.c6 > svg polygon,
+.c6 > svg path {
+  fill: #ffffff;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 32px auto;
+}
+
+.c3 > .c4 {
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.c3 > .c5 > svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width:1200px) {
+  .c2 {
+    max-width: 100%;
+  }
+
+  .c2:before {
+    content: 'span 12';
+  }
+}
+
+@media (min-width:1024px) and (max-width:1199px) {
+  .c2 {
+    max-width: 100%;
+  }
+
+  .c2:before {
+    content: 'span 12';
+  }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+  .c2 {
+    max-width: 100%;
+  }
+
+  .c2:before {
+    content: 'span 6';
+  }
+}
+
+@media (min-width:414px) and (max-width:767px) {
+  .c2 {
+    max-width: 100%;
+  }
+
+  .c2:before {
+    content: 'span 2';
+  }
+}
+
+@media (max-width:413px) {
+  .c2 {
+    max-width: 100%;
+  }
+
+  .c2:before {
+    content: 'span 1';
+  }
+}
+
+@media (min-width:1200px) {
+  .c1 {
+    padding-left: 44px;
+    padding-right: 44px;
+  }
+}
+
+@media (min-width:1024px) and (max-width:1199px) {
+  .c1 {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+  .c1 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width:414px) and (max-width:767px) {
+  .c1 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width:413px) {
+  .c1 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width:540px) {
+  .c3 {
+    margin: 20px auto;
+  }
+}
+
+@media screen and (max-width:540px) {
+  .c3 > .c4 {
+    margin: 20px 0;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+      order="0"
+    >
+      <div
+        class="c3"
+      >
+        <img
+          alt=""
+          class="c4 "
+          src="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
+        />
+        <button
+          class="c5 c6"
+          color="primary"
+        >
+          <svg
+            focusable="false"
+            viewBox="0 0 32 32"
+          >
+            <path
+              d="M0 27.996h32V32H0v-4.004zm22.36-13.983l2.83 2.823L16 26.044l-9.19-9.208 2.83-2.823L14 18.377V0h4v18.377l4.36-4.364z"
+            />
+          </svg>
+          Download PDF (12MB)
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,13 +1,22 @@
 import React from 'react'
+import styled from '@datapunt/asc-core'
 import { storiesOf } from '@storybook/react/'
-import { Download } from '@datapunt/asc-assets'
 import Article from './Article'
 import { Column, CustomHTMLBlock, Row, ArticleMetaList } from '../../index'
 import Summary from '../Typography/Summary'
 import ArticleHeader from './ArticleHeader/ArticleHeader'
-import ArticleContent from './ArticleContent'
 import publicationJSON from './publication_feed.json'
-import Button from '../Button'
+import Downloader from '../Downloader'
+import SummaryStyle from '../Typography/SummaryStyle'
+
+const PublicationContentStyle = styled.div`
+  & > ${SummaryStyle} {
+    margin: 0;
+  }
+`
+const PublicationContent: React.FC<{}> = ({ children }) => (
+  <PublicationContentStyle>{children}</PublicationContentStyle>
+)
 
 storiesOf('Composed/Publication', module).add('with image', () => {
   const {
@@ -22,10 +31,15 @@ storiesOf('Composed/Publication', module).add('with image', () => {
       <br />
       <br />
       <Article>
-        <Row debug>
-          <Column wrap span={{ small: 4, medium: 8, big: 12, large: 12 }}>
-            <Column debug span={{ small: 4, medium: 8, big: 12, large: 12 }}>
-              <ArticleContent>
+        <Row>
+          <Column
+            wrap
+            span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}
+          >
+            <Column
+              span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}
+            >
+              <PublicationContent>
                 <ArticleHeader title={title}></ArticleHeader>
                 <ArticleMetaList
                   fields={[
@@ -33,22 +47,23 @@ storiesOf('Composed/Publication', module).add('with image', () => {
                     { id: 2, label: fileType },
                   ]}
                 ></ArticleMetaList>
-              </ArticleContent>
+              </PublicationContent>
             </Column>
-            <Column debug span={{ small: 4, medium: 4, big: 6, large: 6 }}>
-              <ArticleContent>
-                <img
-                  src="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
-                  alt="voorpagina"
-                />
-                <Button color="primary" onClick={() => console.log('download')}>
-                  <Download />
-                  {`Download PDF (${fileSize})`}
-                </Button>
-              </ArticleContent>
+            <Column
+              debug
+              span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}
+            >
+              <Downloader
+                imageSrc="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
+                description={`Download PDF (${fileSize})`}
+                onClick={() => console.log('download')}
+              />
             </Column>
-            <Column debug span={{ small: 4, medium: 4, big: 6, large: 6 }}>
-              <ArticleContent>
+            <Column
+              debug
+              span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}
+            >
+              <PublicationContent>
                 <Summary>
                   Optioneel hier kan een kleine omschrijving komen. Van de
                   146.500 Amsterdamse jongeren in de leeftijd van 15 tot en met
@@ -60,7 +75,7 @@ storiesOf('Composed/Publication', module).add('with image', () => {
                     __html: body.processed,
                   }}
                 ></CustomHTMLBlock>
-              </ArticleContent>
+              </PublicationContent>
             </Column>
           </Column>
         </Row>

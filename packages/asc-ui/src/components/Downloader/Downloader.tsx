@@ -4,6 +4,7 @@ import DownloaderStyle, { DownloaderStyleProps } from './DownloaderStyle'
 import { Row, Column } from '../Grid'
 import Button from '../Button'
 import Image from '../Image'
+import DownloaderContent from './DownloaderContent'
 
 interface Props extends DownloaderStyleProps {
   imageSrc: string
@@ -18,15 +19,15 @@ const Downloader: React.FC<Props> = ({
   ...otherProps
 }) => (
   <DownloaderStyle {...otherProps}>
-    <Row debug>
-      <Column debug span={5}>
-        <Column debug span={3} push={1}>
+    <Row>
+      <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
+        <DownloaderContent>
           <Image src={imageSrc} alt=""></Image>
           <Button color="primary" onClick={onClick}>
             <Download />
             {description}
           </Button>
-        </Column>
+        </DownloaderContent>
       </Column>
     </Row>
   </DownloaderStyle>
