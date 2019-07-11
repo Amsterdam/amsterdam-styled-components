@@ -1,11 +1,11 @@
 import styled, { css } from '@datapunt/asc-core'
-import { breakpoint, fromTheme, getColorFromTheme } from '../../utils'
+import { breakpoint, getColorFromTheme } from '../../utils'
 import HeaderTitleStyle from './HeaderTitleStyle'
 import HeaderNavigationStyle from './HeaderNavigationStyle'
 import HeaderLogoTextStyle from './HeaderLogoTextStyle'
 import TopBarStyle from '../TopBar/TopBarStyle'
 import HeaderStyle from './HeaderStyle'
-import { CONTENT_HEIGHT_TALL } from './sizes'
+import { CONTENT_HEIGHT_TALL, WRAPPER_MAX_WIDTH } from './sizes'
 
 export type Props = {
   tall?: boolean
@@ -28,8 +28,8 @@ const HeaderWrapperStyle = styled.div<Props>`
     getColorFromTheme(theme, 'tint', 'level1')};
   margin: 0 auto;
   width: 100%;
-  max-width: ${({ fullWidth, theme }) =>
-    fullWidth ? 'none' : fromTheme('layouts.maxGridWidth')({ theme })}px;
+  max-width: ${({ fullWidth }) =>
+    fullWidth ? 'none' : `${WRAPPER_MAX_WIDTH}px`};
   box-shadow: 0 4px rgba(0, 0, 0, 0.04);
   box-sizing: content-box;
   position: fixed; /* Unfortunately no sticky because IE11 */

@@ -1,21 +1,21 @@
 import React from 'react'
-import ArticleStyle, { Props as StyleProps } from './ArticleStyle'
+import BlogStyle, { Props as StyleProps } from './BlogStyle'
 import BackgroundImage from '../BackgroundImage'
 
 type Props = {} & StyleProps
 
-const Article: React.FC<Props> = ({ children, image }) => (
-  <ArticleStyle image={image}>
+const Blog: React.FC<Props> = ({ children, image }) => (
+  <BlogStyle image={image}>
     {image && (
       <BackgroundImage
         aspectRatio={44}
         size="cover"
         position="top center"
-        src={image}
+        source={image}
       />
     )}
     {children}
-  </ArticleStyle>
+  </BlogStyle>
 )
 
-export default Article
+export default Blog

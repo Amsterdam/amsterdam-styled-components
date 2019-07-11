@@ -1,20 +1,20 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react/'
-import Article from './Article'
+import Blog from './Blog'
 import { Column, CustomHTMLBlock, Row } from '../../index'
 import Summary from '../Typography/Summary'
 import Heading from '../Typography/Heading'
-import ArticleHeader from './ArticleHeader/ArticleHeader'
-import ArticleMetaList from './ArticleMetaList'
-import ArticleContent from './ArticleContent'
-import ArticleSidebar from './ArticleSidebar'
+import BlogHeader from './BlogHeader/BlogHeader'
+import BlogMetaList from './BlogMetaList'
+import BlogContent from './BlogContent'
+import BlogSidebar from './BlogSidebar'
 import LinkListItem from '../LinkList/LinkListItem'
 import LinkList from '../LinkList/LinkList'
 import articleJSON from './article_feed.json'
 
-storiesOf('Composed/Article', module)
+storiesOf('Composed/Blog', module)
   .add('with image', () => (
-    <Article image={articleJSON.image}>
+    <Blog image={articleJSON.image}>
       <Row>
         <Column
           wrap
@@ -22,14 +22,14 @@ storiesOf('Composed/Article', module)
           push={{ small: 0, medium: 0, big: 1, large: 1, xLarge: 1 }}
         >
           <Column span={{ small: 1, medium: 2, big: 4, large: 7, xLarge: 7 }}>
-            <ArticleContent>
-              <ArticleHeader title={articleJSON.title}>
-                <ArticleMetaList
+            <BlogContent>
+              <BlogHeader title={articleJSON.title}>
+                <BlogMetaList
                   dateTime={articleJSON.publicationDate}
                   dateFormatted={articleJSON.publicationDateFormatted}
                   fields={[{ id: 1, label: 'Redactie' }]}
                 />
-              </ArticleHeader>
+              </BlogHeader>
               <Summary hasLongText>{articleJSON.fields.intro}</Summary>
               <CustomHTMLBlock
                 hasLongText
@@ -37,13 +37,13 @@ storiesOf('Composed/Article', module)
                   __html: articleJSON.body,
                 }}
               />
-            </ArticleContent>
+            </BlogContent>
           </Column>
           <Column
             span={{ small: 1, medium: 2, big: 2, large: 3, xLarge: 3 }}
             push={{ small: 0, medium: 0, big: 1, large: 1, xLarge: 1 }}
           >
-            <ArticleSidebar>
+            <BlogSidebar>
               <Heading as="h2">Links</Heading>
               <LinkList>
                 <LinkListItem href="/">I am a ListLink!</LinkListItem>
@@ -52,14 +52,14 @@ storiesOf('Composed/Article', module)
                   A loooooong, very, very, very long link
                 </LinkListItem>
               </LinkList>
-            </ArticleSidebar>
+            </BlogSidebar>
           </Column>
         </Column>
       </Row>
-    </Article>
+    </Blog>
   ))
   .add('without image', () => (
-    <Article>
+    <Blog>
       <Row>
         <Column
           wrap
@@ -67,14 +67,14 @@ storiesOf('Composed/Article', module)
           push={{ small: 0, medium: 0, big: 1, large: 1, xLarge: 1 }}
         >
           <Column span={{ small: 1, medium: 2, big: 4, large: 7, xLarge: 7 }}>
-            <ArticleContent>
-              <ArticleHeader title={articleJSON.title}>
-                <ArticleMetaList
+            <BlogContent>
+              <BlogHeader title={articleJSON.title}>
+                <BlogMetaList
                   dateTime={articleJSON.publicationDate}
                   dateFormatted={articleJSON.publicationDateFormatted}
                   fields={[{ id: 1, label: 'Redactie' }]}
                 />
-              </ArticleHeader>
+              </BlogHeader>
               <Summary hasLongText>{articleJSON.fields.intro}</Summary>
               <CustomHTMLBlock
                 hasLongText
@@ -82,13 +82,13 @@ storiesOf('Composed/Article', module)
                   __html: articleJSON.body,
                 }}
               />
-            </ArticleContent>
+            </BlogContent>
           </Column>
           <Column
             span={{ small: 1, medium: 2, big: 2, large: 3, xLarge: 3 }}
             push={{ small: 0, medium: 0, big: 1, large: 1, xLarge: 1 }}
           >
-            <ArticleSidebar>
+            <BlogSidebar>
               <Heading as="h2">Downloads</Heading>
               <LinkList>
                 <LinkListItem fileInfo="PDF 40kB" href="/">
@@ -101,9 +101,9 @@ storiesOf('Composed/Article', module)
                   File
                 </LinkListItem>
               </LinkList>
-            </ArticleSidebar>
+            </BlogSidebar>
           </Column>
         </Column>
       </Row>
-    </Article>
+    </Blog>
   ))

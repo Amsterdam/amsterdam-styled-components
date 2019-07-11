@@ -15,7 +15,7 @@ export default styled.ul`
   }
 `
 
-export const ArticleMetaListItemStyle = styled.li`
+export const BlogMetaListItemStyle = styled.li`
   &:not(:last-of-type) {
     position: relative;
     margin-right: 20px;

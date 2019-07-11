@@ -2,7 +2,7 @@ import styled, { css } from '@datapunt/asc-core'
 import { clearFix } from 'polished'
 
 export type Props = {
-  src: string
+  source: string
   position?: string
   aspectRatio?: number
   repeat?: string
@@ -11,7 +11,7 @@ export type Props = {
 
 export default styled.div<Props>`
   width: 100%;
-  background-image: url(${({ src }) => src});
+  background-image: url(${({ source }) => source});
   background-repeat: ${({ repeat }) => repeat};
   background-position: ${({ position }) => position};
   background-size: ${({ size }) => size};
