@@ -26,7 +26,7 @@ import SearchBarToggle, {
 } from './components/SearchBarToggle'
 import TextField, { TextFieldStyles } from './components/TextField'
 import GlobalStyle from './components/GlobalStyle'
-import { GridContainer, GridItem } from './components/Grid'
+import { GridContainer, GridItem, Column, Row } from './components/Grid'
 import {
   MenuItemTitle,
   MenuItemLink,
@@ -38,6 +38,7 @@ import {
   MenuStyles,
 } from './components/NewMenu'
 import ThemeProvider from './theme'
+import Spinner from './components/Spinner/Spinner'
 
 export { breakpoint } from './utils'
 
@@ -56,40 +57,43 @@ export const styles = {
 // Components
 export {
   AmsterdamLogo,
+  ascDefaultTheme,
   BackDrop,
-  Divider,
-  Icon,
   Button,
-  IconButton,
-  Modal,
-  TextField,
-  Portal,
-  ListItem,
-  Typography,
-  Radio,
-  TopBar,
-  Input,
-  SearchBarToggle,
-  ShareBar,
-  ShareButton,
-  Focus,
+  Column,
   ContextMenu,
   ContextMenuButtonStyle,
   ContextMenuItem,
-  MenuItemTitle,
-  MenuItemLink,
-  MenuItemLabel,
-  MenuItem,
-  MenuFlyOut,
-  MenuInline,
-  MenuToggle,
-  Header,
-  SearchBar,
+  Divider,
+  Focus,
   GlobalStyle,
-  ServerStyleSheet,
-  Theme,
-  ThemeProvider,
   GridContainer,
   GridItem,
-  ascDefaultTheme,
+  Header,
+  Icon,
+  IconButton,
+  Input,
+  ListItem,
+  MenuFlyOut,
+  MenuInline,
+  MenuItem,
+  MenuItemLabel,
+  MenuItemLink,
+  MenuItemTitle,
+  MenuToggle,
+  Modal,
+  Portal,
+  Radio,
+  Row,
+  SearchBar,
+  SearchBarToggle,
+  ServerStyleSheet,
+  ShareBar,
+  ShareButton,
+  Spinner,
+  TextField,
+  Theme,
+  ThemeProvider,
+  TopBar,
+  Typography,
 }

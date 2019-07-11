@@ -18,7 +18,12 @@ const MenuFlyOut: React.FC<any> = ({
   label,
   linkIndex,
 }) => {
-  const { hasToggle, setActiveToggleChild, onExpand } = useMenuContext()
+  const {
+    hasToggle,
+    setActiveToggleChild,
+    onExpand,
+    setOpenToggle,
+  } = useMenuContext()
 
   const ref = React.useRef<HTMLLIElement>(null)
 
@@ -131,6 +136,9 @@ const MenuFlyOut: React.FC<any> = ({
           underFlyOutMenu: true,
           hasToggle,
           setOpenToggle: (val: boolean) => {
+            if (setOpenToggle) {
+              setOpenToggle(val)
+            }
             setOpen(val)
             setOpenOnClick(val)
           },

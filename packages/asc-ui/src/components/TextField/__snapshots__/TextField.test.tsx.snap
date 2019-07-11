@@ -47,6 +47,35 @@ exports[`<TextField /> should render 1`] = `
         },
       },
       "globalStyle": "",
+      "layouts": Object {
+        "big": Object {
+          "columns": 12,
+          "gutter": 24,
+          "margin": 40,
+          "max": 1440,
+          "min": 1024,
+        },
+        "large": Object {
+          "columns": 18,
+          "gutter": 34,
+          "margin": 60,
+          "min": 1440,
+        },
+        "maxGridWidth": 2560,
+        "medium": Object {
+          "columns": 8,
+          "gutter": 20,
+          "margin": 20,
+          "max": 1024,
+          "min": 768,
+        },
+        "small": Object {
+          "columns": 4,
+          "gutter": 12,
+          "margin": 0,
+          "max": 768,
+        },
+      },
       "typography": Object {
         "a": Object {
           "color": "#000000",
@@ -101,7 +130,7 @@ exports[`<TextField /> should render 1`] = `
         },
         "h6": Object {
           "color": "#000000",
-          "fontSize": "6rem",
+          "fontSize": "1rem",
           "fontWeight": 400,
           "letterSpacing": "-0.01562em",
           "lineHeight": 1,
