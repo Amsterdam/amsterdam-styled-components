@@ -14,14 +14,22 @@ describe('MenuFlyOut', () => {
   let menuListProps: any
 
   const children = [
-    <MenuItem key={1} href="/">Space Bear 6</MenuItem>,
-    <MenuItem key={2} href="/">Space Bear 6 Plus</MenuItem>,
-    <MenuItem key={3} href="/">Space Bear 7</MenuItem>
+    <MenuItem key={1} href="/">
+      Space Bear 6
+    </MenuItem>,
+    <MenuItem key={2} href="/">
+      Space Bear 6 Plus
+    </MenuItem>,
+    <MenuItem key={3} href="/">
+      Space Bear 7
+    </MenuItem>,
   ]
 
   describe('Without parent element', () => {
     beforeEach(() => {
-      component = shallow<{}>(<MenuFlyOut label="Fly Out">{children}</MenuFlyOut>)
+      component = shallow<{}>(
+        <MenuFlyOut label="Fly Out">{children}</MenuFlyOut>,
+      )
     })
 
     it('should render', () => {
@@ -29,11 +37,19 @@ describe('MenuFlyOut', () => {
     })
 
     describe('should toggle', () => {
-      const onClickSimulate = () => component.find(MenuItemLink).at(0).simulate('click', { preventDefault: () => {} })
-      const onKeyDownSimulate = (keyType: any) => component.find(MenuItemLink).at(0).simulate('keydown', {
-        preventDefault: () => {},
-        key: KeyboardKeys[keyType],
-      })
+      const onClickSimulate = () =>
+        component
+          .find(MenuItemLink)
+          .at(0)
+          .simulate('click', { preventDefault: () => {} })
+      const onKeyDownSimulate = (keyType: any) =>
+        component
+          .find(MenuItemLink)
+          .at(0)
+          .simulate('keydown', {
+            preventDefault: () => {},
+            key: KeyboardKeys[keyType],
+          })
 
       it('should be closed by default', () => {
         menuListProps = component.find(MenuList).props()
@@ -53,7 +69,7 @@ describe('MenuFlyOut', () => {
 
         menuListProps = component.find(MenuList).props()
         expect(menuListProps['aria-hidden']).toBe(false)
-      });
+      })
 
       it('should toggle the open state on enter', () => {
         onKeyDownSimulate('Enter')
@@ -68,20 +84,6 @@ describe('MenuFlyOut', () => {
         menuListProps = component.find(MenuList).props()
         expect(menuListProps['aria-hidden']).toBe(false)
       })
-
-      // it('should toggle the open state on blur', () => {
-      //   onClickSimulate()
-
-      //   component.at(0).simulate('blur')
-      //   expect(setTimeout).toHaveBeenCalledTimes(1);
-
-      //   jest.advanceTimersByTime(1000);
-
-      //     menuListProps = component.find(MenuList).props()
-      //     expect(menuListProps['aria-hidden']).toBe(true)
-      // })
-
-
-    });
-  });
+    })
+  })
 })
