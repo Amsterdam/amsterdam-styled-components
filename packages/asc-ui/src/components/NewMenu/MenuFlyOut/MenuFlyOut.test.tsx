@@ -25,65 +25,61 @@ describe('MenuFlyOut', () => {
     </MenuItem>,
   ]
 
-  describe('Without parent element', () => {
-    beforeEach(() => {
-      component = shallow<{}>(
-        <MenuFlyOut label="Fly Out">{children}</MenuFlyOut>,
-      )
+  beforeEach(() => {
+    component = shallow<{}>(<MenuFlyOut label="Fly Out">{children}</MenuFlyOut>)
+  })
+
+  it('should render', () => {
+    expect(component.exists()).toBeTruthy()
+  })
+
+  describe('should toggle', () => {
+    const onClickSimulate = () =>
+      component
+        .find(MenuItemLink)
+        .at(0)
+        .simulate('click', { preventDefault: () => {} })
+    const onKeyDownSimulate = (keyType: any) =>
+      component
+        .find(MenuItemLink)
+        .at(0)
+        .simulate('keydown', {
+          preventDefault: () => {},
+          key: KeyboardKeys[keyType],
+        })
+
+    it('should be closed by default', () => {
+      menuListProps = component.find(MenuList).props()
+      expect(menuListProps['aria-hidden']).toBe(true)
     })
 
-    it('should render', () => {
-      expect(component.exists()).toBeTruthy()
+    it('should toggle the open state on click', () => {
+      onClickSimulate()
+
+      menuListProps = component.find(MenuList).props()
+      expect(menuListProps['aria-hidden']).toBe(false)
     })
 
-    describe('should toggle', () => {
-      const onClickSimulate = () =>
-        component
-          .find(MenuItemLink)
-          .at(0)
-          .simulate('click', { preventDefault: () => {} })
-      const onKeyDownSimulate = (keyType: any) =>
-        component
-          .find(MenuItemLink)
-          .at(0)
-          .simulate('keydown', {
-            preventDefault: () => {},
-            key: KeyboardKeys[keyType],
-          })
+    it('should not toggle the open state when already opened', () => {
+      onClickSimulate()
+      onClickSimulate()
 
-      it('should be closed by default', () => {
-        menuListProps = component.find(MenuList).props()
-        expect(menuListProps['aria-hidden']).toBe(true)
-      })
+      menuListProps = component.find(MenuList).props()
+      expect(menuListProps['aria-hidden']).toBe(false)
+    })
 
-      it('should toggle the open state on click', () => {
-        onClickSimulate()
+    it('should toggle the open state on enter', () => {
+      onKeyDownSimulate('Enter')
 
-        menuListProps = component.find(MenuList).props()
-        expect(menuListProps['aria-hidden']).toBe(false)
-      })
+      menuListProps = component.find(MenuList).props()
+      expect(menuListProps['aria-hidden']).toBe(false)
+    })
 
-      it('should not toggle the open state when already opened', () => {
-        onClickSimulate()
-        onClickSimulate()
+    it('should toggle the open state on space', () => {
+      onKeyDownSimulate('Space')
 
-        menuListProps = component.find(MenuList).props()
-        expect(menuListProps['aria-hidden']).toBe(false)
-      })
-
-      it('should toggle the open state on enter', () => {
-        onKeyDownSimulate('Enter')
-
-        menuListProps = component.find(MenuList).props()
-        expect(menuListProps['aria-hidden']).toBe(false)
-      })
-
-      it('should toggle the open state on space', () => {
-        onKeyDownSimulate('Space')
-
-        menuListProps = component.find(MenuList).props()
-        expect(menuListProps['aria-hidden']).toBe(false)
-      })
+      menuListProps = component.find(MenuList).props()
+      expect(menuListProps['aria-hidden']).toBe(false)
     })
   })
 })

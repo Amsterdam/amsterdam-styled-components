@@ -18,6 +18,6 @@ describe('MenuItem', () => {
 
   it('should render the children', () => {
     expect(component.find(MenuItemLink).exists()).toBeTruthy()
-    expect(component.find(MenuItemLink).props().children).toBe(children)
+    expect(component.find(MenuItemLink).props()).toEqual({ children })
   })
 })

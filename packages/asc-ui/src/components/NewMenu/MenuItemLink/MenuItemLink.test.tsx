@@ -39,7 +39,7 @@ describe('MenuItemLink', () => {
 
   it('should render the children', () => {
     expect(component.find(MenuItemLabel).exists()).toBeTruthy()
-    expect(component.find(MenuItemLabel).props().children).toBe(children)
+    expect(component.find(MenuItemLabel).props()).toEqual({ children })
   })
 
   it('should render a leftIcon and rightIcon prop', () => {

@@ -18,6 +18,6 @@ describe('MenuList', () => {
 
   it('should render the children', () => {
     expect(component.find(MenuListStyle).exists()).toBeTruthy()
-    expect(component.find(MenuListStyle).props().children).toBe(children)
+    expect(component.find(MenuListStyle).props()).toEqual({ children })
   })
 })

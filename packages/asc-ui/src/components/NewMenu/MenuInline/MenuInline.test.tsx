@@ -28,7 +28,7 @@ describe('MenuInline', () => {
   })
 
   it('should render the children', () => {
-    expect(component.find(MenuInlineStyle).props().children).toBe(children)
+    expect(component.find(MenuInlineStyle).props()).toEqual({ children })
     expect(
       component
         .find(MenuItem)

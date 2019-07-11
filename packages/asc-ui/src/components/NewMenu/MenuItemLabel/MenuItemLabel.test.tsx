@@ -18,6 +18,6 @@ describe('MenuItemLabel', () => {
 
   it('should render the children', () => {
     expect(component.find(MenuItemLabelStyle).exists()).toBeTruthy()
-    expect(component.find(MenuItemLabelStyle).props().children).toBe(children)
+    expect(component.find(MenuItemLabelStyle).props()).toEqual({ children })
   })
 })
