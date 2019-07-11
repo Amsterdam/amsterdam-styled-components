@@ -1,13 +1,13 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react/'
 import { action } from '@storybook/addon-actions'
-import { Column, CustomHTMLBlock, Row, ArticleMetaList } from '../../index'
+import { Column, CustomHTMLBlock, Row, BlogHeader } from '../../index'
 import Summary from '../Typography/Summary'
-import ArticleHeader from '../Article/ArticleHeader/ArticleHeader'
 import Downloader from '../Downloader'
 import PublicationContent from './PublicationContent'
 import Publication from './Publication'
 import publicationJSON from './publication_feed.json'
+import { BlogMetaList } from '../Blog'
 
 storiesOf('Composed/Publication', module).add('with image', () => {
   const {
@@ -36,13 +36,13 @@ storiesOf('Composed/Publication', module).add('with image', () => {
               span={{ small: 1, medium: 4, big: 6, large: 12, xLarge: 12 }}
             >
               <PublicationContent>
-                <ArticleHeader title={title}></ArticleHeader>
-                <ArticleMetaList
+                <BlogHeader title={title}></BlogHeader>
+                <BlogMetaList
                   fields={[
                     { id: 1, label: fileSize },
                     { id: 2, label: fileType },
                   ]}
-                ></ArticleMetaList>
+                ></BlogMetaList>
               </PublicationContent>
             </Column>
             <Column span={{ small: 1, medium: 4, big: 3, large: 6, xLarge: 6 }}>

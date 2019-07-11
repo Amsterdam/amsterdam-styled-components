@@ -3,10 +3,29 @@
 exports[`Downloader should render 1`] = `
 .c0 {
   width: 100%;
-  background-color: red;
+}
+
+.c0 > div:first-child {
+  background-color: #F5F5F5;
 }
 
 .c2 {
+  box-sizing: border-box;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c3 {
   box-sizing: border-box;
   width: 100%;
   display: -webkit-box;
@@ -57,6 +76,30 @@ exports[`Downloader should render 1`] = `
   height: 20px;
 }
 
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  box-sizing: content-box;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c8 > svg {
+  width: inherit;
+  height: inherit;
+}
+
+.c8 > svg rect,
+.c8 > svg polygon,
+.c8 > svg path {
+  fill: #ffffff;
+}
+
 .c6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -76,8 +119,16 @@ exports[`Downloader should render 1`] = `
   -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
   transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
   background: #004699;
-  padding: 0 10px 0 10px;
-  min-height: 38px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 4px 10px 4px 10px;
+  min-height: 36px;
   line-height: 1em;
   color: #fff;
 }
@@ -101,6 +152,14 @@ exports[`Downloader should render 1`] = `
   font-size: 0;
 }
 
+.c6 > .c7:first-child {
+  margin-right: 5px;
+}
+
+.c6 > .c7:last-child {
+  margin-left: 5px;
+}
+
 .c6 > svg {
   width: 30px;
   height: 30px;
@@ -112,7 +171,7 @@ exports[`Downloader should render 1`] = `
   fill: #ffffff;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -123,14 +182,36 @@ exports[`Downloader should render 1`] = `
   margin: 32px auto;
 }
 
-.c3 > .c4 {
+.c4 > .c5 {
   margin-bottom: 32px;
   width: 100%;
 }
 
-.c3 > .c5 > svg {
-  width: 20px;
-  height: 20px;
+.c9 {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  color: #000000;
+  font-weight: 400;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: -0.01562em;
+  -moz-letter-spacing: -0.01562em;
+  -ms-letter-spacing: -0.01562em;
+  letter-spacing: -0.01562em;
+  line-height: 18px;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+@media screen and (max-width:768px) {
+  .c0 {
+    margin-bottom: 20px;
+  }
 }
 
 @media (min-width:1200px) {
@@ -159,6 +240,40 @@ exports[`Downloader should render 1`] = `
 
 @media (max-width:413px) {
   .c2 {
+    max-width: 100%;
+  }
+}
+
+@media (min-width:1200px) {
+  .c3 {
+    max-width: calc((((100% - 264px) / 12) * 10) + 216px);
+    margin-left: calc((((100% - 264px) / 12) * 1) + 24px);
+  }
+}
+
+@media (min-width:1024px) and (max-width:1199px) {
+  .c3 {
+    max-width: calc((((100% - 264px) / 12) * 10) + 216px);
+    margin-left: calc((((100% - 264px) / 12) * 1) + 24px);
+  }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+  .c3 {
+    max-width: calc((((100% - 120px) / 6) * 4) + 72px);
+    margin-left: calc((((100% - 120px) / 6) * 1) + 24px);
+  }
+}
+
+@media (min-width:414px) and (max-width:767px) {
+  .c3 {
+    max-width: calc((((100% - 60px) / 4) * 2) + 20px);
+    margin-left: calc((((100% - 60px) / 4) * 1) + 20px);
+  }
+}
+
+@media (max-width:413px) {
+  .c3 {
     max-width: 100%;
   }
 }
@@ -199,13 +314,13 @@ exports[`Downloader should render 1`] = `
 }
 
 @media screen and (max-width:540px) {
-  .c3 {
+  .c4 {
     margin: 20px auto;
   }
 }
 
 @media screen and (max-width:540px) {
-  .c3 > .c4 {
+  .c4 > .c5 {
     margin-bottom: 20px;
   }
 }
@@ -222,26 +337,42 @@ exports[`Downloader should render 1`] = `
     >
       <div
         class="c3"
+        order="0"
       >
-        <img
-          alt=""
-          class="c4 "
-          src="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
-        />
-        <button
-          class="c5 c6"
-          color="primary"
+        <div
+          class="c4"
         >
-          <svg
-            focusable="false"
-            viewBox="0 0 32 32"
+          <img
+            alt=""
+            class="c5 "
+            src="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
+          />
+          <button
+            class="c6"
+            color="primary"
           >
-            <path
-              d="M0 27.996h32V32H0v-4.004zm22.36-13.983l2.83 2.823L16 26.044l-9.19-9.208 2.83-2.823L14 18.377V0h4v18.377l4.36-4.364z"
-            />
-          </svg>
-          Download PDF (12MB)
-        </button>
+            <span
+              class="c7 c8"
+              color="bright"
+              size="20"
+            >
+              <svg
+                focusable="false"
+                viewBox="0 0 32 32"
+              >
+                <path
+                  d="M0 27.996h32V32H0v-4.004zm22.36-13.983l2.83 2.823L16 26.044l-9.19-9.208 2.83-2.823L14 18.377V0h4v18.377l4.36-4.364z"
+                />
+              </svg>
+            </span>
+            <span
+              class="c9"
+              color="bright"
+            >
+              Download PDF (12MB)
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
