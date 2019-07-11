@@ -54,7 +54,7 @@ storiesOf('Composed/Publication', module).add('with image', () => {
             </Column>
             <Column span={{ small: 1, medium: 4, big: 3, large: 6, xLarge: 6 }}>
               <PublicationContent>
-                <Summary>{intro}</Summary>
+                {intro && <Summary>{intro}</Summary>}
                 <CustomHTMLBlock
                   dangerouslySetInnerHTML={{
                     __html: body.processed,

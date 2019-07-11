@@ -11,7 +11,6 @@ describe('Downloader', () => {
   beforeEach(() => {
     component = renderWithTheme(
       <Downloader
-        backgroundColor="red"
         imageSrc="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
         onClick={() => {}}
         description="Download PDF (12MB)"

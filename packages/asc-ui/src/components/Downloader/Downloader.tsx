@@ -1,6 +1,6 @@
 import React from 'react'
 import { Download } from '@datapunt/asc-assets'
-import DownloaderStyle, { DownloaderStyleProps } from './DownloaderStyle'
+import DownloaderStyle from './DownloaderStyle'
 import { Row, Column } from '../Grid'
 import Button from '../Button'
 import Image from '../Image'
@@ -8,7 +8,7 @@ import DownloaderContent from './DownloaderContent'
 import Typography from '../Typography'
 import Icon from '../Icon'
 
-interface Props extends DownloaderStyleProps {
+interface Props {
   imageSrc: string
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
   description: string
