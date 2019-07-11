@@ -5,6 +5,8 @@ import { Row, Column } from '../Grid'
 import Button from '../Button'
 import Image from '../Image'
 import DownloaderContent from './DownloaderContent'
+import Typography from '../Typography'
+import Icon from '../Icon'
 
 interface Props extends DownloaderStyleProps {
   imageSrc: string
@@ -28,8 +30,12 @@ const Downloader: React.FC<Props> = ({
           <DownloaderContent>
             <Image src={imageSrc} alt=""></Image>
             <Button color="primary" onClick={onClick}>
-              <Download />
-              {description}
+              <Icon size={20} color="bright">
+                <Download />
+              </Icon>
+              <Typography as="span" color="bright">
+                {description}
+              </Typography>
             </Button>
           </DownloaderContent>
         </Column>

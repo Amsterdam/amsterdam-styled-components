@@ -77,6 +77,13 @@ const typography: Theme.TypographyInterface = {
     letterSpacing: '-0.01562em',
     lineHeight: '18px',
   },
+  span: {
+    defaultColor: colors.tint.level7,
+    fontSize: rem(14),
+    fontWeight: 400,
+    letterSpacing: '-0.01562em',
+    lineHeight: '18px',
+  },
 }
 
 export default typography

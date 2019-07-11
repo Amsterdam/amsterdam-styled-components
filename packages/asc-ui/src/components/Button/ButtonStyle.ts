@@ -4,10 +4,13 @@ import { svgFill, getColorFromTheme } from '../../utils'
 import ButtonBaseStyle, {
   Props as ButtonBaseStyleProps,
 } from './ButtonBaseStyle'
+import IconStyle from '../Icon/IconStyle'
 
 export type Props = ButtonBaseStyleProps
 
 const ButtonStyle = styled(ButtonBaseStyle)<Props>`
+  display: flex;
+  justify-content: center;
   padding: 0 10px 0 10px;
   min-height: 38px;
   line-height: 1em;
@@ -27,6 +30,16 @@ const ButtonStyle = styled(ButtonBaseStyle)<Props>`
       css`
         outline: 1px solid ${getColorFromTheme(theme, 'primary')};
       `}
+  }
+
+  /* stylelint-disable-next-line selector-type-no-unknown */
+  & > ${IconStyle}:first-child {
+    margin-right: 5px;
+  }
+
+  /* stylelint-disable-next-line selector-type-no-unknown */
+  & > ${IconStyle}:last-child {
+    margin-left: 5px;
   }
 
   & > svg {

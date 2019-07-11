@@ -1,7 +1,6 @@
 import styled from '@datapunt/asc-core'
 import { breakpoint } from '../../../utils'
 import ImageStyle from '../../Image/ImageStyle'
-import ButtonStyle from '../../Button/ButtonStyle'
 
 export default styled.div`
   display: flex;
@@ -18,13 +17,6 @@ export default styled.div`
 
     @media screen and ${breakpoint('max-width', 'tabletS')} {
       margin-bottom: 20px;
-    }
-  }
-
-  & > ${ButtonStyle} {
-    & > svg {
-      width: 20px;
-      height: 20px;
     }
   }
 `

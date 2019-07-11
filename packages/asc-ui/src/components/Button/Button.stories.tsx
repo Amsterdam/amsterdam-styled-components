@@ -1,9 +1,11 @@
-import * as React from 'react'
-import { storiesOf } from '@storybook/react'
+import { Alert, Download, ChevronRight } from '@datapunt/asc-assets'
 import { action } from '@storybook/addon-actions'
-import { Alert } from '@datapunt/asc-assets'
-import Button from './Button'
+import { storiesOf } from '@storybook/react'
+import * as React from 'react'
 import ButtonBar from '../ButtonBar'
+import Icon from '../Icon'
+import Typography from '../Typography'
+import Button from './Button'
 
 storiesOf('Atoms/Buttons', module)
   .add('Default', () => (
@@ -18,7 +20,9 @@ storiesOf('Atoms/Buttons', module)
       <ButtonBar>
         <Button color="primary">Primary</Button>
         <Button color="primary">
-          <Alert />
+          <Icon size={24} color="bright">
+            <Alert />
+          </Icon>
           Primary with icon left
         </Button>
         <Button color="primary">
@@ -39,6 +43,23 @@ storiesOf('Atoms/Buttons', module)
         <Button color="secondary">
           Secondary with icon right
           <Alert />
+        </Button>
+      </ButtonBar>
+    </>
+  ))
+  .add('with Content', () => (
+    <>
+      <ButtonBar>
+        <Button color="primary">
+          <Icon size={20} color="bright">
+            <Download />
+          </Icon>
+          <Typography as="span" color="bright" fontSize={16}>
+            Download button
+          </Typography>
+          <Icon size={20} color="secondary">
+            <ChevronRight />
+          </Icon>
         </Button>
       </ButtonBar>
     </>
