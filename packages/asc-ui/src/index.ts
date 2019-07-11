@@ -41,13 +41,13 @@ import {
   Row,
   Container,
 } from './components/Grid'
-import Article, {
-  ArticleStyles,
-  ArticleMetaList,
-  ArticleContent,
-  ArticleHeader,
-  ArticleSidebar,
-} from './components/Article'
+import Blog, {
+  BlogStyles,
+  BlogMetaList,
+  BlogContent,
+  BlogHeader,
+  BlogSidebar,
+} from './components/Blog'
 import {
   MenuItemTitle,
   MenuItemLink,
@@ -77,7 +77,7 @@ export const styles = {
   ...SearchBarToggleStyles,
   ...CustomHTMLBlockStyles,
   ...MenuStyles,
-  ...ArticleStyles,
+  ...BlogStyles,
 }
 
 // Components
@@ -125,16 +125,16 @@ export {
   ThemeProvider,
   Typography,
   TopBar,
-  Article,
+  Blog,
   Link,
   Paragraph,
   Heading,
   Summary,
-  ArticleStyles,
-  ArticleMetaList,
-  ArticleContent,
-  ArticleHeader,
-  ArticleSidebar,
+  BlogStyles,
+  BlogMetaList,
+  BlogContent,
+  BlogHeader,
+  BlogSidebar,
   ascDefaultTheme,
   Publication,
   PublicationContent,

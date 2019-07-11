@@ -10,4 +10,10 @@ export default styled.div`
   @media screen and ${breakpoint('min-width', 'tabletM')} {
     padding: 32px 24px;
   }
+
+  img,
+  video {
+    max-width: 100%;
+    margin: 24px auto;
+  }
 `
