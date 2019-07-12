@@ -337,7 +337,7 @@ describe('utils/grid', () => {
 
       expect(spanWidthStr).not.toEqual(spanWithParentSpanWidthstr)
 
-      const widthRe = /^calc\(\(\(\(100% - (\d+)px\) \/ (\d+)\) \* \d+\) \+ \d+px\)$/
+      const widthRe = /^calc\(\(\(\(100% - (\d+)px\) \/ (\d+)\) \* \d+\) \+ \d+px \+ \d+px\)$/
       const matches: any = spanWidthStr.match(widthRe)
       const parentSpanMatches: any = spanWithParentSpanWidthstr.match(widthRe)
 

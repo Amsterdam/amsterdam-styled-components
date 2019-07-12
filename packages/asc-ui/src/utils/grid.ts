@@ -157,8 +157,11 @@ export const spanGutterWidth = (
   span: number,
   withUnit?: boolean,
 ) => ({ theme }: { theme: Theme.ThemeInterface }): number | string => {
-  const gutterWidthValue = <number>gutter(layoutId)({ theme })
+  if (span <= 0) {
+    return 0
+  }
 
+  const gutterWidthValue = <number>gutter(layoutId)({ theme })
   const value = (span - 1) * gutterWidthValue
 
   if (withUnit) {
@@ -176,9 +179,12 @@ export const pushGutterWidth = (
   push: number,
   withUnit?: boolean,
 ) => ({ theme }: { theme: Theme.ThemeInterface }): number | string => {
-  const gutterWidthValue = <number>gutter(layoutId)({ theme })
+  if (push <= 0) {
+    return 0
+  }
 
-  const value = (push - 1) * gutterWidthValue + gutterWidthValue
+  const gutterWidthValue = <number>gutter(layoutId)({ theme })
+  const value = push * gutterWidthValue
 
   if (withUnit) {
     return `${value}px`
@@ -276,19 +282,25 @@ export const colWidthCalc = ({
   calculateAsPush?: boolean
 }) => ({ theme }: { theme: Theme.ThemeInterface }): string => {
   // get defaults if not set
-  const parentSpans = parentSpan || defaultParentSpan(theme)
+  const spanContext = parentSpan || defaultParentSpan(theme)
 
   // get numeric values for columns
   const spanCols = colCount(span, layoutId)
-  const parentCols = colCount(parentSpans, layoutId)
+  const parentCols = colCount(spanContext, layoutId)
 
   // get unit values for gutters
-  const spanGutters = spanGutterWidth(layoutId, spanCols, true)({ theme })
-  const pushGutters = pushGutterWidth(layoutId, parentCols, true)({ theme })
-  const parentGutters = calculateAsPush ? spanGutters : pushGutters
+  const gutterWidthInContext = spanGutterWidth(layoutId, parentCols, true)({
+    theme,
+  })
+  const gutterWidthInSpan = spanGutterWidth(layoutId, spanCols, true)({ theme })
 
-  const columnWidth = `(100% - ${parentGutters}) / ${parentCols}`
-  return `calc(((${columnWidth}) * ${spanCols}) + ${spanGutters})`
+  // when pushing a column, an extra gutter needs to be added
+  const pushGutterValue = calculateAsPush
+    ? <string>gutter(layoutId, true)({ theme })
+    : '0px'
+
+  const columnWidth = `(100% - ${gutterWidthInContext}) / ${parentCols}`
+  return `calc(((${columnWidth}) * ${spanCols}) + ${gutterWidthInSpan} + ${pushGutterValue})`
 }
 
 /**
