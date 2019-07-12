@@ -45,7 +45,7 @@ const mq = (layoutId: string) => mediaQuery(layoutId)({ theme })
 
 describe('Column', () => {
   it('should filter invalid attributes', () => {
-    render(
+    const { container } = render(
       <ThemeProvider theme={theme}>
         <Row>
           <Column data-testid="foo" aria-labelledby="bar" wrap span={1}>
@@ -55,13 +55,11 @@ describe('Column', () => {
       </ThemeProvider>,
     )
 
-    expect(
-      global.document.querySelectorAll('[data-testid="foo"]'),
-    ).toHaveLength(1)
-    expect(
-      global.document.querySelectorAll('[aria-labelledby="bar"]'),
-    ).toHaveLength(1)
-    expect(global.document.querySelectorAll('[wrap]')).toHaveLength(0)
+    expect(container.querySelectorAll('[data-testid="foo"]')).toHaveLength(1)
+    expect(container.querySelectorAll('[aria-labelledby="bar"]')).toHaveLength(
+      1,
+    )
+    expect(container.querySelectorAll('[wrap]')).toHaveLength(0)
   })
 })
 
@@ -183,7 +181,7 @@ describe('ColumnStyle', () => {
   })
 
   it('should set push values', () => {
-    const { container, queryByTestId, rerender } = render(
+    const { queryByTestId, rerender } = render(
       <ThemeProvider theme={theme}>
         <Row>
           <Column data-testid="span4" span={4} push={2}>
