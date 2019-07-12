@@ -193,8 +193,6 @@ describe('ColumnStyle', () => {
       </ThemeProvider>,
     )
 
-    expect(container.firstChild).toMatchSnapshot()
-
     expect(queryByTestId('span4')).toHaveStyleRule(
       'margin-left',
       expect.stringContaining('* 2'),
