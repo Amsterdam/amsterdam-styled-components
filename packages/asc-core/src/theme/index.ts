@@ -21,8 +21,6 @@ export namespace Theme {
     (type: Theme.TypeBreakpoint): string
   }
 
-  // export type TypeLayout = { [key: string]: LayoutInterface }
-
   export type TypeSpan = { [key: string]: number } | number
 
   export interface BreakpointsInterface {
