@@ -7,7 +7,6 @@
 [![Build Status](https://travis-ci.org/Amsterdam/amsterdam-styled-components.svg?branch=draft)](https://travis-ci.org/Amsterdam/amsterdam-styled-components)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4faed618-ee95-4a15-bebb-448d215dbb38/deploy-status)](https://app.netlify.com/sites/amsterdam-styled-components/deploys)
 
-NOTE: this is a draft. We are still experimenting and configuring. Do not use in production.
 
 [Demo site with the storybook of the components](https://amsterdam.github.io/amsterdam-styled-components)
 
@@ -57,7 +56,7 @@ The guidelines can be found here (TBD)
 ### Development
 
 ```bash
-yarn install
+yarn
 ```
 
 To start watching files and start storybook, run `yarn start`
@@ -77,6 +76,11 @@ npm link ./examples/create-react-app/node-modules/react
 ```
 from the root folder to use the same React version in the component lib as in the application.
 
+#### Generate components from templates
+
+To make life a little easier, we added [hygen](https://www.hygen.io/). To add a component, simply run `hygen component new`. You will be prompted with questions the generator needs to build the files for the new component.
+
+![](media/hygen.gif)
 
 #### Development guidelines
 

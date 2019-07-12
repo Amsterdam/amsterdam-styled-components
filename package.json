@@ -89,6 +89,7 @@
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "^1.6.0",
     "husky": "^2.4.0",
+    "hygen": "^4.0.7",
     "jest": "^24.8.0",
     "jest-cli": "^24.8.0",
     "jest-styled-components": "^6.3.1",
