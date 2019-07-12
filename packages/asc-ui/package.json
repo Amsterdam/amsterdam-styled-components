@@ -12,7 +12,6 @@
   "dependencies": {
     "@datapunt/asc-assets": "^0.7.3-alpha.0",
     "@datapunt/asc-core": "^0.7.4-alpha.0",
-    "@testing-library/react": "^8.0.4",
     "classnames": "^2.2.6",
     "deepmerge": "^3.2.0",
     "enzyme": "^3.10.0",

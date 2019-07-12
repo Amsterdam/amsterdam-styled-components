@@ -82,17 +82,11 @@ describe('utils/grid', () => {
       expect(typeof grid.gutter('huge', true)({ theme })).toEqual('string')
     })
 
-    it('should throw', () => {
-      expect(() => {
-        const noGutter = merge({}, theme)
-        delete noGutter.layouts.huge.gutter
+    it('should return 0', () => {
+      const noGutter = merge({}, theme)
+      delete noGutter.layouts.huge.gutter
 
-        grid.gutter('huge')({ theme: noGutter })
-      }).toThrow()
-
-      expect(() => {
-        grid.gutter('layoutDoesNotExist')({ theme })
-      }).toThrow()
+      expect(grid.gutter('huge')({ theme: noGutter })).toEqual(0)
     })
   })
 

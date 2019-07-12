@@ -7,7 +7,7 @@ type Props = {
   className?: string
   debug?: boolean
   debugColor?: string
-  id?: keyof Theme.GridInterface
+  id?: string
   order?: Theme.TypeSpan
   push?: Theme.TypeSpan
   span: Theme.TypeSpan

@@ -1,21 +1,52 @@
 import React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import 'jest-styled-components'
-import { ascDefaultTheme } from '@datapunt/asc-core'
+import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import { mount } from 'enzyme'
 import Row from '../Row'
 import Column from '../Column'
 import ColumnStyle from '../ColumnStyle'
-import { ThemeProvider } from '../../../index'
 import { mediaQuery } from '../../../utils/grid'
 
-const mq = (layoutId: string) =>
-  mediaQuery(layoutId)({ theme: ascDefaultTheme })
+const theme = {
+  ...ascDefaultTheme,
+  maxGridWidth: 1920,
+  layouts: {
+    large: {
+      columns: 18,
+      margin: 60,
+      gutter: 34,
+      min: 2000,
+    },
+    big: {
+      columns: 12,
+      margin: 40,
+      gutter: 24,
+      max: 2000,
+      min: 1000,
+    },
+    medium: {
+      columns: 8,
+      margin: 20,
+      gutter: 20,
+      max: 1000,
+      min: 500,
+    },
+    small: {
+      columns: 1,
+      margin: 0,
+      gutter: 12,
+      max: 500,
+    },
+  },
+}
+
+const mq = (layoutId: string) => mediaQuery(layoutId)({ theme })
 
 describe('Column', () => {
   it('should filter invalid attributes', () => {
     render(
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <Row>
           <Column data-testid="foo" aria-labelledby="bar" wrap span={1}>
             <span>Child right here</span>
@@ -24,9 +55,13 @@ describe('Column', () => {
       </ThemeProvider>,
     )
 
-    expect(document.querySelectorAll('[data-testid="foo"]')).toHaveLength(1)
-    expect(document.querySelectorAll('[aria-labelledby="bar"]')).toHaveLength(1)
-    expect(document.querySelectorAll('[wrap]')).toHaveLength(0)
+    expect(
+      global.document.querySelectorAll('[data-testid="foo"]'),
+    ).toHaveLength(1)
+    expect(
+      global.document.querySelectorAll('[aria-labelledby="bar"]'),
+    ).toHaveLength(1)
+    expect(global.document.querySelectorAll('[wrap]')).toHaveLength(0)
   })
 })
 
@@ -35,7 +70,7 @@ describe('ColumnStyle', () => {
 
   it('should set parentSpan for nested column components', () => {
     const tree = mount(
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <Row>
           <Column span={10}>
             <Column data-testid="span5" span={5}>
@@ -63,7 +98,7 @@ describe('ColumnStyle', () => {
   it('should show debug information', () => {
     const span = 7
     const { rerender, queryByTestId } = render(
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <Row>
           <Column data-testid="col" span={span}>
             <span>Child right here</span>
@@ -79,7 +114,7 @@ describe('ColumnStyle', () => {
     )
 
     rerender(
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <Row>
           <Column data-testid="col" span={span} debug>
             <span>Another child</span>
@@ -108,7 +143,7 @@ describe('ColumnStyle', () => {
 
   it('should set order values', () => {
     const { queryByTestId, rerender } = render(
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <Row>
           <Column data-testid="col" order={2} span={4}>
             <span>Another child</span>
@@ -120,7 +155,7 @@ describe('ColumnStyle', () => {
     expect(queryByTestId('col')).toHaveStyleRule('order', '2')
 
     rerender(
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <Row>
           <Column
             data-testid="col"
@@ -148,8 +183,8 @@ describe('ColumnStyle', () => {
   })
 
   it('should set push values', () => {
-    const { queryByTestId, rerender } = render(
-      <ThemeProvider>
+    const { container, queryByTestId, rerender } = render(
+      <ThemeProvider theme={theme}>
         <Row>
           <Column data-testid="span4" span={4} push={2}>
             <span>Another child</span>
@@ -157,6 +192,8 @@ describe('ColumnStyle', () => {
         </Row>
       </ThemeProvider>,
     )
+
+    expect(container.firstChild).toMatchSnapshot()
 
     expect(queryByTestId('span4')).toHaveStyleRule(
       'margin-left',
@@ -182,16 +219,16 @@ describe('ColumnStyle', () => {
       },
     )
 
-    expect(queryByTestId('span4')).toHaveStyleRule(
+    expect(queryByTestId('span4')).not.toHaveStyleRule(
       'margin-left',
-      expect.stringContaining('* 2'),
+      expect.stringContaining('* 0'),
       {
         media: mq('small'),
       },
     )
 
     rerender(
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <Row>
           <Column
             data-testid="span4"
@@ -228,9 +265,9 @@ describe('ColumnStyle', () => {
       },
     )
 
-    expect(queryByTestId('span4')).toHaveStyleRule(
+    expect(queryByTestId('span4')).not.toHaveStyleRule(
       'margin-left',
-      expect.stringContaining('* 2'),
+      expect.stringContaining('* 0'),
       {
         media: mq('small'),
       },
@@ -239,7 +276,7 @@ describe('ColumnStyle', () => {
 
   it('should wrap its contents', () => {
     const { queryByTestId } = render(
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <Row>
           <Column wrap span={10} data-testid="span10_wrap">
             <Column data-testid="span5" span={5}>

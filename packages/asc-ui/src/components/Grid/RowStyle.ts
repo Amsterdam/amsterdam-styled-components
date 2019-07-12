@@ -1,4 +1,4 @@
-import styled, { css, ascDefaultTheme, Theme } from '@datapunt/asc-core'
+import styled, { css, Theme } from '@datapunt/asc-core'
 import { fromTheme, valueFromObject } from '../../utils'
 import {
   mediaQuery,
@@ -10,8 +10,6 @@ import {
   gutter,
 } from '../../utils/grid'
 import { TypeFlexPosition } from '.'
-
-const { layouts } = ascDefaultTheme
 
 type FlexJustify =
   | 'flex-start'
@@ -70,7 +68,7 @@ const RowStyle = styled.div<TypeProps>`
     hasMargin?: boolean
     theme: Theme.ThemeInterface
   }) =>
-    Object.keys(layouts).map(
+    Object.keys(theme.layouts).map(
       layoutId => css`
     @media ${mediaQuery(layoutId)} {
       ${debug &&

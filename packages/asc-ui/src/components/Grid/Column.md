@@ -7,8 +7,8 @@ The grid components depend on a site's theme configuration and specifically the 
   "layouts": {
     "major": {
       "columns": 66, # (number) number of columns that should be available between the values of max and min; required
-      "gutter": 20,  # (px) space between two columns; optional
-      "margin": 42,  # (px) space on either side of the grid; optional
+      "gutter": 20,  # (px) space between two columns; optional (default: 0)
+      "margin": 42,  # (px) space on either side of the grid; optional (default: 0)
       "max": 2560,   # (px) max-width media query value; optional
       "min": 1820    # (px) min-width media query value; optional, but either min or max should be present
     },

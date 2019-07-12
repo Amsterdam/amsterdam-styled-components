@@ -1,9 +1,13 @@
 import React from 'react'
-import styled, { Theme, css, ascDefaultTheme } from '@datapunt/asc-core'
-import { mediaQuery, colCount, spanWidth, pushWidth } from '../../utils/grid'
+import styled, { Theme, css } from '@datapunt/asc-core'
+import {
+  mediaQuery,
+  colCount,
+  spanWidth,
+  pushWidth,
+  margin,
+} from '../../utils/grid'
 import { TypeFlexPosition } from '.'
-
-const { layouts } = ascDefaultTheme
 
 export type TypeProps = {
   alignSelf?: TypeFlexPosition
@@ -60,13 +64,15 @@ const ColumnStyle = styled(({ className, children, id, ...rest }) => {
     span,
     parentSpan,
     push = 0,
+    theme,
   }: {
     debug?: boolean
     parentSpan?: Theme.TypeSpan
     span: Theme.TypeSpan
     push?: Theme.TypeSpan
+    theme: Theme.ThemeInterface
   }) =>
-    Object.keys(layouts).map(layoutId => {
+    Object.keys(theme.layouts).map(layoutId => {
       const spanCount = colCount(span, layoutId)
       const pushCount = colCount(push, layoutId)
 
@@ -83,6 +89,7 @@ const ColumnStyle = styled(({ className, children, id, ...rest }) => {
               }
             `}
           ${pushCount > 0 &&
+            margin(layoutId)({ theme }) > 0 &&
             css`
               margin-left: ${pushWidth({ layoutId, push, parentSpan })};
             `}

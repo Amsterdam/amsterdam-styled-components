@@ -32,15 +32,15 @@ export const columns = (layoutId: string) => ({
 }: {
   theme: Theme.ThemeInterface
 }): number => {
-  const columns = fromTheme(`layouts.${layoutId}.columns`)({ theme })
+  const colCount = fromTheme(`layouts.${layoutId}.columns`)({ theme })
 
-  if (Number.isNaN(parseInt(columns, 10))) {
+  if (Number.isNaN(parseInt(colCount, 10))) {
     throw new Error(
       `Requesting a value from layout '${layoutId}' that is not defined or doesn't have a 'columns' prop`,
     )
   }
 
-  return columns
+  return colCount
 }
 
 /**
@@ -51,13 +51,7 @@ export const gutter = (layoutId: string, withUnit = false) => ({
 }: {
   theme: Theme.ThemeInterface
 }): string | number => {
-  const gutterValue = fromTheme(`layouts.${layoutId}.gutter`)({ theme })
-
-  if (Number.isNaN(parseInt(gutterValue, 10))) {
-    throw new Error(
-      `Requesting a value from layout '${layoutId}' that is not defined or doesn't have a 'gutter' prop`,
-    )
-  }
+  const gutterValue = fromTheme(`layouts.${layoutId}.gutter`)({ theme }) || 0
 
   if (withUnit) {
     return `${gutterValue}px`
@@ -285,8 +279,11 @@ export const colWidthCalc = ({
   const spanContext = parentSpan || defaultParentSpan(theme)
 
   // get numeric values for columns
-  const spanCols = colCount(span, layoutId)
+  const spanColsCount = colCount(span, layoutId)
   const parentCols = colCount(spanContext, layoutId)
+
+  // cap the width to the parent
+  const spanCols = spanColsCount > parentCols ? parentCols : spanColsCount
 
   // get unit values for gutters
   const gutterWidthInContext = spanGutterWidth(layoutId, parentCols, true)({

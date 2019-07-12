@@ -23,6 +23,16 @@ export namespace Theme {
 
   export type TypeSpan = { [key: string]: number } | number
 
+  export interface LayoutInterface {
+    [key: string]: {
+      columns: number
+      gutter?: number
+      margin?: number
+      max?: number
+      min?: number
+    }
+  }
+
   export interface BreakpointsInterface {
     mobileS: GetBreakpointFunc
     mobileM: GetBreakpointFunc
@@ -34,21 +44,6 @@ export namespace Theme {
     laptopL: GetBreakpointFunc
     desktop: GetBreakpointFunc
     desktopL: GetBreakpointFunc
-  }
-
-  export interface LayoutInterface {
-    min?: number
-    max?: number
-    gutter: number
-    columns: number
-    margin: number
-  }
-
-  export interface GridInterface {
-    large: LayoutInterface
-    big: LayoutInterface
-    medium: LayoutInterface
-    small: LayoutInterface
   }
 
   export interface PaletteInterface {
@@ -110,6 +105,8 @@ export namespace Theme {
     colors: ColorInterface
     globalStyle: GlobalStyleType
     typography: TypographyInterface
+    layouts: LayoutInterface
+    maxGridWidth: number
   }
 
   export class ThemeFactory implements ThemeInterface {
