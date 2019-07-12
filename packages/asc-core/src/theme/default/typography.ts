@@ -44,7 +44,7 @@ const typography: Theme.TypographyInterface = {
   },
   h6: {
     color: colors.tint.level7,
-    fontSize: '6rem',
+    fontSize: '1rem',
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: 1,
