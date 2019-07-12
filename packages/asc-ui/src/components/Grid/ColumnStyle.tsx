@@ -36,14 +36,14 @@ const ColumnStyle = styled(({ className, children, id, ...rest }) => {
   box-sizing: border-box;
   width: 100%;
   display: flex;
-  align-self: ${({ alignSelf }) => alignSelf};
+  align-self: ${({ alignSelf }: { alignSelf?: string }) => alignSelf};
   justify-content: space-between;
-  ${({ wrap }) =>
+  ${({ wrap }: { wrap?: boolean }) =>
     wrap &&
     css`
       flex-wrap: wrap;
     `}
-  ${({ order }) =>
+  ${({ order }: { order?: number }) =>
     order && typeof order !== 'number'
       ? Object.keys(order).map(
           layoutId => css`
@@ -90,7 +90,7 @@ const ColumnStyle = styled(({ className, children, id, ...rest }) => {
         }
       `
     })};
-  ${({ debug, debugColor }) =>
+  ${({ debug, debugColor }: { debug?: boolean; debugColor?: string }) =>
     debug &&
     css`
       position: relative;

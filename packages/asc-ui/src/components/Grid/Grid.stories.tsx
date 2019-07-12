@@ -1,5 +1,7 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
+import columnNotes from './Column.md'
+import nestedColumnNotes from './ColumnNested.md'
 import Column from './Column'
 import Row from './Row'
 
@@ -12,21 +14,25 @@ const ColumnStory: React.FC<{}> = () => (
         order={{ small: 2, medium: 1, big: 1, large: 1 }}
         span={{ small: 4, medium: 4, big: 2, large: 2 }}
       >
-        <pre>Left sidebar</pre>
+        <pre style={{ backgroundColor: 'rebeccapurple', width: '100%' }}>
+          Left sidebar
+        </pre>
       </Column>
       <Column
         order={{ small: 1, medium: 3, big: 2, large: 2 }}
         span={{ small: 4, medium: 8, big: 8, large: 12 }}
-        debug
       >
-        <pre>Center column</pre>
+        <pre style={{ backgroundColor: 'gold', width: '100%' }}>
+          <p>Center column</p>
+        </pre>
       </Column>
       <Column
         order={{ small: 3, medium: 2, big: 3, large: 3 }}
         span={{ small: 4, medium: 4, big: 2, large: 4 }}
-        debug
       >
-        <pre>Right sidebar</pre>
+        <pre style={{ backgroundColor: 'rebeccapurple', width: '100%' }}>
+          Right sidebar
+        </pre>
       </Column>
     </Row>
   </>
@@ -57,13 +63,10 @@ const NestedColumnsStory: React.FC<{}> = () => (
         <pre>Right sidebar</pre>
       </Column>
     </Row>
-  </>
-)
 
-const NestedPushedColumnsStory: React.FC<{}> = () => (
-  <>
     <br />
     <br />
+
     <Row debug>
       <Column
         wrap
@@ -75,8 +78,9 @@ const NestedPushedColumnsStory: React.FC<{}> = () => (
             Center #1
           </pre>
         </Column>
+
         <Column span={{ small: 2, medium: 4, big: 10, large: 5 }} debug>
-          <pre style={{ backgroundColor: 'silver', width: 'inherit' }}>
+          <span style={{ backgroundColor: 'silver', width: 'inherit' }}>
             Center #2
             <br />
             <br />
@@ -87,7 +91,7 @@ const NestedPushedColumnsStory: React.FC<{}> = () => (
             <br />
             <br />
             <br />
-          </pre>
+          </span>
         </Column>
       </Column>
     </Row>
@@ -95,6 +99,7 @@ const NestedPushedColumnsStory: React.FC<{}> = () => (
 )
 
 storiesOf('Atoms/Grid', module)
-  .add('Column', () => <ColumnStory />)
-  .add('Nested Columns', () => <NestedColumnsStory />)
-  .add('Nested wrapped Columns', () => <NestedPushedColumnsStory />)
+  .add('Column', () => <ColumnStory />, { notes: { markdown: columnNotes } })
+  .add('Nesting Columns', () => <NestedColumnsStory />, {
+    notes: { markdown: nestedColumnNotes },
+  })

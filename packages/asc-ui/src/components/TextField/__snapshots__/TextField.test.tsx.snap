@@ -75,6 +75,7 @@ exports[`<TextField /> should render 1`] = `
           "max": 768,
         },
       },
+      "maxGridWidth": 2560,
       "typography": Object {
         "a": Object {
           "color": "#000000",

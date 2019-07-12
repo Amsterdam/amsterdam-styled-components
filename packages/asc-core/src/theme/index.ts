@@ -122,6 +122,7 @@ export namespace Theme {
       const globalStyle = require(`./${themeName}/globalStyle`).default
       const typography = require(`./${themeName}/typography`).default
       const layouts = require(`./${themeName}/layouts`).default
+      const { maxGridWidth } = require(`./${themeName}/layouts`)
       /* eslint-enable global-require, import/no-dynamic-require */
       return new ThemeFactory(
         breakpoints,
@@ -129,6 +130,7 @@ export namespace Theme {
         globalStyle,
         typography,
         layouts,
+        maxGridWidth,
       )
     }
 
@@ -138,6 +140,7 @@ export namespace Theme {
       public globalStyle: GlobalStyleType,
       public typography: TypographyInterface,
       public layouts: LayoutInterface,
+      public maxGridWidth: number,
     ) {}
   }
 }
