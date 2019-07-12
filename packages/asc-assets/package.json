@@ -23,9 +23,9 @@
     "generate": "svgr -d src/Icons src/assets/Icons --template src/utils/generateIconReact.js --svg-props focusable={false} --ext tsx"
   },
   "dependencies": {
-    "@svgr/cli": "^4.2.0",
-    "@svgr/core": "^2.1.1",
-    "svgo": "^1.0.5"
+    "@svgr/cli": "^4.3.1",
+    "@svgr/core": "^2.4.1",
+    "svgo": "^1.2.2"
   },
   "publishConfig": {
     "access": "public"
