@@ -41,7 +41,9 @@ import {
   Row,
   Container,
 } from './components/Grid'
-import Blog, {
+import {
+  BlogBody,
+  BlogPost,
   BlogStyles,
   BlogMetaList,
   BlogContent,
@@ -63,6 +65,7 @@ import Spinner from './components/Spinner/Spinner'
 import LinkList, { LinkListItem } from './components/LinkList'
 import Publication, { PublicationContent } from './components/Publication'
 import Downloader from './components/Downloader'
+import { Article, ArticleStyle } from './components/Article'
 
 export { breakpoint } from './utils'
 
@@ -78,6 +81,7 @@ export const styles = {
   ...CustomHTMLBlockStyles,
   ...MenuStyles,
   ...BlogStyles,
+  ArticleStyle,
 }
 
 // Components
@@ -125,12 +129,13 @@ export {
   ThemeProvider,
   Typography,
   TopBar,
-  Blog,
+  BlogPost,
+  Article,
   Link,
   Paragraph,
   Heading,
   Summary,
-  BlogStyles,
+  BlogBody,
   BlogMetaList,
   BlogContent,
   BlogHeader,

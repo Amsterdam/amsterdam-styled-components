@@ -93,18 +93,24 @@ export namespace Theme {
     letterSpacing: CSSProp
   }
 
+  type TypographyType = {
+    breakpoints?: {
+      [key in keyof BreakpointsInterface]?: TypographyElementStyle
+    }
+  } & TypographyElementStyle
+
   export type TypographyElements = {
-    h1: TypographyElementStyle
-    h2: TypographyElementStyle
-    h3: TypographyElementStyle
-    h4: TypographyElementStyle
-    h5: TypographyElementStyle
-    h6: TypographyElementStyle
-    p: TypographyElementStyle
-    a: TypographyElementStyle
-    em: TypographyElementStyle
-    small: TypographyElementStyle
-    span: TypographyElementStyle
+    h1: TypographyType
+    h2: TypographyType
+    h3: TypographyType
+    h4: TypographyType
+    h5: TypographyType
+    h6: TypographyType
+    p: TypographyType
+    a: TypographyType
+    em: TypographyType
+    small: TypographyType
+    span: TypographyType
   }
 
   export interface TypographyInterface extends TypographyElements {

@@ -24,4 +24,10 @@ export default styled.div`
       }
     `,
   )}
+
+  img,
+  video {
+    max-width: 100%;
+    margin: 24px auto;
+  }
 `

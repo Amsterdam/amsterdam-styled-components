@@ -3,21 +3,28 @@
 exports[`getTypographyFromTheme should return the requested typography from theme 1`] = `
 Array [
   "
-    color: ",
+    ",
+  "
+  color: ",
   "#000000",
   ";
-    font-weight: ",
+  font-weight: ",
   "400",
   ";
-    font-size: ",
-  "1rem",
+  font-size: ",
+  "16px",
   ";
-    letter-spacing: ",
+  letter-spacing: ",
   "-0.01562em",
   ";
-    line-height: ",
+  line-height: ",
   "22px",
   ";
+",
+  "
+    ",
+  [Function],
+  "
   ",
 ]
 `;
