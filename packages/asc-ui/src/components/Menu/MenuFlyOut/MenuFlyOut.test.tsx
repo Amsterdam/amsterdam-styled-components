@@ -1,4 +1,4 @@
-import { ChevronDown, ChevronUp } from '@datapunt/asc-core'
+import { ChevronDown, ChevronUp } from '@datapunt/asc-assets'
 import { mount, ReactWrapper, shallow, ShallowWrapper } from 'enzyme'
 import 'jest-styled-components'
 import React from 'react'
