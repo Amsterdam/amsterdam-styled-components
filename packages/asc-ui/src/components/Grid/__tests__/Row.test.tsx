@@ -8,30 +8,28 @@ import RowStyle from '../RowStyle'
 import Column from '../Column'
 import { mediaQuery } from '../../../utils/grid'
 
-const layouts = {
-  huge: {
-    columns: 100,
-    gutter: 20,
-    margin: 20,
-    min: 2000,
-  },
-  somewhereInTheMiddle: {
-    columns: 40,
-    gutter: 13,
-    margin: 17,
-    max: 2000,
-    min: 750,
-  },
-  theSmallest: {
-    columns: 16,
-    max: 750,
-  },
-}
-
 const theme = {
   ...ascDefaultTheme,
   maxGridWidth: 1920,
-  layouts,
+  layouts: {
+    huge: {
+      columns: 100,
+      gutter: 20,
+      margin: 20,
+      min: 2000,
+    },
+    somewhereInTheMiddle: {
+      columns: 40,
+      gutter: 13,
+      margin: 17,
+      max: 2000,
+      min: 750,
+    },
+    theSmallest: {
+      columns: 16,
+      max: 750,
+    },
+  },
 }
 
 const mq = (layoutId: string) => mediaQuery(layoutId)({ theme })

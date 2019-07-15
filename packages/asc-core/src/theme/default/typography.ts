@@ -1,4 +1,3 @@
-import { rem } from 'polished'
 import { Theme } from '../index'
 import colors from './colors'
 
@@ -30,14 +29,14 @@ const typography: Theme.TypographyInterface = {
   },
   h4: {
     color: colors.tint.level7,
-    fontSize: rem(18),
+    fontSize: '18px',
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: 1,
   },
   h5: {
     color: colors.tint.level7,
-    fontSize: rem(18),
+    fontSize: '18px',
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: 1,
