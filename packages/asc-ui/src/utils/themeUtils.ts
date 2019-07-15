@@ -69,6 +69,18 @@ export const getTypographyFromTheme = () => ({ as = 'p', theme }: any) => {
       letterSpacing,
       lineHeight,
     })}
+    ${() =>
+      breakpoints
+        ? Object.entries(breakpoints).map(
+            ([breakpointFromTypography, styles]) => css`
+              @media screen and ${breakpoint('min-width', <
+                  keyof BreakpointsInterface
+                >breakpointFromTypography)} {
+                ${generateCSSFromTypography(styles)}
+              }
+            `,
+          )
+        : ``}
   `
 }
 
