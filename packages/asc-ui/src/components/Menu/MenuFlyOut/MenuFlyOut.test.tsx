@@ -1,14 +1,14 @@
+import { ChevronDown, ChevronUp } from '@datapunt/asc-core'
+import { mount, ReactWrapper, shallow, ShallowWrapper } from 'enzyme'
+import 'jest-styled-components'
 import React from 'react'
-import { shallow, mount, ReactWrapper, ShallowWrapper } from 'enzyme'
-import MenuFlyOut from '.'
+import { KeyboardKeys } from '../../../types'
+import { useMenuContext } from '../MenuContext'
+import MenuFlyOut from '../MenuFlyOut'
 import MenuItem from '../MenuItem'
 import MenuItemLink from '../MenuItemLink'
 import MenuList from '../MenuList'
-import { KeyboardKeys } from '../../../types'
-import { useMenuContext } from '../MenuContext'
 import useMenuFocus from '../useMenuFocus'
-import 'jest-styled-components'
-import { ChevronDown, ChevronUp } from 'asc-assets/lib'
 
 jest.useFakeTimers()
 
