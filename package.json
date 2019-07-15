@@ -129,7 +129,7 @@
       "prettier-eslint --write",
       "git add"
     ],
-    "*.ts": [
+    "*Style.ts": [
       "prettier-eslint --write",
       "yarn stylelint",
       "git add"
