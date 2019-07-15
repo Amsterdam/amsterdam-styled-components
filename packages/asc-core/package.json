@@ -24,7 +24,6 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "polished": "^3.4.0",
     "styled-components": "^4.3.1"
   }
 }
