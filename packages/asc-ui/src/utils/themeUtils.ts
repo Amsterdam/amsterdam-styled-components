@@ -26,6 +26,32 @@ export const color = (
     : fromTheme('colors.tint.level1')({ theme })
 }
 
+export const breakpoint = (
+  type: Theme.TypeBreakpoint,
+  variant: keyof BreakpointsInterface,
+) => ({ theme }: ThemeProp) => {
+  const breakpointFunc: Theme.GetBreakpointFunc = fromTheme(
+    `breakpoints.${[variant]}`,
+  )({
+    theme,
+  })
+  return breakpointFunc && breakpointFunc(type)
+}
+
+const generateCSSFromTypography = ({
+  defaultColor,
+  fontWeight,
+  fontSize,
+  letterSpacing,
+  lineHeight,
+}: any) => css`
+  color: ${defaultColor};
+  font-weight: ${fontWeight};
+  font-size: ${fontSize};
+  letter-spacing: ${letterSpacing};
+  line-height: ${lineHeight};
+`
+
 export const getTypographyFromTheme = () => ({ as = 'p', theme }: any) => {
   const {
     defaultColor,
@@ -33,13 +59,28 @@ export const getTypographyFromTheme = () => ({ as = 'p', theme }: any) => {
     fontSize,
     letterSpacing,
     lineHeight,
+    breakpoints,
   } = fromTheme(`typography.${[as]}`)({ theme })
   return css`
-    color: ${defaultColor};
-    font-weight: ${fontWeight};
-    font-size: ${fontSize};
-    letter-spacing: ${letterSpacing};
-    line-height: ${lineHeight};
+    ${generateCSSFromTypography({
+      defaultColor,
+      fontWeight,
+      fontSize,
+      letterSpacing,
+      lineHeight,
+    })}
+    ${() =>
+      breakpoints
+        ? Object.entries(breakpoints).map(
+            ([breakpointFromTypography, styles]) => css`
+              @media screen and ${breakpoint('min-width', <
+                  keyof BreakpointsInterface
+                >breakpointFromTypography)} {
+                ${generateCSSFromTypography(styles)}
+              }
+            `,
+          )
+        : ``}
   `
 }
 
@@ -66,7 +107,6 @@ export const focusStyleText = () => ({
     background-color: ${color('support', 'focus')({ theme })};
   }
 `
-
 export const srOnlyStyle = () => ({ srOnly }: { srOnly: boolean }) =>
   srOnly
     ? css`
@@ -80,18 +120,6 @@ export const srOnlyStyle = () => ({ srOnly }: { srOnly: boolean }) =>
         width: 1px;
       `
     : ''
-
-export const breakpoint = (
-  type: Theme.TypeBreakpoint,
-  variant: keyof BreakpointsInterface,
-) => ({ theme }: ThemeProp) => {
-  const breakpointFunc: Theme.GetBreakpointFunc = fromTheme(
-    `breakpoints.${[variant]}`,
-  )({
-    theme,
-  })
-  return breakpointFunc && breakpointFunc(type)
-}
 
 export const svgFill = (
   colorType?: Theme.TypeLevel,

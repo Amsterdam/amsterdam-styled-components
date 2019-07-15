@@ -8,17 +8,35 @@ const typography: Theme.TypographyInterface = {
   fontSize: '16px',
   h1: {
     defaultColor: colors.tint.level7,
-    fontSize: '30px',
+    fontSize: '24px',
     fontWeight: 700,
     letterSpacing: 'inherit',
-    lineHeight: '38px',
+    lineHeight: '30px',
+    breakpoints: {
+      tabletS: {
+        defaultColor: colors.tint.level7,
+        fontSize: '30px',
+        fontWeight: 700,
+        letterSpacing: 'inherit',
+        lineHeight: '38px',
+      },
+    },
   },
   h2: {
     defaultColor: colors.tint.level7,
-    fontSize: '24px',
+    fontSize: '20px',
     fontWeight: 700,
-    letterSpacing: '-0.01562em',
+    letterSpacing: 'inherit',
     lineHeight: '28px',
+    breakpoints: {
+      tabletS: {
+        defaultColor: colors.tint.level7,
+        fontSize: '24px',
+        fontWeight: 700,
+        letterSpacing: 'inherit',
+        lineHeight: '30px',
+      },
+    },
   },
   h3: {
     defaultColor: colors.tint.level7,

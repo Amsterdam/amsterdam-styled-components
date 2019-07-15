@@ -9,17 +9,30 @@ Array [
   margin-left: 0;
   color: #000000;
   font-weight: 700;
-  font-size: 1.875rem;
+  font-size: 24px;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
-  line-height: 38px;
+  line-height: 30px;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
   -ms-letter-spacing: normal;
   letter-spacing: normal;
+}
+
+@media screen and (min-width:540.02px) {
+  .c0 {
+    color: #000000;
+    font-weight: 700;
+    font-size: 30px;
+    -webkit-letter-spacing: inherit;
+    -moz-letter-spacing: inherit;
+    -ms-letter-spacing: inherit;
+    letter-spacing: inherit;
+    line-height: 38px;
+  }
 }
 
 <h1
@@ -34,17 +47,30 @@ Array [
   margin-left: 0;
   color: #000000;
   font-weight: 700;
-  font-size: 1.5rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
+  font-size: 20px;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
   line-height: 28px;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
   -ms-letter-spacing: normal;
   letter-spacing: normal;
+}
+
+@media screen and (min-width:540.02px) {
+  .c0 {
+    color: #000000;
+    font-weight: 700;
+    font-size: 24px;
+    -webkit-letter-spacing: inherit;
+    -moz-letter-spacing: inherit;
+    -ms-letter-spacing: inherit;
+    letter-spacing: inherit;
+    line-height: 30px;
+  }
 }
 
 <h2
@@ -59,7 +85,7 @@ Array [
   margin-left: 0;
   color: #000000;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 20px;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
@@ -84,7 +110,7 @@ Array [
   margin-left: 0;
   color: #000000;
   font-weight: 400;
-  font-size: 1.125rem;
+  font-size: 18px;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
@@ -109,7 +135,7 @@ Array [
   margin-left: 0;
   color: #000000;
   font-weight: 400;
-  font-size: 1.125rem;
+  font-size: 18px;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
@@ -134,7 +160,7 @@ Array [
   margin-left: 0;
   color: #000000;
   font-weight: 400;
-  font-size: 1.125rem;
+  font-size: 18px;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
@@ -205,7 +231,7 @@ Array [
   margin-left: 0;
   color: #000000;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
