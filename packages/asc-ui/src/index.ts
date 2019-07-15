@@ -63,7 +63,7 @@ import {
 import ThemeProvider from './theme'
 import Spinner from './components/Spinner/Spinner'
 import LinkList, { LinkListItem } from './components/LinkList'
-import Publication, { PublicationContent } from './components/Publication'
+import Publication from './components/Publication'
 import Downloader from './components/Downloader'
 import { Article, ArticleStyle } from './components/Article'
 
@@ -131,6 +131,7 @@ export {
   TopBar,
   BlogPost,
   Article,
+  Publication,
   Link,
   Paragraph,
   Heading,
@@ -141,7 +142,5 @@ export {
   BlogHeader,
   BlogSidebar,
   ascDefaultTheme,
-  Publication,
-  PublicationContent,
   Downloader,
 }

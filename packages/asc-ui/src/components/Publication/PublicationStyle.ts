@@ -1,11 +1,6 @@
 import styled from '@datapunt/asc-core'
-import { color } from '../../utils'
+import { BlogPostStyle } from '../Blog/BlogPost'
 
 export type Props = {}
 
-export default styled.article<Props>`
-  width: 100%;
-  margin: 54px auto 72px auto;
-  color: ${color('tint', 'level6')};
-  background-color: ${color('tint', 'level1')};
-`
+export default styled(BlogPostStyle)<Props>``

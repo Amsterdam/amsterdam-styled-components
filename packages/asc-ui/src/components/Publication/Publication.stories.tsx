@@ -4,15 +4,13 @@ import { action } from '@storybook/addon-actions'
 import { Column, CustomHTMLBlock, Row, BlogHeader } from '../../index'
 import Summary from '../Typography/Summary'
 import Downloader from '../Downloader'
-import PublicationContent from './PublicationContent'
 import Publication from './Publication'
 import publicationJSON from './publication_feed.json'
-import { BlogMetaList } from '../Blog'
+import { BlogMetaList, BlogContent } from '../Blog'
 
-storiesOf('Composed/Publication', module).add('with image', () => {
+storiesOf('Composed/Blog/Publication', module).add('dataportal version', () => {
   const {
     title,
-    // created,
     body,
     field_publication_intro: intro,
     field_file_size: fileSize,
@@ -35,7 +33,7 @@ storiesOf('Composed/Publication', module).add('with image', () => {
             <Column
               span={{ small: 1, medium: 4, big: 6, large: 12, xLarge: 12 }}
             >
-              <PublicationContent>
+              <BlogContent>
                 <BlogHeader title={title}></BlogHeader>
                 <BlogMetaList
                   fields={[
@@ -43,7 +41,7 @@ storiesOf('Composed/Publication', module).add('with image', () => {
                     { id: 2, label: fileType },
                   ]}
                 ></BlogMetaList>
-              </PublicationContent>
+              </BlogContent>
             </Column>
             <Column span={{ small: 1, medium: 4, big: 3, large: 6, xLarge: 6 }}>
               <Downloader
@@ -53,14 +51,14 @@ storiesOf('Composed/Publication', module).add('with image', () => {
               />
             </Column>
             <Column span={{ small: 1, medium: 4, big: 3, large: 6, xLarge: 6 }}>
-              <PublicationContent>
+              <BlogContent>
                 {intro && <Summary>{intro}</Summary>}
                 <CustomHTMLBlock
                   dangerouslySetInnerHTML={{
                     __html: body.processed,
                   }}
                 ></CustomHTMLBlock>
-              </PublicationContent>
+              </BlogContent>
             </Column>
           </Column>
         </Row>

@@ -176,7 +176,7 @@ exports[`<TextField /> should render 1`] = `
         },
         "span": Object {
           "defaultColor": "#000000",
-          "fontSize": "0.875rem",
+          "fontSize": "14px",
           "fontWeight": 400,
           "letterSpacing": "-0.01562em",
           "lineHeight": "18px",
