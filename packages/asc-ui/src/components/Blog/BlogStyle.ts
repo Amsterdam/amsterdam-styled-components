@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled, { css } from '@datapunt/asc-core'
 import BackgroundImageStyle from '../BackgroundImage/BackgroundImageStyle'
 import BlogContentStyle from './BlogContent/BlogContentStyle'
 import { color, breakpoint } from '../../utils'
@@ -26,6 +26,17 @@ export default styled.article<Props>`
       margin-bottom: ${BG_IMAGE_MARGIN_BOTTOM}px;
     }
   }
+
+  ${({ image }) =>
+    image &&
+    css`
+      ${BlogContentStyle} {
+        padding: 20px 0;
+        @media screen and ${breakpoint('min-width', 'tabletM')} {
+          padding: 32px 24px;
+        }
+      }
+    `}
 
   ${BlogContentStyle} {
     @media screen and ${breakpoint('min-width', 'tabletM')} {

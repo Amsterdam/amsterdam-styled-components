@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React from 'react'
 
 type Props = {
@@ -46,7 +47,6 @@ class Modal extends React.Component<Props, State> {
         role="presentation"
         ref={this.myRef}
         onKeyDown={onKeyDown}
-        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
         tabIndex={0}
       >
         {children}

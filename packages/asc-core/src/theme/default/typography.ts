@@ -1,4 +1,3 @@
-import { rem } from 'polished'
 import { Theme } from '../index'
 import { colors } from './index'
 
@@ -9,42 +8,42 @@ const typography: Theme.TypographyInterface = {
   fontSize: '16px',
   h1: {
     defaultColor: colors.tint.level7,
-    fontSize: rem(30),
+    fontSize: '30px',
     fontWeight: 700,
     letterSpacing: 'inherit',
     lineHeight: '38px',
   },
   h2: {
     defaultColor: colors.tint.level7,
-    fontSize: rem(24),
+    fontSize: '24px',
     fontWeight: 700,
     letterSpacing: '-0.01562em',
     lineHeight: '28px',
   },
   h3: {
     defaultColor: colors.tint.level7,
-    fontSize: rem(20),
+    fontSize: '20px',
     fontWeight: 700,
     letterSpacing: '-0.01562em',
     lineHeight: '28px',
   },
   h4: {
     defaultColor: colors.tint.level7,
-    fontSize: rem(18),
+    fontSize: '18px',
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: '25px',
   },
   h5: {
     defaultColor: colors.tint.level7,
-    fontSize: rem(18),
+    fontSize: '18px',
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: 1,
   },
   h6: {
     defaultColor: colors.tint.level7,
-    fontSize: rem(18),
+    fontSize: '18px',
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: 1,
@@ -58,21 +57,21 @@ const typography: Theme.TypographyInterface = {
   },
   p: {
     defaultColor: colors.tint.level7,
-    fontSize: rem(16),
+    fontSize: '16px',
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: '22px',
   },
   em: {
     defaultColor: colors.tint.level7,
-    fontSize: rem(16),
+    fontSize: '16px',
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: 1.25,
   },
   small: {
     defaultColor: colors.tint.level7,
-    fontSize: rem(14),
+    fontSize: '14px',
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: '18px',
