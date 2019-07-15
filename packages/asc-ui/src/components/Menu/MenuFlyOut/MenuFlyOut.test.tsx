@@ -4,7 +4,7 @@ import 'jest-styled-components'
 import React from 'react'
 import { KeyboardKeys } from '../../../types'
 import { useMenuContext } from '../MenuContext'
-import MenuFlyOut from '../MenuFlyOut'
+import MenuFlyOut from '.'
 import MenuItem from '../MenuItem'
 import MenuItemLink from '../MenuItemLink'
 import MenuList from '../MenuList'
@@ -44,7 +44,7 @@ describe('MenuFlyOut', () => {
   }
 
   const onClickSimulate = (element: any = component) =>
-    component
+    element
       .find(MenuItemLink)
       .at(0)
       .simulate('click', { preventDefault: () => {} })
@@ -112,6 +112,7 @@ describe('MenuFlyOut', () => {
     container = mount<{}>(<MenuFlyOut label="Fly Out">{children}</MenuFlyOut>)
 
     onClickSimulate(container)
+
     expect(onExpandMock).toHaveBeenCalled()
   })
 
@@ -137,7 +138,7 @@ describe('MenuFlyOut', () => {
       menuListProps = component.find(MenuList).props()
       expect(menuListProps['aria-hidden']).toBe(true)
 
-      onClickSimulate(component)
+      onClickSimulate()
 
       expect(menuItemLink.find(<ChevronUp />)).toBeTruthy()
 
