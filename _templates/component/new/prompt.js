@@ -13,11 +13,17 @@ module.exports = [
   {
     type: 'input',
     name: 'parent',
-    message: "What is the component's parent? (Leave empty if not applicable)",
+    message:
+      "Does the component have an existing parent? If so, what's it's name? (Leave empty if not applicable)",
   },
   {
     type: 'confirm',
     name: 'story',
     message: 'Do you want to add a story to it?',
+  },
+  {
+    type: 'confirm',
+    name: 'composed',
+    message: 'Is this a composed component?',
   },
 ]

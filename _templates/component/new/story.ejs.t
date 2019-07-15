@@ -7,7 +7,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import <%= name %> from './<%= name %>'
 
-storiesOf('Atom/<%= name %>', module)
+storiesOf('<%= composed ? 'Composed' : 'Atom' %>/<%= name %>', module)
   .add('default state', () => (
     <<%= name %> />
   ))
