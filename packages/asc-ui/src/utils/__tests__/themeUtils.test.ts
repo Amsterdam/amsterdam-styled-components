@@ -1,7 +1,7 @@
 // @ts-ignore
 import { ascDefaultTheme } from '@datapunt/asc-core'
 import 'jest-styled-components'
-import { layouts, maxGridWidth } from 'asc-core/lib/theme/default'
+import { layouts, maxGridWidth } from '@datapunt/asc-core/lib/theme/default'
 import {
   color,
   focusStyleOutline,

@@ -274,7 +274,7 @@ describe('utils/grid', () => {
   describe('colWidthCalc', () => {
     it('should return a calc() rule', () => {
       const span = 10
-      const calcRe = new RegExp(`calc.* \* ${span}`)
+      const calcRe = new RegExp(`calc.* \\* ${span}`)
       const colCalcStr = grid.colWidthCalc({ layoutId: 'huge', span })({
         theme,
       })
@@ -315,7 +315,7 @@ describe('utils/grid', () => {
         theSmallest: 10,
         theImpossible: 4,
       }
-      const calcRe = new RegExp(`calc.* \* ${span.somewhereInTheMiddle}`)
+      const calcRe = new RegExp(`calc.* \\* ${span.somewhereInTheMiddle}`)
       const spanWidthStr = grid.spanWidth({
         layoutId: 'somewhereInTheMiddle',
         span,
