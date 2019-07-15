@@ -14,7 +14,7 @@ module.exports = [
     type: 'input',
     name: 'parent',
     message:
-      "Does the component have an existing parent? If so, what's it's name? (Leave empty if not applicable)",
+      "Does the component have an existing parent? If so, what's its name? (Leave empty if not applicable)",
   },
   {
     type: 'confirm',
