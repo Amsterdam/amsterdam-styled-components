@@ -1,6 +1,6 @@
 import styled, { css } from '@datapunt/asc-core'
 import { readableColor } from 'polished'
-import { svgFill, getColorFromTheme } from '../../utils'
+import { getColorFromTheme } from '../../utils'
 import ButtonBaseStyle, {
   Props as ButtonBaseStyleProps,
 } from './ButtonBaseStyle'
@@ -40,12 +40,6 @@ const ButtonStyle = styled(ButtonBaseStyle)<Props>`
   /* stylelint-disable-next-line selector-type-no-unknown */
   & > ${IconStyle}:last-child {
     margin-left: 5px;
-  }
-
-  & > svg {
-    width: 30px;
-    height: 30px;
-    ${({ theme }) => svgFill('tint', 'level1')({ theme })};
   }
 `
 

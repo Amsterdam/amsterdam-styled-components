@@ -27,7 +27,9 @@ storiesOf('Atoms/Buttons', module)
         </Button>
         <Button color="primary">
           Primary with icon right
-          <Alert />
+          <Icon size={24} color="bright">
+            <Alert />
+          </Icon>
         </Button>
       </ButtonBar>
     </>
@@ -37,12 +39,16 @@ storiesOf('Atoms/Buttons', module)
       <ButtonBar>
         <Button color="secondary">Secondary</Button>
         <Button color="secondary">
-          <Alert />
+          <Icon size={24} color="bright">
+            <Alert />
+          </Icon>
           Secondary with icon left
         </Button>
         <Button color="secondary">
           Secondary with icon right
-          <Alert />
+          <Icon size={24} color="bright">
+            <Alert />
+          </Icon>
         </Button>
       </ButtonBar>
     </>
