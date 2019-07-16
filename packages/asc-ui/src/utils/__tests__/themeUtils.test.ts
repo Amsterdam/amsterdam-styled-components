@@ -1,6 +1,7 @@
 // @ts-ignore
 import { ascDefaultTheme } from '@datapunt/asc-core'
 import 'jest-styled-components'
+import { layouts, maxGridWidth } from '@datapunt/asc-core/lib/theme/default'
 import {
   color,
   focusStyleOutline,
@@ -24,6 +25,8 @@ describe('getColorFromTheme', () => {
       },
     },
     typography,
+    layouts,
+    maxGridWidth,
   }
 
   it('should return the requested color from theme', () => {
@@ -47,6 +50,8 @@ describe('getTypographyFromTheme', () => {
         ...typography,
         fontSize: '16px',
       },
+      layouts,
+      maxGridWidth,
     }
 
     expect(getTypographyFromTheme(theme, 'fontSize')).toBe('16px')
@@ -65,6 +70,8 @@ describe('focusStyleOutline', () => {
       },
     },
     typography,
+    layouts,
+    maxGridWidth,
   }
 
   it('should return the focusstyle from theme', () => {
@@ -79,6 +86,8 @@ describe('breakpoint', () => {
     globalStyle,
     colors,
     typography,
+    layouts,
+    maxGridWidth,
   }
 
   it('should return the right breakpoint', () => {
@@ -97,6 +106,8 @@ describe('svgFill', () => {
     globalStyle,
     colors,
     typography,
+    layouts,
+    maxGridWidth,
   }
 
   it("should return een empty string when the color doesn't exist", () => {
@@ -115,6 +126,8 @@ describe('mapToBreakpoints', () => {
     globalStyle,
     colors,
     typography,
+    layouts,
+    maxGridWidth,
   }
 
   it('should return a style with 3 breakpoints and corresponding values', () => {
