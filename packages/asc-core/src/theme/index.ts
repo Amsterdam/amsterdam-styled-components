@@ -85,7 +85,7 @@ export namespace Theme {
     bright: PaletteInterface
   }
 
-  type TypographyElementStyle = {
+  export type TypographyElementStyle = {
     defaultColor: CSSProp
     fontWeight: 400 | 500 | 700 | 'inherit'
     fontSize: CSSProp

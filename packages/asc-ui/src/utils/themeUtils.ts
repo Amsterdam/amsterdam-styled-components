@@ -2,6 +2,9 @@ import { css, Theme } from '@datapunt/asc-core'
 import { fromTheme } from '.'
 
 import BreakpointsInterface = Theme.BreakpointsInterface
+import ThemeInterface = Theme.ThemeInterface
+import TypographyInterface = Theme.TypographyInterface
+import TypographyElementStyle = Theme.TypographyElementStyle
 
 type ThemeProp = {
   theme: Theme.ThemeInterface
@@ -82,6 +85,21 @@ export const getTypographyFromTheme = () => ({ as = 'p', theme }: any) => {
           )
         : ``}
   `
+}
+
+export const getTypographyValueFromProperty = (
+  element: keyof TypographyInterface,
+  property: keyof TypographyElementStyle,
+  breakpointRule?: keyof BreakpointsInterface,
+) => ({ theme }: { theme: ThemeInterface }) => {
+  const rules = fromTheme(`typography.${[element]}`)({ theme })
+  if (breakpointRule) {
+    if (rules.breakpoints[breakpointRule]) {
+      return rules.breakpoints[breakpointRule][property]
+    }
+    return ''
+  }
+  return rules[property]
 }
 
 export const focusStyleOutline = (width: number = 3, offset: number = 0) => ({
