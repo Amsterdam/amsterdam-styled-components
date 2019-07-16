@@ -1,6 +1,7 @@
 // @ts-ignore
-import { ascDefaultTheme } from '@datapunt/asc-core'
+import { ascDefaultTheme, Theme } from '@datapunt/asc-core'
 import 'jest-styled-components'
+import { layouts, maxGridWidth } from '@datapunt/asc-core/lib/theme/default'
 import {
   color,
   focusStyleOutline,
@@ -10,6 +11,8 @@ import {
   mapToBreakpoints,
   getTypographyValueFromProperty,
 } from '../themeUtils'
+
+import ThemeInterface = Theme.ThemeInterface
 
 const { breakpoints, colors, globalStyle, typography } = ascDefaultTheme
 
@@ -25,6 +28,8 @@ describe('getColorFromTheme', () => {
       },
     },
     typography,
+    layouts,
+    maxGridWidth,
   }
 
   it('should return the requested color from theme', () => {
@@ -47,6 +52,8 @@ describe('getTypographyFromTheme', () => {
       typography: {
         ...typography,
       },
+      layouts,
+      maxGridWidth,
     }
 
     expect(getTypographyFromTheme()({ as: 'p', theme })).toMatchSnapshot()
@@ -54,13 +61,15 @@ describe('getTypographyFromTheme', () => {
 })
 
 describe('getTypographyValueFromProperty', () => {
-  const theme = {
+  const theme: ThemeInterface = {
     breakpoints,
     globalStyle,
     colors,
     typography: {
       ...typography,
     },
+    layouts,
+    maxGridWidth,
   }
   it('should the value without a breakpoint', () => {
     expect(
@@ -93,6 +102,8 @@ describe('focusStyleOutline', () => {
       },
     },
     typography,
+    layouts,
+    maxGridWidth,
   }
 
   it('should return the focusstyle from theme', () => {
@@ -107,6 +118,8 @@ describe('breakpoint', () => {
     globalStyle,
     colors,
     typography,
+    layouts,
+    maxGridWidth,
   }
 
   it('should return the right breakpoint', () => {
@@ -125,6 +138,8 @@ describe('svgFill', () => {
     globalStyle,
     colors,
     typography,
+    layouts,
+    maxGridWidth,
   }
 
   it("should return een empty string when the color doesn't exist", () => {
@@ -143,6 +158,8 @@ describe('mapToBreakpoints', () => {
     globalStyle,
     colors,
     typography,
+    layouts,
+    maxGridWidth,
   }
 
   it('should return a style with 3 breakpoints and corresponding values', () => {
