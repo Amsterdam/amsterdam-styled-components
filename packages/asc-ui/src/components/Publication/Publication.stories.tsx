@@ -8,21 +8,22 @@ import Publication from './Publication'
 import publicationJSON from './publication_feed.json'
 import { BlogMetaList, BlogContent } from '../Blog'
 
-storiesOf('Composed/Blog/Publication', module).add('dataportal version', () => {
-  const {
-    title,
-    body,
-    field_publication_intro: intro,
-    field_file_size: fileSize,
-    field_file_type: fileType,
-    filecover_url: coverUrl,
-    file_url: downloadUrl,
-  } = publicationJSON
+storiesOf('Composed/Blog/Publication', module)
+  .addDecorator(storyFn => (
+    <div style={{ padding: '40px 10px', width: '250px' }}>{storyFn()}</div>
+  ))
+  .add('dataportal version', () => {
+    const {
+      title,
+      body,
+      field_publication_intro: intro,
+      field_file_size: fileSize,
+      field_file_type: fileType,
+      filecover_url: coverUrl,
+      file_url: downloadUrl,
+    } = publicationJSON
 
-  return (
-    <>
-      <br />
-      <br />
+    return (
       <Publication>
         <Row>
           <Column
@@ -62,6 +63,5 @@ storiesOf('Composed/Blog/Publication', module).add('dataportal version', () => {
           </Column>
         </Row>
       </Publication>
-    </>
-  )
-})
+    )
+  })

@@ -32,13 +32,11 @@ const ButtonStyle = styled(ButtonBaseStyle)<Props>`
       `}
   }
 
-  /* stylelint-disable-next-line selector-type-no-unknown */
-  & > ${IconStyle}:first-child {
+  & > ${/* sc-selector */ IconStyle}:first-child {
     margin-right: 5px;
   }
 
-  /* stylelint-disable-next-line selector-type-no-unknown */
-  & > ${IconStyle}:last-child {
+  & > ${/* sc-selector */ IconStyle}:last-child {
     margin-left: 5px;
   }
 `

@@ -8,65 +8,60 @@ import Typography from '../Typography'
 import Button from './Button'
 
 storiesOf('Atoms/Buttons', module)
+  .addDecorator(storyFn => (
+    <div style={{ padding: '40px 10px', width: '250px' }}>{storyFn()}</div>
+  ))
   .add('Default', () => (
-    <>
-      <ButtonBar>
-        <Button onClick={action('click')}>Default button</Button>
-      </ButtonBar>
-    </>
+    <ButtonBar>
+      <Button onClick={action('click')}>Default button</Button>
+    </ButtonBar>
   ))
   .add('Primary', () => (
-    <>
-      <ButtonBar>
-        <Button color="primary">Primary</Button>
-        <Button color="primary">
-          <Icon size={24} color="bright">
-            <Alert />
-          </Icon>
-          Primary with icon left
-        </Button>
-        <Button color="primary">
-          Primary with icon right
-          <Icon size={24} color="bright">
-            <Alert />
-          </Icon>
-        </Button>
-      </ButtonBar>
-    </>
+    <ButtonBar>
+      <Button color="primary">Primary</Button>
+      <Button color="primary">
+        <Icon size={24} color="bright">
+          <Alert />
+        </Icon>
+        Primary with icon left
+      </Button>
+      <Button color="primary">
+        Primary with icon right
+        <Icon size={24} color="bright">
+          <Alert />
+        </Icon>
+      </Button>
+    </ButtonBar>
   ))
   .add('Secondary', () => (
-    <>
-      <ButtonBar>
-        <Button color="secondary">Secondary</Button>
-        <Button color="secondary">
-          <Icon size={24} color="bright">
-            <Alert />
-          </Icon>
-          Secondary with icon left
-        </Button>
-        <Button color="secondary">
-          Secondary with icon right
-          <Icon size={24} color="bright">
-            <Alert />
-          </Icon>
-        </Button>
-      </ButtonBar>
-    </>
+    <ButtonBar>
+      <Button color="secondary">Secondary</Button>
+      <Button color="secondary">
+        <Icon size={24} color="bright">
+          <Alert />
+        </Icon>
+        Secondary with icon left
+      </Button>
+      <Button color="secondary">
+        Secondary with icon right
+        <Icon size={24} color="bright">
+          <Alert />
+        </Icon>
+      </Button>
+    </ButtonBar>
   ))
   .add('with Content', () => (
-    <>
-      <ButtonBar>
-        <Button color="primary">
-          <Icon size={20} color="bright">
-            <Download />
-          </Icon>
-          <Typography as="span" color="bright" fontSize={16}>
-            Download button
-          </Typography>
-          <Icon size={20} color="secondary">
-            <ChevronRight />
-          </Icon>
-        </Button>
-      </ButtonBar>
-    </>
+    <ButtonBar>
+      <Button color="primary">
+        <Icon size={20} color="bright">
+          <Download />
+        </Icon>
+        <Typography as="span" color="bright" fontSize={16}>
+          Download button
+        </Typography>
+        <Icon size={20} color="secondary">
+          <ChevronRight />
+        </Icon>
+      </Button>
+    </ButtonBar>
   ))
