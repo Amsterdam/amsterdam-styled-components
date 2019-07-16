@@ -7,11 +7,12 @@ export type Props = {
 }
 
 export const ParagraphStyleCSS = css<Props>`
-  margin: 8px 0 20px;
+  margin-top: 0;
+  margin-bottom: 20px;
   color: inherit;
 
   @media screen and ${breakpoint('min-width', 'laptopM')} {
-    margin: 8px 0 24px;
+    margin-bottom: 24px;
   }
 
   ${({ hasLongText }) =>

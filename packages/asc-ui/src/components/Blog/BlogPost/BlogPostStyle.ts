@@ -4,7 +4,7 @@ import BackgroundImageStyle from '../../BackgroundImage/BackgroundImageStyle'
 import BlogContentStyle from '../BlogContent/BlogContentStyle'
 
 export type Props = {
-  image?: string
+  hasImage: boolean
 }
 
 export const BLOG_POST_MARGIN_TOP = 54
@@ -21,8 +21,8 @@ export default styled.section<Props>`
     margin-bottom: 70px;
   }
 
-  ${({ image }) =>
-    image &&
+  ${({ hasImage }) =>
+    hasImage &&
     css`
       margin-top: 0;
 

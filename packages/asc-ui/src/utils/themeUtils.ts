@@ -47,12 +47,14 @@ const generateCSSFromTypography = ({
   fontSize,
   letterSpacing,
   lineHeight,
+  marginBottom,
 }: any) => css`
   color: ${defaultColor};
   font-weight: ${fontWeight};
   font-size: ${fontSize};
   letter-spacing: ${letterSpacing};
   line-height: ${lineHeight};
+  margin-bottom: ${marginBottom};
 `
 
 export const getTypographyFromTheme = () => ({ as = 'p', theme }: any) => {
@@ -62,6 +64,7 @@ export const getTypographyFromTheme = () => ({ as = 'p', theme }: any) => {
     fontSize,
     letterSpacing,
     lineHeight,
+    marginBottom,
     breakpoints,
   } = fromTheme(`typography.${[as]}`)({ theme })
   return css`
@@ -71,6 +74,7 @@ export const getTypographyFromTheme = () => ({ as = 'p', theme }: any) => {
       fontSize,
       letterSpacing,
       lineHeight,
+      marginBottom,
     })}
     ${() =>
       breakpoints

@@ -15,6 +15,7 @@ Array [
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   line-height: 30px;
+  margin-bottom: 0;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -32,6 +33,7 @@ Array [
     -ms-letter-spacing: inherit;
     letter-spacing: inherit;
     line-height: 38px;
+    margin-bottom: 0;
   }
 }
 
@@ -53,6 +55,7 @@ Array [
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   line-height: 28px;
+  margin-bottom: 0;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -70,6 +73,7 @@ Array [
     -ms-letter-spacing: inherit;
     letter-spacing: inherit;
     line-height: 30px;
+    margin-bottom: 0;
   }
 }
 
@@ -91,6 +95,7 @@ Array [
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 28px;
+  margin-bottom: 0;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -116,6 +121,7 @@ Array [
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 25px;
+  margin-bottom: 8px;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -141,6 +147,7 @@ Array [
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1;
+  margin-bottom: 0;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -166,6 +173,7 @@ Array [
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1;
+  margin-bottom: 0;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -191,6 +199,7 @@ Array [
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1.25;
+  margin-bottom: 0;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -217,6 +226,7 @@ Array [
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 1.25;
+  margin-bottom: 0;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -237,6 +247,7 @@ Array [
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
   line-height: 22px;
+  margin-bottom: 0;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;

@@ -12,6 +12,7 @@ const typography: Theme.TypographyInterface = {
     fontWeight: 700,
     letterSpacing: 'inherit',
     lineHeight: '30px',
+    marginBottom: '0',
     breakpoints: {
       tabletS: {
         defaultColor: colors.tint.level7,
@@ -19,6 +20,7 @@ const typography: Theme.TypographyInterface = {
         fontWeight: 700,
         letterSpacing: 'inherit',
         lineHeight: '38px',
+        marginBottom: '0',
       },
     },
   },
@@ -28,6 +30,7 @@ const typography: Theme.TypographyInterface = {
     fontWeight: 700,
     letterSpacing: 'inherit',
     lineHeight: '28px',
+    marginBottom: '0',
     breakpoints: {
       tabletS: {
         defaultColor: colors.tint.level7,
@@ -35,6 +38,7 @@ const typography: Theme.TypographyInterface = {
         fontWeight: 700,
         letterSpacing: 'inherit',
         lineHeight: '30px',
+        marginBottom: '0',
       },
     },
   },
@@ -44,6 +48,7 @@ const typography: Theme.TypographyInterface = {
     fontWeight: 700,
     letterSpacing: '-0.01562em',
     lineHeight: '28px',
+    marginBottom: '0',
   },
   h4: {
     defaultColor: colors.tint.level7,
@@ -51,6 +56,7 @@ const typography: Theme.TypographyInterface = {
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: '25px',
+    marginBottom: '8px',
   },
   h5: {
     defaultColor: colors.tint.level7,
@@ -58,6 +64,7 @@ const typography: Theme.TypographyInterface = {
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: 1,
+    marginBottom: '0',
   },
   h6: {
     defaultColor: colors.tint.level7,
@@ -65,6 +72,7 @@ const typography: Theme.TypographyInterface = {
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: 1,
+    marginBottom: '0',
   },
   a: {
     defaultColor: colors.tint.level7,
@@ -72,6 +80,7 @@ const typography: Theme.TypographyInterface = {
     fontWeight: 'inherit',
     letterSpacing: '-0.01562em',
     lineHeight: 1.25,
+    marginBottom: '0',
   },
   p: {
     defaultColor: colors.tint.level7,
@@ -79,6 +88,7 @@ const typography: Theme.TypographyInterface = {
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: '22px',
+    marginBottom: '0',
   },
   em: {
     defaultColor: colors.tint.level7,
@@ -86,6 +96,7 @@ const typography: Theme.TypographyInterface = {
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: 1.25,
+    marginBottom: '0',
   },
   small: {
     defaultColor: colors.tint.level7,
@@ -93,6 +104,7 @@ const typography: Theme.TypographyInterface = {
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: '18px',
+    marginBottom: '0',
   },
 }
 

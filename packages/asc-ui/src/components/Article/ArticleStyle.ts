@@ -18,8 +18,8 @@ const BLOG_BODY_PADDING_TOP = 32
 
 export default styled(BlogPostStyle)<Props>` 
   ${BlogBodyStyle} {
-    ${({ image }) =>
-      image &&
+    ${({ hasImage }) =>
+      hasImage &&
       css`
         @media screen and ${breakpoint('min-width', 'tabletM')} {
           padding: ${BLOG_BODY_PADDING_TOP}px 24px;
@@ -33,8 +33,8 @@ export default styled(BlogPostStyle)<Props>`
     - the BlogMeta margin-top and line-height
     */
     @media screen and ${breakpoint('min-width', 'tabletM')} {
-      margin-top: ${({ image, theme }) =>
-        image
+      margin-top: ${({ hasImage, theme }) =>
+        hasImage
           ? `${(BLOG_POST_MARGIN_TOP +
               BLOG_META_LINE_HEIGHT +
               BLOG_META_MARGIN_TOP +

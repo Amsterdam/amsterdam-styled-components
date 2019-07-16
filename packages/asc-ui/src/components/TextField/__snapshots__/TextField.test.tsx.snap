@@ -89,6 +89,7 @@ exports[`<TextField /> should render 1`] = `
           "fontWeight": "inherit",
           "letterSpacing": "-0.01562em",
           "lineHeight": 1.25,
+          "marginBottom": "0",
         },
         "em": Object {
           "defaultColor": "#000000",
@@ -96,6 +97,7 @@ exports[`<TextField /> should render 1`] = `
           "fontWeight": 400,
           "letterSpacing": "-0.01562em",
           "lineHeight": 1.25,
+          "marginBottom": "0",
         },
         "fontFamily": "Avenir Next, Arial, sans-serif",
         "fontSize": "16px",
@@ -107,6 +109,7 @@ exports[`<TextField /> should render 1`] = `
               "fontWeight": 700,
               "letterSpacing": "inherit",
               "lineHeight": "38px",
+              "marginBottom": "0",
             },
           },
           "defaultColor": "#000000",
@@ -114,6 +117,7 @@ exports[`<TextField /> should render 1`] = `
           "fontWeight": 700,
           "letterSpacing": "inherit",
           "lineHeight": "30px",
+          "marginBottom": "0",
         },
         "h2": Object {
           "breakpoints": Object {
@@ -123,6 +127,7 @@ exports[`<TextField /> should render 1`] = `
               "fontWeight": 700,
               "letterSpacing": "inherit",
               "lineHeight": "30px",
+              "marginBottom": "0",
             },
           },
           "defaultColor": "#000000",
@@ -130,6 +135,7 @@ exports[`<TextField /> should render 1`] = `
           "fontWeight": 700,
           "letterSpacing": "inherit",
           "lineHeight": "28px",
+          "marginBottom": "0",
         },
         "h3": Object {
           "defaultColor": "#000000",
@@ -137,6 +143,7 @@ exports[`<TextField /> should render 1`] = `
           "fontWeight": 700,
           "letterSpacing": "-0.01562em",
           "lineHeight": "28px",
+          "marginBottom": "0",
         },
         "h4": Object {
           "defaultColor": "#000000",
@@ -144,6 +151,7 @@ exports[`<TextField /> should render 1`] = `
           "fontWeight": 400,
           "letterSpacing": "-0.01562em",
           "lineHeight": "25px",
+          "marginBottom": "8px",
         },
         "h5": Object {
           "defaultColor": "#000000",
@@ -151,6 +159,7 @@ exports[`<TextField /> should render 1`] = `
           "fontWeight": 400,
           "letterSpacing": "-0.01562em",
           "lineHeight": 1,
+          "marginBottom": "0",
         },
         "h6": Object {
           "defaultColor": "#000000",
@@ -158,6 +167,7 @@ exports[`<TextField /> should render 1`] = `
           "fontWeight": 400,
           "letterSpacing": "-0.01562em",
           "lineHeight": 1,
+          "marginBottom": "0",
         },
         "p": Object {
           "defaultColor": "#000000",
@@ -165,6 +175,7 @@ exports[`<TextField /> should render 1`] = `
           "fontWeight": 400,
           "letterSpacing": "-0.01562em",
           "lineHeight": "22px",
+          "marginBottom": "0",
         },
         "small": Object {
           "defaultColor": "#000000",
@@ -172,6 +183,7 @@ exports[`<TextField /> should render 1`] = `
           "fontWeight": 400,
           "letterSpacing": "-0.01562em",
           "lineHeight": "18px",
+          "marginBottom": "0",
         },
       },
     }
