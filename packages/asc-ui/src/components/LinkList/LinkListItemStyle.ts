@@ -2,13 +2,14 @@ import styled from '@datapunt/asc-core'
 import LinkStyle from '../Typography/LinkStyle'
 import { color, svgFill } from '../../utils'
 import IconStyle from '../Icon/IconStyle'
+import TypographyStyle from '../Typography/TypographyStyle'
 
 export default styled.li`
   position: relative;
   word-break: break-word;
   margin-bottom: 8px;
 
-  small {
+  ${TypographyStyle} {
     font-weight: 700;
     display: block;
     color: ${color('tint', 'level6')};

@@ -1,6 +1,3 @@
 import styled from '@datapunt/asc-core'
 
-export default styled.div`
-  margin: auto;
-  width: 100%;
-`
+export default styled.div``
