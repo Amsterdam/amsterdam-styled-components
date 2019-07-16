@@ -53,11 +53,7 @@ storiesOf('Composed/Blog/Publication', module)
             <Column span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}>
               <BlogContent>
                 {intro && <Summary>{intro}</Summary>}
-                <CustomHTMLBlock
-                  dangerouslySetInnerHTML={{
-                    __html: body,
-                  }}
-                />
+                <CustomHTMLBlock body={body} />
               </BlogContent>
             </Column>
           </Column>

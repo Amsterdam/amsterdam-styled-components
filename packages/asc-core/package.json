@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
   },
-  "version": "0.7.4-alpha.0",
+  "version": "0.7.4-beta.0",
   "main": "lib/index.js",
   "files": [
     "lib"
@@ -25,5 +25,6 @@
   },
   "dependencies": {
     "styled-components": "^4.3.1"
-  }
+  },
+  "gitHead": "e9fa02de2db7fdc9c60285319df52042d6b217fc"
 }
