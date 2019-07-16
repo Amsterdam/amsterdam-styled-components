@@ -6,7 +6,7 @@ import Button from '../Button'
 
 jest.useFakeTimers()
 
-describe('Downloader', () => {
+describe('DocumentCover', () => {
   const mockFn = jest.fn()
   let component: any
 
