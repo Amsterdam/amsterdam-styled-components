@@ -62,7 +62,6 @@ exports[`<TextField /> should render 1`] = `
           "max": 1200,
           "min": 1024,
         },
-        "maxGridWidth": 1430,
         "medium": Object {
           "columns": 2,
           "gutter": 20,
@@ -72,7 +71,6 @@ exports[`<TextField /> should render 1`] = `
         },
         "small": Object {
           "columns": 1,
-          "gutter": 12,
           "margin": 20,
           "max": 414,
         },
@@ -83,6 +81,7 @@ exports[`<TextField /> should render 1`] = `
           "min": 1200,
         },
       },
+      "maxGridWidth": 1430,
       "typography": Object {
         "a": Object {
           "defaultColor": "#000000",

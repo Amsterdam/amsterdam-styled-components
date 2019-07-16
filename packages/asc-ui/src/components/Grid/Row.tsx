@@ -13,12 +13,9 @@ const Row: React.FC<TypeProps> = ({ children, debug, ...props }) => (
 )
 
 Row.defaultProps = {
-  className: '',
   debug: false,
   debugColor: 'rgba(51,102,153,0.75)',
-  halign: 'space-between',
   hasMargin: true,
-  valign: 'stretch',
 }
 
 export default Row

@@ -33,7 +33,6 @@ const layouts = {
   small: {
     columns: 1,
     margin: 20,
-    gutter: 12,
     max: sizes.mobileL,
   },
 }
