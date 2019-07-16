@@ -1,7 +1,7 @@
 import styled from '@datapunt/asc-core'
 import { color, breakpoint, svgFill } from '../../utils'
-import { MenuItemStyle } from '../NewMenu/MenuItem'
-import { MenuItemLabelStyle } from '../NewMenu/MenuItemLabel'
+import { MenuItemStyle } from '../Menu/MenuItem'
+import { MenuItemLabelStyle } from '../Menu/MenuItemLabel'
 
 const HeaderLinksStyle = styled.div`
   display: flex;

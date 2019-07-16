@@ -6,7 +6,7 @@ import MenuItem from './MenuItem'
 import MenuFlyOut from './MenuFlyOut'
 import MenuTitle from './MenuItemTitle'
 
-storiesOf('Composed/NewMenu', module)
+storiesOf('Composed/Menu', module)
   .add('default', () => (
     <MenuInline>
       <MenuItem href="/">Home</MenuItem>
