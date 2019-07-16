@@ -33,13 +33,13 @@ storiesOf('Composed/Blog/Publication', module).add('dataportal version', () => {
               span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}
             >
               <BlogContent>
-                <BlogHeader title={title}></BlogHeader>
+                <BlogHeader title={title} />
                 <BlogMetaList
                   fields={[
                     { id: 1, label: fileSize },
                     { id: 2, label: fileType },
                   ]}
-                ></BlogMetaList>
+                />
               </BlogContent>
             </Column>
             <Column span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}>
@@ -56,7 +56,7 @@ storiesOf('Composed/Blog/Publication', module).add('dataportal version', () => {
                   dangerouslySetInnerHTML={{
                     __html: body.processed,
                   }}
-                ></CustomHTMLBlock>
+                />
               </BlogContent>
             </Column>
           </Column>

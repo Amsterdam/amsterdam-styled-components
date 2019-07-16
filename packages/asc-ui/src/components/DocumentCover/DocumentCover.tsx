@@ -21,7 +21,7 @@ const Downloader: React.FC<Props> = ({
 }) => (
   <DocumentCoverStyle {...otherProps}>
     <DocumentCoverContent>
-      <Image src={imageSrc} alt=""></Image>
+      <Image src={imageSrc} alt="" />
       <Button color="primary" onClick={onClick}>
         <Icon size={20} color="bright">
           <Download />

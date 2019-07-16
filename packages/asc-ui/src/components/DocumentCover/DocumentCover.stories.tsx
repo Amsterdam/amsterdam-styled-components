@@ -9,7 +9,7 @@ const DocumentCoverComponent: React.FC<{}> = () => (
       imageSrc="http://lorempixel.com/400/800/sports/8/"
       onClick={action('click')}
       description="Download PDF (12MB)"
-    ></DocumentCover>
+    />
   </>
 )
 

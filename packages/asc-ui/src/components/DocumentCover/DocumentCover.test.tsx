@@ -16,7 +16,7 @@ describe('DocumentCover', () => {
         imageSrc="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
         onClick={mockFn}
         description="Download PDF (12MB)"
-      ></DocumentCover>,
+      />,
     )
     expect(component).toMatchSnapshot()
   })
@@ -27,7 +27,7 @@ describe('DocumentCover', () => {
         imageSrc="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
         onClick={mockFn}
         description="Download PDF (12MB)"
-      ></DocumentCover>,
+      />,
     )
     component.find(Button).simulate('click')
     expect(mockFn).toHaveBeenCalled()
