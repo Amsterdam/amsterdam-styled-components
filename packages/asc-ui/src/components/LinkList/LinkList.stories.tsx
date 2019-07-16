@@ -14,7 +14,7 @@ storiesOf('Atoms/LinkList', module)
       <LinkListItem href="/">
         A loooooong, very, very, very long link
       </LinkListItem>
-      <LinkListItem href="/" fileInfo="PDF 35kb">
+      <LinkListItem href="/" meta="PDF 35kb">
         A file!
       </LinkListItem>
     </LinkList>

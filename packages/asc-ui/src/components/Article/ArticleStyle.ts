@@ -18,16 +18,23 @@ const BLOG_BODY_PADDING_TOP = 32
 
 export default styled(BlogPostStyle)<Props>` 
   ${BlogBodyStyle} {
-    ${({ image }) =>
-      image &&
+    ${({ hasImage }) =>
+      hasImage &&
       css`
         @media screen and ${breakpoint('min-width', 'tabletM')} {
           padding: ${BLOG_BODY_PADDING_TOP}px 24px;
         }
       `}
+    
+    /* 
+    Here we calculate how much the BlogBody needs to shift up by getting existing css values from:
+    - The H1 line-height
+    - the padding of the BlogBody
+    - the BlogMeta margin-top and line-height
+    */
     @media screen and ${breakpoint('min-width', 'tabletM')} {
-      margin-top: ${({ image, theme }) =>
-        image
+      margin-top: ${({ hasImage, theme }) =>
+        hasImage
           ? `${(BLOG_POST_MARGIN_TOP +
               BLOG_META_LINE_HEIGHT +
               BLOG_META_MARGIN_TOP +

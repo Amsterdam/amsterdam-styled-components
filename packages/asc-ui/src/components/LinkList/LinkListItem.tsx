@@ -6,12 +6,12 @@ import Icon from '../Icon'
 import Typography from '../Typography'
 
 type Props = {
-  fileInfo?: string
+  meta?: string
 } & LinkProps
 
 const LinkListItem: React.FC<Props> = ({
   children,
-  fileInfo,
+  meta,
   href,
   title,
   rel,
@@ -22,7 +22,7 @@ const LinkListItem: React.FC<Props> = ({
         <ChevronRight />
       </Icon>
       {children}
-      {fileInfo && <Typography as="small">{fileInfo}</Typography>}
+      {meta && <Typography as="small">{meta}</Typography>}
     </Link>
   </LinkListItemStyle>
 )

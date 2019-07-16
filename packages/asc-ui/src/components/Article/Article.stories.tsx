@@ -99,13 +99,13 @@ storiesOf('Composed/Blog/Article', module)
               <BlogSidebar>
                 <Heading as="h2">Downloads</Heading>
                 <LinkList>
-                  <LinkListItem fileInfo="PDF 40kB" href="/">
+                  <LinkListItem meta="PDF 40kB" href="/">
                     File
                   </LinkListItem>
-                  <LinkListItem fileInfo="PDF 40kB" href="/">
+                  <LinkListItem meta="PDF 40kB" href="/">
                     File
                   </LinkListItem>
-                  <LinkListItem fileInfo="PDF 40kB" href="/">
+                  <LinkListItem meta="PDF 40kB" href="/">
                     File
                   </LinkListItem>
                 </LinkList>

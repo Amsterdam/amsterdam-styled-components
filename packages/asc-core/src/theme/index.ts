@@ -91,6 +91,7 @@ export namespace Theme {
     fontSize: CSSProp
     lineHeight: number | CSSProp
     letterSpacing: CSSProp
+    marginBottom: CSSProp
   }
 
   type TypographyType = {

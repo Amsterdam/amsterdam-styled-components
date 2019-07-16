@@ -1,13 +1,14 @@
 import React from 'react'
-import BlogPostStyle, { Props as BlogPostStyleProps } from './BlogPostStyle'
+import BlogPostStyle from './BlogPostStyle'
 import BackgroundImage from '../../BackgroundImage'
 
-type Props = {
-  StyledComponent: any
-} & BlogPostStyleProps
+export type Props = {
+  StyledComponent?: any
+  image?: string
+}
 
 const BlogPost: React.FC<Props> = ({ children, image, StyledComponent }) => (
-  <StyledComponent image={image}>
+  <StyledComponent hasImage={!!image}>
     {image && (
       <BackgroundImage
         aspectRatio={44}
