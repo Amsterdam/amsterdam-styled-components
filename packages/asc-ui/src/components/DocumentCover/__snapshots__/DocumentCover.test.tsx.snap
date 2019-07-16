@@ -98,17 +98,6 @@ exports[`Downloader should render 1`] = `
   margin-left: 5px;
 }
 
-.c3 > svg {
-  width: 30px;
-  height: 30px;
-}
-
-.c3 > svg rect,
-.c3 > svg polygon,
-.c3 > svg path {
-  fill: #ffffff;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;

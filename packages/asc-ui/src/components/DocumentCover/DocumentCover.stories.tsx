@@ -1,20 +1,20 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import Downloader from './Downloader'
+import DocumentCover from './DocumentCover'
 
-const DownloaderComponent: React.FC<{}> = () => (
+const DocumentCoverComponent: React.FC<{}> = () => (
   <>
-    <Downloader
+    <DocumentCover
       imageSrc="https://acc.cms.data.amsterdam.nl/sites/default/files/images/2019-factsheet-jeugdwerkloosheid-2014-2018.png"
       onClick={action('click')}
       description="Download PDF (12MB)"
-    ></Downloader>
+    ></DocumentCover>
   </>
 )
 
-storiesOf('Atoms/Downloader', module)
+storiesOf('Atoms/DocumentCover', module)
   .addDecorator(storyFn => (
     <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
   ))
-  .add('default state', () => <DownloaderComponent />)
+  .add('default state', () => <DocumentCoverComponent />)

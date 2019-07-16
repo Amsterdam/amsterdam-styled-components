@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Downloader from './Downloader'
+import DocumentCover from './DocumentCover'
 import { renderWithTheme, mountWithTheme } from '../../utils/withTheme'
 import 'jest-styled-components'
 import Button from '../Button'
@@ -12,22 +12,22 @@ describe('Downloader', () => {
 
   it('should render', () => {
     component = renderWithTheme(
-      <Downloader
+      <DocumentCover
         imageSrc="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
         onClick={mockFn}
         description="Download PDF (12MB)"
-      ></Downloader>,
+      ></DocumentCover>,
     )
     expect(component).toMatchSnapshot()
   })
 
   it('should trigger the downlaod action when the button is clicked', () => {
     component = mountWithTheme(
-      <Downloader
+      <DocumentCover
         imageSrc="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
         onClick={mockFn}
         description="Download PDF (12MB)"
-      ></Downloader>,
+      ></DocumentCover>,
     )
     component.find(Button).simulate('click')
     expect(mockFn).toHaveBeenCalled()

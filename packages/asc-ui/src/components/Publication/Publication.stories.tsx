@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react/'
 import { action } from '@storybook/addon-actions'
 import { Column, CustomHTMLBlock, Row, BlogHeader } from '../../index'
 import Summary from '../Typography/Summary'
-import Downloader from '../Downloader'
+import DocumentCover from '../DocumentCover'
 import Publication from './Publication'
 import publicationJSON from './publication_feed.json'
 import { BlogMetaList, BlogContent } from '../Blog'
@@ -44,7 +44,7 @@ storiesOf('Composed/Blog/Publication', module).add('dataportal version', () => {
               </BlogContent>
             </Column>
             <Column span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}>
-              <Downloader
+              <DocumentCover
                 imageSrc={`${cmsRoot}${coverUrl}`}
                 description={`Download PDF (${fileSize})`}
                 onClick={action(`downloading: ${cmsRoot}${downloadUrl}`)}

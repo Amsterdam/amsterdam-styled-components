@@ -61,17 +61,6 @@ exports[`Button should render the button 1`] = `
   margin-left: 5px;
 }
 
-.c0 > svg {
-  width: 30px;
-  height: 30px;
-}
-
-.c0 > svg rect,
-.c0 > svg polygon,
-.c0 > svg path {
-  fill: #ffffff;
-}
-
 <button
   class="c0"
   color="primary"

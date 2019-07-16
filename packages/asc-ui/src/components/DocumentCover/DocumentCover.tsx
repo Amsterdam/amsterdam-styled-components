@@ -1,9 +1,9 @@
 import React from 'react'
 import { Download } from '@datapunt/asc-assets'
-import DownloaderStyle from './DownloaderStyle'
+import DocumentCoverStyle from './DocumentCoverStyle'
 import Button from '../Button'
 import Image from '../Image'
-import DownloaderContent from './DownloaderContent'
+import DocumentCoverContent from './DocumentCoverContent'
 import Typography from '../Typography'
 import Icon from '../Icon'
 
@@ -19,8 +19,8 @@ const Downloader: React.FC<Props> = ({
   description,
   ...otherProps
 }) => (
-  <DownloaderStyle {...otherProps}>
-    <DownloaderContent>
+  <DocumentCoverStyle {...otherProps}>
+    <DocumentCoverContent>
       <Image src={imageSrc} alt=""></Image>
       <Button color="primary" onClick={onClick}>
         <Icon size={20} color="bright">
@@ -30,8 +30,8 @@ const Downloader: React.FC<Props> = ({
           {description}
         </Typography>
       </Button>
-    </DownloaderContent>
-  </DownloaderStyle>
+    </DocumentCoverContent>
+  </DocumentCoverStyle>
 )
 
 export default Downloader
