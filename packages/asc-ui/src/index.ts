@@ -17,8 +17,9 @@ import TopBar, { TopBarStyles } from './components/TopBar'
 import ShareBar from './components/ShareBar'
 import ShareButton from './components/ShareButton'
 import Button from './components/Button'
-import CustomHTMLBlock, {
-  CustomHTMLBlockStyles,
+import {
+  CustomHTMLBlock,
+  CustomHTMLBlockStyle,
 } from './components/CustomHTMLBlock'
 import Radio from './components/Radio'
 import Focus from './components/Focus'
@@ -78,9 +79,9 @@ export const styles = {
   ...TopBarStyles,
   ...InputStyles,
   ...SearchBarToggleStyles,
-  ...CustomHTMLBlockStyles,
   ...MenuStyles,
   ...BlogStyles,
+  CustomHTMLBlockStyle,
   ArticleStyle,
 }
 

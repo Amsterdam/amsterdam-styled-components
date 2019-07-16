@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react/'
-import CustomHTMLBlock from './CustomHTMLBlock'
+import CustomHTMLBlock from './CustomHTMLBlockStyle'
 
 storiesOf('Atoms/CustomHTMLBlock', module)
   .addDecorator(storyFn => (

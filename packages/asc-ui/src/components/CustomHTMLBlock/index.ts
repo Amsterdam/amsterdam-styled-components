@@ -1,7 +1,2 @@
-import CustomHTMLBlock from './CustomHTMLBlock'
-
-export default CustomHTMLBlock
-
-export const CustomHTMLBlockStyles = {
-  CustomHTMLBlockStyle: CustomHTMLBlock,
-}
+export { default as CustomHTMLBlock } from './CustomHTMLBlock'
+export { default as CustomHTMLBlockStyle } from './CustomHTMLBlockStyle'

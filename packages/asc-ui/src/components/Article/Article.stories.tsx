@@ -37,12 +37,7 @@ storiesOf('Composed/Blog/Article', module)
                   />
                 </BlogHeader>
                 <Summary hasLongText>{articleJSON.fields.intro}</Summary>
-                <CustomHTMLBlock
-                  hasLongText
-                  dangerouslySetInnerHTML={{
-                    __html: articleJSON.body,
-                  }}
-                />
+                <CustomHTMLBlock body={articleJSON.body} />
               </BlogBody>
             </Column>
             <Column
@@ -84,12 +79,7 @@ storiesOf('Composed/Blog/Article', module)
                   />
                 </BlogHeader>
                 <Summary hasLongText>{articleJSON.fields.intro}</Summary>
-                <CustomHTMLBlock
-                  hasLongText
-                  dangerouslySetInnerHTML={{
-                    __html: articleJSON.body,
-                  }}
-                />
+                <CustomHTMLBlock body={articleJSON.body} />
               </BlogBody>
             </Column>
             <Column
