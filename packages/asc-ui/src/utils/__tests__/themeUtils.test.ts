@@ -8,6 +8,7 @@ import {
   svgFill,
   getTypographyFromTheme,
   mapToBreakpoints,
+  getTypographyValueFromProperty,
 } from '../themeUtils'
 
 const { breakpoints, colors, globalStyle, typography } = ascDefaultTheme
@@ -49,6 +50,34 @@ describe('getTypographyFromTheme', () => {
     }
 
     expect(getTypographyFromTheme()({ as: 'p', theme })).toMatchSnapshot()
+  })
+})
+
+describe('getTypographyValueFromProperty', () => {
+  const theme = {
+    breakpoints,
+    globalStyle,
+    colors,
+    typography: {
+      ...typography,
+    },
+  }
+  it('should the value without a breakpoint', () => {
+    expect(
+      getTypographyValueFromProperty('h1', 'lineHeight')({ theme }),
+    ).toEqual('30px')
+  })
+
+  it('should the value with a breakpoint', () => {
+    expect(
+      getTypographyValueFromProperty('h1', 'lineHeight', 'tabletS')({ theme }),
+    ).toEqual('38px')
+  })
+
+  it('should return an empty string if no results could be found', () => {
+    expect(
+      getTypographyValueFromProperty('h1', 'lineHeight', 'laptop')({ theme }),
+    ).toEqual('')
   })
 })
 

@@ -1,6 +1,9 @@
 import styled from '@datapunt/asc-core'
 import { breakpoint, color } from '../../../utils'
 
+export const BLOG_META_MARGIN_TOP = 20
+export const BLOG_META_LINE_HEIGHT = 16
+
 export default styled.ul`
   margin: 15px 0 20px 0;
   padding: 0;
@@ -8,10 +11,11 @@ export default styled.ul`
   display: flex;
   flex-wrap: wrap;
   font-size: 14px;
+  line-height: ${BLOG_META_LINE_HEIGHT}px;
   color: ${color('tint', 'level5')};
 
   @media screen and ${breakpoint('min-width', 'laptopM')} {
-    margin: 20px 0 24px 0;
+    margin: ${BLOG_META_MARGIN_TOP}px 0 24px 0;
   }
 `
 

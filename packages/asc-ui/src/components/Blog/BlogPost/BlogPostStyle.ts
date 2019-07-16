@@ -7,6 +7,8 @@ export type Props = {
   image?: string
 }
 
+export const BLOG_POST_MARGIN_TOP = 54
+
 export default styled.section<Props>`
   width: 100%;
   color: ${color('tint', 'level6')};
@@ -15,7 +17,7 @@ export default styled.section<Props>`
   margin-bottom: 20px;
 
   @media screen and ${breakpoint('min-width', 'tabletM')} {
-    margin-top: 54px;
+    margin-top: ${BLOG_POST_MARGIN_TOP}px;
     margin-bottom: 70px;
   }
 
@@ -27,7 +29,7 @@ export default styled.section<Props>`
       ${BlogContentStyle} {
         margin-top: 20px;
         @media screen and ${breakpoint('min-width', 'tabletM')} {
-          margin-top: 54px;
+          margin-top: ${BLOG_POST_MARGIN_TOP}px;
         }
       }
     `}
