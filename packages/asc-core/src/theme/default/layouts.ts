@@ -1,6 +1,6 @@
 import { sizes } from './breakpoints'
 
-export const maxGridWidth = 2560
+export const maxGridWidth = sizes.laptopL
 
 const layouts = {
   xLarge: {
