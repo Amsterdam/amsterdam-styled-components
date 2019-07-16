@@ -14,21 +14,10 @@ exports[`Publication should render 1`] = `
   min-height: 250px;
 }
 
-.c0 .c2 .c3 {
-  margin: 0 0 24px;
-  color: #000000;
-}
-
 @media screen and (min-width:768.02px) {
   .c0 {
     margin-top: 54px;
     margin-bottom: 70px;
-  }
-}
-
-@media screen and (max-width:1200px) {
-  .c0 .c2 .c3 {
-    margin: 0 0 20px;
   }
 }
 

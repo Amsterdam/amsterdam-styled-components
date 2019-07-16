@@ -112,6 +112,7 @@ const typography: Theme.TypographyInterface = {
     fontWeight: 400,
     letterSpacing: '-0.01562em',
     lineHeight: '18px',
+    marginBottom: '0',
   },
 }
 
