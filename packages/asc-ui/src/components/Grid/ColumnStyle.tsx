@@ -12,7 +12,7 @@ import { TypeFlexPosition } from '.'
 export type TypeProps = {
   alignSelf?: TypeFlexPosition
   children: React.ReactNode
-  clasName?: string
+  className?: string
   debug?: boolean
   debugColor?: string
   id?: string

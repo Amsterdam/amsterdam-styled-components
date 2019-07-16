@@ -15,9 +15,9 @@ storiesOf('Composed/Blog/Publication', module).add('dataportal version', () => {
     field_publication_intro: intro,
     field_file_size: fileSize,
     field_file_type: fileType,
-  } = publicationJSON.data[0].attributes
-  const coverUrl = publicationJSON.included[0].attributes.uri.url
-  const downloadUrl = publicationJSON.included[1].attributes.uri.url
+    filecover_url: coverUrl,
+    file_url: downloadUrl,
+  } = publicationJSON
 
   return (
     <>
@@ -54,7 +54,7 @@ storiesOf('Composed/Blog/Publication', module).add('dataportal version', () => {
                 {intro && <Summary>{intro}</Summary>}
                 <CustomHTMLBlock
                   dangerouslySetInnerHTML={{
-                    __html: body.processed,
+                    __html: body,
                   }}
                 />
               </BlogContent>
