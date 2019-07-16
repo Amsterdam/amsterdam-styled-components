@@ -17,7 +17,7 @@ export default styled.div`
     width: 100%;
 
     @media screen and ${breakpoint('max-width', 'tabletS')} {
-      max-width: 180px;
+      max-width: 200px;
       margin-bottom: 20px;
     }
   }

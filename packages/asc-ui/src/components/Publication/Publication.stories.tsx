@@ -16,7 +16,6 @@ storiesOf('Composed/Blog/Publication', module).add('dataportal version', () => {
     field_file_size: fileSize,
     field_file_type: fileType,
   } = publicationJSON.data[0].attributes
-  const cmsRoot = 'https://acc.cms.data.amsterdam.nl'
   const coverUrl = publicationJSON.included[0].attributes.uri.url
   const downloadUrl = publicationJSON.included[1].attributes.uri.url
 
@@ -45,9 +44,9 @@ storiesOf('Composed/Blog/Publication', module).add('dataportal version', () => {
             </Column>
             <Column span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}>
               <DocumentCover
-                imageSrc={`${cmsRoot}${coverUrl}`}
+                imageSrc={`${coverUrl}`}
                 description={`Download PDF (${fileSize})`}
-                onClick={action(`downloading: ${cmsRoot}${downloadUrl}`)}
+                onClick={action(`downloading: ${downloadUrl}`)}
               />
             </Column>
             <Column span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}>

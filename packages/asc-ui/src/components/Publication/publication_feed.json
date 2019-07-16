@@ -20,7 +20,7 @@
         "filename": "2019-rapportage-wallengebied.png",
         "uri": {
           "value": "public:\/\/images\/2019-rapportage-wallengebied.png",
-          "url": "\/sites\/default\/files\/images\/2019-rapportage-wallengebied.png"
+          "url": "http:\/\/lorempixel.com\/400\/800\/sports\/8\/"
         }
       }
     },
@@ -28,7 +28,7 @@
       "attributes": {
         "uri": {
           "value": "public:\/\/publications\/2019-rapportage-wallengebied.pdf",
-          "url": "\/sites\/default\/files\/publications\/2019-rapportage-wallengebied.pdf"
+          "url": "http:\/\/lorempixel.com\/400\/800\/sports\/1\/2019-rapportage-wallengebied.pdf"
         }
       }
     }

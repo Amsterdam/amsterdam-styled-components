@@ -144,7 +144,7 @@ exports[`Downloader should render 1`] = `
 
 @media screen and (max-width:540px) {
   .c1 > .c2 {
-    max-width: 180px;
+    max-width: 200px;
     margin-bottom: 20px;
   }
 }
