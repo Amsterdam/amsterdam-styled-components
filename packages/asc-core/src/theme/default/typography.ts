@@ -106,6 +106,14 @@ const typography: Theme.TypographyInterface = {
     lineHeight: '18px',
     marginBottom: '0',
   },
+  span: {
+    defaultColor: colors.tint.level7,
+    fontSize: '14px',
+    fontWeight: 400,
+    letterSpacing: '-0.01562em',
+    lineHeight: '18px',
+    marginBottom: '0',
+  },
 }
 
 export default typography

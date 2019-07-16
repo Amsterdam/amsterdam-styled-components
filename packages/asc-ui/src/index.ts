@@ -63,6 +63,8 @@ import {
 import ThemeProvider from './theme'
 import Spinner from './components/Spinner/Spinner'
 import LinkList, { LinkListItem } from './components/LinkList'
+import Publication from './components/Publication'
+import DocumentCover from './components/DocumentCover'
 import { Article, ArticleStyle } from './components/Article'
 
 export { breakpoint } from './utils'
@@ -129,6 +131,7 @@ export {
   TopBar,
   BlogPost,
   Article,
+  Publication,
   Link,
   Paragraph,
   Heading,
@@ -139,4 +142,5 @@ export {
   BlogHeader,
   BlogSidebar,
   ascDefaultTheme,
+  DocumentCover,
 }

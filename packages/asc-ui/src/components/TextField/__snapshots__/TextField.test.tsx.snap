@@ -185,6 +185,14 @@ exports[`<TextField /> should render 1`] = `
           "lineHeight": "18px",
           "marginBottom": "0",
         },
+        "span": Object {
+          "defaultColor": "#000000",
+          "fontSize": "14px",
+          "fontWeight": 400,
+          "letterSpacing": "-0.01562em",
+          "lineHeight": "18px",
+          "marginBottom": "0",
+        },
       },
     }
   }

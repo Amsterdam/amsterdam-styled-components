@@ -10,7 +10,7 @@ exports[`ButtonBar should render the buttons in the bar 1`] = `
       },
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-htpNat",
+        "componentId": "sc-bxivhb",
         "isStatic": false,
         "rules": Array [
           "
@@ -28,7 +28,7 @@ exports[`ButtonBar should render the buttons in the bar 1`] = `
       "displayName": "styled.div",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "sc-htpNat",
+      "styledComponentId": "sc-bxivhb",
       "target": "div",
       "toString": [Function],
       "warnTooManyClasses": [Function],

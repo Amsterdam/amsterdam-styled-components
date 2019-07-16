@@ -20,8 +20,16 @@ exports[`Button should render the button 1`] = `
   -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
   transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
   background: #004699;
-  padding: 0 10px 0 10px;
-  min-height: 38px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 4px 10px 4px 10px;
+  min-height: 36px;
   line-height: 1em;
   color: #fff;
 }
@@ -45,15 +53,12 @@ exports[`Button should render the button 1`] = `
   font-size: 0;
 }
 
-.c0 > svg {
-  width: 30px;
-  height: 30px;
+.c0 > .c1:first-child {
+  margin-right: 5px;
 }
 
-.c0 > svg rect,
-.c0 > svg polygon,
-.c0 > svg path {
-  fill: #ffffff;
+.c0 > .c1:last-child {
+  margin-left: 5px;
 }
 
 <button

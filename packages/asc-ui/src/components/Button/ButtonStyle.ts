@@ -1,15 +1,18 @@
 import styled, { css } from '@datapunt/asc-core'
 import { readableColor } from 'polished'
-import { svgFill, getColorFromTheme } from '../../utils'
+import { getColorFromTheme } from '../../utils'
 import ButtonBaseStyle, {
   Props as ButtonBaseStyleProps,
 } from './ButtonBaseStyle'
+import IconStyle from '../Icon/IconStyle'
 
 export type Props = ButtonBaseStyleProps
 
 const ButtonStyle = styled(ButtonBaseStyle)<Props>`
-  padding: 0 10px 0 10px;
-  min-height: 38px;
+  display: flex;
+  justify-content: center;
+  padding: 4px 10px 4px 10px;
+  min-height: 36px;
   line-height: 1em;
   color: ${({ color, theme }) =>
     color
@@ -29,10 +32,12 @@ const ButtonStyle = styled(ButtonBaseStyle)<Props>`
       `}
   }
 
-  & > svg {
-    width: 30px;
-    height: 30px;
-    ${({ theme }) => svgFill('tint', 'level1')({ theme })};
+  & > ${/* sc-selector */ IconStyle}:first-child {
+    margin-right: 5px;
+  }
+
+  & > ${/* sc-selector */ IconStyle}:last-child {
+    margin-left: 5px;
   }
 `
 

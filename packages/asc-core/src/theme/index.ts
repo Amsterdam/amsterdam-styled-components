@@ -111,6 +111,7 @@ export namespace Theme {
     a: TypographyType
     em: TypographyType
     small: TypographyType
+    span: TypographyType
   }
 
   export interface TypographyInterface extends TypographyElements {
