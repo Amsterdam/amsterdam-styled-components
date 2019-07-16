@@ -59,7 +59,7 @@ import {
   MenuInline,
   MenuToggle,
   MenuStyles,
-} from './components/NewMenu'
+} from './components/Menu'
 import ThemeProvider from './theme'
 import Spinner from './components/Spinner/Spinner'
 import LinkList, { LinkListItem } from './components/LinkList'

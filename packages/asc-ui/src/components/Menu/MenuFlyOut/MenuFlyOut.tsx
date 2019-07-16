@@ -48,6 +48,7 @@ const MenuFlyOut: React.FC<any> = ({
 
   const onHandleToggle = (e: React.MouseEvent | React.KeyboardEvent) => {
     e.preventDefault()
+
     if (hasToggle) {
       setOpen(isOpen ? false : isOpen)
       setOpenOnClick(!isOpenOnClick)

@@ -4,10 +4,10 @@ import { css } from '@datapunt/asc-core'
 import { Header, styles } from '../../../index'
 import SearchBar from '../../SearchBar'
 import SearchBarToggle from '../../SearchBarToggle/SearchBarToggle'
-import MenuInline from '../../NewMenu/MenuInline'
-import MenuToggle from '../../NewMenu/MenuToggle'
-import MenuItem from '../../NewMenu/MenuItem'
-import MenuFlyOut from '../../NewMenu/MenuFlyOut'
+import MenuInline from '../../Menu/MenuInline'
+import MenuToggle from '../../Menu/MenuToggle'
+import MenuItem from '../../Menu/MenuItem'
+import MenuFlyOut from '../../Menu/MenuFlyOut'
 
 const DataportaalHeaderWrapperStyle = css`
   ${styles.HeaderContentStyle} {
