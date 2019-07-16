@@ -1,8 +1,8 @@
 import React from 'react'
-import DownloaderContentStyle from './DocumentCoverContentStyle'
+import DocumentCoverContentStyle from './DocumentCoverContentStyle'
 
 const DocumentCoverContent: React.FC<{}> = ({ children }) => (
-  <DownloaderContentStyle>{children}</DownloaderContentStyle>
+  <DocumentCoverContentStyle>{children}</DocumentCoverContentStyle>
 )
 
 export default DocumentCoverContent

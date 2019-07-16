@@ -13,7 +13,7 @@ interface Props {
   description: string
 }
 
-const Downloader: React.FC<Props> = ({
+const DocumentCoverContentStyle: React.FC<Props> = ({
   imageSrc,
   onClick,
   description,
@@ -34,4 +34,4 @@ const Downloader: React.FC<Props> = ({
   </DocumentCoverStyle>
 )
 
-export default Downloader
+export default DocumentCoverContentStyle
