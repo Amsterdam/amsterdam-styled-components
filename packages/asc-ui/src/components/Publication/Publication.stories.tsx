@@ -28,10 +28,10 @@ storiesOf('Composed/Blog/Publication', module).add('dataportal version', () => {
         <Row>
           <Column
             wrap
-            span={{ small: 1, medium: 4, big: 6, large: 12, xLarge: 12 }}
+            span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}
           >
             <Column
-              span={{ small: 1, medium: 4, big: 6, large: 12, xLarge: 12 }}
+              span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}
             >
               <BlogContent>
                 <BlogHeader title={title}></BlogHeader>
@@ -43,14 +43,14 @@ storiesOf('Composed/Blog/Publication', module).add('dataportal version', () => {
                 ></BlogMetaList>
               </BlogContent>
             </Column>
-            <Column span={{ small: 1, medium: 4, big: 3, large: 6, xLarge: 6 }}>
+            <Column span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}>
               <Downloader
                 imageSrc={`${cmsRoot}${coverUrl}`}
                 description={`Download PDF (${fileSize})`}
                 onClick={action(`downloading: ${cmsRoot}${downloadUrl}`)}
               />
             </Column>
-            <Column span={{ small: 1, medium: 4, big: 3, large: 6, xLarge: 6 }}>
+            <Column span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}>
               <BlogContent>
                 {intro && <Summary>{intro}</Summary>}
                 <CustomHTMLBlock

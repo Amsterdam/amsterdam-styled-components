@@ -2,81 +2,19 @@
 
 exports[`Downloader should render 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 100%;
-}
-
-.c0 > div:first-child {
   background-color: #F5F5F5;
 }
 
-.c2 {
-  box-sizing: border-box;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-order: 0;
-  -ms-flex-order: 0;
-  order: 0;
-}
-
-.c3 {
-  box-sizing: border-box;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-order: 0;
-  -ms-flex-order: 0;
-  order: 0;
-}
-
-.c1 {
-  box-sizing: border-box;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  max-width: 1430px;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.c1 .layout-label {
-  position: absolute;
-  top: -20px;
-  width: 100%;
-}
-
-.c1 .layout-label::before {
-  position: absolute;
-  padding: 2px 4px;
-  font: 12px sans-serif;
-  background: white;
-  height: 20px;
-}
-
-.c8 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -89,18 +27,18 @@ exports[`Downloader should render 1`] = `
   transform: rotate(0deg);
 }
 
-.c8 > svg {
+.c5 > svg {
   width: inherit;
   height: inherit;
 }
 
-.c8 > svg rect,
-.c8 > svg polygon,
-.c8 > svg path {
+.c5 > svg rect,
+.c5 > svg polygon,
+.c5 > svg path {
   fill: #ffffff;
 }
 
-.c6 {
+.c3 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -133,7 +71,7 @@ exports[`Downloader should render 1`] = `
   color: #fff;
 }
 
-.c6:focus {
+.c3:focus {
   z-index: 10;
   outline-color: #FEC813;
   outline-style: solid;
@@ -141,37 +79,37 @@ exports[`Downloader should render 1`] = `
   outline-width: 3px;
 }
 
-.c6:hover {
+.c3:hover {
   background: #00387a;
 }
 
-.c6:after {
+.c3:after {
   content: '';
   display: block;
   min-height: inherit;
   font-size: 0;
 }
 
-.c6 > .c7:first-child {
+.c3 > .c4:first-child {
   margin-right: 5px;
 }
 
-.c6 > .c7:last-child {
+.c3 > .c4:last-child {
   margin-left: 5px;
 }
 
-.c6 > svg {
+.c3 > svg {
   width: 30px;
   height: 30px;
 }
 
-.c6 > svg rect,
-.c6 > svg polygon,
-.c6 > svg path {
+.c3 > svg rect,
+.c3 > svg polygon,
+.c3 > svg path {
   fill: #ffffff;
 }
 
-.c4 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -182,12 +120,13 @@ exports[`Downloader should render 1`] = `
   margin: 32px auto;
 }
 
-.c4 > .c5 {
+.c1 > .c2 {
+  max-width: 300px;
   margin-bottom: 32px;
   width: 100%;
 }
 
-.c9 {
+.c6 {
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
@@ -208,119 +147,15 @@ exports[`Downloader should render 1`] = `
   color: #ffffff;
 }
 
-@media screen and (max-width:768px) {
-  .c0 {
-    margin-bottom: 20px;
-  }
-}
-
-@media (min-width:1200px) {
-  .c2 {
-    max-width: 100%;
-  }
-}
-
-@media (min-width:1024px) and (max-width:1199px) {
-  .c2 {
-    max-width: 100%;
-  }
-}
-
-@media (min-width:768px) and (max-width:1023px) {
-  .c2 {
-    max-width: 100%;
-  }
-}
-
-@media (min-width:414px) and (max-width:767px) {
-  .c2 {
-    max-width: 100%;
-  }
-}
-
-@media (max-width:413px) {
-  .c2 {
-    max-width: 100%;
-  }
-}
-
-@media (min-width:1200px) {
-  .c3 {
-    max-width: calc((((100% - 264px) / 12) * 10) + 216px);
-    margin-left: calc((((100% - 264px) / 12) * 1) + 24px);
-  }
-}
-
-@media (min-width:1024px) and (max-width:1199px) {
-  .c3 {
-    max-width: calc((((100% - 264px) / 12) * 10) + 216px);
-    margin-left: calc((((100% - 264px) / 12) * 1) + 24px);
-  }
-}
-
-@media (min-width:768px) and (max-width:1023px) {
-  .c3 {
-    max-width: calc((((100% - 120px) / 6) * 4) + 72px);
-    margin-left: calc((((100% - 120px) / 6) * 1) + 24px);
-  }
-}
-
-@media (min-width:414px) and (max-width:767px) {
-  .c3 {
-    max-width: calc((((100% - 60px) / 4) * 2) + 20px);
-    margin-left: calc((((100% - 60px) / 4) * 1) + 20px);
-  }
-}
-
-@media (max-width:413px) {
-  .c3 {
-    max-width: 100%;
-  }
-}
-
-@media (min-width:1200px) {
+@media screen and (max-width:540px) {
   .c1 {
-    padding-left: 44px;
-    padding-right: 44px;
-  }
-}
-
-@media (min-width:1024px) and (max-width:1199px) {
-  .c1 {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
-
-@media (min-width:768px) and (max-width:1023px) {
-  .c1 {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-
-@media (min-width:414px) and (max-width:767px) {
-  .c1 {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-@media (max-width:413px) {
-  .c1 {
-    padding-left: 20px;
-    padding-right: 20px;
+    margin: 20px;
   }
 }
 
 @media screen and (max-width:540px) {
-  .c4 {
-    margin: 20px auto;
-  }
-}
-
-@media screen and (max-width:540px) {
-  .c4 > .c5 {
+  .c1 > .c2 {
+    max-width: 180px;
     margin-bottom: 20px;
   }
 }
@@ -331,50 +166,36 @@ exports[`Downloader should render 1`] = `
   <div
     class="c1"
   >
-    <div
-      class="c2"
-      order="0"
+    <img
+      alt=""
+      class="c2 "
+      src="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
+    />
+    <button
+      class="c3"
+      color="primary"
     >
-      <div
-        class="c3"
-        order="0"
+      <span
+        class="c4 c5"
+        color="bright"
+        size="20"
       >
-        <div
-          class="c4"
+        <svg
+          focusable="false"
+          viewBox="0 0 32 32"
         >
-          <img
-            alt=""
-            class="c5 "
-            src="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
+          <path
+            d="M0 27.996h32V32H0v-4.004zm22.36-13.983l2.83 2.823L16 26.044l-9.19-9.208 2.83-2.823L14 18.377V0h4v18.377l4.36-4.364z"
           />
-          <button
-            class="c6"
-            color="primary"
-          >
-            <span
-              class="c7 c8"
-              color="bright"
-              size="20"
-            >
-              <svg
-                focusable="false"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M0 27.996h32V32H0v-4.004zm22.36-13.983l2.83 2.823L16 26.044l-9.19-9.208 2.83-2.823L14 18.377V0h4v18.377l4.36-4.364z"
-                />
-              </svg>
-            </span>
-            <span
-              class="c9"
-              color="bright"
-            >
-              Download PDF (12MB)
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
+        </svg>
+      </span>
+      <span
+        class="c6"
+        color="bright"
+      >
+        Download PDF (12MB)
+      </span>
+    </button>
   </div>
 </div>
 `;

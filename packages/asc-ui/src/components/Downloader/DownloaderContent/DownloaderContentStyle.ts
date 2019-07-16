@@ -8,14 +8,16 @@ export default styled.div`
   margin: 32px auto;
 
   @media screen and ${breakpoint('max-width', 'tabletS')} {
-    margin: 20px auto;
+    margin: 20px;
   }
 
   & > ${ImageStyle} {
+    max-width: 300px;
     margin-bottom: 32px;
     width: 100%;
 
     @media screen and ${breakpoint('max-width', 'tabletS')} {
+      max-width: 180px;
       margin-bottom: 20px;
     }
   }
