@@ -6,7 +6,7 @@ import DocumentCover from './DocumentCover'
 const DocumentCoverComponent: React.FC<{}> = () => (
   <>
     <DocumentCover
-      imageSrc="https://acc.cms.data.amsterdam.nl/sites/default/files/images/2019-factsheet-jeugdwerkloosheid-2014-2018.png"
+      imageSrc="http://lorempixel.com/400/800/sports/8/"
       onClick={action('click')}
       description="Download PDF (12MB)"
     ></DocumentCover>
