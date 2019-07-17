@@ -136,10 +136,10 @@ exports[`<TextField /> should render 1`] = `
         },
         "h6": Object {
           "color": "#000000",
-          "fontSize": "1rem",
-          "fontWeight": 400,
+          "fontSize": "16px",
+          "fontWeight": 500,
           "letterSpacing": "-0.01562em",
-          "lineHeight": 1,
+          "lineHeight": 1.25,
         },
         "p": Object {
           "color": "#000000",

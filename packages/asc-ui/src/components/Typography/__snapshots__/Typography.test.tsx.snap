@@ -222,13 +222,13 @@ Array [
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-weight: 400;
-  font-size: 1rem;
+  font-weight: 500;
+  font-size: 16px;
   -webkit-letter-spacing: -0.01562em;
   -moz-letter-spacing: -0.01562em;
   -ms-letter-spacing: -0.01562em;
   letter-spacing: -0.01562em;
-  line-height: 1;
+  line-height: 1.25;
   color: #000000;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
@@ -279,7 +279,6 @@ Array [
     I am a link!
   </a>,
   .c0 {
-  line-height: 1.25;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
