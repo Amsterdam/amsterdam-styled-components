@@ -15,12 +15,8 @@ const typography: Theme.TypographyInterface = {
     marginBottom: '0',
     breakpoints: {
       tabletS: {
-        defaultColor: colors.tint.level7,
         fontSize: '30px',
-        fontWeight: 700,
-        letterSpacing: 'inherit',
         lineHeight: '38px',
-        marginBottom: '0',
       },
     },
   },
@@ -33,12 +29,8 @@ const typography: Theme.TypographyInterface = {
     marginBottom: '0',
     breakpoints: {
       tabletS: {
-        defaultColor: colors.tint.level7,
         fontSize: '24px',
-        fontWeight: 700,
-        letterSpacing: 'inherit',
         lineHeight: '30px',
-        marginBottom: '0',
       },
     },
   },
@@ -91,11 +83,6 @@ const typography: Theme.TypographyInterface = {
     marginBottom: '20px',
     breakpoints: {
       tabletS: {
-        defaultColor: colors.tint.level7,
-        fontSize: '16px',
-        fontWeight: 400,
-        letterSpacing: 'inherit',
-        lineHeight: '22px',
         marginBottom: '24px',
       },
     },

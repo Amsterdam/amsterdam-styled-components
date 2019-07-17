@@ -25,15 +25,8 @@ Array [
 
 @media screen and (min-width:540.02px) {
   .c0 {
-    color: #000000;
-    font-weight: 700;
     font-size: 30px;
-    -webkit-letter-spacing: inherit;
-    -moz-letter-spacing: inherit;
-    -ms-letter-spacing: inherit;
-    letter-spacing: inherit;
     line-height: 38px;
-    margin-bottom: 0;
   }
 }
 
@@ -65,15 +58,8 @@ Array [
 
 @media screen and (min-width:540.02px) {
   .c0 {
-    color: #000000;
-    font-weight: 700;
     font-size: 24px;
-    -webkit-letter-spacing: inherit;
-    -moz-letter-spacing: inherit;
-    -ms-letter-spacing: inherit;
-    letter-spacing: inherit;
     line-height: 30px;
-    margin-bottom: 0;
   }
 }
 
@@ -257,14 +243,6 @@ Array [
 
 @media screen and (min-width:540.02px) {
   .c0 {
-    color: #000000;
-    font-weight: 400;
-    font-size: 16px;
-    -webkit-letter-spacing: inherit;
-    -moz-letter-spacing: inherit;
-    -ms-letter-spacing: inherit;
-    letter-spacing: inherit;
-    line-height: 22px;
     margin-bottom: 24px;
   }
 }

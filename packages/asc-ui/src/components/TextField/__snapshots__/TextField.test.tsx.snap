@@ -104,12 +104,8 @@ exports[`<TextField /> should render 1`] = `
         "h1": Object {
           "breakpoints": Object {
             "tabletS": Object {
-              "defaultColor": "#000000",
               "fontSize": "30px",
-              "fontWeight": 700,
-              "letterSpacing": "inherit",
               "lineHeight": "38px",
-              "marginBottom": "0",
             },
           },
           "defaultColor": "#000000",
@@ -122,12 +118,8 @@ exports[`<TextField /> should render 1`] = `
         "h2": Object {
           "breakpoints": Object {
             "tabletS": Object {
-              "defaultColor": "#000000",
               "fontSize": "24px",
-              "fontWeight": 700,
-              "letterSpacing": "inherit",
               "lineHeight": "30px",
-              "marginBottom": "0",
             },
           },
           "defaultColor": "#000000",
@@ -172,11 +164,6 @@ exports[`<TextField /> should render 1`] = `
         "p": Object {
           "breakpoints": Object {
             "tabletS": Object {
-              "defaultColor": "#000000",
-              "fontSize": "16px",
-              "fontWeight": 400,
-              "letterSpacing": "inherit",
-              "lineHeight": "22px",
               "marginBottom": "24px",
             },
           },
