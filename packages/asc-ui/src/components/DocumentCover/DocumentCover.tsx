@@ -1,4 +1,5 @@
 import React from 'react'
+import { css } from '@datapunt/asc-core'
 import { Download } from '@datapunt/asc-assets'
 import DocumentCoverStyle from './DocumentCoverStyle'
 import Button from '../Button'
@@ -22,7 +23,14 @@ const DocumentCoverContentStyle: React.FC<Props> = ({
   <DocumentCoverStyle {...otherProps}>
     <DocumentCoverContent>
       <Image src={imageSrc} alt="" />
-      <Button color="primary" onClick={onClick}>
+      <Button
+        color="primary"
+        onClick={onClick}
+        css={css`
+          display: flex;
+          justify-content: center;
+        `}
+      >
         <Icon size={20} color="bright">
           <Download />
         </Icon>

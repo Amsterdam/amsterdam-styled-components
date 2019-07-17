@@ -9,8 +9,6 @@ import IconStyle from '../Icon/IconStyle'
 export type Props = ButtonBaseStyleProps
 
 const ButtonStyle = styled(ButtonBaseStyle)<Props>`
-  display: flex;
-  justify-content: center;
   padding: 4px 10px 4px 10px;
   min-height: 36px;
   line-height: 1em;
