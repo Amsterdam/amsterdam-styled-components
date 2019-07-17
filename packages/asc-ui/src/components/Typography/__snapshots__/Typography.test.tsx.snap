@@ -90,10 +90,10 @@ Array [
   color: #000000;
   font-weight: 700;
   font-size: 20px;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
   line-height: 28px;
   margin-bottom: 0;
   font-stretch: normal;
@@ -114,12 +114,12 @@ Array [
   margin-bottom: 0;
   margin-left: 0;
   color: #000000;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 18px;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
   line-height: 25px;
   margin-bottom: 8px;
   font-stretch: normal;
@@ -142,10 +142,10 @@ Array [
   color: #000000;
   font-weight: 400;
   font-size: 18px;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
   line-height: 1;
   margin-bottom: 0;
   font-stretch: normal;
@@ -168,10 +168,10 @@ Array [
   color: #000000;
   font-weight: 400;
   font-size: 18px;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
   line-height: 1;
   margin-bottom: 0;
   font-stretch: normal;
@@ -194,10 +194,10 @@ Array [
   color: #000000;
   font-weight: inherit;
   font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
   line-height: 1.25;
   margin-bottom: 0;
   font-stretch: normal;
@@ -221,10 +221,10 @@ Array [
   color: #000000;
   font-weight: inherit;
   font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
   line-height: 1.25;
   margin-bottom: 0;
   font-stretch: normal;
@@ -242,17 +242,31 @@ Array [
   color: #000000;
   font-weight: 400;
   font-size: 16px;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
   line-height: 22px;
-  margin-bottom: 0;
+  margin-bottom: 20px;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
   -ms-letter-spacing: normal;
   letter-spacing: normal;
+}
+
+@media screen and (min-width:540.02px) {
+  .c0 {
+    color: #000000;
+    font-weight: 400;
+    font-size: 16px;
+    -webkit-letter-spacing: inherit;
+    -moz-letter-spacing: inherit;
+    -ms-letter-spacing: inherit;
+    letter-spacing: inherit;
+    line-height: 22px;
+    margin-bottom: 24px;
+  }
 }
 
 <p
