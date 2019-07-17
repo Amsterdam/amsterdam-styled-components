@@ -8,6 +8,7 @@ import {
   margin,
 } from '../../utils/grid'
 import { TypeFlexPosition } from '.'
+import { color } from '../../utils'
 
 export type TypeProps = {
   alignSelf?: TypeFlexPosition
@@ -21,6 +22,7 @@ export type TypeProps = {
   push?: Theme.TypeSpan
   span: Theme.TypeSpan
   wrap?: boolean
+  inverted?: boolean
 }
 
 const ColumnStyle = styled(({ className, children, id, ...rest }) => {
@@ -42,6 +44,9 @@ const ColumnStyle = styled(({ className, children, id, ...rest }) => {
   display: flex;
   align-self: ${({ alignSelf }: { alignSelf?: string }) => alignSelf};
   justify-content: space-between;
+  background-color: ${({ inverted }) =>
+    inverted ? color('tint', 'level5') : 'inherit'};
+
   ${({ wrap }: { wrap?: boolean }) =>
     wrap &&
     css`

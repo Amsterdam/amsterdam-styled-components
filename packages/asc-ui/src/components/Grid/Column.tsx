@@ -1,6 +1,6 @@
 import React from 'react'
 import { Theme } from '@datapunt/asc-core'
-import ColumnStyle from './ColumnStyle'
+import ColumnStyle, { TypeProps as ColumnStyleProps } from './ColumnStyle'
 
 type Props = {
   children: React.ReactNode
@@ -12,7 +12,7 @@ type Props = {
   push?: Theme.TypeSpan
   span: Theme.TypeSpan
   wrap?: boolean
-}
+} & ColumnStyleProps
 
 type Context = {
   parentSpan?: Theme.TypeSpan

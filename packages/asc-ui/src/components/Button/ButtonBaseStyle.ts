@@ -1,6 +1,11 @@
 import { transitions } from 'polished'
-import styled, { Theme, css } from '@datapunt/asc-core'
-import { color as themeColor, focusStyleOutline } from '../../utils'
+import styled, { Theme } from '@datapunt/asc-core'
+import {
+  color as themeColor,
+  focusStyleOutline,
+  customCss,
+  CustomCssPropsType,
+} from '../../utils'
 import { flexboxMinHeightFix } from '../shared/ie-fixes'
 
 export type Props = {
@@ -10,8 +15,7 @@ export type Props = {
   href?: string
   type?: 'button' | 'reset' | 'submit'
   size?: number
-  css?: any
-}
+} & CustomCssPropsType
 
 const ButtonBaseStyle = styled.button<Props>`
   display: inline-flex;
@@ -34,11 +38,7 @@ const ButtonBaseStyle = styled.button<Props>`
   }
 
   ${flexboxMinHeightFix()}
-  ${props =>
-    props.css &&
-    css`
-      ${props.css}
-    `}
+  ${customCss}
 `
 
 export default ButtonBaseStyle

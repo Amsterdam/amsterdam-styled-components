@@ -1,11 +1,18 @@
-import styled, { css } from '@datapunt/asc-core'
-import { color, showHide, ShowHideTypes } from '../../utils'
+import styled from '@datapunt/asc-core'
+import {
+  color,
+  showHide,
+  ShowHideTypes,
+  customCss,
+  CustomCssPropsInterface,
+} from '../../utils'
 import SearchBarStyle from '../SearchBar/SearchBarStyle'
 import ToggleStyle from '../Toggle/ToggleStyle'
 
-export interface SearchBarMenuStyleProps extends ShowHideTypes {
+export interface SearchBarMenuStyleProps
+  extends ShowHideTypes,
+    CustomCssPropsInterface {
   open?: boolean
-  css?: string
 }
 
 const SearchBarMenuStyle = styled(ToggleStyle)<SearchBarMenuStyleProps>`
@@ -24,11 +31,7 @@ const SearchBarMenuStyle = styled(ToggleStyle)<SearchBarMenuStyleProps>`
   }
 
   ${showHide()}
-  ${props =>
-    props.css &&
-    css`
-      ${props.css}
-    `}
+  ${customCss}
 `
 
 export default SearchBarMenuStyle

@@ -7,9 +7,12 @@ import SearchBar from '../SearchBar'
 import { InputMethods, InputProps } from '../Input'
 import Toggle, { Props as ToggleProps } from '../Toggle/Toggle'
 import { SearchBarProps } from '../SearchBar/SearchBar'
+import { CustomCssPropsInterface } from '../../utils'
 
-interface SearchBarMenuProps extends SearchBarMenuStyleProps, InputMethods {
-  css?: any
+interface SearchBarMenuProps
+  extends SearchBarMenuStyleProps,
+    InputMethods,
+    CustomCssPropsInterface {
   placeholder?: string
   label?: string
   onSubmit?: Function

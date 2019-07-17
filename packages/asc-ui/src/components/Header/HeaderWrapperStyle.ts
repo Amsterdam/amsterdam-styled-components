@@ -1,5 +1,10 @@
 import styled, { css } from '@datapunt/asc-core'
-import { breakpoint, getColorFromTheme } from '../../utils'
+import {
+  breakpoint,
+  getColorFromTheme,
+  customCss,
+  CustomCssPropsType,
+} from '../../utils'
 import HeaderTitleStyle from './HeaderTitleStyle'
 import HeaderNavigationStyle from './HeaderNavigationStyle'
 import HeaderLogoTextStyle from './HeaderLogoTextStyle'
@@ -10,8 +15,7 @@ import { CONTENT_HEIGHT_TALL, WRAPPER_MAX_WIDTH } from './sizes'
 export type Props = {
   tall?: boolean
   fullWidth?: boolean
-  css?: any
-}
+} & CustomCssPropsType
 
 const shortStyle = css`
   ${HeaderTitleStyle} {
@@ -94,11 +98,7 @@ const HeaderWrapperStyle = styled.div<Props>`
         `
       : shortStyle}
 
-  ${props =>
-    props.css &&
-    css`
-      ${props.css}
-    `}
+  ${customCss}
 `
 
 export default HeaderWrapperStyle
