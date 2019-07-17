@@ -4,7 +4,11 @@ import { color, svgFill } from '../../utils'
 import IconStyle from '../Icon/IconStyle'
 import TypographyStyle from '../Typography/TypographyStyle'
 
-export default styled.li`
+export type Props = {
+  inverted?: boolean
+}
+
+export default styled.li<Props>`
   position: relative;
   word-break: break-word;
   margin-bottom: 8px;
@@ -12,25 +16,35 @@ export default styled.li`
   ${TypographyStyle} {
     font-weight: 700;
     display: block;
-    color: ${color('tint', 'level6')};
+    color: ${({ inverted }) =>
+      inverted ? color('tint', 'level1') : color('tint', 'level6')};
   }
 
   ${IconStyle} {
     position: absolute;
     left: 0;
     top: 3px;
+
+    & > svg {
+      ${({ inverted }) =>
+        inverted ? svgFill('tint', 'level1') : svgFill('default')};
+    }
   }
 
   ${LinkStyle} {
     padding-left: 15px;
-    color: ${color('tint', 'level7')};
+    color: ${({ inverted }) =>
+      inverted ? color('tint', 'level1') : color('tint', 'level7')};
     text-decoration: none;
     font-weight: 700;
 
     &:hover {
-      color: ${color('secondary')};
+      color: ${({ inverted }) =>
+        inverted ? color('tint', 'level1') : color('secondary')};
+      text-decoration: ${({ inverted }) => (inverted ? 'underline' : 'none')};
       ${IconStyle} > svg {
-        ${svgFill('secondary')};
+        ${({ inverted }) =>
+          inverted ? svgFill('tint', 'level1') : svgFill('secondary')};
       }
     }
   }

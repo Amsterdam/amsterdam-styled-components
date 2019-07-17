@@ -19,3 +19,19 @@ storiesOf('Atoms/LinkList', module)
       </LinkListItem>
     </LinkList>
   ))
+  .add('inverted', () => (
+    <LinkList inverted>
+      <LinkListItem href="/" inverted>
+        I am a ListLink!
+      </LinkListItem>
+      <LinkListItem href="/" inverted>
+        Another one
+      </LinkListItem>
+      <LinkListItem href="/" inverted>
+        A loooooong, very, very, very long link
+      </LinkListItem>
+      <LinkListItem href="/" meta="PDF 35kb" inverted>
+        A file!
+      </LinkListItem>
+    </LinkList>
+  ))
