@@ -43,10 +43,10 @@ const typography: Theme.TypographyInterface = {
   },
   h6: {
     color: colors.tint.level7,
-    fontSize: '1rem',
-    fontWeight: 400,
+    fontSize: '16px',
+    fontWeight: 500,
     letterSpacing: '-0.01562em',
-    lineHeight: 1,
+    lineHeight: 1.25,
   },
   a: {
     color: colors.tint.level7,

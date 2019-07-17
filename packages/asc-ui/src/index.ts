@@ -13,6 +13,7 @@ import { Column, GridContainer, GridItem, Row } from './components/Grid'
 import Header, { HeaderStyles } from './components/Header'
 import Icon from './components/Icon'
 import IconButton from './components/IconButton'
+import Image from './components/Image'
 import Input, { InputStyles } from './components/Input'
 import ListItem from './components/ListItem'
 import {
@@ -60,6 +61,7 @@ export {
   Header,
   Icon,
   IconButton,
+  Image,
   Input,
   ListItem,
   MenuFlyOut,

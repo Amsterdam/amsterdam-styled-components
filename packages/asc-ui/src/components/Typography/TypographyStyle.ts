@@ -31,9 +31,7 @@ const extendedStyles = {
   h6: css`
     ${headings}
   `,
-  p: css`
-    line-height: 1.25;
-  `,
+  p: css``,
   a: css`
     color: ${color('primary')};
     display: inline-block;
