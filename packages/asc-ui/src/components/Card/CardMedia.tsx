@@ -1,10 +1,10 @@
 import * as React from 'react'
-import CardMediaStyle, { CardMediaWrapperStyle } from './CardMediaStyle'
+import CardMediaStyle, { CardMediaWrapperStyle, Props } from './CardMediaStyle'
 
-const CardMedia: React.FC<{}> = ({ children, ...otherProps }) => (
-  <CardMediaStyle {...otherProps}>
-    <CardMediaWrapperStyle>{children}</CardMediaWrapperStyle>
-  </CardMediaStyle>
+const CardMedia: React.FC<Props> = ({ children, ...otherProps }) => (
+  <CardMediaWrapperStyle {...otherProps}>
+    <CardMediaStyle>{children}</CardMediaStyle>
+  </CardMediaWrapperStyle>
 )
 
 export default CardMedia
