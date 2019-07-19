@@ -13,7 +13,8 @@ type Props = {
   css?: any
   navigation?: React.ReactNode
   links?: React.ReactNode
-} & HeaderWrapperProps
+} & HeaderWrapperProps &
+  React.HTMLAttributes<HTMLDivElement>
 
 const Header: React.FC<Props> = ({
   css,
@@ -23,9 +24,14 @@ const Header: React.FC<Props> = ({
   tall,
   navigation,
   links,
+  className,
   ...otherProps
 }) => (
-  <HeaderWrapperStyle {...{ css, tall, fullWidth }} id="header">
+  <HeaderWrapperStyle
+    {...{ css, tall, fullWidth }}
+    className={className}
+    id="header"
+  >
     <HeaderStyle {...{ fullWidth, ...otherProps }}>
       <HeaderLogoText {...{ tall, title, homeLink }} />
       <HeaderNavigation>{navigation}</HeaderNavigation>

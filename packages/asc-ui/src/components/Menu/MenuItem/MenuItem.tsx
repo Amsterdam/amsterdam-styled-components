@@ -16,14 +16,20 @@ export default React.forwardRef<HTMLLIElement, Props>(function MenuItem(
     isActive,
     iconLeft,
     onClick,
+    className,
     href,
     ...otherProps
   },
   ref,
 ) {
   return (
-    // @ts-ignore
-    <MenuItemStyle ref={ref} tabIndex={-1} {...otherProps}>
+    <MenuItemStyle
+      className={className}
+      // @ts-ignore
+      ref={ref}
+      tabIndex={-1}
+      {...otherProps}
+    >
       <MenuItemLink
         {...{
           element,

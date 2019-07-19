@@ -1,25 +1,23 @@
 import styled, { css } from '@datapunt/asc-core'
 import { stripUnit } from 'polished'
-import BlogPostStyle, {
-  BLOG_POST_MARGIN_TOP,
-  Props as BlogPostStyleProps,
-} from '../Blog/BlogPost/BlogPostStyle'
-import { breakpoint } from '../../utils'
-import BlogBodyStyle from '../Blog/BlogBody/BlogBodyStyle'
-import { getTypographyValueFromProperty } from '../../utils/themeUtils'
+import { BLOG_POST_MARGIN_TOP } from '../BlogPost/BlogPostStyle'
+import { breakpoint } from '../../../utils'
+import BlogBodyStyle from '../BlogBody/BlogBodyStyle'
+import { getTypographyValueFromProperty } from '../../../utils/themeUtils'
 import {
   BLOG_META_LINE_HEIGHT,
   BLOG_META_MARGIN_TOP,
-} from '../Blog/BlogMetaList/BlogMetaListStyle'
+} from '../BlogMetaList/BlogMetaListStyle'
+import BlogPost, { Props as BlogPostProps } from '../BlogPost/BlogPost'
 
-export type Props = {} & BlogPostStyleProps
+export type Props = {} & BlogPostProps
 
 const BLOG_BODY_PADDING_TOP = 32
 
-export default styled(BlogPostStyle)<Props>` 
+export default styled(BlogPost)<Props>` 
   ${BlogBodyStyle} {
-    ${({ hasImage }) =>
-      hasImage &&
+    ${({ image }) =>
+      !!image &&
       css`
         @media screen and ${breakpoint('min-width', 'tabletM')} {
           padding: ${BLOG_BODY_PADDING_TOP}px 24px;
@@ -33,8 +31,8 @@ export default styled(BlogPostStyle)<Props>`
     - the BlogMeta margin-top and line-height
     */
     @media screen and ${breakpoint('min-width', 'tabletM')} {
-      margin-top: ${({ hasImage, theme }) =>
-        hasImage
+      margin-top: ${({ image, theme }) =>
+        image
           ? `${(BLOG_POST_MARGIN_TOP +
               BLOG_META_LINE_HEIGHT +
               BLOG_META_MARGIN_TOP +

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link should render 1`] = `
+.c0 {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  color: #000000;
+  font-weight: inherit;
+  font-size: 1rem;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  line-height: 1.25;
+  margin-bottom: 0;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  color: #004699;
+  display: inline-block;
+}
+
+.c0:focus {
+  background-color: #FEC813;
+}
+
+.c0:hover {
+  color: #ec0000;
+}
+
+<a
+  class="c0"
+  href="#"
+>
+  Foo
+</a>
+`;

@@ -1,14 +1,21 @@
 import styled, { css } from '@datapunt/asc-core'
-import TypographyStyle from './TypographyStyle'
-import { breakpoint } from '../../utils'
+import TypographyStyle from '../Typography/TypographyStyle'
+import { breakpoint, color } from '../../utils'
 
 export type Props = {
   hasLongText?: boolean
+  strong?: boolean
 }
 
 export const ParagraphStyleCSS = css<Props>`
   margin-top: 0;
   color: inherit;
+  ${({ strong }) =>
+    strong &&
+    css`
+      font-weight: 700;
+      color: ${color('tint', 'level7')};
+    `}
   ${({ hasLongText }) =>
     hasLongText &&
     css`

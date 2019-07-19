@@ -1,6 +1,8 @@
 /* eslint-disable import/prefer-default-export */
-export const flexboxMinHeightFix = () => `
-  &:after {
+import { css } from '@datapunt/asc-core'
+
+export const flexboxMinHeightFix = () => css`
+  &::after {
     content: '';
     display: block;
     min-height: inherit;

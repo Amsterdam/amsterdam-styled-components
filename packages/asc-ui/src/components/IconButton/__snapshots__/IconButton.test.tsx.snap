@@ -37,7 +37,7 @@ exports[`IconButton should render the IconButton 1`] = `
 
   ",
           "
-  &:after {
+  &::after {
     content: '';
     display: block;
     min-height: inherit;

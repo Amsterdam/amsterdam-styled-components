@@ -15,7 +15,7 @@ import {
   Paragraph,
   Heading,
 } from '../..'
-import Link from '../Typography/Link'
+import Link from '../Link/Link'
 
 const SimpleModal: React.FC<Props> = props => (
   <div>

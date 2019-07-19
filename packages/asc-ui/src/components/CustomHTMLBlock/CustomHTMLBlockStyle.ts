@@ -1,7 +1,7 @@
 import styled, { css } from '@datapunt/asc-core'
-import { HeaderStyleCSS } from '../Typography/HeadingStyle'
-import { LinkStyleCSS } from '../Typography/LinkStyle'
-import { ParagraphStyleCSS } from '../Typography/ParagraphStyle'
+import { HeaderStyleCSS } from '../Heading/HeadingStyle'
+import { LinkStyleCSS } from '../Link/LinkStyle'
+import { ParagraphStyleCSS } from '../Paragraph/ParagraphStyle'
 import { getTypographyFromTheme } from '../../utils'
 
 const ElementStyleMapping = {

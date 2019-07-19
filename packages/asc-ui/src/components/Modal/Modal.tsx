@@ -11,7 +11,8 @@ export type Props = {
   disablePortal?: boolean
   backdropOpacity?: number
   blurredNodeSelector?: string
-} & PortalProps
+} & PortalProps &
+  React.HTMLAttributes<HTMLElement>
 
 type State = {}
 
@@ -68,12 +69,14 @@ class Modal extends React.Component<Props, State> {
       backdropOpacity,
       element,
       blurredNodeSelector,
+      className,
       ...other
     } = this.props
     const Element = disablePortal ? 'div' : Portal
 
     return open ? (
       <Element
+        className={className}
         {...(!disablePortal
           ? {
               element,
