@@ -8,12 +8,14 @@ import { Props } from './Modal'
 import {
   ListItem,
   Modal,
-  Typography,
   Button,
   Divider,
   IconButton,
   TopBar,
+  Paragraph,
+  Heading,
 } from '../..'
+import Link from '../Typography/Link'
 
 const SimpleModal: React.FC<Props> = props => (
   <div>
@@ -24,10 +26,10 @@ const SimpleModal: React.FC<Props> = props => (
       onClose={linkTo('Modal', 'closed state')}
     >
       <ListItem>
-        <Typography paragraph element="p" gutterBottom>
+        <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto,
           quisquam!
-        </Typography>
+        </Paragraph>
       </ListItem>
     </Modal>
   </div>
@@ -53,54 +55,44 @@ storiesOf('Composed/Modal', module)
       aria-labelledby="feedback"
       aria-describedby="feedback"
       onClose={action('close modal from escape button or click outside')}
-      blurredNode={window.document.querySelector('#root') as HTMLInputElement}
     >
       <TopBar>
-        <Typography style={{ flexGrow: 1 }} element="h4">
+        <Heading style={{ flexGrow: 1 }} as="h4">
           Feedback
           <IconButton onClick={action('close modal')}>
             <Close />
           </IconButton>
-        </Typography>
+        </Heading>
       </TopBar>
       <Divider />
       <ListItem>
-        <Typography gutterBottom element="h5">
-          Onjuiste of ontbrekende gegevens?
-        </Typography>
-        <Typography paragraph element="p" gutterBottom>
+        <Heading as="h4">Onjuiste of ontbrekende gegevens?</Heading>
+        <Paragraph>
           Geef aan welke gegevens onjuist zijn of ontbreken. Ook als je weet wat
           het wel moet zijn. We horen het graag.
-        </Typography>
+        </Paragraph>
         <Button color="primary" onClick={action('click')}>
           Terugmelden
         </Button>
       </ListItem>
       <Divider gutter />
       <ListItem>
-        <Typography gutterBottom element="h5">
-          Vraag of een klacht?
-        </Typography>
-        <Typography paragraph element="p" gutterBottom>
+        <Heading as="h4">Vraag of een klacht?</Heading>
+        <Paragraph>
           Als iets op deze pagina niet goed werkt, onduidelijk is of vragen
           oproept, geef het aan ons door.
-        </Typography>
+        </Paragraph>
         <Button color="primary" onClick={action('click')}>
           Probleem melden
         </Button>
       </ListItem>
       <Divider transparent />
       <ListItem>
-        <Typography element="a" href="#">
-          Hulp nodig?
-        </Typography>
+        <Link href="/help">Hulp nodig?</Link>
       </ListItem>
     </Modal>
   ))
   .add('with blurred background', () => (
-    <SimpleModal
-      open
-      blurredNode={window.document.querySelector('#root') as HTMLInputElement}
-    />
+    <SimpleModal blurredNodeSelector="#root" open />
   ))
   .add('closed state', () => <SimpleModal open={false} />)

@@ -6,12 +6,12 @@ const withTypeBreakpoint = (size: number) => (type: Theme.TypeBreakpoint) =>
 export const sizes = {
   mobileS: 320,
   mobileM: 375,
-  mobileL: 425,
+  mobileL: 414,
   tabletS: 540,
   tabletM: 768,
   laptop: 1024,
   laptopM: 1200,
-  laptopL: 1440,
+  laptopL: 1430,
   desktop: 1920,
   desktopL: 2560,
 }

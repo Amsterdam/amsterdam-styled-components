@@ -2,6 +2,9 @@ import { css, Theme } from '@datapunt/asc-core'
 import { fromTheme } from '.'
 
 import BreakpointsInterface = Theme.BreakpointsInterface
+import ThemeInterface = Theme.ThemeInterface
+import TypographyInterface = Theme.TypographyInterface
+import TypographyElementStyle = Theme.TypographyElementStyle
 
 type ThemeProp = {
   theme: Theme.ThemeInterface
@@ -26,11 +29,81 @@ export const color = (
     : fromTheme('colors.tint.level1')({ theme })
 }
 
-export const getTypographyFromTheme = (
-  theme: Theme.ThemeInterface,
-  attributeType: string,
-) => {
-  return fromTheme(`typography.${[attributeType]}`)({ theme })
+export const breakpoint = (
+  type: Theme.TypeBreakpoint,
+  variant: keyof BreakpointsInterface,
+) => ({ theme }: ThemeProp) => {
+  const breakpointFunc: Theme.GetBreakpointFunc = fromTheme(
+    `breakpoints.${[variant]}`,
+  )({
+    theme,
+  })
+  return breakpointFunc && breakpointFunc(type)
+}
+
+const generateCSSFromTypography = ({
+  defaultColor,
+  fontWeight,
+  fontSize,
+  letterSpacing,
+  lineHeight,
+  marginBottom,
+}: any) => css`
+  color: ${defaultColor};
+  font-weight: ${fontWeight};
+  font-size: ${fontSize};
+  letter-spacing: ${letterSpacing};
+  line-height: ${lineHeight};
+  margin-bottom: ${marginBottom};
+`
+
+export const getTypographyFromTheme = () => ({ as = 'p', theme }: any) => {
+  const {
+    defaultColor,
+    fontWeight,
+    fontSize,
+    letterSpacing,
+    lineHeight,
+    marginBottom,
+    breakpoints,
+  } = fromTheme(`typography.${[as]}`)({ theme })
+  return css`
+    ${generateCSSFromTypography({
+      defaultColor,
+      fontWeight,
+      fontSize,
+      letterSpacing,
+      lineHeight,
+      marginBottom,
+    })}
+    ${() =>
+      breakpoints
+        ? Object.entries(breakpoints).map(
+            ([breakpointFromTypography, styles]) => css`
+              @media screen and ${breakpoint('min-width', <
+                  keyof BreakpointsInterface
+                >breakpointFromTypography)} {
+                ${generateCSSFromTypography(styles)}
+              }
+            `,
+          )
+        : ``}
+  `
+}
+
+export const getTypographyValueFromProperty = (
+  element: keyof TypographyInterface,
+  property: keyof TypographyElementStyle,
+  breakpointRule?: keyof BreakpointsInterface,
+) => ({ theme }: { theme: ThemeInterface }) => {
+  const rules = fromTheme(`typography.${[element]}`)({ theme })
+  if (breakpointRule) {
+    if (rules.breakpoints[breakpointRule]) {
+      return rules.breakpoints[breakpointRule][property]
+    }
+    return ''
+  }
+  return rules[property]
 }
 
 export const focusStyleOutline = (width: number = 3, offset: number = 0) => ({
@@ -56,7 +129,6 @@ export const focusStyleText = () => ({
     background-color: ${color('support', 'focus')({ theme })};
   }
 `
-
 export const srOnlyStyle = () => ({ srOnly }: { srOnly: boolean }) =>
   srOnly
     ? css`
@@ -70,18 +142,6 @@ export const srOnlyStyle = () => ({ srOnly }: { srOnly: boolean }) =>
         width: 1px;
       `
     : ''
-
-export const breakpoint = (
-  type: Theme.TypeBreakpoint,
-  variant: keyof BreakpointsInterface,
-) => ({ theme }: ThemeProp) => {
-  const breakpointFunc: Theme.GetBreakpointFunc = fromTheme(
-    `breakpoints.${[variant]}`,
-  )({
-    theme,
-  })
-  return breakpointFunc && breakpointFunc(type)
-}
 
 export const svgFill = (
   colorType?: Theme.TypeLevel,

@@ -37,7 +37,7 @@ type ContentFillerProps = ContentFillerStyleProps
 
 const ContentFiller: React.FC<ContentFillerProps> = ({ ...otherProps }) => (
   <ContentFillerStyle {...otherProps}>
-    <Typography element="h5">
+    <Typography as="h5">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Erat pellentesque
       adipiscing commodo elit at imperdiet dui. Mi in nulla posuere sollicitudin
@@ -54,7 +54,7 @@ const ContentFiller: React.FC<ContentFillerProps> = ({ ...otherProps }) => (
       pulvinar elementum integer. Et tortor consequat id porta. Praesent
       elementum facilisis leo vel.
     </Typography>
-    <Typography element="p">
+    <Typography as="p">
       Urna condimentum mattis pellentesque id nibh tortor id aliquet. Viverra
       vitae congue eu consequat ac felis donec. Id diam maecenas ultricies mi
       eget mauris pharetra et ultrices. Magna eget est lorem ipsum. Fusce id

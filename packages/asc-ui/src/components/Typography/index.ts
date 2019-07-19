@@ -1,1 +1,5 @@
 export { default } from './Typography'
+export { default as Summary } from './Summary'
+export { default as Paragraph } from './Paragraph'
+export { default as Heading } from './Heading'
+export { default as Link } from './Link'

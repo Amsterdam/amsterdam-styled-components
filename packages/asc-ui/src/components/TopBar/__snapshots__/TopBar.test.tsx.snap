@@ -23,6 +23,14 @@ exports[`TopBar should render 1`] = `
   font-size: 0;
 }
 
+.c0 .c1 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+
 @media screen and (min-width:540.02px) {
   .c0 {
     padding: 0 15px;

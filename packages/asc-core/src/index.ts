@@ -17,6 +17,7 @@ const {
 >
 
 export {
+  styledComponents,
   css,
   StyledComponent,
   createGlobalStyle,

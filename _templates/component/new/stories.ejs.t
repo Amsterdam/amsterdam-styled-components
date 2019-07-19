@@ -1,5 +1,5 @@
 ---
-to: "<%= story ? `packages/asc-ui/src/components/${parent}/${name}/${name}.story.tsx` : null %>"
+to: "<%= story ? `packages/asc-ui/src/components/${parent}/${name}/${name}.stories.tsx` : null %>"
 skip_if: <%= story %>
 ---
 

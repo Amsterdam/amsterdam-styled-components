@@ -1,88 +1,46 @@
-import styled, { css, StyledComponent, Theme } from '@datapunt/asc-core'
+import styled, { css, styledComponents, Theme } from '@datapunt/asc-core'
 import { em, margin } from 'polished'
-import { getTypographyFromTheme, color } from '../../utils'
-import { focusStyleText } from '../../utils/themeUtils'
+import { getTypographyFromTheme, color as getColor } from '../../utils'
 
 export type Props = {
-  gutterBottom?: boolean
+  gutterBottom?: number
   paragraph?: boolean
   href?: string
   tabindex?: number
   element?: Variant
   color?: Theme.TypeLevel
-}
-const headings = css`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-`
+  fontSize?: number
+} & styledComponents.StyledProps<any>
 
-const extendedStyles = {
-  h1: headings,
-  h2: headings,
-  h3: headings,
-  h4: css`
-    ${headings}
-  `,
-  h5: css`
-    ${headings}
-  `,
-  h6: css`
-    ${headings}
-  `,
-  p: css`
-    line-height: 1.25;
-  `,
-  a: css`
-    color: ${color('primary')};
-    display: inline-block;
-    ${focusStyleText()}
-
-    &:hover {
-      color: ${color('secondary')};
-    }
-  `,
+export const defaultTypographyStyles = {
   em: css`
     font-style: italic;
   `,
 }
 
-export type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'a' | 'em'
+export type Variant = keyof typeof defaultTypographyStyles
 
 const getProperty = <T, K extends keyof T>(obj: T, key: K) => obj[key]
 
-export default (element: Variant): StyledComponent<any, any> => styled(element)<
-  Props
->`
-  ${getProperty(extendedStyles, element)}
+export default styled.p<Props>`
+  ${({ as }) => getProperty(defaultTypographyStyles, as)}
   ${margin(0)};
+  ${getTypographyFromTheme()};
+  font-stretch: normal;
+  letter-spacing: normal;
   ${({ gutterBottom }) =>
     gutterBottom &&
     css`
-      margin-bottom: ${em('8px')};
+      margin-bottom: ${em(`${gutterBottom}px`)};
     `}
-  ${({ paragraph }) =>
-    paragraph &&
+  ${({ color }) =>
+    color &&
     css`
-      margin-bottom: ${em('15px')};
+      color: ${getColor(color)};
     `}
-  ${({ theme }) => {
-    const {
-      fontWeight,
-      fontSize,
-      letterSpacing,
-      lineHeight,
-      color: colorProp,
-    } = getTypographyFromTheme(theme, element)
-    return css`
-      font-weight: ${fontWeight};
-      font-size: ${fontSize};
-      letter-spacing: ${letterSpacing};
-      line-height: ${lineHeight};
-      color: ${colorProp};
-    `
-  }}
-  font-stretch: normal;
-  letter-spacing: normal;
+  ${({ fontSize }) =>
+    fontSize &&
+    css`
+      font-size: ${fontSize}px;
+    `}
 `

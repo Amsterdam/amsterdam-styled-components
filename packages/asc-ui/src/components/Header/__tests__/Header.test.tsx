@@ -11,7 +11,7 @@ const setup = (props = {}) =>
       homeLink="http://data.amsterdam.nl"
       {...props}
     >
-      <Typography element="p">
+      <Typography>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis,
         dicta incidunt maxime necessitatibus voluptatibus.
       </Typography>
