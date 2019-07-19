@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import articleJSON from '../Blog/article_feed.json'
+import articleJSON from './article_feed_example.json'
 import { Column, CustomHTMLBlock, Row } from '../..'
 
 /* Blog components */
