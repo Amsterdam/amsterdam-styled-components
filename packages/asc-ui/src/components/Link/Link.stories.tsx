@@ -4,6 +4,6 @@ import Link from './Link'
 
 storiesOf('Atoms/Typography/Link', module).add('default style', () => (
   <>
-    <Link href="#">I am a link!</Link>
+    <Link href="/">I am a link!</Link>
   </>
 ))

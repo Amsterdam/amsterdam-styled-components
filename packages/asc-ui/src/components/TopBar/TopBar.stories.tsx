@@ -1,3 +1,4 @@
+import styled from '@datapunt/asc-core'
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
@@ -8,15 +9,19 @@ import Heading from '../Heading'
 
 const backgroundColor = '#E6E6E6'
 
+const HeadingStyled = styled(Heading)`
+  flex-grow: 1;
+`
+
 const TopBarComponent: React.FC<{}> = () => (
   <>
     <TopBar>
-      <Heading style={{ flexGrow: 1 }} as="h4">
+      <HeadingStyled as="h4">
         TopBar
         <IconButton aria-label="Close" onClick={action('close')}>
           <Close />
         </IconButton>
-      </Heading>
+      </HeadingStyled>
     </TopBar>
   </>
 )
@@ -24,12 +29,12 @@ const TopBarComponent: React.FC<{}> = () => (
 const TopBarWithBackgoundComponent: React.FC<{}> = () => (
   <>
     <TopBar backgroundColor={backgroundColor}>
-      <Heading style={{ flexGrow: 1 }} as="h4">
+      <HeadingStyled as="h4">
         TopBar - with backgroundColor property set
         <IconButton aria-label="Close" onClick={action('close')}>
           <Close />
         </IconButton>
-      </Heading>
+      </HeadingStyled>
     </TopBar>
   </>
 )

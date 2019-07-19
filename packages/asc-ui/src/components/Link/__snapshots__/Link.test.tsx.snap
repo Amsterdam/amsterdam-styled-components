@@ -34,7 +34,7 @@ exports[`Link should render 1`] = `
 
 <a
   class="c0"
-  href="#"
+  href="/"
 >
   Foo
 </a>
