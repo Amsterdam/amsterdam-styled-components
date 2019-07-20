@@ -5,8 +5,12 @@ import TypographyStyle, {
 
 const Typography: React.FC<
   TypographyStyleProps & { style?: React.CSSProperties }
-> = ({ children, ...otherProps }) => {
-  return <TypographyStyle {...otherProps}>{children}</TypographyStyle>
+> = ({ children, className, ...otherProps }) => {
+  return (
+    <TypographyStyle {...otherProps} className={className}>
+      {children}
+    </TypographyStyle>
+  )
 }
 
 export default Typography

@@ -16,7 +16,7 @@ exports[`TopBar should render 1`] = `
   background-color: red;
 }
 
-.c0:after {
+.c0::after {
   content: '';
   display: block;
   min-height: inherit;

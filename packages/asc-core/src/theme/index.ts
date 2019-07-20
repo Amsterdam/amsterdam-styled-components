@@ -94,9 +94,11 @@ export namespace Theme {
     marginBottom: CSSProp
   }
 
+  type Optional<T> = { [P in keyof T]?: T[P] }
+
   type TypographyType = {
     breakpoints?: {
-      [key in keyof BreakpointsInterface]?: TypographyElementStyle
+      [key in keyof BreakpointsInterface]?: Optional<TypographyElementStyle>
     }
   } & TypographyElementStyle
 

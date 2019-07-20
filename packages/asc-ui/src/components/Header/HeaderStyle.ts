@@ -9,6 +9,7 @@ export type HeaderStyleProps = {
 const HeaderStyle = styled(TopBarStyle)<HeaderStyleProps>`
   flex-wrap: nowrap;
   height: 100%;
+  min-height: 50px;
   margin: 0 auto;
   padding: 0 10px;
   align-items: stretch;

@@ -1,6 +1,6 @@
 import styled from '@datapunt/asc-core'
 import LinkListStyle from '../../LinkList/LinkListStyle'
-import HeadingStyle from '../../Typography/HeadingStyle'
+import HeadingStyle from '../../Heading/HeadingStyle'
 
 export default styled.aside`
   ${LinkListStyle} {

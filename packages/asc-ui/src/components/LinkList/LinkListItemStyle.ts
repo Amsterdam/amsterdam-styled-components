@@ -1,5 +1,5 @@
 import styled from '@datapunt/asc-core'
-import LinkStyle from '../Typography/LinkStyle'
+import LinkStyle from '../Link/LinkStyle'
 import { color, svgFill } from '../../utils'
 import IconStyle from '../Icon/IconStyle'
 import TypographyStyle from '../Typography/TypographyStyle'

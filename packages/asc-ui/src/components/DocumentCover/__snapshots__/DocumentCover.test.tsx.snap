@@ -84,7 +84,7 @@ exports[`DocumentCover should render 1`] = `
   background: #00387a;
 }
 
-.c3:after {
+.c3::after {
   content: '';
   display: block;
   min-height: inherit;

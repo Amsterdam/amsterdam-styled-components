@@ -10,8 +10,9 @@ export type Props = {
   onClose?: Function
   disablePortal?: boolean
   backdropOpacity?: number
-  blurredNode?: Element
-} & PortalProps
+  blurredNodeSelector?: string
+} & PortalProps &
+  React.HTMLAttributes<HTMLElement>
 
 type State = {}
 
@@ -67,13 +68,26 @@ class Modal extends React.Component<Props, State> {
       children,
       backdropOpacity,
       element,
-      blurredNode,
+      blurredNodeSelector,
+      className,
       ...other
     } = this.props
     const Element = disablePortal ? 'div' : Portal
 
     return open ? (
-      <Element {...(!disablePortal ? { element, blurredNode } : {})}>
+      <Element
+        className={className}
+        {...(!disablePortal
+          ? {
+              element,
+              blurredNode: blurredNodeSelector
+                ? (window.document.querySelector(
+                    blurredNodeSelector,
+                  ) as HTMLElement)
+                : undefined,
+            }
+          : {})}
+      >
         <Focus onKeyDown={this.handleKeyDown}>
           <ModalStyleContainer {...other}>
             <BackDropStyle

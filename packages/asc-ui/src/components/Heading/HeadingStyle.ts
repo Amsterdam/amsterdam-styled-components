@@ -1,5 +1,5 @@
 import styled, { css, styledComponents } from '@datapunt/asc-core'
-import TypographyStyle from './TypographyStyle'
+import TypographyStyle from '../Typography/TypographyStyle'
 
 type Props = {} & styledComponents.StyledProps<any>
 

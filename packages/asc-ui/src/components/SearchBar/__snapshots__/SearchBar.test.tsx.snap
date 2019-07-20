@@ -67,7 +67,7 @@ exports[`SearchBar should render 1`] = `
   background: #bc0000;
 }
 
-.c6:after {
+.c6::after {
   content: '';
   display: block;
   min-height: inherit;

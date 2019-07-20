@@ -1,21 +1,25 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import articleJSON from '../Blog/article_feed.json'
-import { Column, CustomHTMLBlock, Row } from '../..'
+import articleJSON from './article_feed_example.json'
+import {
+  Column,
+  CustomHTMLBlock,
+  Row,
+  Heading,
+  LinkList,
+  LinkListItem,
+  Article,
+  BlogBody,
+  Paragraph,
+} from '../../..'
 
 /* Blog components */
-import BlogContent from '../Blog/BlogContent'
-import BlogHeader from '../Blog/BlogHeader'
-import BlogMetaList from '../Blog/BlogMetaList'
-import BlogSidebar from '../Blog/BlogSidebar/BlogSidebar'
+import BlogContent from '../BlogContent'
+import BlogHeader from '../BlogHeader'
+import BlogMetaList from '../BlogMetaList'
+import BlogSidebar from '../BlogSidebar/BlogSidebar'
 
 /* Rest components */
-import Summary from '../Typography/Summary'
-import Heading from '../Typography/Heading'
-import LinkList from '../LinkList'
-import LinkListItem from '../LinkList/LinkListItem'
-import Article from './Article'
-import BlogBody from '../Blog/BlogBody/BlogBody'
 
 storiesOf('Composed/Blog/Article', module)
   .add('with image', () => (
@@ -36,7 +40,9 @@ storiesOf('Composed/Blog/Article', module)
                     fields={[{ id: 1, label: 'Redactie' }]}
                   />
                 </BlogHeader>
-                <Summary hasLongText>{articleJSON.fields.intro}</Summary>
+                <Paragraph strong hasLongText>
+                  {articleJSON.fields.intro}
+                </Paragraph>
                 <CustomHTMLBlock body={articleJSON.body} />
               </BlogBody>
             </Column>
@@ -78,7 +84,9 @@ storiesOf('Composed/Blog/Article', module)
                     fields={[{ id: 1, label: 'Redactie' }]}
                   />
                 </BlogHeader>
-                <Summary hasLongText>{articleJSON.fields.intro}</Summary>
+                <Paragraph strong hasLongText>
+                  {articleJSON.fields.intro}
+                </Paragraph>
                 <CustomHTMLBlock body={articleJSON.body} />
               </BlogBody>
             </Column>

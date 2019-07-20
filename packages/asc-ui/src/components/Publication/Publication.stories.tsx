@@ -2,11 +2,11 @@ import React from 'react'
 import { storiesOf } from '@storybook/react/'
 import { action } from '@storybook/addon-actions'
 import { Column, CustomHTMLBlock, Row, BlogHeader } from '../../index'
-import Summary from '../Typography/Summary'
 import DocumentCover from '../DocumentCover'
 import Publication from './Publication'
 import publicationJSON from './publication_feed.json'
 import { BlogMetaList, BlogContent } from '../Blog'
+import Paragraph from '../Paragraph'
 
 storiesOf('Composed/Blog/Publication', module)
   .addDecorator(storyFn => (
@@ -52,7 +52,7 @@ storiesOf('Composed/Blog/Publication', module)
             </Column>
             <Column span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}>
               <BlogContent>
-                {intro && <Summary>{intro}</Summary>}
+                {intro && <Paragraph strong>{intro}</Paragraph>}
                 <CustomHTMLBlock body={body} />
               </BlogContent>
             </Column>

@@ -5,10 +5,15 @@ export type Props = {
   dateTime?: string
   dateFormatted?: string
   fields?: Array<{ id: number; label: string }>
-}
+} & React.HTMLAttributes<HTMLElement>
 
-const BlogMetaList: React.FC<Props> = ({ dateTime, dateFormatted, fields }) => (
-  <BlogMetaListStyle>
+const BlogMetaList: React.FC<Props> = ({
+  dateTime,
+  dateFormatted,
+  fields,
+  className,
+}) => (
+  <BlogMetaListStyle className={className}>
     {dateFormatted && dateTime && (
       <BlogMetaListItemStyle>
         <time dateTime={dateTime}>{dateFormatted}</time>

@@ -1,7 +1,7 @@
 import * as React from 'react'
-import Header from '../Header'
-import { renderWithTheme } from '../../../utils/withTheme'
-import Typography from '../../Typography'
+import Header from './Header'
+import { renderWithTheme } from '../../utils/withTheme'
+import Typography from '../Typography'
 import 'jest-styled-components'
 
 const setup = (props = {}) =>

@@ -7,12 +7,9 @@ import Icon from './components/Icon'
 import Input, { InputStyles } from './components/Input'
 import Modal from './components/Modal'
 import Portal from './components/Portal'
-import Typography, {
-  Link,
-  Paragraph,
-  Heading,
-  Summary,
-} from './components/Typography'
+import Heading from './components/Heading'
+import Link from './components/Link'
+import Paragraph from './components/Paragraph'
 import TopBar, { TopBarStyles } from './components/TopBar'
 import ShareBar from './components/ShareBar'
 import ShareButton from './components/ShareButton'
@@ -51,6 +48,7 @@ import {
   BlogHeader,
   BlogSidebar,
 } from './components/Blog'
+import Typography from './components/Typography'
 import {
   MenuItemTitle,
   MenuItemLink,
@@ -66,7 +64,7 @@ import Spinner from './components/Spinner/Spinner'
 import LinkList, { LinkListItem } from './components/LinkList'
 import Publication from './components/Publication'
 import DocumentCover from './components/DocumentCover'
-import { Article, ArticleStyle } from './components/Article'
+import { Article, ArticleStyle } from './components/Blog/Article'
 
 export { breakpoint } from './utils'
 
@@ -119,6 +117,7 @@ export {
   Portal,
   Radio,
   Row,
+  Typography,
   SearchBar,
   SearchBarToggle,
   ServerStyleSheet,
@@ -128,7 +127,6 @@ export {
   TextField,
   Theme,
   ThemeProvider,
-  Typography,
   TopBar,
   BlogPost,
   Article,
@@ -136,7 +134,6 @@ export {
   Link,
   Paragraph,
   Heading,
-  Summary,
   BlogBody,
   BlogMetaList,
   BlogContent,

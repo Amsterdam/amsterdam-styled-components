@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggle should render 1`] = `
+<styled.div
+  onBlur={[Function]}
+  onKeyDown={[Function]}
+>
+  <Styled(Styled(styled.button))
+    onClick={[Function]}
+    open={false}
+  >
+    <Icon>
+      <SvgMenu />
+    </Icon>
+  </Styled(Styled(styled.button))>
+  <div
+    aria-hidden={true}
+    id="child"
+    key=".0"
+  >
+    Foo
+  </div>
+</styled.div>
+`;
