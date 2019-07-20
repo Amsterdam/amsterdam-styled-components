@@ -9,7 +9,7 @@ import {
   InverterdLinkList,
   InverterdLinkListItem,
 } from './FooterContent/FooterLinkList'
-import { color, breakpoint } from '../../utils'
+import { color, breakpoint, ShowHideTypes } from '../../utils'
 import LinkStyle from '../Link/LinkStyle'
 import ToggleFooterHeader, {
   FooterHeading,
@@ -18,6 +18,11 @@ import { Toggle } from '../Toggle'
 
 const InvertedRow = styled(Row)`
   padding-top: 32px;
+
+  @media screen and ${breakpoint('min-width', 'tabletM')} {
+    padding-bottom: 32px;
+  }
+
   background-color: ${color('tint', 'level5')};
 `
 
@@ -26,8 +31,9 @@ const FooterLinkList = styled(LinkList)`
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  min-height: 44px;
+  margin: 11px 0;
 `
+
 const FooterLinkListItem = styled(LinkListItem)`
   margin-right: 52px;
   & > ${LinkStyle} {
@@ -38,31 +44,35 @@ const FooterLinkListItem = styled(LinkListItem)`
     }
   }
 
-  @media screen and ${breakpoint('max-width', 'laptopM')} {
+  @media screen and ${breakpoint('max-width', 'tabletM')} {
     margin-right: 20px;
   }
 `
 
-const ColofonLinks: React.FC<{}> = ({ ...otherProps }) => (
-  <InverterdLinkList {...otherProps}>
-    <InverterdLinkListItem href="/">Over deze site</InverterdLinkListItem>
-    <InverterdLinkListItem href="/">Over OIS</InverterdLinkListItem>
-    <InverterdLinkListItem href="/">Databeleid</InverterdLinkListItem>
-    <InverterdLinkListItem href="/">Bronnen</InverterdLinkListItem>
-  </InverterdLinkList>
+const ColofonLinks: React.FC<{ indent?: boolean }> = ({ ...otherProps }) => (
+  <FooterContent {...otherProps}>
+    <InverterdLinkList>
+      <InverterdLinkListItem href="/">Over deze site</InverterdLinkListItem>
+      <InverterdLinkListItem href="/">Over OIS</InverterdLinkListItem>
+      <InverterdLinkListItem href="/">Databeleid</InverterdLinkListItem>
+      <InverterdLinkListItem href="/">Bronnen</InverterdLinkListItem>
+    </InverterdLinkList>
+  </FooterContent>
 )
 
-const FollowLinks: React.FC<{}> = ({ ...otherProps }) => (
-  <InverterdLinkList {...otherProps}>
-    <InverterdLinkListItem href="/">Nieuwsbrief OIS</InverterdLinkListItem>
-    <InverterdLinkListItem href="/">Twitter</InverterdLinkListItem>
-    <InverterdLinkListItem href="/">Facerbook</InverterdLinkListItem>
-    <InverterdLinkListItem href="/">Linkedin</InverterdLinkListItem>
-    <InverterdLinkListItem href="/">GitHub</InverterdLinkListItem>
-  </InverterdLinkList>
+const FollowLinks: React.FC<{ indent?: boolean }> = ({ ...otherProps }) => (
+  <FooterContent {...otherProps}>
+    <InverterdLinkList>
+      <InverterdLinkListItem href="/">Nieuwsbrief OIS</InverterdLinkListItem>
+      <InverterdLinkListItem href="/">Twitter</InverterdLinkListItem>
+      <InverterdLinkListItem href="/">Facerbook</InverterdLinkListItem>
+      <InverterdLinkListItem href="/">Linkedin</InverterdLinkListItem>
+      <InverterdLinkListItem href="/">GitHub</InverterdLinkListItem>
+    </InverterdLinkList>
+  </FooterContent>
 )
 
-const HelpLinks: React.FC<{}> = ({ ...otherProps }) => (
+const HelpLinks: React.FC<{ indent?: boolean }> = ({ ...otherProps }) => (
   <FooterContent {...otherProps}>
     <FooterHeading as="p">
       Heeft u een vraag en kunt u het antwoord niet vinden op deze website? Of
@@ -81,18 +91,23 @@ const HelpLinks: React.FC<{}> = ({ ...otherProps }) => (
 
 type Props = {
   title?: string
-}
+} & ShowHideTypes
 
-const FooterToggle: React.FC<Props> = ({ title, children, ...otherProps }) => (
-  <Toggle
-    toggleHeader={ToggleFooterHeader}
-    title={title}
-    align="left"
-    {...otherProps}
-  >
-    {children}
-  </Toggle>
-)
+const FooterToggle: React.FC<Props> = ({ title, children, ...otherProps }) => {
+  const StyledFooterToggle = styled(Toggle)`
+    margin-bottom: 24px;
+  `
+  return (
+    <StyledFooterToggle
+      toggleHeader={ToggleFooterHeader}
+      title={title}
+      align="left"
+      {...otherProps}
+    >
+      {children}
+    </StyledFooterToggle>
+  )
+}
 
 storiesOf('Composed/Footer', module)
   .addDecorator(storyFn => (
@@ -118,11 +133,13 @@ storiesOf('Composed/Footer', module)
           span={{ small: 1, medium: 2, big: 2, large: 4, xLarge: 4 }}
         >
           <FooterContent>
-            <FooterToggle title="Colofon">
+            <FooterToggle title="Colofon" hideAt="tabletM">
+              <ColofonLinks indent />
+            </FooterToggle>
+            <FooterContent showAt="tabletM">
+              <FooterHeading as="h3">Colofon</FooterHeading>
               <ColofonLinks />
-            </FooterToggle>
-            {/* <FooterHeading as="h3">Colofon</FooterHeading>
-            <ColofonLinks /> */}
+            </FooterContent>
           </FooterContent>
         </Column>
         <Column
@@ -130,11 +147,13 @@ storiesOf('Composed/Footer', module)
           span={{ small: 1, medium: 2, big: 2, large: 4, xLarge: 4 }}
         >
           <FooterContent>
-            <FooterToggle title="Volg de gemeente">
+            <FooterToggle title="Volg de gemeente" hideAt="tabletM">
+              <FollowLinks indent />
+            </FooterToggle>
+            <FooterContent showAt="tabletM">
+              <FooterHeading as="h3">Volg de gemeente</FooterHeading>
               <FollowLinks />
-            </FooterToggle>
-            {/* <FooterHeading as="h3">Volg de gemeente</FooterHeading>
-            <FollowLinks /> */}
+            </FooterContent>
           </FooterContent>
         </Column>
         <Column
@@ -142,11 +161,13 @@ storiesOf('Composed/Footer', module)
           span={{ small: 1, medium: 2, big: 2, large: 4, xLarge: 4 }}
         >
           <FooterContent>
-            <FooterToggle title="Vragen?">
-              <HelpLinks />
+            <FooterToggle title="Vragen?" hideAt="tabletM">
+              <HelpLinks indent />
             </FooterToggle>
-            {/* <FooterHeading as="h3">Vragen?</FooterHeading>
-            <HelpLinks /> */}
+            <FooterContent showAt="tabletM">
+              <FooterHeading as="h3">Vragen?</FooterHeading>
+              <HelpLinks />
+            </FooterContent>
           </FooterContent>
         </Column>
       </InvertedRow>

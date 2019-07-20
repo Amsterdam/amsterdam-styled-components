@@ -1,13 +1,14 @@
 import styled from '@datapunt/asc-core'
-import { customCss, CustomCssPropsInterface } from '../../../utils'
+import { ShowHideTypes, showHide } from '../../../utils'
 
-export interface Props extends CustomCssPropsInterface {
+export interface Props extends ShowHideTypes {
   className?: string
+  indent?: boolean
 }
 
 export default styled.div<Props>`
-  margin-bottom: 32px;
   display: flex;
   flex-direction: column;
-  ${customCss}
+  margin-left: ${({ indent }) => (indent ? '28px' : '0')};
+  ${showHide}
 `
