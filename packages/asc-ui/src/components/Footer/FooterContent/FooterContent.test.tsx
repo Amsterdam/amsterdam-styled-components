@@ -1,15 +1,15 @@
 import * as React from 'react'
-import Content from './Content'
-import { renderWithTheme } from '../../utils/withTheme'
+import FooterContent from './FooterContent'
+import { renderWithTheme } from '../../../utils/withTheme'
 import 'jest-styled-components'
 
 jest.useFakeTimers()
 
-describe('TopBar', () => {
+describe('FooterContent', () => {
   let component: Cheerio
 
   beforeEach(() => {
-    component = renderWithTheme(<Content>tcontent</Content>)
+    component = renderWithTheme(<FooterContent>FooterContent</FooterContent>)
   })
 
   it('should render', () => {

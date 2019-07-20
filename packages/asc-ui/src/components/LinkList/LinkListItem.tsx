@@ -18,9 +18,9 @@ const LinkListItem: React.FC<Props> = ({
   href,
   title,
   rel,
-  inverted,
+  className,
 }) => (
-  <LinkListItemStyle {...{ inverted }}>
+  <LinkListItemStyle {...{ className }}>
     <Link {...{ href, title, rel }}>
       <Icon size={12}>
         <ChevronRight />
