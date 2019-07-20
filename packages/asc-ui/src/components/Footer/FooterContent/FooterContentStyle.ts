@@ -1,18 +1,13 @@
 import styled from '@datapunt/asc-core'
-import { customCss, CustomCssPropsInterface, color } from '../../../utils'
-import HeadingStyle from '../../Heading/HeadingStyle'
+import { customCss, CustomCssPropsInterface } from '../../../utils'
 
 export interface Props extends CustomCssPropsInterface {
   className?: string
 }
 
 export default styled.div<Props>`
+  margin-bottom: 32px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  & > ${HeadingStyle} {
-    color: ${color('tint', 'level1')};
-  }
-
   ${customCss}
 `

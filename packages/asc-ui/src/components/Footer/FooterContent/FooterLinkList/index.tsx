@@ -25,6 +25,8 @@ export const InverterdLinkListItem = styled(LinkListItem)`
 
     &:hover {
       color: ${color('tint', 'level1')};
+      text-decoration: underline;
+
       ${IconStyle} > svg {
         ${svgFill('tint', 'level1')};
       }

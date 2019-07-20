@@ -1,8 +1,7 @@
 import styled from '@datapunt/asc-core'
-import { color } from '../../utils'
 
-export type Props = {}
+export type Props = {
+  className?: string
+}
 
-export default styled.div<Props>`
-  background-color: ${color('tint', 'level5')};
-`
+export default styled.div<Props>``
