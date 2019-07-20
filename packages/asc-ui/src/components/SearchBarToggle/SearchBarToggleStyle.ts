@@ -9,13 +9,13 @@ import {
 import SearchBarStyle from '../SearchBar/SearchBarStyle'
 import ToggleStyle from '../Toggle/ToggleStyle'
 
-export interface SearchBarMenuStyleProps
+export interface SearchBarToggleStyleProps
   extends ShowHideTypes,
     CustomCssPropsInterface {
   open?: boolean
 }
 
-const SearchBarMenuStyle = styled(ToggleStyle)<SearchBarMenuStyleProps>`
+const SearchBarToggleStyle = styled(ToggleStyle)<SearchBarToggleStyleProps>`
   display: flex;
   align-items: flex-end;
   flex-direction: column;
@@ -34,4 +34,4 @@ const SearchBarMenuStyle = styled(ToggleStyle)<SearchBarMenuStyleProps>`
   ${customCss}
 `
 
-export default SearchBarMenuStyle
+export default SearchBarToggleStyle

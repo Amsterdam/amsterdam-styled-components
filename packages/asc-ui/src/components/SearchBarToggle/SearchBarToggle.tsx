@@ -1,7 +1,7 @@
 import React from 'react'
 import { Search } from '@datapunt/asc-assets'
 import SearchBarToggleStyle, {
-  SearchBarMenuStyleProps,
+  SearchBarToggleStyleProps,
 } from './SearchBarToggleStyle'
 import SearchBar from '../SearchBar'
 import { InputMethods, InputProps } from '../Input'
@@ -9,8 +9,8 @@ import Toggle, { Props as ToggleProps } from '../Toggle/Toggle'
 import { SearchBarProps } from '../SearchBar/SearchBar'
 import { CustomCssPropsInterface } from '../../utils'
 
-interface SearchBarMenuProps
-  extends SearchBarMenuStyleProps,
+interface SearchBarToggleProps
+  extends SearchBarToggleStyleProps,
     InputMethods,
     CustomCssPropsInterface {
   placeholder?: string
@@ -22,7 +22,7 @@ interface SearchBarMenuProps
   searchBarProps?: SearchBarProps
 }
 
-const SearchBarMenu: React.FC<SearchBarMenuProps & ToggleProps> = ({
+const SearchBarToggle: React.FC<SearchBarToggleProps & ToggleProps> = ({
   children,
   hideAt,
   showAt,
@@ -40,7 +40,7 @@ const SearchBarMenu: React.FC<SearchBarMenuProps & ToggleProps> = ({
       css,
     }}
     render={false}
-    icon={<Search />}
+    iconOpen={<Search />}
     {...otherProps}
   >
     <SearchBar inputProps={inputProps} focusOnRender {...searchBarProps}>
@@ -49,9 +49,9 @@ const SearchBarMenu: React.FC<SearchBarMenuProps & ToggleProps> = ({
   </Toggle>
 )
 
-SearchBarMenu.defaultProps = {
+SearchBarToggle.defaultProps = {
   css: '',
   placeholder: 'Search...',
 }
 
-export default SearchBarMenu
+export default SearchBarToggle
