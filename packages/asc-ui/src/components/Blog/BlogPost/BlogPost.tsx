@@ -9,11 +9,11 @@ export type Props = {
 
 const BlogPost: React.FC<Props> = ({
   children,
-  className,
   image,
   StyledComponent,
+  ...otherProps
 }) => (
-  <StyledComponent hasImage={!!image} className={className}>
+  <StyledComponent hasImage={!!image} {...otherProps}>
     {image && (
       <BackgroundImage
         aspectRatio={44}

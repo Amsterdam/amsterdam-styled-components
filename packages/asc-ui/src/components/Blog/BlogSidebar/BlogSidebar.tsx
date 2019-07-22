@@ -3,7 +3,7 @@ import BlogSidebarStyle from './BlogSidebarStyle'
 
 const BlogContent: React.FC<React.HTMLAttributes<HTMLElement>> = ({
   children,
-  className,
-}) => <BlogSidebarStyle className={className}>{children}</BlogSidebarStyle>
+  ...otherProps
+}) => <BlogSidebarStyle {...otherProps}>{children}</BlogSidebarStyle>
 
 export default BlogContent

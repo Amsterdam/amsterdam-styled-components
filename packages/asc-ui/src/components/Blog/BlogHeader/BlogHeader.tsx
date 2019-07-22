@@ -6,8 +6,8 @@ export type Props = {
   title: string
 } & React.HTMLAttributes<HTMLElement>
 
-const BlogHeader: React.FC<Props> = ({ title, children, className }) => (
-  <BlogHeaderStyle className={className}>
+const BlogHeader: React.FC<Props> = ({ title, children, ...otherProps }) => (
+  <BlogHeaderStyle {...otherProps}>
     <Heading as="h1">{title}</Heading>
     {children}
   </BlogHeaderStyle>

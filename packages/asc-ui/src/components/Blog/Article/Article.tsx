@@ -5,9 +5,9 @@ import { Props } from '../BlogPost/BlogPost'
 const Article: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
   children,
   image,
-  className,
+  ...otherProps
 }) => (
-  <ArticleStyle image={image} className={className}>
+  <ArticleStyle image={image} {...otherProps}>
     {children}
   </ArticleStyle>
 )

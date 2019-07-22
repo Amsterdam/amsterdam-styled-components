@@ -4,10 +4,27 @@ import TypographyStyle, {
 } from './TypographyStyle'
 
 const Typography: React.FC<
-  TypographyStyleProps & { style?: React.CSSProperties }
-> = ({ children, className, ...otherProps }) => {
+  TypographyStyleProps & React.HTMLAttributes<HTMLElement>
+> = ({
+  children,
+  gutterBottom,
+  paragraph,
+  element,
+  color,
+  fontSize,
+  ...otherProps
+}) => {
   return (
-    <TypographyStyle {...otherProps} className={className}>
+    <TypographyStyle
+      {...{
+        gutterBottom,
+        paragraph,
+        element,
+        color,
+        fontSize,
+      }}
+      {...otherProps}
+    >
       {children}
     </TypographyStyle>
   )

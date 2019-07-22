@@ -25,7 +25,6 @@ const Toggle: React.FC<Props> = ({
   css,
   render,
   icon,
-  className,
   ...otherProps
 }) => {
   const [open, setOpen] = React.useState(false)
@@ -91,7 +90,6 @@ const Toggle: React.FC<Props> = ({
       css={css}
       onBlur={handleOnBlur}
       onKeyDown={handleOnKeyDown}
-      className={className}
       {...otherProps}
     >
       <ButtonToggle open={open} onClick={handleOnClick}>

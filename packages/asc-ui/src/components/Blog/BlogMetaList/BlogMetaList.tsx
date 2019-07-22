@@ -11,9 +11,9 @@ const BlogMetaList: React.FC<Props> = ({
   dateTime,
   dateFormatted,
   fields,
-  className,
+  ...otherProps
 }) => (
-  <BlogMetaListStyle className={className}>
+  <BlogMetaListStyle {...otherProps}>
     {dateFormatted && dateTime && (
       <BlogMetaListItemStyle>
         <time dateTime={dateTime}>{dateFormatted}</time>

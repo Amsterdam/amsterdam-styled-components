@@ -24,14 +24,9 @@ const Header: React.FC<Props> = ({
   tall,
   navigation,
   links,
-  className,
   ...otherProps
 }) => (
-  <HeaderWrapperStyle
-    {...{ css, tall, fullWidth }}
-    className={className}
-    id="header"
-  >
+  <HeaderWrapperStyle {...{ css, tall, fullWidth }} id="header">
     <HeaderStyle {...{ fullWidth, ...otherProps }}>
       <HeaderLogoText {...{ tall, title, homeLink }} />
       <HeaderNavigation>{navigation}</HeaderNavigation>
