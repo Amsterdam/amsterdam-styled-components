@@ -1,5 +1,5 @@
 import styled, { css } from '@datapunt/asc-core'
-import TypographyStyle from './TypographyStyle'
+import TypographyStyle from '../Typography/TypographyStyle'
 import { color } from '../../utils'
 import { focusStyleText } from '../../utils/themeUtils'
 

@@ -1,10 +1,12 @@
 import React from 'react'
 import MenuItemLabelStyle, { Props } from './MenuItemLabelStyle'
 
-const MenuItemLabel: React.FC<Props> = ({ children }) => {
+const MenuItemLabel: React.FC<
+  Props & React.HTMLAttributes<HTMLSpanElement>
+> = ({ children, className }) => {
   return (
     <span>
-      <MenuItemLabelStyle>{children}</MenuItemLabelStyle>
+      <MenuItemLabelStyle className={className}>{children}</MenuItemLabelStyle>
     </span>
   )
 }

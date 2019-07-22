@@ -5,10 +5,15 @@ import BackgroundImage from '../../BackgroundImage'
 export type Props = {
   StyledComponent?: any
   image?: string
-}
+} & React.HTMLAttributes<HTMLElement>
 
-const BlogPost: React.FC<Props> = ({ children, image, StyledComponent }) => (
-  <StyledComponent hasImage={!!image}>
+const BlogPost: React.FC<Props> = ({
+  children,
+  image,
+  StyledComponent,
+  ...otherProps
+}) => (
+  <StyledComponent hasImage={!!image} {...otherProps}>
     {image && (
       <BackgroundImage
         aspectRatio={44}

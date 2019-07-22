@@ -1,7 +1,7 @@
 import styled from '@datapunt/asc-core'
 import { flexboxMinHeightFix } from '../shared/ie-fixes'
 import { breakpoint, getColorFromTheme } from '../../utils'
-import HeadingStyle from '../Typography/HeadingStyle'
+import HeadingStyle from '../Heading/HeadingStyle'
 
 export type Props = {
   backgroundColor?: string

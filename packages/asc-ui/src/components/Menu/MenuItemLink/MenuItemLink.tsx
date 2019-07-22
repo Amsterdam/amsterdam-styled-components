@@ -30,6 +30,7 @@ const MenuItemLink: React.FC<Props> = ({
   isActive,
   iconLeft,
   onClick,
+  className,
   ...otherProps
 }) => {
   const ref = React.useRef<HTMLAnchorElement>(null!)
@@ -71,6 +72,7 @@ const MenuItemLink: React.FC<Props> = ({
       ref={ref}
       isActive={isActive}
       tabIndex={0}
+      className={className}
       {...(element ? { as: element } : {})}
       {...{ hasToggle, underFlyOutMenu }}
       {...otherProps}

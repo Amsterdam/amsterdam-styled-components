@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Article should render 1`] = `
-.c0 {
+.c1 {
   width: 100%;
   color: #323232;
   background-color: #ffffff;
@@ -9,13 +9,13 @@ exports[`Article should render 1`] = `
   margin-bottom: 20px;
 }
 
-.c0 .c1 {
+.c1 .c2 {
   max-height: 560px;
   min-height: 250px;
 }
 
 @media screen and (min-width:768.02px) {
-  .c0 {
+  .c1 {
     margin-top: 54px;
     margin-bottom: 70px;
   }
@@ -28,7 +28,7 @@ exports[`Article should render 1`] = `
 }
 
 <section
-  class="c0"
+  class="c0 c1"
 >
   This is the publication content
 </section>

@@ -4,7 +4,6 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 import ButtonBar from '../ButtonBar'
 import Icon from '../Icon'
-import Typography from '../Typography'
 import Button from './Button'
 
 storiesOf('Atoms/Buttons', module)
@@ -56,9 +55,7 @@ storiesOf('Atoms/Buttons', module)
         <Icon size={20} color="bright">
           <Download />
         </Icon>
-        <Typography as="span" color="bright" fontSize={16}>
-          Download button
-        </Typography>
+        Download button
         <Icon size={20} color="secondary">
           <ChevronRight />
         </Icon>

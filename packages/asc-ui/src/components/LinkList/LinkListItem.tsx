@@ -1,7 +1,7 @@
 import React from 'react'
 import { ChevronRight } from '@datapunt/asc-assets'
 import LinkListItemStyle from './LinkListItemStyle'
-import Link, { Props as LinkProps } from '../Typography/Link'
+import Link, { Props as LinkProps } from '../Link/Link'
 import Icon from '../Icon'
 import Typography from '../Typography'
 

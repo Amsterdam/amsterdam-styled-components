@@ -18,6 +18,7 @@ exports[`Header should render the short version 1`] = `
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
+  min-height: 50px;
   margin: 0 auto;
   padding: 0 10px;
   -webkit-align-items: stretch;
@@ -28,7 +29,7 @@ exports[`Header should render the short version 1`] = `
   padding-left: 10px !important;
 }
 
-.c2:after {
+.c2::after {
   content: '';
   display: block;
   min-height: inherit;
@@ -299,6 +300,7 @@ exports[`Header should render the short version without the full width 1`] = `
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
+  min-height: 50px;
   margin: 0 auto;
   padding: 0 10px;
   -webkit-align-items: stretch;
@@ -308,7 +310,7 @@ exports[`Header should render the short version without the full width 1`] = `
   max-width: 1600px;
 }
 
-.c2:after {
+.c2::after {
   content: '';
   display: block;
   min-height: inherit;
@@ -595,6 +597,7 @@ exports[`Header should render the tall version 1`] = `
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
+  min-height: 50px;
   margin: 0 auto;
   padding: 0 10px;
   -webkit-align-items: stretch;
@@ -605,7 +608,7 @@ exports[`Header should render the tall version 1`] = `
   padding-left: 10px !important;
 }
 
-.c3:after {
+.c3::after {
   content: '';
   display: block;
   min-height: inherit;
@@ -982,6 +985,7 @@ exports[`Header should render the tall version without a title 1`] = `
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
+  min-height: 50px;
   margin: 0 auto;
   padding: 0 10px;
   -webkit-align-items: stretch;
@@ -992,7 +996,7 @@ exports[`Header should render the tall version without a title 1`] = `
   padding-left: 10px !important;
 }
 
-.c3:after {
+.c3::after {
   content: '';
   display: block;
   min-height: inherit;

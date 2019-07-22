@@ -1,15 +1,12 @@
 import * as React from 'react'
-import Article from './Article'
+import Paragraph from './Paragraph'
 import { renderWithTheme } from '../../utils/withTheme'
 import 'jest-styled-components'
 
-describe('Article', () => {
-  let component: any
-
+describe('Paragraph', () => {
   it('should render', () => {
-    component = renderWithTheme(
-      <Article>This is the publication content</Article>,
-    )
+    const component = renderWithTheme(<Paragraph>Foo</Paragraph>)
+
     expect(component).toMatchSnapshot()
   })
 })

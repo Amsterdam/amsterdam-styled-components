@@ -5,9 +5,8 @@ import HeaderTitle from './HeaderTitle'
 
 type Props = {
   homeLink: string
-  title?: string
   tall?: boolean
-}
+} & React.HTMLAttributes<HTMLHeadingElement>
 
 const HeaderLogoText: React.FC<Props> = ({
   title,
@@ -16,7 +15,7 @@ const HeaderLogoText: React.FC<Props> = ({
   ...otherProps
 }) => (
   <HeaderLogoTextStyle tall={tall} {...otherProps}>
-    <AmsterdamLogo href={homeLink} {...{ tall }} />
+    <AmsterdamLogo href={homeLink} tall={tall} />
     {title && <HeaderTitle href={homeLink}>{title}</HeaderTitle>}
   </HeaderLogoTextStyle>
 )
