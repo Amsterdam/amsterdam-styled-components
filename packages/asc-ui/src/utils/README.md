@@ -44,13 +44,13 @@ const DivStyle = styled.div`
 <DivStyle theme={theme} /> // styles: { backgroundColor: '#f00', fontSize: '2em', padding: '8rem' }
 ```
 
-## getColorFromTheme and color
+## color
 
 Extends `fromTheme`, but it's specified to the theme colors. Will return a default value if no colors are specified
 
 ```js static
 import styled from '@datapunt/asc-core'
-import { getColorFromTheme } from './utils'
+import { color } from './utils'
 
 const theme = {
   colors: {
@@ -62,13 +62,6 @@ const theme = {
   }
 }
 
-// with getColorFromTheme
-const ButtonStyle = styled.button`
-  background-color: ${theme => getColorFromTheme(theme, 'primary', 'dark')};
-  color: ${theme => getColorFromTheme(theme, 'light')};
-`
-
-// with color (prefered)
 const ButtonStyle = styled.button`
   background-color: ${color('primary', 'dark')};
   color: ${color('light')};

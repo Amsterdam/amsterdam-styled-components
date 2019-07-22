@@ -1,6 +1,6 @@
 import styled, { css } from '@datapunt/asc-core'
 import { readableColor } from 'polished'
-import { getColorFromTheme } from '../../utils'
+import { color as getColor } from '../../utils'
 import ButtonBaseStyle, {
   Props as ButtonBaseStyleProps,
 } from './ButtonBaseStyle'
@@ -14,19 +14,19 @@ const ButtonStyle = styled(ButtonBaseStyle)<Props>`
   line-height: 1em;
   color: ${({ color, theme }) =>
     color
-      ? readableColor(getColorFromTheme(theme, color))
-      : getColorFromTheme(theme, 'primary')};
+      ? readableColor(getColor(color)({ theme }))
+      : getColor('primary')({ theme })};
   ${({ theme, color }) =>
     !color &&
     css`
-      border: 1px solid ${getColorFromTheme(theme, 'primary')};
+      border: 1px solid ${getColor('primary')({ theme })};
     `}
 
   &:hover {
     ${({ theme, color }) =>
       !color &&
       css`
-        outline: 1px solid ${getColorFromTheme(theme, 'primary')};
+        outline: 1px solid ${getColor('primary')({ theme })};
       `}
   }
 

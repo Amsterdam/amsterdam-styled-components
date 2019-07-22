@@ -4,12 +4,14 @@ import styled from '@datapunt/asc-core'
 import Footer from './Footer'
 import { Row, Column } from '../Grid'
 import FooterContent from './FooterContent/FooterContent'
-import { FooterLinkList, FooterLinkListItem } from './FooterLinkList'
-import { color, breakpoint, ShowHideTypes } from '../../utils'
-import { ToggleFooterHeader, FooterHeading } from './FooterHeading'
-import { Toggle } from '../Toggle'
-import SmallFooterLinkList from './FooterLinkList/SmallFooterLinkList'
-import SmallFooterLinkListItem from './FooterLinkList/SmallFooterLinkListItem'
+import {
+  FooterLinkList,
+  FooterLinkListItem,
+  FooterBottomLinkList,
+  FooterBottomLinkListItem,
+} from './FooterLinkList'
+import { color, breakpoint } from '../../utils'
+import { FooterHeading, FooterToggle } from './FooterHeading'
 
 const FooterRow = styled(Row)`
   padding-top: 32px;
@@ -58,26 +60,6 @@ const HelpLinks: React.FC<{ indent?: boolean }> = ({ ...otherProps }) => (
     </FooterLinkList>
   </FooterContent>
 )
-
-type Props = {
-  title?: string
-} & ShowHideTypes
-
-const FooterToggle: React.FC<Props> = ({ title, children, ...otherProps }) => {
-  const StyledFooterToggle = styled(Toggle)`
-    margin-bottom: 24px;
-  `
-  return (
-    <StyledFooterToggle
-      toggleHeader={ToggleFooterHeader}
-      title={title}
-      align="left"
-      {...otherProps}
-    >
-      {children}
-    </StyledFooterToggle>
-  )
-}
 
 storiesOf('Composed/Footer', module)
   .addDecorator(storyFn => (
@@ -134,14 +116,14 @@ storiesOf('Composed/Footer', module)
           wrap
           span={{ small: 1, medium: 2, big: 6, large: 10, xLarge: 10 }}
         >
-          <SmallFooterLinkList>
-            <SmallFooterLinkListItem href="/">
+          <FooterBottomLinkList>
+            <FooterBottomLinkListItem href="/">
               Privacy en cookies
-            </SmallFooterLinkListItem>
-            <SmallFooterLinkListItem href="/">
+            </FooterBottomLinkListItem>
+            <FooterBottomLinkListItem href="/">
               Over deze site
-            </SmallFooterLinkListItem>
-          </SmallFooterLinkList>
+            </FooterBottomLinkListItem>
+          </FooterBottomLinkList>
         </Column>
       </Row>
     </Footer>

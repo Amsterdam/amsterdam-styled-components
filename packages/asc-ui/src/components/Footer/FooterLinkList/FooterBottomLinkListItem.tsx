@@ -3,7 +3,7 @@ import { LinkListItem } from '../../LinkList'
 import LinkStyle from '../../Link/LinkStyle'
 import { breakpoint } from '../../../utils'
 
-const SmallFooterLinkListItem = styled(LinkListItem)`
+const FooterBottomLinkListItem = styled(LinkListItem)`
   margin-right: 52px;
   & > ${LinkStyle} {
     font-size: 14px;
@@ -18,4 +18,4 @@ const SmallFooterLinkListItem = styled(LinkListItem)`
   }
 `
 
-export default SmallFooterLinkListItem
+export default FooterBottomLinkListItem

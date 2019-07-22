@@ -16,7 +16,7 @@ export type ToggleHeaderProps = {
 export type Props = {
   render?: boolean
   onOpen?: Function
-  toggleHeader?: any
+  ToggleHeader?: any
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
 } & React.HTMLProps<HTMLElement> &
   ToggleStyleProps &
@@ -32,7 +32,7 @@ const Toggle: React.FC<Props> = ({
   render,
   iconOpen,
   iconClose,
-  toggleHeader: HeaderToggle,
+  ToggleHeader,
   className,
   ...otherProps
 }) => {
@@ -100,7 +100,7 @@ const Toggle: React.FC<Props> = ({
       className={className}
       {...otherProps}
     >
-      <HeaderToggle
+      <ToggleHeader
         {...{
           open,
           iconClose,
@@ -116,7 +116,7 @@ const Toggle: React.FC<Props> = ({
 
 Toggle.defaultProps = {
   render: true,
-  toggleHeader: ToggleHeaderButton,
+  ToggleHeader: ToggleHeaderButton,
 }
 
 export default Toggle

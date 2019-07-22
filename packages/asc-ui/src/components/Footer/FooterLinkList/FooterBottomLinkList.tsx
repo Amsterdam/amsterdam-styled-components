@@ -1,7 +1,7 @@
 import styled from '@datapunt/asc-core'
 import LinkList from '../../LinkList'
 
-const SmallFooterLinkList = styled(LinkList)`
+const FooterBottomLinkList = styled(LinkList)`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -9,4 +9,4 @@ const SmallFooterLinkList = styled(LinkList)`
   margin: 11px 0;
 `
 
-export default SmallFooterLinkList
+export default FooterBottomLinkList
