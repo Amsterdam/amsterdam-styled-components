@@ -14,6 +14,8 @@ export const FooterHeading = styled(Heading)`
   display: flex;
 `
 
+export const ToggleHeading = styled(Heading)``
+
 export const ExpandableFooterHeading = styled(FooterHeading)`
   margin-bottom: ${({ open }) => (open ? '0' : '8px')};
   cursor: pointer;
@@ -33,7 +35,7 @@ export type Props = {
   title?: string
 } & ToggleHeaderProps
 
-const ToggleFooterHeader: React.FC<Props> = ({
+const ToggleHeader: React.FC<Props> = ({
   iconOpen,
   iconClose,
   open,
@@ -52,4 +54,4 @@ const ToggleFooterHeader: React.FC<Props> = ({
   )
 }
 
-export default ToggleFooterHeader
+export default ToggleHeader

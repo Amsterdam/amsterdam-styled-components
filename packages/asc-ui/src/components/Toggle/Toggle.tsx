@@ -9,6 +9,7 @@ export type ToggleHeaderProps = {
   iconOpen?: React.ReactElement
   iconClose?: React.ReactElement
   open?: boolean
+  title?: string
   onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void | undefined
 }
 
