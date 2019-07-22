@@ -1,16 +1,26 @@
 import * as React from 'react'
+import { render, cleanup } from '@testing-library/react'
+import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import Footer from './Footer'
-import { renderWithTheme } from '../../utils/withTheme'
 import 'jest-styled-components'
 
+const theme = {
+  ...ascDefaultTheme,
+}
+
 describe('Footer', () => {
-  let component: Cheerio
-
-  beforeEach(() => {
-    component = renderWithTheme(<Footer>Footer</Footer>)
-  })
-
-  it('should render', () => {
-    expect(component).toMatchSnapshot()
+  beforeEach(cleanup)
+  it('should render and apply the style', () => {
+    const {
+      container,
+      queryByText,
+      // queryByTestId
+    } = render(
+      <ThemeProvider theme={theme}>
+        <Footer data-testid="test-id">Footer content</Footer>
+      </ThemeProvider>,
+    )
+    expect(queryByText(/Footer content/)).not.toBeNull()
+    expect(container.firstChild).toHaveStyleRule('margin-top', '72px')
   })
 })
