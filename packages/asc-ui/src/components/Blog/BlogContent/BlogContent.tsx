@@ -3,7 +3,7 @@ import BlogContentStyle from './BlogContentStyle'
 
 const BlogContent: React.FC<React.HTMLAttributes<HTMLElement>> = ({
   children,
-  className,
-}) => <BlogContentStyle className={className}>{children}</BlogContentStyle>
+  ...otherProps
+}) => <BlogContentStyle {...otherProps}>{children}</BlogContentStyle>
 
 export default BlogContent

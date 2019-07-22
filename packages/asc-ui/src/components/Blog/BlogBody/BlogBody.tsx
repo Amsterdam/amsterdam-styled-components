@@ -3,7 +3,7 @@ import BlogBodyStyle, { Props } from './BlogBodyStyle'
 
 const BlogBody: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
   children,
-  className,
-}) => <BlogBodyStyle className={className}>{children}</BlogBodyStyle>
+  ...otherProps
+}) => <BlogBodyStyle {...otherProps}>{children}</BlogBodyStyle>
 
 export default BlogBody

@@ -3,8 +3,7 @@ import AmsterdamLogoStyle, { LogoStyle } from './AmsterdamLogoStyle'
 
 type Props = {
   tall?: boolean
-  href?: string
-}
+} & React.AnchorHTMLAttributes<HTMLAnchorElement>
 
 const AmsterdamLogo: React.FC<Props> = ({ tall, ...otherProps }) => (
   <AmsterdamLogoStyle {...{ tall }} {...otherProps}>

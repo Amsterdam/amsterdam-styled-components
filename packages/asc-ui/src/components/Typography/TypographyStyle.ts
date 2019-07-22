@@ -5,8 +5,6 @@ import { getTypographyFromTheme, color as getColor } from '../../utils'
 export type Props = {
   gutterBottom?: number
   paragraph?: boolean
-  href?: string
-  tabindex?: number
   element?: Variant
   color?: Theme.TypeLevel
   fontSize?: number
