@@ -4,6 +4,6 @@ export type Props = {
   className?: string
 }
 
-export default styled.div<Props>`
+export default styled.footer<Props>`
   margin-top: 72px;
 `

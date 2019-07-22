@@ -9,17 +9,14 @@ export type ToggleHeaderProps = {
   iconOpen?: React.ReactElement
   iconClose?: React.ReactElement
   open?: boolean
-  title?: string
-  onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void | undefined
-}
+} & React.HTMLAttributes<HTMLElement>
 
 export type Props = {
   render?: boolean
   onOpen?: Function
   ToggleHeader?: any
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
-} & React.HTMLProps<HTMLElement> &
-  ToggleStyleProps &
+} & ToggleStyleProps &
   ToggleHeaderProps
 
 const Toggle: React.FC<Props> = ({

@@ -19,9 +19,7 @@ const SearchBarStyle = styled.div<Props>`
     padding: 10px;
     width: 40px;
     height: 40px;
-    & svg {
-      ${svgFill('tint', 'level1')};
-    }
+    ${svgFill('tint', 'level1')};
   }
 
   ${showHide()}

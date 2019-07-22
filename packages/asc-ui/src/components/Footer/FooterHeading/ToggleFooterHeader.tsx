@@ -7,19 +7,11 @@ import IconStyle from '../../Icon/IconStyle'
 import FooterHeading from './FooterHeading'
 import { svgFill } from '../../../utils'
 
-export type Props = {
-  title?: string
-} & ToggleHeaderProps
+export type Props = ToggleHeaderProps
 
-const ToggleFooterHeader: React.FC<Props> = ({
-  iconOpen,
-  iconClose,
-  open,
-  onClick,
-  title,
-}) => {
-  const IconOpen = iconOpen || <ChevronDown />
-  const IconClose = iconClose || <ChevronUp />
+const ToggleFooterHeader: React.FC<Props> = ({ open, onClick, title }) => {
+  const IconOpen = <ChevronDown />
+  const IconClose = <ChevronUp />
   const StyledFooterHeading = styled(FooterHeading)`
     margin-bottom: ${({ open: isOpen }) => (isOpen ? '0' : '8px')};
     cursor: pointer;
@@ -29,9 +21,7 @@ const ToggleFooterHeader: React.FC<Props> = ({
 
     & > ${IconStyle} {
       margin-right: 8px;
-      & > svg {
-        ${svgFill('tint', 'level1')};
-      }
+      ${svgFill('tint', 'level1')};
     }
   `
 

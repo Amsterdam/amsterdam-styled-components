@@ -11,9 +11,7 @@ const FooterLinkListItem = styled(LinkListItem)`
   }
 
   ${IconStyle} {
-    & > svg {
-      ${svgFill('tint', 'level1')};
-    }
+    ${svgFill('tint', 'level1')};
   }
 
   ${LinkStyle} {
@@ -23,7 +21,7 @@ const FooterLinkListItem = styled(LinkListItem)`
       color: ${color('tint', 'level1')};
       text-decoration: underline;
 
-      ${IconStyle} > svg {
+      ${IconStyle} {
         ${svgFill('tint', 'level1')};
       }
     }

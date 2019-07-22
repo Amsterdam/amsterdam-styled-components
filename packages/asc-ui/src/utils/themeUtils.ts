@@ -140,12 +140,13 @@ export const svgFill = (
   if (colorType) {
     const value = color(colorType, variant)({ theme })
     if (typeof value === 'string') {
-      return `
+      return `& > svg {
         rect,
         polygon,
         path {
           fill: ${value}
         }
+      }
       `
     }
   }

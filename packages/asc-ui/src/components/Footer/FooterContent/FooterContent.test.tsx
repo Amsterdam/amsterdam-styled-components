@@ -3,8 +3,6 @@ import FooterContent from './FooterContent'
 import { renderWithTheme } from '../../../utils/withTheme'
 import 'jest-styled-components'
 
-jest.useFakeTimers()
-
 describe('FooterContent', () => {
   let component: Cheerio
 
