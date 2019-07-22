@@ -1,6 +1,7 @@
 import styled from '@datapunt/asc-core'
 import { flexboxMinHeightFix } from '../shared/ie-fixes'
 import { breakpoint, getColorFromTheme } from '../../utils'
+import HeadingStyle from '../Heading/HeadingStyle'
 
 export type Props = {
   backgroundColor?: string
@@ -18,6 +19,11 @@ const TopBarStyle = styled.header<Props>`
 
   @media screen and ${breakpoint('min-width', 'tabletS')} {
     padding: 0 15px;
+  }
+
+  ${HeadingStyle} {
+    flex-grow: 1;
+    margin-bottom: 0;
   }
 `
 

@@ -1,5 +1,5 @@
 // @ts-ignore
-import { ascDefaultTheme } from '@datapunt/asc-core'
+import { ascDefaultTheme, Theme } from '@datapunt/asc-core'
 import 'jest-styled-components'
 import { layouts, maxGridWidth } from '@datapunt/asc-core/lib/theme/default'
 import {
@@ -9,7 +9,10 @@ import {
   svgFill,
   getTypographyFromTheme,
   mapToBreakpoints,
+  getTypographyValueFromProperty,
 } from '../themeUtils'
+
+import ThemeInterface = Theme.ThemeInterface
 
 const { breakpoints, colors, globalStyle, typography } = ascDefaultTheme
 
@@ -48,13 +51,42 @@ describe('getTypographyFromTheme', () => {
       colors,
       typography: {
         ...typography,
-        fontSize: '16px',
       },
       layouts,
       maxGridWidth,
     }
 
-    expect(getTypographyFromTheme(theme, 'fontSize')).toBe('16px')
+    expect(getTypographyFromTheme()({ as: 'p', theme })).toMatchSnapshot()
+  })
+})
+
+describe('getTypographyValueFromProperty', () => {
+  const theme: ThemeInterface = {
+    breakpoints,
+    globalStyle,
+    colors,
+    typography: {
+      ...typography,
+    },
+    layouts,
+    maxGridWidth,
+  }
+  it('should the value without a breakpoint', () => {
+    expect(
+      getTypographyValueFromProperty('h1', 'lineHeight')({ theme }),
+    ).toEqual('30px')
+  })
+
+  it('should the value with a breakpoint', () => {
+    expect(
+      getTypographyValueFromProperty('h1', 'lineHeight', 'tabletS')({ theme }),
+    ).toEqual('38px')
+  })
+
+  it('should return an empty string if no results could be found', () => {
+    expect(
+      getTypographyValueFromProperty('h1', 'lineHeight', 'laptop')({ theme }),
+    ).toEqual('')
   })
 })
 
@@ -95,7 +127,7 @@ describe('breakpoint', () => {
       '(max-width: 2560px)',
     )
     expect(breakpoint('min-width', 'mobileL')({ theme })).toEqual(
-      '(min-width: 425.02px)',
+      '(min-width: 414.02px)',
     )
   })
 })

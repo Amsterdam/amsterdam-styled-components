@@ -46,10 +46,24 @@ export namespace Theme {
     desktopL: GetBreakpointFunc
   }
 
+  export interface GridInterface {
+    xLarge: LayoutInterface
+    large: LayoutInterface
+    big: LayoutInterface
+    medium: LayoutInterface
+    small: LayoutInterface
+  }
+
   export interface PaletteInterface {
     light?: string
     dark?: string
     main: string
+  }
+
+  export interface SupportPaletteInterface {
+    valid: string
+    invalid: string
+    focus: string
   }
 
   export type Tint = {
@@ -67,32 +81,39 @@ export namespace Theme {
     secondary: PaletteInterface
     error: PaletteInterface
     tint: Tint
-    support: {
-      valid: string
-      invalid: string
-      focus: string
-    }
+    support: SupportPaletteInterface
     bright: PaletteInterface
   }
 
-  type TypographyElementStyle = {
-    color: CSSProp
+  export type TypographyElementStyle = {
+    defaultColor: CSSProp
     fontWeight: 400 | 500 | 700 | 'inherit'
     fontSize: CSSProp
     lineHeight: number | CSSProp
     letterSpacing: CSSProp
+    marginBottom: CSSProp
   }
 
+  type Optional<T> = { [P in keyof T]?: T[P] }
+
+  type TypographyType = {
+    breakpoints?: {
+      [key in keyof BreakpointsInterface]?: Optional<TypographyElementStyle>
+    }
+  } & TypographyElementStyle
+
   export type TypographyElements = {
-    h1: TypographyElementStyle
-    h2: TypographyElementStyle
-    h3: TypographyElementStyle
-    h4: TypographyElementStyle
-    h5: TypographyElementStyle
-    h6: TypographyElementStyle
-    p: TypographyElementStyle
-    a: TypographyElementStyle
-    em: TypographyElementStyle
+    h1: TypographyType
+    h2: TypographyType
+    h3: TypographyType
+    h4: TypographyType
+    h5: TypographyType
+    h6: TypographyType
+    p: TypographyType
+    a: TypographyType
+    em: TypographyType
+    small: TypographyType
+    span: TypographyType
   }
 
   export interface TypographyInterface extends TypographyElements {

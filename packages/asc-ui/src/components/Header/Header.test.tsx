@@ -1,7 +1,7 @@
 import * as React from 'react'
-import Header from '../Header'
-import { renderWithTheme } from '../../../utils/withTheme'
-import Typography from '../../Typography'
+import Header from './Header'
+import { renderWithTheme } from '../../utils/withTheme'
+import Typography from '../Typography'
 import 'jest-styled-components'
 
 const setup = (props = {}) =>
@@ -11,7 +11,7 @@ const setup = (props = {}) =>
       homeLink="http://data.amsterdam.nl"
       {...props}
     >
-      <Typography element="p">
+      <Typography>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis,
         dicta incidunt maxime necessitatibus voluptatibus.
       </Typography>

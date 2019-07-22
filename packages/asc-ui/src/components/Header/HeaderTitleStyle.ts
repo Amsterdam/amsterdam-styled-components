@@ -2,7 +2,7 @@ import styled from '@datapunt/asc-core'
 import { breakpoint } from '../../utils'
 import TypographyStyle from '../Typography/TypographyStyle'
 
-const HeaderTitleStyle = styled(TypographyStyle('a'))`
+const HeaderTitleStyle = styled(TypographyStyle)`
   margin: ${({ tall }) => (tall ? '0px' : '0px')};
   display: inline-flex;
   color: #000;

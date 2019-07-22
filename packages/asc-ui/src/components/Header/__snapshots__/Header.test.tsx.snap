@@ -18,6 +18,7 @@ exports[`Header should render the short version 1`] = `
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
+  min-height: 50px;
   margin: 0 auto;
   padding: 0 10px;
   -webkit-align-items: stretch;
@@ -28,28 +29,35 @@ exports[`Header should render the short version 1`] = `
   padding-left: 10px !important;
 }
 
-.c2:after {
+.c2::after {
   content: '';
   display: block;
   min-height: inherit;
   font-size: 0;
 }
 
+.c2 .c12 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+
 .c8 {
-  color: #004699;
-  display: inline-block;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+  color: #000000;
   font-weight: inherit;
   font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1;
-  color: #000000;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  line-height: 1.25;
+  margin-bottom: 0;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -63,14 +71,6 @@ exports[`Header should render the short version 1`] = `
   color: #000;
   -webkit-text-decoration: none;
   text-decoration: none;
-}
-
-.c8:focus {
-  background-color: #FEC813;
-}
-
-.c8:hover {
-  color: #ec0000;
 }
 
 .c8:hover {
@@ -192,35 +192,35 @@ exports[`Header should render the short version 1`] = `
   justify-content: flex-end;
 }
 
-.c11 .c13 {
+.c11 .c14 {
   height: 17px;
   padding: 0;
 }
 
-.c11 .c13:not(:last-child) {
+.c11 .c14:not(:last-child) {
   margin-right: 30px;
 }
 
-.c11 .c13:focus,
-.c11 .c13:hover {
+.c11 .c14:focus,
+.c11 .c14:hover {
   background-color: transparent;
 }
 
-.c11 .c13:focus .c12,
-.c11 .c13:hover .c12 {
+.c11 .c14:focus .c13,
+.c11 .c14:hover .c13 {
   color: #ec0000;
 }
 
-.c11 .c13:focus svg rect,
-.c11 .c13:hover svg rect,
-.c11 .c13:focus svg polygon,
-.c11 .c13:hover svg polygon,
-.c11 .c13:focus svg path,
-.c11 .c13:hover svg path {
+.c11 .c14:focus svg rect,
+.c11 .c14:hover svg rect,
+.c11 .c14:focus svg polygon,
+.c11 .c14:hover svg polygon,
+.c11 .c14:focus svg path,
+.c11 .c14:hover svg path {
   fill: #ec0000;
 }
 
-.c11 .c13 .c12 {
+.c11 .c14 .c13 {
   line-height: 17px;
 }
 
@@ -268,7 +268,6 @@ exports[`Header should render the short version 1`] = `
       </a>
       <a
         class="c7 c8"
-        href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
@@ -301,6 +300,7 @@ exports[`Header should render the short version without the full width 1`] = `
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
+  min-height: 50px;
   margin: 0 auto;
   padding: 0 10px;
   -webkit-align-items: stretch;
@@ -310,28 +310,35 @@ exports[`Header should render the short version without the full width 1`] = `
   max-width: 1600px;
 }
 
-.c2:after {
+.c2::after {
   content: '';
   display: block;
   min-height: inherit;
   font-size: 0;
 }
 
+.c2 .c13 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+
 .c8 {
-  color: #004699;
-  display: inline-block;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+  color: #000000;
   font-weight: inherit;
   font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1;
-  color: #000000;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  line-height: 1.25;
+  margin-bottom: 0;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -345,14 +352,6 @@ exports[`Header should render the short version without the full width 1`] = `
   color: #000;
   -webkit-text-decoration: none;
   text-decoration: none;
-}
-
-.c8:focus {
-  background-color: #FEC813;
-}
-
-.c8:hover {
-  color: #ec0000;
 }
 
 .c8:hover {
@@ -490,35 +489,35 @@ exports[`Header should render the short version without the full width 1`] = `
   justify-content: flex-end;
 }
 
-.c11 .c14 {
+.c11 .c15 {
   height: 17px;
   padding: 0;
 }
 
-.c11 .c14:not(:last-child) {
+.c11 .c15:not(:last-child) {
   margin-right: 30px;
 }
 
-.c11 .c14:focus,
-.c11 .c14:hover {
+.c11 .c15:focus,
+.c11 .c15:hover {
   background-color: transparent;
 }
 
-.c11 .c14:focus .c13,
-.c11 .c14:hover .c13 {
+.c11 .c15:focus .c14,
+.c11 .c15:hover .c14 {
   color: #ec0000;
 }
 
-.c11 .c14:focus svg rect,
-.c11 .c14:hover svg rect,
-.c11 .c14:focus svg polygon,
-.c11 .c14:hover svg polygon,
-.c11 .c14:focus svg path,
-.c11 .c14:hover svg path {
+.c11 .c15:focus svg rect,
+.c11 .c15:hover svg rect,
+.c11 .c15:focus svg polygon,
+.c11 .c15:hover svg polygon,
+.c11 .c15:focus svg path,
+.c11 .c15:hover svg path {
   fill: #ec0000;
 }
 
-.c11 .c14 .c13 {
+.c11 .c15 .c14 {
   line-height: 17px;
 }
 
@@ -566,7 +565,6 @@ exports[`Header should render the short version without the full width 1`] = `
       </a>
       <a
         class="c7 c8"
-        href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
@@ -599,6 +597,7 @@ exports[`Header should render the tall version 1`] = `
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
+  min-height: 50px;
   margin: 0 auto;
   padding: 0 10px;
   -webkit-align-items: stretch;
@@ -609,28 +608,35 @@ exports[`Header should render the tall version 1`] = `
   padding-left: 10px !important;
 }
 
-.c3:after {
+.c3::after {
   content: '';
   display: block;
   min-height: inherit;
   font-size: 0;
 }
 
+.c3 .c18 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+
 .c11 {
-  color: #004699;
-  display: inline-block;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+  color: #000000;
   font-weight: inherit;
   font-size: 1rem;
-  -webkit-letter-spacing: -0.01562em;
-  -moz-letter-spacing: -0.01562em;
-  -ms-letter-spacing: -0.01562em;
-  letter-spacing: -0.01562em;
-  line-height: 1;
-  color: #000000;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  line-height: 1.25;
+  margin-bottom: 0;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;
@@ -644,14 +650,6 @@ exports[`Header should render the tall version 1`] = `
   color: #000;
   -webkit-text-decoration: none;
   text-decoration: none;
-}
-
-.c11:focus {
-  background-color: #FEC813;
-}
-
-.c11:hover {
-  color: #ec0000;
 }
 
 .c11:hover {
@@ -801,35 +799,35 @@ exports[`Header should render the tall version 1`] = `
   justify-content: flex-end;
 }
 
-.c14 .c19 {
+.c14 .c20 {
   height: 17px;
   padding: 0;
 }
 
-.c14 .c19:not(:last-child) {
+.c14 .c20:not(:last-child) {
   margin-right: 30px;
 }
 
-.c14 .c19:focus,
-.c14 .c19:hover {
+.c14 .c20:focus,
+.c14 .c20:hover {
   background-color: transparent;
 }
 
-.c14 .c19:focus .c18,
-.c14 .c19:hover .c18 {
+.c14 .c20:focus .c19,
+.c14 .c20:hover .c19 {
   color: #ec0000;
 }
 
-.c14 .c19:focus svg rect,
-.c14 .c19:hover svg rect,
-.c14 .c19:focus svg polygon,
-.c14 .c19:hover svg polygon,
-.c14 .c19:focus svg path,
-.c14 .c19:hover svg path {
+.c14 .c20:focus svg rect,
+.c14 .c20:hover svg rect,
+.c14 .c20:focus svg polygon,
+.c14 .c20:hover svg polygon,
+.c14 .c20:focus svg path,
+.c14 .c20:hover svg path {
   fill: #ec0000;
 }
 
-.c14 .c19 .c18 {
+.c14 .c20 .c19 {
   line-height: 17px;
 }
 
@@ -955,7 +953,6 @@ exports[`Header should render the tall version 1`] = `
       </a>
       <a
         class="c10 c11"
-        href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
@@ -988,6 +985,7 @@ exports[`Header should render the tall version without a title 1`] = `
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
+  min-height: 50px;
   margin: 0 auto;
   padding: 0 10px;
   -webkit-align-items: stretch;
@@ -998,11 +996,19 @@ exports[`Header should render the tall version without a title 1`] = `
   padding-left: 10px !important;
 }
 
-.c3:after {
+.c3::after {
   content: '';
   display: block;
   min-height: inherit;
   font-size: 0;
+}
+
+.c3 .c16 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-bottom: 0;
 }
 
 .c11 {
@@ -1140,35 +1146,35 @@ exports[`Header should render the tall version without a title 1`] = `
   justify-content: flex-end;
 }
 
-.c12 .c17 {
+.c12 .c18 {
   height: 17px;
   padding: 0;
 }
 
-.c12 .c17:not(:last-child) {
+.c12 .c18:not(:last-child) {
   margin-right: 30px;
 }
 
-.c12 .c17:focus,
-.c12 .c17:hover {
+.c12 .c18:focus,
+.c12 .c18:hover {
   background-color: transparent;
 }
 
-.c12 .c17:focus .c16,
-.c12 .c17:hover .c16 {
+.c12 .c18:focus .c17,
+.c12 .c18:hover .c17 {
   color: #ec0000;
 }
 
-.c12 .c17:focus svg rect,
-.c12 .c17:hover svg rect,
-.c12 .c17:focus svg polygon,
-.c12 .c17:hover svg polygon,
-.c12 .c17:focus svg path,
-.c12 .c17:hover svg path {
+.c12 .c18:focus svg rect,
+.c12 .c18:hover svg rect,
+.c12 .c18:focus svg polygon,
+.c12 .c18:hover svg polygon,
+.c12 .c18:focus svg path,
+.c12 .c18:hover svg path {
   fill: #ec0000;
 }
 
-.c12 .c17 .c16 {
+.c12 .c18 .c17 {
   line-height: 17px;
 }
 
@@ -1196,7 +1202,7 @@ exports[`Header should render the tall version without a title 1`] = `
 }
 
 @media screen and (max-width:1200px) {
-  .c0 .sc-bxivhb {
+  .c0 .sc-ifAKCX {
     margin-top: -2px;
   }
 
@@ -1232,7 +1238,7 @@ exports[`Header should render the tall version without a title 1`] = `
     background-color: transparent;
   }
 
-  .c0 .sc-bxivhb {
+  .c0 .sc-ifAKCX {
     margin-top: 0px;
     -webkit-align-self: flex-start;
     -ms-flex-item-align: start;

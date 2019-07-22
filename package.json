@@ -129,11 +129,12 @@
   "lint-staged": {
     "*.tsx": [
       "prettier-eslint --write",
+      "eslint",
       "git add"
     ],
-    "*.ts": [
+    "*Style.ts": [
       "prettier-eslint --write",
-      "yarn stylelint",
+      "stylelint",
       "git add"
     ]
   }

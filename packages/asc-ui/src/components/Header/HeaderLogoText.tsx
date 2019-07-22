@@ -1,13 +1,12 @@
 import React from 'react'
 import HeaderLogoTextStyle from './HeaderLogoTextStyle'
 import AmsterdamLogo from '../AmsterdamLogo'
-import HeaderTitleStyle from './HeaderTitleStyle'
+import HeaderTitle from './HeaderTitle'
 
 type Props = {
   homeLink: string
-  title?: string
   tall?: boolean
-}
+} & React.HTMLAttributes<HTMLHeadingElement>
 
 const HeaderLogoText: React.FC<Props> = ({
   title,
@@ -16,8 +15,8 @@ const HeaderLogoText: React.FC<Props> = ({
   ...otherProps
 }) => (
   <HeaderLogoTextStyle tall={tall} {...otherProps}>
-    <AmsterdamLogo href={homeLink} {...{ tall }} />
-    {title && <HeaderTitleStyle href={homeLink}>{title}</HeaderTitleStyle>}
+    <AmsterdamLogo href={homeLink} tall={tall} />
+    {title && <HeaderTitle href={homeLink}>{title}</HeaderTitle>}
   </HeaderLogoTextStyle>
 )
 

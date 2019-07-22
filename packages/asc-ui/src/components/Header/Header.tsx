@@ -13,7 +13,8 @@ type Props = {
   css?: any
   navigation?: React.ReactNode
   links?: React.ReactNode
-} & HeaderWrapperProps
+} & HeaderWrapperProps &
+  React.HTMLAttributes<HTMLDivElement>
 
 const Header: React.FC<Props> = ({
   css,

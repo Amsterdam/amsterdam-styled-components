@@ -5,9 +5,9 @@ import ShareButtonStyle, {
 } from './ShareButtonStyle'
 
 type Props = {
-  onClick?: React.MouseEventHandler<HTMLButtonElement>
   iconSize?: number
-} & ShareButtonStyleProps
+} & ShareButtonStyleProps &
+  React.HTMLAttributes<HTMLButtonElement>
 
 const ShareButton: React.FC<Props> = ({
   children,

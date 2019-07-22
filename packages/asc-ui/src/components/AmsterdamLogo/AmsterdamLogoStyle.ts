@@ -5,7 +5,6 @@ import { breakpoint, focusStyleOutline } from '../../utils'
 
 export type Props = {
   tall?: boolean
-  tabindex?: number
 }
 
 export const LogoStyle = styled.span`

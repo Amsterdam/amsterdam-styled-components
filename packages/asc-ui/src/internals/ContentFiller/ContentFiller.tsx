@@ -1,8 +1,8 @@
 import * as React from 'react'
 import styled from '@datapunt/asc-core'
-import Typography from '../../components/Typography'
 import { CONTENT_HEIGHT_TALL } from '../../components/Header/sizes'
 import { breakpoint } from '../../utils'
+import Heading from '../../components/Heading'
 
 type ContentFillerStyleProps = {
   backgroundColor?: string
@@ -37,7 +37,7 @@ type ContentFillerProps = ContentFillerStyleProps
 
 const ContentFiller: React.FC<ContentFillerProps> = ({ ...otherProps }) => (
   <ContentFillerStyle {...otherProps}>
-    <Typography element="h5">
+    <Heading as="h5">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Erat pellentesque
       adipiscing commodo elit at imperdiet dui. Mi in nulla posuere sollicitudin
@@ -53,8 +53,8 @@ const ContentFiller: React.FC<ContentFillerProps> = ({ ...otherProps }) => (
       facilisi nullam vehicula ipsum a arcu. Id consectetur purus ut faucibus
       pulvinar elementum integer. Et tortor consequat id porta. Praesent
       elementum facilisis leo vel.
-    </Typography>
-    <Typography element="p">
+    </Heading>
+    <Heading as="p">
       Urna condimentum mattis pellentesque id nibh tortor id aliquet. Viverra
       vitae congue eu consequat ac felis donec. Id diam maecenas ultricies mi
       eget mauris pharetra et ultrices. Magna eget est lorem ipsum. Fusce id
@@ -89,7 +89,7 @@ const ContentFiller: React.FC<ContentFillerProps> = ({ ...otherProps }) => (
       nisi. Porttitor massa id neque aliquam vestibulum. Feugiat nibh sed
       pulvinar proin. Aliquam etiam erat velit scelerisque. Eu turpis egestas
       pretium aenean pharetra.
-    </Typography>
+    </Heading>
   </ContentFillerStyle>
 )
 

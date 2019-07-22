@@ -3,11 +3,12 @@ import { storiesOf } from '@storybook/react'
 import React from 'react'
 import Icon from '../Icon'
 import Image from '../Image'
-import Typography from '../Typography'
 import Card from '.'
 import CardActions from './CardActions'
 import CardContent from './CardContent'
 import CardMedia from './CardMedia'
+import Heading from '../Heading'
+import Paragraph from '../Paragraph'
 
 storiesOf('Composed/Card', module)
   .addDecorator(storyFn => (
@@ -18,16 +19,16 @@ storiesOf('Composed/Card', module)
   .add('default', () => (
     <Card maxWidth={250}>
       <CardContent>
-        <Typography element="h6">This is a card</Typography>
-        <Typography element="p">Lorem ipsum dolor sit amet</Typography>
+        <Heading as="h6">This is a card</Heading>
+        <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
       </CardContent>
     </Card>
   ))
   .add('default with action', () => (
     <Card maxWidth={250}>
       <CardContent>
-        <Typography element="h6">This is a card</Typography>
-        <Typography element="p">Lorem ipsum dolor sit amet</Typography>
+        <Heading as="h6">This is a card</Heading>
+        <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
       </CardContent>
       <CardActions>
         <Icon size={15}>
@@ -39,14 +40,11 @@ storiesOf('Composed/Card', module)
   .add('default with action and media item', () => (
     <Card maxWidth={250}>
       <CardMedia>
-        <Image
-          src="https://www.amsterdam.nl/publish/pages/900852/41412-stadsloket-nw-8460.jpg"
-          alt="stadsloket"
-        />
+        <Image src="" alt="stadsloket" />
       </CardMedia>
       <CardContent>
-        <Typography element="h6">Title</Typography>
-        <Typography element="p">This is a card</Typography>
+        <Heading as="h6">Title</Heading>
+        <Paragraph>This is a card</Paragraph>
       </CardContent>
       <CardActions>
         <Icon size={15}>
@@ -58,8 +56,8 @@ storiesOf('Composed/Card', module)
   .add('with shadow', () => (
     <Card maxWidth={250} backgroundColor="level2" shadow>
       <CardContent>
-        <Typography element="h6">This is a card</Typography>
-        <Typography element="p">Lorem ipsum dolor sit amet</Typography>
+        <Heading as="h6">This is a card</Heading>
+        <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
       </CardContent>
       <CardActions>
         <Icon size={15}>
@@ -76,8 +74,8 @@ storiesOf('Composed/Card', module)
         </Icon>
       </CardMedia>
       <CardContent>
-        <Typography element="h6">This is a card</Typography>
-        <Typography element="p">Lorem ipsum dolor sit amet</Typography>
+        <Heading as="h6">This is a card</Heading>
+        <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
       </CardContent>
       <CardActions>
         <Icon size={15}>
