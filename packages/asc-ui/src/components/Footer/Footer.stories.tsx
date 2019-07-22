@@ -83,19 +83,7 @@ storiesOf('Composed/Footer', module)
   .addDecorator(storyFn => (
     <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
   ))
-  .add(' linked list', () => (
-    <FooterLinkList>
-      <FooterLinkListItem href="/">I am a ListLink!</FooterLinkListItem>
-      <FooterLinkListItem href="/">Another one</FooterLinkListItem>
-      <FooterLinkListItem href="/">
-        A loooooong, very, very, very long link
-      </FooterLinkListItem>
-      <FooterLinkListItem href="/" meta="PDF 35kb">
-        A file!
-      </FooterLinkListItem>
-    </FooterLinkList>
-  ))
-  .add('default state', () => (
+  .add('Footer implementation for dataportaal', () => (
     <Footer>
       <FooterRow>
         <Column
