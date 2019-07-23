@@ -1,6 +1,8 @@
 import styled, { css, styledComponents, Theme } from '@datapunt/asc-core'
 import { em, margin } from 'polished'
-import { getTypographyFromTheme, color as getColor } from '../../utils'
+import { getTypographyFromTheme, color as getColor, color } from '../../utils'
+
+import TypographyElements = Theme.TypographyElements
 
 export type Props = {
   gutterBottom?: number
@@ -8,6 +10,9 @@ export type Props = {
   element?: Variant
   color?: Theme.TypeLevel
   fontSize?: number
+  styleAs?: keyof TypographyElements
+  skipAutoMargin?: boolean
+  strong?: boolean
 } & styledComponents.StyledProps<any>
 
 export const defaultTypographyStyles = {
@@ -26,19 +31,25 @@ export default styled.p<Props>`
   ${getTypographyFromTheme()};
   font-stretch: normal;
   letter-spacing: normal;
+  ${({ strong }) =>
+    strong &&
+    css`
+      font-weight: 700;
+      color: ${color('tint', 'level7')};
+    `}
   ${({ gutterBottom }) =>
     gutterBottom &&
     css`
       margin-bottom: ${em(`${gutterBottom}px`)};
     `}
-  ${({ color }) =>
-    color &&
+  ${({ color: colorProp }) =>
+    colorProp &&
     css`
-      color: ${getColor(color)};
+      color: ${getColor(colorProp)};
     `}
   ${({ fontSize }) =>
     fontSize &&
     css`
       font-size: ${fontSize}px;
-    `}
+    `} 
 `

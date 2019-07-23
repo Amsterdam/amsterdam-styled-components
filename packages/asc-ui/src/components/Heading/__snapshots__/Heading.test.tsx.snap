@@ -64,7 +64,7 @@ Array [
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   line-height: 28px;
-  margin-bottom: 0;
+  margin-bottom: 8px;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
   -moz-letter-spacing: normal;

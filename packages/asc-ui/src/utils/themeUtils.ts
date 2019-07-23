@@ -1,4 +1,4 @@
-import { css, Theme } from '@datapunt/asc-core'
+import { css, keyframes, Theme } from '@datapunt/asc-core'
 import { fromTheme } from '.'
 
 import BreakpointsInterface = Theme.BreakpointsInterface
@@ -41,23 +41,32 @@ export const breakpoint = (
   return breakpointFunc && breakpointFunc(type)
 }
 
-const generateCSSFromTypography = ({
-  defaultColor,
-  fontWeight,
-  fontSize,
-  letterSpacing,
-  lineHeight,
-  marginBottom,
-}: any) => css`
+const generateCSSFromTypography = (
+  {
+    defaultColor,
+    fontWeight,
+    fontSize,
+    letterSpacing,
+    lineHeight,
+    marginBottom,
+  }: any,
+  skipAutoMargin?: boolean,
+) => css`
   color: ${defaultColor};
   font-weight: ${fontWeight};
   font-size: ${fontSize};
   letter-spacing: ${letterSpacing};
   line-height: ${lineHeight};
-  margin-bottom: ${marginBottom};
+  margin-bottom: ${skipAutoMargin ? 0 : marginBottom};
 `
 
-export const getTypographyFromTheme = () => ({ as = 'p', theme }: any) => {
+export const getTypographyFromTheme = () => ({
+  as: asProp = 'p',
+  skipAutoMargin,
+  styleAs,
+  theme,
+}: any) => {
+  const as = styleAs || asProp
   const {
     defaultColor,
     fontWeight,
@@ -68,14 +77,17 @@ export const getTypographyFromTheme = () => ({ as = 'p', theme }: any) => {
     breakpoints,
   } = fromTheme(`typography.${[as]}`)({ theme })
   return css`
-    ${generateCSSFromTypography({
-      defaultColor,
-      fontWeight,
-      fontSize,
-      letterSpacing,
-      lineHeight,
-      marginBottom,
-    })}
+    ${generateCSSFromTypography(
+      {
+        defaultColor,
+        fontWeight,
+        fontSize,
+        letterSpacing,
+        lineHeight,
+        marginBottom,
+      },
+      skipAutoMargin,
+    )}
     ${() =>
       breakpoints
         ? Object.entries(breakpoints).map(
@@ -83,7 +95,7 @@ export const getTypographyFromTheme = () => ({ as = 'p', theme }: any) => {
               @media screen and ${breakpoint('min-width', <
                   keyof BreakpointsInterface
                 >breakpointFromTypography)} {
-                ${generateCSSFromTypography(styles)}
+                ${generateCSSFromTypography(styles, skipAutoMargin)}
               }
             `,
           )
@@ -161,6 +173,34 @@ export const svgFill = (
   }
 
   return ''
+}
+
+/**
+ * Use this util to animate the background-color (or other property), for perceived performance purposes
+ * @param theme
+ * @param property
+ */
+export const perceivedLoading = (
+  theme: ThemeInterface,
+  property: string = 'background-color',
+) => {
+  const animation = keyframes`
+    0% {
+      ${property}: ${color('tint', 'level3')({ theme })};
+    }
+  
+    50% {
+      ${property}: ${color('tint', 'level4')({ theme })};
+    }
+    
+    100% {
+      ${property}: ${color('tint', 'level3')({ theme })};
+    }
+  `
+
+  return css`
+    animation: ${animation} 2s ease-in-out infinite;
+  `
 }
 
 export const mapToBreakpoints = (
