@@ -28,5 +28,5 @@ export const ParagraphStyleCSS = css<Props>`
 `
 
 export default styled(TypographyStyle)<Props>`
-  ${ParagraphStyleCSS}
+  ${ParagraphStyleCSS};
 `

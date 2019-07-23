@@ -1,7 +1,7 @@
 import React from 'react'
-import ImageCardContentStyle, { Props } from './ImageCardContentStyle'
+import ImageCardContentStyle from './ImageCardContentStyle'
 
-const ImageCardContent: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
+const ImageCardContent: React.FC<React.HTMLAttributes<HTMLElement>> = ({
   children,
   ...otherProps
 }) => <ImageCardContentStyle {...otherProps}>{children}</ImageCardContentStyle>

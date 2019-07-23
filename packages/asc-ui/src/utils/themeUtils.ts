@@ -50,19 +50,21 @@ const generateCSSFromTypography = (
     lineHeight,
     marginBottom,
   }: any,
-  skipAutoMargin?: boolean,
+  gutterBottom?: boolean,
 ) => css`
   color: ${defaultColor};
   font-weight: ${fontWeight};
   font-size: ${fontSize};
   letter-spacing: ${letterSpacing};
   line-height: ${lineHeight};
-  margin-bottom: ${skipAutoMargin ? 0 : marginBottom};
+  margin-bottom: ${typeof gutterBottom === 'number'
+    ? gutterBottom
+    : marginBottom};
 `
 
 export const getTypographyFromTheme = () => ({
   as: asProp = 'p',
-  skipAutoMargin,
+  gutterBottom,
   styleAs,
   theme,
 }: any) => {
@@ -86,7 +88,7 @@ export const getTypographyFromTheme = () => ({
         lineHeight,
         marginBottom,
       },
-      skipAutoMargin,
+      gutterBottom,
     )}
     ${() =>
       breakpoints
@@ -95,7 +97,7 @@ export const getTypographyFromTheme = () => ({
               @media screen and ${breakpoint('min-width', <
                   keyof BreakpointsInterface
                 >breakpointFromTypography)} {
-                ${generateCSSFromTypography(styles, skipAutoMargin)}
+                ${generateCSSFromTypography(styles, gutterBottom)}
               }
             `,
           )

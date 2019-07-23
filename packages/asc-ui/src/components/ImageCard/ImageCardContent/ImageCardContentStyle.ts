@@ -1,9 +1,7 @@
 import styled from '@datapunt/asc-core'
 import { color, breakpoint } from '../../../utils'
 
-export type Props = {}
-
-export default styled.div<Props>`
+export default styled.div`
   padding: 8px 14px;
   background-color: ${color('tint', 'level1')};
   position: absolute;

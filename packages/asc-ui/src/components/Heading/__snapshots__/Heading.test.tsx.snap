@@ -3,10 +3,7 @@
 exports[`Heading should render 1`] = `
 Array [
   .c0 {
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
+  margin: 0;
   color: #000000;
   font-weight: 700;
   font-size: 24px;
@@ -52,10 +49,7 @@ Array [
     Foo
   </h1>,
   .c0 {
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
+  margin: 0;
   color: #000000;
   font-weight: 700;
   font-size: 20px;
@@ -101,10 +95,7 @@ Array [
     Foo
   </h2>,
   .c0 {
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
+  margin: 0;
   color: #000000;
   font-weight: 700;
   font-size: 20px;
@@ -143,10 +134,7 @@ Array [
     Foo
   </h3>,
   .c0 {
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
+  margin: 0;
   color: #000000;
   font-weight: 700;
   font-size: 18px;

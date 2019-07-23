@@ -11,7 +11,7 @@ import { breakpoint } from '../../utils'
 import { ImageCardWrapperStyle } from './ImageCardStyle'
 import TypographyStyle from '../Typography/TypographyStyle'
 
-const ImageCardConstainer = styled.section`
+const ImageCardContainer = styled.section`
   width: calc(100% + 24px);
   margin-left: -12px;
   margin-right: -12px;
@@ -88,7 +88,7 @@ storiesOf('Atoms/ImageCard', module)
           <Heading as="h6" styleAs="h2">
             Jeugdwerkloosheid Amsterdam daalt naar 6,2%
           </Heading>
-          <Paragraph skipAutoMargin>
+          <Paragraph gutterBottom={0}>
             Amsterdamse jongeren even vaak werkloos als gemiddeld in Nederland
           </Paragraph>
         </ImageCardContent>
@@ -99,7 +99,7 @@ storiesOf('Atoms/ImageCard', module)
     <Row>
       <Column wrap span={{ small: 1, medium: 2, big: 6, large: 8, xLarge: 8 }}>
         <div style={{ width: '100%' }}>
-          <ImageCardConstainer>
+          <ImageCardContainer>
             <ImageCardWrapperBig>
               <ImageCard
                 margin={12}
@@ -109,7 +109,7 @@ storiesOf('Atoms/ImageCard', module)
                   <Heading as="h6" styleAs="h2">
                     Jeugdwerkloosheid Amsterdam daalt naar 6,2%
                   </Heading>
-                  <Paragraph skipAutoMargin>
+                  <Paragraph gutterBottom={0}>
                     Amsterdamse jongeren even vaak werkloos als gemiddeld in
                     Nederland
                   </Paragraph>
@@ -122,7 +122,7 @@ storiesOf('Atoms/ImageCard', module)
                 backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
               >
                 <ImageCardContent>
-                  <Heading as="h6" strong skipAutoMargin styleAs="p">
+                  <Heading as="h6" strong gutterBottom={0} styleAs="p">
                     Jeugdwerk&shy;loosheid Amsterdam daalt naar 6,2%
                   </Heading>
                 </ImageCardContent>
@@ -132,13 +132,13 @@ storiesOf('Atoms/ImageCard', module)
                 backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
               >
                 <ImageCardContent>
-                  <Heading as="h6" strong skipAutoMargin styleAs="p">
+                  <Heading as="h6" strong gutterBottom={0} styleAs="p">
                     Amsterdammers voelen zich veiliger in het OV
                   </Heading>
                 </ImageCardContent>
               </ImageCard>
             </ImageCardWrapperSmall>
-          </ImageCardConstainer>
+          </ImageCardContainer>
         </div>
       </Column>
     </Row>
