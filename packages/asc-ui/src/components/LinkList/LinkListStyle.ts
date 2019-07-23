@@ -1,9 +1,8 @@
+import React from 'react'
 import styled from '@datapunt/asc-core'
 import { color } from '../../utils'
 
-export interface Props {
-  className?: string
-}
+export interface Props extends React.HTMLAttributes<HTMLUListElement> {}
 
 export default styled.ul<Props>`
   margin: 0;

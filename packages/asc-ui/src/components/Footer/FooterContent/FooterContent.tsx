@@ -5,14 +5,8 @@ import FooterContentStyle, {
 
 export interface Props extends FooterContentStyleProps {}
 
-const FooterContent: React.FC<Props> = ({
-  children,
-  className,
-  ...otherProps
-}) => (
-  <FooterContentStyle className={className} {...otherProps}>
-    {children}
-  </FooterContentStyle>
+const FooterContent: React.FC<Props> = ({ children, ...otherProps }) => (
+  <FooterContentStyle {...otherProps}>{children}</FooterContentStyle>
 )
 
 export default FooterContent

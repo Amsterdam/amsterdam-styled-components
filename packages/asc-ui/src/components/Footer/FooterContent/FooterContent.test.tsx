@@ -1,10 +1,5 @@
 import * as React from 'react'
-// import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
-import {
-  render,
-  cleanup,
-  //  fireEvent
-} from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
 import FooterContent from './FooterContent'
 import 'jest-styled-components'
 

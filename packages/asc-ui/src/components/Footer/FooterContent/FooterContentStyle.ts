@@ -2,7 +2,6 @@ import styled from '@datapunt/asc-core'
 import { ShowHideTypes, showHide } from '../../../utils'
 
 export interface Props extends ShowHideTypes {
-  className?: string
   indent?: boolean
 }
 

@@ -1,9 +1,5 @@
 import * as React from 'react'
-import {
-  render,
-  cleanup,
-  // fireEvent
-} from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
 import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import { FooterLinkList, FooterLinkListItem, FooterBottomLinkListItem } from '.'
 import FooterBottomLinkList from './FooterBottomLinkList'
