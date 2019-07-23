@@ -1,10 +1,10 @@
 import styled, { Theme } from '@datapunt/asc-core'
+import { CustomCssPropsType } from '../../utils'
 
 export type Props = {
   color?: Theme.TypeLevel
   size?: number
-  css?: any
-}
+} & CustomCssPropsType
 
 const SpinnerStyle = styled.div<Props>`
   @keyframes rotating {

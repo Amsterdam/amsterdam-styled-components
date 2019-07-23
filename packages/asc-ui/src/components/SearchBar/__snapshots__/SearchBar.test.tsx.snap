@@ -130,9 +130,9 @@ exports[`SearchBar should render 1`] = `
   height: 40px;
 }
 
-.c0 > .c5 svg rect,
-.c0 > .c5 svg polygon,
-.c0 > .c5 svg path {
+.c0 > .c5 > svg rect,
+.c0 > .c5 > svg polygon,
+.c0 > .c5 > svg path {
   fill: #ffffff;
 }
 

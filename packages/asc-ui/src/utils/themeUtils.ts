@@ -10,16 +10,6 @@ type ThemeProp = {
   theme: Theme.ThemeInterface
 }
 
-export const getColorFromTheme = (
-  theme: Theme.ThemeInterface,
-  colorType?: Theme.TypeLevel,
-  variant: string = 'main',
-) => {
-  return colorType
-    ? fromTheme(`colors.${[colorType]}.${[variant]}`)({ theme })
-    : fromTheme('colors.tint.level1')({ theme })
-}
-
 export const color = (
   colorType?: Theme.TypeLevel,
   variant: string = 'main',
@@ -164,12 +154,13 @@ export const svgFill = (
   if (colorType) {
     const value = color(colorType, variant)({ theme })
     if (typeof value === 'string') {
-      return `
+      return `& > svg {
         rect,
         polygon,
         path {
           fill: ${value}
         }
+      }
       `
     }
   }

@@ -42,6 +42,7 @@ const ColumnStyle = styled(({ className, children, id, ...rest }) => {
   display: flex;
   align-self: ${({ alignSelf }: { alignSelf?: string }) => alignSelf};
   justify-content: space-between;
+
   ${({ wrap }: { wrap?: boolean }) =>
     wrap &&
     css`

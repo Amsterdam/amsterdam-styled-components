@@ -1,20 +1,23 @@
 import React from 'react'
-import { Close, Menu } from '@datapunt/asc-assets'
 import ToggleStyle, { Props as ToggleStyleProps } from './ToggleStyle'
-import Icon from '../Icon'
-import ButtonToggle from '../ButtonToggle/ButtonToggleStyle'
 import ownerDocument from '../../utils/ownerDocument'
 import usePassPropsToChildren from '../../utils/usePassPropsToChildren'
 import useActionOnEscape from '../../utils/useActionOnEscape'
+import ToggleHeaderButton from './ToggleHeaderButton'
+
+export type ToggleHeaderProps = {
+  iconOpen?: React.ReactElement
+  iconClose?: React.ReactElement
+  open?: boolean
+} & React.HTMLAttributes<HTMLElement>
 
 export type Props = {
-  icon?: React.ReactElement
-  open?: boolean
   render?: boolean
   onOpen?: Function
+  ToggleHeader?: any
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
-} & React.HTMLProps<HTMLElement> &
-  ToggleStyleProps
+} & ToggleStyleProps &
+  ToggleHeaderProps
 
 const Toggle: React.FC<Props> = ({
   children: childrenProps,
@@ -24,7 +27,9 @@ const Toggle: React.FC<Props> = ({
   onOpen,
   css,
   render,
-  icon,
+  iconOpen,
+  iconClose,
+  ToggleHeader,
   ...otherProps
 }) => {
   const [open, setOpen] = React.useState(false)
@@ -79,8 +84,6 @@ const Toggle: React.FC<Props> = ({
     handleOnOpen(open)
   }, [handleOnOpen, open])
 
-  const ClosedIcon = icon || <Menu />
-
   const conditionalRenderedChildren = open ? children : null
 
   return (
@@ -92,9 +95,15 @@ const Toggle: React.FC<Props> = ({
       onKeyDown={handleOnKeyDown}
       {...otherProps}
     >
-      <ButtonToggle open={open} onClick={handleOnClick}>
-        <Icon>{open ? <Close /> : ClosedIcon}</Icon>
-      </ButtonToggle>
+      <ToggleHeader
+        {...{
+          open,
+          iconClose,
+          iconOpen,
+          onClick: handleOnClick,
+          ...otherProps,
+        }}
+      />
       {render ? children : conditionalRenderedChildren}
     </ToggleStyle>
   )
@@ -102,6 +111,7 @@ const Toggle: React.FC<Props> = ({
 
 Toggle.defaultProps = {
   render: true,
+  ToggleHeader: ToggleHeaderButton,
 }
 
 export default Toggle

@@ -27,9 +27,7 @@ const HeaderLinksStyle = styled.div`
         color: ${color('secondary')};
       }
 
-      & svg {
-        ${svgFill('secondary')};
-      }
+      ${svgFill('secondary')};
     }
 
     ${MenuItemLabelStyle} {

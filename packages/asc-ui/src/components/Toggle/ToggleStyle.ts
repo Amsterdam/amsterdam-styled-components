@@ -1,10 +1,10 @@
 import styled from '@datapunt/asc-core'
-import { showHide, ShowHideTypes } from '../../utils'
+import { showHide, ShowHideTypes, CustomCssPropsType } from '../../utils'
 
 export type Props = {
   align?: 'left' | 'right'
-  css?: any
-} & ShowHideTypes
+} & ShowHideTypes &
+  CustomCssPropsType
 
 export default styled.div<Props>`
   display: flex;

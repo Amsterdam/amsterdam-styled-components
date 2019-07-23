@@ -1,13 +1,16 @@
 import React from 'react'
 import { ChevronRight } from '@datapunt/asc-assets'
-import LinkListItemStyle from './LinkListItemStyle'
+import LinkListItemStyle, {
+  Props as LinkListItemStyleProps,
+} from './LinkListItemStyle'
 import Link, { Props as LinkProps } from '../Link/Link'
 import Icon from '../Icon'
 import Typography from '../Typography'
 
 type Props = {
   meta?: string
-} & LinkProps
+} & LinkProps &
+  LinkListItemStyleProps
 
 const LinkListItem: React.FC<Props> = ({
   children,
@@ -15,8 +18,9 @@ const LinkListItem: React.FC<Props> = ({
   href,
   title,
   rel,
+  className,
 }) => (
-  <LinkListItemStyle>
+  <LinkListItemStyle {...{ className }}>
     <Link {...{ href, title, rel }}>
       <Icon size={12}>
         <ChevronRight />

@@ -1,13 +1,13 @@
 import * as React from 'react'
-import { shallow } from 'enzyme'
+import { mount, render } from 'enzyme'
 import Toggle from './Toggle'
 import 'jest-styled-components'
-import { ButtonToggleStyle } from '../ButtonToggle'
 import { KeyboardKeys } from '../../types'
+import ToggleHeaderButton from './ToggleHeaderButton'
 
 describe('Toggle', () => {
   it('should render', () => {
-    const component = shallow(
+    const component = render(
       <Toggle>
         <div id="child">Foo</div>
       </Toggle>,
@@ -18,7 +18,7 @@ describe('Toggle', () => {
 
   it('should display the children when the button is clicked', () => {
     const onClickMock = jest.fn()
-    const component = shallow(
+    const component = mount(
       <Toggle onClick={onClickMock} render={false}>
         <div id="child">Foo</div>
       </Toggle>,
@@ -26,7 +26,7 @@ describe('Toggle', () => {
 
     expect(component.find('#child').exists()).toBe(false)
     component
-      .find(ButtonToggleStyle)
+      .find(ToggleHeaderButton)
       .at(0)
       .simulate('click')
     expect(component.find('#child').exists()).toBe(true)
@@ -34,18 +34,19 @@ describe('Toggle', () => {
   })
 
   it('should not render the children when user presses the escape key after opening it', () => {
+    const onClickMock = jest.fn()
     const escape = {
       preventDefault: () => {},
       key: KeyboardKeys.Escape,
     }
-    const component = shallow(
-      <Toggle render={false}>
+    const component = mount(
+      <Toggle onClick={onClickMock} render={false}>
         <div id="child">Foo</div>
       </Toggle>,
     )
 
     component
-      .find(ButtonToggleStyle)
+      .find(ToggleHeaderButton)
       .at(0)
       .simulate('click')
     expect(component.find('#child').exists()).toBe(true)

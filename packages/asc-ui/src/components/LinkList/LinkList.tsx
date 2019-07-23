@@ -1,8 +1,10 @@
 import React from 'react'
-import LinkListStyle from './LinkListStyle'
+import LinkListStyle, { Props as LinkListStyleProps } from './LinkListStyle'
 
-const LinkList: React.FC<{}> = ({ children }) => {
-  return <LinkListStyle>{children}</LinkListStyle>
+export interface Props extends LinkListStyleProps {}
+
+const LinkList: React.FC<Props> = ({ children, ...otherProps }) => {
+  return <LinkListStyle {...otherProps}>{children}</LinkListStyle>
 }
 
 export default LinkList
