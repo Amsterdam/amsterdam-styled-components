@@ -6,7 +6,7 @@ const FooterBottomLinkList = styled(LinkList)`
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  margin: 11px 0;
+  margin: 12px 0;
 `
 
 export default FooterBottomLinkList
