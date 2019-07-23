@@ -1,5 +1,9 @@
 import * as React from 'react'
-import { render, cleanup } from '@testing-library/react'
+import {
+  render,
+  cleanup,
+  // fireEvent
+} from '@testing-library/react'
 import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import { FooterLinkList, FooterLinkListItem, FooterBottomLinkListItem } from '.'
 import FooterBottomLinkList from './FooterBottomLinkList'
@@ -13,7 +17,7 @@ const theme = {
 describe('FooterLinkList', () => {
   afterEach(cleanup)
   it('should render a list with two items and apply the style', () => {
-    const { queryByTestId, queryAllByText } = render(
+    const { queryByTestId, queryAllByText, getByText } = render(
       <ThemeProvider theme={theme}>
         <FooterLinkList data-testid="link-list-id">
           <FooterLinkListItem href="http://link1">Item1</FooterLinkListItem>
@@ -26,6 +30,9 @@ describe('FooterLinkList', () => {
       color('tint', 'level5')({ theme }),
     )
     expect(queryAllByText(/Item/)).toHaveLength(2)
+
+    const anchor = getByText(/Item1/).closest('a')
+    expect(anchor && anchor.getAttribute('href')).toEqual('http://link1')
   })
 })
 

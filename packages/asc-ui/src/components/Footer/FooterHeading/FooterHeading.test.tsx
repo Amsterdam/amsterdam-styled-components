@@ -3,7 +3,6 @@ import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import { render, cleanup, fireEvent } from '@testing-library/react'
 import { FooterHeading, ToggleFooterHeader } from '.'
 import { color } from '../../../utils'
-// import FooterToggle from './FooterToggle'
 import 'jest-styled-components'
 
 const theme = {
@@ -30,19 +29,6 @@ describe('FooterHeading', () => {
     expect(queryByText('Footer heading')).not.toBeNull()
   })
 })
-
-// describe('FooterToggle', () => {
-//   afterEach(cleanup)
-//   it.only('should render', () => {
-//     const props = {
-//       title: 'title',
-//     }
-//     const { container } = render(
-//       <FooterToggle {...props}>Footer toggle</FooterToggle>,
-//     )
-//     expect(container).toMatchSnapshot()
-//   })
-// })
 
 describe('ToggleFooterHeader', () => {
   afterEach(cleanup)
