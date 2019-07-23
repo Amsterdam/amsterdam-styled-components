@@ -32,6 +32,10 @@ import SearchBarToggle, {
 } from './components/SearchBarToggle'
 import TextField, { TextFieldStyles } from './components/TextField'
 import GlobalStyle from './components/GlobalStyle'
+import ImageCard, {
+  ImageCardContent,
+  ImageCardStyles,
+} from './components/ImageCard'
 import {
   GridContainer,
   GridItem,
@@ -79,6 +83,7 @@ export const styles = {
   ...SearchBarToggleStyles,
   ...MenuStyles,
   ...BlogStyles,
+  ...ImageCardStyles,
   CustomHTMLBlockStyle,
   ArticleStyle,
 }
@@ -105,6 +110,8 @@ export {
   Divider,
   IconButton,
   Input,
+  ImageCard,
+  ImageCardContent,
   ListItem,
   MenuFlyOut,
   MenuInline,

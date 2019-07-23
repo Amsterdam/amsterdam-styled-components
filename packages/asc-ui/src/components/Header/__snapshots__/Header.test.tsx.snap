@@ -45,10 +45,7 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c8 {
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
+  margin: 0;
   color: #000000;
   font-weight: inherit;
   font-size: 1rem;
@@ -326,10 +323,7 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c8 {
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
+  margin: 0;
   color: #000000;
   font-weight: inherit;
   font-size: 1rem;
@@ -624,10 +618,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c11 {
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
+  margin: 0;
   color: #000000;
   font-weight: inherit;
   font-size: 1rem;

@@ -29,5 +29,6 @@ export default styled.div`
   video {
     max-width: 100%;
     margin: 24px auto;
+    width: 100%;
   }
 `

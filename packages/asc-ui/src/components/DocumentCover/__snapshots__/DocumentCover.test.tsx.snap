@@ -117,10 +117,7 @@ exports[`DocumentCover should render 1`] = `
 }
 
 .c6 {
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
+  margin: 0;
   color: #000000;
   font-weight: 400;
   font-size: 14px;
