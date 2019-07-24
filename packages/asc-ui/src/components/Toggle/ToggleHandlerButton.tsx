@@ -2,9 +2,9 @@ import React from 'react'
 import { Close, Menu } from '@datapunt/asc-assets'
 import Icon from '../Icon'
 import ButtonToggle from '../ButtonToggle/ButtonToggleStyle'
-import { ToggleHeaderProps } from './Toggle'
+import { ToggleHandlerProps } from './Toggle'
 
-const ToggleHeaderButton: React.FC<ToggleHeaderProps> = ({
+const ToggleHandlerButton: React.FC<ToggleHandlerProps> = ({
   iconOpen,
   iconClose,
   open,
@@ -19,4 +19,4 @@ const ToggleHeaderButton: React.FC<ToggleHeaderProps> = ({
   )
 }
 
-export default ToggleHeaderButton
+export default ToggleHandlerButton
