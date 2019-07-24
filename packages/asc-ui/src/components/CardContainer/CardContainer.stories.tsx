@@ -24,8 +24,7 @@ const CardContentStyled = styled(CardContent)`
   padding-top: 8px;
   padding-bottom: 8px;
 `
-
-const CardContainerGreen = styled(CardContainer)`
+const CardContainerGeneriekeFuncties = styled(CardContainer)`
   position: relative;
   background-color: ${color('support', 'valid')};
 
@@ -64,106 +63,14 @@ const CardContainerGreen = styled(CardContainer)`
   }
 `
 
-const cards = (
-  <>
-    <Card horizontal>
-      <CardMedia backgroundColor="level2">
-        <Icon size={25}>
-          <Menu />
-        </Icon>
-      </CardMedia>
-      <CardContentStyled>
-        <Heading as="h6">This is a card</Heading>
-        <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
-      </CardContentStyled>
-      <CardActions>
-        <Icon size={15}>
-          <ChevronRight />
-        </Icon>
-      </CardActions>
-    </Card>
-    <Card horizontal>
-      <CardMedia backgroundColor="level2">
-        <Icon size={25}>
-          <Download />
-        </Icon>
-      </CardMedia>
-      <CardContentStyled>
-        <Heading as="h6">This is a card</Heading>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto,
-          quisquam!
-        </Paragraph>
-      </CardContentStyled>
-      <CardActions>
-        <Icon size={15}>
-          <ChevronRight />
-        </Icon>
-      </CardActions>
-    </Card>
-    <Card horizontal>
-      <CardMedia backgroundColor="level2">
-        <Icon size={25}>
-          <Download />
-        </Icon>
-      </CardMedia>
-      <CardContentStyled>
-        <Heading as="h6">This is a card</Heading>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo,
-          provident quasi.
-        </Paragraph>
-      </CardContentStyled>
-      <CardActions>
-        <Icon size={15}>
-          <ChevronRight />
-        </Icon>
-      </CardActions>
-    </Card>
-    <Card horizontal>
-      <CardMedia backgroundColor="level2">
-        <Icon size={25}>
-          <Download />
-        </Icon>
-      </CardMedia>
-      <CardContentStyled>
-        <Heading as="h6">This is a card</Heading>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo,
-          provident quasi voluptate fuga nulla. Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit. Explicabo, provident quasi voluptate
-          fuga nulla.
-        </Paragraph>
-      </CardContentStyled>
-      <CardActions>
-        <Icon size={15}>
-          <ChevronRight />
-        </Icon>
-      </CardActions>
-    </Card>
-    <Card horizontal>
-      <CardMedia backgroundColor="level2">
-        <Icon size={25}>
-          <Download />
-        </Icon>
-      </CardMedia>
-      <CardContentStyled>
-        <Heading as="h6">This is a card</Heading>
-        <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
-      </CardContentStyled>
-      <CardActions>
-        <Icon size={15}>
-          <ChevronRight />
-        </Icon>
-      </CardActions>
-    </Card>
-  </>
-)
 const CardContainerOverData = styled(CardContainer)`
   padding-bottom: 24px;
 
   ${ColumnStyle} > ${HeadingStyle} {
     margin-bottom: 16px;
+  }
+  ${CardStyle} {
+    width: 100%;
   }
 
   @media screen and ${breakpoint('max-width', 'laptop')} {
@@ -201,13 +108,118 @@ const Border = styled.div`
 
 storiesOf('Composed/CardContainer', module)
   .addDecorator(storyFn => (
-    <div style={{ padding: '40px 10px', background: 'rgb(200,200,200)' }}>
+    <div style={{ padding: '40px 0px', background: 'rgb(250,250,250)' }}>
       {storyFn()}
     </div>
   ))
-  .add('default', () => <CardContainer>{cards}</CardContainer>)
-  .add('green - implementation on Dataportaal', () => (
-    <CardContainerGreen maxWidth={460}>{cards}</CardContainerGreen>
+  .add('default', () => (
+    <CardContainer>
+      <Card horizontal>
+        <CardMedia backgroundColor="level2">
+          <Icon size={25}>
+            <Menu />
+          </Icon>
+        </CardMedia>
+        <CardContentStyled>
+          <Heading as="h6">This is a card</Heading>
+          <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
+        </CardContentStyled>
+        <CardActions>
+          <Icon size={15}>
+            <ChevronRight />
+          </Icon>
+        </CardActions>
+      </Card>
+      <Card horizontal>
+        <CardMedia backgroundColor="level2">
+          <Icon size={25}>
+            <Download />
+          </Icon>
+        </CardMedia>
+        <CardContentStyled>
+          <Heading as="h6">This is a card</Heading>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Architecto, quisquam!
+          </Paragraph>
+        </CardContentStyled>
+        <CardActions>
+          <Icon size={15}>
+            <ChevronRight />
+          </Icon>
+        </CardActions>
+      </Card>
+    </CardContainer>
+  ))
+  .add('segment "Generieke functies"', () => (
+    <CardContainerGeneriekeFuncties maxWidth={460}>
+      <Card horizontal>
+        <CardContentStyled>
+          <Heading as="h6">This is a card</Heading>
+          <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
+        </CardContentStyled>
+        <CardActions>
+          <Icon size={15}>
+            <ChevronRight />
+          </Icon>
+        </CardActions>
+      </Card>
+      <Card horizontal>
+        <CardContentStyled>
+          <Heading as="h6">This is a card</Heading>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Architecto, quisquam!
+          </Paragraph>
+        </CardContentStyled>
+        <CardActions>
+          <Icon size={15}>
+            <ChevronRight />
+          </Icon>
+        </CardActions>
+      </Card>
+      <Card horizontal>
+        <CardContentStyled>
+          <Heading as="h6">This is a card</Heading>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo,
+            provident quasi.
+          </Paragraph>
+        </CardContentStyled>
+        <CardActions>
+          <Icon size={15}>
+            <ChevronRight />
+          </Icon>
+        </CardActions>
+      </Card>
+      <Card horizontal>
+        <CardContentStyled>
+          <Heading as="h6">This is a card</Heading>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo,
+            provident quasi voluptate fuga nulla. Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Explicabo, provident quasi voluptate
+            fuga nulla.
+          </Paragraph>
+        </CardContentStyled>
+        <CardActions>
+          <Icon size={15}>
+            <ChevronRight />
+          </Icon>
+        </CardActions>
+      </Card>
+      <Card horizontal>
+        <CardContentStyled>
+          <Heading as="h6">This is a card</Heading>
+          <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
+        </CardContentStyled>
+        <CardActions>
+          <Icon size={15}>
+            <ChevronRight />
+          </Icon>
+        </CardActions>
+      </Card>
+    </CardContainerGeneriekeFuncties>
   ))
   .add('segment "Over Data & Over deze site"', () => (
     <CardContainerOverData>
