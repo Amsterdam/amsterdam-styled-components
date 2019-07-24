@@ -75,7 +75,7 @@ storiesOf('Composed/Card', module)
       </CardMedia>
       <CardContent>
         <Heading as="h6">This is a card</Heading>
-        <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
+        <Paragraph>Lorem ipsum dolor sit amete</Paragraph>
       </CardContent>
       <CardActions>
         <Icon size={15}>
