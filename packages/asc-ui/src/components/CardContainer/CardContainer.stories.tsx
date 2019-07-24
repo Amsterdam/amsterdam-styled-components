@@ -6,6 +6,7 @@ import { color, breakpoint } from '../../utils'
 import Icon from '../Icon'
 import CardContainer from '.'
 import Card from '../Card/Card'
+import CardStyle from '../Card/CardStyle'
 import CardContentStyle from '../Card/CardContentStyle'
 import { CardMediaWrapperStyle } from '../Card/CardMediaStyle'
 import CardActions from '../Card/CardActions'
@@ -14,6 +15,10 @@ import CardContent from '../Card/CardContent'
 import CardMedia from '../Card/CardMedia'
 import Heading from '../Heading'
 import Paragraph from '../Paragraph'
+import HeadingStyle from '../Heading/HeadingStyle'
+import Row from '../Grid/Row'
+import Column from '../Grid/Column'
+import ColumnStyle from '../Grid/ColumnStyle'
 
 const CardContentStyled = styled(CardContent)`
   padding-top: 8px;
@@ -154,6 +159,45 @@ const cards = (
     </Card>
   </>
 )
+const CardContainerOverData = styled(CardContainer)`
+  padding-bottom: 24px;
+
+  ${ColumnStyle} > ${HeadingStyle} {
+    margin-bottom: 16px;
+  }
+
+  @media screen and ${breakpoint('max-width', 'laptop')} {
+    ${CardStyle} {
+      margin-bottom: 40px;
+    }
+  }
+
+  @media screen and ${breakpoint('max-width', 'tabletM')} {
+    ${CardStyle} {
+      margin-bottom: 24px;
+    }
+  }
+
+  @media screen and ${breakpoint('min-width', 'laptop')} {
+    ${ColumnStyle} > ${HeadingStyle} {
+      margin-bottom: 24px;
+    }
+    ${CardContentStyle} {
+      padding-bottom: 56px;
+    }
+  }
+`
+
+const Border = styled.div`
+  width: inherit;
+  height: 4px;
+  margin-bottom: 12px;
+  background-color: ${color('tint', 'level3')};
+
+  @media screen and ${breakpoint('min-width', 'laptop')} {
+    margin-bottom: 24px;
+  }
+`
 
 storiesOf('Composed/CardContainer', module)
   .addDecorator(storyFn => (
@@ -164,4 +208,68 @@ storiesOf('Composed/CardContainer', module)
   .add('default', () => <CardContainer>{cards}</CardContainer>)
   .add('green - implementation on Dataportaal', () => (
     <CardContainerGreen maxWidth={460}>{cards}</CardContainerGreen>
+  ))
+  .add('segment "Over Data & Over deze site"', () => (
+    <CardContainerOverData>
+      <Row>
+        <Column
+          wrap
+          span={{ small: 1, medium: 2, big: 6, large: 6, xLarge: 6 }}
+        >
+          <Column span={{ small: 1, medium: 2, big: 6, large: 6, xLarge: 6 }}>
+            <Border />
+          </Column>
+          <Column span={{ small: 1, medium: 2, big: 6, large: 6, xLarge: 6 }}>
+            <Heading as="h2">Header one</Heading>
+          </Column>
+
+          <Column span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}>
+            <Card backgroundColor="level2" shadow>
+              <CardContent>
+                <Heading as="h6">This is a card</Heading>
+                <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
+              </CardContent>
+            </Card>
+          </Column>
+
+          <Column span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}>
+            <Card backgroundColor="level2" shadow>
+              <CardContent>
+                <Heading as="h6">This is a card</Heading>
+                <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
+              </CardContent>
+            </Card>
+          </Column>
+        </Column>
+        <Column
+          wrap
+          span={{ small: 1, medium: 2, big: 6, large: 6, xLarge: 6 }}
+        >
+          <Column span={{ small: 1, medium: 2, big: 6, large: 6, xLarge: 6 }}>
+            <Border />
+          </Column>
+          <Column span={{ small: 1, medium: 2, big: 6, large: 6, xLarge: 6 }}>
+            <Heading as="h2">Header two</Heading>
+          </Column>
+
+          <Column span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}>
+            <Card backgroundColor="level2" shadow>
+              <CardContent>
+                <Heading as="h6">This is a card</Heading>
+                <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
+              </CardContent>
+            </Card>
+          </Column>
+
+          <Column span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}>
+            <Card backgroundColor="level2" shadow>
+              <CardContent>
+                <Heading as="h6">This is a card</Heading>
+                <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
+              </CardContent>
+            </Card>
+          </Column>
+        </Column>
+      </Row>
+    </CardContainerOverData>
   ))
