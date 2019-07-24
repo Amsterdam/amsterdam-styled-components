@@ -2,12 +2,12 @@ import React from 'react'
 import styled from '@datapunt/asc-core'
 import { ChevronDown, ChevronUp } from '@datapunt/asc-assets'
 import Icon from '../../Icon'
-import { ToggleHeaderProps } from '../../Toggle'
+import { ToggleHandlerProps } from '../../Toggle'
 import IconStyle from '../../Icon/IconStyle'
 import FooterHeading from './FooterHeading'
 import { svgFill } from '../../../utils'
 
-export type Props = ToggleHeaderProps
+export type Props = ToggleHandlerProps
 
 const ToggleFooterHeader: React.FC<Props> = ({ open, onClick, title }) => {
   const IconOpen = <ChevronDown />
