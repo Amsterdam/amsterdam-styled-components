@@ -7,7 +7,9 @@ import Icon from '../Icon'
 import CardContainer from '.'
 import Card from '../Card/Card'
 import CardContentStyle from '../Card/CardContentStyle'
+import { CardMediaWrapperStyle } from '../Card/CardMediaStyle'
 import CardActions from '../Card/CardActions'
+import CardActionsStyle from '../Card/CardActionsStyle'
 import CardContent from '../Card/CardContent'
 import CardMedia from '../Card/CardMedia'
 import Heading from '../Heading'
@@ -46,7 +48,112 @@ const CardContainerGreen = styled(CardContainer)`
       padding: 12px;
     }
   }
+
+  @media screen and ${breakpoint('max-width', 'laptop')} {
+    ${CardMediaWrapperStyle} {
+      max-width: 48px;
+    }
+    ${CardActionsStyle} {
+      padding-left: 0;
+    }
+  }
 `
+
+const cards = (
+  <>
+    <Card horizontal>
+      <CardMedia backgroundColor="level2">
+        <Icon size={25}>
+          <Menu />
+        </Icon>
+      </CardMedia>
+      <CardContentStyled>
+        <Heading as="h6">This is a card</Heading>
+        <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
+      </CardContentStyled>
+      <CardActions>
+        <Icon size={15}>
+          <ChevronRight />
+        </Icon>
+      </CardActions>
+    </Card>
+    <Card horizontal>
+      <CardMedia backgroundColor="level2">
+        <Icon size={25}>
+          <Download />
+        </Icon>
+      </CardMedia>
+      <CardContentStyled>
+        <Heading as="h6">This is a card</Heading>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto,
+          quisquam!
+        </Paragraph>
+      </CardContentStyled>
+      <CardActions>
+        <Icon size={15}>
+          <ChevronRight />
+        </Icon>
+      </CardActions>
+    </Card>
+    <Card horizontal>
+      <CardMedia backgroundColor="level2">
+        <Icon size={25}>
+          <Download />
+        </Icon>
+      </CardMedia>
+      <CardContentStyled>
+        <Heading as="h6">This is a card</Heading>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo,
+          provident quasi.
+        </Paragraph>
+      </CardContentStyled>
+      <CardActions>
+        <Icon size={15}>
+          <ChevronRight />
+        </Icon>
+      </CardActions>
+    </Card>
+    <Card horizontal>
+      <CardMedia backgroundColor="level2">
+        <Icon size={25}>
+          <Download />
+        </Icon>
+      </CardMedia>
+      <CardContentStyled>
+        <Heading as="h6">This is a card</Heading>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo,
+          provident quasi voluptate fuga nulla. Lorem ipsum dolor sit amet,
+          consectetur adipisicing elit. Explicabo, provident quasi voluptate
+          fuga nulla.
+        </Paragraph>
+      </CardContentStyled>
+      <CardActions>
+        <Icon size={15}>
+          <ChevronRight />
+        </Icon>
+      </CardActions>
+    </Card>
+    <Card horizontal>
+      <CardMedia backgroundColor="level2">
+        <Icon size={25}>
+          <Download />
+        </Icon>
+      </CardMedia>
+      <CardContentStyled>
+        <Heading as="h6">This is a card</Heading>
+        <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
+      </CardContentStyled>
+      <CardActions>
+        <Icon size={15}>
+          <ChevronRight />
+        </Icon>
+      </CardActions>
+    </Card>
+  </>
+)
 
 storiesOf('Composed/CardContainer', module)
   .addDecorator(storyFn => (
@@ -54,177 +161,7 @@ storiesOf('Composed/CardContainer', module)
       {storyFn()}
     </div>
   ))
-  .add('default', () => (
-    <CardContainer>
-      <Card horizontal>
-        <CardMedia backgroundColor="level2">
-          <Icon size={25}>
-            <Menu />
-          </Icon>
-        </CardMedia>
-        <CardContentStyled>
-          <Heading as="h6">This is a card</Heading>
-          <Paragraph>One line card copy</Paragraph>
-        </CardContentStyled>
-        <CardActions>
-          <Icon size={15}>
-            <ChevronRight />
-          </Icon>
-        </CardActions>
-      </Card>
-      <Card horizontal>
-        <CardMedia backgroundColor="level2">
-          <Icon size={25}>
-            <Download />
-          </Icon>
-        </CardMedia>
-        <CardContentStyled>
-          <Heading as="h6">This is a card</Heading>
-          <Paragraph>This is a card that has a two line copy</Paragraph>
-        </CardContentStyled>
-        <CardActions>
-          <Icon size={15}>
-            <ChevronRight />
-          </Icon>
-        </CardActions>
-      </Card>
-      <Card horizontal>
-        <CardMedia backgroundColor="level2">
-          <Icon size={25}>
-            <Download />
-          </Icon>
-        </CardMedia>
-        <CardContentStyled>
-          <Heading as="h6">This is a card</Heading>
-          <Paragraph>One line copy</Paragraph>
-        </CardContentStyled>
-        <CardActions>
-          <Icon size={15}>
-            <ChevronRight />
-          </Icon>
-        </CardActions>
-      </Card>
-      <Card horizontal>
-        <CardMedia backgroundColor="level2">
-          <Icon size={25}>
-            <Download />
-          </Icon>
-        </CardMedia>
-        <CardContentStyled>
-          <Heading as="h6">This is a card</Heading>
-          <Paragraph>
-            What happens if a copy has more than the maximum characters, because
-            the backend does not have a limit?
-          </Paragraph>
-        </CardContentStyled>
-        <CardActions>
-          <Icon size={15}>
-            <ChevronRight />
-          </Icon>
-        </CardActions>
-      </Card>
-      <Card horizontal>
-        <CardMedia backgroundColor="level2">
-          <Icon size={25}>
-            <Download />
-          </Icon>
-        </CardMedia>
-        <CardContentStyled>
-          <Heading as="h6">This is a card</Heading>
-          <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
-        </CardContentStyled>
-        <CardActions>
-          <Icon size={15}>
-            <ChevronRight />
-          </Icon>
-        </CardActions>
-      </Card>
-    </CardContainer>
-  ))
+  .add('default', () => <CardContainer>{cards}</CardContainer>)
   .add('green - implementation on Dataportaal', () => (
-    <CardContainerGreen maxWidth={460}>
-      <Card horizontal>
-        <CardMedia backgroundColor="level2">
-          <Icon size={25}>
-            <Menu />
-          </Icon>
-        </CardMedia>
-        <CardContentStyled>
-          <Heading as="h6">This is a card</Heading>
-          <Paragraph>One line card copy</Paragraph>
-        </CardContentStyled>
-        <CardActions>
-          <Icon size={15}>
-            <ChevronRight />
-          </Icon>
-        </CardActions>
-      </Card>
-      <Card horizontal>
-        <CardMedia backgroundColor="level2">
-          <Icon size={25}>
-            <Download />
-          </Icon>
-        </CardMedia>
-        <CardContentStyled>
-          <Heading as="h6">This is a card</Heading>
-          <Paragraph>This is a card that has a two line copy</Paragraph>
-        </CardContentStyled>
-        <CardActions>
-          <Icon size={15}>
-            <ChevronRight />
-          </Icon>
-        </CardActions>
-      </Card>
-      <Card horizontal>
-        <CardMedia backgroundColor="level2">
-          <Icon size={25}>
-            <Download />
-          </Icon>
-        </CardMedia>
-        <CardContentStyled>
-          <Heading as="h6">This is a card</Heading>
-          <Paragraph>One line copy</Paragraph>
-        </CardContentStyled>
-        <CardActions>
-          <Icon size={15}>
-            <ChevronRight />
-          </Icon>
-        </CardActions>
-      </Card>
-      <Card horizontal>
-        <CardMedia backgroundColor="level2">
-          <Icon size={25}>
-            <Download />
-          </Icon>
-        </CardMedia>
-        <CardContentStyled>
-          <Heading as="h6">This is a card</Heading>
-          <Paragraph>
-            What happens if a copy has more than the maximum characters, because
-            the backend does not have a limit?
-          </Paragraph>
-        </CardContentStyled>
-        <CardActions>
-          <Icon size={15}>
-            <ChevronRight />
-          </Icon>
-        </CardActions>
-      </Card>
-      <Card horizontal>
-        <CardMedia backgroundColor="level2">
-          <Icon size={25}>
-            <Download />
-          </Icon>
-        </CardMedia>
-        <CardContentStyled>
-          <Heading as="h6">This is a card</Heading>
-          <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
-        </CardContentStyled>
-        <CardActions>
-          <Icon size={15}>
-            <ChevronRight />
-          </Icon>
-        </CardActions>
-      </Card>
-    </CardContainerGreen>
+    <CardContainerGreen maxWidth={460}>{cards}</CardContainerGreen>
   ))
