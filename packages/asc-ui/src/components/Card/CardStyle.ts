@@ -1,7 +1,8 @@
 import styled, { Theme, css } from '@datapunt/asc-core'
 import { color } from '../../utils'
+import { perceivedLoading } from '../../utils/themeUtils'
 import CardActionsStyle from './CardActionsStyle'
-import SpinnerStyle from '../Spinner/SpinnerStyle'
+import { CardMediaWrapperStyle } from './CardMediaStyle'
 
 export type Props = {
   maxWidth?: number
@@ -28,20 +29,15 @@ const CardStyle = styled.div<Props>`
         padding: 24px 16px;
       }
     `}
-   ${({ loading }) =>
-     loading &&
-     css`
-       > *:not(${SpinnerStyle}) {
-         opacity: 0;
-         opacity: 0.1;
-       }
-     `}
-    ${SpinnerStyle} {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-`
+  ${({ loading, theme }) =>
+    loading &&
+    css`
+      ${perceivedLoading(theme)}
+
+      ${CardMediaWrapperStyle} {
+        ${perceivedLoading(theme)}
+      }
+    `}`
 
 CardStyle.defaultProps = {
   loading: false,

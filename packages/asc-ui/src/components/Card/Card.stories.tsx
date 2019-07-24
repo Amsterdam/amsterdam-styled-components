@@ -111,11 +111,37 @@ storiesOf('Composed/Card', module)
       </CardActions>
     </Card>
   ))
-  .add('loading state (@TODO: Add Chris his loading util)', () => (
+  .add('loading state - default', () => (
     <Card maxWidth={250} loading>
       <CardContent>
-        <Heading as="h6">This is a card</Heading>
-        <Paragraph>Lorem ipsum dolor sit amete</Paragraph>
+        <Heading as="h6" />
+        <Paragraph />
+      </CardContent>
+    </Card>
+  ))
+  .add('loading state - with action', () => (
+    <Card maxWidth={250} loading>
+      <CardContent>
+        <Heading as="h6" />
+        <Paragraph />
+      </CardContent>
+      <CardActions>
+        <Icon size={15}>
+          <ChevronRight />
+        </Icon>
+      </CardActions>
+    </Card>
+  ))
+  .add('loading state - horizontal', () => (
+    <Card maxWidth={450} horizontal loading>
+      <CardMedia backgroundColor="level2">
+        <Icon size={25}>
+          <Download />
+        </Icon>
+      </CardMedia>
+      <CardContent>
+        <Heading as="h6" />
+        <Paragraph />
       </CardContent>
       <CardActions>
         <Icon size={15}>
