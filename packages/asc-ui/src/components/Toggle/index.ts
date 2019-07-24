@@ -1,5 +1,5 @@
 export {
   default as Toggle,
-  ToggleHeaderProps,
+  ToggleHandlerProps,
   Props as ToggleProps,
 } from './Toggle'
