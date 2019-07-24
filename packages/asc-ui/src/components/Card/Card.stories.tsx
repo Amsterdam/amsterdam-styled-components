@@ -12,8 +12,8 @@ import Heading from '../Heading'
 import Paragraph from '../Paragraph'
 
 const CardContentStyled = styled(CardContent)`
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
 `
 
 storiesOf('Composed/Card', module)
