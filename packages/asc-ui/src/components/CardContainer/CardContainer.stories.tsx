@@ -36,10 +36,15 @@ const CardContainerGreen = styled(CardContainer)`
     }
   }
 
-  // Fallback if card exceeds the maximum character length
   ${CardContentStyle} {
-    max-height: 75px;
+    padding: 8px 12px;
+    // Fallback if card exceeds the maximum character length
+    max-height: 80px;
     overflow: hidden;
+
+    @media screen and ${breakpoint('min-width', 'laptop')} {
+      padding: 12px;
+    }
   }
 `
 
