@@ -154,7 +154,7 @@ export const svgFill = (
   if (colorType) {
     const value = color(colorType, variant)({ theme })
     if (typeof value === 'string') {
-      return `& > svg {
+      return `& svg {
         rect,
         polygon,
         path {

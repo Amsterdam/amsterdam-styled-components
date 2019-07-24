@@ -33,9 +33,9 @@ exports[`DocumentCover should render 1`] = `
   height: inherit;
 }
 
-.c5 > svg rect,
-.c5 > svg polygon,
-.c5 > svg path {
+.c5 svg rect,
+.c5 svg polygon,
+.c5 svg path {
   fill: #ffffff;
 }
 
