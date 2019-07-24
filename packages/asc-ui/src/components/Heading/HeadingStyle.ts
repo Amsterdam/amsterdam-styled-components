@@ -1,7 +1,9 @@
 import styled, { css, styledComponents } from '@datapunt/asc-core'
-import TypographyStyle from '../Typography/TypographyStyle'
+import TypographyStyle, {
+  Props as TypographyProps,
+} from '../Typography/TypographyStyle'
 
-type Props = {} & styledComponents.StyledProps<any>
+export type Props = TypographyProps & styledComponents.StyledProps<any>
 
 export const HeaderStyleCSS = css`
   margin-top: 0;

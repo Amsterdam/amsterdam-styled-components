@@ -2,7 +2,7 @@ import * as React from 'react'
 import { shallow, render, mount } from 'enzyme'
 import { ThemeProvider } from '../index'
 
-export const renderWithTheme = (component: JSX.Element) =>
+export const renderWithTheme = (component: JSX.Element): Cheerio =>
   render(<ThemeProvider>{component}</ThemeProvider>)
 
 export const shallowWithTheme = (component: JSX.Element) =>

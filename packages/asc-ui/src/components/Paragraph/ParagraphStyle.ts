@@ -1,11 +1,12 @@
 import styled, { css } from '@datapunt/asc-core'
-import TypographyStyle from '../Typography/TypographyStyle'
+import TypographyStyle, {
+  Props as TypographyProps,
+} from '../Typography/TypographyStyle'
 import { breakpoint, color } from '../../utils'
 
 export type Props = {
   hasLongText?: boolean
-  strong?: boolean
-}
+} & TypographyProps
 
 export const ParagraphStyleCSS = css<Props>`
   margin-top: 0;
@@ -27,5 +28,5 @@ export const ParagraphStyleCSS = css<Props>`
 `
 
 export default styled(TypographyStyle)<Props>`
-  ${ParagraphStyleCSS}
+  ${ParagraphStyleCSS};
 `

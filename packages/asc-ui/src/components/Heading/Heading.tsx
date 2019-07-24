@@ -1,12 +1,16 @@
 import React from 'react'
-import HeadingStyle from './HeadingStyle'
+import HeadingStyle, { Props as HeadingStyleProps } from './HeadingStyle'
 
-const Heading: React.FC<
-  {
-    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
-  } & React.HTMLAttributes<HTMLHeadingElement>
-> = ({ children, className, as, ...otherProps }) => (
-  <HeadingStyle className={className} as={as} {...otherProps}>
+type Props = HeadingStyleProps & React.HTMLAttributes<HTMLHeadingElement>
+
+const Heading: React.FC<Props> = ({
+  children,
+  className,
+  as,
+  styleAs,
+  ...otherProps
+}) => (
+  <HeadingStyle {...{ styleAs, as, className }} {...otherProps}>
     {children}
   </HeadingStyle>
 )

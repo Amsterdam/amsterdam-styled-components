@@ -10,9 +10,7 @@ export const activeStyle = css`
   }
 
   ${IconStyle} {
-    & > svg {
-      ${svgFill('secondary')};
-    }
+    ${svgFill('secondary')};
   }
 `
 

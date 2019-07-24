@@ -6,14 +6,15 @@ import HeaderWrapperStyle, {
 import HeaderLogoText from './HeaderLogoText'
 import HeaderNavigation from './HeaderNavigation'
 import HeaderLinks from './HeaderLinks'
+import { CustomCssPropsType } from '../../utils'
 
 type Props = {
   homeLink: string
   title?: string
-  css?: any
   navigation?: React.ReactNode
   links?: React.ReactNode
 } & HeaderWrapperProps &
+  CustomCssPropsType &
   React.HTMLAttributes<HTMLDivElement>
 
 const Header: React.FC<Props> = ({

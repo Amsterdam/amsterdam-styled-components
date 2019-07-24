@@ -127,7 +127,7 @@ exports[`<TextField /> should render 1`] = `
           "fontWeight": 700,
           "letterSpacing": "inherit",
           "lineHeight": "28px",
-          "marginBottom": "0",
+          "marginBottom": "8px",
         },
         "h3": Object {
           "defaultColor": "#000000",

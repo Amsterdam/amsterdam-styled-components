@@ -18,7 +18,6 @@ exports[`Header should render the short version 1`] = `
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
-  min-height: 50px;
   margin: 0 auto;
   padding: 0 10px;
   -webkit-align-items: stretch;
@@ -45,10 +44,7 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c8 {
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
+  margin: 0;
   color: #000000;
   font-weight: inherit;
   font-size: 1rem;
@@ -171,6 +167,7 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c0 .c1 {
+  min-height: 50px;
   padding-right: 0;
 }
 
@@ -300,7 +297,6 @@ exports[`Header should render the short version without the full width 1`] = `
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
-  min-height: 50px;
   margin: 0 auto;
   padding: 0 10px;
   -webkit-align-items: stretch;
@@ -326,10 +322,7 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c8 {
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
+  margin: 0;
   color: #000000;
   font-weight: inherit;
   font-size: 1rem;
@@ -437,6 +430,7 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c12 .c1 {
+  min-height: 50px;
   padding-right: 0;
 }
 
@@ -468,6 +462,7 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c0 .c1 {
+  min-height: 50px;
   padding-right: 0;
 }
 
@@ -597,7 +592,6 @@ exports[`Header should render the tall version 1`] = `
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
-  min-height: 50px;
   margin: 0 auto;
   padding: 0 10px;
   -webkit-align-items: stretch;
@@ -624,10 +618,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c11 {
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
+  margin: 0;
   color: #000000;
   font-weight: inherit;
   font-size: 1rem;
@@ -739,6 +730,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c16 .c2 {
+  min-height: 50px;
   padding-right: 0;
 }
 
@@ -755,6 +747,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c17 .c2 {
+  min-height: 50px;
   padding-right: 0;
 }
 
@@ -872,6 +865,7 @@ exports[`Header should render the tall version 1`] = `
   }
 
   .c0 .c2 {
+    min-height: 50px;
     padding-right: 0;
   }
 }
@@ -985,7 +979,6 @@ exports[`Header should render the tall version without a title 1`] = `
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
-  min-height: 50px;
   margin: 0 auto;
   padding: 0 10px;
   -webkit-align-items: stretch;
@@ -1090,6 +1083,7 @@ exports[`Header should render the tall version without a title 1`] = `
 }
 
 .c14 .c2 {
+  min-height: 50px;
   padding-right: 0;
 }
 
@@ -1102,6 +1096,7 @@ exports[`Header should render the tall version without a title 1`] = `
 }
 
 .c15 .c2 {
+  min-height: 50px;
   padding-right: 0;
 }
 
@@ -1207,6 +1202,7 @@ exports[`Header should render the tall version without a title 1`] = `
   }
 
   .c0 .c2 {
+    min-height: 50px;
     padding-right: 0;
   }
 }

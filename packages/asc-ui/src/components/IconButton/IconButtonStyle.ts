@@ -1,5 +1,5 @@
+import styled, { css } from '@datapunt/asc-core'
 import { size } from 'polished'
-import styled from '@datapunt/asc-core'
 import ButtonBaseStyle, {
   Props as ButtonBaseStyleProps,
 } from '../Button/ButtonBaseStyle'
@@ -17,10 +17,10 @@ export const IconButtonStyle = styled(ButtonBaseStyle)<Props>`
   ${({ size: sizeProp }) =>
     sizeProp
       ? size(sizeProp)
-      : `
-  width: 30px;
-  height: 30px;
-  `}
+      : css`
+          width: 30px;
+          height: 30px;
+        `}
 
   ${IconStyle} {
     ${({ iconSize }) => iconSize && size(iconSize)}

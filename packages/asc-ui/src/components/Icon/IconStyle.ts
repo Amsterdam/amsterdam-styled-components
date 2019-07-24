@@ -34,8 +34,9 @@ const IconStyle = styled.span<Props>`
   & > svg {
     width: inherit;
     height: inherit;
-    ${({ color, theme }) => svgFill(color)({ theme })};
   }
+  
+  ${({ color, theme }) => svgFill(color)({ theme })};
 `
 
 export default IconStyle

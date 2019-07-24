@@ -4,7 +4,9 @@ import { color, svgFill } from '../../utils'
 import IconStyle from '../Icon/IconStyle'
 import TypographyStyle from '../Typography/TypographyStyle'
 
-export default styled.li`
+export type Props = React.HTMLAttributes<HTMLElement>
+
+export default styled.li<Props>`
   position: relative;
   word-break: break-word;
   margin-bottom: 8px;
@@ -29,7 +31,7 @@ export default styled.li`
 
     &:hover {
       color: ${color('secondary')};
-      ${IconStyle} > svg {
+      ${IconStyle} {
         ${svgFill('secondary')};
       }
     }
