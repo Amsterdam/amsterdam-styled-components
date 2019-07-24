@@ -2,7 +2,7 @@ import { ChevronRight, Download, Menu } from '@datapunt/asc-assets'
 import { storiesOf } from '@storybook/react'
 import styled from '@datapunt/asc-core'
 import React from 'react'
-import { color } from '../../utils'
+import { color, breakpoint } from '../../utils'
 import Icon from '../Icon'
 import CardContainer from '.'
 import Card from '../Card/Card'
@@ -22,16 +22,18 @@ const CardContainerGreen = styled(CardContainer)`
   position: relative;
   background-color: ${color('support', 'valid')};
 
-  ::after {
-    content: '';
-    position: absolute;
-    height: 0;
-    width: 0;
-    left: 0px;
-    top: 0px;
-    border-style: solid;
-    border-width: 48px 48px 0 0;
-    border-color: #fff transparent transparent transparent;
+  @media screen and ${breakpoint('min-width', 'laptop')} {
+    ::after {
+      content: '';
+      position: absolute;
+      height: 0;
+      width: 0;
+      left: 0px;
+      top: 0px;
+      border-style: solid;
+      border-width: 48px 48px 0 0;
+      border-color: #fff transparent transparent transparent;
+    }
   }
 
   // Fallback if card exceeds the maximum character length
@@ -48,7 +50,7 @@ storiesOf('Composed/CardContainer', module)
     </div>
   ))
   .add('default', () => (
-    <CardContainer maxWidth={460}>
+    <CardContainer>
       <Card horizontal>
         <CardMedia backgroundColor="level2">
           <Icon size={25}>
