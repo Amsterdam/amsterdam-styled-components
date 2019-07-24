@@ -115,7 +115,7 @@ storiesOf('Composed/Card', module)
     <Card maxWidth={250} loading>
       <CardContent>
         <Heading as="h6">This is a card</Heading>
-        <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
+        <Paragraph>Lorem ipsum dolor sit amete</Paragraph>
       </CardContent>
       <CardActions>
         <Icon size={15}>
