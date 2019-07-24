@@ -33,15 +33,9 @@ exports[`DocumentCover should render 1`] = `
   height: inherit;
 }
 
-<<<<<<< HEAD
-.c6 > svg rect,
-.c6 > svg polygon,
-.c6 > svg path {
-=======
-.c5 svg rect,
-.c5 svg polygon,
-.c5 svg path {
->>>>>>> 6ce7596cab90f33ca04e2cd8235e30b4202b878e
+.c6 svg rect,
+.c6 svg polygon,
+.c6 svg path {
   fill: #ffffff;
 }
 
@@ -126,16 +120,8 @@ exports[`DocumentCover should render 1`] = `
   width: 100%;
 }
 
-<<<<<<< HEAD
 .c7 {
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-=======
-.c6 {
   margin: 0;
->>>>>>> 6ce7596cab90f33ca04e2cd8235e30b4202b878e
   color: #000000;
   font-weight: 400;
   font-size: 14px;
