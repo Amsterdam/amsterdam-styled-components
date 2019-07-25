@@ -77,7 +77,7 @@ storiesOf('Composed/Footer', module)
               <ColofonLinks indent />
             </FooterToggle>
             <FooterContent showAt="tabletM">
-              <FooterHeading styleAs="h3">Colofon</FooterHeading>
+              <FooterHeading>Colofon</FooterHeading>
               <ColofonLinks />
             </FooterContent>
           </FooterContent>
@@ -91,7 +91,7 @@ storiesOf('Composed/Footer', module)
               <FollowLinks indent />
             </FooterToggle>
             <FooterContent showAt="tabletM">
-              <FooterHeading styleAs="h3">Volg de gemeente</FooterHeading>
+              <FooterHeading>Volg de gemeente</FooterHeading>
               <FollowLinks />
             </FooterContent>
           </FooterContent>
@@ -105,7 +105,7 @@ storiesOf('Composed/Footer', module)
               <HelpLinks indent />
             </FooterToggle>
             <FooterContent showAt="tabletM">
-              <FooterHeading styleAs="h3">Vragen?</FooterHeading>
+              <FooterHeading>Vragen?</FooterHeading>
               <HelpLinks />
             </FooterContent>
           </FooterContent>
