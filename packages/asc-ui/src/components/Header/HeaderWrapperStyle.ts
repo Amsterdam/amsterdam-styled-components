@@ -18,6 +18,7 @@ const shortStyle = css`
   }
 
   ${HeaderStyle} {
+    min-height: 50px;
     padding-right: 0; /* collapse to the right side to align navigation items to the edge */
   }
 `

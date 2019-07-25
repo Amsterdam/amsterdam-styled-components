@@ -18,7 +18,6 @@ exports[`Header should render the short version 1`] = `
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
-  min-height: 50px;
   margin: 0 auto;
   padding: 0 10px;
   -webkit-align-items: stretch;
@@ -168,6 +167,7 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c0 .c1 {
+  min-height: 50px;
   padding-right: 0;
 }
 
@@ -208,12 +208,12 @@ exports[`Header should render the short version 1`] = `
   color: #ec0000;
 }
 
-.c11 .c14:focus > svg rect,
-.c11 .c14:hover > svg rect,
-.c11 .c14:focus > svg polygon,
-.c11 .c14:hover > svg polygon,
-.c11 .c14:focus > svg path,
-.c11 .c14:hover > svg path {
+.c11 .c14:focus svg rect,
+.c11 .c14:hover svg rect,
+.c11 .c14:focus svg polygon,
+.c11 .c14:hover svg polygon,
+.c11 .c14:focus svg path,
+.c11 .c14:hover svg path {
   fill: #ec0000;
 }
 
@@ -297,7 +297,6 @@ exports[`Header should render the short version without the full width 1`] = `
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
-  min-height: 50px;
   margin: 0 auto;
   padding: 0 10px;
   -webkit-align-items: stretch;
@@ -431,6 +430,7 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c12 .c1 {
+  min-height: 50px;
   padding-right: 0;
 }
 
@@ -462,6 +462,7 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c0 .c1 {
+  min-height: 50px;
   padding-right: 0;
 }
 
@@ -502,12 +503,12 @@ exports[`Header should render the short version without the full width 1`] = `
   color: #ec0000;
 }
 
-.c11 .c15:focus > svg rect,
-.c11 .c15:hover > svg rect,
-.c11 .c15:focus > svg polygon,
-.c11 .c15:hover > svg polygon,
-.c11 .c15:focus > svg path,
-.c11 .c15:hover > svg path {
+.c11 .c15:focus svg rect,
+.c11 .c15:hover svg rect,
+.c11 .c15:focus svg polygon,
+.c11 .c15:hover svg polygon,
+.c11 .c15:focus svg path,
+.c11 .c15:hover svg path {
   fill: #ec0000;
 }
 
@@ -591,7 +592,6 @@ exports[`Header should render the tall version 1`] = `
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
-  min-height: 50px;
   margin: 0 auto;
   padding: 0 10px;
   -webkit-align-items: stretch;
@@ -730,6 +730,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c16 .c2 {
+  min-height: 50px;
   padding-right: 0;
 }
 
@@ -746,6 +747,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c17 .c2 {
+  min-height: 50px;
   padding-right: 0;
 }
 
@@ -809,12 +811,12 @@ exports[`Header should render the tall version 1`] = `
   color: #ec0000;
 }
 
-.c14 .c20:focus > svg rect,
-.c14 .c20:hover > svg rect,
-.c14 .c20:focus > svg polygon,
-.c14 .c20:hover > svg polygon,
-.c14 .c20:focus > svg path,
-.c14 .c20:hover > svg path {
+.c14 .c20:focus svg rect,
+.c14 .c20:hover svg rect,
+.c14 .c20:focus svg polygon,
+.c14 .c20:hover svg polygon,
+.c14 .c20:focus svg path,
+.c14 .c20:hover svg path {
   fill: #ec0000;
 }
 
@@ -863,6 +865,7 @@ exports[`Header should render the tall version 1`] = `
   }
 
   .c0 .c2 {
+    min-height: 50px;
     padding-right: 0;
   }
 }
@@ -976,7 +979,6 @@ exports[`Header should render the tall version without a title 1`] = `
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
-  min-height: 50px;
   margin: 0 auto;
   padding: 0 10px;
   -webkit-align-items: stretch;
@@ -1081,6 +1083,7 @@ exports[`Header should render the tall version without a title 1`] = `
 }
 
 .c14 .c2 {
+  min-height: 50px;
   padding-right: 0;
 }
 
@@ -1093,6 +1096,7 @@ exports[`Header should render the tall version without a title 1`] = `
 }
 
 .c15 .c2 {
+  min-height: 50px;
   padding-right: 0;
 }
 
@@ -1156,12 +1160,12 @@ exports[`Header should render the tall version without a title 1`] = `
   color: #ec0000;
 }
 
-.c12 .c18:focus > svg rect,
-.c12 .c18:hover > svg rect,
-.c12 .c18:focus > svg polygon,
-.c12 .c18:hover > svg polygon,
-.c12 .c18:focus > svg path,
-.c12 .c18:hover > svg path {
+.c12 .c18:focus svg rect,
+.c12 .c18:hover svg rect,
+.c12 .c18:focus svg polygon,
+.c12 .c18:hover svg polygon,
+.c12 .c18:focus svg path,
+.c12 .c18:hover svg path {
   fill: #ec0000;
 }
 
@@ -1198,6 +1202,7 @@ exports[`Header should render the tall version without a title 1`] = `
   }
 
   .c0 .c2 {
+    min-height: 50px;
     padding-right: 0;
   }
 }

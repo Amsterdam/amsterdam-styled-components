@@ -14,7 +14,7 @@ const FooterToggle: React.FC<Props> = ({ title, children, ...otherProps }) => {
   `
   return (
     <StyledFooterToggle
-      ToggleHeader={ToggleFooterHeader}
+      ToggleHandler={ToggleFooterHeader}
       title={title}
       align="left"
       {...otherProps}

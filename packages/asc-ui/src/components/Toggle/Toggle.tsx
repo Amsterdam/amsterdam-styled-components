@@ -3,9 +3,9 @@ import ToggleStyle, { Props as ToggleStyleProps } from './ToggleStyle'
 import ownerDocument from '../../utils/ownerDocument'
 import usePassPropsToChildren from '../../utils/usePassPropsToChildren'
 import useActionOnEscape from '../../utils/useActionOnEscape'
-import ToggleHeaderButton from './ToggleHeaderButton'
+import ToggleHandlerButton from './ToggleHandlerButton'
 
-export type ToggleHeaderProps = {
+export type ToggleHandlerProps = {
   iconOpen?: React.ReactElement
   iconClose?: React.ReactElement
   open?: boolean
@@ -14,10 +14,10 @@ export type ToggleHeaderProps = {
 export type Props = {
   render?: boolean
   onOpen?: Function
-  ToggleHeader?: any
+  ToggleHandler?: any
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
 } & ToggleStyleProps &
-  ToggleHeaderProps
+  ToggleHandlerProps
 
 const Toggle: React.FC<Props> = ({
   children: childrenProps,
@@ -29,7 +29,7 @@ const Toggle: React.FC<Props> = ({
   render,
   iconOpen,
   iconClose,
-  ToggleHeader,
+  ToggleHandler,
   ...otherProps
 }) => {
   const [open, setOpen] = React.useState(false)
@@ -95,7 +95,7 @@ const Toggle: React.FC<Props> = ({
       onKeyDown={handleOnKeyDown}
       {...otherProps}
     >
-      <ToggleHeader
+      <ToggleHandler
         {...{
           open,
           iconClose,
@@ -111,7 +111,7 @@ const Toggle: React.FC<Props> = ({
 
 Toggle.defaultProps = {
   render: true,
-  ToggleHeader: ToggleHeaderButton,
+  ToggleHandler: ToggleHandlerButton,
 }
 
 export default Toggle
