@@ -17,6 +17,7 @@ const MenuFlyOut: React.FC<any> = ({
   children: childrenProps,
   label,
   linkIndex,
+  ...otherProps
 }) => {
   const {
     hasToggle,
@@ -106,6 +107,7 @@ const MenuFlyOut: React.FC<any> = ({
       hasToggle={hasToggle}
       tabIndex={-1}
       {...extraEvents}
+      {...otherProps}
     >
       <MenuItemLink
         element="span"
@@ -127,6 +129,7 @@ const MenuFlyOut: React.FC<any> = ({
         ignoreCloseOnClick
         aria-haspopup="true"
         aria-expanded={flyOutOpen}
+        {...otherProps}
       >
         {label}
       </MenuItemLink>

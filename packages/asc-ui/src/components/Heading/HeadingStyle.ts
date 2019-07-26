@@ -1,7 +1,6 @@
 import styled, { css, styledComponents } from '@datapunt/asc-core'
-import TypographyStyle, {
-  Props as TypographyProps,
-} from '../Typography/TypographyStyle'
+import { Props as TypographyProps } from '../Typography/TypographyStyle'
+import Typography from '../Typography'
 
 export type Props = TypographyProps & styledComponents.StyledProps<any>
 
@@ -13,6 +12,6 @@ export const HeaderStyleCSS = css`
   justify-content: space-between;
 `
 
-export default styled(TypographyStyle)<Props>`
+export default styled(Typography)<Props>`
   ${HeaderStyleCSS}
 `

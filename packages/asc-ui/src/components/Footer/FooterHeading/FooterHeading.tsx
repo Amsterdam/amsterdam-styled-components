@@ -1,12 +1,12 @@
-import styled from '@datapunt/asc-core'
-import Heading from '../../Heading'
-import { color } from '../../../utils'
+import React from 'react'
+import FooterHeadingStyle, { Props } from './FooterHeadingStyle'
 
-const FooterHeading = styled(Heading)`
-  margin-top: 0;
-  margin-bottom: 8px;
-  color: ${color('tint', 'level1')};
-  display: flex;
-`
+export { Props }
+
+const FooterHeading: React.FC<
+  Props & React.HTMLAttributes<HTMLHeadingElement>
+> = ({ children, ...otherProps }) => {
+  return <FooterHeadingStyle {...otherProps}>{children}</FooterHeadingStyle>
+}
 
 export default FooterHeading

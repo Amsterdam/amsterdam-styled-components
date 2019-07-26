@@ -48,7 +48,7 @@ const generateCSSFromTypography = (
   letter-spacing: ${letterSpacing};
   line-height: ${lineHeight};
   margin-bottom: ${typeof gutterBottom === 'number'
-    ? gutterBottom
+    ? `${gutterBottom}px`
     : marginBottom};
 `
 
