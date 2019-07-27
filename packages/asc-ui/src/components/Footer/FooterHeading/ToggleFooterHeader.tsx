@@ -12,7 +12,7 @@ export type Props = ToggleHandlerProps
 const ToggleFooterHeader: React.FC<Props> = ({ open, onClick, title }) => {
   const IconOpen = <ChevronDown />
   const IconClose = <ChevronUp />
-  const StyledFooterHeading = styled(FooterHeading)<Props>`
+  const StyledFooterHeading: any = styled(FooterHeading)<Props>`
     margin-bottom: ${({ open: isOpen }) => (isOpen ? '0' : '8px')};
     cursor: pointer;
     &:hover {
@@ -26,7 +26,7 @@ const ToggleFooterHeader: React.FC<Props> = ({ open, onClick, title }) => {
   `
 
   return (
-    <StyledFooterHeading as="h3" onClick={onClick}>
+    <StyledFooterHeading $as="h3" onClick={onClick}>
       <Icon size={20}>{open ? IconClose : IconOpen}</Icon>
       {title && title}
     </StyledFooterHeading>
