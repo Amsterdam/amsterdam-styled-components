@@ -3,21 +3,6 @@
 exports[`Heading should render 1`] = `
 Array [
   .c0 {
-  margin: 0;
-  color: #000000;
-  font-weight: 700;
-  font-size: 24px;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  line-height: 30px;
-  margin-bottom: 0;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
   margin-top: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -34,13 +19,6 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-@media screen and (min-width:540.02px) {
-  .c0 {
-    font-size: 30px;
-    line-height: 38px;
-  }
 }
 
 <h1
@@ -49,21 +27,6 @@ Array [
     Foo
   </h1>,
   .c0 {
-  margin: 0;
-  color: #000000;
-  font-weight: 700;
-  font-size: 20px;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  line-height: 28px;
-  margin-bottom: 8px;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
   margin-top: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -82,34 +45,12 @@ Array [
   justify-content: space-between;
 }
 
-@media screen and (min-width:540.02px) {
-  .c0 {
-    font-size: 24px;
-    line-height: 30px;
-  }
-}
-
 <h2
     class="c0"
   >
     Foo
   </h2>,
   .c0 {
-  margin: 0;
-  color: #000000;
-  font-weight: 700;
-  font-size: 20px;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  line-height: 28px;
-  margin-bottom: 0;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
   margin-top: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -134,21 +75,6 @@ Array [
     Foo
   </h3>,
   .c0 {
-  margin: 0;
-  color: #000000;
-  font-weight: 700;
-  font-size: 18px;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  line-height: 25px;
-  margin-bottom: 8px;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
   margin-top: 0;
   display: -webkit-box;
   display: -webkit-flex;
