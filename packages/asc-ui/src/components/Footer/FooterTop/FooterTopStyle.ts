@@ -8,6 +8,6 @@ export default styled.div<Props>`
   padding-top: 32px;
 
   @media screen and ${breakpoint('min-width', 'tabletM')} {
-    padding-bottom: 32px;
+    padding-bottom: 24px;
   }
 `
