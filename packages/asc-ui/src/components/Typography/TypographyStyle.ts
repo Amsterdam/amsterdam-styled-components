@@ -1,4 +1,4 @@
-import styled, { css, styledComponents, Theme } from '@datapunt/asc-core'
+import styled, { css, Theme } from '@datapunt/asc-core'
 import { getTypographyFromTheme, color } from '../../utils'
 
 import TypographyElements = Theme.TypographyElements
@@ -10,8 +10,9 @@ export type Props = {
   color?: Theme.TypeLevel
   fontSize?: number
   styleAs?: keyof TypographyElements
+  as?: any
   strong?: boolean
-} & styledComponents.StyledProps<any>
+}
 
 export const defaultTypographyStyles = {
   em: css`

@@ -9,6 +9,7 @@ export type ToggleHandlerProps = {
   iconOpen?: React.ReactElement
   iconClose?: React.ReactElement
   open?: boolean
+  as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
 } & React.HTMLAttributes<HTMLElement>
 
 export type Props = {

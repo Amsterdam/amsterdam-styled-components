@@ -3,31 +3,34 @@ import TypographyStyle, {
   Props as TypographyStyleProps,
 } from './TypographyStyle'
 
-const Typography: React.FC<
-  TypographyStyleProps & React.HTMLAttributes<HTMLElement>
-> = ({
+type Props = {
+  $as?: string
+} & TypographyStyleProps &
+  React.HTMLAttributes<HTMLElement>
+
+const Typography: React.FC<Props> = ({
   children,
   gutterBottom,
   paragraph,
   element,
   color,
   fontSize,
+  $as,
   ...otherProps
-}) => {
-  return (
-    <TypographyStyle
-      {...{
-        gutterBottom,
-        paragraph,
-        element,
-        color,
-        fontSize,
-      }}
-      {...otherProps}
-    >
-      {children}
-    </TypographyStyle>
-  )
-}
+}) => (
+  <TypographyStyle
+    {...{
+      gutterBottom,
+      paragraph,
+      element,
+      color,
+      fontSize,
+    }}
+    as={$as}
+    {...otherProps}
+  >
+    {children}
+  </TypographyStyle>
+)
 
 export default Typography

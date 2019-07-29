@@ -1,7 +1,7 @@
 import styled, { css } from '@datapunt/asc-core'
-import TypographyStyle from '../Typography/TypographyStyle'
 import { color } from '../../utils'
 import { focusStyleText } from '../../utils/themeUtils'
+import Typography from '../Typography'
 
 export const LinkStyleCSS = css`
   color: ${color('primary')};
@@ -13,6 +13,6 @@ export const LinkStyleCSS = css`
   }
 `
 
-export default styled(TypographyStyle)`
+export default styled(Typography)`
   ${LinkStyleCSS}
 `
