@@ -24,7 +24,7 @@ const CardContentStyled = styled(CardContent)`
   padding-top: 8px;
   padding-bottom: 8px;
 `
-const CardContainerGeneriekeFuncties = styled(CardContainer)`
+const CardContainerGenericFunctions = styled(CardContainer)`
   position: relative;
   background-color: ${color('support', 'valid')};
 
@@ -63,7 +63,7 @@ const CardContainerGeneriekeFuncties = styled(CardContainer)`
   }
 `
 
-const CardContainerOverData = styled(CardContainer)`
+const CardContainerAboutData = styled(CardContainer)`
   padding-bottom: 24px;
 
   ${ColumnStyle} > ${HeadingStyle} {
@@ -151,8 +151,8 @@ storiesOf('Composed/CardContainer', module)
       </Card>
     </CardContainer>
   ))
-  .add('segment "Generieke functies"', () => (
-    <CardContainerGeneriekeFuncties maxWidth={460}>
+  .add('segment "Generic functions"', () => (
+    <CardContainerGenericFunctions maxWidth={460}>
       <Card horizontal>
         <CardContentStyled>
           <Heading as="h6">This is a card</Heading>
@@ -219,10 +219,10 @@ storiesOf('Composed/CardContainer', module)
           </Icon>
         </CardActions>
       </Card>
-    </CardContainerGeneriekeFuncties>
+    </CardContainerGenericFunctions>
   ))
-  .add('segment "Over Data & Over deze site"', () => (
-    <CardContainerOverData>
+  .add('segment "About Data & About this site"', () => (
+    <CardContainerAboutData>
       <Row>
         <Column
           wrap
@@ -283,5 +283,5 @@ storiesOf('Composed/CardContainer', module)
           </Column>
         </Column>
       </Row>
-    </CardContainerOverData>
+    </CardContainerAboutData>
   ))
