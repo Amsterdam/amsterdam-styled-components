@@ -14,7 +14,8 @@ export type Props = {
 
 const CardStyle = styled.div<Props>`
   ${({ maxWidth }) => maxWidth && `max-width: ${maxWidth}px;`}
-  ${({ shadow }) => shadow && 'box-shadow: 1px 1px #e6e6e6;'}
+  ${({ shadow, theme }) =>
+    shadow && `box-shadow: 1px 1px ${color('tint', 'level3')({ theme })};`}
   background-color: ${({ backgroundColor, theme }) =>
     color('tint', backgroundColor || 'level1')({ theme })};
   display: flex;

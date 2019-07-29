@@ -62,7 +62,7 @@ const typography: Theme.TypographyInterface = {
     defaultColor: colors.tint.level7,
     fontSize: '16px',
     fontWeight: 500,
-    letterSpacing: '-0.01562em',
+    letterSpacing: 'inherit',
     lineHeight: 1.25,
     marginBottom: '0',
   },
