@@ -40,7 +40,7 @@ const typography: Theme.TypographyInterface = {
     fontWeight: 700,
     letterSpacing: 'inherit',
     lineHeight: '28px',
-    marginBottom: '0',
+    marginBottom: '8px',
   },
   h4: {
     defaultColor: colors.tint.level7,

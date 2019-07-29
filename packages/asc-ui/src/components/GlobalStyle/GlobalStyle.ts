@@ -2,7 +2,7 @@ import { normalize } from 'polished'
 import { createGlobalStyle } from '@datapunt/asc-core'
 import { fromTheme } from '../../utils'
 
-export default createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   ${normalize()}
   ${({ theme }) => fromTheme('globalStyle')({ theme })}
 
@@ -22,3 +22,5 @@ export default createGlobalStyle`
     outline: none;
   }
 `
+
+export default GlobalStyle

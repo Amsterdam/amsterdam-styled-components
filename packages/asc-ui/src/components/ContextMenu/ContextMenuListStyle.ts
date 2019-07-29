@@ -1,6 +1,11 @@
 import styled from '@datapunt/asc-core'
 import { color } from '../../utils'
-import { ContextMenuListProps } from './types'
+import { Position } from './types'
+
+export type ContextMenuListProps = {
+  labelId?: string
+  position?: Position
+}
 
 const ContextMenuListStyle = styled.ul<ContextMenuListProps>`
   display: flex;

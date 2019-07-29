@@ -48,7 +48,7 @@ const generateCSSFromTypography = (
   letter-spacing: ${letterSpacing};
   line-height: ${lineHeight};
   margin-bottom: ${typeof gutterBottom === 'number'
-    ? gutterBottom
+    ? `${gutterBottom}px`
     : marginBottom};
 `
 
@@ -250,4 +250,17 @@ export const showHide = () => ({ hideAt, showAt, theme }: ShowHideProps) => {
     ${showAtCss}
     ${hideAtCss}
   `
+}
+
+export const customCss = (props: any) =>
+  props.css &&
+  css`
+    ${props.css}
+  `
+export interface CustomCssPropsInterface {
+  css?: any
+}
+
+export type CustomCssPropsType = {
+  css?: any
 }
