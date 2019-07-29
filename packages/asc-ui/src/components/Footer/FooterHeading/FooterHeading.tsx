@@ -11,7 +11,6 @@ const FooterHeading: React.FC<
 
 FooterHeading.defaultProps = {
   $as: 'h3',
-  styleAs: 'h3',
 }
 
 export default FooterHeading
