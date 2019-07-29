@@ -157,7 +157,7 @@ exports[`<TextField /> should render 1`] = `
           "defaultColor": "#000000",
           "fontSize": "16px",
           "fontWeight": 500,
-          "letterSpacing": "-0.01562em",
+          "letterSpacing": "inherit",
           "lineHeight": 1.25,
           "marginBottom": "0",
         },
