@@ -15,7 +15,6 @@ export const CardMediaWrapperStyle = styled.div<Props>`
   display: flex;
   width: ${({ width }) => (width ? `${width}px` : '100%')};
   flex: ${({ width }) => (width ? `0 0 ${width}px` : 'auto')};
-  max-width: 80px;
 
   &::before {
     content: '';
