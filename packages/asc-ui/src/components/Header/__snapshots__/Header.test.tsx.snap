@@ -1,6 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header should render the short version 1`] = `
+.c10 {
+  margin: 0;
+  color: #000000;
+  font-weight: inherit;
+  font-size: 1rem;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  line-height: 1.25;
+  margin-bottom: 0;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -35,7 +53,7 @@ exports[`Header should render the short version 1`] = `
   font-size: 0;
 }
 
-.c2 .c13 {
+.c2 .c14 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -44,21 +62,6 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c9 {
-  margin: 0;
-  color: #000000;
-  font-weight: inherit;
-  font-size: 1rem;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  line-height: 1.25;
-  margin-bottom: 0;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
   color: #004699;
   display: inline-block;
 }
@@ -86,7 +89,7 @@ exports[`Header should render the short version 1`] = `
   color: inherit;
 }
 
-.c11 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -167,7 +170,7 @@ exports[`Header should render the short version 1`] = `
   z-index: 2;
 }
 
-.c0 .c10 {
+.c0 .c11 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -184,7 +187,7 @@ exports[`Header should render the short version 1`] = `
   padding-right: 0;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -202,35 +205,35 @@ exports[`Header should render the short version 1`] = `
   justify-content: flex-end;
 }
 
-.c12 .c15 {
+.c13 .c16 {
   height: 17px;
   padding: 0;
 }
 
-.c12 .c15:not(:last-child) {
+.c13 .c16:not(:last-child) {
   margin-right: 30px;
 }
 
-.c12 .c15:focus,
-.c12 .c15:hover {
+.c13 .c16:focus,
+.c13 .c16:hover {
   background-color: transparent;
 }
 
-.c12 .c15:focus .c14,
-.c12 .c15:hover .c14 {
+.c13 .c16:focus .c15,
+.c13 .c16:hover .c15 {
   color: #ec0000;
 }
 
-.c12 .c15:focus svg rect,
-.c12 .c15:hover svg rect,
-.c12 .c15:focus svg polygon,
-.c12 .c15:hover svg polygon,
-.c12 .c15:focus svg path,
-.c12 .c15:hover svg path {
+.c13 .c16:focus svg rect,
+.c13 .c16:hover svg rect,
+.c13 .c16:focus svg polygon,
+.c13 .c16:hover svg polygon,
+.c13 .c16:focus svg path,
+.c13 .c16:hover svg path {
   fill: #ec0000;
 }
 
-.c12 .c15 .c14 {
+.c13 .c16 .c15 {
   line-height: 17px;
 }
 
@@ -253,7 +256,7 @@ exports[`Header should render the short version 1`] = `
 }
 
 @media screen and (max-width:1200px) {
-  .c12 {
+  .c13 {
     display: none;
   }
 }
@@ -277,23 +280,41 @@ exports[`Header should render the short version 1`] = `
         />
       </a>
       <a
-        class="c7 c8 c9"
+        class="c7 c8 c9 c10"
         href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
     </h1>
     <nav
-      class="c10 c11"
+      class="c11 c12"
     />
     <div
-      class="c12"
+      class="c13"
     />
   </header>
 </div>
 `;
 
 exports[`Header should render the short version without the full width 1`] = `
+.c10 {
+  margin: 0;
+  color: #000000;
+  font-weight: inherit;
+  font-size: 1rem;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  line-height: 1.25;
+  margin-bottom: 0;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -327,7 +348,7 @@ exports[`Header should render the short version without the full width 1`] = `
   font-size: 0;
 }
 
-.c2 .c14 {
+.c2 .c15 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -336,21 +357,6 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c9 {
-  margin: 0;
-  color: #000000;
-  font-weight: inherit;
-  font-size: 1rem;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  line-height: 1.25;
-  margin-bottom: 0;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
   color: #004699;
   display: inline-block;
 }
@@ -378,7 +384,7 @@ exports[`Header should render the short version without the full width 1`] = `
   color: inherit;
 }
 
-.c11 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -444,7 +450,7 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-right: 10px;
 }
 
-.c13 .c10 {
+.c14 .c11 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -452,11 +458,11 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-left: 15px;
 }
 
-.c13 .c7 {
+.c14 .c7 {
   margin-top: -2px;
 }
 
-.c13 .c1 {
+.c14 .c1 {
   min-height: 50px;
   padding-right: 0;
 }
@@ -476,7 +482,7 @@ exports[`Header should render the short version without the full width 1`] = `
   z-index: 2;
 }
 
-.c0 .c10 {
+.c0 .c11 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -493,7 +499,7 @@ exports[`Header should render the short version without the full width 1`] = `
   padding-right: 0;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -511,35 +517,35 @@ exports[`Header should render the short version without the full width 1`] = `
   justify-content: flex-end;
 }
 
-.c12 .c16 {
+.c13 .c17 {
   height: 17px;
   padding: 0;
 }
 
-.c12 .c16:not(:last-child) {
+.c13 .c17:not(:last-child) {
   margin-right: 30px;
 }
 
-.c12 .c16:focus,
-.c12 .c16:hover {
+.c13 .c17:focus,
+.c13 .c17:hover {
   background-color: transparent;
 }
 
-.c12 .c16:focus .c15,
-.c12 .c16:hover .c15 {
+.c13 .c17:focus .c16,
+.c13 .c17:hover .c16 {
   color: #ec0000;
 }
 
-.c12 .c16:focus svg rect,
-.c12 .c16:hover svg rect,
-.c12 .c16:focus svg polygon,
-.c12 .c16:hover svg polygon,
-.c12 .c16:focus svg path,
-.c12 .c16:hover svg path {
+.c13 .c17:focus svg rect,
+.c13 .c17:hover svg rect,
+.c13 .c17:focus svg polygon,
+.c13 .c17:hover svg polygon,
+.c13 .c17:focus svg path,
+.c13 .c17:hover svg path {
   fill: #ec0000;
 }
 
-.c12 .c16 .c15 {
+.c13 .c17 .c16 {
   line-height: 17px;
 }
 
@@ -562,7 +568,7 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 @media screen and (max-width:1200px) {
-  .c12 {
+  .c13 {
     display: none;
   }
 }
@@ -586,23 +592,41 @@ exports[`Header should render the short version without the full width 1`] = `
         />
       </a>
       <a
-        class="c7 c8 c9"
+        class="c7 c8 c9 c10"
         href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
     </h1>
     <nav
-      class="c10 c11"
+      class="c11 c12"
     />
     <div
-      class="c12"
+      class="c13"
     />
   </header>
 </div>
 `;
 
 exports[`Header should render the tall version 1`] = `
+.c13 {
+  margin: 0;
+  color: #000000;
+  font-weight: inherit;
+  font-size: 1rem;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  line-height: 1.25;
+  margin-bottom: 0;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -637,7 +661,7 @@ exports[`Header should render the tall version 1`] = `
   font-size: 0;
 }
 
-.c3 .c19 {
+.c3 .c20 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -646,21 +670,6 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c12 {
-  margin: 0;
-  color: #000000;
-  font-weight: inherit;
-  font-size: 1rem;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  line-height: 1.25;
-  margin-bottom: 0;
-  font-stretch: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
   color: #004699;
   display: inline-block;
 }
@@ -688,7 +697,7 @@ exports[`Header should render the tall version 1`] = `
   color: inherit;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -729,7 +738,7 @@ exports[`Header should render the tall version 1`] = `
   outline-width: 3px;
 }
 
-.c16 .c6 {
+.c17 .c6 {
   margin-right: 10px;
 }
 
@@ -758,24 +767,7 @@ exports[`Header should render the tall version 1`] = `
   margin-right: 10px;
 }
 
-.c17 .c13 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c17 .c10 {
-  margin-top: -2px;
-}
-
-.c17 .c2 {
-  min-height: 50px;
-  padding-right: 0;
-}
-
-.c18 .c13 {
+.c18 .c14 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -788,6 +780,23 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c18 .c2 {
+  min-height: 50px;
+  padding-right: 0;
+}
+
+.c19 .c14 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.c19 .c10 {
+  margin-top: -2px;
+}
+
+.c19 .c2 {
   min-height: 50px;
   padding-right: 0;
 }
@@ -807,7 +816,7 @@ exports[`Header should render the tall version 1`] = `
   z-index: 2;
 }
 
-.c0 .c13 {
+.c0 .c14 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -815,7 +824,7 @@ exports[`Header should render the tall version 1`] = `
   margin-left: 15px;
 }
 
-.c15 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -833,35 +842,35 @@ exports[`Header should render the tall version 1`] = `
   justify-content: flex-end;
 }
 
-.c15 .c21 {
+.c16 .c22 {
   height: 17px;
   padding: 0;
 }
 
-.c15 .c21:not(:last-child) {
+.c16 .c22:not(:last-child) {
   margin-right: 30px;
 }
 
-.c15 .c21:focus,
-.c15 .c21:hover {
+.c16 .c22:focus,
+.c16 .c22:hover {
   background-color: transparent;
 }
 
-.c15 .c21:focus .c20,
-.c15 .c21:hover .c20 {
+.c16 .c22:focus .c21,
+.c16 .c22:hover .c21 {
   color: #ec0000;
 }
 
-.c15 .c21:focus svg rect,
-.c15 .c21:hover svg rect,
-.c15 .c21:focus svg polygon,
-.c15 .c21:hover svg polygon,
-.c15 .c21:focus svg path,
-.c15 .c21:hover svg path {
+.c16 .c22:focus svg rect,
+.c16 .c22:hover svg rect,
+.c16 .c22:focus svg polygon,
+.c16 .c22:hover svg polygon,
+.c16 .c22:focus svg path,
+.c16 .c22:hover svg path {
   fill: #ec0000;
 }
 
-.c15 .c21 .c20 {
+.c16 .c22 .c21 {
   line-height: 17px;
 }
 
@@ -952,7 +961,7 @@ exports[`Header should render the tall version 1`] = `
     padding: 15px 0;
   }
 
-  .c0 .c13 {
+  .c0 .c14 {
     -webkit-flex-basis: 100%;
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
@@ -963,7 +972,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 @media screen and (max-width:1200px) {
-  .c15 {
+  .c16 {
     display: none;
   }
 }
@@ -987,17 +996,17 @@ exports[`Header should render the tall version 1`] = `
         />
       </a>
       <a
-        class="c10 c11 c12"
+        class="c10 c11 c12 c13"
         href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
     </h1>
     <nav
-      class="c13 c14"
+      class="c14 c15"
     />
     <div
-      class="c15"
+      class="c16"
     />
   </header>
 </div>

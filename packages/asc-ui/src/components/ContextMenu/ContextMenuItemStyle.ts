@@ -1,6 +1,13 @@
 import styled, { css } from '@datapunt/asc-core'
-import { ContextMenuItemProps } from './types'
 import { color, fromTheme } from '../../utils'
+
+export type ContextMenuItemProps = {
+  role?: string
+  id: string
+  label: string
+  focused: boolean
+  divider?: boolean
+}
 
 export const ContextMenuItemStyle = styled.li<ContextMenuItemProps>`
   padding: 0 15px 0 0;

@@ -32,7 +32,7 @@ describe('FooterHeading', () => {
 
 describe('ToggleFooterHeader', () => {
   afterEach(cleanup)
-  it('should render adn react on click', () => {
+  it('should react on click', () => {
     const testProps = {
       open: false,
       onClick: jest.fn(),
@@ -40,7 +40,9 @@ describe('ToggleFooterHeader', () => {
     }
 
     const { queryByText, getByText } = render(
-      <ToggleFooterHeader {...testProps} />,
+      <ThemeProvider theme={theme}>
+        <ToggleFooterHeader {...testProps} />
+      </ThemeProvider>,
     )
     expect(queryByText(testProps.title)).not.toBeNull()
 

@@ -1,7 +1,6 @@
 import styled from '@datapunt/asc-core'
-import { ContextMenuWrapperStyleProps } from './types'
 
-const ContextMenuWrapperStyle = styled.div<ContextMenuWrapperStyleProps>`
+const ContextMenuWrapperStyle = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;

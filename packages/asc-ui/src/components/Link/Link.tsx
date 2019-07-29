@@ -5,7 +5,7 @@ import LinkStyle from './LinkStyle'
 export type Props = styledComponents.StyledProps<any>
 
 const Link: React.FC<Props> = ({ children, ...otherProps }) => (
-  <LinkStyle as="a" {...otherProps}>
+  <LinkStyle $as="a" {...otherProps}>
     {children}
   </LinkStyle>
 )
