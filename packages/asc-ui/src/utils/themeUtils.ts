@@ -251,3 +251,16 @@ export const showHide = () => ({ hideAt, showAt, theme }: ShowHideProps) => {
     ${hideAtCss}
   `
 }
+
+export const customCss = (props: any) =>
+  props.css &&
+  css`
+    ${props.css}
+  `
+export interface CustomCssPropsInterface {
+  css?: any
+}
+
+export type CustomCssPropsType = {
+  css?: any
+}

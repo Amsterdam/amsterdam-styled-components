@@ -8,5 +8,7 @@ export {
   svgFill,
   showHide,
   ShowHideTypes,
+  customCss,
+  CustomCssPropsType,
+  CustomCssPropsInterface,
 } from './themeUtils'
-export { customCss, CustomCssPropsType, CustomCssPropsInterface } from './utils'
