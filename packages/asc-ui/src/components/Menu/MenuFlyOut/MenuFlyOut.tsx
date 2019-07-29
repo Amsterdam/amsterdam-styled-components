@@ -129,7 +129,6 @@ const MenuFlyOut: React.FC<any> = ({
         ignoreCloseOnClick
         aria-haspopup="true"
         aria-expanded={flyOutOpen}
-        {...otherProps}
       >
         {label}
       </MenuItemLink>
