@@ -14,7 +14,7 @@ const LinkListItem: React.FC<Props> = ({
   className,
 }) => (
   <LinkListItemStyle {...{ className }}>
-    <Link {...{ href, title, rel }} linkType="list">
+    <Link {...{ href, title, rel }} linkType="default">
       {children}
     </Link>
   </LinkListItemStyle>

@@ -37,19 +37,19 @@ export const LinkStyleCSS = ({ theme }: { theme: Theme.ThemeInterface }) => css`
   }
 `
 
-type TypeLink = 'list' | 'inline' | 'nostyle'
+type TypeLink = 'default' | 'inline' | 'blank'
 
-export const getLinkType = (linkType: TypeLink = 'inline') => ({
+export const getLinkType = (linkType: TypeLink = 'default') => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
 }) => {
   switch (linkType) {
-    case 'nostyle':
+    case 'blank':
       return NoStyleCSS
     case 'inline':
       return InlineStyleCSS({ theme })
-    case 'list':
+    case 'default':
       return LinkStyleCSS({ theme })
     default:
       return ''
