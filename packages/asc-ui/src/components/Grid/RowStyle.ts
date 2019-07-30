@@ -26,6 +26,7 @@ export type TypeProps = {
   debugColor?: string
   halign?: FlexJustify
   hasMargin?: boolean
+  hasMaxWidth?: boolean
   valign?: TypeFlexPosition
 }
 
@@ -35,7 +36,8 @@ const RowStyle = styled.div<TypeProps>`
   display: flex;
   justify-content: ${({ halign }: { halign?: string }) => halign};
   align-items: ${({ valign }: { valign?: string }) => valign};
-  max-width: ${fromTheme('maxGridWidth')}px;
+  max-width: ${({ hasMaxWidth, theme }) =>
+    hasMaxWidth ? `${fromTheme('maxGridWidth')({ theme })}px` : '100%'};
   flex-wrap: wrap;
 
   .layout-label {
@@ -142,6 +144,7 @@ const RowStyle = styled.div<TypeProps>`
 
 RowStyle.defaultProps = {
   halign: 'space-between',
+  hasMaxWidth: true,
   valign: 'stretch',
 }
 
