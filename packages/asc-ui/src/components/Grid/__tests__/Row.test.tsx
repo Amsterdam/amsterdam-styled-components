@@ -80,6 +80,28 @@ describe('RowStyle', () => {
     )
   })
 
+  it("should set the grid's max width to 100%", () => {
+    const { container } = render(
+      <ThemeProvider theme={theme}>
+        <Row hasMaxWidth={false}>
+          <Column data-testid="span1" span={1}>
+            foo bar
+          </Column>
+        </Row>
+      </ThemeProvider>,
+    )
+
+    expect(container.firstChild).not.toHaveStyleRule(
+      'max-width',
+      expect.stringContaining(`${theme.maxGridWidth}`),
+    )
+
+    expect(container.firstChild).toHaveStyleRule(
+      'max-width',
+      expect.stringContaining('100%'),
+    )
+  })
+
   it('should show a linear repeating background image', () => {
     const { container } = render(
       <ThemeProvider theme={theme}>

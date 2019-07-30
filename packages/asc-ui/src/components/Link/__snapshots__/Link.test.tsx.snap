@@ -20,8 +20,8 @@ exports[`Link should render 1`] = `
 }
 
 .c0 {
-  color: #004699;
   display: inline-block;
+  color: #004699;
 }
 
 .c0:focus {
