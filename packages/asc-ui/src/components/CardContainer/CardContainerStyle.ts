@@ -7,15 +7,17 @@ export type Props = {
 }
 
 const CardContainerStyle = styled.div<Props>`
-  padding: 48px 24px;
+  padding: 24px;
 
-  ${/* sc-selector */ CardStyle}:not(:last-of-type) {
+  ${CardStyle} {
     margin-bottom: 12px;
+  }
+  ${/* sc-selector */ CardStyle}:last-of-type {
+    margin-bottom: 0;
   }
 
   @media screen and ${breakpoint('min-width', 'laptopM')} {
     ${({ maxWidth }) => `max-width: ${maxWidth}px;`}
-    padding: 48px;
   }
 `
 
