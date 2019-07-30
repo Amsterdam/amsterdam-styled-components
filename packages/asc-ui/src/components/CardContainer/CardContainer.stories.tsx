@@ -121,7 +121,7 @@ storiesOf('Composed/CardContainer', module)
           </Icon>
         </CardMedia>
         <CardContentStyled>
-          <Heading as="h6">This is a card</Heading>
+          <Heading $as="h6">This is a card</Heading>
           <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
         </CardContentStyled>
         <CardActions>
@@ -137,7 +137,7 @@ storiesOf('Composed/CardContainer', module)
           </Icon>
         </CardMedia>
         <CardContentStyled>
-          <Heading as="h6">This is a card</Heading>
+          <Heading $as="h6">This is a card</Heading>
           <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Architecto, quisquam!
@@ -155,7 +155,7 @@ storiesOf('Composed/CardContainer', module)
     <CardContainerGenericFunctions maxWidth={460}>
       <Card horizontal>
         <CardContentStyled>
-          <Heading as="h6">This is a card</Heading>
+          <Heading $as="h6">This is a card</Heading>
           <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
         </CardContentStyled>
         <CardActions>
@@ -166,7 +166,7 @@ storiesOf('Composed/CardContainer', module)
       </Card>
       <Card horizontal>
         <CardContentStyled>
-          <Heading as="h6">This is a card</Heading>
+          <Heading $as="h6">This is a card</Heading>
           <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Architecto, quisquam!
@@ -180,7 +180,7 @@ storiesOf('Composed/CardContainer', module)
       </Card>
       <Card horizontal>
         <CardContentStyled>
-          <Heading as="h6">This is a card</Heading>
+          <Heading $as="h6">This is a card</Heading>
           <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo,
             provident quasi.
@@ -194,7 +194,7 @@ storiesOf('Composed/CardContainer', module)
       </Card>
       <Card horizontal>
         <CardContentStyled>
-          <Heading as="h6">This is a card</Heading>
+          <Heading $as="h6">This is a card</Heading>
           <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo,
             provident quasi voluptate fuga nulla. Lorem ipsum dolor sit amet,
@@ -210,7 +210,7 @@ storiesOf('Composed/CardContainer', module)
       </Card>
       <Card horizontal>
         <CardContentStyled>
-          <Heading as="h6">This is a card</Heading>
+          <Heading $as="h6">This is a card</Heading>
           <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
         </CardContentStyled>
         <CardActions>
@@ -232,13 +232,13 @@ storiesOf('Composed/CardContainer', module)
             <Border />
           </Column>
           <Column span={{ small: 1, medium: 2, big: 6, large: 6, xLarge: 6 }}>
-            <Heading as="h2">Header one</Heading>
+            <Heading $as="h2">Header one</Heading>
           </Column>
 
           <Column span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}>
             <Card backgroundColor="level2" shadow>
               <CardContent>
-                <Heading as="h6">This is a card</Heading>
+                <Heading $as="h6">This is a card</Heading>
                 <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
               </CardContent>
             </Card>
@@ -247,7 +247,7 @@ storiesOf('Composed/CardContainer', module)
           <Column span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}>
             <Card backgroundColor="level2" shadow>
               <CardContent>
-                <Heading as="h6">This is a card</Heading>
+                <Heading $as="h6">This is a card</Heading>
                 <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
               </CardContent>
             </Card>
@@ -261,13 +261,13 @@ storiesOf('Composed/CardContainer', module)
             <Border />
           </Column>
           <Column span={{ small: 1, medium: 2, big: 6, large: 6, xLarge: 6 }}>
-            <Heading as="h2">Header two</Heading>
+            <Heading $as="h2">Header two</Heading>
           </Column>
 
           <Column span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}>
             <Card backgroundColor="level2" shadow>
               <CardContent>
-                <Heading as="h6">This is a card</Heading>
+                <Heading $as="h6">This is a card</Heading>
                 <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
               </CardContent>
             </Card>
@@ -276,7 +276,7 @@ storiesOf('Composed/CardContainer', module)
           <Column span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}>
             <Card backgroundColor="level2" shadow>
               <CardContent>
-                <Heading as="h6">This is a card</Heading>
+                <Heading $as="h6">This is a card</Heading>
                 <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
               </CardContent>
             </Card>

@@ -25,7 +25,7 @@ storiesOf('Composed/Card', module)
   .add('default', () => (
     <Card maxWidth={250}>
       <CardContent>
-        <Heading as="h6">This is a card</Heading>
+        <Heading $as="h6">This is a card</Heading>
         <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
       </CardContent>
     </Card>
@@ -33,7 +33,7 @@ storiesOf('Composed/Card', module)
   .add('default with action', () => (
     <Card maxWidth={250}>
       <CardContent>
-        <Heading as="h6">This is a card</Heading>
+        <Heading $as="h6">This is a card</Heading>
         <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
       </CardContent>
       <CardActions>
@@ -52,7 +52,7 @@ storiesOf('Composed/Card', module)
         />
       </CardMedia>
       <CardContent>
-        <Heading as="h6">Title</Heading>
+        <Heading $as="h6">Title</Heading>
         <Paragraph>This is a card</Paragraph>
       </CardContent>
       <CardActions>
@@ -65,7 +65,7 @@ storiesOf('Composed/Card', module)
   .add('with shadow', () => (
     <Card maxWidth={250} backgroundColor="level2" shadow>
       <CardContent>
-        <Heading as="h6">This is a card</Heading>
+        <Heading $as="h6">This is a card</Heading>
         <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
       </CardContent>
       <CardActions>
@@ -83,7 +83,7 @@ storiesOf('Composed/Card', module)
         </Icon>
       </CardMedia>
       <CardContent>
-        <Heading as="h6">This is a card</Heading>
+        <Heading $as="h6">This is a card</Heading>
         <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
       </CardContent>
       <CardActions>
@@ -101,7 +101,7 @@ storiesOf('Composed/Card', module)
         </Icon>
       </CardMedia>
       <CardContentStyled>
-        <Heading as="h6">This is a card</Heading>
+        <Heading $as="h6">This is a card</Heading>
         <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
       </CardContentStyled>
       <CardActions>
@@ -114,7 +114,7 @@ storiesOf('Composed/Card', module)
   .add('loading state - default', () => (
     <Card maxWidth={250} loading>
       <CardContent>
-        <Heading as="h6" />
+        <Heading $as="h6" />
         <Paragraph />
       </CardContent>
     </Card>
@@ -122,7 +122,7 @@ storiesOf('Composed/Card', module)
   .add('loading state - with action', () => (
     <Card maxWidth={250} loading>
       <CardContent>
-        <Heading as="h6" />
+        <Heading $as="h6" />
         <Paragraph />
       </CardContent>
       <CardActions>
@@ -140,7 +140,7 @@ storiesOf('Composed/Card', module)
         </Icon>
       </CardMedia>
       <CardContent>
-        <Heading as="h6" />
+        <Heading $as="h6" />
         <Paragraph />
       </CardContent>
       <CardActions>
