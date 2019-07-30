@@ -62,8 +62,8 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c9 {
-  color: #004699;
   display: inline-block;
+  color: #004699;
 }
 
 .c9:focus {
@@ -357,8 +357,8 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c9 {
-  color: #004699;
   display: inline-block;
+  color: #004699;
 }
 
 .c9:focus {
@@ -670,8 +670,8 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c12 {
-  color: #004699;
   display: inline-block;
+  color: #004699;
 }
 
 .c12:focus {
@@ -1248,7 +1248,7 @@ exports[`Header should render the tall version without a title 1`] = `
 }
 
 @media screen and (max-width:1200px) {
-  .c0 .sc-EHOje {
+  .c0 .sc-bZQynM {
     margin-top: -2px;
   }
 
@@ -1285,7 +1285,7 @@ exports[`Header should render the tall version without a title 1`] = `
     background-color: transparent;
   }
 
-  .c0 .sc-EHOje {
+  .c0 .sc-bZQynM {
     margin-top: 0px;
     -webkit-align-self: flex-start;
     -ms-flex-item-align: start;

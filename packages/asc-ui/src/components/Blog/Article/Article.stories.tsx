@@ -18,6 +18,7 @@ import BlogContent from '../BlogContent'
 import BlogHeader from '../BlogHeader'
 import BlogMetaList from '../BlogMetaList'
 import BlogSidebar from '../BlogSidebar/BlogSidebar'
+import Typography from '../../Typography'
 
 /* Rest components */
 
@@ -97,14 +98,17 @@ storiesOf('Composed/Blog/Article', module)
               <BlogSidebar>
                 <Heading as="h2">Downloads</Heading>
                 <LinkList>
-                  <LinkListItem meta="PDF 40kB" href="/">
+                  <LinkListItem href="/">
                     File
+                    <Typography as="small">PDF 40kB</Typography>
                   </LinkListItem>
-                  <LinkListItem meta="PDF 40kB" href="/">
+                  <LinkListItem href="/">
                     File
+                    <Typography as="small">PDF 40kB</Typography>
                   </LinkListItem>
-                  <LinkListItem meta="PDF 40kB" href="/">
+                  <LinkListItem href="/">
                     File
+                    <Typography as="small">PDF 40kB</Typography>
                   </LinkListItem>
                 </LinkList>
               </BlogSidebar>

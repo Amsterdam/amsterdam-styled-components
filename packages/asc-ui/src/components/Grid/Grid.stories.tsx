@@ -9,7 +9,7 @@ const ColumnStory: React.FC<{}> = () => (
   <>
     <br />
     <br />
-    <Row debug>
+    <Row debug hasMaxWidth={false}>
       <Column
         order={{ small: 2, medium: 1, big: 1, large: 1, xLarge: 1 }}
         span={{ small: 1, medium: 1, big: 1, large: 2, xLarge: 2 }}

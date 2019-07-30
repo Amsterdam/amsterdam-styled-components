@@ -88,7 +88,9 @@ storiesOf('Composed/Modal', module)
       </ListItem>
       <Divider transparent />
       <ListItem>
-        <Link href="/help">Hulp nodig?</Link>
+        <Link href="/help" linkType="inline">
+          Hulp nodig?
+        </Link>
       </ListItem>
     </Modal>
   ))

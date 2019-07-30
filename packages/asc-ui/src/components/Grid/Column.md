@@ -40,6 +40,15 @@ The below example will align the child `Column` component with the remaining spa
 </Row>
 ```
 
+Also, the `Row` component can be used without a fixed width by setting the value of the prop `hasMaxwidth` to `false` (default value is `true`).
+
+```jsx
+<Row hasMaxWidth={false}>
+  ...
+</Row>
+```
+
+
 ## Debugging
 
 Setting the `debug` prop on a `<Row />` component will show both a repeating linear background images that indicated where the columns will be placed as well as as label that shows the current layout name based on the width of the screen. The `debugColor` prop can be given a valid color string (hex, hsl, rgb, rbga) which will change the color of the linear gradient.
