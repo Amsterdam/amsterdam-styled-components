@@ -12,7 +12,7 @@ const EditorialHeader: React.FC<Props> = ({
   ...otherProps
 }) => (
   <EditorialHeaderStyle {...otherProps}>
-    <Heading as="h1">{title}</Heading>
+    <Heading $as="h1">{title}</Heading>
     {children}
   </EditorialHeaderStyle>
 )
