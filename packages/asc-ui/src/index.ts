@@ -44,14 +44,14 @@ import {
   Container,
 } from './components/Grid'
 import {
-  BlogBody,
-  BlogPost,
-  BlogStyles,
-  BlogMetaList,
-  BlogContent,
-  BlogHeader,
-  BlogSidebar,
-} from './components/Blog'
+  EditorialBody,
+  EditorialPost,
+  EditorialStyles,
+  EditorialMetaList,
+  EditorialContent,
+  EditorialHeader,
+  EditorialSidebar,
+} from './components/Editorial'
 import Typography from './components/Typography'
 import {
   MenuItemTitle,
@@ -66,9 +66,8 @@ import {
 import ThemeProvider from './theme'
 import Spinner from './components/Spinner/Spinner'
 import LinkList, { LinkListItem } from './components/LinkList'
-import Publication from './components/Publication'
 import DocumentCover from './components/DocumentCover'
-import { Article, ArticleStyle } from './components/Blog/Article'
+import { Article, ArticleStyle } from './components/Editorial/Article'
 
 export { breakpoint } from './utils'
 
@@ -82,7 +81,7 @@ export const styles = {
   ...InputStyles,
   ...SearchBarToggleStyles,
   ...MenuStyles,
-  ...BlogStyles,
+  ...EditorialStyles,
   ...ImageCardStyles,
   CustomHTMLBlockStyle,
   ArticleStyle,
@@ -135,17 +134,16 @@ export {
   Theme,
   ThemeProvider,
   TopBar,
-  BlogPost,
+  EditorialPost,
   Article,
-  Publication,
   Link,
   Paragraph,
   Heading,
-  BlogBody,
-  BlogMetaList,
-  BlogContent,
-  BlogHeader,
-  BlogSidebar,
+  EditorialBody,
+  EditorialMetaList,
+  EditorialContent,
+  EditorialHeader,
+  EditorialSidebar,
   ascDefaultTheme,
   DocumentCover,
 }
