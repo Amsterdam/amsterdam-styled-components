@@ -8,14 +8,14 @@ storiesOf('Atoms/LinkList', module)
     <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
   ))
   .add('default', () => (
-    <LinkList>
-      <LinkListItem href="/">I am a ListLink!</LinkListItem>
-      <LinkListItem href="/">Another one</LinkListItem>
-      <LinkListItem href="/">
-        A loooooong, very, very, very long link
-      </LinkListItem>
-      <LinkListItem href="/" meta="PDF 35kb">
-        A file!
-      </LinkListItem>
-    </LinkList>
+    <>
+      <LinkList>
+        <LinkListItem href="/">I am a ListLink!</LinkListItem>
+        <LinkListItem href="/">Another one</LinkListItem>
+        <LinkListItem href="/">
+          A loooooong, very, very, very long link
+        </LinkListItem>
+        <LinkListItem href="/">A file!</LinkListItem>
+      </LinkList>
+    </>
   ))

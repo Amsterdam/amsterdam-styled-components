@@ -62,8 +62,10 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c9 {
-  display: block;
-  padding-left: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   color: #323232;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -72,6 +74,10 @@ exports[`Header should render the short version 1`] = `
 
 .c9:focus {
   background-color: #FEC813;
+}
+
+.c9 .c15 {
+  margin: 3px;
 }
 
 .c9:hover {
@@ -369,8 +375,10 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c9 {
-  display: block;
-  padding-left: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   color: #323232;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -379,6 +387,10 @@ exports[`Header should render the short version without the full width 1`] = `
 
 .c9:focus {
   background-color: #FEC813;
+}
+
+.c9 .c16 {
+  margin: 3px;
 }
 
 .c9:hover {
@@ -694,8 +706,10 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c12 {
-  display: block;
-  padding-left: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   color: #323232;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -704,6 +718,10 @@ exports[`Header should render the tall version 1`] = `
 
 .c12:focus {
   background-color: #FEC813;
+}
+
+.c12 .c21 {
+  margin: 3px;
 }
 
 .c12:hover {
