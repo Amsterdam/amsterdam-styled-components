@@ -11,7 +11,6 @@ import Heading from '../Heading'
 import Paragraph from '../Paragraph'
 import Image from '../Image'
 import { Row, Column } from '../Grid'
-import ImageStyle from '../Image/ImageStyle'
 import ParagraphStyle from '../Paragraph/ParagraphStyle'
 import CardContentStyle from '../Card/CardContentStyle'
 import LinkList, { LinkListItem } from '../LinkList'
@@ -24,29 +23,22 @@ import LinkStyle from '../Link/LinkStyle'
 
 const SpecialCard = styled(Card)`
   border-bottom: ${color('tint', 'level3')} 1px solid;
-  width: 100%;
   padding: 0 8px;
-  cursor: pointer;
+  width: 100%;
 
   & > ${LinkStyle} {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 
     ${CardMediaWrapperStyle} {
       max-width: 80px;
     }
   }
 
-  & > ${ImageStyle} {
-    max-width: 56px;
-  }
-
   ${CardContentStyle} {
     padding-left: 0;
-    ${HeadingStyle} {
-      cursor: pointer;
-    }
 
     ${ParagraphStyle} {
       max-height: 66px;
@@ -95,7 +87,7 @@ storiesOf('Composed/CardContainer', module)
   .add('implementation dataportaal "Specials"', () => (
     <SpecialCardContainer>
       <Row>
-        <Heading $as="h3" gutterBottom={32}>
+        <Heading $as="h1" gutterBottom={32}>
           In Beeld
         </Heading>
       </Row>
