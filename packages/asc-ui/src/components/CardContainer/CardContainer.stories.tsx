@@ -29,6 +29,8 @@ import ParagraphStyle from '../Paragraph/ParagraphStyle'
 import Row from '../Grid/Row'
 import Column from '../Grid/Column'
 import ColumnStyle from '../Grid/ColumnStyle'
+import Link from '../Link'
+import LinkStyle from '../Link/LinkStyle'
 
 const CardContainerGenericFunctions = styled(CardContainer)`
   position: relative;
@@ -133,6 +135,7 @@ const CardContainerGenericFunctions = styled(CardContainer)`
 `
 
 const CardContainerAboutData = styled(CardContainer)`
+
   ${ColumnStyle} {
     margin-bottom: 16px;
 
@@ -146,8 +149,29 @@ const CardContainerAboutData = styled(CardContainer)`
     }
   }
 
+  ${LinkStyle} {
+    width: 100%;
+    height: 100%;
+  }
+
   ${CardStyle} {
     width: 100%;
+    height: 100%;
+    cursor: pointer;
+
+    &:hover {
+      ${({ theme }) => `box-shadow: 2px 2px ${color('secondary')({ theme })};`}
+
+      ${HeadingStyle} {
+        color: ${color('secondary')};
+        text-decoration: underline;
+      }
+    }
+
+  }
+
+  ${LinkStyle}:focus ${CardStyle} {
+    background: none;
   }
 
   ${CardContentStyle} {
@@ -302,29 +326,33 @@ storiesOf('Composed/CardContainer', module)
           span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}
           order={{ small: 2, medium: 2, big: 2, large: 3, xLarge: 3 }}
         >
-          <Card backgroundColor="level2" shadow>
-            <CardContent>
-              <Heading $as="h4">This is a card</Heading>
-              <Paragraph>
-                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
-                ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet.
-              </Paragraph>
-            </CardContent>
-          </Card>
+          <Link href="/" linkType="blank">
+            <Card backgroundColor="level2" shadow>
+              <CardContent>
+                <Heading $as="h4">This is a card</Heading>
+                <Paragraph>
+                  Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                  ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum
+                  dolor sit amet.
+                </Paragraph>
+              </CardContent>
+            </Card>
+          </Link>
         </Column>
         <Column
           span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}
           order={{ small: 3, medium: 3, big: 3, large: 4, xLarge: 4 }}
         >
-          <Card backgroundColor="level2" shadow>
-            <CardContent>
-              <Heading $as="h4">
-                This is a card with very very very long content
-              </Heading>
-              <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
-            </CardContent>
-          </Card>
+          <Link href="/" linkType="blank">
+            <Card backgroundColor="level2" shadow>
+              <CardContent>
+                <Heading $as="h4">
+                  This is a card with very very very long content
+                </Heading>
+                <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
+              </CardContent>
+            </Card>
+          </Link>
         </Column>
 
         <Column
@@ -342,24 +370,28 @@ storiesOf('Composed/CardContainer', module)
           span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}
           order={{ small: 5, medium: 5, big: 5, large: 5, xLarge: 5 }}
         >
-          <Card backgroundColor="level2" shadow>
-            <CardContent>
-              <Heading $as="h4">This is a card</Heading>
-              <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
-            </CardContent>
-          </Card>
+          <Link href="/" linkType="blank">
+            <Card backgroundColor="level2" shadow>
+              <CardContent>
+                <Heading $as="h4">This is a card</Heading>
+                <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
+              </CardContent>
+            </Card>
+          </Link>
         </Column>
 
         <Column
           span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}
           order={{ small: 6, medium: 6, big: 6, large: 6, xLarge: 6 }}
         >
-          <Card backgroundColor="level2" shadow>
-            <CardContent>
-              <Heading $as="h4">This is a card</Heading>
-              <Paragraph>Lorem ipsum dolor sit amet. </Paragraph>
-            </CardContent>
-          </Card>
+          <Link href="/" linkType="blank">
+            <Card backgroundColor="level2" shadow>
+              <CardContent>
+                <Heading $as="h4">This is a card</Heading>
+                <Paragraph>Lorem ipsum dolor sit amet. </Paragraph>
+              </CardContent>
+            </Card>
+          </Link>
         </Column>
       </Row>
     </CardContainerAboutData>
