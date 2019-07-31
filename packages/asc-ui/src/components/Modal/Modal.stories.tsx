@@ -49,7 +49,11 @@ storiesOf('Composed/Modal', module)
       })}
     />
   ))
-  .add('example of actual usage', () => (
+  .add('with blurred background', () => (
+    <SimpleModal blurredNodeSelector="#root" open />
+  ))
+  .add('closed state', () => <SimpleModal open={false} />)
+  .add('implementation for dataportaal', () => (
     <Modal
       open
       aria-labelledby="feedback"
@@ -88,11 +92,9 @@ storiesOf('Composed/Modal', module)
       </ListItem>
       <Divider transparent />
       <ListItem>
-        <Link href="/help">Hulp nodig?</Link>
+        <Link href="/help" linkType="inline">
+          Hulp nodig?
+        </Link>
       </ListItem>
     </Modal>
   ))
-  .add('with blurred background', () => (
-    <SimpleModal blurredNodeSelector="#root" open />
-  ))
-  .add('closed state', () => <SimpleModal open={false} />)

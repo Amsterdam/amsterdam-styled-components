@@ -56,7 +56,7 @@ storiesOf('Composed/Footer', module)
   .addDecorator(storyFn => (
     <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
   ))
-  .add('Footer implementation for dataportaal', () => (
+  .add('implementation for dataportaal', () => (
     <Footer>
       <FooterTop>
         <Row>
