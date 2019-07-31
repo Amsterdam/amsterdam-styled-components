@@ -54,7 +54,7 @@ for the new component. For more info possibilities, check the hygen documentatio
 
 1. Ensure any install or build dependencies are removed before the end of the layer when doing a 
    build.
-2. Update the [CHANGELOG.md unreleased sections](../CHANGELOG.md#mardown-header-unreleased) with 
+2. Update the [CHANGELOG.md unreleased sections](../CHANGELOG.md#user-content-unreleasedd) with 
    details of changes, this includes additions (new components or (theme) configurations), changes 
    and removals.
 3. Once your PR is approved and merged, you can bump a version yourself or contact one of the 
