@@ -2,17 +2,15 @@ import styled, { css, styledComponents, Theme } from '@datapunt/asc-core'
 import { readableColor } from 'polished'
 import { Props as TypographyProps } from '../Typography/TypographyStyle'
 import Typography from '../Typography'
-import { color as getColor } from '../../utils'
+import { getColorCode } from '../../utils'
 
 export type Props = {
-  backgroundColor?: keyof Theme.Tint | keyof Theme.TypeLevel
+  color?: Theme.Tint | Theme.TypeLevel
 } & TypographyProps &
   styledComponents.StyledProps<any>
 
-export const TagStyleCSS = ({ backgroundColor, theme }: any) => {
-  const color: string = backgroundColor.startsWith('level')
-    ? getColor('tint', backgroundColor)({ theme })
-    : getColor(backgroundColor)({ theme })
+export const TagStyleCSS = ({ color, theme }: Props) => {
+  const backgroundColor = getColorCode(theme, color)
 
   return css<Props>`
     margin-top: 0;
@@ -20,8 +18,8 @@ export const TagStyleCSS = ({ backgroundColor, theme }: any) => {
     padding: 4px;
     background: blue;
     width: fit-content;
-    background-color: ${color};
-    color: ${readableColor(color)};
+    background-color: ${backgroundColor};
+    color: ${readableColor(backgroundColor)};
   `
 }
 

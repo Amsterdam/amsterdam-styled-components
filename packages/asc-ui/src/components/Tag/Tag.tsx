@@ -9,7 +9,7 @@ const Tag: React.FC<Props> = ({ children, ...otherProps }) => (
 
 Tag.defaultProps = {
   $as: 'span',
-  backgroundColor: 'level2',
+  color: 'level2',
 }
 
 export default Tag

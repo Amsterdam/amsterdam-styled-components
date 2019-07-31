@@ -23,7 +23,6 @@
     "build:watch": "yarn build:ts -w",
     "clean:generated": "find ./packages -name \"*.d.ts\" -type f -delete && find ./packages -name \"*.tsbuildinfo\" -type f -delete",
     "deploy-storybook": "storybook-to-ghpages",
-    "generate:component": "hygen component new",
     "preinstall": "yarn clean:generated",
     "postinstall": "lerna link",
     "lint": "yarn lint:css & yarn lint:js",
