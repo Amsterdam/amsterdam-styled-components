@@ -61,7 +61,7 @@ storiesOf('Composed/Modal', module)
       onClose={action('close modal from escape button or click outside')}
     >
       <TopBar>
-        <Heading style={{ flexGrow: 1 }} as="h4">
+        <Heading $as="h4" style={{ flexGrow: 1 }}>
           Feedback
           <IconButton onClick={action('close modal')}>
             <Close />
@@ -70,7 +70,7 @@ storiesOf('Composed/Modal', module)
       </TopBar>
       <Divider />
       <ListItem>
-        <Heading as="h4">Onjuiste of ontbrekende gegevens?</Heading>
+        <Heading $as="h4">Onjuiste of ontbrekende gegevens?</Heading>
         <Paragraph>
           Geef aan welke gegevens onjuist zijn of ontbreken. Ook als je weet wat
           het wel moet zijn. We horen het graag.
@@ -81,7 +81,7 @@ storiesOf('Composed/Modal', module)
       </ListItem>
       <Divider gutter />
       <ListItem>
-        <Heading as="h4">Vraag of een klacht?</Heading>
+        <Heading $as="h4">Vraag of een klacht?</Heading>
         <Paragraph>
           Als iets op deze pagina niet goed werkt, onduidelijk is of vragen
           oproept, geef het aan ons door.

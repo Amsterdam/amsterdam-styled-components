@@ -8,7 +8,7 @@ export type Props = {
 
 const BlogHeader: React.FC<Props> = ({ title, children, ...otherProps }) => (
   <BlogHeaderStyle {...otherProps}>
-    <Heading as="h1">{title}</Heading>
+    <Heading $as="h1">{title}</Heading>
     {children}
   </BlogHeaderStyle>
 )
