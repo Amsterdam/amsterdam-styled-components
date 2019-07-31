@@ -1,4 +1,6 @@
-import EditorialMetaListStyle, { EditorialMetaListItemStyle } from './EditorialMetaListStyle'
+import EditorialMetaListStyle, {
+  EditorialMetaListItemStyle,
+} from './EditorialMetaListStyle'
 
 export { default } from './EditorialMetaList'
 

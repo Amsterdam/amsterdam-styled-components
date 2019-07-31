@@ -13,14 +13,12 @@ export default styled.section<Props>`
   width: 100%;
   color: ${color('tint', 'level6')};
   background-color: ${color('tint', 'level1')};
-
   ${({ hasImage }) =>
     hasImage &&
     css`
       margin-top: 0;
-
       ${EditorialContentStyle} {
-        margin-top: ${EDITORIAL_PADDING_TOP * .75}px;
+        margin-top: ${EDITORIAL_PADDING_TOP * 0.75}px;
         @media screen and ${breakpoint('min-width', 'tabletM')} {
           margin-top: ${EDITORIAL_PADDING_TOP}px;
         }
