@@ -77,14 +77,14 @@ to your project.
    directory.
 2. cd to the package you want to test, run `yarn link`.
 3. Go to the repo where you want to use your package and run 
-   `yarn link <package-name>`.`<package-name>` can be found in the `package.json` you linked in 
+   `yarn link <package-name>`. The `<package-name>` can be found in the `package.json` you linked in 
    step 2.
 
 Now you can import the package like you would do like a normal npm dependency. Changes you will make 
 in your package will be seen in your repo.
 
 - There is a known issue when developing with `yarn link` and using Hooks 
-  [click her for details](https://reactjs.org/warnings/invalid-hook-call-warning.html). The cause 
+  [click here for details](https://reactjs.org/warnings/invalid-hook-call-warning.html). The cause 
   is that 2 React instances are used when using link.
 - To solve this problem for the `./examples/create-react-app`, run: 
   `npm link ./examples/create-react-app/node-modules/react` from the root folder to use the same 
