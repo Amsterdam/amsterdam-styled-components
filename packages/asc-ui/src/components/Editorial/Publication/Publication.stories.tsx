@@ -1,7 +1,13 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react/'
 import { action } from '@storybook/addon-actions'
-import { Container, Column, CustomHTMLBlock, Row, EditorialHeader } from '../../../index'
+import {
+  Container,
+  Column,
+  CustomHTMLBlock,
+  Row,
+  EditorialHeader,
+} from '../../../index'
 import DocumentCover from '../../DocumentCover'
 import publicationJSON from './publication_feed.json'
 import { EditorialMetaList, EditorialContent } from '../index'

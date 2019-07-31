@@ -1,5 +1,7 @@
 import React from 'react'
-import EditorialMetaListStyle, { EditorialMetaListItemStyle } from './EditorialMetaListStyle'
+import EditorialMetaListStyle, {
+  EditorialMetaListItemStyle,
+} from './EditorialMetaListStyle'
 
 export type Props = {
   dateTime?: string
