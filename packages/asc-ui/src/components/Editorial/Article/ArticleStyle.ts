@@ -1,0 +1,48 @@
+import styled, { css } from '@datapunt/asc-core'
+import { stripUnit } from 'polished'
+import { breakpoint } from '../../../utils'
+import EditorialBodyStyle from '../EditorialBody/EditorialBodyStyle'
+import { EDITORIAL_PADDING_TOP } from '../EditorialPost/EditorialPostStyle'
+import { getTypographyValueFromProperty } from '../../../utils/themeUtils'
+import {
+  EDITORIAL_META_LINE_HEIGHT,
+  EDITORIAL_META_MARGIN_TOP,
+} from '../EditorialMetaList/EditorialMetaListStyle'
+import EditorialPost, {
+  Props as EditorialPostProps,
+} from '../EditorialPost/EditorialPost'
+
+export type Props = {} & EditorialPostProps
+
+export default styled(EditorialPost)<Props>` 
+  ${EditorialBodyStyle} {
+    ${({ image }) =>
+      !!image &&
+      css`
+        @media screen and ${breakpoint('min-width', 'tabletM')} {
+          padding: ${EDITORIAL_PADDING_TOP}px 24px;
+        }
+      `}
+    
+    /* 
+    Here we calculate how much the EditorialBody needs to shift up by getting existing css values from:
+    - The H1 line-height
+    - the padding of the EditorialBody
+    - the EditorialMeta margin-top and line-height
+    */
+    @media screen and ${breakpoint('min-width', 'tabletM')} {
+      margin-top: ${({ image, theme }) =>
+        image
+          ? `${(EDITORIAL_PADDING_TOP * 2 +
+              EDITORIAL_META_LINE_HEIGHT +
+              EDITORIAL_META_MARGIN_TOP +
+              stripUnit(
+                getTypographyValueFromProperty('h1', 'lineHeight', 'tabletS')({
+                  theme,
+                }),
+              )) *
+              -1}px`
+          : `0`};
+    }
+  }
+`
