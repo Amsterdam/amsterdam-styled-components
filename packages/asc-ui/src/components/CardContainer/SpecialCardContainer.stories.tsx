@@ -20,6 +20,7 @@ import ColumnStyle from '../Grid/ColumnStyle'
 import HeadingStyle from '../Heading/HeadingStyle'
 import LinkListStyle from '../LinkList/LinkListStyle'
 import Link from '../Link'
+import Tag, { TagStyle } from '../Tag'
 import LinkStyle from '../Link/LinkStyle'
 
 const SpecialCard = styled(Card)`
@@ -42,6 +43,10 @@ const SpecialCard = styled(Card)`
     max-width: 56px;
   }
 
+  & ${TagStyle} {
+    margin-right: 5px;
+  }
+
   ${CardContentStyle} {
     padding-left: 0;
     ${HeadingStyle} {
@@ -60,12 +65,6 @@ const SpecialCard = styled(Card)`
       text-decoration: underline;
     }
   }
-`
-
-const CardType = styled.span`
-  background-color: ${color('tint', 'level3')};
-  padding: 1px 3px;
-  margin-right: 5px;
 `
 
 const SpecialCardContainer = styled(CardContainer)`
@@ -111,7 +110,7 @@ storiesOf('Composed/CardContainer', module)
                   Veiligheidsindex
                 </Heading>
                 <Paragraph>
-                  <CardType>Dashbord</CardType>
+                  <Tag>Dashboard</Tag>
                   Hoe veilig is mijn buurt vergeleken met andere buurten en met
                   voorgaande perioden?
                 </Paragraph>
@@ -136,7 +135,7 @@ storiesOf('Composed/CardContainer', module)
                   Veiligheidsindex
                 </Heading>
                 <Paragraph>
-                  <CardType>Dashbord</CardType>
+                  <Tag>Dashboard</Tag>
                   Sub max 3 regels 14/17 #000000 Hoe veilig is mijn buurt
                   vergelek…
                 </Paragraph>
@@ -185,7 +184,7 @@ storiesOf('Composed/CardContainer', module)
                   Veiligheidsindex titel 16/20
                 </Heading>
                 <Paragraph>
-                  <CardType>Dashbord</CardType>
+                  <Tag>Dashboard</Tag>
                   Sub max 3 regels 14/17 #000000 Hoe veilig is mijn buurt
                   vergelek…
                 </Paragraph>

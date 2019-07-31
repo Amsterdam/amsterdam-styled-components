@@ -7,6 +7,7 @@ import Input, { InputStyles } from './components/Input'
 import Modal from './components/Modal'
 import Portal from './components/Portal'
 import Heading from './components/Heading'
+import Tag from './components/Tag'
 import Link from './components/Link'
 import Paragraph from './components/Paragraph'
 import TopBar, { TopBarStyles } from './components/TopBar'
@@ -151,4 +152,5 @@ export {
   BlogSidebar,
   ascDefaultTheme,
   DocumentCover,
+  Tag,
 }
