@@ -10,7 +10,7 @@ export type Props = {
   styledComponents.StyledProps<any>
 
 export const TagStyleCSS = ({ color, theme }: Props) => {
-  const backgroundColor = getColorCode(theme, color)
+  const backgroundColor = getColorCode(color)({ theme })
 
   return css<Props>`
     margin-top: 0;

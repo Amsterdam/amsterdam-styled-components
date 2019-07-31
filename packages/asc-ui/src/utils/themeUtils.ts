@@ -270,10 +270,9 @@ export type CustomCssPropsType = {
  * @param theme
  * @param property
  */
-export const getColorCode = (
-  theme: ThemeInterface,
-  colorType: Theme.TypeLevel & Theme.Tint
-) => {
+export const getColorCode = (colorType: Theme.TypeLevel & Theme.Tint) => ({
+  theme,
+}: ThemeProp) => {
   if (colorType.startsWith('level')) {
     return color('tint', colorType)({ theme })
   }
