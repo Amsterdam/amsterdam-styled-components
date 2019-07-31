@@ -51,7 +51,7 @@ storiesOf('Composed/Blog/Article', module)
               push={{ small: 0, medium: 0, big: 1, large: 1, xLarge: 1 }}
             >
               <BlogSidebar>
-                <Heading as="h2">Links</Heading>
+                <Heading $as="h2">Links</Heading>
                 <LinkList>
                   <LinkListItem href="/">I am a ListLink!</LinkListItem>
                   <LinkListItem href="/">Another one</LinkListItem>
@@ -95,17 +95,11 @@ storiesOf('Composed/Blog/Article', module)
               push={{ small: 0, medium: 0, big: 1, large: 1, xLarge: 1 }}
             >
               <BlogSidebar>
-                <Heading as="h2">Downloads</Heading>
+                <Heading $as="h2">Downloads</Heading>
                 <LinkList>
-                  <LinkListItem meta="PDF 40kB" href="/">
-                    File
-                  </LinkListItem>
-                  <LinkListItem meta="PDF 40kB" href="/">
-                    File
-                  </LinkListItem>
-                  <LinkListItem meta="PDF 40kB" href="/">
-                    File
-                  </LinkListItem>
+                  <LinkListItem href="/">File</LinkListItem>
+                  <LinkListItem href="/">File</LinkListItem>
+                  <LinkListItem href="/">File</LinkListItem>
                 </LinkList>
               </BlogSidebar>
             </Column>

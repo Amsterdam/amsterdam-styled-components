@@ -3,7 +3,7 @@ import TypographyStyle, {
   Props as TypographyStyleProps,
 } from './TypographyStyle'
 
-type Props = {
+export type Props = {
   $as?: string
 } & TypographyStyleProps &
   React.HTMLAttributes<HTMLElement>

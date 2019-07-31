@@ -43,7 +43,7 @@ storiesOf('Composed/ContextMenu', module)
       </ContextMenuItem>
     </ContextMenu>
   ))
-  .add('example of actual usage', () => (
+  .add('implementation for dataportaal', () => (
     <ContextMenu
       arrowIcon={<ChevronDown />}
       icon={
