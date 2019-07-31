@@ -62,16 +62,34 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c9 {
-  color: #004699;
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #323232;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 700;
 }
 
 .c9:focus {
   background-color: #FEC813;
 }
 
+.c9 .c15 {
+  margin: 3px;
+}
+
 .c9:hover {
   color: #ec0000;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c9:hover .c15 svg rect,
+.c9:hover .c15 svg polygon,
+.c9:hover .c15 svg path {
+  fill: #ec0000;
 }
 
 .c8 {
@@ -205,35 +223,35 @@ exports[`Header should render the short version 1`] = `
   justify-content: flex-end;
 }
 
-.c13 .c16 {
+.c13 .c17 {
   height: 17px;
   padding: 0;
 }
 
-.c13 .c16:not(:last-child) {
+.c13 .c17:not(:last-child) {
   margin-right: 30px;
 }
 
-.c13 .c16:focus,
-.c13 .c16:hover {
+.c13 .c17:focus,
+.c13 .c17:hover {
   background-color: transparent;
 }
 
-.c13 .c16:focus .c15,
-.c13 .c16:hover .c15 {
+.c13 .c17:focus .c16,
+.c13 .c17:hover .c16 {
   color: #ec0000;
 }
 
-.c13 .c16:focus svg rect,
-.c13 .c16:hover svg rect,
-.c13 .c16:focus svg polygon,
-.c13 .c16:hover svg polygon,
-.c13 .c16:focus svg path,
-.c13 .c16:hover svg path {
+.c13 .c17:focus svg rect,
+.c13 .c17:hover svg rect,
+.c13 .c17:focus svg polygon,
+.c13 .c17:hover svg polygon,
+.c13 .c17:focus svg path,
+.c13 .c17:hover svg path {
   fill: #ec0000;
 }
 
-.c13 .c16 .c15 {
+.c13 .c17 .c16 {
   line-height: 17px;
 }
 
@@ -357,16 +375,34 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c9 {
-  color: #004699;
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #323232;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 700;
 }
 
 .c9:focus {
   background-color: #FEC813;
 }
 
+.c9 .c16 {
+  margin: 3px;
+}
+
 .c9:hover {
   color: #ec0000;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c9:hover .c16 svg rect,
+.c9:hover .c16 svg polygon,
+.c9:hover .c16 svg path {
+  fill: #ec0000;
 }
 
 .c8 {
@@ -517,35 +553,35 @@ exports[`Header should render the short version without the full width 1`] = `
   justify-content: flex-end;
 }
 
-.c13 .c17 {
+.c13 .c18 {
   height: 17px;
   padding: 0;
 }
 
-.c13 .c17:not(:last-child) {
+.c13 .c18:not(:last-child) {
   margin-right: 30px;
 }
 
-.c13 .c17:focus,
-.c13 .c17:hover {
+.c13 .c18:focus,
+.c13 .c18:hover {
   background-color: transparent;
 }
 
-.c13 .c17:focus .c16,
-.c13 .c17:hover .c16 {
+.c13 .c18:focus .c17,
+.c13 .c18:hover .c17 {
   color: #ec0000;
 }
 
-.c13 .c17:focus svg rect,
-.c13 .c17:hover svg rect,
-.c13 .c17:focus svg polygon,
-.c13 .c17:hover svg polygon,
-.c13 .c17:focus svg path,
-.c13 .c17:hover svg path {
+.c13 .c18:focus svg rect,
+.c13 .c18:hover svg rect,
+.c13 .c18:focus svg polygon,
+.c13 .c18:hover svg polygon,
+.c13 .c18:focus svg path,
+.c13 .c18:hover svg path {
   fill: #ec0000;
 }
 
-.c13 .c17 .c16 {
+.c13 .c18 .c17 {
   line-height: 17px;
 }
 
@@ -670,16 +706,34 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c12 {
-  color: #004699;
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #323232;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 700;
 }
 
 .c12:focus {
   background-color: #FEC813;
 }
 
+.c12 .c21 {
+  margin: 3px;
+}
+
 .c12:hover {
   color: #ec0000;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c12:hover .c21 svg rect,
+.c12:hover .c21 svg polygon,
+.c12:hover .c21 svg path {
+  fill: #ec0000;
 }
 
 .c11 {
@@ -842,35 +896,35 @@ exports[`Header should render the tall version 1`] = `
   justify-content: flex-end;
 }
 
-.c16 .c22 {
+.c16 .c23 {
   height: 17px;
   padding: 0;
 }
 
-.c16 .c22:not(:last-child) {
+.c16 .c23:not(:last-child) {
   margin-right: 30px;
 }
 
-.c16 .c22:focus,
-.c16 .c22:hover {
+.c16 .c23:focus,
+.c16 .c23:hover {
   background-color: transparent;
 }
 
-.c16 .c22:focus .c21,
-.c16 .c22:hover .c21 {
+.c16 .c23:focus .c22,
+.c16 .c23:hover .c22 {
   color: #ec0000;
 }
 
-.c16 .c22:focus svg rect,
-.c16 .c22:hover svg rect,
-.c16 .c22:focus svg polygon,
-.c16 .c22:hover svg polygon,
-.c16 .c22:focus svg path,
-.c16 .c22:hover svg path {
+.c16 .c23:focus svg rect,
+.c16 .c23:hover svg rect,
+.c16 .c23:focus svg polygon,
+.c16 .c23:hover svg polygon,
+.c16 .c23:focus svg path,
+.c16 .c23:hover svg path {
   fill: #ec0000;
 }
 
-.c16 .c22 .c21 {
+.c16 .c23 .c22 {
   line-height: 17px;
 }
 
@@ -1248,7 +1302,7 @@ exports[`Header should render the tall version without a title 1`] = `
 }
 
 @media screen and (max-width:1200px) {
-  .c0 .sc-EHOje {
+  .c0 .sc-bZQynM {
     margin-top: -2px;
   }
 
@@ -1285,7 +1339,7 @@ exports[`Header should render the tall version without a title 1`] = `
     background-color: transparent;
   }
 
-  .c0 .sc-EHOje {
+  .c0 .sc-bZQynM {
     margin-top: 0px;
     -webkit-align-self: flex-start;
     -ms-flex-item-align: start;
