@@ -45,6 +45,16 @@ const CardContainerGenericFunctions = styled(CardContainer)`
   and ${breakpoint('max-width', 'laptop')} {
     column-count: 2;
     column-gap: 8px;
+
+    // Fallback in case of having an unequal count of cards
+    // eg: 5 cards instead of 6
+    // because that breaks the design in Firefox and Safari
+    padding-bottom: calc(24px - 8px); // Calculate the padding-bottom minus margin-bottom of the card
+    ${CardStyle} {
+      display: inline-flex;
+      width: 100%;
+      break-inside: avoid;
+    }
   }
 
   // Generate the arrow / triangle in the left corner
@@ -70,11 +80,16 @@ const CardContainerGenericFunctions = styled(CardContainer)`
   ${CardMediaWrapperStyle} {
     @media screen and ${breakpoint('max-width', 'mobileL')} {
       max-width: 48px;
-        height: 100%;
+      height: 100%;
     }
     @media screen and ${breakpoint('max-width', 'mobileM')} {
       max-width: 40px;
         height: 100%;
+    }
+    @media screen and ${breakpoint('min-width', 'tabletM')} {
+      ${IconStyle} {
+        transform: scale(1.15);
+      }
     }
   }
 
@@ -90,35 +105,30 @@ const CardContainerGenericFunctions = styled(CardContainer)`
   }
 
   ${CardActionsStyle} {
+    width: inherit;
     padding-right: 12px;
     padding-left: 0px;
   }
 
   ${IconStyle} {
     @media screen and ${breakpoint('max-width', 'mobileL')} {
-      max-width: 35px;
+      max-width: 36px;
     }
   }
 
   ${HeadingStyle} {
     margin-bottom: 0;
-    @media screen and ${breakpoint('max-width', 'tabletS')} {
-      font-size: 16px;
-      line-height: 20px;
-    }
+    font-size: 16px;
+    line-height: 20px;
   }
 
   ${ParagraphStyle} {
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 17px;
 
-    // Fallback if card exceeds the maximum character length
+    // Fallback in case card exceeds the maximum character length
     max-height: 36px;
     overflow: hidden;
-
-    @media screen and ${breakpoint('max-width', 'tabletS')} {
-      font-size: 14px;
-      line-height: 17px;
-    }
   }
 `
 
@@ -175,7 +185,7 @@ storiesOf('Composed/CardContainer', module)
     <CardContainerGenericFunctions maxWidth={415}>
       <Card horizontal>
         <CardMedia backgroundColor="level2" width={73}>
-          <Icon size={50}>
+          <Icon size={20}>
             <Map />
           </Icon>
         </CardMedia>
@@ -191,7 +201,7 @@ storiesOf('Composed/CardContainer', module)
       </Card>
       <Card horizontal>
         <CardMedia backgroundColor="level2" width={73}>
-          <Icon size={50}>
+          <Icon size={30}>
             <Pano />
           </Icon>
         </CardMedia>
@@ -207,7 +217,7 @@ storiesOf('Composed/CardContainer', module)
       </Card>
       <Card horizontal>
         <CardMedia backgroundColor="level2" width={73}>
-          <Icon size={50}>
+          <Icon size={30}>
             <DocumentText />
           </Icon>
         </CardMedia>
@@ -225,7 +235,7 @@ storiesOf('Composed/CardContainer', module)
       </Card>
       <Card horizontal>
         <CardMedia backgroundColor="level2" width={73}>
-          <Icon size={50}>
+          <Icon size={20}>
             <Data />
           </Icon>
         </CardMedia>
@@ -241,7 +251,7 @@ storiesOf('Composed/CardContainer', module)
       </Card>
       <Card horizontal>
         <CardMedia backgroundColor="level2" width={73}>
-          <Icon size={50}>
+          <Icon size={25}>
             <Table />
           </Icon>
         </CardMedia>
@@ -257,7 +267,7 @@ storiesOf('Composed/CardContainer', module)
       </Card>
       <Card horizontal>
         <CardMedia backgroundColor="level2" width={73}>
-          <Icon size={50}>
+          <Icon size={30}>
             <Api />
           </Icon>
         </CardMedia>
