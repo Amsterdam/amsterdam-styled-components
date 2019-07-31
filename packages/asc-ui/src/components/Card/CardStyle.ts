@@ -44,8 +44,4 @@ const CardStyle = styled.div<Props>`
       }
     `}`
 
-CardStyle.defaultProps = {
-  loading: false,
-}
-
 export default CardStyle
