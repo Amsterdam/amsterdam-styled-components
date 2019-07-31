@@ -22,11 +22,14 @@ export const InlineStyleCSS = ({
   }
 `
 export const LinkStyleCSS = ({ theme }: { theme: Theme.ThemeInterface }) => css`
-  display: block;
-  padding-left: 15px;
+  display: flex;
   color: ${color('tint', 'level6')({ theme })};
   text-decoration: none;
   font-weight: 700;
+
+  ${IconStyle} {
+    margin: 3px;
+  }
 
   &:hover {
     color: ${color('secondary')({ theme })};
