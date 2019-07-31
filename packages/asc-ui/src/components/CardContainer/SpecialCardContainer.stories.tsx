@@ -6,6 +6,7 @@ import Card from '../Card/Card'
 import CardStyle from '../Card/CardStyle'
 import CardContent from '../Card/CardContent'
 import CardMedia from '../Card/CardMedia'
+import { CardMediaWrapperStyle } from '../Card/CardMediaStyle'
 import Heading from '../Heading'
 import Paragraph from '../Paragraph'
 import Image from '../Image'
@@ -18,12 +19,24 @@ import CardContainer from './CardContainer'
 import ColumnStyle from '../Grid/ColumnStyle'
 import HeadingStyle from '../Heading/HeadingStyle'
 import LinkListStyle from '../LinkList/LinkListStyle'
+import Link from '../Link'
+import LinkStyle from '../Link/LinkStyle'
 
 const SpecialCard = styled(Card)`
   border-bottom: ${color('tint', 'level3')} 1px solid;
   width: 100%;
   padding: 0 8px;
   cursor: pointer;
+
+  & > ${LinkStyle} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ${CardMediaWrapperStyle} {
+      max-width: 80px;
+    }
+  }
 
   & > ${ImageStyle} {
     max-width: 56px;
@@ -77,9 +90,9 @@ const SpecialCardContainer = styled(CardContainer)`
   }
 `
 
-storiesOf('Composed/CardContainer(special)', module)
+storiesOf('Composed/CardContainer', module)
   .addDecorator(storyFn => <div style={{ padding: '40px 0' }}>{storyFn()}</div>)
-  .add('default', () => (
+  .add('implementation dataportaal "Specials"', () => (
     <SpecialCardContainer>
       <Row>
         <Heading $as="h3" gutterBottom={32}>
@@ -92,22 +105,24 @@ storiesOf('Composed/CardContainer(special)', module)
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
           <SpecialCard horizontal>
-            <CardContent>
-              <Heading $as="h4" gutterBottom={8}>
-                Veiligheidsindex
-              </Heading>
-              <Paragraph>
-                <CardType>Dashbord</CardType>
-                Hoe veilig is mijn buurt vergeleken met andere buurten en met
-                voorgaande perioden?
-              </Paragraph>
-            </CardContent>
-            <CardMedia backgroundColor="level2">
-              <Image
-                src="https://lorempixel.com/100/100/sports/1"
-                alt="stadsloket"
-              />
-            </CardMedia>
+            <Link href="/" linkType="blank">
+              <CardContent>
+                <Heading $as="h4" gutterBottom={8}>
+                  Veiligheidsindex
+                </Heading>
+                <Paragraph>
+                  <CardType>Dashbord</CardType>
+                  Hoe veilig is mijn buurt vergeleken met andere buurten en met
+                  voorgaande perioden?
+                </Paragraph>
+              </CardContent>
+              <CardMedia backgroundColor="level2">
+                <Image
+                  src="https://lorempixel.com/100/100/sports/1"
+                  alt="stadsloket"
+                />
+              </CardMedia>
+            </Link>
           </SpecialCard>
         </Column>
         <Column
@@ -115,22 +130,24 @@ storiesOf('Composed/CardContainer(special)', module)
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
           <SpecialCard horizontal>
-            <CardContent>
-              <Heading $as="h4" gutterBottom={8}>
-                Veiligheidsindex titel 16/20
-              </Heading>
-              <Paragraph>
-                <CardType>Dashbord</CardType>
-                Sub max 3 regels 14/17 #000000 Hoe veilig is mijn buurt
-                vergelek…
-              </Paragraph>
-            </CardContent>
-            <CardMedia backgroundColor="level2">
-              <Image
-                src="https://lorempixel.com/100/100/sports/2"
-                alt="stadsloket"
-              />
-            </CardMedia>
+            <Link href="/" linkType="blank">
+              <CardContent>
+                <Heading $as="h4" gutterBottom={8}>
+                  Veiligheidsindex
+                </Heading>
+                <Paragraph>
+                  <CardType>Dashbord</CardType>
+                  Sub max 3 regels 14/17 #000000 Hoe veilig is mijn buurt
+                  vergelek…
+                </Paragraph>
+              </CardContent>
+              <CardMedia backgroundColor="level2">
+                <Image
+                  src="https://lorempixel.com/100/100/sports/2"
+                  alt="stadsloket"
+                />
+              </CardMedia>
+            </Link>
           </SpecialCard>
         </Column>
         <Column
@@ -138,21 +155,23 @@ storiesOf('Composed/CardContainer(special)', module)
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
           <SpecialCard horizontal>
-            <CardContent>
-              <Heading $as="h4" gutterBottom={8}>
-                Veiligheidsindex titel 16/20
-              </Heading>
-              <Paragraph>
-                Sub max 3 regels 14/17 #000000 Hoe veilig is mijn buurt
-                vergelek…
-              </Paragraph>
-            </CardContent>
-            <CardMedia backgroundColor="level2">
-              <Image
-                src="https://lorempixel.com/100/100/sports/3"
-                alt="stadsloket"
-              />
-            </CardMedia>
+            <Link href="/" linkType="blank">
+              <CardContent>
+                <Heading $as="h4" gutterBottom={8}>
+                  Veiligheidsindex titel 16/20
+                </Heading>
+                <Paragraph>
+                  Sub max 3 regels 14/17 #000000 Hoe veilig is mijn buurt
+                  vergelek…
+                </Paragraph>
+              </CardContent>
+              <CardMedia backgroundColor="level2">
+                <Image
+                  src="https://lorempixel.com/100/100/sports/3"
+                  alt="stadsloket"
+                />
+              </CardMedia>
+            </Link>
           </SpecialCard>
         </Column>
         <Column
@@ -160,24 +179,24 @@ storiesOf('Composed/CardContainer(special)', module)
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
           <SpecialCard horizontal>
-            <CardContent>
-              <Heading $as="h4" gutterBottom={8}>
-                Veiligheidsindex titel 16/20
-              </Heading>
-              <Paragraph>
-                <CardType>Dashbord</CardType>
-                Sub max 3 regels 14/17 #000000 Hoe veilig is mijn buurt
-                vergelek…
-              </Paragraph>
-            </CardContent>
-            <CardMedia backgroundColor="level2">
+            <Link href="/" linkType="blank">
+              <CardContent>
+                <Heading $as="h4" gutterBottom={8}>
+                  Veiligheidsindex titel 16/20
+                </Heading>
+                <Paragraph>
+                  <CardType>Dashbord</CardType>
+                  Sub max 3 regels 14/17 #000000 Hoe veilig is mijn buurt
+                  vergelek…
+                </Paragraph>
+              </CardContent>
               <CardMedia backgroundColor="level2">
                 <Image
                   src="https://lorempixel.com/100/100/sports/4"
                   alt="stadsloket"
                 />
               </CardMedia>
-            </CardMedia>
+            </Link>
           </SpecialCard>
         </Column>
         <Column
@@ -185,21 +204,23 @@ storiesOf('Composed/CardContainer(special)', module)
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
           <SpecialCard horizontal>
-            <CardContent>
-              <Heading $as="h4" gutterBottom={8}>
-                Veiligheidsindex titel 16/20
-              </Heading>
-              <Paragraph>
-                Sub max 3 regels 14/17 #000000 Hoe veilig is mijn buurt
-                vergelek…
-              </Paragraph>
-            </CardContent>
-            <CardMedia backgroundColor="level2">
-              <Image
-                src="https://lorempixel.com/100/100/sports/5"
-                alt="stadsloket"
-              />
-            </CardMedia>
+            <Link href="/" linkType="blank">
+              <CardContent>
+                <Heading $as="h4" gutterBottom={8}>
+                  Veiligheidsindex titel 16/20
+                </Heading>
+                <Paragraph>
+                  Sub max 3 regels 14/17 #000000 Hoe veilig is mijn buurt
+                  vergelek…
+                </Paragraph>
+              </CardContent>
+              <CardMedia backgroundColor="level2">
+                <Image
+                  src="https://lorempixel.com/100/100/sports/5"
+                  alt="stadsloket"
+                />
+              </CardMedia>
+            </Link>
           </SpecialCard>
         </Column>
         <Column
@@ -207,27 +228,31 @@ storiesOf('Composed/CardContainer(special)', module)
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
           <SpecialCard horizontal>
-            <CardContent>
-              <Heading $as="h4" gutterBottom={8}>
-                Veiligheidsindex titel 16/20
-              </Heading>
-              <Paragraph>
-                Sub max 3 regels 14/17 #000000 Hoe veilig is mijn buurt
-                vergelek…
-              </Paragraph>
-            </CardContent>
-            <CardMedia backgroundColor="level2">
-              <Image
-                src="https://lorempixel.com/100/100/sports/6"
-                alt="stadsloket"
-              />
-            </CardMedia>
+            <Link href="/" linkType="blank">
+              <CardContent>
+                <Heading $as="h4" gutterBottom={8}>
+                  Veiligheidsindex titel 16/20
+                </Heading>
+                <Paragraph>
+                  Sub max 3 regels 14/17 #000000 Hoe veilig is mijn buurt
+                  vergelek…
+                </Paragraph>
+              </CardContent>
+              <CardMedia backgroundColor="level2">
+                <Image
+                  src="https://lorempixel.com/100/100/sports/6"
+                  alt="stadsloket"
+                />
+              </CardMedia>
+            </Link>
           </SpecialCard>
         </Column>
       </Row>
       <Row>
         <LinkList>
-          <LinkListItem href="/">Bekijk overzicht</LinkListItem>
+          <LinkListItem href="/" linkType="list">
+            Bekijk overzicht
+          </LinkListItem>
         </LinkList>
       </Row>
     </SpecialCardContainer>
