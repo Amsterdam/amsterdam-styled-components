@@ -1,6 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ImageCard should render 1`] = `
+.c3 {
+  margin: 0;
+  color: #000000;
+  font-weight: 700;
+  font-size: 20px;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  line-height: 28px;
+  margin-bottom: 8px;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+}
+
 .c2 {
   margin-top: 0;
   display: -webkit-box;
@@ -54,6 +72,13 @@ exports[`ImageCard should render 1`] = `
   border-right-color: white;
 }
 
+@media screen and (min-width:540.02px) {
+  .c3 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
 @media screen and (min-width:768.02px) {
   .c1 {
     padding: 16px;
@@ -70,7 +95,7 @@ exports[`ImageCard should render 1`] = `
       class="c1"
     >
       <h6
-        class="c2"
+        class="c2 c3"
       >
         Jeugdwerkloosheid Amsterdam daalt naar 6,2%
       </h6>
