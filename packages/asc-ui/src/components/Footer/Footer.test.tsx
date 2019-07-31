@@ -11,11 +11,7 @@ const theme = {
 describe('Footer', () => {
   beforeEach(cleanup)
   it('should render and apply the style', () => {
-    const {
-      container,
-      queryByText,
-      // queryByTestId
-    } = render(
+    const { container, queryByText } = render(
       <ThemeProvider theme={theme}>
         <Footer data-testid="test-id">Footer content</Footer>
       </ThemeProvider>,

@@ -4,19 +4,11 @@ import { ChevronRight } from '@datapunt/asc-assets'
 import LinkStyle, { Props as LinkStyleProps } from './LinkStyle'
 import Icon from '../Icon'
 
-export type Props = {
-  noIcon?: boolean
-} & styledComponents.StyledProps<any> &
-  LinkStyleProps
+export type Props = styledComponents.StyledProps<any> & LinkStyleProps
 
-const Link: React.FC<Props> = ({
-  children,
-  noIcon,
-  linkType,
-  ...otherProps
-}) => (
+const Link: React.FC<Props> = ({ children, linkType, ...otherProps }) => (
   <LinkStyle $as="a" {...otherProps} linkType={linkType}>
-    {linkType === 'default' && !noIcon && (
+    {linkType === 'with-chevron' && (
       <Icon size={12}>
         <ChevronRight />
       </Icon>

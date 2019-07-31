@@ -47,4 +47,4 @@ storiesOf('Composed/Header', module)
       }
     />
   ))
-  .add('Header implementation for dataportaal', () => <DataportaalHeader />)
+  .add('implementation for dataportaal', () => <DataportaalHeader />)
