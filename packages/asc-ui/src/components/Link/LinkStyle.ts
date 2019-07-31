@@ -4,12 +4,12 @@ import { focusStyleText, svgFill } from '../../utils/themeUtils'
 import Typography, { TypographyProps } from '../Typography'
 import IconStyle from '../Icon/IconStyle'
 
-export const NoStyleCSS = css`
+export const BlankLinkStyleCSS = css`
   display: inline-block;
   text-decoration: none;
   color: inherit;
 `
-export const InlineStyleCSS = ({
+export const InlineLinkStyleCSS = ({
   theme,
 }: {
   theme: Theme.ThemeInterface
@@ -21,7 +21,11 @@ export const InlineStyleCSS = ({
     color: ${color('secondary')};
   }
 `
-export const LinkStyleCSS = ({ theme }: { theme: Theme.ThemeInterface }) => css`
+export const DefaultLinkStyleCSS = ({
+  theme,
+}: {
+  theme: Theme.ThemeInterface
+}) => css`
   display: flex;
   color: ${color('tint', 'level6')({ theme })};
   text-decoration: none;
@@ -40,7 +44,7 @@ export const LinkStyleCSS = ({ theme }: { theme: Theme.ThemeInterface }) => css`
   }
 `
 
-type TypeLink = 'default' | 'inline' | 'blank'
+type TypeLink = 'default' | 'inline' | 'blank' | 'default-chevron'
 
 export const getLinkType = (linkType: TypeLink = 'default') => ({
   theme,
@@ -49,11 +53,12 @@ export const getLinkType = (linkType: TypeLink = 'default') => ({
 }) => {
   switch (linkType) {
     case 'blank':
-      return NoStyleCSS
+      return BlankLinkStyleCSS
     case 'inline':
-      return InlineStyleCSS({ theme })
+      return InlineLinkStyleCSS({ theme })
     case 'default':
-      return LinkStyleCSS({ theme })
+    case 'default-chevron':
+      return DefaultLinkStyleCSS({ theme })
     default:
       return ''
   }

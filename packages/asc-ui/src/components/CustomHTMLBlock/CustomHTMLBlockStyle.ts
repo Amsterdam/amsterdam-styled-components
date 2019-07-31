@@ -1,6 +1,6 @@
 import styled, { css } from '@datapunt/asc-core'
 import { HeaderStyleCSS } from '../Heading/HeadingStyle'
-import { LinkStyleCSS } from '../Link/LinkStyle'
+import { DefaultLinkStyleCSS } from '../Link/LinkStyle'
 import { ParagraphStyleCSS } from '../Paragraph/ParagraphStyle'
 import { getTypographyFromTheme } from '../../utils'
 
@@ -11,7 +11,7 @@ const ElementStyleMapping = {
   h4: HeaderStyleCSS,
   h5: HeaderStyleCSS,
   h6: HeaderStyleCSS,
-  a: LinkStyleCSS,
+  a: DefaultLinkStyleCSS,
   p: ParagraphStyleCSS,
 }
 

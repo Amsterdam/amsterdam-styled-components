@@ -12,7 +12,7 @@ storiesOf('Composed/Blog/Publication', module)
   .addDecorator(storyFn => (
     <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
   ))
-  .add('dataportal version', () => {
+  .add('implementation for dataportal', () => {
     const {
       title,
       body,
