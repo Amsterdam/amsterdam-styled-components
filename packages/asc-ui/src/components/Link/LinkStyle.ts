@@ -44,9 +44,9 @@ export const DefaultLinkStyleCSS = ({
   }
 `
 
-type TypeLink = 'default' | 'inline' | 'blank' | 'default-chevron'
+type TypeLink = 'inline' | 'blank' | 'with-chevron'
 
-export const getLinkType = (linkType: TypeLink = 'default') => ({
+export const getLinkType = (linkType?: TypeLink) => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
@@ -56,11 +56,8 @@ export const getLinkType = (linkType: TypeLink = 'default') => ({
       return BlankLinkStyleCSS
     case 'inline':
       return InlineLinkStyleCSS({ theme })
-    case 'default':
-    case 'default-chevron':
-      return DefaultLinkStyleCSS({ theme })
     default:
-      return ''
+      return DefaultLinkStyleCSS({ theme })
   }
 }
 

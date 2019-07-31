@@ -8,14 +8,12 @@ storiesOf('Atoms/Typography/Link', module)
       {storyFn()}
     </div>
   ))
-  .add('default type (link with chevron icon)', () => (
-    <Link href="/" linkType="default-chevron">
-      I am a default link!
-    </Link>
+  .add('default type', () => (
+    <Link href="/">I am a &quot;default&quot; link without chevron icon!</Link>
   ))
-  .add('default type without', () => (
-    <Link href="/" linkType="default">
-      I am a &quot;default&quot; link without chevron icon!
+  .add('default type with chevron icon', () => (
+    <Link href="/" linkType="with-chevron">
+      I am a default link!
     </Link>
   ))
   .add('inline type (internl link)', () => (
