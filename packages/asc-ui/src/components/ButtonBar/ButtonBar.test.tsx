@@ -8,8 +8,8 @@ describe('ButtonBar', () => {
   it('should render the buttons in the bar', () => {
     const component = shallow(
       <ButtonBar>
-        <Button color="primary">Hello</Button>
-        <Button color="secondary">World</Button>
+        <Button variant="primary">Hello</Button>
+        <Button variant="secondary">World</Button>
       </ButtonBar>,
     ).dive()
     expect(component).toMatchSnapshot()

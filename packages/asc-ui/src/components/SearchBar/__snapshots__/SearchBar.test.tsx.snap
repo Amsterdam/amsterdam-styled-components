@@ -34,7 +34,7 @@ exports[`SearchBar should render 1`] = `
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1em;
+  line-height: 20px;
   padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -84,6 +84,7 @@ exports[`SearchBar should render 1`] = `
 .c6:disabled {
   cursor: default;
   outline: none;
+  border: none;
   color: #B4B4B4;
   background-color: #E6E6E6;
 }

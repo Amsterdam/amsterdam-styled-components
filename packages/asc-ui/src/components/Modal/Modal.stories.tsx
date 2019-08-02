@@ -82,7 +82,7 @@ storiesOf('Composed/Modal', module)
           Geef aan welke gegevens onjuist zijn of ontbreken. Ook als je weet wat
           het wel moet zijn. We horen het graag.
         </Paragraph>
-        <Button color="primary" onClick={action('click')}>
+        <Button variant="primary" onClick={action('click')}>
           Terugmelden
         </Button>
       </ListItem>
@@ -93,7 +93,7 @@ storiesOf('Composed/Modal', module)
           Als iets op deze pagina niet goed werkt, onduidelijk is of vragen
           oproept, geef het aan ons door.
         </Paragraph>
-        <Button color="primary" onClick={action('click')}>
+        <Button variant="primary" onClick={action('click')}>
           Probleem melden
         </Button>
       </ListItem>

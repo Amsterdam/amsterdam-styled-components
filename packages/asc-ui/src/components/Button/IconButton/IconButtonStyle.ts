@@ -11,7 +11,9 @@ export type Props = {
 } & ButtonStyleProps
 
 export const IconButtonStyle = styled(ButtonStyle)<Props>`
+  border: none;
   outline: none;
+  padding: 0;
 
   ${IconStyle} {
     ${({ iconSize }) => iconSize && size(iconSize)}

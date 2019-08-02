@@ -13,7 +13,7 @@ type Props = {
  * @deprecated Use the Button component in combination with the Icon component
  */
 const IconButton: React.FC<Props> = ({ children, onClick, ...otherProps }) => (
-  <IconButtonStyle onClick={onClick} {...otherProps} square>
+  <IconButtonStyle onClick={onClick} {...otherProps} square variant="blank">
     <Icon>{children}</Icon>
   </IconButtonStyle>
 )

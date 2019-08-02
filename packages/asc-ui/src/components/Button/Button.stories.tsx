@@ -8,7 +8,6 @@ import {
   Email,
   Print,
 } from '@datapunt/asc-assets'
-import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 import ButtonBar from '../ButtonBar'
@@ -21,17 +20,17 @@ storiesOf('Atoms/Buttons', module)
   .addDecorator(storyFn => (
     <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
   ))
-  .add('basic', () => (
+  .add('[deprecated] variants', () => (
     <ButtonBar>
-      <Button onClick={action('click')}>Default button</Button>
+      <Button>Default button</Button>
+      <Button color="primary">Primary button</Button>
+      <Button color="secondary">Secondary button</Button>
     </ButtonBar>
   ))
   .add('variants', () => (
     <ButtonBar>
-      <Button variant="primary" onClick={action('click')}>
-        Default button
-      </Button>
-      <Button variant="secondary">
+      <Button variant="primary">Default button</Button>
+      <Button variant="secondary" hasIconLeft hasIconRight>
         <Icon size={20} color="bright">
           <Download />
         </Icon>
@@ -40,13 +39,13 @@ storiesOf('Atoms/Buttons', module)
           <ChevronRight />
         </Icon>
       </Button>
-      <Button variant="tertiary">
+      <Button variant="tertiary" hasIconRight>
         Download button
         <Icon size={20} color="bright">
           <ChevronRight />
         </Icon>
       </Button>
-      <Button variant="primaryInverted">
+      <Button variant="primaryInverted" hasIconLeft>
         <Icon size={20} color="bright">
           <ChevronRight />
         </Icon>
@@ -56,10 +55,10 @@ storiesOf('Atoms/Buttons', module)
   ))
   .add('variants - disabled', () => (
     <ButtonBar>
-      <Button disabled variant="primary" onClick={action('click')}>
+      <Button disabled variant="primary">
         Default button
       </Button>
-      <Button disabled variant="secondary">
+      <Button disabled variant="secondary" hasIconLeft hasIconRight>
         <Icon size={20} color="bright">
           <Download />
         </Icon>
@@ -68,13 +67,13 @@ storiesOf('Atoms/Buttons', module)
           <ChevronRight />
         </Icon>
       </Button>
-      <Button disabled variant="tertiary">
+      <Button disabled variant="tertiary" hasIconRight>
         Download button
         <Icon size={20} color="bright">
           <ChevronRight />
         </Icon>
       </Button>
-      <Button disabled variant="primaryInverted">
+      <Button disabled variant="primaryInverted" hasIconLeft>
         <Icon size={20} color="bright">
           <ChevronRight />
         </Icon>

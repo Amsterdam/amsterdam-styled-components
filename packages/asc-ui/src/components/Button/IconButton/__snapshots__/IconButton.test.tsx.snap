@@ -18,7 +18,7 @@ exports[`IconButton should render the IconButton 1`] = `
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1em;
+  line-height: 20px;
   padding: ",
           [Function],
           ";
@@ -44,12 +44,10 @@ exports[`IconButton should render the IconButton 1`] = `
   }
 ",
           " // ie fix
-  ",
-          [Function],
-          "
   &:disabled {
     cursor: default;
     outline: none;
+    border: none;
     color: ",
           [Function],
           ";
@@ -62,7 +60,9 @@ exports[`IconButton should render the IconButton 1`] = `
   }
 ",
           "
+  border: none;
   outline: none;
+  padding: 0;
 
   ",
           ".sc-bdVaJa",
@@ -89,6 +89,7 @@ exports[`IconButton should render the IconButton 1`] = `
   forwardedRef={null}
   onClick={[MockFunction]}
   square={true}
+  variant="blank"
 >
   <Icon>
     icon-content

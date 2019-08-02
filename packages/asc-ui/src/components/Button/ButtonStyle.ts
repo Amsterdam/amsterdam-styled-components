@@ -3,8 +3,6 @@ import { transitions, readableColor, darken, size } from 'polished'
 import {
   color as themeColor,
   focusStyleOutline,
-  customCss,
-  CustomCssPropsType,
   color as getColor,
   svgFill,
 } from '../../utils'
@@ -54,6 +52,7 @@ const getVariant = () => ({
     case 'tertiary':
       return css`
         background-color: ${themeColor('tint', 'level4')({ theme })};
+        ${svgFill('tint', 'level7')};
 
         &:hover {
           background-color: ${darken(
@@ -66,11 +65,11 @@ const getVariant = () => ({
     case 'primaryInverted':
       return css`
         color: ${getColor('primary')({ theme })};
-        outline: 1px solid ${getColor('primary')({ theme })};
+        border: 1px solid ${getColor('primary')({ theme })};
         ${svgFill('primary')};
 
         &:hover {
-          outline-width: 2px;
+          outline: 1px solid ${getColor('primary')({ theme })};
         }
       `
 
@@ -94,7 +93,7 @@ const getVariant = () => ({
 
         ${!color &&
           css`
-            outline: 1px solid ${getColor('primary')({ theme })};
+            border: 1px solid ${getColor('primary')({ theme })};
           `}
 
         &:hover {
@@ -103,7 +102,7 @@ const getVariant = () => ({
             : themeColor('tint', 'level3')({ theme })};
           ${!color &&
             css`
-              outline-width: 2px;
+              outline: 1px solid ${getColor('primary')({ theme })};
             `}
         }
       `
@@ -129,7 +128,9 @@ export type Props = {
    * A variant, usually different background-color and color of a button
    */
   variant?: keyof typeof ButtonVariants
-} & CustomCssPropsType
+  hasIconLeft?: boolean
+  hasIconRight?: boolean
+}
 
 const ButtonStyle = styled.button<Props>`
   display: inline-flex;
@@ -139,9 +140,9 @@ const ButtonStyle = styled.button<Props>`
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1em;
-  padding: ${({ size: sizeProp }) => (sizeProp ? '0' : '4px 10px 4px 10px')};
-  ${({ size: sizeProp, square }) =>
+  line-height: 20px;
+  padding: ${({ size: sizeProp }) => (sizeProp ? '0' : '12px 15px')};
+  ${({ size: sizeProp, square, hasIconLeft, hasIconRight }) =>
     sizeProp || square // make the button square
       ? css`
           display: flex;
@@ -151,13 +152,18 @@ const ButtonStyle = styled.button<Props>`
         `
       : css`
           // extra styles for a non-square button
-          min-height: 36px;
           & > ${IconStyle} {
             &:first-of-type {
-              margin-right: 5px;
+              ${hasIconLeft &&
+                css`
+                  margin-right: 10px;
+                `}
             }
             &:last-of-type {
-              margin-left: 5px;
+              ${hasIconRight &&
+                css`
+                  margin-left: 10px;
+                `}
             }
           }
         `}
@@ -165,10 +171,10 @@ const ButtonStyle = styled.button<Props>`
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')}
   ${getVariant()}
   ${flexboxMinHeightFix()} // ie fix
-  ${customCss}
   &:disabled {
     cursor: default;
     outline: none;
+    border: none;
     color: ${themeColor('tint', 'level4')};
     background-color: ${themeColor('tint', 'level3')};
     ${svgFill('tint', 'level4')};

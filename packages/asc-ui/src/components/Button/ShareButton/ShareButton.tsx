@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon } from '@datapunt/asc-ui'
+import Icon from '../../Icon'
 import ShareButtonStyle, {
   Props as ShareButtonStyleProps,
 } from './ShareButtonStyle'

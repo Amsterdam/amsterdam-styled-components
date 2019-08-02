@@ -1,11 +1,10 @@
 import React from 'react'
-import { css } from '@datapunt/asc-core'
+import styled from '@datapunt/asc-core'
 import { Download } from '@datapunt/asc-assets'
 import DocumentCoverStyle from './DocumentCoverStyle'
 import Button from '../Button'
 import Image from '../Image'
 import DocumentCoverContent from './DocumentCoverContent'
-import Typography from '../Typography'
 import Icon from '../Icon'
 
 interface Props {
@@ -13,6 +12,11 @@ interface Props {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
   description: string
 }
+
+const ButtonStyled = styled(Button)`
+  display: flex;
+  justify-content: center;
+`
 
 const DocumentCoverContentStyle: React.FC<Props> = ({
   imageSrc,
@@ -23,21 +27,12 @@ const DocumentCoverContentStyle: React.FC<Props> = ({
   <DocumentCoverStyle {...otherProps}>
     <DocumentCoverContent>
       <Image src={imageSrc} alt="" />
-      <Button
-        color="primary"
-        onClick={onClick}
-        css={css`
-          display: flex;
-          justify-content: center;
-        `}
-      >
+      <ButtonStyled variant="primary" onClick={onClick} hasIconLeft>
         <Icon size={20} color="bright">
           <Download />
         </Icon>
-        <Typography as="span" color="bright">
-          {description}
-        </Typography>
-      </Button>
+        {description}
+      </ButtonStyled>
     </DocumentCoverContent>
   </DocumentCoverStyle>
 )

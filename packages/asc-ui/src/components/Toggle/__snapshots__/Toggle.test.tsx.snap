@@ -48,7 +48,7 @@ exports[`Toggle should render 1`] = `
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1em;
+  line-height: 20px;
   padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -85,6 +85,7 @@ exports[`Toggle should render 1`] = `
 .c1:disabled {
   cursor: default;
   outline: none;
+  border: none;
 }
 
 <div
