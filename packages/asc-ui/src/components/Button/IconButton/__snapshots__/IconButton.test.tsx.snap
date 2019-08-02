@@ -17,24 +17,23 @@ exports[`IconButton should render the IconButton 1`] = `
   border: none;
   cursor: pointer;
   font-size: 16px;
-  font-weight: normal;
-  padding: 0 10px 0 10px;
+  font-weight: 500;
+  line-height: 1em;
+  padding: ",
+          [Function],
+          ";
+  ",
+          [Function],
+          "
   ",
           [Function],
           "
   ",
           "transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;",
           "
-  background: ",
+  ",
           [Function],
-          ";
-
-  &:hover {
-    background: ",
-          [Function],
-          ";
-  }
-
+          "
   ",
           "
   &::after {
@@ -44,22 +43,29 @@ exports[`IconButton should render the IconButton 1`] = `
     font-size: 0;
   }
 ",
-          "
+          " // ie fix
   ",
           [Function],
           "
+  &:disabled {
+    cursor: default;
+    outline: none;
+    color: ",
+          [Function],
+          ";
+    background-color: ",
+          [Function],
+          ";
+    ",
+          [Function],
+          ";
+  }
 ",
           "
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-  ",
-          [Function],
-          "
+  outline: none;
 
   ",
-          ".sc-bwzfXH",
+          ".sc-bdVaJa",
           " {
     ",
           [Function],
@@ -70,7 +76,7 @@ exports[`IconButton should render the IconButton 1`] = `
       },
       "displayName": "Styled(styled.button)",
       "foldedComponentIds": Array [
-        "sc-bdVaJa",
+        "sc-bwzfXH",
       ],
       "render": [Function],
       "styledComponentId": "sc-htpNat",

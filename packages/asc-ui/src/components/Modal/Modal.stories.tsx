@@ -10,12 +10,12 @@ import {
   Modal,
   Button,
   Divider,
-  IconButton,
   TopBar,
   Paragraph,
   Heading,
 } from '../..'
 import Link from '../Link/Link'
+import Icon from '../Icon'
 
 const SimpleModal: React.FC<Props> = props => (
   <div>
@@ -63,9 +63,16 @@ storiesOf('Composed/Modal', module)
       <TopBar>
         <Heading $as="h4" style={{ flexGrow: 1 }}>
           Feedback
-          <IconButton onClick={action('close modal')}>
-            <Close />
-          </IconButton>
+          <Button
+            type="button"
+            size={30}
+            onClick={action('close modal')}
+            variant="blank"
+          >
+            <Icon size={20}>
+              <Close />
+            </Icon>
+          </Button>
         </Heading>
       </TopBar>
       <Divider />

@@ -1,7 +1,7 @@
 import styled from '@datapunt/asc-core'
-import IconButtonStyle from '../IconButton/IconButtonStyle'
-import { showHide, ShowHideTypes, svgFill, customCss } from '../../utils'
+import { showHide, ShowHideTypes, customCss } from '../../utils'
 import TextFieldStyle from '../TextField/TextFieldStyle'
+import ButtonStyle from '../Button/ButtonStyle'
 
 export interface Props extends ShowHideTypes {
   css?: string
@@ -14,12 +14,8 @@ const SearchBarStyle = styled.div<Props>`
     flex-grow: 1;
   }
 
-  & > ${IconButtonStyle} {
+  & > ${ButtonStyle} {
     margin-left: 5px;
-    padding: 10px;
-    width: 40px;
-    height: 40px;
-    ${svgFill('tint', 'level1')};
   }
 
   ${showHide()}

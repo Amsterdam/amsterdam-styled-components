@@ -1,13 +1,13 @@
 import styled from '@datapunt/asc-core'
-import IconStyle from '../Icon/IconStyle'
-import IconButtonStyle, {
-  Props as IconButtonStyleProps,
-} from '../IconButton/IconButtonStyle'
-import { color, svgFill } from '../../utils'
+import IconStyle from '../../Icon/IconStyle'
+import { color, svgFill } from '../../../utils'
+import ButtonStyle, { Props as ButtonProps } from '../ButtonStyle'
 
-export type Props = IconButtonStyleProps
+export type Props = {
+  hoverColor?: string
+} & ButtonProps
 
-const ShareButtonStyle = styled(IconButtonStyle)<Props>`
+const ShareButtonStyle = styled(ButtonStyle)<Props>`
   padding: 0;
   position: relative;
   justify-content: center;

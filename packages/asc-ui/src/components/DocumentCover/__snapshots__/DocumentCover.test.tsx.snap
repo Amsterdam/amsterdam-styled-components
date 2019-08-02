@@ -53,10 +53,13 @@ exports[`DocumentCover should render 1`] = `
   border: none;
   cursor: pointer;
   font-size: 16px;
-  font-weight: normal;
-  padding: 0 10px 0 10px;
+  font-weight: 500;
+  line-height: 1em;
+  padding: 4px 10px 4px 10px;
+  min-height: 36px;
   -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
   transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  color: #fff;
   background: #004699;
   display: -webkit-box;
   display: -webkit-flex;
@@ -66,10 +69,14 @@ exports[`DocumentCover should render 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 4px 10px 4px 10px;
-  min-height: 36px;
-  line-height: 1em;
-  color: #fff;
+}
+
+.c3 > .c4:first-of-type {
+  margin-right: 5px;
+}
+
+.c3 > .c4:last-of-type {
+  margin-left: 5px;
 }
 
 .c3:focus {
@@ -91,12 +98,17 @@ exports[`DocumentCover should render 1`] = `
   font-size: 0;
 }
 
-.c3 > .c4:first-child {
-  margin-right: 5px;
+.c3:disabled {
+  cursor: default;
+  outline: none;
+  color: #B4B4B4;
+  background-color: #E6E6E6;
 }
 
-.c3 > .c4:last-child {
-  margin-left: 5px;
+.c3:disabled svg rect,
+.c3:disabled svg polygon,
+.c3:disabled svg path {
+  fill: #B4B4B4;
 }
 
 .c1 {

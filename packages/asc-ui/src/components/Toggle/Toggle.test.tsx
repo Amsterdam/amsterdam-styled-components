@@ -3,7 +3,7 @@ import { mount, render } from 'enzyme'
 import Toggle from './Toggle'
 import 'jest-styled-components'
 import { KeyboardKeys } from '../../types'
-import ToggleHandlerButton from './ToggleHandlerButton'
+import ToggleButton from '../Button/ToggleButton/ToggleButton'
 
 describe('Toggle', () => {
   it('should render', () => {
@@ -26,7 +26,7 @@ describe('Toggle', () => {
 
     expect(component.find('#child').exists()).toBe(false)
     component
-      .find(ToggleHandlerButton)
+      .find(ToggleButton)
       .at(0)
       .simulate('click')
     expect(component.find('#child').exists()).toBe(true)
@@ -46,7 +46,7 @@ describe('Toggle', () => {
     )
 
     component
-      .find(ToggleHandlerButton)
+      .find(ToggleButton)
       .at(0)
       .simulate('click')
     expect(component.find('#child').exists()).toBe(true)

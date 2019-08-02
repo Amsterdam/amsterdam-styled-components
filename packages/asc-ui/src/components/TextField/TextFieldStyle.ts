@@ -1,10 +1,10 @@
 import styled from '@datapunt/asc-core'
-import IconButtonStyle from '../IconButton/IconButtonStyle'
+import ButtonStyle from '../Button/ButtonStyle'
 
 const TextFieldStyle = styled.div`
   position: relative;
 
-  & > ${IconButtonStyle} {
+  & > ${ButtonStyle} {
     position: absolute;
     top: 5px;
     right: 5px;

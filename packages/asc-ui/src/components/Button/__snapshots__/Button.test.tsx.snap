@@ -15,15 +15,22 @@ exports[`Button should render the button 1`] = `
   border: none;
   cursor: pointer;
   font-size: 16px;
-  font-weight: normal;
-  padding: 0 10px 0 10px;
-  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
-  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
-  background: #004699;
+  font-weight: 500;
+  line-height: 1em;
   padding: 4px 10px 4px 10px;
   min-height: 36px;
-  line-height: 1em;
+  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
   color: #fff;
+  background: #004699;
+}
+
+.c0 > .c1:first-of-type {
+  margin-right: 5px;
+}
+
+.c0 > .c1:last-of-type {
+  margin-left: 5px;
 }
 
 .c0:focus {
@@ -45,12 +52,17 @@ exports[`Button should render the button 1`] = `
   font-size: 0;
 }
 
-.c0 > .c1:first-child {
-  margin-right: 5px;
+.c0:disabled {
+  cursor: default;
+  outline: none;
+  color: #B4B4B4;
+  background-color: #E6E6E6;
 }
 
-.c0 > .c1:last-child {
-  margin-left: 5px;
+.c0:disabled svg rect,
+.c0:disabled svg polygon,
+.c0:disabled svg path {
+  fill: #B4B4B4;
 }
 
 <button
