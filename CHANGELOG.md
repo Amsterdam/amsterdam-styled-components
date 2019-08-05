@@ -16,8 +16,8 @@ Prefix the change with one of these keywords:
 - Added: react-docgen-typescript-loader to storybook config for showing props with description
 - Added: font-display: swap; in font-face definitions
 - Added: seperate tsconfig for building the lib: now excludes .test and .stories files
-- Changed: Made IconButton and ShareBar deprecated. Also refactored this in other components than 
-  use IconButton
+- Deprecated: Made IconButton, ButtonBar and ShareBar deprecated. Also refactored this in other 
+  components than use IconButton
 - Added: stories for buttons
 - Changed: Refactored the Button component to use the prop "variants" instead of "color". 
 - Removed: ShareBar, named export however still exists

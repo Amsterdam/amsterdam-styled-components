@@ -1,3 +1,4 @@
+import styled from '@datapunt/asc-core'
 import {
   Download,
   ChevronRight,
@@ -10,10 +11,17 @@ import {
 } from '@datapunt/asc-assets'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
-import ButtonBar from '../ButtonBar'
 import Button from './Button'
 import IconButton from './IconButton'
 import ShareButton from './ShareButton'
+
+const ButtonBar = styled.div<{}>`
+  display: flex;
+
+  & > * {
+    margin-right: 5px;
+  }
+`
 
 storiesOf('Atoms/Buttons', module)
   .addDecorator(storyFn => (

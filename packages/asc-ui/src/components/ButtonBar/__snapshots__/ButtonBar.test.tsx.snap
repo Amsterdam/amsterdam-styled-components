@@ -8,13 +8,10 @@ exports[`ButtonBar should render the buttons in the bar 1`] = `
       "attrs": Array [],
       "componentStyle": ComponentStyle {
         "componentId": "sc-ifAKCX",
-        "isStatic": false,
+        "isStatic": true,
         "rules": Array [
           "
   display: flex;
-  ",
-          [Function],
-          "
 
   & > * {
     margin-right: 5px;
@@ -33,7 +30,6 @@ exports[`ButtonBar should render the buttons in the bar 1`] = `
     }
   }
   forwardedRef={null}
-  padding={5}
 >
   <Button
     variant="primary"

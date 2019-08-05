@@ -88,7 +88,7 @@ export const styles = {
 }
 
 /**
- * @deprecated Use ButtonBar instead
+ * @deprecated
  */
 const ShareBar = ButtonBar
 
