@@ -12,7 +12,6 @@ import {
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 import Button from './Button'
-import IconButton from './IconButton'
 import ShareButton from './ShareButton'
 
 const ButtonBar = styled.div<{}>`
@@ -77,9 +76,6 @@ storiesOf('Atoms/Buttons', module)
     <>
       <Button size={30} variant="blank" icon={<ChevronRight />} />
       <Button size={60} variant="blank" iconSize={40} icon={<Close />} />
-      <IconButton>
-        <Close />
-      </IconButton>
     </>
   ))
   .add('social buttons', () => (

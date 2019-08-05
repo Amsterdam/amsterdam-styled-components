@@ -1,7 +1,9 @@
 import styled from '@datapunt/asc-core'
 import { size } from 'polished'
 import IconStyle from '../../Icon/IconStyle'
-import ButtonStyle, { Props as ButtonStyleProps } from '../ButtonStyle'
+import ButtonStyle, {
+  Props as ButtonStyleProps,
+} from '../../Button/ButtonStyle'
 
 export type Props = {
   /**
