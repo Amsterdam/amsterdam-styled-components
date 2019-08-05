@@ -3,19 +3,20 @@ import ToggleStyle, { Props as ToggleStyleProps } from './ToggleStyle'
 import ownerDocument from '../../utils/ownerDocument'
 import usePassPropsToChildren from '../../utils/usePassPropsToChildren'
 import useActionOnEscape from '../../utils/useActionOnEscape'
-import ToggleHandlerButton from './ToggleHandlerButton'
+import ToggleButton, {
+  Props as ToggleButtonProps,
+} from '../Button/ToggleButton/ToggleButton'
 
 export type ToggleHandlerProps = {
-  iconOpen?: React.ReactElement
-  iconClose?: React.ReactElement
-  open?: boolean
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
-} & React.HTMLAttributes<HTMLElement>
+} & ToggleButtonProps &
+  React.HTMLAttributes<HTMLElement>
 
 export type Props = {
   render?: boolean
   onOpen?: Function
   ToggleHandler?: any
+  rotateOnOpen?: number
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
 } & ToggleStyleProps &
   ToggleHandlerProps
@@ -31,6 +32,7 @@ const Toggle: React.FC<Props> = ({
   iconOpen,
   iconClose,
   ToggleHandler,
+  title,
   ...otherProps
 }) => {
   const [open, setOpen] = React.useState(false)
@@ -102,7 +104,7 @@ const Toggle: React.FC<Props> = ({
           iconClose,
           iconOpen,
           onClick: handleOnClick,
-          ...otherProps,
+          title,
         }}
       />
       {render ? children : conditionalRenderedChildren}
@@ -112,7 +114,7 @@ const Toggle: React.FC<Props> = ({
 
 Toggle.defaultProps = {
   render: true,
-  ToggleHandler: ToggleHandlerButton,
+  ToggleHandler: ToggleButton,
 }
 
 export default Toggle

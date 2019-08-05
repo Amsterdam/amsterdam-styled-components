@@ -1,11 +1,12 @@
 import React from 'react'
 import { Search } from '@datapunt/asc-assets'
-import IconButton from '../IconButton/IconButton'
 import SearchBarStyle, { Props as SearchBarStyleProps } from './SearchBarStyle'
 import TextField from '../TextField/TextField'
 import InputContext from '../Input/InputMethodsContext'
 import { InputProps } from '../Input'
 import { KeyboardKeys } from '../../types'
+import Button from '../Button'
+import Icon from '../Icon'
 
 export interface SearchBarProps extends InputProps, SearchBarStyleProps {
   placeholder?: string
@@ -107,14 +108,17 @@ const SearchBar: React.FC<SearchBarProps> = ({
           }}
         />
       </InputContext.Provider>
-      <IconButton
+      <Button
         aria-label="Search"
-        color="secondary"
         type="submit"
+        size={40}
         onClick={handleOnSubmit}
+        variant="secondary"
       >
-        <Search />
-      </IconButton>
+        <Icon size={20}>
+          <Search />
+        </Icon>
+      </Button>
       {children}
     </SearchBarStyle>
   )

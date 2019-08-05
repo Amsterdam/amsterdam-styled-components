@@ -10,12 +10,12 @@ import {
   Modal,
   Button,
   Divider,
-  IconButton,
   TopBar,
   Paragraph,
   Heading,
 } from '../..'
 import Link from '../Link/Link'
+import Icon from '../Icon'
 
 const SimpleModal: React.FC<Props> = props => (
   <div>
@@ -63,9 +63,16 @@ storiesOf('Composed/Modal', module)
       <TopBar>
         <Heading $as="h4" style={{ flexGrow: 1 }}>
           Feedback
-          <IconButton onClick={action('close modal')}>
-            <Close />
-          </IconButton>
+          <Button
+            type="button"
+            size={30}
+            onClick={action('close modal')}
+            variant="blank"
+          >
+            <Icon size={20}>
+              <Close />
+            </Icon>
+          </Button>
         </Heading>
       </TopBar>
       <Divider />
@@ -75,7 +82,7 @@ storiesOf('Composed/Modal', module)
           Geef aan welke gegevens onjuist zijn of ontbreken. Ook als je weet wat
           het wel moet zijn. We horen het graag.
         </Paragraph>
-        <Button color="primary" onClick={action('click')}>
+        <Button variant="primary" onClick={action('click')}>
           Terugmelden
         </Button>
       </ListItem>
@@ -86,7 +93,7 @@ storiesOf('Composed/Modal', module)
           Als iets op deze pagina niet goed werkt, onduidelijk is of vragen
           oproept, geef het aan ons door.
         </Paragraph>
-        <Button color="primary" onClick={action('click')}>
+        <Button variant="primary" onClick={action('click')}>
           Probleem melden
         </Button>
       </ListItem>

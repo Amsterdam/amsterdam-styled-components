@@ -2,7 +2,6 @@ import { ServerStyleSheet, Theme, ascDefaultTheme } from '@datapunt/asc-core'
 
 import AmsterdamLogo, { AmsterdamLogoStyles } from './components/AmsterdamLogo'
 import BackDrop, { BackDropStyles } from './components/BackDrop'
-import IconButton from './components/IconButton'
 import Icon from './components/Icon'
 import Input, { InputStyles } from './components/Input'
 import Modal from './components/Modal'
@@ -11,8 +10,7 @@ import Heading from './components/Heading'
 import Link from './components/Link'
 import Paragraph from './components/Paragraph'
 import TopBar, { TopBarStyles } from './components/TopBar'
-import ShareBar from './components/ShareBar'
-import ShareButton from './components/ShareButton'
+import ShareButton from './components/Button/ShareButton'
 import Button from './components/Button'
 import {
   CustomHTMLBlock,
@@ -68,6 +66,8 @@ import Spinner from './components/Spinner/Spinner'
 import LinkList, { LinkListItem } from './components/LinkList'
 import DocumentCover from './components/DocumentCover'
 import { Article, ArticleStyle } from './components/Editorial/Article'
+import IconButton from './components/deprecated/IconButton'
+import ButtonBar from './components/deprecated/ButtonBar'
 
 export { breakpoint } from './utils'
 
@@ -87,6 +87,11 @@ export const styles = {
   ArticleStyle,
 }
 
+/**
+ * @deprecated
+ */
+const ShareBar = ButtonBar
+
 // Components
 export {
   LinkList,
@@ -95,6 +100,8 @@ export {
   BackDrop,
   CustomHTMLBlock,
   Button,
+  ButtonBar,
+  ShareBar,
   Column,
   ContextMenu,
   ContextMenuButtonStyle,
@@ -127,7 +134,6 @@ export {
   SearchBar,
   SearchBarToggle,
   ServerStyleSheet,
-  ShareBar,
   ShareButton,
   Spinner,
   TextField,
