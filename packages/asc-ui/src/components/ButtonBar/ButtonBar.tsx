@@ -1,18 +1,14 @@
 import React from 'react'
 import ButtonBarStyle, { Props as ButtonBarStyleProps } from './ButtonBarStyle'
 
-export type Props = {
-  styledComponent?: any
-} & ButtonBarStyleProps
+export type Props = ButtonBarStyleProps
 
-const ButtonBar: React.FC<Props> = ({ children, styledComponent }) => {
-  const ExtendedButtonBarStyle = styledComponent
-  return <ExtendedButtonBarStyle padding={0}>{children}</ExtendedButtonBarStyle>
+const ButtonBar: React.FC<Props> = ({ children, ...otherProps }) => {
+  return <ButtonBarStyle {...otherProps}>{children}</ButtonBarStyle>
 }
 
 ButtonBar.defaultProps = {
-  styledComponent: ButtonBarStyle,
+  padding: 5,
 }
 
 export default ButtonBar
-export { ButtonBarStyle }

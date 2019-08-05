@@ -17,10 +17,11 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "lerna exec --scope @datapunt/asc-assets -- yarn build && yarn build:ts",
+    "prebuild": "lerna exec --scope @datapunt/asc-assets -- yarn build",
+    "build": "yarn build:ts",
     "build-storybook": "build-storybook -c .storybook -s ./packages/asc-assets/lib/assets -o .sb",
-    "build:ts": "tsc -b packages/asc-core packages/asc-ui",
-    "build:watch": "yarn build:ts -w",
+    "build:ts": "tsc -b packages/asc-assets packages/asc-core packages/asc-ui",
+    "build:watch": "yarn build -w",
     "clean:generated": "find ./packages -name \"*.d.ts\" -type f -delete && find ./packages -name \"*.tsbuildinfo\" -type f -delete",
     "deploy-storybook": "storybook-to-ghpages",
     "preinstall": "yarn clean:generated",

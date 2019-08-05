@@ -7,14 +7,18 @@ import {
   svgFill,
 } from '../../utils'
 import { flexboxMinHeightFix } from '../shared/ie-fixes'
-import IconStyle from '../Icon/IconStyle'
+import Icon from '../Icon'
 
 enum ButtonVariants {
   primary,
   secondary,
   tertiary,
   primaryInverted,
-  blank,
+  blank, // blank variant is a plain white button with a grey background on hover
+}
+
+const defaultProps = {
+  size: 30,
 }
 
 const getVariant = () => ({
@@ -128,9 +132,14 @@ export type Props = {
    * A variant, usually different background-color and color of a button
    */
   variant?: keyof typeof ButtonVariants
-  hasIconLeft?: boolean
-  hasIconRight?: boolean
 }
+
+export const IconLeft = styled(Icon)`
+  margin-right: 10px;
+`
+export const IconRight = styled(Icon)`
+  margin-left: 10px;
+`
 
 const ButtonStyle = styled.button<Props>`
   display: inline-flex;
@@ -142,31 +151,14 @@ const ButtonStyle = styled.button<Props>`
   font-weight: 500;
   line-height: 20px;
   padding: ${({ size: sizeProp }) => (sizeProp ? '0' : '12px 15px')};
-  ${({ size: sizeProp, square, hasIconLeft, hasIconRight }) =>
-    sizeProp || square // make the button square
-      ? css`
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          ${size(sizeProp || 30)} // width and height
-        `
-      : css`
-          // extra styles for a non-square button
-          & > ${IconStyle} {
-            &:first-of-type {
-              ${hasIconLeft &&
-                css`
-                  margin-right: 10px;
-                `}
-            }
-            &:last-of-type {
-              ${hasIconRight &&
-                css`
-                  margin-left: 10px;
-                `}
-            }
-          }
-        `}
+  ${({ size: sizeProp, square }) =>
+    (sizeProp || square) && // make the button square
+    css`
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      ${size(sizeProp || defaultProps.size)} // width and height
+    `}
   ${focusStyleOutline()}
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')}
   ${getVariant()}

@@ -7,7 +7,7 @@ exports[`IconButton should render the IconButton 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-htpNat",
+        "componentId": "sc-ifAKCX",
         "isStatic": false,
         "rules": Array [
           "
@@ -76,10 +76,10 @@ exports[`IconButton should render the IconButton 1`] = `
       },
       "displayName": "Styled(styled.button)",
       "foldedComponentIds": Array [
-        "sc-bwzfXH",
+        "sc-bxivhb",
       ],
       "render": [Function],
-      "styledComponentId": "sc-htpNat",
+      "styledComponentId": "sc-ifAKCX",
       "target": "button",
       "toString": [Function],
       "warnTooManyClasses": [Function],

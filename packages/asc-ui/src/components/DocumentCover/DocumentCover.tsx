@@ -5,7 +5,6 @@ import DocumentCoverStyle from './DocumentCoverStyle'
 import Button from '../Button'
 import Image from '../Image'
 import DocumentCoverContent from './DocumentCoverContent'
-import Icon from '../Icon'
 
 interface Props {
   imageSrc: string
@@ -27,10 +26,7 @@ const DocumentCoverContentStyle: React.FC<Props> = ({
   <DocumentCoverStyle {...otherProps}>
     <DocumentCoverContent>
       <Image src={imageSrc} alt="" />
-      <ButtonStyled variant="primary" onClick={onClick} hasIconLeft>
-        <Icon size={20} color="bright">
-          <Download />
-        </Icon>
+      <ButtonStyled variant="primary" onClick={onClick} iconLeft={<Download />}>
         {description}
       </ButtonStyled>
     </DocumentCoverContent>

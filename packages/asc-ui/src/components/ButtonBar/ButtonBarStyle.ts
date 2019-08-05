@@ -13,8 +13,4 @@ const ButtonBarStyle = styled.div<Props>`
   }
 `
 
-ButtonBarStyle.defaultProps = {
-  padding: 5,
-}
-
 export default ButtonBarStyle

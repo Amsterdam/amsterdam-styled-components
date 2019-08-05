@@ -11,7 +11,6 @@ import {
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 import ButtonBar from '../ButtonBar'
-import Icon from '../Icon'
 import Button from './Button'
 import IconButton from './IconButton'
 import ShareButton from './ShareButton'
@@ -30,25 +29,17 @@ storiesOf('Atoms/Buttons', module)
   .add('variants', () => (
     <ButtonBar>
       <Button variant="primary">Default button</Button>
-      <Button variant="secondary" hasIconLeft hasIconRight>
-        <Icon size={20} color="bright">
-          <Download />
-        </Icon>
+      <Button
+        variant="secondary"
+        iconLeft={<Download />}
+        iconRight={<ChevronRight />}
+      >
         Download button
-        <Icon size={20} color="bright">
-          <ChevronRight />
-        </Icon>
       </Button>
-      <Button variant="tertiary" hasIconRight>
+      <Button variant="tertiary" iconRight={<ChevronRight />}>
         Download button
-        <Icon size={20} color="bright">
-          <ChevronRight />
-        </Icon>
       </Button>
-      <Button variant="primaryInverted" hasIconLeft>
-        <Icon size={20} color="bright">
-          <ChevronRight />
-        </Icon>
+      <Button variant="primaryInverted" iconLeft={<ChevronRight />}>
         Download button
       </Button>
     </ButtonBar>
@@ -58,36 +49,26 @@ storiesOf('Atoms/Buttons', module)
       <Button disabled variant="primary">
         Default button
       </Button>
-      <Button disabled variant="secondary" hasIconLeft hasIconRight>
-        <Icon size={20} color="bright">
-          <Download />
-        </Icon>
+      <Button
+        disabled
+        variant="secondary"
+        iconLeft={<Download />}
+        iconRight={<ChevronRight />}
+      >
         Download button
-        <Icon size={20} color="bright">
-          <ChevronRight />
-        </Icon>
       </Button>
-      <Button disabled variant="tertiary" hasIconRight>
+      <Button disabled variant="tertiary" iconRight={<ChevronRight />}>
         Download button
-        <Icon size={20} color="bright">
-          <ChevronRight />
-        </Icon>
       </Button>
-      <Button disabled variant="primaryInverted" hasIconLeft>
-        <Icon size={20} color="bright">
-          <ChevronRight />
-        </Icon>
+      <Button disabled variant="primaryInverted" iconLeft={<ChevronRight />}>
         Download button
       </Button>
     </ButtonBar>
   ))
   .add('with only an icon', () => (
     <>
-      <Button size={30} variant="blank">
-        <Icon size={20} color="bright">
-          <ChevronRight />
-        </Icon>
-      </Button>
+      <Button size={30} variant="blank" icon={<ChevronRight />} />
+      <Button size={60} variant="blank" iconSize={40} icon={<Close />} />
       <IconButton>
         <Close />
       </IconButton>

@@ -1,5 +1,7 @@
 import React from 'react'
-import IconStyle, { Props as IconStyleProps } from './IconStyle'
+import IconStyle, { defaultProps, Props as IconStyleProps } from './IconStyle'
+
+export { defaultProps }
 
 export type Props = IconStyleProps
 
