@@ -11,7 +11,6 @@ import Heading from '../Heading'
 import Paragraph from '../Paragraph'
 import Image from '../Image'
 import { Row, Column } from '../Grid'
-import ParagraphStyle from '../Paragraph/ParagraphStyle'
 import CardContentStyle from '../Card/CardContentStyle'
 import LinkList, { LinkListItem } from '../LinkList'
 import CardContainer from './CardContainer'
@@ -25,11 +24,13 @@ const SpecialCard = styled(Card)`
   border-bottom: ${color('tint', 'level3')} 1px solid;
   padding: 0 8px;
   width: 100%;
+  align-items: baseline;
 
   & > ${LinkStyle} {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    margin-top: 32px;
     width: 100%;
 
     ${CardMediaWrapperStyle} {
@@ -39,11 +40,7 @@ const SpecialCard = styled(Card)`
 
   ${CardContentStyle} {
     padding-left: 0;
-
-    ${ParagraphStyle} {
-      max-height: 66px;
-      overflow-y: hidden;
-    }
+    padding-top: 0;
   }
 
   &:hover {
