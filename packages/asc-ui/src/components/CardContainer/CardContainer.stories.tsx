@@ -11,7 +11,7 @@ import { storiesOf } from '@storybook/react'
 import styled from '@datapunt/asc-core'
 import React from 'react'
 import { color, breakpoint } from '../../utils'
-import Icon from '../Icon'
+import { Icon } from '../..'
 import IconStyle from '../Icon/IconStyle'
 import CardContainer from '.'
 import Card from '../Card/Card'
@@ -52,10 +52,13 @@ const CardContainerGenericFunctions = styled(CardContainer)`
     // eg: 5 cards instead of 6
     // because that breaks the design in Firefox and Safari
     padding-bottom: calc(24px - 8px); // Calculate the padding-bottom minus margin-bottom of the card
-    ${CardStyle} {
+    ${CardStyle}, ${LinkStyle} {
       display: inline-flex;
       width: 100%;
       break-inside: avoid;
+    }
+    ${LinkStyle} {
+      display: inline-flex;
     }
   }
 
@@ -77,7 +80,7 @@ const CardContainerGenericFunctions = styled(CardContainer)`
   ${LinkStyle} {
     position: relative;
     width: 100%;
-    height: 73px;
+    min-height: 66px;
     margin-bottom: 8px;
 
     &:hover ${HeadingStyle} {
@@ -102,20 +105,12 @@ const CardContainerGenericFunctions = styled(CardContainer)`
     }
   }
 
-  ${CardStyle} {
-    // height: 73px;
-  }
-
   ${CardMediaWrapperStyle} {
-    @media screen and ${breakpoint('max-width', 'mobileL')} {
-      max-width: 48px;
-      height: 100%;
-    }
-    @media screen and ${breakpoint('max-width', 'mobileM')} {
-      max-width: 40px;
-        height: 100%;
-    }
+    width: 13%;
+
     @media screen and ${breakpoint('min-width', 'tabletM')} {
+      width: 23%;
+
       ${IconStyle} {
         transform: scale(1.15);
       }
@@ -128,13 +123,11 @@ const CardContainerGenericFunctions = styled(CardContainer)`
     padding: 8px;
 
     @media screen and ${breakpoint('min-width', 'tabletS')} {
-      height: 73px;
       padding: 6px 12px 6px;
     }
   }
 
   ${CardActionsStyle} {
-    width: inherit;
     padding-right: 12px;
     padding-left: 0px;
   }
@@ -156,8 +149,8 @@ const CardContainerGenericFunctions = styled(CardContainer)`
     line-height: 17px;
 
     // Fallback in case card exceeds the maximum character length
-    max-height: 36px;
-    overflow: hidden;
+    // max-height: 36px;
+    // overflow: hidden;
   }
 `
 
@@ -234,120 +227,129 @@ storiesOf('Composed/CardContainer', module)
     </div>
   ))
   .add('implementation dataportaal "Generic functions"', () => (
-    <CardContainerGenericFunctions maxWidth={415}>
-      <Link href="/" linkType="blank">
-        <Card horizontal>
-          <CardMedia backgroundColor="level2" width={73}>
-            <Icon size={20}>
-              <Map />
-            </Icon>
-          </CardMedia>
-          <CardContent>
-            <Heading $as="h4">Kaart</Heading>
-            <Paragraph>Zoek en bekijk data op de kaart</Paragraph>
-          </CardContent>
-          <CardActions>
-            <Icon size={15}>
-              <ChevronRight />
-            </Icon>
-          </CardActions>
-        </Card>
-      </Link>
-      <Link href="/" linkType="blank">
-        <Card horizontal>
-          <CardMedia backgroundColor="level2" width={73}>
-            <Icon size={30}>
-              <Pano />
-            </Icon>
-          </CardMedia>
-          <CardContent>
-            <Heading $as="h4">Panoramabeelden</Heading>
-            <Paragraph>Kijk 360 graden in het rond</Paragraph>
-          </CardContent>
-          <CardActions>
-            <Icon size={15}>
-              <ChevronRight />
-            </Icon>
-          </CardActions>
-        </Card>
-      </Link>
-      <Link href="/" linkType="blank">
-        <Card horizontal>
-          <CardMedia backgroundColor="level2" width={73}>
-            <Icon size={30}>
-              <DocumentText />
-            </Icon>
-          </CardMedia>
-          <CardContent>
-            <Heading $as="h4">Publicaties</Heading>
-            <Paragraph>
-              Download onderzoeksrapporten, fasctsheets of het jaarboek
-            </Paragraph>
-          </CardContent>
-          <CardActions>
-            <Icon size={15}>
-              <ChevronRight />
-            </Icon>
-          </CardActions>
-        </Card>
-      </Link>
-      <Link href="/" linkType="blank">
-        <Card horizontal>
-          <CardMedia backgroundColor="level2" width={73}>
-            <Icon size={20}>
-              <Data />
-            </Icon>
-          </CardMedia>
-          <CardContent>
-            <Heading $as="h4">Datasets</Heading>
-            <Paragraph>
-              Download cijfers en andere (open) databestanden
-            </Paragraph>
-          </CardContent>
-          <CardActions>
-            <Icon size={15}>
-              <ChevronRight />
-            </Icon>
-          </CardActions>
-        </Card>
-      </Link>
-      <Link href="/" linkType="blank">
-        <Card horizontal>
-          <CardMedia backgroundColor="level2" width={73}>
-            <Icon size={25}>
-              <Table />
-            </Icon>
-          </CardMedia>
-          <CardContent>
-            <Heading $as="h4">Tabellen</Heading>
-            <Paragraph>Selecteer data en download als spreadsheet</Paragraph>
-          </CardContent>
-          <CardActions>
-            <Icon size={15}>
-              <ChevronRight />
-            </Icon>
-          </CardActions>
-        </Card>
-      </Link>
-      <Link href="/" linkType="blank">
-        <Card horizontal>
-          <CardMedia backgroundColor="level2" width={73}>
-            <Icon size={30}>
-              <Api />
-            </Icon>
-          </CardMedia>
-          <CardContent>
-            <Heading $as="h4">Data services</Heading>
-            <Paragraph>Alles over het koppelen van data via APIs</Paragraph>
-          </CardContent>
-          <CardActions>
-            <Icon size={15}>
-              <ChevronRight />
-            </Icon>
-          </CardActions>
-        </Card>
-      </Link>
-    </CardContainerGenericFunctions>
+    <Row>
+      <Column
+        className="column-with-heading"
+        span={{ small: 1, medium: 2, big: 6, large: 5, xLarge: 5 }}
+      >
+        <CardContainerGenericFunctions>
+          <Link href="/" linkType="blank">
+            <Card horizontal>
+              <CardMedia backgroundColor="level2">
+                <Icon size={20}>
+                  <Map />
+                </Icon>
+              </CardMedia>
+              <CardContent>
+                <Heading $as="h4">Kaart</Heading>
+                <Paragraph>Zoek en bekijk data op de kaart</Paragraph>
+              </CardContent>
+              <CardActions>
+                <Icon size={15}>
+                  <ChevronRight />
+                </Icon>
+              </CardActions>
+            </Card>
+          </Link>
+          <Link href="/" linkType="blank">
+            <Card horizontal>
+              <CardMedia backgroundColor="level2">
+                <Icon size={30}>
+                  <Pano />
+                </Icon>
+              </CardMedia>
+              <CardContent>
+                <Heading $as="h4">Panoramabeelden</Heading>
+                <Paragraph>Kijk 360 graden in het rond</Paragraph>
+              </CardContent>
+              <CardActions>
+                <Icon size={15}>
+                  <ChevronRight />
+                </Icon>
+              </CardActions>
+            </Card>
+          </Link>
+          <Link href="/" linkType="blank">
+            <Card horizontal>
+              <CardMedia backgroundColor="level2">
+                <Icon size={30}>
+                  <DocumentText />
+                </Icon>
+              </CardMedia>
+              <CardContent>
+                <Heading $as="h4">Publicaties</Heading>
+                <Paragraph>
+                  Download onderzoeksrapporten, fasctsheets of het jaarboek
+                </Paragraph>
+              </CardContent>
+              <CardActions>
+                <Icon size={15}>
+                  <ChevronRight />
+                </Icon>
+              </CardActions>
+            </Card>
+          </Link>
+          <Link href="/" linkType="blank">
+            <Card horizontal>
+              <CardMedia backgroundColor="level2">
+                <Icon size={20}>
+                  <Data />
+                </Icon>
+              </CardMedia>
+              <CardContent>
+                <Heading $as="h4">Datasets</Heading>
+                <Paragraph>
+                  Download cijfers en andere (open) databestanden
+                </Paragraph>
+              </CardContent>
+              <CardActions>
+                <Icon size={15}>
+                  <ChevronRight />
+                </Icon>
+              </CardActions>
+            </Card>
+          </Link>
+          <Link href="/" linkType="blank">
+            <Card horizontal>
+              <CardMedia backgroundColor="level2">
+                <Icon size={25}>
+                  <Table />
+                </Icon>
+              </CardMedia>
+              <CardContent>
+                <Heading $as="h4">Tabellen</Heading>
+                <Paragraph>
+                  Selecteer data en download als spreadsheet
+                </Paragraph>
+              </CardContent>
+              <CardActions>
+                <Icon size={15}>
+                  <ChevronRight />
+                </Icon>
+              </CardActions>
+            </Card>
+          </Link>
+          <Link href="/" linkType="blank">
+            <Card horizontal>
+              <CardMedia backgroundColor="level2">
+                <Icon size={30}>
+                  <Api />
+                </Icon>
+              </CardMedia>
+              <CardContent>
+                <Heading $as="h4">Data services</Heading>
+                <Paragraph>Alles over het koppelen van data via APIs</Paragraph>
+              </CardContent>
+              <CardActions>
+                <Icon size={15}>
+                  <ChevronRight />
+                </Icon>
+              </CardActions>
+            </Card>
+          </Link>
+        </CardContainerGenericFunctions>
+      </Column>
+    </Row>
   ))
   .add('implementation dataportaal "About Data & About this site"', () => (
     <CardContainerAboutData>

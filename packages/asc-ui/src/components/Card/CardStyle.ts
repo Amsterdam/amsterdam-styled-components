@@ -29,7 +29,7 @@ const CardStyle = styled.div<Props>`
         max-width: 80px;
       }
       ${CardActionsStyle} {
-        width: inherit;
+        width: initial;
         padding: 24px 16px;
       }
     `}

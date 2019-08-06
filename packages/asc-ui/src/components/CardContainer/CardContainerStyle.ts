@@ -1,12 +1,7 @@
 import styled from '@datapunt/asc-core'
 import CardStyle from '../Card/CardStyle'
-import { breakpoint } from '../../utils'
 
-export type Props = {
-  maxWidth?: number
-}
-
-const CardContainerStyle = styled.div<Props>`
+const CardContainerStyle = styled.div`
   padding: 24px;
 
   ${CardStyle} {
@@ -14,10 +9,6 @@ const CardContainerStyle = styled.div<Props>`
   }
   ${/* sc-selector */ CardStyle}:last-of-type {
     margin-bottom: 0;
-  }
-
-  @media screen and ${breakpoint('min-width', 'laptopM')} {
-    ${({ maxWidth }) => `max-width: ${maxWidth}px;`}
   }
 `
 
