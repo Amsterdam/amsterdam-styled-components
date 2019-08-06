@@ -10,7 +10,7 @@ export type Props = {
   rotate?: number
 }
 
-const defaultProps = {
+export const defaultProps = {
   size: 20,
   padding: 0,
   rotate: 0,

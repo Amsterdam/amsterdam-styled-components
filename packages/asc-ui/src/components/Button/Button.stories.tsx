@@ -1,64 +1,99 @@
-import { Alert, Download, ChevronRight } from '@datapunt/asc-assets'
-import { action } from '@storybook/addon-actions'
+import styled from '@datapunt/asc-core'
+import {
+  Download,
+  ChevronRight,
+  Close,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Email,
+  Print,
+} from '@datapunt/asc-assets'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
-import ButtonBar from '../ButtonBar'
-import Icon from '../Icon'
 import Button from './Button'
+import ShareButton from './ShareButton'
+
+const ButtonBar = styled.div<{}>`
+  display: flex;
+
+  & > * {
+    margin-right: 5px;
+  }
+`
 
 storiesOf('Atoms/Buttons', module)
   .addDecorator(storyFn => (
     <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
   ))
-  .add('Default', () => (
+  .add('[deprecated] variants', () => (
     <ButtonBar>
-      <Button onClick={action('click')}>Default button</Button>
+      <Button>Default button</Button>
+      <Button color="primary">Primary button</Button>
+      <Button color="secondary">Secondary button</Button>
     </ButtonBar>
   ))
-  .add('Primary', () => (
+  .add('variants', () => (
     <ButtonBar>
-      <Button color="primary">Primary</Button>
-      <Button color="primary">
-        <Icon size={24} color="bright">
-          <Alert />
-        </Icon>
-        Primary with icon left
-      </Button>
-      <Button color="primary">
-        Primary with icon right
-        <Icon size={24} color="bright">
-          <Alert />
-        </Icon>
-      </Button>
-    </ButtonBar>
-  ))
-  .add('Secondary', () => (
-    <ButtonBar>
-      <Button color="secondary">Secondary</Button>
-      <Button color="secondary">
-        <Icon size={24} color="bright">
-          <Alert />
-        </Icon>
-        Secondary with icon left
-      </Button>
-      <Button color="secondary">
-        Secondary with icon right
-        <Icon size={24} color="bright">
-          <Alert />
-        </Icon>
-      </Button>
-    </ButtonBar>
-  ))
-  .add('with Content', () => (
-    <ButtonBar>
-      <Button color="primary">
-        <Icon size={20} color="bright">
-          <Download />
-        </Icon>
+      <Button variant="primary">Default button</Button>
+      <Button
+        variant="secondary"
+        iconLeft={<Download />}
+        iconRight={<ChevronRight />}
+      >
         Download button
-        <Icon size={20} color="secondary">
-          <ChevronRight />
-        </Icon>
       </Button>
+      <Button variant="tertiary" iconRight={<ChevronRight />}>
+        Download button
+      </Button>
+      <Button variant="primaryInverted" iconLeft={<ChevronRight />}>
+        Download button
+      </Button>
+    </ButtonBar>
+  ))
+  .add('variants - disabled', () => (
+    <ButtonBar>
+      <Button disabled variant="primary">
+        Default button
+      </Button>
+      <Button
+        disabled
+        variant="secondary"
+        iconLeft={<Download />}
+        iconRight={<ChevronRight />}
+      >
+        Download button
+      </Button>
+      <Button disabled variant="tertiary" iconRight={<ChevronRight />}>
+        Download button
+      </Button>
+      <Button disabled variant="primaryInverted" iconLeft={<ChevronRight />}>
+        Download button
+      </Button>
+    </ButtonBar>
+  ))
+  .add('with only an icon', () => (
+    <>
+      <Button size={30} variant="blank" icon={<ChevronRight />} />
+      <Button size={60} variant="blank" iconSize={40} icon={<Close />} />
+    </>
+  ))
+  .add('social buttons', () => (
+    <ButtonBar>
+      <ShareButton hoverColor="#3b5999" iconSize={30}>
+        <Facebook />
+      </ShareButton>
+      <ShareButton hoverColor="#55acee">
+        <Twitter />
+      </ShareButton>
+      <ShareButton hoverColor="#0077B5">
+        <Linkedin />
+      </ShareButton>
+      <ShareButton>
+        <Email />
+      </ShareButton>
+      <ShareButton>
+        <Print />
+      </ShareButton>
     </ButtonBar>
   ))

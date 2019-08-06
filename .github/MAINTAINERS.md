@@ -1,5 +1,0 @@
-# Maintainers
-
-- chrisvanmook
-- royderks
-- aditudorache

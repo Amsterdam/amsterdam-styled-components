@@ -1,7 +1,7 @@
-import { ascDefaultTheme, ServerStyleSheet, Theme } from '@datapunt/asc-core'
+import { ServerStyleSheet, Theme, ascDefaultTheme } from '@datapunt/asc-core'
+
 import AmsterdamLogo, { AmsterdamLogoStyles } from './components/AmsterdamLogo'
 import BackDrop, { BackDropStyles } from './components/BackDrop'
-import IconButton from './components/IconButton'
 import Icon from './components/Icon'
 import Input, { InputStyles } from './components/Input'
 import Modal from './components/Modal'
@@ -10,8 +10,7 @@ import Heading from './components/Heading'
 import Link from './components/Link'
 import Paragraph from './components/Paragraph'
 import TopBar, { TopBarStyles } from './components/TopBar'
-import ShareBar from './components/ShareBar'
-import ShareButton from './components/ShareButton'
+import ShareButton from './components/Button/ShareButton'
 import Button from './components/Button'
 import Card from './components/Card'
 import {
@@ -45,31 +44,32 @@ import {
   Container,
 } from './components/Grid'
 import {
-  BlogBody,
-  BlogPost,
-  BlogStyles,
-  BlogMetaList,
-  BlogContent,
-  BlogHeader,
-  BlogSidebar,
-} from './components/Blog'
+  EditorialBody,
+  EditorialPost,
+  EditorialStyles,
+  EditorialMetaList,
+  EditorialContent,
+  EditorialHeader,
+  EditorialSidebar,
+} from './components/Editorial'
 import Typography from './components/Typography'
 import {
+  MenuItemTitle,
+  MenuItemLink,
+  MenuItemLabel,
+  MenuItem,
   MenuFlyOut,
   MenuInline,
-  MenuItem,
-  MenuItemLabel,
-  MenuItemLink,
-  MenuItemTitle,
-  MenuStyles,
   MenuToggle,
+  MenuStyles,
 } from './components/Menu'
 import ThemeProvider from './theme'
 import Spinner from './components/Spinner/Spinner'
 import LinkList, { LinkListItem } from './components/LinkList'
-import Publication from './components/Publication'
 import DocumentCover from './components/DocumentCover'
-import { Article, ArticleStyle } from './components/Blog/Article'
+import { Article, ArticleStyle } from './components/Editorial/Article'
+import IconButton from './components/deprecated/IconButton'
+import ButtonBar from './components/deprecated/ButtonBar'
 
 export { breakpoint } from './utils'
 
@@ -83,11 +83,16 @@ export const styles = {
   ...InputStyles,
   ...SearchBarToggleStyles,
   ...MenuStyles,
-  ...BlogStyles,
+  ...EditorialStyles,
   ...ImageCardStyles,
   CustomHTMLBlockStyle,
   ArticleStyle,
 }
+
+/**
+ * @deprecated
+ */
+const ShareBar = ButtonBar
 
 // Components
 export {
@@ -98,6 +103,8 @@ export {
   CustomHTMLBlock,
   Button,
   Card,
+  ButtonBar,
+  ShareBar,
   Column,
   ContextMenu,
   ContextMenuButtonStyle,
@@ -131,24 +138,22 @@ export {
   SearchBar,
   SearchBarToggle,
   ServerStyleSheet,
-  ShareBar,
   ShareButton,
   Spinner,
   TextField,
   Theme,
   ThemeProvider,
   TopBar,
-  BlogPost,
+  EditorialPost,
   Article,
-  Publication,
   Link,
   Paragraph,
   Heading,
-  BlogBody,
-  BlogMetaList,
-  BlogContent,
-  BlogHeader,
-  BlogSidebar,
+  EditorialBody,
+  EditorialMetaList,
+  EditorialContent,
+  EditorialHeader,
+  EditorialSidebar,
   ascDefaultTheme,
   DocumentCover,
 }

@@ -33,11 +33,9 @@ exports[`SearchBar should render 1`] = `
   border: none;
   cursor: pointer;
   font-size: 16px;
-  font-weight: normal;
-  padding: 0 10px 0 10px;
-  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
-  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
-  background: #ec0000;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -50,9 +48,12 @@ exports[`SearchBar should render 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 5px;
-  width: 30px;
-  height: 30px;
+  height: 40px;
+  width: 40px;
+  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ec0000;
+  color: #ffffff;
 }
 
 .c6:focus {
@@ -63,8 +64,14 @@ exports[`SearchBar should render 1`] = `
   outline-width: 3px;
 }
 
+.c6 svg rect,
+.c6 svg polygon,
+.c6 svg path {
+  fill: #ffffff;
+}
+
 .c6:hover {
-  background: #bc0000;
+  background-color: #b90000;
 }
 
 .c6::after {
@@ -74,29 +81,18 @@ exports[`SearchBar should render 1`] = `
   font-size: 0;
 }
 
-.c4 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  font-size: 1rem;
-  border: solid 1px #767676;
-  border-radius: 0;
-  box-sizing: border-box;
-  line-height: 18px;
-  padding: 10px;
-  width: 100%;
+.c6:disabled {
+  cursor: default;
+  outline: none;
+  border: none;
+  color: #B4B4B4;
+  background-color: #E6E6E6;
 }
 
-.c4:focus {
-  z-index: 10;
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-offset: 0.5px;
-  outline-width: 2px;
-}
-
-.c4:hover {
-  border-color: #323232;
+.c6:disabled svg rect,
+.c6:disabled svg polygon,
+.c6:disabled svg path {
+  fill: #B4B4B4;
 }
 
 .c2 {
@@ -125,15 +121,6 @@ exports[`SearchBar should render 1`] = `
 
 .c0 > .c5 {
   margin-left: 5px;
-  padding: 10px;
-  width: 40px;
-  height: 40px;
-}
-
-.c0 > .c5 svg rect,
-.c0 > .c5 svg polygon,
-.c0 > .c5 svg path {
-  fill: #ffffff;
 }
 
 .c3 {
@@ -146,6 +133,31 @@ exports[`SearchBar should render 1`] = `
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.c4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 1rem;
+  border: solid 1px #767676;
+  border-radius: 0;
+  box-sizing: border-box;
+  line-height: 18px;
+  padding: 10px;
+  width: 100%;
+}
+
+.c4:focus {
+  z-index: 10;
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-offset: 0.5px;
+  outline-width: 2px;
+}
+
+.c4:hover {
+  border-color: #323232;
 }
 
 <div
@@ -174,11 +186,12 @@ exports[`SearchBar should render 1`] = `
   <button
     aria-label="Search"
     class="c5 c6"
-    color="secondary"
+    size="40"
     type="submit"
   >
     <span
       class="c7"
+      size="20"
     >
       <svg
         focusable="false"
