@@ -43,11 +43,6 @@ A typical structure of a component would look like this
 7. Eventually, we need to make our component available to use in other project, so we import
    the corresponding component's default index.ts and make it available in the export.
 
-### Internals
-
-`asc-ui/src/internals` folder where the styles are allowed. The components from this folder are
-just for internal use in the stories.
-
 **Pro tip!** Use generators to quickly add the needed files to develop components.
 To make life a little easier, we added [hygen](https://www.hygen.io/). Simply run
 `hygen component new`. You will be prompted with questions the generator needs to build the files
