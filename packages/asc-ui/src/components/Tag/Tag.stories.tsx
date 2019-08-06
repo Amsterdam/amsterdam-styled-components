@@ -10,8 +10,8 @@ storiesOf('Atoms/Typography/Tag', module)
     <>
       <Tag>Tag one</Tag>
       <br />
-      <Tag color="primary">Tag two</Tag>
+      <Tag colorVariant="primary">Tag two</Tag>
       <br />
-      <Tag color="secondary">Tag three</Tag>
+      <Tag colorVariant="secondary">Tag three</Tag>
     </>
   ))

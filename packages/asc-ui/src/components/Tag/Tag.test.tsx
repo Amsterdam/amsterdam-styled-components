@@ -29,7 +29,7 @@ describe('Tag', () => {
   it('should render and apply custom style', () => {
     const { container, queryByText } = render(
       <ThemeProvider theme={theme}>
-        <Tag color="primary">Tag two</Tag>
+        <Tag colorVariant="primary">Tag two</Tag>
       </ThemeProvider>,
     )
 

@@ -5,12 +5,12 @@ import Typography from '../Typography'
 import { getColorCode } from '../../utils'
 
 export type Props = {
-  color?: Theme.Tint | Theme.TypeLevel
+  colorVariant?: Theme.Tint | Theme.TypeLevel
 } & TypographyProps &
   styledComponents.StyledProps<any>
 
-export const TagStyleCSS = ({ color, theme }: Props) => {
-  const backgroundColor = getColorCode(color)({ theme })
+export const TagStyleCSS = ({ colorVariant, theme }: Props) => {
+  const backgroundColor = getColorCode(colorVariant)({ theme })
 
   return css<Props>`
     margin-top: 0;
