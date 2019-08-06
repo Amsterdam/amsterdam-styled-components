@@ -18,9 +18,10 @@
     "lib"
   ],
   "scripts": {
-    "prebuild": "mkdir -p lib && cp -R src/* lib/ && svgo --config=.svgo.yml -f ./src/assets/Icons/ -o ./lib/Icons",
-    "build": "yarn generate",
-    "generate": "svgr -d src/Icons src/assets/Icons --template src/utils/generateIconReact.js --svg-props focusable={false} --ext tsx"
+    "prebuild": "mkdir -p lib && cp -R src/assets lib/",
+    "build": "yarn build:optimize-svg && yarn build:react-icons",
+    "build:optimize-svg": "svgo --config=.svgo.yml -f ./src/assets/Icons/ -o ./src/tmp/Icons && mkdir -p lib && cp -Rf src/assets/Icons lib/assets",
+    "build:react-icons": "svgr -d src/Icons src/tmp/Icons --template src/utils/generateIconReact.js --svg-props focusable={false} --ext tsx && rm -rf ./src/tmp"
   },
   "dependencies": {
     "@svgr/cli": "^4.3.1",
@@ -30,5 +31,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "e9fa02de2db7fdc9c60285319df52042d6b217fc"
+  "gitHead": "79ff2022d76a557b0f047fcbe64972cc0963e275"
 }

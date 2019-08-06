@@ -59,6 +59,10 @@ export const getTypographyFromTheme = () => ({
   theme,
 }: any) => {
   const as = styleAs || asProp
+  const styles = fromTheme(`typography.${[as]}`)({ theme })
+  if (!styles) {
+    return ''
+  }
   const {
     defaultColor,
     fontWeight,
@@ -67,7 +71,7 @@ export const getTypographyFromTheme = () => ({
     lineHeight,
     marginBottom,
     breakpoints,
-  } = fromTheme(`typography.${[as]}`)({ theme })
+  } = styles
   return css`
     ${generateCSSFromTypography(
       {
