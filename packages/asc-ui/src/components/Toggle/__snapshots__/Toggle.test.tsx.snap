@@ -104,7 +104,6 @@ exports[`Toggle should render 1`] = `
       >
         <path
           d="M0 3.238h32V7.81H0V3.238zm0 10.476h32v4.572H0v-4.572zM0 24.19h32v4.572H0V24.19z"
-          fill="#000"
           fill-rule="evenodd"
         />
       </svg>
