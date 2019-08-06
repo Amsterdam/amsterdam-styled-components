@@ -1,14 +1,10 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import BoxWrapper from '../../internals/Box/BoxWrapper'
 import Header from './Header'
 import Typography from '../Typography'
 import DataportaalHeader from './examples/DataportaalHeader'
 
 storiesOf('Composed/Header', module)
-  .addDecorator(storyFn => (
-    <BoxWrapper backgroundColor="#E6E6E6">{storyFn()}</BoxWrapper>
-  ))
   .add('Header short', () => (
     <Header
       tall={false}

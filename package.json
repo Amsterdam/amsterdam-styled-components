@@ -55,6 +55,7 @@
     "@storybook/storybook-deployer": "^2.8.1",
     "@svgr/webpack": "^4.3.2",
     "@testing-library/react": "^8.0.6",
+    "@testing-library/react-hooks": "^1.1.0",
     "@types/babel__core": "^7.1.2",
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",

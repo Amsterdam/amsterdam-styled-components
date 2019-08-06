@@ -1,8 +1,8 @@
 import React from 'react'
 import ToggleStyle, { Props as ToggleStyleProps } from './ToggleStyle'
 import ownerDocument from '../../utils/ownerDocument'
-import usePassPropsToChildren from '../../utils/usePassPropsToChildren'
-import useActionOnEscape from '../../utils/useActionOnEscape'
+import usePassPropsToChildren from '../../utils/hooks/usePassPropsToChildren'
+import useActionOnEscape from '../../utils/hooks/useActionOnEscape'
 import ToggleButton, {
   Props as ToggleButtonProps,
 } from '../Button/ToggleButton/ToggleButton'

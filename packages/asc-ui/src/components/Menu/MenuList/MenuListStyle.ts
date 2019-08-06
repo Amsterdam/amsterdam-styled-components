@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from '@datapunt/asc-core'
 import { MenuItemStyle } from '../MenuItem'
-import { EdgeDetectionTypes } from '../../../utils/useEdgeDetection'
+import { EdgeDetectionTypes } from '../../../utils/hooks/useEdgeDetection'
 import { showHide } from '../../../utils'
 
 export type Props = {

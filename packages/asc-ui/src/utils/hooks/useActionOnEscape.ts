@@ -1,5 +1,5 @@
 import React from 'react'
-import { KeyboardKeys } from '../types'
+import { KeyboardKeys } from '../../types'
 
 function useActionOnEscape(callback: Function) {
   const onKeyDown = (event: React.KeyboardEvent) => {

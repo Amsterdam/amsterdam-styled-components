@@ -1,21 +1,19 @@
 import * as React from 'react'
-import { shallow } from 'enzyme'
+import { render, fireEvent } from '@testing-library/react'
 import ShareButton from './index'
-import { Icon } from '../../../index'
 
 describe('ShareButton', () => {
   const mockOnClick = jest.fn()
-  const component = shallow(
+  const { getByText, container } = render(
     <ShareButton onClick={mockOnClick}>Click me</ShareButton>,
   )
 
   it('should render with the correct children', () => {
-    expect(component.find(Icon).props().children).toBe('Click me')
+    expect(getByText('Click me')).toBeTruthy()
   })
 
   it('should handle the onclick event', () => {
-    component.at(0).simulate('click')
-
+    fireEvent.click(container.firstChild as Element)
     expect(mockOnClick).toHaveBeenCalled()
   })
 })
