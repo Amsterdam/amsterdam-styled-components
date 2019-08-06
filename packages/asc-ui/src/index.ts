@@ -12,16 +12,13 @@ import {
 } from './components/Blog'
 import { Article, ArticleStyle } from './components/Blog/Article'
 import Button from './components/Button'
-import {
+import Card, {
   CardActions,
   CardContent,
   CardMedia,
   CardStyles,
-  default as Card,
 } from './components/Card'
-import CardContainer, {
-  CardContainerStyle,
-} from './components/CardContainer'
+import CardContainer, { CardContainerStyle } from './components/CardContainer'
 import ContextMenu from './components/ContextMenu'
 import ContextMenuButtonStyle from './components/ContextMenu/ContextMenuButton'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
