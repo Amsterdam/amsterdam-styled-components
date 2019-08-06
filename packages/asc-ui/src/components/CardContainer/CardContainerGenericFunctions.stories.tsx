@@ -146,10 +146,6 @@ const CardContainerGenericFunctions = styled(CardContainer)`
   ${ParagraphStyle} {
     font-size: 14px;
     line-height: 17px;
-
-    // Fallback in case card exceeds the maximum character length
-    // max-height: 36px;
-    // overflow: hidden;
   }
 `
 
