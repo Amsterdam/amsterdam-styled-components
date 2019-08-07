@@ -10,6 +10,6 @@ cache:
 install:
   - yarn
 script:
+  - yarn build
   - yarn lint
   - yarn test --maxWorkers=4
-  - yarn build
