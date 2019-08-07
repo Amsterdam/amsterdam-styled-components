@@ -3,6 +3,7 @@ import { color } from '../../utils'
 import { perceivedLoading } from '../../utils/themeUtils'
 import CardActionsStyle from './CardActionsStyle'
 import { CardMediaWrapperStyle } from './CardMediaStyle'
+import CardContentStyle from './CardContentStyle'
 
 export type Props = {
   maxWidth?: number
@@ -41,6 +42,9 @@ const CardStyle = styled.div<Props>`
 
       ${CardMediaWrapperStyle} {
         ${perceivedLoading(theme)}
+      }
+      ${CardContentStyle} {
+        visibility: hidden;
       }
     `}`
 

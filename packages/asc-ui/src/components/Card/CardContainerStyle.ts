@@ -1,5 +1,5 @@
 import styled from '@datapunt/asc-core'
-import CardStyle from '../Card/CardStyle'
+import CardStyle from './CardStyle'
 
 const CardContainerStyle = styled.div`
   width: 100%;

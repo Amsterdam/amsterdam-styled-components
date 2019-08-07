@@ -1,3 +1,6 @@
+import ColumnStyle from './ColumnStyle'
+import RowStyle from './RowStyle'
+
 export { default as GridContainer } from './GridContainerStyle'
 export { default as GridItem } from './GridItemStyle'
 export { default as Column } from './Column'
@@ -10,3 +13,8 @@ export type TypeFlexPosition =
   | 'center'
   | 'baseline'
   | 'stretch'
+
+export const GridStyles = {
+  RowStyle,
+  ColumnStyle,
+}
