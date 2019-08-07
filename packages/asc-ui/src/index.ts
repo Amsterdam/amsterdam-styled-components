@@ -1,4 +1,5 @@
-import { ascDefaultTheme, ServerStyleSheet, Theme } from '@datapunt/asc-core'
+import { ServerStyleSheet, Theme, ascDefaultTheme } from '@datapunt/asc-core'
+
 import AmsterdamLogo, { AmsterdamLogoStyles } from './components/AmsterdamLogo'
 import BackDrop, { BackDropStyles } from './components/BackDrop'
 import Icon from './components/Icon'
@@ -53,14 +54,14 @@ import {
 } from './components/Editorial'
 import Typography from './components/Typography'
 import {
+  MenuItemTitle,
+  MenuItemLink,
+  MenuItemLabel,
+  MenuItem,
   MenuFlyOut,
   MenuInline,
-  MenuItem,
-  MenuItemLabel,
-  MenuItemLink,
-  MenuItemTitle,
-  MenuStyles,
   MenuToggle,
+  MenuStyles,
 } from './components/Menu'
 import ThemeProvider from './theme'
 import Spinner from './components/Spinner/Spinner'
