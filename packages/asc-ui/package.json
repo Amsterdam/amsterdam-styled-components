@@ -3,7 +3,7 @@
   "description": "React Components that developers can reuse in multiple projects",
   "license": "MPL-2.0",
   "author": "Datapunt Amsterdam",
-  "version": "0.10.1-alpha.0",
+  "version": "0.10.0",
   "main": "lib/index.js",
   "files": [
     "lib",
@@ -27,7 +27,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "79ff2022d76a557b0f047fcbe64972cc0963e275",
+  "gitHead": "e9fa02de2db7fdc9c60285319df52042d6b217fc",
   "resolutions": {
     "react": "16.8.6",
     "react-dom": "16.8.6"
