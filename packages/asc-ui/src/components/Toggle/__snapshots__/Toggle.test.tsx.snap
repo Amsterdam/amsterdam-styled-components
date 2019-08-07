@@ -47,10 +47,9 @@ exports[`Toggle should render 1`] = `
   border: none;
   cursor: pointer;
   font-size: 16px;
-  font-weight: normal;
-  padding: 0 10px 0 10px;
-  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
-  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -63,11 +62,10 @@ exports[`Toggle should render 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 5px;
-  width: 30px;
-  height: 30px;
   height: 50px;
   width: 50px;
+  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
 }
 
 .c1:focus {
@@ -84,11 +82,18 @@ exports[`Toggle should render 1`] = `
   font-size: 0;
 }
 
+.c1:disabled {
+  cursor: default;
+  outline: none;
+  border: none;
+}
+
 <div
   class="c0"
 >
   <button
     class="c1"
+    size="50"
   >
     <span
       class="c2"
@@ -99,7 +104,6 @@ exports[`Toggle should render 1`] = `
       >
         <path
           d="M0 3.238h32V7.81H0V3.238zm0 10.476h32v4.572H0v-4.572zM0 24.19h32v4.572H0V24.19z"
-          fill="#000"
           fill-rule="evenodd"
         />
       </svg>

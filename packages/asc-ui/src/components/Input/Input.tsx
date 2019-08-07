@@ -1,8 +1,8 @@
 import React from 'react'
 import InputStyle from './InputStyle'
 import InputContext from './InputMethodsContext'
-import useFocusOnRender from '../../utils/useFocusOnRender'
-import useActionOnEscape from '../../utils/useActionOnEscape'
+import useFocusOnRender from '../../utils/hooks/useFocusOnRender'
+import useActionOnEscape from '../../utils/hooks/useActionOnEscape'
 
 export interface InputMethods {
   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void

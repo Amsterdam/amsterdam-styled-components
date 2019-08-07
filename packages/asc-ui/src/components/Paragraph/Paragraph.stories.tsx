@@ -21,7 +21,7 @@ storiesOf('Atoms/Typography/Paragraph', module)
       </Paragraph>
     </>
   ))
-  .add('long text (for blog posts)', () => (
+  .add('long text (for editorial posts)', () => (
     <>
       <Paragraph hasLongText>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
