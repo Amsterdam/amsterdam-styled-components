@@ -1,4 +1,5 @@
-import { ascDefaultTheme, ServerStyleSheet, Theme } from '@datapunt/asc-core'
+import { ServerStyleSheet, Theme, ascDefaultTheme } from '@datapunt/asc-core'
+
 import AmsterdamLogo, { AmsterdamLogoStyles } from './components/AmsterdamLogo'
 import BackDrop, { BackDropStyles } from './components/BackDrop'
 import Icon from './components/Icon'
@@ -56,14 +57,14 @@ import ImageCard, {
 import LinkList, { LinkListItem } from './components/LinkList'
 import ListItem from './components/ListItem'
 import {
+  MenuItemTitle,
+  MenuItemLink,
+  MenuItemLabel,
+  MenuItem,
   MenuFlyOut,
   MenuInline,
-  MenuItem,
-  MenuItemLabel,
-  MenuItemLink,
-  MenuItemTitle,
-  MenuStyles,
   MenuToggle,
+  MenuStyles,
 } from './components/Menu'
 import ThemeProvider from './theme'
 import IconButton from './components/deprecated/IconButton'
