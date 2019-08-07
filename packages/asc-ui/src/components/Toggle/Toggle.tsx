@@ -36,7 +36,9 @@ const Toggle: React.FC<Props> = ({
   ...otherProps
 }) => {
   const [open, setOpen] = React.useState(false)
-  const { onKeyDown: onKeyDownHook } = useActionOnEscape(() => setOpen(false))
+  const { onKeyDown: onKeyDownHook } = useActionOnEscape(() =>
+    handleOnOpen(false),
+  )
   const ref = React.useRef(null!)
 
   const handleOnBlur = () => {
@@ -46,7 +48,7 @@ const Toggle: React.FC<Props> = ({
         const currentFocus = ownerDocument(element).activeElement
         // @ts-ignore
         if (!element.contains(currentFocus)) {
-          setOpen(false)
+          handleOnOpen(false)
         }
       }
     })
@@ -60,7 +62,7 @@ const Toggle: React.FC<Props> = ({
   }
 
   const handleOnClick = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
-    setOpen(!open)
+    handleOnOpen(!open)
     if (onClick) {
       onClick(e)
     }
@@ -73,19 +75,20 @@ const Toggle: React.FC<Props> = ({
   // Useful if parent needs to take over control the open state
   React.useEffect(() => {
     if (typeof openProp !== 'undefined') {
-      setOpen(openProp)
+      handleOnOpen(openProp)
     }
-  }, [openProp])
+  }, [handleOnOpen, openProp])
 
   const handleOnOpen = React.useCallback(
-    openParam => onOpen && onOpen(openParam),
+    openParam => {
+      console.log('handleOnOpen', openParam)
+
+      onOpen && onOpen(openParam)
+      setOpen(openParam)
+    },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   )
-
-  React.useEffect(() => {
-    handleOnOpen(open)
-  }, [handleOnOpen, open])
 
   const conditionalRenderedChildren = open ? children : null
 
