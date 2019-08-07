@@ -60,10 +60,10 @@ const typography: Theme.TypographyInterface = {
   },
   h6: {
     defaultColor: colors.tint.level7,
-    fontSize: '18px',
-    fontWeight: 400,
+    fontSize: '16px',
+    fontWeight: 500,
     letterSpacing: 'inherit',
-    lineHeight: 1,
+    lineHeight: 1.25,
     marginBottom: '0',
   },
   a: {

@@ -5,4 +5,6 @@ export type Props = {
   alt: string
 }
 
-export default styled.img<Props>``
+export default styled.img<Props>`
+  width: 100%;
+`

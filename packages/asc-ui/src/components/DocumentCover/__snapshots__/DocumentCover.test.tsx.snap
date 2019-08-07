@@ -15,7 +15,7 @@ exports[`DocumentCover should render 1`] = `
   background-color: #F5F5F5;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,16 +28,16 @@ exports[`DocumentCover should render 1`] = `
   transform: rotate(0deg);
 }
 
-.c6 > svg {
+.c7 > svg {
   width: inherit;
   height: inherit;
 }
 
-.c5 {
+.c6 {
   margin-right: 10px;
 }
 
-.c4 {
+.c5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -60,7 +60,7 @@ exports[`DocumentCover should render 1`] = `
   color: #fff;
 }
 
-.c4:focus {
+.c5:focus {
   z-index: 10;
   outline-color: #FEC813;
   outline-style: solid;
@@ -68,24 +68,24 @@ exports[`DocumentCover should render 1`] = `
   outline-width: 3px;
 }
 
-.c4 svg rect,
-.c4 svg polygon,
-.c4 svg path {
+.c5 svg rect,
+.c5 svg polygon,
+.c5 svg path {
   fill: #ffffff;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: #002f66;
 }
 
-.c4::after {
+.c5::after {
   content: '';
   display: block;
   min-height: inherit;
   font-size: 0;
 }
 
-.c4:disabled {
+.c5:disabled {
   cursor: default;
   outline: none;
   border: none;
@@ -93,10 +93,14 @@ exports[`DocumentCover should render 1`] = `
   background-color: #E6E6E6;
 }
 
-.c4:disabled svg rect,
-.c4:disabled svg polygon,
-.c4:disabled svg path {
+.c5:disabled svg rect,
+.c5:disabled svg polygon,
+.c5:disabled svg path {
   fill: #B4B4B4;
+}
+
+.c3 {
+  width: 100%;
 }
 
 .c1 {
@@ -116,7 +120,7 @@ exports[`DocumentCover should render 1`] = `
   width: 100%;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -148,14 +152,14 @@ exports[`DocumentCover should render 1`] = `
   >
     <img
       alt=""
-      class="c2 "
+      class="c2 c3"
       src="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
     />
     <button
-      class="c3 c4"
+      class="c4 c5"
     >
       <span
-        class="c5 c6"
+        class="c6 c7"
         size="20"
       >
         <svg

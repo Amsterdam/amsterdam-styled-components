@@ -40,7 +40,7 @@ const generateCSSFromTypography = (
     lineHeight,
     marginBottom,
   }: any,
-  gutterBottom?: boolean,
+  gutterBottom?: number,
 ) => css`
   color: ${defaultColor};
   font-weight: ${fontWeight};
