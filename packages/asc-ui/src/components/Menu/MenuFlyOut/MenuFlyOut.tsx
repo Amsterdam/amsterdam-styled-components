@@ -33,7 +33,7 @@ const MenuFlyOut: React.FC<any> = ({
   const [isOpenOnClick, setOpenOnClick] = React.useState(false)
   const [activeChild, setActiveChild] = React.useState(0)
 
-  const setOpen = useDebounce(setOpenFn, isOpen && !hasToggle ? 300 : 0)
+  const setOpen = useDebounce(setOpenFn, 0)
 
   const flyOutOpen = isOpen || isOpenOnClick
 
@@ -67,21 +67,18 @@ const MenuFlyOut: React.FC<any> = ({
     }
   }
 
-  const onBlurHandler = useDebounce(
-    () => {
-      const element = ref && (ref.current as HTMLLIElement)
-      if (element) {
-        const currentFocus = ownerDocument(element).activeElement
+  const onBlurHandler = useDebounce(() => {
+    const element = ref && (ref.current as HTMLLIElement)
+    if (element) {
+      const currentFocus = ownerDocument(element).activeElement
 
-        if (!element.contains(currentFocus)) {
-          setOpen(false)
-          setOpenOnClick(false)
-          setActiveChild(0)
-        }
+      if (!element.contains(currentFocus)) {
+        setOpen(false)
+        setOpenOnClick(false)
+        setActiveChild(0)
       }
-    },
-    isOpen && !hasToggle ? 300 : 0,
-  )
+    }
+  })
 
   const extraEvents = !hasToggle
     ? {
