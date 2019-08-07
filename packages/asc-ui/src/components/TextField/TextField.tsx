@@ -2,9 +2,10 @@ import * as React from 'react'
 import { useUID } from 'react-uid'
 import { Close } from '@datapunt/asc-assets'
 import FormLabelStyle from '../FormLabelStyle'
-import IconButton from '../IconButton'
 import TextFieldStyle from './TextFieldStyle'
 import Input, { InputProps } from '../Input'
+import Button from '../Button'
+import Icon from '../Icon'
 
 export interface TextFieldProps extends InputProps {
   label?: string
@@ -35,9 +36,17 @@ const TextField = ({
         id={uid}
       />
       {onClear && value && (
-        <IconButton type="button" aria-label="Close" onClick={() => onClear()}>
-          <Close />
-        </IconButton>
+        <Button
+          size={30}
+          variant="blank"
+          type="button"
+          aria-label="Close"
+          onClick={() => onClear()}
+        >
+          <Icon>
+            <Close />
+          </Icon>
+        </Button>
       )}
     </TextFieldStyle>
   )

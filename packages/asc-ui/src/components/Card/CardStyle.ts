@@ -15,7 +15,7 @@ export type Props = {
 const CardStyle = styled.div<Props>`
   ${({ maxWidth }) => maxWidth && `max-width: ${maxWidth}px;`}
   ${({ shadow, theme }) =>
-    shadow && `box-shadow: 1px 1px ${color('tint', 'level3')({ theme })};`}
+    shadow && `box-shadow: 2px 2px ${color('tint', 'level3')({ theme })};`}
   background-color: ${({ backgroundColor, theme }) =>
     color('tint', backgroundColor || 'level1')({ theme })};
   display: flex;
@@ -29,7 +29,7 @@ const CardStyle = styled.div<Props>`
         max-width: 80px;
       }
       ${CardActionsStyle} {
-        width: inherit;
+        width: initial;
         padding: 24px 16px;
       }
     `}

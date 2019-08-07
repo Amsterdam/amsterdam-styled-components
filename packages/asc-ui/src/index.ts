@@ -1,16 +1,16 @@
 import { ascDefaultTheme, ServerStyleSheet, Theme } from '@datapunt/asc-core'
 import AmsterdamLogo, { AmsterdamLogoStyles } from './components/AmsterdamLogo'
 import BackDrop, { BackDropStyles } from './components/BackDrop'
-import {
-  BlogBody,
-  BlogContent,
-  BlogHeader,
-  BlogMetaList,
-  BlogPost,
-  BlogSidebar,
-  BlogStyles,
-} from './components/Blog'
-import { Article, ArticleStyle } from './components/Blog/Article'
+import Icon from './components/Icon'
+import Input, { InputStyles } from './components/Input'
+import Modal from './components/Modal'
+import Portal from './components/Portal'
+import Heading from './components/Heading'
+import Link from './components/Link'
+import Paragraph from './components/Paragraph'
+import TopBar, { TopBarStyles } from './components/TopBar'
+import ShareButton from './components/Button/ShareButton'
+import { Article, ArticleStyle } from './components/Editorial/Article'
 import Button from './components/Button'
 import Card, {
   CardActions,
@@ -37,17 +37,22 @@ import {
   GridItem,
   Row,
 } from './components/Grid'
+import {
+  EditorialBody,
+  EditorialPost,
+  EditorialStyles,
+  EditorialMetaList,
+  EditorialContent,
+  EditorialHeader,
+  EditorialSidebar,
+} from './components/Editorial'
+import Typography from './components/Typography'
 import Header, { HeaderStyles } from './components/Header'
-import Heading from './components/Heading'
-import Icon from './components/Icon'
-import IconButton from './components/IconButton'
 import Image from './components/Image'
 import ImageCard, {
   ImageCardContent,
   ImageCardStyles,
 } from './components/ImageCard'
-import Input, { InputStyles } from './components/Input'
-import Link from './components/Link'
 import LinkList, { LinkListItem } from './components/LinkList'
 import ListItem from './components/ListItem'
 import {
@@ -60,24 +65,42 @@ import {
   MenuStyles,
   MenuToggle,
 } from './components/Menu'
-import Modal from './components/Modal'
-import Paragraph from './components/Paragraph'
-import Portal from './components/Portal'
-import Publication from './components/Publication'
+import ThemeProvider from './theme'
+import IconButton from './components/deprecated/IconButton'
+import ButtonBar from './components/deprecated/ButtonBar'
 import Radio from './components/Radio'
 import SearchBar, { SearchBarStyles } from './components/SearchBar'
 import SearchBarToggle, {
   SearchBarToggleStyles,
 } from './components/SearchBarToggle'
-import ShareBar from './components/ShareBar'
-import ShareButton from './components/ShareButton'
 import Spinner from './components/Spinner/Spinner'
 import TextField, { TextFieldStyles } from './components/TextField'
-import TopBar, { TopBarStyles } from './components/TopBar'
-import Typography from './components/Typography'
-import ThemeProvider from './theme'
+
+/**
+ * @deprecated
+ */
+const ShareBar = ButtonBar
 
 export { breakpoint, color } from './utils'
+
+export const styles = {
+  ...AmsterdamLogoStyles,
+  ...BackDropStyles,
+  ...CardStyles,
+  ...HeaderStyles,
+  ...SearchBarStyles,
+  ...TextFieldStyles,
+  ...TopBarStyles,
+  ...InputStyles,
+  ...SearchBarToggleStyles,
+  ...MenuStyles,
+  ...EditorialStyles,
+  ...ImageCardStyles,
+  CustomHTMLBlockStyle,
+  ArticleStyle,
+  CardContainerStyle,
+}
+
 // Components
 export {
   LinkList,
@@ -91,6 +114,8 @@ export {
   CardActions,
   CardContent,
   CardMedia,
+  ButtonBar,
+  ShareBar,
   Column,
   ContextMenu,
   ContextMenuButtonStyle,
@@ -124,42 +149,22 @@ export {
   SearchBar,
   SearchBarToggle,
   ServerStyleSheet,
-  ShareBar,
   ShareButton,
   Spinner,
   TextField,
   Theme,
   ThemeProvider,
   TopBar,
-  BlogPost,
+  EditorialPost,
   Article,
-  Publication,
   Link,
   Paragraph,
   Heading,
-  BlogBody,
-  BlogMetaList,
-  BlogContent,
-  BlogHeader,
-  BlogSidebar,
+  EditorialBody,
+  EditorialMetaList,
+  EditorialContent,
+  EditorialHeader,
+  EditorialSidebar,
   ascDefaultTheme,
   DocumentCover,
-}
-
-export const styles = {
-  ...AmsterdamLogoStyles,
-  ...BackDropStyles,
-  ...CardStyles,
-  ...HeaderStyles,
-  ...SearchBarStyles,
-  ...TextFieldStyles,
-  ...TopBarStyles,
-  ...InputStyles,
-  ...SearchBarToggleStyles,
-  ...MenuStyles,
-  ...BlogStyles,
-  ...ImageCardStyles,
-  CustomHTMLBlockStyle,
-  ArticleStyle,
-  CardContainerStyle,
 }
