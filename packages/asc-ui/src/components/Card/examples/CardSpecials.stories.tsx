@@ -18,70 +18,75 @@ import {
   breakpoint,
   styles,
 } from '../../..'
-
-const SpecialCard = styled(Card)`
-  border-bottom: ${color('tint', 'level3')} 1px solid;
-  width: 100%;
-  align-items: stretch;
-
-  & > ${styles.LinkStyle} {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    padding: 10px 0;
-    margin: 22px 0;
-
-    ${styles.CardMediaWrapperStyle} {
-      max-width: 80px;
-      align-self: flex-start;
-    }
-  }
-
-  & ${styles.TagStyle} {
-    margin-right: 5px;
-  }
-
-  ${styles.CardContentStyle} {
-    padding-left: 0;
-    padding-top: 0;
-  }
-
-  &:hover {
-    ${styles.HeadingStyle} {
-      color: ${color('secondary')};
-      text-decoration: underline;
-    }
-  }
-`
+import RowStyle from '../../Grid/RowStyle';
 
 const SpecialCardContainer = styled(CardContainer)`
-  ${styles.LinkListStyle} {
-    margin-top: 32px;
-  }
-
-  ${/* sc-selector */ styles.ColumnStyle}:first-child > ${styles.CardStyle} {
+  ${/* sc-selector */ styles.ColumnStyle}:first-child > ${styles.LinkStyle} {
     border-top: ${color('tint', 'level3')} 1px solid;
   }
 
-  @media screen and ${breakpoint('min-width', 'tabletM')} {
-    ${/* sc-selector */ styles.ColumnStyle}:nth-child(2) > ${styles.CardStyle} {
+    @media screen and ${breakpoint('min-width', 'tabletM')} {
+    ${/* sc-selector */ styles.ColumnStyle}:nth-child(2) > ${styles.LinkStyle} {
       border-top: ${color('tint', 'level3')} 1px solid;
     }
   }
 
   @media screen and ${breakpoint('min-width', 'laptop')} {
-    ${/* sc-selector */ styles.ColumnStyle}:nth-child(3) > ${styles.CardStyle} {
+    ${/* sc-selector */ styles.ColumnStyle}:nth-child(3) > ${styles.LinkStyle} {
       border-top: ${color('tint', 'level3')} 1px solid;
     }
   }
+
+  ${/* sc-selector */ styles.ColumnStyle} > ${styles.LinkStyle} {
+   border-bottom: ${color('tint', 'level3')} 1px solid;
+    width: 100%;
+    min-height: 66px; 
+
+    &:hover > ${styles.CardStyle} > ${styles.CardContentStyle} > ${styles.HeadingStyle} {
+      color: ${color('secondary')};
+      text-decoration: underline;
+    }
+
+  }
+  
+    ${styles.CardStyle} {
+
+      background: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8px 0;
+    margin: 24px 8px!important;
+
+  }
+     ${styles.CardContentStyle} {
+      padding: 0;
+     margin-right: 16px;
+   }
+
+    ${styles.CardMediaWrapperStyle} {
+      max-width: 80px;
+      align-self: flex-start;
+
+    }
+      ${styles.TagStyle} {
+        display: inline;
+     margin-right: 5px;
+   }
+
+  ${RowStyle} > ${/* sc-selector */styles.LinkStyle}:last-child {
+    margin-top: 24px;
+    padding: 8px 3px 8px 0;
+  }
+
+
 `
 
 storiesOf('Atoms/Card/Implementation', module)
   .addDecorator(storyFn => <div style={{ padding: '40px 0' }}>{storyFn()}</div>)
   .addDecorator(withKnobs)
   .add('Dataportaal "Specials"', () => (
-    <SpecialCardContainer>
+        <SpecialCardContainer>
       <Row>
         <Heading $as="h1" gutterBottom={32}>
           In Beeld
@@ -92,10 +97,10 @@ storiesOf('Atoms/Card/Implementation', module)
           wrap
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
-          <SpecialCard horizontal loading={boolean('loading', false)}>
             <Link href="/" linkType="blank">
+          <Card horizontal loading={boolean('loading', false)}>
               <CardContent>
-                <Heading $as="h4" gutterBottom={8}>
+                <Heading $as="h4" gutterBottom={8} >
                   Veiligheidsindex
                 </Heading>
                 <Paragraph>
@@ -110,15 +115,15 @@ storiesOf('Atoms/Card/Implementation', module)
                   alt="stadsloket"
                 />
               </CardMedia>
+          </Card>
             </Link>
-          </SpecialCard>
         </Column>
         <Column
           wrap
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
-          <SpecialCard horizontal loading={boolean('loading', false)}>
             <Link href="/" linkType="blank">
+          <Card horizontal loading={boolean('loading', false)}>
               <CardContent>
                 <Heading $as="h4" gutterBottom={8}>
                   Veiligheidsindex
@@ -135,15 +140,15 @@ storiesOf('Atoms/Card/Implementation', module)
                   alt="stadsloket"
                 />
               </CardMedia>
+          </Card>
             </Link>
-          </SpecialCard>
         </Column>
         <Column
           wrap
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
-          <SpecialCard horizontal loading={boolean('loading', false)}>
             <Link href="/" linkType="blank">
+          <Card horizontal loading={boolean('loading', false)}>
               <CardContent>
                 <Heading $as="h4" gutterBottom={8}>
                   Veiligheidsindex titel 16/20
@@ -159,15 +164,15 @@ storiesOf('Atoms/Card/Implementation', module)
                   alt="stadsloket"
                 />
               </CardMedia>
+          </Card>
             </Link>
-          </SpecialCard>
         </Column>
         <Column
           wrap
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
-          <SpecialCard horizontal loading={boolean('loading', false)}>
             <Link href="/" linkType="blank">
+          <Card horizontal loading={boolean('loading', false)}>
               <CardContent>
                 <Heading $as="h4" gutterBottom={8}>
                   Veiligheidsindex titel 16/20
@@ -184,15 +189,15 @@ storiesOf('Atoms/Card/Implementation', module)
                   alt="stadsloket"
                 />
               </CardMedia>
+          </Card>
             </Link>
-          </SpecialCard>
         </Column>
         <Column
           wrap
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
-          <SpecialCard horizontal loading={boolean('loading', false)}>
             <Link href="/" linkType="blank">
+          <Card horizontal loading={boolean('loading', false)}>
               <CardContent>
                 <Heading $as="h4" gutterBottom={8}>
                   Veiligheidsindex titel 16/20
@@ -208,15 +213,15 @@ storiesOf('Atoms/Card/Implementation', module)
                   alt="stadsloket"
                 />
               </CardMedia>
+          </Card>
             </Link>
-          </SpecialCard>
         </Column>
         <Column
           wrap
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
-          <SpecialCard horizontal loading={boolean('loading', false)}>
-            <Link href="/" linkType="blank">
+<Link href="/" linkType="blank">
+          <Card horizontal loading={boolean('loading', false)}>
               <CardContent>
                 <Heading $as="h4" gutterBottom={8}>
                   Veiligheidsindex titel 16/20
@@ -232,8 +237,8 @@ storiesOf('Atoms/Card/Implementation', module)
                   alt="stadsloket"
                 />
               </CardMedia>
+          </Card>
             </Link>
-          </SpecialCard>
         </Column>
         <Link linkType="with-chevron" href="/">
           Bekijk overzicht
