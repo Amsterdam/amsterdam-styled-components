@@ -13,11 +13,13 @@ Prefix the change with one of these keywords:
 - *Security*: in case of vulnerabilities.
 
 ## [Unreleased]
+- Added: Card components with implementation stories 
+- Added: tag component
 
 ## [0.10.0] - 2019-08-05
 - Added: react-docgen-typescript-loader to storybook config for showing props with description
 - Added: font-display: swap; in font-face definitions
-- Added: seperate tsconfig for building the lib: now excludes .test and .stories files
+- Added: separate tsconfig for building the lib: now excludes .test and .stories files
 - Deprecated: Made IconButton, ButtonBar and ShareBar deprecated. Also refactored this in other 
   components than use IconButton
 - Added: stories for buttons

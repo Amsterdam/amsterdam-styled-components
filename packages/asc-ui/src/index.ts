@@ -2,14 +2,14 @@ import { ServerStyleSheet, Theme, ascDefaultTheme } from '@datapunt/asc-core'
 
 import AmsterdamLogo, { AmsterdamLogoStyles } from './components/AmsterdamLogo'
 import BackDrop, { BackDropStyles } from './components/BackDrop'
-import Icon from './components/Icon'
+import Icon, { IconStyle } from './components/Icon'
 import Input, { InputStyles } from './components/Input'
 import Modal from './components/Modal'
 import Portal from './components/Portal'
-import Heading from './components/Heading'
+import Heading, { HeadingStyle } from './components/Heading'
 import Tag, { TagStyle } from './components/Tag'
-import Link from './components/Link'
-import Paragraph from './components/Paragraph'
+import Link, { LinkStyle } from './components/Link'
+import Paragraph, { ParagraphStyle } from './components/Paragraph'
 import TopBar, { TopBarStyles } from './components/TopBar'
 import ShareButton from './components/Button/ShareButton'
 import { Article, ArticleStyle } from './components/Editorial/Article'
@@ -19,8 +19,8 @@ import Card, {
   CardContent,
   CardMedia,
   CardStyles,
+  CardContainer,
 } from './components/Card'
-import CardContainer, { CardContainerStyle } from './components/CardContainer'
 import ContextMenu from './components/ContextMenu'
 import ContextMenuButtonStyle from './components/ContextMenu/ContextMenuButton'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
@@ -38,6 +38,7 @@ import {
   GridContainer,
   GridItem,
   Row,
+  GridStyles,
 } from './components/Grid'
 import {
   EditorialBody,
@@ -98,10 +99,14 @@ export const styles = {
   ...MenuStyles,
   ...EditorialStyles,
   ...ImageCardStyles,
+  ...GridStyles,
+  ParagraphStyle,
+  IconStyle,
+  LinkStyle,
+  HeadingStyle,
   CustomHTMLBlockStyle,
   ArticleStyle,
   TagStyle,
-  CardContainerStyle,
 }
 
 // Components

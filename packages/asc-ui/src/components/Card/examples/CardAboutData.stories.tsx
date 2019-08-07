@@ -1,19 +1,23 @@
 import { storiesOf } from '@storybook/react'
+import { withKnobs, boolean } from '@storybook/addon-knobs'
 import styled from '@datapunt/asc-core'
 import React from 'react'
-import { color, breakpoint } from '../../utils'
-import { Card, Heading, Paragraph, Row, Column, Link } from '../..'
-import CardContainer from '.'
-import CardStyle from '../Card/CardStyle'
-import CardContentStyle from '../Card/CardContentStyle'
-import CardContent from '../Card/CardContent'
-import HeadingStyle from '../Heading/HeadingStyle'
-import ColumnStyle from '../Grid/ColumnStyle'
-import LinkStyle from '../Link/LinkStyle'
+import {
+  Card,
+  Heading,
+  Paragraph,
+  Row,
+  Column,
+  Link,
+  CardContainer,
+  CardContent,
+  styles,
+  color,
+  breakpoint,
+} from '../../..'
 
 const CardContainerAboutData = styled(CardContainer)`
-
-  ${ColumnStyle} {
+  ${styles.ColumnStyle} {
     margin-bottom: 16px;
 
     &.column-with-heading {
@@ -26,16 +30,16 @@ const CardContainerAboutData = styled(CardContainer)`
     }
   }
 
-  ${LinkStyle} {
+  ${styles.LinkStyle} {
     width: 100%;
     height: 100%;
 
-    &:focus ${CardStyle} {
+    &:focus ${styles.CardStyle} {
       background: none;
     }
   }
 
-  ${CardStyle} {
+  ${styles.CardStyle} {
     width: 100%;
     height: 100%;
     cursor: pointer;
@@ -43,24 +47,26 @@ const CardContainerAboutData = styled(CardContainer)`
     &:hover {
       ${({ theme }) => `box-shadow: 2px 2px ${color('secondary')({ theme })};`}
 
-      ${HeadingStyle} {
+      ${styles.HeadingStyle} {
         color: ${color('secondary')};
         text-decoration: underline;
       }
     }
   }
 
-  ${CardContentStyle} {
+  ${styles.CardContentStyle} {
     padding-top: 20px;
     padding-bottom: 20px;
   }
 
-  // The media query below is not using the breakpoint function
-  // @media screen and ${breakpoint('min-width', 'tabletM')} {
-  // because the Grid changes at exactly 768px, instead of breakpoint which is 768.02px
-  // so that means that 768px styles different from 769px...
+  /* 
+    The media query below is not using the breakpoint function
+    @media screen and ${breakpoint('min-width', 'tabletM')} {
+    because the Grid changes at exactly 768px, instead of breakpoint which is 768.02px
+    so that means that 768px styles different from 769px...
+   */
   @media screen and (min-width: 768px) {
-    ${ColumnStyle} {
+    ${styles.ColumnStyle} {
       margin-bottom: 48px;
 
       &.column-with-heading {
@@ -77,12 +83,13 @@ const Border = styled.div`
   background-color: ${color('tint', 'level3')};
 `
 
-storiesOf('Composed/CardContainer', module)
+storiesOf('Atoms/Card/Implementation', module)
   .addDecorator(storyFn => (
     <div style={{ padding: '40px 0px', background: 'rgb(250,250,250)' }}>
       {storyFn()}
     </div>
   ))
+  .addDecorator(withKnobs)
   .add('implementation dataportaal "About Data & About this site"', () => (
     <CardContainerAboutData>
       <Row>
@@ -101,7 +108,11 @@ storiesOf('Composed/CardContainer', module)
           order={{ small: 2, medium: 2, big: 2, large: 3, xLarge: 3 }}
         >
           <Link href="/" linkType="blank">
-            <Card backgroundColor="level2" shadow>
+            <Card
+              backgroundColor="level2"
+              shadow
+              loading={boolean('loading', false)}
+            >
               <CardContent>
                 <Heading $as="h4">This is a card</Heading>
                 <Paragraph>
@@ -118,7 +129,11 @@ storiesOf('Composed/CardContainer', module)
           order={{ small: 3, medium: 3, big: 3, large: 4, xLarge: 4 }}
         >
           <Link href="/" linkType="blank">
-            <Card backgroundColor="level2" shadow>
+            <Card
+              backgroundColor="level2"
+              shadow
+              loading={boolean('loading', false)}
+            >
               <CardContent>
                 <Heading $as="h4">
                   This is a card with very very very long content
@@ -145,7 +160,11 @@ storiesOf('Composed/CardContainer', module)
           order={{ small: 5, medium: 5, big: 5, large: 5, xLarge: 5 }}
         >
           <Link href="/" linkType="blank">
-            <Card backgroundColor="level2" shadow>
+            <Card
+              backgroundColor="level2"
+              shadow
+              loading={boolean('loading', false)}
+            >
               <CardContent>
                 <Heading $as="h4">This is a card</Heading>
                 <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
@@ -159,7 +178,11 @@ storiesOf('Composed/CardContainer', module)
           order={{ small: 6, medium: 6, big: 6, large: 6, xLarge: 6 }}
         >
           <Link href="/" linkType="blank">
-            <Card backgroundColor="level2" shadow>
+            <Card
+              backgroundColor="level2"
+              shadow
+              loading={boolean('loading', false)}
+            >
               <CardContent>
                 <Heading $as="h4">This is a card</Heading>
                 <Paragraph>Lorem ipsum dolor sit amet. </Paragraph>

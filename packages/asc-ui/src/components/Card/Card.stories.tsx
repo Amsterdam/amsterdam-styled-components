@@ -10,7 +10,7 @@ import CardMedia from './CardMedia'
 import Heading from '../Heading'
 import Paragraph from '../Paragraph'
 
-storiesOf('Composed/Card', module)
+storiesOf('Atoms/Card', module)
   .addDecorator(storyFn => (
     <div style={{ padding: '40px 10px', background: 'rgb(248,248,248,0.8)' }}>
       {storyFn()}
