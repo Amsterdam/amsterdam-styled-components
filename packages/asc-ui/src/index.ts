@@ -11,37 +11,32 @@ import Link from './components/Link'
 import Paragraph from './components/Paragraph'
 import TopBar, { TopBarStyles } from './components/TopBar'
 import ShareButton from './components/Button/ShareButton'
+import { Article, ArticleStyle } from './components/Editorial/Article'
 import Button from './components/Button'
-import Card from './components/Card'
+import Card, {
+  CardActions,
+  CardContent,
+  CardMedia,
+  CardStyles,
+} from './components/Card'
+import CardContainer, { CardContainerStyle } from './components/CardContainer'
+import ContextMenu from './components/ContextMenu'
+import ContextMenuButtonStyle from './components/ContextMenu/ContextMenuButton'
+import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
 import {
   CustomHTMLBlock,
   CustomHTMLBlockStyle,
 } from './components/CustomHTMLBlock'
-import Radio from './components/Radio'
-import Focus from './components/Focus'
-import ContextMenu from './components/ContextMenu'
-import ContextMenuButtonStyle from './components/ContextMenu/ContextMenuButton'
-import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
 import Divider from './components/Divider'
-import Header, { HeaderStyles } from './components/Header'
-import Image from './components/Image'
-import ListItem from './components/ListItem'
-import SearchBar, { SearchBarStyles } from './components/SearchBar'
-import SearchBarToggle, {
-  SearchBarToggleStyles,
-} from './components/SearchBarToggle'
-import TextField, { TextFieldStyles } from './components/TextField'
+import DocumentCover from './components/DocumentCover'
+import Focus from './components/Focus'
 import GlobalStyle from './components/GlobalStyle'
-import ImageCard, {
-  ImageCardContent,
-  ImageCardStyles,
-} from './components/ImageCard'
 import {
+  Column,
+  Container,
   GridContainer,
   GridItem,
-  Column,
   Row,
-  Container,
 } from './components/Grid'
 import {
   EditorialBody,
@@ -53,6 +48,14 @@ import {
   EditorialSidebar,
 } from './components/Editorial'
 import Typography from './components/Typography'
+import Header, { HeaderStyles } from './components/Header'
+import Image from './components/Image'
+import ImageCard, {
+  ImageCardContent,
+  ImageCardStyles,
+} from './components/ImageCard'
+import LinkList, { LinkListItem } from './components/LinkList'
+import ListItem from './components/ListItem'
 import {
   MenuItemTitle,
   MenuItemLink,
@@ -64,18 +67,27 @@ import {
   MenuStyles,
 } from './components/Menu'
 import ThemeProvider from './theme'
-import Spinner from './components/Spinner/Spinner'
-import LinkList, { LinkListItem } from './components/LinkList'
-import DocumentCover from './components/DocumentCover'
-import { Article, ArticleStyle } from './components/Editorial/Article'
 import IconButton from './components/deprecated/IconButton'
 import ButtonBar from './components/deprecated/ButtonBar'
+import Radio from './components/Radio'
+import SearchBar, { SearchBarStyles } from './components/SearchBar'
+import SearchBarToggle, {
+  SearchBarToggleStyles,
+} from './components/SearchBarToggle'
+import Spinner from './components/Spinner/Spinner'
+import TextField, { TextFieldStyles } from './components/TextField'
 
-export { breakpoint } from './utils'
+/**
+ * @deprecated
+ */
+const ShareBar = ButtonBar
+
+export { breakpoint, color } from './utils'
 
 export const styles = {
   ...AmsterdamLogoStyles,
   ...BackDropStyles,
+  ...CardStyles,
   ...HeaderStyles,
   ...SearchBarStyles,
   ...TextFieldStyles,
@@ -87,12 +99,8 @@ export const styles = {
   ...ImageCardStyles,
   CustomHTMLBlockStyle,
   ArticleStyle,
+  CardContainerStyle,
 }
-
-/**
- * @deprecated
- */
-const ShareBar = ButtonBar
 
 // Components
 export {
@@ -103,6 +111,10 @@ export {
   CustomHTMLBlock,
   Button,
   Card,
+  CardContainer,
+  CardActions,
+  CardContent,
+  CardMedia,
   ButtonBar,
   ShareBar,
   Column,
