@@ -82,7 +82,7 @@ const SpecialCardContainer = styled(CardContainer)`
 storiesOf('Composed/CardContainer', module)
   .addDecorator(storyFn => <div style={{ padding: '40px 0' }}>{storyFn()}</div>)
   .add('implementation dataportaal "Specials"', () => (
-    <CardContainerSpecials>
+    <SpecialCardContainer>
       <Row>
         <Heading $as="h1" gutterBottom={32}>
           In Beeld
@@ -244,5 +244,5 @@ storiesOf('Composed/CardContainer', module)
           </LinkListItem>
         </LinkList>
       </Row>
-    </CardContainerSpecials>
+    </SpecialCardContainer>
   ))

@@ -87,11 +87,11 @@ export const getTypographyFromTheme = () => ({
     ${() =>
       breakpoints
         ? Object.entries(breakpoints).map(
-            ([breakpointFromTypography, styles]) => css`
+            ([breakpointFromTypography, breakpointStyles]) => css`
               @media screen and ${breakpoint('min-width', <
                   keyof BreakpointsInterface
                 >breakpointFromTypography)} {
-                ${generateCSSFromTypography(styles, gutterBottom)}
+                ${generateCSSFromTypography(breakpointStyles, gutterBottom)}
               }
             `,
           )
