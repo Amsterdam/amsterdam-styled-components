@@ -7,6 +7,7 @@ import Input, { InputStyles } from './components/Input'
 import Modal from './components/Modal'
 import Portal from './components/Portal'
 import Heading from './components/Heading'
+import Tag, { TagStyle } from './components/Tag'
 import Link from './components/Link'
 import Paragraph from './components/Paragraph'
 import TopBar, { TopBarStyles } from './components/TopBar'
@@ -99,6 +100,7 @@ export const styles = {
   ...ImageCardStyles,
   CustomHTMLBlockStyle,
   ArticleStyle,
+  TagStyle,
   CardContainerStyle,
 }
 
@@ -168,4 +170,5 @@ export {
   EditorialSidebar,
   ascDefaultTheme,
   DocumentCover,
+  Tag,
 }

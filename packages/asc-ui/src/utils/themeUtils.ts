@@ -268,3 +268,18 @@ export interface CustomCssPropsInterface {
 export type CustomCssPropsType = {
   css?: any
 }
+
+/**
+ * Use this util to animate the background-color (or other property), for perceived performance purposes
+ * @param theme
+ * @param property
+ */
+export const getColorCode = (colorType: Theme.TypeLevel & Theme.Tint) => ({
+  theme,
+}: ThemeProp) => {
+  if (colorType.startsWith('level')) {
+    return color('tint', colorType)({ theme })
+  }
+
+  return color(colorType)({ theme })
+}
