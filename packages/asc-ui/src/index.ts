@@ -12,6 +12,7 @@ import Paragraph from './components/Paragraph'
 import TopBar, { TopBarStyles } from './components/TopBar'
 import ShareButton from './components/Button/ShareButton'
 import Button from './components/Button'
+import Card from './components/Card'
 import {
   CustomHTMLBlock,
   CustomHTMLBlockStyle,
@@ -21,8 +22,9 @@ import Focus from './components/Focus'
 import ContextMenu from './components/ContextMenu'
 import ContextMenuButtonStyle from './components/ContextMenu/ContextMenuButton'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
-import Header, { HeaderStyles } from './components/Header'
 import Divider from './components/Divider'
+import Header, { HeaderStyles } from './components/Header'
+import Image from './components/Image'
 import ListItem from './components/ListItem'
 import SearchBar, { SearchBarStyles } from './components/SearchBar'
 import SearchBarToggle, {
@@ -100,6 +102,7 @@ export {
   BackDrop,
   CustomHTMLBlock,
   Button,
+  Card,
   ButtonBar,
   ShareBar,
   Column,
@@ -115,6 +118,7 @@ export {
   Icon,
   Divider,
   IconButton,
+  Image,
   Input,
   ImageCard,
   ImageCardContent,
