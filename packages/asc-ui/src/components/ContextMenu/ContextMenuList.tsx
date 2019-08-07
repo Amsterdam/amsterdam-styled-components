@@ -4,7 +4,7 @@ import { Position } from './types'
 import ContextMenuListStyle, {
   ContextMenuListWrapperStyle,
 } from './ContextMenuListStyle'
-import usePassPropsToChildren from '../../utils/usePassPropsToChildren'
+import usePassPropsToChildren from '../../utils/hooks/usePassPropsToChildren'
 
 type Props = {
   open: boolean

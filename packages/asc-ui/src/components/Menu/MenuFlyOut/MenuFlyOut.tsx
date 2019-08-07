@@ -9,8 +9,8 @@ import useKeysToFocus from '../useKeysToFocus'
 import ownerDocument from '../../../utils/ownerDocument'
 import MenuFlyOutStyle from './MenuFlyOutStyle'
 import Icon from '../../Icon'
-import useEdgeDetection from '../../../utils/useEdgeDetection'
-import useDebounce from '../../../utils/useDebounce'
+import useEdgeDetection from '../../../utils/hooks/useEdgeDetection'
+import useDebounce from '../../../utils/hooks/useDebounce'
 import { KeyboardKeys } from '../../../types/index'
 
 const MenuFlyOut: React.FC<any> = ({

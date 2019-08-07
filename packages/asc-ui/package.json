@@ -5,9 +5,10 @@
   "author": "Datapunt Amsterdam",
   "version": "0.10.0",
   "main": "lib/index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "files": [
+    "lib",
+    "README.md"
+  ],
   "typings": "lib/index.d.ts",
   "dependencies": {
     "@datapunt/asc-assets": "^0.10.0",
