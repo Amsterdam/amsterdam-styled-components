@@ -11,8 +11,6 @@ import Heading from '../Heading'
 import Paragraph from '../Paragraph'
 import Image from '../Image'
 import { Row, Column } from '../Grid'
-import ImageStyle from '../Image/ImageStyle'
-import ParagraphStyle from '../Paragraph/ParagraphStyle'
 import CardContentStyle from '../Card/CardContentStyle'
 import LinkList, { LinkListItem } from '../LinkList'
 import CardContainer from './CardContainer'
@@ -24,34 +22,26 @@ import LinkStyle from '../Link/LinkStyle'
 
 const SpecialCard = styled(Card)`
   border-bottom: ${color('tint', 'level3')} 1px solid;
-  width: 100%;
   padding: 0 8px;
-  cursor: pointer;
+  width: 100%;
+  align-items: baseline;
 
   & > ${LinkStyle} {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    margin-top: 32px;
+    width: 100%;
 
     ${CardMediaWrapperStyle} {
       max-width: 80px;
+      align-self: flex-start;
     }
-  }
-
-  & > ${ImageStyle} {
-    max-width: 56px;
   }
 
   ${CardContentStyle} {
     padding-left: 0;
-    ${HeadingStyle} {
-      cursor: pointer;
-    }
-
-    ${ParagraphStyle} {
-      max-height: 66px;
-      overflow-y: hidden;
-    }
+    padding-top: 0;
   }
 
   &:hover {
@@ -68,7 +58,7 @@ const CardType = styled.span`
   margin-right: 5px;
 `
 
-const SpecialCardContainer = styled(CardContainer)`
+const CardContainerSpecials = styled(CardContainer)`
   ${LinkListStyle} {
     margin-top: 32px;
   }
@@ -93,9 +83,9 @@ const SpecialCardContainer = styled(CardContainer)`
 storiesOf('Composed/CardContainer', module)
   .addDecorator(storyFn => <div style={{ padding: '40px 0' }}>{storyFn()}</div>)
   .add('implementation dataportaal "Specials"', () => (
-    <SpecialCardContainer>
+    <CardContainerSpecials>
       <Row>
-        <Heading $as="h3" gutterBottom={32}>
+        <Heading $as="h1" gutterBottom={32}>
           In Beeld
         </Heading>
       </Row>
@@ -116,9 +106,9 @@ storiesOf('Composed/CardContainer', module)
                   voorgaande perioden?
                 </Paragraph>
               </CardContent>
-              <CardMedia backgroundColor="level2">
+              <CardMedia>
                 <Image
-                  src="https://lorempixel.com/100/100/sports/1"
+                  src="https://picsum.photos/100/?random=1"
                   alt="stadsloket"
                 />
               </CardMedia>
@@ -141,9 +131,9 @@ storiesOf('Composed/CardContainer', module)
                   vergelek…
                 </Paragraph>
               </CardContent>
-              <CardMedia backgroundColor="level2">
+              <CardMedia>
                 <Image
-                  src="https://lorempixel.com/100/100/sports/2"
+                  src="https://picsum.photos/100/?random=2"
                   alt="stadsloket"
                 />
               </CardMedia>
@@ -165,9 +155,9 @@ storiesOf('Composed/CardContainer', module)
                   vergelek…
                 </Paragraph>
               </CardContent>
-              <CardMedia backgroundColor="level2">
+              <CardMedia>
                 <Image
-                  src="https://lorempixel.com/100/100/sports/3"
+                  src="https://picsum.photos/100/?random=3"
                   alt="stadsloket"
                 />
               </CardMedia>
@@ -190,9 +180,9 @@ storiesOf('Composed/CardContainer', module)
                   vergelek…
                 </Paragraph>
               </CardContent>
-              <CardMedia backgroundColor="level2">
+              <CardMedia>
                 <Image
-                  src="https://lorempixel.com/100/100/sports/4"
+                  src="https://picsum.photos/100/?random=4"
                   alt="stadsloket"
                 />
               </CardMedia>
@@ -214,9 +204,9 @@ storiesOf('Composed/CardContainer', module)
                   vergelek…
                 </Paragraph>
               </CardContent>
-              <CardMedia backgroundColor="level2">
+              <CardMedia>
                 <Image
-                  src="https://lorempixel.com/100/100/sports/5"
+                  src="https://picsum.photos/100/?random=5"
                   alt="stadsloket"
                 />
               </CardMedia>
@@ -238,9 +228,9 @@ storiesOf('Composed/CardContainer', module)
                   vergelek…
                 </Paragraph>
               </CardContent>
-              <CardMedia backgroundColor="level2">
+              <CardMedia>
                 <Image
-                  src="https://lorempixel.com/100/100/sports/6"
+                  src="https://picsum.photos/100/?random=6"
                   alt="stadsloket"
                 />
               </CardMedia>
@@ -255,5 +245,5 @@ storiesOf('Composed/CardContainer', module)
           </LinkListItem>
         </LinkList>
       </Row>
-    </SpecialCardContainer>
+    </CardContainerSpecials>
   ))
