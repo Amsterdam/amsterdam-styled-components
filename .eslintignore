@@ -4,6 +4,5 @@ packages/asc-assets/*.js
 packages/asc-assets/src/Icons/
 *.d.ts
 node_modules/
-examples/
 config/
 coverage/

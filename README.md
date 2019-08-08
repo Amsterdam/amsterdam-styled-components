@@ -98,7 +98,7 @@ Webpack configuration. In case you run into any problems, consider the following
 1. Run `npm install @svgr/webpack url-loader`
 2. In your `webpack.config.js` add:
 
-```
+```json
 {
   test: /\.svg$/,
   use: ['@svgr/webpack', 'url-loader'],

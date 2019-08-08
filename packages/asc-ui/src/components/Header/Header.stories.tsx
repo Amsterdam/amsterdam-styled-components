@@ -2,7 +2,6 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import Header from './Header'
 import Typography from '../Typography'
-import DataportaalHeader from './examples/DataportaalHeader'
 
 storiesOf('Composed/Header', module)
   .add('Header short', () => (
@@ -43,4 +42,3 @@ storiesOf('Composed/Header', module)
       }
     />
   ))
-  .add('implementation for dataportaal', () => <DataportaalHeader />)

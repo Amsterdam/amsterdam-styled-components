@@ -48,7 +48,7 @@ To make life a little easier, we added [hygen](https://www.hygen.io/). Simply ru
 `hygen component new`. You will be prompted with questions the generator needs to build the files
 for the new component. For more info possibilities, check the hygen documentation.
 
-![](../media/hygen.gif)
+![hygen](../media/hygen.gif)
 
 ## Pull Request Process
 
