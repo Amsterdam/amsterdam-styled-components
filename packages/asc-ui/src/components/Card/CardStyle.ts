@@ -43,8 +43,8 @@ const CardStyle = styled.div<Props>`
       ${CardMediaWrapperStyle} {
         ${perceivedLoading(theme)}
       }
-      ${CardContentStyle} {
-        visibility: hidden;
+      ${CardContentStyle} > * {
+        display: none;
       }
     `}`
 

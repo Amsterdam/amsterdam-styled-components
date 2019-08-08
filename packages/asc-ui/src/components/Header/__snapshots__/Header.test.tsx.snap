@@ -66,7 +66,6 @@ exports[`Header should render the short version 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  color: #323232;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-weight: 700;
@@ -379,7 +378,6 @@ exports[`Header should render the short version without the full width 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  color: #323232;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-weight: 700;
@@ -710,7 +708,6 @@ exports[`Header should render the tall version 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  color: #323232;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-weight: 700;
