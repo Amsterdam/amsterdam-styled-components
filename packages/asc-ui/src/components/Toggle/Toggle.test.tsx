@@ -16,8 +16,8 @@ describe('Toggle', () => {
     )
   })
 
-  it('should render', () => {
-    expect(component).toMatchSnapshot()
+  it('should render the toggle button', () => {
+    expect(component.find(ToggleButton).exists()).toBe(true)
   })
 
   it('should display the children when the button is clicked', () => {
