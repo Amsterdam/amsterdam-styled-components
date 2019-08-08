@@ -1,4 +1,5 @@
 import React from 'react'
+import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { css } from '@datapunt/asc-core'
 import { Header, styles } from '../../../index'
@@ -25,7 +26,7 @@ const DataportaalHeaderWrapperStyle = css`
   }
 `
 
-// MenuToggle should take an array of children, wrapping components in Fragments will return a string.. 
+// MenuToggle should take an array of children, wrapping components in Fragments will return a string..
 const menuChildren = [
   <MenuFlyOut label="Categorieën">
     <MenuItem href="#" onClick={() => action('redux')}>
@@ -51,10 +52,7 @@ const menuChildren = [
     <MenuItem href="#" onClick={() => action('redux')}>
       Technisch beheer en werkwijze
     </MenuItem>
-    <MenuItem
-      title="Contact"
-      href="mailto:datapunt@amsterdam.nl"
-    >
+    <MenuItem title="Contact" href="mailto:datapunt@amsterdam.nl">
       Contact
     </MenuItem>
   </MenuFlyOut>,
@@ -62,13 +60,11 @@ const menuChildren = [
   <MenuItem href="/help">Help</MenuItem>,
   <MenuFlyOut label="Jon Doe">
     <MenuItem onClick={() => action('Log out')}>Uitloggen</MenuItem>
-  </MenuFlyOut>
+  </MenuFlyOut>,
 ]
 
 const MenuDefault = (props: any) => (
-  <MenuInline {...props}>
-    {menuChildren}
-  </MenuInline>
+  <MenuInline {...props}>{menuChildren}</MenuInline>
 )
 
 const MenuMobile = (props: any) => (
@@ -77,52 +73,44 @@ const MenuMobile = (props: any) => (
   </MenuToggle>
 )
 
-// const HeaderLinksMenu = () => (
-//   <Menu>
-//     <MenuItem href="#one" onClick={action('click')}>
-//       One
-//     </MenuItem>
-//     <MenuItem href="#two" onClick={action('click')}>
-//       Two
-//     </MenuItem>
-//   </Menu>
-// )
-
 const DataportaalHeader: React.FC<{}> = () => (
-    <Header
-      tall
-      title="Data en informatie"
-      homeLink="http://data.amsterdam.nl"
-      fullWidth={false}
-      css={DataportaalHeaderWrapperStyle}
-      navigation={
-        <>
-          <SearchBar
-            showAt="tabletM"
-            placeholder="Enter the search text"
-            onChange={() => {
-              action(`text changed`)
-            }}
-            onSubmit={() => {
-              action(`button clicked`)
-            }}
-          />
-          <SearchBarToggle
-            align="left"
-            hideAt="tabletM"
-            placeholder="Enter the search text"
-            onChange={() => {
-              action(`text changed`)
-            }}
-            onSubmit={() => {
-              action(`button clicked`)
-            }}
-          />
-          <MenuDefault showAt="tabletM" />
-          <MenuMobile hideAt="tabletM" />
-        </>
-      }
-    />
+  <Header
+    tall
+    title="Data en informatie"
+    homeLink="http://data.amsterdam.nl"
+    fullWidth={false}
+    css={DataportaalHeaderWrapperStyle}
+    navigation={
+      <>
+        <SearchBar
+          showAt="tabletM"
+          placeholder="Enter the search text"
+          onChange={() => {
+            action(`text changed`)
+          }}
+          onSubmit={() => {
+            action(`button clicked`)
+          }}
+        />
+        <SearchBarToggle
+          align="left"
+          hideAt="tabletM"
+          placeholder="Enter the search text"
+          onChange={() => {
+            action(`text changed`)
+          }}
+          onSubmit={() => {
+            action(`button clicked`)
+          }}
+        />
+        <MenuDefault showAt="tabletM" />
+        <MenuMobile hideAt="tabletM" />
+      </>
+    }
+  />
 )
 
-export default DataportaalHeader
+storiesOf('Composed/Header', module).add(
+  'implementation for dataportaal',
+  () => <DataportaalHeader />,
+)
