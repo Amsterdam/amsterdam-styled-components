@@ -88,32 +88,357 @@ exports[`Toggle should render 1`] = `
   border: none;
 }
 
-<div
-  class="c0"
+<Toggle
+  ToggleHandler={[Function]}
+  onClick={[MockFunction]}
+  render={false}
 >
-  <button
-    class="c1"
-    size="50"
+  <styled.div
+    onBlur={[Function]}
+    onKeyDown={[Function]}
   >
-    <span
-      class="c2"
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": false,
+            "lastClassName": "c0",
+            "rules": Array [
+              "
+  display: flex;
+  flex-direction: column;
+  align-items: ",
+              [Function],
+              ";
+  ",
+              [Function],
+              ";
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={
+        Object {
+          "current": .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  box-sizing: content-box;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c2 > svg {
+  width: inherit;
+  height: inherit;
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+}
+
+.c1:focus {
+  z-index: 10;
+  outline-style: solid;
+  outline-offset: 0px;
+  outline-width: 3px;
+}
+
+.c1::after {
+  content: '';
+  display: block;
+  min-height: inherit;
+  font-size: 0;
+}
+
+.c1:disabled {
+  cursor: default;
+  outline: none;
+  border: none;
+}
+
+<div
+            class="c0"
+          >
+            <button
+              class="c1"
+              size="50"
+              type="button"
+            >
+              <span
+                class="c2"
+              >
+                <svg
+                  focusable="false"
+                  viewBox="0 0 32 32"
+                >
+                  <path
+                    d="M0 3.238h32V7.81H0V3.238zm0 10.476h32v4.572H0v-4.572zM0 24.19h32v4.572H0V24.19z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>,
+        }
+      }
+      onBlur={[Function]}
+      onKeyDown={[Function]}
     >
-      <svg
-        focusable="false"
-        viewBox="0 0 32 32"
+      <div
+        className="c0"
+        onBlur={[Function]}
+        onKeyDown={[Function]}
       >
-        <path
-          d="M0 3.238h32V7.81H0V3.238zm0 10.476h32v4.572H0v-4.572zM0 24.19h32v4.572H0V24.19z"
-          fill-rule="evenodd"
-        />
-      </svg>
-    </span>
-  </button>
-  <div
-    aria-hidden="true"
-    id="child"
-  >
-    Foo
-  </div>
-</div>
+        <ToggleHandlerButton
+          onClick={[Function]}
+          open={false}
+          type="button"
+        >
+          <Styled(styled.button)
+            onClick={[Function]}
+            open={false}
+            size={50}
+            type="button"
+            variant="blank"
+          >
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-EHOje",
+                    "isStatic": false,
+                    "lastClassName": "c1",
+                    "rules": Array [
+                      "
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  padding: ",
+                      [Function],
+                      ";
+  ",
+                      [Function],
+                      "
+  ",
+                      [Function],
+                      "
+  ",
+                      "transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;",
+                      "
+  ",
+                      [Function],
+                      "
+  ",
+                      "
+  &::after {
+    content: '';
+    display: block;
+    min-height: inherit;
+    font-size: 0;
+  }
+",
+                      " // ie fix
+  &:disabled {
+    cursor: default;
+    outline: none;
+    border: none;
+    color: ",
+                      [Function],
+                      ";
+    background-color: ",
+                      [Function],
+                      ";
+    ",
+                      [Function],
+                      ";
+  }
+",
+                      "
+  background-color: ",
+                      [Function],
+                      ";
+
+  &:hover,
+  &:focus {
+    background-color: ",
+                      [Function],
+                      ";
+  }
+",
+                    ],
+                  },
+                  "displayName": "Styled(styled.button)",
+                  "foldedComponentIds": Array [
+                    "sc-ifAKCX",
+                  ],
+                  "render": [Function],
+                  "styledComponentId": "sc-EHOje",
+                  "target": "button",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              onClick={[Function]}
+              open={false}
+              size={50}
+              type="button"
+              variant="blank"
+            >
+              <button
+                className="c1"
+                onClick={[Function]}
+                open={false}
+                size={50}
+                type="button"
+              >
+                <Icon>
+                  <styled.span>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-bwzfXH",
+                            "isStatic": false,
+                            "lastClassName": "c2",
+                            "rules": Array [
+                              "
+  display: ",
+                              [Function],
+                              ";
+  ",
+                              [Function],
+                              "
+  ",
+                              [Function],
+                              "
+  ",
+                              [Function],
+                              ";
+  box-sizing: content-box;
+  ",
+                              [Function],
+                              ";
+
+  & > svg {
+    width: inherit;
+    height: inherit;
+  }
+  
+  ",
+                              [Function],
+                              ";
+",
+                            ],
+                          },
+                          "displayName": "styled.span",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-bwzfXH",
+                          "target": "span",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <span
+                        className="c2"
+                      >
+                        <SvgMenu>
+                          <svg
+                            focusable={false}
+                            viewBox="0 0 32 32"
+                          >
+                            <path
+                              d="M0 3.238h32V7.81H0V3.238zm0 10.476h32v4.572H0v-4.572zM0 24.19h32v4.572H0V24.19z"
+                              fillRule="evenodd"
+                            />
+                          </svg>
+                        </SvgMenu>
+                      </span>
+                    </StyledComponent>
+                  </styled.span>
+                </Icon>
+              </button>
+            </StyledComponent>
+          </Styled(styled.button)>
+        </ToggleHandlerButton>
+      </div>
+    </StyledComponent>
+  </styled.div>
+</Toggle>
 `;
