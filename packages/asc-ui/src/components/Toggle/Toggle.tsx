@@ -36,6 +36,20 @@ const Toggle: React.FC<Props> = ({
   ...otherProps
 }) => {
   const [open, setOpen] = React.useState(false)
+
+  const handleOnOpen = React.useCallback(
+    (openParam: boolean) => {
+      setOpen(openParam)
+
+      if (onOpen) {
+        onOpen(openParam)
+      }
+    },
+    // Empty dependency array prevents an infinite loop if the parent rerenders
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  )
+
   const { onKeyDown: onKeyDownHook } = useActionOnEscape(() =>
     handleOnOpen(false),
   )
@@ -63,6 +77,7 @@ const Toggle: React.FC<Props> = ({
 
   const handleOnClick = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
     handleOnOpen(!open)
+
     if (onClick) {
       onClick(e)
     }
@@ -78,17 +93,6 @@ const Toggle: React.FC<Props> = ({
       handleOnOpen(openProp)
     }
   }, [handleOnOpen, openProp])
-
-  const handleOnOpen = React.useCallback(
-    openParam => {
-      console.log('handleOnOpen', openParam)
-
-      onOpen && onOpen(openParam)
-      setOpen(openParam)
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
-  )
 
   const conditionalRenderedChildren = open ? children : null
 
@@ -109,6 +113,7 @@ const Toggle: React.FC<Props> = ({
           onClick: handleOnClick,
           title,
         }}
+        type="button"
       />
       {render ? children : conditionalRenderedChildren}
     </ToggleStyle>
