@@ -38,7 +38,7 @@
     "test:coverage": "yarn jest --collect-coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watch --onlyChanged --collect-coverage --verbose true",
     "prettier": "yarn prettier:js & yarn prettier:package",
-    "prettier:js": "prettier-eslint --write './packages/**/**/*.{ts, tsx}'",
+    "prettier:js": "prettier --write './packages/**/**/*.{ts, tsx}'",
     "prettier:package": "yarn prettier-package-json --write **/package.json"
   },
   "devDependencies": {
@@ -101,8 +101,6 @@
     "lerna": "^3.16.4",
     "lint-staged": "^9.2.1",
     "prettier": "^1.18.2",
-    "prettier-eslint": "^9.0.0",
-    "prettier-eslint-cli": "^5.0.0",
     "prettier-package-json": "^2.1.0",
     "react": "^16.8.6",
     "react-docgen-typescript-loader": "^3.1.0",
@@ -121,7 +119,7 @@
     "typescript-plugin-styled-components": "^1.4.3"
   },
   "engines": {
-    "node": "^8 || ^10"
+    "node": "^10 || ^12"
   },
   "husky": {
     "hooks": {
@@ -131,14 +129,16 @@
   },
   "lint-staged": {
     "*.tsx": [
-      "prettier-eslint --write",
+      "prettier --write",
       "eslint",
       "git add"
     ],
-    "*Style.ts": [
-      "prettier-eslint --write",
-      "stylelint",
+    "*.ts": [
+      "prettier --write",
       "git add"
+    ],
+    "*Style.ts": [
+      "stylelint"
     ]
   }
 }
