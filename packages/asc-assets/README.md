@@ -45,9 +45,9 @@ don't forget to include the css!
 ## Optimized SVGs
 
 ```jsx
-import IconName from '@datapunt/asc-assets/lib/Icons/IconName.svg'
+import { svg } from '@datapunt/asc-assets'
 
-return <img src={IconName} />
+return <img src={svg.IconName} />
 ```
 
 ## Build Project
