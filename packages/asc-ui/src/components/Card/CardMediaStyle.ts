@@ -3,7 +3,7 @@ import { color } from '../../utils'
 
 export type Props = {
   backgroundColor?: keyof Theme.Tint
-  width?: number
+  maxWidth?: number
 }
 
 export const CardMediaWrapperStyle = styled.div<Props>`
@@ -13,8 +13,8 @@ export const CardMediaWrapperStyle = styled.div<Props>`
   overflow: hidden;
   line-height: 0;
   display: flex;
-  width: ${({ width }) => (width ? `${width}px` : '100%')};
-  flex: ${({ width }) => (width ? `0 0 ${width}px` : 'auto')};
+  width: ${({ maxWidth }) => (maxWidth ? `${maxWidth}px` : '100%')};
+  flex: ${({ maxWidth }) => (maxWidth ? `0 0 ${maxWidth}px` : 'auto')};
   align-self: stretch;
 
   &::before {

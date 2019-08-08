@@ -26,9 +26,6 @@ const CardStyle = styled.div<Props>`
   ${({ horizontal }) =>
     horizontal &&
     css`
-      ${CardMediaWrapperStyle} {
-        max-width: 80px;
-      }
       ${CardActionsStyle} {
         width: initial;
         padding: 24px 16px;
