@@ -20,7 +20,7 @@ const StyledCardContainer = styled(CardContainer)`
   padding: 24px 0;
 `
 
-const ArticleWrapper = styled.div`
+const ArticleCardsWrapper = styled.div`
   padding: 40px 0 20px;
   background-color: ${color('tint', 'level3')};
 `
@@ -53,7 +53,7 @@ storiesOf('Atoms/Card/Implementation', module)
   .addDecorator(storyFn => <div style={{ padding: '40px 0' }}>{storyFn()}</div>)
   .addDecorator(withKnobs)
   .add('Dataportaal "Article list"', () => (
-    <ArticleWrapper>
+    <ArticleCardsWrapper>
       <Row>
         <Heading $as="h2" styleAs="h1" gutterBottom={20}>
           Onderzoek, Informatie en Statistiek
@@ -134,5 +134,5 @@ storiesOf('Atoms/Card/Implementation', module)
           </StyledCardContainer>
         </Column>
       </StyledRow>
-    </ArticleWrapper>
+    </ArticleCardsWrapper>
   ))
