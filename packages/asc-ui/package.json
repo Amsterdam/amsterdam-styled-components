@@ -16,6 +16,7 @@
     "deepmerge": "^4.0.0",
     "enzyme": "^3.10.0",
     "jest-styled-components": "^6.3.3",
+    "objectFitPolyfill": "^2.3.0",
     "polished": "^3.4.1",
     "react-uid": "^2.2.0"
   },

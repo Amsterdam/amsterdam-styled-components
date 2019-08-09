@@ -40,7 +40,7 @@ storiesOf('Atoms/Card', module)
   .add('default with action and media item', () => (
     <Card maxWidth={250}>
       <CardMedia>
-        <Image src="https://picsum.photos/250/250/" alt="stadsloket" />
+        <Image src="https://picsum.photos/300/200/" alt="stadsloket" square />
       </CardMedia>
       <CardContent>
         <Heading $as="h6">Title</Heading>
@@ -66,9 +66,9 @@ storiesOf('Atoms/Card', module)
       </CardActions>
     </Card>
   ))
-  .add('horizontal', () => (
+  .add('horizontal with action and media item', () => (
     <Card maxWidth={450} horizontal>
-      <CardMedia backgroundColor="level2">
+      <CardMedia maxWidth={100} backgroundColor="level2">
         <Icon size={25}>
           <Download />
         </Icon>

@@ -111,6 +111,7 @@ storiesOf('Atoms/Card/Implementation', module)
                 <Image
                   src="https://picsum.photos/100/?random=1"
                   alt="stadsloket"
+                  square
                 />
               </CardMedia>
             </Card>
@@ -136,6 +137,7 @@ storiesOf('Atoms/Card/Implementation', module)
                 <Image
                   src="https://picsum.photos/100/?random=2"
                   alt="stadsloket"
+                  square
                 />
               </CardMedia>
             </Card>
@@ -160,6 +162,7 @@ storiesOf('Atoms/Card/Implementation', module)
                 <Image
                   src="https://picsum.photos/100/?random=3"
                   alt="stadsloket"
+                  square
                 />
               </CardMedia>
             </Card>
@@ -185,6 +188,7 @@ storiesOf('Atoms/Card/Implementation', module)
                 <Image
                   src="https://picsum.photos/100/?random=4"
                   alt="stadsloket"
+                  square
                 />
               </CardMedia>
             </Card>
@@ -209,6 +213,7 @@ storiesOf('Atoms/Card/Implementation', module)
                 <Image
                   src="https://picsum.photos/100/?random=5"
                   alt="stadsloket"
+                  square
                 />
               </CardMedia>
             </Card>
@@ -233,6 +238,7 @@ storiesOf('Atoms/Card/Implementation', module)
                 <Image
                   src="https://picsum.photos/100/?random=6"
                   alt="stadsloket"
+                  square
                 />
               </CardMedia>
             </Card>
