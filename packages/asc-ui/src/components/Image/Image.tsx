@@ -1,6 +1,8 @@
 import 'objectFitPolyfill'
 import React from 'react'
-import ImageStyle, { Props } from './ImageStyle'
+import ImageStyle, { Props as ImageStyleProps } from './ImageStyle'
+
+type Props = ImageStyleProps & React.ImgHTMLAttributes<HTMLImageElement>
 
 const Image: React.FC<Props> = ({ square, ...otherProps }) => (
   <ImageStyle
