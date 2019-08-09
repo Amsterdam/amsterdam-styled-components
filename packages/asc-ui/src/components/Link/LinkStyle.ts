@@ -27,7 +27,6 @@ export const DefaultLinkStyleCSS = ({
   theme: Theme.ThemeInterface
 }) => css`
   display: flex;
-  color: ${color('tint', 'level6')({ theme })};
   text-decoration: none;
   font-weight: 700;
 
