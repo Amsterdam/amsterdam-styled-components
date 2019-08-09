@@ -16,6 +16,8 @@ Prefix the change with one of these keywords:
 
 ## [Unreleased]
 
+## [0.11.0] - 2019-08-09
+
 - Added: Card components with implementation stories
 - Added: tag component
 - Added: new way of loading svg's: instead of importing like this: 
