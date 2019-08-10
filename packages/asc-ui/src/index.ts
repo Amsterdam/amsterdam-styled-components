@@ -84,7 +84,7 @@ import TextField, { TextFieldStyles } from './components/TextField'
  */
 const ShareBar = ButtonBar
 
-export { breakpoint, color } from './utils'
+export { breakpoint, color, svgFill } from './utils'
 
 export const styles = {
   ...AmsterdamLogoStyles,
