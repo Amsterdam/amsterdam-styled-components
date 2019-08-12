@@ -10,6 +10,7 @@ const ContainerWrapperStyle = styled.div<{}>`
   justify-content: center;
 `
 const ContainerStyle = styled.div<Props>`
+  width: 100%;
   max-width: 1920px;
   flex-grow: 1;
   position: relative;
