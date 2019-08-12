@@ -1,15 +1,10 @@
 import styled, { css } from '@datapunt/asc-core'
 import { MenuItemStyle } from '../MenuItem'
 import MenuListStyle from '../MenuList/MenuListStyle'
-import MenuItemTitleStyle from '../MenuItemTitle/MenuItemTitleStyle'
-import {
-  FLY_OUT_WIDTH,
-  MENU_ITEM_SIZE,
-  MENU_ITEM_FLYOUT_SIZE,
-} from '../constants'
+import { FLY_OUT_WIDTH, MENU_ITEM_SIZE } from '../constants'
 import { color } from '../../../utils'
 
-type Props = {
+export type Props = {
   hasToggle?: boolean
 }
 
@@ -25,16 +20,11 @@ export default styled(MenuItemStyle)<Props>`
     ${({ hasToggle }) =>
       !hasToggle &&
       css`
-        border-bottom: 4px solid #000;
+        border-bottom: 4px solid ${color('tint', 'level7')};
       `}
 
     & > ${MenuItemStyle} {
-      min-height: ${MENU_ITEM_FLYOUT_SIZE}px;
       font-weight: 400;
-    }
-
-    & > ${MenuItemTitleStyle} {
-      min-height: ${MENU_ITEM_FLYOUT_SIZE}px;
     }
   }
 

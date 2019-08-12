@@ -30,7 +30,7 @@
     "lint:css": "stylelint \"./packages/**/*Style.ts\"",
     "lint:js": "eslint \"./packages/asc-ui/src\" \"./packages/asc-core/src\" --ext .ts,.tsx",
     "prepare": "yarn build",
-    "publish:packages": "yarn lint && yarn test && lerna publish",
+    "publish:packages": "lerna publish",
     "start": "yarn build:watch & yarn storybook",
     "storybook": "start-storybook -p 6006 -c .storybook -s ./packages/asc-assets/lib/assets",
     "stylelint": "stylelint \"./packages/**/*Style.ts\"",

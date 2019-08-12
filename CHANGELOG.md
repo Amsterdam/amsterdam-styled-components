@@ -15,6 +15,11 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## [Unreleased]
+- Added: MenuButton component: this now can be used as a button or link inside MenuItem
+- Changed: **BREAKING** MenuItem now doesn't accept any onClick or href props: it's just a wrapper 
+  now. Use MenuButton inside MenuItem
+- Removed: functionality to use arrows inside a MenuFlyOut / MenuToggle. This created a lot of 
+  (unnecessary) complexity. Perhaps will be added in the future if really needed. 
 
 ## [0.11.0] - 2019-08-09
 
