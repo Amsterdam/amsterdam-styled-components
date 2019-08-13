@@ -4,7 +4,7 @@ import { ChevronDown } from '@datapunt/asc-assets'
 import Icon from '../../Icon'
 import { ToggleHandlerProps } from '../../Toggle'
 import IconStyle from '../../Icon/IconStyle'
-import FooterHeading from './FooterHeading'
+import { FooterHeading } from '../index'
 import { svgFill } from '../../../utils'
 
 export type Props = ToggleHandlerProps

@@ -77,6 +77,18 @@ import SearchBarToggle, {
 } from './components/SearchBarToggle'
 import Spinner from './components/Spinner/Spinner'
 import TextField, { TextFieldStyles } from './components/TextField'
+import Footer, {
+  FooterContent,
+  FooterLinkList,
+  FooterLinkListItem,
+  FooterBottomLinkList,
+  FooterBottomLinkListItem,
+  FooterHeading,
+  FooterToggle,
+  FooterBottom,
+  FooterTop,
+  FooterStyles,
+} from './components/Footer'
 
 /**
  * @deprecated
@@ -99,6 +111,7 @@ export const styles = {
   ...EditorialStyles,
   ...ImageCardStyles,
   ...GridStyles,
+  ...FooterStyles,
   ParagraphStyle,
   IconStyle,
   LinkStyle,
@@ -128,6 +141,16 @@ export {
   ContextMenuButtonStyle,
   ContextMenuItem,
   Focus,
+  Footer,
+  FooterContent,
+  FooterLinkList,
+  FooterLinkListItem,
+  FooterBottomLinkList,
+  FooterBottomLinkListItem,
+  FooterHeading,
+  FooterToggle,
+  FooterBottom,
+  FooterTop,
   GlobalStyle,
   Container,
   GridContainer,
