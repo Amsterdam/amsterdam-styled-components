@@ -1,40 +1,37 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import Footer from './Footer'
 import { Row, Column } from '../Grid'
-import FooterContent from './FooterContent/FooterContent'
 import {
+  Footer,
+  FooterContent,
   FooterLinkList,
   FooterLinkListItem,
   FooterBottomLinkList,
   FooterBottomLinkListItem,
-} from './FooterLinkList'
-import { FooterHeading, FooterToggle } from './FooterHeading'
+  FooterHeading,
+  FooterToggle,
+  FooterBottom,
+  FooterTop,
+} from '../../index'
 import Paragraph from '../Paragraph'
-import { FooterBottom } from './FooterBottom'
-import FooterTop from './FooterTop/FooterTop'
 
 const ColofonLinks: React.FC<{ indent?: boolean }> = () => (
-  <>
-    <FooterLinkList>
-      <FooterLinkListItem href="/">Over deze site</FooterLinkListItem>
-      <FooterLinkListItem href="/">Over OIS</FooterLinkListItem>
-      <FooterLinkListItem href="/">Databeleid</FooterLinkListItem>
-      <FooterLinkListItem href="/">Bronnen</FooterLinkListItem>
-    </FooterLinkList>
-  </>
+  <FooterLinkList>
+    <FooterLinkListItem href="/">Over deze site</FooterLinkListItem>
+    <FooterLinkListItem href="/">Over OIS</FooterLinkListItem>
+    <FooterLinkListItem href="/">Databeleid</FooterLinkListItem>
+    <FooterLinkListItem href="/">Bronnen</FooterLinkListItem>
+  </FooterLinkList>
 )
 
 const FollowLinks: React.FC<{ indent?: boolean }> = () => (
-  <>
-    <FooterLinkList>
-      <FooterLinkListItem href="/">Nieuwsbrief OIS</FooterLinkListItem>
-      <FooterLinkListItem href="/">Twitter</FooterLinkListItem>
-      <FooterLinkListItem href="/">Facerbook</FooterLinkListItem>
-      <FooterLinkListItem href="/">Linkedin</FooterLinkListItem>
-      <FooterLinkListItem href="/">GitHub</FooterLinkListItem>
-    </FooterLinkList>
-  </>
+  <FooterLinkList>
+    <FooterLinkListItem href="/">Nieuwsbrief OIS</FooterLinkListItem>
+    <FooterLinkListItem href="/">Twitter</FooterLinkListItem>
+    <FooterLinkListItem href="/">Facerbook</FooterLinkListItem>
+    <FooterLinkListItem href="/">Linkedin</FooterLinkListItem>
+    <FooterLinkListItem href="/">GitHub</FooterLinkListItem>
+  </FooterLinkList>
 )
 
 const HelpLinks: React.FC<{ indent?: boolean }> = () => (
