@@ -47,10 +47,10 @@ const StyledLinkList = styled(LinkList)`
 The background color of the StyledLinkList component has the color of `tint.level5` widths smaller than `laptopM` breakpoint and `tint.level1` for widths larger than `laptopM`
 The colors and the breakpoints are defined in the `asc-core` default theme
 
-Each component exposes its style that can be used a a (class)selector in another component. For example LinkListItem has an styles.LinkListStyle selector.
+Each component exposes its style that can be used a (class)selector in another component. The naming convention for the styles is: `<component-name>` -> `styles.<component-name>Style`. For example LinkListItem has a styles.LinkListStyle selector.
 We use the exposed selector to change the color of the LinkedListItems to the `primary` theme color. In this case we don't need to create a new StyledLinkedList item to override the style.
 
-The same can be acheved by creating of a new StyledLinkedListItem:
+The same can be achieved by creating of a new StyledLinkedListItem:
 
 ```jsx
 import styled from '@datapunt/asc-core'

@@ -108,6 +108,7 @@ in your package will be seen in your repo.
         react: path.resolve('./node_modules/react'),
         'react-dom': path.resolve('./node_modules/react-dom'),
       },
+    },
   ```
 
 ### Using with Webpack

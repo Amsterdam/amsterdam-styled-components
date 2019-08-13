@@ -28,9 +28,9 @@ styled.p`` // <-- theme typed styled component!
 
 To add a new theme:
 
-- add a new folder in src/theme/<new-theme-name>
-- implement the interfaces defined in src/theme/index.ts
-- export the them from the package (/src/index.ts)
+- add a new folder in `src/theme/<new-theme-name>`
+- implement the interfaces defined in `src/theme/index.ts`
+- export the theme from the package (`/src/index.ts`)
 - use it in your project as parameter of the ThemeProvider
 
 ```js
