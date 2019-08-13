@@ -3,6 +3,7 @@ import { color, svgFill } from '../../../utils/index'
 import Button, { Props as ButtonProps } from '../../Button/Button'
 import { MenuFlyOutStyle } from '../MenuFlyOut'
 import { MenuListStyle } from '../MenuList'
+import { IconStyle } from '../../Icon'
 
 export const MenuButtonTextStyle = styled.span``
 export const MenuButtonTextWrapperStyle = styled.span``
@@ -17,6 +18,7 @@ export const MenuButtonBaseStyle = styled(Button)<Props>`
   background-color: transparent;
   height: 100%;
   color: ${color('tint', 'level7')};
+  align-items: flex-start;
 
   &[aria-expanded='true'] {
     ${MenuButtonTextStyle} {
@@ -27,6 +29,10 @@ export const MenuButtonBaseStyle = styled(Button)<Props>`
   & > ${MenuButtonTextWrapperStyle} {
     flex-grow: 1;
     text-align: left;
+  }
+
+  ${IconStyle} {
+    transform: rotate(0deg) translateY(3px);
   }
 
   &:hover,
