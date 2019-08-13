@@ -1,51 +1,29 @@
 import React from 'react'
 import { ChevronDown, ChevronUp } from '@datapunt/asc-assets'
-import MenuItemLink from '../MenuItemLink/MenuItemLink'
 import MenuList from '../MenuList/MenuList'
 import MenuContext, { useMenuContext } from '../MenuContext'
-import useMenuFocus from '../useMenuFocus'
-import useFocussedChildren from '../useFocussedChildren'
-import useKeysToFocus from '../useKeysToFocus'
 import ownerDocument from '../../../utils/ownerDocument'
-import MenuFlyOutStyle from './MenuFlyOutStyle'
-import Icon from '../../Icon'
+import MenuFlyOutStyle, { Props as MenuFlyOutProps } from './MenuFlyOutStyle'
 import useEdgeDetection from '../../../utils/hooks/useEdgeDetection'
 import useDebounce from '../../../utils/hooks/useDebounce'
 import { KeyboardKeys } from '../../../types/index'
+import MenuButton from '../MenuButton/MenuButton'
 
-const MenuFlyOut: React.FC<any> = ({
-  children: childrenProps,
-  label,
-  linkIndex,
-  ...otherProps
-}) => {
-  const {
-    hasToggle,
-    setActiveToggleChild,
-    onExpand,
-    setOpenToggle,
-  } = useMenuContext()
+type Props = {
+  label: string
+} & MenuFlyOutProps
+
+const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
+  const { hasToggle, onExpand, setOpenToggle } = useMenuContext()
 
   const ref = React.useRef<HTMLLIElement>(null)
 
   const [isOpen, setOpenFn] = React.useState(false)
-  const [linkRef, setLinkRef] = React.useState(null)
   const [isOpenOnClick, setOpenOnClick] = React.useState(false)
-  const [activeChild, setActiveChild] = React.useState(0)
 
   const setOpen = useDebounce(setOpenFn, 0)
 
   const flyOutOpen = isOpen || isOpenOnClick
-
-  const { children, filteredChildren } = useFocussedChildren(childrenProps)
-  const { onKeyDown } = useKeysToFocus(
-    filteredChildren,
-    activeChild,
-    setActiveChild,
-    setOpen,
-    linkRef,
-  )
-  useMenuFocus(linkRef, linkIndex)
 
   const onHandleToggle = (e: React.MouseEvent | React.KeyboardEvent) => {
     e.preventDefault()
@@ -53,9 +31,6 @@ const MenuFlyOut: React.FC<any> = ({
     if (hasToggle) {
       setOpen(isOpen ? false : isOpen)
       setOpenOnClick(!isOpenOnClick)
-
-      // @ts-ignore
-      setActiveToggleChild(linkIndex)
     } else {
       setOpenOnClick(true)
     }
@@ -75,7 +50,6 @@ const MenuFlyOut: React.FC<any> = ({
       if (!element.contains(currentFocus)) {
         setOpen(false)
         setOpenOnClick(false)
-        setActiveChild(0)
       }
     }
   })
@@ -103,39 +77,25 @@ const MenuFlyOut: React.FC<any> = ({
     <MenuFlyOutStyle
       ref={ref}
       onBlur={onBlurHandler}
-      onKeyDown={onKeyDown}
       hasToggle={hasToggle}
-      tabIndex={-1}
       {...extraEvents}
       {...otherProps}
     >
-      <MenuItemLink
-        element="span"
+      <MenuButton
         iconRight={
-          hasToggle ? (
-            <Icon size={14}>
-              {flyOutOpen ? <ChevronUp /> : <ChevronDown />}
-            </Icon>
-          ) : (
-            undefined
-          )
+          // eslint-disable-next-line no-nested-ternary
+          hasToggle ? flyOutOpen ? <ChevronUp /> : <ChevronDown /> : undefined
         }
-        tabIndex={0}
-        isActive={flyOutOpen}
-        setCurrentLinkRef={setLinkRef}
         onFocus={() => setOpen(true)}
         onClick={onHandleToggle}
         onKeyDown={onHandleKeyDown}
-        ignoreCloseOnClick
         aria-haspopup="true"
         aria-expanded={flyOutOpen}
       >
         {label}
-      </MenuItemLink>
+      </MenuButton>
       <MenuContext.Provider
         value={{
-          activeChild,
-          setActiveChild,
           underFlyOutMenu: true,
           hasToggle,
           setOpenToggle: (val: boolean) => {

@@ -2,13 +2,15 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { css } from '@datapunt/asc-core'
-import { Header, styles } from '../../../index'
-import SearchBar from '../../SearchBar'
-import SearchBarToggle from '../../SearchBarToggle/SearchBarToggle'
-import MenuInline from '../../Menu/MenuInline'
-import MenuToggle from '../../Menu/MenuToggle'
-import MenuItem from '../../Menu/MenuItem'
-import MenuFlyOut from '../../Menu/MenuFlyOut'
+import {
+  Header,
+  MenuInline,
+  MenuToggle,
+  SearchBarToggle,
+  SearchBar,
+  styles,
+} from '../../../index'
+import { MenuChildren } from '../../Menu/Menu.stories'
 
 const DataportaalHeaderWrapperStyle = css`
   ${styles.HeaderContentStyle} {
@@ -26,50 +28,16 @@ const DataportaalHeaderWrapperStyle = css`
   }
 `
 
-// MenuToggle should take an array of children, wrapping components in Fragments will return a string..
-const menuChildren = [
-  <MenuFlyOut label="Categorieën">
-    <MenuItem href="#" onClick={() => action('redux')}>
-      Kaart
-    </MenuItem>
-    <MenuItem href="#" onClick={() => action('redux')}>
-      Panoramabeelden
-    </MenuItem>
-    <MenuItem href="#" onClick={() => action('redux')}>
-      Datasets
-    </MenuItem>
-    <MenuItem href="#" onClick={() => action('redux')}>
-      Data services
-    </MenuItem>
-  </MenuFlyOut>,
-  <MenuFlyOut label="Over">
-    <MenuItem href="#" onClick={() => action('redux')}>
-      Privacy en informatiebeveiliging
-    </MenuItem>
-    <MenuItem href="#" onClick={() => action('redux')}>
-      Beschikbaarheid en kwaliteit data
-    </MenuItem>
-    <MenuItem href="#" onClick={() => action('redux')}>
-      Technisch beheer en werkwijze
-    </MenuItem>
-    <MenuItem title="Contact" href="mailto:datapunt@amsterdam.nl">
-      Contact
-    </MenuItem>
-  </MenuFlyOut>,
-  <MenuItem onClick={() => action('Show feedback form')}>Feedback</MenuItem>,
-  <MenuItem href="/help">Help</MenuItem>,
-  <MenuFlyOut label="Jon Doe">
-    <MenuItem onClick={() => action('Log out')}>Uitloggen</MenuItem>
-  </MenuFlyOut>,
-]
-
+// Re-used from the Menu story. Go to the Menu story to see how it's implemented
 const MenuDefault = (props: any) => (
-  <MenuInline {...props}>{menuChildren}</MenuInline>
+  <MenuInline {...props}>
+    <MenuChildren />
+  </MenuInline>
 )
 
 const MenuMobile = (props: any) => (
   <MenuToggle {...props} align="right">
-    {menuChildren}
+    <MenuChildren />
   </MenuToggle>
 )
 

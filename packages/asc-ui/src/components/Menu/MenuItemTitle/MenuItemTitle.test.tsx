@@ -14,7 +14,7 @@ describe('MenuItemTitle', () => {
 
   it('should render', () => {
     expect(component.exists()).toBeTruthy()
-    expect(component.props().as).toBe('li')
+    expect(component.props().$as).toBe('li')
   })
 
   it('should render the children', () => {

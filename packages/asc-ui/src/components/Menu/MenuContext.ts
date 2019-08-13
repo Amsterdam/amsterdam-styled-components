@@ -1,9 +1,6 @@
 import React from 'react'
 
 export type ContextValueTypes = {
-  activeChild?: number
-  setActiveChild?: Function
-  setActiveToggleChild?: Function
   setOpenToggle?: Function
   underFlyOutMenu?: boolean
   hasToggle?: boolean
@@ -11,9 +8,6 @@ export type ContextValueTypes = {
 }
 
 const initialValues: ContextValueTypes = {
-  activeChild: 0,
-  setActiveChild: () => {},
-  setActiveToggleChild: () => {},
   setOpenToggle: () => {},
   underFlyOutMenu: false,
   hasToggle: false,

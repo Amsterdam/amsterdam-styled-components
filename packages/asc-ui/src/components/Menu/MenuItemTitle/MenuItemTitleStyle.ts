@@ -1,8 +1,7 @@
 import styled from '@datapunt/asc-core'
-import { MenuItemSharedStyle } from '../MenuItem'
+import { MenuButtonBaseStyle } from '../MenuButton/MenuButtonStyle'
 
-export default styled.li`
-  ${MenuItemSharedStyle};
+export default styled(MenuButtonBaseStyle)`
   font-weight: 700;
   cursor: default;
 `

@@ -6,31 +6,34 @@ import { KeyboardKeys } from '../../../types'
 import { useMenuContext } from '../MenuContext'
 import MenuFlyOut from '.'
 import MenuItem from '../MenuItem'
-import MenuItemLink from '../MenuItemLink'
 import MenuList from '../MenuList'
-import useMenuFocus from '../useMenuFocus'
+import MenuButton from '../MenuButton/MenuButton'
 
 jest.useFakeTimers()
 
 jest.mock('../MenuContext')
-jest.mock('../useMenuFocus')
 
 describe('MenuFlyOut', () => {
   let component: ShallowWrapper<any, any>
   let container: ReactWrapper<any, any>
   let menuListProps: any
   const useMenuContextMock = useMenuContext as jest.Mock
-  const useMenuFocusMock = useMenuFocus as jest.Mock
 
   const children = [
-    <MenuItem key={1} href="/">
-      Space Bear 6
+    <MenuItem key={1}>
+      <MenuButton $as="a" href="/">
+        Space Bear 6
+      </MenuButton>
     </MenuItem>,
-    <MenuItem key={2} href="/">
-      Space Bear 6 Plus
+    <MenuItem key={2}>
+      <MenuButton $as="a" href="/">
+        Space Bear 6 Plus
+      </MenuButton>
     </MenuItem>,
-    <MenuItem key={3} href="/">
-      Space Bear 7
+    <MenuItem key={3}>
+      <MenuButton $as="a" href="/">
+        Space Bear 7
+      </MenuButton>
     </MenuItem>,
   ]
 
@@ -45,12 +48,12 @@ describe('MenuFlyOut', () => {
 
   const onClickSimulate = (element: any = component) =>
     element
-      .find(MenuItemLink)
+      .find(MenuButton)
       .at(0)
       .simulate('click', { preventDefault: () => {} })
   const onKeyDownSimulate = (keyType: any) =>
     component
-      .find(MenuItemLink)
+      .find(MenuButton)
       .at(0)
       .simulate('keydown', {
         preventDefault: () => {},
@@ -59,7 +62,6 @@ describe('MenuFlyOut', () => {
 
   beforeEach(() => {
     useMenuContextMock.mockImplementation(() => mockContext)
-    useMenuFocusMock.mockImplementation(() => {})
 
     component = shallow<{}>(<MenuFlyOut label="Fly Out">{children}</MenuFlyOut>)
   })
@@ -125,14 +127,13 @@ describe('MenuFlyOut', () => {
         setActiveToggleChild: setActiveToggleChildMock,
         hasToggle: true,
       }))
-      useMenuFocusMock.mockImplementation(() => {})
 
       component = shallow<{}>(
         <MenuFlyOut label="Fly Out">{children}</MenuFlyOut>,
       )
     })
     it('should set the open state including the Chevron icons', () => {
-      const menuItemLink = component.find(MenuItemLink).at(0)
+      const menuItemLink = component.find(MenuButton).at(0)
 
       expect(menuItemLink.find(<ChevronDown />)).toBeTruthy()
       menuListProps = component.find(MenuList).props()
@@ -144,9 +145,6 @@ describe('MenuFlyOut', () => {
 
       menuListProps = component.find(MenuList).props()
       expect(menuListProps['aria-hidden']).toBe(false)
-
-      // And set the active toggle child
-      expect(setActiveToggleChildMock).toHaveBeenCalled()
     })
   })
 })

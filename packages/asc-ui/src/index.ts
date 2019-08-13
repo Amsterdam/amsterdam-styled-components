@@ -60,13 +60,12 @@ import LinkList, { LinkListItem } from './components/LinkList'
 import ListItem from './components/ListItem'
 import {
   MenuItemTitle,
-  MenuItemLink,
-  MenuItemLabel,
   MenuItem,
   MenuFlyOut,
   MenuInline,
   MenuToggle,
   MenuStyles,
+  MenuButton,
 } from './components/Menu'
 import ThemeProvider from './theme'
 import IconButton from './components/deprecated/IconButton'
@@ -145,10 +144,9 @@ export {
   MenuFlyOut,
   MenuInline,
   MenuItem,
-  MenuItemLabel,
-  MenuItemLink,
   MenuItemTitle,
   MenuToggle,
+  MenuButton,
   Modal,
   Portal,
   Radio,

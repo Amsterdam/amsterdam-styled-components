@@ -1,10 +1,10 @@
 import styled, { css } from '@datapunt/asc-core'
 import { color, showHide, ShowHideTypes } from '../../../utils'
-import { MenuItemLinkStyle } from '../MenuItemLink'
 import { MenuItemTitleStyle } from '../MenuItemTitle'
 import { MenuListStyle } from '../MenuList'
 import { MenuFlyOutStyle } from '../MenuFlyOut'
 import { TOGGLE_BUTTON_SIZE, FLY_OUT_WIDTH } from '../constants'
+import MenuButtonStyle from '../MenuButton/MenuButtonStyle'
 
 export type Props = {
   align?: 'left' | 'right'
@@ -36,8 +36,34 @@ export default styled.div<Props>`
           `};
   }
 
-  ${MenuItemLinkStyle} {
+  ${MenuButtonStyle} {
     border-bottom: 1px solid ${color('tint', 'level3')};
+    background-color: ${color('tint', 'level2')};
+
+    &:hover,
+    &:focus {
+      background-color: ${color('tint', 'level2')};
+    }
+  }
+
+  & ${MenuFlyOutStyle} {
+    ${MenuButtonStyle} {
+      border-left-color: ${color('tint', 'level2')};
+    }
+
+    & > ${/* sc-selector */ MenuButtonStyle}[aria-expanded="true"] {
+      border-left-color: ${color('secondary')};
+    }
+
+    ${MenuListStyle} {
+      ${MenuButtonStyle} {
+        background-color: ${color('tint', 'level1')};
+        &:hover,
+        &:focus {
+          background-color: ${color('tint', 'level1')};
+        }
+      }
+    }
   }
 
   ${MenuListStyle} {

@@ -222,38 +222,6 @@ exports[`Header should render the short version 1`] = `
   justify-content: flex-end;
 }
 
-.c13 .c17 {
-  height: 17px;
-  padding: 0;
-}
-
-.c13 .c17:not(:last-child) {
-  margin-right: 30px;
-}
-
-.c13 .c17:focus,
-.c13 .c17:hover {
-  background-color: transparent;
-}
-
-.c13 .c17:focus .c16,
-.c13 .c17:hover .c16 {
-  color: #ec0000;
-}
-
-.c13 .c17:focus svg rect,
-.c13 .c17:hover svg rect,
-.c13 .c17:focus svg polygon,
-.c13 .c17:hover svg polygon,
-.c13 .c17:focus svg path,
-.c13 .c17:hover svg path {
-  fill: #ec0000;
-}
-
-.c13 .c17 .c16 {
-  line-height: 17px;
-}
-
 @media screen and (min-width:540.02px) {
   .c2 {
     padding: 0 15px;
@@ -549,38 +517,6 @@ exports[`Header should render the short version without the full width 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-}
-
-.c13 .c18 {
-  height: 17px;
-  padding: 0;
-}
-
-.c13 .c18:not(:last-child) {
-  margin-right: 30px;
-}
-
-.c13 .c18:focus,
-.c13 .c18:hover {
-  background-color: transparent;
-}
-
-.c13 .c18:focus .c17,
-.c13 .c18:hover .c17 {
-  color: #ec0000;
-}
-
-.c13 .c18:focus svg rect,
-.c13 .c18:hover svg rect,
-.c13 .c18:focus svg polygon,
-.c13 .c18:hover svg polygon,
-.c13 .c18:focus svg path,
-.c13 .c18:hover svg path {
-  fill: #ec0000;
-}
-
-.c13 .c18 .c17 {
-  line-height: 17px;
 }
 
 @media screen and (min-width:540.02px) {
@@ -891,38 +827,6 @@ exports[`Header should render the tall version 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-}
-
-.c16 .c23 {
-  height: 17px;
-  padding: 0;
-}
-
-.c16 .c23:not(:last-child) {
-  margin-right: 30px;
-}
-
-.c16 .c23:focus,
-.c16 .c23:hover {
-  background-color: transparent;
-}
-
-.c16 .c23:focus .c22,
-.c16 .c23:hover .c22 {
-  color: #ec0000;
-}
-
-.c16 .c23:focus svg rect,
-.c16 .c23:hover svg rect,
-.c16 .c23:focus svg polygon,
-.c16 .c23:hover svg polygon,
-.c16 .c23:focus svg path,
-.c16 .c23:hover svg path {
-  fill: #ec0000;
-}
-
-.c16 .c23 .c22 {
-  line-height: 17px;
 }
 
 @media screen and (min-width:540.02px) {
@@ -1241,38 +1145,6 @@ exports[`Header should render the tall version without a title 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-}
-
-.c12 .c18 {
-  height: 17px;
-  padding: 0;
-}
-
-.c12 .c18:not(:last-child) {
-  margin-right: 30px;
-}
-
-.c12 .c18:focus,
-.c12 .c18:hover {
-  background-color: transparent;
-}
-
-.c12 .c18:focus .c17,
-.c12 .c18:hover .c17 {
-  color: #ec0000;
-}
-
-.c12 .c18:focus svg rect,
-.c12 .c18:hover svg rect,
-.c12 .c18:focus svg polygon,
-.c12 .c18:hover svg polygon,
-.c12 .c18:focus svg path,
-.c12 .c18:hover svg path {
-  fill: #ec0000;
-}
-
-.c12 .c18 .c17 {
-  line-height: 17px;
 }
 
 @media screen and (min-width:540.02px) {
