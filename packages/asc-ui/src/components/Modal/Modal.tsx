@@ -24,7 +24,7 @@ const Modal: React.FC<Props> = ({
   blurredNodeSelector,
   className,
   onClose,
-  ...other
+  ...otherProps
 }) => {
   let renderedTimer: number = 0
 
@@ -75,7 +75,7 @@ const Modal: React.FC<Props> = ({
         : {})}
     >
       <Focus onKeyDown={handleKeyDown}>
-        <ModalStyleContainer {...other}>
+        <ModalStyleContainer {...otherProps}>
           <BackDropStyle
             backdropOpacity={backdropOpacity}
             onClick={handleClose}
