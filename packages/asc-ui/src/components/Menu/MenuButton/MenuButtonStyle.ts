@@ -50,7 +50,6 @@ const MenuButtonStyle = styled(MenuButtonBaseStyle)<Props>`
 
   ${/* sc-selector */ MenuFlyOutStyle} ${/* sc-selector */ MenuListStyle} &,
   ${/* sc-selector */ MenuFlyOutStyle}[aria-expanded='true'] {
-    background-color: ${color('tint', 'level2')};
     font-weight: 400;
   }
 `

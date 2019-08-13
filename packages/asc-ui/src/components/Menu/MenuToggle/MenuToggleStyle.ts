@@ -49,10 +49,10 @@ export default styled.div<Props>`
   & ${MenuFlyOutStyle} {
     ${MenuButtonStyle} {
       border-left-color: ${color('tint', 'level2')};
-      &:hover,
-      &:focus {
-        border-left-color: ${color('secondary')};
-      }
+    }
+
+    & > ${/* sc-selector */ MenuButtonStyle}[aria-expanded="true"] {
+      border-left-color: ${color('secondary')};
     }
 
     ${MenuListStyle} {

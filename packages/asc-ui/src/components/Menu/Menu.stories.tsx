@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from '@datapunt/asc-core'
 import { ChevronRight } from '@datapunt/asc-assets'
 import { storiesOf } from '@storybook/react'
 import {
@@ -8,6 +9,7 @@ import {
   MenuItemTitle,
   MenuInline,
   MenuToggle,
+  color,
 } from '../../index'
 
 const ReactRouterLink: React.FC<any> = ({
@@ -25,6 +27,10 @@ const StyledReactRouterLink: React.FC<any> = ({ children, ...otherProps }) => (
     {children}
   </MenuButton>
 )
+
+const StyledMenuInline = styled(MenuInline)`
+  background-color: ${color('tint', 'level2')};
+`
 
 // eslint-disable-next-line import/prefer-default-export
 export const MenuChildren = () => (
@@ -73,9 +79,9 @@ export const MenuChildren = () => (
 
 storiesOf('Composed/Menu', module)
   .add('default', () => (
-    <MenuInline>
+    <StyledMenuInline>
       <MenuChildren />
-    </MenuInline>
+    </StyledMenuInline>
   ))
   .add('toggle', () => (
     <MenuToggle>
