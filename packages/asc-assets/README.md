@@ -1,4 +1,4 @@
-# ASC-Assets
+# asc-assets
 
 This is a standalone package that contains:
 
