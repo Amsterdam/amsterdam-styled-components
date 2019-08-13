@@ -1,9 +1,13 @@
 import * as React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
-import { FooterLinkList, FooterLinkListItem, FooterBottomLinkListItem } from '.'
-import FooterBottomLinkList from './FooterBottomLinkList'
 import Link from '../../Link/Link'
+import {
+  FooterBottomLinkList,
+  FooterLinkList,
+  FooterLinkListItem,
+  FooterBottomLinkListItem,
+} from './index'
 import { color } from '../../../utils'
 import 'jest-styled-components'
 
