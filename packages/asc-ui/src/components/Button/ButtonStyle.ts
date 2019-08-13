@@ -9,7 +9,7 @@ import {
 import { flexboxMinHeightFix } from '../shared/ie-fixes'
 import Icon from '../Icon'
 
-enum ButtonVariants {
+export enum ButtonVariants {
   primary,
   secondary,
   tertiary,
@@ -33,7 +33,7 @@ const getVariant = () => ({
   switch (variant) {
     case 'primary':
       return css`
-        background-color: ${themeColor('primary')({ theme })};
+        background-color: ${themeColor('primary')};
         color: ${readableColor(themeColor('primary')({ theme }))};
         ${svgFill('tint', 'level1')};
 
@@ -44,8 +44,8 @@ const getVariant = () => ({
 
     case 'secondary':
       return css`
-        background-color: ${themeColor('secondary')({ theme })};
-        color: ${themeColor('tint', 'level1')({ theme })};
+        background-color: ${themeColor('secondary')};
+        color: ${themeColor('tint', 'level1')};
         ${svgFill('tint', 'level1')};
 
         &:hover {
@@ -55,7 +55,7 @@ const getVariant = () => ({
 
     case 'tertiary':
       return css`
-        background-color: ${themeColor('tint', 'level4')({ theme })};
+        background-color: ${themeColor('tint', 'level4')};
         ${svgFill('tint', 'level7')};
 
         &:hover {
@@ -68,20 +68,21 @@ const getVariant = () => ({
 
     case 'primaryInverted':
       return css`
-        color: ${getColor('primary')({ theme })};
-        border: 1px solid ${getColor('primary')({ theme })};
+        color: ${getColor('primary')};
+        border: 1px solid ${getColor('primary')};
         ${svgFill('primary')};
 
         &:hover {
-          outline: 1px solid ${getColor('primary')({ theme })};
+          outline: 1px solid ${getColor('primary')};
         }
       `
 
     case 'blank':
       return css`
+        background-color: ${getColor('tint', 'level1')};
         ${svgFill('tint', 'level7')}
         &:hover {
-          background-color: ${themeColor('tint', 'level3')({ theme })};
+          background-color: ${themeColor('tint', 'level3')};
         }
       `
     default:
@@ -92,12 +93,12 @@ const getVariant = () => ({
           : getColor('primary')({ theme })};
         ${color &&
           css`
-            background: ${themeColor(color)({ theme })};
+            background: ${themeColor(color)};
           `}
 
         ${!color &&
           css`
-            border: 1px solid ${getColor('primary')({ theme })};
+            border: 1px solid ${getColor('primary')};
           `}
 
         &:hover {
@@ -106,7 +107,7 @@ const getVariant = () => ({
             : themeColor('tint', 'level3')({ theme })};
           ${!color &&
             css`
-              outline: 1px solid ${getColor('primary')({ theme })};
+              outline: 1px solid ${getColor('primary')};
             `}
         }
       `

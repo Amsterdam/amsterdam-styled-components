@@ -1,49 +1,90 @@
 import React from 'react'
+import styled from '@datapunt/asc-core'
+import { ChevronRight } from '@datapunt/asc-assets'
 import { storiesOf } from '@storybook/react'
-import MenuInline from './MenuInline/MenuInline'
-import MenuToggle from './MenuToggle'
-import MenuItem from './MenuItem'
-import MenuFlyOut from './MenuFlyOut'
-import MenuTitle from './MenuItemTitle'
+import {
+  MenuFlyOut,
+  MenuItem,
+  MenuButton,
+  MenuItemTitle,
+  MenuInline,
+  MenuToggle,
+  color,
+} from '../../index'
+
+const ReactRouterLink: React.FC<any> = ({
+  children,
+  reactRouterProp,
+  ...otherProps
+}) => (
+  <a {...otherProps} data-attr={reactRouterProp}>
+    {children}
+  </a>
+)
+
+const StyledReactRouterLink: React.FC<any> = ({ children, ...otherProps }) => (
+  <MenuButton $as={ReactRouterLink} {...otherProps}>
+    {children}
+  </MenuButton>
+)
+
+const StyledMenuInline = styled(MenuInline)`
+  background-color: ${color('tint', 'level2')};
+`
+
+// eslint-disable-next-line import/prefer-default-export
+export const MenuChildren = () => (
+  <>
+    <MenuItem>
+      <MenuButton $as="a" href="/">
+        Home
+      </MenuButton>
+    </MenuItem>
+    <MenuItem>
+      <StyledReactRouterLink reactRouterProp="hello!" $as="a" href="/">
+        Shop
+      </StyledReactRouterLink>
+    </MenuItem>
+    <MenuFlyOut label="Submenu!">
+      <MenuItem>
+        <MenuButton $as="a" href="/" iconLeft={<ChevronRight />}>
+          Space Bear 6
+        </MenuButton>
+      </MenuItem>
+      <MenuItem>
+        <MenuButton $as="a" href="/" iconLeft={<ChevronRight />}>
+          Space Bear 6 Plus
+        </MenuButton>
+      </MenuItem>
+      <MenuItemTitle>Just a menu title</MenuItemTitle>
+      <MenuItem>
+        <MenuButton
+          onClick={() => {
+            // eslint-disable-next-line no-undef,no-alert
+            alert('Hello!')
+          }}
+          iconLeft={<ChevronRight />}
+        >
+          This triggers an alert!
+        </MenuButton>
+      </MenuItem>
+    </MenuFlyOut>
+    <MenuItem>
+      <MenuButton $as="a" href="/">
+        Contact
+      </MenuButton>
+    </MenuItem>
+  </>
+)
 
 storiesOf('Composed/Menu', module)
   .add('default', () => (
-    <MenuInline>
-      <MenuItem href="/">Home</MenuItem>
-      <MenuItem href="/">Shop</MenuItem>
-      <MenuFlyOut label="Submenu!">
-        <MenuItem href="/">Space Bear 6</MenuItem>
-        <MenuItem href="/">Space Bear 6 Plus</MenuItem>
-        <MenuTitle>Just a menu title</MenuTitle>
-        <MenuItem href="/">Space Bear 7</MenuItem>
-      </MenuFlyOut>
-      <MenuItem href="/">Mars Cars</MenuItem>
-      <MenuItem href="/">Contact</MenuItem>
-      <MenuFlyOut label="Another one!">
-        <MenuItem href="/">Space Bear 6</MenuItem>
-        <MenuItem href="/">Space Bear 6 Plus</MenuItem>
-        <MenuTitle>Just a menu title</MenuTitle>
-        <MenuItem href="/">Space Bear 7</MenuItem>
-      </MenuFlyOut>
-    </MenuInline>
+    <StyledMenuInline>
+      <MenuChildren />
+    </StyledMenuInline>
   ))
   .add('toggle', () => (
     <MenuToggle>
-      <MenuItem href="/">Home</MenuItem>
-      <MenuItem href="/">Shop</MenuItem>
-      <MenuFlyOut label="Submenu!">
-        <MenuItem href="/">Space Bear 6</MenuItem>
-        <MenuItem href="/">Space Bear 6 Plus</MenuItem>
-        <MenuTitle>Just a menu title</MenuTitle>
-        <MenuItem href="/">Space Bear 7</MenuItem>
-      </MenuFlyOut>
-      <MenuItem href="/">Mars Cars</MenuItem>
-      <MenuItem href="/">Contact</MenuItem>
-      <MenuFlyOut label="Another one!">
-        <MenuItem href="/">Space Bear 6</MenuItem>
-        <MenuItem href="/">Space Bear 6 Plus</MenuItem>
-        <MenuTitle>Just a menu title</MenuTitle>
-        <MenuItem href="/">Space Bear 7</MenuItem>
-      </MenuFlyOut>
+      <MenuChildren />
     </MenuToggle>
   ))

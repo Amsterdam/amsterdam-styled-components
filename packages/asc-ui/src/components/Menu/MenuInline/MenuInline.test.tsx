@@ -3,19 +3,20 @@ import { shallow, ShallowWrapper } from 'enzyme'
 import MenuInline from './MenuInline'
 import MenuInlineStyle from './MenuInlineStyle'
 import MenuItem from '../MenuItem'
+import MenuButton from '../MenuButton'
 
 describe('MenuInline', () => {
   let component: ShallowWrapper<any, any>
 
   const children = [
-    <MenuItem key={1} href="/">
-      Space Bear 6
+    <MenuItem key={1}>
+      <MenuButton>Space Bear 6</MenuButton>
     </MenuItem>,
-    <MenuItem key={2} href="/">
-      Space Bear 6 Plus
+    <MenuItem key={2}>
+      <MenuButton>Space Bear 6 Plus</MenuButton>
     </MenuItem>,
-    <MenuItem key={3} href="/">
-      Space Bear 7
+    <MenuItem key={3}>
+      <MenuButton>Space Bear 7</MenuButton>
     </MenuItem>,
   ]
 
