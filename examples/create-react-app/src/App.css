@@ -31,3 +31,7 @@
     transform: rotate(360deg);
   }
 }
+
+.App-link-list-container {
+  padding: 50px;
+}

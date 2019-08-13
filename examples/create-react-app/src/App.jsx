@@ -61,13 +61,13 @@ const App = () => {
         <GlobalStyle />
         <div className="App">
           <Typography>Link list deafaultexample</Typography>
-          <Typography $as="p">
+          <Typography $as="p" className="App-link-list-container">
             <LinkList>
               <LinkListItem href="/">default LinkListItem 1</LinkListItem>
               <LinkListItem href="/">default LinkListItem 2</LinkListItem>
             </LinkList>
           </Typography>
-          <Typography $as="p">
+          <Typography $as="p" className="App-link-list-container">
             <StyledLinkList>
               <LinkListItem href="/">
                 StyledLinkList LinkListItem 1
@@ -77,13 +77,13 @@ const App = () => {
               </LinkListItem>
             </StyledLinkList>
           </Typography>
-          <Typography $as="p">
+          <Typography $as="p" className="App-link-list-container">
             <StyledLinkList className="link-list">
               <StyledLinkListItem href="/">
-                StyledLinkListItem 1
+                StyledLinkList StyledLinkListItem 1
               </StyledLinkListItem>
               <StyledLinkListItem href="/">
-                StyledLinkListItem 2
+                StyledLinkList StyledLinkListItem 2
               </StyledLinkListItem>
             </StyledLinkList>
           </Typography>
