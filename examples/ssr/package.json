@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "scripts": {
     "client": "webpack -w",
-    "postinstall": "../../scripts/link-packages.sh",
     "start": "concurrently \"yarn client\" \"node ./index.js\""
   },
   "dependencies": {
@@ -17,6 +16,9 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
+    "@datapunt/asc-assets": "0.11.0",
+    "@datapunt/asc-core": "0.11.0",
+    "@datapunt/asc-ui": "0.12.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-inline-react-svg": "^1.0.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
