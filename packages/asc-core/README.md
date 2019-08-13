@@ -30,13 +30,44 @@ To add a new theme:
 
 - add a new folder in `src/theme/<new-theme-name>`
 - implement the interfaces defined in `src/theme/index.ts`
-- export the theme from the package (`/src/index.ts`)
-- use it in your project as parameter of the ThemeProvider
+- use the themeName as parameter of the ThemeProvider
 
 ```js
-import { newThemeName, ThemeProvider } from '@datapunt/asc-core'
+import { ThemeProvider } from '@datapunt/asc-core'
 
-<ThemeProvider theme={newThemeName}>
+<ThemeProvider themeName={`<new-theme-name>`}>
+  <App />
+</ThemeProvider>
+```
+
+## Override theme properties
+
+To override some of the theme properties
+
+- create a themeOverrides object with the properties that you want to overriede
+- pass the themeOverrides object as parameter to the Theme provider
+- the themeOverrides must match the Theme.ThemeInterface interface structure
+- in the next example we override the `laptopM` breakpoint and redefine the primary and secondary colors
+
+```js
+import { ThemeProvider } from '@datapunt/asc-core'
+
+const themeOverides = {
+  breakpoints: {
+    laptopM: () => '(min-width: 800.02px)',
+  },
+  colors: {
+    primary: {
+      main: '#00887a',
+    },
+    secondary: {
+      main: 'green',
+    },
+  },
+}
+
+
+<ThemeProvider overrides={themeOverides}>
   <App />
 </ThemeProvider>
 ```
