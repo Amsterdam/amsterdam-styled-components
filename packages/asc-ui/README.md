@@ -20,43 +20,43 @@ Consult the [demo site with the storybook of the components](https://amsterdam.g
 
 ```jsx
 import styled from '@datapunt/asc-core'
-import { color, LinkList, breakpoint, styles, ThemeProvider } from '@datapunt/asc-ui'
+import { color, List, breakpoint, styles, ThemeProvider } from '@datapunt/asc-ui'
 
-const StyledLinkList = styled(LinkList)`
+const StyledList = styled(List)`
   background-color: ${color('tint', 'level5')};
 
   @media screen and ${breakpoint('min-width', 'laptopM')} {
     background-color: ${color('tint', 'level1')};
   }
 
-  ${styles.LinkListItemStyle} {
+  ${styles.ListItemStyle} {
     color: ${color('primary')};
   }
 
   `
 
 <ThemeProvider>
-  <StyledLinkList>
-    <LinkListItem href="/">Item1</LinkListItem>
-    <LinkListItem href="/">Item2</LinkListItem>
-  </StyledLinkList>
+  <StyledList>
+    <ListItem href="/">Item1</ListItem>
+    <ListItem href="/">Item2</ListItem>
+  </StyledList>
 </ThemeProvider>
 
 ```
 
-The background color of the StyledLinkList component has the color of `tint.level5` widths smaller than `laptopM` breakpoint and `tint.level1` for widths larger than `laptopM`
+The background color of the StyledList component has the color of `tint.level5` widths smaller than `laptopM` breakpoint and `tint.level1` for widths larger than `laptopM`
 The colors and the breakpoints are defined in the `asc-core` default theme
 
-Each component exposes its style that can be used a (class)selector in another component. The naming convention for the styles is: `<component-name>` -> `styles.<component-name>Style`. For example LinkListItem has a styles.LinkListStyle selector.
+Each component exposes its style that can be used a (class)selector in another component. The naming convention for the styles is: `<component-name>` -> `styles.<component-name>Style`. For example ListItem has a styles.ListStyle selector.
 We use the exposed selector to change the color of the LinkedListItems to the `primary` theme color. In this case we don't need to create a new StyledLinkedList item to override the style.
 
 The same can be achieved by creating of a new StyledLinkedListItem:
 
 ```jsx
 import styled from '@datapunt/asc-core'
-import { color, LinkList, breakpoint, styles, ThemeProvider, svgFill } from '@datapunt/asc-ui'
+import { color, List, breakpoint, styles, ThemeProvider, svgFill } from '@datapunt/asc-ui'
 
-const StyledLinkList = styled(LinkList)`
+const StyledList = styled(List)`
   background-color: ${color('tint', 'level5')};
 
   @media screen and ${breakpoint('min-width', 'laptopM')} {
@@ -64,7 +64,7 @@ const StyledLinkList = styled(LinkList)`
   }
 `
 
-const StyledLinkListItem - styled(LinkListItem)`
+const StyledListItem - styled(ListItem)`
   color: ${color('primary')};
 
   ${styles.IconStyle} {
@@ -83,12 +83,12 @@ const StyledLinkListItem - styled(LinkListItem)`
 `
 
 <ThemeProvider>
-  <StyledLinkList>
-    <StyledLinkListItem href="/">Item1</StyledLinkListItem>
-    <StyledLinkListItem href="/">Item2</StyledLinkListItem>
-  </StyledLinkList>
+  <StyledList>
+    <StyledListItem href="/">Item1</StyledListItem>
+    <StyledListItem href="/">Item2</StyledListItem>
+  </StyledList>
 </ThemeProvider>
 
 ```
 
-In this example, we use the IconStyle selector to override the color of the chevron icon from the LinkLinkListItem
+In this example, we use the IconStyle selector to override the color of the chevron icon from the ListItem

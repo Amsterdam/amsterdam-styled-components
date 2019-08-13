@@ -56,8 +56,7 @@ import ImageCard, {
   ImageCardContent,
   ImageCardStyles,
 } from './components/ImageCard'
-import LinkList, { LinkListItem } from './components/LinkList'
-import ListItem from './components/ListItem'
+import List, { ListItem } from './components/List'
 import {
   MenuItemTitle,
   MenuItem,
@@ -110,8 +109,8 @@ export const styles = {
 
 // Components
 export {
-  LinkList,
-  LinkListItem,
+  List,
+  ListItem,
   AmsterdamLogo,
   BackDrop,
   CustomHTMLBlock,
@@ -140,7 +139,6 @@ export {
   Input,
   ImageCard,
   ImageCardContent,
-  ListItem,
   MenuFlyOut,
   MenuInline,
   MenuItem,

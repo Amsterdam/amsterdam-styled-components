@@ -6,8 +6,8 @@ import {
   CustomHTMLBlock,
   Row,
   Heading,
-  LinkList,
-  LinkListItem,
+  List,
+  ListItem,
   Article,
   EditorialBody,
   Paragraph,
@@ -54,13 +54,13 @@ storiesOf('Composed/Editorial/Article', module)
             >
               <EditorialSidebar>
                 <Heading as="h2">Links</Heading>
-                <LinkList>
-                  <LinkListItem href="/">I am a ListLink!</LinkListItem>
-                  <LinkListItem href="/">Another one</LinkListItem>
-                  <LinkListItem href="/">
+                <List>
+                  <ListItem href="/">I am a ListLink!</ListItem>
+                  <ListItem href="/">Another one</ListItem>
+                  <ListItem href="/">
                     A loooooong, very, very, very long link
-                  </LinkListItem>
-                </LinkList>
+                  </ListItem>
+                </List>
               </EditorialSidebar>
             </Column>
           </Column>
@@ -98,11 +98,11 @@ storiesOf('Composed/Editorial/Article', module)
             >
               <EditorialSidebar>
                 <Heading as="h2">Downloads</Heading>
-                <LinkList>
-                  <LinkListItem href="/">File</LinkListItem>
-                  <LinkListItem href="/">File</LinkListItem>
-                  <LinkListItem href="/">File</LinkListItem>
-                </LinkList>
+                <List>
+                  <ListItem href="/">File</ListItem>
+                  <ListItem href="/">File</ListItem>
+                  <ListItem href="/">File</ListItem>
+                </List>
               </EditorialSidebar>
             </Column>
           </Column>

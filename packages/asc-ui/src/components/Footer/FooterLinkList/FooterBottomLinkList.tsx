@@ -1,7 +1,7 @@
 import styled from '@datapunt/asc-core'
-import LinkList from '../../LinkList'
+import List from '../../List'
 
-const FooterBottomLinkList = styled(LinkList)`
+const FooterBottomLinkList = styled(List)`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
