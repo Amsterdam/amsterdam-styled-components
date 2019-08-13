@@ -14,7 +14,7 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## [Unreleased]
+## [0.12.0] - 2019-08-13
 - Added: MenuButton component: this now can be used as a button or link inside MenuItem
 - Changed: **BREAKING** MenuItem now doesn't accept any onClick or href props: it's just a wrapper 
   now. Use MenuButton inside MenuItem
