@@ -6,8 +6,8 @@ import {
   CustomHTMLBlock,
   Row,
   Heading,
-  LinkList,
-  LinkListItem,
+  List,
+  ListItem,
   Article,
   EditorialBody,
   Paragraph,
@@ -18,6 +18,7 @@ import EditorialContent from '../EditorialContent'
 import EditorialHeader from '../EditorialHeader'
 import EditorialMetaList from '../EditorialMetaList'
 import EditorialSidebar from '../EditorialSidebar/EditorialSidebar'
+import Link from '../../Link/Link'
 
 /* Rest components */
 storiesOf('Composed/Editorial/Article', module)
@@ -54,13 +55,19 @@ storiesOf('Composed/Editorial/Article', module)
             >
               <EditorialSidebar>
                 <Heading as="h2">Links</Heading>
-                <LinkList>
-                  <LinkListItem href="/">I am a ListLink!</LinkListItem>
-                  <LinkListItem href="/">Another one</LinkListItem>
-                  <LinkListItem href="/">
-                    A loooooong, very, very, very long link
-                  </LinkListItem>
-                </LinkList>
+                <List>
+                  <ListItem>
+                    <Link href="/">I am a ListLink!</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="/">Another one</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="/">
+                      A loooooong, very, very, very long link
+                    </Link>
+                  </ListItem>
+                </List>
               </EditorialSidebar>
             </Column>
           </Column>
@@ -98,11 +105,17 @@ storiesOf('Composed/Editorial/Article', module)
             >
               <EditorialSidebar>
                 <Heading as="h2">Downloads</Heading>
-                <LinkList>
-                  <LinkListItem href="/">File</LinkListItem>
-                  <LinkListItem href="/">File</LinkListItem>
-                  <LinkListItem href="/">File</LinkListItem>
-                </LinkList>
+                <List>
+                  <ListItem>
+                    <Link href="/">File</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="/">File</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="/">File</Link>
+                  </ListItem>
+                </List>
               </EditorialSidebar>
             </Column>
           </Column>

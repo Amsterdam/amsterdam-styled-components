@@ -1,12 +1,13 @@
 import * as React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
+import Link from '../../Link/Link'
 import {
   FooterBottomLinkList,
   FooterLinkList,
   FooterLinkListItem,
   FooterBottomLinkListItem,
-} from '../index'
+} from './index'
 import { color } from '../../../utils'
 import 'jest-styled-components'
 
@@ -20,8 +21,12 @@ describe('FooterLinkList', () => {
     const { queryByTestId, queryAllByText, getByText } = render(
       <ThemeProvider theme={theme}>
         <FooterLinkList data-testid="link-list-id">
-          <FooterLinkListItem href="http://link1">Item1</FooterLinkListItem>
-          <FooterLinkListItem href="http://link2">Item2</FooterLinkListItem>
+          <FooterLinkListItem>
+            <Link href="http://link1">Item1</Link>
+          </FooterLinkListItem>
+          <FooterLinkListItem>
+            <Link href="http://link2">Item2</Link>
+          </FooterLinkListItem>
         </FooterLinkList>
       </ThemeProvider>,
     )
@@ -42,9 +47,15 @@ describe('FooterBottomLinkList', () => {
     const { queryByTestId, queryAllByText } = render(
       <ThemeProvider theme={theme}>
         <FooterBottomLinkList data-testid="link-list-id">
-          <FooterBottomLinkListItem>Item1</FooterBottomLinkListItem>
-          <FooterBottomLinkListItem>Item2</FooterBottomLinkListItem>
-          <FooterBottomLinkListItem>Item3</FooterBottomLinkListItem>
+          <FooterBottomLinkListItem>
+            <Link href="http://link1">Item1</Link>
+          </FooterBottomLinkListItem>
+          <FooterBottomLinkListItem>
+            <Link href="http://link2">Item2</Link>
+          </FooterBottomLinkListItem>
+          <FooterBottomLinkListItem>
+            <Link href="http://link3">Item3</Link>
+          </FooterBottomLinkListItem>
         </FooterBottomLinkList>
       </ThemeProvider>,
     )

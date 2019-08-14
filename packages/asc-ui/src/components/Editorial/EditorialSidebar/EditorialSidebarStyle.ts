@@ -1,12 +1,12 @@
 import styled from '@datapunt/asc-core'
-import LinkListStyle from '../../LinkList/LinkListStyle'
+import ListStyle from '../../List/ListStyle'
 import HeadingStyle from '../../Heading/HeadingStyle'
 import TypographyStyle from '../../Typography/TypographyStyle'
 import LinkStyle from '../../Link/LinkStyle'
 import { color } from '../../../utils'
 
 export default styled.aside`
-  ${LinkListStyle} {
+  ${ListStyle} {
     margin: 16px 0;
   }
 
