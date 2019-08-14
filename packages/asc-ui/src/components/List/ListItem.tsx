@@ -1,5 +1,5 @@
 import React from 'react'
-import ListItemStyle, { ListItemStyleProps } from './ListItemStyle'
+import ListItemStyle, { Props as ListItemStyleProps } from './ListItemStyle'
 
 type Props = ListItemStyleProps
 

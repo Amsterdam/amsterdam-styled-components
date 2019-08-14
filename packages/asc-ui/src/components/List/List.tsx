@@ -1,5 +1,5 @@
 import React from 'react'
-import ListStyle, { ListStyleProps } from './ListStyle'
+import ListStyle, { Props as ListStyleProps } from './ListStyle'
 
 export interface Props extends ListStyleProps {}
 
