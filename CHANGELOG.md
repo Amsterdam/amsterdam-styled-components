@@ -25,7 +25,7 @@ Prefix the change with one of these keywords:
 
 - Added: Card components with implementation stories
 - Added: tag component
-- Added: new way of loading svg's: instead of importing like this: 
+- Added: new way of loading svg's: instead of importing like this:  
   `import Logo from '@datapunt/asc-assets/lib/assets/Icons/Logo.svg'` you now can use the svg object: 
   `import { svg } from '@datapunt/asc-assets'` and load it like this: `background-image: url(${svg.Logo})`
 - Added: Image component can render images as a square (including IE11)

@@ -1,9 +1,9 @@
 import styled from '@datapunt/asc-core'
-import { LinkListItem } from '../../LinkList'
+import { ListItem } from '../../List'
 import LinkStyle from '../../Link/LinkStyle'
 import { breakpoint } from '../../../utils'
 
-const FooterBottomLinkListItem = styled(LinkListItem)`
+const FooterBottomListItem = styled(ListItem)`
   margin-right: 52px;
   & > ${LinkStyle} {
     font-size: 14px;
@@ -18,4 +18,4 @@ const FooterBottomLinkListItem = styled(LinkListItem)`
   }
 `
 
-export default FooterBottomLinkListItem
+export default FooterBottomListItem
