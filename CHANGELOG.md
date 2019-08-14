@@ -14,7 +14,13 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## [0.13.0] - 2019-08-14
+
+- Changed: LinkList(LinkListItem) is renamed to List(ListItem), the Link functionality has to be done in the implementation
+- Changed: Breaking change, ListItem(div) is replaced by a ListItem(li), was used as block container in the Modal, Should be replaced in the implementation
+
 ## [0.12.0] - 2019-08-13
+
 - Added: MenuButton component: this now can be used as a button or link inside MenuItem
 - Changed: **BREAKING** MenuItem now doesn't accept any onClick or href props: it's just a wrapper 
   now. Use MenuButton inside MenuItem
