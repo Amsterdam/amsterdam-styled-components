@@ -14,8 +14,7 @@
   },
   "version": "0.6.1-alpha.0",
   "workspaces": [
-    "packages/*",
-    "examples/*"
+    "packages/*"
   ],
   "scripts": {
     "prebuild": "lerna exec --scope @datapunt/asc-assets -- yarn build",
