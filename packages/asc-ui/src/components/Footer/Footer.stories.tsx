@@ -19,16 +19,24 @@ import Link from '../Link'
 const ColofonLinks: React.FC<{ indent?: boolean }> = () => (
   <FooterLinkList>
     <FooterLinkListItem>
-      <Link href="/">Over deze site</Link>
+      <Link href="/" linkType="with-chevron">
+        Over deze site
+      </Link>
     </FooterLinkListItem>
     <FooterLinkListItem>
-      <Link href="/">Over OIS</Link>
+      <Link href="/" linkType="with-chevron">
+        Over OIS
+      </Link>
     </FooterLinkListItem>
     <FooterLinkListItem>
-      <Link href="/">Databeleid</Link>
+      <Link href="/" linkType="with-chevron">
+        Databeleid
+      </Link>
     </FooterLinkListItem>
     <FooterLinkListItem>
-      <Link href="/">Bronnen</Link>
+      <Link href="/" linkType="with-chevron">
+        Bronnen
+      </Link>
     </FooterLinkListItem>
   </FooterLinkList>
 )
@@ -36,19 +44,29 @@ const ColofonLinks: React.FC<{ indent?: boolean }> = () => (
 const FollowLinks: React.FC<{ indent?: boolean }> = () => (
   <FooterLinkList>
     <FooterLinkListItem>
-      <Link href="/">Nieuwsbrief OIS</Link>
+      <Link href="/" linkType="with-chevron">
+        Nieuwsbrief OIS
+      </Link>
     </FooterLinkListItem>
     <FooterLinkListItem>
-      <Link href="/">Twitter</Link>
+      <Link href="/" linkType="with-chevron">
+        Twitter
+      </Link>
     </FooterLinkListItem>
     <FooterLinkListItem>
-      <Link href="/">Facerbook</Link>
+      <Link href="/" linkType="with-chevron">
+        Facerbook
+      </Link>
     </FooterLinkListItem>
     <FooterLinkListItem>
-      <Link href="/">Linkedin</Link>
+      <Link href="/" linkType="with-chevron">
+        Linkedin
+      </Link>
     </FooterLinkListItem>
     <FooterLinkListItem>
-      <Link href="/">GitHub</Link>
+      <Link href="/" linkType="with-chevron">
+        GitHub
+      </Link>
     </FooterLinkListItem>
   </FooterLinkList>
 )
@@ -61,16 +79,24 @@ const HelpLinks: React.FC<{ indent?: boolean }> = () => (
     </Paragraph>
     <FooterLinkList>
       <FooterLinkListItem>
-        <Link href="/">Veelgestelde vragen</Link>
+        <Link href="/" linkType="with-chevron">
+          Veelgestelde vragen
+        </Link>
       </FooterLinkListItem>
       <FooterLinkListItem>
-        <Link href="/">Contact opnemen</Link>
+        <Link href="/" linkType="with-chevron">
+          Contact opnemen
+        </Link>
       </FooterLinkListItem>
       <FooterLinkListItem>
-        <Link href="/">Feedback geven</Link>
+        <Link href="/" linkType="with-chevron">
+          Feedback geven
+        </Link>
       </FooterLinkListItem>
       <FooterLinkListItem>
-        <Link href="/">Uitleg gebruik</Link>
+        <Link href="/" linkType="with-chevron">
+          Uitleg gebruik
+        </Link>
       </FooterLinkListItem>
     </FooterLinkList>
   </>
@@ -144,10 +170,14 @@ storiesOf('Composed/Footer', module)
           >
             <FooterBottomLinkList>
               <FooterBottomLinkListItem>
-                <Link href="/">Privacy en cookies</Link>
+                <Link href="/" linkType="with-chevron">
+                  Privacy en cookies
+                </Link>
               </FooterBottomLinkListItem>
               <FooterBottomLinkListItem>
-                <Link href="/">Over deze site</Link>
+                <Link href="/" linkType="with-chevron">
+                  Over deze site
+                </Link>
               </FooterBottomLinkListItem>
             </FooterBottomLinkList>
           </Column>
