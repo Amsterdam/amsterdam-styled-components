@@ -14,7 +14,13 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## [0.13.0] - 2019-08-14
+
+- Changed: LinkList(LinkListItem) is renamed to List(ListItem), the Link functionality has to be done in the implementation
+- Changed: Breaking change, ListItem(div) is replaced by a ListItem(li), was used as block container in the Modal, Should be replaced in the implementation
+
 ## [0.12.0] - 2019-08-13
+
 - Added: MenuButton component: this now can be used as a button or link inside MenuItem
 - Changed: **BREAKING** MenuItem now doesn't accept any onClick or href props: it's just a wrapper 
   now. Use MenuButton inside MenuItem
@@ -25,7 +31,7 @@ Prefix the change with one of these keywords:
 
 - Added: Card components with implementation stories
 - Added: tag component
-- Added: new way of loading svg's: instead of importing like this: 
+- Added: new way of loading svg's: instead of importing like this:  
   `import Logo from '@datapunt/asc-assets/lib/assets/Icons/Logo.svg'` you now can use the svg object: 
   `import { svg } from '@datapunt/asc-assets'` and load it like this: `background-image: url(${svg.Logo})`
 - Added: Image component can render images as a square (including IE11)

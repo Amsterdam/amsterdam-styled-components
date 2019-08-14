@@ -1,4 +1,4 @@
-# Amsterdam Styled Components
+# Amsterdam Styled Components (asc)
 
 [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
 [![Storybook](https://github.com/storybooks/brand/blob/master/badge/badge-storybook.svg)](https://github.com/storybooks/storybook)
@@ -11,9 +11,9 @@
 
 ## Vision
 
-Consistency is always a painpoint in software engineering, especially when it comes to web styling 
+Consistency is always a painpoint in software engineering, especially when it comes to web styling
 and UX. That is why we think a component library who captures styling but also certain UX aspects,
-e.g. button loading state, is highly beneficial for organisations with large or multiple 
+e.g. button loading state, is highly beneficial for organisations with large or multiple
 applications, such as Datapunt Amsterdam.
 
 We acknowledge that such a library entails some risks and pitfalls and we aim to cover these as 
@@ -25,13 +25,13 @@ One of the biggest risks is the way a library needs be maintained in order to gu
 keep developers motivated to continue using it. This is at risk when:
 
 - Maintainers stop maintaining, e.g. they leave Datapunt
-- Maintainers do not have the time to properly review PR's, e.g. there is no budget/time to spend 
+- Maintainers do not have the time to properly review PR's, e.g. there is no budget/time to spend
   on the project
 - Tests are neglected
 - Dev guidelines are violated
 
-Our goal is to set up strict guidelines for development and limit the amount of reviewers in the 
-repo. Creating these guidelines is an iterative process and we invite all who are interested to 
+Our goal is to set up strict guidelines for development and limit the amount of reviewers in the
+repo. Creating these guidelines is an iterative process and we invite all who are interested to
 contribute.
 
 The guidelines can be found here (TBD)
@@ -43,10 +43,10 @@ The guidelines can be found here (TBD)
 - Able to reuse components, this will not only save development time in the long term, but it also
   introduces consistency in design and code. No more copy-paste code.
 - Easier to test; strong separation of concerns. Every component keeps its own logic and style.
-- A monorepo: one source for styled components and everything that is related to that. Also updates 
+- A monorepo: one source for styled components and everything that is related to that. Also updates
   won't immediately affect other repo’s because of versioning
 - Great to be used in a living styleguide like Storybook
-- Attractive for the (internal) open source community; could even be used outside Datapunt in other 
+- Attractive for the (internal) open source community; could even be used outside Datapunt in other
   departments within the Municipality of Amsterdam.
 
 ### Risks
@@ -62,6 +62,13 @@ The guidelines can be found here (TBD)
 
 Please read the [CONTRIBUTION.md](./docs/CONTRIBUTING.md)
 
+## Structure
+
+This project is a monorepo with 3 packages
+
+- [asc-assets](packages/asc-assets) - contains Fonts and Icons
+- [asc-core](packages/asc-core) - contains the theme definitions
+- [asc-ui](packages/asc-ui) - the react implementation of the components
 
 ## Usage
 
@@ -73,22 +80,36 @@ dependencies. Next run `yarn start` to start storybook!
 Something you want to see your changes immediately in your project. Follow these steps to link asc
 to your project.
 
-1. Run `yarn build:watch`, this will watch your files and transpile them to the package lib 
+1. Run `yarn build:watch`, this will watch your files and transpile them to the package lib
    directory.
 2. cd to the package you want to test, run `yarn link`.
-3. Go to the repo where you want to use your package and run 
-   `yarn link <package-name>`. The `<package-name>` can be found in the `package.json` you linked in 
+3. Go to the repo where you want to use your package and run
+   `yarn link <package-name>`. The `<package-name>` can be found in the `package.json` you linked in
    step 2.
 
 Now you can import the package like you would do like a normal npm dependency. Changes you will make 
 in your package will be seen in your repo.
 
-- There is a known issue when developing with `yarn link` and using Hooks 
-  [click here for details](https://reactjs.org/warnings/invalid-hook-call-warning.html). The cause 
+- There is a known issue when developing with `yarn link` and using Hooks
+  [click here for details](https://reactjs.org/warnings/invalid-hook-call-warning.html). The cause
   is that 2 React instances are used when using link.
-- To solve this problem for the `./examples/create-react-app`, run: 
-  `npm link ./examples/create-react-app/node-modules/react` from the root folder to use the same 
-  React version in the component lib as in the application.
+- To solve this problem there are 2 solutions
+  1. for the `./examples/create-react-app`, run: 
+     `npm link ./examples/create-react-app/node-modules/react` from the root folder to use the same
+     React version in the component lib as in the application.
+  2. eject your project. add to the webpack.config  in the resolve section an alias to react and
+    react-dom
+
+  ```json
+    resolve: {
+      extensions: ['.js', '.jsx'],
+      modules: ['./node_modules'],
+      alias: {
+        react: path.resolve('./node_modules/react'),
+        'react-dom': path.resolve('./node_modules/react-dom'),
+      },
+    },
+  ```
 
 ### Using with Webpack
 
@@ -98,12 +119,12 @@ Webpack configuration. In case you run into any problems, consider the following
 1. Run `npm install @svgr/webpack url-loader`
 2. In your `webpack.config.js` add:
 
-```json
-{
-  test: /\.svg$/,
-  use: ['@svgr/webpack', 'url-loader'],
-}
-```
+  ```json
+  {
+    test: /\.svg$/,
+    use: ['@svgr/webpack', 'url-loader'],
+  }
+  ```
 
 3. Integrate in your code:
 
@@ -120,3 +141,11 @@ const App = () => (
 
 - [Material ui](https://material-ui.com/getting-started/installation/)
 - [styled-components](https://www.styled-components.com/)
+
+### Extra information
+
+More detailed information can be found in the README.md of each package.
+
+- [asc-assets](packages/asc-assets/README.md)
+- [asc-core](packages/asc-core/README.md)
+- [asc-ui](packages/asc-ui/README.md)

@@ -1,11 +1,11 @@
 import styled from '@datapunt/asc-core'
 import { color, svgFill } from '../../../utils'
-import { LinkListItem } from '../../LinkList'
+import { ListItem } from '../../List'
 import TypographyStyle from '../../Typography/TypographyStyle'
 import IconStyle from '../../Icon/IconStyle'
 import LinkStyle from '../../Link/LinkStyle'
 
-const FooterLinkListItem = styled(LinkListItem)`
+const FooterListItem = styled(ListItem)`
   ${TypographyStyle} {
     color: ${color('tint', 'level1')};
   }
@@ -28,4 +28,4 @@ const FooterLinkListItem = styled(LinkListItem)`
   }
 `
 
-export default FooterLinkListItem
+export default FooterListItem

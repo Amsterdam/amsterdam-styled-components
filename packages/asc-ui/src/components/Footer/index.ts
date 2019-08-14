@@ -6,7 +6,7 @@ import FooterTop, { FooterTopStyle } from './FooterTop'
 
 export { default } from './Footer'
 export {
-  default as FooterLinkList,
+  FooterLinkList,
   FooterBottomLinkList,
   FooterBottomLinkListItem,
   FooterLinkListItem,
