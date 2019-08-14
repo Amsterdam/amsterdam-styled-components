@@ -7,7 +7,7 @@ type Props = {
 
 type State = {}
 
-class Modal extends React.Component<Props, State> {
+class Focus extends React.Component<Props, State> {
   renderedTimer: any = 0
 
   myRef = React.createRef<HTMLDivElement>()
@@ -55,4 +55,4 @@ class Modal extends React.Component<Props, State> {
   }
 }
 
-export default Modal
+export default Focus
