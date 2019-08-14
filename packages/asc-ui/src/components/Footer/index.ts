@@ -1,4 +1,23 @@
-export { default as FooterStyle } from './FooterStyle'
-export { FooterTop } from './FooterTop'
-export { FooterBottom } from './FooterBottom'
-export { default as Footer } from './Footer'
+import FooterBottom, { FooterBottomStyle } from './FooterBottom'
+import FooterContent, { FooterContentStyle } from './FooterContent'
+import FooterHeading, { FooterHeadingStyle } from './FooterHeading'
+import FooterStyle from './FooterStyle'
+import FooterTop, { FooterTopStyle } from './FooterTop'
+
+export { default } from './Footer'
+export {
+  default as FooterLinkList,
+  FooterBottomLinkList,
+  FooterBottomLinkListItem,
+  FooterLinkListItem,
+} from './FooterLinkList'
+export { default as FooterToggle, ToggleFooterHeader } from './FooterToggle'
+export { FooterBottom, FooterContent, FooterHeading, FooterTop }
+
+export const FooterStyles: any = {
+  FooterBottomStyle,
+  FooterContentStyle,
+  FooterHeadingStyle,
+  FooterTopStyle,
+  FooterStyle,
+}
