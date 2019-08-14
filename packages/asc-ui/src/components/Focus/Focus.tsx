@@ -5,30 +5,16 @@ type Props = {
   onKeyDown?: React.EventHandler<React.KeyboardEvent>
 }
 
-type State = {}
+const Focus: React.FC<Props> = ({ children, onKeyDown }) => {
+  let renderedTimer: number = 0
 
-class Modal extends React.Component<Props, State> {
-  renderedTimer: any = 0
+  const myRef = React.createRef<HTMLDivElement>()
 
-  myRef = React.createRef<HTMLDivElement>()
-
-  componentDidMount() {
-    this.focus()
-  }
-
-  componentDidUpdate() {
-    this.focus()
-  }
-
-  componentWillUnmount(): void {
-    clearTimeout(this.renderedTimer)
-  }
-
-  focus = () => {
-    const { current: node } = this.myRef
+  const focus = () => {
+    const { current: node } = myRef
     if (node) {
-      clearTimeout(this.renderedTimer)
-      this.renderedTimer = setTimeout(() => {
+      clearTimeout(renderedTimer)
+      renderedTimer = setTimeout(() => {
         const x = window.scrollX
         const y = window.scrollY
         node.focus()
@@ -39,20 +25,18 @@ class Modal extends React.Component<Props, State> {
     }
   }
 
-  render() {
-    const { children, onKeyDown } = this.props
+  React.useEffect(() => {
+    focus()
+    return () => {
+      clearTimeout(renderedTimer)
+    }
+  }, [focus, renderedTimer])
 
-    return (
-      <div
-        role="presentation"
-        ref={this.myRef}
-        onKeyDown={onKeyDown}
-        tabIndex={0}
-      >
-        {children}
-      </div>
-    )
-  }
+  return (
+    <div role="presentation" ref={myRef} onKeyDown={onKeyDown} tabIndex={0}>
+      {children}
+    </div>
+  )
 }
 
-export default Modal
+export default Focus
