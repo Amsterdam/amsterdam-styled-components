@@ -4,6 +4,7 @@ import Focus from '../Focus'
 import ModalStyle, { ModalStyleContainer } from './ModalStyle'
 import BackDropStyle from '../BackDrop/BackDropStyle'
 import { KeyboardKeys } from '../../types'
+import useTrappedFocus from '../../utils/hooks/useTrappedFocus'
 
 export type Props = {
   open: boolean
@@ -14,92 +15,78 @@ export type Props = {
 } & PortalProps &
   React.HTMLAttributes<HTMLElement>
 
-type State = {}
+const Modal: React.FC<Props> = ({
+  open,
+  disablePortal,
+  children,
+  backdropOpacity,
+  element,
+  blurredNodeSelector,
+  className,
+  onClose,
+  ...otherProps
+}) => {
+  let renderedTimer: number = 0
 
-class Modal extends React.Component<Props, State> {
-  static defaultProps = {
-    disablePortal: false,
-  }
+  const ref: any = React.useRef<HTMLDivElement>()
+  const { keyDown } = useTrappedFocus(ref)
 
-  renderedTimer: number = 0
-
-  myRef = React.createRef<HTMLDivElement>()
-
-  componentDidMount() {
-    this.focus()
-  }
-
-  componentDidUpdate() {
-    this.focus()
-  }
-
-  componentWillUnmount(): void {
-    clearTimeout(this.renderedTimer)
-  }
-
-  handleClose = () => {
-    const { onClose } = this.props
-    if (onClose) {
-      onClose()
-    }
-  }
-
-  handleKeyDown = (event: React.KeyboardEvent) => {
-    if (event.key === KeyboardKeys.Escape) {
-      event.stopPropagation()
-      this.handleClose()
-    }
-  }
-
-  focus = () => {
-    const { current: node } = this.myRef
+  const focus = () => {
+    const { current: node } = ref
     if (node) {
-      clearTimeout(this.renderedTimer)
-      this.renderedTimer = setTimeout(() => {
+      clearTimeout(renderedTimer)
+      renderedTimer = setTimeout(() => {
         node.focus()
       })
     }
   }
+  React.useEffect(() => {
+    focus()
+    return () => {
+      clearTimeout(renderedTimer)
+    }
+  }, [])
 
-  render() {
-    const {
-      open,
-      disablePortal,
-      children,
-      backdropOpacity,
-      element,
-      blurredNodeSelector,
-      className,
-      ...other
-    } = this.props
-    const Element = disablePortal ? 'div' : Portal
-
-    return open ? (
-      <Element
-        className={className}
-        {...(!disablePortal
-          ? {
-              element,
-              blurredNode: blurredNodeSelector
-                ? (window.document.querySelector(
-                    blurredNodeSelector,
-                  ) as HTMLElement)
-                : undefined,
-            }
-          : {})}
-      >
-        <Focus onKeyDown={this.handleKeyDown}>
-          <ModalStyleContainer {...other}>
-            <BackDropStyle
-              backdropOpacity={backdropOpacity}
-              onClick={this.handleClose}
-            />
-            <ModalStyle>{children}</ModalStyle>
-          </ModalStyleContainer>
-        </Focus>
-      </Element>
-    ) : null
+  const handleClose = () => {
+    if (onClose) {
+      onClose()
+    }
   }
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === KeyboardKeys.Escape) {
+      event.stopPropagation()
+      handleClose()
+    }
+  }
+  const Element = disablePortal ? 'div' : Portal
+
+  return open ? (
+    <Element
+      className={className}
+      {...(!disablePortal
+        ? {
+            element,
+            blurredNode: blurredNodeSelector
+              ? (window.document.querySelector(
+                  blurredNodeSelector,
+                ) as HTMLElement)
+              : undefined,
+          }
+        : {})}
+    >
+      <Focus onKeyDown={handleKeyDown}>
+        <ModalStyleContainer {...otherProps}>
+          <BackDropStyle
+            backdropOpacity={backdropOpacity}
+            onClick={handleClose}
+          />
+          <ModalStyle role="dialog" ref={ref} onKeyDown={keyDown}>
+            {children}
+          </ModalStyle>
+        </ModalStyleContainer>
+      </Focus>
+    </Element>
+  ) : null
 }
 
 export default Modal

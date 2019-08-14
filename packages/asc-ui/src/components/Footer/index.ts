@@ -1,8 +1,8 @@
-import { default as FooterBottom, FooterBottomStyle } from './FooterBottom'
-import { default as FooterContent, FooterContentStyle } from './FooterContent'
-import { default as FooterHeading, FooterHeadingStyle } from './FooterHeading'
-import { default as FooterStyle } from './FooterStyle'
-import { default as FooterTop, FooterTopStyle } from './FooterTop'
+import FooterBottom, { FooterBottomStyle } from './FooterBottom'
+import FooterContent, { FooterContentStyle } from './FooterContent'
+import FooterHeading, { FooterHeadingStyle } from './FooterHeading'
+import FooterStyle from './FooterStyle'
+import FooterTop, { FooterTopStyle } from './FooterTop'
 
 export { default } from './Footer'
 export {
