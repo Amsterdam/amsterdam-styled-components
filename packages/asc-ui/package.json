@@ -3,14 +3,14 @@
   "description": "React Components that developers can reuse in multiple projects",
   "license": "MPL-2.0",
   "author": "Datapunt Amsterdam",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "main": "lib/index.js",
   "files": [
     "lib"
   ],
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@datapunt/asc-assets": "^0.11.0",
+    "@datapunt/asc-assets": "^0.12.1",
     "classnames": "^2.2.6",
     "deepmerge": "^4.0.0",
     "enzyme": "^3.10.0",
