@@ -15,7 +15,7 @@ storiesOf('Atoms/List', module)
           I am a ListLink!
         </Link>
       </ListItem>
-      <ListItem href="/">
+      <ListItem>
         <Link href="/" linkType="with-chevron">
           Another one
         </Link>

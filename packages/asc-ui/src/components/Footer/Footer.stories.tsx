@@ -14,23 +14,42 @@ import {
   FooterTop,
 } from '../../index'
 import Paragraph from '../Paragraph'
+import Link from '../Link'
 
 const ColofonLinks: React.FC<{ indent?: boolean }> = () => (
   <FooterLinkList>
-    <FooterLinkListItem href="/">Over deze site</FooterLinkListItem>
-    <FooterLinkListItem href="/">Over OIS</FooterLinkListItem>
-    <FooterLinkListItem href="/">Databeleid</FooterLinkListItem>
-    <FooterLinkListItem href="/">Bronnen</FooterLinkListItem>
+    <FooterLinkListItem>
+      <Link href="/">Over deze site</Link>
+    </FooterLinkListItem>
+    <FooterLinkListItem>
+      <Link href="/">Over OIS</Link>
+    </FooterLinkListItem>
+    <FooterLinkListItem>
+      <Link href="/">Databeleid</Link>
+    </FooterLinkListItem>
+    <FooterLinkListItem>
+      <Link href="/">Bronnen</Link>
+    </FooterLinkListItem>
   </FooterLinkList>
 )
 
 const FollowLinks: React.FC<{ indent?: boolean }> = () => (
   <FooterLinkList>
-    <FooterLinkListItem href="/">Nieuwsbrief OIS</FooterLinkListItem>
-    <FooterLinkListItem href="/">Twitter</FooterLinkListItem>
-    <FooterLinkListItem href="/">Facerbook</FooterLinkListItem>
-    <FooterLinkListItem href="/">Linkedin</FooterLinkListItem>
-    <FooterLinkListItem href="/">GitHub</FooterLinkListItem>
+    <FooterLinkListItem>
+      <Link href="/">Nieuwsbrief OIS</Link>
+    </FooterLinkListItem>
+    <FooterLinkListItem>
+      <Link href="/">Twitter</Link>
+    </FooterLinkListItem>
+    <FooterLinkListItem>
+      <Link href="/">Facerbook</Link>
+    </FooterLinkListItem>
+    <FooterLinkListItem>
+      <Link href="/">Linkedin</Link>
+    </FooterLinkListItem>
+    <FooterLinkListItem>
+      <Link href="/">GitHub</Link>
+    </FooterLinkListItem>
   </FooterLinkList>
 )
 
@@ -41,10 +60,18 @@ const HelpLinks: React.FC<{ indent?: boolean }> = () => (
       heeft u bevindingen? Neem dan contact met ons op.
     </Paragraph>
     <FooterLinkList>
-      <FooterLinkListItem href="/">Veelgestelde vragen</FooterLinkListItem>
-      <FooterLinkListItem href="/">Contact opnemen</FooterLinkListItem>
-      <FooterLinkListItem href="/">Feedback geven</FooterLinkListItem>
-      <FooterLinkListItem href="/">Uitleg gebruik</FooterLinkListItem>
+      <FooterLinkListItem>
+        <Link href="/">Veelgestelde vragen</Link>
+      </FooterLinkListItem>
+      <FooterLinkListItem>
+        <Link href="/">Contact opnemen</Link>
+      </FooterLinkListItem>
+      <FooterLinkListItem>
+        <Link href="/">Feedback geven</Link>
+      </FooterLinkListItem>
+      <FooterLinkListItem>
+        <Link href="/">Uitleg gebruik</Link>
+      </FooterLinkListItem>
     </FooterLinkList>
   </>
 )
@@ -116,11 +143,11 @@ storiesOf('Composed/Footer', module)
             span={{ small: 1, medium: 2, big: 6, large: 10, xLarge: 10 }}
           >
             <FooterBottomLinkList>
-              <FooterBottomLinkListItem href="/">
-                Privacy en cookies
+              <FooterBottomLinkListItem>
+                <Link href="/">Privacy en cookies</Link>
               </FooterBottomLinkListItem>
-              <FooterBottomLinkListItem href="/">
-                Over deze site
+              <FooterBottomLinkListItem>
+                <Link href="/">Over deze site</Link>
               </FooterBottomLinkListItem>
             </FooterBottomLinkList>
           </Column>

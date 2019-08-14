@@ -18,6 +18,7 @@ import EditorialContent from '../EditorialContent'
 import EditorialHeader from '../EditorialHeader'
 import EditorialMetaList from '../EditorialMetaList'
 import EditorialSidebar from '../EditorialSidebar/EditorialSidebar'
+import Link from '../../Link/Link'
 
 /* Rest components */
 storiesOf('Composed/Editorial/Article', module)
@@ -55,10 +56,16 @@ storiesOf('Composed/Editorial/Article', module)
               <EditorialSidebar>
                 <Heading as="h2">Links</Heading>
                 <List>
-                  <ListItem href="/">I am a ListLink!</ListItem>
-                  <ListItem href="/">Another one</ListItem>
-                  <ListItem href="/">
-                    A loooooong, very, very, very long link
+                  <ListItem>
+                    <Link href="/">I am a ListLink!</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="/">Another one</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="/">
+                      A loooooong, very, very, very long link
+                    </Link>
                   </ListItem>
                 </List>
               </EditorialSidebar>
@@ -99,9 +106,15 @@ storiesOf('Composed/Editorial/Article', module)
               <EditorialSidebar>
                 <Heading as="h2">Downloads</Heading>
                 <List>
-                  <ListItem href="/">File</ListItem>
-                  <ListItem href="/">File</ListItem>
-                  <ListItem href="/">File</ListItem>
+                  <ListItem>
+                    <Link href="/">File</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="/">File</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="/">File</Link>
+                  </ListItem>
                 </List>
               </EditorialSidebar>
             </Column>
