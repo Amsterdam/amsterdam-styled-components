@@ -49,6 +49,7 @@ The colors and the breakpoints are defined in the `asc-core` default theme
 
 Each component exposes its style that can be used a (class)selector in another component. The naming convention for the styles is: `<component-name>` -> `styles.<component-name>Style`. For example ListItem has a styles.ListStyle selector.
 We use the exposed selector to change the color of the LinkedListItems to the `primary` theme color. In this case we don't need to create a new StyledLinkedList item to override the style.
+This is just the way we are exposing the styles from the asc library to be used as selectors. For extending the styles use the convention `const StyledLinkList = styled(LinkList)` as shown in the example.
 
 The same can be achieved by creating of a new StyledLinkedListItem:
 

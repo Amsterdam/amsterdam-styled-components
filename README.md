@@ -66,9 +66,9 @@ Please read the [CONTRIBUTION.md](./docs/CONTRIBUTING.md)
 
 This project is a monorepo with 3 packages
 
-- asc-assets - contains Fonts and Icons
-- asc-core - contains the theme definitions
-- asc-ui - the react implementation of the components
+- [asc-assets](packages/asc-assets) - contains Fonts and Icons
+- [asc-core](packages/asc-core) - contains the theme definitions
+- [asc-ui](packages/asc-ui) - the react implementation of the components
 
 ## Usage
 
