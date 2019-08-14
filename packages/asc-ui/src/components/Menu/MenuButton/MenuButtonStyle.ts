@@ -1,5 +1,5 @@
 import styled from '@datapunt/asc-core'
-import { color, svgFill } from '../../../utils/index'
+import { color, svgFill } from '../../../utils'
 import Button, { Props as ButtonProps } from '../../Button/Button'
 import { MenuFlyOutStyle } from '../MenuFlyOut'
 import { MenuListStyle } from '../MenuList'
@@ -18,9 +18,11 @@ export const MenuButtonBaseStyle = styled(Button)<Props>`
   background-color: transparent;
   height: 100%;
   color: ${color('tint', 'level7')};
-  align-items: flex-start;
+  align-items: center;
 
   &[aria-expanded='true'] {
+    background-color: ${color('tint', 'level2')};
+
     ${MenuButtonTextStyle} {
       border-bottom: 2px solid ${color('secondary')};
     }
@@ -33,10 +35,11 @@ export const MenuButtonBaseStyle = styled(Button)<Props>`
 
   ${IconStyle} {
     transform: rotate(0deg) translateY(3px);
+    align-self: flex-start;
   }
 
-  &:hover,
-  &:focus {
+  &:not([aria-expanded='true']):hover,
+  &:not([aria-expanded='true']):focus {
     background-color: transparent;
   }
 `
@@ -53,6 +56,7 @@ const MenuButtonStyle = styled(MenuButtonBaseStyle)<Props>`
 
     ${svgFill('secondary')}
   }
+  
 
   ${/* sc-selector */ MenuFlyOutStyle} ${/* sc-selector */ MenuListStyle} &,
   ${/* sc-selector */ MenuFlyOutStyle}[aria-expanded='true'] {

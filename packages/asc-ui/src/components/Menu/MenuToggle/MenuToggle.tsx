@@ -43,7 +43,6 @@ const MenuToggle: React.FC<Props> = ({
     >
       <Toggle
         as={MenuToggleStyle}
-        tabIndex={0}
         onOpen={onOpen}
         onClick={toggleMenu}
         align={align}

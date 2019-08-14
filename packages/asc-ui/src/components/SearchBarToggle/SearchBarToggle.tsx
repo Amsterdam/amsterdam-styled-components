@@ -33,7 +33,6 @@ const SearchBarToggle: React.FC<SearchBarToggleProps & ToggleProps> = ({
 }) => (
   <Toggle
     as={SearchBarToggleStyle}
-    tabIndex={0}
     {...{
       hideAt,
       showAt,
