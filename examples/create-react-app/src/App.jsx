@@ -4,8 +4,8 @@ import styled from '@datapunt/asc-core'
 import {
   ThemeProvider,
   GlobalStyle,
-  List,
-  ListItem,
+  LinkList,
+  LinkListItem,
   Typography,
   styles,
   color,
@@ -27,7 +27,7 @@ const themeOverides = {
   },
 }
 
-const StyledLinkList = styled(List)`
+const StyledLinkList = styled(LinkList)`
   padding: 50px;
   background-color: ${color('tint', 'level2')};
 
@@ -44,7 +44,7 @@ const StyledLinkList = styled(List)`
   }
 `
 
-const StyledLinkListItem = styled(ListItem)`
+const StyledLinkListItem = styled(LinkListItem)`
   & > a {
     color: ${color('primary')};
   }
@@ -62,15 +62,19 @@ const App = () => {
         <div className="App">
           <Typography>Link list deafaultexample</Typography>
           <Typography $as="p" className="App-link-list-container">
-            <List>
-              <ListItem href="/">default LinkListItem 1</ListItem>
-              <ListItem href="/">default LinkListItem 2</ListItem>
-            </List>
+            <LinkList>
+              <LinkListItem href="/">default LinkListItem 1</LinkListItem>
+              <LinkListItem href="/">default LinkListItem 2</LinkListItem>
+            </LinkList>
           </Typography>
           <Typography $as="p" className="App-link-list-container">
             <StyledLinkList>
-              <ListItem href="/">StyledLinkList LinkListItem 1</ListItem>
-              <ListItem href="/">StyledLinkList LinkListItem 2</ListItem>
+              <LinkListItem href="/">
+                StyledLinkList LinkListItem 1
+              </LinkListItem>
+              <LinkListItem href="/">
+                StyledLinkList LinkListItem 2
+              </LinkListItem>
             </StyledLinkList>
           </Typography>
           <Typography $as="p" className="App-link-list-container">
