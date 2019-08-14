@@ -1,21 +1,20 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
+import styled from '@datapunt/asc-core'
 import { linkTo } from '@storybook/addon-links'
 import { withKnobs, number } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import { Close } from '@datapunt/asc-assets'
 import { Props } from './Modal'
-import {
-  ListItem,
-  Modal,
-  Button,
-  Divider,
-  TopBar,
-  Paragraph,
-  Heading,
-} from '../..'
+import { Modal, Button, Divider, TopBar, Paragraph, Heading } from '../..'
 import Link from '../Link/Link'
 import Icon from '../Icon'
+
+const ModalBlock = styled.div`
+  display: block;
+  padding: 0 15px;
+  margin: 15px 0;
+`
 
 const SimpleModal: React.FC<Props> = props => (
   <div>
@@ -25,12 +24,12 @@ const SimpleModal: React.FC<Props> = props => (
       {...props}
       onClose={linkTo('Modal', 'closed state')}
     >
-      <ListItem>
+      <ModalBlock>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto,
           quisquam!
         </Paragraph>
-      </ListItem>
+      </ModalBlock>
     </Modal>
   </div>
 )
@@ -76,7 +75,7 @@ storiesOf('Composed/Modal', module)
         </Heading>
       </TopBar>
       <Divider />
-      <ListItem>
+      <ModalBlock>
         <Heading $as="h4">Onjuiste of ontbrekende gegevens?</Heading>
         <Paragraph>
           Geef aan welke gegevens onjuist zijn of ontbreken. Ook als je weet wat
@@ -85,9 +84,9 @@ storiesOf('Composed/Modal', module)
         <Button variant="primary" onClick={action('click')}>
           Terugmelden
         </Button>
-      </ListItem>
+      </ModalBlock>
       <Divider gutter />
-      <ListItem>
+      <ModalBlock>
         <Heading $as="h4">Vraag of een klacht?</Heading>
         <Paragraph>
           Als iets op deze pagina niet goed werkt, onduidelijk is of vragen
@@ -96,12 +95,12 @@ storiesOf('Composed/Modal', module)
         <Button variant="primary" onClick={action('click')}>
           Probleem melden
         </Button>
-      </ListItem>
+      </ModalBlock>
       <Divider transparent />
-      <ListItem>
+      <ModalBlock>
         <Link href="/help" linkType="inline">
           Hulp nodig?
         </Link>
-      </ListItem>
+      </ModalBlock>
     </Modal>
   ))
