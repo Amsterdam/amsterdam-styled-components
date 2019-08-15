@@ -86,7 +86,6 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
           // eslint-disable-next-line no-nested-ternary
           hasToggle ? flyOutOpen ? <ChevronUp /> : <ChevronDown /> : undefined
         }
-        onFocus={() => setOpen(true)}
         onClick={onHandleToggle}
         onKeyDown={onHandleKeyDown}
         aria-haspopup="true"

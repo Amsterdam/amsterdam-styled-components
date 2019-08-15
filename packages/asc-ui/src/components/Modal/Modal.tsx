@@ -41,6 +41,7 @@ const Modal: React.FC<Props> = ({
     return () => {
       clearTimeout(renderedTimer)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleClose = () => {
