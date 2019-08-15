@@ -47,6 +47,7 @@ describe('ToggleFooterHeader', () => {
     expect(queryByText(testProps.title)).not.toBeNull()
 
     fireEvent.click(getByText(testProps.title))
+
     expect(testProps.onClick).toHaveBeenCalledTimes(1)
   })
 })

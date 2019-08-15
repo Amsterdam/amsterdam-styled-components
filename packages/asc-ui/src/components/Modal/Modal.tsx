@@ -26,12 +26,11 @@ const Modal: React.FC<Props> = ({
   onClose,
   ...otherProps
 }) => {
-  let renderedTimer: number = 0
-
   const ref: any = React.useRef<HTMLDivElement>()
   const { keyDown } = useTrappedFocus(ref)
 
-  const focus = () => {
+  React.useEffect(() => {
+    let renderedTimer: number = 0
     const { current: node } = ref
     if (node) {
       clearTimeout(renderedTimer)
@@ -39,9 +38,6 @@ const Modal: React.FC<Props> = ({
         node.focus()
       })
     }
-  }
-  React.useEffect(() => {
-    focus()
     return () => {
       clearTimeout(renderedTimer)
     }
