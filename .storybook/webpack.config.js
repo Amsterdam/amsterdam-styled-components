@@ -8,6 +8,7 @@ const styledComponentsTransformer = createTransformer({ displayName: true })
 const basePath = path.resolve(__dirname, '../', 'packages')
 
 module.exports = ({ config, mode }) => {
+  const isDev = (mode === 'DEVELOPMENT')
   // This piece adds the '&quiet=true' param to the hot loader module,
   // because we use transpileOnly: true will show warnings,
   // these can be considered false positive, because we use a seperate
@@ -19,12 +20,13 @@ module.exports = ({ config, mode }) => {
     config.entry.push(newHotLoaderUrl)
   }
 
-  if (mode === 'DEVELOPMENT') {
+  if (isDev) {
     // Same motivation as described above
     config.devServer = {
       stats: 'errors-only',
     }
   }
+
   // Add typescript support
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
@@ -32,11 +34,12 @@ module.exports = ({ config, mode }) => {
       {
         loader: require.resolve('awesome-typescript-loader'),
         options: {
-          transpileOnly: (mode === 'DEVELOPMENT'), // huge performance win
+          transpileOnly: isDev, // huge performance win
           configFileName: './tsconfig.storybook.json',
           getCustomTransformers: () => ({
             before: [styledComponentsTransformer],
           }),
+          silent: isDev,
         },
       },
       {
@@ -84,7 +87,7 @@ module.exports = ({ config, mode }) => {
       : {}),
   }))
 
-  if (mode === 'DEVELOPMENT') {
+  if (isDev) {
     config.plugins = [...config.plugins, new ForkTsCheckerWebpackPlugin()]
   }
 
