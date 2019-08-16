@@ -98,6 +98,7 @@
     "jest-styled-components": "^6.3.3",
     "lerna": "3.16.4",
     "lint-staged": "^9.2.1",
+    "mkdirp": "^0.5.1",
     "prettier": "^1.18.2",
     "prettier-package-json": "^2.1.0",
     "react": "^16.8.6",
