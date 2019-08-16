@@ -1,7 +1,6 @@
 sudo: false
 os:
   - linux
-  - windows
   - osx
 language: node_js
 node_js:

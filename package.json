@@ -29,7 +29,7 @@
     "lint": "concurrently \"yarn lint:css\" \"yarn lint:js\"",
     "lint:css": "stylelint \"./packages/**/*Style.ts\"",
     "lint:js": "eslint \"./packages/asc-ui/src\" \"./packages/asc-core/src\" --ext .ts,.tsx",
-    "prepare": "yarn build",
+    "prepublish": "yarn build",
     "publish:packages": "lerna publish",
     "start": "concurrently \"yarn build:watch\" \"yarn storybook\"",
     "storybook": "start-storybook -p 6006 -c .storybook -s ./packages/asc-assets/lib/assets",
