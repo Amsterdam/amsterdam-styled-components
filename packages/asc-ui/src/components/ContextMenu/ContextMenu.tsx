@@ -27,6 +27,7 @@ class ContextMenu extends React.Component<Props, State> {
 
   list = React.createRef<HTMLDivElement>()
 
+  // eslint-disable-next-line react/static-property-placement
   static defaultProps = {
     open: false,
   }

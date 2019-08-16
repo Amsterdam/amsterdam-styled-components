@@ -6,11 +6,10 @@ type Props = {
 }
 
 const Focus: React.FC<Props> = ({ children, onKeyDown }) => {
-  let renderedTimer: number = 0
-
   const myRef = React.createRef<HTMLDivElement>()
 
-  const focus = () => {
+  React.useEffect(() => {
+    let renderedTimer: number = 0
     const { current: node } = myRef
     if (node) {
       clearTimeout(renderedTimer)
@@ -23,14 +22,10 @@ const Focus: React.FC<Props> = ({ children, onKeyDown }) => {
         window.scrollTo(x, y)
       })
     }
-  }
-
-  React.useEffect(() => {
-    focus()
     return () => {
       clearTimeout(renderedTimer)
     }
-  }, [focus, renderedTimer])
+  }, [myRef])
 
   return (
     <div role="presentation" ref={myRef} onKeyDown={onKeyDown} tabIndex={0}>

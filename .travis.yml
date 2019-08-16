@@ -1,8 +1,11 @@
 sudo: false
+os:
+  - linux
+  - osx
 language: node_js
 node_js:
-  - '12'
   - '10'
+  - '12'
 cache:
   yarn: true
   directories:
@@ -11,5 +14,15 @@ install:
   - yarn
 script:
   - yarn lint
-  - yarn test --maxWorkers=4
-  - yarn build
+  - yarn test
+  - yarn build-storybook
+branches:
+  only:
+    - master
+deploy:
+  local_dir: .sb
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master

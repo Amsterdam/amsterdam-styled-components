@@ -42,7 +42,7 @@ describe('utils/grid', () => {
 
     it('should throw', () => {
       expect(() => {
-        const noMaxGridWidthValue = Object.assign({}, theme)
+        const noMaxGridWidthValue = { ...theme }
         delete noMaxGridWidthValue.maxGridWidth
 
         grid.maxWidth()({ theme: noMaxGridWidthValue })

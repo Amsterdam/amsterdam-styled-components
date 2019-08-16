@@ -4,9 +4,14 @@ import ShareButton from './index'
 
 describe('ShareButton', () => {
   const mockOnClick = jest.fn()
-  const { getByText, container } = render(
-    <ShareButton onClick={mockOnClick}>Click me</ShareButton>,
-  )
+  let getByText: Function
+  let container: HTMLElement
+
+  beforeEach(() => {
+    ;({ getByText, container } = render(
+      <ShareButton onClick={mockOnClick}>Click me</ShareButton>,
+    ))
+  })
 
   it('should render with the correct children', () => {
     expect(getByText('Click me')).toBeTruthy()

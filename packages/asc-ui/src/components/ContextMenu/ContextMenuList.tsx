@@ -23,10 +23,12 @@ export default forwardRef((props: any, ref: React.Ref<any>) => (
 ))
 
 class ContextMenuList extends React.Component<Props> {
+  // eslint-disable-next-line react/state-in-constructor
   state = {}
 
   myRef = React.createRef<HTMLDivElement>()
 
+  // eslint-disable-next-line react/static-property-placement
   static defaultProps = {
     position: Position.top,
   }

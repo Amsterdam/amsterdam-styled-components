@@ -15,9 +15,6 @@
       "node",
       "react",
       "react-dom",
-      "storybook__addon-actions",
-      "storybook__addon-info",
-      "storybook__addon-links",
       "storybook__react",
       "styled-components"
     ],
@@ -58,5 +55,10 @@
   "exclude": [
     "node_modules",
     "lib"
+  ],
+  "include": [
+    "packages",
+    "**/*.tsx",
+    "**/*.ts"
   ]
 }
