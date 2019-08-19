@@ -148,6 +148,132 @@ const CardContainerGenericFunctions = styled(CardContainer)`
   }
 `
 
+// eslint-disable-next-line import/prefer-default-export
+export const DataportaalCardGenericFunctions: React.FC<{}> = () => (
+  <Row hasMargin={false}>
+    <Column
+      className="column-with-heading"
+      span={{ small: 1, medium: 2, big: 6, large: 5, xLarge: 5 }}
+      push={{ small: 0, medium: 0, big: 0, large: 7, xLarge: 7 }}
+    >
+      <CardContainerGenericFunctions>
+        <Link href="/" linkType="blank">
+          <Card horizontal loading={boolean('loading', false)}>
+            <CardMedia backgroundColor="level2">
+              <Icon size={20}>
+                <Map />
+              </Icon>
+            </CardMedia>
+            <CardContent>
+              <Heading $as="h4">Kaart</Heading>
+              <Paragraph>Zoek en bekijk data op de kaart</Paragraph>
+            </CardContent>
+            <CardActions>
+              <Icon size={15}>
+                <ChevronRight />
+              </Icon>
+            </CardActions>
+          </Card>
+        </Link>
+        <Link href="/" linkType="blank">
+          <Card horizontal loading={boolean('loading', false)}>
+            <CardMedia backgroundColor="level2">
+              <Icon size={30}>
+                <Pano />
+              </Icon>
+            </CardMedia>
+            <CardContent>
+              <Heading $as="h4">Panoramabeelden</Heading>
+              <Paragraph>Kijk 360 graden in het rond</Paragraph>
+            </CardContent>
+            <CardActions>
+              <Icon size={15}>
+                <ChevronRight />
+              </Icon>
+            </CardActions>
+          </Card>
+        </Link>
+        <Link href="/" linkType="blank">
+          <Card horizontal loading={boolean('loading', false)}>
+            <CardMedia backgroundColor="level2">
+              <Icon size={30}>
+                <DocumentText />
+              </Icon>
+            </CardMedia>
+            <CardContent>
+              <Heading $as="h4">Publicaties</Heading>
+              <Paragraph>
+                Download onderzoeksrapporten, fasctsheets of het jaarboek
+              </Paragraph>
+            </CardContent>
+            <CardActions>
+              <Icon size={15}>
+                <ChevronRight />
+              </Icon>
+            </CardActions>
+          </Card>
+        </Link>
+        <Link href="/" linkType="blank">
+          <Card horizontal loading={boolean('loading', false)}>
+            <CardMedia backgroundColor="level2">
+              <Icon size={20}>
+                <Data />
+              </Icon>
+            </CardMedia>
+            <CardContent>
+              <Heading $as="h4">Datasets</Heading>
+              <Paragraph>
+                Download cijfers en andere (open) databestanden
+              </Paragraph>
+            </CardContent>
+            <CardActions>
+              <Icon size={15}>
+                <ChevronRight />
+              </Icon>
+            </CardActions>
+          </Card>
+        </Link>
+        <Link href="/" linkType="blank">
+          <Card horizontal loading={boolean('loading', false)}>
+            <CardMedia backgroundColor="level2">
+              <Icon size={25}>
+                <Table />
+              </Icon>
+            </CardMedia>
+            <CardContent>
+              <Heading $as="h4">Tabellen</Heading>
+              <Paragraph>Selecteer data en download als spreadsheet</Paragraph>
+            </CardContent>
+            <CardActions>
+              <Icon size={15}>
+                <ChevronRight />
+              </Icon>
+            </CardActions>
+          </Card>
+        </Link>
+        <Link href="/" linkType="blank">
+          <Card horizontal loading={boolean('loading', false)}>
+            <CardMedia backgroundColor="level2">
+              <Icon size={30}>
+                <Api />
+              </Icon>
+            </CardMedia>
+            <CardContent>
+              <Heading $as="h4">Data services</Heading>
+              <Paragraph>Alles over het koppelen van data via APIs</Paragraph>
+            </CardContent>
+            <CardActions>
+              <Icon size={15}>
+                <ChevronRight />
+              </Icon>
+            </CardActions>
+          </Card>
+        </Link>
+      </CardContainerGenericFunctions>
+    </Column>
+  </Row>
+)
+
 storiesOf('Atoms/Card/Implementation', module)
   .addDecorator(storyFn => (
     <div style={{ padding: '40px 0px', background: 'rgb(250,250,250)' }}>
@@ -156,128 +282,5 @@ storiesOf('Atoms/Card/Implementation', module)
   ))
   .addDecorator(withKnobs)
   .add('Dataportaal "Generic functions"', () => (
-    <Row>
-      <Column
-        className="column-with-heading"
-        span={{ small: 1, medium: 2, big: 6, large: 5, xLarge: 5 }}
-        push={{ small: 0, medium: 0, big: 0, large: 7, xLarge: 7 }}
-      >
-        <CardContainerGenericFunctions>
-          <Link href="/" linkType="blank">
-            <Card horizontal loading={boolean('loading', false)}>
-              <CardMedia backgroundColor="level2">
-                <Icon size={20}>
-                  <Map />
-                </Icon>
-              </CardMedia>
-              <CardContent>
-                <Heading $as="h4">Kaart</Heading>
-                <Paragraph>Zoek en bekijk data op de kaart</Paragraph>
-              </CardContent>
-              <CardActions>
-                <Icon size={15}>
-                  <ChevronRight />
-                </Icon>
-              </CardActions>
-            </Card>
-          </Link>
-          <Link href="/" linkType="blank">
-            <Card horizontal loading={boolean('loading', false)}>
-              <CardMedia backgroundColor="level2">
-                <Icon size={30}>
-                  <Pano />
-                </Icon>
-              </CardMedia>
-              <CardContent>
-                <Heading $as="h4">Panoramabeelden</Heading>
-                <Paragraph>Kijk 360 graden in het rond</Paragraph>
-              </CardContent>
-              <CardActions>
-                <Icon size={15}>
-                  <ChevronRight />
-                </Icon>
-              </CardActions>
-            </Card>
-          </Link>
-          <Link href="/" linkType="blank">
-            <Card horizontal loading={boolean('loading', false)}>
-              <CardMedia backgroundColor="level2">
-                <Icon size={30}>
-                  <DocumentText />
-                </Icon>
-              </CardMedia>
-              <CardContent>
-                <Heading $as="h4">Publicaties</Heading>
-                <Paragraph>
-                  Download onderzoeksrapporten, fasctsheets of het jaarboek
-                </Paragraph>
-              </CardContent>
-              <CardActions>
-                <Icon size={15}>
-                  <ChevronRight />
-                </Icon>
-              </CardActions>
-            </Card>
-          </Link>
-          <Link href="/" linkType="blank">
-            <Card horizontal loading={boolean('loading', false)}>
-              <CardMedia backgroundColor="level2">
-                <Icon size={20}>
-                  <Data />
-                </Icon>
-              </CardMedia>
-              <CardContent>
-                <Heading $as="h4">Datasets</Heading>
-                <Paragraph>
-                  Download cijfers en andere (open) databestanden
-                </Paragraph>
-              </CardContent>
-              <CardActions>
-                <Icon size={15}>
-                  <ChevronRight />
-                </Icon>
-              </CardActions>
-            </Card>
-          </Link>
-          <Link href="/" linkType="blank">
-            <Card horizontal loading={boolean('loading', false)}>
-              <CardMedia backgroundColor="level2">
-                <Icon size={25}>
-                  <Table />
-                </Icon>
-              </CardMedia>
-              <CardContent>
-                <Heading $as="h4">Tabellen</Heading>
-                <Paragraph>
-                  Selecteer data en download als spreadsheet
-                </Paragraph>
-              </CardContent>
-              <CardActions>
-                <Icon size={15}>
-                  <ChevronRight />
-                </Icon>
-              </CardActions>
-            </Card>
-          </Link>
-          <Link href="/" linkType="blank">
-            <Card horizontal loading={boolean('loading', false)}>
-              <CardMedia backgroundColor="level2">
-                <Icon size={30}>
-                  <Api />
-                </Icon>
-              </CardMedia>
-              <CardContent>
-                <Heading $as="h4">Data services</Heading>
-                <Paragraph>Alles over het koppelen van data via APIs</Paragraph>
-              </CardContent>
-              <CardActions>
-                <Icon size={15}>
-                  <ChevronRight />
-                </Icon>
-              </CardActions>
-            </Card>
-          </Link>
-        </CardContainerGenericFunctions>
-      </Column>
-    </Row>
+    <DataportaalCardGenericFunctions />
   ))
