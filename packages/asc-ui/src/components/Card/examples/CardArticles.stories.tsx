@@ -72,7 +72,7 @@ storiesOf('Atoms/Card/Implementation', module)
                     de resultaten daarvan bekend op deze website.
                   </Paragraph>
                 </div>
-                <StyledLink linkType="with-chevron" href="/">
+                <StyledLink variant="with-chevron" href="/">
                   Lees meer
                 </StyledLink>
               </StyledCardContent>
@@ -90,7 +90,7 @@ storiesOf('Atoms/Card/Implementation', module)
                     tot uitgebreide monitors.
                   </Paragraph>
                 </div>
-                <StyledLink linkType="with-chevron" href="/">
+                <StyledLink variant="with-chevron" href="/">
                   Lees meer
                 </StyledLink>
               </StyledCardContent>
@@ -108,7 +108,7 @@ storiesOf('Atoms/Card/Implementation', module)
                     tot uitgebreide monitors.
                   </Paragraph>
                 </div>
-                <StyledLink linkType="with-chevron" href="/">
+                <StyledLink variant="with-chevron" href="/">
                   Lees meer
                 </StyledLink>
               </StyledCardContent>
@@ -126,7 +126,7 @@ storiesOf('Atoms/Card/Implementation', module)
                     jaarboek. Het oudste dateert uit 1895!
                   </Paragraph>
                 </div>
-                <StyledLink linkType="with-chevron" href="/">
+                <StyledLink variant="with-chevron" href="/">
                   Lees meer
                 </StyledLink>
               </StyledCardContent>

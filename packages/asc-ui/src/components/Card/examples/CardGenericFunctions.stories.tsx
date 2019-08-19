@@ -163,7 +163,7 @@ storiesOf('Atoms/Card/Implementation', module)
         push={{ small: 0, medium: 0, big: 0, large: 7, xLarge: 7 }}
       >
         <CardContainerGenericFunctions>
-          <Link href="/" linkType="blank">
+          <Link href="/" variant="blank">
             <Card horizontal loading={boolean('loading', false)}>
               <CardMedia backgroundColor="level2">
                 <Icon size={20}>
@@ -181,7 +181,7 @@ storiesOf('Atoms/Card/Implementation', module)
               </CardActions>
             </Card>
           </Link>
-          <Link href="/" linkType="blank">
+          <Link href="/" variant="blank">
             <Card horizontal loading={boolean('loading', false)}>
               <CardMedia backgroundColor="level2">
                 <Icon size={30}>
@@ -199,7 +199,7 @@ storiesOf('Atoms/Card/Implementation', module)
               </CardActions>
             </Card>
           </Link>
-          <Link href="/" linkType="blank">
+          <Link href="/" variant="blank">
             <Card horizontal loading={boolean('loading', false)}>
               <CardMedia backgroundColor="level2">
                 <Icon size={30}>
@@ -219,7 +219,7 @@ storiesOf('Atoms/Card/Implementation', module)
               </CardActions>
             </Card>
           </Link>
-          <Link href="/" linkType="blank">
+          <Link href="/" variant="blank">
             <Card horizontal loading={boolean('loading', false)}>
               <CardMedia backgroundColor="level2">
                 <Icon size={20}>
@@ -239,7 +239,7 @@ storiesOf('Atoms/Card/Implementation', module)
               </CardActions>
             </Card>
           </Link>
-          <Link href="/" linkType="blank">
+          <Link href="/" variant="blank">
             <Card horizontal loading={boolean('loading', false)}>
               <CardMedia backgroundColor="level2">
                 <Icon size={25}>
@@ -259,7 +259,7 @@ storiesOf('Atoms/Card/Implementation', module)
               </CardActions>
             </Card>
           </Link>
-          <Link href="/" linkType="blank">
+          <Link href="/" variant="blank">
             <Card horizontal loading={boolean('loading', false)}>
               <CardMedia backgroundColor="level2">
                 <Icon size={30}>

@@ -11,22 +11,22 @@ storiesOf('Atoms/List', module)
   .add('default', () => (
     <List>
       <ListItem>
-        <Link href="/" linkType="with-chevron">
+        <Link href="/" variant="with-chevron">
           I am a ListLink!
         </Link>
       </ListItem>
       <ListItem>
-        <Link href="/" linkType="with-chevron">
+        <Link href="/" variant="with-chevron">
           Another one
         </Link>
       </ListItem>
       <ListItem>
-        <Link href="/" linkType="with-chevron">
+        <Link href="/" variant="with-chevron">
           A loooooong, very, very, very long link
         </Link>
       </ListItem>
       <ListItem>
-        <Link href="/" linkType="with-chevron">
+        <Link href="/" variant="with-chevron">
           A file!
         </Link>
       </ListItem>

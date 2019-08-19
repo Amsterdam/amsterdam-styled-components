@@ -11,12 +11,11 @@ const theme = {
 describe('Footer', () => {
   beforeEach(cleanup)
   it('should render and apply the style', () => {
-    const { container, queryByText } = render(
+    const { queryByText } = render(
       <ThemeProvider theme={theme}>
         <Footer data-testid="test-id">Footer content</Footer>
       </ThemeProvider>,
     )
     expect(queryByText(/Footer content/)).not.toBeNull()
-    expect(container.firstChild).toHaveStyleRule('margin-top', '72px')
   })
 })
