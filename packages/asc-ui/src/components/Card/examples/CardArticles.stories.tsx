@@ -49,90 +49,93 @@ const StyledRow = styled(Row)`
   }
 `
 
+// eslint-disable-next-line import/prefer-default-export
+export const DataportaalCardArticles: React.FC<{}> = () => (
+  <ArticleCardsWrapper>
+    <Row>
+      <Heading $as="h2" styleAs="h1" gutterBottom={20}>
+        Onderzoek, Informatie en Statistiek
+      </Heading>
+    </Row>
+    <StyledRow>
+      <Column span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}>
+        <StyledCardContainer>
+          <StyledCard loading={boolean('loading', false)}>
+            <StyledCardContent>
+              <div>
+                <Heading $as="h4">Over IOS</Heading>
+                <Paragraph>
+                  De afdeling Onderzoek, Informatie en Statistiek (OIS) doet
+                  onderzoek, verzamelt en bewerkt data over de stad en maakt de
+                  resultaten daarvan bekend op deze website.
+                </Paragraph>
+              </div>
+              <StyledLink linkType="with-chevron" href="/">
+                Lees meer
+              </StyledLink>
+            </StyledCardContent>
+          </StyledCard>
+        </StyledCardContainer>
+      </Column>
+      <Column span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}>
+        <StyledCardContainer>
+          <StyledCard loading={boolean('loading', false)}>
+            <StyledCardContent>
+              <div>
+                <Heading $as="h4">Onderzoek</Heading>
+                <Paragraph>
+                  We doen jaarlijks honderden onderzoeken, van kleine enquêtes
+                  tot uitgebreide monitors.
+                </Paragraph>
+              </div>
+              <StyledLink linkType="with-chevron" href="/">
+                Lees meer
+              </StyledLink>
+            </StyledCardContent>
+          </StyledCard>
+        </StyledCardContainer>
+      </Column>
+      <Column span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}>
+        <StyledCardContainer>
+          <StyledCard loading={boolean('loading', false)}>
+            <StyledCardContent>
+              <div>
+                <Heading $as="h4">Panels en enquêtes</Heading>
+                <Paragraph>
+                  We doen jaarlijks honderden onderzoeken, van kleine enquêtes
+                  tot uitgebreide monitors.
+                </Paragraph>
+              </div>
+              <StyledLink linkType="with-chevron" href="/">
+                Lees meer
+              </StyledLink>
+            </StyledCardContent>
+          </StyledCard>
+        </StyledCardContainer>
+      </Column>
+      <Column span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}>
+        <StyledCardContainer>
+          <StyledCard loading={boolean('loading', false)}>
+            <StyledCardContent>
+              <div>
+                <Heading $as="h4">Publicaties</Heading>
+                <Paragraph>
+                  Download onderzoeksrapporten, fasctsheets of het ons jaarboek.
+                  Het oudste dateert uit 1895!
+                </Paragraph>
+              </div>
+              <StyledLink linkType="with-chevron" href="/">
+                Lees meer
+              </StyledLink>
+            </StyledCardContent>
+          </StyledCard>
+        </StyledCardContainer>
+      </Column>
+    </StyledRow>
+  </ArticleCardsWrapper>
+)
+
 storiesOf('Atoms/Card/Implementation', module)
   .addDecorator(storyFn => <div style={{ padding: '40px 0' }}>{storyFn()}</div>)
   .addDecorator(withKnobs)
-  .add('Dataportaal "Article list"', () => (
-    <ArticleCardsWrapper>
-      <Row>
-        <Heading $as="h2" styleAs="h1" gutterBottom={20}>
-          Onderzoek, Informatie en Statistiek
-        </Heading>
-      </Row>
-      <StyledRow>
-        <Column span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}>
-          <StyledCardContainer>
-            <StyledCard loading={boolean('loading', false)}>
-              <StyledCardContent>
-                <div>
-                  <Heading $as="h4">Over IOS</Heading>
-                  <Paragraph>
-                    De afdeling Onderzoek, Informatie en Statistiek (OIS) doet
-                    onderzoek, verzamelt en bewerkt data over de stad en maakt
-                    de resultaten daarvan bekend op deze website.
-                  </Paragraph>
-                </div>
-                <StyledLink variant="with-chevron" href="/">
-                  Lees meer
-                </StyledLink>
-              </StyledCardContent>
-            </StyledCard>
-          </StyledCardContainer>
-        </Column>
-        <Column span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}>
-          <StyledCardContainer>
-            <StyledCard loading={boolean('loading', false)}>
-              <StyledCardContent>
-                <div>
-                  <Heading $as="h4">Onderzoek</Heading>
-                  <Paragraph>
-                    We doen jaarlijks honderden onderzoeken, van kleine enquêtes
-                    tot uitgebreide monitors.
-                  </Paragraph>
-                </div>
-                <StyledLink variant="with-chevron" href="/">
-                  Lees meer
-                </StyledLink>
-              </StyledCardContent>
-            </StyledCard>
-          </StyledCardContainer>
-        </Column>
-        <Column span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}>
-          <StyledCardContainer>
-            <StyledCard loading={boolean('loading', false)}>
-              <StyledCardContent>
-                <div>
-                  <Heading $as="h4">Panels en enquêtes</Heading>
-                  <Paragraph>
-                    We doen jaarlijks honderden onderzoeken, van kleine enquêtes
-                    tot uitgebreide monitors.
-                  </Paragraph>
-                </div>
-                <StyledLink variant="with-chevron" href="/">
-                  Lees meer
-                </StyledLink>
-              </StyledCardContent>
-            </StyledCard>
-          </StyledCardContainer>
-        </Column>
-        <Column span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}>
-          <StyledCardContainer>
-            <StyledCard loading={boolean('loading', false)}>
-              <StyledCardContent>
-                <div>
-                  <Heading $as="h4">Publicaties</Heading>
-                  <Paragraph>
-                    Download onderzoeksrapporten, fasctsheets of het ons
-                    jaarboek. Het oudste dateert uit 1895!
-                  </Paragraph>
-                </div>
-                <StyledLink variant="with-chevron" href="/">
-                  Lees meer
-                </StyledLink>
-              </StyledCardContent>
-            </StyledCard>
-          </StyledCardContainer>
-        </Column>
-      </StyledRow>
-    </ArticleCardsWrapper>
-  ))
+  .add('Dataportaal "Article list"', () => <DataportaalCardArticles />)

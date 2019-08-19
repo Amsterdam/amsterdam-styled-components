@@ -41,7 +41,8 @@ const MenuMobile = (props: any) => (
   </MenuToggle>
 )
 
-const DataportaalHeader: React.FC<{}> = () => (
+// eslint-disable-next-line import/prefer-default-export
+export const DataportaalHeader: React.FC<{}> = () => (
   <Header
     tall
     title="Data en informatie"
