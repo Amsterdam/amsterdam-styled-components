@@ -14,16 +14,12 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## Unreleased
-
+## [0.12.2] - 2019-08-14
 - Deprecated: 'linkType' on Link component. Please use variant instead.
 - Added: Able to pass a 'color' prop to Link
 - Changed: Link now has a default color black 
 - Removed: margin-top from Footer and max-width from FooterContent (very specific styling)
 - Changed: `MenuFlyOut` no longer opens on tab keydown, only `enter` or `space` (besides `click` or `mouseover`)
-
-## [0.13.0] - 2019-08-14
-
 - Changed: LinkList(LinkListItem) is renamed to List(ListItem), the Link functionality has to be done in the implementation
 - Changed: Breaking change, ListItem(div) is replaced by a ListItem(li), was used as block container in the Modal, Should be replaced in the implementation
 
