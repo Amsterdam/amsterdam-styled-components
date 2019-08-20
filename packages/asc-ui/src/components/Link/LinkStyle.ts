@@ -4,38 +4,6 @@ import { focusStyleText, svgFill } from '../../utils/themeUtils'
 import Typography, { TypographyProps } from '../Typography'
 import IconStyle from '../Icon/IconStyle'
 
-export const BlankLinkStyleCSS = css`
-  display: inline-block;
-  text-decoration: none;
-  color: inherit;
-`
-export const InlineLinkStyleCSS = css`
-  display: inline-block;
-  color: ${color('primary')};
-
-  &:hover {
-    color: ${color('secondary')};
-  }
-`
-export const DefaultLinkStyleCSS = css`
-  display: inline-flex;
-  text-decoration: none;
-  font-weight: 700;
-  color: ${color('tint', 'level7')};
-
-  ${IconStyle} {
-    margin: 3px;
-  }
-
-  &:hover {
-    color: ${color('secondary')};
-    text-decoration: underline;
-    ${IconStyle} {
-      ${svgFill('secondary')};
-    }
-  }
-`
-
 export enum LinkVariants {
   inline,
   blank,
@@ -51,6 +19,43 @@ export type Props = {
   color?: string
 } & TypographyProps
 
+export const BlankLinkStyleCSS = css`
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+`
+export const InlineLinkStyleCSS = css`
+  display: inline-block;
+  color: ${color('primary')};
+
+  &:hover {
+    color: ${color('secondary')};
+  }
+`
+export const DefaultLinkStyleCSS = css<Props>`
+  display: inline-flex;
+  text-decoration: none;
+  font-weight: 700;
+  color: ${({ color: colorOverride, theme }) =>
+    color('tint', 'level7', colorOverride)({ theme })};
+
+  ${IconStyle} {
+    margin: 3px;
+    ${({ color: colorOverride, theme }) =>
+      svgFill('tint', 'level7', colorOverride)({ theme })};
+  }
+
+  &:hover {
+    color: ${({ color: colorOverride, theme }) =>
+      color('secondary', 'main', colorOverride)({ theme })};
+    text-decoration: underline;
+    ${IconStyle} {
+      ${({ color: colorOverride, theme }) =>
+        svgFill('secondary', 'main', colorOverride)({ theme })};
+    }
+  }
+`
+
 export default styled(Typography)<Props>`
   ${focusStyleText()}
   ${({ variant }) => {
@@ -63,14 +68,4 @@ export default styled(Typography)<Props>`
         return DefaultLinkStyleCSS
     }
   }}
-  
-  ${({ color: colorProp }) =>
-    colorProp &&
-    css`
-      color: ${colorProp};
-      &:hover,
-      &focus {
-        color: ${colorProp};
-      }
-    `}
 `
