@@ -4,7 +4,6 @@ import { ChevronDown } from '@datapunt/asc-assets'
 import ContextMenu from '../ContextMenu'
 import ContextMenuItem from '../ContextMenuItem'
 import { KeyboardKeys } from '../../../types'
-import 'jest-styled-components'
 
 jest.useFakeTimers()
 

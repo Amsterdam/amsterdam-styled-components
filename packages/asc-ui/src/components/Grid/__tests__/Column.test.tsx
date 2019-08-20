@@ -1,6 +1,5 @@
 import React from 'react'
 import { render, cleanup } from '@testing-library/react'
-import 'jest-styled-components'
 import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import { mount } from 'enzyme'
 import Row from '../Row'

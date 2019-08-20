@@ -1,7 +1,6 @@
 import * as React from 'react'
 import SearchBar from './SearchBar'
 import { renderWithTheme } from '../../utils/withTheme'
-import 'jest-styled-components'
 
 jest.useFakeTimers()
 

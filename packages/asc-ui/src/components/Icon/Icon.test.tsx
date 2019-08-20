@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { renderWithTheme } from '../../utils/withTheme'
 import Icon from './Icon'
-import 'jest-styled-components'
 
 describe('Icon', () => {
   it('should render the icon', () => {

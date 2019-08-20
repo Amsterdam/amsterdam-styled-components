@@ -2,7 +2,6 @@ import React from 'react'
 import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import { render } from '@testing-library/react'
 import GlobalStyle from './GlobalStyle'
-import 'jest-styled-components'
 
 const theme = {
   ...ascDefaultTheme,

@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { mount } from 'enzyme'
 import Toggle from './Toggle'
-import 'jest-styled-components'
 import { KeyboardKeys } from '../../types'
 import ToggleButton from '../Button/ToggleButton/ToggleButton'
 

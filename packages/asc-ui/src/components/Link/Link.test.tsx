@@ -2,7 +2,6 @@ import * as React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import Link from './Link'
-import 'jest-styled-components'
 
 const theme = { ...ascDefaultTheme }
 

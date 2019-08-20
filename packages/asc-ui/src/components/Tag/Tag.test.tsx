@@ -1,6 +1,5 @@
 import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import { cleanup, render } from '@testing-library/react'
-import 'jest-styled-components'
 import * as React from 'react'
 import { color } from '../../utils'
 import Tag from './Tag'

@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import FooterContent from './FooterContent'
-import 'jest-styled-components'
 
 describe('FooterContent', () => {
   afterEach(cleanup)
