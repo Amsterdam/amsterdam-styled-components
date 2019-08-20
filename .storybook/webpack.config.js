@@ -35,7 +35,7 @@ module.exports = ({ config, mode }) => {
         loader: require.resolve('awesome-typescript-loader'),
         options: {
           transpileOnly: isDev, // huge performance win
-          configFileName: './tsconfig.storybook.json',
+          configFileName: './tsconfig.json',
           getCustomTransformers: () => ({
             before: [styledComponentsTransformer],
           }),
