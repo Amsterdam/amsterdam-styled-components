@@ -41,6 +41,7 @@
     "esModuleInterop": true,
     "noImplicitAny": true,
     "declaration": true,
+    "declarationMap": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,

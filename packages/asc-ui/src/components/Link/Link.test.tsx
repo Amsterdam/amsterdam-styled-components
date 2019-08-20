@@ -14,13 +14,13 @@ describe('Link', () => {
       <ThemeProvider theme={theme}>
         <>
           <Link href="http://default-link">default link</Link>
-          <Link href="http://with-chevron-link" linkType="with-chevron">
+          <Link href="http://with-chevron-link" variant="with-chevron">
             default link with chevron
           </Link>
-          <Link href="http://inline-link" linkType="inline">
+          <Link href="http://inline-link" variant="inline">
             inline link
           </Link>
-          <Link href="http://blank-link" linkType="blank">
+          <Link href="http://blank-link" variant="blank">
             blank link (no style)
           </Link>
         </>
