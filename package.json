@@ -17,6 +17,7 @@
     "lint:css": "stylelint \"./packages/**/*Style.ts\"",
     "lint:js": "eslint \"./packages/asc-ui/src\" \"./packages/asc-core/src\" --ext .ts,.tsx",
     "prepare": "yarn build",
+    "prepublishOnly": "yarn clean:generated",
     "publish:packages": "lerna publish",
     "start": "concurrently \"yarn build:watch\" \"yarn storybook\"",
     "storybook": "start-storybook -p 6006 -c .storybook -s ./packages/asc-assets/lib/assets",
