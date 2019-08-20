@@ -6,7 +6,8 @@
   "homepage": "https://github.com/Amsterdam/amsterdam-styled-components/tree/master/packages/asc-core#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Amsterdam/amsterdam-styled-components.git"
+    "url": "https://github.com/Amsterdam/amsterdam-styled-components.git",
+    "directory": "packages/asc-ui"
   },
   "bugs": {
     "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
