@@ -62,13 +62,14 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-weight: 700;
+  color: #000000;
 }
 
 .c9:focus {
@@ -342,13 +343,14 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-weight: 700;
+  color: #000000;
 }
 
 .c9:focus {
@@ -640,13 +642,14 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-weight: 700;
+  color: #000000;
 }
 
 .c12:focus {

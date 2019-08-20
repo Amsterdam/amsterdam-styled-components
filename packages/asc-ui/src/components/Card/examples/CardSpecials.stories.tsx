@@ -95,7 +95,7 @@ storiesOf('Atoms/Card/Implementation', module)
           wrap
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
-          <Link href="/" linkType="blank">
+          <Link href="/" variant="blank">
             <Card horizontal loading={boolean('loading', false)}>
               <CardContent>
                 <Heading $as="h4" gutterBottom={8}>
@@ -121,7 +121,7 @@ storiesOf('Atoms/Card/Implementation', module)
           wrap
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
-          <Link href="/" linkType="blank">
+          <Link href="/" variant="blank">
             <Card horizontal loading={boolean('loading', false)}>
               <CardContent>
                 <Heading $as="h4" gutterBottom={8}>
@@ -147,7 +147,7 @@ storiesOf('Atoms/Card/Implementation', module)
           wrap
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
-          <Link href="/" linkType="blank">
+          <Link href="/" variant="blank">
             <Card horizontal loading={boolean('loading', false)}>
               <CardContent>
                 <Heading $as="h4" gutterBottom={8}>
@@ -172,7 +172,7 @@ storiesOf('Atoms/Card/Implementation', module)
           wrap
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
-          <Link href="/" linkType="blank">
+          <Link href="/" variant="blank">
             <Card horizontal loading={boolean('loading', false)}>
               <CardContent>
                 <Heading $as="h4" gutterBottom={8}>
@@ -198,7 +198,7 @@ storiesOf('Atoms/Card/Implementation', module)
           wrap
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
-          <Link href="/" linkType="blank">
+          <Link href="/" variant="blank">
             <Card horizontal loading={boolean('loading', false)}>
               <CardContent>
                 <Heading $as="h4" gutterBottom={8}>
@@ -223,7 +223,7 @@ storiesOf('Atoms/Card/Implementation', module)
           wrap
           span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}
         >
-          <Link href="/" linkType="blank">
+          <Link href="/" variant="blank">
             <Card horizontal loading={boolean('loading', false)}>
               <CardContent>
                 <Heading $as="h4" gutterBottom={8}>
@@ -244,7 +244,7 @@ storiesOf('Atoms/Card/Implementation', module)
             </Card>
           </Link>
         </Column>
-        <Link linkType="with-chevron" href="/">
+        <Link variant="with-chevron" href="/">
           Bekijk overzicht
         </Link>
       </Row>

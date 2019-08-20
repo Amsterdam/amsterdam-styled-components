@@ -1,4 +1,4 @@
-import styled, { css, Theme } from '@datapunt/asc-core'
+import styled, { css } from '@datapunt/asc-core'
 import { color } from '../../utils'
 import { focusStyleText, svgFill } from '../../utils/themeUtils'
 import Typography, { TypographyProps } from '../Typography'
@@ -9,62 +9,68 @@ export const BlankLinkStyleCSS = css`
   text-decoration: none;
   color: inherit;
 `
-export const InlineLinkStyleCSS = ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}) => css`
+export const InlineLinkStyleCSS = css`
   display: inline-block;
-  color: ${color('primary')({ theme })};
+  color: ${color('primary')};
 
   &:hover {
     color: ${color('secondary')};
   }
 `
-export const DefaultLinkStyleCSS = ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}) => css`
-  display: flex;
+export const DefaultLinkStyleCSS = css`
+  display: inline-flex;
   text-decoration: none;
   font-weight: 700;
+  color: ${color('tint', 'level7')};
 
   ${IconStyle} {
     margin: 3px;
   }
 
   &:hover {
-    color: ${color('secondary')({ theme })};
+    color: ${color('secondary')};
     text-decoration: underline;
     ${IconStyle} {
-      ${svgFill('secondary')({ theme })};
+      ${svgFill('secondary')};
     }
   }
 `
 
-type TypeLink = 'inline' | 'blank' | 'with-chevron'
-
-export const getLinkType = (linkType?: TypeLink) => ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}) => {
-  switch (linkType) {
-    case 'blank':
-      return BlankLinkStyleCSS
-    case 'inline':
-      return InlineLinkStyleCSS({ theme })
-    default:
-      return DefaultLinkStyleCSS({ theme })
-  }
+export enum LinkVariants {
+  inline,
+  blank,
+  withChevron = 'with-chevron',
 }
 
 export type Props = {
-  linkType?: TypeLink
+  variant?: keyof typeof LinkVariants
+  /**
+   * @deprecated
+   */
+  linkType?: keyof typeof LinkVariants
+  color?: string
 } & TypographyProps
 
 export default styled(Typography)<Props>`
   ${focusStyleText()}
-  ${({ linkType }) => getLinkType(linkType)}
+  ${({ variant }) => {
+    switch (variant) {
+      case 'blank':
+        return BlankLinkStyleCSS
+      case 'inline':
+        return InlineLinkStyleCSS
+      default:
+        return DefaultLinkStyleCSS
+    }
+  }}
+  
+  ${({ color: colorProp }) =>
+    colorProp &&
+    css`
+      color: ${colorProp};
+      &:hover,
+      &focus {
+        color: ${colorProp};
+      }
+    `}
 `

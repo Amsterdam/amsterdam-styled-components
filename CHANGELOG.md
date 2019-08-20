@@ -16,6 +16,10 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Deprecated: 'linkType' on Link component. Please use variant instead.
+- Added: Able to pass a 'color' prop to Link
+- Changed: Link now has a default color black 
+- Removed: margin-top from Footer and max-width from FooterContent (very specific styling)
 - Changed: `MenuFlyOut` no longer opens on tab keydown, only `enter` or `space` (besides `click` or `mouseover`)
 
 ## [0.13.0] - 2019-08-14
