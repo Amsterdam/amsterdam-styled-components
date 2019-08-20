@@ -1,5 +1,5 @@
 import { css, keyframes, Theme } from '@datapunt/asc-core'
-import { fromTheme } from '.'
+import fromTheme from './fromTheme'
 
 import BreakpointsInterface = Theme.BreakpointsInterface
 import ThemeInterface = Theme.ThemeInterface
