@@ -2,7 +2,6 @@ import * as React from 'react'
 import { shallow } from 'enzyme'
 import { Search } from '@datapunt/asc-assets'
 import SearchBar from './SearchBar'
-import 'jest-styled-components'
 
 jest.useFakeTimers()
 
