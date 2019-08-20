@@ -3,7 +3,6 @@ import { render, cleanup } from '@testing-library/react'
 import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import FooterBottom from './FooterBottom'
 import { color } from '../../../utils'
-import 'jest-styled-components'
 
 const theme = { ...ascDefaultTheme }
 

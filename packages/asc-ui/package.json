@@ -1,16 +1,26 @@
 {
   "name": "@datapunt/asc-ui",
-  "description": "React Components that developers can reuse in multiple projects",
+  "description": "React UI Components that developers at de Gemeente Amsterdam can reuse in multiple projects",
   "license": "MPL-2.0",
   "author": "Datapunt Amsterdam",
-  "version": "0.12.1",
+  "homepage": "https://github.com/Amsterdam/amsterdam-styled-components#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Amsterdam/amsterdam-styled-components.git",
+    "directory": "packages/asc-ui"
+  },
+  "bugs": {
+    "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
+  },
+  "version": "0.12.2",
   "main": "lib/index.js",
   "files": [
     "lib"
   ],
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@datapunt/asc-assets": "^0.12.1",
+    "@datapunt/asc-assets": "^0.12.2",
+    "@datapunt/asc-core": "^0.12.2",
     "classnames": "^2.2.6",
     "deepmerge": "^4.0.0",
     "enzyme": "^3.10.0",
@@ -20,12 +30,11 @@
     "react-uid": "^2.2.0"
   },
   "peerDependencies": {
-    "@datapunt/asc-core": "0.12.1",
     "react": "16.8.6",
     "react-dom": "16.8.6"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "e9fa02de2db7fdc9c60285319df52042d6b217fc"
+  "gitHead": "08ca01af54dd5407e17fc44880555dd712764d18"
 }

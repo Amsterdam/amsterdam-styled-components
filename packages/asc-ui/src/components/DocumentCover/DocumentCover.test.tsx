@@ -1,7 +1,6 @@
 import * as React from 'react'
 import DocumentCover from './DocumentCover'
 import { renderWithTheme, mountWithTheme } from '../../utils/withTheme'
-import 'jest-styled-components'
 import Button from '../Button'
 
 jest.useFakeTimers()

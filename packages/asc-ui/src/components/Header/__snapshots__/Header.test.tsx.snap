@@ -80,6 +80,12 @@ exports[`Header should render the short version 1`] = `
   margin: 3px;
 }
 
+.c9 .c15 svg rect,
+.c9 .c15 svg polygon,
+.c9 .c15 svg path {
+  fill: #000000;
+}
+
 .c9:hover {
   color: #ec0000;
   -webkit-text-decoration: underline;
@@ -359,6 +365,12 @@ exports[`Header should render the short version without the full width 1`] = `
 
 .c9 .c16 {
   margin: 3px;
+}
+
+.c9 .c16 svg rect,
+.c9 .c16 svg polygon,
+.c9 .c16 svg path {
+  fill: #000000;
 }
 
 .c9:hover {
@@ -658,6 +670,12 @@ exports[`Header should render the tall version 1`] = `
 
 .c12 .c21 {
   margin: 3px;
+}
+
+.c12 .c21 svg rect,
+.c12 .c21 svg polygon,
+.c12 .c21 svg path {
+  fill: #000000;
 }
 
 .c12:hover {

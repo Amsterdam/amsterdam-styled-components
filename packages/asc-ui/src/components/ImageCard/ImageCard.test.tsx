@@ -3,7 +3,6 @@ import { renderWithTheme } from '../../utils/withTheme'
 import ImageCard from './ImageCard'
 import Heading from '../Heading'
 import ImageCardContent from './ImageCardContent/ImageCardContent'
-import 'jest-styled-components'
 
 describe('ImageCard', () => {
   it('should render', () => {
