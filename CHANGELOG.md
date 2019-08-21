@@ -14,7 +14,10 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## [0.12.2] - 2019-08-14
+## [0.12.3] - 2019-08-21
+- Fixed: IE11 issue in Article component
+
+## [0.12.2] - 2019-08-20
 - Deprecated: 'linkType' on Link component. Please use variant instead.
 - Added: Able to pass a 'color' prop to Link
 - Changed: Link now has a default color black 
