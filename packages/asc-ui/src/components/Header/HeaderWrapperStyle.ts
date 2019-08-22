@@ -10,7 +10,7 @@ import HeaderNavigationStyle from './HeaderNavigationStyle'
 import HeaderLogoTextStyle from './HeaderLogoTextStyle'
 import TopBarStyle from '../TopBar/TopBarStyle'
 import HeaderStyle from './HeaderStyle'
-import { CONTENT_HEIGHT_TALL, WRAPPER_MAX_WIDTH } from './sizes'
+import { HEADER_HEIGHT_SMALL, WRAPPER_MAX_WIDTH } from './sizes'
 
 export type Props = {
   tall?: boolean
@@ -61,8 +61,8 @@ const HeaderWrapperStyle = styled.div<Props>`
               position: absolute;
               left: 0;
               right: 0;
-              height: ${CONTENT_HEIGHT_TALL}px;
-              margin-top: ${CONTENT_HEIGHT_TALL * -1}px;
+              height: ${HEADER_HEIGHT_SMALL}px;
+              margin-top: ${HEADER_HEIGHT_SMALL * -1}px;
               background-color: ${themeColor('tint', 'level2')};
             }
 
@@ -91,7 +91,7 @@ const HeaderWrapperStyle = styled.div<Props>`
               flex-basis: 100%;
               margin-left: 25px;
               margin-right: 25px;
-              height: ${CONTENT_HEIGHT_TALL}px;
+              height: ${HEADER_HEIGHT_SMALL}px;
             }
           }
         `

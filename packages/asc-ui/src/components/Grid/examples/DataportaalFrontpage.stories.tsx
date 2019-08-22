@@ -16,7 +16,7 @@ storiesOf('Composed/Frontpage', module).add(
     <>
       <Row hasMargin={false}>
         <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
-          <DataportaalHeader />
+          <DataportaalHeader tall fullWidth />
         </Column>
       </Row>
       <Row hasMargin={false}>
