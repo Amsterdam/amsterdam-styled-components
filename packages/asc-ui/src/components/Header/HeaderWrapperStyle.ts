@@ -1,16 +1,21 @@
 import styled, { css } from '@datapunt/asc-core'
-import { breakpoint, color, customCss, CustomCssPropsType } from '../../utils'
+import {
+  breakpoint,
+  color,
+  customCss,
+  CustomCssPropsInterface,
+} from '../../utils'
 import HeaderTitleStyle from './HeaderTitleStyle'
 import HeaderNavigationStyle from './HeaderNavigationStyle'
 import HeaderLogoTextStyle from './HeaderLogoTextStyle'
 import TopBarStyle from '../TopBar/TopBarStyle'
 import HeaderStyle from './HeaderStyle'
-import { HEADER_HEIGHT_SMALL, WRAPPER_MAX_WIDTH } from './sizes'
+import { HEADER_HEIGHT_SMALL, WRAPPER_MAX_WIDTH } from '../shared/sizes'
 
-export type Props = {
+export interface Props extends CustomCssPropsInterface {
   tall?: boolean
   fullWidth?: boolean
-} & CustomCssPropsType
+}
 
 const shortStyle = css`
   ${HeaderTitleStyle} {
@@ -49,6 +54,8 @@ const HeaderWrapperStyle = styled.div<Props>`
           }
           @media screen and ${breakpoint('min-width', 'laptopM')} {
             box-shadow: none;
+            position: relative;
+            margin: 0;
 
             &:after {
               content: '';

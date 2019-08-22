@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import styled, { css } from '@datapunt/asc-core'
+import { css } from '@datapunt/asc-core'
 import {
   Header,
   MenuInline,
@@ -11,16 +11,17 @@ import {
   styles,
 } from '../../../index'
 import { MenuChildren } from '../../Menu/Menu.stories'
-import Heading from '../../Heading'
-import Typography from '../../Typography'
-import { color } from '../../../utils'
+import { PageLayoutInterface } from '../../shared/sizes'
+import { Row, Column } from '../../Grid'
+import BodyFiller from './BodyFiller.stories'
+import Body from '../../Body'
 
 const DataportaalHeaderWrapperStyle = css`
   ${styles.HeaderContentStyle} {
     justify-content: flex-end;
   }
 
-  ${styles.HeaderNavigationStyle} > ${styles.SearchBarStyle} {
+  ${styles.HeaderNavigationStyle} > ${styles.SearchBarStyle} { 
     flex-grow: 1;
 
     ${styles.TextFieldStyle} {
@@ -90,58 +91,52 @@ export const DataportaalHeader: React.FC<DataportaalHeaderProps> = ({
   />
 )
 
-const DataportaalBodyStyle = styled.div<DataportaalHeaderProps>`
-  background-color: ${color('tint', 'level3')};
-  position: relative;
-  z-index: 1;
-`
-/* ${({tall}) => {
-    
-    tall ? css`
-  ` : 
-  css
-  } */
-
-// const HeaderFiller: React.FC<{}> = () => ()
-const DataportaalBody: React.FC<DataportaalHeaderProps> = ({
+export const DataportaalBody: React.FC<PageLayoutInterface> = ({
   tall,
   fullWidth,
-}) => (
-  <DataportaalBodyStyle {...{ tall, fullWidth }}>
-    <Heading>Content</Heading>
-    <Typography $as="p">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    </Typography>
-  </DataportaalBodyStyle>
-)
+  children,
+}) => <Body {...{ tall, fullWidth }}>{children}</Body>
 
 storiesOf('Composed/Header', module)
   .addDecorator(storyFn => (
-    <div style={{ backgroundColor: 'lightgrey', height: '100%' }}>
+    <div
+      style={{
+        backgroundColor: 'lightgrey',
+        height: '100%',
+        position: 'relative',
+      }}
+    >
       {storyFn()}
     </div>
   ))
   .add('implementation for dataportaal - Frontpage', () => (
     <>
       <DataportaalHeader tall fullWidth={false} />
-      <DataportaalBody tall fullWidth={false} />
+      <DataportaalBody tall fullWidth={false}>
+        <BodyFiller />
+      </DataportaalBody>
     </>
   ))
   .add('implementation for dataportaal - Editorial content', () => (
     <>
       <DataportaalHeader tall={false} fullWidth={false} />
-      <DataportaalBody tall={false} fullWidth={false} />
+      <DataportaalBody tall={false} fullWidth={false}>
+        <Row>
+          <Column
+            wrap
+            span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}
+          >
+            <BodyFiller />
+          </Column>
+        </Row>
+      </DataportaalBody>
     </>
   ))
   .add('implementation for dataportaal - Functional content', () => (
     <>
       <DataportaalHeader tall={false} fullWidth />
-      <DataportaalBody tall={false} fullWidth />
+      <DataportaalBody tall={false} fullWidth>
+        <BodyFiller />
+      </DataportaalBody>
     </>
   ))
