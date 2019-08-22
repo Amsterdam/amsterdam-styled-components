@@ -1,6 +1,6 @@
 import styled, { css } from '@datapunt/asc-core'
 import TopBarStyle from '../TopBar/TopBarStyle'
-import { HEADER_MAX_WIDTH } from './sizes'
+import { HEADER_MAX_WIDTH } from '../shared/sizes'
 
 export type HeaderStyleProps = {
   fullWidth?: boolean
