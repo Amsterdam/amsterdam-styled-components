@@ -66,6 +66,49 @@ const ImageCardWrapperSmall = styled.div`
   }
 `
 
+// eslint-disable-next-line import/prefer-default-export
+export const DataportaalImageCard: React.FC<{}> = () => (
+  <ImageCardContainer>
+    <ImageCardWrapperBig>
+      <ImageCard
+        margin={12}
+        backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
+      >
+        <ImageCardContent>
+          <Heading $as="h6" styleAs="h2">
+            Jeugdwerkloosheid Amsterdam daalt naar 6,2%
+          </Heading>
+          <Paragraph gutterBottom={0}>
+            Amsterdamse jongeren even vaak werkloos als gemiddeld in Nederland
+          </Paragraph>
+        </ImageCardContent>
+      </ImageCard>
+    </ImageCardWrapperBig>
+    <ImageCardWrapperSmall>
+      <ImageCard
+        margin={12}
+        backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
+      >
+        <ImageCardContent>
+          <Heading $as="h6" strong gutterBottom={0} styleAs="p">
+            Jeugdwerk&shy;loosheid Amsterdam daalt naar 6,2%
+          </Heading>
+        </ImageCardContent>
+      </ImageCard>
+      <ImageCard
+        margin={12}
+        backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
+      >
+        <ImageCardContent>
+          <Heading $as="h6" strong gutterBottom={0} styleAs="p">
+            Amsterdammers voelen zich veiliger in het OV
+          </Heading>
+        </ImageCardContent>
+      </ImageCard>
+    </ImageCardWrapperSmall>
+  </ImageCardContainer>
+)
+
 storiesOf('Atoms/ImageCard', module)
   .add('default state', () => (
     <div style={{ maxWidth: '600px' }}>
@@ -96,49 +139,14 @@ storiesOf('Atoms/ImageCard', module)
     </div>
   ))
   .add('dataportaal implementation', () => (
-    <Row>
-      <Column wrap span={{ small: 1, medium: 2, big: 6, large: 8, xLarge: 8 }}>
+    <Row debug>
+      <Column
+        debug
+        wrap
+        span={{ small: 1, medium: 2, big: 6, large: 8, xLarge: 8 }}
+      >
         <div style={{ width: '100%' }}>
-          <ImageCardContainer>
-            <ImageCardWrapperBig>
-              <ImageCard
-                margin={12}
-                backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
-              >
-                <ImageCardContent>
-                  <Heading $as="h6" styleAs="h2">
-                    Jeugdwerkloosheid Amsterdam daalt naar 6,2%
-                  </Heading>
-                  <Paragraph gutterBottom={0}>
-                    Amsterdamse jongeren even vaak werkloos als gemiddeld in
-                    Nederland
-                  </Paragraph>
-                </ImageCardContent>
-              </ImageCard>
-            </ImageCardWrapperBig>
-            <ImageCardWrapperSmall>
-              <ImageCard
-                margin={12}
-                backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
-              >
-                <ImageCardContent>
-                  <Heading $as="h6" strong gutterBottom={0} styleAs="p">
-                    Jeugdwerk&shy;loosheid Amsterdam daalt naar 6,2%
-                  </Heading>
-                </ImageCardContent>
-              </ImageCard>
-              <ImageCard
-                margin={12}
-                backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
-              >
-                <ImageCardContent>
-                  <Heading $as="h6" strong gutterBottom={0} styleAs="p">
-                    Amsterdammers voelen zich veiliger in het OV
-                  </Heading>
-                </ImageCardContent>
-              </ImageCard>
-            </ImageCardWrapperSmall>
-          </ImageCardContainer>
+          <DataportaalImageCard />)
         </div>
       </Column>
     </Row>
