@@ -878,6 +878,8 @@ exports[`Header should render the tall version 1`] = `
 @media screen and (min-width:1200.02px) {
   .c0 {
     box-shadow: none;
+    position: relative;
+    margin: 0;
   }
 
   .c0:after {
@@ -1184,6 +1186,8 @@ exports[`Header should render the tall version without a title 1`] = `
 @media screen and (min-width:1200.02px) {
   .c0 {
     box-shadow: none;
+    position: relative;
+    margin: 0;
   }
 
   .c0:after {
