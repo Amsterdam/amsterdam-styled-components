@@ -25,8 +25,16 @@ const DataportaalSubtiltle = styled(Heading)`
 `
 
 const OverviewLink = styled(Link)`
-  margin-top: 32px;
+  margin-top: 24px;
   padding: 8px 3px 8px 0;
+
+  @media screen and ${breakpoint('max-width', 'tabletM')} {
+    margin-top: 12px;
+  }
+`
+
+const StyledDataportaalFooter = styled(DataportaalFooter)`
+  margin-top: 48px;
 `
 
 storiesOf('Composed/Page', module).add('implementation for dataportaal', () => (
@@ -45,16 +53,16 @@ storiesOf('Composed/Page', module).add('implementation for dataportaal', () => (
         >
           <DataportaalImageCard />
         </Column>
+        <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
+          <OverviewLink linkType="with-chevron" href="/">
+            Bekijk overzicht
+          </OverviewLink>
+        </Column>
         <Column
           wrap
           span={{ small: 1, medium: 2, big: 6, large: 5, xLarge: 5 }}
         >
           <DataportaalCardGenericFunctions />
-        </Column>
-        <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
-          <OverviewLink linkType="with-chevron" href="/">
-            Bekijk overzicht
-          </OverviewLink>
         </Column>
       </Row>
       <Row hasMargin={false}>
@@ -62,17 +70,17 @@ storiesOf('Composed/Page', module).add('implementation for dataportaal', () => (
           <DataportaalCardSpecials />
         </Column>
       </Row>
+      <Row hasMargin>
+        <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
+          <DataportaalCardArticles />
+        </Column>
+      </Row>
       <Row hasMargin={false}>
         <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
           <DataportaalCardAboutData />
         </Column>
       </Row>
-      <Row hasMargin={true}> 
-        <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
-          <DataportaalCardArticles />
-        </Column>
-      </Row>
-      <DataportaalFooter />
+      <StyledDataportaalFooter />
     </DataportaalBody>
   </>
 ))

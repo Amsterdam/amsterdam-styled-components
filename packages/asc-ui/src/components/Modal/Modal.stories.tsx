@@ -98,7 +98,7 @@ storiesOf('Composed/Modal', module)
       </ModalBlock>
       <Divider transparent />
       <ModalBlock>
-        <Link href="/help" linkType="inline">
+        <Link href="/help" variant="inline">
           Hulp nodig?
         </Link>
       </ModalBlock>

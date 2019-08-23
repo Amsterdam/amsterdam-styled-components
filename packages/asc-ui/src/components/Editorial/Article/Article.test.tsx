@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Article from './Article'
 import { renderWithTheme } from '../../../utils/withTheme'
-import 'jest-styled-components'
 
 describe('Article', () => {
   let component: any

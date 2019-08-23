@@ -25,7 +25,7 @@ const SpecialCardContainer = styled(CardContainer)`
      border-top: ${color('tint', 'level3')} 1px solid;
   }
 
-    @media screen and ${breakpoint('min-width', 'tabletM')} {
+  @media screen and ${breakpoint('min-width', 'tabletM')} {
     ${/* sc-selector */ styles.ColumnStyle}:nth-child(2) > ${styles.LinkStyle} {
       border-top: ${color('tint', 'level3')} 1px solid;
     }
@@ -56,7 +56,11 @@ const SpecialCardContainer = styled(CardContainer)`
     justify-content: space-between;
     align-items: flex-start;
     padding: 8px 0;
-    margin: 24px 8px!important;
+    margin: 24px 8px;
+    @media screen and ${breakpoint('max-width', 'tabletM')} {
+      margin: 24px 0;
+    }
+
   }
 
   ${styles.CardContentStyle} {
@@ -80,14 +84,17 @@ const SpecialCardContainer = styled(CardContainer)`
   }
 `
 
+const CardSpecialsSubtiltle = styled(Heading)`
+  @media screen and ${breakpoint('max-width', 'tabletM')} {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+`
+
 // eslint-disable-next-line import/prefer-default-export
 export const DataportaalCardSpecials: React.FC<{}> = () => (
   <SpecialCardContainer>
-    <Row hasMargin={false}>
-      <Heading $as="h1" gutterBottom={32}>
-        In Beeld
-      </Heading>
-    </Row>
+    <CardSpecialsSubtiltle $as="h1">In Beeld</CardSpecialsSubtiltle>
     <Row hasMargin={false}>
       <Column wrap span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}>
         <Link href="/" linkType="blank">

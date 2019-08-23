@@ -19,22 +19,22 @@ import Link from '../Link'
 const ColofonLinks: React.FC<{ indent?: boolean }> = () => (
   <FooterLinkList>
     <FooterLinkListItem>
-      <Link href="/" linkType="with-chevron">
+      <Link href="/" variant="with-chevron">
         Over deze site
       </Link>
     </FooterLinkListItem>
     <FooterLinkListItem>
-      <Link href="/" linkType="with-chevron">
+      <Link href="/" variant="with-chevron">
         Over OIS
       </Link>
     </FooterLinkListItem>
     <FooterLinkListItem>
-      <Link href="/" linkType="with-chevron">
+      <Link href="/" variant="with-chevron">
         Databeleid
       </Link>
     </FooterLinkListItem>
     <FooterLinkListItem>
-      <Link href="/" linkType="with-chevron">
+      <Link href="/" variant="with-chevron">
         Bronnen
       </Link>
     </FooterLinkListItem>
@@ -44,27 +44,27 @@ const ColofonLinks: React.FC<{ indent?: boolean }> = () => (
 const FollowLinks: React.FC<{ indent?: boolean }> = () => (
   <FooterLinkList>
     <FooterLinkListItem>
-      <Link href="/" linkType="with-chevron">
+      <Link href="/" variant="with-chevron">
         Nieuwsbrief OIS
       </Link>
     </FooterLinkListItem>
     <FooterLinkListItem>
-      <Link href="/" linkType="with-chevron">
+      <Link href="/" variant="with-chevron">
         Twitter
       </Link>
     </FooterLinkListItem>
     <FooterLinkListItem>
-      <Link href="/" linkType="with-chevron">
+      <Link href="/" variant="with-chevron">
         Facerbook
       </Link>
     </FooterLinkListItem>
     <FooterLinkListItem>
-      <Link href="/" linkType="with-chevron">
+      <Link href="/" variant="with-chevron">
         Linkedin
       </Link>
     </FooterLinkListItem>
     <FooterLinkListItem>
-      <Link href="/" linkType="with-chevron">
+      <Link href="/" variant="with-chevron">
         GitHub
       </Link>
     </FooterLinkListItem>
@@ -79,22 +79,22 @@ const HelpLinks: React.FC<{ indent?: boolean }> = () => (
     </Paragraph>
     <FooterLinkList>
       <FooterLinkListItem>
-        <Link href="/" linkType="with-chevron">
+        <Link href="/" variant="with-chevron">
           Veelgestelde vragen
         </Link>
       </FooterLinkListItem>
       <FooterLinkListItem>
-        <Link href="/" linkType="with-chevron">
+        <Link href="/" variant="with-chevron">
           Contact opnemen
         </Link>
       </FooterLinkListItem>
       <FooterLinkListItem>
-        <Link href="/" linkType="with-chevron">
+        <Link href="/" variant="with-chevron">
           Feedback geven
         </Link>
       </FooterLinkListItem>
       <FooterLinkListItem>
-        <Link href="/" linkType="with-chevron">
+        <Link href="/" variant="with-chevron">
           Uitleg gebruik
         </Link>
       </FooterLinkListItem>
@@ -103,8 +103,10 @@ const HelpLinks: React.FC<{ indent?: boolean }> = () => (
 )
 
 // eslint-disable-next-line import/prefer-default-export
-export const DataportaalFooter: React.FC<{}> = () => (
-  <Footer>
+export const DataportaalFooter: React.FC<React.HTMLAttributes<HTMLElement>> = ({
+  ...otherProps
+}) => (
+  <Footer {...otherProps}>
     <FooterTop>
       <Row>
         <Column

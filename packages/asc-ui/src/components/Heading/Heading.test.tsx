@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Heading from './Heading'
 import { renderWithTheme } from '../../utils/withTheme'
-import 'jest-styled-components'
 
 describe('Heading', () => {
   it('should render', () => {

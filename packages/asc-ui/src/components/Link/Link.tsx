@@ -6,16 +6,25 @@ import Icon from '../Icon'
 
 export type Props = styledComponents.StyledProps<any> & LinkStyleProps
 
-const Link: React.FC<Props> = ({ children, linkType, ...otherProps }) => (
-  <LinkStyle $as="a" {...otherProps} linkType={linkType}>
-    {linkType === 'with-chevron' && (
-      <Icon size={12}>
-        <ChevronRight />
-      </Icon>
-    )}
+const Link: React.FC<Props> = ({
+  children,
+  variant: variantProp,
+  linkType,
+  $as,
+  ...otherProps
+}) => {
+  const variant = linkType || variantProp
+  return (
+    <LinkStyle $as={$as || 'a'} {...otherProps} variant={variant}>
+      {variant === 'with-chevron' && (
+        <Icon size={12}>
+          <ChevronRight />
+        </Icon>
+      )}
 
-    {children}
-  </LinkStyle>
-)
+      {children}
+    </LinkStyle>
+  )
+}
 
 export default Link

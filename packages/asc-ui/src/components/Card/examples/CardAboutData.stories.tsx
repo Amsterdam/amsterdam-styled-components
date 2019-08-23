@@ -98,7 +98,7 @@ export const DataportaalCardAboutData: React.FC<{}> = () => (
         </Heading>
       </Column>
       <Column
-        span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}
+        span={{ small: 1, medium: 1, big: 3, large: 3, xLarge: 3 }}
         order={{ small: 2, medium: 2, big: 2, large: 3, xLarge: 3 }}
       >
         <Link href="/" linkType="blank">
@@ -119,7 +119,7 @@ export const DataportaalCardAboutData: React.FC<{}> = () => (
         </Link>
       </Column>
       <Column
-        span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}
+        span={{ small: 1, medium: 1, big: 3, large: 3, xLarge: 3 }}
         order={{ small: 3, medium: 3, big: 3, large: 4, xLarge: 4 }}
       >
         <Link href="/" linkType="blank">
@@ -150,7 +150,7 @@ export const DataportaalCardAboutData: React.FC<{}> = () => (
       </Column>
 
       <Column
-        span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}
+        span={{ small: 1, medium: 1, big: 3, large: 3, xLarge: 3 }}
         order={{ small: 5, medium: 5, big: 5, large: 5, xLarge: 5 }}
       >
         <Link href="/" linkType="blank">
@@ -168,7 +168,7 @@ export const DataportaalCardAboutData: React.FC<{}> = () => (
       </Column>
 
       <Column
-        span={{ small: 1, medium: 2, big: 3, large: 3, xLarge: 3 }}
+        span={{ small: 1, medium: 1, big: 3, large: 3, xLarge: 3 }}
         order={{ small: 6, medium: 6, big: 6, large: 6, xLarge: 6 }}
       >
         <Link href="/" linkType="blank">

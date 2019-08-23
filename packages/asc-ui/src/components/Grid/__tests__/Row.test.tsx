@@ -1,5 +1,4 @@
 import React from 'react'
-import 'jest-styled-components'
 import { render, cleanup } from '@testing-library/react'
 import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 

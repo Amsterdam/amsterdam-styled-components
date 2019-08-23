@@ -33,8 +33,23 @@ const CardContainerGenericFunctions = styled(CardContainer)`
   padding: 12px;
   background-color: ${color('support', 'valid')};
 
-  @media screen and ${breakpoint('min-width', 'mobileM')} {
+  @media screen and ${breakpoint('max-width', 'mobileL')} {
+    margin-top: 24px;
+    padding: 20px;
+    margin-left:-20px;
+    margin-right:-20px;
+    width: calc(100% + 40px)
+  }
+
+  @media screen and ${breakpoint('min-width', 'mobileL')} and  ${breakpoint(
+  'max-width',
+  'tabletM',
+)} {
+    margin-top: 24px;
     padding: 24px;
+    margin-left:-24px;
+    margin-right:-24px;
+    width: calc(100% + 48px);
   }
 
   /* Separate content in two columns on tabletM only */
@@ -81,6 +96,10 @@ const CardContainerGenericFunctions = styled(CardContainer)`
     width: 100%;
     min-height: 66px;
     margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     &:hover ${styles.HeadingStyle} {
       color: ${color('secondary')};

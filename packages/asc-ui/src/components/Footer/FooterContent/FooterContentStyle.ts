@@ -8,9 +8,9 @@ export interface Props extends ShowHideTypes {
 
 export default styled.div<Props>`
   display: flex;
+  flex: 1;
   flex-direction: column;
   margin-left: ${({ indent }) => (indent ? '28px' : '0')};
-  max-width: 300px;
   ${showHide}
 
   ${ParagraphStyle} {

@@ -1,23 +1,38 @@
 import * as React from 'react'
+import { shallow } from 'enzyme'
+import { Search } from '@datapunt/asc-assets'
 import SearchBar from './SearchBar'
-import { renderWithTheme } from '../../utils/withTheme'
-import 'jest-styled-components'
 
 jest.useFakeTimers()
 
 describe('SearchBar', () => {
-  let component: Cheerio
+  let component: any
+
+  const mockOnSubmit = jest.fn()
 
   beforeEach(() => {
-    const fn = jest.fn()
-    component = renderWithTheme(
-      <SearchBar onSubmit={fn} onChange={fn}>
+    component = shallow(
+      <SearchBar onSubmit={mockOnSubmit} onChange={() => {}}>
         searchbar-content
       </SearchBar>,
     )
   })
 
-  it('should render', () => {
-    expect(component).toMatchSnapshot()
+  it('should render the label and icon', () => {
+    const { children } = component.props()
+    const icon = component.find('Icon')
+
+    expect(icon.exists()).toBeTruthy()
+    expect(icon.props().children).toStrictEqual(<Search />)
+
+    expect(children[children.length - 1]).toBe('searchbar-content')
+  })
+
+  it('should handle the onClick event', () => {
+    const button = component.find('Button')
+
+    button.simulate('click')
+
+    expect(mockOnSubmit).toHaveBeenCalled()
   })
 })
