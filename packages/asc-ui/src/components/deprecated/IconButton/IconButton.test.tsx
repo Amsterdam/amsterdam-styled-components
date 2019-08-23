@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { shallow, ShallowWrapper } from 'enzyme'
 import IconButton from './IconButton'
-import 'jest-styled-components'
 
 describe('IconButton', () => {
   const onClickMock = jest.fn()

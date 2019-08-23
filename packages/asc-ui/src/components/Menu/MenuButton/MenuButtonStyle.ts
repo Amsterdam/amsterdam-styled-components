@@ -1,7 +1,7 @@
 import styled from '@datapunt/asc-core'
 import { color, svgFill } from '../../../utils'
 import Button, { Props as ButtonProps } from '../../Button/Button'
-import { MenuFlyOutStyle } from '../MenuFlyOut'
+import MenuFlyOutStyle from '../MenuFlyOut/MenuFlyOutStyle'
 import { MenuListStyle } from '../MenuList'
 import { IconStyle } from '../../Icon'
 

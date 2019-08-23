@@ -3,7 +3,6 @@ import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import { render, cleanup, fireEvent } from '@testing-library/react'
 import { FooterHeading, ToggleFooterHeader } from '../index'
 import { color } from '../../../utils'
-import 'jest-styled-components'
 
 const theme = {
   ...ascDefaultTheme,

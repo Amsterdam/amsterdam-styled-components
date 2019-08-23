@@ -1,5 +1,5 @@
 import { css, keyframes, Theme } from '@datapunt/asc-core'
-import { fromTheme } from '.'
+import fromTheme from './fromTheme'
 
 import BreakpointsInterface = Theme.BreakpointsInterface
 import ThemeInterface = Theme.ThemeInterface
@@ -13,10 +13,16 @@ type ThemeProp = {
 export const color = (
   colorType?: Theme.TypeLevel,
   variant: string = 'main',
+  override?: string,
 ) => ({ theme }: ThemeProp) => {
-  return colorType
-    ? fromTheme(`colors.${[colorType]}.${[variant]}`)({ theme })
-    : fromTheme('colors.tint.level1')({ theme })
+  if (override) {
+    return override
+  }
+  if (colorType) {
+    return fromTheme(`colors.${[colorType]}.${[variant]}`)({ theme })
+  }
+
+  return fromTheme('colors.tint.level1')({ theme })
 }
 
 export const breakpoint = (
@@ -154,9 +160,10 @@ export const srOnlyStyle = () => ({ srOnly }: { srOnly: boolean }) =>
 export const svgFill = (
   colorType?: Theme.TypeLevel,
   variant: string = 'main',
+  override?: string,
 ) => ({ theme }: ThemeProp) => {
   if (colorType) {
-    const value = color(colorType, variant)({ theme })
+    const value = color(colorType, variant, override)({ theme })
     if (typeof value === 'string') {
       return `& svg {
         rect,

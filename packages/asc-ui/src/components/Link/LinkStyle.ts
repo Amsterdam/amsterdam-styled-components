@@ -1,70 +1,71 @@
-import styled, { css, Theme } from '@datapunt/asc-core'
+import styled, { css } from '@datapunt/asc-core'
 import { color } from '../../utils'
 import { focusStyleText, svgFill } from '../../utils/themeUtils'
 import Typography, { TypographyProps } from '../Typography'
 import IconStyle from '../Icon/IconStyle'
+
+export enum LinkVariants {
+  inline,
+  blank,
+  withChevron = 'with-chevron',
+}
+
+export type Props = {
+  variant?: keyof typeof LinkVariants
+  /**
+   * @deprecated
+   */
+  linkType?: keyof typeof LinkVariants
+  color?: string
+} & TypographyProps
 
 export const BlankLinkStyleCSS = css`
   display: inline-block;
   text-decoration: none;
   color: inherit;
 `
-export const InlineLinkStyleCSS = ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}) => css`
+export const InlineLinkStyleCSS = css`
   display: inline-block;
-  color: ${color('primary')({ theme })};
+  color: ${color('primary')};
 
   &:hover {
     color: ${color('secondary')};
   }
 `
-export const DefaultLinkStyleCSS = ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}) => css`
-  display: flex;
+export const DefaultLinkStyleCSS = css<Props>`
+  display: inline-flex;
   text-decoration: none;
   font-weight: 700;
+  color: ${({ color: colorOverride, theme }) =>
+    color('tint', 'level7', colorOverride)({ theme })};
 
   ${IconStyle} {
     margin: 3px;
+    ${({ color: colorOverride, theme }) =>
+      svgFill('tint', 'level7', colorOverride)({ theme })};
   }
 
   &:hover {
-    color: ${color('secondary')({ theme })};
+    color: ${({ color: colorOverride, theme }) =>
+      color('secondary', 'main', colorOverride)({ theme })};
     text-decoration: underline;
     ${IconStyle} {
-      ${svgFill('secondary')({ theme })};
+      ${({ color: colorOverride, theme }) =>
+        svgFill('secondary', 'main', colorOverride)({ theme })};
     }
   }
 `
 
-type TypeLink = 'inline' | 'blank' | 'with-chevron'
-
-export const getLinkType = (linkType?: TypeLink) => ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}) => {
-  switch (linkType) {
-    case 'blank':
-      return BlankLinkStyleCSS
-    case 'inline':
-      return InlineLinkStyleCSS({ theme })
-    default:
-      return DefaultLinkStyleCSS({ theme })
-  }
-}
-
-export type Props = {
-  linkType?: TypeLink
-} & TypographyProps
-
 export default styled(Typography)<Props>`
   ${focusStyleText()}
-  ${({ linkType }) => getLinkType(linkType)}
+  ${({ variant }) => {
+    switch (variant) {
+      case 'blank':
+        return BlankLinkStyleCSS
+      case 'inline':
+        return InlineLinkStyleCSS
+      default:
+        return DefaultLinkStyleCSS
+    }
+  }}
 `

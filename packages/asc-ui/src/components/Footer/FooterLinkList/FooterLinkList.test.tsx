@@ -9,7 +9,6 @@ import {
   FooterBottomLinkListItem,
 } from './index'
 import { color } from '../../../utils'
-import 'jest-styled-components'
 
 const theme = {
   ...ascDefaultTheme,

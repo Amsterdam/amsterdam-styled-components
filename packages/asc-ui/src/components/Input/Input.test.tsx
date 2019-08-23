@@ -3,7 +3,6 @@ import { mount } from 'enzyme'
 import Input from './Input'
 import { renderWithTheme } from '../../utils/withTheme'
 import { KeyboardKeys } from '../../types'
-import 'jest-styled-components'
 
 jest.useFakeTimers()
 

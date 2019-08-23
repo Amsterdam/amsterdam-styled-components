@@ -1,5 +1,5 @@
 import { Theme } from '../index'
-import { colors } from './index'
+import colors from './colors'
 
 const defaultFontFamily = 'Avenir Next, Arial, sans-serif'
 
