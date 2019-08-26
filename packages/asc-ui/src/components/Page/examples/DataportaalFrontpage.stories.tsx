@@ -39,6 +39,11 @@ const StyledDataportaalFooter = styled(DataportaalFooter)`
   }
 `
 
+const StyledColumn = styled(Column)`
+  display: block;
+  height: 100%;
+`
+
 storiesOf('Composed/Page', module)
   .addDecorator(storyFn => (
     <div
@@ -63,7 +68,7 @@ storiesOf('Composed/Page', module)
         <Row>
           <Column
             wrap
-            span={{ small: 1, medium: 2, big: 6, large: 7, xLarge: 7 }}
+            span={{ small: 1, medium: 2, big: 6, large: 8, xLarge: 8 }}
           >
             <DataportaalImageCard />
           </Column>
@@ -75,12 +80,12 @@ storiesOf('Composed/Page', module)
               Bekijk overzicht
             </OverviewLink>
           </Column>
-          <Column
+          <StyledColumn
             wrap
-            span={{ small: 1, medium: 2, big: 6, large: 5, xLarge: 5 }}
+            span={{ small: 1, medium: 2, big: 6, large: 4, xLarge: 4 }}
           >
             <DataportaalCardGenericFunctions />
-          </Column>
+          </StyledColumn>
         </Row>
         <Row>
           <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>

@@ -57,6 +57,7 @@ const CardContainerGenericFunctions = styled(CardContainer)`
       width: 100%;
       break-inside: avoid;
     }
+
     ${styles.LinkStyle} {
       display: inline-flex;
     }
@@ -76,6 +77,12 @@ const CardContainerGenericFunctions = styled(CardContainer)`
       border-color: #fff transparent transparent transparent;
     }
   }
+
+  @media screen and ${breakpoint('min-width', 'laptop')} {
+    display: block;
+    height: 100%;
+  }
+
 
   ${styles.LinkStyle} {
     position: relative;
