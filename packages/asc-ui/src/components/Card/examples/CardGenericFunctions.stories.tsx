@@ -30,7 +30,7 @@ import {
 
 const CardContainerGenericFunctions = styled(CardContainer)`
   position: relative;
-  padding: 12px;
+  padding: 24px;
   background-color: ${themeColor('support', 'valid')};
 
   @media screen and ${breakpoint('min-width', 'mobileM')} {
@@ -42,6 +42,7 @@ const CardContainerGenericFunctions = styled(CardContainer)`
   'max-width',
   'laptop',
 )} {
+    margin-top: 40px;
     column-count: 2;
     column-gap: 8px;
 

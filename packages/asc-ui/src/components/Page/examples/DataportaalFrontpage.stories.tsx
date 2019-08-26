@@ -27,6 +27,16 @@ const DataportaalSubtiltle = styled(Heading)`
 const OverviewLink = styled(Link)`
   margin-top: 32px;
   padding: 8px 3px 8px 0;
+
+  @media screen and ${breakpoint('max-width', 'tabletM')} {
+    margin-top: 12px;
+  }
+`
+
+const StyledDataportaalFooter = styled(DataportaalFooter)`
+  @media screen and ${breakpoint('max-width', 'tabletM')} {
+    margin-top: 48px;
+  }
 `
 
 storiesOf('Composed/Page', module).add('implementation for dataportaal', () => (
@@ -44,6 +54,14 @@ storiesOf('Composed/Page', module).add('implementation for dataportaal', () => (
           span={{ small: 1, medium: 2, big: 6, large: 7, xLarge: 7 }}
         >
           <DataportaalImageCard />
+        </Column>
+        <Column
+          span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}
+          order={{ large: 3, xLarge: 3 }}
+        >
+          <OverviewLink linkType="with-chevron" href="/">
+            Bekijk overzicht
+          </OverviewLink>
         </Column>
         <Column
           wrap
@@ -67,7 +85,7 @@ storiesOf('Composed/Page', module).add('implementation for dataportaal', () => (
           <DataportaalCardAboutData />
         </Column>
       </Row>
-      <Row hasMargin={true}> 
+      <Row hasMargin>
         <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
           <DataportaalCardArticles />
         </Column>

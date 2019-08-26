@@ -23,6 +23,27 @@ const StyledCardContainer = styled(CardContainer)`
 const ArticleCardsWrapper = styled.div`
   padding: 40px 0 20px;
   background-color: ${themeColor('tint', 'level3')};
+
+  @media screen and ${breakpoint('max-width', 'mobileL')} {
+    padding: 40px 0 16px 0;
+    margin-left:-20px;
+    margin-right:-20px;
+    width: calc(100% + 40px)
+  }
+
+  @media screen and ${breakpoint('min-width', 'mobileL')} and  ${breakpoint(
+  'max-width',
+  'tabletM',
+)} {
+    padding: 48px 12px 16px 12px;
+    margin-left:-24px;
+    margin-right:-24px;
+    width: calc(100% + 48px);
+  }
+
+  @media screen and ${breakpoint('max-width', 'desktopL')} {
+    padding: 24px 0;
+  }
 `
 
 const StyledCard = styled(Card)`
