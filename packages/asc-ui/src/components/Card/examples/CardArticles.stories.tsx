@@ -21,6 +21,7 @@ const StyledCardContainer = styled(CardContainer)`
 `
 
 const ArticleCardsWrapper = styled.div`
+  margin-top: 40px;
   padding: 40px 0 20px;
   background-color: ${color('tint', 'level3')};
 
@@ -39,10 +40,6 @@ const ArticleCardsWrapper = styled.div`
     margin-left:-24px;
     margin-right:-24px;
     width: calc(100% + 48px);
-  }
-
-  @media screen and ${breakpoint('max-width', 'desktopL')} {
-    padding: 24px 0;
   }
 `
 
