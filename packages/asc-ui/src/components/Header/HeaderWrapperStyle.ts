@@ -55,7 +55,7 @@ const HeaderWrapperStyle = styled.div<Props>`
           @media screen and ${breakpoint('min-width', 'laptopM')} {
             box-shadow: none;
             position: relative;
-            margin: 0;
+            /* margin: 0; */
 
             &:after {
               content: '';

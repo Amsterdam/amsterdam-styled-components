@@ -39,58 +39,65 @@ const StyledDataportaalFooter = styled(DataportaalFooter)`
   }
 `
 
-storiesOf('Composed/Page', module).add('implementation for dataportaal', () => (
-  <>
-    <DataportaalHeader tall fullWidth={false} />
-    <DataportaalBody tall fullWidth={false}>
-      <Row>
-        <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
-          <DataportaalSubtiltle>Uitgelicht</DataportaalSubtiltle>
-        </Column>
-      </Row>
-      <Row>
-        <Column
-          wrap
-          span={{ small: 1, medium: 2, big: 6, large: 7, xLarge: 7 }}
-        >
-          <DataportaalImageCard />
-        </Column>
-        <Column
-          span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}
-          order={{ large: 3, xLarge: 3 }}
-        >
-          <OverviewLink linkType="with-chevron" href="/">
-            Bekijk overzicht
-          </OverviewLink>
-        </Column>
-        <Column
-          wrap
-          span={{ small: 1, medium: 2, big: 6, large: 5, xLarge: 5 }}
-        >
-          <DataportaalCardGenericFunctions />
-        </Column>
-        <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
-          <OverviewLink linkType="with-chevron" href="/">
-            Bekijk overzicht
-          </OverviewLink>
-        </Column>
-      </Row>
-      <Row hasMargin={false}>
-        <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
-          <DataportaalCardSpecials />
-        </Column>
-      </Row>
-      <Row hasMargin={false}>
-        <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
-          <DataportaalCardAboutData />
-        </Column>
-      </Row>
-      <Row hasMargin>
-        <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
-          <DataportaalCardArticles />
-        </Column>
-      </Row>
-      <DataportaalFooter />
-    </DataportaalBody>
-  </>
-))
+storiesOf('Composed/Page', module)
+  .addDecorator(storyFn => (
+    <div
+      style={{
+        backgroundColor: 'lightgrey',
+        height: '100%',
+        position: 'relative',
+      }}
+    >
+      {storyFn()}
+    </div>
+  ))
+  .add('implementation for dataportaal', () => (
+    <>
+      <DataportaalHeader tall fullWidth={false} />
+      <DataportaalBody tall fullWidth={false}>
+        <Row>
+          <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
+            <DataportaalSubtiltle>Uitgelicht</DataportaalSubtiltle>
+          </Column>
+        </Row>
+        <Row>
+          <Column
+            wrap
+            span={{ small: 1, medium: 2, big: 6, large: 7, xLarge: 7 }}
+          >
+            <DataportaalImageCard />
+          </Column>
+          <Column
+            span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}
+            order={{ large: 3, xLarge: 3 }}
+          >
+            <OverviewLink linkType="with-chevron" href="/">
+              Bekijk overzicht
+            </OverviewLink>
+          </Column>
+          <Column
+            wrap
+            span={{ small: 1, medium: 2, big: 6, large: 5, xLarge: 5 }}
+          >
+            <DataportaalCardGenericFunctions />
+          </Column>
+        </Row>
+        <Row>
+          <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
+            <DataportaalCardSpecials />
+          </Column>
+        </Row>
+        <Row>
+          <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
+            <DataportaalCardArticles />
+          </Column>
+        </Row>
+        <Row hasMargin={false}>
+          <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
+            <DataportaalCardAboutData />
+          </Column>
+        </Row>
+        <StyledDataportaalFooter />
+      </DataportaalBody>
+    </>
+  ))

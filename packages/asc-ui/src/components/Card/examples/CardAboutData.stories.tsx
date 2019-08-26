@@ -17,6 +17,8 @@ import {
 } from '../../..'
 
 const CardContainerAboutData = styled(CardContainer)`
+  margin-top: 40px;
+  
   ${styles.ColumnStyle} {
     margin-bottom: 16px;
 
@@ -87,7 +89,7 @@ const Border = styled.div`
 // eslint-disable-next-line import/prefer-default-export
 export const DataportaalCardAboutData: React.FC<{}> = () => (
   <CardContainerAboutData>
-    <Row hasMargin={false}>
+    <Row>
       <Column
         className="column-with-heading"
         span={{ small: 1, medium: 2, big: 6, large: 6, xLarge: 6 }}
