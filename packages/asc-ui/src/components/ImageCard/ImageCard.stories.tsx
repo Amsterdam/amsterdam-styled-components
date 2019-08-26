@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@datapunt/asc-core'
 import { storiesOf } from '@storybook/react'
+import { boolean, withKnobs } from '@storybook/addon-knobs'
 import ImageCard from './ImageCard'
 import { ImageCardContent } from './ImageCardContent'
 import Heading from '../Heading'
@@ -10,6 +11,7 @@ import Column from '../Grid/Column'
 import { breakpoint } from '../../utils'
 import { ImageCardWrapperStyle } from './ImageCardStyle'
 import TypographyStyle from '../Typography/TypographyStyle'
+import { LoadingInterface } from '../shared/types'
 
 const ImageCardOuterContainer = styled.div`
   width: 100%;
@@ -75,13 +77,16 @@ const ImageCardWrapperSmall = styled.div`
 `
 
 // eslint-disable-next-line import/prefer-default-export
-export const DataportaalImageCard: React.FC<{}> = () => (
+export const DataportaalImageCard: React.FC<LoadingInterface> = ({
+  loading,
+}) => (
   <ImageCardOuterContainer>
     <ImageCardInnerContainer>
       <ImageCardWrapperBig>
         <ImageCard
           margin={12}
           backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
+          loading={loading}
         >
           <ImageCardContent>
             <Heading $as="h6" styleAs="h2">
@@ -97,6 +102,7 @@ export const DataportaalImageCard: React.FC<{}> = () => (
         <ImageCard
           margin={12}
           backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
+          loading={loading}
         >
           <ImageCardContent>
             <Heading $as="h6" strong gutterBottom={0} styleAs="p">
@@ -107,6 +113,7 @@ export const DataportaalImageCard: React.FC<{}> = () => (
         <ImageCard
           margin={12}
           backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
+          loading={loading}
         >
           <ImageCardContent>
             <Heading $as="h6" strong gutterBottom={0} styleAs="p">
@@ -120,6 +127,7 @@ export const DataportaalImageCard: React.FC<{}> = () => (
 )
 
 storiesOf('Atoms/ImageCard', module)
+  .addDecorator(withKnobs)
   .add('default state', () => (
     <div style={{ maxWidth: '600px' }}>
       <ImageCard backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg">
@@ -155,7 +163,7 @@ storiesOf('Atoms/ImageCard', module)
         wrap
         span={{ small: 1, medium: 2, big: 6, large: 8, xLarge: 8 }}
       >
-        <DataportaalImageCard />)
+        <DataportaalImageCard loading={boolean('loading', false)} />)
       </Column>
     </Row>
   ))

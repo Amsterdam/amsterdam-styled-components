@@ -27,6 +27,7 @@ import {
   breakpoint,
   styles,
 } from '../../..'
+import { LoadingInterface } from '../../shared/types'
 
 const CardContainerGenericFunctions = styled(CardContainer)`
   position: relative;
@@ -176,10 +177,12 @@ const CardContainerGenericFunctions = styled(CardContainer)`
 `
 
 // eslint-disable-next-line import/prefer-default-export
-export const DataportaalCardGenericFunctions: React.FC<{}> = () => (
+export const DataportaalCardGenericFunctions: React.FC<LoadingInterface> = ({
+  loading,
+}) => (
   <CardContainerGenericFunctions>
     <Link href="/" linkType="blank">
-      <Card horizontal loading={boolean('loading', false)}>
+      <Card horizontal loading={loading}>
         <CardMedia backgroundColor="level2">
           <Icon size={20}>
             <Map />
@@ -197,7 +200,7 @@ export const DataportaalCardGenericFunctions: React.FC<{}> = () => (
       </Card>
     </Link>
     <Link href="/" linkType="blank">
-      <Card horizontal loading={boolean('loading', false)}>
+      <Card horizontal loading={loading}>
         <CardMedia backgroundColor="level2">
           <Icon size={30}>
             <Pano />
@@ -215,7 +218,7 @@ export const DataportaalCardGenericFunctions: React.FC<{}> = () => (
       </Card>
     </Link>
     <Link href="/" linkType="blank">
-      <Card horizontal loading={boolean('loading', false)}>
+      <Card horizontal loading={loading}>
         <CardMedia backgroundColor="level2">
           <Icon size={30}>
             <DocumentText />
@@ -235,7 +238,7 @@ export const DataportaalCardGenericFunctions: React.FC<{}> = () => (
       </Card>
     </Link>
     <Link href="/" linkType="blank">
-      <Card horizontal loading={boolean('loading', false)}>
+      <Card horizontal loading={loading}>
         <CardMedia backgroundColor="level2">
           <Icon size={20}>
             <Data />
@@ -253,7 +256,7 @@ export const DataportaalCardGenericFunctions: React.FC<{}> = () => (
       </Card>
     </Link>
     <Link href="/" linkType="blank">
-      <Card horizontal loading={boolean('loading', false)}>
+      <Card horizontal loading={loading}>
         <CardMedia backgroundColor="level2">
           <Icon size={25}>
             <Table />
@@ -271,7 +274,7 @@ export const DataportaalCardGenericFunctions: React.FC<{}> = () => (
       </Card>
     </Link>
     <Link href="/" linkType="blank">
-      <Card horizontal loading={boolean('loading', false)}>
+      <Card horizontal loading={loading}>
         <CardMedia backgroundColor="level2">
           <Icon size={30}>
             <Api />
@@ -305,7 +308,7 @@ storiesOf('Atoms/Card/Implementation', module)
         span={{ small: 1, medium: 2, big: 6, large: 5, xLarge: 5 }}
         push={{ small: 0, medium: 0, big: 0, large: 7, xLarge: 7 }}
       >
-        <DataportaalCardGenericFunctions />
+        <DataportaalCardGenericFunctions loading={boolean('laodong', false)} />
       </Column>
     </Row>
   ))

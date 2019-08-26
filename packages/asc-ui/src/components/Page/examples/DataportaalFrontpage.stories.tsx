@@ -1,6 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import styled from '@datapunt/asc-core'
+import { boolean, withKnobs } from '@storybook/addon-knobs'
 import {
   DataportaalHeader,
   DataportaalBody,
@@ -56,6 +57,7 @@ storiesOf('Composed/Page', module)
       {storyFn()}
     </div>
   ))
+  .addDecorator(withKnobs)
   .add('implementation for dataportaal', () => (
     <>
       <DataportaalHeader tall fullWidth={false} />
@@ -70,7 +72,7 @@ storiesOf('Composed/Page', module)
             wrap
             span={{ small: 1, medium: 2, big: 6, large: 8, xLarge: 8 }}
           >
-            <DataportaalImageCard />
+            <DataportaalImageCard loading={boolean('loading', false)} />
           </Column>
           <Column
             span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}
@@ -84,22 +86,24 @@ storiesOf('Composed/Page', module)
             wrap
             span={{ small: 1, medium: 2, big: 6, large: 4, xLarge: 4 }}
           >
-            <DataportaalCardGenericFunctions />
+            <DataportaalCardGenericFunctions
+              loading={boolean('loading', false)}
+            />
           </StyledColumn>
         </Row>
         <Row>
           <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
-            <DataportaalCardSpecials />
+            <DataportaalCardSpecials loading={boolean('loading', false)} />
           </Column>
         </Row>
         <Row>
           <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
-            <DataportaalCardArticles />
+            <DataportaalCardArticles loading={boolean('loading', false)} />
           </Column>
         </Row>
         <Row hasMargin={false}>
           <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
-            <DataportaalCardAboutData />
+            <DataportaalCardAboutData loading={boolean('loading', false)} />
           </Column>
         </Row>
         <StyledDataportaalFooter />

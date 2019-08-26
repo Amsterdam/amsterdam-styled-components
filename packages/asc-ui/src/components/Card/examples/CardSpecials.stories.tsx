@@ -19,6 +19,7 @@ import {
   styles,
 } from '../../..'
 import RowStyle from '../../Grid/RowStyle'
+import { LoadingInterface } from '../../shared/types'
 
 const SpecialCardContainer = styled(CardContainer)`
   ${/* sc-selector */ styles.ColumnStyle}:first-child > ${styles.LinkStyle} {
@@ -104,13 +105,15 @@ const CardSpecialsSubtiltle = styled(Heading)`
 `
 
 // eslint-disable-next-line import/prefer-default-export
-export const DataportaalCardSpecials: React.FC<{}> = () => (
+export const DataportaalCardSpecials: React.FC<LoadingInterface> = ({
+  loading,
+}) => (
   <SpecialCardContainer>
     <CardSpecialsSubtiltle $as="h1">In Beeld</CardSpecialsSubtiltle>
     <Row hasMargin={false}>
       <Column wrap span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}>
         <Link href="/" linkType="blank">
-          <Card horizontal loading={boolean('loading', false)}>
+          <Card horizontal loading={loading}>
             <CardContent>
               <Heading $as="h4" gutterBottom={8}>
                 Veiligheidsindex
@@ -133,7 +136,7 @@ export const DataportaalCardSpecials: React.FC<{}> = () => (
       </Column>
       <Column wrap span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}>
         <Link href="/" linkType="blank">
-          <Card horizontal loading={boolean('loading', false)}>
+          <Card horizontal loading={loading}>
             <CardContent>
               <Heading $as="h4" gutterBottom={8}>
                 Veiligheidsindex
@@ -156,7 +159,7 @@ export const DataportaalCardSpecials: React.FC<{}> = () => (
       </Column>
       <Column wrap span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}>
         <Link href="/" linkType="blank">
-          <Card horizontal loading={boolean('loading', false)}>
+          <Card horizontal loading={loading}>
             <CardContent>
               <Heading $as="h4" gutterBottom={8}>
                 Veiligheidsindex titel 16/20
@@ -178,7 +181,7 @@ export const DataportaalCardSpecials: React.FC<{}> = () => (
       </Column>
       <Column wrap span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}>
         <Link href="/" linkType="blank">
-          <Card horizontal loading={boolean('loading', false)}>
+          <Card horizontal loading={loading}>
             <CardContent>
               <Heading $as="h4" gutterBottom={8}>
                 Veiligheidsindex titel 16/20
@@ -201,7 +204,7 @@ export const DataportaalCardSpecials: React.FC<{}> = () => (
       </Column>
       <Column wrap span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}>
         <Link href="/" linkType="blank">
-          <Card horizontal loading={boolean('loading', false)}>
+          <Card horizontal loading={loading}>
             <CardContent>
               <Heading $as="h4" gutterBottom={8}>
                 Veiligheidsindex titel 16/20
@@ -223,7 +226,7 @@ export const DataportaalCardSpecials: React.FC<{}> = () => (
       </Column>
       <Column wrap span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}>
         <Link href="/" linkType="blank">
-          <Card horizontal loading={boolean('loading', false)}>
+          <Card horizontal loading={loading}>
             <CardContent>
               <Heading $as="h4" gutterBottom={8}>
                 Veiligheidsindex titel 16/20
@@ -253,4 +256,6 @@ export const DataportaalCardSpecials: React.FC<{}> = () => (
 storiesOf('Atoms/Card/Implementation', module)
   .addDecorator(storyFn => <div style={{ padding: '40px 0' }}>{storyFn()}</div>)
   .addDecorator(withKnobs)
-  .add('Dataportaal "Specials"', () => <DataportaalCardSpecials />)
+  .add('Dataportaal "Specials"', () => (
+    <DataportaalCardSpecials loading={boolean('loading', false)} />
+  ))

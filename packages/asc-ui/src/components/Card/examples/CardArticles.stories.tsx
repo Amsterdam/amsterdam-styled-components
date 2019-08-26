@@ -14,6 +14,7 @@ import {
   Paragraph,
   Row,
 } from '../../../index'
+import { LoadingInterface } from '../../shared/types'
 
 const StyledCardContainer = styled(CardContainer)`
   border-top: 3px solid;
@@ -68,7 +69,9 @@ const StyledRow = styled(Row)`
 `
 
 // eslint-disable-next-line import/prefer-default-export
-export const DataportaalCardArticles: React.FC<{}> = () => (
+export const DataportaalCardArticles: React.FC<LoadingInterface> = ({
+  loading,
+}) => (
   <ArticleCardsWrapper>
     <Row>
       <Heading $as="h2" styleAs="h1" gutterBottom={20}>
@@ -78,7 +81,7 @@ export const DataportaalCardArticles: React.FC<{}> = () => (
     <StyledRow>
       <Column span={{ small: 1, medium: 1, big: 3, large: 3, xLarge: 3 }}>
         <StyledCardContainer>
-          <StyledCard loading={boolean('loading', false)}>
+          <StyledCard loading={loading}>
             <StyledCardContent>
               <div>
                 <Heading $as="h4">Over IOS</Heading>
@@ -97,7 +100,7 @@ export const DataportaalCardArticles: React.FC<{}> = () => (
       </Column>
       <Column span={{ small: 1, medium: 1, big: 3, large: 3, xLarge: 3 }}>
         <StyledCardContainer>
-          <StyledCard loading={boolean('loading', false)}>
+          <StyledCard loading={loading}>
             <StyledCardContent>
               <div>
                 <Heading $as="h4">Onderzoek</Heading>
@@ -115,7 +118,7 @@ export const DataportaalCardArticles: React.FC<{}> = () => (
       </Column>
       <Column span={{ small: 1, medium: 1, big: 3, large: 3, xLarge: 3 }}>
         <StyledCardContainer>
-          <StyledCard loading={boolean('loading', false)}>
+          <StyledCard loading={loading}>
             <StyledCardContent>
               <div>
                 <Heading $as="h4">Panels en enquêtes</Heading>
@@ -133,7 +136,7 @@ export const DataportaalCardArticles: React.FC<{}> = () => (
       </Column>
       <Column span={{ small: 1, medium: 1, big: 3, large: 3, xLarge: 3 }}>
         <StyledCardContainer>
-          <StyledCard loading={boolean('loading', false)}>
+          <StyledCard loading={loading}>
             <StyledCardContent>
               <div>
                 <Heading $as="h4">Publicaties</Heading>
@@ -143,7 +146,7 @@ export const DataportaalCardArticles: React.FC<{}> = () => (
                 </Paragraph>
               </div>
               <StyledLink linkType="with-chevron" href="/">
-                Lees meer
+                Bekijk overzicht
               </StyledLink>
             </StyledCardContent>
           </StyledCard>
@@ -156,4 +159,6 @@ export const DataportaalCardArticles: React.FC<{}> = () => (
 storiesOf('Atoms/Card/Implementation', module)
   .addDecorator(storyFn => <div style={{ padding: '40px 0' }}>{storyFn()}</div>)
   .addDecorator(withKnobs)
-  .add('Dataportaal "Article list"', () => <DataportaalCardArticles />)
+  .add('Dataportaal "Article list"', () => (
+    <DataportaalCardArticles loading={boolean('loading', false)} />
+  ))
