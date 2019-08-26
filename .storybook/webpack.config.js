@@ -1,4 +1,4 @@
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin
 
 const path = require('path')
 
@@ -9,23 +9,6 @@ const basePath = path.resolve(__dirname, '../', 'packages')
 
 module.exports = ({ config, mode }) => {
   const isDev = (mode === 'DEVELOPMENT')
-  // This piece adds the '&quiet=true' param to the hot loader module,
-  // because we use transpileOnly: true will show warnings,
-  // these can be considered false positive, because we use a seperate
-  // typechecker: fork-ts-checker-webpack-plugin
-  const hotLoaderUrl = config.entry.find(enr => /hot-middleware/.test(enr))
-  if (hotLoaderUrl) {
-    config.entry.splice(config.entry.indexOf(hotLoaderUrl), 1)
-    const newHotLoaderUrl = `${hotLoaderUrl}&quiet=true`
-    config.entry.push(newHotLoaderUrl)
-  }
-
-  if (isDev) {
-    // Same motivation as described above
-    config.devServer = {
-      stats: 'errors-only',
-    }
-  }
 
   // Add typescript support
   config.module.rules.push({
@@ -34,12 +17,15 @@ module.exports = ({ config, mode }) => {
       {
         loader: require.resolve('awesome-typescript-loader'),
         options: {
-          transpileOnly: isDev, // huge performance win
+          useCache: true,
+          forceIsolatedModules: true,
           configFileName: './tsconfig.json',
           getCustomTransformers: () => ({
             before: [styledComponentsTransformer],
           }),
-          silent: isDev,
+          reportFiles: [
+            "packages/**/*.{ts,tsx}"
+          ],
         },
       },
       {
@@ -88,7 +74,7 @@ module.exports = ({ config, mode }) => {
   }))
 
   if (isDev) {
-    config.plugins = [...config.plugins, new ForkTsCheckerWebpackPlugin()]
+    config.plugins = [...config.plugins, new CheckerPlugin()]
   }
 
   return config
