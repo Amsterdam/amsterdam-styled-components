@@ -85,8 +85,15 @@ const SpecialCardContainer = styled(CardContainer)`
 `
 
 const CardSpecialsSubtiltle = styled(Heading)`
+  margin-top: 48px;
+
   @media screen and ${breakpoint('max-width', 'tabletM')} {
     margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  @media screen and ${breakpoint('max-width', 'laptopL')} {
+    margin-top: 24px;
     margin-bottom: 16px;
   }
 `

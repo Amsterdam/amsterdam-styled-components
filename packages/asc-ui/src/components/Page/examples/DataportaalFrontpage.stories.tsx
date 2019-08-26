@@ -34,7 +34,9 @@ const OverviewLink = styled(Link)`
 `
 
 const StyledDataportaalFooter = styled(DataportaalFooter)`
-  margin-top: 48px;
+  @media screen and ${breakpoint('max-width', 'tabletM')} {
+    margin-top: 48px;
+  }
 `
 
 storiesOf('Composed/Page', module).add('implementation for dataportaal', () => (
@@ -53,7 +55,10 @@ storiesOf('Composed/Page', module).add('implementation for dataportaal', () => (
         >
           <DataportaalImageCard />
         </Column>
-        <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
+        <Column
+          span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}
+          order={{ large: 3, xLarge: 3 }}
+        >
           <OverviewLink linkType="with-chevron" href="/">
             Bekijk overzicht
           </OverviewLink>

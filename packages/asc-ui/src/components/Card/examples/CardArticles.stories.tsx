@@ -40,6 +40,10 @@ const ArticleCardsWrapper = styled.div`
     margin-right:-24px;
     width: calc(100% + 48px);
   }
+
+  @media screen and ${breakpoint('max-width', 'desktopL')} {
+    padding: 24px 0;
+  }
 `
 
 const StyledCard = styled(Card)`
