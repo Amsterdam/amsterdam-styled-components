@@ -15,6 +15,7 @@ import {
   themeColor,
   breakpoint,
 } from '../../..'
+import { LoadingInterface } from '../../shared/types'
 
 const CardContainerAboutData = styled(CardContainer)`
   margin-top: 40px;
@@ -87,7 +88,9 @@ const Border = styled.div`
 `
 
 // eslint-disable-next-line import/prefer-default-export
-export const DataportaalCardAboutData: React.FC<{}> = () => (
+export const DataportaalCardAboutData: React.FC<LoadingInterface> = ({
+  loading,
+}) => (
   <CardContainerAboutData>
     <Row>
       <Column
@@ -105,11 +108,7 @@ export const DataportaalCardAboutData: React.FC<{}> = () => (
         order={{ small: 2, medium: 2, big: 2, large: 3, xLarge: 3 }}
       >
         <Link href="/" linkType="blank">
-          <Card
-            backgroundColor="level2"
-            shadow
-            loading={boolean('loading', false)}
-          >
+          <Card backgroundColor="level2" shadow loading={loading}>
             <CardContent>
               <Heading $as="h4">This is a card</Heading>
               <Paragraph>
@@ -126,11 +125,7 @@ export const DataportaalCardAboutData: React.FC<{}> = () => (
         order={{ small: 3, medium: 3, big: 3, large: 4, xLarge: 4 }}
       >
         <Link href="/" linkType="blank">
-          <Card
-            backgroundColor="level2"
-            shadow
-            loading={boolean('loading', false)}
-          >
+          <Card backgroundColor="level2" shadow loading={loading}>
             <CardContent>
               <Heading $as="h4">
                 This is a card with very very very long content
@@ -157,11 +152,7 @@ export const DataportaalCardAboutData: React.FC<{}> = () => (
         order={{ small: 5, medium: 5, big: 5, large: 5, xLarge: 5 }}
       >
         <Link href="/" linkType="blank">
-          <Card
-            backgroundColor="level2"
-            shadow
-            loading={boolean('loading', false)}
-          >
+          <Card backgroundColor="level2" shadow loading={loading}>
             <CardContent>
               <Heading $as="h4">This is a card</Heading>
               <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
@@ -175,11 +166,7 @@ export const DataportaalCardAboutData: React.FC<{}> = () => (
         order={{ small: 6, medium: 6, big: 6, large: 6, xLarge: 6 }}
       >
         <Link href="/" linkType="blank">
-          <Card
-            backgroundColor="level2"
-            shadow
-            loading={boolean('loading', false)}
-          >
+          <Card backgroundColor="level2" shadow loading={loading}>
             <CardContent>
               <Heading $as="h4">This is a card</Heading>
               <Paragraph>Lorem ipsum dolor sit amet. </Paragraph>
@@ -199,5 +186,5 @@ storiesOf('Atoms/Card/Implementation', module)
   ))
   .addDecorator(withKnobs)
   .add('implementation dataportaal "About Data & About this site"', () => (
-    <DataportaalCardAboutData />
+    <DataportaalCardAboutData loading={boolean('loading', false)} />
   ))

@@ -1,11 +1,11 @@
 import styled, { css } from '@datapunt/asc-core'
 import {
-  PageLayoutInterface,
   HEADER_HEIGHT_SMALL,
   HEADER_HEIGHT_TALL,
   WRAPPER_MAX_WIDTH,
 } from '../shared/sizes'
 import { breakpoint, color } from '../../utils'
+import { PageLayoutInterface } from '../shared/types'
 
 const BodyStyle = styled.div<PageLayoutInterface>`
   background-color: ${color('tint', 'level1')};

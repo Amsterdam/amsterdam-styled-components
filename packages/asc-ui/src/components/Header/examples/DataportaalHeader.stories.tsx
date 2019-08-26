@@ -11,7 +11,7 @@ import {
   styles,
 } from '../../../index'
 import { MenuChildren } from '../../Menu/Menu.stories'
-import { PageLayoutInterface } from '../../shared/sizes'
+import { PageLayoutInterface } from '../../shared/types'
 import { Row, Column } from '../../Grid'
 import BodyFiller from './BodyFiller.stories'
 import Body from '../../Body'
