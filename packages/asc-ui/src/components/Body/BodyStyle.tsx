@@ -11,7 +11,7 @@ const BodyStyle = styled.div<PageLayoutInterface>`
   background-color: ${color('tint', 'level1')};
   position: relative;
   z-index: 1;
-  height: calc(100% + ${HEADER_HEIGHT_SMALL}px);
+  height: calc(100% - ${HEADER_HEIGHT_SMALL}px);
   top: ${HEADER_HEIGHT_SMALL}px;
   ${({ tall }) => {
     return tall

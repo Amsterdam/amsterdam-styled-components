@@ -51,6 +51,7 @@ import {
 } from './components/Editorial'
 import Typography from './components/Typography'
 import Header, { HeaderStyles } from './components/Header'
+import Body, { BodyStyle } from './components/Body'
 import Image from './components/Image'
 import ImageCard, {
   ImageCardContent,
@@ -118,6 +119,7 @@ export const styles = {
   CustomHTMLBlockStyle,
   ArticleStyle,
   TagStyle,
+  BodyStyle,
 }
 
 // Components
@@ -195,4 +197,5 @@ export {
   ascDefaultTheme,
   DocumentCover,
   Tag,
+  Body,
 }
