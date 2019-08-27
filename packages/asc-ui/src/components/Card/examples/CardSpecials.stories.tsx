@@ -77,6 +77,8 @@ const SpecialCardContainer = styled(CardContainer)`
   ${styles.TagStyle} {
     display: inline;
     margin-right: 5px;
+    background-color: ${color('tint', 'level3')};
+    padding: 2px;
   }
 
   ${RowStyle} > ${/* sc-selector */ styles.LinkStyle}:last-child {
@@ -109,7 +111,14 @@ export const DataportaalCardSpecials: React.FC<LoadingInterface> = ({
   loading,
 }) => (
   <SpecialCardContainer>
-    <CardSpecialsSubtiltle $as="h1">In Beeld</CardSpecialsSubtiltle>
+    <Row hasMargin={false}>
+      <Column
+        wrap
+        span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}
+      >
+        <CardSpecialsSubtiltle $as="h1">In Beeld</CardSpecialsSubtiltle>
+      </Column>
+    </Row>
     <Row hasMargin={false}>
       <Column wrap span={{ small: 1, medium: 2, big: 3, large: 4, xLarge: 4 }}>
         <Link href="/" linkType="blank">
