@@ -38,8 +38,10 @@ const OverviewLink = styled(Link)`
 `
 
 const StyledDataportaalFooter = styled(DataportaalFooter)`
-  @media screen and ${breakpoint('max-width', 'tabletM')} {
-    margin-top: 48px;
+  margin-top: 16px;
+
+  @media screen and ${breakpoint('min-width', 'laptopM')} {
+    margin-top: 24px;
   }
 `
 
@@ -123,7 +125,7 @@ storiesOf('Composed/Page', module)
           <DataportaalCardAboutData loading={boolean('loading', false)} />
         </Column>
       </Row>
-      <Row hasMargin>
+      <Row hasMargin={false}>
         <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
           <StyledDataportaalFooter />
         </Column>

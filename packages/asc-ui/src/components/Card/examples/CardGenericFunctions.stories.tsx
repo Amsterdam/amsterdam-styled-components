@@ -155,6 +155,11 @@ const CardContainerGenericFunctions = styled(CardContainer)`
     font-size: 14px;
     line-height: 17px;
   }
+
+  ${/* sc-selector */ styles.CardStyle}:last-of-type {
+        margin-bottom: 0;
+  }
+
 `
 
 // eslint-disable-next-line import/prefer-default-export

@@ -7,9 +7,6 @@ const CardContainerStyle = styled.div`
   ${CardStyle} {
     margin-bottom: 12px;
   }
-  ${/* sc-selector */ CardStyle}:last-of-type {
-    margin-bottom: 0;
-  }
 `
 
 export default CardContainerStyle

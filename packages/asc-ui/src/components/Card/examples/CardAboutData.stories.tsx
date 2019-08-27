@@ -20,6 +20,10 @@ import { LoadingInterface } from '../../shared/types'
 const CardContainerAboutData = styled(CardContainer)`
   margin-top: 40px;
   
+  @media screen and ${breakpoint('min-width', 'laptopM')} {
+    margin-top: 80px;
+  }
+
   ${styles.ColumnStyle} {
     margin-bottom: 16px;
 
