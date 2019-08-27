@@ -89,7 +89,7 @@ export const DataportaalImageCard: React.FC<LoadingInterface> = ({
           loading={loading}
         >
           <ImageCardContent>
-            <Heading $as="h6" styleAs="h2">
+            <Heading $as="h4" styleAs="h2">
               Jeugdwerkloosheid Amsterdam daalt naar 6,2%
             </Heading>
             <Paragraph gutterBottom={0}>
@@ -105,7 +105,7 @@ export const DataportaalImageCard: React.FC<LoadingInterface> = ({
           loading={loading}
         >
           <ImageCardContent>
-            <Heading $as="h6" strong gutterBottom={0} styleAs="p">
+            <Heading $as="h4" strong gutterBottom={0} styleAs="p">
               Jeugdwerk&shy;loosheid Amsterdam daalt naar 6,2%
             </Heading>
           </ImageCardContent>
@@ -116,7 +116,7 @@ export const DataportaalImageCard: React.FC<LoadingInterface> = ({
           loading={loading}
         >
           <ImageCardContent>
-            <Heading $as="h6" strong gutterBottom={0} styleAs="p">
+            <Heading $as="h4" strong gutterBottom={0} styleAs="p">
               Amsterdammers voelen zich veiliger in het OV
             </Heading>
           </ImageCardContent>
@@ -132,7 +132,7 @@ storiesOf('Atoms/ImageCard', module)
     <div style={{ maxWidth: '600px' }}>
       <ImageCard backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg">
         <ImageCardContent>
-          <Heading $as="h6" styleAs="h2">
+          <Heading $as="h4" styleAs="h2">
             Jeugdwerkloosheid Amsterdam daalt naar 6,2%
           </Heading>
         </ImageCardContent>
@@ -146,7 +146,7 @@ storiesOf('Atoms/ImageCard', module)
         backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
       >
         <ImageCardContent>
-          <Heading $as="h6" styleAs="h2">
+          <Heading $as="h4" styleAs="h2">
             Jeugdwerkloosheid Amsterdam daalt naar 6,2%
           </Heading>
           <Paragraph gutterBottom={0}>

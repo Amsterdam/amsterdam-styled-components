@@ -13,18 +13,18 @@ import {
   Link,
   Paragraph,
   Row,
+  styles,
 } from '../../../index'
 import { LoadingInterface } from '../../shared/types'
 
 const StyledCardContainer = styled(CardContainer)`
-  border-top: 3px solid;
-  padding: 24px 0;
+  border-top: 2px solid;
 `
 
 const ArticleCardsWrapper = styled.div`
   margin-top: 40px;
   padding: 40px 0 20px;
-  background-color: ${color('tint', 'level3')};
+  background-color: ${color('tint', 'level2')};
 
   @media screen and ${breakpoint('max-width', 'mobileL')} {
     padding: 40px 0 16px 0;
@@ -38,9 +38,13 @@ const ArticleCardsWrapper = styled.div`
   'tabletM',
 )} {
     padding: 48px 12px 16px 12px;
-    margin-left:-24px;
-    margin-right:-24px;
+    margin-left: -24px;
+    margin-right: -24px;
     width: calc(100% + 48px);
+  }
+
+  @media screen and ${breakpoint('min-width', 'laptopM')} {
+    margin-top: 80px;
   }
 `
 
@@ -60,6 +64,10 @@ const StyledCardContent = styled(CardContent)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  ${styles.HeadingStyle} {
+    margin: 12px 0 24px;
+  }
 `
 
 const StyledRow = styled(Row)`
