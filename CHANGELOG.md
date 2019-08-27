@@ -14,6 +14,13 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## Unreleased
+### ASC-ASSETS
+- Fixed: svg object contains svg's again
+
+### ASC-UI
+- Changed: Set Modal's className on wrapper (solved issue where className was set on Portal component)
+
 ## [0.12.3] - 2019-08-21
 - Fixed: IE11 issue in Article component
 

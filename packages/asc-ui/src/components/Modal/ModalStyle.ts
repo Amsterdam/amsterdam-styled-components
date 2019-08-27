@@ -23,9 +23,7 @@ const ModalStyle = styled.div<Props>`
   }
 `
 
-export const ModalStyleContainer = styled.div.attrs(props => ({
-  ...props,
-}))`
+export const ModalStyleContainer = styled.div`
   display: grid;
   height: 100vh;
   margin: 0;
