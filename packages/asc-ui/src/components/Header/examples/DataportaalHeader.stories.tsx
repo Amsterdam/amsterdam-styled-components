@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { css } from '@datapunt/asc-core'
+import styled, { css } from '@datapunt/asc-core'
 import {
   Header,
   MenuInline,
@@ -15,6 +15,7 @@ import { PageLayoutInterface } from '../../shared/types'
 import { Row, Column } from '../../Grid'
 import BodyFiller from './BodyFiller.stories'
 import Body from '../../Body'
+import { breakpoint } from '../../../utils'
 
 const DataportaalHeaderWrapperStyle = css`
   ${styles.HeaderContentStyle} {
@@ -91,6 +92,17 @@ export const DataportaalHeader: React.FC<DataportaalHeaderProps> = ({
   />
 )
 
+const StickyRow = styled(Row)`
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  @media screen and ${breakpoint('min-width', 'laptopM')} {
+    box-shadow: none;
+    position: relative;
+  }
+`
+
 export const DataportaalBody: React.FC<PageLayoutInterface> = ({
   tall,
   fullWidth,
@@ -111,10 +123,19 @@ storiesOf('Composed/Header', module)
   ))
   .add('implementation for dataportaal - Frontpage', () => (
     <div>
-      <DataportaalHeader tall fullWidth={false} />
-      <DataportaalBody tall fullWidth={false}>
-        <BodyFiller />
-      </DataportaalBody>
+      <StickyRow hasMargin={false}>
+        <Column span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}>
+          <DataportaalHeader tall fullWidth={false} />
+        </Column>
+      </StickyRow>
+      <Row hasMargin={false}>
+        <Column
+          wrap
+          span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}
+        >
+          <BodyFiller />
+        </Column>
+      </Row>
     </div>
   ))
   .add('implementation for dataportaal - Editorial content', () => (
