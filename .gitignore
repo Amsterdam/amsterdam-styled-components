@@ -20,6 +20,7 @@ packages/**/*.d.ts
 .env.development.local
 .env.test.local
 .env.production.local
+/.awcache/
 
 npm-debug.log*
 yarn-debug.log*
