@@ -79,7 +79,7 @@ const CardContainerGenericFunctions = styled(CardContainer)`
     }
   }
 
-  @media screen and ${breakpoint('min-width', 'laptop')} {
+  @media screen and ${breakpoint('min-width', 'tabletM')} {
     display: block;
     height: 100%;
   }
@@ -88,7 +88,6 @@ const CardContainerGenericFunctions = styled(CardContainer)`
   ${styles.LinkStyle} {
     position: relative;
     width: 100%;
-    min-height: 66px;
     margin-bottom: 8px;
 
     &:hover ${styles.HeadingStyle} {
@@ -114,6 +113,7 @@ const CardContainerGenericFunctions = styled(CardContainer)`
 
   ${styles.CardMediaWrapperStyle} {
     width: 13%;
+    min-width: 50px;
 
     @media screen and ${breakpoint('min-width', 'tabletM')} {
       width: 23%;
@@ -156,8 +156,14 @@ const CardContainerGenericFunctions = styled(CardContainer)`
     line-height: 17px;
   }
 
+  ${/* sc-selector */ styles.CardStyle} {
+    min-height: 73px;
+  }
+
   ${/* sc-selector */ styles.CardStyle}:last-of-type {
+    @media screen and ${breakpoint('min-width', 'tabletM')} {
         margin-bottom: 0;
+    }
   }
 
 `

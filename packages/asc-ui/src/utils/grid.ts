@@ -89,7 +89,7 @@ export const min = (layoutId: string, withUnit = false) => ({
 
   if (minValue >= 0) {
     if (withUnit) {
-      return `${minValue}px`
+      return `${minValue + 0.02}px`
     }
 
     return minValue
