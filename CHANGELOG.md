@@ -14,7 +14,7 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## Unreleased
+## [0.12.7] - 2019-08-21
 ### ASC-ASSETS
 - Fixed: svg object contains svg's again
 
