@@ -12,13 +12,12 @@ const BodyStyle = styled.div<PageLayoutInterface>`
   position: relative;
   z-index: 1;
   height: calc(100% - ${HEADER_HEIGHT_SMALL}px);
-  top: ${HEADER_HEIGHT_SMALL}px;
+  top: 0;
   ${({ tall }) => {
     return tall
       ? css`
           @media screen and ${breakpoint('min-width', 'laptopM')} {
             height: calc(100% - ${HEADER_HEIGHT_TALL}px);
-            top: 0;
           }
         `
       : css``

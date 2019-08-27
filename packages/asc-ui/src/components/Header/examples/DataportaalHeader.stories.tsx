@@ -110,12 +110,12 @@ storiesOf('Composed/Header', module)
     </div>
   ))
   .add('implementation for dataportaal - Frontpage', () => (
-    <>
+    <div>
       <DataportaalHeader tall fullWidth={false} />
       <DataportaalBody tall fullWidth={false}>
         <BodyFiller />
       </DataportaalBody>
-    </>
+    </div>
   ))
   .add('implementation for dataportaal - Editorial content', () => (
     <>

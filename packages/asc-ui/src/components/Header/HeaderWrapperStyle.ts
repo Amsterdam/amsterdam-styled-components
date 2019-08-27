@@ -36,10 +36,9 @@ const HeaderWrapperStyle = styled.div<Props>`
     fullWidth ? 'none' : `${WRAPPER_MAX_WIDTH}px`};
   box-shadow: 0 4px rgba(0, 0, 0, 0.04);
   box-sizing: content-box;
-  position: fixed; /* Unfortunately no sticky because IE11 */
-  left: 0;
-  right: 0;
-  z-index: 2; /* Orders the header higher than the content */
+  position: sticky;
+  top: 0;
+  z-index: 2;
 
   ${HeaderNavigationStyle} {
     flex-grow: 1;
@@ -55,12 +54,10 @@ const HeaderWrapperStyle = styled.div<Props>`
           @media screen and ${breakpoint('min-width', 'laptopM')} {
             box-shadow: none;
             position: relative;
-            /* margin: 0; */
 
             &:after {
               content: '';
               display: block;
-              position: absolute;
               left: 0;
               right: 0;
               height: ${HEADER_HEIGHT_SMALL}px;
