@@ -33,10 +33,10 @@ storiesOf('Composed/Editorial/Publication', module)
         <Row>
           <Column
             wrap
-            span={{ small: 1, medium: 4, big: 6, large: 12, xLarge: 12 }}
+            span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}
           >
             <Column
-              span={{ small: 1, medium: 4, big: 6, large: 12, xLarge: 12 }}
+              span={{ small: 1, medium: 2, big: 6, large: 12, xLarge: 12 }}
             >
               <EditorialContent>
                 <EditorialHeader title={title} />
@@ -48,14 +48,14 @@ storiesOf('Composed/Editorial/Publication', module)
                 />
               </EditorialContent>
             </Column>
-            <Column span={{ small: 1, medium: 4, big: 3, large: 6, xLarge: 6 }}>
+            <Column span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}>
               <DocumentCover
                 imageSrc={`${coverUrl}`}
                 description={`Download PDF (${fileSize})`}
                 onClick={action(`downloading: ${downloadUrl}`)}
               />
             </Column>
-            <Column span={{ small: 1, medium: 4, big: 3, large: 6, xLarge: 6 }}>
+            <Column span={{ small: 1, medium: 2, big: 3, large: 6, xLarge: 6 }}>
               <EditorialContent>
                 {intro && <Paragraph strong>{intro}</Paragraph>}
                 <CustomHTMLBlock body={body} />
