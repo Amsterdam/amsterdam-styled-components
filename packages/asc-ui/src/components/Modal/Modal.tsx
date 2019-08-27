@@ -59,7 +59,6 @@ const Modal: React.FC<Props> = ({
 
   return open ? (
     <Element
-      className={className}
       {...(!disablePortal
         ? {
             element,
@@ -72,7 +71,7 @@ const Modal: React.FC<Props> = ({
         : {})}
     >
       <Focus onKeyDown={handleKeyDown}>
-        <ModalStyleContainer {...otherProps}>
+        <ModalStyleContainer {...otherProps} className={className}>
           <BackDropStyle
             backdropOpacity={backdropOpacity}
             onClick={handleClose}
