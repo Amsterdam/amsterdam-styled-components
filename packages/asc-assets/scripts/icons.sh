@@ -10,7 +10,9 @@ for s in ./assets/Icons/*;do
     if [[ "$s" ]]
     then
         filename=${s##*/}
-        echo "export { default as ${filename%.svg} } from '$s'" >> svg.ts;
+#        For some reason webpack cannot deal with export { default as .... with svg's
+        echo "import ${filename%.svg} from '$s'
+export { ${filename%.svg} }" >> svg.ts;
     fi
 done
 

@@ -134,7 +134,7 @@ exports[`Header should render the short version 1`] = `
   height: 100%;
   width: 100%;
   background-size: cover;
-  background-image: url("");
+  background-image: url("-react-component: svg-mock;");
 }
 
 .c5 {
@@ -419,7 +419,7 @@ exports[`Header should render the short version without the full width 1`] = `
   height: 100%;
   width: 100%;
   background-size: cover;
-  background-image: url("");
+  background-image: url("-react-component: svg-mock;");
 }
 
 .c5 {
@@ -722,7 +722,7 @@ exports[`Header should render the tall version 1`] = `
   height: 100%;
   width: 100%;
   background-size: cover;
-  background-image: url("");
+  background-image: url("-react-component: svg-mock;");
 }
 
 .c7 {
@@ -869,7 +869,7 @@ exports[`Header should render the tall version 1`] = `
   }
 
   .c7 .c8 {
-    background-image: url("");
+    background-image: url("-react-component: svg-mock;");
   }
 }
 
@@ -1046,7 +1046,7 @@ exports[`Header should render the tall version without a title 1`] = `
   height: 100%;
   width: 100%;
   background-size: cover;
-  background-image: url("");
+  background-image: url("-react-component: svg-mock;");
 }
 
 .c7 {
@@ -1173,7 +1173,7 @@ exports[`Header should render the tall version without a title 1`] = `
   }
 
   .c7 .c8 {
-    background-image: url("");
+    background-image: url("-react-component: svg-mock;");
   }
 }
 
