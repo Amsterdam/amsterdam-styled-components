@@ -20,15 +20,15 @@ describe('Tag', () => {
     expect(queryByText(/Tag one/)).not.toBeNull()
     expect(container.firstChild).toHaveStyleRule(
       'background-color',
-      color('tint', 'level2')({ theme }),
+      color('primary', 'main')({ theme }),
     )
     // color should be readable
-    expect(container.firstChild).toHaveStyleRule('color', '#000')
+    expect(container.firstChild).toHaveStyleRule('color', '#fff')
   })
   it('should render and apply custom style', () => {
     const { container, queryByText } = render(
       <ThemeProvider theme={theme}>
-        <Tag colorVariant="primary">Tag two</Tag>
+        <Tag colorType="primary">Tag two</Tag>
       </ThemeProvider>,
     )
 

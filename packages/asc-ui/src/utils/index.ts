@@ -1,7 +1,7 @@
 export { default as fromTheme, valueFromObject } from './fromTheme'
 export {
   color,
-  getColorCode,
+  themeColor,
   getTypographyFromTheme,
   focusStyleOutline,
   srOnlyStyle,
