@@ -1,6 +1,6 @@
 import styled from '@datapunt/asc-core'
 import IconStyle from '../../Icon/IconStyle'
-import { color, svgFill } from '../../../utils'
+import { themeColor, svgFill } from '../../../utils'
 import ButtonStyle, { Props as ButtonProps } from '../ButtonStyle'
 
 export type Props = {
@@ -11,11 +11,11 @@ const ShareButtonStyle = styled(ButtonStyle)<Props>`
   padding: 0;
   position: relative;
   justify-content: center;
-  background: ${color('tint', 'level5')};
+  background: ${themeColor('tint', 'level5')};
 
   &:focus,
   &:hover {
-    background: ${({ hoverColor }) => hoverColor || color('secondary')};
+    background: ${({ hoverColor }) => hoverColor || themeColor('secondary')};
   }
 
   ${IconStyle} {

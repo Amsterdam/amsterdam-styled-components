@@ -10,8 +10,7 @@ type ThemeProp = {
   theme: Theme.ThemeInterface
 }
 
-/** @deprecated to avoid naming conflicts with the css color prop. Use `themeColor` function instead. */
-export const color = (
+export const themeColor = (
   colorType?: Theme.ColorType,
   colorSubtype: string = 'main',
   override?: string,
@@ -26,8 +25,6 @@ export const color = (
 
   return fromTheme('colors.tint.level1')({ theme })
 }
-
-export const themeColor = color
 
 export const breakpoint = (
   type: Theme.TypeBreakpoint,
@@ -131,7 +128,7 @@ export const focusStyleOutline = (width: number = 3, offset: number = 0) => ({
 }) => css`
   &:focus {
     z-index: 10;
-    outline-color: ${color('support', 'focus')({ theme })};
+    outline-color: ${themeColor('support', 'focus')({ theme })};
     outline-style: solid;
     outline-offset: ${offset}px;
     outline-width: ${width}px;
@@ -144,7 +141,7 @@ export const focusStyleText = () => ({
   theme: Theme.ThemeInterface
 }) => css`
   &:focus {
-    background-color: ${color('support', 'focus')({ theme })};
+    background-color: ${themeColor('support', 'focus')({ theme })};
   }
 `
 export const srOnlyStyle = () => ({ srOnly }: { srOnly: boolean }) =>
@@ -167,7 +164,7 @@ export const svgFill = (
   override?: string,
 ) => ({ theme }: ThemeProp) => {
   if (colorType) {
-    const value = color(colorType, variant, override)({ theme })
+    const value = themeColor(colorType, variant, override)({ theme })
     if (typeof value === 'string') {
       return `& svg {
         rect,
@@ -194,15 +191,15 @@ export const perceivedLoading = (
 ) => {
   const animation = keyframes`
     0% {
-      ${property}: ${color('tint', 'level3')({ theme })};
+      ${property}: ${themeColor('tint', 'level3')({ theme })};
     }
   
     50% {
-      ${property}: ${color('tint', 'level4')({ theme })};
+      ${property}: ${themeColor('tint', 'level4')({ theme })};
     }
     
     100% {
-      ${property}: ${color('tint', 'level3')({ theme })};
+      ${property}: ${themeColor('tint', 'level3')({ theme })};
     }
   `
 

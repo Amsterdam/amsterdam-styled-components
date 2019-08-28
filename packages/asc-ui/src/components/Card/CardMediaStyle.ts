@@ -1,5 +1,5 @@
 import styled, { Theme } from '@datapunt/asc-core'
-import { color } from '../../utils'
+import { themeColor } from '../../utils'
 
 export type Props = {
   backgroundColor?: keyof Theme.Tint
@@ -8,7 +8,7 @@ export type Props = {
 
 export const CardMediaWrapperStyle = styled.div<Props>`
   background-color: ${({ backgroundColor, theme }) =>
-    color('tint', backgroundColor || 'level1')({ theme })};
+    themeColor('tint', backgroundColor || 'level1')({ theme })};
   position: relative;
   overflow: hidden;
   line-height: 0;

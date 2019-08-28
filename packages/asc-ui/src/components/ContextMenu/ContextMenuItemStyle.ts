@@ -1,5 +1,5 @@
 import styled, { css } from '@datapunt/asc-core'
-import { color, fromTheme } from '../../utils'
+import { themeColor, fromTheme } from '../../utils'
 
 export type ContextMenuItemProps = {
   role?: string
@@ -20,7 +20,7 @@ export const ContextMenuItemStyle = styled.li<ContextMenuItemProps>`
   cursor: pointer;
   font-size: ${fromTheme('typography.fontSize')};
   text-decoration: none;
-  color: ${color('tint', 'level7')};
+  color: ${themeColor('tint', 'level7')};
 
   & > span:first-of-type {
     margin: 5px 6px;
@@ -29,13 +29,13 @@ export const ContextMenuItemStyle = styled.li<ContextMenuItemProps>`
   ${({ divider }) =>
     divider &&
     css`
-      border-bottom: 1px solid ${color('tint', 'level4')};
+      border-bottom: 1px solid ${themeColor('tint', 'level4')};
     `}
 
   &:hover,
   &:focus {
     outline: none;
-    background-color: ${color('tint', 'level2')};
+    background-color: ${themeColor('tint', 'level2')};
   }
 `
 

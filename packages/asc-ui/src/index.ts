@@ -95,7 +95,7 @@ import Footer, {
  */
 const ShareBar = ButtonBar
 
-export { breakpoint, color, svgFill } from './utils'
+export { breakpoint, themeColor, svgFill } from './utils'
 
 export const styles = {
   ...AmsterdamLogoStyles,

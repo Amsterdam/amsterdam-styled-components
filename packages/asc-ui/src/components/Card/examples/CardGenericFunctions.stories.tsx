@@ -18,13 +18,14 @@ import {
   CardContainer,
   CardContent,
   CardMedia,
-  color,
   Column,
   Heading,
   Icon,
   Link,
   Paragraph,
   Row,
+  themeColor,
+  breakpoint,
   styles,
 } from '../../..'
 import { LoadingInterface } from '../../shared/types'
@@ -32,7 +33,7 @@ import { LoadingInterface } from '../../shared/types'
 const CardContainerGenericFunctions = styled(CardContainer)`
   position: relative;
   padding: 24px;
-  background-color: ${color('support', 'valid')};
+  background-color: ${themeColor('support', 'valid')};
 
   @media screen and ${breakpoint('max-width', 'mobileL')} {
     margin-top: 24px;
@@ -110,7 +111,7 @@ const CardContainerGenericFunctions = styled(CardContainer)`
     }
 
     &:hover ${styles.HeadingStyle} {
-      color: ${color('secondary')};
+      color: ${themeColor('secondary')};
       text-decoration: underline;
     }
 
@@ -125,7 +126,7 @@ const CardContainerGenericFunctions = styled(CardContainer)`
         bottom: 0;
         right: 0;
         ${({ theme }) =>
-          `border: 4px solid ${color('support', 'focus')({ theme })};`}
+          `border: 4px solid ${themeColor('support', 'focus')({ theme })};`}
       }
     }
   }

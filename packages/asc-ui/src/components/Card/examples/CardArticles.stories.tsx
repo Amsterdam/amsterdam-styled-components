@@ -7,7 +7,7 @@ import {
   Card,
   CardContainer,
   CardContent,
-  color,
+  themeColor,
   Column,
   Heading,
   Link,
@@ -24,7 +24,7 @@ const StyledCardContainer = styled(CardContainer)`
 const ArticleCardsWrapper = styled.div`
   margin-top: 40px;
   padding: 40px 0 20px;
-  background-color: ${color('tint', 'level2')};
+  background-color: ${themeColor('tint', 'level3')};
 
   @media screen and ${breakpoint('max-width', 'mobileL')} {
     padding: 40px 0 16px 0;

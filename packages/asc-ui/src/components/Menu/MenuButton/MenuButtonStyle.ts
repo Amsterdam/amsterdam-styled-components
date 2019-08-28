@@ -1,5 +1,5 @@
 import styled from '@datapunt/asc-core'
-import { color, svgFill } from '../../../utils'
+import { themeColor, svgFill } from '../../../utils'
 import Button, { Props as ButtonProps } from '../../Button/Button'
 import MenuFlyOutStyle from '../MenuFlyOut/MenuFlyOutStyle'
 import { MenuListStyle } from '../MenuList'
@@ -17,14 +17,14 @@ export const MenuButtonBaseStyle = styled(Button)<Props>`
   border-left: 8px solid transparent;
   background-color: transparent;
   height: 100%;
-  color: ${color('tint', 'level7')};
+  color: ${themeColor('tint', 'level7')};
   align-items: center;
 
   &[aria-expanded='true'] {
-    background-color: ${color('tint', 'level2')};
+    background-color: ${themeColor('tint', 'level2')};
 
     ${MenuButtonTextStyle} {
-      border-bottom: 2px solid ${color('secondary')};
+      border-bottom: 2px solid ${themeColor('secondary')};
     }
   }
 
@@ -47,11 +47,11 @@ export const MenuButtonBaseStyle = styled(Button)<Props>`
 const MenuButtonStyle = styled(MenuButtonBaseStyle)<Props>`
   &:hover,
   &:focus {
-    color: ${color('secondary')};
+    color: ${themeColor('secondary')};
 
     ${MenuButtonTextStyle} {
-      color: ${color('secondary')};
-      border-bottom: 2px solid ${color('secondary')};
+      color: ${themeColor('secondary')};
+      border-bottom: 2px solid ${themeColor('secondary')};
     }
 
     ${svgFill('secondary')}

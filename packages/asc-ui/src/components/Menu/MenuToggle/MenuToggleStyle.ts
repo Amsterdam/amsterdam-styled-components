@@ -1,5 +1,5 @@
 import styled, { css } from '@datapunt/asc-core'
-import { color, showHide, ShowHideTypes } from '../../../utils'
+import { themeColor, showHide, ShowHideTypes } from '../../../utils'
 import { MenuItemTitleStyle } from '../MenuItemTitle'
 import { MenuListStyle } from '../MenuList'
 import { MenuFlyOutStyle } from '../MenuFlyOut'
@@ -18,7 +18,7 @@ export default styled.div<Props>`
   max-width: ${FLY_OUT_WIDTH}px;
 
   & > ${MenuListStyle} {
-    border-bottom: 5px solid ${color('tint', 'level7')};
+    border-bottom: 5px solid ${themeColor('tint', 'level7')};
   }
 
   ${MenuListStyle} {
@@ -37,30 +37,30 @@ export default styled.div<Props>`
   }
 
   ${MenuButtonStyle} {
-    border-bottom: 1px solid ${color('tint', 'level3')};
-    background-color: ${color('tint', 'level2')};
+    border-bottom: 1px solid ${themeColor('tint', 'level3')};
+    background-color: ${themeColor('tint', 'level2')};
 
     &:hover,
     &:focus {
-      background-color: ${color('tint', 'level2')};
+      background-color: ${themeColor('tint', 'level2')};
     }
   }
 
   & ${MenuFlyOutStyle} {
     ${MenuButtonStyle} {
-      border-left-color: ${color('tint', 'level2')};
+      border-left-color: ${themeColor('tint', 'level2')};
     }
 
     & > ${/* sc-selector */ MenuButtonStyle}[aria-expanded="true"] {
-      border-left-color: ${color('secondary')};
+      border-left-color: ${themeColor('secondary')};
     }
 
     ${MenuListStyle} {
       ${MenuButtonStyle} {
-        background-color: ${color('tint', 'level1')};
+        background-color: ${themeColor('tint', 'level1')};
         &:hover,
         &:focus {
-          background-color: ${color('tint', 'level1')};
+          background-color: ${themeColor('tint', 'level1')};
         }
       }
     }
@@ -68,16 +68,16 @@ export default styled.div<Props>`
 
   ${MenuListStyle} {
     flex-shrink: 0;
-    background-color: ${color('tint', 'level2')};
+    background-color: ${themeColor('tint', 'level2')};
   }
 
   ${MenuFlyOutStyle} {
     ${MenuItemTitleStyle} {
-      border-bottom: 1px solid ${color('tint', 'level3')};
-      border-left-color: ${color('tint', 'level2')};
+      border-bottom: 1px solid ${themeColor('tint', 'level3')};
+      border-left-color: ${themeColor('tint', 'level2')};
     }
     ${MenuListStyle} {
-      background-color: ${color('tint', 'level1')};
+      background-color: ${themeColor('tint', 'level1')};
       position: relative;
       top: 0;
     }
