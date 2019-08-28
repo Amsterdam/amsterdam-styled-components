@@ -1,5 +1,5 @@
 import styled, { css } from '@datapunt/asc-core'
-import { color } from '../../utils'
+import { themeColor } from '../../utils'
 import { focusStyleText, svgFill } from '../../utils/themeUtils'
 import Typography, { TypographyProps } from '../Typography'
 import IconStyle from '../Icon/IconStyle'
@@ -26,10 +26,10 @@ export const BlankLinkStyleCSS = css`
 `
 export const InlineLinkStyleCSS = css`
   display: inline-block;
-  color: ${color('primary')};
+  color: ${themeColor('primary')};
 
   &:hover {
-    color: ${color('secondary')};
+    color: ${themeColor('secondary')};
   }
 `
 export const DefaultLinkStyleCSS = css<Props>`
@@ -37,7 +37,7 @@ export const DefaultLinkStyleCSS = css<Props>`
   text-decoration: none;
   font-weight: 700;
   color: ${({ color: colorOverride, theme }) =>
-    color('tint', 'level7', colorOverride)({ theme })};
+    themeColor('tint', 'level7', colorOverride)({ theme })};
 
   ${IconStyle} {
     margin: 3px;
@@ -47,7 +47,7 @@ export const DefaultLinkStyleCSS = css<Props>`
 
   &:hover {
     color: ${({ color: colorOverride, theme }) =>
-      color('secondary', 'main', colorOverride)({ theme })};
+      themeColor('secondary', 'main', colorOverride)({ theme })};
     text-decoration: underline;
     ${IconStyle} {
       ${({ color: colorOverride, theme }) =>

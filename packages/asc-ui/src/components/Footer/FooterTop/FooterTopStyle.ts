@@ -1,10 +1,10 @@
 import styled from '@datapunt/asc-core'
-import { breakpoint, color } from '../../../utils'
+import { breakpoint, themeColor } from '../../../utils'
 
 export type Props = {}
 
 export default styled.div<Props>`
-  background-color: ${color('tint', 'level5')};
+  background-color: ${themeColor('tint', 'level5')};
   padding-top: 32px;
 
   @media screen and ${breakpoint('min-width', 'tabletM')} {

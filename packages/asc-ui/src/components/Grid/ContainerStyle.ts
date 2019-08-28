@@ -1,5 +1,5 @@
 import styled, { css, Theme } from '@datapunt/asc-core'
-import { breakpoint, color } from '../../utils'
+import { breakpoint, themeColor } from '../../utils'
 
 export type Props = {
   beamColor?: keyof Theme.SupportPaletteInterface
@@ -22,7 +22,7 @@ const ContainerStyle = styled.div<Props>`
       css`
         &::after {
           content: '';
-          background-color: ${color('support', beamColor)};
+          background-color: ${themeColor('support', beamColor)};
           bottom: 0;
           display: block;
           position: absolute;

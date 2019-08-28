@@ -1,5 +1,5 @@
 import styled, { css } from '@datapunt/asc-core'
-import { breakpoint, color } from '../../../utils'
+import { breakpoint, themeColor } from '../../../utils'
 import BackgroundImageStyle from '../../BackgroundImage/BackgroundImageStyle'
 import EditorialContentStyle from '../EditorialContent/EditorialContentStyle'
 
@@ -11,8 +11,8 @@ export const EDITORIAL_PADDING_TOP = 32
 
 export default styled.section<Props>`
   width: 100%;
-  color: ${color('tint', 'level6')};
-  background-color: ${color('tint', 'level1')};
+  color: ${themeColor('tint', 'level6')};
+  background-color: ${themeColor('tint', 'level1')};
   ${({ hasImage }) =>
     hasImage &&
     css`

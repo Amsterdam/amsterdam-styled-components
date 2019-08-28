@@ -1,6 +1,5 @@
 export { default as fromTheme, valueFromObject } from './fromTheme'
 export {
-  color,
   themeColor,
   getTypographyFromTheme,
   focusStyleOutline,

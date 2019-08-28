@@ -2,7 +2,7 @@ import * as React from 'react'
 import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import { render, cleanup, fireEvent } from '@testing-library/react'
 import { FooterHeading, ToggleFooterHeader } from '../index'
-import { color } from '../../../utils'
+import { themeColor } from '../../../utils'
 
 const theme = {
   ...ascDefaultTheme,
@@ -23,7 +23,7 @@ describe('FooterHeading', () => {
     expect(queryByTestId('test-id')).toHaveStyleRule('margin-bottom', '8px')
     expect(queryByTestId('test-id')).toHaveStyleRule(
       'color',
-      color('tint', 'level1')({ theme }),
+      themeColor('tint', 'level1')({ theme }),
     )
     expect(queryByText('Footer heading')).not.toBeNull()
   })

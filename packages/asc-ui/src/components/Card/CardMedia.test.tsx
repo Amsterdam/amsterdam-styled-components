@@ -2,7 +2,7 @@ import * as React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import CardMedia from './CardMedia'
-import { color } from '../../utils'
+import { themeColor } from '../../utils'
 
 const theme = {
   ...ascDefaultTheme,
@@ -19,7 +19,7 @@ describe('CardMedia', () => {
     expect(queryByText(/CardMedia content/)).not.toBeNull()
     expect(container.firstChild).toHaveStyleRule(
       'background-color',
-      color('tint', 'level1')({ theme }),
+      themeColor('tint', 'level1')({ theme }),
     )
   })
 })

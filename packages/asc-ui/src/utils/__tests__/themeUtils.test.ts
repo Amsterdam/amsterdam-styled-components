@@ -2,7 +2,7 @@
 import { ascDefaultTheme, Theme } from '@datapunt/asc-core'
 import { layouts, maxGridWidth } from '@datapunt/asc-core/lib/theme/default'
 import {
-  color,
+  themeColor,
   focusStyleOutline,
   breakpoint,
   svgFill,
@@ -32,13 +32,13 @@ describe('getColorFromTheme', () => {
   }
 
   it('should return the requested color from theme', () => {
-    expect(color('primary', 'main')({ theme })).toBe('#fff')
-    expect(color('primary', 'dark')({ theme })).toBe('#000')
-    expect(color('primary')({ theme })).toBe('#fff')
+    expect(themeColor('primary', 'main')({ theme })).toBe('#fff')
+    expect(themeColor('primary', 'dark')({ theme })).toBe('#000')
+    expect(themeColor('primary')({ theme })).toBe('#fff')
   })
 
   it('should return the default color when the colorType is not provided', () => {
-    expect(color()({ theme })).toBe('#ffffff')
+    expect(themeColor()({ theme })).toBe('#ffffff')
   })
 })
 

@@ -23,7 +23,7 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  color,
+  themeColor,
   breakpoint,
   styles,
 } from '../../..'
@@ -31,7 +31,7 @@ import {
 const CardContainerGenericFunctions = styled(CardContainer)`
   position: relative;
   padding: 12px;
-  background-color: ${color('support', 'valid')};
+  background-color: ${themeColor('support', 'valid')};
 
   @media screen and ${breakpoint('min-width', 'mobileM')} {
     padding: 24px;
@@ -83,7 +83,7 @@ const CardContainerGenericFunctions = styled(CardContainer)`
     margin-bottom: 8px;
 
     &:hover ${styles.HeadingStyle} {
-      color: ${color('secondary')};
+      color: ${themeColor('secondary')};
       text-decoration: underline;
     }
 
@@ -98,7 +98,7 @@ const CardContainerGenericFunctions = styled(CardContainer)`
         bottom: 0;
         right: 0;
         ${({ theme }) =>
-          `border: 4px solid ${color('support', 'focus')({ theme })};`}
+          `border: 4px solid ${themeColor('support', 'focus')({ theme })};`}
       }
     }
   }
