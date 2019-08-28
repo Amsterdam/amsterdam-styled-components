@@ -1,30 +1,30 @@
 import React from 'react'
 import {
-  ChevronRight,
-  DocumentText,
   Api,
+  ChevronRight,
   Data,
-  Table,
-  Pano,
+  DocumentText,
   Map,
+  Pano,
+  Table,
 } from '@datapunt/asc-assets'
-import { storiesOf } from '@storybook/react'
 import styled from '@datapunt/asc-core'
 import { boolean, withKnobs } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
 import {
+  breakpoint,
   Card,
-  Icon,
-  Heading,
-  Paragraph,
-  Row,
-  Column,
-  Link,
-  CardContainer,
   CardActions,
+  CardContainer,
   CardContent,
   CardMedia,
   color,
-  breakpoint,
+  Column,
+  Heading,
+  Icon,
+  Link,
+  Paragraph,
+  Row,
   styles,
 } from '../../..'
 import { LoadingInterface } from '../../shared/types'
@@ -132,7 +132,14 @@ const CardContainerGenericFunctions = styled(CardContainer)`
 
   ${styles.CardMediaWrapperStyle} {
     width: 13%;
-    min-width: 50px;
+    
+    @media screen and ${breakpoint('max-width', 'mobileL')} {
+      min-width: 50px;
+
+      ${styles.IconStyle} {
+        transform: scale(0.85);
+      }
+    }
 
     @media screen and ${breakpoint('min-width', 'tabletM')} {
       width: 23%;
