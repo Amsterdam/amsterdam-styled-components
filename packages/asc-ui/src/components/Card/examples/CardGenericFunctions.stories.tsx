@@ -12,19 +12,19 @@ import styled from '@datapunt/asc-core'
 import { boolean, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import {
-  breakpoint,
   Card,
   CardActions,
   CardContainer,
   CardContent,
   CardMedia,
-  themeColor,
   Column,
   Heading,
   Icon,
   Link,
   Paragraph,
   Row,
+  themeColor,
+  breakpoint,
   styles,
 } from '../../..'
 import { LoadingInterface } from '../../shared/types'
