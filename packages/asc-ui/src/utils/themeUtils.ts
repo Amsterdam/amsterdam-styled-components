@@ -10,20 +10,24 @@ type ThemeProp = {
   theme: Theme.ThemeInterface
 }
 
+/** @deprecated to avoid naming conflicts with the css color prop. Use `themeColor` function instead. */
 export const color = (
-  colorType?: Theme.TypeLevel,
-  variant: string = 'main',
+  colorType?: Theme.ColorType,
+  colorSubtype: string = 'main',
   override?: string,
 ) => ({ theme }: ThemeProp) => {
   if (override) {
     return override
   }
+
   if (colorType) {
-    return fromTheme(`colors.${[colorType]}.${[variant]}`)({ theme })
+    return fromTheme(`colors.${[colorType]}.${[colorSubtype]}`)({ theme })
   }
 
   return fromTheme('colors.tint.level1')({ theme })
 }
+
+export const themeColor = color
 
 export const breakpoint = (
   type: Theme.TypeBreakpoint,
@@ -158,7 +162,7 @@ export const srOnlyStyle = () => ({ srOnly }: { srOnly: boolean }) =>
     : ''
 
 export const svgFill = (
-  colorType?: Theme.TypeLevel,
+  colorType?: Theme.ColorType,
   variant: string = 'main',
   override?: string,
 ) => ({ theme }: ThemeProp) => {
@@ -274,19 +278,4 @@ export interface CustomCssPropsInterface {
 
 export type CustomCssPropsType = {
   css?: any
-}
-
-/**
- * Use this util to animate the background-color (or other property), for perceived performance purposes
- * @param theme
- * @param property
- */
-export const getColorCode = (colorType: Theme.TypeLevel & Theme.Tint) => ({
-  theme,
-}: ThemeProp) => {
-  if (colorType.startsWith('level')) {
-    return color('tint', colorType)({ theme })
-  }
-
-  return color(colorType)({ theme })
 }

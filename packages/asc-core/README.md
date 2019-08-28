@@ -15,7 +15,7 @@ Simply use the core library like this:
 import styled, { Theme } from '@datapunt/asc-core'
 
 export type Props = {
-    color?: Theme.TypeLevel; // <-- theme typings!
+    color?: Theme.ColorType; // <-- theme typings!
 }
 
 styled.p`` // <-- theme typed styled component!

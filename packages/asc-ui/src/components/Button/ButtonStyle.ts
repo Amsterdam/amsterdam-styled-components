@@ -28,7 +28,7 @@ const getVariant = () => ({
 }: {
   theme: any
   variant?: keyof typeof ButtonVariants
-  color?: Theme.TypeLevel
+  color?: Theme.ColorType
 }) => {
   switch (variant) {
     case 'primary':
@@ -119,7 +119,7 @@ export type Props = {
    * Deprecated: Use variant instead. Pass the theme-color.
    * @deprecated
    */
-  color?: Theme.TypeLevel
+  color?: Theme.ColorType
   /**
    * Deprecated: use size to create a button with equal width and height
    * @deprecated

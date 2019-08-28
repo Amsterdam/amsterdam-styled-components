@@ -7,11 +7,12 @@ export type Props = {
   gutterBottom?: number
   paragraph?: boolean
   element?: Variant
-  color?: Theme.TypeLevel
+  color?: Theme.ColorType
   fontSize?: number
   styleAs?: keyof TypographyElements
   as?: any
-  strong?: boolean
+  strong?: boolean // makes the text strong(bold)
+  compact?: boolean // applies the compact line heights
 }
 
 export const defaultTypographyStyles = {

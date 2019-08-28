@@ -37,7 +37,7 @@ describe('getColorFromTheme', () => {
     expect(color('primary')({ theme })).toBe('#fff')
   })
 
-  it('should returen the default color when the colorType is not provided', () => {
+  it('should return the default color when the colorType is not provided', () => {
     expect(color()({ theme })).toBe('#ffffff')
   })
 })

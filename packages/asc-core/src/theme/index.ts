@@ -2,7 +2,7 @@
 import { CSSProp } from 'styled-components'
 
 export namespace Theme {
-  export type TypeLevel =
+  export type ColorType =
     | 'primary'
     | 'secondary'
     | 'bright'
@@ -10,8 +10,6 @@ export namespace Theme {
     | 'none'
     | 'support'
     | 'default'
-
-  export type Color = TypeLevel
 
   export type GlobalStyleType = string
 
@@ -76,7 +74,7 @@ export namespace Theme {
     level7: string
   }
 
-  export interface ColorInterface {
+  export interface ColorTypeInterface {
     primary: PaletteInterface
     secondary: PaletteInterface
     error: PaletteInterface
@@ -85,8 +83,13 @@ export namespace Theme {
     bright: PaletteInterface
   }
 
+  export interface ColorSubtypeInterface
+    extends Tint,
+      PaletteInterface,
+      SupportPaletteInterface {}
+
   export type TypographyElementStyle = {
-    defaultColor: CSSProp
+    color: CSSProp
     fontWeight: 400 | 500 | 700 | 'inherit'
     fontSize: CSSProp
     lineHeight: number | CSSProp
@@ -102,7 +105,7 @@ export namespace Theme {
     }
   } & TypographyElementStyle
 
-  export type TypographyElements = {
+  export interface TypographyElements {
     h1: TypographyType
     h2: TypographyType
     h3: TypographyType
@@ -123,7 +126,7 @@ export namespace Theme {
 
   export interface ThemeInterface {
     breakpoints: BreakpointsInterface
-    colors: ColorInterface
+    colors: ColorTypeInterface
     globalStyle: GlobalStyleType
     typography: TypographyInterface
     layouts: LayoutInterface
@@ -152,7 +155,7 @@ export namespace Theme {
 
     constructor(
       public breakpoints: BreakpointsInterface,
-      public colors: ColorInterface,
+      public colors: ColorTypeInterface,
       public globalStyle: GlobalStyleType,
       public typography: TypographyInterface,
       public layouts: LayoutInterface,

@@ -7,7 +7,7 @@ const typography: Theme.TypographyInterface = {
   fontFamily: defaultFontFamily,
   fontSize: '16px',
   h1: {
-    defaultColor: colors.tint.level7,
+    color: colors.tint.level7,
     fontSize: '24px',
     fontWeight: 700,
     letterSpacing: 'inherit',
@@ -21,7 +21,7 @@ const typography: Theme.TypographyInterface = {
     },
   },
   h2: {
-    defaultColor: colors.tint.level7,
+    color: colors.tint.level7,
     fontSize: '20px',
     fontWeight: 700,
     letterSpacing: 'inherit',
@@ -35,7 +35,7 @@ const typography: Theme.TypographyInterface = {
     },
   },
   h3: {
-    defaultColor: colors.tint.level7,
+    color: colors.tint.level7,
     fontSize: '20px',
     fontWeight: 700,
     letterSpacing: 'inherit',
@@ -43,7 +43,7 @@ const typography: Theme.TypographyInterface = {
     marginBottom: '8px',
   },
   h4: {
-    defaultColor: colors.tint.level7,
+    color: colors.tint.level7,
     fontSize: '18px',
     fontWeight: 700,
     letterSpacing: 'inherit',
@@ -51,7 +51,7 @@ const typography: Theme.TypographyInterface = {
     marginBottom: '8px',
   },
   h5: {
-    defaultColor: colors.tint.level7,
+    color: colors.tint.level7,
     fontSize: '18px',
     fontWeight: 400,
     letterSpacing: 'inherit',
@@ -59,7 +59,7 @@ const typography: Theme.TypographyInterface = {
     marginBottom: '0',
   },
   h6: {
-    defaultColor: colors.tint.level7,
+    color: colors.tint.level7,
     fontSize: '16px',
     fontWeight: 500,
     letterSpacing: 'inherit',
@@ -67,7 +67,7 @@ const typography: Theme.TypographyInterface = {
     marginBottom: '0',
   },
   a: {
-    defaultColor: colors.tint.level7,
+    color: colors.tint.level7,
     fontSize: '1rem',
     fontWeight: 'inherit',
     letterSpacing: 'inherit',
@@ -75,7 +75,7 @@ const typography: Theme.TypographyInterface = {
     marginBottom: '0',
   },
   p: {
-    defaultColor: colors.tint.level7,
+    color: colors.tint.level7,
     fontSize: '16px',
     fontWeight: 400,
     letterSpacing: 'inherit',
@@ -88,7 +88,7 @@ const typography: Theme.TypographyInterface = {
     },
   },
   em: {
-    defaultColor: colors.tint.level7,
+    color: colors.tint.level7,
     fontSize: '16px',
     fontWeight: 400,
     letterSpacing: 'inherit',
@@ -96,7 +96,7 @@ const typography: Theme.TypographyInterface = {
     marginBottom: '0',
   },
   small: {
-    defaultColor: colors.tint.level7,
+    color: colors.tint.level7,
     fontSize: '14px',
     fontWeight: 400,
     letterSpacing: 'inherit',
@@ -104,7 +104,7 @@ const typography: Theme.TypographyInterface = {
     marginBottom: '0',
   },
   span: {
-    defaultColor: colors.tint.level7,
+    color: colors.tint.level7,
     fontSize: '14px',
     fontWeight: 400,
     letterSpacing: 'inherit',

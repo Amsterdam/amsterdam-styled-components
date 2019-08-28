@@ -2,7 +2,7 @@ import styled, { Theme } from '@datapunt/asc-core'
 import { CustomCssPropsType } from '../../utils'
 
 export type Props = {
-  color?: Theme.TypeLevel
+  color?: Theme.ColorType
   size?: number
 } & CustomCssPropsType
 
