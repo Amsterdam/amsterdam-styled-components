@@ -73,7 +73,7 @@ const SpecialCardContainer = styled(CardContainer)`
   ${styles.TagStyle} {
     display: inline;
     margin-right: 5px;
-    background-color: ${color('tint', 'level3')};
+    background-color: ${themeColor('tint', 'level3')};
     padding: 2px;
   }
 

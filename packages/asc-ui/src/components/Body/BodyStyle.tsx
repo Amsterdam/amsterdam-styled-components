@@ -4,11 +4,11 @@ import {
   HEADER_HEIGHT_TALL,
   WRAPPER_MAX_WIDTH,
 } from '../shared/sizes'
-import { breakpoint, color } from '../../utils'
+import { breakpoint, themeColor } from '../../utils'
 import { PageLayoutInterface } from '../shared/types'
 
 const BodyStyle = styled.div<PageLayoutInterface>`
-  background-color: ${color('tint', 'level1')};
+  background-color: ${themeColor('tint', 'level1')};
   position: relative;
   z-index: 1;
   height: calc(100% - ${HEADER_HEIGHT_SMALL}px);

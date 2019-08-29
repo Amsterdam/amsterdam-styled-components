@@ -11,12 +11,12 @@ import { DataportaalCardAboutData } from '../../Card/examples/CardAboutData.stor
 import { DataportaalImageCard } from '../../ImageCard/ImageCard.stories'
 import { Row, Column } from '../../Grid'
 import { Heading, styles } from '../../..'
-import { breakpoint, color } from '../../../utils'
+import { breakpoint, themeColor } from '../../../utils'
 import Link from '../../Link'
 
 const DaraportaalFrontpage = styled.div`
   & > ${styles.RowStyle} {
-    background-color: ${color('tint', 'level1')};
+    background-color: ${themeColor('tint', 'level1')};
   }
 `
 

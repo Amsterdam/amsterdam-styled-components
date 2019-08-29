@@ -30,7 +30,7 @@ Prefix the change with one of these keywords:
 
 ## [0.12.3] - 2019-08-21
 
-- Fixed: IE11 issue in Article componen
+- Fixed: IE11 issue in Article component
 
 ## [0.12.2] - 2019-08-20
 
