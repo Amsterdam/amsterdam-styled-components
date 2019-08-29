@@ -3,12 +3,8 @@ import { Checkmark } from '@datapunt/asc-assets'
 import CheckboxStyle, {
   CheckboxIconStyle,
   CheckboxWrapper,
-  Props as StyleProps,
+  Props,
 } from './CheckboxStyle'
-
-type Props = {
-  henk?: boolean
-} & StyleProps
 
 const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   checked: checkedProp,
@@ -33,7 +29,6 @@ const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
         {...{ ...otherProps, disabled, checked }}
         onFocus={() => {
           setFocus(true)
-          console.log('focus set')
         }}
         onBlur={() => setFocus(false)}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {

@@ -22,17 +22,17 @@ storiesOf('Atoms/Checkbox', module)
   ))
   .add('disabled', () => (
     <>
-      <Label disabled htmlFor="four" label="Disabled">
-        <Checkbox id="four" />
+      <Label disabled htmlFor="disabled_1" label="Disabled">
+        <Checkbox id="disabled_1" />
       </Label>
-      <Label disabled htmlFor="five" label="Disabled checked">
-        <Checkbox checked id="five" />
+      <Label disabled htmlFor="disabled_2" label="Disabled checked">
+        <Checkbox checked id="disabled_2" />
       </Label>
-      <Label disabled htmlFor="five" label="Disabled checked primary">
-        <Checkbox checked id="five" variant="primary" />
+      <Label disabled htmlFor="disabled_3" label="Disabled checked primary">
+        <Checkbox checked id="disabled_3" variant="primary" />
       </Label>
-      <Label disabled htmlFor="five" label="Disabled checked secondary">
-        <Checkbox checked id="five" variant="secondary" />
+      <Label disabled htmlFor="disabled_4" label="Disabled checked secondary">
+        <Checkbox checked id="disabled_4" variant="secondary" />
       </Label>
     </>
   ))
