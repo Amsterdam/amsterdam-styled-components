@@ -3,7 +3,7 @@ import styled from '@datapunt/asc-core'
 import { storiesOf } from '@storybook/react'
 import { boolean, withKnobs } from '@storybook/addon-knobs'
 import ImageCard from './ImageCard'
-import { ImageCardContent } from './ImageCardContent'
+import { ImageCardContent, ImageCardContentStyle } from './ImageCardContent'
 import Heading from '../Heading'
 import Paragraph from '../Paragraph'
 import Row from '../Grid/Row'
@@ -12,6 +12,7 @@ import { breakpoint } from '../../utils'
 import { ImageCardWrapperStyle } from './ImageCardStyle'
 import TypographyStyle from '../Typography/TypographyStyle'
 import { LoadingInterface } from '../shared/types'
+import CompactThemeProvider from '../../theme/CompactThemeProvider'
 
 const ImageCardOuterContainer = styled.div`
   width: 100%;
@@ -62,16 +63,21 @@ const ImageCardWrapperSmall = styled.div`
     ${ImageCardWrapperStyle} {
       flex-basis: 100%;
     }
+
+    ${ImageCardContentStyle} {
+      padding: 8px 16px;
+    }
   }
 
-  ${TypographyStyle} {
-    @media screen and ${breakpoint('min-width', 'tabletM')} {
-      line-height: inherit;
-      font-size: inherit;
-    }
+  ${TypographyStyle}.smaller-header {
     @media screen and ${breakpoint('max-width', 'tabletM')} {
-      line-height: 20px;
       font-size: 14px;
+      line-height: 17px;
+    }
+
+    @media screen and ${breakpoint('max-width', 'laptop')} {
+      font-size: 14px;
+      line-height: 20px;
     }
   }
 `
@@ -82,46 +88,59 @@ export const DataportaalImageCard: React.FC<LoadingInterface> = ({
 }) => (
   <ImageCardOuterContainer>
     <ImageCardInnerContainer>
-      <ImageCardWrapperBig>
-        <ImageCard
-          margin={12}
-          backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
-          loading={loading}
-        >
-          <ImageCardContent>
-            <Heading $as="h4" styleAs="h2">
-              Jeugdwerkloosheid Amsterdam daalt naar 6,2%
-            </Heading>
-            <Paragraph gutterBottom={0}>
-              Amsterdamse jongeren even vaak werkloos als gemiddeld in Nederland
-            </Paragraph>
-          </ImageCardContent>
-        </ImageCard>
-      </ImageCardWrapperBig>
-      <ImageCardWrapperSmall>
-        <ImageCard
-          margin={12}
-          backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
-          loading={loading}
-        >
-          <ImageCardContent>
-            <Heading $as="h4" strong gutterBottom={0} styleAs="p">
-              Jeugdwerk&shy;loosheid Amsterdam daalt naar 6,2%
-            </Heading>
-          </ImageCardContent>
-        </ImageCard>
-        <ImageCard
-          margin={12}
-          backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
-          loading={loading}
-        >
-          <ImageCardContent>
-            <Heading $as="h4" strong gutterBottom={0} styleAs="p">
-              Amsterdammers voelen zich veiliger in het OV
-            </Heading>
-          </ImageCardContent>
-        </ImageCard>
-      </ImageCardWrapperSmall>
+      <CompactThemeProvider>
+        <ImageCardWrapperBig>
+          <ImageCard
+            margin={12}
+            backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
+            loading={loading}
+          >
+            <ImageCardContent>
+              <Heading $as="h4" styleAs="h2">
+                Jeugdwerkloosheid Amsterdam daalt naar 6,2%
+              </Heading>
+              <Paragraph gutterBottom={0}>
+                Amsterdamse jongeren even vaak werkloos als gemiddeld in
+                Nederland
+              </Paragraph>
+            </ImageCardContent>
+          </ImageCard>
+        </ImageCardWrapperBig>
+        <ImageCardWrapperSmall>
+          <ImageCard
+            margin={12}
+            backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
+            loading={loading}
+          >
+            <ImageCardContent>
+              <Heading
+                $as="h4"
+                strong
+                gutterBottom={0}
+                className="smaller-header"
+              >
+                Jeugdwerk&shy;loosheid Amsterdam daalt naar 6,2%
+              </Heading>
+            </ImageCardContent>
+          </ImageCard>
+          <ImageCard
+            margin={12}
+            backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
+            loading={loading}
+          >
+            <ImageCardContent>
+              <Heading
+                $as="h4"
+                strong
+                gutterBottom={0}
+                className="smaller-header"
+              >
+                Amsterdammers voelen zich veiliger in het OV
+              </Heading>
+            </ImageCardContent>
+          </ImageCard>
+        </ImageCardWrapperSmall>
+      </CompactThemeProvider>
     </ImageCardInnerContainer>
   </ImageCardOuterContainer>
 )
