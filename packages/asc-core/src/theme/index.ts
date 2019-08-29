@@ -97,13 +97,11 @@ export namespace Theme {
     marginBottom: CSSProp
   }
 
-  type Optional<T> = { [P in keyof T]?: T[P] }
-
-  type TypographyType = {
+  interface TypographyType extends Partial<TypographyElementStyle> {
     breakpoints?: {
-      [key in keyof BreakpointsInterface]?: Optional<TypographyElementStyle>
+      [key in keyof BreakpointsInterface]?: Partial<TypographyElementStyle>
     }
-  } & TypographyElementStyle
+  }
 
   export interface TypographyElements {
     h1: TypographyType
@@ -119,17 +117,17 @@ export namespace Theme {
     span: TypographyType
   }
 
-  export interface TypographyInterface extends TypographyElements {
-    fontFamily: string
-    fontSize: string
+  export interface TypographyInterface extends Partial<TypographyElements> {
+    fontFamily?: string
+    fontSize?: string
   }
 
   export interface ThemeInterface {
-    breakpoints: BreakpointsInterface
-    colors: ColorTypeInterface
-    globalStyle: GlobalStyleType
-    typography: TypographyInterface
-    layouts: LayoutInterface
+    breakpoints: Partial<BreakpointsInterface>
+    colors: Partial<ColorTypeInterface>
+    globalStyle: Partial<GlobalStyleType>
+    typography: Partial<TypographyInterface>
+    layouts: Partial<LayoutInterface>
     maxGridWidth: number
   }
 

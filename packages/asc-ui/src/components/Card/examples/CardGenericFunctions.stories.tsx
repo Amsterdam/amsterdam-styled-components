@@ -24,7 +24,6 @@ import {
   Paragraph,
   Row,
   themeColor,
-  breakpoint,
   styles,
 } from '../../..'
 import { LoadingInterface } from '../../shared/types'

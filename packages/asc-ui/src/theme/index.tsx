@@ -1,16 +1,20 @@
 import React, { ReactNode } from 'react'
 import deepMerge from 'deepmerge'
-import { Theme, ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
+import {
+  Theme,
+  ascDefaultTheme,
+  ThemeProvider as AscThemeProvider,
+} from '@datapunt/asc-core'
 
 const { DEFAULT_THEME_NAME } = ascDefaultTheme
 
 interface Props {
-  overrides?: Theme.ThemeInterface
+  overrides?: Partial<Theme.ThemeInterface>
   themeName?: string
   children: ReactNode
 }
 
-const DefaultThemeProvider: React.FC<Props> = ({
+const ThemeProvider: React.FC<Props> = ({
   themeName = DEFAULT_THEME_NAME,
   overrides,
   children,
@@ -21,10 +25,10 @@ const DefaultThemeProvider: React.FC<Props> = ({
   )
 
   return (
-    <ThemeProvider theme={theme}>
+    <AscThemeProvider theme={theme}>
       <>{children}</>
-    </ThemeProvider>
+    </AscThemeProvider>
   )
 }
 
-export default DefaultThemeProvider
+export default ThemeProvider
