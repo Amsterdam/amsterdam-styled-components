@@ -97,7 +97,6 @@ const ShareBar = ButtonBar
 
 /** @deprecated  the color function was renamed to themeColor to eliminate the ambiguity with css color property. Will be removed in the next version */
 const color = themeColor
-
 export { color, themeColor }
 
 export { breakpoint, svgFill } from './utils'
