@@ -15,8 +15,29 @@ import { breakpoint, themeColor } from '../../../utils'
 import Link from '../../Link'
 
 const DaraportaalFrontpage = styled.div`
+  position: relative;
+  @media screen and ${breakpoint('min-width', 'laptopM')} {
+    margin: 0 24px;
+  }
+
   & > ${styles.RowStyle} {
     background-color: ${themeColor('tint', 'level1')};
+
+    @media screen and ${breakpoint('min-width', 'laptopM')} {
+      position: relative;
+
+      &::after {
+        content: '';
+        background-color: ${themeColor('support', 'valid')};
+        bottom: 0;
+        display: block;
+        position: absolute;
+        right: -24px;
+        top: 0;
+        width: 24px;
+        z-index: 300;
+      }
+    }
   }
 `
 
