@@ -91,26 +91,20 @@ to your project.
 Now you can import the package like you would do like a normal npm dependency. Changes you will make 
 in your package will be seen in your repo.
 
-- There is a known issue when developing with `yarn link` and using Hooks
-  [click here for details](https://reactjs.org/warnings/invalid-hook-call-warning.html). The cause
-  is that 2 React instances are used when using link.
-- To solve this problem there are 2 solutions
-  1. for the `./examples/create-react-app`, run: 
-     `npm link ./examples/create-react-app/node-modules/react` from the root folder to use the same
-     React version in the component lib as in the application.
-  2. eject your project. add to the webpack.config  in the resolve section an alias to react and
-    react-dom
+There is a known issue when developing with `yarn link` and using Hooks
+[(click here for details)](https://reactjs.org/warnings/invalid-hook-call-warning.html). The cause
+is that two React instances are used when using `link`. To solve this problem add this code to `webpack.common.js`:
 
-  ```json
-    resolve: {
-      extensions: ['.js', '.jsx'],
-      modules: ['./node_modules'],
-      alias: {
-        react: path.resolve('./node_modules/react'),
-        'react-dom': path.resolve('./node_modules/react-dom'),
-      },
+```javascript
+  resolve: {
+    modules: ['node_modules'],
+    extensions: ['.js', '.jsx'],
+    alias: {
+      react: path.resolve('./node_modules/react'),
+      'react-dom': path.resolve('./node_modules/react-dom'),
     },
-  ```
+  },
+```
 
 ### Using with Webpack
 
