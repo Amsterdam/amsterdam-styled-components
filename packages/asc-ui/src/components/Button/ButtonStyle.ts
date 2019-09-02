@@ -1,11 +1,6 @@
 import styled, { Theme, css } from '@datapunt/asc-core'
 import { transitions, readableColor, darken, size } from 'polished'
-import {
-  color as themeColor,
-  focusStyleOutline,
-  color as getColor,
-  svgFill,
-} from '../../utils'
+import { themeColor, focusStyleOutline, svgFill } from '../../utils'
 import { flexboxMinHeightFix } from '../shared/ie-fixes'
 import Icon from '../Icon'
 
@@ -28,7 +23,7 @@ const getVariant = () => ({
 }: {
   theme: any
   variant?: keyof typeof ButtonVariants
-  color?: Theme.TypeLevel
+  color?: Theme.ColorType
 }) => {
   switch (variant) {
     case 'primary':
@@ -68,18 +63,18 @@ const getVariant = () => ({
 
     case 'primaryInverted':
       return css`
-        color: ${getColor('primary')};
-        border: 1px solid ${getColor('primary')};
+        color: ${themeColor('primary')};
+        border: 1px solid ${themeColor('primary')};
         ${svgFill('primary')};
 
         &:hover {
-          outline: 1px solid ${getColor('primary')};
+          outline: 1px solid ${themeColor('primary')};
         }
       `
 
     case 'blank':
       return css`
-        background-color: ${getColor('tint', 'level1')};
+        background-color: ${themeColor('tint', 'level1')};
         ${svgFill('tint', 'level7')}
         &:hover {
           background-color: ${themeColor('tint', 'level3')};
@@ -89,8 +84,8 @@ const getVariant = () => ({
       // About-to-be-deprecated codeblock to support the 'color' prop
       return css`
         color: ${color
-          ? readableColor(getColor(color)({ theme }))
-          : getColor('primary')({ theme })};
+          ? readableColor(themeColor(color)({ theme }))
+          : themeColor('primary')({ theme })};
         ${color &&
           css`
             background: ${themeColor(color)};
@@ -98,7 +93,7 @@ const getVariant = () => ({
 
         ${!color &&
           css`
-            border: 1px solid ${getColor('primary')};
+            border: 1px solid ${themeColor('primary')};
           `}
 
         &:hover {
@@ -107,7 +102,7 @@ const getVariant = () => ({
             : themeColor('tint', 'level3')({ theme })};
           ${!color &&
             css`
-              outline: 1px solid ${getColor('primary')};
+              outline: 1px solid ${themeColor('primary')};
             `}
         }
       `
@@ -119,7 +114,7 @@ export type Props = {
    * Deprecated: Use variant instead. Pass the theme-color.
    * @deprecated
    */
-  color?: Theme.TypeLevel
+  color?: Theme.ColorType
   /**
    * Deprecated: use size to create a button with equal width and height
    * @deprecated

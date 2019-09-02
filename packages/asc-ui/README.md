@@ -20,17 +20,17 @@ Consult the [demo site with the storybook of the components](https://amsterdam.g
 
 ```jsx
 import styled from '@datapunt/asc-core'
-import { color, List, breakpoint, styles, ThemeProvider } from '@datapunt/asc-ui'
+import { themeColor, List, breakpoint, styles, ThemeProvider } from '@datapunt/asc-ui'
 
 const StyledList = styled(List)`
-  background-color: ${color('tint', 'level5')};
+  background-color: ${themeColor('tint', 'level5')};
 
   @media screen and ${breakpoint('min-width', 'laptopM')} {
-    background-color: ${color('tint', 'level1')};
+    background-color: ${themeColor('tint', 'level1')};
   }
 
   ${styles.ListItemStyle} {
-    color: ${color('primary')};
+    color: ${themeColor('primary')};
   }
 
   `
@@ -55,18 +55,18 @@ The same can be achieved by creating of a new StyledLinkedListItem:
 
 ```jsx
 import styled from '@datapunt/asc-core'
-import { color, List, breakpoint, styles, ThemeProvider, svgFill } from '@datapunt/asc-ui'
+import { themeColor, List, breakpoint, styles, ThemeProvider, svgFill } from '@datapunt/asc-ui'
 
 const StyledList = styled(List)`
-  background-color: ${color('tint', 'level5')};
+  background-color: ${themeColor('tint', 'level5')};
 
   @media screen and ${breakpoint('min-width', 'laptopM')} {
-    background-color: ${color('tint', 'level1')};
+    background-color: ${themeColor('tint', 'level1')};
   }
 `
 
 const StyledListItem - styled(ListItem)`
-  color: ${color('primary')};
+  color: ${themeColor('primary')};
 
   ${styles.IconStyle} {
     ${svgFill('tint', 'level1')};

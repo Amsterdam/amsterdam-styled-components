@@ -1,5 +1,10 @@
 import styled, { css } from '@datapunt/asc-core'
-import { breakpoint, color, customCss, CustomCssPropsType } from '../../utils'
+import {
+  breakpoint,
+  themeColor,
+  customCss,
+  CustomCssPropsType,
+} from '../../utils'
 import HeaderTitleStyle from './HeaderTitleStyle'
 import HeaderNavigationStyle from './HeaderNavigationStyle'
 import HeaderLogoTextStyle from './HeaderLogoTextStyle'
@@ -24,7 +29,7 @@ const shortStyle = css`
 `
 
 const HeaderWrapperStyle = styled.div<Props>`
-  background-color: ${color('tint', 'level1')};
+  background-color: ${themeColor('tint', 'level1')};
   margin: 0 auto;
   width: 100%;
   max-width: ${({ fullWidth }) =>
@@ -58,7 +63,7 @@ const HeaderWrapperStyle = styled.div<Props>`
               right: 0;
               height: ${CONTENT_HEIGHT_TALL}px;
               margin-top: ${CONTENT_HEIGHT_TALL * -1}px;
-              background-color: ${color('tint', 'level2')};
+              background-color: ${themeColor('tint', 'level2')};
             }
 
             ${HeaderStyle} {

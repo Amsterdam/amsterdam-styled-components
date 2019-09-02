@@ -14,7 +14,7 @@ import {
   Column,
   Tag,
   Link,
-  color,
+  themeColor,
   breakpoint,
   styles,
 } from '../../..'
@@ -22,30 +22,30 @@ import RowStyle from '../../Grid/RowStyle'
 
 const SpecialCardContainer = styled(CardContainer)`
   ${/* sc-selector */ styles.ColumnStyle}:first-child > ${styles.LinkStyle} {
-     border-top: ${color('tint', 'level3')} 1px solid;
+     border-top: ${themeColor('tint', 'level3')} 1px solid;
   }
 
     @media screen and ${breakpoint('min-width', 'tabletM')} {
     ${/* sc-selector */ styles.ColumnStyle}:nth-child(2) > ${styles.LinkStyle} {
-      border-top: ${color('tint', 'level3')} 1px solid;
+      border-top: ${themeColor('tint', 'level3')} 1px solid;
     }
   }
 
   @media screen and ${breakpoint('min-width', 'laptop')} {
     ${/* sc-selector */ styles.ColumnStyle}:nth-child(3) > ${styles.LinkStyle} {
-      border-top: ${color('tint', 'level3')} 1px solid;
+      border-top: ${themeColor('tint', 'level3')} 1px solid;
     }
   }
 
   ${/* sc-selector */ styles.ColumnStyle} > ${styles.LinkStyle} {
-    border-bottom: ${color('tint', 'level3')} 1px solid;
+    border-bottom: ${themeColor('tint', 'level3')} 1px solid;
     width: 100%;
     min-height: 66px; 
 
     &:hover > ${styles.CardStyle} 
       > ${styles.CardContentStyle} 
       > ${styles.HeadingStyle} {
-        color: ${color('secondary')};
+        color: ${themeColor('secondary')};
         text-decoration: underline;
     }
   }

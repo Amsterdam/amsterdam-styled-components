@@ -3,7 +3,7 @@ import ListStyle from '../../List/ListStyle'
 import HeadingStyle from '../../Heading/HeadingStyle'
 import TypographyStyle from '../../Typography/TypographyStyle'
 import LinkStyle from '../../Link/LinkStyle'
-import { color } from '../../../utils'
+import { themeColor } from '../../../utils'
 
 export default styled.aside`
   ${ListStyle} {
@@ -18,7 +18,7 @@ export default styled.aside`
   ${LinkStyle} {
     & > ${TypographyStyle} {
       display: block;
-      color: ${color('tint', 'level6')};
+      color: ${themeColor('tint', 'level6')};
       text-decoration: none;
     }
   }

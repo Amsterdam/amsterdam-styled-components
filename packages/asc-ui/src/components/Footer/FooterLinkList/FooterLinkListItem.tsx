@@ -1,5 +1,5 @@
 import styled from '@datapunt/asc-core'
-import { color, svgFill } from '../../../utils'
+import { themeColor, svgFill } from '../../../utils'
 import { ListItem } from '../../List'
 import TypographyStyle from '../../Typography/TypographyStyle'
 import IconStyle from '../../Icon/IconStyle'
@@ -7,7 +7,7 @@ import LinkStyle from '../../Link/LinkStyle'
 
 const FooterListItem = styled(ListItem)`
   ${TypographyStyle} {
-    color: ${color('tint', 'level1')};
+    color: ${themeColor('tint', 'level1')};
   }
 
   ${IconStyle} {
@@ -15,10 +15,10 @@ const FooterListItem = styled(ListItem)`
   }
 
   ${LinkStyle} {
-    color: ${color('tint', 'level1')};
+    color: ${themeColor('tint', 'level1')};
 
     &:hover {
-      color: ${color('tint', 'level1')};
+      color: ${themeColor('tint', 'level1')};
       text-decoration: underline;
 
       ${IconStyle} {

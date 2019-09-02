@@ -9,7 +9,7 @@ import {
   MenuItemTitle,
   MenuInline,
   MenuToggle,
-  color,
+  themeColor,
 } from '../../index'
 
 const ReactRouterLink: React.FC<any> = ({
@@ -29,7 +29,7 @@ const StyledReactRouterLink: React.FC<any> = ({ children, ...otherProps }) => (
 )
 
 const StyledMenuInline = styled(MenuInline)`
-  background-color: ${color('tint', 'level2')};
+  background-color: ${themeColor('tint', 'level2')};
 `
 
 // eslint-disable-next-line import/prefer-default-export

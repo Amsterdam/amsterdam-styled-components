@@ -1,5 +1,5 @@
 import styled, { css, Theme } from '@datapunt/asc-core'
-import { getTypographyFromTheme, color } from '../../utils'
+import { getTypographyFromTheme, themeColor } from '../../utils'
 
 import TypographyElements = Theme.TypographyElements
 
@@ -7,11 +7,12 @@ export type Props = {
   gutterBottom?: number
   paragraph?: boolean
   element?: Variant
-  color?: Theme.TypeLevel
+  color?: Theme.ColorType
   fontSize?: number
   styleAs?: keyof TypographyElements
   as?: any
-  strong?: boolean
+  strong?: boolean // makes the text strong(bold)
+  compact?: boolean // applies the compact line heights
 }
 
 export const defaultTypographyStyles = {
@@ -34,12 +35,12 @@ export default styled.p<Props>`
     strong &&
     css`
       font-weight: 700;
-      color: ${color('tint', 'level7')};
+      color: ${themeColor('tint', 'level7')};
     `}
-  ${({ color: colorProp }) =>
-    colorProp &&
+  ${({ color }) =>
+    color &&
     css`
-      color: ${color(colorProp)};
+      color: ${themeColor(color)};
     `}
   ${({ fontSize }) =>
     fontSize &&

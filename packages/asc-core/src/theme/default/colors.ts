@@ -1,6 +1,6 @@
 import { Theme } from '../index'
 
-const colors: Theme.ColorInterface = {
+const colors: Theme.ColorTypeInterface = {
   primary: {
     main: '#004699',
     dark: '#00387a',

@@ -1,5 +1,5 @@
 import styled from '@datapunt/asc-core'
-import { color } from '../../utils'
+import { themeColor } from '../../utils'
 import { Position } from './types'
 
 export type ContextMenuListProps = {
@@ -24,8 +24,8 @@ export const ContextMenuListWrapperStyle = styled.div.attrs(() => ({
   tabIndex: -1,
 }))<ContextMenuListProps>`
   order: ${({ position }) => (position === 'bottom' ? -1 : 0)};
-  background-color: ${color('tint', 'level1')};
-  border: 1px solid ${color('tint', 'level7')};
+  background-color: ${themeColor('tint', 'level1')};
+  border: 1px solid ${themeColor('tint', 'level7')};
   max-width: 250px;
   width: 100%;
 

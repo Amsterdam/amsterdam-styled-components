@@ -1,6 +1,6 @@
 import { margin } from 'polished'
 import styled, { css } from '@datapunt/asc-core'
-import { color } from '../../utils'
+import { themeColor } from '../../utils'
 
 type Props = {
   gutter?: boolean
@@ -20,7 +20,7 @@ const DividerStyle = styled.hr<Props>`
     ${({ theme, transparent }) =>
       transparent
         ? 'background-color: transparent;'
-        : color('tint', 'level4')({ theme })};
+        : themeColor('tint', 'level4')({ theme })};
 `
 
 export default DividerStyle

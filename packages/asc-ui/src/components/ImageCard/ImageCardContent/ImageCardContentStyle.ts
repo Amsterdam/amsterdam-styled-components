@@ -1,9 +1,9 @@
 import styled from '@datapunt/asc-core'
-import { color, breakpoint } from '../../../utils'
+import { themeColor, breakpoint } from '../../../utils'
 
 export default styled.div`
   padding: 8px 14px;
-  background-color: ${color('tint', 'level1')};
+  background-color: ${themeColor('tint', 'level1')};
   position: absolute;
   bottom: 56px;
   left: 0;
