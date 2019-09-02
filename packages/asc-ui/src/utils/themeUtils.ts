@@ -137,8 +137,7 @@ export const focusStyleOutline = (width?: number, offset?: number) => ({
 }: {
   theme: Theme.ThemeInterface
 }) => css`
-  &:focus {
-    z-index: 10;
+  &&:focus {
     ${outlineStyle(theme, width, offset)}
   }
 `
