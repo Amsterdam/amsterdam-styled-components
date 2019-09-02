@@ -66,7 +66,7 @@ import {
   MenuStyles,
   MenuButton,
 } from './components/Menu'
-import ThemeProvider from './theme'
+import { ThemeProvider, CompactThemeProvider } from './theme'
 import IconButton from './components/deprecated/IconButton'
 import ButtonBar from './components/deprecated/ButtonBar'
 import Radio from './components/Radio'
@@ -187,6 +187,7 @@ export {
   TextField,
   Theme,
   ThemeProvider,
+  CompactThemeProvider,
   TopBar,
   EditorialPost,
   Article,
