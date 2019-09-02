@@ -48,10 +48,12 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "importHelpers": true,
     "strict": true
   },
   "files": [
-    "custom.d.ts"
+    "custom.d.ts",
+    "node_modules/jest-styled-components/typings/index.d.ts"
   ],
   "exclude": [
     "node_modules",

@@ -121,17 +121,25 @@ export const getTypographyValueFromProperty = (
   return rules[property]
 }
 
-export const focusStyleOutline = (width: number = 3, offset: number = 0) => ({
+export const outlineStyle = (
+  theme: ThemeInterface,
+  width: number = 3,
+  offset: number = 0,
+) => css`
+  outline-color: ${themeColor('support', 'focus')({ theme })};
+  outline-style: solid;
+  outline-offset: ${offset}px;
+  outline-width: ${width}px;
+`
+
+export const focusStyleOutline = (width?: number, offset?: number) => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
 }) => css`
   &:focus {
     z-index: 10;
-    outline-color: ${themeColor('support', 'focus')({ theme })};
-    outline-style: solid;
-    outline-offset: ${offset}px;
-    outline-width: ${width}px;
+    ${outlineStyle(theme, width, offset)}
   }
 `
 
@@ -144,7 +152,11 @@ export const focusStyleText = () => ({
     background-color: ${themeColor('support', 'focus')({ theme })};
   }
 `
-export const srOnlyStyle = () => ({ srOnly }: { srOnly: boolean }) =>
+
+/**
+ * Util to hide the component for screen readers
+ */
+export const srOnlyStyle = () => ({ srOnly }: { srOnly?: boolean }) =>
   srOnly
     ? css`
         border-width: 0;

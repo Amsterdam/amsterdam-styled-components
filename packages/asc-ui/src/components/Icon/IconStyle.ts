@@ -19,7 +19,7 @@ export const defaultProps = {
 const IconStyle = styled.span<Props>`
   display: ${({ inline }) => (inline ? 'inline-flex' : 'flex')};
   ${({ iconUrl }) => iconUrl && `background-image: ${iconUrl}`}
-  ${({ size = defaultProps.size, padding = defaultProps.padding }) => `
+  ${({ size = defaultProps.size, padding = defaultProps.padding }) => css`
     width: ${size - padding * 2}px;
     height: ${size - padding * 2}px;
   `}
@@ -32,8 +32,10 @@ const IconStyle = styled.span<Props>`
   ${({ rotate = defaultProps.rotate }) => `transform: rotate(${rotate}deg)`};
 
   & > svg {
-    width: inherit;
-    height: inherit;
+    ${({ size = defaultProps.size, padding = defaultProps.padding }) => css`
+      width: ${size - padding * 2}px;
+      height: ${size - padding * 2}px;
+    `}
   }
   
   ${({ color, theme }) => svgFill(color)({ theme })};

@@ -14,8 +14,8 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## [0.13.0] - 2019-xx-xx
-
+## UNRELEASED
+- Added: Checkbox component
 - Deprecated: Renamed the `color` function for extracting a color from the theme to `themeColor` for resolving ambiguity with the color prop in css
 
 ## [0.12.7] - 2019-08-21
@@ -30,7 +30,7 @@ Prefix the change with one of these keywords:
 
 ## [0.12.3] - 2019-08-21
 
-- Fixed: IE11 issue in Article componen
+- Fixed: IE11 issue in Article component
 
 ## [0.12.2] - 2019-08-20
 
