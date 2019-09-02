@@ -1,5 +1,5 @@
 import styled, { css } from '@datapunt/asc-core'
-import { color, srOnlyStyle } from '../../utils'
+import { themeColor, srOnlyStyle } from '../../utils'
 
 type SharedProps = {
   position?: 'top' | 'right' | 'bottom' | 'left'
@@ -14,7 +14,7 @@ const FormLabelStyle = styled.label<Props>`
   display: inline-flex;
   align-items: center;
   vertical-align: middle;
-  color: ${color('tint', 'level7')};
+  color: ${themeColor('tint', 'level7')};
   ${srOnlyStyle()}
   ${({ disabled }) =>
     disabled
