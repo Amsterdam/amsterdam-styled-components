@@ -29,8 +29,8 @@ exports[`DocumentCover should render 1`] = `
 }
 
 .c7 > svg {
-  width: inherit;
-  height: inherit;
+  width: 20px;
+  height: 20px;
 }
 
 .c6 {

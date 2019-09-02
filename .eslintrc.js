@@ -30,6 +30,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   rules: {
+    'no-console': 2,
     'prettier/prettier': ['error'],
     'react/prop-types': 0,
     'react/jsx-wrap-multilines': 'off',
