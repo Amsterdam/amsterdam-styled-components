@@ -3,10 +3,6 @@ import { render, cleanup, fireEvent } from '@testing-library/react'
 import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import Checkbox from './Checkbox'
 
-const theme = {
-  ...ascDefaultTheme,
-}
-
 describe('Checkbox', () => {
   let container: any
   const onChangeMock = jest.fn()
@@ -14,7 +10,7 @@ describe('Checkbox', () => {
   beforeEach(() => {
     cleanup()
     ;({ container } = render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={ascDefaultTheme}>
         <Checkbox onChange={onChangeMock} />
       </ThemeProvider>,
     ))

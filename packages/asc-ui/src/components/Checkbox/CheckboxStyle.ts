@@ -1,5 +1,5 @@
 import styled, { css } from '@datapunt/asc-core'
-import { color, focusStyleOutline, svgFill } from '../../utils'
+import { themeColor, focusStyleOutline, svgFill } from '../../utils'
 import { IconStyle } from '../Icon'
 import { ButtonVariants } from '../Button/ButtonStyle'
 import { outlineStyle } from '../../utils/themeUtils'
@@ -23,20 +23,20 @@ const getVariant = () => ({
   switch (variant) {
     case 'primary':
       return css`
-        color: ${color('primary', 'main')};
-        background-color: ${color('primary', 'main')};
+        color: ${themeColor('primary', 'main')};
+        background-color: ${themeColor('primary', 'main')};
       `
 
     case 'secondary':
       return css`
-        color: ${color('secondary', 'main')};
-        background-color: ${color('secondary', 'main')};
+        color: ${themeColor('secondary', 'main')};
+        background-color: ${themeColor('secondary', 'main')};
       `
 
     default:
       return css`
-        color: ${color('tint', 'level7')};
-        background-color: ${color('tint', 'level7')};
+        color: ${themeColor('tint', 'level7')};
+        background-color: ${themeColor('tint', 'level7')};
       `
   }
 }
@@ -95,10 +95,10 @@ const CheckboxWrapper = styled.div<Props & { focus: boolean }>`
     `}
   ${({ checked, disabled }) =>
     !checked &&
-    !disabled && // IE11 fix
+    !disabled && // IE11 fix. If an element is disabled, you can still hover on it on IE11.
     css`
       &:hover {
-        color: ${color('tint', 'level7')};
+        color: ${themeColor('tint', 'level7')};
 
         ${CheckboxIconStyle} {
           outline-style: solid;
