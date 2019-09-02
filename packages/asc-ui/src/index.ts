@@ -88,13 +88,19 @@ import Footer, {
   FooterTop,
   FooterStyles,
 } from './components/Footer'
+import { themeColor } from './utils'
 
 /**
  * @deprecated
  */
 const ShareBar = ButtonBar
 
-export { breakpoint, themeColor, svgFill } from './utils'
+/** @deprecated  the color function was renamed to themeColor to eliminate the ambiguity with css color property. Will be removed in the next version */
+const color = themeColor
+
+export { color, themeColor }
+
+export { breakpoint, svgFill } from './utils'
 
 export const styles = {
   ...AmsterdamLogoStyles,
