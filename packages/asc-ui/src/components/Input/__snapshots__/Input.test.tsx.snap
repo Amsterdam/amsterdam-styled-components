@@ -14,8 +14,7 @@ exports[`Input component structure should render 1`] = `
   width: 100%;
 }
 
-.c0:focus {
-  z-index: 10;
+.c0.c0:focus {
   outline-color: #FEC813;
   outline-style: solid;
   outline-offset: 0.5px;
