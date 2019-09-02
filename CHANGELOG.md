@@ -16,18 +16,24 @@ Prefix the change with one of these keywords:
 
 ## UNRELEASED
 - Added: Checkbox component
+- Deprecated: Renamed the `color` function for extracting a color from the theme to `themeColor` for resolving ambiguity with the color prop in css
 
 ## [0.12.7] - 2019-08-21
+
 ### ASC-ASSETS
+
 - Fixed: svg object contains svg's again
 
 ### ASC-UI
+
 - Changed: Set Modal's className on wrapper (solved issue where className was set on Portal component)
 
 ## [0.12.3] - 2019-08-21
+
 - Fixed: IE11 issue in Article component
 
 ## [0.12.2] - 2019-08-20
+
 - Deprecated: 'linkType' on Link component. Please use variant instead.
 - Added: Able to pass a 'color' prop to Link
 - Changed: Link now has a default color black 

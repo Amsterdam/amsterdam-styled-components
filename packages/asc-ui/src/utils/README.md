@@ -50,7 +50,7 @@ Extends `fromTheme`, but it's specified to the theme colors. Will return a defau
 
 ```js static
 import styled from '@datapunt/asc-core'
-import { color } from './utils'
+import { themeColor } from './utils'
 
 const theme = {
   colors: {
@@ -63,8 +63,8 @@ const theme = {
 }
 
 const ButtonStyle = styled.button`
-  background-color: ${color('primary', 'dark')};
-  color: ${color('light')};
+  background-color: ${themeColor('primary', 'dark')};
+  color: ${themeColor('light')};
 `
 
 

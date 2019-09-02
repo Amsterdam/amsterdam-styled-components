@@ -2,16 +2,16 @@ import styled, { css, styledComponents, Theme } from '@datapunt/asc-core'
 import { readableColor } from 'polished'
 import { Props as TypographyProps } from '../Typography/TypographyStyle'
 import Typography from '../Typography'
-import { getColorCode } from '../../utils'
+import { themeColor } from '../../utils'
 
 export type Props = {
-  colorVariant?: Theme.Tint | Theme.TypeLevel
+  colorType?: keyof Theme.ColorType
+  colorSubtype?: keyof Theme.Tint
 } & TypographyProps &
   styledComponents.StyledProps<any>
 
-export const TagStyleCSS = ({ colorVariant, theme }: Props) => {
-  const backgroundColor = getColorCode(colorVariant)({ theme })
-
+export const TagStyleCSS = ({ colorType, colorSubtype, theme }: Props) => {
+  const backgroundColor = themeColor(colorType, colorSubtype)({ theme })
   return css<Props>`
     margin-top: 0;
     display: block;

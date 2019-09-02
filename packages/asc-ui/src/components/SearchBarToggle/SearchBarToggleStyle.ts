@@ -1,6 +1,6 @@
 import styled from '@datapunt/asc-core'
 import {
-  color,
+  themeColor,
   showHide,
   ShowHideTypes,
   customCss,
@@ -26,7 +26,7 @@ const SearchBarToggleStyle = styled(ToggleStyle)<SearchBarToggleStyleProps>`
     right: 0;
     left: 0;
     padding: 15px;
-    background-color: ${color('tint', 'level2')};
+    background-color: ${themeColor('tint', 'level2')};
     border-bottom: 4px solid;
   }
 

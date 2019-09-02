@@ -1,5 +1,5 @@
 import styled from '@datapunt/asc-core'
-import { ShowHideTypes, showHide, color } from '../../../utils'
+import { ShowHideTypes, showHide, themeColor } from '../../../utils'
 import ParagraphStyle from '../../Paragraph/ParagraphStyle'
 
 export interface Props extends ShowHideTypes {
@@ -14,6 +14,6 @@ export default styled.div<Props>`
   ${showHide}
 
   ${ParagraphStyle} {
-    color: ${color('tint', 'level1')};
+    color: ${themeColor('tint', 'level1')};
   }
 `

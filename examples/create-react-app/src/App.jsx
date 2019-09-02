@@ -9,7 +9,7 @@ import {
   Link,
   Typography,
   styles,
-  color,
+  themeColor,
   breakpoint,
   svgFill,
 } from '@datapunt/asc-ui'
@@ -30,24 +30,24 @@ const themeOverides = {
 
 const StyledLinkList = styled(List)`
   padding: 50px;
-  background-color: ${color('tint', 'level2')};
+  background-color: ${themeColor('tint', 'level2')};
 
   @media screen and ${breakpoint('min-width', 'laptopM')} {
-    background-color: ${color('tint', 'level4')};
+    background-color: ${themeColor('tint', 'level4')};
   }
 
   ${styles.LinkListItemStyle} > a {
-    color: ${color('primary')};
+    color: ${themeColor('primary')};
   }
 
   &.link-list {
-    background-color: ${color('tint', 'level3')};
+    background-color: ${themeColor('tint', 'level3')};
   }
 `
 
 const StyledLinkListItem = styled(ListItem)`
   & > a {
-    color: ${color('primary')};
+    color: ${themeColor('primary')};
   }
 
   ${styles.IconStyle} {

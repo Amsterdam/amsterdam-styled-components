@@ -3,7 +3,7 @@ import { svgFill } from '../../utils'
 
 export type Props = {
   inline?: boolean
-  color?: Theme.TypeLevel
+  color?: Theme.ColorType
   iconUrl?: string
   size?: number
   padding?: number

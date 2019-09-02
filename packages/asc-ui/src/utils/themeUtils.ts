@@ -10,16 +10,17 @@ type ThemeProp = {
   theme: Theme.ThemeInterface
 }
 
-export const color = (
-  colorType?: Theme.TypeLevel,
-  variant: string = 'main',
+export const themeColor = (
+  colorType?: Theme.ColorType,
+  colorSubtype: string = 'main',
   override?: string,
 ) => ({ theme }: ThemeProp) => {
   if (override) {
     return override
   }
+
   if (colorType) {
-    return fromTheme(`colors.${[colorType]}.${[variant]}`)({ theme })
+    return fromTheme(`colors.${[colorType]}.${[colorSubtype]}`)({ theme })
   }
 
   return fromTheme('colors.tint.level1')({ theme })
@@ -125,7 +126,7 @@ export const outlineStyle = (
   width: number = 3,
   offset: number = 0,
 ) => css`
-  outline-color: ${color('support', 'focus')({ theme })};
+  outline-color: ${themeColor('support', 'focus')({ theme })};
   outline-style: solid;
   outline-offset: ${offset}px;
   outline-width: ${width}px;
@@ -148,7 +149,7 @@ export const focusStyleText = () => ({
   theme: Theme.ThemeInterface
 }) => css`
   &:focus {
-    background-color: ${color('support', 'focus')({ theme })};
+    background-color: ${themeColor('support', 'focus')({ theme })};
   }
 `
 
@@ -170,12 +171,12 @@ export const srOnlyStyle = () => ({ srOnly }: { srOnly?: boolean }) =>
     : ''
 
 export const svgFill = (
-  colorType?: Theme.TypeLevel,
+  colorType?: Theme.ColorType,
   variant: string = 'main',
   override?: string,
 ) => ({ theme }: ThemeProp) => {
   if (colorType) {
-    const value = color(colorType, variant, override)({ theme })
+    const value = themeColor(colorType, variant, override)({ theme })
     if (typeof value === 'string') {
       return `& svg {
         rect,
@@ -202,15 +203,15 @@ export const perceivedLoading = (
 ) => {
   const animation = keyframes`
     0% {
-      ${property}: ${color('tint', 'level3')({ theme })};
+      ${property}: ${themeColor('tint', 'level3')({ theme })};
     }
   
     50% {
-      ${property}: ${color('tint', 'level4')({ theme })};
+      ${property}: ${themeColor('tint', 'level4')({ theme })};
     }
     
     100% {
-      ${property}: ${color('tint', 'level3')({ theme })};
+      ${property}: ${themeColor('tint', 'level3')({ theme })};
     }
   `
 
@@ -286,19 +287,4 @@ export interface CustomCssPropsInterface {
 
 export type CustomCssPropsType = {
   css?: any
-}
-
-/**
- * Use this util to animate the background-color (or other property), for perceived performance purposes
- * @param theme
- * @param property
- */
-export const getColorCode = (colorType: Theme.TypeLevel & Theme.Tint) => ({
-  theme,
-}: ThemeProp) => {
-  if (colorType.startsWith('level')) {
-    return color('tint', colorType)({ theme })
-  }
-
-  return color(colorType)({ theme })
 }

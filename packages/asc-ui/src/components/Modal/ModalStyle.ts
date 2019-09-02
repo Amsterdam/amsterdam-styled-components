@@ -1,13 +1,13 @@
 import styled from '@datapunt/asc-core'
 import TopBarStyle from '../TopBar/TopBarStyle'
-import { color } from '../../utils'
+import { themeColor } from '../../utils'
 
 type Props = {
   attributes?: object
 }
 
 const ModalStyle = styled.div<Props>`
-  background-color: ${color('tint', 'level1')};
+  background-color: ${themeColor('tint', 'level1')};
   overflow: auto;
   z-index: 20;
   width: 100%;

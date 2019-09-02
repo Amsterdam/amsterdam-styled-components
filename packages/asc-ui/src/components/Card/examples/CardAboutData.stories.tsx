@@ -12,7 +12,7 @@ import {
   CardContainer,
   CardContent,
   styles,
-  color,
+  themeColor,
   breakpoint,
 } from '../../..'
 
@@ -45,10 +45,11 @@ const CardContainerAboutData = styled(CardContainer)`
     cursor: pointer;
 
     &:hover {
-      ${({ theme }) => `box-shadow: 2px 2px ${color('secondary')({ theme })};`}
+      ${({ theme }) =>
+        `box-shadow: 2px 2px ${themeColor('secondary')({ theme })};`}
 
       ${styles.HeadingStyle} {
-        color: ${color('secondary')};
+        color: ${themeColor('secondary')};
         text-decoration: underline;
       }
     }
@@ -80,7 +81,7 @@ const CardContainerAboutData = styled(CardContainer)`
 const Border = styled.div`
   height: 4px;
   margin-bottom: 16px;
-  background-color: ${color('tint', 'level3')};
+  background-color: ${themeColor('tint', 'level3')};
 `
 
 storiesOf('Atoms/Card/Implementation', module)

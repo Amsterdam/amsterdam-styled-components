@@ -2,7 +2,7 @@ import * as React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import FooterTop from './FooterTop'
-import { color, breakpoint } from '../../../utils'
+import { themeColor, breakpoint } from '../../../utils'
 
 const theme = { ...ascDefaultTheme }
 
@@ -18,7 +18,7 @@ describe('FooterTop', () => {
 
     expect(queryByTestId('test-id')).toHaveStyleRule(
       'background-color',
-      color('tint', 'level5')({ theme }),
+      themeColor('tint', 'level5')({ theme }),
     )
 
     expect(queryByTestId('test-id')).not.toHaveStyleRule(

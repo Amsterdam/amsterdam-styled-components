@@ -8,7 +8,7 @@ import {
   FooterLinkListItem,
   FooterBottomLinkListItem,
 } from './index'
-import { color } from '../../../utils'
+import { themeColor } from '../../../utils'
 
 const theme = {
   ...ascDefaultTheme,
@@ -31,7 +31,7 @@ describe('FooterLinkList', () => {
     )
     expect(queryByTestId('link-list-id')).toHaveStyleRule(
       'background-color',
-      color('tint', 'level5')({ theme }),
+      themeColor('tint', 'level5')({ theme }),
     )
     expect(queryAllByText(/Item/)).toHaveLength(2)
 
@@ -60,7 +60,7 @@ describe('FooterBottomLinkList', () => {
     )
     expect(queryByTestId('link-list-id')).toHaveStyleRule(
       'background-color',
-      color('tint', 'level1')({ theme }),
+      themeColor('tint', 'level1')({ theme }),
     )
     expect(queryAllByText(/Item/)).toHaveLength(3)
   })

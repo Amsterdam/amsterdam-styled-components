@@ -14,7 +14,7 @@ const App = () => {
         >
           An html button with an onclick event, click me!
         </button>
-        <Button color={Theme.TypeLevel.primary}>
+        <Button color={Theme.ColorType.primary}>
           <Close />Hello
         </Button>
       </>

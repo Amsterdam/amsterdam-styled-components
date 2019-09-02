@@ -7,7 +7,7 @@ import {
   Card,
   CardContainer,
   CardContent,
-  color,
+  themeColor,
   Column,
   Heading,
   Link,
@@ -22,7 +22,7 @@ const StyledCardContainer = styled(CardContainer)`
 
 const ArticleCardsWrapper = styled.div`
   padding: 40px 0 20px;
-  background-color: ${color('tint', 'level3')};
+  background-color: ${themeColor('tint', 'level3')};
 `
 
 const StyledCard = styled(Card)`
