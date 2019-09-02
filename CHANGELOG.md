@@ -16,6 +16,10 @@ Prefix the change with one of these keywords:
 
 ## UNRELEASED
 
+## [0.13.2] - 2019-09-xx
+
+- Added: export CompactThemeProvider
+
 ## [0.13.1] - 2019-09-02
 
 - Added: Checkbox component
