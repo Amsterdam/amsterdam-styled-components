@@ -66,7 +66,7 @@ import {
   MenuStyles,
   MenuButton,
 } from './components/Menu'
-import { ThemeProvider, CompactThemeProvider } from './theme'
+import ThemeProvider, { CompactThemeProvider } from './theme'
 import IconButton from './components/deprecated/IconButton'
 import ButtonBar from './components/deprecated/ButtonBar'
 import Radio from './components/Radio'
