@@ -15,6 +15,9 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## UNRELEASED
+
+## [0.13.1] - 2019-09-02
+
 - Added: Checkbox component
 - Deprecated: Renamed the `color` function for extracting a color from the theme to `themeColor` for resolving ambiguity with the color prop in css
 
