@@ -66,7 +66,7 @@ import {
   MenuStyles,
   MenuButton,
 } from './components/Menu'
-import ThemeProvider from './theme'
+import ThemeProvider, { CompactThemeProvider } from './theme'
 import IconButton from './components/deprecated/IconButton'
 import ButtonBar from './components/deprecated/ButtonBar'
 import Radio from './components/Radio'
@@ -97,7 +97,6 @@ const ShareBar = ButtonBar
 
 /** @deprecated  the color function was renamed to themeColor to eliminate the ambiguity with css color property. Will be removed in the next version */
 const color = themeColor
-
 export { color, themeColor }
 
 export { breakpoint, svgFill } from './utils'
@@ -187,6 +186,7 @@ export {
   TextField,
   Theme,
   ThemeProvider,
+  CompactThemeProvider,
   TopBar,
   EditorialPost,
   Article,
