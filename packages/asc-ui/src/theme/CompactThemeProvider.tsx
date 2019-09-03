@@ -27,9 +27,12 @@ const overridesCompactTheme: Partial<Theme.ThemeInterface> = {
  * This can be used to decorate a component in order to use this specific theme just for it
  *
  *  @example <caption>Decorate a component to enfoce this theme</caption>
+ * <ThemeProvider>
+ *  <Heading>I am a header with a default style</Heading>
  *  <CompactThemeProvider>
- *    <DecoratedComponent />
- * </CompactThemeProvider>
+ *    <Heading>I have a compact style</Heading>
+ *  </CompactThemeProvider>
+ * </ThemeProvider>
  *
  */
 const CompactThemeProvider: React.FC<{}> = ({ children }) => (
