@@ -71,7 +71,6 @@ const CheckboxIconStyle = styled(IconStyle)<Props>`
     css`
       ${getVariant()};
     `}
-
   ${svgFill('tint', 'level1')};
 `
 
@@ -81,34 +80,34 @@ const CheckboxWrapper = styled.div<Props & { focus: boolean }>`
   user-select: none;
   vertical-align: middle;
   padding: 10px;
-  ${({ focus, theme }) =>
-    focus &&
-    css`
-      ${CheckboxIconStyle} {
-        ${outlineStyle(theme, 2, 1)}
-      }
-    `}
-  ${({ disabled }) =>
-    disabled &&
-    css`
-      pointer-events: none;
-    `}
-  ${({ checked, disabled }) =>
-    !checked &&
-    !disabled && // IE11 fix. If an element is disabled, you can still hover on it on IE11.
-    css`
-      &:hover {
-        color: ${themeColor('tint', 'level7')};
-
+  color: ${themeColor('tint', 'level5')}
+    ${({ focus, theme }) =>
+      focus &&
+      css`
         ${CheckboxIconStyle} {
-          outline-style: solid;
-          outline-width: 2px;
+          ${outlineStyle(theme, 2, 1)}
         }
-      }
-    `}
-  
+      `}
+    ${({ disabled }) =>
+      disabled &&
+      css`
+        pointer-events: none;
+      `}
+    ${({ checked, disabled, focus }) =>
+      !checked &&
+      !disabled && // IE11 fix. If an element is disabled, you can still hover on it on IE11.
+      !focus && // don't override the outline if element is also focussed
+      css`
+        &:hover {
+          color: ${themeColor('tint', 'level7')};
 
-  ${focusStyleOutline()}
+          ${CheckboxIconStyle} {
+            outline-style: solid;
+            outline-width: 1px;
+          }
+        }
+      `}
+    ${focusStyleOutline()};
 `
 
 export { CheckboxWrapper, CheckboxIconStyle }
