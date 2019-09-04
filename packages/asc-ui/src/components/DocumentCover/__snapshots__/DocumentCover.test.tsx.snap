@@ -90,6 +90,8 @@ exports[`DocumentCover should render 1`] = `
   border: none;
   color: #B4B4B4;
   background-color: #E6E6E6;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c5:disabled svg rect,

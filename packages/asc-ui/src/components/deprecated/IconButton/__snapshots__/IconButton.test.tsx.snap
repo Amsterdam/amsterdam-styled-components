@@ -57,6 +57,10 @@ exports[`IconButton should render the IconButton 1`] = `
     ",
           [Function],
           ";
+    text-decoration: none;
+    ",
+          [Function],
+          "
   }
 ",
           "
