@@ -56,7 +56,7 @@ import ImageCard, {
   ImageCardContent,
   ImageCardStyles,
 } from './components/ImageCard'
-import List, { ListItem } from './components/List'
+import List, { ListItem, ListStyles } from './components/List'
 import {
   MenuItemTitle,
   MenuItem,
@@ -116,6 +116,7 @@ export const styles = {
   ...ImageCardStyles,
   ...GridStyles,
   ...FooterStyles,
+  ...ListStyles,
   ParagraphStyle,
   IconStyle,
   LinkStyle,
