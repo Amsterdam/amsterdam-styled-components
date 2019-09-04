@@ -10,7 +10,6 @@ export enum ButtonVariants {
   tertiary,
   primaryInverted,
   textButton,
-  textButtonOnGrey,
   blank, // blank variant is a plain white button with a grey background on hover
 }
 
@@ -83,17 +82,6 @@ const getVariant = () => ({
         &:hover {
           color: ${themeColor('secondary')};
           ${svgFill('secondary')};
-        }
-      `
-
-    case 'textButtonOnGrey':
-      return css`
-        color: ${themeColor('primary')};
-        background-color: rgba(0, 0, 0, 0);
-        ${svgFill('primary')};
-
-        &:hover {
-          text-decoration: underline;
         }
       `
 
@@ -187,7 +175,7 @@ const ButtonStyle = styled.button<Props>`
   ${flexboxMinHeightFix()} // ie fix
   ${({ variant }) =>
     variant &&
-    (variant === 'textButton' || variant === 'textButtonOnGrey') &&
+    variant === 'textButton' &&
     css`
       // remove transition because it's async with Icon
       ${transitions(['color'], '0s')}
@@ -208,7 +196,7 @@ const ButtonStyle = styled.button<Props>`
     text-decoration: none;
     ${({ variant }) =>
       variant &&
-      (variant === 'textButton' || variant === 'textButtonOnGrey') &&
+      variant === 'textButton' &&
       css`
         background-color: rgba(0, 0, 0, 0);
       `}

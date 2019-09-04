@@ -17,7 +17,7 @@ Prefix the change with one of these keywords:
 ## UNRELEASED
 
 - Added: bullet-list style to List component
-- Added: Button variants "Text button" and "Text button on grey"
+- Added: Button variant "Text button"
 
 ## [0.13.2] - 2019-09-xx
 
