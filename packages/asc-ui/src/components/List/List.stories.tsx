@@ -8,7 +8,14 @@ storiesOf('Atoms/List', module)
   .addDecorator(storyFn => (
     <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
   ))
-  .add('default', () => (
+  .add('default style', () => (
+    <List>
+      <ListItem>I am a ListLink!</ListItem>
+      <ListItem>Another one</ListItem>
+      <ListItem>A file!</ListItem>
+    </List>
+  ))
+  .add('default style with chevron links', () => (
     <List>
       <ListItem>
         <Link href="/" variant="with-chevron">
@@ -22,13 +29,18 @@ storiesOf('Atoms/List', module)
       </ListItem>
       <ListItem>
         <Link href="/" variant="with-chevron">
-          A loooooong, very, very, very long link
-        </Link>
-      </ListItem>
-      <ListItem>
-        <Link href="/" variant="with-chevron">
           A file!
         </Link>
+      </ListItem>
+    </List>
+  ))
+  .add('bullet list', () => (
+    <List variant="bullet">
+      <ListItem>Amsterdam Noord</ListItem>
+      <ListItem>Amsterdam Zuid</ListItem>
+      <ListItem>Amsterdam Oost</ListItem>
+      <ListItem>
+        <Link href="/">Amsterdam West</Link>
       </ListItem>
     </List>
   ))
