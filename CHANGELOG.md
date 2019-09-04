@@ -18,6 +18,7 @@ Prefix the change with one of these keywords:
 
 ## [0.13.2] - 2019-09-xx
 
+- Added: new Button variant "transparent"
 - Added: export CompactThemeProvider
 
 ## [0.13.1] - 2019-09-02
