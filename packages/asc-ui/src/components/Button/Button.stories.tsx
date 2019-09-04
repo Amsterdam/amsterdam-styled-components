@@ -2,6 +2,7 @@ import styled from '@datapunt/asc-core'
 import {
   Download,
   ChevronRight,
+  ChevronLeft,
   Close,
   Facebook,
   Twitter,
@@ -34,54 +35,78 @@ storiesOf('Atoms/Buttons', module)
     </ButtonBar>
   ))
   .add('variants', () => (
-    <ButtonBar>
-      <Button variant="primary">Default button</Button>
-      <Button
-        variant="secondary"
-        iconLeft={<Download />}
-        iconRight={<ChevronRight />}
-      >
-        Download button
-      </Button>
-      <Button variant="tertiary" iconRight={<ChevronRight />}>
-        Download button
-      </Button>
-      <Button variant="primaryInverted" iconLeft={<ChevronRight />}>
-        Download button
-      </Button>
-      <Button variant="transparent" iconLeft={<ChevronRight />} iconSize={15}>
-        Download button
-      </Button>
-    </ButtonBar>
+    <>
+      <ButtonBar>
+        <Button variant="primary">Default button</Button>
+        <Button
+          variant="secondary"
+          iconLeft={<Download />}
+          iconRight={<ChevronRight />}
+        >
+          Download button
+        </Button>
+        <Button variant="tertiary" iconRight={<ChevronRight />}>
+          Download button
+        </Button>
+        <Button variant="primaryInverted" iconLeft={<ChevronRight />}>
+          Download button
+        </Button>
+        <Button variant="textButton" iconLeft={<ChevronLeft />} iconSize={14}>
+          Text button
+        </Button>
+      </ButtonBar>
+
+      <ButtonBar style={{ background: '#F7F7F7', marginTop: 20 }}>
+        <Button
+          variant="textButtonOnGrey"
+          iconLeft={<ChevronLeft />}
+          iconSize={14}
+        >
+          Text button on grey
+        </Button>
+      </ButtonBar>
+    </>
   ))
   .add('variants - disabled', () => (
-    <ButtonBar>
-      <Button disabled variant="primary">
-        Default button
-      </Button>
-      <Button
-        disabled
-        variant="secondary"
-        iconLeft={<Download />}
-        iconRight={<ChevronRight />}
-      >
-        Download button
-      </Button>
-      <Button disabled variant="tertiary" iconRight={<ChevronRight />}>
-        Download button
-      </Button>
-      <Button disabled variant="primaryInverted" iconLeft={<ChevronRight />}>
-        Download button
-      </Button>
-      <Button
-        disabled
-        variant="transparent"
-        iconLeft={<ChevronRight />}
-        iconSize={15}
-      >
-        Download button
-      </Button>
-    </ButtonBar>
+    <>
+      <ButtonBar>
+        <Button disabled variant="primary">
+          Default button
+        </Button>
+        <Button
+          disabled
+          variant="secondary"
+          iconLeft={<Download />}
+          iconRight={<ChevronRight />}
+        >
+          Download button
+        </Button>
+        <Button disabled variant="tertiary" iconRight={<ChevronRight />}>
+          Download button
+        </Button>
+        <Button disabled variant="primaryInverted" iconLeft={<ChevronRight />}>
+          Download button
+        </Button>
+        <Button
+          disabled
+          variant="textButton"
+          iconLeft={<ChevronLeft />}
+          iconSize={14}
+        >
+          Text button
+        </Button>
+      </ButtonBar>
+      <ButtonBar style={{ background: '#F7F7F7', marginTop: 20 }}>
+        <Button
+          disabled
+          variant="textButtonOnGrey"
+          iconLeft={<ChevronLeft />}
+          iconSize={14}
+        >
+          Text button on grey
+        </Button>
+      </ButtonBar>
+    </>
   ))
   .add('with only an icon', () => (
     <>

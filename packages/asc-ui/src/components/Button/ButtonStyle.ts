@@ -9,7 +9,8 @@ export enum ButtonVariants {
   secondary,
   tertiary,
   primaryInverted,
-  transparent,
+  textButton,
+  textButtonOnGrey,
   blank, // blank variant is a plain white button with a grey background on hover
 }
 
@@ -73,17 +74,26 @@ const getVariant = () => ({
         }
       `
 
-    case 'transparent':
+    case 'textButton':
       return css`
         color: ${themeColor('primary')};
+        background-color: rgba(0, 0, 0, 0);
+        ${svgFill('primary')};
+
+        &:hover {
+          color: ${themeColor('secondary')};
+          ${svgFill('secondary')};
+        }
+      `
+
+    case 'textButtonOnGrey':
+      return css`
+        color: ${themeColor('primary')};
+        background-color: rgba(0, 0, 0, 0);
         ${svgFill('primary')};
 
         &:hover {
           text-decoration: underline;
-        }
-
-        &:disabled {
-          background-color: rgba(0, 0, 0, 0);
         }
       `
 
@@ -153,6 +163,7 @@ export const IconRight = styled(Icon)`
 `
 
 const ButtonStyle = styled.button<Props>`
+
   display: inline-flex;
   align-items: center;
   text-decoration: none;
@@ -174,6 +185,19 @@ const ButtonStyle = styled.button<Props>`
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')}
   ${getVariant()}
   ${flexboxMinHeightFix()} // ie fix
+  ${({ variant }) =>
+    variant &&
+    (variant === 'textButton' || variant === 'textButtonOnGrey') &&
+    css`
+      // remove transition because it's async with Icon
+      ${transitions(['color'], '0s')}
+      ${IconLeft} {
+        margin-right: 5px;
+      }
+      ${IconRight} {
+        margin-left: 5px;
+      }
+    `}
   &:disabled {
     cursor: default;
     outline: none;
@@ -184,11 +208,11 @@ const ButtonStyle = styled.button<Props>`
     text-decoration: none;
     ${({ variant }) =>
       variant &&
-      variant === 'transparent' && // make button transparent
+      (variant === 'textButton' || variant === 'textButtonOnGrey') &&
       css`
         background-color: rgba(0, 0, 0, 0);
       `}
-  }
+    }
 `
 
 export default ButtonStyle
