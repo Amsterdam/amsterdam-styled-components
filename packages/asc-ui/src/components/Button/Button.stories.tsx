@@ -49,6 +49,9 @@ storiesOf('Atoms/Buttons', module)
       <Button variant="primaryInverted" iconLeft={<ChevronRight />}>
         Download button
       </Button>
+      <Button variant="transparent" iconLeft={<ChevronRight />} iconSize={15}>
+        Download button
+      </Button>
     </ButtonBar>
   ))
   .add('variants - disabled', () => (
@@ -68,6 +71,14 @@ storiesOf('Atoms/Buttons', module)
         Download button
       </Button>
       <Button disabled variant="primaryInverted" iconLeft={<ChevronRight />}>
+        Download button
+      </Button>
+      <Button
+        disabled
+        variant="transparent"
+        iconLeft={<ChevronRight />}
+        iconSize={15}
+      >
         Download button
       </Button>
     </ButtonBar>

@@ -9,6 +9,7 @@ export enum ButtonVariants {
   secondary,
   tertiary,
   primaryInverted,
+  transparent,
   blank, // blank variant is a plain white button with a grey background on hover
 }
 
@@ -69,6 +70,20 @@ const getVariant = () => ({
 
         &:hover {
           outline: 1px solid ${themeColor('primary')};
+        }
+      `
+
+    case 'transparent':
+      return css`
+        color: ${themeColor('primary')};
+        ${svgFill('primary')};
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:disabled {
+          background-color: rgba(0, 0, 0, 0);
         }
       `
 
@@ -166,6 +181,13 @@ const ButtonStyle = styled.button<Props>`
     color: ${themeColor('tint', 'level4')};
     background-color: ${themeColor('tint', 'level3')};
     ${svgFill('tint', 'level4')};
+    text-decoration: none;
+    ${({ variant }) =>
+      variant &&
+      variant === 'transparent' && // make button transparent
+      css`
+        background-color: rgba(0, 0, 0, 0);
+      `}
   }
 `
 
