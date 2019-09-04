@@ -69,6 +69,7 @@ exports[`Checkbox should render 1`] = `
   user-select: none;
   vertical-align: middle;
   padding: 10px;
+  color: #767676;
 }
 
 .c0:hover {
@@ -77,7 +78,7 @@ exports[`Checkbox should render 1`] = `
 
 .c0:hover .c1 {
   outline-style: solid;
-  outline-width: 2px;
+  outline-width: 1px;
 }
 
 .c0.c0:focus {

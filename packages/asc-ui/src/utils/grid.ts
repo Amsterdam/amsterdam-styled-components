@@ -80,12 +80,17 @@ export const margin = (layoutId: string, withUnit = false) => ({
 /**
  * Get the min-width breakpoint value for a specific layout
  */
-export const min = (layoutId: string, withUnit = false) => ({
+export const min = (
+  layoutId: string,
+  withUnit = false,
+  noConflict = false,
+) => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
 }): string | number | undefined => {
-  const minValue = fromTheme(`layouts.${layoutId}.min`)({ theme })
+  let minValue = fromTheme(`layouts.${layoutId}.min`)({ theme })
+  minValue += noConflict ? 0.02 : 0
 
   if (minValue >= 0) {
     if (withUnit) {
@@ -101,17 +106,12 @@ export const min = (layoutId: string, withUnit = false) => ({
 /**
  * Get the max-width breakpoint value for a specific layout
  */
-export const max = (
-  layoutId: string,
-  withUnit = false,
-  noConflict = false,
-) => ({
+export const max = (layoutId: string, withUnit = false) => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
 }): string | number | undefined => {
-  let maxValue = fromTheme(`layouts.${layoutId}.max`)({ theme })
-  maxValue += noConflict ? -1 : 0
+  const maxValue = fromTheme(`layouts.${layoutId}.max`)({ theme })
 
   if (maxValue > 0) {
     if (withUnit) {
@@ -197,8 +197,8 @@ export const mediaQuery = (
   toMax = true,
 ) => ({ theme }: { theme: Theme.ThemeInterface }): string => {
   const mediaParts = []
-  const minQuery = min(layoutId, true)({ theme })
-  const maxQuery = max(layoutId, true, noConflict)({ theme })
+  const minQuery = min(layoutId, true, noConflict)({ theme })
+  const maxQuery = max(layoutId, true)({ theme })
 
   if (minQuery !== undefined && fromMin)
     mediaParts.push(`(min-width:${minQuery})`)

@@ -19,7 +19,7 @@ const FormLabelStyle = styled.label<Props>`
   ${({ disabled }) =>
     disabled
       ? css`
-          opacity: 0.2;
+          opacity: 0.3;
         `
       : css`
           cursor: pointer;
