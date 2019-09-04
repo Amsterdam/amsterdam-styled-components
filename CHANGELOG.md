@@ -15,11 +15,12 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## UNRELEASED
-- Added: bullet-list style to List component 
+
+- Added: bullet-list style to List component
+- Added: Button variants "Text button" and "Text button on grey"
 
 ## [0.13.2] - 2019-09-xx
 
-- Added: Button variants "Text button" and "Text button on grey"
 - Added: export CompactThemeProvider
 
 ## [0.13.1] - 2019-09-02
