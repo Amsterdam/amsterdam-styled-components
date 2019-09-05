@@ -97,7 +97,7 @@ export namespace Theme {
     marginBottom: CSSProp
   }
 
-  interface TypographyType extends Partial<TypographyElementStyle> {
+  export interface TypographyType extends Partial<TypographyElementStyle> {
     breakpoints?: {
       [key in keyof BreakpointsInterface]?: Partial<TypographyElementStyle>
     }

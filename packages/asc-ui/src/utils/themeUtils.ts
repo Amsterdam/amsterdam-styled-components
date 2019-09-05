@@ -40,16 +40,16 @@ export const breakpoint = (
 
 const generateCSSFromTypography = (
   {
-    defaultColor,
+    color,
     fontWeight,
     fontSize,
     letterSpacing,
     lineHeight,
     marginBottom,
-  }: any,
+  }: Partial<TypographyElementStyle>,
   gutterBottom?: number,
 ) => css`
-  color: ${defaultColor};
+  color: ${color};
   font-weight: ${fontWeight};
   font-size: ${fontSize};
   letter-spacing: ${letterSpacing};
@@ -66,28 +66,17 @@ export const getTypographyFromTheme = () => ({
   theme,
 }: any) => {
   const as = styleAs || asProp
-  const styles = fromTheme(`typography.${[as]}`)({ theme })
+  const styles = fromTheme(`typography.${[as]}`)({
+    theme,
+  }) as Theme.TypographyType
   if (!styles) {
     return ''
   }
-  const {
-    defaultColor,
-    fontWeight,
-    fontSize,
-    letterSpacing,
-    lineHeight,
-    marginBottom,
-    breakpoints,
-  } = styles
+  const { breakpoints, ...otherProps } = styles
   return css`
     ${generateCSSFromTypography(
       {
-        defaultColor,
-        fontWeight,
-        fontSize,
-        letterSpacing,
-        lineHeight,
-        marginBottom,
+        ...otherProps,
       },
       gutterBottom,
     )}
@@ -98,7 +87,7 @@ export const getTypographyFromTheme = () => ({
               @media screen and ${breakpoint('min-width', <
                   keyof BreakpointsInterface
                 >breakpointFromTypography)} {
-                ${generateCSSFromTypography(typoStyles, gutterBottom)}
+                ${generateCSSFromTypography(typoStyles || {}, gutterBottom)}
               }
             `,
           )
