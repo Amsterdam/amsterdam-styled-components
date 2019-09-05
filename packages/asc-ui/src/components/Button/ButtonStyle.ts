@@ -54,7 +54,7 @@ const getVariant = () => ({
           taskflow &&
           css`
             // used for taskflow button
-            &:hover ${ArrowRight} {
+            &:not(:disabled)&:hover ${ArrowRight} {
               border-left-color: ${darken(
                 0.1,
                 themeColor('secondary')({ theme }),
@@ -170,6 +170,7 @@ export const IconRight = styled(Icon)`
 
 export const ArrowRight = styled.div`
   position: absolute;
+  top: 0;
   right: -38px;
   width: 0;
   height: 0;
@@ -248,10 +249,7 @@ const ButtonStyle = styled.button<Props>`
     ${({ taskflow }) =>
       taskflow &&
       css`
-        &:before {
-          border-bottom-color: ${themeColor('tint', 'level3')};
-        }
-        &:after {
+        ${ArrowRight} {
           border-left-color: ${themeColor('tint', 'level3')};
         }
       `}
