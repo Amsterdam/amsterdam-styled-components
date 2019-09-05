@@ -17,16 +17,37 @@ const defaultProps = {
   size: 30,
 }
 
+export const ArrowRight = styled.div`
+  position: absolute;
+  top: 0;
+  right: -38px;
+  width: 0;
+  height: 0;
+  border: 23px solid rgba(255, 255, 255, 0);
+  border-left: 15px solid ${themeColor('secondary')};
+  ${transitions('border-color', '0.1s ease-in-out')}
+  :after {
+    content: '';
+    position: absolute;
+    top: -26px;
+    right: -30px;
+    width: 0;
+    height: 0;
+    border: 26px solid rgba(255, 255, 255, 0);
+    border-left: 17px solid ${themeColor('support', 'focus')};
+    z-index: -1;
+    opacity: 0;
+  }
+`
+
 const getVariant = () => ({
   theme,
   variant,
   color,
-  taskflow,
 }: {
   theme: any
   variant?: keyof typeof ButtonVariants
   color?: Theme.ColorType
-  taskflow?: boolean
 }) => {
   switch (variant) {
     case 'primary':
@@ -53,7 +74,6 @@ const getVariant = () => ({
         ${taskflow =>
           taskflow &&
           css`
-            // used for taskflow button
             &:not(:disabled)&:hover ${ArrowRight} {
               border-left-color: ${darken(
                 0.1,
@@ -168,29 +188,6 @@ export const IconRight = styled(Icon)`
   margin-left: 10px;
 `
 
-export const ArrowRight = styled.div`
-  position: absolute;
-  top: 0;
-  right: -38px;
-  width: 0;
-  height: 0;
-  border: 23px solid rgba(255, 255, 255, 0);
-  border-left: 15px solid ${themeColor('secondary')};
-  ${transitions('border-color', '0.1s ease-in-out')}
-  :after {
-    content: '';
-    position: absolute;
-    top: -26px;
-    right: -30px;
-    width: 0;
-    height: 0;
-    border: 26px solid rgba(255, 255, 255, 0);
-    border-left: 17px solid ${themeColor('support', 'focus')};
-    z-index: -1;
-    opacity: 0;
-  }
-`
-
 const ButtonStyle = styled.button<Props>`
   white-space: nowrap;
   display: inline-flex;
@@ -214,7 +211,7 @@ const ButtonStyle = styled.button<Props>`
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')}
   ${getVariant()}
   ${flexboxMinHeightFix()} // ie fix
-  ${({ taskflow }) =>
+  ${taskflow =>
     taskflow &&
     css`
       position: relative;
