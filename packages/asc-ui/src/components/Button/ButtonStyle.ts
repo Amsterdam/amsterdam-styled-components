@@ -21,10 +21,12 @@ const getVariant = () => ({
   theme,
   variant,
   color,
+  taskflow,
 }: {
   theme: any
   variant?: keyof typeof ButtonVariants
   color?: Theme.ColorType
+  taskflow?: boolean
 }) => {
   switch (variant) {
     case 'primary':
@@ -47,6 +49,18 @@ const getVariant = () => ({
         &:hover {
           background-color: ${darken(0.1, themeColor('secondary')({ theme }))};
         }
+
+        ${taskflow =>
+          taskflow &&
+          css`
+            // used for taskflow button
+            &:hover ${ArrowRight} {
+              border-left-color: ${darken(
+                0.1,
+                themeColor('secondary')({ theme }),
+              )};
+            }
+          `}
       `
 
     case 'tertiary':
@@ -141,6 +155,10 @@ export type Props = {
    * A variant, usually different background-color and color of a button
    */
   variant?: keyof typeof ButtonVariants
+  /**
+   * Add narrow arrow on the right side of the secondary button
+   */
+  taskflow?: boolean
 }
 
 export const IconLeft = styled(Icon)`
@@ -150,8 +168,30 @@ export const IconRight = styled(Icon)`
   margin-left: 10px;
 `
 
-const ButtonStyle = styled.button<Props>`
+export const ArrowRight = styled.div`
+  position: absolute;
+  right: -38px;
+  width: 0;
+  height: 0;
+  border: 23px solid rgba(255, 255, 255, 0);
+  border-left: 15px solid ${themeColor('secondary')};
+  ${transitions('border-color', '0.1s ease-in-out')}
+  :after {
+    content: '';
+    position: absolute;
+    top: -26px;
+    right: -30px;
+    width: 0;
+    height: 0;
+    border: 26px solid rgba(255, 255, 255, 0);
+    border-left: 17px solid ${themeColor('support', 'focus')};
+    z-index: -1;
+    opacity: 0;
+  }
+`
 
+const ButtonStyle = styled.button<Props>`
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
@@ -173,12 +213,23 @@ const ButtonStyle = styled.button<Props>`
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')}
   ${getVariant()}
   ${flexboxMinHeightFix()} // ie fix
+  ${({ taskflow }) =>
+    taskflow &&
+    css`
+      position: relative;
+      && {
+        margin-right: 25px;
+      }
+      &:focus ${ArrowRight}:after {
+        opacity: 1;
+      }
+    `}
   ${({ variant }) =>
     variant &&
     variant === 'textButton' &&
     css`
       // remove transition because it's async with Icon
-      ${transitions(['color'], '0s')}
+      ${transitions('color', '0s')}
       ${IconLeft} {
         margin-right: 5px;
       }
@@ -194,6 +245,16 @@ const ButtonStyle = styled.button<Props>`
     background-color: ${themeColor('tint', 'level3')};
     ${svgFill('tint', 'level4')};
     text-decoration: none;
+    ${({ taskflow }) =>
+      taskflow &&
+      css`
+        &:before {
+          border-bottom-color: ${themeColor('tint', 'level3')};
+        }
+        &:after {
+          border-left-color: ${themeColor('tint', 'level3')};
+        }
+      `}
     ${({ variant }) =>
       variant &&
       variant === 'textButton' &&

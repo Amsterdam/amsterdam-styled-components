@@ -7,11 +7,11 @@ exports[`IconButton should render the IconButton 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-ifAKCX",
+        "componentId": "sc-EHOje",
         "isStatic": false,
         "rules": Array [
           "
-
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
@@ -48,6 +48,9 @@ exports[`IconButton should render the IconButton 1`] = `
   ",
           [Function],
           "
+  ",
+          [Function],
+          "
   &:disabled {
     cursor: default;
     outline: none;
@@ -62,6 +65,9 @@ exports[`IconButton should render the IconButton 1`] = `
           [Function],
           ";
     text-decoration: none;
+    ",
+          [Function],
+          "
     ",
           [Function],
           "
@@ -84,10 +90,10 @@ exports[`IconButton should render the IconButton 1`] = `
       },
       "displayName": "Styled(styled.button)",
       "foldedComponentIds": Array [
-        "sc-bxivhb",
+        "sc-ifAKCX",
       ],
       "render": [Function],
-      "styledComponentId": "sc-ifAKCX",
+      "styledComponentId": "sc-EHOje",
       "target": "button",
       "toString": [Function],
       "warnTooManyClasses": [Function],

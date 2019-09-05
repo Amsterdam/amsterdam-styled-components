@@ -17,7 +17,7 @@ Prefix the change with one of these keywords:
 ## UNRELEASED
 
 - Added: bullet-list style to List component
-- Added: Button variant "Text button"
+- Added: Button variants `Text button` (transparent and borderless) and `Taskflow button` (adds narrow arrow on the right side of the button)
 
 ## [0.13.2] - 2019-09-xx
 

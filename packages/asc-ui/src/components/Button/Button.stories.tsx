@@ -44,6 +44,9 @@ storiesOf('Atoms/Buttons', module)
       >
         Download button
       </Button>
+      <Button variant="secondary" taskflow>
+        Taskflow button
+      </Button>
       <Button variant="tertiary" iconRight={<ChevronRight />}>
         Download button
       </Button>
@@ -81,6 +84,9 @@ storiesOf('Atoms/Buttons', module)
         iconSize={14}
       >
         Text button
+      </Button>
+      <Button disabled variant="secondary" taskflow>
+        Taskflow button
       </Button>
     </ButtonBar>
   ))
