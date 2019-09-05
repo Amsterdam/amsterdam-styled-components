@@ -63,7 +63,7 @@ const typography: Theme.TypographyInterface = {
     fontSize: '16px',
     fontWeight: 500,
     letterSpacing: 'inherit',
-    lineHeight: 1.25,
+    lineHeight: '20px',
     marginBottom: '0',
   },
   a: {

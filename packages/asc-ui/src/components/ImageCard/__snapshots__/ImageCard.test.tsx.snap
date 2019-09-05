@@ -3,6 +3,7 @@
 exports[`ImageCard should render 1`] = `
 .c3 {
   margin: 0;
+  color: #000000;
   font-weight: 700;
   font-size: 20px;
   -webkit-letter-spacing: inherit;
@@ -93,11 +94,11 @@ exports[`ImageCard should render 1`] = `
     <div
       class="c1"
     >
-      <h6
+      <h4
         class="c2 c3"
       >
         Jeugdwerkloosheid Amsterdam daalt naar 6,2%
-      </h6>
+      </h4>
     </div>
   </div>
 </div>

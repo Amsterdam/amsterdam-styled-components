@@ -41,7 +41,7 @@ export default styled.div<Props>`
             &::before {
               content: '';
               display: block;
-              width: 380px;
+              width: calc(100% - 30px);
               height: 30px;
               ${perceivedLoading(theme)}
             }

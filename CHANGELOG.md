@@ -17,9 +17,11 @@ Prefix the change with one of these keywords:
 ## UNRELEASED
 
 - Added: bullet-list style to List component
+- Removed: `Dataportaal` implemenation for header and frontpage blocks
+- Added: extra focus style options
 - Added: Button variants `Text button` (transparent and borderless) and `Taskflow button` (adds narrow arrow on the right side of the button)
 
-## [0.13.2] - 2019-09-xx
+## [0.13.2] - 2019-09-04
 
 - Added: export CompactThemeProvider
 

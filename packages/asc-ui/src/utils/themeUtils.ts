@@ -40,16 +40,16 @@ export const breakpoint = (
 
 const generateCSSFromTypography = (
   {
-    defaultColor,
+    color,
     fontWeight,
     fontSize,
     letterSpacing,
     lineHeight,
     marginBottom,
-  }: any,
+  }: Partial<TypographyElementStyle>,
   gutterBottom?: number,
 ) => css`
-  color: ${defaultColor};
+  color: ${color};
   font-weight: ${fontWeight};
   font-size: ${fontSize};
   letter-spacing: ${letterSpacing};
@@ -66,28 +66,17 @@ export const getTypographyFromTheme = () => ({
   theme,
 }: any) => {
   const as = styleAs || asProp
-  const styles = fromTheme(`typography.${[as]}`)({ theme })
+  const styles = fromTheme(`typography.${[as]}`)({
+    theme,
+  }) as Theme.TypographyType
   if (!styles) {
     return ''
   }
-  const {
-    defaultColor,
-    fontWeight,
-    fontSize,
-    letterSpacing,
-    lineHeight,
-    marginBottom,
-    breakpoints,
-  } = styles
+  const { breakpoints, ...otherProps } = styles
   return css`
     ${generateCSSFromTypography(
       {
-        defaultColor,
-        fontWeight,
-        fontSize,
-        letterSpacing,
-        lineHeight,
-        marginBottom,
+        ...otherProps,
       },
       gutterBottom,
     )}
@@ -98,7 +87,7 @@ export const getTypographyFromTheme = () => ({
               @media screen and ${breakpoint('min-width', <
                   keyof BreakpointsInterface
                 >breakpointFromTypography)} {
-                ${generateCSSFromTypography(typoStyles, gutterBottom)}
+                ${generateCSSFromTypography(typoStyles || {}, gutterBottom)}
               }
             `,
           )
@@ -132,17 +121,22 @@ export const outlineStyle = (
   outline-width: ${width}px;
 `
 
+/* we have chosen here to use a dubble selector '&&'.  
+ This will override a hover state with outlines.
+ introduced this when resolving issue: #131
+*/
 export const focusStyleOutline = (width?: number, offset?: number) => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
-}) => css`
-  &&:focus {
-    ${outlineStyle(theme, width, offset)}
-  }
-`
+}) =>
+  css`
+    &&:focus {
+      ${outlineStyle(theme, width, offset)}
+    }
+  `
 
-export const focusStyleText = () => ({
+export const focusStyleFill = () => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
@@ -151,6 +145,32 @@ export const focusStyleText = () => ({
     background-color: ${themeColor('support', 'focus')({ theme })};
   }
 `
+
+export enum FocusStyleEnum {
+  outline,
+  fill,
+  none,
+}
+
+/**
+ * @param  {keyoftypeofFocusStyleEnum='fill'} focusStyle
+ *
+ * decorates an element with one of the existing focus styles:
+ * - outline: draws a border around the element on focus
+ * - fill: fills the element background on focus
+ * - none: ignored the focus state
+ */
+export const getFocusStyle = (
+  focusStyle: keyof typeof FocusStyleEnum = 'fill',
+) => {
+  const styles = {
+    outline: focusStyleOutline(),
+    fill: focusStyleFill(),
+    none: '',
+  }
+
+  return styles[focusStyle]
+}
 
 /**
  * Util to hide the component for screen readers
