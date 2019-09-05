@@ -59,6 +59,7 @@ exports[`DocumentCover should render 1`] = `
   transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
   background-color: #004699;
   color: #fff;
+  position: relative;
 }
 
 .c5.c5:focus {
@@ -83,6 +84,14 @@ exports[`DocumentCover should render 1`] = `
   display: block;
   min-height: inherit;
   font-size: 0;
+}
+
+.c5.c5 {
+  margin-right: 25px;
+}
+
+.c5:focus .c8:after {
+  opacity: 1;
 }
 
 .c5:disabled {
