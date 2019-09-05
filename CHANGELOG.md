@@ -16,10 +16,12 @@ Prefix the change with one of these keywords:
 
 ## UNRELEASED
 
+## [0.14.1] - 2019-09-05
+
 - Added: bullet-list style to List component 
 - Removed: `Dataportaal` implemenation for header and frontpage blocks
 
-## [0.13.2] - 2019-09-xx
+## [0.13.2] - 2019-09-04
 
 - Added: export CompactThemeProvider
 
