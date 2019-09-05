@@ -15,7 +15,9 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## UNRELEASED
+
 - Added: bullet-list style to List component 
+- Added: extra focus style options
 
 ## [0.13.2] - 2019-09-xx
 
