@@ -3,6 +3,7 @@
 exports[`ImageCard should render 1`] = `
 .c3 {
   margin: 0;
+  color: #000000;
   font-weight: 700;
   font-size: 20px;
   -webkit-letter-spacing: inherit;
