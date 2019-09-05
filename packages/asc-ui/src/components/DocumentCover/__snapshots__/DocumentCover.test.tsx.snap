@@ -60,7 +60,7 @@ exports[`DocumentCover should render 1`] = `
   color: #fff;
 }
 
-.c5:focus {
+.c5.c5:focus {
   outline-color: #FEC813;
   outline-style: solid;
   outline-offset: 0px;

@@ -132,15 +132,20 @@ export const outlineStyle = (
   outline-width: ${width}px;
 `
 
+/* we have chosen here to use a dubble selector '&&'.  
+ This will override a hover state with outlines.
+ introduced this when resolving issue: #131
+*/
 export const focusStyleOutline = (width?: number, offset?: number) => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
-}) => css`
-  &:focus {
-    ${outlineStyle(theme, width, offset)}
-  }
-`
+}) =>
+  css`
+    &&:focus {
+      ${outlineStyle(theme, width, offset)}
+    }
+  `
 
 export const focusStyleFill = () => ({
   theme,
@@ -158,7 +163,17 @@ export enum FocusStyleEnum {
   none,
 }
 
-export const getFocusStyle = (focusStyle: string = 'fill') => {
+/**
+ * @param  {keyoftypeofFocusStyleEnum='fill'} focusStyle
+ *
+ * decorates an element with one of the existing focus styles:
+ * - outline: draws a border around the element on focus
+ * - fill: fills the element background on focus
+ * - none: ignored the focus state
+ */
+export const getFocusStyle = (
+  focusStyle: keyof typeof FocusStyleEnum = 'fill',
+) => {
   const styles = {
     outline: focusStyleOutline(),
     fill: focusStyleFill(),

@@ -81,7 +81,7 @@ exports[`Checkbox should render 1`] = `
   outline-width: 1px;
 }
 
-.c0:focus {
+.c0.c0:focus {
   outline-color: #FEC813;
   outline-style: solid;
   outline-offset: 0px;
