@@ -17,9 +17,10 @@ Prefix the change with one of these keywords:
 ## UNRELEASED
 
 - Added: bullet-list style to List component 
+- Removed: `Dataportaal` implemenation for header and frontpage blocks
 - Added: extra focus style options
 
-## [0.13.2] - 2019-09-xx
+## [0.13.2] - 2019-09-04
 
 - Added: export CompactThemeProvider
 

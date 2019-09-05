@@ -102,86 +102,89 @@ const HelpLinks: React.FC<{ indent?: boolean }> = () => (
   </>
 )
 
+// eslint-disable-next-line import/prefer-default-export
+export const DataportaalFooter: React.FC<{}> = () => (
+  <Footer>
+    <FooterTop>
+      <Row>
+        <Column
+          wrap
+          span={{ small: 1, medium: 2, big: 2, large: 4, xLarge: 4 }}
+        >
+          <>
+            <FooterToggle title="Colofon" hideAt="tabletM">
+              <FooterContent indent>
+                <ColofonLinks />
+              </FooterContent>
+            </FooterToggle>
+            <FooterContent showAt="tabletM">
+              <FooterHeading $as="h3">Colofon</FooterHeading>
+              <ColofonLinks />
+            </FooterContent>
+          </>
+        </Column>
+        <Column
+          wrap
+          span={{ small: 1, medium: 2, big: 2, large: 4, xLarge: 4 }}
+        >
+          <>
+            <FooterToggle title="Volg de gemeente" hideAt="tabletM">
+              <FooterContent indent>
+                <FollowLinks />
+              </FooterContent>
+            </FooterToggle>
+            <FooterContent showAt="tabletM">
+              <FooterHeading $as="h3">Volg de gemeente</FooterHeading>
+              <FollowLinks />
+            </FooterContent>
+          </>
+        </Column>
+        <Column
+          wrap
+          span={{ small: 1, medium: 2, big: 2, large: 4, xLarge: 4 }}
+        >
+          <>
+            <FooterToggle title="Vragen?" hideAt="tabletM">
+              <FooterContent indent>
+                <HelpLinks />
+              </FooterContent>
+            </FooterToggle>
+            <FooterContent showAt="tabletM">
+              <FooterHeading $as="h3" styleAs="h3">
+                Vragen?
+              </FooterHeading>
+              <HelpLinks />
+            </FooterContent>
+          </>
+        </Column>
+      </Row>
+    </FooterTop>
+    <FooterBottom>
+      <Row>
+        <Column
+          wrap
+          span={{ small: 1, medium: 2, big: 6, large: 10, xLarge: 10 }}
+        >
+          <FooterBottomLinkList>
+            <FooterBottomLinkListItem>
+              <Link href="/" linkType="with-chevron">
+                Privacy en cookies
+              </Link>
+            </FooterBottomLinkListItem>
+            <FooterBottomLinkListItem>
+              <Link href="/" linkType="with-chevron">
+                Over deze site
+              </Link>
+            </FooterBottomLinkListItem>
+          </FooterBottomLinkList>
+        </Column>
+      </Row>
+    </FooterBottom>
+  </Footer>
+)
+
 storiesOf('Composed/Footer', module)
   .addDecorator(storyFn => (
     <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
   ))
-  .add('implementation for dataportaal', () => (
-    <Footer>
-      <FooterTop>
-        <Row>
-          <Column
-            wrap
-            span={{ small: 1, medium: 2, big: 2, large: 4, xLarge: 4 }}
-          >
-            <>
-              <FooterToggle title="Colofon" hideAt="tabletM">
-                <FooterContent indent>
-                  <ColofonLinks />
-                </FooterContent>
-              </FooterToggle>
-              <FooterContent showAt="tabletM">
-                <FooterHeading $as="h3">Colofon</FooterHeading>
-                <ColofonLinks />
-              </FooterContent>
-            </>
-          </Column>
-          <Column
-            wrap
-            span={{ small: 1, medium: 2, big: 2, large: 4, xLarge: 4 }}
-          >
-            <>
-              <FooterToggle title="Volg de gemeente" hideAt="tabletM">
-                <FooterContent indent>
-                  <FollowLinks />
-                </FooterContent>
-              </FooterToggle>
-              <FooterContent showAt="tabletM">
-                <FooterHeading $as="h3">Volg de gemeente</FooterHeading>
-                <FollowLinks />
-              </FooterContent>
-            </>
-          </Column>
-          <Column
-            wrap
-            span={{ small: 1, medium: 2, big: 2, large: 4, xLarge: 4 }}
-          >
-            <>
-              <FooterToggle title="Vragen?" hideAt="tabletM">
-                <FooterContent indent>
-                  <HelpLinks />
-                </FooterContent>
-              </FooterToggle>
-              <FooterContent showAt="tabletM">
-                <FooterHeading $as="h3" styleAs="h3">
-                  Vragen?
-                </FooterHeading>
-                <HelpLinks />
-              </FooterContent>
-            </>
-          </Column>
-        </Row>
-      </FooterTop>
-      <FooterBottom>
-        <Row>
-          <Column
-            wrap
-            span={{ small: 1, medium: 2, big: 6, large: 10, xLarge: 10 }}
-          >
-            <FooterBottomLinkList>
-              <FooterBottomLinkListItem>
-                <Link href="/" variant="with-chevron">
-                  Privacy en cookies
-                </Link>
-              </FooterBottomLinkListItem>
-              <FooterBottomLinkListItem>
-                <Link href="/" variant="with-chevron">
-                  Over deze site
-                </Link>
-              </FooterBottomLinkListItem>
-            </FooterBottomLinkList>
-          </Column>
-        </Row>
-      </FooterBottom>
-    </Footer>
-  ))
+  .add('implementation for dataportaal', () => <DataportaalFooter />)

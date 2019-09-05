@@ -184,9 +184,9 @@ exports[`Header should render the short version 1`] = `
   max-width: none;
   box-shadow: 0 4px rgba(0,0,0,0.04);
   box-sizing: content-box;
-  position: fixed;
-  left: 0;
-  right: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   z-index: 2;
 }
 
@@ -484,9 +484,9 @@ exports[`Header should render the short version without the full width 1`] = `
   max-width: 1800px;
   box-shadow: 0 4px rgba(0,0,0,0.04);
   box-sizing: content-box;
-  position: fixed;
-  left: 0;
-  right: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   z-index: 2;
 }
 
@@ -806,9 +806,9 @@ exports[`Header should render the tall version 1`] = `
   max-width: none;
   box-shadow: 0 4px rgba(0,0,0,0.04);
   box-sizing: content-box;
-  position: fixed;
-  left: 0;
-  right: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   z-index: 2;
 }
 
@@ -887,12 +887,12 @@ exports[`Header should render the tall version 1`] = `
 @media screen and (min-width:1200.02px) {
   .c0 {
     box-shadow: none;
+    position: relative;
   }
 
   .c0:after {
     content: '';
     display: block;
-    position: absolute;
     left: 0;
     right: 0;
     height: 50px;
@@ -1121,9 +1121,9 @@ exports[`Header should render the tall version without a title 1`] = `
   max-width: none;
   box-shadow: 0 4px rgba(0,0,0,0.04);
   box-sizing: content-box;
-  position: fixed;
-  left: 0;
-  right: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   z-index: 2;
 }
 
@@ -1190,12 +1190,12 @@ exports[`Header should render the tall version without a title 1`] = `
 @media screen and (min-width:1200.02px) {
   .c0 {
     box-shadow: none;
+    position: relative;
   }
 
   .c0:after {
     content: '';
     display: block;
-    position: absolute;
     left: 0;
     right: 0;
     height: 50px;

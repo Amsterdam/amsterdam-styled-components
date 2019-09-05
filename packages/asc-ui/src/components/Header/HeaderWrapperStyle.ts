@@ -3,19 +3,19 @@ import {
   breakpoint,
   themeColor,
   customCss,
-  CustomCssPropsType,
+  CustomCssPropsInterface,
 } from '../../utils'
 import HeaderTitleStyle from './HeaderTitleStyle'
 import HeaderNavigationStyle from './HeaderNavigationStyle'
 import HeaderLogoTextStyle from './HeaderLogoTextStyle'
 import TopBarStyle from '../TopBar/TopBarStyle'
 import HeaderStyle from './HeaderStyle'
-import { CONTENT_HEIGHT_TALL, WRAPPER_MAX_WIDTH } from './sizes'
+import { HEADER_HEIGHT_SMALL, WRAPPER_MAX_WIDTH } from '../shared/sizes'
 
-export type Props = {
+export interface Props extends CustomCssPropsInterface {
   tall?: boolean
   fullWidth?: boolean
-} & CustomCssPropsType
+}
 
 const shortStyle = css`
   ${HeaderTitleStyle} {
@@ -36,10 +36,9 @@ const HeaderWrapperStyle = styled.div<Props>`
     fullWidth ? 'none' : `${WRAPPER_MAX_WIDTH}px`};
   box-shadow: 0 4px rgba(0, 0, 0, 0.04);
   box-sizing: content-box;
-  position: fixed; /* Unfortunately no sticky because IE11 */
-  left: 0;
-  right: 0;
-  z-index: 2; /* Orders the header higher than the content */
+  position: sticky;
+  top: 0;
+  z-index: 2;
 
   ${HeaderNavigationStyle} {
     flex-grow: 1;
@@ -54,15 +53,15 @@ const HeaderWrapperStyle = styled.div<Props>`
           }
           @media screen and ${breakpoint('min-width', 'laptopM')} {
             box-shadow: none;
+            position: relative;
 
             &:after {
               content: '';
               display: block;
-              position: absolute;
               left: 0;
               right: 0;
-              height: ${CONTENT_HEIGHT_TALL}px;
-              margin-top: ${CONTENT_HEIGHT_TALL * -1}px;
+              height: ${HEADER_HEIGHT_SMALL}px;
+              margin-top: ${HEADER_HEIGHT_SMALL * -1}px;
               background-color: ${themeColor('tint', 'level2')};
             }
 
@@ -91,7 +90,7 @@ const HeaderWrapperStyle = styled.div<Props>`
               flex-basis: 100%;
               margin-left: 25px;
               margin-right: 25px;
-              height: ${CONTENT_HEIGHT_TALL}px;
+              height: ${HEADER_HEIGHT_SMALL}px;
             }
           }
         `
