@@ -1,6 +1,6 @@
 import styled, { css } from '@datapunt/asc-core'
 import { themeColor } from '../../utils'
-import { focusStyleText, svgFill } from '../../utils/themeUtils'
+import { svgFill, FocusStyleEnum, getFocusStyle } from '../../utils/themeUtils'
 import Typography, { TypographyProps } from '../Typography'
 import IconStyle from '../Icon/IconStyle'
 
@@ -17,6 +17,7 @@ export type Props = {
    */
   linkType?: keyof typeof LinkVariants
   color?: string
+  focusStyle?: keyof typeof FocusStyleEnum
 } & TypographyProps
 
 export const BlankLinkStyleCSS = css`
@@ -57,7 +58,7 @@ export const DefaultLinkStyleCSS = css<Props>`
 `
 
 export default styled(Typography)<Props>`
-  ${focusStyleText()}
+  ${({ focusStyle }) => getFocusStyle(focusStyle)}
   ${({ variant }) => {
     switch (variant) {
       case 'blank':
