@@ -71,10 +71,6 @@ exports[`Header should render the short version 1`] = `
   color: #000000;
 }
 
-.c9:focus {
-  background-color: #FEC813;
-}
-
 .c9 .c15 {
   margin: 3px;
 }
@@ -145,7 +141,7 @@ exports[`Header should render the short version 1`] = `
   flex-shrink: 0;
 }
 
-.c5.c5:focus {
+.c5:focus {
   outline-color: #FEC813;
   outline-style: solid;
   outline-offset: 0px;
@@ -354,10 +350,6 @@ exports[`Header should render the short version without the full width 1`] = `
   color: #000000;
 }
 
-.c9:focus {
-  background-color: #FEC813;
-}
-
 .c9 .c16 {
   margin: 3px;
 }
@@ -428,7 +420,7 @@ exports[`Header should render the short version without the full width 1`] = `
   flex-shrink: 0;
 }
 
-.c5.c5:focus {
+.c5:focus {
   outline-color: #FEC813;
   outline-style: solid;
   outline-offset: 0px;
@@ -655,10 +647,6 @@ exports[`Header should render the tall version 1`] = `
   color: #000000;
 }
 
-.c12:focus {
-  background-color: #FEC813;
-}
-
 .c12 .c21 {
   margin: 3px;
 }
@@ -729,7 +717,7 @@ exports[`Header should render the tall version 1`] = `
   flex-shrink: 0;
 }
 
-.c7.c7:focus {
+.c7:focus {
   outline-color: #FEC813;
   outline-style: solid;
   outline-offset: 0px;
@@ -1052,7 +1040,7 @@ exports[`Header should render the tall version without a title 1`] = `
   flex-shrink: 0;
 }
 
-.c7.c7:focus {
+.c7:focus {
   outline-color: #FEC813;
   outline-style: solid;
   outline-offset: 0px;

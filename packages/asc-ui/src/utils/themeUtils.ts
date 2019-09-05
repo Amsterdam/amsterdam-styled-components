@@ -137,12 +137,12 @@ export const focusStyleOutline = (width?: number, offset?: number) => ({
 }: {
   theme: Theme.ThemeInterface
 }) => css`
-  &&:focus {
+  &:focus {
     ${outlineStyle(theme, width, offset)}
   }
 `
 
-export const focusStyleText = () => ({
+export const focusStyleFill = () => ({
   theme,
 }: {
   theme: Theme.ThemeInterface
@@ -151,6 +151,22 @@ export const focusStyleText = () => ({
     background-color: ${themeColor('support', 'focus')({ theme })};
   }
 `
+
+export enum FocusStyleEnum {
+  outline,
+  fill,
+  none,
+}
+
+export const getFocusStyle = (focusStyle: string = 'fill') => {
+  const styles = {
+    outline: focusStyleOutline(),
+    fill: focusStyleFill(),
+    none: '',
+  }
+
+  return styles[focusStyle]
+}
 
 /**
  * Util to hide the component for screen readers
