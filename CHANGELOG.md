@@ -16,9 +16,10 @@ Prefix the change with one of these keywords:
 
 ## UNRELEASED
 
-- Added: bullet-list style to List component 
+- Added: bullet-list style to List component
 - Removed: `Dataportaal` implemenation for header and frontpage blocks
 - Added: extra focus style options
+- Added: Button variants `Text button` (transparent and borderless) and `Taskflow button` (adds narrow arrow on the right side of the button)
 
 ## [0.13.2] - 2019-09-04
 
@@ -47,7 +48,7 @@ Prefix the change with one of these keywords:
 
 - Deprecated: 'linkType' on Link component. Please use variant instead.
 - Added: Able to pass a 'color' prop to Link
-- Changed: Link now has a default color black 
+- Changed: Link now has a default color black
 - Removed: margin-top from Footer and max-width from FooterContent (very specific styling)
 - Changed: `MenuFlyOut` no longer opens on tab keydown, only `enter` or `space` (besides `click` or `mouseover`)
 - Changed: LinkList(LinkListItem) is renamed to List(ListItem), the Link functionality has to be done in the implementation
@@ -56,17 +57,17 @@ Prefix the change with one of these keywords:
 ## [0.12.0] - 2019-08-13
 
 - Added: MenuButton component: this now can be used as a button or link inside MenuItem
-- Changed: **BREAKING** MenuItem now doesn't accept any onClick or href props: it's just a wrapper 
+- Changed: **BREAKING** MenuItem now doesn't accept any onClick or href props: it's just a wrapper
   now. Use MenuButton inside MenuItem
-- Removed: functionality to use arrows inside a MenuFlyOut / MenuToggle. This created a lot of 
-  (unnecessary) complexity. Perhaps will be added in the future if really needed. 
+- Removed: functionality to use arrows inside a MenuFlyOut / MenuToggle. This created a lot of
+  (unnecessary) complexity. Perhaps will be added in the future if really needed.
 
 ## [0.11.0] - 2019-08-09
 
 - Added: Card components with implementation stories
 - Added: tag component
-- Added: new way of loading svg's: instead of importing like this:  
-  `import Logo from '@datapunt/asc-assets/lib/assets/Icons/Logo.svg'` you now can use the svg object: 
+- Added: new way of loading svg's: instead of importing like this:
+  `import Logo from '@datapunt/asc-assets/lib/assets/Icons/Logo.svg'` you now can use the svg object:
   `import { svg } from '@datapunt/asc-assets'` and load it like this: `background-image: url(${svg.Logo})`
 - Added: Image component can render images as a square (including IE11)
 

@@ -7,7 +7,7 @@ exports[`ButtonBar should render the buttons in the bar 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-ifAKCX",
+        "componentId": "sc-EHOje",
         "isStatic": true,
         "rules": Array [
           "
@@ -22,7 +22,7 @@ exports[`ButtonBar should render the buttons in the bar 1`] = `
       "displayName": "styled.div",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "sc-ifAKCX",
+      "styledComponentId": "sc-EHOje",
       "target": "div",
       "toString": [Function],
       "warnTooManyClasses": [Function],

@@ -38,6 +38,7 @@ exports[`DocumentCover should render 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -58,6 +59,7 @@ exports[`DocumentCover should render 1`] = `
   transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
   background-color: #004699;
   color: #fff;
+  position: relative;
 }
 
 .c5.c5:focus {
@@ -84,12 +86,22 @@ exports[`DocumentCover should render 1`] = `
   font-size: 0;
 }
 
+.c5.c5 {
+  margin-right: 25px;
+}
+
+.c5:focus .c8:after {
+  opacity: 1;
+}
+
 .c5:disabled {
   cursor: default;
   outline: none;
   border: none;
   color: #B4B4B4;
   background-color: #E6E6E6;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c5:disabled svg rect,
