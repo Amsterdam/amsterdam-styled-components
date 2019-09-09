@@ -214,29 +214,33 @@ export const svgFill = (
 /**
  * Use this util to animate the background-color (or other property), for perceived performance purposes
  * @param theme
- * @param property
+ * @param animateLoading
  */
 export const perceivedLoading = (
   theme: ThemeInterface,
-  property: string = 'background-color',
+  animateLoading: boolean = false,
 ) => {
   const animation = keyframes`
     0% {
-      ${property}: ${themeColor('tint', 'level3')({ theme })};
+      background-color: ${themeColor('tint', 'level3')({ theme })};
     }
   
     50% {
-      ${property}: ${themeColor('tint', 'level4')({ theme })};
+      background-color: ${themeColor('tint', 'level4')({ theme })};
     }
     
     100% {
-      ${property}: ${themeColor('tint', 'level3')({ theme })};
+      background-color: ${themeColor('tint', 'level3')({ theme })};
     }
   `
 
-  return css`
-    animation: ${animation} 2s ease-in-out infinite;
-  `
+  return animateLoading
+    ? css`
+        animation: ${animation} 2s ease-in-out infinite;
+      `
+    : css`
+        background-color: ${themeColor('tint', 'level4')({ theme })};
+      `
 }
 
 export const mapToBreakpoints = (

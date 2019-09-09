@@ -11,6 +11,7 @@ export type Props = {
   horizontal?: boolean
   backgroundColor?: keyof Theme.Tint
   loading?: boolean
+  animateLoading?: boolean
 }
 
 const CardStyle = styled.div<Props>`
@@ -32,13 +33,13 @@ const CardStyle = styled.div<Props>`
       }
     `}
 
-  ${({ loading, theme }) =>
+  ${({ loading, animateLoading, theme }) =>
     loading &&
     css`
-      ${perceivedLoading(theme)}
+      ${perceivedLoading(theme, animateLoading)}
 
       ${CardMediaWrapperStyle} {
-        ${perceivedLoading(theme)}
+        ${perceivedLoading(theme, animateLoading)}
       }
       ${CardContentStyle} > * {
         display: none;
