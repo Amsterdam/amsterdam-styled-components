@@ -218,7 +218,7 @@ export const svgFill = (
  */
 export const perceivedLoading = (
   theme: ThemeInterface,
-  animateLoading: boolean = false,
+  animateLoading: boolean = true,
 ) => {
   const animation = keyframes`
     0% {

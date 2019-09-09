@@ -23,7 +23,6 @@ exports[`Button should render the button 1`] = `
   transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
   color: #fff;
   background: #004699;
-  position: relative;
 }
 
 .c0.c0:focus {
@@ -42,14 +41,6 @@ exports[`Button should render the button 1`] = `
   display: block;
   min-height: inherit;
   font-size: 0;
-}
-
-.c0.c0 {
-  margin-right: 25px;
-}
-
-.c0:focus .c1:after {
-  opacity: 1;
 }
 
 .c0:disabled {
