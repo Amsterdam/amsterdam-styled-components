@@ -16,6 +16,8 @@ Prefix the change with one of these keywords:
 
 ## UNRELEASED
 
+## [0.14.2-rc.1] - 2019-09-09
+- Fixed: issue with button's margin
 - Added: bullet-list style to List component
 - Removed: `Dataportaal` implemenation for header and frontpage blocks
 - Added: extra focus style options
