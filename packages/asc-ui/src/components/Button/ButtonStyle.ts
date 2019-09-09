@@ -211,7 +211,7 @@ const ButtonStyle = styled.button<Props>`
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')}
   ${getVariant()}
   ${flexboxMinHeightFix()} // ie fix
-  ${taskflow =>
+  ${({ taskflow }) =>
     taskflow &&
     css`
       position: relative;

@@ -5,6 +5,7 @@ import { ImageCardContentStyle } from './ImageCardContent'
 export type Props = {
   backgroundImage: string
   loading?: boolean
+  animateLoading?: boolean
 }
 
 export type WrapperProps = {
@@ -26,10 +27,10 @@ export default styled.div<Props>`
   position: relative;
   width: 100%;
   overflow: hidden;
-  ${({ loading, theme, backgroundImage }) =>
+  ${({ loading, theme, animateLoading, backgroundImage }) =>
     loading
       ? css`
-          ${perceivedLoading(theme)}
+          ${perceivedLoading(theme, animateLoading)}
           ${ImageCardContentStyle} {
             height: 100px;
             width: 100%;
@@ -43,7 +44,7 @@ export default styled.div<Props>`
               display: block;
               width: calc(100% - 30px);
               height: 30px;
-              ${perceivedLoading(theme)}
+              ${perceivedLoading(theme, animateLoading)}
             }
           }
         `
