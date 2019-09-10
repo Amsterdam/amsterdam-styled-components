@@ -9,12 +9,36 @@ export enum ButtonVariants {
   secondary,
   tertiary,
   primaryInverted,
+  textButton,
   blank, // blank variant is a plain white button with a grey background on hover
 }
 
 const defaultProps = {
   size: 30,
 }
+
+export const ArrowRight = styled.div`
+  position: absolute;
+  top: 0;
+  right: -38px;
+  width: 0;
+  height: 0;
+  border: 23px solid rgba(255, 255, 255, 0);
+  border-left: 15px solid ${themeColor('secondary')};
+  ${transitions('border-color', '0.1s ease-in-out')}
+  :after {
+    content: '';
+    position: absolute;
+    top: -26px;
+    right: -30px;
+    width: 0;
+    height: 0;
+    border: 26px solid rgba(255, 255, 255, 0);
+    border-left: 17px solid ${themeColor('support', 'focus')};
+    z-index: -1;
+    opacity: 0;
+  }
+`
 
 const getVariant = () => ({
   theme,
@@ -46,6 +70,17 @@ const getVariant = () => ({
         &:hover {
           background-color: ${darken(0.1, themeColor('secondary')({ theme }))};
         }
+
+        ${taskflow =>
+          taskflow &&
+          css`
+            &:not(:disabled)&:hover ${ArrowRight} {
+              border-left-color: ${darken(
+                0.1,
+                themeColor('secondary')({ theme }),
+              )};
+            }
+          `}
       `
 
     case 'tertiary':
@@ -69,6 +104,18 @@ const getVariant = () => ({
 
         &:hover {
           outline: 1px solid ${themeColor('primary')};
+        }
+      `
+
+    case 'textButton':
+      return css`
+        color: ${themeColor('primary')};
+        background-color: rgba(0, 0, 0, 0);
+        ${svgFill('primary')};
+
+        &:hover {
+          color: ${themeColor('secondary')};
+          ${svgFill('secondary')};
         }
       `
 
@@ -128,6 +175,10 @@ export type Props = {
    * A variant, usually different background-color and color of a button
    */
   variant?: keyof typeof ButtonVariants
+  /**
+   * Add narrow arrow on the right side of the secondary button
+   */
+  taskflow?: boolean
 }
 
 export const IconLeft = styled(Icon)`
@@ -138,6 +189,7 @@ export const IconRight = styled(Icon)`
 `
 
 const ButtonStyle = styled.button<Props>`
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
@@ -159,6 +211,30 @@ const ButtonStyle = styled.button<Props>`
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')}
   ${getVariant()}
   ${flexboxMinHeightFix()} // ie fix
+  ${({ taskflow }) =>
+    taskflow &&
+    css`
+      position: relative;
+      && {
+        margin-right: 25px;
+      }
+      &:focus ${ArrowRight}:after {
+        opacity: 1;
+      }
+    `}
+  ${({ variant }) =>
+    variant &&
+    variant === 'textButton' &&
+    css`
+      // remove transition because it's async with Icon
+      ${transitions('color', '0s')}
+      ${IconLeft} {
+        margin-right: 5px;
+      }
+      ${IconRight} {
+        margin-left: 5px;
+      }
+    `}
   &:disabled {
     cursor: default;
     outline: none;
@@ -166,7 +242,21 @@ const ButtonStyle = styled.button<Props>`
     color: ${themeColor('tint', 'level4')};
     background-color: ${themeColor('tint', 'level3')};
     ${svgFill('tint', 'level4')};
-  }
+    text-decoration: none;
+    ${({ taskflow }) =>
+      taskflow &&
+      css`
+        ${ArrowRight} {
+          border-left-color: ${themeColor('tint', 'level3')};
+        }
+      `}
+    ${({ variant }) =>
+      variant &&
+      variant === 'textButton' &&
+      css`
+        background-color: rgba(0, 0, 0, 0);
+      `}
+    }
 `
 
 export default ButtonStyle

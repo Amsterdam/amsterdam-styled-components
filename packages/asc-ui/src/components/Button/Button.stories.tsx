@@ -2,6 +2,7 @@ import styled from '@datapunt/asc-core'
 import {
   Download,
   ChevronRight,
+  ChevronLeft,
   Close,
   Facebook,
   Twitter,
@@ -43,11 +44,17 @@ storiesOf('Atoms/Buttons', module)
       >
         Download button
       </Button>
+      <Button variant="secondary" taskflow>
+        Taskflow button
+      </Button>
       <Button variant="tertiary" iconRight={<ChevronRight />}>
         Download button
       </Button>
       <Button variant="primaryInverted" iconLeft={<ChevronRight />}>
         Download button
+      </Button>
+      <Button variant="textButton" iconLeft={<ChevronLeft />} iconSize={14}>
+        Text button
       </Button>
     </ButtonBar>
   ))
@@ -69,6 +76,17 @@ storiesOf('Atoms/Buttons', module)
       </Button>
       <Button disabled variant="primaryInverted" iconLeft={<ChevronRight />}>
         Download button
+      </Button>
+      <Button
+        disabled
+        variant="textButton"
+        iconLeft={<ChevronLeft />}
+        iconSize={14}
+      >
+        Text button
+      </Button>
+      <Button disabled variant="secondary" taskflow>
+        Taskflow button
       </Button>
     </ButtonBar>
   ))

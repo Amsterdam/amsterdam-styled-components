@@ -38,6 +38,7 @@ exports[`DocumentCover should render 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -90,6 +91,8 @@ exports[`DocumentCover should render 1`] = `
   border: none;
   color: #B4B4B4;
   background-color: #E6E6E6;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c5:disabled svg rect,

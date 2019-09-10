@@ -2,6 +2,7 @@ import * as React from 'react'
 import ButtonStyle, {
   IconLeft,
   IconRight,
+  ArrowRight,
   Props as ButtonStyleProps,
   ButtonVariants,
 } from './ButtonStyle'
@@ -14,6 +15,7 @@ export type Props = {
   icon?: React.ReactNode
   iconSize?: number
   $as?: any
+  taskflow?: boolean
 } & ButtonStyleProps &
   React.ButtonHTMLAttributes<HTMLButtonElement>
 
@@ -26,16 +28,18 @@ const Button: React.FC<Props> = ({
   icon,
   iconSize,
   $as,
+  taskflow,
   ...otherProps
 }): any => {
   const iconProps = {
     size: iconSize || iconDefaultProps.size,
   }
   return (
-    <ButtonStyle {...otherProps} as={$as}>
+    <ButtonStyle {...otherProps} as={$as} taskflow={taskflow}>
       {iconLeft && <IconLeft {...iconProps}>{iconLeft}</IconLeft>}
       {icon ? <Icon {...iconProps}>{icon}</Icon> : children}
       {iconRight && <IconRight {...iconProps}>{iconRight}</IconRight>}
+      {taskflow && <ArrowRight />}
     </ButtonStyle>
   )
 }

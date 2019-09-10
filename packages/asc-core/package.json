@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
   },
-  "version": "0.14.2-alpha.0",
+  "version": "0.14.2-rc.1",
   "main": "lib/index.js",
   "files": [
     "lib"
