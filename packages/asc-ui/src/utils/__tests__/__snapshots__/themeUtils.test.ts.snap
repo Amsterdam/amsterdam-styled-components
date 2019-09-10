@@ -37,11 +37,11 @@ Array [
   "
     ",
   "width: 100px;
-        @media screen and (min-width: 375.02px) {
+        @media screen and (min-width: 375px) {
           width: 70px;
         }
       
-        @media screen and (min-width: 414.02px) {
+        @media screen and (min-width: 414px) {
           width: 50px;
         }
       ",
@@ -55,11 +55,11 @@ Array [
   "
     ",
   "flex-basis: 500px;
-        @media screen and (min-width: 375.02px) {
+        @media screen and (min-width: 375px) {
           flex-basis: 600px;
         }
       
-        @media screen and (min-width: 414.02px) {
+        @media screen and (min-width: 414px) {
           flex-basis: 200px;
         }
       ",
@@ -73,39 +73,39 @@ Array [
   "
     ",
   "width: 100px;
-        @media screen and (min-width: 375.02px) {
+        @media screen and (min-width: 375px) {
           width: 70px;
         }
       
-        @media screen and (min-width: 414.02px) {
+        @media screen and (min-width: 414px) {
           width: 50px;
         }
       
-        @media screen and (min-width: 540.02px) {
+        @media screen and (min-width: 540px) {
           width: 100px;
         }
       
-        @media screen and (min-width: 768.02px) {
+        @media screen and (min-width: 768px) {
           width: 70px;
         }
       
-        @media screen and (min-width: 1024.02px) {
+        @media screen and (min-width: 1024px) {
           width: 50px;
         }
       
-        @media screen and (min-width: 1200.02px) {
+        @media screen and (min-width: 1200px) {
           width: 100px;
         }
       
-        @media screen and (min-width: 1430.02px) {
+        @media screen and (min-width: 1430px) {
           width: 70px;
         }
       
-        @media screen and (min-width: 1920.02px) {
+        @media screen and (min-width: 1920px) {
           width: 50px;
         }
       
-        @media screen and (min-width: 2560.02px) {
+        @media screen and (min-width: 2560px) {
           width: 50px;
         }
       ",

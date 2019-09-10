@@ -209,12 +209,12 @@ describe('utils/grid', () => {
 
       expect(query).toEqual(
         expect.stringContaining(
-          `(min-width:${theme.layouts.somewhereInTheMiddle.min}px)`,
+          `(max-width:${theme.layouts.somewhereInTheMiddle.max}px)`,
         ),
       )
       expect(queryNoConflict).toEqual(
         expect.stringContaining(
-          `(min-width:${theme.layouts.somewhereInTheMiddle.min + 0.02}px)`,
+          `(max-width:${theme.layouts.somewhereInTheMiddle.max - 1}px)`,
         ),
       )
     })

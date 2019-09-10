@@ -31,7 +31,7 @@ exports[`TopBar should render 1`] = `
   margin-bottom: 0;
 }
 
-@media screen and (min-width:540.02px) {
+@media screen and (min-width:540px) {
   .c0 {
     padding: 0 15px;
   }
