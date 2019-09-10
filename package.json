@@ -109,8 +109,6 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn test --bail",
-      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
