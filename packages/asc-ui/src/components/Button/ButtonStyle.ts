@@ -216,6 +216,7 @@ const ButtonStyle = styled.button<Props>`
     taskflow &&
     css`
       position: relative;
+      z-index: 0;
       && {
         margin-right: 25px;
       }
