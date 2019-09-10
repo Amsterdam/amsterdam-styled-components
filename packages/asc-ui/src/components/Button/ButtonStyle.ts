@@ -20,10 +20,10 @@ const defaultProps = {
 export const ArrowRight = styled.div`
   position: absolute;
   top: 0;
-  right: -38px;
+  right: -37px;
   width: 0;
   height: 0;
-  border: 23px solid rgba(255, 255, 255, 0);
+  border: 22px solid rgba(255, 255, 255, 0);
   border-left: 15px solid ${themeColor('secondary')};
   ${transitions('border-color', '0.1s ease-in-out')}
   :after {
@@ -189,6 +189,7 @@ export const IconRight = styled(Icon)`
 `
 
 const ButtonStyle = styled.button<Props>`
+  height: 44px;
   white-space: nowrap;
   display: inline-flex;
   align-items: center;

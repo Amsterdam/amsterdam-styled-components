@@ -11,6 +11,7 @@ exports[`IconButton should render the IconButton 1`] = `
         "isStatic": false,
         "rules": Array [
           "
+  height: 44px;
   white-space: nowrap;
   display: inline-flex;
   align-items: center;

@@ -38,6 +38,7 @@ exports[`DocumentCover should render 1`] = `
 }
 
 .c5 {
+  height: 44px;
   white-space: nowrap;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
