@@ -1,6 +1,7 @@
 import styled, { css } from '@datapunt/asc-core'
 import {
   breakpoint,
+  fromTheme,
   themeColor,
   customCss,
   CustomCssPropsInterface,
@@ -10,7 +11,7 @@ import HeaderNavigationStyle from './HeaderNavigationStyle'
 import HeaderLogoTextStyle from './HeaderLogoTextStyle'
 import TopBarStyle from '../TopBar/TopBarStyle'
 import HeaderStyle from './HeaderStyle'
-import { HEADER_HEIGHT_SMALL, WRAPPER_MAX_WIDTH } from '../shared/sizes'
+import { HEADER_HEIGHT_SMALL } from '../shared/sizes'
 
 export interface Props extends CustomCssPropsInterface {
   tall?: boolean
@@ -32,8 +33,8 @@ const HeaderWrapperStyle = styled.div<Props>`
   background-color: ${themeColor('tint', 'level1')};
   margin: 0 auto;
   width: 100%;
-  max-width: ${({ fullWidth }) =>
-    fullWidth ? 'none' : `${WRAPPER_MAX_WIDTH}px`};
+  max-width: ${({ fullWidth, theme }) =>
+    fullWidth ? 'none' : `${fromTheme('maxGridWidth')({ theme })}px`};
   box-shadow: 0 4px rgba(0, 0, 0, 0.04);
   box-sizing: content-box;
   position: sticky;
