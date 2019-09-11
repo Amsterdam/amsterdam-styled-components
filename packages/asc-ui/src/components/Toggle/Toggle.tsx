@@ -104,6 +104,7 @@ const Toggle: React.FC<Props> = ({
       onBlur={handleOnBlur}
       onKeyDown={handleOnKeyDown}
       {...otherProps}
+      tabIndex={-1} // This will enable the onblur event for this div element on all browsers
     >
       <ToggleHandler
         {...{
