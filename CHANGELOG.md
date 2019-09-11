@@ -17,6 +17,7 @@ Prefix the change with one of these keywords:
 ## UNRELEASED
 
 - Fixed: issue with button's size
+- Changed: The `max-width` value of the header is now defined by the max width of the grid in the theme configuration
 
 ## [0.14.2-rc.1] - 2019-09-09
 
