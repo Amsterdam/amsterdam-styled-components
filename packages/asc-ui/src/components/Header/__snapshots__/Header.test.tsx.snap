@@ -202,7 +202,7 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c0 .c1 {
-  min-height: 50px;
+  height: 50px;
   padding-right: 0;
 }
 
@@ -472,7 +472,7 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c14 .c1 {
-  min-height: 50px;
+  height: 50px;
   padding-right: 0;
 }
 
@@ -502,7 +502,7 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c0 .c1 {
-  min-height: 50px;
+  height: 50px;
   padding-right: 0;
 }
 
@@ -776,7 +776,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c18 .c2 {
-  min-height: 50px;
+  height: 50px;
   padding-right: 0;
 }
 
@@ -793,7 +793,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c19 .c2 {
-  min-height: 50px;
+  height: 50px;
   padding-right: 0;
 }
 
@@ -877,7 +877,7 @@ exports[`Header should render the tall version 1`] = `
   }
 
   .c0 .c2 {
-    min-height: 50px;
+    height: 50px;
     padding-right: 0;
   }
 }
@@ -1093,7 +1093,7 @@ exports[`Header should render the tall version without a title 1`] = `
 }
 
 .c14 .c2 {
-  min-height: 50px;
+  height: 50px;
   padding-right: 0;
 }
 
@@ -1106,7 +1106,7 @@ exports[`Header should render the tall version without a title 1`] = `
 }
 
 .c15 .c2 {
-  min-height: 50px;
+  height: 50px;
   padding-right: 0;
 }
 
@@ -1178,7 +1178,7 @@ exports[`Header should render the tall version without a title 1`] = `
   }
 
   .c0 .c2 {
-    min-height: 50px;
+    height: 50px;
     padding-right: 0;
   }
 }
