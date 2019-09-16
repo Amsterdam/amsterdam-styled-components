@@ -31,6 +31,8 @@ export namespace Theme {
     }
   }
 
+  export type Spacing = number
+
   export interface BreakpointsInterface {
     mobileS: GetBreakpointFunc
     mobileM: GetBreakpointFunc
@@ -129,6 +131,7 @@ export namespace Theme {
     typography: Partial<TypographyInterface>
     layouts: Partial<LayoutInterface>
     maxGridWidth: number
+    spacing: Spacing
   }
 
   export class ThemeFactory implements ThemeInterface {
@@ -140,6 +143,7 @@ export namespace Theme {
       const typography = require(`./${themeName}/typography`).default
       const layouts = require(`./${themeName}/layouts`).default
       const { maxGridWidth } = require(`./${themeName}/layouts`)
+      const spacing = require(`./${themeName}/spacing`)
       /* eslint-enable global-require, import/no-dynamic-require */
       return new ThemeFactory(
         breakpoints,
@@ -148,6 +152,7 @@ export namespace Theme {
         typography,
         layouts,
         maxGridWidth,
+        spacing,
       )
     }
 
@@ -158,6 +163,7 @@ export namespace Theme {
       public typography: TypographyInterface,
       public layouts: LayoutInterface,
       public maxGridWidth: number,
+      public spacing: Spacing,
     ) {}
   }
 }
