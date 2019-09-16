@@ -197,13 +197,14 @@ export const svgFill = (
   if (colorType) {
     const value = themeColor(colorType, variant, override)({ theme })
     if (typeof value === 'string') {
-      return `& svg {
-        rect,
-        polygon,
-        path {
-          fill: ${value}
+      return css`
+        & svg {
+          rect,
+          polygon,
+          path {
+            fill: ${value};
+          }
         }
-      }
       `
     }
   }
@@ -278,19 +279,19 @@ type ShowHideProps = ThemeProp & ShowHideTypes
 
 export const showHide = () => ({ hideAt, showAt, theme }: ShowHideProps) => {
   const hideAtCss = hideAt
-    ? `
-    @media screen and ${breakpoint('min-width', hideAt)({ theme })} {
-      display: none;
-    }
-`
+    ? css`
+        @media screen and ${breakpoint('min-width', hideAt)({ theme })} {
+          display: none;
+        }
+      `
     : ''
 
   const showAtCss = showAt
-    ? `
-    @media screen and ${breakpoint('max-width', showAt)({ theme })} {
-      display: none;
-    }
-`
+    ? css`
+        @media screen and ${breakpoint('max-width', showAt)({ theme })} {
+          display: none;
+        }
+      `
     : ''
 
   return css`
