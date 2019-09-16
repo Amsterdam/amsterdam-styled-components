@@ -82,6 +82,9 @@ exports[`<TextField /> should render 1`] = `
         },
       },
       "maxGridWidth": 1430,
+      "spacing": Object {
+        "default": 4,
+      },
       "typography": Object {
         "a": Object {
           "color": "#000000",

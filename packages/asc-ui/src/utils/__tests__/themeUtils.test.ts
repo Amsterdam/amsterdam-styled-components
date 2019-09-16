@@ -9,11 +9,18 @@ import {
   getTypographyFromTheme,
   mapToBreakpoints,
   getTypographyValueFromProperty,
+  themeSpacing,
 } from '../themeUtils'
 
 import ThemeInterface = Theme.ThemeInterface
 
-const { breakpoints, colors, globalStyle, typography } = ascDefaultTheme
+const {
+  breakpoints,
+  colors,
+  globalStyle,
+  typography,
+  spacing,
+} = ascDefaultTheme
 
 describe('getColorFromTheme', () => {
   const theme = {
@@ -189,5 +196,28 @@ describe('mapToBreakpoints', () => {
       theme,
     )
     expect(result).toMatchSnapshot()
+  })
+})
+
+describe('themeSpacing', () => {
+  const theme = {
+    breakpoints,
+    globalStyle,
+    colors,
+    typography,
+    layouts,
+    maxGridWidth,
+    spacing,
+  }
+  it('should return the result of n * theme spacing', () => {
+    expect(themeSpacing(1)({ theme })).toBe('4px')
+    expect(themeSpacing(2)({ theme })).toBe('8px')
+    expect(themeSpacing(3)({ theme })).toBe('12px')
+  })
+
+  it('should accept up to 4 parameters and return a spaced separated string with the results', () => {
+    expect(themeSpacing(1, 3)({ theme })).toBe('4px 12px')
+    expect(themeSpacing(1, 2, 3)({ theme })).toBe('4px 8px 12px')
+    expect(themeSpacing(1, 2, 3, 4)({ theme })).toBe('4px 8px 12px 16px')
   })
 })
