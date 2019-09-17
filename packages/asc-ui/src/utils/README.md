@@ -6,7 +6,7 @@ Gets value from the props object. Useful for styled-components
 
 ```js static
 import styled from '@datapunt/asc-core'
-import { fromProps } from './utils/fromTheme'
+import { fromProps } from './utils'
 
 const Div = styled.div`
   display: ${fromProps('display')};

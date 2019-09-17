@@ -1,5 +1,5 @@
 import { css, keyframes, Theme } from '@datapunt/asc-core'
-import fromTheme from './fromTheme'
+import { fromProps } from './fromProps'
 
 import BreakpointsInterface = Theme.BreakpointsInterface
 import ThemeInterface = Theme.ThemeInterface
@@ -30,6 +30,13 @@ export const withTheme = <T extends any[]>(
 
 type ThemeColorParameters = [Theme.ColorType?, string?, string?]
 
+/**
+ * A shortcut to the `fromProps` that will get a value out of the props.theme object
+ */
+export const getValueFromTheme = withTheme<[string, Function?]>(
+  (theme, identifier, callback) => fromProps(identifier, callback)(theme),
+)
+
 export const themeColor = withTheme<ThemeColorParameters>(
   (theme, colorType, colorSubtype = 'main', override) => {
     if (override) {
@@ -37,17 +44,19 @@ export const themeColor = withTheme<ThemeColorParameters>(
     }
 
     if (colorType) {
-      return fromTheme(`colors.${[colorType]}.${[colorSubtype]}`)({ theme })
+      return getValueFromTheme(`colors.${[colorType]}.${[colorSubtype]}`)({
+        theme,
+      })
     }
 
-    return fromTheme('colors.tint.level1')({ theme })
+    return getValueFromTheme('colors.tint.level1')({ theme })
   },
 )
 
 type BreakpointsType = [Theme.TypeBreakpoint, keyof BreakpointsInterface]
 
 export const breakpoint = withTheme<BreakpointsType>((theme, type, variant) => {
-  const breakpointFunc: Theme.GetBreakpointFunc = fromTheme(
+  const breakpointFunc: Theme.GetBreakpointFunc = getValueFromTheme(
     `breakpoints.${[variant]}`,
   )({
     theme,
@@ -83,7 +92,7 @@ export const getTypographyFromTheme = () => ({
   theme,
 }: any) => {
   const as = styleAs || asProp
-  const styles = fromTheme(`typography.${[as]}`)({
+  const styles = getValueFromTheme(`typography.${[as]}`)({
     theme,
   }) as Theme.TypographyType
   if (!styles) {
@@ -123,7 +132,7 @@ type GetTypographyValueFromPropertyParameters = [
 export const getTypographyValueFromProperty = withTheme<
   GetTypographyValueFromPropertyParameters
 >((theme, element, property, breakpointRule) => {
-  const rules = fromTheme(`typography.${[element]}`)({ theme })
+  const rules = getValueFromTheme(`typography.${[element]}`)({ theme })
   if (breakpointRule) {
     if (rules.breakpoints[breakpointRule]) {
       return rules.breakpoints[breakpointRule][property]
@@ -337,7 +346,7 @@ type ThemeSpacingParameters = [
  */
 export const themeSpacing = withTheme<ThemeSpacingParameters>(
   (theme, ...factors) => {
-    const spacing: Theme.Spacing = fromTheme('spacing')({ theme })
+    const spacing: Theme.Spacing = getValueFromTheme('spacing')({ theme })
     return factors
       .map(factor => factor && `${factor * spacing}px`)
       .join(' ')

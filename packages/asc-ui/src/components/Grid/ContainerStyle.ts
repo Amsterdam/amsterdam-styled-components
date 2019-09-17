@@ -1,5 +1,5 @@
 import styled, { css, Theme } from '@datapunt/asc-core'
-import { breakpoint, themeColor, fromTheme } from '../../utils'
+import { breakpoint, themeColor, getValueFromTheme } from '../../utils'
 
 export type Props = {
   beamColor?: keyof Theme.SupportPaletteInterface
@@ -15,7 +15,7 @@ const ContainerWrapperStyle = styled.div<{}>`
 const ContainerStyle = styled.div<Props>`
   width: 100%;
   max-width: ${({ maxWidth, theme }) =>
-    `${maxWidth || fromTheme('maxGridWidth')({ theme })}px`};
+    `${maxWidth || getValueFromTheme('maxGridWidth')({ theme })}px`};
   flex-grow: 1;
   position: relative;
 

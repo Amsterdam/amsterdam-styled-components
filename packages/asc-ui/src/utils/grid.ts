@@ -1,16 +1,13 @@
 import { Theme } from '@datapunt/asc-core'
-import fromTheme from './fromTheme'
-import { withTheme } from './themeUtils'
+import { withTheme, getValueFromTheme } from './themeUtils'
 
 /**
  * Get the value for the maximum width of the grid
  */
-export const maxWidth = (withUnit = false) => ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}): number | string => {
-  const gridWidthValue = fromTheme('maxGridWidth')({ theme })
+export const maxWidth = withTheme<[boolean?]>((theme, withUnit = false):
+  | number
+  | string => {
+  const gridWidthValue = getValueFromTheme('maxGridWidth')({ theme })
 
   if (Number.isNaN(parseInt(gridWidthValue, 10))) {
     throw new Error(
@@ -23,17 +20,13 @@ export const maxWidth = (withUnit = false) => ({
   }
 
   return gridWidthValue
-}
+})
 
 /**
  * Get the amount of column for a specific layout
  */
-export const columns = (layoutId: string) => ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}): number => {
-  const colCount = fromTheme(`layouts.${layoutId}.columns`)({ theme })
+export const columns = withTheme<[string]>((theme, layoutId): number => {
+  const colCount = getValueFromTheme(`layouts.${layoutId}.columns`)({ theme })
 
   if (Number.isNaN(parseInt(colCount, 10))) {
     throw new Error(
@@ -42,106 +35,99 @@ export const columns = (layoutId: string) => ({
   }
 
   return colCount
-}
+})
 
 /**
  * Get the gutter width for a specific layout
  */
-export const gutter = (layoutId: string, withUnit = false) => ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}): string | number => {
-  const gutterValue = fromTheme(`layouts.${layoutId}.gutter`)({ theme }) || 0
+export const gutter = withTheme<[string, boolean?]>(
+  (theme, layoutId: string, withUnit = false): string | number => {
+    const gutterValue =
+      getValueFromTheme(`layouts.${layoutId}.gutter`)({ theme }) || 0
 
-  if (withUnit) {
-    return `${gutterValue}px`
-  }
+    if (withUnit) {
+      return `${gutterValue}px`
+    }
 
-  return gutterValue
-}
+    return gutterValue
+  },
+)
 
 /**
  * Get the margin width for a specific layout
  */
-export const margin = (layoutId: string, withUnit = false) => ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}): string | number => {
-  const marginValue = fromTheme(`layouts.${layoutId}.margin`)({ theme }) || 0
+export const margin = withTheme<[string, boolean?]>(
+  (theme, layoutId: string, withUnit = false): string | number => {
+    const marginValue =
+      getValueFromTheme(`layouts.${layoutId}.margin`)({ theme }) || 0
 
-  if (withUnit) {
-    return `${marginValue}px`
-  }
+    if (withUnit) {
+      return `${marginValue}px`
+    }
 
-  return marginValue
-}
+    return marginValue
+  },
+)
 
 /**
  * Get the min-width breakpoint value for a specific layout
  */
-export const min = (layoutId: string, withUnit = false) => ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}): string | number | undefined => {
-  const minValue = fromTheme(`layouts.${layoutId}.min`)({ theme })
+export const min = withTheme<[string, boolean?]>(
+  (theme, layoutId: string, withUnit = false): string | number | undefined => {
+    const minValue = getValueFromTheme(`layouts.${layoutId}.min`)({ theme })
 
-  if (minValue >= 0) {
-    if (withUnit) {
-      return `${minValue}px`
+    if (minValue >= 0) {
+      if (withUnit) {
+        return `${minValue}px`
+      }
+
+      return minValue
     }
 
-    return minValue
-  }
-
-  return undefined
-}
+    return undefined
+  },
+)
 
 /**
  * Get the max-width breakpoint value for a specific layout
  */
-export const max = (
-  layoutId: string,
-  withUnit = false,
-  noConflict = false,
-) => ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}): string | number | undefined => {
-  let maxValue = fromTheme(`layouts.${layoutId}.max`)({ theme })
-  maxValue += noConflict ? -1 : 0
-  if (maxValue > 0) {
-    if (withUnit) {
-      return `${maxValue}px`
+export const max = withTheme<[string, boolean?, boolean?]>(
+  (
+    theme,
+    layoutId: string,
+    withUnit = false,
+    noConflict = false,
+  ): string | number | undefined => {
+    let maxValue = getValueFromTheme(`layouts.${layoutId}.max`)({ theme })
+    maxValue += noConflict ? -1 : 0
+    if (maxValue > 0) {
+      if (withUnit) {
+        return `${maxValue}px`
+      }
+
+      return maxValue
     }
 
-    return maxValue
-  }
-
-  return undefined
-}
+    return undefined
+  },
+)
 
 /**
  * Get the sum of the gutters for the entire grid
  */
-export const gridGutterWidth = (layoutId: string, withUnit = false) => ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}): string | number => {
-  const cols = columns(layoutId)({ theme })
-  const gutterWidthValue = <number>gutter(layoutId)({ theme })
-  const value = (cols - 1) * gutterWidthValue
+export const gridGutterWidth = withTheme<[string, boolean?]>(
+  (theme, layoutId: string, withUnit = false): string | number => {
+    const cols = columns(layoutId)({ theme })
+    const gutterWidthValue = <number>gutter(layoutId)({ theme })
+    const value = (cols - 1) * gutterWidthValue
 
-  if (withUnit) {
-    return `${value}px`
-  }
+    if (withUnit) {
+      return `${value}px`
+    }
 
-  return value
-}
+    return value
+  },
+)
 
 /**
  * Get the width of all gutters in a set of columns
@@ -237,7 +223,7 @@ export const maxMediaQuery = withTheme<[string]>((theme, layoutId): string =>
 export const defaultParentSpan = (
   theme: Theme.ThemeInterface,
 ): Theme.TypeSpan => {
-  const layouts = fromTheme('layouts')({ theme })
+  const layouts = getValueFromTheme('layouts')({ theme })
   const defaults = <Theme.TypeSpan>{}
 
   Object.keys(layouts).forEach(layoutId => {

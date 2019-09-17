@@ -9,6 +9,7 @@ import {
   mapToBreakpoints,
   getTypographyValueFromProperty,
   themeSpacing,
+  getValueFromTheme,
 } from '../themeUtils'
 
 const { colors, typography } = ascDefaultTheme
@@ -174,5 +175,30 @@ describe('themeSpacing', () => {
     expect(themeSpacing(1, 3)({ theme })).toBe('4px 12px')
     expect(themeSpacing(1, 2, 3)({ theme })).toBe('4px 8px 12px')
     expect(themeSpacing(1, 2, 3, 4)({ theme })).toBe('4px 8px 12px 16px')
+  })
+})
+
+describe('fromTheme', () => {
+  const theme = {
+    ...ascDefaultTheme,
+    colours: { white: '#fff' },
+    units: 'px',
+    size: 1,
+  }
+
+  it('should return a value from the theme object', () => {
+    expect(getValueFromTheme('colours.white')({ theme })).toBe(
+      theme.colours.white,
+    )
+    expect(getValueFromTheme('units')({ theme })).toBe(theme.units)
+    expect(
+      getValueFromTheme('size', (value: number) => value * 2)({ theme }),
+    ).toBe(theme.size * 2)
+  })
+
+  it('should not throw when a nested key cannot be found', () => {
+    expect(() =>
+      getValueFromTheme('colours.white.light')({ theme }),
+    ).not.toThrow()
   })
 })

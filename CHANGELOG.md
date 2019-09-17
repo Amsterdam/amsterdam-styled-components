@@ -18,6 +18,7 @@ Prefix the change with one of these keywords:
 - Added: theme spacing unit and a themeSpacing util to retrieve a size from the theme's spacing unit. 
 - Fixed: issue with button's size
 - Changed: The `max-width` value of the header is now defined by the max width of the grid in the theme configuration
+- Deprecated: `fromTheme` util method. Use `getValueFromTheme` instead
 
 ## [0.14.2-rc.1] - 2019-09-09
 

@@ -1,5 +1,5 @@
 import styled, { css } from '@datapunt/asc-core'
-import { themeColor, fromTheme } from '../../utils'
+import { themeColor, getValueFromTheme } from '../../utils'
 
 export type ContextMenuItemProps = {
   role?: string
@@ -18,7 +18,7 @@ export const ContextMenuItemStyle = styled.li<ContextMenuItemProps>`
   height: 34px;
   width: 100%;
   cursor: pointer;
-  font-size: ${fromTheme('typography.fontSize')};
+  font-size: ${getValueFromTheme('typography.fontSize')};
   text-decoration: none;
   color: ${themeColor('tint', 'level7')};
 
