@@ -99,7 +99,7 @@ const ShareBar = ButtonBar
 const color = themeColor
 export { color, themeColor }
 
-export { breakpoint, svgFill } from './utils'
+export { breakpoint, svgFill, themeSpacing } from './utils'
 
 export const styles = {
   ...AmsterdamLogoStyles,
