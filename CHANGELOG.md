@@ -15,6 +15,9 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## UNRELEASED
+
+## [0.15.0] - 2019-09-17
+
 - Added: theme spacing unit and a themeSpacing util to retrieve a size from the theme's spacing unit. 
 - Fixed: issue with button's size
 - Changed: The `max-width` value of the header is now defined by the max width of the grid in the theme configuration
