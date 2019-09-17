@@ -143,7 +143,7 @@ export namespace Theme {
       const typography = require(`./${themeName}/typography`).default
       const layouts = require(`./${themeName}/layouts`).default
       const { maxGridWidth } = require(`./${themeName}/layouts`)
-      const spacing = require(`./${themeName}/spacing`)
+      const spacing = require(`./${themeName}/spacing`).default
       /* eslint-enable global-require, import/no-dynamic-require */
       return new ThemeFactory(
         breakpoints,
