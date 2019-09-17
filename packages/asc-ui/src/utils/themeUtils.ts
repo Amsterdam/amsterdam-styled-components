@@ -1,5 +1,5 @@
 import { css, keyframes, Theme } from '@datapunt/asc-core'
-import fromTheme from './fromTheme'
+import { fromProps } from './fromProps'
 
 import BreakpointsInterface = Theme.BreakpointsInterface
 import ThemeInterface = Theme.ThemeInterface
@@ -10,33 +10,59 @@ type ThemeProp = {
   theme: Theme.ThemeInterface
 }
 
-export const themeColor = (
-  colorType?: Theme.ColorType,
-  colorSubtype: string = 'main',
-  override?: string,
-) => ({ theme }: ThemeProp) => {
-  if (override) {
-    return override
-  }
+/**
+ * Curry function to provide the theme as first parameter, followed up with other parameters
+ * @param cb
+ *
+ * @example
+ * const myThemeHelperFunction = withTheme((theme, ...otherParams) => {
+ *   ...
+ * })
+ *
+ * css`
+ *  ${myThemeHelperFunction(param1, param2)}
+ * `
+ */
+export const withTheme = <T extends any[]>(
+  cb: (theme: ThemeInterface, ...params: T) => any,
+) => (...params: T) => ({ theme }: { theme: ThemeInterface }) =>
+  cb(theme, ...params)
 
-  if (colorType) {
-    return fromTheme(`colors.${[colorType]}.${[colorSubtype]}`)({ theme })
-  }
+type ThemeColorParameters = [Theme.ColorType?, string?, string?]
 
-  return fromTheme('colors.tint.level1')({ theme })
-}
+/**
+ * A shortcut to the `fromProps` that will get a value out of the props.theme object
+ */
+export const getValueFromTheme = withTheme<[string, Function?]>(
+  (theme, identifier, callback) => fromProps(identifier, callback)(theme),
+)
 
-export const breakpoint = (
-  type: Theme.TypeBreakpoint,
-  variant: keyof BreakpointsInterface,
-) => ({ theme }: ThemeProp) => {
-  const breakpointFunc: Theme.GetBreakpointFunc = fromTheme(
+export const themeColor = withTheme<ThemeColorParameters>(
+  (theme, colorType, colorSubtype = 'main', override) => {
+    if (override) {
+      return override
+    }
+
+    if (colorType) {
+      return getValueFromTheme(`colors.${[colorType]}.${[colorSubtype]}`)({
+        theme,
+      })
+    }
+
+    return getValueFromTheme('colors.tint.level1')({ theme })
+  },
+)
+
+type BreakpointsType = [Theme.TypeBreakpoint, keyof BreakpointsInterface]
+
+export const breakpoint = withTheme<BreakpointsType>((theme, type, variant) => {
+  const breakpointFunc: Theme.GetBreakpointFunc = getValueFromTheme(
     `breakpoints.${[variant]}`,
   )({
     theme,
   })
   return breakpointFunc && breakpointFunc(type)
-}
+})
 
 const generateCSSFromTypography = (
   {
@@ -66,7 +92,7 @@ export const getTypographyFromTheme = () => ({
   theme,
 }: any) => {
   const as = styleAs || asProp
-  const styles = fromTheme(`typography.${[as]}`)({
+  const styles = getValueFromTheme(`typography.${[as]}`)({
     theme,
   }) as Theme.TypographyType
   if (!styles) {
@@ -95,12 +121,18 @@ export const getTypographyFromTheme = () => ({
   `
 }
 
-export const getTypographyValueFromProperty = (
-  element: keyof TypographyInterface,
-  property: keyof TypographyElementStyle,
-  breakpointRule?: keyof BreakpointsInterface,
-) => ({ theme }: { theme: ThemeInterface }) => {
-  const rules = fromTheme(`typography.${[element]}`)({ theme })
+type BreakpointKeys = keyof BreakpointsInterface
+
+type GetTypographyValueFromPropertyParameters = [
+  keyof TypographyInterface,
+  keyof TypographyElementStyle,
+  BreakpointKeys?,
+]
+
+export const getTypographyValueFromProperty = withTheme<
+  GetTypographyValueFromPropertyParameters
+>((theme, element, property, breakpointRule) => {
+  const rules = getValueFromTheme(`typography.${[element]}`)({ theme })
   if (breakpointRule) {
     if (rules.breakpoints[breakpointRule]) {
       return rules.breakpoints[breakpointRule][property]
@@ -108,7 +140,7 @@ export const getTypographyValueFromProperty = (
     return ''
   }
   return rules[property]
-}
+})
 
 export const outlineStyle = (
   theme: ThemeInterface,
@@ -136,15 +168,13 @@ export const focusStyleOutline = (width?: number, offset?: number) => ({
     }
   `
 
-export const focusStyleFill = () => ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}) => css`
-  &:focus {
-    background-color: ${themeColor('support', 'focus')({ theme })};
-  }
-`
+export const focusStyleFill = withTheme(
+  theme => css`
+    &:focus {
+      background-color: ${themeColor('support', 'focus')({ theme })};
+    }
+  `,
+)
 
 export enum FocusStyleEnum {
   outline,
@@ -189,28 +219,26 @@ export const srOnlyStyle = () => ({ srOnly }: { srOnly?: boolean }) =>
       `
     : ''
 
-export const svgFill = (
-  colorType?: Theme.ColorType,
-  variant: string = 'main',
-  override?: string,
-) => ({ theme }: ThemeProp) => {
-  if (colorType) {
-    const value = themeColor(colorType, variant, override)({ theme })
-    if (typeof value === 'string') {
-      return css`
-        & svg {
-          rect,
-          polygon,
-          path {
-            fill: ${value};
+export const svgFill = withTheme<[Theme.ColorType?, string?, string?]>(
+  (theme, colorType, variant = 'main', override) => {
+    if (colorType) {
+      const value = themeColor(colorType, variant, override)({ theme })
+      if (typeof value === 'string') {
+        return css`
+          & svg {
+            rect,
+            polygon,
+            path {
+              fill: ${value};
+            }
           }
-        }
-      `
+        `
+      }
     }
-  }
 
-  return ''
-}
+    return ''
+  },
+)
 
 /**
  * Use this util to animate the background-color (or other property), for perceived performance purposes
@@ -300,6 +328,35 @@ export const showHide = () => ({ hideAt, showAt, theme }: ShowHideProps) => {
   `
 }
 
+type ThemeSpacingParameters = [
+  Theme.Spacing,
+  Theme.Spacing?,
+  Theme.Spacing?,
+  Theme.Spacing?,
+]
+
+/**
+ * Retrieve an amount of pixels by passing a factor that will multiply it by the theme's spacing unit
+ *
+ * @example If the theme's spacing unit is 4px:
+ * css`
+ *  padding: ${themeSpacing(1, 2, 1, 4)} // padding: 4px 8px 4px 18px;
+ *  margin-bottom: ${themeSpacing(3)} // margin-bottom: 12px;
+ * `
+ */
+export const themeSpacing = withTheme<ThemeSpacingParameters>(
+  (theme, ...factors) => {
+    const spacing: Theme.Spacing = getValueFromTheme('spacing')({ theme })
+    return factors
+      .map(factor => factor && `${factor * spacing}px`)
+      .join(' ')
+      .trim()
+  },
+)
+
+/**
+ * @deprecated Please wrap around the SC styled() method to extend your styles.
+ */
 export const customCss = (props: any) =>
   props.css &&
   css`

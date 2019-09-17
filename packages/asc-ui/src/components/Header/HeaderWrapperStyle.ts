@@ -1,7 +1,7 @@
 import styled, { css } from '@datapunt/asc-core'
 import {
   breakpoint,
-  fromTheme,
+  getValueFromTheme,
   themeColor,
   customCss,
   CustomCssPropsInterface,
@@ -34,7 +34,7 @@ const HeaderWrapperStyle = styled.div<Props>`
   margin: 0 auto;
   width: 100%;
   max-width: ${({ fullWidth, theme }) =>
-    fullWidth ? 'none' : `${fromTheme('maxGridWidth')({ theme })}px`};
+    fullWidth ? 'none' : `${getValueFromTheme('maxGridWidth')({ theme })}px`};
   box-shadow: 0 4px rgba(0, 0, 0, 0.04);
   box-sizing: content-box;
   position: sticky;

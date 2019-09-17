@@ -1,6 +1,5 @@
 // @ts-ignore
-import { ascDefaultTheme, Theme } from '@datapunt/asc-core'
-import { layouts, maxGridWidth } from '@datapunt/asc-core/lib/theme/default'
+import { ascDefaultTheme } from '@datapunt/asc-core'
 import {
   themeColor,
   focusStyleOutline,
@@ -9,16 +8,15 @@ import {
   getTypographyFromTheme,
   mapToBreakpoints,
   getTypographyValueFromProperty,
+  themeSpacing,
+  getValueFromTheme,
 } from '../themeUtils'
 
-import ThemeInterface = Theme.ThemeInterface
-
-const { breakpoints, colors, globalStyle, typography } = ascDefaultTheme
+const { colors, typography } = ascDefaultTheme
 
 describe('getColorFromTheme', () => {
   const theme = {
-    breakpoints,
-    globalStyle,
+    ...ascDefaultTheme,
     colors: {
       ...colors,
       primary: {
@@ -26,9 +24,6 @@ describe('getColorFromTheme', () => {
         dark: '#000',
       },
     },
-    typography,
-    layouts,
-    maxGridWidth,
   }
 
   it('should return the requested color from theme', () => {
@@ -45,14 +40,10 @@ describe('getColorFromTheme', () => {
 describe('getTypographyFromTheme', () => {
   it('should return the requested typography from theme', () => {
     const theme = {
-      breakpoints,
-      globalStyle,
-      colors,
+      ...ascDefaultTheme,
       typography: {
         ...typography,
       },
-      layouts,
-      maxGridWidth,
     }
 
     expect(getTypographyFromTheme()({ as: 'p', theme })).toMatchSnapshot()
@@ -60,15 +51,11 @@ describe('getTypographyFromTheme', () => {
 })
 
 describe('getTypographyValueFromProperty', () => {
-  const theme: ThemeInterface = {
-    breakpoints,
-    globalStyle,
-    colors,
+  const theme = {
+    ...ascDefaultTheme,
     typography: {
       ...typography,
     },
-    layouts,
-    maxGridWidth,
   }
   it('should the value without a breakpoint', () => {
     expect(
@@ -91,8 +78,7 @@ describe('getTypographyValueFromProperty', () => {
 
 describe('focusStyleOutline', () => {
   const theme = {
-    breakpoints,
-    globalStyle,
+    ...ascDefaultTheme,
     colors: {
       ...colors,
       support: {
@@ -100,9 +86,6 @@ describe('focusStyleOutline', () => {
         focus: '#abcde',
       },
     },
-    typography,
-    layouts,
-    maxGridWidth,
   }
 
   it('should return the focusstyle from theme', () => {
@@ -113,12 +96,7 @@ describe('focusStyleOutline', () => {
 
 describe('breakpoint', () => {
   const theme = {
-    breakpoints,
-    globalStyle,
-    colors,
-    typography,
-    layouts,
-    maxGridWidth,
+    ...ascDefaultTheme,
   }
 
   it('should return the right breakpoint', () => {
@@ -133,12 +111,7 @@ describe('breakpoint', () => {
 
 describe('svgFill', () => {
   const theme = {
-    breakpoints,
-    globalStyle,
-    colors,
-    typography,
-    layouts,
-    maxGridWidth,
+    ...ascDefaultTheme,
   }
 
   it("should return een empty string when the color doesn't exist", () => {
@@ -153,12 +126,7 @@ describe('svgFill', () => {
 // Todo: use serializer: https://github.com/styled-components/jest-styled-components
 describe('mapToBreakpoints', () => {
   const theme = {
-    breakpoints,
-    globalStyle,
-    colors,
-    typography,
-    layouts,
-    maxGridWidth,
+    ...ascDefaultTheme,
   }
 
   it('should return a style with 3 breakpoints and corresponding values', () => {
@@ -189,5 +157,48 @@ describe('mapToBreakpoints', () => {
       theme,
     )
     expect(result).toMatchSnapshot()
+  })
+})
+
+describe('themeSpacing', () => {
+  const theme = {
+    ...ascDefaultTheme,
+  }
+  it('should return the result of n * theme spacing', () => {
+    expect(themeSpacing(0)({ theme })).toBe('0')
+    expect(themeSpacing(1)({ theme })).toBe('4px')
+    expect(themeSpacing(2)({ theme })).toBe('8px')
+    expect(themeSpacing(3)({ theme })).toBe('12px')
+  })
+
+  it('should accept up to 4 parameters and return a spaced separated string with the results', () => {
+    expect(themeSpacing(1, 3)({ theme })).toBe('4px 12px')
+    expect(themeSpacing(1, 2, 3)({ theme })).toBe('4px 8px 12px')
+    expect(themeSpacing(1, 2, 3, 4)({ theme })).toBe('4px 8px 12px 16px')
+  })
+})
+
+describe('fromTheme', () => {
+  const theme = {
+    ...ascDefaultTheme,
+    colours: { white: '#fff' },
+    units: 'px',
+    size: 1,
+  }
+
+  it('should return a value from the theme object', () => {
+    expect(getValueFromTheme('colours.white')({ theme })).toBe(
+      theme.colours.white,
+    )
+    expect(getValueFromTheme('units')({ theme })).toBe(theme.units)
+    expect(
+      getValueFromTheme('size', (value: number) => value * 2)({ theme }),
+    ).toBe(theme.size * 2)
+  })
+
+  it('should not throw when a nested key cannot be found', () => {
+    expect(() =>
+      getValueFromTheme('colours.white.light')({ theme }),
+    ).not.toThrow()
   })
 })

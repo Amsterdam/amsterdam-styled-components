@@ -1,4 +1,5 @@
-export { default as fromTheme, valueFromObject } from './fromTheme'
+import { getValueFromTheme } from './themeUtils'
+
 export {
   themeColor,
   getTypographyFromTheme,
@@ -11,4 +12,14 @@ export {
   customCss,
   CustomCssPropsType,
   CustomCssPropsInterface,
+  getValueFromTheme,
 } from './themeUtils'
+export { valueFromObject } from './valueFromObject'
+export { fromProps } from './fromProps'
+
+/**
+ * @deprecated Use getValueFromTheme instead
+ */
+const fromTheme = getValueFromTheme
+
+export { fromTheme }

@@ -1,13 +1,13 @@
 import { normalize } from 'polished'
 import { createGlobalStyle } from '@datapunt/asc-core'
-import { fromTheme } from '../../utils'
+import { getValueFromTheme } from '../../utils'
 
 const GlobalStyle = createGlobalStyle`
   ${normalize()}
-  ${({ theme }) => fromTheme('globalStyle')({ theme })}
+  ${({ theme }) => getValueFromTheme('globalStyle')({ theme })}
 
   body {
-    font-family: ${fromTheme('typography.fontFamily')};
+    font-family: ${getValueFromTheme('typography.fontFamily')};
   }
 
   [aria-hidden="true"] {

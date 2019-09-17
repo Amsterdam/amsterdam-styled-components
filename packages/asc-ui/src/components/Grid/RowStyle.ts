@@ -1,5 +1,5 @@
 import styled, { css, Theme } from '@datapunt/asc-core'
-import { fromTheme, valueFromObject } from '../../utils'
+import { getValueFromTheme, valueFromObject } from '../../utils'
 import {
   mediaQuery,
   min,
@@ -37,7 +37,7 @@ const RowStyle = styled.div<TypeProps>`
   justify-content: ${({ halign }: { halign?: string }) => halign};
   align-items: ${({ valign }: { valign?: string }) => valign};
   max-width: ${({ hasMaxWidth, theme }) =>
-    hasMaxWidth ? `${fromTheme('maxGridWidth')({ theme })}px` : '100%'};
+    hasMaxWidth ? `${getValueFromTheme('maxGridWidth')({ theme })}px` : '100%'};
   flex-wrap: wrap;
 
   .layout-label {
