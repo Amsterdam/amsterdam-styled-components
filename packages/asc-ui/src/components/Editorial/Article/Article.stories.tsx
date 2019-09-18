@@ -1,5 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import styled from '@datapunt/asc-core'
 import articleJSON from './article_feed_example.json'
 import {
   Column,
@@ -11,7 +12,9 @@ import {
   Article,
   EditorialBody,
   Paragraph,
+  breakpoint,
 } from '../../..'
+import { Props as ParagraphStyleProps } from '../../Paragraph/ParagraphStyle'
 
 /* Editorial components */
 import EditorialContent from '../EditorialContent'
@@ -20,7 +23,20 @@ import EditorialMetaList from '../EditorialMetaList'
 import EditorialSidebar from '../EditorialSidebar/EditorialSidebar'
 import Link from '../../Link/Link'
 
+// / Specific implementation for dataportaal of a paragraph with long text. Will be moved to atlas
+const IntroParagraphStyle = styled(Paragraph)`
+  @media screen and ${breakpoint('min-width', 'tabletS')} {
+    font-size: 18px;
+    line-height: 25px;
+  }
+`
+
+const IntroParagraph: React.FC<ParagraphStyleProps> = ({ children }) => (
+  <IntroParagraphStyle strong>{children}</IntroParagraphStyle>
+)
+
 /* Rest components */
+
 storiesOf('Composed/Editorial/Article', module)
   .addDecorator(storyFn => (
     <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
@@ -43,9 +59,9 @@ storiesOf('Composed/Editorial/Article', module)
                     fields={[{ id: 1, label: 'Redactie' }]}
                   />
                 </EditorialHeader>
-                <Paragraph strong hasLongText>
+                <IntroParagraph strong>
                   {articleJSON.fields.intro}
-                </Paragraph>
+                </IntroParagraph>
                 <CustomHTMLBlock body={articleJSON.body} />
               </EditorialBody>
             </Column>
@@ -93,9 +109,9 @@ storiesOf('Composed/Editorial/Article', module)
                     fields={[{ id: 1, label: 'Redactie' }]}
                   />
                 </EditorialHeader>
-                <Paragraph strong hasLongText>
+                <IntroParagraph strong>
                   {articleJSON.fields.intro}
-                </Paragraph>
+                </IntroParagraph>
                 <CustomHTMLBlock body={articleJSON.body} />
               </EditorialBody>
             </Column>

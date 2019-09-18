@@ -22,15 +22,6 @@ storiesOf('Atoms/Typography/Paragraph', module)
       </Paragraph>
     </>
   ))
-  .add('long text (for editorial posts)', () => (
-    <>
-      <Paragraph hasLongText>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
-        deleniti dicta doloremque eveniet explicabo id ipsum omnis placeat rerum
-        suscipit.
-      </Paragraph>
-    </>
-  ))
   .add('compact paragraph', () => (
     <CompactThemeProvider>
       <div style={{ width: '300px' }}>

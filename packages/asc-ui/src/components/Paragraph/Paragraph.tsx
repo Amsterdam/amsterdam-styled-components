@@ -5,8 +5,8 @@ export { Props }
 
 const Paragraph: React.FC<
   Props & React.HTMLAttributes<HTMLParagraphElement>
-> = ({ children, hasLongText, strong, ...otherProps }) => (
-  <ParagraphStyle {...{ hasLongText, strong }} {...otherProps}>
+> = ({ children, strong, ...otherProps }) => (
+  <ParagraphStyle {...{ strong }} {...otherProps}>
     {children}
   </ParagraphStyle>
 )
