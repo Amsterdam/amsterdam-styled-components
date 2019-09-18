@@ -10,6 +10,7 @@ export type Props = {
   fontSize?: number
   styleAs?: keyof TypographyElements
   as?: any
+  strong?: boolean
 }
 
 export const defaultTypographyStyles = {
@@ -28,6 +29,12 @@ export default styled.p<Props>`
   ${getTypographyFromTheme()};
   font-stretch: normal;
   letter-spacing: normal;
+  ${({ strong }) =>
+    strong &&
+    css`
+      font-weight: 700;
+      color: ${themeColor('tint', 'level7')};
+    `}
   ${({ color }) =>
     color &&
     css`
