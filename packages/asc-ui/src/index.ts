@@ -49,7 +49,7 @@ import {
   EditorialHeader,
   EditorialSidebar,
 } from './components/Editorial'
-import Typography from './components/Typography'
+import Typography, { TypographtStyle } from './components/Typography'
 import Header, { HeaderStyles } from './components/Header'
 import Image from './components/Image'
 import ImageCard, {
@@ -88,6 +88,7 @@ import Footer, {
   FooterTop,
   FooterStyles,
 } from './components/Footer'
+import Multiline, { MultilineStyle } from './components/Multiline'
 import { themeColor } from './utils'
 
 /**
@@ -124,6 +125,8 @@ export const styles = {
   CustomHTMLBlockStyle,
   ArticleStyle,
   TagStyle,
+  TypographtStyle,
+  MultilineStyle,
 }
 
 // Components
@@ -202,4 +205,5 @@ export {
   ascDefaultTheme,
   DocumentCover,
   Tag,
+  Multiline,
 }
