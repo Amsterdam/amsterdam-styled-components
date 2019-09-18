@@ -21,6 +21,8 @@ import Card, {
   CardStyles,
   CardContainer,
 } from './components/Card'
+import { Checkbox, CheckboxStyle } from './components/Checkbox'
+import Label from './components/Label'
 import ContextMenu from './components/ContextMenu'
 import ContextMenuButtonStyle from './components/ContextMenu/ContextMenuButton'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
@@ -124,6 +126,7 @@ export const styles = {
   CustomHTMLBlockStyle,
   ArticleStyle,
   TagStyle,
+  CheckboxStyle,
 }
 
 // Components
@@ -141,6 +144,7 @@ export {
   CardMedia,
   ButtonBar,
   ShareBar,
+  Checkbox,
   Column,
   ContextMenu,
   ContextMenuButtonStyle,
@@ -168,6 +172,7 @@ export {
   Input,
   ImageCard,
   ImageCardContent,
+  Label,
   MenuFlyOut,
   MenuInline,
   MenuItem,

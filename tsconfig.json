@@ -48,7 +48,6 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "importHelpers": true,
     "strict": true
   },
   "files": [
