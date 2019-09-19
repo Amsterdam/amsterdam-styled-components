@@ -17,6 +17,7 @@ Prefix the change with one of these keywords:
 ## UNRELEASED
 
 - Removed: specific parameter hasLongText from the paragraph, will be implemented in the consumer applications
+- Changed: the breakpoints for the typography font sizes are changed to from `tabletS` to `laptop`
 
 
 ## [0.15.0] - 2019-09-17

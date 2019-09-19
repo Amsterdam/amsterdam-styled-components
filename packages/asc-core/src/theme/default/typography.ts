@@ -4,9 +4,9 @@ import colors from './colors'
 const defaultFontFamily = 'Avenir Next, Arial, sans-serif'
 
 /**
- *  The font definitions differ from the ones from the design system.
+ *  The font definitions differ from the ones in the design system.
  *  In this theme are the breakpoints for the typographty set to `laptop` (1024px)
- *  while in design system are set on `tabletS` (540px)
+ *  while in design system are set to `tabletS` (540px)
  */
 const typography: Theme.TypographyInterface = {
   fontFamily: defaultFontFamily,
