@@ -3,6 +3,11 @@ import colors from './colors'
 
 const defaultFontFamily = 'Avenir Next, Arial, sans-serif'
 
+/**
+ *  The font definitions differ from the ones from the design system.
+ *  In this theme are the breakpoints for the typographty set to `laptop` (1024px)
+ *  while in design system are set on `tabletS` (540px)
+ */
 const typography: Theme.TypographyInterface = {
   fontFamily: defaultFontFamily,
   fontSize: '16px',
@@ -14,7 +19,7 @@ const typography: Theme.TypographyInterface = {
     lineHeight: '30px',
     marginBottom: '0',
     breakpoints: {
-      tabletS: {
+      laptop: {
         fontSize: '30px',
         lineHeight: '38px',
       },
@@ -28,7 +33,7 @@ const typography: Theme.TypographyInterface = {
     lineHeight: '28px',
     marginBottom: '8px',
     breakpoints: {
-      tabletS: {
+      laptop: {
         fontSize: '24px',
         lineHeight: '30px',
       },
@@ -84,6 +89,10 @@ const typography: Theme.TypographyInterface = {
     breakpoints: {
       tabletS: {
         marginBottom: '24px',
+      },
+      laptop: {
+        fontSize: '18px',
+        lineHeight: '25px',
       },
     },
   },

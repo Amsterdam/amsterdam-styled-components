@@ -39,7 +39,7 @@ Array [
   justify-content: space-between;
 }
 
-@media screen and (min-width:540px) {
+@media screen and (min-width:1024px) {
   .c1 {
     font-size: 30px;
     line-height: 38px;
@@ -88,7 +88,7 @@ Array [
   justify-content: space-between;
 }
 
-@media screen and (min-width:540px) {
+@media screen and (min-width:1024px) {
   .c1 {
     font-size: 24px;
     line-height: 30px;

@@ -72,7 +72,7 @@ exports[`ImageCard should render 1`] = `
   border-right-color: white;
 }
 
-@media screen and (min-width:540px) {
+@media screen and (min-width:1024px) {
   .c3 {
     font-size: 24px;
     line-height: 30px;

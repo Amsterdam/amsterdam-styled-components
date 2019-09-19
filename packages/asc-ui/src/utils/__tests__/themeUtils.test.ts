@@ -65,13 +65,13 @@ describe('getTypographyValueFromProperty', () => {
 
   it('should the value with a breakpoint', () => {
     expect(
-      getTypographyValueFromProperty('h1', 'lineHeight', 'tabletS')({ theme }),
+      getTypographyValueFromProperty('h1', 'lineHeight', 'laptop')({ theme }),
     ).toEqual('38px')
   })
 
   it('should return an empty string if no results could be found', () => {
     expect(
-      getTypographyValueFromProperty('h1', 'lineHeight', 'laptop')({ theme }),
+      getTypographyValueFromProperty('h1', 'lineHeight', 'tabletS')({ theme }),
     ).toEqual('')
   })
 })
