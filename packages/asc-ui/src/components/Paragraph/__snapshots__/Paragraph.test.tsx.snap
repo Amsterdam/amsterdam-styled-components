@@ -27,6 +27,13 @@ exports[`Paragraph should render 1`] = `
   }
 }
 
+@media screen and (min-width:1024px) {
+  .c0 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
 <p
   class="c0"
 >

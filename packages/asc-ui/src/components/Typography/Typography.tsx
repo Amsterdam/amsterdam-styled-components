@@ -11,7 +11,6 @@ export type Props = {
 const Typography: React.FC<Props> = ({
   children,
   gutterBottom,
-  paragraph,
   element,
   color,
   fontSize,
@@ -21,7 +20,6 @@ const Typography: React.FC<Props> = ({
   <TypographyStyle
     {...{
       gutterBottom,
-      paragraph,
       element,
       color,
       fontSize,

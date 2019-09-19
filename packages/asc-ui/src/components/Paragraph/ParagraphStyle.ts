@@ -2,29 +2,12 @@ import styled, { css } from '@datapunt/asc-core'
 import TypographyStyle, {
   Props as TypographyProps,
 } from '../Typography/TypographyStyle'
-import { breakpoint, themeColor } from '../../utils'
 
-export type Props = {
-  hasLongText?: boolean
-} & TypographyProps
+export type Props = TypographyProps
 
 export const ParagraphStyleCSS = css<Props>`
   margin-top: 0;
   color: inherit;
-  ${({ strong }) =>
-    strong &&
-    css`
-      font-weight: 700;
-      color: ${themeColor('tint', 'level7')};
-    `}
-  ${({ hasLongText }) =>
-    hasLongText &&
-    css`
-      @media screen and ${breakpoint('min-width', 'tabletS')} {
-        font-size: 18px;
-        line-height: 25px;
-      }
-    `}
 `
 
 export default styled(TypographyStyle)<Props>`

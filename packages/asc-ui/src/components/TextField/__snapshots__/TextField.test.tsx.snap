@@ -104,7 +104,7 @@ exports[`<TextField /> should render 1`] = `
         "fontSize": "16px",
         "h1": Object {
           "breakpoints": Object {
-            "tabletS": Object {
+            "laptop": Object {
               "fontSize": "30px",
               "lineHeight": "38px",
             },
@@ -118,7 +118,7 @@ exports[`<TextField /> should render 1`] = `
         },
         "h2": Object {
           "breakpoints": Object {
-            "tabletS": Object {
+            "laptop": Object {
               "fontSize": "24px",
               "lineHeight": "30px",
             },
@@ -164,6 +164,10 @@ exports[`<TextField /> should render 1`] = `
         },
         "p": Object {
           "breakpoints": Object {
+            "laptop": Object {
+              "fontSize": "18px",
+              "lineHeight": "25px",
+            },
             "tabletS": Object {
               "marginBottom": "24px",
             },

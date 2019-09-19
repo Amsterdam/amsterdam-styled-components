@@ -43,9 +43,7 @@ storiesOf('Composed/Editorial/Article', module)
                     fields={[{ id: 1, label: 'Redactie' }]}
                   />
                 </EditorialHeader>
-                <Paragraph strong hasLongText>
-                  {articleJSON.fields.intro}
-                </Paragraph>
+                <Paragraph strong>{articleJSON.fields.intro}</Paragraph>
                 <CustomHTMLBlock body={articleJSON.body} />
               </EditorialBody>
             </Column>
@@ -93,9 +91,7 @@ storiesOf('Composed/Editorial/Article', module)
                     fields={[{ id: 1, label: 'Redactie' }]}
                   />
                 </EditorialHeader>
-                <Paragraph strong hasLongText>
-                  {articleJSON.fields.intro}
-                </Paragraph>
+                <Paragraph strong>{articleJSON.fields.intro}</Paragraph>
                 <CustomHTMLBlock body={articleJSON.body} />
               </EditorialBody>
             </Column>
