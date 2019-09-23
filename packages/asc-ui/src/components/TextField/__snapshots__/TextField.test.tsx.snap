@@ -81,6 +81,7 @@ exports[`<TextField /> should render 1`] = `
           "min": 1200,
         },
       },
+      "maxContainerWidth": 1920,
       "maxGridWidth": 1430,
       "spacing": 4,
       "typography": Object {
