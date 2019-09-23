@@ -15,7 +15,8 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## UNRELEASED
-
+- Changed: max-width on Container is now desktop (1920px)
+- Changed: max-width on HeaderWrapperStyle is moved to HeaderStyle.
 - Removed: specific parameter hasLongText from the paragraph, will be implemented in the consumer applications
 - Changed: the breakpoints for the typography font sizes are changed to from `tabletS` to `laptop`
 
