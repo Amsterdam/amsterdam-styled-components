@@ -23,7 +23,7 @@ const ElementStyleMapping = {
   li: ListItemStyleCSS,
 }
 
-export default styled.div`
+const CustomHTMLBlock = styled.div`
   ${Object.entries(ElementStyleMapping).map(
     ([element, style]) => css`
       ${element} {
@@ -40,3 +40,5 @@ export default styled.div`
     width: 100%;
   }
 `
+
+export default CustomHTMLBlock
