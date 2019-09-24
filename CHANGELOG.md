@@ -15,19 +15,21 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## UNRELEASED
+
+## [0.16.0] - 2019-09-17
+
 - Changed: max-width on Container is now desktop (1920px)
 - Changed: max-width on HeaderWrapperStyle is moved to HeaderStyle.
 - Removed: specific parameter hasLongText from the paragraph, will be implemented in the consumer applications
 - Changed: the breakpoints for the typography font sizes are changed to from `tabletS` to `laptop`
+- Removed: width: 100% on CustomHTMLBlock img and video
 
-
-## [0.15.0] - 2019-09-17
+## [0.15.5] - 2019-09-17
 
 - Added: theme spacing unit and a themeSpacing util to retrieve a size from the theme's spacing unit. 
 - Fixed: issue with button's size
 - Changed: The `max-width` value of the header is now defined by the max width of the grid in the theme configuration
 - Deprecated: `fromTheme` util method. Use `getValueFromTheme` instead
-- Removed: width: 100% on CustomHTMLBlock img and video
 
 ## [0.14.2-rc.1] - 2019-09-09
 
