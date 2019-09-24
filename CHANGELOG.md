@@ -27,6 +27,7 @@ Prefix the change with one of these keywords:
 - Fixed: issue with button's size
 - Changed: The `max-width` value of the header is now defined by the max width of the grid in the theme configuration
 - Deprecated: `fromTheme` util method. Use `getValueFromTheme` instead
+- Removed: width: 100% on CustomHTMLBlock img and video
 
 ## [0.14.2-rc.1] - 2019-09-09
 
