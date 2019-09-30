@@ -76,7 +76,7 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c9 .c15 {
-  margin: 3px;
+  margin: 4px;
 }
 
 .c9 .c15 svg rect,
@@ -359,7 +359,7 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c9 .c15 {
-  margin: 3px;
+  margin: 4px;
 }
 
 .c9 .c15 svg rect,
@@ -642,7 +642,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c12 .c20 {
-  margin: 3px;
+  margin: 4px;
 }
 
 .c12 .c20 svg rect,
