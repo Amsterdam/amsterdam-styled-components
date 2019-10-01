@@ -19,6 +19,7 @@ export const MenuButtonBaseStyle = styled(Button)<Props>`
   height: 100%;
   color: ${themeColor('tint', 'level7')};
   align-items: center;
+  white-space: normal;
 
   &[aria-expanded='true'] {
     background-color: ${themeColor('tint', 'level2')};
