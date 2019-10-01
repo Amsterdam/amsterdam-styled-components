@@ -16,6 +16,9 @@ Prefix the change with one of these keywords:
 
 ## UNRELEASED
 
+- Fixed: reseted the breakpoints for typography in the CompactTheme as they are not used in this theme
+
+
 ## [0.16.0] - 2019-09-17
 
 - Changed: max-width on Container is now desktop (1920px)
