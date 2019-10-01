@@ -7,18 +7,22 @@ const overridesCompactTheme: Partial<Theme.ThemeInterface> = {
     h2: {
       fontSize: '24px',
       lineHeight: '30px',
+      breakpoints: undefined,
     },
     h3: {
       fontSize: '18px',
       lineHeight: '23px',
+      breakpoints: undefined,
     },
     h4: {
       fontSize: '16px',
       lineHeight: '20px',
+      breakpoints: undefined,
     },
     p: {
       fontSize: '16px',
       lineHeight: '20px',
+      breakpoints: undefined,
     },
   },
 }
