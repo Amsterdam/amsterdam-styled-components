@@ -60,7 +60,7 @@ describe('FooterBottomLinkList', () => {
     )
     expect(queryByTestId('link-list-id')).toHaveStyleRule(
       'background-color',
-      themeColor('tint', 'level1')({ theme }),
+      'transparent',
     )
     expect(queryAllByText(/Item/)).toHaveLength(3)
   })
