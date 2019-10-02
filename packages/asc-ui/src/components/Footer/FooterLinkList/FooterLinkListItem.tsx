@@ -30,8 +30,8 @@ const StyledListItem = styled(ListItem)`
   }
 `
 
-const FooterListItem = ({ children, ...otherProps }: any) => (
+const FooterLinkListItem = ({ children, ...otherProps }: any) => (
   <StyledListItem {...otherProps}>{children}</StyledListItem>
 )
 
-export default FooterListItem
+export default FooterLinkListItem
