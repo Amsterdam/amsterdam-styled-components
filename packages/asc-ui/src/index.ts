@@ -14,6 +14,7 @@ import TopBar, { TopBarStyles } from './components/TopBar'
 import ShareButton from './components/Button/ShareButton'
 import { Article, ArticleStyle } from './components/Editorial/Article'
 import Button from './components/Button'
+import Blockquote, { BlockquoteStyle } from './components/Blockquote'
 import Card, {
   CardActions,
   CardContent,
@@ -120,6 +121,7 @@ export const styles = {
   ...FooterStyles,
   ...ListStyles,
   ParagraphStyle,
+  BlockquoteStyle,
   IconStyle,
   LinkStyle,
   HeadingStyle,
@@ -137,6 +139,7 @@ export {
   BackDrop,
   CustomHTMLBlock,
   Button,
+  Blockquote,
   Card,
   CardContainer,
   CardActions,

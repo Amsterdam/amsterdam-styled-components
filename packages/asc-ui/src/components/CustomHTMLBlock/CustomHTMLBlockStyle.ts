@@ -5,6 +5,7 @@ import { ParagraphStyleCSS } from '../Paragraph/ParagraphStyle'
 import { getTypographyFromTheme } from '../../utils'
 import { BulletCSS, ListStyleCSS } from '../List/ListStyle'
 import { ListItemStyleCSS } from '../List/ListItemStyle'
+import { BlockquoteStyleCSS } from '../Blockquote/BlockquoteStyle'
 
 const ElementStyleMapping = {
   h1: HeaderStyleCSS,
@@ -15,6 +16,7 @@ const ElementStyleMapping = {
   h6: HeaderStyleCSS,
   a: InlineLinkStyleCSS,
   p: ParagraphStyleCSS,
+  blockquote: BlockquoteStyleCSS,
   // Default variant bullet when rendered in CustomHTMLBlock
   ul: css`
     ${ListStyleCSS}
