@@ -1,6 +1,8 @@
 import styled, { css } from '@datapunt/asc-core'
 
-export type Props = React.HTMLAttributes<HTMLElement>
+export type Props = {
+  order?: Number
+} & React.HTMLAttributes<HTMLElement>
 
 export const ListItemStyleCSS = css`
   word-break: break-word;
@@ -8,5 +10,6 @@ export const ListItemStyleCSS = css`
 `
 
 export default styled.li<Props>`
+  ${({ order }) => order && `order: ${order};`}
   ${ListItemStyleCSS}
 `
