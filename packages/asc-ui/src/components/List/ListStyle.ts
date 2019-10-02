@@ -1,5 +1,5 @@
 import styled, { css } from '@datapunt/asc-core'
-import { themeColor } from '../../utils'
+import { themeColor, themeSpacing } from '../../utils'
 
 export type Props = {
   variant?: 'bullet'
@@ -21,9 +21,8 @@ export const BulletCSS = css`
       width: ${BULLET_SIZE}px;
       height: ${BULLET_SIZE}px;
       background-color: ${themeColor('tint', 'level7')};
-      top: 50%;
-      transform: translateY(-50%);
       left: -${BULLET_MARGIN + BULLET_SIZE}px;
+      top: ${themeSpacing(1)};
     }
   }
 `
@@ -41,11 +40,13 @@ const getVariant = () => ({ variant }: Props) => {
 export const ListStyleCSS = css`
   list-style: none;
   background-color: ${themeColor('tint', 'level1')};
-  margin: 0 0 24px 0;
+  margin: ${themeSpacing(0, 0, 6, 0)};
   padding: 0;
 `
 
 export default styled.ul<Props>`
+  display: flex;
+  flex-direction: column;
   ${ListStyleCSS}
   ${getVariant()}
 `

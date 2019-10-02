@@ -1,10 +1,11 @@
 import styled, { css } from '@datapunt/asc-core'
 import { HeaderStyleCSS } from '../Heading/HeadingStyle'
-import { InlineLinkStyleCSS } from '../Link/LinkStyle'
+import { DefaultLinkStyleCSS } from '../Link/LinkStyle'
 import { ParagraphStyleCSS } from '../Paragraph/ParagraphStyle'
 import { getTypographyFromTheme } from '../../utils'
 import { BulletCSS, ListStyleCSS } from '../List/ListStyle'
 import { ListItemStyleCSS } from '../List/ListItemStyle'
+import { BlockquoteStyleCSS } from '../Blockquote/BlockquoteStyle'
 
 const ElementStyleMapping = {
   h1: HeaderStyleCSS,
@@ -13,8 +14,9 @@ const ElementStyleMapping = {
   h4: HeaderStyleCSS,
   h5: HeaderStyleCSS,
   h6: HeaderStyleCSS,
-  a: InlineLinkStyleCSS,
+  a: DefaultLinkStyleCSS,
   p: ParagraphStyleCSS,
+  blockquote: BlockquoteStyleCSS,
   // Default variant bullet when rendered in CustomHTMLBlock
   ul: css`
     ${ListStyleCSS}
