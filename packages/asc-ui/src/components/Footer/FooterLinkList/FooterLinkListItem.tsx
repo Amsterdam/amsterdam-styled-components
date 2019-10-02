@@ -17,7 +17,7 @@ const StyledListItem = styled(ListItem)`
 
   ${LinkStyle} {
     color: ${themeColor('tint', 'level1')};
-    background-color: 'transparent';
+    background-color: transparent;
 
     &:hover {
       color: ${themeColor('tint', 'level1')};
