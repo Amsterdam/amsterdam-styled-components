@@ -8,7 +8,6 @@ import {
   FooterLinkListItem,
   FooterBottomLinkListItem,
 } from './index'
-import { themeColor } from '../../../utils'
 
 const theme = {
   ...ascDefaultTheme,
@@ -17,7 +16,7 @@ const theme = {
 describe('FooterLinkList', () => {
   afterEach(cleanup)
   it('should render a list with two items and apply the style', () => {
-    const { queryByTestId, queryAllByText, getByText } = render(
+    const { queryAllByText, getByText } = render(
       <ThemeProvider theme={theme}>
         <FooterLinkList data-testid="link-list-id">
           <FooterLinkListItem>
@@ -29,10 +28,6 @@ describe('FooterLinkList', () => {
         </FooterLinkList>
       </ThemeProvider>,
     )
-    expect(queryByTestId('link-list-id')).toHaveStyleRule(
-      'background-color',
-      themeColor('tint', 'level5')({ theme }),
-    )
     expect(queryAllByText(/Item/)).toHaveLength(2)
 
     const anchor = getByText(/Item1/).closest('a')
@@ -43,7 +38,7 @@ describe('FooterLinkList', () => {
 describe('FooterBottomLinkList', () => {
   afterEach(cleanup)
   it('should render', () => {
-    const { queryByTestId, queryAllByText } = render(
+    const { queryAllByText } = render(
       <ThemeProvider theme={theme}>
         <FooterBottomLinkList data-testid="link-list-id">
           <FooterBottomLinkListItem>
@@ -57,10 +52,6 @@ describe('FooterBottomLinkList', () => {
           </FooterBottomLinkListItem>
         </FooterBottomLinkList>
       </ThemeProvider>,
-    )
-    expect(queryByTestId('link-list-id')).toHaveStyleRule(
-      'background-color',
-      'transparent',
     )
     expect(queryAllByText(/Item/)).toHaveLength(3)
   })
