@@ -46,6 +46,8 @@ export const ListStyleCSS = css`
 `
 
 export default styled.ul<Props>`
+  display: flex;
+  flex-direction: column;
   ${ListStyleCSS}
   ${getVariant()}
 `

@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from '@datapunt/asc-core'
 import { themeColor, svgFill } from '../../../utils'
 import { ListItem } from '../../List'
@@ -5,7 +6,7 @@ import TypographyStyle from '../../Typography/TypographyStyle'
 import IconStyle from '../../Icon/IconStyle'
 import LinkStyle from '../../Link/LinkStyle'
 
-const FooterListItem = styled(ListItem)`
+const StyledListItem = styled(ListItem)`
   ${TypographyStyle} {
     color: ${themeColor('tint', 'level1')};
   }
@@ -16,6 +17,7 @@ const FooterListItem = styled(ListItem)`
 
   ${LinkStyle} {
     color: ${themeColor('tint', 'level1')};
+    background-color: transparent;
 
     &:hover {
       color: ${themeColor('tint', 'level1')};
@@ -28,4 +30,8 @@ const FooterListItem = styled(ListItem)`
   }
 `
 
-export default FooterListItem
+const FooterLinkListItem = ({ children, ...otherProps }: any) => (
+  <StyledListItem {...otherProps}>{children}</StyledListItem>
+)
+
+export default FooterLinkListItem
