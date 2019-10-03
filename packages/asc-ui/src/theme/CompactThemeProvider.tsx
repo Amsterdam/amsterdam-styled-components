@@ -5,9 +5,14 @@ import { ThemeProvider, Theme } from '..'
 const overridesCompactTheme: Partial<Theme.ThemeInterface> = {
   typography: {
     h2: {
-      fontSize: '24px',
-      lineHeight: '30px',
-      breakpoints: undefined,
+      fontSize: '20px',
+      lineHeight: '24px',
+      breakpoints: {
+        laptop: {
+          fontSize: '24px',
+          lineHeight: '30px',
+        },
+      },
     },
     h3: {
       fontSize: '18px',
@@ -15,9 +20,14 @@ const overridesCompactTheme: Partial<Theme.ThemeInterface> = {
       breakpoints: undefined,
     },
     h4: {
-      fontSize: '16px',
-      lineHeight: '20px',
-      breakpoints: undefined,
+      fontSize: '14px',
+      lineHeight: '17px',
+      breakpoints: {
+        laptop: {
+          fontSize: '16px',
+          lineHeight: '20px',
+        },
+      },
     },
     p: {
       fontSize: '16px',
