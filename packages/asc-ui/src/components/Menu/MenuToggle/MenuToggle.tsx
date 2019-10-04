@@ -8,6 +8,7 @@ const MenuToggle: React.FC<Props> = ({
   children,
   onExpand,
   align = 'left',
+  hasBackDrop,
   ...otherProps
 }) => {
   const [menuOpen, setMenuOpen] = React.useState(false)
@@ -47,6 +48,7 @@ const MenuToggle: React.FC<Props> = ({
         onClick={toggleMenu}
         align={align}
         open={menuOpen}
+        hasBackDrop={hasBackDrop}
         {...otherProps}
       >
         <MenuList>{children}</MenuList>

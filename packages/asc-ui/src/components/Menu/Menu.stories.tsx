@@ -93,3 +93,8 @@ storiesOf('Composed/Menu', module)
       <MenuChildren />
     </MenuToggle>
   ))
+  .add('toggle with backdrop', () => (
+    <MenuToggle hasBackDrop>
+      <MenuChildren />
+    </MenuToggle>
+  ))

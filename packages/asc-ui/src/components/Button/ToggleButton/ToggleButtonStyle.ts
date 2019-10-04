@@ -5,6 +5,7 @@ import ButtonStyle, { Props as ButtonProps } from '../ButtonStyle'
 export type Props = {
   open?: boolean
   size?: number
+  hasBackDrop?: boolean
 } & ButtonProps
 
 export default styled(ButtonStyle)<Props>`
@@ -16,4 +17,11 @@ export default styled(ButtonStyle)<Props>`
     background-color: ${({ theme, open }) =>
       themeColor('tint', open ? 'level3' : 'level2')({ theme })};
   }
+
+  ${({ hasBackDrop }) =>
+    hasBackDrop &&
+    `
+  position: relative;
+  z-index: 20;
+  `}
 `

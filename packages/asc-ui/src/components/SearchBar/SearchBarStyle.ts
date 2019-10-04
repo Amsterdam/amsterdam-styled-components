@@ -5,6 +5,7 @@ import ButtonStyle from '../Button/ButtonStyle'
 
 export interface Props extends ShowHideTypes {
   css?: string
+  hasBackDrop?: boolean
 }
 
 const SearchBarStyle = styled.div<Props>`
@@ -20,6 +21,12 @@ const SearchBarStyle = styled.div<Props>`
 
   ${showHide()}
   ${customCss}
+  ${({ hasBackDrop }) =>
+    hasBackDrop &&
+    `
+position: relative;
+z-index: 20;
+`}
 `
 
 export default SearchBarStyle

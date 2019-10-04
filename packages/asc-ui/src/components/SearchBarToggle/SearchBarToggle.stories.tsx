@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { css } from '@datapunt/asc-core'
 import SearchBarToggle from './SearchBarToggle'
 
-const ControlledSearchBarToggle = () => {
+const ControlledSearchBarToggle = ({ ...otherProps }) => {
   const [open, setOpen] = React.useState(false)
   return (
     <SearchBarToggle
@@ -20,6 +20,7 @@ const ControlledSearchBarToggle = () => {
       onSubmit={() => {
         action('submit')
       }}
+      {...otherProps}
     />
   )
 }
@@ -43,3 +44,6 @@ storiesOf('Composed/SearchBarToggle', module)
     />
   ))
   .add('controlled', () => <ControlledSearchBarToggle />)
+  .add('controlled with backdrop', () => (
+    <ControlledSearchBarToggle hasBackDrop />
+  ))

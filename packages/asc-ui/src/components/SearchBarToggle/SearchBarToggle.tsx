@@ -20,6 +20,7 @@ interface SearchBarToggleProps
   open?: boolean
   inputProps?: InputProps
   searchBarProps?: SearchBarProps
+  hasBackDrop?: boolean
 }
 
 const SearchBarToggle: React.FC<SearchBarToggleProps & ToggleProps> = ({
@@ -29,6 +30,7 @@ const SearchBarToggle: React.FC<SearchBarToggleProps & ToggleProps> = ({
   searchBarProps,
   inputProps,
   css,
+  hasBackDrop,
   ...otherProps
 }) => (
   <Toggle
@@ -37,12 +39,18 @@ const SearchBarToggle: React.FC<SearchBarToggleProps & ToggleProps> = ({
       hideAt,
       showAt,
       css,
+      hasBackDrop,
     }}
     render={false}
     iconOpen={<Search />}
     {...otherProps}
   >
-    <SearchBar inputProps={inputProps} focusOnRender {...searchBarProps}>
+    <SearchBar
+      inputProps={inputProps}
+      focusOnRender
+      {...searchBarProps}
+      hasBackDrop={hasBackDrop}
+    >
       {children}
     </SearchBar>
   </Toggle>

@@ -1,11 +1,12 @@
 import React from 'react'
-import ToggleStyle, { Props as ToggleStyleProps } from './ToggleStyle'
+import ToggleStyle, { Props as StyleProps } from './ToggleStyle'
 import ownerDocument from '../../utils/ownerDocument'
 import usePassPropsToChildren from '../../utils/hooks/usePassPropsToChildren'
 import useActionOnEscape from '../../utils/hooks/useActionOnEscape'
 import ToggleButton, {
   Props as ToggleButtonProps,
 } from '../Button/ToggleButton/ToggleButton'
+import BackDropStyle from '../BackDrop'
 
 export type ToggleHandlerProps = {
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
@@ -18,7 +19,8 @@ export type Props = {
   ToggleHandler?: any
   rotateOnOpen?: number
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
-} & ToggleStyleProps &
+  hasBackDrop?: boolean
+} & StyleProps &
   ToggleHandlerProps
 
 const Toggle: React.FC<Props> = ({
@@ -28,6 +30,7 @@ const Toggle: React.FC<Props> = ({
   onKeyDown,
   onOpen,
   css,
+  hasBackDrop,
   render,
   iconOpen,
   iconClose,
@@ -97,27 +100,32 @@ const Toggle: React.FC<Props> = ({
   const conditionalRenderedChildren = open ? children : null
 
   return (
-    <ToggleStyle
-      // @ts-ignore
-      ref={ref}
-      css={css}
-      onBlur={handleOnBlur}
-      onKeyDown={handleOnKeyDown}
-      {...otherProps}
-      tabIndex={-1} // This will enable the onblur event for this div element on all browsers
-    >
-      <ToggleHandler
-        {...{
-          open,
-          iconClose,
-          iconOpen,
-          onClick: handleOnClick,
-          title,
-        }}
-        type="button"
-      />
-      {render ? children : conditionalRenderedChildren}
-    </ToggleStyle>
+    <>
+      {hasBackDrop && open && <BackDropStyle onClick={onClick} />}
+      <ToggleStyle
+        // @ts-ignore
+        ref={ref}
+        css={css}
+        onBlur={handleOnBlur}
+        onKeyDown={handleOnKeyDown}
+        hasBackDrop={hasBackDrop}
+        {...otherProps}
+        tabIndex={-1} // This will enable the onblur event for this div element on all browsers
+      >
+        <ToggleHandler
+          {...{
+            open,
+            iconClose,
+            iconOpen,
+            onClick: handleOnClick,
+            title,
+            hasBackDrop,
+          }}
+          type="button"
+        />
+        {render ? children : conditionalRenderedChildren}
+      </ToggleStyle>
+    </>
   )
 }
 

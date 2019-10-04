@@ -9,6 +9,7 @@ import MenuButtonStyle from '../MenuButton/MenuButtonStyle'
 export type Props = {
   align?: 'left' | 'right'
   onExpand?: Function
+  hasBackDrop?: boolean
 } & ShowHideTypes
 
 export default styled.div<Props>`
@@ -82,6 +83,14 @@ export default styled.div<Props>`
       top: 0;
     }
   }
+
+  ${({ hasBackDrop }) =>
+    hasBackDrop &&
+    css`
+      position: relative;
+      z-index: 20;
+    `}
+ 
 
   ${showHide()}
 `
