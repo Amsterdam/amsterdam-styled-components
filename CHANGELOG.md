@@ -18,6 +18,7 @@ Prefix the change with one of these keywords:
 
 - Fixed: reseted the breakpoints for typography in the CompactTheme as they are not used in this theme
 - Added: Make it possible to order the ListItems inside a List component by passing an `order` prop
+- Added: Add the `hasBackDrop` prop to the MenuInline, MenuToggle and SearchBarToggle components that places a backdrop over the entire page
 
 
 ## [0.16.0] - 2019-09-17
