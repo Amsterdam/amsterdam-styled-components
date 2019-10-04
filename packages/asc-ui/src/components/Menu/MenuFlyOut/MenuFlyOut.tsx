@@ -42,22 +42,29 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
     }
   }
 
+  const onHandleOpen = (val: boolean) => {
+    if (setOpenToggle) {
+      setOpenToggle(val)
+    }
+    setOpen(val)
+    setOpenOnClick(val)
+  }
+
   const onBlurHandler = useDebounce(() => {
     const element = ref && (ref.current as HTMLLIElement)
     if (element) {
       const currentFocus = ownerDocument(element).activeElement
 
       if (!element.contains(currentFocus)) {
-        setOpen(false)
-        setOpenOnClick(false)
+        onHandleOpen(false)
       }
     }
   })
 
   const extraEvents = !hasToggle
     ? {
-        onMouseOver: () => setOpen(true),
-        onMouseOut: () => setOpen(false),
+        onMouseOver: () => onHandleOpen(true),
+        onMouseOut: () => onHandleOpen(false),
       }
     : {}
 
@@ -97,13 +104,7 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
         value={{
           underFlyOutMenu: true,
           hasToggle,
-          setOpenToggle: (val: boolean) => {
-            if (setOpenToggle) {
-              setOpenToggle(val)
-            }
-            setOpen(val)
-            setOpenOnClick(val)
-          },
+          setOpenToggle: onHandleOpen,
         }}
       >
         <MenuList
