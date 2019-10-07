@@ -7,6 +7,8 @@ import HeaderLogoText from './HeaderLogoText'
 import HeaderNavigation from './HeaderNavigation'
 import HeaderLinks from './HeaderLinks'
 import { CustomCssPropsType } from '../../utils'
+import Portal from '../Portal'
+import BackDropStyle from '../BackDrop'
 
 type Props = {
   homeLink: string
@@ -34,6 +36,9 @@ const Header: React.FC<Props> = ({
       <HeaderNavigation>{navigation}</HeaderNavigation>
       <HeaderLinks>{links}</HeaderLinks>
     </HeaderStyle>
+    <Portal>
+      <BackDropStyle backdropOpacity={0.3} />
+    </Portal>
   </HeaderWrapperStyle>
 )
 
