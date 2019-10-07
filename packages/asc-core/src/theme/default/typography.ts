@@ -58,10 +58,10 @@ const typography: Theme.TypographyInterface = {
   h5: {
     color: colors.tint.level7,
     fontSize: '18px',
-    fontWeight: 400,
+    fontWeight: 700,
     letterSpacing: 'inherit',
-    lineHeight: 1,
-    marginBottom: '0',
+    lineHeight: '25px',
+    marginBottom: '8px',
   },
   h6: {
     color: colors.tint.level7,
