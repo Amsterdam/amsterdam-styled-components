@@ -2,6 +2,7 @@ import React from 'react'
 import MenuInlineStyle, { Props as StyleProps } from './MenuInlineStyle'
 import MenuContext from '../MenuContext'
 import BackDropStyle from '../../BackDrop'
+import Portal from '../../Portal'
 
 export type Props = {
   onExpand?: Function
@@ -17,9 +18,7 @@ const MenuInline: React.FC<Props> = ({
   const [menuOpen, setMenuOpen] = React.useState(false)
 
   return (
-    <>
-      {hasBackDrop && menuOpen && <BackDropStyle />}
-
+    <Portal visible={hasBackDrop && menuOpen}>
       <MenuContext.Provider
         value={{
           onExpand,
@@ -30,7 +29,8 @@ const MenuInline: React.FC<Props> = ({
       >
         <MenuInlineStyle {...otherProps}>{children}</MenuInlineStyle>
       </MenuContext.Provider>
-    </>
+      {hasBackDrop && menuOpen && <BackDropStyle />}
+    </Portal>
   )
 }
 

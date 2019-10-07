@@ -5,6 +5,7 @@ import ownerDocument from '../../utils/ownerDocument'
 export type Props = {
   element?: HTMLElement
   blurredNode?: HTMLElement
+  visible?: boolean
 }
 
 type State = {}
@@ -57,8 +58,10 @@ class Portal extends React.Component<Props, State> {
   }
 
   render() {
-    const { children } = this.props
-    return this.mountEl ? ReactDOM.createPortal(children, this.mountEl) : null
+    const { children, visible = true } = this.props
+    return this.mountEl && visible
+      ? ReactDOM.createPortal(children, this.mountEl)
+      : children
   }
 }
 
