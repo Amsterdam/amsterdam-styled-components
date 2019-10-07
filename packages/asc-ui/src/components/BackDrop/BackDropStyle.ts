@@ -1,6 +1,6 @@
 import { position, transparentize } from 'polished'
 import styled from '@datapunt/asc-core'
-import { BACKDROP_Z_INDEX } from './'
+import { BACKDROP_Z_INDEX } from '.'
 
 type Props = {
   backdropOpacity?: number
