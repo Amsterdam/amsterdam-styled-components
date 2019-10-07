@@ -113,6 +113,7 @@ export namespace Theme {
     h5: TypographyType
     h6: TypographyType
     p: TypographyType
+    li: TypographyType
     a: TypographyType
     em: TypographyType
     small: TypographyType
