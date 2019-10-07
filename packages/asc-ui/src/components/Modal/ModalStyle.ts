@@ -1,6 +1,7 @@
 import styled from '@datapunt/asc-core'
 import TopBarStyle from '../TopBar/TopBarStyle'
 import { themeColor } from '../../utils'
+import { BACKDROP_Z_INDEX } from '../BackDrop'
 
 type Props = {
   attributes?: object
@@ -9,7 +10,7 @@ type Props = {
 const ModalStyle = styled.div<Props>`
   background-color: ${themeColor('tint', 'level1')};
   overflow: auto;
-  z-index: 20;
+  z-index: ${BACKDROP_Z_INDEX + 1};
   width: 100%;
   max-width: 620px;
   max-height: 75%;

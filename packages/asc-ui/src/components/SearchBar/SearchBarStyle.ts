@@ -2,6 +2,7 @@ import styled from '@datapunt/asc-core'
 import { showHide, ShowHideTypes, customCss } from '../../utils'
 import TextFieldStyle from '../TextField/TextFieldStyle'
 import ButtonStyle from '../Button/ButtonStyle'
+import { BACKDROP_Z_INDEX } from '../BackDrop'
 
 export interface Props extends ShowHideTypes {
   css?: string
@@ -25,7 +26,7 @@ const SearchBarStyle = styled.div<Props>`
     hasBackDrop &&
     `
 position: relative;
-z-index: 20;
+z-index: ${BACKDROP_Z_INDEX + 1};
 `}
 `
 

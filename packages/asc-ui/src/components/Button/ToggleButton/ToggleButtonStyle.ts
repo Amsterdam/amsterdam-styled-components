@@ -1,6 +1,7 @@
 import styled from '@datapunt/asc-core'
 import { themeColor } from '../../../utils'
 import ButtonStyle, { Props as ButtonProps } from '../ButtonStyle'
+import { BACKDROP_Z_INDEX } from '../../BackDrop'
 
 export type Props = {
   open?: boolean
@@ -22,6 +23,6 @@ export default styled(ButtonStyle)<Props>`
     hasBackDrop &&
     `
   position: relative;
-  z-index: 20;
+  z-index: ${BACKDROP_Z_INDEX + 1};
   `}
 `
