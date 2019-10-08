@@ -91,6 +91,7 @@ describe('MenuFlyOut', () => {
 
   it('should toggle the open state on enter', () => {
     onKeyDownSimulate('Enter')
+    jest.runAllTimers()
 
     menuListProps = component.find(MenuList).props()
     expect(menuListProps['aria-hidden']).toBe(false)
@@ -98,6 +99,7 @@ describe('MenuFlyOut', () => {
 
   it('should toggle the open state on space', () => {
     onKeyDownSimulate('Space')
+    jest.runAllTimers()
 
     menuListProps = component.find(MenuList).props()
     expect(menuListProps['aria-hidden']).toBe(false)
