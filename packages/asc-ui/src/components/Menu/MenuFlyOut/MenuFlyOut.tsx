@@ -18,40 +18,40 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
 
   const ref = React.useRef<HTMLLIElement>(null)
 
-  const [isOpen, setOpenFn] = React.useState(false)
+  const [isOpen, setOpen] = React.useState(false)
   const [isOpenOnClick, setOpenOnClick] = React.useState(false)
 
-  const setOpen = useDebounce(setOpenFn, 0)
-
   const flyOutOpen = isOpen || isOpenOnClick
+
+  const onHandleOpen = useDebounce((val: boolean) => {
+    if (setOpenToggle) {
+      setOpenToggle(val)
+    }
+
+    setOpen(val)
+    setOpenOnClick(val)
+  })
 
   const onHandleToggle = (e: React.MouseEvent | React.KeyboardEvent) => {
     e.preventDefault()
 
     if (hasToggle) {
-      setOpen(isOpen ? false : isOpen)
-      setOpenOnClick(!isOpenOnClick)
+      setOpen(!flyOutOpen)
+      setOpenOnClick(!flyOutOpen)
     } else {
       setOpenOnClick(true)
     }
   }
 
-  const onHandleKeyDown = (event: React.KeyboardEvent) => {
-    if (event.key === KeyboardKeys.Enter || event.key === KeyboardKeys.Space) {
-      onHandleToggle(event)
+  const onHandleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === KeyboardKeys.Enter || e.key === KeyboardKeys.Space) {
+      onHandleOpen(!flyOutOpen)
     }
-  }
-
-  const onHandleOpen = (val: boolean) => {
-    if (setOpenToggle) {
-      setOpenToggle(val)
-    }
-    setOpen(val)
-    setOpenOnClick(val)
   }
 
   const onBlurHandler = useDebounce(() => {
     const element = ref && (ref.current as HTMLLIElement)
+
     if (element) {
       const currentFocus = ownerDocument(element).activeElement
 
