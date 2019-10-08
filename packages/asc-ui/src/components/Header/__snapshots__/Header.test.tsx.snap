@@ -5,12 +5,12 @@ exports[`Header should render the short version 1`] = `
   margin: 0;
   color: #000000;
   font-weight: inherit;
-  font-size: 1rem;
+  font-size: 16;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
-  line-height: 1.25;
+  line-height: 22px;
   margin-bottom: 0;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
@@ -224,6 +224,13 @@ exports[`Header should render the short version 1`] = `
   justify-content: flex-end;
 }
 
+@media screen and (min-width:1024px) {
+  .c10 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
 @media screen and (min-width:540px) {
   .c2 {
     padding: 0 15px;
@@ -288,12 +295,12 @@ exports[`Header should render the short version without the full width 1`] = `
   margin: 0;
   color: #000000;
   font-weight: inherit;
-  font-size: 1rem;
+  font-size: 16;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
-  line-height: 1.25;
+  line-height: 22px;
   margin-bottom: 0;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
@@ -507,6 +514,13 @@ exports[`Header should render the short version without the full width 1`] = `
   justify-content: flex-end;
 }
 
+@media screen and (min-width:1024px) {
+  .c10 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
 @media screen and (min-width:540px) {
   .c2 {
     padding: 0 15px;
@@ -571,12 +585,12 @@ exports[`Header should render the tall version 1`] = `
   margin: 0;
   color: #000000;
   font-weight: inherit;
-  font-size: 1rem;
+  font-size: 16;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
-  line-height: 1.25;
+  line-height: 22px;
   margin-bottom: 0;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
@@ -800,6 +814,13 @@ exports[`Header should render the tall version 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+}
+
+@media screen and (min-width:1024px) {
+  .c13 {
+    font-size: 18px;
+    line-height: 25px;
+  }
 }
 
 @media screen and (min-width:540px) {
