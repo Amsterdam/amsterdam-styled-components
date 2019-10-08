@@ -1,8 +1,7 @@
 import styled, { css } from '@datapunt/asc-core'
+import { stripUnit } from 'polished'
 import { themeColor, themeSpacing, getTypographyFromTheme } from '../../utils'
 import { getTypographyValueFromProperty } from '../../utils/themeUtils'
-
-import { stripUnit } from 'polished'
 
 export type Props = {
   variant?: 'bullet'
