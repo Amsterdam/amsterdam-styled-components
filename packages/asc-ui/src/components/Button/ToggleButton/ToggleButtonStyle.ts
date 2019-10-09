@@ -1,7 +1,7 @@
 import styled from '@datapunt/asc-core'
 import { themeColor } from '../../../utils'
 import ButtonStyle, { Props as ButtonProps } from '../ButtonStyle'
-import { BACKDROP_Z_INDEX } from '../../BackDrop/BackDropStyle'
+import { BACKDROP_Z_INDEX } from '../../shared/constants'
 
 export type Props = {
   open?: boolean

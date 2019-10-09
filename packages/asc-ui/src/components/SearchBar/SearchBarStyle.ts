@@ -2,7 +2,7 @@ import styled from '@datapunt/asc-core'
 import { showHide, ShowHideTypes, customCss } from '../../utils'
 import TextFieldStyle from '../TextField/TextFieldStyle'
 import ButtonStyle from '../Button/ButtonStyle'
-import { BACKDROP_Z_INDEX } from '../BackDrop/BackDropStyle'
+import { BACKDROP_Z_INDEX } from '../shared/constants'
 
 export interface Props extends ShowHideTypes {
   css?: string

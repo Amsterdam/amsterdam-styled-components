@@ -30,30 +30,32 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
 
     setOpen(val)
     setOpenOnClick(val)
-  }, 300)
-
-  const onHandleToggle = useDebounce((e: React.MouseEvent) => {
-    e.preventDefault()
-
-    if (hasToggle) {
-      setOpen(!flyOutOpen)
-      setOpenOnClick(!flyOutOpen)
-    } else {
-      // Flyouts can't be closed by clicking on them
-      onHandleOpen(true)
-    }
   })
 
-  const onHandleKeyDown = (e: React.KeyboardEvent) => {
+  const onHandleToggle = useDebounce(
+    (e: React.MouseEvent | React.KeyboardEvent) => {
+      e.preventDefault()
+
+      if (hasToggle) {
+        setOpen(!flyOutOpen)
+        setOpenOnClick(!flyOutOpen)
+      } else {
+        // Flyouts can't be closed by clicking on them
+        onHandleOpen(true)
+      }
+    },
+  )
+
+  const onHandleKeyDown = useDebounce((e: React.KeyboardEvent) => {
     if (e.key === KeyboardKeys.Enter || e.key === KeyboardKeys.Space) {
-      onHandleOpen(!flyOutOpen)
+      onHandleToggle(e)
     }
-  }
+  })
 
   const onBlurHandler = useDebounce(() => {
     const element = ref && (ref.current as HTMLLIElement)
 
-    if (element) {
+    if (element && !hasToggle) {
       const currentFocus = ownerDocument(element).activeElement
 
       if (!element.contains(currentFocus)) {

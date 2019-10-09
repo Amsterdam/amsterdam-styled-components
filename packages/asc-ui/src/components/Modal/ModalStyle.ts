@@ -1,7 +1,7 @@
 import styled from '@datapunt/asc-core'
 import TopBarStyle from '../TopBar/TopBarStyle'
 import { themeColor } from '../../utils'
-import { BACKDROP_Z_INDEX } from '../BackDrop/BackDropStyle'
+import { BACKDROP_Z_INDEX } from '../shared/constants'
 
 type Props = {
   attributes?: object

@@ -3,7 +3,7 @@ import { MenuListStyle } from '../MenuList'
 import { MenuItemStyle } from '../MenuItem'
 import { showHide, ShowHideTypes } from '../../../utils'
 import { MENU_ITEM_SIZE } from '../constants'
-import { BACKDROP_Z_INDEX } from '../../BackDrop/BackDropStyle'
+import { BACKDROP_Z_INDEX } from '../../shared/constants'
 
 export type Props = ShowHideTypes
 

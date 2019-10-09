@@ -10,7 +10,7 @@ import HeaderNavigationStyle from './HeaderNavigationStyle'
 import HeaderLogoTextStyle from './HeaderLogoTextStyle'
 import TopBarStyle from '../TopBar/TopBarStyle'
 import HeaderStyle from './HeaderStyle'
-import { HEADER_HEIGHT_SMALL } from '../shared/sizes'
+import { HEADER_HEIGHT_SMALL, BACKDROP_Z_INDEX } from '../shared/constants'
 
 export interface Props extends CustomCssPropsInterface {
   tall?: boolean
@@ -35,7 +35,7 @@ const HeaderWrapperStyle = styled.div<Props>`
   box-sizing: content-box;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: ${BACKDROP_Z_INDEX + 1};
 
   ${HeaderNavigationStyle} {
     flex-grow: 1;

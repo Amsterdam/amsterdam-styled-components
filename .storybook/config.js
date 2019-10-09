@@ -1,7 +1,7 @@
 import React from 'react'
 import { addDecorator, configure } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info';
-import { GlobalStyle, ThemeProvider } from '@datapunt/asc-ui'
+import { withInfo } from '@storybook/addon-info'
+import { GlobalStyle, ThemeProvider, constants } from '@datapunt/asc-ui'
 import { withA11y } from '@storybook/addon-a11y'
 
 addDecorator(withInfo)
@@ -15,22 +15,25 @@ const extendedTheme = {
   `,
 }
 
-// Add global styles to every story and wrap the story in a div with a positive zIndex to prevent React Portals to get out of scope
 function withGlobalStyles(storyFn) {
   return (
     <ThemeProvider overrides={extendedTheme}>
       <>
         <GlobalStyle />
-        <div style={{ position: 'relative', zIndex: 1 }}>
-          {storyFn()}
-        </div>
-        
+
+        {storyFn()}
       </>
     </ThemeProvider>
   )
 }
 
 addDecorator(withGlobalStyles)
+
+// Storybook scopes the stories in a div with a z-index of 0, this will break components that use React Portals
+// This creates a new scope that is larger than the one of the React Portal
+addDecorator(storyFn => (
+  <div style={{ position: 'relative', zIndex: constants.BACKDROP_Z_INDEX + 1 }}>{storyFn()}</div>
+))
 
 function loadStories() {
   req.keys().forEach(filename => req(filename))

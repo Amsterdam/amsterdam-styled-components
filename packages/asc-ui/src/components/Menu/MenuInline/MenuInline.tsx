@@ -12,13 +12,13 @@ export type Props = {
 const MenuInline: React.FC<Props> = ({
   children,
   onExpand,
-  hasBackDrop = false,
+  hasBackDrop,
   ...otherProps
 }) => {
   const [menuOpen, setMenuOpen] = React.useState(false)
 
   return (
-    <div style={{ position: 'relative', zIndex: 9999 }}>
+    <>
       <MenuContext.Provider
         value={{
           onExpand,
@@ -34,7 +34,7 @@ const MenuInline: React.FC<Props> = ({
           <BackDropStyle onClick={() => setMenuOpen(!menuOpen)} />
         </Portal>
       )}
-    </div>
+    </>
   )
 }
 

@@ -91,6 +91,7 @@ import Footer, {
   FooterTop,
   FooterStyles,
 } from './components/Footer'
+import * as constants from './components/shared/constants'
 import { themeColor } from './utils'
 
 /**
@@ -210,4 +211,5 @@ export {
   ascDefaultTheme,
   DocumentCover,
   Tag,
+  constants,
 }

@@ -40,8 +40,10 @@ class Portal extends React.Component<Props, State> {
     const el = this.element
 
     if (blurredNode) {
-      el.setAttribute('style', 'overflow: hidden;')
       blurredNode.setAttribute('style', 'filter: blur(1px)')
+
+      // The window only gets "locked" when the underlying node gets blurred
+      el.setAttribute('style', 'overflow: hidden;')
     }
 
     el.appendChild(this.mountEl)

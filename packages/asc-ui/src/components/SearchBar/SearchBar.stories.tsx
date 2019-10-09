@@ -1,10 +1,7 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react/'
 import { action } from '@storybook/addon-actions'
-import { css } from '@datapunt/asc-core'
 import SearchBar from './SearchBar'
-
-import SearchBarToggle from '../SearchBarToggle/SearchBarToggle'
 
 const ControlledSearchBarStory: React.FC<{}> = () => {
   const [searchText, setText] = React.useState('')
@@ -46,14 +43,3 @@ storiesOf('Composed/SearchBar', module)
     />
   ))
   .add('default controlled', () => <ControlledSearchBarStory />)
-  .add('menu version', () => (
-    <SearchBarToggle
-      css={css`
-        position: relative;
-      `}
-      onWatchValue={value => {
-        action(`input value changed: ${value}`)
-      }}
-      onSubmit={() => action('input submitted')}
-    />
-  ))

@@ -7,6 +7,7 @@ import ToggleButton, {
   Props as ToggleButtonProps,
 } from '../Button/ToggleButton/ToggleButton'
 import BackDropStyle from '../BackDrop'
+import Portal from '../Portal'
 
 export type ToggleHandlerProps = {
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
@@ -101,7 +102,6 @@ const Toggle: React.FC<Props> = ({
 
   return (
     <>
-      {hasBackDrop && open && <BackDropStyle onClick={onClick} />}
       <ToggleStyle
         // @ts-ignore
         ref={ref}
@@ -125,6 +125,11 @@ const Toggle: React.FC<Props> = ({
         />
         {render ? children : conditionalRenderedChildren}
       </ToggleStyle>
+      {hasBackDrop && open && (
+        <Portal>
+          <BackDropStyle onClick={onClick} />
+        </Portal>
+      )}
     </>
   )
 }

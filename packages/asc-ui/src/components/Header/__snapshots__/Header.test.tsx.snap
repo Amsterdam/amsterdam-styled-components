@@ -186,7 +186,7 @@ exports[`Header should render the short version 1`] = `
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 21;
 }
 
 .c0 .c11 {
@@ -469,7 +469,7 @@ exports[`Header should render the short version without the full width 1`] = `
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 21;
 }
 
 .c0 .c11 {
@@ -773,7 +773,7 @@ exports[`Header should render the tall version 1`] = `
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 21;
 }
 
 .c0 .c14 {
@@ -1073,7 +1073,7 @@ exports[`Header should render the tall version without a title 1`] = `
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 21;
 }
 
 .c0 .c10 {
