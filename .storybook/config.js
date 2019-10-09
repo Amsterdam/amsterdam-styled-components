@@ -15,12 +15,16 @@ const extendedTheme = {
   `,
 }
 
+// Add global styles to every story and wrap the story in a div with a positive zIndex to prevent React Portals to get out of scope
 function withGlobalStyles(storyFn) {
   return (
     <ThemeProvider overrides={extendedTheme}>
       <>
         <GlobalStyle />
-        {storyFn()}
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          {storyFn()}
+        </div>
+        
       </>
     </ThemeProvider>
   )

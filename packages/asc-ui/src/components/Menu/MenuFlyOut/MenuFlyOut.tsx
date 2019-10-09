@@ -30,18 +30,19 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
 
     setOpen(val)
     setOpenOnClick(val)
-  })
+  }, 300)
 
-  const onHandleToggle = (e: React.MouseEvent | React.KeyboardEvent) => {
+  const onHandleToggle = useDebounce((e: React.MouseEvent) => {
     e.preventDefault()
 
     if (hasToggle) {
       setOpen(!flyOutOpen)
       setOpenOnClick(!flyOutOpen)
     } else {
-      setOpenOnClick(true)
+      // Flyouts can't be closed by clicking on them
+      onHandleOpen(true)
     }
-  }
+  })
 
   const onHandleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === KeyboardKeys.Enter || e.key === KeyboardKeys.Space) {

@@ -5,7 +5,7 @@ import { MenuListStyle } from '../MenuList'
 import { MenuFlyOutStyle } from '../MenuFlyOut'
 import { TOGGLE_BUTTON_SIZE, FLY_OUT_WIDTH } from '../constants'
 import MenuButtonStyle from '../MenuButton/MenuButtonStyle'
-import { BACKDROP_Z_INDEX } from '../../BackDrop'
+import { BACKDROP_Z_INDEX } from '../../BackDrop/BackDropStyle'
 
 export type Props = {
   align?: 'left' | 'right'
