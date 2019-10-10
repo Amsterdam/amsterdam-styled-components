@@ -73,11 +73,17 @@ const typography: Theme.TypographyInterface = {
   },
   a: {
     color: colors.tint.level7,
-    fontSize: '1rem',
+    fontSize: '16px',
     fontWeight: 'inherit',
     letterSpacing: 'inherit',
-    lineHeight: 1.25,
+    lineHeight: '22px',
     marginBottom: '0',
+    breakpoints: {
+      laptop: {
+        fontSize: '18px',
+        lineHeight: '25px',
+      },
+    },
   },
   p: {
     color: colors.tint.level7,

@@ -86,11 +86,17 @@ exports[`<TextField /> should render 1`] = `
       "spacing": 4,
       "typography": Object {
         "a": Object {
+          "breakpoints": Object {
+            "laptop": Object {
+              "fontSize": "18px",
+              "lineHeight": "25px",
+            },
+          },
           "color": "#000000",
-          "fontSize": "1rem",
+          "fontSize": "16px",
           "fontWeight": "inherit",
           "letterSpacing": "inherit",
-          "lineHeight": 1.25,
+          "lineHeight": "22px",
           "marginBottom": "0",
         },
         "em": Object {

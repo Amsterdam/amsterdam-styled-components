@@ -34,6 +34,11 @@ const overridesCompactTheme: Partial<Theme.ThemeInterface> = {
       lineHeight: '20px',
       breakpoints: undefined,
     },
+    a: {
+      fontSize: '16px',
+      lineHeight: '20px',
+      breakpoints: undefined,
+    },
   },
 }
 
