@@ -73,7 +73,7 @@ const typography: Theme.TypographyInterface = {
   },
   a: {
     color: colors.tint.level7,
-    fontSize: '16',
+    fontSize: '16px',
     fontWeight: 'inherit',
     letterSpacing: 'inherit',
     lineHeight: '22px',

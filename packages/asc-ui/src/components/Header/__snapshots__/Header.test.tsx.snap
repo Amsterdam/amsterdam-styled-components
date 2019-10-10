@@ -5,7 +5,7 @@ exports[`Header should render the short version 1`] = `
   margin: 0;
   color: #000000;
   font-weight: inherit;
-  font-size: 16;
+  font-size: 16px;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
   -ms-letter-spacing: inherit;
@@ -295,7 +295,7 @@ exports[`Header should render the short version without the full width 1`] = `
   margin: 0;
   color: #000000;
   font-weight: inherit;
-  font-size: 16;
+  font-size: 16px;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
   -ms-letter-spacing: inherit;
@@ -585,7 +585,7 @@ exports[`Header should render the tall version 1`] = `
   margin: 0;
   color: #000000;
   font-weight: inherit;
-  font-size: 16;
+  font-size: 16px;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
   -ms-letter-spacing: inherit;
