@@ -8,25 +8,8 @@ export type Props = {
 } & TypographyStyleProps &
   React.HTMLAttributes<HTMLElement>
 
-const Typography: React.FC<Props> = ({
-  children,
-  gutterBottom,
-  element,
-  color,
-  fontSize,
-  $as,
-  ...otherProps
-}) => (
-  <TypographyStyle
-    {...{
-      gutterBottom,
-      element,
-      color,
-      fontSize,
-    }}
-    as={$as}
-    {...otherProps}
-  >
+const Typography: React.FC<Props> = ({ children, $as, ...otherProps }) => (
+  <TypographyStyle as={$as} {...otherProps}>
     {children}
   </TypographyStyle>
 )

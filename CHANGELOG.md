@@ -16,9 +16,9 @@ Prefix the change with one of these keywords:
 
 ## UNRELEASED
 
-- Fixed: reseted the breakpoints for typography in the CompactTheme as they are not used in this theme
+- Fixed: reset the breakpoints for typography in the CompactTheme as they are not used in this theme
 - Added: Make it possible to order the ListItems inside a List component by passing an `order` prop
-
+- Changed: Card and ImageCard 'loading' prop to 'isLoading'
 
 ## [0.16.0] - 2019-09-17
 

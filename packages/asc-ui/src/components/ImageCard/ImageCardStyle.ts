@@ -4,7 +4,7 @@ import { ImageCardContentStyle } from './ImageCardContent'
 
 export type Props = {
   backgroundImage: string
-  loading?: boolean
+  isLoading?: boolean
   animateLoading?: boolean
 }
 
@@ -27,8 +27,8 @@ export default styled.div<Props>`
   position: relative;
   width: 100%;
   overflow: hidden;
-  ${({ loading, theme, animateLoading, backgroundImage }) =>
-    loading
+  ${({ isLoading, theme, animateLoading, backgroundImage }) =>
+    isLoading
       ? css`
           ${perceivedLoading(theme, animateLoading)}
           ${ImageCardContentStyle} {

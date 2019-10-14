@@ -10,7 +10,7 @@ export type Props = {
   shadow?: boolean
   horizontal?: boolean
   backgroundColor?: keyof Theme.Tint
-  loading?: boolean
+  isLoading?: boolean
   animateLoading?: boolean
 }
 
@@ -33,8 +33,8 @@ const CardStyle = styled.div<Props>`
       }
     `}
 
-  ${({ loading, animateLoading, theme }) =>
-    loading &&
+  ${({ isLoading, animateLoading, theme }) =>
+    isLoading &&
     css`
       ${perceivedLoading(theme, animateLoading)}
 
