@@ -6,6 +6,7 @@ import { getTypographyFromTheme } from '../../utils'
 import { BulletCSS, ListStyleCSS } from '../List/ListStyle'
 import { ListItemStyleCSS } from '../List/ListItemStyle'
 import { BlockquoteStyleCSS } from '../Blockquote/BlockquoteStyle'
+import { OrderedListStyleCSS } from '../List/OrderedListStyle'
 
 const ElementStyleMapping = {
   h1: HeaderStyleCSS,
@@ -21,6 +22,9 @@ const ElementStyleMapping = {
   ul: css`
     ${ListStyleCSS}
     ${BulletCSS}
+  `,
+  ol: css`
+    ${OrderedListStyleCSS}
   `,
   li: ListItemStyleCSS,
 }

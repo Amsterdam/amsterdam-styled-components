@@ -1,7 +1,7 @@
 import React from 'react'
 import { styledComponents } from '@datapunt/asc-core'
 import { ChevronRight } from '@datapunt/asc-assets'
-import LinkStyle, { Props as LinkStyleProps } from './LinkStyle'
+import LinkStyle, { LinkContent, Props as LinkStyleProps } from './LinkStyle'
 import Icon from '../Icon'
 
 export type Props = styledComponents.StyledProps<any> & LinkStyleProps
@@ -21,8 +21,7 @@ const Link: React.FC<Props> = ({
           <ChevronRight />
         </Icon>
       )}
-
-      {children}
+      <LinkContent>{children}</LinkContent>
     </LinkStyle>
   )
 }

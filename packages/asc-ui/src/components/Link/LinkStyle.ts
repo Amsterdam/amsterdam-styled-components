@@ -62,6 +62,10 @@ export const DefaultLinkStyleCSS = css<Props>`
   }
 `
 
+export const LinkContent = styled.span`
+  width: 100%; /* IE11 Fix */
+`
+
 export default styled(Typography)<Props>`
   ${({ focusStyle }) => getFocusStyle(focusStyle)}
   ${({ variant }) => {

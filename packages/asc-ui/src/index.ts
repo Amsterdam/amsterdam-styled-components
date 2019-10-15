@@ -59,7 +59,7 @@ import ImageCard, {
   ImageCardContent,
   ImageCardStyles,
 } from './components/ImageCard'
-import List, { ListItem, ListStyles } from './components/List'
+import List, { ListItem, OrderedList, ListStyles } from './components/List'
 import {
   MenuItemTitle,
   MenuItem,
@@ -134,6 +134,7 @@ export const styles = {
 // Components
 export {
   List,
+  OrderedList,
   ListItem,
   AmsterdamLogo,
   BackDrop,

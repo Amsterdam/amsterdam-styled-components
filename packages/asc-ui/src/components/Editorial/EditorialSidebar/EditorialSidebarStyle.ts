@@ -6,6 +6,8 @@ import LinkStyle from '../../Link/LinkStyle'
 import { themeColor } from '../../../utils'
 
 export default styled.aside`
+  width: 100%;
+
   ${ListStyle} {
     margin: 16px 0;
   }
