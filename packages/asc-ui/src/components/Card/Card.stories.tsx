@@ -85,7 +85,7 @@ storiesOf('Atoms/Card', module)
     </Card>
   ))
   .add('loading state - default', () => (
-    <Card maxWidth={250} loading>
+    <Card maxWidth={250} isLoading>
       <CardContent>
         <Heading $as="h6" />
         <Paragraph />
@@ -93,7 +93,7 @@ storiesOf('Atoms/Card', module)
     </Card>
   ))
   .add('loading state - with action', () => (
-    <Card maxWidth={250} loading>
+    <Card maxWidth={250} isLoading>
       <CardContent>
         <Heading $as="h6" />
         <Paragraph />
@@ -106,7 +106,7 @@ storiesOf('Atoms/Card', module)
     </Card>
   ))
   .add('loading state - horizontal', () => (
-    <Card maxWidth={450} horizontal loading>
+    <Card maxWidth={450} horizontal isLoading>
       <CardMedia backgroundColor="level2">
         <Icon size={25}>
           <Download />
