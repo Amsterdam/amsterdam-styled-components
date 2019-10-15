@@ -21,7 +21,12 @@ const Link: React.FC<Props> = ({
           <ChevronRight />
         </Icon>
       )}
-      <LinkContent>{children}</LinkContent>
+      {/* Wrap the content in a span if it has a chevron, as this will fix overflow issues in IE11 */}
+      {variant === 'with-chevron' ? (
+        <LinkContent>{children}</LinkContent>
+      ) : (
+        children
+      )}
     </LinkStyle>
   )
 }

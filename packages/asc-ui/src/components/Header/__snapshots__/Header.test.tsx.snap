@@ -52,16 +52,12 @@ exports[`Header should render the short version 1`] = `
   font-size: 0;
 }
 
-.c2 .c15 {
+.c2 .c14 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
   margin-bottom: 0;
-}
-
-.c11 {
-  width: 100%;
 }
 
 .c9 {
@@ -79,13 +75,13 @@ exports[`Header should render the short version 1`] = `
   background-color: #FEC813;
 }
 
-.c9 .c16 {
+.c9 .c15 {
   margin: 4px;
 }
 
-.c9 .c16 svg rect,
-.c9 .c16 svg polygon,
-.c9 .c16 svg path {
+.c9 .c15 svg rect,
+.c9 .c15 svg polygon,
+.c9 .c15 svg path {
   fill: #000000;
 }
 
@@ -95,9 +91,9 @@ exports[`Header should render the short version 1`] = `
   text-decoration: underline;
 }
 
-.c9:hover .c16 svg rect,
-.c9:hover .c16 svg polygon,
-.c9:hover .c16 svg path {
+.c9:hover .c15 svg rect,
+.c9:hover .c15 svg polygon,
+.c9:hover .c15 svg path {
   fill: #ec0000;
 }
 
@@ -116,7 +112,7 @@ exports[`Header should render the short version 1`] = `
   color: inherit;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -193,7 +189,7 @@ exports[`Header should render the short version 1`] = `
   z-index: 2;
 }
 
-.c0 .c12 {
+.c0 .c11 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -210,7 +206,7 @@ exports[`Header should render the short version 1`] = `
   padding-right: 0;
 }
 
-.c14 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -254,7 +250,7 @@ exports[`Header should render the short version 1`] = `
 }
 
 @media screen and (max-width:1199px) {
-  .c14 {
+  .c13 {
     display: none;
   }
 }
@@ -281,18 +277,14 @@ exports[`Header should render the short version 1`] = `
         class="c7 c8 c9 c10"
         href="http://data.amsterdam.nl"
       >
-        <span
-          class="c11"
-        >
-          Data en informatie
-        </span>
+        Data en informatie
       </a>
     </h1>
     <nav
-      class="c12 c13"
+      class="c11 c12"
     />
     <div
-      class="c14"
+      class="c13"
     />
   </header>
 </div>
@@ -350,16 +342,12 @@ exports[`Header should render the short version without the full width 1`] = `
   font-size: 0;
 }
 
-.c2 .c15 {
+.c2 .c14 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
   margin-bottom: 0;
-}
-
-.c11 {
-  width: 100%;
 }
 
 .c9 {
@@ -377,13 +365,13 @@ exports[`Header should render the short version without the full width 1`] = `
   background-color: #FEC813;
 }
 
-.c9 .c16 {
+.c9 .c15 {
   margin: 4px;
 }
 
-.c9 .c16 svg rect,
-.c9 .c16 svg polygon,
-.c9 .c16 svg path {
+.c9 .c15 svg rect,
+.c9 .c15 svg polygon,
+.c9 .c15 svg path {
   fill: #000000;
 }
 
@@ -393,9 +381,9 @@ exports[`Header should render the short version without the full width 1`] = `
   text-decoration: underline;
 }
 
-.c9:hover .c16 svg rect,
-.c9:hover .c16 svg polygon,
-.c9:hover .c16 svg path {
+.c9:hover .c15 svg rect,
+.c9:hover .c15 svg polygon,
+.c9:hover .c15 svg path {
   fill: #ec0000;
 }
 
@@ -414,7 +402,7 @@ exports[`Header should render the short version without the full width 1`] = `
   color: inherit;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -491,7 +479,7 @@ exports[`Header should render the short version without the full width 1`] = `
   z-index: 2;
 }
 
-.c0 .c12 {
+.c0 .c11 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -508,7 +496,7 @@ exports[`Header should render the short version without the full width 1`] = `
   padding-right: 0;
 }
 
-.c14 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -552,7 +540,7 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 @media screen and (max-width:1199px) {
-  .c14 {
+  .c13 {
     display: none;
   }
 }
@@ -579,18 +567,14 @@ exports[`Header should render the short version without the full width 1`] = `
         class="c7 c8 c9 c10"
         href="http://data.amsterdam.nl"
       >
-        <span
-          class="c11"
-        >
-          Data en informatie
-        </span>
+        Data en informatie
       </a>
     </h1>
     <nav
-      class="c12 c13"
+      class="c11 c12"
     />
     <div
-      class="c14"
+      class="c13"
     />
   </header>
 </div>
@@ -648,16 +632,12 @@ exports[`Header should render the tall version 1`] = `
   font-size: 0;
 }
 
-.c3 .c20 {
+.c3 .c19 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
   margin-bottom: 0;
-}
-
-.c14 {
-  width: 100%;
 }
 
 .c12 {
@@ -675,13 +655,13 @@ exports[`Header should render the tall version 1`] = `
   background-color: #FEC813;
 }
 
-.c12 .c21 {
+.c12 .c20 {
   margin: 4px;
 }
 
-.c12 .c21 svg rect,
-.c12 .c21 svg polygon,
-.c12 .c21 svg path {
+.c12 .c20 svg rect,
+.c12 .c20 svg polygon,
+.c12 .c20 svg path {
   fill: #000000;
 }
 
@@ -691,9 +671,9 @@ exports[`Header should render the tall version 1`] = `
   text-decoration: underline;
 }
 
-.c12:hover .c21 svg rect,
-.c12:hover .c21 svg polygon,
-.c12:hover .c21 svg path {
+.c12:hover .c20 svg rect,
+.c12:hover .c20 svg polygon,
+.c12:hover .c20 svg path {
   fill: #ec0000;
 }
 
@@ -712,7 +692,7 @@ exports[`Header should render the tall version 1`] = `
   color: inherit;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -752,7 +732,7 @@ exports[`Header should render the tall version 1`] = `
   outline-width: 3px;
 }
 
-.c18 .c6 {
+.c17 .c6 {
   margin-right: 10px;
 }
 
@@ -781,7 +761,7 @@ exports[`Header should render the tall version 1`] = `
   margin-right: 10px;
 }
 
-.c19 .c15 {
+.c18 .c14 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -789,11 +769,11 @@ exports[`Header should render the tall version 1`] = `
   margin-left: 15px;
 }
 
-.c19 .c10 {
+.c18 .c10 {
   margin-top: -2px;
 }
 
-.c19 .c2 {
+.c18 .c2 {
   height: 50px;
   padding-right: 0;
 }
@@ -810,7 +790,7 @@ exports[`Header should render the tall version 1`] = `
   z-index: 2;
 }
 
-.c0 .c15 {
+.c0 .c14 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -818,7 +798,7 @@ exports[`Header should render the tall version 1`] = `
   margin-left: 15px;
 }
 
-.c17 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -930,7 +910,7 @@ exports[`Header should render the tall version 1`] = `
     padding: 15px 0;
   }
 
-  .c0 .c15 {
+  .c0 .c14 {
     -webkit-flex-basis: 100%;
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
@@ -941,7 +921,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 @media screen and (max-width:1199px) {
-  .c17 {
+  .c16 {
     display: none;
   }
 }
@@ -968,18 +948,14 @@ exports[`Header should render the tall version 1`] = `
         class="c10 c11 c12 c13"
         href="http://data.amsterdam.nl"
       >
-        <span
-          class="c14"
-        >
-          Data en informatie
-        </span>
+        Data en informatie
       </a>
     </h1>
     <nav
-      class="c15 c16"
+      class="c14 c15"
     />
     <div
-      class="c17"
+      class="c16"
     />
   </header>
 </div>
