@@ -15,6 +15,11 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## UNRELEASED
+
+## [0.17.2] - 2019-10-14
+
+### ASC-UI
+
 - Added: accessibility support for MenuFlyOut to navigate with arrow keys when open
 - Fixed: firefox issue with blurring on MenuFlyOut 
 
