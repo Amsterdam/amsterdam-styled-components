@@ -5,7 +5,17 @@ import Label from '../Label'
 
 storiesOf('Atoms/Checkbox', module)
   .addDecorator(storyFn => (
-    <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
+    <div
+      style={{
+        display: 'flex',
+        maxWidth: 400,
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        padding: '40px 10px',
+      }}
+    >
+      {storyFn()}
+    </div>
   ))
   .add('variants', () => (
     <>
@@ -15,8 +25,22 @@ storiesOf('Atoms/Checkbox', module)
       <Label htmlFor="one" label="Primary">
         <Checkbox id="one" variant="primary" />
       </Label>
+
       <Label htmlFor="two" label="Secondary">
         <Checkbox id="two" variant="secondary" />
+      </Label>
+    </>
+  ))
+  .add('checked', () => (
+    <>
+      <Label htmlFor="default" label="Default checked">
+        <Checkbox id="default" checked />
+      </Label>
+      <Label htmlFor="one" label="Primary checked">
+        <Checkbox id="one" variant="primary" checked />
+      </Label>
+      <Label htmlFor="two" label="Secondary checked">
+        <Checkbox id="two" variant="secondary" checked />
       </Label>
     </>
   ))

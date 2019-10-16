@@ -61,7 +61,6 @@ const CheckboxIconStyle = styled(IconStyle)<Props>`
   border-style: solid;
   width: 22px;
   height: 22px;
-  margin: 2px;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -74,40 +73,41 @@ const CheckboxIconStyle = styled(IconStyle)<Props>`
   ${svgFill('tint', 'level1')};
 `
 
-const CheckboxWrapper = styled.div<Props & { focus: boolean }>`
+const CheckboxWrapperStyle = styled.div<Props & { focus: boolean }>`
   position: relative;
   display: inline-flex;
-  user-select: none;
+  user-select: none;  
   vertical-align: middle;
-  padding: 10px;
-  color: ${themeColor('tint', 'level5')}
-    ${({ focus, theme }) =>
-      focus &&
-      css`
-        ${CheckboxIconStyle} {
-          ${outlineStyle(theme, 2, 1)}
-        }
-      `}
-    ${({ disabled }) =>
-      disabled &&
-      css`
-        pointer-events: none;
-      `}
-    ${({ checked, disabled, focus }) =>
-      !checked &&
-      !disabled && // IE11 fix. If an element is disabled, you can still hover on it on IE11.
-      !focus && // don't override the outline if element is also focussed
-      css`
-        &:hover {
-          color: ${themeColor('tint', 'level7')};
+  margin-bottom: 1px;
+  padding: 6px;
+  color: ${themeColor('tint', 'level5')};
+  ${({ focus, theme }) =>
+    focus &&
+    css`
+      ${CheckboxIconStyle} {
+        ${outlineStyle(theme, 2, 1)};
+      }
+    `}
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      pointer-events: none;
+    `}
+  ${({ checked, disabled, focus }) =>
+    !checked &&
+    !disabled && // IE11 fix. If an element is disabled, you can still hover on it on IE11.
+    !focus && // don't override the outline if element is also focussed
+    css`
+      &:hover {
+        color: ${themeColor('tint', 'level7')};
 
-          ${CheckboxIconStyle} {
-            outline-style: solid;
-            outline-width: 1px;
-          }
+        ${CheckboxIconStyle} {
+          outline-style: solid;
+          outline-width: 1px;
         }
-      `}
-    ${focusStyleOutline()};
+      }
+    `}
+  ${focusStyleOutline()}
 `
 
-export { CheckboxWrapper, CheckboxIconStyle }
+export { CheckboxWrapperStyle, CheckboxIconStyle }

@@ -2,7 +2,7 @@ import React from 'react'
 import { Checkmark } from '@datapunt/asc-assets'
 import CheckboxStyle, {
   CheckboxIconStyle,
-  CheckboxWrapper,
+  CheckboxWrapperStyle,
   Props,
 } from './CheckboxStyle'
 
@@ -18,7 +18,7 @@ const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   const [focus, setFocus] = React.useState(false)
 
   return (
-    <CheckboxWrapper
+    <CheckboxWrapperStyle
       {...{ className, disabled, focus, checked }}
       aria-disabled={disabled}
     >
@@ -38,7 +38,7 @@ const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
           setChecked(!checked)
         }}
       />
-    </CheckboxWrapper>
+    </CheckboxWrapperStyle>
   )
 }
 

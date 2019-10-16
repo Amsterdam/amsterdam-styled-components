@@ -1,5 +1,6 @@
 import styled, { css } from '@datapunt/asc-core'
 import { themeColor, srOnlyStyle } from '../../utils'
+import { CheckboxWrapperStyle } from '../Checkbox'
 
 type SharedProps = {
   position?: 'top' | 'right' | 'bottom' | 'left'
@@ -10,7 +11,7 @@ export type Props = {
   disabled?: boolean
 } & SharedProps
 
-const FormLabelStyle = styled.label<Props>`
+const LabelStyle = styled.label<Props>`
   display: inline-flex;
   align-items: center;
   vertical-align: middle;
@@ -29,7 +30,18 @@ const FormLabelStyle = styled.label<Props>`
     css`
       flex-direction: column;
     `}
+  ${({ position }) =>
+    position &&
+    css`
+      & ${CheckboxWrapperStyle} {
+        padding-${position}: 12px;
+      }
+    `}
 `
+
+LabelStyle.defaultProps = {
+  position: 'right',
+} as SharedProps
 
 export const LabelTextStyle = styled.span<SharedProps>`
   ${({ position }) =>
@@ -42,4 +54,4 @@ export const LabelTextStyle = styled.span<SharedProps>`
         `}
 `
 
-export default FormLabelStyle
+export default LabelStyle
