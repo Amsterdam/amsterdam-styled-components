@@ -8,6 +8,7 @@ import useEdgeDetection from '../../../utils/hooks/useEdgeDetection'
 import useDebounce from '../../../utils/hooks/useDebounce'
 import { KeyboardKeys } from '../../../types/index'
 import MenuButton from '../MenuButton/MenuButton'
+import useFocusWithArrows from '../../../utils/hooks/useFocusWithArrows'
 
 type Props = {
   label: string
@@ -20,6 +21,8 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
 
   const [isOpen, setOpenFn] = React.useState(false)
   const [isOpenOnClick, setOpenOnClick] = React.useState(false)
+
+  const { keyDown } = useFocusWithArrows(ref)
 
   const setOpen = useDebounce(setOpenFn, 0)
 
@@ -78,6 +81,7 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
       ref={ref}
       onBlur={onBlurHandler}
       hasToggle={hasToggle}
+      onKeyDown={keyDown}
       {...extraEvents}
       {...otherProps}
     >

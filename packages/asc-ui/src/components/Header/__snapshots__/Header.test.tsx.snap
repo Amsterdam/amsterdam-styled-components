@@ -194,7 +194,6 @@ exports[`Header should render the short version 1`] = `
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin-left: 15px;
 }
 
 .c0 .c7 {
@@ -246,6 +245,12 @@ exports[`Header should render the short version 1`] = `
 @media screen and (min-width:375px) {
   .c8 {
     font-size: 16px;
+  }
+}
+
+@media screen and (min-width:375px) {
+  .c0 .c11 {
+    margin-left: 16px;
   }
 }
 
@@ -484,7 +489,6 @@ exports[`Header should render the short version without the full width 1`] = `
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin-left: 15px;
 }
 
 .c0 .c7 {
@@ -536,6 +540,12 @@ exports[`Header should render the short version without the full width 1`] = `
 @media screen and (min-width:375px) {
   .c8 {
     font-size: 16px;
+  }
+}
+
+@media screen and (min-width:375px) {
+  .c0 .c11 {
+    margin-left: 16px;
   }
 }
 
@@ -766,7 +776,6 @@ exports[`Header should render the tall version 1`] = `
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin-left: 15px;
 }
 
 .c18 .c10 {
@@ -795,7 +804,6 @@ exports[`Header should render the tall version 1`] = `
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin-left: 15px;
 }
 
 .c16 {
@@ -855,6 +863,18 @@ exports[`Header should render the tall version 1`] = `
 @media screen and (min-width:1200px) {
   .c5 .c6 {
     margin-right: 40px;
+  }
+}
+
+@media screen and (min-width:375px) {
+  .c18 .c14 {
+    margin-left: 16px;
+  }
+}
+
+@media screen and (min-width:375px) {
+  .c0 .c14 {
+    margin-left: 16px;
   }
 }
 
@@ -1077,7 +1097,6 @@ exports[`Header should render the tall version without a title 1`] = `
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin-left: 15px;
 }
 
 .c14 .c2 {
@@ -1102,7 +1121,6 @@ exports[`Header should render the tall version without a title 1`] = `
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin-left: 15px;
 }
 
 .c12 {
@@ -1143,6 +1161,18 @@ exports[`Header should render the tall version without a title 1`] = `
 @media screen and (min-width:1200px) {
   .c5 .c6 {
     margin-right: 40px;
+  }
+}
+
+@media screen and (min-width:375px) {
+  .c14 .c10 {
+    margin-left: 16px;
+  }
+}
+
+@media screen and (min-width:375px) {
+  .c0 .c10 {
+    margin-left: 16px;
   }
 }
 

@@ -4,6 +4,7 @@ import {
   themeColor,
   customCss,
   CustomCssPropsInterface,
+  themeSpacing,
 } from '../../utils'
 import HeaderTitleStyle from './HeaderTitleStyle'
 import HeaderNavigationStyle from './HeaderNavigationStyle'
@@ -39,7 +40,9 @@ const HeaderWrapperStyle = styled.div<Props>`
 
   ${HeaderNavigationStyle} {
     flex-grow: 1;
-    margin-left: 15px;
+    @media screen and ${breakpoint('min-width', 'mobileM')} {
+      margin-left: ${themeSpacing(4)};
+    }
   }
 
   ${({ tall }) =>
