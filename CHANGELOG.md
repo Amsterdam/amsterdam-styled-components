@@ -16,10 +16,10 @@ Prefix the change with one of these keywords:
 
 ## UNRELEASED
 
-## [0.17.2] - 2019-10-14
-
 - Added: default `position` prop for Label(Text) is 'right'
 - Fixed: updated Checkbox according to design system
+
+## [0.17.2] - 2019-10-14
 
 ### ASC-UI
 
