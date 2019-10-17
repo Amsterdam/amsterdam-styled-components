@@ -20,9 +20,15 @@ branches:
   only:
     - master
 deploy:
-  local_dir: .sb
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  on:
-    branch: master
+  - provider: pages
+    local_dir: .sb
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    on:
+      branch: master
+  - provider: npm
+    email: "datapunt@amsterdam.nl"
+    api_key: $NPM_TOKEN
+    script: bash scripts/publish-canary.sh
+    on:
+      branch: master
