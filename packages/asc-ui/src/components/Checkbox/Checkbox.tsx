@@ -2,7 +2,7 @@ import React from 'react'
 import { Checkmark } from '@datapunt/asc-assets'
 import CheckboxStyle, {
   CheckboxIconStyle,
-  CheckboxWrapper,
+  CheckboxWrapperStyle,
   Props,
 } from './CheckboxStyle'
 
@@ -12,17 +12,18 @@ const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   onChange,
   variant,
   disabled,
+  error,
   ...otherProps
 }) => {
   const [checked, setChecked] = React.useState(!!checkedProp)
   const [focus, setFocus] = React.useState(false)
 
   return (
-    <CheckboxWrapper
-      {...{ className, disabled, focus, checked }}
+    <CheckboxWrapperStyle
+      {...{ className, disabled, focus, checked, error }}
       aria-disabled={disabled}
     >
-      <CheckboxIconStyle {...{ disabled, variant, checked }} size={15}>
+      <CheckboxIconStyle {...{ disabled, variant, checked, error }} size={15}>
         {checked && <Checkmark />}
       </CheckboxIconStyle>
       <CheckboxStyle
@@ -38,7 +39,7 @@ const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
           setChecked(!checked)
         }}
       />
-    </CheckboxWrapper>
+    </CheckboxWrapperStyle>
   )
 }
 
