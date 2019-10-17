@@ -17,6 +17,7 @@ Prefix the change with one of these keywords:
 ## UNRELEASED
 
 - Added: default `position` prop for Label(Text) is 'right'
+- Added: Checkbox has Error state, by passing an `error` prop
 - Fixed: updated Checkbox according to design system
 
 ## [0.17.2] - 2019-10-14

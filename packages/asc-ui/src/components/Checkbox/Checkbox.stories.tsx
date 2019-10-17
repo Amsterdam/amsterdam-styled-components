@@ -29,6 +29,9 @@ storiesOf('Atoms/Checkbox', module)
       <Label htmlFor="two" label="Secondary">
         <Checkbox id="two" variant="secondary" />
       </Label>
+      <Label htmlFor="three" label="Error">
+        <Checkbox id="three" error />
+      </Label>
     </>
   ))
   .add('checked', () => (

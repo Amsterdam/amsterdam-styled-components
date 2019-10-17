@@ -12,6 +12,7 @@ const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   onChange,
   variant,
   disabled,
+  error,
   ...otherProps
 }) => {
   const [checked, setChecked] = React.useState(!!checkedProp)
@@ -19,10 +20,10 @@ const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
 
   return (
     <CheckboxWrapperStyle
-      {...{ className, disabled, focus, checked }}
+      {...{ className, disabled, focus, checked, error }}
       aria-disabled={disabled}
     >
-      <CheckboxIconStyle {...{ disabled, variant, checked }} size={15}>
+      <CheckboxIconStyle {...{ disabled, variant, checked, error }} size={15}>
         {checked && <Checkmark />}
       </CheckboxIconStyle>
       <CheckboxStyle

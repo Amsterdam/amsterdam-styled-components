@@ -13,6 +13,7 @@ export type Props = {
   variant?: keyof typeof Variants
   checked?: boolean
   disabled?: boolean
+  error?: boolean
 }
 
 const getVariant = () => ({
@@ -107,6 +108,17 @@ const CheckboxWrapperStyle = styled.div<Props & { focus: boolean }>`
         }
       }
     `}
+    ${({ error, checked, disabled, focus }) =>
+      error &&
+      !checked &&
+      !disabled &&
+      !focus &&
+      css`
+        ${CheckboxIconStyle} {
+          border-color: red;
+          outline: 1px solid red;
+        }
+      `}
   ${focusStyleOutline()}
 `
 
