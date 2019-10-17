@@ -20,7 +20,7 @@ branches:
   only:
     - master
 before_deploy:
-  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/nul
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
 deploy:
   - provider: pages
     local_dir: .sb
@@ -29,9 +29,11 @@ deploy:
     on:
       branch: master
       node: '12'
+      os: linux
   - provider: script
     script: bash scripts/publish-canary.sh
     skip_cleanup: true
     on:
       branch: master
       node: '12'
+      os: linux
