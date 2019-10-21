@@ -22,7 +22,7 @@ const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
 
   useMemo(() => {
     setActive(checked)
-  }, [checked])
+  }, [checked, setActive])
 
   return (
     <CheckboxWrapperStyle

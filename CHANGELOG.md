@@ -16,7 +16,7 @@ Prefix the change with one of these keywords:
 
 ## UNRELEASED
 
-- Added: Checkbox has a new variant: 'application'
+- Added: Button has a new variant: 'application'
 - Added: Components "FilterBox" and "FilterOption"
 - Added: LabelContext for getting an active state when used with a Checkbox
 

@@ -21,6 +21,6 @@ export default styled.div<Props>`
 export const FilterBoxHeader = styled.div`
   margin-bottom: ${themeSpacing(5)};
   padding: ${themeSpacing(4)} 0;
-  min-height: 84px;
+  min-height: 88px;
   border-bottom: 2px solid ${themeColor('tint', 'level3')};
 `
