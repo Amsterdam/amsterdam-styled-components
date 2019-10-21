@@ -1,6 +1,7 @@
 import React from 'react'
 import LabelStyle, { LabelTextStyle, Props as StyleProps } from './LabelStyle'
 import usePassPropsToChildren from '../../utils/hooks/usePassPropsToChildren'
+import LabelContext from './LabelContext'
 
 type Props = {
   label: string
@@ -13,14 +14,17 @@ const Label: React.FC<Props & React.LabelHTMLAttributes<HTMLLabelElement>> = ({
   position,
   ...otherProps
 }) => {
+  const [active, setActive] = React.useState(false)
   const { children } = usePassPropsToChildren(childrenProps, {
     disabled,
   })
   return (
-    <LabelStyle {...{ ...otherProps, disabled, position }}>
-      <LabelTextStyle position={position}>{label}</LabelTextStyle>
-      {children}
-    </LabelStyle>
+    <LabelContext.Provider value={{ active, setActive }}>
+      <LabelStyle {...{ ...otherProps, disabled, position, active }}>
+        <LabelTextStyle position={position}>{label}</LabelTextStyle>
+        {children}
+      </LabelStyle>
+    </LabelContext.Provider>
   )
 }
 

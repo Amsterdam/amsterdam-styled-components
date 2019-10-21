@@ -9,11 +9,16 @@ type SharedProps = {
 export type Props = {
   srOnly?: boolean
   disabled?: boolean
+  align?: 'center' | 'flex-start' | 'flex-end'
 } & SharedProps
 
-const LabelStyle = styled.label<Props>`
+type StyleOnlyProps = {
+  active: boolean
+}
+
+const LabelStyle = styled.label<Props & StyleOnlyProps>`
   display: inline-flex;
-  align-items: center;
+  align-items: ${({ align }) => align};
   vertical-align: middle;
   color: ${themeColor('tint', 'level7')};
   ${srOnlyStyle()}
@@ -37,10 +42,17 @@ const LabelStyle = styled.label<Props>`
         padding-${position}: 12px;
       }
     `}
+  
+  ${({ active }) =>
+    active &&
+    css`
+      font-weight: 700;
+    `}
 `
 
 LabelStyle.defaultProps = {
   position: 'right',
+  align: 'center',
 } as SharedProps
 
 export const LabelTextStyle = styled.span<SharedProps>`
