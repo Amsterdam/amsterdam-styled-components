@@ -40,6 +40,7 @@ export const InlineLinkStyleCSS = css`
 `
 export const DefaultLinkStyleCSS = css<Props>`
   display: inline-flex;
+  align-items: center;
   text-decoration: none;
   font-weight: 700;
   color: ${({ color: colorOverride, theme }) =>
