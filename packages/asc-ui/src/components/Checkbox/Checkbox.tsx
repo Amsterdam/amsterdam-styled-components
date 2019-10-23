@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState, useContext, useMemo } from 'react'
 import { Checkmark } from '@datapunt/asc-assets'
 import CheckboxStyle, {
   CheckboxIconStyle,
   CheckboxWrapperStyle,
   Props,
 } from './CheckboxStyle'
+import LabelContext from '../Label/LabelContext'
 
 const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   checked: checkedProp,
@@ -15,8 +16,13 @@ const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   error,
   ...otherProps
 }) => {
-  const [checked, setChecked] = React.useState(!!checkedProp)
-  const [focus, setFocus] = React.useState(false)
+  const [checked, setChecked] = useState(!!checkedProp)
+  const [focus, setFocus] = useState(false)
+  const { setActive } = useContext(LabelContext)
+
+  useMemo(() => {
+    setActive(checked)
+  }, [checked, setActive])
 
   return (
     <CheckboxWrapperStyle

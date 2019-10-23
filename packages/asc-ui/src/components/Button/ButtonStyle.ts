@@ -1,6 +1,11 @@
 import styled, { Theme, css } from '@datapunt/asc-core'
 import { transitions, readableColor, darken, size } from 'polished'
-import { themeColor, focusStyleOutline, svgFill } from '../../utils'
+import {
+  themeColor,
+  focusStyleOutline,
+  svgFill,
+  themeSpacing,
+} from '../../utils'
 import { flexboxMinHeightFix } from '../shared/ie-fixes'
 import Icon from '../Icon'
 
@@ -11,6 +16,7 @@ export enum ButtonVariants {
   primaryInverted,
   textButton,
   blank, // blank variant is a plain white button with a grey background on hover
+  application,
 }
 
 const defaultProps = {
@@ -125,6 +131,17 @@ const getVariant = () => ({
         ${svgFill('tint', 'level7')}
         &:hover {
           background-color: ${themeColor('tint', 'level3')};
+        }
+      `
+    case 'application':
+      return css`
+        border: 1px solid ${themeColor('tint', 'level7')};
+        background-color: ${themeColor('tint', 'level1')};
+        height: 32px;
+        padding: ${themeSpacing(1, 2)};
+        ${svgFill('tint', 'level7')}
+        &:hover {
+          background-color: ${themeColor('tint', 'level4')};
         }
       `
     default:

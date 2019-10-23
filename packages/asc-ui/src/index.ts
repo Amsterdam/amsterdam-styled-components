@@ -15,6 +15,8 @@ import ShareButton from './components/Button/ShareButton'
 import { Article, ArticleStyle } from './components/Editorial/Article'
 import Button from './components/Button'
 import Blockquote, { BlockquoteStyle } from './components/Blockquote'
+import { FilterBox, FilterBoxStyle } from './components/FilterBox'
+import { FilterOption, FilterOptionStyle } from './components/FilterOption'
 import Card, {
   CardActions,
   CardContent,
@@ -129,6 +131,8 @@ export const styles = {
   ArticleStyle,
   TagStyle,
   CheckboxStyle,
+  FilterBoxStyle,
+  FilterOptionStyle,
 }
 
 // Components
@@ -153,6 +157,8 @@ export {
   ContextMenu,
   ContextMenuButtonStyle,
   ContextMenuItem,
+  FilterBox,
+  FilterOption,
   Focus,
   Footer,
   FooterContent,

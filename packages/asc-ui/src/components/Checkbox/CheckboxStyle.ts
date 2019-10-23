@@ -81,6 +81,7 @@ const CheckboxWrapperStyle = styled.div<Props & { focus: boolean }>`
   vertical-align: middle;
   margin-bottom: 1px;
   padding: 6px;
+  flex-shrink: 0; /* IE11 fix */
   color: ${themeColor('tint', 'level5')};
   ${({ focus, theme }) =>
     focus &&

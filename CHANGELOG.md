@@ -16,6 +16,12 @@ Prefix the change with one of these keywords:
 
 ## UNRELEASED
 
+- Added: Button has a new variant: 'application'
+- Added: Components "FilterBox" and "FilterOption"
+- Added: LabelContext for getting an active state when used with a Checkbox
+
+## [0.17.3] - 2019-10-16
+
 - Added: default `position` prop for Label(Text) is 'right'
 - Added: Checkbox has Error state, by passing an `error` prop
 - Fixed: updated Checkbox according to design system
