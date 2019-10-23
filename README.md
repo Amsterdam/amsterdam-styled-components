@@ -10,6 +10,9 @@
 
 [Demo site with the storybook of the components](https://amsterdam.github.io/amsterdam-styled-components)
 
+## Install the complete asc project
+`npm install --save @datapunt/asc-assets @datapunt/asc-core @datapunt/asc-ui`
+
 ## Vision
 
 Consistency is always a painpoint in software engineering, especially when it comes to web styling
