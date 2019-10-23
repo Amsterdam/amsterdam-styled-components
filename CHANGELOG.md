@@ -14,7 +14,7 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## UNRELEASED
+## [0.17.4] - 2019-10-23
 
 - Added: Button has a new variant: 'application'
 - Added: Components "FilterBox" and "FilterOption"
