@@ -22,15 +22,17 @@ storiesOf('Atoms/Checkbox', module)
       <Label htmlFor="default" label="Default">
         <Checkbox id="default" />
       </Label>
-      <Label htmlFor="one" label="Primary">
-        <Checkbox id="one" variant="primary" />
+      <Label htmlFor="primary" label="Primary">
+        <Checkbox id="primary" variant="primary" />
       </Label>
-
-      <Label htmlFor="two" label="Secondary">
-        <Checkbox id="two" variant="secondary" />
+      <Label htmlFor="secondary" label="Secondary">
+        <Checkbox id="twsecondaryo" variant="secondary" />
       </Label>
-      <Label htmlFor="three" label="Error">
-        <Checkbox id="three" error />
+      <Label htmlFor="tertiary" label="Tertiary">
+        <Checkbox id="tertiary" variant="tertiary" />
+      </Label>
+      <Label htmlFor="error" label="Error">
+        <Checkbox id="error" error />
       </Label>
     </>
   ))
@@ -45,21 +47,27 @@ storiesOf('Atoms/Checkbox', module)
       <Label htmlFor="two" label="Secondary checked">
         <Checkbox id="two" variant="secondary" checked />
       </Label>
+      <Label htmlFor="three" label="Tertiary checked">
+        <Checkbox id="three" variant="tertiary" checked />
+      </Label>
     </>
   ))
   .add('disabled', () => (
     <>
-      <Label disabled htmlFor="disabled_1" label="Disabled">
-        <Checkbox id="disabled_1" />
+      <Label disabled htmlFor="one" label="Disabled">
+        <Checkbox id="one" />
       </Label>
-      <Label disabled htmlFor="disabled_2" label="Disabled checked">
-        <Checkbox checked id="disabled_2" />
+      <Label disabled htmlFor="two" label="Disabled checked">
+        <Checkbox checked id="two" />
       </Label>
-      <Label disabled htmlFor="disabled_3" label="Disabled checked primary">
-        <Checkbox checked id="disabled_3" variant="primary" />
+      <Label disabled htmlFor="three" label="Disabled checked primary">
+        <Checkbox checked id="three" variant="primary" />
       </Label>
-      <Label disabled htmlFor="disabled_4" label="Disabled checked secondary">
-        <Checkbox checked id="disabled_4" variant="secondary" />
+      <Label disabled htmlFor="four" label="Disabled checked secondary">
+        <Checkbox checked id="four" variant="secondary" />
+      </Label>
+      <Label disabled htmlFor="five" label="Tertiary checked secondary">
+        <Checkbox checked id="five" variant="tertiary" />
       </Label>
     </>
   ))

@@ -7,6 +7,7 @@ import { outlineStyle } from '../../utils/themeUtils'
 enum Variants {
   primary,
   secondary,
+  tertiary,
 }
 
 export type Props = {
@@ -26,18 +27,28 @@ const getVariant = () => ({
       return css`
         color: ${themeColor('primary', 'main')};
         background-color: ${themeColor('primary', 'main')};
+        ${svgFill('tint', 'level1')};
       `
 
     case 'secondary':
       return css`
         color: ${themeColor('secondary', 'main')};
         background-color: ${themeColor('secondary', 'main')};
+        ${svgFill('tint', 'level1')};
+      `
+
+    case 'tertiary':
+      return css`
+        color: ${themeColor('tint', 'level7')};
+        background-color: ${themeColor('tint', 'level1')};
+        ${svgFill('tint', 'level7')};
       `
 
     default:
       return css`
         color: ${themeColor('tint', 'level7')};
         background-color: ${themeColor('tint', 'level7')};
+        ${svgFill('tint', 'level1')};
       `
   }
 }
@@ -71,7 +82,6 @@ const CheckboxIconStyle = styled(IconStyle)<Props>`
     css`
       ${getVariant()};
     `}
-  ${svgFill('tint', 'level1')};
 `
 
 const CheckboxWrapperStyle = styled.div<Props & { focus: boolean }>`
