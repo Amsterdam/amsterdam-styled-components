@@ -26,7 +26,7 @@ storiesOf('Atoms/Checkbox', module)
         <Checkbox id="primary" variant="primary" />
       </Label>
       <Label htmlFor="secondary" label="Secondary">
-        <Checkbox id="twsecondaryo" variant="secondary" />
+        <Checkbox id="secondary" variant="secondary" />
       </Label>
       <Label htmlFor="tertiary" label="Tertiary">
         <Checkbox id="tertiary" variant="tertiary" />
