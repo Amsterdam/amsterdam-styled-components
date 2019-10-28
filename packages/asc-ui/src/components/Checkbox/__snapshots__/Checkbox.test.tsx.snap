@@ -50,12 +50,6 @@ exports[`Checkbox should render 1`] = `
   height: 15px;
 }
 
-.c2 svg rect,
-.c2 svg polygon,
-.c2 svg path {
-  fill: #ffffff;
-}
-
 .c0 {
   position: relative;
   display: -webkit-inline-box;
