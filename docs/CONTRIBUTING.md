@@ -66,8 +66,17 @@ for the new component. For more info possibilities, check the hygen documentatio
 For now, only core maintainers can publish. If you want have rights to publish as well, contact one 
 of the [core maintainers](./MAINTAINERS.md). To publish these packages to npm, follow these steps:
 
+### Publish canary version
+
 1. Make sure you're logged in to npm, by running `npm login`
-2. Run `yarn publish:packages`. This will run linters and tests before the lerna prompt,
+2. Run `yarn publish:canary`. This will run linters and tests before the lerna prompt,
+   so be patient :smile:
+3. Select a version
+
+### Publish stable version
+
+1. Make sure you're logged in to npm, by running `npm login`
+2. Run `yarn publish:canary`. This will run linters and tests before the lerna prompt,
    so be patient :smile:
 3. Select a version
 4. Once published, update the [changelog](../CHANGELOG.md) and move all the bulletpoints under the
