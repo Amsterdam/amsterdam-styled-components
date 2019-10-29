@@ -20,6 +20,7 @@ module.exports = ({ config, mode }) => {
           useCache: true,
           forceIsolatedModules: true,
           configFileName: './tsconfig.json',
+          ignoreDiagnostics: [7005], // Temporary fix for this issue: https://github.com/storybookjs/storybook/issues/7829
           getCustomTransformers: () => ({
             before: [styledComponentsTransformer],
           }),
@@ -42,20 +43,8 @@ module.exports = ({ config, mode }) => {
       },
     ],
   })
-  config.resolve.extensions.push('.ts', '.tsx')
 
-  config.module.rules.push({
-    test: /\.stories\.tsx?$/,
-    loaders: [
-      {
-        loader: require.resolve('@storybook/addon-storysource/loader'),
-        options: {
-          parser: 'typescript',
-        },
-      },
-    ],
-    enforce: 'pre',
-  })
+  config.resolve.extensions.push('.ts', '.tsx')
 
   // Resolve every package to it's src directory
   Object.assign(config.resolve.alias, {
