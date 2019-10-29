@@ -97,10 +97,10 @@ in your package will be seen in your repo.
 Example: linking the `asc-ui` package.
 
 ```
-cd amsterdam-styled-components/packages/asc-ui
-yarn link
-cd ../../../atlas
-yarn link "@datapunt/asc-ui"
+cd amsterdam-styled-components/packages/asc-ui  # go into the package directory
+yarn link                                       # creates global link
+cd path-to-your-main-project                    # go into the dir of your main project
+yarn link "@datapunt/asc-ui"                    # link-install the package
 ```
 
 There is a known issue when developing with `yarn link` and using Hooks
