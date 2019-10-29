@@ -20,6 +20,7 @@ export const TagStyleCSS = ({ colorType, colorSubtype, theme }: Props) => {
     width: fit-content;
     background-color: ${backgroundColor};
     color: ${readableColor(backgroundColor)};
+    line-height: 2em;
   `
 }
 
