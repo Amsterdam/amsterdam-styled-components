@@ -32,28 +32,26 @@ const MenuToggle: React.FC<Props> = ({
   }, [handleOnExpand, menuOpen])
 
   return (
-    <>
-      <MenuContext.Provider
-        value={{
-          underFlyOutMenu: false,
-          hasToggle: true,
-          setOpenToggle: () => {
-            setMenuOpen(false)
-          },
-        }}
+    <MenuContext.Provider
+      value={{
+        underFlyOutMenu: false,
+        hasToggle: true,
+        setOpenToggle: () => {
+          setMenuOpen(false)
+        },
+      }}
+    >
+      <Toggle
+        as={MenuToggleStyle}
+        onOpen={onOpen}
+        onClick={toggleMenu}
+        align={align}
+        open={menuOpen}
+        {...otherProps}
       >
-        <Toggle
-          as={MenuToggleStyle}
-          onOpen={onOpen}
-          onClick={toggleMenu}
-          align={align}
-          open={menuOpen}
-          {...otherProps}
-        >
-          <MenuList>{children}</MenuList>
-        </Toggle>
-      </MenuContext.Provider>
-    </>
+        <MenuList>{children}</MenuList>
+      </Toggle>
+    </MenuContext.Provider>
   )
 }
 
