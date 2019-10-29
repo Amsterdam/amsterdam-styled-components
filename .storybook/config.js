@@ -6,7 +6,7 @@ import { withA11y } from '@storybook/addon-a11y'
 addDecorator(withA11y)
 
 // automatically import all files ending in *.stories.js
-const req = require.context('../packages', true, /\.stories\.(tsx|mdx)$/)
+const req = require.context('../packages', true, /\.stories\.(tsx)$/)
 
 const extendedTheme = {
   globalStyle: `
