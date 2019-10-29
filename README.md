@@ -94,6 +94,15 @@ to your project.
 Now you can import the package like you would do like a normal npm dependency. Changes you will make 
 in your package will be seen in your repo.
 
+Example: linking the `asc-ui` package.
+
+```
+cd amsterdam-styled-components/packages/asc-ui
+yarn link
+cd ../../../atlas
+yarn link "@datapunt/asc-ui"
+```
+
 There is a known issue when developing with `yarn link` and using Hooks
 [(click here for details)](https://reactjs.org/warnings/invalid-hook-call-warning.html). The cause
 is that two React instances are used when using `link`. To solve this problem add this code to `webpack.common.js`:
