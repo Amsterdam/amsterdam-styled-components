@@ -5,11 +5,12 @@ import Checkbox from './Checkbox'
 
 describe('Checkbox', () => {
   let container: any
+  let rerender: Function
   const onChangeMock = jest.fn()
 
   beforeEach(() => {
     cleanup()
-    ;({ container } = render(
+    ;({ container, rerender } = render(
       <ThemeProvider theme={ascDefaultTheme}>
         <Checkbox onChange={onChangeMock} />
       </ThemeProvider>,
@@ -34,6 +35,30 @@ describe('Checkbox', () => {
 
     // Toggle off
     fireEvent.click(checkBox)
+
+    expect(icon).not.toHaveStyleRule('background-color', expect.any(String))
+  })
+
+  it('should toggle checked / not checked when the props change', () => {
+    const icon = container.querySelector('span')
+
+    expect(icon).not.toHaveStyleRule('background-color', expect.any(String))
+
+    // Toggle on by changing props
+    rerender(
+      <ThemeProvider theme={ascDefaultTheme}>
+        <Checkbox checked />
+      </ThemeProvider>,
+    )
+
+    expect(icon).toHaveStyleRule('background-color', expect.any(String))
+
+    // Toggle of by changing props
+    rerender(
+      <ThemeProvider theme={ascDefaultTheme}>
+        <Checkbox />
+      </ThemeProvider>,
+    )
 
     expect(icon).not.toHaveStyleRule('background-color', expect.any(String))
   })

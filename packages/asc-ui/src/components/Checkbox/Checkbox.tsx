@@ -20,9 +20,15 @@ const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   const [focus, setFocus] = useState(false)
   const { setActive } = useContext(LabelContext)
 
+  // Make the label aware of changes in the checked state
   useMemo(() => {
     setActive(checked)
   }, [checked, setActive])
+
+  // Make the component aware of changes in the checked prop
+  useMemo(() => {
+    setChecked(!!checkedProp)
+  }, [checkedProp, setChecked])
 
   return (
     <CheckboxWrapperStyle
