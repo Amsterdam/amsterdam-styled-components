@@ -17,6 +17,7 @@ Prefix the change with one of these keywords:
 ## Unreleased
 
 - Added: Checkbox has a new variant: 'tertiary'
+- Removed: Breaking change: css prop for SearchBar and SearchBarToggle.
 
 ## [0.17.4] - 2019-10-23
 
