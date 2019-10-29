@@ -72,6 +72,7 @@ of the [core maintainers](./MAINTAINERS.md). To publish these packages to npm, f
 2. Run `yarn publish:canary`. This will run linters and tests before the lerna prompt,
    so be patient :smile:
 3. Select a version
+4. This canary version is now available for usage in any local or demo version of your project, but not tagged with the `@latest` tag on npm.
 
 ### Publish stable version
 
