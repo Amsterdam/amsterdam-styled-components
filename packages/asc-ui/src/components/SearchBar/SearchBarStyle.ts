@@ -1,14 +1,13 @@
 import styled from '@datapunt/asc-core'
-import { showHide, ShowHideTypes, customCss } from '../../utils'
+import { showHide, ShowHideTypes } from '../../utils'
 import TextFieldStyle from '../TextField/TextFieldStyle'
 import ButtonStyle from '../Button/ButtonStyle'
 
-export interface Props extends ShowHideTypes {
-  css?: string
-}
+export interface Props extends ShowHideTypes {}
 
 const SearchBarStyle = styled.div<Props>`
   display: flex;
+  position: relative;
 
   ${TextFieldStyle} {
     flex-grow: 1;
@@ -19,7 +18,6 @@ const SearchBarStyle = styled.div<Props>`
   }
 
   ${showHide()}
-  ${customCss}
 `
 
 export default SearchBarStyle

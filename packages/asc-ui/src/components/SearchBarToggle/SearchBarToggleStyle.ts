@@ -1,23 +1,16 @@
 import styled from '@datapunt/asc-core'
-import {
-  themeColor,
-  showHide,
-  ShowHideTypes,
-  customCss,
-  CustomCssPropsInterface,
-} from '../../utils'
+import { themeColor, showHide, ShowHideTypes } from '../../utils'
 import SearchBarStyle from '../SearchBar/SearchBarStyle'
 import ToggleStyle from '../Toggle/ToggleStyle'
 
-export interface SearchBarToggleStyleProps
-  extends ShowHideTypes,
-    CustomCssPropsInterface {
+export interface SearchBarToggleStyleProps extends ShowHideTypes {
   open?: boolean
 }
 
 const SearchBarToggleStyle = styled(ToggleStyle)<SearchBarToggleStyleProps>`
   display: flex;
   align-items: flex-end;
+  position: relative;
   flex-direction: column;
 
   & > ${SearchBarStyle} {
@@ -31,7 +24,6 @@ const SearchBarToggleStyle = styled(ToggleStyle)<SearchBarToggleStyleProps>`
   }
 
   ${showHide()}
-  ${customCss}
 `
 
 export default SearchBarToggleStyle
