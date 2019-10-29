@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio should render 1`] = `
+.c1 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  cursor: inherit;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  opacity: 0;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  margin-bottom: 1px;
+  padding: 6px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  color: #767676;
+  border: 2px solid;
+  border-radius: 50%;
+}
+
+.c0:hover {
+  color: #000000;
+}
+
+.c0.c0:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-offset: 0px;
+  outline-width: 3px;
+}
+
+<div>
+  <div
+    aria-disabled="false"
+    class="c0"
+  >
+    <input
+      class="c1"
+      id="test"
+      type="radio"
+    />
+  </div>
+</div>
+`;
