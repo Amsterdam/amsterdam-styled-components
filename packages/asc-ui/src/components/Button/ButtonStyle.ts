@@ -115,13 +115,28 @@ const getVariant = () => ({
 
     case 'textButton':
       return css`
+        height: auto;
+        padding: 0;
+        align-self: baseline;
+        white-space: normal;
+        text-align: left;
         color: ${themeColor('primary')};
         background-color: rgba(0, 0, 0, 0);
         ${svgFill('primary')};
 
+        /* remove transition because it's async with Icon */
+        ${transitions('color', '0s')}
+
         &:hover {
           color: ${themeColor('secondary')};
           ${svgFill('secondary')};
+        }
+
+        ${IconLeft} {
+          margin-right: 5px;
+        }
+        ${IconRight} {
+          margin-left: 5px;
         }
       `
 
@@ -239,24 +254,6 @@ const ButtonStyle = styled.button<Props>`
       }
       &:focus ${ArrowRight}:after {
         opacity: 1;
-      }
-    `}
-  ${({ variant }) =>
-    variant &&
-    variant === 'textButton' &&
-    css`
-      height: auto;
-      padding: 0;
-      align-self: baseline;
-      white-space: normal;
-      text-align: left;
-      // remove transition because it's async with Icon
-      ${transitions('color', '0s')}
-      ${IconLeft} {
-        margin-right: 5px;
-      }
-      ${IconRight} {
-        margin-left: 5px;
       }
     `}
   &:disabled {
