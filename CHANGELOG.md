@@ -16,7 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
-- Fixed: Update on `Text Button` variant
+- Fixed: Update styling on `Text Button` variant
 
 ## [0.17.5] - 2019-10-30
 
