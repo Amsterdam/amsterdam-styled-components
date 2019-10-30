@@ -77,7 +77,7 @@ of the [core maintainers](./MAINTAINERS.md). To publish these packages to npm, f
 ### Publish stable version
 
 1. Make sure you're logged in to npm, by running `npm login`
-2. Run `yarn publish:canary`. This will run linters and tests before the lerna prompt,
+2. Run `yarn publish:stable`. This will run linters and tests before the lerna prompt,
    so be patient :smile:
 3. Select a version
 4. Once published, update the [changelog](../CHANGELOG.md) and move all the bulletpoints under the
