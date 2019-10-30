@@ -16,7 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
-- Fixed: Update on `Text Button` variant: no padding and auto height (according to design system)
+- Fixed: Update on `Text Button` variant
 
 ## [0.17.5] - 2019-10-30
 

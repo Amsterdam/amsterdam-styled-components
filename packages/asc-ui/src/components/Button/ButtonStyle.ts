@@ -248,6 +248,8 @@ const ButtonStyle = styled.button<Props>`
       height: auto;
       padding: 0;
       align-self: baseline;
+      white-space: normal;
+      text-align: left;
       // remove transition because it's async with Icon
       ${transitions('color', '0s')}
       ${IconLeft} {
