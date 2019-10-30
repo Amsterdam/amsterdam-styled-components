@@ -14,10 +14,12 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## Unreleased
+## [0.17.5] - 2019-10-30
 
+- Added: Functionality to publish a canary release for internal testing
 - Added: Checkbox has a new variant: 'tertiary'
-- Removed: Breaking change: css prop for SearchBar and SearchBarToggle.
+- Changed: Publish script for stable releases has changed, due to addition of canary releases
+- Removed: Breaking change: `css` prop for SearchBar and SearchBarToggle.
 
 ## [0.17.4] - 2019-10-23
 
