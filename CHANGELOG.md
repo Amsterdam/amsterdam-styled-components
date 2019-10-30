@@ -14,6 +14,10 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## Unreleased
+
+- Changed: Keep the toggle component background colour when toggled and not toggled.
+
 ## [0.17.5] - 2019-10-30
 
 - Added: Functionality to publish a canary release for internal testing
