@@ -245,6 +245,9 @@ const ButtonStyle = styled.button<Props>`
     variant &&
     variant === 'textButton' &&
     css`
+      height: auto;
+      padding: 0;
+      align-self: baseline;
       // remove transition because it's async with Icon
       ${transitions('color', '0s')}
       ${IconLeft} {
