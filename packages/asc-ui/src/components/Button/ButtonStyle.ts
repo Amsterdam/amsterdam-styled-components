@@ -133,10 +133,10 @@ const getVariant = () => ({
         }
 
         ${IconLeft} {
-          margin-right: 5px;
+          margin-right: ${themeSpacing(1)};
         }
         ${IconRight} {
-          margin-left: 5px;
+          margin-left: ${themeSpacing(1)};
         }
       `
 
