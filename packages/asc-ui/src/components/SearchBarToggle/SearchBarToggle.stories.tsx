@@ -22,7 +22,9 @@ const ControlledSearchBarToggle = () => {
 
 storiesOf('Composed/SearchBarToggle', module)
   .addDecorator(storyFn => (
-    <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
+    <div style={{ padding: '40px 10px', position: 'relative' }}>
+      {storyFn()}
+    </div>
   ))
   .add('default', () => (
     <SearchBarToggle
