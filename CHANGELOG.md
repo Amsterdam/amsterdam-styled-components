@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Added: `active` prop to MenuButton to enable activeStyles (instead of only on `:hover, :focus`)
 - Fixed: Update styling on `Text Button` variant
 - Changed: Keep the toggle component background colour when toggled and not toggled
 

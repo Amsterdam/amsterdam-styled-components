@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled, { css } from '@datapunt/asc-core'
 import { themeColor, svgFill } from '../../../utils'
 import Button, { Props as ButtonProps } from '../../Button/Button'
 import MenuFlyOutStyle from '../MenuFlyOut/MenuFlyOutStyle'
@@ -8,7 +8,9 @@ import { IconStyle } from '../../Icon'
 export const MenuButtonTextStyle = styled.span``
 export const MenuButtonTextWrapperStyle = styled.span``
 
-export type Props = ButtonProps
+export type Props = { active?: boolean } & ButtonProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement> &
+  React.AnchorHTMLAttributes<HTMLAnchorElement>
 
 export const MenuButtonBaseStyle = styled(Button)<Props>`
   position: relative;
@@ -45,19 +47,26 @@ export const MenuButtonBaseStyle = styled(Button)<Props>`
   }
 `
 
-const MenuButtonStyle = styled(MenuButtonBaseStyle)<Props>`
-  &:hover,
-  &:focus {
+const activeStyle = css`
+  color: ${themeColor('secondary')};
+  ${svgFill('secondary')}
+
+  ${MenuButtonTextStyle} {
     color: ${themeColor('secondary')};
-
-    ${MenuButtonTextStyle} {
-      color: ${themeColor('secondary')};
-      border-bottom: 2px solid ${themeColor('secondary')};
-    }
-
-    ${svgFill('secondary')}
+    border-bottom: 2px solid ${themeColor('secondary')};
   }
-  
+`
+
+const MenuButtonStyle = styled(MenuButtonBaseStyle)<Props>`
+  ${({ active }) =>
+    active
+      ? activeStyle
+      : css`
+          &:hover,
+          &:focus {
+            ${activeStyle}
+          }
+        `}
 
   ${/* sc-selector */ MenuFlyOutStyle} ${/* sc-selector */ MenuListStyle} &,
   ${/* sc-selector */ MenuFlyOutStyle}[aria-expanded='true'] {
