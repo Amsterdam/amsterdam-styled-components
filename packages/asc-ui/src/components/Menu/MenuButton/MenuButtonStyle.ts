@@ -47,15 +47,14 @@ export const MenuButtonBaseStyle = styled(Button)<Props>`
   }
 `
 
-const activeStyle = `
+const activeStyle = css`
   color: ${themeColor('secondary')};
+  ${svgFill('secondary')}
 
   ${MenuButtonTextStyle} {
     color: ${themeColor('secondary')};
     border-bottom: 2px solid ${themeColor('secondary')};
   }
-
-  ${svgFill('secondary')}
 `
 
 const MenuButtonStyle = styled(MenuButtonBaseStyle)<Props>`
@@ -67,7 +66,7 @@ const MenuButtonStyle = styled(MenuButtonBaseStyle)<Props>`
           &:focus {
             ${activeStyle}
           }
-        `}  
+        `}
 
   ${/* sc-selector */ MenuFlyOutStyle} ${/* sc-selector */ MenuListStyle} &,
   ${/* sc-selector */ MenuFlyOutStyle}[aria-expanded='true'] {
