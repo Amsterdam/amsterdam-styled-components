@@ -2,6 +2,7 @@ import styled, { css, styledComponents } from '@datapunt/asc-core'
 import { Props as TypographyProps } from '../Typography/TypographyStyle'
 import Typography from '../Typography'
 import { themeColor } from '../../utils'
+import IconStyle from '../Icon/IconStyle'
 
 export type Props = {} & TypographyProps & styledComponents.StyledProps<any>
 
@@ -23,7 +24,7 @@ export const FilterTagStyleCSS = () => {
       cursor: pointer;
     }
 
-    span {
+    ${IconStyle} {
       margin: 0 5px;
       vertical-align: middle;
     }

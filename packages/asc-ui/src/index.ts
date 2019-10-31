@@ -17,7 +17,7 @@ import Button from './components/Button'
 import Blockquote, { BlockquoteStyle } from './components/Blockquote'
 import { FilterBox, FilterBoxStyle } from './components/FilterBox'
 import { FilterOption, FilterOptionStyle } from './components/FilterOption'
-import { FilterTag } from './components/FilterTag'
+import FilterTag from './components/FilterTag'
 import Card, {
   CardActions,
   CardContent,
