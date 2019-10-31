@@ -16,7 +16,6 @@ export type Props = {
   iconSize?: number
   $as?: any
   taskflow?: boolean
-  active?: boolean
 } & ButtonStyleProps &
   React.ButtonHTMLAttributes<HTMLButtonElement>
 

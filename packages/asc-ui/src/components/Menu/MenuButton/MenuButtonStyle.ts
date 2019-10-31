@@ -8,7 +8,9 @@ import { IconStyle } from '../../Icon'
 export const MenuButtonTextStyle = styled.span``
 export const MenuButtonTextWrapperStyle = styled.span``
 
-export type Props = ButtonProps
+export type Props = { active?: boolean } & ButtonProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement> &
+  React.AnchorHTMLAttributes<HTMLAnchorElement>
 
 export const MenuButtonBaseStyle = styled(Button)<Props>`
   position: relative;
