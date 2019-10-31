@@ -5,9 +5,7 @@ import Tag, { Props as TagProps } from '../Tag/Tag'
 import FilterTagStyle from './FilterTagStyle'
 import Icon from '../Icon'
 
-export interface FilterTagProps extends TagProps {
-  onClick?: Function
-}
+export interface FilterTagProps extends TagProps {}
 
 const FilterTag: React.FC<FilterTagProps> = ({ children, ...otherProps }) => {
   const [display, setDisplay] = useState(true)
