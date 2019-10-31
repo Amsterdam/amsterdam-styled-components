@@ -49,9 +49,6 @@ exports[`IconButton should render the IconButton 1`] = `
   ",
           [Function],
           "
-  ",
-          [Function],
-          "
   &:disabled {
     cursor: default;
     outline: none;

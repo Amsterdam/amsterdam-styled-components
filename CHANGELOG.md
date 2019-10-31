@@ -16,7 +16,8 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
-- Changed: Keep the toggle component background colour when toggled and not toggled.
+- Fixed: Update styling on `Text Button` variant
+- Changed: Keep the toggle component background colour when toggled and not toggled
 
 ## [0.17.5] - 2019-10-30
 
