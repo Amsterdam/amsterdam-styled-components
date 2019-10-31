@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Added: FilterTag component.
 - Changed: Keep the toggle component background colour when toggled and not toggled.
 
 ## [0.17.5] - 2019-10-30
