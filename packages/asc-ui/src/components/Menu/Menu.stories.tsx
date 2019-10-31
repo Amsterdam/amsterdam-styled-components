@@ -83,8 +83,18 @@ storiesOf('Composed/Menu', module)
       <MenuChildren />
     </StyledMenuInline>
   ))
+  .add('default with backdrop', () => (
+    <StyledMenuInline hasBackDrop>
+      <MenuChildren />
+    </StyledMenuInline>
+  ))
   .add('toggle', () => (
     <MenuToggle>
+      <MenuChildren />
+    </MenuToggle>
+  ))
+  .add('toggle with backdrop', () => (
+    <MenuToggle hasBackDrop>
       <MenuChildren />
     </MenuToggle>
   ))

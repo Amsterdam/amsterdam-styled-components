@@ -9,6 +9,7 @@ import MenuButtonStyle from '../MenuButton/MenuButtonStyle'
 export type Props = {
   align?: 'left' | 'right'
   onExpand?: Function
+  hasBackDrop?: boolean
 } & ShowHideTypes
 
 export default styled.div<Props>`
