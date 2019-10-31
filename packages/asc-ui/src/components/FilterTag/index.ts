@@ -1,1 +1,3 @@
-export { default as FilterTag } from './FilterTag'
+import FilterTag from './FilterTag'
+
+export default FilterTag

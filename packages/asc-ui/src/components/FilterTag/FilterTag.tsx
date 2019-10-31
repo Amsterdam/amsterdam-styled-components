@@ -1,13 +1,30 @@
 import React from 'react'
 
-import { Props as TagProps } from '../Tag/Tag'
-import TagStyle from '../Tag/TagStyle'
+import { Close } from '@datapunt/asc-assets'
+import Tag, { Props as TagProps } from '../Tag/Tag'
+import FilterTagStyle from './FilterTagStyle'
+import Icon from '../Icon'
 
-const FilterTag: React.FC<TagProps> = ({ children, ...otherProps }) => (
-  <TagStyle {...otherProps}>
+export interface FilterTagProps extends TagProps {
+  onClick?: Function
+}
+
+const FilterTag: React.FC<FilterTagProps> = ({
+  children,
+  onClick,
+  ...otherProps
+}) => (
+  <FilterTagStyle {...otherProps} onClick={onClick}>
     {children}
-    <a href="#close">x</a>
-  </TagStyle>
+    <Icon inline size={14} color="primary">
+      <Close />
+    </Icon>
+  </FilterTagStyle>
 )
+
+FilterTag.defaultProps = {
+  ...Tag.defaultProps,
+  onClick: (): void => {},
+}
 
 export default FilterTag

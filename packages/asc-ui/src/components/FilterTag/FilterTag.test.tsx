@@ -18,13 +18,4 @@ describe('FilterTag', () => {
 
     expect(queryByText(/Verkeer en infrastructuur/)).not.toBeNull()
   })
-  it('should render and apply custom style', () => {
-    const { queryByText } = render(
-      <ThemeProvider theme={theme}>
-        <FilterTag colorType="primary">Tag two</FilterTag>
-      </ThemeProvider>,
-    )
-
-    expect(queryByText(/Tag two/)).not.toBeNull()
-  })
 })
