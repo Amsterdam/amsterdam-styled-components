@@ -46,6 +46,13 @@ export const ArrowRight = styled.div`
   }
 `
 
+export const IconLeft = styled(Icon)`
+  margin-right: 10px;
+`
+export const IconRight = styled(Icon)`
+  margin-left: 10px;
+`
+
 const getVariant = () => ({
   theme,
   variant,
@@ -212,13 +219,6 @@ export type Props = {
    */
   taskflow?: boolean
 }
-
-export const IconLeft = styled(Icon)`
-  margin-right: 10px;
-`
-export const IconRight = styled(Icon)`
-  margin-left: 10px;
-`
 
 const ButtonStyle = styled.button<Props>`
   height: 44px;
