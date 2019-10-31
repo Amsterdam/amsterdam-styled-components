@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled, { css } from '@datapunt/asc-core'
 import { themeColor, svgFill } from '../../../utils'
 import Button, { Props as ButtonProps } from '../../Button/Button'
 import MenuFlyOutStyle from '../MenuFlyOut/MenuFlyOutStyle'
@@ -45,19 +45,27 @@ export const MenuButtonBaseStyle = styled(Button)<Props>`
   }
 `
 
-const MenuButtonStyle = styled(MenuButtonBaseStyle)<Props>`
-  &:hover,
-  &:focus {
+const activeStyle = `
+  color: ${themeColor('secondary')};
+
+  ${MenuButtonTextStyle} {
     color: ${themeColor('secondary')};
-
-    ${MenuButtonTextStyle} {
-      color: ${themeColor('secondary')};
-      border-bottom: 2px solid ${themeColor('secondary')};
-    }
-
-    ${svgFill('secondary')}
+    border-bottom: 2px solid ${themeColor('secondary')};
   }
-  
+
+  ${svgFill('secondary')}
+`
+
+const MenuButtonStyle = styled(MenuButtonBaseStyle)<Props>`
+  ${({ active }) =>
+    active
+      ? activeStyle
+      : css`
+          &:hover,
+          &:focus {
+            ${activeStyle}
+          }
+        `}  
 
   ${/* sc-selector */ MenuFlyOutStyle} ${/* sc-selector */ MenuListStyle} &,
   ${/* sc-selector */ MenuFlyOutStyle}[aria-expanded='true'] {
