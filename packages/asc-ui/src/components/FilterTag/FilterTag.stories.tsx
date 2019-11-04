@@ -2,7 +2,7 @@ import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import FilterTag from './FilterTag'
 
-const filterTagHandleClick = (e: Event) => {
+const filterTagHandleClick = (e: React.KeyboardEvent | React.MouseEvent) => {
   const target = e.currentTarget as HTMLElement
   target.remove()
 }

@@ -12,7 +12,7 @@ const FilterTag: React.FC<FilterTagProps> = ({
   children,
   ...otherProps
 }) => {
-  const handleClick = (e: Event) => {
+  const handleClick = (e: React.KeyboardEvent | React.MouseEvent) => {
     onClick(e)
   }
 
