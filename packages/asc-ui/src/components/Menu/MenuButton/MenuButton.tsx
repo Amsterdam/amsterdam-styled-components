@@ -5,11 +5,7 @@ import MenuButtonStyle, {
   Props,
 } from './MenuButtonStyle'
 
-const MenuButton: React.FC<
-  Props &
-    React.ButtonHTMLAttributes<HTMLButtonElement> &
-    React.AnchorHTMLAttributes<HTMLAnchorElement>
-> = ({ children, ...otherProps }) => (
+const MenuButton: React.FC<Props> = ({ children, ...otherProps }) => (
   <MenuButtonStyle iconSize={14} variant="blank" {...otherProps}>
     <MenuButtonTextWrapperStyle>
       <MenuButtonTextStyle>{children}</MenuButtonTextStyle>
