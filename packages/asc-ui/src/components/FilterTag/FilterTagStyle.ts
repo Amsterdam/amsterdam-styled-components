@@ -1,15 +1,15 @@
 import styled, { css, styledComponents } from '@datapunt/asc-core'
 import { Props as TypographyProps } from '../Typography/TypographyStyle'
 import Typography from '../Typography'
-import { themeColor } from '../../utils'
+import { themeColor, themeSpacing } from '../../utils'
 import IconStyle from '../Icon/IconStyle'
 
 export type Props = {} & TypographyProps & styledComponents.StyledProps<any>
 
 export const FilterTagStyleCSS = () => {
   return css<Props>`
-    margin: 0 8px 8px 0;
-    padding: 0 7px 0 9px;
+    margin: 0 ${themeSpacing(2)} ${themeSpacing(2)} 0;
+    padding: 0 ${themeSpacing(2)} 0 ${themeSpacing(2)};
     line-height: 30px;
     display: inline-block;
     width: fit-content;
