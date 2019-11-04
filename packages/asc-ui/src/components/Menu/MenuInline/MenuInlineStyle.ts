@@ -1,9 +1,8 @@
-import styled, { css } from '@datapunt/asc-core'
+import styled from '@datapunt/asc-core'
 import { MenuListStyle } from '../MenuList'
 import { MenuItemStyle } from '../MenuItem'
-import { showHide, ShowHideTypes } from '../../../utils'
+import { showHide, ShowHideTypes, showAboveBackDrop } from '../../../utils'
 import { MENU_ITEM_SIZE } from '../constants'
-import { BACKDROP_Z_INDEX } from '../../shared/constants'
 
 export type Props = {
   onExpand?: Function
@@ -11,18 +10,14 @@ export type Props = {
 } & ShowHideTypes
 
 const MenuInlineStyle = styled(MenuListStyle)<Props>`
-  ${showHide()}
+  position: relative;
 
   & > ${MenuItemStyle} {
     height: ${MENU_ITEM_SIZE}px;
   }
 
-  ${({ hasBackDrop }) =>
-    hasBackDrop &&
-    css`
-      position: relative;
-      z-index: ${BACKDROP_Z_INDEX + 1};
-    `}
+  ${showAboveBackDrop()}
+  ${showHide()}
 `
 
 export default MenuInlineStyle

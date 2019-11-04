@@ -329,6 +329,7 @@ export const showHide = () => ({ hideAt, showAt, theme }: ShowHideProps) => {
   `
 }
 
+// Function that uses the BACKDROP_Z_INDEX constant to determine the z-index for components rendered with a backdrop
 export const showAboveBackDrop = (show?: boolean) => ({ hasBackDrop }: any) => {
   return hasBackDrop || show
     ? css`
