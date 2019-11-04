@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import { Close } from '@datapunt/asc-assets'
 import Tag, { Props as TagProps } from '../Tag/Tag'
@@ -7,17 +7,17 @@ import Icon from '../Icon'
 
 export interface FilterTagProps extends TagProps {}
 
-const FilterTag: React.FC<FilterTagProps> = ({ children, ...otherProps }) => {
-  const [display, setDisplay] = useState(true)
-
-  const onClick = (): void => setDisplay(false)
-
-  if (!display) {
-    return null
+const FilterTag: React.FC<FilterTagProps> = ({
+  filterTagOnClick,
+  children,
+  ...otherProps
+}) => {
+  const handleClick = (e: Event) => {
+    filterTagOnClick(e)
   }
 
   return (
-    <FilterTagStyle {...otherProps} onClick={onClick}>
+    <FilterTagStyle {...otherProps} onClick={handleClick}>
       {children}
       <Icon inline size={14} color="primary">
         <Close />
