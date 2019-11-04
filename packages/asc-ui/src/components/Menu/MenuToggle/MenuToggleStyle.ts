@@ -1,10 +1,17 @@
 import styled, { css } from '@datapunt/asc-core'
-import { themeColor, showHide, ShowHideTypes } from '../../../utils'
+import {
+  themeColor,
+  showHide,
+  ShowHideTypes,
+  showAboveBackDrop,
+} from '../../../utils'
 import { MenuItemTitleStyle } from '../MenuItemTitle'
 import { MenuListStyle } from '../MenuList'
 import { MenuFlyOutStyle } from '../MenuFlyOut'
-import { TOGGLE_BUTTON_SIZE, FLY_OUT_WIDTH } from '../constants'
+import { FLY_OUT_WIDTH } from '../constants'
 import MenuButtonStyle from '../MenuButton/MenuButtonStyle'
+import { TOGGLE_BUTTON_SIZE } from '../../shared/constants'
+import ToggleButtonStyle from '../../Button/ToggleButton'
 
 export type Props = {
   align?: 'left' | 'right'
@@ -20,6 +27,11 @@ export default styled.div<Props>`
 
   & > ${MenuListStyle} {
     border-bottom: 5px solid ${themeColor('tint', 'level7')};
+    ${showAboveBackDrop()}
+  }
+
+  & > ${ToggleButtonStyle} {
+    ${showAboveBackDrop()}
   }
 
   ${MenuListStyle} {

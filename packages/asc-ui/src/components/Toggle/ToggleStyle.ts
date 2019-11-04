@@ -3,6 +3,7 @@ import { showHide, ShowHideTypes, CustomCssPropsType } from '../../utils'
 
 export type Props = {
   align?: 'left' | 'right'
+  hasBackDrop?: boolean
 } & ShowHideTypes &
   CustomCssPropsType
 

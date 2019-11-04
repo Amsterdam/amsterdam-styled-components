@@ -6,6 +6,7 @@ import useActionOnEscape from '../../utils/hooks/useActionOnEscape'
 import ToggleButton, {
   Props as ToggleButtonProps,
 } from '../Button/ToggleButton/ToggleButton'
+import BackDrop from '../BackDrop/BackDrop'
 
 export type ToggleHandlerProps = {
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
@@ -33,6 +34,7 @@ const Toggle: React.FC<Props> = ({
   iconClose,
   ToggleHandler,
   title,
+  hasBackDrop,
   ...otherProps
 }) => {
   const [open, setOpen] = React.useState(false)
@@ -103,6 +105,7 @@ const Toggle: React.FC<Props> = ({
       css={css}
       onBlur={handleOnBlur}
       onKeyDown={handleOnKeyDown}
+      hasBackDrop={hasBackDrop}
       {...otherProps}
       tabIndex={-1} // This will enable the onblur event for this div element on all browsers
     >
@@ -113,10 +116,14 @@ const Toggle: React.FC<Props> = ({
           iconOpen,
           onClick: handleOnClick,
           title,
+          hasBackDrop,
         }}
         type="button"
       />
       {render ? children : conditionalRenderedChildren}
+      {hasBackDrop && open && (
+        <BackDrop onClick={handleOnClick} disablePortal />
+      )}
     </ToggleStyle>
   )
 }
