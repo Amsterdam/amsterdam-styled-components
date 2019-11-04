@@ -1,5 +1,5 @@
 // @ts-ignore
-import { ascDefaultTheme, css } from '@datapunt/asc-core'
+import { ascDefaultTheme } from '@datapunt/asc-core'
 import {
   themeColor,
   focusStyleOutline,
@@ -210,8 +210,18 @@ describe('showAboveBackDrop', () => {
     expect(showAboveBackDrop(true)({})[1]).toBeTruthy() // should return an array with the styling rules
     expect(showAboveBackDrop(true)({})[1]).toContain(BACKDROP_Z_INDEX + 1)
 
-    expect(showAboveBackDrop(true)({ hasBackDrop: true })[1]).toBeTruthy() // should return an array with the styling rules
+    expect(showAboveBackDrop(true)({ hasBackDrop: false })[1]).toBeTruthy() // should return an array with the styling rules
+    expect(showAboveBackDrop(true)({ hasBackDrop: false })[1]).toContain(
+      BACKDROP_Z_INDEX + 1,
+    )
+
+    expect(showAboveBackDrop()({ hasBackDrop: true })[1]).toBeTruthy() // should return an array with the styling rules
     expect(showAboveBackDrop()({ hasBackDrop: true })[1]).toContain(
+      BACKDROP_Z_INDEX + 1,
+    )
+
+    expect(showAboveBackDrop(false)({ hasBackDrop: true })[1]).toBeTruthy() // should return an array with the styling rules
+    expect(showAboveBackDrop(false)({ hasBackDrop: true })[1]).toContain(
       BACKDROP_Z_INDEX + 1,
     )
   })

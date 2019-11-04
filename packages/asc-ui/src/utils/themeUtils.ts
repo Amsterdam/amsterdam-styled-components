@@ -1,11 +1,12 @@
 import { css, keyframes, Theme } from '@datapunt/asc-core'
+
 import { fromProps } from './fromProps'
+import { BACKDROP_Z_INDEX } from '../components/shared/constants'
 
 import BreakpointsInterface = Theme.BreakpointsInterface
 import ThemeInterface = Theme.ThemeInterface
 import TypographyInterface = Theme.TypographyInterface
 import TypographyElementStyle = Theme.TypographyElementStyle
-import { BACKDROP_Z_INDEX } from '../components/shared/constants'
 
 type ThemeProp = {
   theme: Theme.ThemeInterface
@@ -330,13 +331,16 @@ export const showHide = () => ({ hideAt, showAt, theme }: ShowHideProps) => {
 }
 
 // Function that uses the BACKDROP_Z_INDEX constant to determine the z-index for components rendered with a backdrop
-export const showAboveBackDrop = (show?: boolean) => ({ hasBackDrop }: any) => {
-  return hasBackDrop || show
+export const showAboveBackDrop = (show?: boolean) => ({
+  hasBackDrop,
+}: {
+  hasBackDrop?: boolean
+}) =>
+  hasBackDrop || show
     ? css`
         z-index: ${BACKDROP_Z_INDEX + 1};
       `
     : ''
-}
 
 type ThemeSpacingParameters = [
   Theme.Spacing,

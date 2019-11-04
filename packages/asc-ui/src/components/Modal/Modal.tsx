@@ -58,7 +58,7 @@ const Modal: React.FC<Props> = ({
       blurredNodeSelector={blurredNodeSelector}
       element={element}
       backdropOpacity={backdropOpacity}
-      // onClick={handleClose}
+      onClick={handleClose}
     >
       <Focus onKeyDown={handleKeyDown}>
         <ModalStyleContainer {...otherProps} className={className}>

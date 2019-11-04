@@ -17,6 +17,8 @@ Prefix the change with one of these keywords:
 ## Unreleased
 
 - Changed: Keep the toggle component background colour when toggled and not toggled.
+- Added: Export a `BackDrop` component that can be used for i.e. React Portals
+- Changed: Setup for managing the `z-index` of the project's components, `z-index` can now be imported in single projects
 
 ## [0.17.5] - 2019-10-30
 

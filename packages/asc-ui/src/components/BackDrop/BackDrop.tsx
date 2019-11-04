@@ -17,7 +17,7 @@ const BackDrop: React.FC<Props> = ({
   children,
   ...otherProps
 }) => {
-  const Element = disablePortal ? 'div' : Portal
+  const Element = disablePortal ? React.Fragment : Portal
 
   return (
     <Element
@@ -31,10 +31,10 @@ const BackDrop: React.FC<Props> = ({
               : undefined,
           }
         : {})}
-      {...otherProps}
     >
-      {children}
-      <BackDropStyle backdropOpacity={backdropOpacity} />
+      <BackDropStyle backdropOpacity={backdropOpacity} {...otherProps}>
+        {children}
+      </BackDropStyle>
     </Element>
   )
 }

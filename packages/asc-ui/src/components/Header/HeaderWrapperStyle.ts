@@ -36,7 +36,6 @@ const HeaderWrapperStyle = styled.div<Props>`
   box-sizing: content-box;
   position: sticky;
   top: 0;
-  z-index: 2;
 
   ${HeaderNavigationStyle} {
     flex-grow: 1;
@@ -66,7 +65,6 @@ const HeaderWrapperStyle = styled.div<Props>`
             }
 
             ${HeaderStyle} {
-              z-index: 100;
               flex-wrap: wrap;
             }
 
