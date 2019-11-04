@@ -13,12 +13,12 @@ storiesOf('Atoms/FilterTag', module)
   ))
   .add('default', () => (
     <>
-      <FilterTag filterTagOnClick={filterTagHandleClick}>
+      <FilterTag onClick={filterTagHandleClick}>
         Verkeer en infrastructuur
       </FilterTag>
-      <FilterTag filterTagOnClick={filterTagHandleClick}>Multiselect</FilterTag>
+      <FilterTag onClick={filterTagHandleClick}>Multiselect</FilterTag>
       <br />
-      <FilterTag filterTagOnClick={filterTagHandleClick}>
+      <FilterTag onClick={filterTagHandleClick}>
         Filters over meerdere regels
       </FilterTag>
     </>

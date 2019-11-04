@@ -8,12 +8,12 @@ import Icon from '../Icon'
 export interface FilterTagProps extends TagProps {}
 
 const FilterTag: React.FC<FilterTagProps> = ({
-  filterTagOnClick,
+  onClick,
   children,
   ...otherProps
 }) => {
   const handleClick = (e: Event) => {
-    filterTagOnClick(e)
+    onClick(e)
   }
 
   return (
