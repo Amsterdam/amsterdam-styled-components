@@ -25,7 +25,7 @@ export const FilterTagStyleCSS = () => {
     }
 
     ${IconStyle} {
-      margin: 0 5px;
+      margin: 0 ${themeSpacing(1)};
       vertical-align: middle;
     }
   `
