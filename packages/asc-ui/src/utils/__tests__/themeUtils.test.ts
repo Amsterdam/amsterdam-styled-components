@@ -1,5 +1,5 @@
 // @ts-ignore
-import { ascDefaultTheme } from '@datapunt/asc-core'
+import { ascDefaultTheme, css } from '@datapunt/asc-core'
 import {
   themeColor,
   focusStyleOutline,
@@ -10,7 +10,9 @@ import {
   getTypographyValueFromProperty,
   themeSpacing,
   getValueFromTheme,
+  showAboveBackDrop,
 } from '../themeUtils'
+import { BACKDROP_Z_INDEX } from '../../components/shared/constants'
 
 const { colors, typography } = ascDefaultTheme
 
@@ -200,5 +202,22 @@ describe('fromTheme', () => {
     expect(() =>
       getValueFromTheme('colours.white.light')({ theme }),
     ).not.toThrow()
+  })
+})
+
+describe('showAboveBackDrop', () => {
+  it('should set the correct z-index when there is a hasBackDrop prop or positive parameter', () => {
+    expect(showAboveBackDrop(true)({})[1]).toBeTruthy() // should return an array with the styling rules
+    expect(showAboveBackDrop(true)({})[1]).toContain(BACKDROP_Z_INDEX + 1)
+
+    expect(showAboveBackDrop(true)({ hasBackDrop: true })[1]).toBeTruthy() // should return an array with the styling rules
+    expect(showAboveBackDrop()({ hasBackDrop: true })[1]).toContain(
+      BACKDROP_Z_INDEX + 1,
+    )
+  })
+
+  it("should set no correct z-index when there isn't a hasBackDrop prop or positive parameter", () => {
+    expect(showAboveBackDrop(false)({})).toBe('')
+    expect(showAboveBackDrop()({ hasBackDrop: false })).toBe('')
   })
 })
