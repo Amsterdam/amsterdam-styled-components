@@ -4,6 +4,7 @@ import { themeColor, showAboveBackDrop } from '../../utils'
 
 type Props = {
   attributes?: object
+  hasBackDrop?: boolean
 }
 
 const ModalStyle = styled.div<Props>`
@@ -21,7 +22,7 @@ const ModalStyle = styled.div<Props>`
     min-height: 54px;
   }
 
-  ${showAboveBackDrop(true)}
+  ${showAboveBackDrop()}
 `
 
 export const ModalStyleContainer = styled.div`

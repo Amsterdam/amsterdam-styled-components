@@ -62,7 +62,7 @@ const Modal: React.FC<Props> = ({
     >
       <Focus onKeyDown={handleKeyDown}>
         <ModalStyleContainer {...otherProps} className={className}>
-          <ModalStyle role="dialog" ref={ref} onKeyDown={keyDown}>
+          <ModalStyle role="dialog" ref={ref} onKeyDown={keyDown} hasBackDrop>
             {children}
           </ModalStyle>
         </ModalStyleContainer>
