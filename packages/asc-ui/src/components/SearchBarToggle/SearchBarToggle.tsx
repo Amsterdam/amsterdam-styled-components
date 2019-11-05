@@ -7,12 +7,8 @@ import SearchBar from '../SearchBar'
 import { InputMethods, InputProps } from '../Input'
 import Toggle, { Props as ToggleProps } from '../Toggle/Toggle'
 import { SearchBarProps } from '../SearchBar/SearchBar'
-import { CustomCssPropsInterface } from '../../utils'
 
-interface SearchBarToggleProps
-  extends SearchBarToggleStyleProps,
-    InputMethods,
-    CustomCssPropsInterface {
+interface SearchBarToggleProps extends SearchBarToggleStyleProps, InputMethods {
   placeholder?: string
   label?: string
   onSubmit?: Function
@@ -28,7 +24,6 @@ const SearchBarToggle: React.FC<SearchBarToggleProps & ToggleProps> = ({
   showAt,
   searchBarProps,
   inputProps,
-  css,
   ...otherProps
 }) => (
   <Toggle
@@ -36,7 +31,6 @@ const SearchBarToggle: React.FC<SearchBarToggleProps & ToggleProps> = ({
     {...{
       hideAt,
       showAt,
-      css,
     }}
     render={false}
     iconOpen={<Search />}
@@ -49,7 +43,6 @@ const SearchBarToggle: React.FC<SearchBarToggleProps & ToggleProps> = ({
 )
 
 SearchBarToggle.defaultProps = {
-  css: '',
   placeholder: 'Search...',
 }
 

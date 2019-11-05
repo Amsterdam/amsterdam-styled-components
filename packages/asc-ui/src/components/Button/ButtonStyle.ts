@@ -46,6 +46,13 @@ export const ArrowRight = styled.div`
   }
 `
 
+export const IconLeft = styled(Icon)`
+  margin-right: 10px;
+`
+export const IconRight = styled(Icon)`
+  margin-left: 10px;
+`
+
 const getVariant = () => ({
   theme,
   variant,
@@ -115,13 +122,29 @@ const getVariant = () => ({
 
     case 'textButton':
       return css`
+        height: auto;
+        padding: 0;
+        align-self: baseline;
+        white-space: normal;
+        text-align: left;
         color: ${themeColor('primary')};
         background-color: rgba(0, 0, 0, 0);
+        font-weight: 700;
         ${svgFill('primary')};
+
+        /* remove transition because it's async with Icon */
+        ${transitions('color', '0s')}
 
         &:hover {
           color: ${themeColor('secondary')};
           ${svgFill('secondary')};
+        }
+
+        ${IconLeft} {
+          margin-right: ${themeSpacing(1)};
+        }
+        ${IconRight} {
+          margin-left: ${themeSpacing(1)};
         }
       `
 
@@ -198,13 +221,6 @@ export type Props = {
   taskflow?: boolean
 }
 
-export const IconLeft = styled(Icon)`
-  margin-right: 10px;
-`
-export const IconRight = styled(Icon)`
-  margin-left: 10px;
-`
-
 const ButtonStyle = styled.button<Props>`
   height: 44px;
   white-space: nowrap;
@@ -239,19 +255,6 @@ const ButtonStyle = styled.button<Props>`
       }
       &:focus ${ArrowRight}:after {
         opacity: 1;
-      }
-    `}
-  ${({ variant }) =>
-    variant &&
-    variant === 'textButton' &&
-    css`
-      // remove transition because it's async with Icon
-      ${transitions('color', '0s')}
-      ${IconLeft} {
-        margin-right: 5px;
-      }
-      ${IconRight} {
-        margin-left: 5px;
       }
     `}
   &:disabled {

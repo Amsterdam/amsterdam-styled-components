@@ -17,7 +17,6 @@ export interface SearchBarProps extends InputProps, SearchBarStyleProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({
   children,
-  css,
   placeholder,
   onSubmit,
   onBlur,
@@ -80,7 +79,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   }, [value, setInputValue])
 
   return (
-    <SearchBarStyle {...otherProps} {...{ hideAt, showAt, css }}>
+    <SearchBarStyle {...otherProps} {...{ hideAt, showAt }}>
       <InputContext.Provider
         value={{
           onBlur,

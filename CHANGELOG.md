@@ -16,7 +16,16 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Added: `active` prop to MenuButton to enable activeStyles (instead of only on `:hover, :focus`)
+- Fixed: Update styling on `Text Button` variant
+- Changed: Keep the toggle component background colour when toggled and not toggled
+
+## [0.17.5] - 2019-10-30
+
+- Added: Functionality to publish a canary release for internal testing
 - Added: Checkbox has a new variant: 'tertiary'
+- Changed: Publish script for stable releases has changed, due to addition of canary releases
+- Removed: Breaking change: `css` prop for SearchBar and SearchBarToggle.
 
 ## [0.17.4] - 2019-10-23
 
