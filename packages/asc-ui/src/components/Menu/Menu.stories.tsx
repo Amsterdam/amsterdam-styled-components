@@ -36,7 +36,7 @@ const StyledMenuInline = styled(MenuInline)`
 export const MenuChildren = () => (
   <>
     <MenuItem>
-      <MenuButton $as="a" href="/">
+      <MenuButton $as="a" href="/" active>
         Home
       </MenuButton>
     </MenuItem>

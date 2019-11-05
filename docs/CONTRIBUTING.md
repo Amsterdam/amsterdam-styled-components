@@ -63,7 +63,7 @@ for the new component. For more info possibilities, check the hygen documentatio
 
 ## Publishing
 
-For now, only core maintainers can publish. If you want have rights to publish as well, contact one 
+For now, only core maintainers can publish. If you want have rights to publish as well, contact one
 of the [core maintainers](./MAINTAINERS.md). To publish these packages to npm, follow these steps:
 
 ### Publish canary version
@@ -71,8 +71,7 @@ of the [core maintainers](./MAINTAINERS.md). To publish these packages to npm, f
 1. Make sure you're logged in to npm, by running `npm login`
 2. Run `yarn publish:canary`. This will run linters and tests before the lerna prompt,
    so be patient :smile:
-3. Select a version
-4. This canary version is now available for usage in any local or demo version of your project, but not tagged with the `@latest` tag on npm.
+3. This canary version is now available for usage in any local or demo version of your project, but not tagged with the `@latest` tag on npm. So use for example `yarn add @datapunt/asc-ui@canary`.
 
 ### Publish stable version
 
