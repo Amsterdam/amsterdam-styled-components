@@ -31,10 +31,10 @@ storiesOf('Atoms/FilterTag', module)
       defaultFilterTagElements,
     )
 
-    const filterTagHandleClick = (nr: number): void =>
+    const filterTagHandleClick = (id: number): void =>
       setFilterTagElements(
         filterTagElements &&
-          filterTagElements.filter(el => (el.id !== nr ? el : undefined)),
+          filterTagElements.filter(el => (el.id !== id ? el : undefined)),
       )
 
     return (
