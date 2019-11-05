@@ -5,12 +5,18 @@ import RadioContext from './RadioContext'
 
 const RadioGroup: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   disabled,
+  name,
   children,
 }) => {
   const [selected, setSelected] = React.useState('')
   return (
     <RadioContext.Provider
-      value={{ selected, setSelected, disabledGroup: !!disabled }}
+      value={{
+        selected,
+        setSelected,
+        disabledGroup: !!disabled,
+        nameGroup: name,
+      }}
     >
       <RadioGroupStyle>{children}</RadioGroupStyle>
     </RadioContext.Provider>

@@ -20,12 +20,12 @@ storiesOf('Atoms/Radio', module)
   ))
   .add('variants', () => (
     <>
-      <RadioGroup>
+      <RadioGroup name="group">
         <Label htmlFor="radio-1" label="Radio 1">
-          <Radio id="radio-1" name="group" />
+          <Radio id="radio-1" />
         </Label>
         <Label htmlFor="radio-2" label="Radio 2">
-          <Radio id="radio-2" name="group" />
+          <Radio id="radio-2" />
         </Label>
       </RadioGroup>
     </>

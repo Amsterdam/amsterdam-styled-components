@@ -53,6 +53,7 @@ exports[`Radio should render 1`] = `
     <input
       class="c1"
       id="test"
+      name=""
       type="radio"
     />
   </div>
