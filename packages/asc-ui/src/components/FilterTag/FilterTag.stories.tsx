@@ -13,7 +13,7 @@ storiesOf('Atoms/FilterTag', module)
     <div style={{ padding: '40px 20px' }}>{storyFn()}</div>
   ))
   .add('default', () => {
-    let filterTagElements: FilterTagElement[] = [
+    const defaultFilterTagElements: FilterTagElement[] = [
       {
         id: 1,
         labelText: 'Verkeer en infrastructuur',
@@ -31,28 +31,33 @@ storiesOf('Atoms/FilterTag', module)
       },
     ]
 
-    const filterTagHandleClick = (nr: number): void => {
-      filterTagElements = filterTagElements
-        .filter(el => {
-          if (el.id !== nr) {
-            return el
-          }
-          return undefined
-        })
-        .map(el => el)
-    }
+    const [filterTagElements, setFilterTagElements] = React.useState(
+      defaultFilterTagElements,
+    )
+
+    const filterTagHandleClick = (nr: number): void =>
+      setFilterTagElements(
+        filterTagElements &&
+          filterTagElements.filter(el => {
+            if (el.id !== nr) {
+              return el
+            }
+            return undefined
+          }),
+      )
 
     return (
       <>
-        {filterTagElements.map(element => (
-          <FilterTag
-            forwardRef={element.ref}
-            onClick={() => filterTagHandleClick(element.id)}
-            key={`filterTag${element.id}`}
-          >
-            {element.labelText}
-          </FilterTag>
-        ))}
+        {filterTagElements &&
+          filterTagElements.map(element => (
+            <FilterTag
+              forwardRef={element.ref}
+              onClick={() => filterTagHandleClick(element.id)}
+              key={`filterTag${element.id}`}
+            >
+              {element.labelText}
+            </FilterTag>
+          ))}
       </>
     )
   })
