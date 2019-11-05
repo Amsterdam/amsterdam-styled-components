@@ -2,9 +2,10 @@ import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import FilterTag from './FilterTag'
 
-const filterTagHandleClick = (nr: number) => {
-  // eslint-disable-next-line no-console
-  console.log(nr)
+interface FilterTagElement {
+  id: number
+  labelText: string
+  ref: React.MutableRefObject<null>
 }
 
 storiesOf('Atoms/FilterTag', module)
@@ -12,7 +13,7 @@ storiesOf('Atoms/FilterTag', module)
     <div style={{ padding: '40px 20px' }}>{storyFn()}</div>
   ))
   .add('default', () => {
-    const myArray = [
+    let filterTagElements: FilterTagElement[] = [
       {
         id: 1,
         labelText: 'Verkeer en infrastructuur',
@@ -29,14 +30,27 @@ storiesOf('Atoms/FilterTag', module)
         ref: React.useRef(null),
       },
     ]
+
+    const filterTagHandleClick = (nr: number): void => {
+      filterTagElements = filterTagElements
+        .filter(el => {
+          if (el.id !== nr) {
+            return el
+          }
+          return undefined
+        })
+        .map(el => el)
+    }
+
     return (
       <>
-        {myArray.map(element => (
+        {filterTagElements.map(element => (
           <FilterTag
-            ref={element.ref}
+            forwardRef={element.ref}
             onClick={() => filterTagHandleClick(element.id)}
+            key={`filterTag${element.id}`}
           >
-            Verkeer en infrastructuur
+            {element.labelText}
           </FilterTag>
         ))}
       </>
