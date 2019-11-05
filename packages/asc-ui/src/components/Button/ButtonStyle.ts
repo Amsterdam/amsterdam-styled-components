@@ -129,6 +129,7 @@ const getVariant = () => ({
         text-align: left;
         color: ${themeColor('primary')};
         background-color: rgba(0, 0, 0, 0);
+        font-weight: 700;
         ${svgFill('primary')};
 
         /* remove transition because it's async with Icon */
