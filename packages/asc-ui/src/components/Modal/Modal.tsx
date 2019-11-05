@@ -13,6 +13,7 @@ export type Props = {
 
 const Modal: React.FC<Props> = ({
   open,
+  disablePortal,
   children,
   backdropOpacity,
   element,
@@ -54,6 +55,7 @@ const Modal: React.FC<Props> = ({
 
   return open ? (
     <BackDrop
+      disablePortal={disablePortal}
       blurredNodeSelector={blurredNodeSelector}
       element={element}
       backdropOpacity={backdropOpacity}
