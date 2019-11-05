@@ -29,7 +29,7 @@ const MenuInline: React.FC<Props> = ({
         {children}
       </MenuInlineStyle>
       {hasBackDrop && menuOpen && (
-        <BackDrop onClick={handleOnExpand} disablePortal />
+        <BackDrop onClick={handleOnExpand} hideOverFlow={false} />
       )}
     </MenuContext.Provider>
   )

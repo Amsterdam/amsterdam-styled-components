@@ -5,6 +5,7 @@ import ownerDocument from '../../utils/ownerDocument'
 export type Props = {
   element?: HTMLElement
   blurredNode?: HTMLElement
+  hideOverFlow?: boolean
 }
 
 type State = {}
@@ -36,9 +37,14 @@ class Portal extends React.Component<Props, State> {
   }
 
   setMountNode() {
-    const { blurredNode } = this.props
+    const { blurredNode, hideOverFlow = true } = this.props
     const el = this.element
-    el.setAttribute('style', 'overflow: hidden;')
+
+    // Determines if the overflow should be hidden on the <body> element
+    if (hideOverFlow) {
+      el.setAttribute('style', 'overflow: hidden;')
+    }
+
     el.appendChild(this.mountEl)
     if (blurredNode) {
       blurredNode.setAttribute('style', 'filter: blur(1px)')

@@ -13,13 +13,13 @@ export type Props = {
 
 const Modal: React.FC<Props> = ({
   open,
-  disablePortal,
   children,
   backdropOpacity,
   element,
   blurredNodeSelector,
   className,
   onClose,
+  hideOverFlow,
   ...otherProps
 }) => {
   const ref: any = React.useRef<HTMLDivElement>()
@@ -54,11 +54,11 @@ const Modal: React.FC<Props> = ({
 
   return open ? (
     <BackDrop
-      disablePortal={disablePortal}
       blurredNodeSelector={blurredNodeSelector}
       element={element}
       backdropOpacity={backdropOpacity}
       onClick={handleClose}
+      hideOverFlow={hideOverFlow}
     >
       <Focus onKeyDown={handleKeyDown}>
         <ModalStyleContainer {...otherProps} className={className}>

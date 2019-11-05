@@ -122,7 +122,7 @@ const Toggle: React.FC<Props> = ({
       />
       {render ? children : conditionalRenderedChildren}
       {hasBackDrop && open && (
-        <BackDrop onClick={handleOnClick} disablePortal />
+        <BackDrop onClick={handleOnClick} hideOverFlow={false} />
       )}
     </ToggleStyle>
   )
