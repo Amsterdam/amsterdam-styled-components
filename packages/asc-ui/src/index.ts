@@ -95,6 +95,10 @@ import Footer, {
 } from './components/Footer'
 import { themeColor } from './utils'
 
+import * as constants from './components/shared/constants'
+
+export { constants }
+
 /**
  * @deprecated
  */
@@ -104,7 +108,7 @@ const ShareBar = ButtonBar
 const color = themeColor
 export { color, themeColor }
 
-export { breakpoint, svgFill, themeSpacing } from './utils'
+export { breakpoint, svgFill, themeSpacing, showAboveBackDrop } from './utils'
 
 export const styles = {
   ...AmsterdamLogoStyles,

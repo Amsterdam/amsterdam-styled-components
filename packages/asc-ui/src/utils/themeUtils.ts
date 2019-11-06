@@ -1,5 +1,7 @@
 import { css, keyframes, Theme } from '@datapunt/asc-core'
+
 import { fromProps } from './fromProps'
+import { BACKDROP_Z_INDEX } from '../components/shared/constants'
 
 import BreakpointsInterface = Theme.BreakpointsInterface
 import ThemeInterface = Theme.ThemeInterface
@@ -327,6 +329,19 @@ export const showHide = () => ({ hideAt, showAt, theme }: ShowHideProps) => {
     ${hideAtCss}
   `
 }
+
+// Function that uses the BACKDROP_Z_INDEX constant to determine the z-index for components rendered with a backdrop
+// The first argument in the curry can be used to raise the z-index for components that need to be displayed above the backdrop, but aren't directly related
+export const showAboveBackDrop = (show?: boolean) => ({
+  hasBackDrop,
+}: {
+  hasBackDrop?: boolean
+}) =>
+  hasBackDrop || show
+    ? css`
+        z-index: ${BACKDROP_Z_INDEX + 1};
+      `
+    : ''
 
 type ThemeSpacingParameters = [
   Theme.Spacing,
