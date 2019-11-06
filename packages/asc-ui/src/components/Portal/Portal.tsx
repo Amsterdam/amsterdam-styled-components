@@ -33,7 +33,11 @@ class Portal extends React.Component<Props, State> {
     if (blurredNode) {
       blurredNode.removeAttribute('style')
     }
-    el.removeChild(this.mountEl)
+
+    // check if the Portal is still active, in case there are muliple Portals mounted and unmounted
+    if (this.mountEl && this.mountEl.parentNode === el) {
+      el.removeChild(this.mountEl)
+    }
   }
 
   setMountNode() {
