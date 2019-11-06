@@ -16,9 +16,11 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Changed: Keep the toggle component background colour when toggled and not toggled.
+- Added: Export a `BackDrop` component that can be used for i.e. React Portals
+- Changed: Setup for managing the `z-index` of the project's components, `z-index` can now be imported in single projects
 - Added: `active` prop to MenuButton to enable activeStyles (instead of only on `:hover, :focus`)
 - Fixed: Update styling on `Text Button` variant
-- Changed: Keep the toggle component background colour when toggled and not toggled
 
 ## [0.17.5] - 2019-10-30
 

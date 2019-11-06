@@ -1,7 +1,7 @@
 import BackDropStyle from './BackDropStyle'
+import BackDrop from './BackDrop'
 
-export default BackDropStyle
-
+export default BackDrop
 export const BackDropStyles = {
   BackDropStyle,
 }
