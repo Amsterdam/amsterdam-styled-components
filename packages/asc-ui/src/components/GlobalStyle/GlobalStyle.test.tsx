@@ -17,7 +17,7 @@ describe('GlobalStyle', () => {
       (acc: string, rule: string) => acc + rule,
     )
     expect(
-      css.indexOf(`return utils_1.getValueFromTheme('globalStyle')`),
+      css.indexOf(`utils_1.getValueFromTheme('globalStyle')`),
     ).toBeGreaterThan(-1)
   })
 
