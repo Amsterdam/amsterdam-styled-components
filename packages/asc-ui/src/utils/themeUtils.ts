@@ -331,7 +331,8 @@ export const showHide = () => ({ hideAt, showAt, theme }: ShowHideProps) => {
 }
 
 // Function that uses the BACKDROP_Z_INDEX constant to determine the z-index for components rendered with a backdrop
-// The first argument in the curry can be used to raise the z-index for components that need to be displayed above the backdrop, but aren't directly related
+// The first argument in the curry can be used to raise the z-index for components that need to be displayed above
+// the backdrop, but aren't directly related
 export const showAboveBackDrop = (show?: boolean) => ({
   hasBackDrop,
 }: {
