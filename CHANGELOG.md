@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Canary
 
+- Added: Accordion component.
 - Added: FilterTag component.
 - Changed: Keep the toggle component background colour when toggled and not toggled.
 - Added: Export a `BackDrop` component that can be used for i.e. React Portals
