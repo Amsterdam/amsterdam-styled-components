@@ -1,7 +1,7 @@
 import styled, { css, styledComponents } from '@datapunt/asc-core'
 import { Props as TypographyProps } from '../Typography/TypographyStyle'
 import Typography from '../Typography'
-import { themeColor, themeSpacing } from '../../utils'
+import { themeColor, themeSpacing, breakpoint } from '../../utils'
 import IconStyle from '../Icon/IconStyle'
 
 export type Props = {} & TypographyProps & styledComponents.StyledProps<any>
@@ -23,6 +23,10 @@ export const AccordionStyleCSS = () => {
     overflow: hidden;
     text-overflow: ellipsis;
 
+    @media screen and ${breakpoint('max-width', 'tabletS')} {
+      width: auto;
+    }
+
     &:hover {
       background-color: ${themeColor('tint', 'level3')};
       cursor: pointer;
@@ -39,5 +43,3 @@ export const AccordionStyleCSS = () => {
 export default styled(Typography)<Props>`
   ${AccordionStyleCSS}
 `
-
-// fit-content;
