@@ -22,6 +22,7 @@ Prefix the change with one of these keywords:
 - Changed: Setup for managing the `z-index` of the project's components, `z-index` can now be imported in single projects
 - Added: `active` prop to MenuButton to enable activeStyles (instead of only on `:hover, :focus`)
 - Fixed: Update styling on `Text Button` variant
+- Fixed: Menu also closes `OnMouseLeave` when it was opened with an `onClick` event
 
 ## [0.17.5] - 2019-10-30
 

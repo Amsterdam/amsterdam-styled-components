@@ -19,29 +19,21 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
 
   const ref = React.useRef<HTMLLIElement>(null)
 
-  const [isOpen, setOpenFn] = React.useState(false)
-  const [isOpenOnClick, setOpenOnClick] = React.useState(false)
+  const [menuOpen, setMenuOpen] = React.useState(false)
 
   const { keyDown } = useFocusWithArrows(ref)
 
-  const setOpen = useDebounce(setOpenFn, 0)
+  const setOpen = useDebounce(setMenuOpen, 0)
 
-  const flyOutOpen = isOpen || isOpenOnClick
-
-  const onHandleToggle = (e: React.MouseEvent | React.KeyboardEvent) => {
+  const onHandleOpen = (e: React.MouseEvent | React.KeyboardEvent) => {
     e.preventDefault()
 
-    if (hasToggle) {
-      setOpen(isOpen ? false : isOpen)
-      setOpenOnClick(!isOpenOnClick)
-    } else {
-      setOpenOnClick(true)
-    }
+    setOpen(!menuOpen)
   }
 
   const onHandleKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === KeyboardKeys.Enter || event.key === KeyboardKeys.Space) {
-      onHandleToggle(event)
+      onHandleOpen(event)
     }
   }
 
@@ -52,7 +44,6 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
 
       if (!element.contains(currentFocus)) {
         setOpen(false)
-        setOpenOnClick(false)
       }
     }
   })
@@ -64,7 +55,7 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
       }
     : {}
 
-  const [listRef, edgeDetection] = useEdgeDetection([flyOutOpen])
+  const [listRef, edgeDetection] = useEdgeDetection([menuOpen])
 
   const handleOnExpand = React.useCallback(
     open => onExpand && onExpand(open),
@@ -73,8 +64,8 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
   )
 
   React.useEffect(() => {
-    handleOnExpand(flyOutOpen)
-  }, [flyOutOpen, handleOnExpand])
+    handleOnExpand(menuOpen)
+  }, [menuOpen, handleOnExpand])
 
   return (
     <MenuFlyOutStyle
@@ -88,12 +79,12 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
       <MenuButton
         iconRight={
           // eslint-disable-next-line no-nested-ternary
-          hasToggle ? flyOutOpen ? <ChevronUp /> : <ChevronDown /> : undefined
+          hasToggle ? menuOpen ? <ChevronUp /> : <ChevronDown /> : undefined
         }
-        onClick={onHandleToggle}
+        onClick={onHandleOpen}
         onKeyDown={onHandleKeyDown}
         aria-haspopup="true"
-        aria-expanded={flyOutOpen}
+        aria-expanded={menuOpen}
       >
         {label}
       </MenuButton>
@@ -106,14 +97,13 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
               setOpenToggle(val)
             }
             setOpen(val)
-            setOpenOnClick(val)
           },
         }}
       >
         <MenuList
           ref={listRef}
           edgeDetection={edgeDetection}
-          aria-hidden={!flyOutOpen}
+          aria-hidden={!menuOpen}
         >
           {children}
         </MenuList>
