@@ -20,7 +20,7 @@ storiesOf('Composed/FilterBox', module)
   .add('with checkboxes', () => (
     <FilterBox
       label="Filters"
-      subLabel="5 geselecteerd"
+      subLabel="x aantal geselecteerd"
       showMoreLabel="Toon meer"
     >
       <Label

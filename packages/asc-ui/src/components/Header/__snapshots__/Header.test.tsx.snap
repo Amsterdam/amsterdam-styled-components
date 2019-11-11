@@ -186,7 +186,6 @@ exports[`Header should render the short version 1`] = `
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 2;
 }
 
 .c0 .c11 {
@@ -481,7 +480,6 @@ exports[`Header should render the short version without the full width 1`] = `
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 2;
 }
 
 .c0 .c11 {
@@ -796,7 +794,6 @@ exports[`Header should render the tall version 1`] = `
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 2;
 }
 
 .c0 .c14 {
@@ -906,7 +903,6 @@ exports[`Header should render the tall version 1`] = `
   }
 
   .c0 .c2 {
-    z-index: 100;
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -1113,7 +1109,6 @@ exports[`Header should render the tall version without a title 1`] = `
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 2;
 }
 
 .c0 .c10 {
@@ -1204,7 +1199,6 @@ exports[`Header should render the tall version without a title 1`] = `
   }
 
   .c0 .c2 {
-    z-index: 100;
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;

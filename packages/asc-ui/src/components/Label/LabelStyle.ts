@@ -57,6 +57,12 @@ LabelStyle.defaultProps = {
 
 export const LabelTextStyle = styled.span<SharedProps>`
   ${({ position }) =>
+    position !== 'top' &&
+    position !== 'bottom' &&
+    css`
+      margin: 9.2px 0; /* To align the label to a checkbox / radiobutton when having a long text. line-height is 1.15 / 18.4px (from normalize css). Margin top & bottom = lineheight / 2 */
+    `}
+  ${({ position }) =>
     position === 'top' || position === 'left'
       ? css`
           order: 0;
