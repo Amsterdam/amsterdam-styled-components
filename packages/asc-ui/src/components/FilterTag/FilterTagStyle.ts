@@ -9,7 +9,7 @@ export type Props = {} & TypographyProps & styledComponents.StyledProps<any>
 export const FilterTagStyleCSS = () => {
   return css<Props>`
     margin: 0 ${themeSpacing(2)} ${themeSpacing(2)} 0;
-    padding: 0 ${themeSpacing(1)} 0 ${themeSpacing(2)};
+    padding: 0 ${themeSpacing(2)};
     line-height: 30px;
     display: inline-block;
     width: fit-content;
@@ -25,7 +25,7 @@ export const FilterTagStyleCSS = () => {
     }
 
     ${IconStyle} {
-      margin: 0 ${themeSpacing(1)} 0 ${themeSpacing(2)};
+      margin: 0 0 0 ${themeSpacing(2)};
       vertical-align: middle;
     }
   `

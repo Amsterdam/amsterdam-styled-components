@@ -33,8 +33,7 @@ storiesOf('Atoms/FilterTag', module)
 
     const filterTagHandleClick = (id: number): void =>
       setFilterTagElements(
-        filterTagElements &&
-          filterTagElements.filter(el => (el.id !== id ? el : undefined)),
+        filterTagElements && filterTagElements.filter(el => el.id !== id),
       )
 
     return (
