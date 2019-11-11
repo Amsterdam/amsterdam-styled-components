@@ -20,6 +20,7 @@ module.exports = ({ config, mode }) => {
           useCache: true,
           forceIsolatedModules: true,
           configFileName: './tsconfig.json',
+          noUnusedLocals: false,
           ignoreDiagnostics: [7005], // Temporary fix for this issue: https://github.com/storybookjs/storybook/issues/7829
           getCustomTransformers: () => ({
             before: [styledComponentsTransformer],
