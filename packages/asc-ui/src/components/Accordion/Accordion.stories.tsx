@@ -9,9 +9,9 @@ storiesOf('Atoms/Accordion', module)
   .add('default', () => {
     return (
       <>
-        <Accordion>Eerste accordion tekst</Accordion>
-        <Accordion>Tweede accordion tekst</Accordion>
-        <Accordion>
+        <Accordion key={1}>Eerste accordion tekst</Accordion>
+        <Accordion key={2}>Tweede accordion tekst</Accordion>
+        <Accordion key={3}>
           Accordeon ingeklapt met meer tekst dan dat zichtbaar is in dit
           resolutie en meer tekst dit moet weg gaan in een elipsis
         </Accordion>

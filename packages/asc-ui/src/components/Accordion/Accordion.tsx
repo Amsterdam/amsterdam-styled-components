@@ -7,14 +7,21 @@ import { ToggleHandlerProps } from '../Toggle'
 
 export type Props = ToggleHandlerProps
 
-const Accordion: React.FC<Props> = ({ children, ...otherProps }) => (
-  <AccordionStyle $as="h4" {...otherProps}>
-    {children}
-    <Icon inline size={14} color="primary">
-      <ChevronDown />
-    </Icon>
-  </AccordionStyle>
-)
+const Accordion: React.FC<Props> = ({
+  open,
+  onClick,
+  children,
+  ...otherProps
+}) => {
+  return (
+    <AccordionStyle $as="h4" onClick={onClick} {...otherProps}>
+      {children}
+      <Icon rotate={open ? 180 : 0} inline size={14} color="primary">
+        <ChevronDown />
+      </Icon>
+    </AccordionStyle>
+  )
+}
 
 Accordion.defaultProps = {}
 
