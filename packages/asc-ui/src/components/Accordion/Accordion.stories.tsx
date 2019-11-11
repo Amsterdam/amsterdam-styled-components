@@ -13,7 +13,7 @@ storiesOf('Atoms/Accordion', module)
         <Accordion>Tweede accordion tekst</Accordion>
         <Accordion>
           Accordeon ingeklapt met meer tekst dan dat zichtbaar is in dit
-          resolutie
+          resolutie en meer tekst dit moet weg gaan in een elipsis
         </Accordion>
       </>
     )
