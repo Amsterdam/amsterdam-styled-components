@@ -7,6 +7,7 @@ const RadioGroup: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   disabled,
   name,
   children,
+  horizontal,
 }) => {
   const [selected, setSelected] = React.useState('')
   return (
@@ -19,7 +20,7 @@ const RadioGroup: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
         hasGroup: true,
       }}
     >
-      <RadioGroupStyle>{children}</RadioGroupStyle>
+      <RadioGroupStyle horizontal={horizontal}>{children}</RadioGroupStyle>
     </RadioContext.Provider>
   )
 }
