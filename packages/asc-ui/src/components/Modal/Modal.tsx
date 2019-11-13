@@ -1,18 +1,14 @@
 import React from 'react'
-import Portal, { Props as PortalProps } from '../Portal/Portal'
 import Focus from '../Focus'
 import ModalStyle, { ModalStyleContainer } from './ModalStyle'
-import BackDropStyle from '../BackDrop/BackDropStyle'
 import { KeyboardKeys } from '../../types'
 import useTrappedFocus from '../../utils/hooks/useTrappedFocus'
+import BackDrop, { Props as BackDropProps } from '../BackDrop/BackDrop'
 
 export type Props = {
   open: boolean
   onClose?: Function
-  disablePortal?: boolean
-  backdropOpacity?: number
-  blurredNodeSelector?: string
-} & PortalProps &
+} & BackDropProps &
   React.HTMLAttributes<HTMLElement>
 
 const Modal: React.FC<Props> = ({
@@ -24,6 +20,7 @@ const Modal: React.FC<Props> = ({
   blurredNodeSelector,
   className,
   onClose,
+  hideOverFlow,
   ...otherProps
 }) => {
   const ref: any = React.useRef<HTMLDivElement>()
@@ -55,33 +52,24 @@ const Modal: React.FC<Props> = ({
       handleClose()
     }
   }
-  const Element = disablePortal ? 'div' : Portal
 
   return open ? (
-    <Element
-      {...(!disablePortal
-        ? {
-            element,
-            blurredNode: blurredNodeSelector
-              ? (window.document.querySelector(
-                  blurredNodeSelector,
-                ) as HTMLElement)
-              : undefined,
-          }
-        : {})}
+    <BackDrop
+      disablePortal={disablePortal}
+      blurredNodeSelector={blurredNodeSelector}
+      element={element}
+      backdropOpacity={backdropOpacity}
+      onClick={handleClose}
+      hideOverFlow={hideOverFlow}
     >
       <Focus onKeyDown={handleKeyDown}>
         <ModalStyleContainer {...otherProps} className={className}>
-          <BackDropStyle
-            backdropOpacity={backdropOpacity}
-            onClick={handleClose}
-          />
-          <ModalStyle role="dialog" ref={ref} onKeyDown={keyDown}>
+          <ModalStyle role="dialog" ref={ref} onKeyDown={keyDown} hasBackDrop>
             {children}
           </ModalStyle>
         </ModalStyleContainer>
       </Focus>
-    </Element>
+    </BackDrop>
   ) : null
 }
 
