@@ -5,5 +5,6 @@ const RadioContext = React.createContext({
   setSelected: () => {},
   disabledGroup: false,
   nameGroup: '',
-} as { selected: string; setSelected: Function; disabledGroup: boolean; nameGroup: string | undefined })
+  hasGroup: false,
+} as { selected: string; setSelected: Function; disabledGroup: boolean; nameGroup: string | undefined; hasGroup: boolean })
 export default RadioContext

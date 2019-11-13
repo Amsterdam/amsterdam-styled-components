@@ -18,14 +18,18 @@ const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   ...otherProps
 }) => {
   const [focus, setFocus] = useState(false)
-  const { setSelected, selected, disabledGroup, nameGroup } = useContext(
-    RadioContext,
-  )
+  const {
+    setSelected,
+    selected,
+    disabledGroup,
+    nameGroup,
+    hasGroup,
+  } = useContext(RadioContext)
   const disabled = disabledProp || disabledGroup
   const name = nameProp || nameGroup
 
   // Set selected on defaultChecked
-  if (defaultChecked && !selected) {
+  if (hasGroup && defaultChecked && !selected) {
     setSelected(id)
   }
 
@@ -37,6 +41,7 @@ const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
         error,
         className,
         variant,
+        hasGroup,
       }}
       aria-disabled={disabled}
       isSelected={selected === id}
@@ -48,6 +53,7 @@ const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
           id,
           defaultChecked,
           name,
+          hasGroup,
         }}
         onFocus={() => {
           setFocus(true)

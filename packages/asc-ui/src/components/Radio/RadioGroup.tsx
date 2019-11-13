@@ -16,6 +16,7 @@ const RadioGroup: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
         setSelected,
         disabledGroup: !!disabled,
         nameGroup: name,
+        hasGroup: true,
       }}
     >
       <RadioGroupStyle>{children}</RadioGroupStyle>

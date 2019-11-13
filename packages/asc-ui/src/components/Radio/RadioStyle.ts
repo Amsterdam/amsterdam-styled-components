@@ -15,21 +15,29 @@ export type Props = {
   id: string
   defaultChecked?: boolean
   onChange?: Function
+  hasGroup?: boolean
 }
 
-export default styled.input.attrs({
+const RadioStyle = styled.input.attrs({
   type: 'radio',
 })<Props>`
-  top: 0;
-  left: 0;
-  width: 100%;
-  cursor: inherit;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  opacity: 0;
+  ${({ hasGroup }) =>
+    hasGroup &&
+    // Styling only happens when using RadioGroup, otherwise native radio-button functionality breaks
+    css`
+      top: 0;
+      left: 0;
+      width: 100%;
+      cursor: inherit;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      opacity: 0;
+    `}
 `
+
+export default RadioStyle
 
 export type RadioWrapperStyleProps = {
   variant?: keyof typeof Variants
@@ -37,19 +45,25 @@ export type RadioWrapperStyleProps = {
   disabled?: boolean
   focus?: boolean
   error?: boolean
+  hasGroup?: boolean
 }
 
 const RadioWrapperStyle = styled.div<RadioWrapperStyleProps>`
-  position: relative;
-  display: inline-flex;
-  user-select: none;  
-  vertical-align: middle;
-  margin-bottom: 1px;
-  padding: 6px;
-  flex-shrink: 0; /* IE11 fix */
-  color: ${themeColor('tint', 'level5')};
-  border: 2px solid;
-  border-radius: 50%;
+  ${({ hasGroup }) =>
+    hasGroup &&
+    css`
+      position: relative;
+      display: inline-flex;
+      user-select: none;
+      vertical-align: middle;
+      margin-bottom: 1px;
+      padding: 6px;
+      flex-shrink: 0; /* IE11 fix */
+      color: ${themeColor('tint', 'level5')};
+      border: 2px solid;
+      border-radius: 50%;
+    `}
+
   ${({ isSelected }) =>
     isSelected &&
     css`
