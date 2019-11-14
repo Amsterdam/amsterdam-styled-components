@@ -13,6 +13,8 @@ export interface SearchBarProps extends InputProps, SearchBarStyleProps {
   label?: string
   inputProps?: InputProps
   onSubmit?: Function
+  noButton?: boolean
+  iconComponent?: React.ReactElement
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -28,6 +30,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
   label,
   hideAt,
   showAt,
+  iconComponent,
+  noButton,
   inputProps,
   ...otherProps
 }) => {
@@ -107,17 +111,17 @@ const SearchBar: React.FC<SearchBarProps> = ({
           }}
         />
       </InputContext.Provider>
-      <Button
-        aria-label="Search"
-        type="submit"
-        size={40}
-        onClick={handleOnSubmit}
-        variant="secondary"
-      >
-        <Icon size={20}>
-          <Search />
-        </Icon>
-      </Button>
+      {!noButton && (
+        <Button
+          aria-label="Search"
+          type="submit"
+          size={40}
+          onClick={handleOnSubmit}
+          variant="secondary"
+        >
+          <Icon size={20}>{iconComponent}</Icon>
+        </Button>
+      )}
       {children}
     </SearchBarStyle>
   )
@@ -126,6 +130,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
 SearchBar.defaultProps = {
   placeholder: 'Search...',
   value: '',
+  iconComponent: <Search />,
+  noButton: false,
 }
 
 export default SearchBar

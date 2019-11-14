@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react/'
 import { action } from '@storybook/addon-actions'
+import { Map } from '@datapunt/asc-assets'
 import SearchBar from './SearchBar'
 
 const ControlledSearchBarStory: React.FC<{}> = () => {
@@ -40,6 +41,30 @@ storiesOf('Composed/SearchBar', module)
       onSubmit={() => {
         action('input submitted')
       }}
+    />
+  ))
+  .add('default without a button', () => (
+    <SearchBar
+      placeholder="Enter the search text"
+      onChange={() => {
+        action('input changed')
+      }}
+      onSubmit={() => {
+        action('input submitted')
+      }}
+      noButton
+    />
+  ))
+  .add('default with different icon', () => (
+    <SearchBar
+      placeholder="Enter the search text"
+      onChange={() => {
+        action('input changed')
+      }}
+      onSubmit={() => {
+        action('input submitted')
+      }}
+      iconComponent={<Map />}
     />
   ))
   .add('default controlled', () => <ControlledSearchBarStory />)

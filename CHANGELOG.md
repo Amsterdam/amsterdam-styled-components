@@ -160,3 +160,9 @@ Prefix the change with one of these keywords:
 ### ASC-CORE
 
 - Changed typography.ts
+
+## Unreleased
+
+### ASC-UI
+- Added: `noButton` optional prop to SearchBar in order to render a searchbar without a button
+- Added: `iconComponent` optional prop to SearchBar in order to render the search button with a different icon
