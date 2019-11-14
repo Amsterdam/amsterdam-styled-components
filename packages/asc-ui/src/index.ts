@@ -3,7 +3,7 @@ import { ServerStyleSheet, Theme, ascDefaultTheme } from '@datapunt/asc-core'
 import AmsterdamLogo, { AmsterdamLogoStyles } from './components/AmsterdamLogo'
 import BackDrop, { BackDropStyles } from './components/BackDrop'
 import Icon, { IconStyle } from './components/Icon'
-import Input, { InputStyles } from './components/Input'
+import Input, { InputStyles, InputContext } from './components/Input'
 import Modal from './components/Modal'
 import Portal from './components/Portal'
 import Heading, { HeadingStyle } from './components/Heading'
@@ -26,7 +26,7 @@ import Card, {
   CardContainer,
 } from './components/Card'
 import { Checkbox, CheckboxStyle } from './components/Checkbox'
-import Label from './components/Label'
+import Label, { LabelContext } from './components/Label'
 import ContextMenu from './components/ContextMenu'
 import ContextMenuButtonStyle from './components/ContextMenu/ContextMenuButton'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
@@ -71,6 +71,7 @@ import {
   MenuToggle,
   MenuStyles,
   MenuButton,
+  MenuContext,
 } from './components/Menu'
 import ThemeProvider, { CompactThemeProvider } from './theme'
 import IconButton from './components/deprecated/IconButton'
@@ -138,6 +139,12 @@ export const styles = {
   CheckboxStyle,
   FilterBoxStyle,
   FilterOptionStyle,
+}
+
+export const context = {
+  InputContext,
+  LabelContext,
+  MenuContext,
 }
 
 // Components

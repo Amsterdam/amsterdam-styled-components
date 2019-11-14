@@ -5,6 +5,7 @@ import MenuItemTitle, { MenuItemTitleStyle } from './MenuItemTitle'
 import MenuList, { MenuListStyle } from './MenuList'
 import MenuInline, { MenuInlineStyle } from './MenuInline'
 import MenuButton, { MenuButtonStyle } from './MenuButton'
+import MenuContext from './MenuContext'
 
 export const MenuStyles = {
   MenuFlyOutStyle,
@@ -24,4 +25,5 @@ export {
   MenuFlyOut,
   MenuItem,
   MenuItemTitle,
+  MenuContext,
 }
