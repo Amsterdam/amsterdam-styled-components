@@ -5,12 +5,12 @@ exports[`Header should render the short version 1`] = `
   margin: 0;
   color: #000000;
   font-weight: inherit;
-  font-size: 1rem;
+  font-size: 16px;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
-  line-height: 1.25;
+  line-height: 22px;
   margin-bottom: 0;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
@@ -42,6 +42,7 @@ exports[`Header should render the short version 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
+  max-width: none;
 }
 
 .c2::after {
@@ -75,7 +76,7 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c9 .c15 {
-  margin: 3px;
+  margin: 4px;
 }
 
 .c9 .c15 svg rect,
@@ -180,13 +181,11 @@ exports[`Header should render the short version 1`] = `
   background-color: #ffffff;
   margin: 0 auto;
   width: 100%;
-  max-width: none;
   box-shadow: 0 4px rgba(0,0,0,0.04);
   box-sizing: content-box;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 2;
 }
 
 .c0 .c11 {
@@ -194,7 +193,6 @@ exports[`Header should render the short version 1`] = `
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin-left: 15px;
 }
 
 .c0 .c7 {
@@ -224,6 +222,13 @@ exports[`Header should render the short version 1`] = `
   justify-content: flex-end;
 }
 
+@media screen and (min-width:1024px) {
+  .c10 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
 @media screen and (min-width:540px) {
   .c2 {
     padding: 0 15px;
@@ -239,6 +244,12 @@ exports[`Header should render the short version 1`] = `
 @media screen and (min-width:375px) {
   .c8 {
     font-size: 16px;
+  }
+}
+
+@media screen and (min-width:375px) {
+  .c0 .c11 {
+    margin-left: 16px;
   }
 }
 
@@ -288,12 +299,12 @@ exports[`Header should render the short version without the full width 1`] = `
   margin: 0;
   color: #000000;
   font-weight: inherit;
-  font-size: 1rem;
+  font-size: 16px;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
-  line-height: 1.25;
+  line-height: 22px;
   margin-bottom: 0;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
@@ -325,6 +336,7 @@ exports[`Header should render the short version without the full width 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
+  max-width: 1430px;
 }
 
 .c2::after {
@@ -334,7 +346,7 @@ exports[`Header should render the short version without the full width 1`] = `
   font-size: 0;
 }
 
-.c2 .c15 {
+.c2 .c14 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -357,13 +369,13 @@ exports[`Header should render the short version without the full width 1`] = `
   background-color: #FEC813;
 }
 
-.c9 .c16 {
-  margin: 3px;
+.c9 .c15 {
+  margin: 4px;
 }
 
-.c9 .c16 svg rect,
-.c9 .c16 svg polygon,
-.c9 .c16 svg path {
+.c9 .c15 svg rect,
+.c9 .c15 svg polygon,
+.c9 .c15 svg path {
   fill: #000000;
 }
 
@@ -373,9 +385,9 @@ exports[`Header should render the short version without the full width 1`] = `
   text-decoration: underline;
 }
 
-.c9:hover .c16 svg rect,
-.c9:hover .c16 svg polygon,
-.c9:hover .c16 svg path {
+.c9:hover .c15 svg rect,
+.c9:hover .c15 svg polygon,
+.c9:hover .c15 svg path {
   fill: #ec0000;
 }
 
@@ -459,34 +471,15 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-right: 10px;
 }
 
-.c14 .c11 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c14 .c7 {
-  margin-top: -2px;
-}
-
-.c14 .c1 {
-  height: 50px;
-  padding-right: 0;
-}
-
 .c0 {
   background-color: #ffffff;
   margin: 0 auto;
   width: 100%;
-  max-width: 1430px;
   box-shadow: 0 4px rgba(0,0,0,0.04);
   box-sizing: content-box;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 2;
 }
 
 .c0 .c11 {
@@ -494,7 +487,6 @@ exports[`Header should render the short version without the full width 1`] = `
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin-left: 15px;
 }
 
 .c0 .c7 {
@@ -524,6 +516,13 @@ exports[`Header should render the short version without the full width 1`] = `
   justify-content: flex-end;
 }
 
+@media screen and (min-width:1024px) {
+  .c10 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
 @media screen and (min-width:540px) {
   .c2 {
     padding: 0 15px;
@@ -539,6 +538,12 @@ exports[`Header should render the short version without the full width 1`] = `
 @media screen and (min-width:375px) {
   .c8 {
     font-size: 16px;
+  }
+}
+
+@media screen and (min-width:375px) {
+  .c0 .c11 {
+    margin-left: 16px;
   }
 }
 
@@ -588,12 +593,12 @@ exports[`Header should render the tall version 1`] = `
   margin: 0;
   color: #000000;
   font-weight: inherit;
-  font-size: 1rem;
+  font-size: 16px;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
-  line-height: 1.25;
+  line-height: 22px;
   margin-bottom: 0;
   font-stretch: normal;
   -webkit-letter-spacing: normal;
@@ -625,6 +630,7 @@ exports[`Header should render the tall version 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
+  max-width: none;
 }
 
 .c3::after {
@@ -634,7 +640,7 @@ exports[`Header should render the tall version 1`] = `
   font-size: 0;
 }
 
-.c3 .c20 {
+.c3 .c19 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -657,13 +663,13 @@ exports[`Header should render the tall version 1`] = `
   background-color: #FEC813;
 }
 
-.c12 .c21 {
-  margin: 3px;
+.c12 .c20 {
+  margin: 4px;
 }
 
-.c12 .c21 svg rect,
-.c12 .c21 svg polygon,
-.c12 .c21 svg path {
+.c12 .c20 svg rect,
+.c12 .c20 svg polygon,
+.c12 .c20 svg path {
   fill: #000000;
 }
 
@@ -673,9 +679,9 @@ exports[`Header should render the tall version 1`] = `
   text-decoration: underline;
 }
 
-.c12:hover .c21 svg rect,
-.c12:hover .c21 svg polygon,
-.c12:hover .c21 svg path {
+.c12:hover .c20 svg rect,
+.c12:hover .c20 svg polygon,
+.c12:hover .c20 svg path {
   fill: #ec0000;
 }
 
@@ -768,7 +774,6 @@ exports[`Header should render the tall version 1`] = `
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin-left: 15px;
 }
 
 .c18 .c10 {
@@ -780,34 +785,15 @@ exports[`Header should render the tall version 1`] = `
   padding-right: 0;
 }
 
-.c19 .c14 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c19 .c10 {
-  margin-top: -2px;
-}
-
-.c19 .c2 {
-  height: 50px;
-  padding-right: 0;
-}
-
 .c0 {
   background-color: #ffffff;
   margin: 0 auto;
   width: 100%;
-  max-width: none;
   box-shadow: 0 4px rgba(0,0,0,0.04);
   box-sizing: content-box;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 2;
 }
 
 .c0 .c14 {
@@ -815,7 +801,6 @@ exports[`Header should render the tall version 1`] = `
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin-left: 15px;
 }
 
 .c16 {
@@ -834,6 +819,13 @@ exports[`Header should render the tall version 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+}
+
+@media screen and (min-width:1024px) {
+  .c13 {
+    font-size: 18px;
+    line-height: 25px;
+  }
 }
 
 @media screen and (min-width:540px) {
@@ -871,6 +863,18 @@ exports[`Header should render the tall version 1`] = `
   }
 }
 
+@media screen and (min-width:375px) {
+  .c18 .c14 {
+    margin-left: 16px;
+  }
+}
+
+@media screen and (min-width:375px) {
+  .c0 .c14 {
+    margin-left: 16px;
+  }
+}
+
 @media screen and (max-width:1199px) {
   .c0 .c10 {
     margin-top: -2px;
@@ -899,7 +903,6 @@ exports[`Header should render the tall version 1`] = `
   }
 
   .c0 .c2 {
-    z-index: 100;
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -998,6 +1001,7 @@ exports[`Header should render the tall version without a title 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
+  max-width: none;
 }
 
 .c3::after {
@@ -1007,7 +1011,7 @@ exports[`Header should render the tall version without a title 1`] = `
   font-size: 0;
 }
 
-.c3 .c16 {
+.c3 .c15 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -1089,23 +1093,9 @@ exports[`Header should render the tall version without a title 1`] = `
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin-left: 15px;
 }
 
 .c14 .c2 {
-  height: 50px;
-  padding-right: 0;
-}
-
-.c15 .c10 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: 15px;
-}
-
-.c15 .c2 {
   height: 50px;
   padding-right: 0;
 }
@@ -1114,13 +1104,11 @@ exports[`Header should render the tall version without a title 1`] = `
   background-color: #ffffff;
   margin: 0 auto;
   width: 100%;
-  max-width: none;
   box-shadow: 0 4px rgba(0,0,0,0.04);
   box-sizing: content-box;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 2;
 }
 
 .c0 .c10 {
@@ -1128,7 +1116,6 @@ exports[`Header should render the tall version without a title 1`] = `
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin-left: 15px;
 }
 
 .c12 {
@@ -1172,8 +1159,20 @@ exports[`Header should render the tall version without a title 1`] = `
   }
 }
 
+@media screen and (min-width:375px) {
+  .c14 .c10 {
+    margin-left: 16px;
+  }
+}
+
+@media screen and (min-width:375px) {
+  .c0 .c10 {
+    margin-left: 16px;
+  }
+}
+
 @media screen and (max-width:1199px) {
-  .c0 .sc-bZQynM {
+  .c0 .sc-gzVnrw {
     margin-top: -2px;
   }
 
@@ -1200,7 +1199,6 @@ exports[`Header should render the tall version without a title 1`] = `
   }
 
   .c0 .c2 {
-    z-index: 100;
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -1210,7 +1208,7 @@ exports[`Header should render the tall version without a title 1`] = `
     background-color: transparent;
   }
 
-  .c0 .sc-bZQynM {
+  .c0 .sc-gzVnrw {
     margin-top: 0px;
     -webkit-align-self: flex-start;
     -ms-flex-item-align: start;

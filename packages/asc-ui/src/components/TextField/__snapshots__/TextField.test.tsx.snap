@@ -81,15 +81,22 @@ exports[`<TextField /> should render 1`] = `
           "min": 1200,
         },
       },
+      "maxContainerWidth": 1920,
       "maxGridWidth": 1430,
       "spacing": 4,
       "typography": Object {
         "a": Object {
+          "breakpoints": Object {
+            "laptop": Object {
+              "fontSize": "18px",
+              "lineHeight": "25px",
+            },
+          },
           "color": "#000000",
-          "fontSize": "1rem",
+          "fontSize": "16px",
           "fontWeight": "inherit",
           "letterSpacing": "inherit",
-          "lineHeight": 1.25,
+          "lineHeight": "22px",
           "marginBottom": "0",
         },
         "em": Object {
@@ -149,10 +156,10 @@ exports[`<TextField /> should render 1`] = `
         "h5": Object {
           "color": "#000000",
           "fontSize": "18px",
-          "fontWeight": 400,
+          "fontWeight": 700,
           "letterSpacing": "inherit",
-          "lineHeight": 1,
-          "marginBottom": "0",
+          "lineHeight": "25px",
+          "marginBottom": "8px",
         },
         "h6": Object {
           "color": "#000000",
@@ -161,6 +168,20 @@ exports[`<TextField /> should render 1`] = `
           "letterSpacing": "inherit",
           "lineHeight": "20px",
           "marginBottom": "0",
+        },
+        "li": Object {
+          "breakpoints": Object {
+            "laptop": Object {
+              "fontSize": "18px",
+              "lineHeight": "25px",
+            },
+          },
+          "color": "#000000",
+          "fontSize": "16px",
+          "fontWeight": 400,
+          "letterSpacing": "inherit",
+          "lineHeight": "22px",
+          "marginBottom": "8",
         },
         "p": Object {
           "breakpoints": Object {

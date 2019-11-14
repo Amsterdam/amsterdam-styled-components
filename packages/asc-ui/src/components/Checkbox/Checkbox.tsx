@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState, useContext, useMemo } from 'react'
 import { Checkmark } from '@datapunt/asc-assets'
 import CheckboxStyle, {
   CheckboxIconStyle,
-  CheckboxWrapper,
+  CheckboxWrapperStyle,
   Props,
 } from './CheckboxStyle'
+import LabelContext from '../Label/LabelContext'
 
 const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   checked: checkedProp,
@@ -12,17 +13,29 @@ const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   onChange,
   variant,
   disabled,
+  error,
   ...otherProps
 }) => {
-  const [checked, setChecked] = React.useState(!!checkedProp)
-  const [focus, setFocus] = React.useState(false)
+  const [checked, setChecked] = useState(!!checkedProp)
+  const [focus, setFocus] = useState(false)
+  const { setActive } = useContext(LabelContext)
+
+  // Make the label aware of changes in the checked state
+  useMemo(() => {
+    setActive(checked)
+  }, [checked, setActive])
+
+  // Make the component aware of changes in the checked prop
+  useMemo(() => {
+    setChecked(!!checkedProp)
+  }, [checkedProp, setChecked])
 
   return (
-    <CheckboxWrapper
-      {...{ className, disabled, focus, checked }}
+    <CheckboxWrapperStyle
+      {...{ className, disabled, focus, checked, error }}
       aria-disabled={disabled}
     >
-      <CheckboxIconStyle {...{ disabled, variant, checked }} size={15}>
+      <CheckboxIconStyle {...{ disabled, variant, checked, error }} size={15}>
         {checked && <Checkmark />}
       </CheckboxIconStyle>
       <CheckboxStyle
@@ -38,7 +51,7 @@ const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
           setChecked(!checked)
         }}
       />
-    </CheckboxWrapper>
+    </CheckboxWrapperStyle>
   )
 }
 

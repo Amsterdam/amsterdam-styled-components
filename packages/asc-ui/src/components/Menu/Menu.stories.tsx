@@ -36,7 +36,7 @@ const StyledMenuInline = styled(MenuInline)`
 export const MenuChildren = () => (
   <>
     <MenuItem>
-      <MenuButton $as="a" href="/">
+      <MenuButton $as="a" href="/" active>
         Home
       </MenuButton>
     </MenuItem>
@@ -45,6 +45,30 @@ export const MenuChildren = () => (
         Shop
       </StyledReactRouterLink>
     </MenuItem>
+    <MenuFlyOut label="Submenu!">
+      <MenuItem>
+        <MenuButton $as="a" href="/" iconLeft={<ChevronRight />}>
+          Space Bear 6
+        </MenuButton>
+      </MenuItem>
+      <MenuItem>
+        <MenuButton $as="a" href="/" iconLeft={<ChevronRight />}>
+          Space Bear 6 Plus
+        </MenuButton>
+      </MenuItem>
+      <MenuItemTitle>Just a menu title</MenuItemTitle>
+      <MenuItem>
+        <MenuButton
+          onClick={() => {
+            // eslint-disable-next-line no-undef,no-alert
+            alert('Hello!')
+          }}
+          iconLeft={<ChevronRight />}
+        >
+          This triggers an alert!
+        </MenuButton>
+      </MenuItem>
+    </MenuFlyOut>
     <MenuFlyOut label="Submenu!">
       <MenuItem>
         <MenuButton $as="a" href="/" iconLeft={<ChevronRight />}>
@@ -83,8 +107,18 @@ storiesOf('Composed/Menu', module)
       <MenuChildren />
     </StyledMenuInline>
   ))
+  .add('default with backdrop', () => (
+    <StyledMenuInline hasBackDrop>
+      <MenuChildren />
+    </StyledMenuInline>
+  ))
   .add('toggle', () => (
     <MenuToggle>
+      <MenuChildren />
+    </MenuToggle>
+  ))
+  .add('toggle with backdrop', () => (
+    <MenuToggle hasBackDrop>
       <MenuChildren />
     </MenuToggle>
   ))

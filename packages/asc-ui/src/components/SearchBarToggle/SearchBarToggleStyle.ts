@@ -3,15 +3,14 @@ import {
   themeColor,
   showHide,
   ShowHideTypes,
-  customCss,
-  CustomCssPropsInterface,
+  showAboveBackDrop,
 } from '../../utils'
 import SearchBarStyle from '../SearchBar/SearchBarStyle'
 import ToggleStyle from '../Toggle/ToggleStyle'
+import { TOGGLE_BUTTON_SIZE } from '../shared/constants'
+import ToggleButtonStyle from '../Button/ToggleButton'
 
-export interface SearchBarToggleStyleProps
-  extends ShowHideTypes,
-    CustomCssPropsInterface {
+export interface SearchBarToggleStyleProps extends ShowHideTypes {
   open?: boolean
 }
 
@@ -20,18 +19,22 @@ const SearchBarToggleStyle = styled(ToggleStyle)<SearchBarToggleStyleProps>`
   align-items: flex-end;
   flex-direction: column;
 
+  & > ${ToggleButtonStyle} {
+    ${showAboveBackDrop()}
+  }
+
   & > ${SearchBarStyle} {
     position: absolute;
-    top: 50px;
+    top: ${TOGGLE_BUTTON_SIZE}px;
     right: 0;
     left: 0;
     padding: 15px;
     background-color: ${themeColor('tint', 'level2')};
     border-bottom: 4px solid;
+    ${showAboveBackDrop()}
   }
 
   ${showHide()}
-  ${customCss}
 `
 
 export default SearchBarToggleStyle

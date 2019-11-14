@@ -10,6 +10,9 @@
 
 [Demo site with the storybook of the components](https://amsterdam.github.io/amsterdam-styled-components)
 
+## Install the complete asc project
+`npm install --save @datapunt/asc-assets @datapunt/asc-core @datapunt/asc-ui`
+
 ## Vision
 
 Consistency is always a painpoint in software engineering, especially when it comes to web styling
@@ -90,6 +93,15 @@ to your project.
 
 Now you can import the package like you would do like a normal npm dependency. Changes you will make 
 in your package will be seen in your repo.
+
+Example: linking the `asc-ui` package.
+
+```
+cd amsterdam-styled-components/packages/asc-ui  # go into the package directory
+yarn link                                       # creates global link
+cd path-to-your-main-project                    # go into the dir of your main project
+yarn link "@datapunt/asc-ui"                    # link-install the package
+```
 
 There is a known issue when developing with `yarn link` and using Hooks
 [(click here for details)](https://reactjs.org/warnings/invalid-hook-call-warning.html). The cause

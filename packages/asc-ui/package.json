@@ -12,15 +12,16 @@
   "bugs": {
     "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
   },
-  "version": "0.15.5",
+  "version": "0.17.7",
   "main": "lib/index.js",
+  "module": "lib/index.js",
   "files": [
     "lib"
   ],
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@datapunt/asc-assets": "^0.15.5",
-    "@datapunt/asc-core": "^0.15.5",
+    "@datapunt/asc-assets": "^0.17.7",
+    "@datapunt/asc-core": "^0.17.7",
     "classnames": "^2.2.6",
     "deepmerge": "^4.0.0",
     "enzyme": "^3.10.0",
@@ -30,11 +31,11 @@
     "react-uid": "^2.2.0"
   },
   "peerDependencies": {
-    "react": "16.8.6 || 16.9.0",
-    "react-dom": "16.8.6 || 16.9.0"
+    "react": "16.8.6 || 16.9.0 || 16.11.0",
+    "react-dom": "16.8.6 || 16.9.0 || 16.11.0"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "7fc0216f99b1eed36d7b971d305d3a3906ec2597"
+  "gitHead": "d24c66f226d569d81e90503da943570316e650da"
 }

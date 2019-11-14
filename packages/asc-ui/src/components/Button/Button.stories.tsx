@@ -8,6 +8,7 @@ import {
   Twitter,
   Linkedin,
   Email,
+  Enlarge,
   Print,
 } from '@datapunt/asc-assets'
 import { storiesOf } from '@storybook/react'
@@ -38,6 +39,9 @@ storiesOf('Atoms/Buttons', module)
   .add('variants', () => (
     <ButtonBar>
       <Button variant="primary">Default button</Button>
+      <Button variant="application" iconLeft={<Enlarge />} iconSize={10}>
+        Application button
+      </Button>
       <Button
         variant="secondary"
         iconLeft={<Download />}
@@ -78,6 +82,9 @@ storiesOf('Atoms/Buttons', module)
       <Button disabled variant="primaryInverted" iconLeft={<ChevronRight />}>
         Download button
       </Button>
+      <Button disabled variant="secondary" taskflow>
+        Taskflow button
+      </Button>
       <Button
         disabled
         variant="textButton"
@@ -85,9 +92,6 @@ storiesOf('Atoms/Buttons', module)
         iconSize={14}
       >
         Text button
-      </Button>
-      <Button disabled variant="secondary" taskflow>
-        Taskflow button
       </Button>
     </ButtonBar>
   ))

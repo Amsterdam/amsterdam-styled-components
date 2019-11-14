@@ -1,10 +1,12 @@
 import styled, { css } from '@datapunt/asc-core'
 import { HeaderStyleCSS } from '../Heading/HeadingStyle'
-import { DefaultLinkStyleCSS } from '../Link/LinkStyle'
+import { InlineLinkStyleCSS } from '../Link/LinkStyle'
 import { ParagraphStyleCSS } from '../Paragraph/ParagraphStyle'
 import { getTypographyFromTheme } from '../../utils'
 import { BulletCSS, ListStyleCSS } from '../List/ListStyle'
 import { ListItemStyleCSS } from '../List/ListItemStyle'
+import { BlockquoteStyleCSS } from '../Blockquote/BlockquoteStyle'
+import { OrderedListStyleCSS } from '../List/OrderedListStyle'
 
 const ElementStyleMapping = {
   h1: HeaderStyleCSS,
@@ -13,12 +15,16 @@ const ElementStyleMapping = {
   h4: HeaderStyleCSS,
   h5: HeaderStyleCSS,
   h6: HeaderStyleCSS,
-  a: DefaultLinkStyleCSS,
+  a: InlineLinkStyleCSS,
   p: ParagraphStyleCSS,
+  blockquote: BlockquoteStyleCSS,
   // Default variant bullet when rendered in CustomHTMLBlock
   ul: css`
     ${ListStyleCSS}
     ${BulletCSS}
+  `,
+  ol: css`
+    ${OrderedListStyleCSS}
   `,
   li: ListItemStyleCSS,
 }
@@ -37,7 +43,6 @@ const CustomHTMLBlockStyle = styled.div`
   video {
     max-width: 100%;
     margin: 24px auto;
-    width: 100%;
   }
 `
 

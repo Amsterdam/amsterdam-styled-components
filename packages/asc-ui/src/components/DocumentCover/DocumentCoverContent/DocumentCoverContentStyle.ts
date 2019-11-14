@@ -1,24 +1,24 @@
 import styled from '@datapunt/asc-core'
-import { breakpoint } from '../../../utils'
+import { breakpoint, themeSpacing } from '../../../utils'
 import ImageStyle from '../../Image/ImageStyle'
 
 export default styled.div`
   display: flex;
   flex-direction: column;
-  margin: 32px auto;
+  margin: ${themeSpacing(8, 0)};
 
   @media screen and ${breakpoint('max-width', 'tabletS')} {
-    margin: 20px;
+    margin: ${themeSpacing(5)};
   }
 
   & > ${ImageStyle} {
     max-width: 300px;
-    margin-bottom: 32px;
+    margin-bottom: ${themeSpacing(8)};
     width: 100%;
 
     @media screen and ${breakpoint('max-width', 'tabletS')} {
       max-width: 200px;
-      margin-bottom: 20px;
+      margin-bottom: ${themeSpacing(5)};
     }
   }
 `

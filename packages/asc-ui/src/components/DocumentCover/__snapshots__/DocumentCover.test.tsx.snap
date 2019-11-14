@@ -114,7 +114,7 @@ exports[`DocumentCover should render 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 32px auto;
+  margin: 32px 0;
 }
 
 .c1 > .c2 {

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import HeaderStyle from './HeaderStyle'
+import HeaderStyle, { Props as HeaderStyleProps } from './HeaderStyle'
 import HeaderWrapperStyle, {
   Props as HeaderWrapperProps,
 } from './HeaderWrapperStyle'
@@ -14,6 +14,7 @@ type Props = {
   navigation?: React.ReactNode
   links?: React.ReactNode
 } & HeaderWrapperProps &
+  HeaderStyleProps &
   CustomCssPropsType &
   React.HTMLAttributes<HTMLDivElement>
 
@@ -27,7 +28,7 @@ const Header: React.FC<Props> = ({
   links,
   ...otherProps
 }) => (
-  <HeaderWrapperStyle {...{ css, tall, fullWidth }} id="header">
+  <HeaderWrapperStyle {...{ css, tall }} id="header">
     <HeaderStyle {...{ fullWidth, ...otherProps }}>
       <HeaderLogoText {...{ tall, title, homeLink }} />
       <HeaderNavigation>{navigation}</HeaderNavigation>

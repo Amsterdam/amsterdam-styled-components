@@ -8,7 +8,10 @@ export type Props = {
   hasToggle?: boolean
 }
 
-export default styled(MenuItemStyle)<Props>`
+export default styled(MenuItemStyle).attrs({
+  tabIndex: -1, // Fix for Firefox to be able to blur
+  role: 'button',
+})<Props>`
   ${MenuListStyle} {
     background-color: ${themeColor('tint', 'level2')};
     width: ${FLY_OUT_WIDTH}px;

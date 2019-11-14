@@ -1,12 +1,14 @@
 import styled, { css } from '@datapunt/asc-core'
-import { themeColor } from '../../utils'
+import { stripUnit } from 'polished'
+import { themeColor, themeSpacing, getTypographyFromTheme } from '../../utils'
+import { getTypographyValueFromProperty } from '../../utils/themeUtils'
 
 export type Props = {
   variant?: 'bullet'
 }
 
 const BULLET_SIZE = 8
-const BULLET_MARGIN = 15
+const BULLET_MARGIN = 16
 
 export const BulletCSS = css`
   margin-left: ${BULLET_MARGIN + BULLET_SIZE}px;
@@ -14,6 +16,7 @@ export const BulletCSS = css`
   li {
     /* Unfortunately we target the element instead of the style. This because we have to target the LI if it's rendered in CustomHTMLBlock */
     position: relative;
+    ${({ theme }) => getTypographyFromTheme()({ as: 'li', theme })};
 
     &::before {
       content: '';
@@ -21,9 +24,15 @@ export const BulletCSS = css`
       width: ${BULLET_SIZE}px;
       height: ${BULLET_SIZE}px;
       background-color: ${themeColor('tint', 'level7')};
-      top: 50%;
-      transform: translateY(-50%);
       left: -${BULLET_MARGIN + BULLET_SIZE}px;
+      top: ${({ theme }) =>
+        `${(stripUnit(
+          getTypographyValueFromProperty('li', 'lineHeight')({
+            theme,
+          }),
+        ) -
+          BULLET_SIZE) /
+          2}px`};
     }
   }
 `
@@ -41,11 +50,13 @@ const getVariant = () => ({ variant }: Props) => {
 export const ListStyleCSS = css`
   list-style: none;
   background-color: ${themeColor('tint', 'level1')};
-  margin: 0 0 24px 0;
+  margin: ${themeSpacing(0, 0, 6, 0)};
   padding: 0;
 `
 
 export default styled.ul<Props>`
+  display: flex;
+  flex-direction: column;
   ${ListStyleCSS}
   ${getVariant()}
 `

@@ -1,6 +1,11 @@
 import styled, { css } from '@datapunt/asc-core'
 import { themeColor } from '../../utils'
-import { svgFill, FocusStyleEnum, getFocusStyle } from '../../utils/themeUtils'
+import {
+  svgFill,
+  FocusStyleEnum,
+  getFocusStyle,
+  themeSpacing,
+} from '../../utils/themeUtils'
 import Typography, { TypographyProps } from '../Typography'
 import IconStyle from '../Icon/IconStyle'
 
@@ -41,7 +46,7 @@ export const DefaultLinkStyleCSS = css<Props>`
     themeColor('tint', 'level7', colorOverride)({ theme })};
 
   ${IconStyle} {
-    margin: 3px;
+    margin: ${themeSpacing(1)};
     ${({ color: colorOverride, theme }) =>
       svgFill('tint', 'level7', colorOverride)({ theme })};
   }
@@ -55,6 +60,10 @@ export const DefaultLinkStyleCSS = css<Props>`
         svgFill('secondary', 'main', colorOverride)({ theme })};
     }
   }
+`
+
+export const LinkContent = styled.span`
+  width: 100%; /* IE11 Fix */
 `
 
 export default styled(Typography)<Props>`

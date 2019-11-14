@@ -14,15 +14,59 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## UNRELEASED
+## Canary
 
+- Added: FilterTag component.
+- Changed: Keep the toggle component background colour when toggled and not toggled.
+- Added: Export a `BackDrop` component that can be used for i.e. React Portals
+- Changed: Setup for managing the `z-index` of the project's components, `z-index` can now be imported in single projects
+- Added: `active` prop to MenuButton to enable activeStyles (instead of only on `:hover, :focus`)
+- Fixed: Update styling on `Text Button` variant
+
+## [0.17.5] - 2019-10-30
+
+- Added: Functionality to publish a canary release for internal testing
+- Added: Checkbox has a new variant: 'tertiary'
+- Changed: Publish script for stable releases has changed, due to addition of canary releases
+- Removed: Breaking change: `css` prop for SearchBar and SearchBarToggle.
+
+## [0.17.4] - 2019-10-23
+
+- Added: Button has a new variant: 'application'
+- Added: Components "FilterBox" and "FilterOption"
+- Added: LabelContext for getting an active state when used with a Checkbox
+
+## [0.17.3] - 2019-10-16
+
+- Added: default `position` prop for Label(Text) is 'right'
+- Added: Checkbox has Error state, by passing an `error` prop
+- Fixed: updated Checkbox according to design system
+
+## [0.17.2] - 2019-10-14
+
+### ASC-UI
+
+- Added: accessibility support for MenuFlyOut to navigate with arrow keys when open
+- Fixed: firefox issue with blurring on MenuFlyOut
+
+## [0.17.0] - 2019-10-14
+
+- Fixed: reset the breakpoints for typography in the CompactTheme as they are not used in this theme
+- Added: Make it possible to order the ListItems inside a List component by passing an `order` prop
+- Added: OrderedList component
+- Changed: Card and ImageCard 'loading' prop to 'isLoading'
+
+## [0.16.0] - 2019-09-17
+
+- Changed: max-width on Container is now desktop (1920px)
+- Changed: max-width on HeaderWrapperStyle is moved to HeaderStyle.
 - Removed: specific parameter hasLongText from the paragraph, will be implemented in the consumer applications
 - Changed: the breakpoints for the typography font sizes are changed to from `tabletS` to `laptop`
+- Removed: width: 100% on CustomHTMLBlock img and video
 
+## [0.15.5] - 2019-09-17
 
-## [0.15.0] - 2019-09-17
-
-- Added: theme spacing unit and a themeSpacing util to retrieve a size from the theme's spacing unit. 
+- Added: theme spacing unit and a themeSpacing util to retrieve a size from the theme's spacing unit.
 - Fixed: issue with button's size
 - Changed: The `max-width` value of the header is now defined by the max width of the grid in the theme configuration
 - Deprecated: `fromTheme` util method. Use `getValueFromTheme` instead

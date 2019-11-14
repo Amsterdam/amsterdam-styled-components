@@ -15,7 +15,7 @@ const ContainerWrapperStyle = styled.div<{}>`
 const ContainerStyle = styled.div<Props>`
   width: 100%;
   max-width: ${({ maxWidth, theme }) =>
-    `${maxWidth || getValueFromTheme('maxGridWidth')({ theme })}px`};
+    `${maxWidth || getValueFromTheme('maxContainerWidth')({ theme })}px`};
   flex-grow: 1;
   position: relative;
 

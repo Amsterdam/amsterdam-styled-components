@@ -9,6 +9,7 @@ export {
   svgFill,
   showHide,
   ShowHideTypes,
+  showAboveBackDrop,
   customCss,
   CustomCssPropsType,
   CustomCssPropsInterface,

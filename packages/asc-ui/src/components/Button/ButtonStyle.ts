@@ -1,6 +1,11 @@
 import styled, { Theme, css } from '@datapunt/asc-core'
 import { transitions, readableColor, darken, size } from 'polished'
-import { themeColor, focusStyleOutline, svgFill } from '../../utils'
+import {
+  themeColor,
+  focusStyleOutline,
+  svgFill,
+  themeSpacing,
+} from '../../utils'
 import { flexboxMinHeightFix } from '../shared/ie-fixes'
 import Icon from '../Icon'
 
@@ -11,6 +16,7 @@ export enum ButtonVariants {
   primaryInverted,
   textButton,
   blank, // blank variant is a plain white button with a grey background on hover
+  application,
 }
 
 const defaultProps = {
@@ -38,6 +44,13 @@ export const ArrowRight = styled.div`
     z-index: -1;
     opacity: 0;
   }
+`
+
+export const IconLeft = styled(Icon)`
+  margin-right: 10px;
+`
+export const IconRight = styled(Icon)`
+  margin-left: 10px;
 `
 
 const getVariant = () => ({
@@ -109,13 +122,29 @@ const getVariant = () => ({
 
     case 'textButton':
       return css`
+        height: auto;
+        padding: 0;
+        align-self: baseline;
+        white-space: normal;
+        text-align: left;
         color: ${themeColor('primary')};
         background-color: rgba(0, 0, 0, 0);
+        font-weight: 700;
         ${svgFill('primary')};
+
+        /* remove transition because it's async with Icon */
+        ${transitions('color', '0s')}
 
         &:hover {
           color: ${themeColor('secondary')};
           ${svgFill('secondary')};
+        }
+
+        ${IconLeft} {
+          margin-right: ${themeSpacing(1)};
+        }
+        ${IconRight} {
+          margin-left: ${themeSpacing(1)};
         }
       `
 
@@ -125,6 +154,17 @@ const getVariant = () => ({
         ${svgFill('tint', 'level7')}
         &:hover {
           background-color: ${themeColor('tint', 'level3')};
+        }
+      `
+    case 'application':
+      return css`
+        border: 1px solid ${themeColor('tint', 'level7')};
+        background-color: ${themeColor('tint', 'level1')};
+        height: 32px;
+        padding: ${themeSpacing(1, 2)};
+        ${svgFill('tint', 'level7')}
+        &:hover {
+          background-color: ${themeColor('tint', 'level4')};
         }
       `
     default:
@@ -181,13 +221,6 @@ export type Props = {
   taskflow?: boolean
 }
 
-export const IconLeft = styled(Icon)`
-  margin-right: 10px;
-`
-export const IconRight = styled(Icon)`
-  margin-left: 10px;
-`
-
 const ButtonStyle = styled.button<Props>`
   height: 44px;
   white-space: nowrap;
@@ -222,19 +255,6 @@ const ButtonStyle = styled.button<Props>`
       }
       &:focus ${ArrowRight}:after {
         opacity: 1;
-      }
-    `}
-  ${({ variant }) =>
-    variant &&
-    variant === 'textButton' &&
-    css`
-      // remove transition because it's async with Icon
-      ${transitions('color', '0s')}
-      ${IconLeft} {
-        margin-right: 5px;
-      }
-      ${IconRight} {
-        margin-left: 5px;
       }
     `}
   &:disabled {

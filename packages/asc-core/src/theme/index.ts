@@ -113,6 +113,7 @@ export namespace Theme {
     h5: TypographyType
     h6: TypographyType
     p: TypographyType
+    li: TypographyType
     a: TypographyType
     em: TypographyType
     small: TypographyType
@@ -131,6 +132,7 @@ export namespace Theme {
     typography: Partial<TypographyInterface>
     layouts: Partial<LayoutInterface>
     maxGridWidth: number
+    maxContainerWidth: number
     spacing: Spacing
   }
 
@@ -142,7 +144,10 @@ export namespace Theme {
       const globalStyle = require(`./${themeName}/globalStyle`).default
       const typography = require(`./${themeName}/typography`).default
       const layouts = require(`./${themeName}/layouts`).default
-      const { maxGridWidth } = require(`./${themeName}/layouts`)
+      const {
+        maxGridWidth,
+        maxContainerWidth,
+      } = require(`./${themeName}/layouts`)
       const spacing = require(`./${themeName}/spacing`).default
       /* eslint-enable global-require, import/no-dynamic-require */
       return new ThemeFactory(
@@ -152,6 +157,7 @@ export namespace Theme {
         typography,
         layouts,
         maxGridWidth,
+        maxContainerWidth,
         spacing,
       )
     }
@@ -163,6 +169,7 @@ export namespace Theme {
       public typography: TypographyInterface,
       public layouts: LayoutInterface,
       public maxGridWidth: number,
+      public maxContainerWidth: number,
       public spacing: Spacing,
     ) {}
   }

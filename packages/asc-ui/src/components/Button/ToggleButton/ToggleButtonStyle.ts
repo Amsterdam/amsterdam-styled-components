@@ -14,6 +14,6 @@ export default styled(ButtonStyle)<Props>`
   &:hover,
   &:focus {
     background-color: ${({ theme, open }) =>
-      themeColor('tint', open ? 'level3' : 'level2')({ theme })};
+      themeColor('tint', open ? 'level2' : 'level2')({ theme })};
   }
 `

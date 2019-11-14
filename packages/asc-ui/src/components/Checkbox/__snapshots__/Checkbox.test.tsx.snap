@@ -32,7 +32,6 @@ exports[`Checkbox should render 1`] = `
   border-style: solid;
   width: 22px;
   height: 22px;
-  margin: 2px;
   position: relative;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -51,12 +50,6 @@ exports[`Checkbox should render 1`] = `
   height: 15px;
 }
 
-.c2 svg rect,
-.c2 svg polygon,
-.c2 svg path {
-  fill: #ffffff;
-}
-
 .c0 {
   position: relative;
   display: -webkit-inline-box;
@@ -68,7 +61,11 @@ exports[`Checkbox should render 1`] = `
   -ms-user-select: none;
   user-select: none;
   vertical-align: middle;
-  padding: 10px;
+  margin-bottom: 1px;
+  padding: 6px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   color: #767676;
 }
 

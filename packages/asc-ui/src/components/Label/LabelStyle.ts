@@ -1,5 +1,6 @@
 import styled, { css } from '@datapunt/asc-core'
 import { themeColor, srOnlyStyle } from '../../utils'
+import { CheckboxWrapperStyle } from '../Checkbox'
 
 type SharedProps = {
   position?: 'top' | 'right' | 'bottom' | 'left'
@@ -8,11 +9,16 @@ type SharedProps = {
 export type Props = {
   srOnly?: boolean
   disabled?: boolean
+  align?: 'center' | 'flex-start' | 'flex-end'
 } & SharedProps
 
-const FormLabelStyle = styled.label<Props>`
+type StyleOnlyProps = {
+  active: boolean
+}
+
+const LabelStyle = styled.label<Props & StyleOnlyProps>`
   display: inline-flex;
-  align-items: center;
+  align-items: ${({ align }) => align};
   vertical-align: middle;
   color: ${themeColor('tint', 'level7')};
   ${srOnlyStyle()}
@@ -29,9 +35,33 @@ const FormLabelStyle = styled.label<Props>`
     css`
       flex-direction: column;
     `}
+  ${({ position }) =>
+    position &&
+    css`
+      & ${CheckboxWrapperStyle} {
+        padding-${position}: 12px;
+      }
+    `}
+  
+  ${({ active }) =>
+    active &&
+    css`
+      font-weight: 700;
+    `}
 `
 
+LabelStyle.defaultProps = {
+  position: 'right',
+  align: 'center',
+} as SharedProps
+
 export const LabelTextStyle = styled.span<SharedProps>`
+  ${({ position }) =>
+    position !== 'top' &&
+    position !== 'bottom' &&
+    css`
+      margin: 9.2px 0; /* To align the label to a checkbox / radiobutton when having a long text. line-height is 1.15 / 18.4px (from normalize css). Margin top & bottom = lineheight / 2 */
+    `}
   ${({ position }) =>
     position === 'top' || position === 'left'
       ? css`
@@ -42,4 +72,4 @@ export const LabelTextStyle = styled.span<SharedProps>`
         `}
 `
 
-export default FormLabelStyle
+export default LabelStyle

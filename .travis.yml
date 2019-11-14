@@ -1,7 +1,6 @@
 sudo: false
 os:
   - linux
-  - osx
 language: node_js
 node_js:
   - '10'
@@ -19,10 +18,21 @@ script:
 branches:
   only:
     - master
+before_deploy:
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
 deploy:
-  local_dir: .sb
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  on:
-    branch: master
+  - provider: pages
+    local_dir: .sb
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    on:
+      branch: master
+      node: '12'
+      os: linux
+  - provider: script
+    script: yarn publish:canary
+    skip_cleanup: true
+    on:
+      branch: master
+      node: '12'
+      os: linux

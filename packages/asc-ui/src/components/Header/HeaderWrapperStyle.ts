@@ -1,21 +1,20 @@
 import styled, { css } from '@datapunt/asc-core'
 import {
   breakpoint,
-  getValueFromTheme,
   themeColor,
   customCss,
   CustomCssPropsInterface,
+  themeSpacing,
 } from '../../utils'
 import HeaderTitleStyle from './HeaderTitleStyle'
 import HeaderNavigationStyle from './HeaderNavigationStyle'
 import HeaderLogoTextStyle from './HeaderLogoTextStyle'
 import TopBarStyle from '../TopBar/TopBarStyle'
 import HeaderStyle from './HeaderStyle'
-import { HEADER_HEIGHT_SMALL } from '../shared/sizes'
+import { HEADER_HEIGHT_SMALL } from '../shared/constants'
 
 export interface Props extends CustomCssPropsInterface {
   tall?: boolean
-  fullWidth?: boolean
 }
 
 const shortStyle = css`
@@ -33,17 +32,16 @@ const HeaderWrapperStyle = styled.div<Props>`
   background-color: ${themeColor('tint', 'level1')};
   margin: 0 auto;
   width: 100%;
-  max-width: ${({ fullWidth, theme }) =>
-    fullWidth ? 'none' : `${getValueFromTheme('maxGridWidth')({ theme })}px`};
   box-shadow: 0 4px rgba(0, 0, 0, 0.04);
   box-sizing: content-box;
   position: sticky;
   top: 0;
-  z-index: 2;
 
   ${HeaderNavigationStyle} {
     flex-grow: 1;
-    margin-left: 15px;
+    @media screen and ${breakpoint('min-width', 'mobileM')} {
+      margin-left: ${themeSpacing(4)};
+    }
   }
 
   ${({ tall }) =>
@@ -67,7 +65,6 @@ const HeaderWrapperStyle = styled.div<Props>`
             }
 
             ${HeaderStyle} {
-              z-index: 100;
               flex-wrap: wrap;
             }
 

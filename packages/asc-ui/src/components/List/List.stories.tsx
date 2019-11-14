@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react'
 import List from './List'
 import ListItem from './ListItem'
 import Link from '../Link/Link'
+import OrderedList from './OrderedList'
 
 storiesOf('Atoms/List', module)
   .addDecorator(storyFn => (
@@ -43,4 +44,14 @@ storiesOf('Atoms/List', module)
         <Link href="/">Amsterdam West</Link>
       </ListItem>
     </List>
+  ))
+  .add('ordered list', () => (
+    <OrderedList>
+      <ListItem>Amsterdam Noord</ListItem>
+      <ListItem>Amsterdam Zuid</ListItem>
+      <ListItem>Amsterdam Oost</ListItem>
+      <ListItem>
+        <Link href="/">Amsterdam West</Link>
+      </ListItem>
+    </OrderedList>
   ))

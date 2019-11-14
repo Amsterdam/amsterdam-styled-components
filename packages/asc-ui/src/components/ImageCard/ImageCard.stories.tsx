@@ -22,7 +22,7 @@ storiesOf('Atoms/ImageCard', module)
   .add('loading state', () => (
     <div style={{ maxWidth: '600px' }}>
       <ImageCard
-        loading
+        isLoading
         backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
       >
         <ImageCardContent>
