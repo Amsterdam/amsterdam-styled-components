@@ -23,7 +23,7 @@ const ElementStyleMapping = {
   li: ListItemStyleCSS,
 }
 
-const CustomHTMLBlock = styled.div`
+const CustomHTMLBlockStyle = styled.div`
   ${Object.entries(ElementStyleMapping).map(
     ([element, style]) => css`
       ${element} {
@@ -41,4 +41,4 @@ const CustomHTMLBlock = styled.div`
   }
 `
 
-export default CustomHTMLBlock
+export default CustomHTMLBlockStyle
