@@ -1,16 +1,16 @@
-import React, {
-  useState,
-  useContext,
-  // useMemo
-} from 'react'
-import RadioStyle, { RadioWrapperStyle, Props } from './RadioStyle'
+import React, { useState, useContext } from 'react'
+import RadioStyle, {
+  RadioWrapperStyle,
+  RadioCircleStyle,
+  Props,
+} from './RadioStyle'
 import RadioContext from './RadioContext'
 
 const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   className,
   onChange,
   variant,
-  disabled: disabledProp,
+  disabled,
   name: nameProp,
   error,
   id,
@@ -20,41 +20,45 @@ const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   const [focus, setFocus] = useState(false)
   const {
     setSelected,
-    selected,
-    disabledGroup,
+    selected: selectedProp,
     nameGroup,
     hasGroup,
   } = useContext(RadioContext)
-  const disabled = disabledProp || disabledGroup
-  const name = nameProp || nameGroup
 
   // Set selected on defaultChecked
-  if (hasGroup && defaultChecked && !selected) {
+  if (hasGroup && defaultChecked && !selectedProp) {
     setSelected(id)
   }
 
   return (
     <RadioWrapperStyle
       {...{
-        disabled,
         focus,
         error,
         className,
         variant,
         hasGroup,
+        disabled,
       }}
       aria-disabled={disabled}
-      isSelected={selected === id}
+      selected={selectedProp === id}
     >
+      <RadioCircleStyle
+        {...{
+          hasGroup,
+          disabled,
+        }}
+        selected={selectedProp === id}
+      />
       <RadioStyle
         {...{
           ...otherProps,
           disabled,
           id,
           defaultChecked,
-          name,
           hasGroup,
         }}
+        name={nameProp || nameGroup}
         onFocus={() => {
           setFocus(true)
         }}

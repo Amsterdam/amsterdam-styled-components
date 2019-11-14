@@ -1,28 +1,77 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio should render 1`] = `
-.c0:hover {
+.c4 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  cursor: inherit;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  opacity: 0;
+}
+
+.c3 {
+  width: 24px;
+  height: 24px;
+  color: #767676;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  padding: 4px;
+  margin-bottom: 1px;
+  margin-right: 8px;
+}
+
+.c1:hover .c2 {
+  border: 2px solid;
   color: #000000;
 }
 
-.c0.c0:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-offset: 0px;
-  outline-width: 3px;
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 <div>
   <div
-    aria-disabled="false"
     class="c0"
   >
-    <input
-      class=""
-      id="test"
-      name=""
-      type="radio"
-    />
+    <div
+      class="c1"
+    >
+      <div
+        class="c2 c3"
+      />
+      <input
+        class="c4"
+        id="test"
+        name="group"
+        type="radio"
+      />
+    </div>
   </div>
 </div>
 `;

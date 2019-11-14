@@ -2,6 +2,7 @@ import * as React from 'react'
 import { render, cleanup, fireEvent } from '@testing-library/react'
 import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import Radio from './Radio'
+import RadioGroup from './RadioGroup'
 
 describe('Radio', () => {
   let container: any
@@ -11,7 +12,9 @@ describe('Radio', () => {
     cleanup()
     ;({ container } = render(
       <ThemeProvider theme={ascDefaultTheme}>
-        <Radio id="test" onChange={onChangeMock} />
+        <RadioGroup name="group">
+          <Radio id="test" onChange={onChangeMock} />
+        </RadioGroup>
       </ThemeProvider>,
     ))
   })
