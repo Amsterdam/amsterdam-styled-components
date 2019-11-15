@@ -1,15 +1,16 @@
 import React from 'react'
-import CustomHTMLBlockStyles from './CustomHTMLBlockStyle'
+import CustomHTMLBlockStyle from './CustomHTMLBlockStyle'
 
 type Props = {
   body: string
 }
 
-const CustomHTMLBlock: React.FC<Props> = ({ body }) => (
-  <CustomHTMLBlockStyles
+const CustomHTMLBlock: React.FC<Props> = ({ body, ...otherProps }) => (
+  <CustomHTMLBlockStyle
     dangerouslySetInnerHTML={{
       __html: body,
     }}
+    {...otherProps}
   />
 )
 
