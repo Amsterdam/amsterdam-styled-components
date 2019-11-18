@@ -6,6 +6,7 @@ import RadioContext from './RadioContext'
 
 const RadioGroup: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   disabled,
+  error,
   name,
   horizontal,
   children: childrenProps,
@@ -20,8 +21,8 @@ const RadioGroup: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
       value={{
         selected,
         setSelected,
-        nameGroup: name,
-        hasGroup: true,
+        name,
+        error,
       }}
     >
       <RadioGroupStyle horizontal={horizontal}>

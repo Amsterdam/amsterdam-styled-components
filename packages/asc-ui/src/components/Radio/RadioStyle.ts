@@ -16,26 +16,20 @@ export type Props = {
   id: string
   defaultChecked?: boolean
   onChange?: Function
-  hasGroup?: boolean
 }
 
 const RadioStyle = styled.input.attrs({
   type: 'radio',
 })<Props>`
-  ${({ hasGroup }) =>
-    hasGroup &&
-    // Styling only happens when using RadioGroup, otherwise native radio-button functionality breaks
-    css`
-      top: 0;
-      left: 0;
-      width: 100%;
-      cursor: inherit;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      position: absolute;
-      opacity: 0;
-    `}
+  top: 0;
+  left: 0;
+  width: 100%;
+  cursor: inherit;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  opacity: 0;
 `
 
 export default RadioStyle
@@ -45,20 +39,15 @@ export type RadioWrapperStyleProps = {
   selected?: boolean
   disabled?: boolean
   error?: boolean
-  hasGroup?: boolean
+  focus?: boolean
 }
 
 const RadioCircleStyle = styled.div<RadioWrapperStyleProps>`
-  ${({ hasGroup }) =>
-    hasGroup &&
-    css`
-      width: ${themeSpacing(6)};
-      height: ${themeSpacing(6)};
-      color: ${themeColor('tint', 'level5')};
-      border: 1px solid;
-      border-radius: 50%;
-    `}
-
+  width: ${themeSpacing(6)};
+  height: ${themeSpacing(6)};
+  color: ${themeColor('tint', 'level5')};
+  border: 1px solid;
+  border-radius: 50%;
   ${({ selected }) =>
     selected &&
     css`
@@ -74,6 +63,16 @@ const RadioCircleStyle = styled.div<RadioWrapperStyleProps>`
         top: 50%;
       }
     `}
+
+  ${({ error, selected, disabled, focus }) =>
+    error &&
+    !selected &&
+    !disabled &&
+    !focus &&
+    css`
+      border-width: 2px;
+      color: red;
+    `}
 `
 
 export { RadioCircleStyle }
@@ -81,21 +80,15 @@ export { RadioCircleStyle }
 const RadioWrapperStyle = styled.div<
   RadioWrapperStyleProps & { focus: boolean }
 >`
-  ${({ hasGroup }) =>
-    hasGroup &&
-    css`
-      position: relative;
-      display: inline-flex;
-      user-select: none;
-      vertical-align: middle;
-      flex-shrink: 0; /* IE11 fix */
-      padding: ${themeSpacing(1)};
-      margin-bottom: 1px;
-      margin-right: ${themeSpacing(2)};
-    `}
-
-  ${({ hasGroup, focus, theme }) =>
-    hasGroup &&
+  position: relative;
+  display: inline-flex;
+  user-select: none;
+  vertical-align: middle;
+  flex-shrink: 0; /* IE11 fix */
+  padding: ${themeSpacing(1)};
+  margin-bottom: 1px;
+  margin-right: ${themeSpacing(2)};
+  ${({ focus, theme }) =>
     focus &&
     css`
       ${RadioCircleStyle} {
@@ -108,7 +101,7 @@ const RadioWrapperStyle = styled.div<
     css`
       pointer-events: none;
     `}
-
+    
   ${({ selected, disabled, focus }) =>
     !selected &&
     !disabled && // IE11 fix. If an element is disabled, you can still hover on it on IE11.

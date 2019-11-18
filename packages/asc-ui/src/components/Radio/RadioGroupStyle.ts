@@ -6,6 +6,7 @@ export type Props = {
   name?: string
   horizontal?: boolean
   disabled?: boolean
+  error?: boolean
 }
 
 export default styled.div<Props>`

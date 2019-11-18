@@ -12,23 +12,25 @@ const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   variant,
   disabled,
   name: nameProp,
-  error,
   id,
   defaultChecked,
+  error: errorProp,
   ...otherProps
 }) => {
   const [focus, setFocus] = useState(false)
   const {
     setSelected,
     selected: selectedProp,
-    nameGroup,
-    hasGroup,
+    name: nameGroup,
+    error: errorGroup,
   } = useContext(RadioContext)
 
   // Set selected on defaultChecked
-  if (hasGroup && defaultChecked && !selectedProp) {
+  if (defaultChecked && !selectedProp) {
     setSelected(id)
   }
+
+  const error = errorProp || errorGroup || false
 
   return (
     <RadioWrapperStyle
@@ -37,7 +39,6 @@ const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
         error,
         className,
         variant,
-        hasGroup,
         disabled,
       }}
       aria-disabled={disabled}
@@ -45,8 +46,9 @@ const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
     >
       <RadioCircleStyle
         {...{
-          hasGroup,
+          error,
           disabled,
+          focus,
         }}
         selected={selectedProp === id}
       />
@@ -56,7 +58,6 @@ const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
           disabled,
           id,
           defaultChecked,
-          hasGroup,
         }}
         name={nameProp || nameGroup}
         onFocus={() => {
