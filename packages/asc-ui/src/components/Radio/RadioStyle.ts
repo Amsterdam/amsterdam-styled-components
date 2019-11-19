@@ -18,6 +18,29 @@ export type Props = {
   onChange?: Function
 }
 
+const getVariantColor = () => ({
+  variant,
+}: {
+  variant?: keyof typeof Variants
+}) => {
+  switch (variant) {
+    case 'primary':
+      return css`
+        ${themeColor('primary', 'main')};
+      `
+
+    case 'secondary':
+      return css`
+        ${themeColor('secondary', 'main')};
+      `
+
+    default:
+      return css`
+        ${themeColor('tint', 'level7')};
+      `
+  }
+}
+
 const RadioStyle = styled.input.attrs({
   type: 'radio',
 })<Props>`
@@ -34,39 +57,40 @@ const RadioStyle = styled.input.attrs({
 
 export default RadioStyle
 
-export type RadioWrapperStyleProps = {
+type StyleOnlyProps = {
   variant?: keyof typeof Variants
-  selected?: boolean
+  checked?: boolean
   disabled?: boolean
   error?: boolean
   focus?: boolean
 }
 
-const RadioCircleStyle = styled.div<RadioWrapperStyleProps>`
+const RadioCircleStyle = styled.div<StyleOnlyProps>`
   width: ${themeSpacing(6)};
   height: ${themeSpacing(6)};
   color: ${themeColor('tint', 'level5')};
   border: 1px solid;
   border-radius: 50%;
-  ${({ selected }) =>
-    selected &&
+  ${({ checked }) =>
+    checked &&
     css`
+      color: ${getVariantColor()};
       &:after {
         content: '';
         position: absolute;
         height: 16px;
         width: 16px;
-        background-color: ${themeColor('tint', 'level7')};
         border-radius: 50%;
         transform: translate(-50%, -50%);
         left: 50%;
         top: 50%;
+        background-color: ${getVariantColor()};
       }
     `}
 
-  ${({ error, selected, disabled, focus }) =>
+  ${({ error, checked, disabled, focus }) =>
     error &&
-    !selected &&
+    !checked &&
     !disabled &&
     !focus &&
     css`
@@ -77,9 +101,7 @@ const RadioCircleStyle = styled.div<RadioWrapperStyleProps>`
 
 export { RadioCircleStyle }
 
-const RadioWrapperStyle = styled.div<
-  RadioWrapperStyleProps & { focus: boolean }
->`
+const RadioWrapperStyle = styled.div<StyleOnlyProps & { focus: boolean }>`
   position: relative;
   display: inline-flex;
   user-select: none;
@@ -102,14 +124,14 @@ const RadioWrapperStyle = styled.div<
       pointer-events: none;
     `}
     
-  ${({ selected, disabled, focus }) =>
-    !selected &&
+  ${({ checked, disabled, focus }) =>
+    !checked &&
     !disabled && // IE11 fix. If an element is disabled, you can still hover on it on IE11.
     !focus && // don't override the outline if element is also focussed
     css`
       &:hover ${RadioCircleStyle} {
         border: 2px solid;
-        color: ${themeColor('tint', 'level7')};
+        color: ${getVariantColor()};
       }
     `}
 `

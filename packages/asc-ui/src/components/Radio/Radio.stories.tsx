@@ -18,20 +18,43 @@ storiesOf('Atoms/Radio', module)
       {storyFn()}
     </div>
   ))
-  .add('checked', () => (
+  .add('variants', () => (
     <>
       <RadioGroup name="group-1">
-        <Label htmlFor="radio-1" label="Default Checked">
+        <Label htmlFor="radio-1" label="Default">
           <Radio id="radio-1" defaultChecked />
         </Label>
-        <Label htmlFor="radio-2" label="Default Unchecked">
+        <Label htmlFor="radio-2" label="Default">
           <Radio id="radio-2" />
         </Label>
-        <Label htmlFor="radio-3" label="Default Unchecked">
+        <Label htmlFor="radio-3" label="Default">
           <Radio id="radio-3" />
         </Label>
-        <Label htmlFor="radio-4" label="Default Unchecked">
-          <Radio id="radio-4" />
+      </RadioGroup>
+      <br />
+      <br />
+      <RadioGroup name="group-2">
+        <Label htmlFor="radio-4" label="Primary">
+          <Radio id="radio-4" variant="primary" defaultChecked />
+        </Label>
+        <Label htmlFor="radio-5" label="Primary">
+          <Radio id="radio-5" variant="primary" />
+        </Label>
+        <Label htmlFor="radio-6" label="Primary">
+          <Radio id="radio-6" variant="primary" />
+        </Label>
+      </RadioGroup>
+      <br />
+      <br />
+      <RadioGroup name="group-3">
+        <Label htmlFor="radio-7" label="Secondary">
+          <Radio id="radio-7" variant="secondary" defaultChecked />
+        </Label>
+        <Label htmlFor="radio-8" label="Secondary">
+          <Radio id="radio-8" variant="secondary" />
+        </Label>
+        <Label htmlFor="radio-9" label="Secondary">
+          <Radio id="radio-9" variant="secondary" />
         </Label>
       </RadioGroup>
     </>
@@ -84,6 +107,40 @@ storiesOf('Atoms/Radio', module)
         </Label>
         <Label htmlFor="radio-4" label="Error">
           <Radio id="radio-4" />
+        </Label>
+      </RadioGroup>
+    </>
+  ))
+  .add('radio group position', () => (
+    <>
+      <RadioGroup name="group-1" horizontal>
+        <Label htmlFor="radio-1" label="Radio horizontal">
+          <Radio id="radio-1" defaultChecked />
+        </Label>
+        <Label htmlFor="radio-2" label="Radio horizontal">
+          <Radio id="radio-2" />
+        </Label>
+        <Label htmlFor="radio-3" label="Radio horizontal">
+          <Radio id="radio-3" />
+        </Label>
+        <Label htmlFor="radio-4" label="Radio horizontal">
+          <Radio id="radio-4" />
+        </Label>
+      </RadioGroup>
+      <br />
+      <br />
+      <RadioGroup name="group-2">
+        <Label htmlFor="radio-5" label="Radio vertical">
+          <Radio id="radio-5" defaultChecked />
+        </Label>
+        <Label htmlFor="radio-6" label="Radio vertical">
+          <Radio id="radio-6" />
+        </Label>
+        <Label htmlFor="radio-7" label="Radio vertical">
+          <Radio id="radio-7" />
+        </Label>
+        <Label htmlFor="radio-8" label="Radio vertical">
+          <Radio id="radio-8" />
         </Label>
       </RadioGroup>
     </>

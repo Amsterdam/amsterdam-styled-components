@@ -1,10 +1,11 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useMemo } from 'react'
 import RadioStyle, {
   RadioWrapperStyle,
   RadioCircleStyle,
   Props,
 } from './RadioStyle'
 import RadioContext from './RadioContext'
+import LabelContext from '../Label/LabelContext'
 
 const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   className,
@@ -19,18 +20,24 @@ const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
 }) => {
   const [focus, setFocus] = useState(false)
   const {
-    setSelected,
-    selected: selectedProp,
+    setChecked,
+    checked: checkedProp,
     name: nameGroup,
     error: errorGroup,
   } = useContext(RadioContext)
-
-  // Set selected on defaultChecked
-  if (defaultChecked && !selectedProp) {
-    setSelected(id)
-  }
-
+  const { setActive } = useContext(LabelContext)
+  const checked = checkedProp === id
   const error = errorProp || errorGroup || false
+
+  // Make the label aware of changes in the checked state
+  useMemo(() => {
+    setActive(checked)
+  }, [checked, setActive])
+
+  // Set checked on defaultChecked
+  if (defaultChecked && !checkedProp) {
+    setChecked(id)
+  }
 
   return (
     <RadioWrapperStyle
@@ -40,17 +47,18 @@ const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
         className,
         variant,
         disabled,
+        checked,
       }}
       aria-disabled={disabled}
-      selected={selectedProp === id}
     >
       <RadioCircleStyle
         {...{
           error,
           disabled,
           focus,
+          variant,
+          checked,
         }}
-        selected={selectedProp === id}
       />
       <RadioStyle
         {...{
@@ -68,7 +76,7 @@ const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
           if (onChange) {
             onChange(e)
           }
-          setSelected(e.target.id)
+          setChecked(e.target.id)
         }}
       />
     </RadioWrapperStyle>

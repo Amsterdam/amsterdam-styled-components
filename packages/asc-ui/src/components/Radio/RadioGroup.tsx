@@ -11,7 +11,7 @@ const RadioGroup: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   horizontal,
   children: childrenProps,
 }) => {
-  const [selected, setSelected] = React.useState('')
+  const [checked, setChecked] = React.useState('')
 
   const { children } = usePassPropsToChildren(childrenProps, {
     disabled,
@@ -19,8 +19,8 @@ const RadioGroup: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   return (
     <RadioContext.Provider
       value={{
-        selected,
-        setSelected,
+        checked,
+        setChecked,
         name,
         error,
       }}

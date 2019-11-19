@@ -1,13 +1,13 @@
 import React from 'react'
 
 const RadioContext = React.createContext({
-  selected: '',
-  setSelected: () => {},
+  checked: '',
+  setChecked: () => {},
   name: '',
   error: false,
 } as {
-  selected: string
-  setSelected: Function
+  checked: string
+  setChecked: Function
   name: string | undefined
   error: boolean | undefined
 })
