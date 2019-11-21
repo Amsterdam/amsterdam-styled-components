@@ -3,7 +3,7 @@ import React from 'react'
 const RadioContext = React.createContext({
   checked: '',
   setChecked: () => {},
-  name: '',
+  name: undefined,
   error: false,
 } as {
   checked: string

@@ -4,6 +4,27 @@ import Radio from './Radio'
 import RadioGroup from './RadioGroup'
 import Label from '../Label'
 
+const RadioGroupComponent: React.FC<{}> = () => {
+  const [checked, setChecked] = React.useState('')
+  const handleChange = (e: any) => setChecked(e.target.id)
+
+  return (
+    <>
+      <RadioGroup name="group-1">
+        <Label htmlFor="radio-1" label="Radio 1">
+          <Radio id="radio-1" onChange={e => handleChange(e)} />
+        </Label>
+        <Label htmlFor="radio-2" label="Radio 2">
+          <Radio id="radio-2" onChange={e => handleChange(e)} />
+        </Label>
+        <Label htmlFor="radio-3" label="Radio 3">
+          <Radio id="radio-3" onChange={e => handleChange(e)} />
+        </Label>
+      </RadioGroup>
+      <p>Checked: {checked}</p>
+    </>
+  )
+}
 storiesOf('Atoms/Radio', module)
   .addDecorator(storyFn => (
     <div
@@ -63,7 +84,7 @@ storiesOf('Atoms/Radio', module)
     <>
       <RadioGroup name="group-1" disabled>
         <Label htmlFor="radio-1" label="Group Disabled">
-          <Radio id="radio-1" />
+          <Radio id="radio-1" defaultChecked />
         </Label>
         <Label htmlFor="radio-2" label="Group Disabled">
           <Radio id="radio-2" />
@@ -111,11 +132,11 @@ storiesOf('Atoms/Radio', module)
       </RadioGroup>
     </>
   ))
-  .add('radio group position', () => (
+  .add('radio group positions', () => (
     <>
       <RadioGroup name="group-1" horizontal>
         <Label htmlFor="radio-1" label="Radio horizontal">
-          <Radio id="radio-1" defaultChecked />
+          <Radio id="radio-1" />
         </Label>
         <Label htmlFor="radio-2" label="Radio horizontal">
           <Radio id="radio-2" />
@@ -131,7 +152,7 @@ storiesOf('Atoms/Radio', module)
       <br />
       <RadioGroup name="group-2">
         <Label htmlFor="radio-5" label="Radio vertical">
-          <Radio id="radio-5" defaultChecked />
+          <Radio id="radio-5" />
         </Label>
         <Label htmlFor="radio-6" label="Radio vertical">
           <Radio id="radio-6" />
@@ -163,3 +184,4 @@ storiesOf('Atoms/Radio', module)
       </RadioGroup>
     </>
   ))
+  .add('function with result', () => <RadioGroupComponent />)

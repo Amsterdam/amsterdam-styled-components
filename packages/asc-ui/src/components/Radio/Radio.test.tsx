@@ -1,19 +1,21 @@
 import * as React from 'react'
 import { render, cleanup, fireEvent } from '@testing-library/react'
 import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
-import Radio from './Radio'
 import RadioGroup from './RadioGroup'
+import Radio from './Radio'
 
 describe('Radio', () => {
   let container: any
+
   const onChangeMock = jest.fn()
 
   beforeEach(() => {
     cleanup()
     ;({ container } = render(
       <ThemeProvider theme={ascDefaultTheme}>
-        <RadioGroup name="group">
-          <Radio id="test" onChange={onChangeMock} />
+        <RadioGroup id="group">
+          <Radio onChange={onChangeMock} id="radio-1" />
+          <Radio onChange={onChangeMock} id="radio-2" />
         </RadioGroup>
       </ThemeProvider>,
     ))
@@ -23,20 +25,38 @@ describe('Radio', () => {
     expect(container).toMatchSnapshot()
   })
 
-  it('should toggle checked / not checked', () => {
-    const radio = container.querySelector('input')
-
+  it('should match the style', () => {
+    // Native radio should be hidden
+    const radio = container.querySelector('#radio-1')
     expect(radio).toHaveStyleRule('opacity', '0')
 
-    // Toggle on
-    fireEvent.click(radio)
+    const circle = radio.previousSibling
+    expect(circle).toHaveStyleRule('border-radius', '50%')
 
-    expect(onChangeMock).toHaveBeenCalled()
-    // expect(icon).toHaveStyleRule('background-color', expect.any(String))
+    const wrapper = radio.parentNode
+    expect(wrapper).toHaveStyleRule('margin-bottom', '1px')
 
-    // Toggle off
-    // fireEvent.click(radio)
+    const radioGroup = container.querySelector('#group')
+    expect(radioGroup).toHaveStyleRule('flex-direction', 'column')
+  })
 
-    // expect(icon).not.toHaveStyleRule('background-color', expect.any(String))
+  it('should change on click events', () => {
+    const radio1 = container.querySelector('#radio-1')
+    const circle1 = radio1.previousSibling
+    const radio2 = container.querySelector('#radio-2')
+
+    expect(circle1).toHaveStyleRule('color', '#767676')
+
+    // Click on Radio 1
+    fireEvent.click(radio1)
+
+    expect(onChangeMock).toHaveBeenCalledTimes(1)
+    expect(circle1).not.toHaveStyleRule('color', '#767676')
+
+    // Clilck on Radio 2
+    fireEvent.click(radio2)
+
+    expect(onChangeMock).toHaveBeenCalledTimes(2)
+    expect(circle1).toHaveStyleRule('color', '#767676')
   })
 })

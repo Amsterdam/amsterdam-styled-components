@@ -65,7 +65,7 @@ type StyleOnlyProps = {
   focus?: boolean
 }
 
-const RadioCircleStyle = styled.div<StyleOnlyProps>`
+const RadioCircleStyle = styled.span<StyleOnlyProps>`
   width: ${themeSpacing(6)};
   height: ${themeSpacing(6)};
   color: ${themeColor('tint', 'level5')};
@@ -75,7 +75,7 @@ const RadioCircleStyle = styled.div<StyleOnlyProps>`
     checked &&
     css`
       color: ${getVariantColor()};
-      &:after {
+      &::after {
         content: '';
         position: absolute;
         height: 16px;
