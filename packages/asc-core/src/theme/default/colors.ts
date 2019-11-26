@@ -23,6 +23,15 @@ const colors: Theme.ColorTypeInterface = {
     invalid: '#EC0000',
     focus: '#FEC813',
   },
+  supplement: {
+    purple: '#A00078',
+    pink: '#E50082',
+    orange: '#FF9100',
+    yellow: '#FFE600',
+    lightgreen: '#BED200',
+    darkgreen: '#00A03C',
+    lightblue: '#009DEC'
+  },
   bright: {
     main: '#ffffff',
   },
