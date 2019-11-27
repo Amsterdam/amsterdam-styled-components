@@ -66,15 +66,14 @@ type StyleOnlyProps = {
 }
 
 const RadioCircleStyle = styled.span<StyleOnlyProps>`
-  width: ${themeSpacing(6)};
-  height: ${themeSpacing(6)};
+  width: 24px;
+  height: 24px;
   color: ${themeColor('tint', 'level5')};
   border: 1px solid;
   border-radius: 50%;
   ${({ checked }) =>
     checked &&
     css`
-      color: ${getVariantColor()};
       &::after {
         content: '';
         position: absolute;
