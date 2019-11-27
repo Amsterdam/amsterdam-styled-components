@@ -13,6 +13,7 @@ export type Props = {
   disabled?: boolean
   error?: boolean
   name?: string
+  value?: string
   id: string
   defaultChecked?: boolean
   onChange?: Function
@@ -71,21 +72,24 @@ const RadioCircleStyle = styled.span<StyleOnlyProps>`
   color: ${themeColor('tint', 'level5')};
   border: 1px solid;
   border-radius: 50%;
-  ${({ checked }) =>
-    checked &&
-    css`
-      &::after {
-        content: '';
-        position: absolute;
-        height: 16px;
-        width: 16px;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        left: 50%;
-        top: 50%;
-        background-color: ${getVariantColor()};
-      }
-    `}
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background-color: ${getVariantColor()};
+    opacity: 0;
+    ${({ checked }) =>
+      checked &&
+      css`
+        opacity: 1;
+      `}
+  }
 
   ${({ error, checked, disabled, focus }) =>
     error &&

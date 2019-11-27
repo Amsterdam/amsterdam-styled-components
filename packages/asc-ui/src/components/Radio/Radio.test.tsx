@@ -3,6 +3,7 @@ import { render, cleanup, fireEvent } from '@testing-library/react'
 import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import RadioGroup from './RadioGroup'
 import Radio from './Radio'
+import Label from '../Label'
 
 describe('Radio', () => {
   let container: any
@@ -13,9 +14,13 @@ describe('Radio', () => {
     cleanup()
     ;({ container } = render(
       <ThemeProvider theme={ascDefaultTheme}>
-        <RadioGroup id="group">
-          <Radio onChange={onChangeMock} id="radio-1" />
-          <Radio onChange={onChangeMock} id="radio-2" />
+        <RadioGroup name="group" id="group">
+          <Label htmlFor="radio-1" label="Radio 1" id="label-1">
+            <Radio onChange={onChangeMock} id="radio-1" value="value-1" />
+          </Label>
+          <Label htmlFor="radio-2" label="Radio 2" id="label-2">
+            <Radio onChange={onChangeMock} id="radio-2" value="value-2" />
+          </Label>
         </RadioGroup>
       </ThemeProvider>,
     ))
@@ -41,22 +46,27 @@ describe('Radio', () => {
   })
 
   it('should change on click events', () => {
-    const radio1 = container.querySelector('#radio-1')
-    const circle1 = radio1.previousSibling
-    const radio2 = container.querySelector('#radio-2')
+    const label1 = container.querySelector('#label-1')
+    const label2 = container.querySelector('#label-2')
 
-    expect(circle1).toHaveStyleRule('color', '#767676')
+    expect(container.querySelector('input:checked')).toBe(null)
 
-    // Click on Radio 1
-    fireEvent.click(radio1)
+    // Click on Label Radio 1
+    fireEvent.click(label1)
 
+    expect(container.querySelector('input:checked').value).toBe('value-1')
     expect(onChangeMock).toHaveBeenCalledTimes(1)
-    expect(circle1).not.toHaveStyleRule('color', '#767676')
 
-    // Clilck on Radio 2
-    fireEvent.click(radio2)
+    // Click on Label Radio 2
+    fireEvent.click(label2)
 
+    expect(container.querySelector('input:checked').value).toBe('value-2')
     expect(onChangeMock).toHaveBeenCalledTimes(2)
-    expect(circle1).toHaveStyleRule('color', '#767676')
+
+    // Click on Label Radio 1
+    fireEvent.click(label1)
+
+    expect(container.querySelector('input:checked').value).toBe('value-1')
+    expect(onChangeMock).toHaveBeenCalledTimes(3)
   })
 })

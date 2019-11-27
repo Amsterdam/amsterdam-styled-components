@@ -15,6 +15,7 @@ const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   id,
   defaultChecked,
   error: errorProp,
+  value,
   ...otherProps
 }) => {
   const [focus, setFocus] = useState(false)
@@ -66,6 +67,7 @@ const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
           id,
           defaultChecked,
           name,
+          value,
         }}
         onFocus={() => {
           setFocus(true)
