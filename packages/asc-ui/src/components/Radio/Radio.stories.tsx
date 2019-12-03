@@ -5,23 +5,59 @@ import RadioGroup from './RadioGroup'
 import Label from '../Label'
 
 const RadioGroupComponent: React.FC<{}> = () => {
-  const [checked, setChecked] = React.useState('')
-  const handleChange = (e: any) => setChecked(e.target.id)
+  const [id, updateId] = React.useState(1)
+  const [state, updateState] = React.useState({})
+
+  const handleChange = (e: any) =>
+    updateState({ ...state, [id]: e.target.value })
 
   return (
     <>
-      <RadioGroup name="group-1">
+      Group: {id}
+      <RadioGroup name={`group-${id}`}>
         <Label htmlFor="radio-1" label="Radio 1">
-          <Radio id="radio-1" onChange={e => handleChange(e)} />
+          <Radio
+            id="radio-1"
+            value="radio-1"
+            onChange={e => handleChange(e)}
+            defaultChecked={state[id] === 'radio-1'}
+          />
         </Label>
         <Label htmlFor="radio-2" label="Radio 2">
-          <Radio id="radio-2" onChange={e => handleChange(e)} />
+          <Radio
+            id="radio-2"
+            value="radio-2"
+            onChange={e => handleChange(e)}
+            defaultChecked={state[id] === 'radio-2'}
+          />
         </Label>
         <Label htmlFor="radio-3" label="Radio 3">
-          <Radio id="radio-3" onChange={e => handleChange(e)} />
+          <Radio
+            id="radio-3"
+            value="radio-3"
+            onChange={e => handleChange(e)}
+            defaultChecked={state[id] === 'radio-3'}
+          />
         </Label>
       </RadioGroup>
-      <p>Checked: {checked}</p>
+      <button
+        type="button"
+        disabled={id <= 1}
+        onClick={() => {
+          updateId(id - 1)
+        }}
+      >
+        prev
+      </button>
+      <button
+        type="button"
+        disabled={id >= 4}
+        onClick={() => {
+          updateId(id + 1)
+        }}
+      >
+        next
+      </button>
     </>
   )
 }
@@ -184,4 +220,4 @@ storiesOf('Atoms/Radio', module)
       </RadioGroup>
     </>
   ))
-  .add('function with result', () => <RadioGroupComponent />)
+  .add('function with state and result', () => <RadioGroupComponent />)
