@@ -13,7 +13,7 @@ const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   variant,
   disabled,
   id,
-  defaultChecked,
+  checked: defaultChecked,
   error: errorProp,
   value,
   ...otherProps
@@ -34,15 +34,10 @@ const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
     setActive(checked)
   }, [checked, setActive])
 
-  // Set checked value on `defaultChecked` if `name` or `id` changes (to fix re-rendering)
+  // Pass default `checked` to RadioGroup on load and when `id` changes
   React.useEffect(() => {
-    // Need a timeout because the RadioGroup also has a `useEffect`
-    setTimeout(() => {
-      if (defaultChecked) {
-        setChecked(id)
-      }
-    }, 0)
-  }, [name, id])
+    if (defaultChecked) setChecked(id)
+  }, [id])
 
   return (
     <RadioWrapperStyle

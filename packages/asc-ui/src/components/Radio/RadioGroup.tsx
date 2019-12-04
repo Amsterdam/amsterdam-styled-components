@@ -13,12 +13,6 @@ const RadioGroup: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   ...otherProps
 }) => {
   const [checked, setChecked] = React.useState('')
-
-  // Reset checked value if `name` changes (to fix re-rendering)
-  React.useEffect(() => {
-    setChecked('')
-  }, [name])
-
   const { children } = usePassPropsToChildren(childrenProps, {
     disabled,
   })

@@ -4,63 +4,6 @@ import Radio from './Radio'
 import RadioGroup from './RadioGroup'
 import Label from '../Label'
 
-const RadioGroupComponent: React.FC<{}> = () => {
-  const [id, updateId] = React.useState(1)
-  const [state, updateState] = React.useState({})
-
-  const handleChange = (e: any) =>
-    updateState({ ...state, [id]: e.target.value })
-
-  return (
-    <>
-      Group: {id}
-      <RadioGroup name={`group-${id}`}>
-        <Label htmlFor="radio-1" label="Radio 1">
-          <Radio
-            id="radio-1"
-            value="radio-1"
-            onChange={e => handleChange(e)}
-            defaultChecked={state[id] === 'radio-1'}
-          />
-        </Label>
-        <Label htmlFor="radio-2" label="Radio 2">
-          <Radio
-            id="radio-2"
-            value="radio-2"
-            onChange={e => handleChange(e)}
-            defaultChecked={state[id] === 'radio-2'}
-          />
-        </Label>
-        <Label htmlFor="radio-3" label="Radio 3">
-          <Radio
-            id="radio-3"
-            value="radio-3"
-            onChange={e => handleChange(e)}
-            defaultChecked={state[id] === 'radio-3'}
-          />
-        </Label>
-      </RadioGroup>
-      <button
-        type="button"
-        disabled={id <= 1}
-        onClick={() => {
-          updateId(id - 1)
-        }}
-      >
-        prev
-      </button>
-      <button
-        type="button"
-        disabled={id >= 4}
-        onClick={() => {
-          updateId(id + 1)
-        }}
-      >
-        next
-      </button>
-    </>
-  )
-}
 storiesOf('Atoms/Radio', module)
   .addDecorator(storyFn => (
     <div
@@ -79,7 +22,7 @@ storiesOf('Atoms/Radio', module)
     <>
       <RadioGroup name="group-1">
         <Label htmlFor="radio-1" label="Default">
-          <Radio id="radio-1" defaultChecked />
+          <Radio id="radio-1" checked />
         </Label>
         <Label htmlFor="radio-2" label="Default">
           <Radio id="radio-2" />
@@ -92,7 +35,7 @@ storiesOf('Atoms/Radio', module)
       <br />
       <RadioGroup name="group-2">
         <Label htmlFor="radio-4" label="Primary">
-          <Radio id="radio-4" variant="primary" defaultChecked />
+          <Radio id="radio-4" variant="primary" checked />
         </Label>
         <Label htmlFor="radio-5" label="Primary">
           <Radio id="radio-5" variant="primary" />
@@ -105,7 +48,7 @@ storiesOf('Atoms/Radio', module)
       <br />
       <RadioGroup name="group-3">
         <Label htmlFor="radio-7" label="Secondary">
-          <Radio id="radio-7" variant="secondary" defaultChecked />
+          <Radio id="radio-7" variant="secondary" checked />
         </Label>
         <Label htmlFor="radio-8" label="Secondary">
           <Radio id="radio-8" variant="secondary" />
@@ -120,7 +63,7 @@ storiesOf('Atoms/Radio', module)
     <>
       <RadioGroup name="group-1" disabled>
         <Label htmlFor="radio-1" label="Group Disabled">
-          <Radio id="radio-1" defaultChecked />
+          <Radio id="radio-1" checked />
         </Label>
         <Label htmlFor="radio-2" label="Group Disabled">
           <Radio id="radio-2" />
@@ -220,4 +163,3 @@ storiesOf('Atoms/Radio', module)
       </RadioGroup>
     </>
   ))
-  .add('function with state and result', () => <RadioGroupComponent />)

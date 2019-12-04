@@ -15,7 +15,7 @@ export type Props = {
   name?: string
   value?: string
   id: string
-  defaultChecked?: boolean
+  checked?: boolean
   onChange?: Function
 }
 
