@@ -75,7 +75,7 @@ import {
 import ThemeProvider, { CompactThemeProvider } from './theme'
 import IconButton from './components/deprecated/IconButton'
 import ButtonBar from './components/deprecated/ButtonBar'
-import Radio from './components/Radio'
+import Radio, { RadioGroup } from './components/Radio'
 import SearchBar, { SearchBarStyles } from './components/SearchBar'
 import SearchBarToggle, {
   SearchBarToggleStyles,
@@ -198,6 +198,7 @@ export {
   Modal,
   Portal,
   Radio,
+  RadioGroup,
   Row,
   Typography,
   SearchBar,
