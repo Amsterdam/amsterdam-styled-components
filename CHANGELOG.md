@@ -18,6 +18,7 @@ Prefix the change with one of these keywords:
 
 - Added: RadioGroup component.
 - Updated: Radio component. (completely redeveloped)
+- Fixed: IE11 support, by adding `babel-loader` to webpack config
 
 ## Canary
 

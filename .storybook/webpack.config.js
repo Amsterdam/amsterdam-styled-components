@@ -8,12 +8,18 @@ const styledComponentsTransformer = createTransformer({ displayName: true })
 const basePath = path.resolve(__dirname, '../', 'packages')
 
 module.exports = ({ config, mode }) => {
-  const isDev = (mode === 'DEVELOPMENT')
+  const isDev = mode === 'DEVELOPMENT'
 
   // Add typescript support
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     use: [
+      {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+        },
+      },
       {
         loader: require.resolve('awesome-typescript-loader'),
         options: {
@@ -25,9 +31,7 @@ module.exports = ({ config, mode }) => {
           getCustomTransformers: () => ({
             before: [styledComponentsTransformer],
           }),
-          reportFiles: [
-            "packages/**/*.{ts,tsx}"
-          ],
+          reportFiles: ['packages/**/*.{ts,tsx}'],
         },
       },
       {
