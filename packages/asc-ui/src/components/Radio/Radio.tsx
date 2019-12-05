@@ -1,4 +1,4 @@
-import React, { useState, useContext, useMemo } from 'react'
+import React, { useState, useContext, useMemo, useEffect } from 'react'
 import RadioStyle, {
   RadioWrapperStyle,
   RadioCircleStyle,
@@ -35,7 +35,7 @@ const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   }, [checked, setActive])
 
   // Pass default `checked` to RadioGroup on load and when `id` changes
-  React.useEffect(() => {
+  useEffect(() => {
     if (defaultChecked) setChecked(id)
   }, [id])
 
