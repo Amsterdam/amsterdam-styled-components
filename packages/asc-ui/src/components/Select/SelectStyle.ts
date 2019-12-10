@@ -16,10 +16,12 @@ const SelectBoxShadow = (color: any) => css`
 
 const SelectStyle = styled.select<Props>`
   width: 100%;
-  padding: ${themeSpacing(3)};
+  height: 40px;
+  padding: 0 ${themeSpacing(3)};
   font-size: 1rem;
   border: 0;
   border-radius: 0;
+  background-color: ${themeColor('tint', 'level1')};
   background-image: url("${svg.ChevronDown}");
   background-position: calc(100% - ${themeSpacing(3)}) 50%;
   background-repeat: no-repeat;
@@ -32,11 +34,17 @@ const SelectStyle = styled.select<Props>`
   &::-ms-expand {
     display: none;
   }
+
+  /* IE11 (hide native focus state) */
+  &::-ms-value {
+    color: black; 
+    background: transparent;
+  }  
   
   /* Firefox (hide native focus state) */
   &:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 #000;
+    text-shadow: 0 0 0 ${themeColor('tint', 'level7')};
   }
 
   &:hover {

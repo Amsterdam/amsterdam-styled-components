@@ -3,10 +3,12 @@
 exports[`Select should render 1`] = `
 .c2 {
   width: 100%;
-  padding: 12px;
+  height: 40px;
+  padding: 0 12px;
   font-size: 1rem;
   border: 0;
   border-radius: 0;
+  background-color: #ffffff;
   background-image: url("-react-component: svg-mock;");
   background-position: calc(100% - 12px) 50%;
   background-repeat: no-repeat;
@@ -22,9 +24,14 @@ exports[`Select should render 1`] = `
   display: none;
 }
 
+.c2::-ms-value {
+  color: black;
+  background: transparent;
+}
+
 .c2:-moz-focusring {
   color: transparent;
-  text-shadow: 0 0 0 #000;
+  text-shadow: 0 0 0 #000000;
 }
 
 .c2:hover {
