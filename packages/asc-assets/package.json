@@ -14,7 +14,6 @@
   },
   "version": "0.17.7",
   "main": "lib/index.js",
-  "module": "lib/index.js",
   "files": [
     "lib"
   ],
