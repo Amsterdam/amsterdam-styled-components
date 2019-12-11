@@ -6,6 +6,7 @@ import { outlineStyle } from '../../utils/themeUtils'
 export type Props = {
   id?: string
   value?: string
+  label?: string
   disabled?: boolean
   error?: boolean
 }
@@ -48,8 +49,9 @@ const SelectStyle = styled.select<Props>`
   }
 
   &:hover {
-    ${({ disabled }) =>
+    ${({ disabled, error }) =>
       !disabled &&
+      !error &&
       css`
         ${SelectBoxShadow(themeColor('tint', 'level7'))}
       `}
