@@ -64,7 +64,15 @@ storiesOf('Atoms/Select (Dropdown)', module)
   ))
   .add('error', () => (
     <>
-      <Select id="select-1" label="With error" error>
+      <Select id="select-1" label="With error label" errorMessage="Error label">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+      </Select>
+      <br />
+      <br />
+      <Select id="select-2" label="Without error label" error>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>

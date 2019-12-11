@@ -8,7 +8,8 @@ export type Props = {
   value?: string
   label?: string
   disabled?: boolean
-  error?: boolean
+  error?: boolean | string
+  errorMessage?: string
 }
 
 const SelectBoxShadow = (color: any) => css`

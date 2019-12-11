@@ -6,20 +6,28 @@ const Select: React.FC<Props & React.HTMLAttributes<HTMLSelectElement>> = ({
   id,
   value,
   label,
-  error,
+  error: errorProp,
+  errorMessage,
   ...otherProps
-}) => (
-  <>
-    {label && <FormLabelStyle htmlFor={id}>{label}</FormLabelStyle>}
-    <SelectStyle
-      {...{
-        ...otherProps,
-        id,
-        value,
-        error,
-      }}
-    />
-  </>
-)
+}) => {
+  const error = errorProp || errorMessage
+
+  return (
+    <>
+      {label && <FormLabelStyle htmlFor={id}>{label}</FormLabelStyle>}
+      {errorMessage && (
+        <FormLabelStyle htmlFor={id}>{errorMessage}</FormLabelStyle>
+      )}
+      <SelectStyle
+        {...{
+          ...otherProps,
+          id,
+          value,
+        }}
+        error={error}
+      />
+    </>
+  )
+}
 
 export default Select
