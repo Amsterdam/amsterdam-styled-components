@@ -1,5 +1,5 @@
 import styled, { css } from '@datapunt/asc-core'
-import { srOnlyStyle } from '../../utils'
+import { srOnlyStyle, getTypographyFromTheme } from '../../utils'
 
 interface IProps {
   htmlFor?: string
@@ -15,6 +15,12 @@ const FormLabelStyle = styled.label.attrs<IProps>(({ htmlFor }: IProps) => {
   ${({ srOnly }) =>
     !srOnly &&
     css`
+      ${({ theme }) =>
+        getTypographyFromTheme()({
+          as: 'p',
+          gutterBottom: 0,
+          theme,
+        })};
       display: block;
       padding-bottom: 10px;
       font-weight: 700;
