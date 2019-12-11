@@ -1,5 +1,5 @@
 import styled, { css } from '@datapunt/asc-core'
-import { srOnlyStyle, getTypographyFromTheme } from '../../utils'
+import { srOnlyStyle, getTypographyFromTheme, themeSpacing } from '../../utils'
 
 interface IProps {
   htmlFor?: string
@@ -22,7 +22,7 @@ const FormLabelStyle = styled.label.attrs<IProps>(({ htmlFor }: IProps) => {
           theme,
         })};
       display: block;
-      padding-bottom: 10px;
+      padding-bottom: ${themeSpacing(2)};
       font-weight: 700;
     `}
 
