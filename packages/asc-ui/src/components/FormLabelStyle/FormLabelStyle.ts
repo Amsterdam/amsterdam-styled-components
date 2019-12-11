@@ -4,7 +4,7 @@ import { srOnlyStyle, getTypographyFromTheme } from '../../utils'
 interface IProps {
   htmlFor?: string
   srOnly: boolean
-  error?: string
+  error?: string | boolean
 }
 
 const FormLabelStyle = styled.label.attrs<IProps>(({ htmlFor }: IProps) => {
