@@ -11,6 +11,7 @@ export interface TextFieldProps extends InputProps {
   label?: string
   keepFocus?: boolean
   srOnly: boolean
+  errorMessage?: string
   onClear?: Function
 }
 
@@ -22,33 +23,42 @@ const TextField = ({
   keepFocus,
   blurOnEscape,
   focusOnRender,
+  errorMessage,
   ...otherProps
 }: TextFieldProps) => {
   const uid = useUID()
   return (
-    <TextFieldStyle>
+    <>
       <FormLabelStyle htmlFor={uid} srOnly={srOnly}>
         {label}
       </FormLabelStyle>
-      <Input
-        {...{ keepFocus, value, blurOnEscape, focusOnRender }}
-        {...otherProps}
-        id={uid}
-      />
-      {onClear && value && (
-        <Button
-          size={30}
-          variant="blank"
-          type="button"
-          aria-label="Close"
-          onClick={() => onClear()}
-        >
-          <Icon>
-            <Close />
-          </Icon>
-        </Button>
+      {errorMessage && (
+        <FormLabelStyle htmlFor={uid} srOnly={srOnly} error={errorMessage}>
+          {errorMessage}
+        </FormLabelStyle>
       )}
-    </TextFieldStyle>
+      <TextFieldStyle>
+        <Input
+          {...{ keepFocus, value, blurOnEscape, focusOnRender }}
+          {...otherProps}
+          id={uid}
+          error={errorMessage}
+        />
+        {onClear && value && (
+          <Button
+            size={30}
+            variant="blank"
+            type="button"
+            aria-label="Close"
+            onClick={() => onClear()}
+          >
+            <Icon>
+              <Close />
+            </Icon>
+          </Button>
+        )}
+      </TextFieldStyle>
+    </>
   )
 }
 

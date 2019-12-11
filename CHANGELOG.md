@@ -16,9 +16,12 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Changed: TextField got new `FormLabel` with `errorMessage`
+- Changed: FormLabel has updated style (to design system)
+- Changed: Input has `error` variant
 - Added: RadioGroup component.
-- Updated: Radio component. (completely redeveloped)
-- Updated: FilterBox component (removed show more button + sublabel)
+- Changed: Radio component. (completely redeveloped)
+- Changed: FilterBox component (removed show more button + sublabel)
 - Fixed: IE11 support, by adding `babel-loader` to webpack config
 
 ## Canary

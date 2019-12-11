@@ -4,14 +4,16 @@ import { action } from '@storybook/addon-actions'
 import TextField from './TextField'
 
 const props = {
-  label: 'text field description',
+  label: 'Text field label',
   onBlur: action('onBlur'),
   onFocus: action('onFocus'),
   onKeyDown: action('onKeyDown'),
   value: '',
 }
 
-const TextFieldComponent: React.FC<{}> = () => {
+const TextFieldComponent: React.FC<{ errorMessage?: string }> = ({
+  errorMessage,
+}) => {
   const [text, setText] = React.useState('')
 
   return (
@@ -19,6 +21,7 @@ const TextFieldComponent: React.FC<{}> = () => {
       {...props}
       value={text}
       id="text-filed-id"
+      errorMessage={errorMessage}
       onChange={e => setText(e.target.value)}
       onClear={() => setText('')}
     />
@@ -45,6 +48,9 @@ storiesOf('Atoms/TextField', module)
     <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
   ))
   .add('default state with label', () => <TextFieldComponent />)
+  .add('default state with label and error', () => (
+    <TextFieldComponent errorMessage="Error message" />
+  ))
   .add('default state with accesible label for screen reader', () => (
     <TextFieldSrOnlyComponent />
   ))

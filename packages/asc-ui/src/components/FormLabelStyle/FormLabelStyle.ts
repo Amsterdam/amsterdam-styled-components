@@ -1,17 +1,31 @@
-import styled from '@datapunt/asc-core'
+import styled, { css } from '@datapunt/asc-core'
 import { srOnlyStyle } from '../../utils'
 
 interface IProps {
   htmlFor?: string
   srOnly: boolean
+  error?: string
 }
 
 const FormLabelStyle = styled.label.attrs<IProps>(({ htmlFor }: IProps) => {
   return {
-    type: 'text',
     htmlFor,
   }
-})`
+})<IProps>`
+  ${({ srOnly }) =>
+    !srOnly &&
+    css`
+      display: block;
+      padding-bottom: 10px;
+      font-weight: 700;
+    `}
+
+  ${({ error }) =>
+    error &&
+    css`
+      color: red;
+    `}  
+
   ${srOnlyStyle()}
 `
 
