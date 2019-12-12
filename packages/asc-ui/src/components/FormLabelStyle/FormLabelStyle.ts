@@ -4,6 +4,7 @@ import { srOnlyStyle, getTypographyFromTheme, themeSpacing } from '../../utils'
 interface IProps {
   htmlFor?: string
   srOnly: boolean
+  label?: string
   error?: string | boolean
 }
 
@@ -12,8 +13,9 @@ const FormLabelStyle = styled.label.attrs<IProps>(({ htmlFor }: IProps) => {
     htmlFor,
   }
 })<IProps>`
-  ${({ srOnly }) =>
-    !srOnly &&
+  ${({ srOnly, label, error }) =>
+    (label || error) && // Style if `label` or `errer` prop is set
+    !srOnly && // Don't style for screen reader
     css`
       ${({ theme }) =>
         getTypographyFromTheme()({
