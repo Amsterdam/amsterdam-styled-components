@@ -51,10 +51,11 @@ storiesOf('Atoms/TextField', module)
   .add('default state', () => (
     <>
       <TextFieldComponent label="Text field label" />
-      <p>
-        Without label:
-        <TextFieldComponent />
-      </p>
+
+      <br />
+      <br />
+      <em>Without label:</em>
+      <TextFieldComponent />
     </>
   ))
   .add('default state with label and error', () => (

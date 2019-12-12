@@ -1,5 +1,10 @@
 import styled, { css } from '@datapunt/asc-core'
-import { srOnlyStyle, getTypographyFromTheme, themeSpacing } from '../../utils'
+import {
+  srOnlyStyle,
+  getTypographyFromTheme,
+  themeSpacing,
+  themeColor,
+} from '../../utils'
 
 interface IProps {
   htmlFor?: string
@@ -13,9 +18,8 @@ const FormLabelStyle = styled.label.attrs<IProps>(({ htmlFor }: IProps) => {
     htmlFor,
   }
 })<IProps>`
-  ${({ srOnly, label, error }) =>
-    (label || error) && // Style if `label` or `errer` prop is set
-    !srOnly && // Don't style for screen reader
+  ${({ label }) =>
+    label &&
     css`
       ${({ theme }) =>
         getTypographyFromTheme()({
@@ -23,6 +27,12 @@ const FormLabelStyle = styled.label.attrs<IProps>(({ htmlFor }: IProps) => {
           gutterBottom: 0,
           theme,
         })};
+    `}
+    
+  ${({ srOnly, label, error }) =>
+    (label || error) && // Style if `label` or `errer` prop is set
+    !srOnly && // Don't style for screen reader
+    css`
       display: block;
       padding-bottom: ${themeSpacing(2)};
       font-weight: 700;
@@ -31,8 +41,9 @@ const FormLabelStyle = styled.label.attrs<IProps>(({ htmlFor }: IProps) => {
   ${({ error }) =>
     error &&
     css`
-      color: red;
-    `}  
+      color: ${themeColor('error', 'main')};
+    `}
+
 
   ${srOnlyStyle()}
 `
