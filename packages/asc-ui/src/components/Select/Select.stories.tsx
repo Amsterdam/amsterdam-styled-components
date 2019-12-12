@@ -22,14 +22,12 @@ storiesOf('Atoms/Select (Dropdown)', module)
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
-        <option value="4" selected>
-          Option 4
-        </option>
+        <option value="4">Option 4</option>
       </Select>
 
       <br />
       <br />
-      <p>Without label</p>
+      <em>Without label</em>
       <Select id="select-2">
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
@@ -44,9 +42,7 @@ storiesOf('Atoms/Select (Dropdown)', module)
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
-        <option value="4" selected>
-          Option 4
-        </option>
+        <option value="4">Option 4</option>
       </Select>
       <br />
       <br />
@@ -64,7 +60,7 @@ storiesOf('Atoms/Select (Dropdown)', module)
   ))
   .add('error', () => (
     <>
-      <Select id="select-1" label="With error label" errorMessage="Error label">
+      <Select id="select-1" label="Label" errorMessage="Error message">
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
@@ -72,7 +68,24 @@ storiesOf('Atoms/Select (Dropdown)', module)
       </Select>
       <br />
       <br />
-      <Select id="select-2" label="Without error label" error>
+      <Select id="select-2" label="Label only" error>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+      </Select>
+      <br />
+      <br />
+      <Select id="select-3" errorMessage="Error message only">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+      </Select>
+      <br />
+      <br />
+      <em>No labels at all</em>
+      <Select id="select-4" error>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
