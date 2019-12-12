@@ -1,5 +1,9 @@
-import styled from '@datapunt/asc-core'
+import styled, { css } from '@datapunt/asc-core'
 import { themeColor, focusStyleOutline } from '../../utils'
+
+type StyleProps = {
+  error?: string | boolean
+}
 
 const InputStyle = styled.input.attrs({
   type: 'text',
@@ -7,7 +11,7 @@ const InputStyle = styled.input.attrs({
   autoComplete: 'off',
   autoCorrect: 'off',
   spellCheck: false,
-})`
+})<StyleProps>`
   appearance: none;
   font-size: 1rem;
   border: solid 1px ${themeColor('tint', 'level5')};
@@ -17,10 +21,19 @@ const InputStyle = styled.input.attrs({
   padding: 10px;
   width: 100%;
   ${focusStyleOutline(2, 0.5)}
+  ${({ error }) =>
+    !error &&
+    css`
+      &:hover {
+        border-color: ${themeColor('tint', 'level6')};
+      }
+    `}
 
-  &:hover {
-    border-color: ${themeColor('tint', 'level6')};
-  }
+  ${({ error }) =>
+    error &&
+    css`
+      border-color: ${themeColor('secondary', 'main')};
+    `}
 `
 
 export default InputStyle
