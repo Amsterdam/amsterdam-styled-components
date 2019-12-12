@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Added: Select (dropdown) component.
 - Changed: TextField got new `FormLabel` with `errorMessage`
 - Changed: FormLabel has updated style (to design system)
 - Changed: Input has `error` variant
