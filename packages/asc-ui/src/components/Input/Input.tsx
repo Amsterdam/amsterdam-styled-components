@@ -20,6 +20,7 @@ export interface InputProps extends InputMethods {
   keepFocus?: boolean
   blurOnEscape?: boolean
   focusOnRender?: boolean
+  error?: string
 }
 
 export interface Shared {}
@@ -28,6 +29,7 @@ const Input: React.FC<InputProps> = ({
   blurOnEscape,
   focusOnRender,
   value,
+  error,
   ...props
 }: InputProps) => {
   const ref = React.useRef<HTMLInputElement>(null)
@@ -70,6 +72,7 @@ const Input: React.FC<InputProps> = ({
             onKeyDown={e => {
               handleOnKeyDown(e, context)
             }}
+            error={error}
             value={value}
           />
         )
