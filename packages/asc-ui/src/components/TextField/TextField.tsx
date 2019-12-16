@@ -11,6 +11,9 @@ export interface TextFieldProps extends InputProps {
   label?: string
   keepFocus?: boolean
   srOnly: boolean
+  errorMessage?: string
+  labelStyle?: object
+  errorStyle?: object
   onClear?: Function
 }
 
@@ -22,33 +25,54 @@ const TextField = ({
   keepFocus,
   blurOnEscape,
   focusOnRender,
+  errorMessage,
+  labelStyle,
+  errorStyle,
   ...otherProps
 }: TextFieldProps) => {
   const uid = useUID()
   return (
-    <TextFieldStyle>
-      <FormLabelStyle htmlFor={uid} srOnly={srOnly}>
+    <>
+      <FormLabelStyle
+        htmlFor={uid}
+        srOnly={srOnly}
+        label={label}
+        style={labelStyle}
+      >
         {label}
       </FormLabelStyle>
-      <Input
-        {...{ keepFocus, value, blurOnEscape, focusOnRender }}
-        {...otherProps}
-        id={uid}
-      />
-      {onClear && value && (
-        <Button
-          size={30}
-          variant="blank"
-          type="button"
-          aria-label="Close"
-          onClick={() => onClear()}
+      {errorMessage && (
+        <FormLabelStyle
+          htmlFor={uid}
+          srOnly={srOnly}
+          error={errorMessage}
+          style={errorStyle}
         >
-          <Icon>
-            <Close />
-          </Icon>
-        </Button>
+          {errorMessage}
+        </FormLabelStyle>
       )}
-    </TextFieldStyle>
+      <TextFieldStyle>
+        <Input
+          {...{ keepFocus, value, blurOnEscape, focusOnRender }}
+          {...otherProps}
+          id={uid}
+          error={errorMessage}
+        />
+        {onClear && value && (
+          <Button
+            size={30}
+            variant="blank"
+            type="button"
+            aria-label="Close"
+            onClick={() => onClear()}
+          >
+            <Icon>
+              <Close />
+            </Icon>
+          </Button>
+        )}
+      </TextFieldStyle>
+    </>
   )
 }
 

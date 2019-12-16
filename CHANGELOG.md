@@ -14,8 +14,18 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## Unreleased
+
 ## Canary
 
+- Added: Select (dropdown) component.
+- Changed: TextField got new `FormLabel` with `errorMessage`
+- Changed: FormLabel has updated style (to design system)
+- Changed: Input has `error` variant
+- Added: RadioGroup component.
+- Changed: Radio component. (completely redeveloped)
+- Changed: FilterBox component (removed show more button + sublabel)
+- Fixed: IE11 support, by adding `babel-loader` to webpack config
 - Added: FilterTag component.
 - Changed: Keep the toggle component background colour when toggled and not toggled.
 - Added: Export a `BackDrop` component that can be used for i.e. React Portals

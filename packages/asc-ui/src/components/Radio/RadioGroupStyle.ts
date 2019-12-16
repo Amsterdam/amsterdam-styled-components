@@ -1,17 +1,22 @@
-import styled from '@datapunt/asc-core'
-import RadioItemStyle from './RadioItemStyle'
+import styled, { css } from '@datapunt/asc-core'
+import LabelStyle from '../Label/LabelStyle'
+import { themeSpacing } from '../../utils'
 
-type Props = {
-  orientation?: string
+export type Props = {
+  name?: string
+  horizontal?: boolean
+  disabled?: boolean
+  error?: boolean
 }
 
-const RadioGroupStyle = styled.div<Props>`
-  ${RadioItemStyle} {
-    display: ${props =>
-      props.orientation === 'horizontal' ? 'inline-block' : 'block'};
-    margin-right: ${props =>
-      props.orientation === 'horizontal' ? '24px' : '0'};
-  }
+export default styled.div<Props>`
+  display: flex;
+  flex-direction: ${({ horizontal }) => (horizontal ? 'row' : 'column')};
+  ${({ horizontal }) =>
+    horizontal &&
+    css`
+      ${LabelStyle} {
+        margin-right: ${themeSpacing(4)};
+      }
+    `}
 `
-
-export default RadioGroupStyle
