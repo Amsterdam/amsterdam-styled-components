@@ -76,11 +76,12 @@ import {
 import ThemeProvider, { CompactThemeProvider } from './theme'
 import IconButton from './components/deprecated/IconButton'
 import ButtonBar from './components/deprecated/ButtonBar'
-import Radio from './components/Radio'
+import Radio, { RadioGroup } from './components/Radio'
 import SearchBar, { SearchBarStyles } from './components/SearchBar'
 import SearchBarToggle, {
   SearchBarToggleStyles,
 } from './components/SearchBarToggle'
+import Select from './components/Select'
 import Spinner from './components/Spinner/Spinner'
 import TextField, { TextFieldStyles } from './components/TextField'
 import Footer, {
@@ -205,10 +206,12 @@ export {
   Modal,
   Portal,
   Radio,
+  RadioGroup,
   Row,
   Typography,
   SearchBar,
   SearchBarToggle,
+  Select,
   ServerStyleSheet,
   ShareButton,
   Spinner,

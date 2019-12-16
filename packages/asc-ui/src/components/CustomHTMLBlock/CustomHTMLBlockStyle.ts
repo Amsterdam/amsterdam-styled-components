@@ -29,7 +29,7 @@ const ElementStyleMapping = {
   li: ListItemStyleCSS,
 }
 
-export default styled.div`
+const CustomHTMLBlockStyle = styled.div`
   ${Object.entries(ElementStyleMapping).map(
     ([element, style]) => css`
       ${element} {
@@ -45,3 +45,5 @@ export default styled.div`
     margin: 24px auto;
   }
 `
+
+export default CustomHTMLBlockStyle
