@@ -30,11 +30,11 @@ const ViewerContainer: React.FC<Props> = ({
       <ViewerContainerItem position="bottom-right">
         {bottomRight}
         {metaData && (
-          <div className="viewer-controls__meta">
+          <div>
             {metaData.map(
               string =>
                 string && (
-                  <div key={string} className="viewer-controls__meta__item">
+                  <div key={string}>
                     <span>{string}</span>
                   </div>
                 ),

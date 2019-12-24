@@ -1,6 +1,7 @@
 import styled, { css } from '@datapunt/asc-core'
+import { themeSpacing } from '../../utils/themeUtils'
 
-const OFFSET = 10
+const OFFSET_UNIT = 4
 
 export const ViewerContainerWrapper = styled.div`
   bottom: 0;
@@ -23,31 +24,31 @@ export const ViewerContainerItem = styled.div<ViewerContainerItemProps>`
   position: absolute;
 
   & > * + * {
-    margin-top: ${OFFSET}px;
+    margin-top: ${themeSpacing(OFFSET_UNIT)}px;
   }
 
   ${({ position }) => {
     switch (position) {
       case 'top-left':
         return css`
-          left: ${OFFSET}px;
-          top: ${OFFSET}px;
+          left: ${themeSpacing(OFFSET_UNIT)}px;
+          top: ${themeSpacing(OFFSET_UNIT)}px;
         `
       case 'top-right':
         return css`
-          right: ${OFFSET}px;
-          top: ${OFFSET}px;
+          right: ${themeSpacing(OFFSET_UNIT)}px;
+          top: ${themeSpacing(OFFSET_UNIT)}px;
         `
       case 'bottom-right':
         return css`
-          bottom: ${OFFSET}px;
-          padding-right: ${OFFSET}px;
+          bottom: ${themeSpacing(OFFSET_UNIT)}px;
+          padding-right: ${themeSpacing(OFFSET_UNIT)}px;
           right: 0;
         `
       case 'bottom-left':
         return css`
-          bottom: ${OFFSET}px;
-          left: ${OFFSET}px;
+          bottom: ${themeSpacing(OFFSET_UNIT)}px;
+          left: ${themeSpacing(OFFSET_UNIT)}px;
         `
       default:
         return ''
