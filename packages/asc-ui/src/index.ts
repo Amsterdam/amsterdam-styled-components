@@ -80,6 +80,7 @@ import SearchBar, { SearchBarStyles } from './components/SearchBar'
 import SearchBarToggle, {
   SearchBarToggleStyles,
 } from './components/SearchBarToggle'
+import Select from './components/Select'
 import Spinner from './components/Spinner/Spinner'
 import TextField, { TextFieldStyles } from './components/TextField'
 import Footer, {
@@ -204,6 +205,7 @@ export {
   Typography,
   SearchBar,
   SearchBarToggle,
+  Select,
   ServerStyleSheet,
   ShareButton,
   Spinner,

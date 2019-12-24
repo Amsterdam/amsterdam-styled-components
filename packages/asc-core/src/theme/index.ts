@@ -9,6 +9,7 @@ export namespace Theme {
     | 'tint'
     | 'none'
     | 'support'
+    | 'error'
     | 'default'
 
   export type GlobalStyleType = string
