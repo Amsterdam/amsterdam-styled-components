@@ -24,31 +24,31 @@ export const ViewerContainerItem = styled.div<ViewerContainerItemProps>`
   position: absolute;
 
   & > * + * {
-    margin-top: ${themeSpacing(OFFSET_UNIT)}px;
+    margin-top: ${themeSpacing(OFFSET_UNIT)};
   }
 
   ${({ position }) => {
     switch (position) {
       case 'top-left':
         return css`
-          left: ${themeSpacing(OFFSET_UNIT)}px;
-          top: ${themeSpacing(OFFSET_UNIT)}px;
+          left: ${themeSpacing(OFFSET_UNIT)};
+          top: ${themeSpacing(OFFSET_UNIT)};
         `
       case 'top-right':
         return css`
-          right: ${themeSpacing(OFFSET_UNIT)}px;
-          top: ${themeSpacing(OFFSET_UNIT)}px;
+          right: ${themeSpacing(OFFSET_UNIT)};
+          top: ${themeSpacing(OFFSET_UNIT)};
         `
       case 'bottom-right':
         return css`
-          bottom: ${themeSpacing(OFFSET_UNIT)}px;
-          padding-right: ${themeSpacing(OFFSET_UNIT)}px;
+          bottom: ${themeSpacing(OFFSET_UNIT)};
+          padding-right: ${themeSpacing(OFFSET_UNIT)};
           right: 0;
         `
       case 'bottom-left':
         return css`
-          bottom: ${themeSpacing(OFFSET_UNIT)}px;
-          left: ${themeSpacing(OFFSET_UNIT)}px;
+          bottom: ${themeSpacing(OFFSET_UNIT)};
+          left: ${themeSpacing(OFFSET_UNIT)};
         `
       default:
         return ''
