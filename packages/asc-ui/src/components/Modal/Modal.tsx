@@ -1,15 +1,24 @@
 import React from 'react'
+import styled from '@datapunt/asc-core'
+import { position } from 'polished'
 import Focus from '../Focus'
 import ModalStyle, { ModalStyleContainer } from './ModalStyle'
 import { KeyboardKeys } from '../../types'
 import useTrappedFocus from '../../utils/hooks/useTrappedFocus'
 import BackDrop, { Props as BackDropProps } from '../BackDrop/BackDrop'
+import { BACKDROP_Z_INDEX } from '../shared/constants'
 
 export type Props = {
   open: boolean
   onClose?: Function
 } & BackDropProps &
   React.HTMLAttributes<HTMLElement>
+
+const StyledFocus = styled(Focus)`
+  ${position('fixed', 0, 0, 0, 0)};
+  z-index: ${BACKDROP_Z_INDEX + 1};
+  pointer-events: none;
+`
 
 const Modal: React.FC<Props> = ({
   open,
@@ -20,7 +29,6 @@ const Modal: React.FC<Props> = ({
   blurredNodeSelector,
   className,
   onClose,
-  hideOverFlow,
   ...otherProps
 }) => {
   const ref: any = React.useRef<HTMLDivElement>()
@@ -60,15 +68,14 @@ const Modal: React.FC<Props> = ({
       element={element}
       backdropOpacity={backdropOpacity}
       onClick={handleClose}
-      hideOverFlow={hideOverFlow}
     >
-      <Focus onKeyDown={handleKeyDown}>
+      <StyledFocus onKeyDown={handleKeyDown}>
         <ModalStyleContainer {...otherProps} className={className}>
-          <ModalStyle role="dialog" ref={ref} onKeyDown={keyDown} hasBackDrop>
+          <ModalStyle role="dialog" ref={ref} onKeyDown={keyDown}>
             {children}
           </ModalStyle>
         </ModalStyleContainer>
-      </Focus>
+      </StyledFocus>
     </BackDrop>
   ) : null
 }
