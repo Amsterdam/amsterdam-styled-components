@@ -33,6 +33,7 @@ Prefix the change with one of these keywords:
 - Added: `active` prop to MenuButton to enable activeStyles (instead of only on `:hover, :focus`)
 - Fixed: Update styling on `Text Button` variant
 - Added: ViewerContainer component, a placeholder on viewers to hold components
+- Fixed: Modal issue: closing modal when clicking on it
 
 ## [0.17.5] - 2019-10-30
 

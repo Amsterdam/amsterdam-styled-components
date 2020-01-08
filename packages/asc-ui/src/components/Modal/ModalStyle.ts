@@ -30,6 +30,7 @@ export const ModalStyleContainer = styled.div`
   height: 100vh;
   margin: 0;
   place-items: center center;
+  pointer-events: all;
 `
 
 export default ModalStyle
