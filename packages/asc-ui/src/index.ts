@@ -96,6 +96,7 @@ import Footer, {
   FooterTop,
   FooterStyles,
 } from './components/Footer'
+import ViewerContainer from './components/ViewerContainer/ViewerContainer'
 import { themeColor } from './utils'
 
 import * as constants from './components/shared/constants'
@@ -233,4 +234,5 @@ export {
   ascDefaultTheme,
   DocumentCover,
   Tag,
+  ViewerContainer,
 }
