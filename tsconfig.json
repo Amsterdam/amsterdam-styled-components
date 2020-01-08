@@ -15,7 +15,6 @@
       "node",
       "react",
       "react-dom",
-      "storybook__react",
       "styled-components"
     ],
     "baseUrl": "./packages",

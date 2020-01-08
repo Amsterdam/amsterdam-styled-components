@@ -272,10 +272,18 @@ export const colWidthCalc = withTheme<
     const spanCols = spanColsCount > parentCols ? parentCols : spanColsCount
 
     // get unit values for gutters
-    const gutterWidthInContext = spanGutterWidth(layoutId, parentCols, true)({
+    const gutterWidthInContext = spanGutterWidth(
+      layoutId,
+      parentCols,
+      true,
+    )({
       theme,
     })
-    const gutterWidthInSpan = spanGutterWidth(layoutId, spanCols, true)({
+    const gutterWidthInSpan = spanGutterWidth(
+      layoutId,
+      spanCols,
+      true,
+    )({
       theme,
     })
 
