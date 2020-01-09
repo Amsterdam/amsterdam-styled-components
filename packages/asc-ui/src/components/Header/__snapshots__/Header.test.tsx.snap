@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header should render the short version 1`] = `
-.c10 {
+.c7 {
   margin: 0;
   color: #000000;
   font-weight: inherit;
@@ -60,7 +60,7 @@ exports[`Header should render the short version 1`] = `
   margin-bottom: 0;
 }
 
-.c9 {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -71,33 +71,33 @@ exports[`Header should render the short version 1`] = `
   color: #000000;
 }
 
-.c9:focus {
+.c8:focus {
   background-color: #FEC813;
 }
 
-.c9 .c15 {
+.c8 .c15 {
   margin: 4px;
 }
 
-.c9 .c15 svg rect,
-.c9 .c15 svg polygon,
-.c9 .c15 svg path {
+.c8 .c15 svg rect,
+.c8 .c15 svg polygon,
+.c8 .c15 svg path {
   fill: #000000;
 }
 
-.c9:hover {
+.c8:hover {
   color: #ec0000;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c9:hover .c15 svg rect,
-.c9:hover .c15 svg polygon,
-.c9:hover .c15 svg path {
+.c8:hover .c15 svg rect,
+.c8:hover .c15 svg polygon,
+.c8:hover .c15 svg path {
   fill: #ec0000;
 }
 
-.c8 {
+.c10 {
   margin: 0px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -108,7 +108,7 @@ exports[`Header should render the short version 1`] = `
   text-decoration: none;
 }
 
-.c8:hover {
+.c10:hover {
   color: inherit;
 }
 
@@ -195,7 +195,7 @@ exports[`Header should render the short version 1`] = `
   flex-grow: 1;
 }
 
-.c0 .c7 {
+.c0 .c9 {
   margin-top: -2px;
 }
 
@@ -223,7 +223,7 @@ exports[`Header should render the short version 1`] = `
 }
 
 @media screen and (min-width:1024px) {
-  .c10 {
+  .c7 {
     font-size: 18px;
     line-height: 25px;
   }
@@ -236,13 +236,13 @@ exports[`Header should render the short version 1`] = `
 }
 
 @media screen and (max-width:374px) {
-  .c8 {
+  .c10 {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width:375px) {
-  .c8 {
+  .c10 {
     font-size: 16px;
   }
 }
@@ -295,7 +295,7 @@ exports[`Header should render the short version 1`] = `
 `;
 
 exports[`Header should render the short version without the full width 1`] = `
-.c10 {
+.c7 {
   margin: 0;
   color: #000000;
   font-weight: inherit;
@@ -354,7 +354,7 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-bottom: 0;
 }
 
-.c9 {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -365,33 +365,33 @@ exports[`Header should render the short version without the full width 1`] = `
   color: #000000;
 }
 
-.c9:focus {
+.c8:focus {
   background-color: #FEC813;
 }
 
-.c9 .c15 {
+.c8 .c15 {
   margin: 4px;
 }
 
-.c9 .c15 svg rect,
-.c9 .c15 svg polygon,
-.c9 .c15 svg path {
+.c8 .c15 svg rect,
+.c8 .c15 svg polygon,
+.c8 .c15 svg path {
   fill: #000000;
 }
 
-.c9:hover {
+.c8:hover {
   color: #ec0000;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c9:hover .c15 svg rect,
-.c9:hover .c15 svg polygon,
-.c9:hover .c15 svg path {
+.c8:hover .c15 svg rect,
+.c8:hover .c15 svg polygon,
+.c8:hover .c15 svg path {
   fill: #ec0000;
 }
 
-.c8 {
+.c10 {
   margin: 0px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -402,7 +402,7 @@ exports[`Header should render the short version without the full width 1`] = `
   text-decoration: none;
 }
 
-.c8:hover {
+.c10:hover {
   color: inherit;
 }
 
@@ -489,7 +489,7 @@ exports[`Header should render the short version without the full width 1`] = `
   flex-grow: 1;
 }
 
-.c0 .c7 {
+.c0 .c9 {
   margin-top: -2px;
 }
 
@@ -517,7 +517,7 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 @media screen and (min-width:1024px) {
-  .c10 {
+  .c7 {
     font-size: 18px;
     line-height: 25px;
   }
@@ -530,13 +530,13 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 @media screen and (max-width:374px) {
-  .c8 {
+  .c10 {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width:375px) {
-  .c8 {
+  .c10 {
     font-size: 16px;
   }
 }
@@ -589,7 +589,7 @@ exports[`Header should render the short version without the full width 1`] = `
 `;
 
 exports[`Header should render the tall version 1`] = `
-.c13 {
+.c10 {
   margin: 0;
   color: #000000;
   font-weight: inherit;
@@ -648,7 +648,7 @@ exports[`Header should render the tall version 1`] = `
   margin-bottom: 0;
 }
 
-.c12 {
+.c11 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -659,33 +659,33 @@ exports[`Header should render the tall version 1`] = `
   color: #000000;
 }
 
-.c12:focus {
+.c11:focus {
   background-color: #FEC813;
 }
 
-.c12 .c20 {
+.c11 .c20 {
   margin: 4px;
 }
 
-.c12 .c20 svg rect,
-.c12 .c20 svg polygon,
-.c12 .c20 svg path {
+.c11 .c20 svg rect,
+.c11 .c20 svg polygon,
+.c11 .c20 svg path {
   fill: #000000;
 }
 
-.c12:hover {
+.c11:hover {
   color: #ec0000;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c12:hover .c20 svg rect,
-.c12:hover .c20 svg polygon,
-.c12:hover .c20 svg path {
+.c11:hover .c20 svg rect,
+.c11:hover .c20 svg polygon,
+.c11:hover .c20 svg path {
   fill: #ec0000;
 }
 
-.c11 {
+.c13 {
   margin: 0px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -696,7 +696,7 @@ exports[`Header should render the tall version 1`] = `
   text-decoration: none;
 }
 
-.c11:hover {
+.c13:hover {
   color: inherit;
 }
 
@@ -776,7 +776,7 @@ exports[`Header should render the tall version 1`] = `
   flex-grow: 1;
 }
 
-.c18 .c10 {
+.c18 .c12 {
   margin-top: -2px;
 }
 
@@ -822,7 +822,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 @media screen and (min-width:1024px) {
-  .c13 {
+  .c10 {
     font-size: 18px;
     line-height: 25px;
   }
@@ -835,13 +835,13 @@ exports[`Header should render the tall version 1`] = `
 }
 
 @media screen and (max-width:374px) {
-  .c11 {
+  .c13 {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width:375px) {
-  .c11 {
+  .c13 {
     font-size: 16px;
   }
 }
@@ -876,7 +876,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 @media screen and (max-width:1199px) {
-  .c0 .c10 {
+  .c0 .c12 {
     margin-top: -2px;
   }
 
@@ -912,7 +912,7 @@ exports[`Header should render the tall version 1`] = `
     background-color: transparent;
   }
 
-  .c0 .c10 {
+  .c0 .c12 {
     margin-top: 0px;
     -webkit-align-self: flex-start;
     -ms-flex-item-align: start;
