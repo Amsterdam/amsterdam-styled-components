@@ -53,6 +53,16 @@ module.exports = {
     ],
     'react/jsx-props-no-spreading': 0,
     semi: [2, 'never'],
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
   },
   settings: {
     'import/resolver': {

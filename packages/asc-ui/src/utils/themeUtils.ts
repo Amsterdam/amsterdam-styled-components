@@ -112,9 +112,10 @@ export const getTypographyFromTheme = () => ({
       breakpoints
         ? Object.entries(breakpoints).map(
             ([breakpointFromTypography, typoStyles]) => css`
-              @media screen and ${breakpoint('min-width', <
-                  keyof BreakpointsInterface
-                >breakpointFromTypography)} {
+              @media screen and ${breakpoint(
+                  'min-width',
+                  <keyof BreakpointsInterface>breakpointFromTypography,
+                )} {
                 ${generateCSSFromTypography(typoStyles || {}, gutterBottom)}
               }
             `,
@@ -289,7 +290,10 @@ export const mapToBreakpoints = (
           ? `${propertyName}: ${value};`
           : breakpointVariants[index] &&
             `
-        @media screen and ${breakpoint('min-width', breakpointVariants[index])({
+        @media screen and ${breakpoint(
+          'min-width',
+          breakpointVariants[index],
+        )({
           theme,
         })} {
           ${propertyName}: ${value};
