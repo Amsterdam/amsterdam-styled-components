@@ -16,6 +16,8 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Changed: Removed `background-color` style for List comp
+
 ## Canary
 
 - Added: Select (dropdown) component.
