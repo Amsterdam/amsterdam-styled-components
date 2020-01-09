@@ -49,7 +49,6 @@ const getVariant = () => ({ variant }: Props) => {
 
 export const ListStyleCSS = css`
   list-style: none;
-  background-color: ${themeColor('tint', 'level1')};
   margin: ${themeSpacing(0, 0, 6, 0)};
   padding: 0;
 `
