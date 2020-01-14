@@ -16,6 +16,7 @@ import ToggleButtonStyle from '../../Button/ToggleButton'
 export type Props = {
   align?: 'left' | 'right'
   onExpand?: Function
+  open?: boolean
   hasBackDrop?: boolean
 } & ShowHideTypes
 
