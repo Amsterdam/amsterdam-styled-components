@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Article should render 1`] = `
-.c1 {
+.c0 {
   width: 100%;
   color: #323232;
   background-color: #ffffff;
 }
 
-.c1 .c2 {
+.c0 .c2 {
   max-height: 560px;
   min-height: 250px;
 }
 
 @media screen and (min-width:768px) {
-  .c0 .sc-bdVaJa {
+  .c1 .sc-bdVaJa {
     margin-top: 0;
   }
 }

@@ -27,7 +27,10 @@ export const BulletCSS = css`
       left: -${BULLET_MARGIN + BULLET_SIZE}px;
       top: ${({ theme }) =>
         `${(stripUnit(
-          getTypographyValueFromProperty('li', 'lineHeight')({
+          getTypographyValueFromProperty(
+            'li',
+            'lineHeight',
+          )({
             theme,
           }),
         ) -
@@ -49,7 +52,6 @@ const getVariant = () => ({ variant }: Props) => {
 
 export const ListStyleCSS = css`
   list-style: none;
-  background-color: ${themeColor('tint', 'level1')};
   margin: ${themeSpacing(0, 0, 6, 0)};
   padding: 0;
 `

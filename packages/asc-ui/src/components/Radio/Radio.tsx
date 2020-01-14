@@ -37,7 +37,7 @@ const Radio: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
   // Pass default `checked` to RadioGroup on load and when `id` changes
   useEffect(() => {
     if (defaultChecked) setChecked(id)
-  }, [id])
+  }, [id, defaultChecked, setChecked])
 
   return (
     <RadioWrapperStyle

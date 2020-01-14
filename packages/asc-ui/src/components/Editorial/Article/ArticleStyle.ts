@@ -37,7 +37,11 @@ export default styled(EditorialPost)<Props>`
               EDITORIAL_META_LINE_HEIGHT +
               EDITORIAL_META_MARGIN_TOP +
               stripUnit(
-                getTypographyValueFromProperty('h1', 'lineHeight', 'tabletS')({
+                getTypographyValueFromProperty(
+                  'h1',
+                  'lineHeight',
+                  'tabletS',
+                )({
                   theme,
                 }),
               )) *

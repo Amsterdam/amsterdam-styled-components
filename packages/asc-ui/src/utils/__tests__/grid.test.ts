@@ -182,7 +182,12 @@ describe('utils/grid', () => {
     })
 
     it('should return a min-width query', () => {
-      const query = grid.mediaQuery('somewhereInTheMiddle', true, true, false)({
+      const query = grid.mediaQuery(
+        'somewhereInTheMiddle',
+        true,
+        true,
+        false,
+      )({
         theme,
       })
       expect(query).not.toEqual(expect.stringMatching(/\(max-width/))
@@ -190,7 +195,11 @@ describe('utils/grid', () => {
     })
 
     it('should return a max-width query', () => {
-      const query = grid.mediaQuery('somewhereInTheMiddle', true, false)({
+      const query = grid.mediaQuery(
+        'somewhereInTheMiddle',
+        true,
+        false,
+      )({
         theme,
       })
       expect(query).not.toEqual(expect.stringMatching(/\(min-width/))
