@@ -16,13 +16,13 @@ const useOptionalControlledState = (
     if (typeof controlledBoolean !== 'undefined') {
       setBoolean(controlledBoolean)
     }
-  }, [controlledBoolean])
+  }, [controlledBoolean, setBoolean])
 
   useEffect(() => {
     if (onSetBoolean) {
       onSetBoolean(boolean)
     }
-  }, [boolean])
+  }, [boolean, onSetBoolean])
 
   return [boolean, setBoolean] as const
 }
