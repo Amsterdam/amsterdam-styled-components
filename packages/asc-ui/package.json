@@ -12,9 +12,8 @@
   "bugs": {
     "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
   },
-  "version": "0.17.7",
+  "version": "0.17.8-alpha.23+71533a03",
   "main": "lib/index.js",
-  "module": "lib/index.js",
   "files": [
     "lib"
   ],
@@ -31,11 +30,11 @@
     "react-uid": "^2.2.0"
   },
   "peerDependencies": {
-    "react": "16.8.6 || 16.9.0 || 16.11.0",
-    "react-dom": "16.8.6 || 16.9.0 || 16.11.0"
+    "react": ">=16.8.6 <=16.x.x",
+    "react-dom": ">=16.8.6 <=16.x.x"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "d24c66f226d569d81e90503da943570316e650da"
+  "gitHead": "71533a03a5ffde679e93b0e2d94eb5138dc84360"
 }

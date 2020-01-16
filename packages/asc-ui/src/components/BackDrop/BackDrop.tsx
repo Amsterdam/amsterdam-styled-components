@@ -16,9 +16,16 @@ const BackDrop: React.FC<Props> = ({
   element,
   children,
   hideOverFlow,
+  onClick,
   ...otherProps
 }) => {
   const Element = disablePortal ? React.Fragment : Portal
+
+  const handleOnClick = (e: React.MouseEvent) => {
+    if (onClick) {
+      onClick(e)
+    }
+  }
 
   return (
     <Element
@@ -34,9 +41,12 @@ const BackDrop: React.FC<Props> = ({
           }
         : {})}
     >
-      <BackDropStyle backdropOpacity={backdropOpacity} {...otherProps}>
-        {children}
-      </BackDropStyle>
+      {children}
+      <BackDropStyle
+        backdropOpacity={backdropOpacity}
+        onClick={handleOnClick}
+        {...otherProps}
+      />
     </Element>
   )
 }
