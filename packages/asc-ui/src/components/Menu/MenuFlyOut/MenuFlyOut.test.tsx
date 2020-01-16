@@ -77,6 +77,8 @@ describe('MenuFlyOut', () => {
   it('should toggle the open state on click', () => {
     onClickSimulate()
 
+    jest.runAllTimers()
+
     menuListProps = component.find(MenuList).props()
     expect(menuListProps['aria-hidden']).toBe(false)
   })
@@ -85,6 +87,8 @@ describe('MenuFlyOut', () => {
     onClickSimulate()
     onClickSimulate()
 
+    jest.runAllTimers()
+
     menuListProps = component.find(MenuList).props()
     expect(menuListProps['aria-hidden']).toBe(false)
   })
@@ -92,12 +96,16 @@ describe('MenuFlyOut', () => {
   it('should toggle the open state on enter', () => {
     onKeyDownSimulate('Enter')
 
+    jest.runAllTimers()
+
     menuListProps = component.find(MenuList).props()
     expect(menuListProps['aria-hidden']).toBe(false)
   })
 
   it('should toggle the open state on space', () => {
     onKeyDownSimulate('Space')
+
+    jest.runAllTimers()
 
     menuListProps = component.find(MenuList).props()
     expect(menuListProps['aria-hidden']).toBe(false)
@@ -139,6 +147,8 @@ describe('MenuFlyOut', () => {
       expect(menuListProps['aria-hidden']).toBe(true)
 
       onClickSimulate()
+
+      jest.runAllTimers()
 
       expect(menuItemLink.find(<ChevronUp />)).toBeTruthy()
 
