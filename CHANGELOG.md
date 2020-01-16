@@ -19,6 +19,7 @@ Prefix the change with one of these keywords:
 - Changed: Removed `background-color` style for List comp
 - Fixed: click outside modal box didn't close the modal
 - Added: "open" prop to MenuToggle to also control the open-state outside of the component
+- Added: Make it possible to pass a z-index offset to the backdrop
 
 ## Canary
 

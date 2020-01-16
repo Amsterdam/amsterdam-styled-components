@@ -339,14 +339,23 @@ export const showHide = () => ({ hideAt, showAt, theme }: ShowHideProps) => {
 // the backdrop, but aren't directly related
 export const showAboveBackDrop = (show?: boolean) => ({
   hasBackDrop,
+  zIndexOffset,
 }: {
   hasBackDrop?: boolean
-}) =>
-  hasBackDrop || show
+  zIndexOffset?: number
+}) => {
+  console.log(
+    zIndexOffset ? BACKDROP_Z_INDEX + zIndexOffset + 1 : BACKDROP_Z_INDEX + 1,
+  )
+
+  return hasBackDrop || show
     ? css`
-        z-index: ${BACKDROP_Z_INDEX + 1};
+        z-index: ${zIndexOffset
+          ? BACKDROP_Z_INDEX + zIndexOffset + 1
+          : BACKDROP_Z_INDEX + 1};
       `
     : ''
+}
 
 type ThemeSpacingParameters = [
   Theme.Spacing,
