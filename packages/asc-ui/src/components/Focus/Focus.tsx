@@ -5,7 +5,7 @@ type Props = {
   onKeyDown?: React.EventHandler<React.KeyboardEvent>
 }
 
-const Focus: React.FC<Props> = ({ children, onKeyDown }) => {
+const Focus: React.FC<Props> = ({ children, onKeyDown, ...otherProps }) => {
   const myRef = React.createRef<HTMLDivElement>()
 
   React.useEffect(() => {
@@ -28,7 +28,13 @@ const Focus: React.FC<Props> = ({ children, onKeyDown }) => {
   }, [myRef])
 
   return (
-    <div role="presentation" ref={myRef} onKeyDown={onKeyDown} tabIndex={0}>
+    <div
+      {...otherProps}
+      role="presentation"
+      ref={myRef}
+      onKeyDown={onKeyDown}
+      tabIndex={0}
+    >
       {children}
     </div>
   )

@@ -3,10 +3,10 @@ import BlockquoteStyle, { Props } from './BlockquoteStyle'
 
 export { Props }
 
-const Blockquote: React.FC<
-  Props & React.HTMLAttributes<HTMLParagraphElement>
-> = ({ children, ...otherProps }) => (
-  <BlockquoteStyle {...otherProps}>{children}</BlockquoteStyle>
-)
+const Blockquote: React.FC<Props &
+  React.HTMLAttributes<HTMLParagraphElement>> = ({
+  children,
+  ...otherProps
+}) => <BlockquoteStyle {...otherProps}>{children}</BlockquoteStyle>
 
 export default Blockquote

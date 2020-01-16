@@ -5,13 +5,7 @@ type StyleProps = {
   error?: string | boolean
 }
 
-const InputStyle = styled.input.attrs({
-  type: 'text',
-  autoCapitalize: 'off',
-  autoComplete: 'off',
-  autoCorrect: 'off',
-  spellCheck: false,
-})<StyleProps>`
+const InputStyle = styled.input<StyleProps>`
   appearance: none;
   font-size: 1rem;
   border: solid 1px ${themeColor('tint', 'level5')};

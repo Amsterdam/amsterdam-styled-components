@@ -16,6 +16,8 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Changed: Removed `background-color` style for List comp
+
 ## Canary
 
 - Added: Select (dropdown) component.
@@ -32,6 +34,8 @@ Prefix the change with one of these keywords:
 - Changed: Setup for managing the `z-index` of the project's components, `z-index` can now be imported in single projects
 - Added: `active` prop to MenuButton to enable activeStyles (instead of only on `:hover, :focus`)
 - Fixed: Update styling on `Text Button` variant
+- Added: ViewerContainer component, a placeholder on viewers to hold components
+- Fixed: Modal issue: closing modal when clicking on it
 
 ## [0.17.5] - 2019-10-30
 
@@ -176,3 +180,4 @@ Prefix the change with one of these keywords:
 ### ASC-UI
 - Added: `noButton` optional prop to SearchBar in order to render a searchbar without a button
 - Added: `iconComponent` optional prop to SearchBar in order to render the search button with a different icon
+- Expose context components to be used in custom components

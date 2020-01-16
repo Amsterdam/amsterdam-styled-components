@@ -40,8 +40,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
   const triggerOnChange = (val: string) => {
     setInputValue(val)
-    // @ts-ignore
-    onChange(val)
+    if (onChange) {
+      // @ts-ignore
+      onChange(val)
+    }
   }
 
   const onClear = () => {
