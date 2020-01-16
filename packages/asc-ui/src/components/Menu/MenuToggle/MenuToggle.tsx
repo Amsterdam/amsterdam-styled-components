@@ -3,33 +3,25 @@ import MenuList from '../MenuList/MenuList'
 import MenuContext from '../MenuContext'
 import MenuToggleStyle, { Props } from './MenuToggleStyle'
 import Toggle from '../../Toggle/Toggle'
+import useOptionalControlledState from '../../../utils/hooks/useOptionalControlledState'
 
 const MenuToggle: React.FC<Props> = ({
   children,
   onExpand,
   align = 'left',
+  open,
   ...otherProps
 }) => {
-  const [menuOpen, setMenuOpen] = React.useState(false)
+  const [menuOpen, setMenuOpen] = useOptionalControlledState(open, onExpand)
   const toggleMenu = () => {
     setMenuOpen(!menuOpen)
   }
 
-  const onOpen = (open: boolean) => {
-    if (!open) {
+  const onOpen = (isOpen: boolean) => {
+    if (!isOpen) {
       setMenuOpen(false)
     }
   }
-
-  const handleOnExpand = React.useCallback(
-    open => onExpand && onExpand(open),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
-  )
-
-  React.useEffect(() => {
-    handleOnExpand(menuOpen)
-  }, [handleOnExpand, menuOpen])
 
   return (
     <MenuContext.Provider
@@ -57,6 +49,7 @@ const MenuToggle: React.FC<Props> = ({
 
 MenuToggle.defaultProps = {
   align: 'left',
+  open: false,
 }
 
 export default MenuToggle
