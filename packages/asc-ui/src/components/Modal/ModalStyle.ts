@@ -17,6 +17,7 @@ const ModalStyle = styled.div<Props>`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  pointer-events: all;
 
   ${TopBarStyle} {
     min-height: 54px;
@@ -30,7 +31,7 @@ export const ModalStyleContainer = styled.div`
   height: 100vh;
   margin: 0;
   place-items: center center;
-  pointer-events: all;
+  pointer-events: none;
 `
 
 export default ModalStyle

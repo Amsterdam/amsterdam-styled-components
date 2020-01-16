@@ -17,6 +17,8 @@ Prefix the change with one of these keywords:
 ## Unreleased
 
 - Changed: Removed `background-color` style for List comp
+- Fixed: click outside modal box didn't close the modal
+- Added: "open" prop to MenuToggle to also control the open-state outside of the component
 
 ## Canary
 
