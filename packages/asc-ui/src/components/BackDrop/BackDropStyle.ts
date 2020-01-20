@@ -6,6 +6,7 @@ import { themeColor } from '../../utils'
 
 export type Props = {
   backdropOpacity?: number
+  zIndexOffset?: number
 }
 
 const BackDropStyle = styled.div<Props>`
@@ -16,7 +17,8 @@ const BackDropStyle = styled.div<Props>`
       backdropOpacity || 0.3,
       themeColor('tint', 'level7')({ theme }),
     )};
-  z-index: ${BACKDROP_Z_INDEX};
+  z-index: ${({ zIndexOffset }) =>
+    zIndexOffset ? BACKDROP_Z_INDEX + zIndexOffset : BACKDROP_Z_INDEX};
 `
 
 export default BackDropStyle

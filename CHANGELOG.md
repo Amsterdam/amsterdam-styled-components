@@ -15,6 +15,7 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## Unreleased
+- Added: Make it possible to pass a z-index offset to the backdrop
 
 ## [0.18.0] - 2020-01-20
 
