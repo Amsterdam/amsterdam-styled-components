@@ -16,12 +16,11 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+## [0.18.0] - 2020-01-20
+
 - Changed: Removed `background-color` style for List comp
 - Fixed: click outside modal box didn't close the modal
 - Added: "open" prop to MenuToggle to also control the open-state outside of the component
-
-## Canary
-
 - Added: Select (dropdown) component.
 - Changed: TextField got new `FormLabel` with `errorMessage`
 - Changed: FormLabel has updated style (to design system)
@@ -39,6 +38,7 @@ Prefix the change with one of these keywords:
 - Fixed: Menu also closes `OnMouseLeave` when it was opened with an `onClick` event
 - Added: ViewerContainer component, a placeholder on viewers to hold components
 - Fixed: Modal issue: closing modal when clicking on it
+- Expose context components to be used in custom components
 
 ## [0.17.5] - 2019-10-30
 
@@ -177,8 +177,3 @@ Prefix the change with one of these keywords:
 ### ASC-CORE
 
 - Changed typography.ts
-
-## Unreleased
-
-### ASC-UI
-- Expose context components to be used in custom components
