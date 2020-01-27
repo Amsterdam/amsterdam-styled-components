@@ -6,18 +6,5 @@
   },
   "include": [
     "./src"
-  ],
-  "paths": {
-    "@components": [
-      "./src/components"
-    ]
-  },
-  "references": [
-    {
-      "path": "../asc-assets"
-    },
-    {
-      "path": "../asc-core"
-    }
   ]
 }

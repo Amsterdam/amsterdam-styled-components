@@ -19,15 +19,7 @@
     ],
     "baseUrl": "./packages",
     "paths": {
-      "@datapunt/asc-assets": [
-        "./asc-assets/src"
-      ],
-      "@datapunt/asc-ui": [
-        "./asc-ui/src"
-      ],
-      "@datapunt/asc-core": [
-        "./asc-core/src"
-      ]
+      "@datapunt/*": ["packages/*/src"]
     },
     "composite": true,
     "sourceMap": true,
@@ -49,6 +41,11 @@
     "emitDecoratorMetadata": true,
     "strict": true
   },
+  "references": [
+    { "path": "packages/asc-assets" },
+    { "path": "packages/asc-core" },
+    { "path": "packages/asc-ui" }
+  ],
   "files": [
     "custom.d.ts",
     "node_modules/jest-styled-components/typings/index.d.ts"
