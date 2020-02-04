@@ -11,7 +11,6 @@ exports[`TopBar should render 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  z-index: 0;
   padding: 0 10px;
   background-color: red;
 }
