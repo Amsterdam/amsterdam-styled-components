@@ -1,10 +1,13 @@
 import styled from '@datapunt/asc-core'
+import { position } from 'polished'
+import Focus from '../Focus'
 import TopBarStyle from '../TopBar/TopBarStyle'
 import { themeColor, showAboveBackDrop } from '../../utils'
 
 type Props = {
   attributes?: object
   hasBackDrop?: boolean
+  zIndexOffset?: number
 }
 
 const ModalStyle = styled.div<Props>`
@@ -23,7 +26,13 @@ const ModalStyle = styled.div<Props>`
     min-height: 54px;
   }
 
-  ${showAboveBackDrop()}
+  ${showAboveBackDrop(true)}
+`
+
+export const ModalFocus = styled(Focus)`
+  ${position('fixed', 0, 0, 0, 0)};
+  pointer-events: none;
+  ${showAboveBackDrop(true)}
 `
 
 export const ModalStyleContainer = styled.div`
