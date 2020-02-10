@@ -7,7 +7,7 @@ import CheckboxStyle, {
 } from './CheckboxStyle'
 import LabelContext from '../Label/LabelContext'
 
-const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
+const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLInputElement>> = ({
   checked: checkedProp,
   className,
   onChange,
