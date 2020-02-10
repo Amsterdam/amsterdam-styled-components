@@ -29,7 +29,6 @@ exports[`Header should render the short version 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  z-index: 0;
   padding: 0 10px;
   background-color: #ffffff;
   -webkit-flex-wrap: nowrap;
@@ -323,7 +322,6 @@ exports[`Header should render the short version without the full width 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  z-index: 0;
   padding: 0 10px;
   background-color: #ffffff;
   -webkit-flex-wrap: nowrap;
@@ -617,7 +615,6 @@ exports[`Header should render the tall version 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  z-index: 0;
   padding: 0 10px;
   background-color: #ffffff;
   -webkit-flex-wrap: nowrap;
@@ -988,7 +985,6 @@ exports[`Header should render the tall version without a title 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  z-index: 0;
   padding: 0 10px;
   background-color: #ffffff;
   -webkit-flex-wrap: nowrap;
