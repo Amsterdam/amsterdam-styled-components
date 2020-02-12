@@ -15,7 +15,7 @@ yarn add @datapunt/asc-assets # or npm install @datapunt/asc-assets --save
 
 ## Basic Usage
 
-### Icons
+### Icons (React)
 
 ```jsx
 import { IconName } from '@datapunt/asc-assets'
@@ -30,8 +30,8 @@ Below an example of how to use with CopyWebpackPlugin:
 ```js
 new CopyWebpackPlugin([
   {
-    from: './node_modules/@datapunt/asc-assets/lib/assets/Fonts',
-    to: 'Fonts',
+    from: './node_modules/@datapunt/asc-assets/static/fonts',
+    to: 'fonts',
   },
 ])
 ```
@@ -39,15 +39,15 @@ new CopyWebpackPlugin([
 don't forget to include the css!
 
 ```scss
-@import '~@datapunt/asc-assets/lib/assets/fonts.css';
+@import '~@datapunt/asc-assets/static/fonts/fonts.css';
 ```
 
 ## Optimized SVGs
 
 ```jsx
-import { svg } from '@datapunt/asc-assets'
+import IconName from '@datapunt/asc-assets/static/icons/IconName.svg'
 
-return <img src={svg.IconName} />
+return <img src={IconName} />
 ```
 
 ## Build Project

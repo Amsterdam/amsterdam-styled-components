@@ -1,4 +1,5 @@
-import { svg } from '@datapunt/asc-assets'
+import LogoShort from '@datapunt/asc-assets/static/icons/LogoShort.svg'
+import LogoTall from '@datapunt/asc-assets/static/icons/LogoTall.svg'
 import styled, { css } from '@datapunt/asc-core'
 import { breakpoint, focusStyleOutline } from '../../utils'
 
@@ -11,7 +12,7 @@ export const LogoStyle = styled.span`
   height: 100%;
   width: 100%;
   background-size: cover;
-  background-image: url("${svg.LogoShort}");
+  background-image: url("${LogoShort}");
 `
 
 const tallStyle = css`
@@ -20,7 +21,7 @@ const tallStyle = css`
     width: 100px;
 
     ${LogoStyle} {
-      background-image: url("${svg.LogoTall}");
+      background-image: url("${LogoTall}");
     }
   }
 `

@@ -15,14 +15,14 @@
   "version": "0.18.1",
   "main": "lib/index.js",
   "files": [
-    "lib"
+    "lib",
+    "static"
   ],
   "scripts": {
-    "prebuild": "mkdirp lib && cp -R src/assets lib/",
     "build": "yarn build:optimize-svg && yarn build:react-icons && yarn build:icon-ts-files",
     "build:icon-ts-files": "./scripts/icons.sh",
-    "build:optimize-svg": "svgo --config=.svgo.yml -f ./src/assets/Icons/ -o ./src/tmp/Icons && mkdirp lib && cp -Rf src/assets/Icons lib/assets",
-    "build:react-icons": "svgr -d src/Icons src/tmp/Icons --template src/utils/generateIconReact.js --svg-props focusable={false} --ext tsx && rm -rf ./src/tmp"
+    "build:optimize-svg": "svgo --config=.svgo.yml -f static/icons",
+    "build:react-icons": "svgr -d src/icons static/icons --template src/utils/generateIconReact.js --svg-props focusable={false} --ext tsx"
   },
   "dependencies": {
     "@svgr/cli": "^4.3.2",

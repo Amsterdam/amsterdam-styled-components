@@ -1,7 +1,7 @@
 packages/**/lib/
 packages/**/node_modules/
 packages/asc-assets/*.js
-packages/asc-assets/src/Icons/
+packages/asc-assets/src/icons/
 *.d.ts
 node_modules/
 config/
