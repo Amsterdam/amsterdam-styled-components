@@ -1,5 +1,5 @@
 import styled, { css } from '@datapunt/asc-core'
-import { svg } from '@datapunt/asc-assets'
+import ChevronDown from '@datapunt/asc-assets/static/icons/ChevronDown.svg'
 import { themeColor, themeSpacing } from '../../utils'
 import { outlineStyle } from '../../utils/themeUtils'
 
@@ -27,7 +27,7 @@ const SelectStyle = styled.select<Props>`
   border: 0;
   border-radius: 0;
   background-color: ${themeColor('tint', 'level1')};
-  background-image: url("${svg.ChevronDown}");
+  background-image: url("${ChevronDown}");
   background-position: calc(100% - ${themeSpacing(3)}) 50%;
   background-repeat: no-repeat;
   background-size: ${themeSpacing(3)};

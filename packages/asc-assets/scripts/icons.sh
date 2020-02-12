@@ -5,22 +5,8 @@
 current_path=`pwd`
 cd "$current_path/src"
 
-rm -f svg.ts
-for s in ./assets/Icons/*;do
-    if [[ "$s" ]]
-    then
-        filename=${s##*/}
-#        For some reason webpack cannot deal with export { default as .... with svg's
-        echo "import ${filename%.svg} from '$s'
-export { ${filename%.svg} }" >> svg.ts;
-    fi
-done
-
 rm -f index.ts
-echo "import * as svg from './svg'
-
-export { svg }" >> index.ts
-for s in ./Icons/*.tsx;do
+for s in ./icons/*.tsx;do
     if [[ "$s" ]]
     then
         filename=${s##*/}
