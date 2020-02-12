@@ -17,6 +17,7 @@ Prefix the change with one of these keywords:
 ## Unreleased
 - Added: Make it possible to pass a z-index offset to the backdrop
 - Added: CompactPager component
+- Fixed: Breaking z-index on the `Header`
 
 ## [0.18.0] - 2020-01-20
 
