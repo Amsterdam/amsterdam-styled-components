@@ -15,9 +15,9 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## Unreleased
-- Changed: **BREAKING** Moved `@datapunt/asc-assets/assets/**` to `@datapunt/asc-assets/static/**` (lowercase)
 
 ## [0.18.2]
+- Changed: **BREAKING** Moved `@datapunt/asc-assets/assets/**` to `@datapunt/asc-assets/static/**` (lowercase)
 - Added: Make it possible to pass a z-index offset to the backdrop
 - Added: CompactPager component
 - Fixed: Breaking z-index on the `Header`
