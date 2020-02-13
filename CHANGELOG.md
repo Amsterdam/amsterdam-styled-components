@@ -15,6 +15,7 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## Unreleased
+- Changed: **BREAKING** `objectFitPolyfill` is now a peerDependency in `asc-ui`
 
 ## [0.18.2]
 - Changed: **BREAKING** Moved `@datapunt/asc-assets/assets/**` to `@datapunt/asc-assets/static/**` (lowercase)
