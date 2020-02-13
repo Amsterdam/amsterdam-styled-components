@@ -244,13 +244,13 @@ export const svgFill = withTheme<[Theme.ColorType?, string?, string?]>(
 )
 
 /**
- * Use this util to animate the background-color (or other property), for perceived performance purposes
- * @param theme
- * @param animateLoading
+ * Adds an animated background to the element to indicate the content is loading.
+ * @param theme The theme interface to use for colors, etc.
+ * @param animateLoading Allows toggling the animation effect, if false a fixed color will be used instead.
  */
 export const perceivedLoading = (
   theme: ThemeInterface,
-  animateLoading: boolean = true,
+  animateLoading = true,
 ) => {
   const animation = keyframes`
     0% {
