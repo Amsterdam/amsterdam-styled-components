@@ -18,6 +18,7 @@ Prefix the change with one of these keywords:
 
 ## [0.18.2]
 - Changed: **BREAKING** Moved `@datapunt/asc-assets/assets/**` to `@datapunt/asc-assets/static/**` (lowercase)
+- Changed: The `perceivedLoading` utility is now exported so it can be used in other apps
 - Added: Make it possible to pass a z-index offset to the backdrop
 - Added: CompactPager component
 - Fixed: Breaking z-index on the `Header`

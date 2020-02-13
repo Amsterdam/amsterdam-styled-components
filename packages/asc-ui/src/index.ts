@@ -99,6 +99,7 @@ import Footer, {
 import CompactPager from './components/CompactPager'
 import ViewerContainer from './components/ViewerContainer/ViewerContainer'
 import { themeColor } from './utils'
+import { perceivedLoading } from './utils/themeUtils'
 
 import * as constants from './components/shared/constants'
 
@@ -111,7 +112,7 @@ const ShareBar = ButtonBar
 
 /** @deprecated  the color function was renamed to themeColor to eliminate the ambiguity with css color property. Will be removed in the next version */
 const color = themeColor
-export { color, themeColor }
+export { color, themeColor, perceivedLoading }
 
 export { breakpoint, svgFill, themeSpacing, showAboveBackDrop } from './utils'
 
