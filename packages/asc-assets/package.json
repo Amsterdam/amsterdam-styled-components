@@ -14,10 +14,13 @@
   },
   "version": "0.18.1",
   "main": "lib/index.js",
+  "module": "es/index.js",
   "files": [
     "lib",
+    "es",
     "static"
   ],
+  "sideEffects": false,
   "scripts": {
     "build": "yarn build:optimize-svg && yarn build:react-icons && yarn build:icon-ts-files",
     "build:icon-ts-files": "./scripts/icons.sh",

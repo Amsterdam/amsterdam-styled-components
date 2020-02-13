@@ -29,6 +29,7 @@ module.exports = {
   testPathIgnorePatterns: [
     '/node_modules/',
     '/lib/',
+    '/es/',
     '/examples/',
     '/config/',
     '/package/',
