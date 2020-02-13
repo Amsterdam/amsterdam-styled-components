@@ -7,6 +7,7 @@ node_modules
 # production
 /build
 /packages/**/lib
+/packages/**/es
 /storybook-static
 /examples/**/lib
 .sb

@@ -14,9 +14,12 @@
   },
   "version": "0.18.2",
   "main": "lib/index.js",
+  "module": "es/index.js",
   "files": [
-    "lib"
+    "lib",
+    "es"
   ],
+  "sideEffects": false,
   "typings": "lib/index.d.ts",
   "dependencies": {
     "@datapunt/asc-assets": "^0.18.1",
