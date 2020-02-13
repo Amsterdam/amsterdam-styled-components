@@ -134,7 +134,7 @@ const RadioWrapperStyle = styled.div<StyleOnlyProps & { focus: boolean }>`
     css`
       &:hover ${RadioCircleStyle} {
         border: 2px solid;
-        color: ${getVariantColor()};
+        color: ${getVariantColor() as any};
       }
     `}
 `
