@@ -13,7 +13,7 @@ export const LogoStyle = styled.span`
   width: 100%;
   background-size: cover;
   background-image: url("${LogoShort}");
-  `
+`
 
 const tallStyle = css`
   @media screen and ${breakpoint('min-width', 'laptopM')} {

@@ -8,6 +8,10 @@ import AmsterdamLogo from '../AmsterdamLogo'
 import Icon from '../Icon'
 import { LogoProps } from './HeaderLogoText'
 
+/**
+ * This is an example of a Custom facebook logo
+ * that can be added to the Header
+ */
 const CustomLogoStyle = styled.a`
   margin-right: 10px;
   border: 1px dotted black;

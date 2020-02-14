@@ -16,7 +16,9 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
-- Changed: **BREAKING** The AmsterdamLogo is not hardcoded anumore in the header. Has to be passed as parameter.
+- Changed: **BREAKING** The AmsterdamLogo is not hardcoded anymore in the header component.
+  Has to be passed as parameter `logo={AmsterdamLogo}`. When the 'logo' parameter is not specified,
+  no logo will be shown before the header title
 
 ## [0.18.2]
 
