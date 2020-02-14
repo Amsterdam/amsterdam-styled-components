@@ -19,7 +19,8 @@ const tallStyle = css`
   @media screen and ${breakpoint('min-width', 'laptopM')} {
     height: 68px;
     width: 100px;
-
+    margin-right: 40px;
+    
     ${LogoStyle} {
       background-image: url("${LogoTall}");
     }
@@ -31,6 +32,7 @@ const AmsterdamLogoStyle = styled.a<Props>`
   height: 30px;
   width: 68px;
   flex-shrink: 0;
+  margin-right: 10px;
   ${focusStyleOutline()}
   ${({ tall }) => tall && tallStyle}
 `

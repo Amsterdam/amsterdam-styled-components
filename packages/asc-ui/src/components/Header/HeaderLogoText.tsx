@@ -1,21 +1,28 @@
 import React from 'react'
 import HeaderLogoTextStyle from './HeaderLogoTextStyle'
-import AmsterdamLogo from '../AmsterdamLogo'
 import HeaderTitle from './HeaderTitle'
 
-type Props = {
+export interface LogoProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  href: string
+  tall?: boolean
+}
+
+interface HeaderLogoTextProps extends React.HTMLAttributes<HTMLHeadingElement> {
   homeLink: string
   tall?: boolean
-} & React.HTMLAttributes<HTMLHeadingElement>
+  logo?: React.FC<LogoProps>
+}
 
-const HeaderLogoText: React.FC<Props> = ({
+const HeaderLogoText: React.FC<HeaderLogoTextProps> = ({
   title,
   homeLink,
   tall,
+  logo: LogoIcon,
   ...otherProps
 }) => (
   <HeaderLogoTextStyle tall={tall} {...otherProps}>
-    <AmsterdamLogo href={homeLink} tall={tall} />
+    {LogoIcon && <LogoIcon href={homeLink} tall={tall} />}
     {title && <HeaderTitle href={homeLink}>{title}</HeaderTitle>}
   </HeaderLogoTextStyle>
 )
