@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header should render the short version 1`] = `
-.c9 {
+.c6 {
   margin: 0;
   color: #000000;
   font-weight: inherit;
@@ -59,7 +59,7 @@ exports[`Header should render the short version 1`] = `
   margin-bottom: 0;
 }
 
-.c8 {
+.c7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -70,33 +70,33 @@ exports[`Header should render the short version 1`] = `
   color: #000000;
 }
 
-.c8:focus {
+.c7:focus {
   background-color: #FEC813;
 }
 
-.c8 .c14 {
+.c7 .c14 {
   margin: 4px;
 }
 
-.c8 .c14 svg rect,
-.c8 .c14 svg polygon,
-.c8 .c14 svg path {
+.c7 .c14 svg rect,
+.c7 .c14 svg polygon,
+.c7 .c14 svg path {
   fill: #000000;
 }
 
-.c8:hover {
+.c7:hover {
   color: #ec0000;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c8:hover .c14 svg rect,
-.c8:hover .c14 svg polygon,
-.c8:hover .c14 svg path {
+.c7:hover .c14 svg rect,
+.c7:hover .c14 svg polygon,
+.c7:hover .c14 svg path {
   fill: #ec0000;
 }
 
-.c7 {
+.c9 {
   margin: 0px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -107,7 +107,7 @@ exports[`Header should render the short version 1`] = `
   text-decoration: none;
 }
 
-.c7:hover {
+.c9:hover {
   color: inherit;
 }
 
@@ -166,7 +166,7 @@ exports[`Header should render the short version 1`] = `
   flex-grow: 1;
 }
 
-.c0 .c6 {
+.c0 .c8 {
   margin-top: -2px;
 }
 
@@ -219,7 +219,7 @@ exports[`Header should render the short version 1`] = `
 }
 
 @media screen and (min-width:1024px) {
-  .c9 {
+  .c6 {
     font-size: 18px;
     line-height: 25px;
   }
@@ -232,13 +232,13 @@ exports[`Header should render the short version 1`] = `
 }
 
 @media screen and (max-width:374px) {
-  .c7 {
+  .c9 {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width:375px) {
-  .c7 {
+  .c9 {
     font-size: 16px;
   }
 }
@@ -291,7 +291,7 @@ exports[`Header should render the short version 1`] = `
 `;
 
 exports[`Header should render the short version without the full width 1`] = `
-.c9 {
+.c6 {
   margin: 0;
   color: #000000;
   font-weight: inherit;
@@ -349,7 +349,7 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-bottom: 0;
 }
 
-.c8 {
+.c7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -360,33 +360,33 @@ exports[`Header should render the short version without the full width 1`] = `
   color: #000000;
 }
 
-.c8:focus {
+.c7:focus {
   background-color: #FEC813;
 }
 
-.c8 .c14 {
+.c7 .c14 {
   margin: 4px;
 }
 
-.c8 .c14 svg rect,
-.c8 .c14 svg polygon,
-.c8 .c14 svg path {
+.c7 .c14 svg rect,
+.c7 .c14 svg polygon,
+.c7 .c14 svg path {
   fill: #000000;
 }
 
-.c8:hover {
+.c7:hover {
   color: #ec0000;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c8:hover .c14 svg rect,
-.c8:hover .c14 svg polygon,
-.c8:hover .c14 svg path {
+.c7:hover .c14 svg rect,
+.c7:hover .c14 svg polygon,
+.c7:hover .c14 svg path {
   fill: #ec0000;
 }
 
-.c7 {
+.c9 {
   margin: 0px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -397,7 +397,7 @@ exports[`Header should render the short version without the full width 1`] = `
   text-decoration: none;
 }
 
-.c7:hover {
+.c9:hover {
   color: inherit;
 }
 
@@ -456,7 +456,7 @@ exports[`Header should render the short version without the full width 1`] = `
   flex-grow: 1;
 }
 
-.c0 .c6 {
+.c0 .c8 {
   margin-top: -2px;
 }
 
@@ -509,7 +509,7 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 @media screen and (min-width:1024px) {
-  .c9 {
+  .c6 {
     font-size: 18px;
     line-height: 25px;
   }
@@ -522,13 +522,13 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 @media screen and (max-width:374px) {
-  .c7 {
+  .c9 {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width:375px) {
-  .c7 {
+  .c9 {
     font-size: 16px;
   }
 }
@@ -581,7 +581,7 @@ exports[`Header should render the short version without the full width 1`] = `
 `;
 
 exports[`Header should render the tall version 1`] = `
-.c12 {
+.c9 {
   margin: 0;
   color: #000000;
   font-weight: inherit;
@@ -639,7 +639,7 @@ exports[`Header should render the tall version 1`] = `
   margin-bottom: 0;
 }
 
-.c11 {
+.c10 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -650,33 +650,33 @@ exports[`Header should render the tall version 1`] = `
   color: #000000;
 }
 
-.c11:focus {
+.c10:focus {
   background-color: #FEC813;
 }
 
-.c11 .c18 {
+.c10 .c18 {
   margin: 4px;
 }
 
-.c11 .c18 svg rect,
-.c11 .c18 svg polygon,
-.c11 .c18 svg path {
+.c10 .c18 svg rect,
+.c10 .c18 svg polygon,
+.c10 .c18 svg path {
   fill: #000000;
 }
 
-.c11:hover {
+.c10:hover {
   color: #ec0000;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c11:hover .c18 svg rect,
-.c11:hover .c18 svg polygon,
-.c11:hover .c18 svg path {
+.c10:hover .c18 svg rect,
+.c10:hover .c18 svg polygon,
+.c10:hover .c18 svg path {
   fill: #ec0000;
 }
 
-.c10 {
+.c12 {
   margin: 0px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -687,7 +687,7 @@ exports[`Header should render the tall version 1`] = `
   text-decoration: none;
 }
 
-.c10:hover {
+.c12:hover {
   color: inherit;
 }
 
@@ -735,7 +735,7 @@ exports[`Header should render the tall version 1`] = `
   flex-grow: 1;
 }
 
-.c16 .c9 {
+.c16 .c11 {
   margin-top: -2px;
 }
 
@@ -806,7 +806,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 @media screen and (min-width:1024px) {
-  .c12 {
+  .c9 {
     font-size: 18px;
     line-height: 25px;
   }
@@ -819,13 +819,13 @@ exports[`Header should render the tall version 1`] = `
 }
 
 @media screen and (max-width:374px) {
-  .c10 {
+  .c12 {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width:375px) {
-  .c10 {
+  .c12 {
     font-size: 16px;
   }
 }
@@ -843,7 +843,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 @media screen and (max-width:1199px) {
-  .c0 .c9 {
+  .c0 .c11 {
     margin-top: -2px;
   }
 
@@ -879,7 +879,7 @@ exports[`Header should render the tall version 1`] = `
     background-color: transparent;
   }
 
-  .c0 .c9 {
+  .c0 .c11 {
     margin-top: 0px;
     -webkit-align-self: flex-start;
     -ms-flex-item-align: start;
@@ -957,7 +957,7 @@ exports[`Header should render the tall version 1`] = `
 `;
 
 exports[`Header should render the tall version with a custom logo 1`] = `
-.c11 {
+.c8 {
   margin: 0;
   color: #000000;
   font-weight: inherit;
@@ -1034,7 +1034,7 @@ exports[`Header should render the tall version with a custom logo 1`] = `
   height: 32px;
 }
 
-.c10 {
+.c9 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1045,33 +1045,33 @@ exports[`Header should render the tall version with a custom logo 1`] = `
   color: #000000;
 }
 
-.c10:focus {
+.c9:focus {
   background-color: #FEC813;
 }
 
-.c10 .c6 {
+.c9 .c6 {
   margin: 4px;
 }
 
-.c10 .c6 svg rect,
-.c10 .c6 svg polygon,
-.c10 .c6 svg path {
+.c9 .c6 svg rect,
+.c9 .c6 svg polygon,
+.c9 .c6 svg path {
   fill: #000000;
 }
 
-.c10:hover {
+.c9:hover {
   color: #ec0000;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c10:hover .c6 svg rect,
-.c10:hover .c6 svg polygon,
-.c10:hover .c6 svg path {
+.c9:hover .c6 svg rect,
+.c9:hover .c6 svg polygon,
+.c9:hover .c6 svg path {
   fill: #ec0000;
 }
 
-.c9 {
+.c11 {
   margin: 0px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1082,7 +1082,7 @@ exports[`Header should render the tall version with a custom logo 1`] = `
   text-decoration: none;
 }
 
-.c9:hover {
+.c11:hover {
   color: inherit;
 }
 
@@ -1130,7 +1130,7 @@ exports[`Header should render the tall version with a custom logo 1`] = `
   flex-grow: 1;
 }
 
-.c15 .c8 {
+.c15 .c10 {
   margin-top: -2px;
 }
 
@@ -1176,7 +1176,7 @@ exports[`Header should render the tall version with a custom logo 1`] = `
 }
 
 @media screen and (min-width:1024px) {
-  .c11 {
+  .c8 {
     font-size: 18px;
     line-height: 25px;
   }
@@ -1189,13 +1189,13 @@ exports[`Header should render the tall version with a custom logo 1`] = `
 }
 
 @media screen and (max-width:374px) {
-  .c9 {
+  .c11 {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width:375px) {
-  .c9 {
+  .c11 {
     font-size: 16px;
   }
 }
@@ -1213,7 +1213,7 @@ exports[`Header should render the tall version with a custom logo 1`] = `
 }
 
 @media screen and (max-width:1199px) {
-  .c0 .c8 {
+  .c0 .c10 {
     margin-top: -2px;
   }
 
@@ -1249,7 +1249,7 @@ exports[`Header should render the tall version with a custom logo 1`] = `
     background-color: transparent;
   }
 
-  .c0 .c8 {
+  .c0 .c10 {
     margin-top: 0px;
     -webkit-align-self: flex-start;
     -ms-flex-item-align: start;
@@ -1602,7 +1602,7 @@ exports[`Header should render the tall version without a title 1`] = `
 `;
 
 exports[`Header should render the tall version without logo 1`] = `
-.c9 {
+.c6 {
   margin: 0;
   color: #000000;
   font-weight: inherit;
@@ -1660,7 +1660,7 @@ exports[`Header should render the tall version without logo 1`] = `
   margin-bottom: 0;
 }
 
-.c8 {
+.c7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1671,33 +1671,33 @@ exports[`Header should render the tall version without logo 1`] = `
   color: #000000;
 }
 
-.c8:focus {
+.c7:focus {
   background-color: #FEC813;
 }
 
-.c8 .c15 {
+.c7 .c15 {
   margin: 4px;
 }
 
-.c8 .c15 svg rect,
-.c8 .c15 svg polygon,
-.c8 .c15 svg path {
+.c7 .c15 svg rect,
+.c7 .c15 svg polygon,
+.c7 .c15 svg path {
   fill: #000000;
 }
 
-.c8:hover {
+.c7:hover {
   color: #ec0000;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c8:hover .c15 svg rect,
-.c8:hover .c15 svg polygon,
-.c8:hover .c15 svg path {
+.c7:hover .c15 svg rect,
+.c7:hover .c15 svg polygon,
+.c7:hover .c15 svg path {
   fill: #ec0000;
 }
 
-.c7 {
+.c9 {
   margin: 0px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1708,7 +1708,7 @@ exports[`Header should render the tall version without logo 1`] = `
   text-decoration: none;
 }
 
-.c7:hover {
+.c9:hover {
   color: inherit;
 }
 
@@ -1756,7 +1756,7 @@ exports[`Header should render the tall version without logo 1`] = `
   flex-grow: 1;
 }
 
-.c13 .c6 {
+.c13 .c8 {
   margin-top: -2px;
 }
 
@@ -1802,7 +1802,7 @@ exports[`Header should render the tall version without logo 1`] = `
 }
 
 @media screen and (min-width:1024px) {
-  .c9 {
+  .c6 {
     font-size: 18px;
     line-height: 25px;
   }
@@ -1815,13 +1815,13 @@ exports[`Header should render the tall version without logo 1`] = `
 }
 
 @media screen and (max-width:374px) {
-  .c7 {
+  .c9 {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width:375px) {
-  .c7 {
+  .c9 {
     font-size: 16px;
   }
 }
@@ -1839,7 +1839,7 @@ exports[`Header should render the tall version without logo 1`] = `
 }
 
 @media screen and (max-width:1199px) {
-  .c0 .c6 {
+  .c0 .c8 {
     margin-top: -2px;
   }
 
@@ -1875,7 +1875,7 @@ exports[`Header should render the tall version without logo 1`] = `
     background-color: transparent;
   }
 
-  .c0 .c6 {
+  .c0 .c8 {
     margin-top: 0px;
     -webkit-align-self: flex-start;
     -ms-flex-item-align: start;
