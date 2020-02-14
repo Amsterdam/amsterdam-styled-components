@@ -16,7 +16,10 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Changed: **BREAKING** The AmsterdamLogo is not hardcoded anumore in the header. Has to be passed as parameter.
+
 ## [0.18.2]
+
 - Changed: **BREAKING** Moved `@datapunt/asc-assets/assets/**` to `@datapunt/asc-assets/static/**` (lowercase)
 - Added: Make it possible to pass a z-index offset to the backdrop
 - Added: CompactPager component

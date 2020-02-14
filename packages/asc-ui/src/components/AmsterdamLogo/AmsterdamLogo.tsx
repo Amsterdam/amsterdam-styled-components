@@ -1,12 +1,9 @@
 import React from 'react'
 import AmsterdamLogoStyle, { LogoStyle } from './AmsterdamLogoStyle'
+import { LogoProps } from '../Header/HeaderLogoText'
 
-type Props = {
-  tall?: boolean
-} & React.AnchorHTMLAttributes<HTMLAnchorElement>
-
-const AmsterdamLogo: React.FC<Props> = ({ tall, ...otherProps }) => (
-  <AmsterdamLogoStyle {...{ tall }} {...otherProps}>
+const AmsterdamLogo: React.FC<LogoProps> = ({ tall, href, ...otherProps }) => (
+  <AmsterdamLogoStyle {...{ tall, href }} {...otherProps}>
     <LogoStyle />
   </AmsterdamLogoStyle>
 )

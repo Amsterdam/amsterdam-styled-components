@@ -2,7 +2,7 @@
 
 exports[`Heading should render 1`] = `
 Array [
-  .c0 {
+  .c1 {
   margin: 0;
   color: #000000;
   font-weight: 700;
@@ -20,7 +20,7 @@ Array [
   letter-spacing: normal;
 }
 
-.c1 {
+.c0 {
   margin-top: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -40,7 +40,7 @@ Array [
 }
 
 @media screen and (min-width:1024px) {
-  .c0 {
+  .c1 {
     font-size: 30px;
     line-height: 38px;
   }
@@ -51,7 +51,7 @@ Array [
   >
     Foo
   </h1>,
-  .c0 {
+  .c1 {
   margin: 0;
   color: #000000;
   font-weight: 700;
@@ -69,7 +69,7 @@ Array [
   letter-spacing: normal;
 }
 
-.c1 {
+.c0 {
   margin-top: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -89,7 +89,7 @@ Array [
 }
 
 @media screen and (min-width:1024px) {
-  .c0 {
+  .c1 {
     font-size: 24px;
     line-height: 30px;
   }
@@ -100,7 +100,7 @@ Array [
   >
     Foo
   </h2>,
-  .c0 {
+  .c1 {
   margin: 0;
   color: #000000;
   font-weight: 700;
@@ -118,7 +118,7 @@ Array [
   letter-spacing: normal;
 }
 
-.c1 {
+.c0 {
   margin-top: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -142,7 +142,7 @@ Array [
   >
     Foo
   </h3>,
-  .c0 {
+  .c1 {
   margin: 0;
   color: #000000;
   font-weight: 700;
@@ -160,7 +160,7 @@ Array [
   letter-spacing: normal;
 }
 
-.c1 {
+.c0 {
   margin-top: 0;
   display: -webkit-box;
   display: -webkit-flex;

@@ -8,7 +8,7 @@ exports[`ButtonBar should render the buttons in the bar 1`] = `
       "attrs": Array [],
       "componentStyle": ComponentStyle {
         "componentId": "sc-EHOje",
-        "isStatic": false,
+        "isStatic": true,
         "rules": Array [
           "
   display: flex;

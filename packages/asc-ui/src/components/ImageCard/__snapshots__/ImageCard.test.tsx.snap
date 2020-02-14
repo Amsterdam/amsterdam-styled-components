@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ImageCard should render 1`] = `
-.c2 {
+.c3 {
   margin: 0;
   color: #000000;
   font-weight: 700;
@@ -19,7 +19,7 @@ exports[`ImageCard should render 1`] = `
   letter-spacing: normal;
 }
 
-.c3 {
+.c2 {
   margin-top: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -73,7 +73,7 @@ exports[`ImageCard should render 1`] = `
 }
 
 @media screen and (min-width:1024px) {
-  .c2 {
+  .c3 {
     font-size: 24px;
     line-height: 30px;
   }
