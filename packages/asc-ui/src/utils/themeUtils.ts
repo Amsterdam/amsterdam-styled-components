@@ -245,35 +245,33 @@ export const svgFill = withTheme<[Theme.ColorType?, string?, string?]>(
 
 /**
  * Adds an animated background to the element to indicate the content is loading.
- * @param theme The theme interface to use for colors, etc.
  * @param animateLoading Allows toggling the animation effect, if false a fixed color will be used instead.
  */
-export const perceivedLoading = (
-  theme: ThemeInterface,
-  animateLoading = true,
-) => {
-  const animation = keyframes`
-    0% {
-      background-color: ${themeColor('tint', 'level3')({ theme })};
-    }
-  
-    50% {
-      background-color: ${themeColor('tint', 'level4')({ theme })};
-    }
+export const perceivedLoading = withTheme(
+  (theme, animateLoading: boolean = true) => {
+    const animation = keyframes`
+      0% {
+        background-color: ${themeColor('tint', 'level3')({ theme })};
+      }
     
-    100% {
-      background-color: ${themeColor('tint', 'level3')({ theme })};
-    }
-  `
-
-  return animateLoading
-    ? css`
-        animation: ${animation} 2s ease-in-out infinite;
-      `
-    : css`
+      50% {
         background-color: ${themeColor('tint', 'level4')({ theme })};
-      `
-}
+      }
+      
+      100% {
+        background-color: ${themeColor('tint', 'level3')({ theme })};
+      }
+    `
+
+    return animateLoading
+      ? css`
+          animation: ${animation} 2s ease-in-out infinite;
+        `
+      : css`
+          background-color: ${themeColor('tint', 'level4')({ theme })};
+        `
+  },
+)
 
 export const mapToBreakpoints = (
   sizes: any,

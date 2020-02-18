@@ -30,7 +30,7 @@ export default styled.div<Props>`
   ${({ isLoading, theme, animateLoading, backgroundImage }) =>
     isLoading
       ? css`
-          ${perceivedLoading(theme, animateLoading)}
+          ${perceivedLoading(animateLoading)({ theme })}
           ${ImageCardContentStyle} {
             height: 100px;
             width: 100%;
@@ -44,7 +44,7 @@ export default styled.div<Props>`
               display: block;
               width: calc(100% - 30px);
               height: 30px;
-              ${perceivedLoading(theme, animateLoading)}
+              ${perceivedLoading(animateLoading)({ theme })}
             }
           }
         `
