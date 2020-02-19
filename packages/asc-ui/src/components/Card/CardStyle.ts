@@ -36,10 +36,10 @@ const CardStyle = styled.div<Props>`
   ${({ isLoading, animateLoading, theme }) =>
     isLoading &&
     css`
-      ${perceivedLoading(theme, animateLoading)}
+      ${perceivedLoading(animateLoading)({ theme })}
 
       ${CardMediaWrapperStyle} {
-        ${perceivedLoading(theme, animateLoading)}
+        ${perceivedLoading(animateLoading)({ theme })}
       }
       ${CardContentStyle} > * {
         display: none;
