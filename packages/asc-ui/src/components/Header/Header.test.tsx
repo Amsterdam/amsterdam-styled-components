@@ -1,7 +1,11 @@
 import * as React from 'react'
+import styled from '@datapunt/asc-core'
+import { Facebook } from '@datapunt/asc-assets'
 import Header from './Header'
 import { renderWithTheme } from '../../utils/withTheme'
 import Typography from '../Typography'
+import AmsterdamLogo from '../AmsterdamLogo'
+import Icon from '../Icon'
 
 const setup = (props = {}) =>
   renderWithTheme(
@@ -19,22 +23,41 @@ const setup = (props = {}) =>
 
 describe('Header', () => {
   it('should render the short version', () => {
-    const component = setup()
+    const component = setup({ logo: AmsterdamLogo })
     expect(component).toMatchSnapshot()
   })
 
   it('should render the short version without the full width', () => {
-    const component = setup({ fullWidth: false })
+    const component = setup({ fullWidth: false, logo: AmsterdamLogo })
     expect(component).toMatchSnapshot()
   })
 
   it('should render the tall version', () => {
-    const component = setup({ tall: true })
+    const component = setup({ tall: true, logo: AmsterdamLogo })
     expect(component).toMatchSnapshot()
   })
 
   it('should render the tall version without a title', () => {
-    const component = setup({ tall: true, title: null })
+    const component = setup({ tall: true, title: null, logo: AmsterdamLogo })
+    expect(component).toMatchSnapshot()
+  })
+
+  it('should render the tall version without logo', () => {
+    const component = setup({ tall: true })
+    expect(component).toMatchSnapshot()
+  })
+
+  it('should render the tall version with a custom logo', () => {
+    const CustomLogoStyle = styled.a``
+    const CustomLogo: React.FC = props => (
+      <CustomLogoStyle {...props}>
+        <Icon padding={4} size={40}>
+          <Facebook />
+        </Icon>
+      </CustomLogoStyle>
+    )
+
+    const component = setup({ tall: true, logo: CustomLogo })
     expect(component).toMatchSnapshot()
   })
 })

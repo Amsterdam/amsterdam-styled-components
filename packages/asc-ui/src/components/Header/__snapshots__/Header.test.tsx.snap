@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header should render the short version 1`] = `
-.c7 {
+.c6 {
   margin: 0;
   color: #000000;
   font-weight: inherit;
@@ -51,7 +51,7 @@ exports[`Header should render the short version 1`] = `
   font-size: 0;
 }
 
-.c2 .c14 {
+.c2 .c13 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -59,7 +59,7 @@ exports[`Header should render the short version 1`] = `
   margin-bottom: 0;
 }
 
-.c8 {
+.c7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -70,33 +70,33 @@ exports[`Header should render the short version 1`] = `
   color: #000000;
 }
 
-.c8:focus {
+.c7:focus {
   background-color: #FEC813;
 }
 
-.c8 .c15 {
+.c7 .c14 {
   margin: 4px;
 }
 
-.c8 .c15 svg rect,
-.c8 .c15 svg polygon,
-.c8 .c15 svg path {
+.c7 .c14 svg rect,
+.c7 .c14 svg polygon,
+.c7 .c14 svg path {
   fill: #000000;
 }
 
-.c8:hover {
+.c7:hover {
   color: #ec0000;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c8:hover .c15 svg rect,
-.c8:hover .c15 svg polygon,
-.c8:hover .c15 svg path {
+.c7:hover .c14 svg rect,
+.c7:hover .c14 svg polygon,
+.c7:hover .c14 svg path {
   fill: #ec0000;
 }
 
-.c10 {
+.c9 {
   margin: 0px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -107,11 +107,11 @@ exports[`Header should render the short version 1`] = `
   text-decoration: none;
 }
 
-.c10:hover {
+.c9:hover {
   color: inherit;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -125,30 +125,6 @@ exports[`Header should render the short version 1`] = `
   -ms-flex-pack: end;
   justify-content: flex-end;
   height: 100%;
-}
-
-.c6 {
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-image: url("-react-component: svg-mock;");
-}
-
-.c5 {
-  display: inline-block;
-  height: 30px;
-  width: 68px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c5.c5:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-offset: 0px;
-  outline-width: 3px;
 }
 
 .c3 {
@@ -172,10 +148,6 @@ exports[`Header should render the short version 1`] = `
   box-sizing: content-box;
 }
 
-.c3 .c4 {
-  margin-right: 10px;
-}
-
 .c0 {
   background-color: #ffffff;
   margin: 0 auto;
@@ -187,14 +159,14 @@ exports[`Header should render the short version 1`] = `
   top: 0;
 }
 
-.c0 .c11 {
+.c0 .c10 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
-.c0 .c9 {
+.c0 .c8 {
   margin-top: -2px;
 }
 
@@ -203,7 +175,7 @@ exports[`Header should render the short version 1`] = `
   padding-right: 0;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -221,8 +193,33 @@ exports[`Header should render the short version 1`] = `
   justify-content: flex-end;
 }
 
+.c5 {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-image: url("-react-component: svg-mock;");
+}
+
+.c4 {
+  display: inline-block;
+  height: 30px;
+  width: 68px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.c4.c4:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-offset: 0px;
+  outline-width: 3px;
+}
+
 @media screen and (min-width:1024px) {
-  .c7 {
+  .c6 {
     font-size: 18px;
     line-height: 25px;
   }
@@ -235,25 +232,25 @@ exports[`Header should render the short version 1`] = `
 }
 
 @media screen and (max-width:374px) {
-  .c10 {
+  .c9 {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width:375px) {
-  .c10 {
+  .c9 {
     font-size: 16px;
   }
 }
 
 @media screen and (min-width:375px) {
-  .c0 .c11 {
+  .c0 .c10 {
     margin-left: 16px;
   }
 }
 
 @media screen and (max-width:1199px) {
-  .c13 {
+  .c12 {
     display: none;
   }
 }
@@ -269,32 +266,32 @@ exports[`Header should render the short version 1`] = `
       class="c3"
     >
       <a
-        class="c4 c5"
+        class="c4"
         href="http://data.amsterdam.nl"
       >
         <span
-          class="c6"
+          class="c5"
         />
       </a>
       <a
-        class="c7 c8 c9 c10"
+        class="c6 c7 c8 c9"
         href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
     </h1>
     <nav
-      class="c11 c12"
+      class="c10 c11"
     />
     <div
-      class="c13"
+      class="c12"
     />
   </header>
 </div>
 `;
 
 exports[`Header should render the short version without the full width 1`] = `
-.c7 {
+.c6 {
   margin: 0;
   color: #000000;
   font-weight: inherit;
@@ -344,7 +341,7 @@ exports[`Header should render the short version without the full width 1`] = `
   font-size: 0;
 }
 
-.c2 .c14 {
+.c2 .c13 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -352,7 +349,7 @@ exports[`Header should render the short version without the full width 1`] = `
   margin-bottom: 0;
 }
 
-.c8 {
+.c7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -363,33 +360,33 @@ exports[`Header should render the short version without the full width 1`] = `
   color: #000000;
 }
 
-.c8:focus {
+.c7:focus {
   background-color: #FEC813;
 }
 
-.c8 .c15 {
+.c7 .c14 {
   margin: 4px;
 }
 
-.c8 .c15 svg rect,
-.c8 .c15 svg polygon,
-.c8 .c15 svg path {
+.c7 .c14 svg rect,
+.c7 .c14 svg polygon,
+.c7 .c14 svg path {
   fill: #000000;
 }
 
-.c8:hover {
+.c7:hover {
   color: #ec0000;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c8:hover .c15 svg rect,
-.c8:hover .c15 svg polygon,
-.c8:hover .c15 svg path {
+.c7:hover .c14 svg rect,
+.c7:hover .c14 svg polygon,
+.c7:hover .c14 svg path {
   fill: #ec0000;
 }
 
-.c10 {
+.c9 {
   margin: 0px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -400,11 +397,11 @@ exports[`Header should render the short version without the full width 1`] = `
   text-decoration: none;
 }
 
-.c10:hover {
+.c9:hover {
   color: inherit;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -418,30 +415,6 @@ exports[`Header should render the short version without the full width 1`] = `
   -ms-flex-pack: end;
   justify-content: flex-end;
   height: 100%;
-}
-
-.c6 {
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-image: url("-react-component: svg-mock;");
-}
-
-.c5 {
-  display: inline-block;
-  height: 30px;
-  width: 68px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c5.c5:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-offset: 0px;
-  outline-width: 3px;
 }
 
 .c3 {
@@ -465,10 +438,6 @@ exports[`Header should render the short version without the full width 1`] = `
   box-sizing: content-box;
 }
 
-.c3 .c4 {
-  margin-right: 10px;
-}
-
 .c0 {
   background-color: #ffffff;
   margin: 0 auto;
@@ -480,14 +449,14 @@ exports[`Header should render the short version without the full width 1`] = `
   top: 0;
 }
 
-.c0 .c11 {
+.c0 .c10 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
-.c0 .c9 {
+.c0 .c8 {
   margin-top: -2px;
 }
 
@@ -496,7 +465,7 @@ exports[`Header should render the short version without the full width 1`] = `
   padding-right: 0;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -514,8 +483,33 @@ exports[`Header should render the short version without the full width 1`] = `
   justify-content: flex-end;
 }
 
+.c5 {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-image: url("-react-component: svg-mock;");
+}
+
+.c4 {
+  display: inline-block;
+  height: 30px;
+  width: 68px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.c4.c4:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-offset: 0px;
+  outline-width: 3px;
+}
+
 @media screen and (min-width:1024px) {
-  .c7 {
+  .c6 {
     font-size: 18px;
     line-height: 25px;
   }
@@ -528,25 +522,25 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 @media screen and (max-width:374px) {
-  .c10 {
+  .c9 {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width:375px) {
-  .c10 {
+  .c9 {
     font-size: 16px;
   }
 }
 
 @media screen and (min-width:375px) {
-  .c0 .c11 {
+  .c0 .c10 {
     margin-left: 16px;
   }
 }
 
 @media screen and (max-width:1199px) {
-  .c13 {
+  .c12 {
     display: none;
   }
 }
@@ -562,32 +556,32 @@ exports[`Header should render the short version without the full width 1`] = `
       class="c3"
     >
       <a
-        class="c4 c5"
+        class="c4"
         href="http://data.amsterdam.nl"
       >
         <span
-          class="c6"
+          class="c5"
         />
       </a>
       <a
-        class="c7 c8 c9 c10"
+        class="c6 c7 c8 c9"
         href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
     </h1>
     <nav
-      class="c11 c12"
+      class="c10 c11"
     />
     <div
-      class="c13"
+      class="c12"
     />
   </header>
 </div>
 `;
 
 exports[`Header should render the tall version 1`] = `
-.c10 {
+.c9 {
   margin: 0;
   color: #000000;
   font-weight: inherit;
@@ -637,7 +631,7 @@ exports[`Header should render the tall version 1`] = `
   font-size: 0;
 }
 
-.c3 .c19 {
+.c3 .c17 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -645,7 +639,7 @@ exports[`Header should render the tall version 1`] = `
   margin-bottom: 0;
 }
 
-.c11 {
+.c10 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -656,33 +650,33 @@ exports[`Header should render the tall version 1`] = `
   color: #000000;
 }
 
-.c11:focus {
+.c10:focus {
   background-color: #FEC813;
 }
 
-.c11 .c20 {
+.c10 .c18 {
   margin: 4px;
 }
 
-.c11 .c20 svg rect,
-.c11 .c20 svg polygon,
-.c11 .c20 svg path {
+.c10 .c18 svg rect,
+.c10 .c18 svg polygon,
+.c10 .c18 svg path {
   fill: #000000;
 }
 
-.c11:hover {
+.c10:hover {
   color: #ec0000;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c11:hover .c20 svg rect,
-.c11:hover .c20 svg polygon,
-.c11:hover .c20 svg path {
+.c10:hover .c18 svg rect,
+.c10:hover .c18 svg polygon,
+.c10:hover .c18 svg path {
   fill: #ec0000;
 }
 
-.c13 {
+.c12 {
   margin: 0px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -693,11 +687,11 @@ exports[`Header should render the tall version 1`] = `
   text-decoration: none;
 }
 
-.c13:hover {
+.c12:hover {
   color: inherit;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -711,34 +705,6 @@ exports[`Header should render the tall version 1`] = `
   -ms-flex-pack: end;
   justify-content: flex-end;
   height: 100%;
-}
-
-.c9 {
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-image: url("-react-component: svg-mock;");
-}
-
-.c7 {
-  display: inline-block;
-  height: 30px;
-  width: 68px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c7.c7:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-offset: 0px;
-  outline-width: 3px;
-}
-
-.c17 .c6 {
-  margin-right: 10px;
 }
 
 .c5 {
@@ -762,22 +728,18 @@ exports[`Header should render the tall version 1`] = `
   box-sizing: content-box;
 }
 
-.c5 .c6 {
-  margin-right: 10px;
-}
-
-.c18 .c14 {
+.c16 .c13 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
-.c18 .c12 {
+.c16 .c11 {
   margin-top: -2px;
 }
 
-.c18 .c2 {
+.c16 .c2 {
   height: 50px;
   padding-right: 0;
 }
@@ -793,14 +755,14 @@ exports[`Header should render the tall version 1`] = `
   top: 0;
 }
 
-.c0 .c14 {
+.c0 .c13 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -818,8 +780,33 @@ exports[`Header should render the tall version 1`] = `
   justify-content: flex-end;
 }
 
+.c8 {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-image: url("-react-component: svg-mock;");
+}
+
+.c6 {
+  display: inline-block;
+  height: 30px;
+  width: 68px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.c6.c6:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-offset: 0px;
+  outline-width: 3px;
+}
+
 @media screen and (min-width:1024px) {
-  .c10 {
+  .c9 {
     font-size: 18px;
     line-height: 25px;
   }
@@ -832,48 +819,31 @@ exports[`Header should render the tall version 1`] = `
 }
 
 @media screen and (max-width:374px) {
-  .c13 {
+  .c12 {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width:375px) {
-  .c13 {
+  .c12 {
     font-size: 16px;
   }
 }
 
-@media screen and (min-width:1200px) {
-  .c7 {
-    height: 68px;
-    width: 100px;
-  }
-
-  .c7 .c8 {
-    background-image: url("-react-component: svg-mock;");
-  }
-}
-
-@media screen and (min-width:1200px) {
-  .c5 .c6 {
-    margin-right: 40px;
-  }
-}
-
 @media screen and (min-width:375px) {
-  .c18 .c14 {
+  .c16 .c13 {
     margin-left: 16px;
   }
 }
 
 @media screen and (min-width:375px) {
-  .c0 .c14 {
+  .c0 .c13 {
     margin-left: 16px;
   }
 }
 
 @media screen and (max-width:1199px) {
-  .c0 .c12 {
+  .c0 .c11 {
     margin-top: -2px;
   }
 
@@ -909,7 +879,7 @@ exports[`Header should render the tall version 1`] = `
     background-color: transparent;
   }
 
-  .c0 .c12 {
+  .c0 .c11 {
     margin-top: 0px;
     -webkit-align-self: flex-start;
     -ms-flex-item-align: start;
@@ -923,7 +893,7 @@ exports[`Header should render the tall version 1`] = `
     padding: 15px 0;
   }
 
-  .c0 .c14 {
+  .c0 .c13 {
     -webkit-flex-basis: 100%;
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
@@ -934,7 +904,377 @@ exports[`Header should render the tall version 1`] = `
 }
 
 @media screen and (max-width:1199px) {
-  .c16 {
+  .c15 {
+    display: none;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .c6 {
+    height: 68px;
+    width: 100px;
+    margin-right: 40px;
+  }
+
+  .c6 .c7 {
+    background-image: url("-react-component: svg-mock;");
+  }
+}
+
+<div
+  class="c0"
+  id="header"
+>
+  <header
+    class="c1 c2 c3"
+  >
+    <h1
+      class="c4 c5"
+    >
+      <a
+        class="c6"
+        href="http://data.amsterdam.nl"
+      >
+        <span
+          class="c7 c8"
+        />
+      </a>
+      <a
+        class="c9 c10 c11 c12"
+        href="http://data.amsterdam.nl"
+      >
+        Data en informatie
+      </a>
+    </h1>
+    <nav
+      class="c13 c14"
+    />
+    <div
+      class="c15"
+    />
+  </header>
+</div>
+`;
+
+exports[`Header should render the tall version with a custom logo 1`] = `
+.c8 {
+  margin: 0;
+  color: #000000;
+  font-weight: inherit;
+  font-size: 16px;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  line-height: 22px;
+  margin-bottom: 0;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 10px;
+  background-color: #ffffff;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  max-width: none;
+}
+
+.c3::after {
+  content: '';
+  display: block;
+  min-height: inherit;
+  font-size: 0;
+}
+
+.c3 .c16 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  box-sizing: content-box;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c7 > svg {
+  width: 32px;
+  height: 32px;
+}
+
+.c9 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 700;
+  color: #000000;
+}
+
+.c9:focus {
+  background-color: #FEC813;
+}
+
+.c9 .c6 {
+  margin: 4px;
+}
+
+.c9 .c6 svg rect,
+.c9 .c6 svg polygon,
+.c9 .c6 svg path {
+  fill: #000000;
+}
+
+.c9:hover {
+  color: #ec0000;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c9:hover .c6 svg rect,
+.c9:hover .c6 svg polygon,
+.c9:hover .c6 svg path {
+  fill: #ec0000;
+}
+
+.c11 {
+  margin: 0px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: #000;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c11:hover {
+  color: inherit;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.c5 {
+  margin: 0;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: normal;
+  -webkit-justify-content: normal;
+  -ms-flex-pack: normal;
+  justify-content: normal;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  box-sizing: content-box;
+}
+
+.c15 .c12 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c15 .c10 {
+  margin-top: -2px;
+}
+
+.c15 .c2 {
+  height: 50px;
+  padding-right: 0;
+}
+
+.c0 {
+  background-color: #ffffff;
+  margin: 0 auto;
+  width: 100%;
+  box-shadow: 0 4px rgba(0,0,0,0.04);
+  box-sizing: content-box;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.c0 .c12 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 17px;
+  right: 45px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+@media screen and (min-width:1024px) {
+  .c8 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+@media screen and (min-width:540px) {
+  .c3 {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width:374px) {
+  .c11 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width:375px) {
+  .c11 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width:375px) {
+  .c15 .c12 {
+    margin-left: 16px;
+  }
+}
+
+@media screen and (min-width:375px) {
+  .c0 .c12 {
+    margin-left: 16px;
+  }
+}
+
+@media screen and (max-width:1199px) {
+  .c0 .c10 {
+    margin-top: -2px;
+  }
+
+  .c0 .c2 {
+    height: 50px;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .c0 {
+    box-shadow: none;
+    position: relative;
+  }
+
+  .c0:after {
+    content: '';
+    display: block;
+    left: 0;
+    right: 0;
+    height: 50px;
+    margin-top: -50px;
+    background-color: #F5F5F5;
+  }
+
+  .c0 .c2 {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .c0 .c1 {
+    background-color: transparent;
+  }
+
+  .c0 .c10 {
+    margin-top: 0px;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    line-height: 38px;
+    font-size: 30px;
+  }
+
+  .c0 .c4 {
+    height: 78px;
+    padding: 15px 0;
+  }
+
+  .c0 .c12 {
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    margin-left: 25px;
+    margin-right: 25px;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width:1199px) {
+  .c14 {
     display: none;
   }
 }
@@ -950,25 +1290,35 @@ exports[`Header should render the tall version 1`] = `
       class="c4 c5"
     >
       <a
-        class="c6 c7"
+        class=""
         href="http://data.amsterdam.nl"
       >
         <span
-          class="c8 c9"
-        />
+          class="c6 c7"
+          size="40"
+        >
+          <svg
+            focusable="false"
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M24.508 18.126l.636-4.606H20.37v-2.97c0-1.33.424-2.252 2.334-2.252h2.545V4.205C24.826 4.102 23.34 4 21.538 4c-3.712 0-6.152 2.15-6.152 6.142v3.378H11.25v4.606h4.136V30h4.985V18.126h4.137z"
+            />
+          </svg>
+        </span>
       </a>
       <a
-        class="c10 c11 c12 c13"
+        class="c8 c9 c10 c11"
         href="http://data.amsterdam.nl"
       >
         Data en informatie
       </a>
     </h1>
     <nav
-      class="c14 c15"
+      class="c12 c13"
     />
     <div
-      class="c16"
+      class="c14"
     />
   </header>
 </div>
@@ -1007,7 +1357,7 @@ exports[`Header should render the tall version without a title 1`] = `
   font-size: 0;
 }
 
-.c3 .c15 {
+.c3 .c13 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -1015,7 +1365,7 @@ exports[`Header should render the tall version without a title 1`] = `
   margin-bottom: 0;
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1029,34 +1379,6 @@ exports[`Header should render the tall version without a title 1`] = `
   -ms-flex-pack: end;
   justify-content: flex-end;
   height: 100%;
-}
-
-.c9 {
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-image: url("-react-component: svg-mock;");
-}
-
-.c7 {
-  display: inline-block;
-  height: 30px;
-  width: 68px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c7.c7:focus {
-  outline-color: #FEC813;
-  outline-style: solid;
-  outline-offset: 0px;
-  outline-width: 3px;
-}
-
-.c13 .c6 {
-  margin-right: 10px;
 }
 
 .c5 {
@@ -1080,18 +1402,365 @@ exports[`Header should render the tall version without a title 1`] = `
   box-sizing: content-box;
 }
 
-.c5 .c6 {
-  margin-right: 10px;
-}
-
-.c14 .c10 {
+.c12 .c9 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
-.c14 .c2 {
+.c12 .c2 {
+  height: 50px;
+  padding-right: 0;
+}
+
+.c0 {
+  background-color: #ffffff;
+  margin: 0 auto;
+  width: 100%;
+  box-shadow: 0 4px rgba(0,0,0,0.04);
+  box-sizing: content-box;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.c0 .c9 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 17px;
+  right: 45px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c8 {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-image: url("-react-component: svg-mock;");
+}
+
+.c6 {
+  display: inline-block;
+  height: 30px;
+  width: 68px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.c6.c6:focus {
+  outline-color: #FEC813;
+  outline-style: solid;
+  outline-offset: 0px;
+  outline-width: 3px;
+}
+
+@media screen and (min-width:540px) {
+  .c3 {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (min-width:375px) {
+  .c12 .c9 {
+    margin-left: 16px;
+  }
+}
+
+@media screen and (min-width:375px) {
+  .c0 .c9 {
+    margin-left: 16px;
+  }
+}
+
+@media screen and (max-width:1199px) {
+  .c0 .sc-gzVnrw {
+    margin-top: -2px;
+  }
+
+  .c0 .c2 {
+    height: 50px;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .c0 {
+    box-shadow: none;
+    position: relative;
+  }
+
+  .c0:after {
+    content: '';
+    display: block;
+    left: 0;
+    right: 0;
+    height: 50px;
+    margin-top: -50px;
+    background-color: #F5F5F5;
+  }
+
+  .c0 .c2 {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .c0 .c1 {
+    background-color: transparent;
+  }
+
+  .c0 .sc-gzVnrw {
+    margin-top: 0px;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    line-height: 38px;
+    font-size: 30px;
+  }
+
+  .c0 .c4 {
+    height: 78px;
+    padding: 15px 0;
+  }
+
+  .c0 .c9 {
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    margin-left: 25px;
+    margin-right: 25px;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width:1199px) {
+  .c11 {
+    display: none;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .c6 {
+    height: 68px;
+    width: 100px;
+    margin-right: 40px;
+  }
+
+  .c6 .c7 {
+    background-image: url("-react-component: svg-mock;");
+  }
+}
+
+<div
+  class="c0"
+  id="header"
+>
+  <header
+    class="c1 c2 c3"
+  >
+    <h1
+      class="c4 c5"
+    >
+      <a
+        class="c6"
+        href="http://data.amsterdam.nl"
+      >
+        <span
+          class="c7 c8"
+        />
+      </a>
+    </h1>
+    <nav
+      class="c9 c10"
+    />
+    <div
+      class="c11"
+    />
+  </header>
+</div>
+`;
+
+exports[`Header should render the tall version without logo 1`] = `
+.c6 {
+  margin: 0;
+  color: #000000;
+  font-weight: inherit;
+  font-size: 16px;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  line-height: 22px;
+  margin-bottom: 0;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 10px;
+  background-color: #ffffff;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  max-width: none;
+}
+
+.c3::after {
+  content: '';
+  display: block;
+  min-height: inherit;
+  font-size: 0;
+}
+
+.c3 .c14 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+
+.c7 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 700;
+  color: #000000;
+}
+
+.c7:focus {
+  background-color: #FEC813;
+}
+
+.c7 .c15 {
+  margin: 4px;
+}
+
+.c7 .c15 svg rect,
+.c7 .c15 svg polygon,
+.c7 .c15 svg path {
+  fill: #000000;
+}
+
+.c7:hover {
+  color: #ec0000;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c7:hover .c15 svg rect,
+.c7:hover .c15 svg polygon,
+.c7:hover .c15 svg path {
+  fill: #ec0000;
+}
+
+.c9 {
+  margin: 0px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: #000;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c9:hover {
+  color: inherit;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.c5 {
+  margin: 0;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: normal;
+  -webkit-justify-content: normal;
+  -ms-flex-pack: normal;
+  justify-content: normal;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  box-sizing: content-box;
+}
+
+.c13 .c10 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c13 .c8 {
+  margin-top: -2px;
+}
+
+.c13 .c2 {
   height: 50px;
   padding-right: 0;
 }
@@ -1132,31 +1801,33 @@ exports[`Header should render the tall version without a title 1`] = `
   justify-content: flex-end;
 }
 
+@media screen and (min-width:1024px) {
+  .c6 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
 @media screen and (min-width:540px) {
   .c3 {
     padding: 0 15px;
   }
 }
 
-@media screen and (min-width:1200px) {
-  .c7 {
-    height: 68px;
-    width: 100px;
-  }
-
-  .c7 .c8 {
-    background-image: url("-react-component: svg-mock;");
-  }
-}
-
-@media screen and (min-width:1200px) {
-  .c5 .c6 {
-    margin-right: 40px;
+@media screen and (max-width:374px) {
+  .c9 {
+    font-size: 14px;
   }
 }
 
 @media screen and (min-width:375px) {
-  .c14 .c10 {
+  .c9 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width:375px) {
+  .c13 .c10 {
     margin-left: 16px;
   }
 }
@@ -1168,7 +1839,7 @@ exports[`Header should render the tall version without a title 1`] = `
 }
 
 @media screen and (max-width:1199px) {
-  .c0 .sc-gzVnrw {
+  .c0 .c8 {
     margin-top: -2px;
   }
 
@@ -1204,7 +1875,7 @@ exports[`Header should render the tall version without a title 1`] = `
     background-color: transparent;
   }
 
-  .c0 .sc-gzVnrw {
+  .c0 .c8 {
     margin-top: 0px;
     -webkit-align-self: flex-start;
     -ms-flex-item-align: start;
@@ -1245,12 +1916,10 @@ exports[`Header should render the tall version without a title 1`] = `
       class="c4 c5"
     >
       <a
-        class="c6 c7"
+        class="c6 c7 c8 c9"
         href="http://data.amsterdam.nl"
       >
-        <span
-          class="c8 c9"
-        />
+        Data en informatie
       </a>
     </h1>
     <nav
