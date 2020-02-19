@@ -15,6 +15,11 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## Unreleased
+- Changed: **BREAKING** `objectFitPolyfill` is now a peerDependency in `asc-ui`
+
+- Changed: **BREAKING** The AmsterdamLogo is not hardcoded anymore in the header component.
+  Has to be passed as parameter `logo={AmsterdamLogo}`. When the 'logo' parameter is not specified,
+  no logo will be shown before the header title
 
 - Changed: **BREAKING** The AmsterdamLogo is not hardcoded anymore in the header component.
   Has to be passed as parameter `logo={AmsterdamLogo}`. When the 'logo' parameter is not specified,
@@ -23,6 +28,7 @@ Prefix the change with one of these keywords:
 ## [0.18.2]
 
 - Changed: **BREAKING** Moved `@datapunt/asc-assets/assets/**` to `@datapunt/asc-assets/static/**` (lowercase)
+- Changed: The `perceivedLoading` utility is now exported so it can be used in other apps
 - Added: Make it possible to pass a z-index offset to the backdrop
 - Added: CompactPager component
 - Fixed: Breaking z-index on the `Header`

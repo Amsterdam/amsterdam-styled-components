@@ -6,12 +6,10 @@ export type Props = {
 
 export default styled.img<Props>`
   width: 100%;
-
   ${({ square }) =>
     square &&
     css`
       height: 100%;
-      // Polyfill for IE11 from 'objectFitPolyfill'
       object-fit: cover;
     `}
 `

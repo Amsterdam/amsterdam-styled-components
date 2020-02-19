@@ -1,4 +1,3 @@
-import 'objectFitPolyfill'
 import React from 'react'
 import ImageStyle, { Props as ImageStyleProps } from './ImageStyle'
 

@@ -14,9 +14,12 @@
   },
   "version": "0.18.1",
   "main": "lib/index.js",
+  "module": "es/index.js",
   "files": [
-    "lib"
+    "lib",
+    "es"
   ],
+  "sideEffects": false,
   "directories": {
     "lib": "lib",
     "test": "__tests__"

@@ -14,10 +14,13 @@
   },
   "version": "0.18.1",
   "main": "lib/index.js",
+  "module": "es/index.js",
   "files": [
     "lib",
+    "es",
     "static"
   ],
+  "sideEffects": false,
   "scripts": {
     "build": "yarn build:optimize-svg && yarn build:react-icons && yarn build:icon-ts-files",
     "build:icon-ts-files": "./scripts/icons.sh",
@@ -25,9 +28,9 @@
     "build:react-icons": "svgr -d src/icons static/icons --template src/utils/generateIconReact.js --svg-props focusable={false} --ext tsx"
   },
   "dependencies": {
-    "@svgr/cli": "^4.3.2",
-    "@svgr/core": "^4.3.2",
-    "svgo": "^1.3.0"
+    "@svgr/cli": "^5.1.0",
+    "@svgr/core": "^5.0.1",
+    "svgo": "^1.3.2"
   },
   "publishConfig": {
     "access": "public"
