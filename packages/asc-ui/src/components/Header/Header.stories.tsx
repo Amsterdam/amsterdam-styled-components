@@ -7,13 +7,14 @@ import Typography from '../Typography'
 import AmsterdamLogo from '../AmsterdamLogo'
 import Icon from '../Icon'
 import { LogoProps } from './HeaderLogoText'
+import { themeSpacing } from '../../utils'
 
 /**
  * This is an example of a Custom facebook logo
  * that can be added to the Header
  */
 const CustomLogoStyle = styled.a`
-  margin-right: 10px;
+  margin-right: ${themeSpacing(3)};
   border: 1px dotted black;
 `
 const CustomLogo: React.FC<LogoProps> = props => (
