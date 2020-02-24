@@ -4024,14 +4024,14 @@
     "@svgr/babel-plugin-transform-svg-component" "^5.2.0"
 
 "@svgr/cli@^5.1.0":
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/@svgr/cli/-/cli-5.1.0.tgz#0658745a9d30b5f200349106bb29987f7b05db00"
-  integrity sha512-mdC+MK3LS3txNU7+iZz0+zVabcCgVzvnSqCzWzSuWX7f5cayHZsrJhQgavKqAuLRA3Jp9tZ4oF6b7Os7CVAk8w==
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@svgr/cli/-/cli-5.2.0.tgz#87b5dd325c08cb02107e6e07f81778c2c2f4849a"
+  integrity sha512-TPsSFFs5APAVV8hgzRhro6jEr/aZf/SvdRtygA0B83LgZpv8lCCp4i09Zh3N/AZV878GqM/2ruzRJ88fm/lp0g==
   dependencies:
-    "@svgr/core" "^5.0.1"
-    "@svgr/plugin-jsx" "^5.0.1"
+    "@svgr/core" "^5.2.0"
+    "@svgr/plugin-jsx" "^5.2.0"
     "@svgr/plugin-prettier" "^5.0.1"
-    "@svgr/plugin-svgo" "^5.1.0"
+    "@svgr/plugin-svgo" "^5.2.0"
     camelcase "^5.3.1"
     chalk "^3.0.0"
     commander "^4.0.1"
