@@ -58,4 +58,16 @@ describe('Select', () => {
 
     expect(onKeyDownMock).toHaveBeenCalledTimes(1)
   })
+
+  it('should handle refs', () => {
+    const ref = React.createRef<HTMLSelectElement>()
+
+    render(
+      <ThemeProvider theme={ascDefaultTheme}>
+        <Select ref={ref} />
+      </ThemeProvider>,
+    )
+
+    expect(ref.current).toBeInstanceOf(HTMLSelectElement)
+  })
 })

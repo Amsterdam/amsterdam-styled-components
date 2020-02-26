@@ -9,6 +9,8 @@ module.exports = {
   ],
   plugins: ['jest', 'prettier', '@typescript-eslint', 'react-hooks'],
   env: {
+    browser: true,
+    node: true,
     'jest/globals': true,
   },
   globals: {
