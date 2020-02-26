@@ -15,16 +15,16 @@
   "version": "0.18.1",
   "main": "lib/index.js",
   "files": [
-    "lib",
     "es",
+    "lib",
     "static"
   ],
-  "sideEffects": false,
   "scripts": {
     "build": "yarn build:optimize-svg && yarn build:react-icons",
     "build:optimize-svg": "svgo --config=.svgo.yml -f static/icons",
     "build:react-icons": "svgr -d src/icons static/icons --template src/utils/generateIconReact.js --svg-props focusable={false} --ext tsx"
   },
+  "sideEffects": false,
   "dependencies": {
     "@svgr/cli": "^5.1.0",
     "@svgr/core": "^5.0.1",

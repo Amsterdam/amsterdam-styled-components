@@ -15,8 +15,8 @@
   "version": "0.18.2",
   "main": "lib/index.js",
   "files": [
-    "lib",
-    "es"
+    "es",
+    "lib"
   ],
   "sideEffects": false,
   "typings": "lib/index.d.ts",
