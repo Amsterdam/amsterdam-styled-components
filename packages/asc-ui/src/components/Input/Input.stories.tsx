@@ -1,9 +1,18 @@
 import * as React from 'react'
-import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import Input from './Input'
 
-const InputComponent: React.FC<{}> = () => {
+export default {
+  title: 'Atoms/Input',
+
+  decorators: [
+    (storyFn: () => React.ReactNode) => (
+      <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
+    ),
+  ],
+}
+
+export const ControlledState = () => {
   const [text, setText] = React.useState('')
 
   return (
@@ -20,9 +29,3 @@ const InputComponent: React.FC<{}> = () => {
     />
   )
 }
-
-storiesOf('Atoms/Input', module)
-  .addDecorator(storyFn => (
-    <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
-  ))
-  .add('default state', () => <InputComponent />)

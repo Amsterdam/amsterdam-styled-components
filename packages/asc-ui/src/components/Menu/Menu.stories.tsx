@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from '@datapunt/asc-core'
 import { ChevronRight } from '@datapunt/asc-assets'
-import { storiesOf } from '@storybook/react'
 import {
   MenuFlyOut,
   MenuItem,
@@ -32,7 +31,16 @@ const StyledMenuInline = styled(MenuInline)`
   background-color: ${themeColor('tint', 'level2')};
 `
 
-// eslint-disable-next-line import/prefer-default-export
+export default {
+  title: 'Composed/Menu',
+
+  decorators: [
+    (storyFn: () => React.ReactNode) => (
+      <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
+    ),
+  ],
+}
+
 export const MenuChildren = () => (
   <>
     <MenuItem>
@@ -100,25 +108,23 @@ export const MenuChildren = () => (
     </MenuItem>
   </>
 )
-
-storiesOf('Composed/Menu', module)
-  .add('default', () => (
-    <StyledMenuInline>
-      <MenuChildren />
-    </StyledMenuInline>
-  ))
-  .add('default with backdrop', () => (
-    <StyledMenuInline hasBackDrop>
-      <MenuChildren />
-    </StyledMenuInline>
-  ))
-  .add('toggle', () => (
-    <MenuToggle>
-      <MenuChildren />
-    </MenuToggle>
-  ))
-  .add('toggle with backdrop', () => (
-    <MenuToggle hasBackDrop>
-      <MenuChildren />
-    </MenuToggle>
-  ))
+export const DefaultState = () => (
+  <StyledMenuInline>
+    <MenuChildren />
+  </StyledMenuInline>
+)
+export const DefaultWithBackdrop = () => (
+  <StyledMenuInline hasBackDrop>
+    <MenuChildren />
+  </StyledMenuInline>
+)
+export const Toggle = () => (
+  <MenuToggle>
+    <MenuChildren />
+  </MenuToggle>
+)
+export const ToggleWithBackdrop = () => (
+  <MenuToggle hasBackDrop>
+    <MenuChildren />
+  </MenuToggle>
+)

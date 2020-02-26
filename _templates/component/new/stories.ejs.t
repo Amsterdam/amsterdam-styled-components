@@ -4,10 +4,17 @@ skip_if: <%= story %>
 ---
 
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 import <%= name %> from './<%= name %>'
 
-storiesOf('<%= composed ? 'Composed' : 'Atoms' %>/<%= name %>', module)
-  .add('default state', () => (
-    <<%= name %> />
-  ))
+export default {
+  title: '<%= composed ? 'Composed' : 'Atoms' %>/<%= name %>',
+
+  decorators: [
+    (storyFn: () => React.ReactNode) => (
+      <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
+    ),
+  ],
+}
+
+
+export const DefaultState = () => <<%= name %> />

@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Spinner as SpinnerIcon } from '@datapunt/asc-assets'
-
 import SpinnerStyle, { Props } from './SpinnerStyle'
 import Icon from '../Icon/Icon'
 

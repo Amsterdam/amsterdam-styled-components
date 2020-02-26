@@ -1,6 +1,5 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { storiesOf } from '@storybook/react'
 import SearchBarToggle from './SearchBarToggle'
 
 const ControlledSearchBarToggle = ({ hasBackDrop = false }) => {
@@ -21,9 +20,20 @@ const ControlledSearchBarToggle = ({ hasBackDrop = false }) => {
   )
 }
 
-storiesOf('Composed/SearchBarToggle', module)
-  .addDecorator(storyFn => (
-    <div style={{ margin: '40px 10px', position: 'relative' }}>{storyFn()}</div>
-  ))
-  .add('default', () => <ControlledSearchBarToggle />)
-  .add('default with backdrop', () => <ControlledSearchBarToggle hasBackDrop />)
+export default {
+  title: 'Composed/SearchBarToggle',
+
+  decorators: [
+    (storyFn: () => React.ReactNode) => (
+      <div style={{ margin: '40px 10px', position: 'relative' }}>
+        {storyFn()}
+      </div>
+    ),
+  ],
+}
+
+export const Default = () => <ControlledSearchBarToggle />
+
+export const DefaultWithBackdrop = () => (
+  <ControlledSearchBarToggle hasBackDrop />
+)
