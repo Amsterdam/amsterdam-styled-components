@@ -10,7 +10,7 @@ import { svgFill } from '../../../utils'
 export type Props = ToggleHandlerProps
 
 const ToggleFooterHeader: React.FC<Props> = ({ open, onClick, title }) => {
-  const StyledFooterHeading: any = styled(FooterHeading)<Props>`
+  const StyledFooterHeading = styled(FooterHeading)<Props>`
     margin-bottom: ${({ open: isOpen }) => (isOpen ? '0' : '8px')};
     cursor: pointer;
     &:hover {
@@ -24,7 +24,7 @@ const ToggleFooterHeader: React.FC<Props> = ({ open, onClick, title }) => {
   `
 
   return (
-    <StyledFooterHeading $as="h3" onClick={onClick}>
+    <StyledFooterHeading forwardedAs="h3" onClick={onClick}>
       <Icon rotate={open ? 180 : 0} size={20}>
         <ChevronDown />
       </Icon>

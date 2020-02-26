@@ -11,7 +11,7 @@ const FilterTag: React.FC<FilterTagProps &
   children,
   ...otherProps
 }) => (
-  <FilterTagStyle $as="button" {...otherProps}>
+  <FilterTagStyle forwardedAs="button" {...otherProps}>
     {children}
     <Icon inline size={14} color="primary">
       <Close />

@@ -1,4 +1,3 @@
-/* eslint-disable import/no-duplicates */
 import * as styledComponents from 'styled-components'
 import { StyledComponent } from 'styled-components'
 import { Theme } from './theme'

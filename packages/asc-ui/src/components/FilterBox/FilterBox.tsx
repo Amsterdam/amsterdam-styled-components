@@ -21,7 +21,7 @@ const FilterBox: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
 }) => (
   <FilterBoxStyle {...otherProps}>
     <FilterBoxHeader>
-      <StyledHeading $as="h3" color="primary">
+      <StyledHeading forwardedAs="h3" color="primary">
         {label}
       </StyledHeading>
     </FilterBoxHeader>

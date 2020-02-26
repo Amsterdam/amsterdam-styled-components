@@ -10,6 +10,7 @@ export type Props = {
   fontSize?: number
   styleAs?: keyof TypographyElements
   as?: any
+  forwardedAs?: any
   strong?: boolean
 }
 
@@ -24,7 +25,8 @@ export type Variant = keyof typeof defaultTypographyStyles
 const getProperty = <T, K extends keyof T>(obj: T, key: K) => obj[key]
 
 export default styled.p<Props>`
-  ${({ as }) => getProperty(defaultTypographyStyles, as)};
+  ${({ as, forwardedAs }) =>
+    getProperty(defaultTypographyStyles, as || forwardedAs)};
   margin: 0;
   ${getTypographyFromTheme()};
   font-stretch: normal;
