@@ -3091,16 +3091,16 @@
     util-deprecate "^1.0.2"
 
 "@storybook/addon-actions@^5.3.13":
-  version "5.3.13"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-5.3.13.tgz#faf57ca14a46ce0c69168c631fbfc3d79d294b38"
-  integrity sha512-NoKTI/7Zf/IpbfeIFPWQT3eN0As1yICLcSklj9BjHq7itSssaqZzvP/vxmeAvdagIBcPM58GaN9XXXLQIn5HLg==
+  version "5.3.14"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-5.3.14.tgz#aacc4d2703fc200a4565bfaa9f5870ed70a6fe32"
+  integrity sha512-4lKrTMzw/r6VQiBY24v72WC3jibW7pc9BIJgtPpTmTUQWTxPnkmxDfT81pV4BjS1GFH9VCnU6f5fWK+5lrQlsw==
   dependencies:
-    "@storybook/addons" "5.3.13"
-    "@storybook/api" "5.3.13"
-    "@storybook/client-api" "5.3.13"
-    "@storybook/components" "5.3.13"
-    "@storybook/core-events" "5.3.13"
-    "@storybook/theming" "5.3.13"
+    "@storybook/addons" "5.3.14"
+    "@storybook/api" "5.3.14"
+    "@storybook/client-api" "5.3.14"
+    "@storybook/components" "5.3.14"
+    "@storybook/core-events" "5.3.14"
+    "@storybook/theming" "5.3.14"
     core-js "^3.0.1"
     fast-deep-equal "^2.0.1"
     global "^4.3.2"
@@ -14170,14 +14170,7 @@ pnp-webpack-plugin@1.5.0:
   dependencies:
     ts-pnp "^1.1.2"
 
-polished@^3.3.1:
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/polished/-/polished-3.4.2.tgz#b4780dad81d64df55615fbfc77acb52fd17d88cd"
-  integrity sha512-9Rch6iMZckABr6EFCLPZsxodeBpXMo9H4fRlfR/9VjMEyy5xpo1/WgXlJGgSjPyVhEZNycbW7UmYMNyWS5MI0g==
-  dependencies:
-    "@babel/runtime" "^7.6.3"
-
-polished@^3.4.4:
+polished@^3.3.1, polished@^3.4.4:
   version "3.4.4"
   resolved "https://registry.yarnpkg.com/polished/-/polished-3.4.4.tgz#ac8cd6e704887398f3b802718f9d389b9ea4307b"
   integrity sha512-x9PKeExyI9AhWrJP3Q57I1k7GInujjiVBJMPFmycj9hX1yCOo/X9eu9eZwxgOziiXge3WbFQ5XOmkzunOntBSA==
