@@ -1,11 +1,14 @@
-import * as React from 'react'
-import { storiesOf } from '@storybook/react'
+import React from 'react'
 import columnNotes from './Column.md'
 import nestedColumnNotes from './ColumnNested.md'
 import Column from './Column'
 import Row from './Row'
 
-const ColumnStory: React.FC<{}> = () => (
+export default {
+  title: 'Atoms/Grid',
+}
+
+export const DefaultColumn = () => (
   <>
     <br />
     <br />
@@ -38,7 +41,11 @@ const ColumnStory: React.FC<{}> = () => (
   </>
 )
 
-const NestedColumnsStory: React.FC<{}> = () => (
+DefaultColumn.story = {
+  parameters: { notes: { markdown: columnNotes } },
+}
+
+export const NestingColumns = () => (
   <>
     <br />
     <br />
@@ -101,8 +108,8 @@ const NestedColumnsStory: React.FC<{}> = () => (
   </>
 )
 
-storiesOf('Atoms/Grid', module)
-  .add('Column', () => <ColumnStory />, { notes: { markdown: columnNotes } })
-  .add('Nesting Columns', () => <NestedColumnsStory />, {
+NestingColumns.story = {
+  parameters: {
     notes: { markdown: nestedColumnNotes },
-  })
+  },
+}

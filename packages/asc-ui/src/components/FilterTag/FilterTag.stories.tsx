@@ -1,52 +1,55 @@
 import * as React from 'react'
-import { storiesOf } from '@storybook/react'
 import FilterTag from './FilterTag'
 
-interface FilterTagElement {
+type FilterTagElement = {
   id: number
   labelText: string
 }
 
-storiesOf('Atoms/FilterTag', module)
-  .addDecorator(storyFn => (
-    <div style={{ padding: '40px 20px' }}>{storyFn()}</div>
-  ))
-  .add('default', () => {
-    const defaultFilterTagElements: FilterTagElement[] = [
-      {
-        id: 1,
-        labelText: 'Verkeer en infrastructuur',
-      },
-      {
-        id: 2,
-        labelText: 'Multiselect',
-      },
-      {
-        id: 3,
-        labelText: 'Filters over meerdere regels',
-      },
-    ]
+export default {
+  title: 'Atoms/FilterTag',
 
-    const [filterTagElements, setFilterTagElements] = React.useState(
-      defaultFilterTagElements,
+  decorators: [
+    (storyFn: () => React.ReactNode) => (
+      <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
+    ),
+  ],
+}
+
+export const DefaultState = () => {
+  const [filterTagElements, setFilterTagElements] = React.useState<
+    FilterTagElement[]
+  >([
+    {
+      id: 1,
+      labelText: 'Verkeer en infrastructuur',
+    },
+    {
+      id: 2,
+      labelText: 'Multiselect',
+    },
+    {
+      id: 3,
+      labelText: 'Filters over meerdere regels',
+    },
+  ])
+
+  const filterTagHandleClick = (id: number): void =>
+    setFilterTagElements(
+      filterTagElements && filterTagElements.filter(el => el.id !== id),
     )
 
-    const filterTagHandleClick = (id: number): void =>
-      setFilterTagElements(
-        filterTagElements && filterTagElements.filter(el => el.id !== id),
-      )
-
-    return (
-      <>
-        {filterTagElements &&
-          filterTagElements.map(element => (
-            <FilterTag
-              onClick={() => filterTagHandleClick(element.id)}
-              key={`filterTag${element.id}`}
-            >
-              {element.labelText}
-            </FilterTag>
-          ))}
-      </>
-    )
-  })
+  return (
+    <>
+      {filterTagElements &&
+        filterTagElements.map(element => (
+          <FilterTag
+            onClick={() => filterTagHandleClick(element.id)}
+            key={`filterTag${element.id}`}
+          >
+            {element.labelText}
+          </FilterTag>
+        ))}
+    </>
+  )
+}

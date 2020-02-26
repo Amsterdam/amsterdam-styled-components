@@ -15,10 +15,9 @@
   "version": "0.18.1",
   "main": "lib/index.js",
   "files": [
-    "lib",
-    "es"
+    "es",
+    "lib"
   ],
-  "sideEffects": false,
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -26,6 +25,7 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
+  "sideEffects": false,
   "dependencies": {
     "styled-components": "^4.3.2"
   },

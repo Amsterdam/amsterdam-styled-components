@@ -26,8 +26,4 @@ function withGlobalStyles(storyFn) {
 
 addDecorator(withGlobalStyles)
 
-function loadStories() {
-  req.keys().forEach(filename => req(filename))
-}
-
-configure(loadStories, module)
+configure(req, module)

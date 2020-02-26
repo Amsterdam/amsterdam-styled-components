@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { Row, Column } from '../Grid'
 import {
   Footer,
@@ -15,6 +14,16 @@ import {
 } from '../../index'
 import Paragraph from '../Paragraph'
 import Link from '../Link'
+
+export default {
+  title: 'Composed/Footer',
+
+  decorators: [
+    (storyFn: () => React.ReactNode) => (
+      <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
+    ),
+  ],
+}
 
 const ColofonLinks: React.FC<{ indent?: boolean }> = () => (
   <FooterLinkList>
@@ -102,8 +111,7 @@ const HelpLinks: React.FC<{ indent?: boolean }> = () => (
   </>
 )
 
-// eslint-disable-next-line import/prefer-default-export
-export const DataportaalFooter: React.FC<{}> = () => (
+export const ImplementationForDataportaal = () => (
   <Footer>
     <FooterTop>
       <Row>
@@ -182,9 +190,3 @@ export const DataportaalFooter: React.FC<{}> = () => (
     </FooterBottom>
   </Footer>
 )
-
-storiesOf('Composed/Footer', module)
-  .addDecorator(storyFn => (
-    <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
-  ))
-  .add('implementation for dataportaal', () => <DataportaalFooter />)
