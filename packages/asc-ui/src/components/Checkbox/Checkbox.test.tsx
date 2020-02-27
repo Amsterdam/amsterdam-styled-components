@@ -62,4 +62,17 @@ describe('Checkbox', () => {
 
     expect(icon).not.toHaveStyleRule('background-color', expect.any(String))
   })
+
+  it('should handle refs', () => {
+    const ref = React.createRef<HTMLInputElement>()
+
+    render(
+      <ThemeProvider theme={ascDefaultTheme}>
+        <Checkbox ref={ref} />
+      </ThemeProvider>,
+    )
+
+    expect(ref.current).toBeInstanceOf(HTMLInputElement)
+    expect(ref.current?.type).toEqual('checkbox')
+  })
 })
