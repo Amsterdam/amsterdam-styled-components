@@ -7,52 +7,60 @@ import CheckboxStyle, {
 } from './CheckboxStyle'
 import LabelContext from '../Label/LabelContext'
 
-const Checkbox: React.FC<Props & React.HTMLAttributes<HTMLInputElement>> = ({
-  checked: checkedProp,
-  className,
-  onChange,
-  variant,
-  disabled,
-  error,
-  ...otherProps
-}) => {
-  const [checked, setChecked] = useState(!!checkedProp)
-  const [focus, setFocus] = useState(false)
-  const { setActive } = useContext(LabelContext)
+const Checkbox = React.forwardRef<
+  HTMLInputElement,
+  Props & React.HTMLAttributes<HTMLInputElement>
+>(
+  (
+    {
+      checked: checkedProp,
+      className,
+      onChange,
+      variant,
+      disabled,
+      error,
+      ...otherProps
+    },
+    ref,
+  ) => {
+    const [checked, setChecked] = useState(!!checkedProp)
+    const [focus, setFocus] = useState(false)
+    const { setActive } = useContext(LabelContext)
 
-  // Make the label aware of changes in the checked state
-  useMemo(() => {
-    setActive(checked)
-  }, [checked, setActive])
+    // Make the label aware of changes in the checked state
+    useMemo(() => {
+      setActive(checked)
+    }, [checked, setActive])
 
-  // Make the component aware of changes in the checked prop
-  useMemo(() => {
-    setChecked(!!checkedProp)
-  }, [checkedProp, setChecked])
+    // Make the component aware of changes in the checked prop
+    useMemo(() => {
+      setChecked(!!checkedProp)
+    }, [checkedProp, setChecked])
 
-  return (
-    <CheckboxWrapperStyle
-      {...{ className, disabled, focus, checked, error }}
-      aria-disabled={disabled}
-    >
-      <CheckboxIconStyle {...{ disabled, variant, checked, error }} size={15}>
-        {checked && <Checkmark />}
-      </CheckboxIconStyle>
-      <CheckboxStyle
-        {...{ ...otherProps, disabled, checked }}
-        onFocus={() => {
-          setFocus(true)
-        }}
-        onBlur={() => setFocus(false)}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-          if (onChange) {
-            onChange(e)
-          }
-          setChecked(!checked)
-        }}
-      />
-    </CheckboxWrapperStyle>
-  )
-}
+    return (
+      <CheckboxWrapperStyle
+        {...{ className, disabled, focus, checked, error }}
+        aria-disabled={disabled}
+      >
+        <CheckboxIconStyle {...{ disabled, variant, checked, error }} size={15}>
+          {checked && <Checkmark />}
+        </CheckboxIconStyle>
+        <CheckboxStyle
+          {...{ ...otherProps, disabled, checked, ref }}
+          onFocus={() => {
+            setFocus(true)
+          }}
+          onBlur={() => setFocus(false)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            if (onChange) {
+              onChange(e)
+            }
+            setChecked(!checked)
+          }}
+        />
+      </CheckboxWrapperStyle>
+    )
+  },
+)
 
 export default Checkbox

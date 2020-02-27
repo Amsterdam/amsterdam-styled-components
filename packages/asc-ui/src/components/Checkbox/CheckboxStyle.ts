@@ -87,7 +87,7 @@ const CheckboxIconStyle = styled(IconStyle)<Props>`
 const CheckboxWrapperStyle = styled.div<Props & { focus: boolean }>`
   position: relative;
   display: inline-flex;
-  user-select: none;  
+  user-select: none;
   vertical-align: middle;
   margin-bottom: 1px;
   padding: 6px;
