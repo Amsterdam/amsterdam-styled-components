@@ -69,4 +69,19 @@ describe('Radio', () => {
     expect(container.querySelector('input:checked').value).toBe('value-1')
     expect(onChangeMock).toHaveBeenCalledTimes(3)
   })
+
+  it('should handle refs', () => {
+    const ref = React.createRef<HTMLInputElement>()
+
+    render(
+      <ThemeProvider theme={ascDefaultTheme}>
+        <RadioGroup name="group" id="group">
+          <Radio id="radio-1" value="value-1" ref={ref} />
+        </RadioGroup>
+      </ThemeProvider>,
+    )
+
+    expect(ref.current).toBeInstanceOf(HTMLInputElement)
+    expect(ref.current?.type).toEqual('radio')
+  })
 })
