@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Added: Alert component
 - Changed: **BREAKING** `objectFitPolyfill` is now a peerDependency in `asc-ui`
 - Changed: **BREAKING** The AmsterdamLogo is not hardcoded anymore in the header component.
   Has to be passed as parameter `logo={AmsterdamLogo}`. When the 'logo' parameter is not specified,

@@ -75,7 +75,7 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c7 .c14 {
-  margin: 4px;
+  margin: 4px 4px 0 0;
 }
 
 .c7 .c14 svg rect,
@@ -85,9 +85,9 @@ exports[`Header should render the short version 1`] = `
 }
 
 .c7:hover {
-  color: #ec0000;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  color: #ec0000;
 }
 
 .c7:hover .c14 svg rect,
@@ -365,7 +365,7 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c7 .c14 {
-  margin: 4px;
+  margin: 4px 4px 0 0;
 }
 
 .c7 .c14 svg rect,
@@ -375,9 +375,9 @@ exports[`Header should render the short version without the full width 1`] = `
 }
 
 .c7:hover {
-  color: #ec0000;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  color: #ec0000;
 }
 
 .c7:hover .c14 svg rect,
@@ -655,7 +655,7 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c10 .c18 {
-  margin: 4px;
+  margin: 4px 4px 0 0;
 }
 
 .c10 .c18 svg rect,
@@ -665,9 +665,9 @@ exports[`Header should render the tall version 1`] = `
 }
 
 .c10:hover {
-  color: #ec0000;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  color: #ec0000;
 }
 
 .c10:hover .c18 svg rect,
@@ -1050,7 +1050,7 @@ exports[`Header should render the tall version with a custom logo 1`] = `
 }
 
 .c9 .c6 {
-  margin: 4px;
+  margin: 4px 4px 0 0;
 }
 
 .c9 .c6 svg rect,
@@ -1060,9 +1060,9 @@ exports[`Header should render the tall version with a custom logo 1`] = `
 }
 
 .c9:hover {
-  color: #ec0000;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  color: #ec0000;
 }
 
 .c9:hover .c6 svg rect,
@@ -1676,7 +1676,7 @@ exports[`Header should render the tall version without logo 1`] = `
 }
 
 .c7 .c15 {
-  margin: 4px;
+  margin: 4px 4px 0 0;
 }
 
 .c7 .c15 svg rect,
@@ -1686,9 +1686,9 @@ exports[`Header should render the tall version without logo 1`] = `
 }
 
 .c7:hover {
-  color: #ec0000;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  color: #ec0000;
 }
 
 .c7:hover .c15 svg rect,
