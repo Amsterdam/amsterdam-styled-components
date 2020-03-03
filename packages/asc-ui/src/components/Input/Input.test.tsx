@@ -1,8 +1,10 @@
-import * as React from 'react'
+import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
+import { render } from '@testing-library/react'
 import { mount } from 'enzyme'
-import Input from './Input'
-import { renderWithTheme } from '../../utils/withTheme'
+import React from 'react'
 import { KeyboardKeys } from '../../types'
+import { renderWithTheme } from '../../utils/withTheme'
+import Input from './Input'
 
 jest.useFakeTimers()
 
@@ -68,5 +70,18 @@ describe('Input', () => {
       input.simulate(enterEvent.type, enterEvent.payload)
       expect(onKeyDownMockFn).toHaveBeenCalledTimes(1)
     })
+  })
+
+  it('should handle refs', () => {
+    const ref = React.createRef<HTMLInputElement>()
+
+    render(
+      <ThemeProvider theme={ascDefaultTheme}>
+        <Input ref={ref} />
+      </ThemeProvider>,
+    )
+
+    expect(ref.current).toBeInstanceOf(HTMLInputElement)
+    expect(ref.current?.type).toEqual('text')
   })
 })
