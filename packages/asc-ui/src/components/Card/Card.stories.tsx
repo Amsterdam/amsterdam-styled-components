@@ -24,7 +24,7 @@ export default {
 export const Default = () => (
   <Card maxWidth={250}>
     <CardContent>
-      <Heading $as="h6">This is a card</Heading>
+      <Heading forwardedAs="h6">This is a card</Heading>
       <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
     </CardContent>
   </Card>
@@ -33,7 +33,7 @@ export const Default = () => (
 export const DefaultWithAction = () => (
   <Card maxWidth={250}>
     <CardContent>
-      <Heading $as="h6">This is a card</Heading>
+      <Heading forwardedAs="h6">This is a card</Heading>
       <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
     </CardContent>
     <CardActions>
@@ -50,7 +50,7 @@ export const DefaultWithActionAndMediaItem = () => (
       <Image src="https://picsum.photos/300/200/" alt="stadsloket" square />
     </CardMedia>
     <CardContent>
-      <Heading $as="h6">Title</Heading>
+      <Heading forwardedAs="h6">Title</Heading>
       <Paragraph>This is a card</Paragraph>
     </CardContent>
     <CardActions>
@@ -64,7 +64,7 @@ export const DefaultWithActionAndMediaItem = () => (
 export const WithShadow = () => (
   <Card maxWidth={250} backgroundColor="level2" shadow>
     <CardContent>
-      <Heading $as="h6">This is a card</Heading>
+      <Heading forwardedAs="h6">This is a card</Heading>
       <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
     </CardContent>
     <CardActions>
@@ -83,7 +83,7 @@ export const HorizontalWithActionAndMediaItem = () => (
       </Icon>
     </CardMedia>
     <CardContent>
-      <Heading $as="h6">This is a card</Heading>
+      <Heading forwardedAs="h6">This is a card</Heading>
       <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
     </CardContent>
     <CardActions>
@@ -97,7 +97,7 @@ export const HorizontalWithActionAndMediaItem = () => (
 export const LoadingStateDefault = () => (
   <Card maxWidth={250} isLoading>
     <CardContent>
-      <Heading $as="h6" />
+      <Heading forwardedAs="h6" />
       <Paragraph />
     </CardContent>
   </Card>
@@ -106,7 +106,7 @@ export const LoadingStateDefault = () => (
 export const LoadingStateWithAction = () => (
   <Card maxWidth={250} isLoading>
     <CardContent>
-      <Heading $as="h6" />
+      <Heading forwardedAs="h6" />
       <Paragraph />
     </CardContent>
     <CardActions>
@@ -125,7 +125,7 @@ export const LoadingStateHorizontal = () => (
       </Icon>
     </CardMedia>
     <CardContent>
-      <Heading $as="h6" />
+      <Heading forwardedAs="h6" />
       <Paragraph />
     </CardContent>
     <CardActions>

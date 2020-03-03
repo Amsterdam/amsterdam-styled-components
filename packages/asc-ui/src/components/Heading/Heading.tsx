@@ -8,7 +8,7 @@ const Heading: React.FC<Props> = ({ children, ...otherProps }) => (
 )
 
 Heading.defaultProps = {
-  $as: 'h1',
+  forwardedAs: 'h1',
 }
 
 export default Heading

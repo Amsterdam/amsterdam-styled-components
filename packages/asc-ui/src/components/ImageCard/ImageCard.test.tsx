@@ -9,7 +9,7 @@ describe('ImageCard', () => {
     const component = renderWithTheme(
       <ImageCard backgroundImage="https://www.example.com">
         <ImageCardContent>
-          <Heading $as="h4" styleAs="h2">
+          <Heading forwardedAs="h4" styleAs="h2">
             Jeugdwerkloosheid Amsterdam daalt naar 6,2%
           </Heading>
         </ImageCardContent>

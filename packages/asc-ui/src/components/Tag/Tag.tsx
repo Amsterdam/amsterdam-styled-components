@@ -8,7 +8,7 @@ const Tag: React.FC<Props> = ({ children, ...otherProps }) => (
 )
 
 Tag.defaultProps = {
-  $as: 'span',
+  forwardedAs: 'span',
   colorType: 'primary',
   colorSubtype: 'main',
 }
