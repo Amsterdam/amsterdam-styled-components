@@ -19,10 +19,7 @@ const ContextMenuListStyle = styled.ul<ContextMenuListProps>`
 `
 export default ContextMenuListStyle
 
-export const ContextMenuListWrapperStyle = styled.div.attrs(() => ({
-  role: 'menu',
-  tabIndex: -1,
-}))<ContextMenuListProps>`
+export const ContextMenuListWrapperStyle = styled.div<ContextMenuListProps>`
   order: ${({ position }) => (position === 'bottom' ? -1 : 0)};
   background-color: ${themeColor('tint', 'level1')};
   border: 1px solid ${themeColor('tint', 'level7')};

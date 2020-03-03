@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { RefObject, useEffect, useRef, useState } from 'react'
 
 export type EdgeDetectionTypes = {
   top: boolean
@@ -7,7 +7,9 @@ export type EdgeDetectionTypes = {
   left: boolean
 }
 
-export default (dependencies: Array<any> = []) => {
+export default <T extends HTMLElement = HTMLElement>(
+  dependencies: ReadonlyArray<any> = [],
+) => {
   const initialState: EdgeDetectionTypes = {
     top: false,
     right: false,
@@ -16,11 +18,10 @@ export default (dependencies: Array<any> = []) => {
   }
   const [edgeDetection, updateEdgeDetection] = useState(initialState)
 
-  const ref = useRef(null)
+  const ref = useRef<T>(null)
 
   useEffect(() => {
     if (ref && ref.current) {
-      // @ts-ignore
       const bounding = ref.current.getBoundingClientRect()
       const { innerWidth, innerHeight, document } = window
       const { documentElement } = document
@@ -35,5 +36,5 @@ export default (dependencies: Array<any> = []) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, dependencies)
 
-  return [ref, edgeDetection]
+  return [ref, edgeDetection] as [RefObject<T>, EdgeDetectionTypes]
 }

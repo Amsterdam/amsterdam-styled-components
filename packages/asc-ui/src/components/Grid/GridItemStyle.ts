@@ -2,9 +2,12 @@ import styled, { css } from '@datapunt/asc-core'
 import { mapToBreakpoints } from '../../utils/themeUtils'
 
 type Props = {
-  width?: number | Array<Number>
+  width?: string[]
 }
 
+/**
+ * @deprecated, use Row with Column instead
+ */
 const GridItemStyle = styled.div<Props>`
   position: relative;
   ${({ width, theme }) =>

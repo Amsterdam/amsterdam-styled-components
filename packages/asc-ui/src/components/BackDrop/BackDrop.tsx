@@ -5,7 +5,7 @@ import BackDropStyle, { Props as StyleProps } from './BackDropStyle'
 export type Props = {
   disablePortal?: boolean
   blurredNodeSelector?: string
-  onClick?: any
+  onClick?: Function
 } & StyleProps &
   PortalProps
 

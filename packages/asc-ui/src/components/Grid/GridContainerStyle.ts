@@ -9,6 +9,9 @@ type Props = {
   collapse?: boolean
 }
 
+/**
+ * @deprecated, use Row with Column instead
+ */
 const GridContainerStyle = styled.div<Props>`
   display: flex;
   flex-direction: ${({ direction }) => direction || 'row'};

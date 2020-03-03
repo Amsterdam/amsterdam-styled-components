@@ -1,4 +1,4 @@
-import styled, { css } from '@datapunt/asc-core'
+import styled, { css, Theme } from '@datapunt/asc-core'
 import ChevronDown from '@datapunt/asc-assets/static/icons/ChevronDown.svg'
 import { themeColor, themeSpacing } from '../../utils'
 import { outlineStyle } from '../../utils/themeUtils'
@@ -15,7 +15,9 @@ export type Props = {
   errorStyle?: object
 }
 
-const SelectBoxShadow = (color: any) => css`
+const SelectBoxShadow = (
+  color: ({ theme }: { theme: Theme.ThemeInterface }) => string,
+) => css`
   box-shadow: inset 0 0 0 1px ${color};
 `
 

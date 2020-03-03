@@ -1,48 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ContextMenuButtonStyle from './ContextMenuButton'
 import MenuList from './ContextMenuList'
-import { KeyboardKeys } from '../../types'
 import ownerDocument from '../../utils/ownerDocument'
 import { Position } from './types'
 import ContextMenuWrapperStyle from './ContextMenuWrapperStyle'
 import ContextMenuItem from './ContextMenuItem'
+import useFocusWithArrows from '../../utils/hooks/useFocusWithArrows'
 
-const selectedChildInitial = -1
-
-type Props = {
+export type Props = {
   position?: Position
   label?: string
   icon?: React.ReactNode
-  arrowIcon: React.ReactNode
+  arrowIcon?: React.ReactNode
   open?: boolean
 }
 
-type State = {
-  open?: boolean
-  selectedChild: number
-}
+const ContextMenu: React.FC<Props> = ({
+  open: openProp,
+  label,
+  children,
+  position,
+  icon,
+  arrowIcon,
+  ...otherProps
+}) => {
+  const ref = React.useRef<HTMLDivElement>(null)
+  const [open, setOpen] = useState(openProp || false)
 
-class ContextMenu extends React.Component<Props, State> {
-  wrapper = React.createRef<HTMLDivElement>()
-
-  list = React.createRef<HTMLDivElement>()
-
-  // eslint-disable-next-line react/static-property-placement
-  static defaultProps = {
-    open: false,
-  }
-
-  constructor(props: Props) {
-    super(props)
-
-    this.state = {
-      open: props.open,
-      selectedChild: selectedChildInitial,
-    }
-  }
-
-  componentDidMount(): void {
-    const { children } = this.props
+  useEffect(() => {
     React.Children.toArray(children).forEach(child => {
       // @ts-ignore
       if (child && child.type !== ContextMenuItem) {
@@ -52,117 +37,56 @@ class ContextMenu extends React.Component<Props, State> {
         )
       }
     })
+  }, [])
+
+  const onToggle = () => {
+    setOpen(!open)
   }
 
-  componentDidUpdate(prevProps: Props) {
-    const { open } = this.props
-
-    if (prevProps.open !== open) {
-      this.onToggle(open)
-    }
-  }
-
-  onKeyDown = (event: React.KeyboardEvent) => {
-    const { children } = this.props
-    const { selectedChild, open } = this.state
-
-    const nrOfChildren = React.Children.count(children)
-
-    if (!open) {
-      return
-    }
-
-    const firstChild = 0
-    const lastChild = nrOfChildren - 1
-
-    if (event.key === KeyboardKeys.ArrowDown) {
-      event.preventDefault()
-      this.setState({
-        selectedChild:
-          selectedChild === lastChild ? firstChild : selectedChild + 1,
-      })
-    }
-
-    if (event.key === KeyboardKeys.ArrowUp) {
-      event.preventDefault()
-      this.setState({
-        selectedChild:
-          selectedChild === firstChild || selectedChild === selectedChildInitial
-            ? lastChild
-            : selectedChild - 1,
-      })
-    }
-  }
-
-  onToggle = (open: Props['open'] | State['open']) => {
-    this.setState({ open })
-  }
-
-  onClose = () => {
+  const onClose = () => {
     setTimeout(() => {
-      const element = this.getReference('wrapper') as HTMLInputElement
+      const element = ref.current
       if (element) {
         const currentFocus = ownerDocument(element).activeElement
         if (!element.contains(currentFocus)) {
-          this.setState({
-            selectedChild: selectedChildInitial,
-            open: false,
-          })
+          setOpen(false)
         }
       }
     })
   }
 
-  getReference = (el: string) => {
-    if (this[el].current) {
-      return this[el].current
-    }
+  const { keyDown } = useFocusWithArrows(ref)
 
-    return null
-  }
-
-  render() {
-    const {
-      label,
-      children,
-      position,
-      icon,
-      arrowIcon,
-      ...otherProps
-    } = this.props
-    const { open, selectedChild } = this.state
-
-    return (
-      <ContextMenuWrapperStyle
-        ref={this.wrapper}
-        onKeyDown={this.onKeyDown}
-        onBlur={this.onClose}
-        {...otherProps}
+  return (
+    <ContextMenuWrapperStyle
+      ref={ref}
+      data-testid="bla"
+      onKeyDown={keyDown}
+      onBlur={onClose}
+      {...otherProps}
+    >
+      <ContextMenuButtonStyle
+        {...{
+          icon,
+          open,
+          position,
+          label,
+          arrowIcon,
+        }}
+        data-testid="toggle"
+        onClick={onToggle}
+      />
+      <MenuList
+        {...{
+          position,
+          open,
+          onClose,
+        }}
       >
-        <ContextMenuButtonStyle
-          {...{
-            icon,
-            open,
-            position,
-            label,
-            arrowIcon,
-          }}
-          onClick={() => this.onToggle(!open)}
-        />
-        <MenuList
-          {...{
-            position,
-            open,
-            selectedChild,
-          }}
-          onClose={this.onClose}
-          ref={this.list}
-        >
-          {children}
-        </MenuList>
-      </ContextMenuWrapperStyle>
-    )
-  }
+        {children}
+      </MenuList>
+    </ContextMenuWrapperStyle>
+  )
 }
 
 export default ContextMenu

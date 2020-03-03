@@ -16,7 +16,9 @@ export type ToggleHandlerProps = {
 export type Props = {
   render?: boolean
   onOpen?: Function
-  ToggleHandler?: any
+  ToggleHandler?: React.FC<
+    ToggleButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>
+  >
   rotateOnOpen?: number
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
 } & ToggleStyleProps &
@@ -55,14 +57,13 @@ const Toggle: React.FC<Props> = ({
   const { onKeyDown: onKeyDownHook } = useActionOnEscape(() =>
     handleOnOpen(false),
   )
-  const ref = React.useRef(null!)
+  const ref = React.useRef<HTMLDivElement>(null!)
 
   const handleOnBlur = () => {
     setTimeout(() => {
       const element = ref.current
       if (element) {
         const currentFocus = ownerDocument(element).activeElement
-        // @ts-ignore
         if (!element.contains(currentFocus)) {
           handleOnOpen(false)
         }
@@ -100,7 +101,6 @@ const Toggle: React.FC<Props> = ({
 
   return (
     <ToggleStyle
-      // @ts-ignore
       ref={ref}
       css={css}
       onBlur={handleOnBlur}
@@ -109,17 +109,19 @@ const Toggle: React.FC<Props> = ({
       {...otherProps}
       tabIndex={-1} // This will enable the onblur event for this div element on all browsers
     >
-      <ToggleHandler
-        {...{
-          open,
-          iconClose,
-          iconOpen,
-          onClick: handleOnClick,
-          title,
-          hasBackDrop,
-        }}
-        type="button"
-      />
+      {ToggleHandler && (
+        <ToggleHandler
+          {...{
+            open,
+            iconClose,
+            iconOpen,
+            onClick: handleOnClick,
+            title,
+            hasBackDrop,
+          }}
+          type="button"
+        />
+      )}
       {render ? children : conditionalRenderedChildren}
       {hasBackDrop && open && (
         <BackDrop onClick={handleOnClick} hideOverFlow={false} />

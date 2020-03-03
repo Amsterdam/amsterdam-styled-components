@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Changed: arrowIcon on ContextMenu is not required anymore
 - Changed: **BREAKING** dropped support for `$as` prop (used components: Button, Tag, Heading, FooterHeading and Link). Use styled-component's `forwardedAs` prop instead
 - Changed: **BREAKING** `objectFitPolyfill` is now a peerDependency in `asc-ui`
 - Changed: **BREAKING** The AmsterdamLogo is not hardcoded anymore in the header component.

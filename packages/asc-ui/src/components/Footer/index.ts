@@ -14,7 +14,7 @@ export {
 export { default as FooterToggle, ToggleFooterHeader } from './FooterToggle'
 export { FooterBottom, FooterContent, FooterHeading, FooterTop }
 
-export const FooterStyles: any = {
+export const FooterStyles = {
   FooterBottomStyle,
   FooterContentStyle,
   FooterHeadingStyle,

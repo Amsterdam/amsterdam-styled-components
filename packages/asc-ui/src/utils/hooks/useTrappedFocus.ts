@@ -12,8 +12,8 @@ const FocusableElements = [
   'select:not([disabled])',
 ]
 
-const useTrappedFocus = (ref: any) => {
-  const keyDown = (e: React.EventHandler<React.KeyboardEvent> & any) => {
+const useTrappedFocus = (ref: React.RefObject<any>) => {
+  const keyDown = (e: React.KeyboardEvent) => {
     if (ref.current) {
       const element = ref.current
 

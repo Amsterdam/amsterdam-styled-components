@@ -25,9 +25,9 @@ type ThemeProp = {
  *  ${myThemeHelperFunction(param1, param2)}
  * `
  */
-export const withTheme = <T extends any[]>(
+export const withTheme = <T extends any[], U = any>(
   cb: (theme: ThemeInterface, ...params: T) => any,
-) => (...params: T) => ({ theme }: { theme: ThemeInterface }) =>
+) => (...params: T) => ({ theme }: { theme: ThemeInterface }): U =>
   cb(theme, ...params)
 
 type ThemeColorParameters = [Theme.ColorType?, string?, string?]
@@ -39,7 +39,7 @@ export const getValueFromTheme = withTheme<[string, Function?]>(
   (theme, identifier, callback) => fromProps(identifier, callback)(theme),
 )
 
-export const themeColor = withTheme<ThemeColorParameters>(
+export const themeColor = withTheme<ThemeColorParameters, string>(
   (theme, colorType, colorSubtype = 'main', override) => {
     if (override) {
       return override
@@ -274,7 +274,7 @@ export const perceivedLoading = withTheme(
 )
 
 export const mapToBreakpoints = (
-  sizes: any,
+  sizes: string[],
   propertyName: string,
   theme: Theme.ThemeInterface,
 ) => {
@@ -283,7 +283,7 @@ export const mapToBreakpoints = (
   >
   return css`
     ${sizes
-      .map((value: number, index: number) =>
+      .map((value, index) =>
         index === 0
           ? `${propertyName}: ${value};`
           : breakpointVariants[index] &&
