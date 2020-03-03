@@ -1,4 +1,3 @@
-// @ts-ignore
 import { ascDefaultTheme } from '@datapunt/asc-core'
 import {
   themeColor,

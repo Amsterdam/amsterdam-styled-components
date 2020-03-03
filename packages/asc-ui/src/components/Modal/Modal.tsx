@@ -23,7 +23,7 @@ const Modal: React.FC<Props> = ({
   onClose,
   ...otherProps
 }) => {
-  const ref: any = React.useRef<HTMLDivElement>()
+  const ref = React.useRef<HTMLDivElement>(null)
   const { keyDown } = useTrappedFocus(ref)
 
   React.useEffect(() => {

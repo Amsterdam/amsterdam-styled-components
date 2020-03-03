@@ -38,7 +38,7 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
   }
 
   const onBlurHandler = useDebounce(() => {
-    const element = ref && (ref.current as HTMLLIElement)
+    const element = ref && ref.current
     if (element) {
       const currentFocus = ownerDocument(element).activeElement
 
@@ -55,7 +55,9 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
       }
     : {}
 
-  const [listRef, edgeDetection] = useEdgeDetection([menuOpen])
+  const [listRef, edgeDetection] = useEdgeDetection<HTMLUListElement>([
+    menuOpen,
+  ])
 
   const handleOnExpand = React.useCallback(
     open => onExpand && onExpand(open),

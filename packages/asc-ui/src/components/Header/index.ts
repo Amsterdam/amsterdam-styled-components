@@ -6,7 +6,7 @@ import HeaderNavigationStyle from './HeaderNavigationStyle'
 
 export { default } from './Header'
 
-export const HeaderStyles: any = {
+export const HeaderStyles = {
   HeaderLinksStyle,
   HeaderLogoTextStyle,
   HeaderNavigationStyle,

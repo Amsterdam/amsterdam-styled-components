@@ -57,7 +57,7 @@ const getVariant = () => ({
   variant,
   color,
 }: {
-  theme: any
+  theme: Theme.ThemeInterface
   variant?: keyof typeof ButtonVariants
   color?: Theme.ColorType
 }) => {
