@@ -9,7 +9,7 @@ export type EdgeDetectionTypes = {
 
 export default <T extends HTMLElement = HTMLElement>(
   dependencies: ReadonlyArray<any> = [],
-) => {
+): [RefObject<T>, EdgeDetectionTypes] => {
   const initialState: EdgeDetectionTypes = {
     top: false,
     right: false,
@@ -36,5 +36,5 @@ export default <T extends HTMLElement = HTMLElement>(
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, dependencies)
 
-  return [ref, edgeDetection] as [RefObject<T>, EdgeDetectionTypes]
+  return [ref, edgeDetection]
 }

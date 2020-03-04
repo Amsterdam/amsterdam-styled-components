@@ -12,7 +12,7 @@ const FocusableElements = [
   'select:not([disabled])',
 ]
 
-const useTrappedFocus = (ref: React.RefObject<any>) => {
+const useTrappedFocus = (ref: React.RefObject<HTMLElement>) => {
   const keyDown = (e: React.KeyboardEvent) => {
     if (ref.current) {
       const element = ref.current
@@ -31,12 +31,16 @@ const useTrappedFocus = (ref: React.RefObject<any>) => {
 
       if (e.shiftKey) {
         if (ownerDocument(element).activeElement === firstFocusableEl) {
-          lastFocusableEl.focus()
-          e.preventDefault()
+          if (lastFocusableEl instanceof HTMLElement) {
+            lastFocusableEl.focus()
+            e.preventDefault()
+          }
         }
       } else if (ownerDocument(element).activeElement === lastFocusableEl) {
-        firstFocusableEl.focus()
-        e.preventDefault()
+        if (firstFocusableEl instanceof HTMLElement) {
+          firstFocusableEl.focus()
+          e.preventDefault()
+        }
       }
     }
   }

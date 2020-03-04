@@ -4,9 +4,9 @@ import { valueFromObject } from './valueFromObject'
  * A higher-order function that gets a value from the given object. Designed to work with `styled-components`
  */
 // eslint-disable-next-line import/prefer-default-export
-export const fromProps = <T = {}>(
+export const fromProps = <T>(
   identifier: string,
-  callback?: Function,
+  callback?: (value: any) => void,
 ): any => (source: T) => {
   try {
     const value = valueFromObject<T>(identifier, source)

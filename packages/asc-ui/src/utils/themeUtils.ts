@@ -35,8 +35,9 @@ type ThemeColorParameters = [Theme.ColorType?, string?, string?]
 /**
  * A shortcut to the `fromProps` that will get a value out of the props.theme object
  */
-export const getValueFromTheme = withTheme<[string, Function?]>(
-  (theme, identifier, callback) => fromProps(identifier, callback)(theme),
+export const getValueFromTheme = withTheme<[string, ((value: any) => void)?]>(
+  (theme, identifier, callback?: (value: any) => void) =>
+    fromProps(identifier, callback)(theme),
 )
 
 export const themeColor = withTheme<ThemeColorParameters, string>(
@@ -182,8 +183,6 @@ export const focusStyleFill = withTheme(
 export type FocusStyle = 'outline' | 'fill' | 'none'
 
 /**
- * @param  {keyoftypeofFocusStyleEnum='fill'} focusStyle
- *
  * decorates an element with one of the existing focus styles:
  * - outline: draws a border around the element on focus
  * - fill: fills the element background on focus
