@@ -17,7 +17,6 @@ import ShareButton from './ShareButton'
 
 const ButtonBar = styled.div<{}>`
   display: flex;
-  height: 100px;
 
   & > * {
     margin-right: 5px;

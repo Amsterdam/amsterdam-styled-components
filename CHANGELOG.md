@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Added: Alert component
 - Changed: **BREAKING** dropped support for `$as` prop (used components: Button, Tag, Heading, FooterHeading and Link). Use styled-component's `forwardedAs` prop instead
 - Changed: **BREAKING** `objectFitPolyfill` is now a peerDependency in `asc-ui`
 - Changed: **BREAKING** The AmsterdamLogo is not hardcoded anymore in the header component.

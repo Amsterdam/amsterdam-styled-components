@@ -98,6 +98,7 @@ import Footer, {
 } from './components/Footer'
 import CompactPager from './components/CompactPager'
 import ViewerContainer from './components/ViewerContainer/ViewerContainer'
+import { AlertMessage, AlertStyle } from './components/Alert'
 import { themeColor } from './utils'
 import { perceivedLoading } from './utils/themeUtils'
 
@@ -143,6 +144,7 @@ export const styles = {
   CheckboxStyle,
   FilterBoxStyle,
   FilterOptionStyle,
+  AlertStyle,
 }
 
 export const context = {
@@ -196,6 +198,7 @@ export {
   Divider,
   IconButton,
   Image,
+  AlertMessage,
   Input,
   ImageCard,
   ImageCardContent,

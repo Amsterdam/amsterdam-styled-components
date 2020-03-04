@@ -21,8 +21,12 @@ export type Props = {
    * @deprecated
    */
   linkType?: keyof typeof LinkVariants
+  /**
+   * @deprecated use prop onDarkBackground instead
+   */
   color?: string
   focusStyle?: keyof typeof FocusStyleEnum
+  onDarkBackground?: boolean
 } & TypographyProps
 
 export const BlankLinkStyleCSS = css`
@@ -46,19 +50,26 @@ export const DefaultLinkStyleCSS = css<Props>`
     themeColor('tint', 'level7', colorOverride)({ theme })};
 
   ${IconStyle} {
-    margin: ${themeSpacing(1)};
-    ${({ color: colorOverride, theme }) =>
-      svgFill('tint', 'level7', colorOverride)({ theme })};
+    margin: ${themeSpacing(1, 1, 0, 0)};
+    ${({ color: colorOverride, theme, onDarkBackground }) =>
+      onDarkBackground
+        ? svgFill('tint', 'level1')({ theme })
+        : svgFill('tint', 'level7', colorOverride)({ theme })};
   }
 
   &:hover {
-    color: ${({ color: colorOverride, theme }) =>
-      themeColor('secondary', 'main', colorOverride)({ theme })};
     text-decoration: underline;
-    ${IconStyle} {
-      ${({ color: colorOverride, theme }) =>
-        svgFill('secondary', 'main', colorOverride)({ theme })};
-    }
+    ${({ color: colorOverride, theme, onDarkBackground }) =>
+      css`
+        color: ${onDarkBackground
+          ? themeColor('tint', 'level1')({ theme })
+          : themeColor('secondary', 'main', colorOverride)({ theme })};
+        ${IconStyle} {
+          ${onDarkBackground
+            ? svgFill('tint', 'level1')({ theme })
+            : svgFill('secondary', 'main', colorOverride)({ theme })}
+        }
+      `}
   }
 `
 
