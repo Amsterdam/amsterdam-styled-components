@@ -2,14 +2,10 @@ import styled, { css } from '@datapunt/asc-core'
 import { themeColor, themeSpacing } from '../../utils'
 import { outlineStyle } from '../../utils/themeUtils'
 
-enum Variants {
-  primary,
-  secondary,
-  tertiary,
-}
+type RadioVariant = 'primary' | 'secondary' | 'tertiary'
 
 export type Props = {
-  variant?: keyof typeof Variants
+  variant?: RadioVariant
   disabled?: boolean
   error?: boolean
   name?: string
@@ -19,11 +15,7 @@ export type Props = {
   onChange?: Function
 }
 
-const getVariantColor = () => ({
-  variant,
-}: {
-  variant?: keyof typeof Variants
-}) => {
+const getVariantColor = () => ({ variant }: { variant?: RadioVariant }) => {
   switch (variant) {
     case 'primary':
       return css`
@@ -59,7 +51,7 @@ const RadioStyle = styled.input.attrs({
 export default RadioStyle
 
 type StyleOnlyProps = {
-  variant?: keyof typeof Variants
+  variant?: RadioVariant
   checked?: boolean
   disabled?: boolean
   error?: boolean

@@ -179,11 +179,7 @@ export const focusStyleFill = withTheme(
   `,
 )
 
-export enum FocusStyleEnum {
-  outline,
-  fill,
-  none,
-}
+export type FocusStyle = 'outline' | 'fill' | 'none'
 
 /**
  * @param  {keyoftypeofFocusStyleEnum='fill'} focusStyle
@@ -193,9 +189,7 @@ export enum FocusStyleEnum {
  * - fill: fills the element background on focus
  * - none: ignored the focus state
  */
-export const getFocusStyle = (
-  focusStyle: keyof typeof FocusStyleEnum = 'fill',
-) => {
+export const getFocusStyle = (focusStyle: FocusStyle = 'fill') => {
   const styles = {
     outline: focusStyleOutline(),
     fill: focusStyleFill(),

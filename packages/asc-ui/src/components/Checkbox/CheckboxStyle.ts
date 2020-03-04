@@ -1,27 +1,18 @@
 import styled, { css } from '@datapunt/asc-core'
 import { themeColor, focusStyleOutline, svgFill } from '../../utils'
 import { IconStyle } from '../Icon'
-import { ButtonVariants } from '../Button/ButtonStyle'
 import { outlineStyle } from '../../utils/themeUtils'
 
-enum Variants {
-  primary,
-  secondary,
-  tertiary,
-}
+type CheckboxVariant = 'primary' | 'secondary' | 'tertiary'
 
 export type Props = {
-  variant?: keyof typeof Variants
+  variant?: CheckboxVariant
   checked?: boolean
   disabled?: boolean
   error?: boolean
 }
 
-const getVariant = () => ({
-  variant,
-}: {
-  variant?: keyof typeof ButtonVariants
-}) => {
+const getVariant = () => ({ variant }: Props) => {
   switch (variant) {
     case 'primary':
       return css`

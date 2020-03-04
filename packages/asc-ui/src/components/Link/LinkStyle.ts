@@ -2,30 +2,26 @@ import styled, { css } from '@datapunt/asc-core'
 import { themeColor } from '../../utils'
 import {
   svgFill,
-  FocusStyleEnum,
+  FocusStyle,
   getFocusStyle,
   themeSpacing,
 } from '../../utils/themeUtils'
 import Typography, { TypographyProps } from '../Typography'
 import IconStyle from '../Icon/IconStyle'
 
-export enum LinkVariants {
-  inline,
-  blank,
-  withChevron = 'with-chevron',
-}
+export type LinkVariant = 'inline' | 'blank' | 'with-chevron'
 
 export type Props = {
-  variant?: keyof typeof LinkVariants
+  variant?: LinkVariant
   /**
    * @deprecated
    */
-  linkType?: keyof typeof LinkVariants
+  linkType?: LinkVariant
   /**
    * @deprecated use prop onDarkBackground instead
    */
   color?: string
-  focusStyle?: keyof typeof FocusStyleEnum
+  focusStyle?: FocusStyle
   onDarkBackground?: boolean
 } & TypographyProps
 

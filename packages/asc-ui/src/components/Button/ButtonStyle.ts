@@ -9,15 +9,14 @@ import {
 import { flexboxMinHeightFix } from '../shared/ie-fixes'
 import Icon from '../Icon'
 
-export enum ButtonVariants {
-  primary,
-  secondary,
-  tertiary,
-  primaryInverted,
-  textButton,
-  blank, // blank variant is a plain white button with a grey background on hover
-  application,
-}
+export type ButtonVariant =
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'primaryInverted'
+  | 'textButton'
+  | 'blank'
+  | 'application'
 
 const defaultProps = {
   size: 30,
@@ -58,7 +57,7 @@ const getVariant = () => ({
   color,
 }: {
   theme: Theme.ThemeInterface
-  variant?: keyof typeof ButtonVariants
+  variant?: ButtonVariant
   color?: Theme.ColorType
 }) => {
   switch (variant) {
@@ -213,7 +212,7 @@ export type Props = {
   /**
    * A variant, usually different background-color and color of a button
    */
-  variant?: keyof typeof ButtonVariants
+  variant?: ButtonVariant
   /**
    * Add narrow arrow on the right side of the secondary button
    */
