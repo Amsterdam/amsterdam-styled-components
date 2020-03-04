@@ -8,8 +8,8 @@ export default {
 export const DefaultStyle = () => (
   <>
     <Heading>Heading one</Heading>
-    <Heading $as="h2">Heading two</Heading>
-    <Heading $as="h3">Heading three</Heading>
-    <Heading $as="h4">Heading four</Heading>
+    <Heading forwardedAs="h2">Heading two</Heading>
+    <Heading forwardedAs="h3">Heading three</Heading>
+    <Heading forwardedAs="h4">Heading four</Heading>
   </>
 )

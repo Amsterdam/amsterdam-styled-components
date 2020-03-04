@@ -9,7 +9,7 @@ const FooterHeading: React.FC<Props &
 }
 
 FooterHeading.defaultProps = {
-  $as: 'h3',
+  forwardedAs: 'h3',
 }
 
 export default FooterHeading

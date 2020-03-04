@@ -20,17 +20,17 @@ describe('MenuFlyOut', () => {
 
   const children = [
     <MenuItem key={1}>
-      <MenuButton $as="a" href="/">
+      <MenuButton forwardedAs="a" href="/">
         Space Bear 6
       </MenuButton>
     </MenuItem>,
     <MenuItem key={2}>
-      <MenuButton $as="a" href="/">
+      <MenuButton forwardedAs="a" href="/">
         Space Bear 6 Plus
       </MenuButton>
     </MenuItem>,
     <MenuItem key={3}>
-      <MenuButton $as="a" href="/">
+      <MenuButton forwardedAs="a" href="/">
         Space Bear 7
       </MenuButton>
     </MenuItem>,

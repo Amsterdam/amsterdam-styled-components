@@ -8,9 +8,7 @@ import { IconStyle } from '../../Icon'
 export const MenuButtonTextStyle = styled.span``
 export const MenuButtonTextWrapperStyle = styled.span``
 
-export type Props = { active?: boolean } & ButtonProps &
-  React.ButtonHTMLAttributes<HTMLButtonElement> &
-  React.AnchorHTMLAttributes<HTMLAnchorElement>
+export type Props = { active?: boolean } & ButtonProps
 
 export const MenuButtonBaseStyle = styled(Button)<Props>`
   position: relative;
@@ -68,7 +66,7 @@ const MenuButtonStyle = styled(MenuButtonBaseStyle)<Props>`
           }
         `}
 
-  ${/* sc-selector */ MenuFlyOutStyle} ${/* sc-selector */ MenuListStyle} &,
+  ${MenuFlyOutStyle} ${MenuListStyle} &,
   ${/* sc-selector */ MenuFlyOutStyle}[aria-expanded='true'] {
     font-weight: 400;
   }

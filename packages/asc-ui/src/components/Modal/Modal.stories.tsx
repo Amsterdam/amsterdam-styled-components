@@ -106,7 +106,7 @@ export const ImplementationForDataportaal = () => (
     onClose={action('close modal from escape button or click outside')}
   >
     <TopBar>
-      <Heading $as="h4" style={{ flexGrow: 1 }}>
+      <Heading forwardedAs="h4" style={{ flexGrow: 1 }}>
         Feedback
         <Button
           type="button"
@@ -122,7 +122,7 @@ export const ImplementationForDataportaal = () => (
     </TopBar>
     <Divider />
     <ModalBlock>
-      <Heading $as="h4">Onjuiste of ontbrekende gegevens?</Heading>
+      <Heading forwardedAs="h4">Onjuiste of ontbrekende gegevens?</Heading>
       <Paragraph>
         Geef aan welke gegevens onjuist zijn of ontbreken. Ook als je weet wat
         het wel moet zijn. We horen het graag.
@@ -133,7 +133,7 @@ export const ImplementationForDataportaal = () => (
     </ModalBlock>
     <Divider gutter />
     <ModalBlock>
-      <Heading $as="h4">Vraag of een klacht?</Heading>
+      <Heading forwardedAs="h4">Vraag of een klacht?</Heading>
       <Paragraph>
         Als iets op deze pagina niet goed werkt, onduidelijk is of vragen
         oproept, geef het aan ons door.

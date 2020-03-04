@@ -22,7 +22,7 @@ const ReactRouterLink: React.FC<any> = ({
 )
 
 const StyledReactRouterLink: React.FC<any> = ({ children, ...otherProps }) => (
-  <MenuButton $as={ReactRouterLink} {...otherProps}>
+  <MenuButton forwardedAs={ReactRouterLink} {...otherProps}>
     {children}
   </MenuButton>
 )
@@ -44,23 +44,23 @@ export default {
 export const MenuChildren = () => (
   <>
     <MenuItem>
-      <MenuButton $as="a" href="/" active>
+      <MenuButton forwardedAs="a" href="/" active>
         Home
       </MenuButton>
     </MenuItem>
     <MenuItem>
-      <StyledReactRouterLink reactRouterProp="hello!" $as="a" href="/">
+      <StyledReactRouterLink reactRouterProp="hello!" forwardedAs="a" href="/">
         Shop
       </StyledReactRouterLink>
     </MenuItem>
     <MenuFlyOut label="Submenu!">
       <MenuItem>
-        <MenuButton $as="a" href="/" iconLeft={<ChevronRight />}>
+        <MenuButton forwardedAs="a" href="/" iconLeft={<ChevronRight />}>
           Space Bear 6
         </MenuButton>
       </MenuItem>
       <MenuItem>
-        <MenuButton $as="a" href="/" iconLeft={<ChevronRight />}>
+        <MenuButton forwardedAs="a" href="/" iconLeft={<ChevronRight />}>
           Space Bear 6 Plus
         </MenuButton>
       </MenuItem>
@@ -79,12 +79,12 @@ export const MenuChildren = () => (
     </MenuFlyOut>
     <MenuFlyOut label="Submenu!">
       <MenuItem>
-        <MenuButton $as="a" href="/" iconLeft={<ChevronRight />}>
+        <MenuButton forwardedAs="a" href="/" iconLeft={<ChevronRight />}>
           Space Bear 6
         </MenuButton>
       </MenuItem>
       <MenuItem>
-        <MenuButton $as="a" href="/" iconLeft={<ChevronRight />}>
+        <MenuButton forwardedAs="a" href="/" iconLeft={<ChevronRight />}>
           Space Bear 6 Plus
         </MenuButton>
       </MenuItem>
@@ -102,7 +102,7 @@ export const MenuChildren = () => (
       </MenuItem>
     </MenuFlyOut>
     <MenuItem>
-      <MenuButton $as="a" href="/">
+      <MenuButton forwardedAs="a" href="/">
         Contact
       </MenuButton>
     </MenuItem>

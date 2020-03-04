@@ -14,7 +14,7 @@ export const DefaultState = () => (
   <div style={{ maxWidth: '600px' }}>
     <ImageCard backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg">
       <ImageCardContent>
-        <Heading $as="h4" styleAs="h2">
+        <Heading forwardedAs="h4" styleAs="h2">
           Jeugdwerkloosheid Amsterdam daalt naar 6,2%
         </Heading>
       </ImageCardContent>
@@ -29,7 +29,7 @@ export const LoadingState = () => (
       backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
     >
       <ImageCardContent>
-        <Heading $as="h4" styleAs="h2">
+        <Heading forwardedAs="h4" styleAs="h2">
           Jeugdwerkloosheid Amsterdam daalt naar 6,2%
         </Heading>
         <Paragraph gutterBottom={0}>

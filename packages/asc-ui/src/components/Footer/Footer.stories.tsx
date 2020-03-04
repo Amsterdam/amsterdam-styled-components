@@ -126,7 +126,7 @@ export const ImplementationForDataportaal = () => (
               </FooterContent>
             </FooterToggle>
             <FooterContent showAt="tabletM">
-              <FooterHeading $as="h3">Colofon</FooterHeading>
+              <FooterHeading forwardedAs="h3">Colofon</FooterHeading>
               <ColofonLinks />
             </FooterContent>
           </>
@@ -142,7 +142,7 @@ export const ImplementationForDataportaal = () => (
               </FooterContent>
             </FooterToggle>
             <FooterContent showAt="tabletM">
-              <FooterHeading $as="h3">Volg de gemeente</FooterHeading>
+              <FooterHeading forwardedAs="h3">Volg de gemeente</FooterHeading>
               <FollowLinks />
             </FooterContent>
           </>
@@ -158,7 +158,7 @@ export const ImplementationForDataportaal = () => (
               </FooterContent>
             </FooterToggle>
             <FooterContent showAt="tabletM">
-              <FooterHeading $as="h3" styleAs="h3">
+              <FooterHeading forwardedAs="h3" styleAs="h3">
                 Vragen?
               </FooterHeading>
               <HelpLinks />
