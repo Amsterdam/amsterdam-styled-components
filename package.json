@@ -6,7 +6,7 @@
   "scripts": {
     "prebuild": "scripts/port-check.sh && lerna exec --scope @datapunt/asc-assets -- yarn build",
     "build": "yarn build:ts && yarn build:ts:es",
-    "build-storybook": "cross-env NODE_ENV=production build-storybook -c .storybook -s ./packages/asc-assets/lib/assets -o .sb",
+    "build-storybook": "cross-env NODE_ENV=production build-storybook -c .storybook -s ./packages/asc-assets/static -o .sb",
     "build:ts": "tsc -b packages/asc-assets packages/asc-core packages/asc-ui",
     "build:ts:es": "tsc -b packages/asc-assets/tsconfig.es.json packages/asc-core/tsconfig.es.json packages/asc-ui/tsconfig.es.json",
     "build:watch": "yarn build -w",

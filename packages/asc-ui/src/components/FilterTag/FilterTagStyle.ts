@@ -1,6 +1,7 @@
 import styled, { css, styledComponents } from '@datapunt/asc-core'
-import { Props as TypographyProps } from '../Typography/TypographyStyle'
-import Typography from '../Typography'
+import TypographyStyle, {
+  Props as TypographyProps,
+} from '../Typography/TypographyStyle'
 import { themeColor, themeSpacing } from '../../utils'
 import IconStyle from '../Icon/IconStyle'
 
@@ -31,6 +32,6 @@ export const FilterTagStyleCSS = () => {
   `
 }
 
-export default styled(Typography)<Props>`
+export default styled(TypographyStyle)<Props>`
   ${FilterTagStyleCSS}
 `

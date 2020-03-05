@@ -5,8 +5,13 @@ import MenuButtonStyle, {
   Props,
 } from './MenuButtonStyle'
 
-const MenuButton: React.FC<Props> = ({ children, ...otherProps }) => (
-  <MenuButtonStyle iconSize={14} variant="blank" {...otherProps}>
+const MenuButton: React.FC<Props> = ({ children, as, ...otherProps }) => (
+  <MenuButtonStyle
+    forwardedAs={as}
+    iconSize={14}
+    variant="blank"
+    {...otherProps}
+  >
     <MenuButtonTextWrapperStyle>
       <MenuButtonTextStyle>{children}</MenuButtonTextStyle>
     </MenuButtonTextWrapperStyle>

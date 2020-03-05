@@ -6,7 +6,12 @@ export { Props }
 const Blockquote: React.FC<Props &
   React.HTMLAttributes<HTMLParagraphElement>> = ({
   children,
+  as,
   ...otherProps
-}) => <BlockquoteStyle {...otherProps}>{children}</BlockquoteStyle>
+}) => (
+  <BlockquoteStyle forwardedAs={as} {...otherProps}>
+    {children}
+  </BlockquoteStyle>
+)
 
 export default Blockquote
