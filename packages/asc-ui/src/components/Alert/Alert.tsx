@@ -9,7 +9,7 @@ import AlertStyle, {
 import Heading from '../Heading'
 import CompactThemeProvider from '../../theme/CompactThemeProvider'
 import Paragraph from '../Paragraph'
-import { ButtonVariants } from '../Button/ButtonStyle'
+import { ButtonVariant } from '../Button/ButtonStyle'
 
 const CLOSE_BUTTON_TITLE = 'Sluiten'
 
@@ -25,7 +25,7 @@ const Alert: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
 }) => {
   const [open, setOpen] = useState(true)
 
-  let variant: keyof typeof ButtonVariants = 'tertiary'
+  let variant: ButtonVariant = 'tertiary'
 
   if (level === 'error') {
     variant = 'secondary'

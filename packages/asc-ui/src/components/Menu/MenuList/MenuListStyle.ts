@@ -35,12 +35,11 @@ export default styled.ul<Props>`
 
   ${({ edgeDetection }) =>
     edgeDetection &&
-    // @ts-ignore
-    Object.entries(edgeDetection).map(([position, value]) => {
-      return css`
+    Object.entries(edgeDetection).map(
+      ([position, value]) => css`
         ${value ? `${position}: 0;` : ''}
-      `
-    })}
+      `,
+    )}
 
   ${showHide()}
 `

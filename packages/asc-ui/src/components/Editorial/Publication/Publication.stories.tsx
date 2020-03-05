@@ -13,7 +13,7 @@ import { EditorialMetaList, EditorialContent } from '../index'
 import Paragraph from '../../Paragraph'
 
 export default {
-  title: 'Composed/Editorial/Publication',
+  title: 'Dataportaal/Composed/Editorial/Publication',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

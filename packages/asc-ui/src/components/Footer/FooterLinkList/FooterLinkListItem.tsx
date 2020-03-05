@@ -30,7 +30,7 @@ const StyledListItem = styled(ListItem)`
   }
 `
 
-const FooterLinkListItem = ({ children, ...otherProps }: any) => (
+const FooterLinkListItem: React.FC = ({ children, ...otherProps }) => (
   <StyledListItem {...otherProps}>{children}</StyledListItem>
 )
 

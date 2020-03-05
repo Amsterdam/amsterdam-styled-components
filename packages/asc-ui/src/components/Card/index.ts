@@ -10,7 +10,7 @@ export { default as CardContent } from './CardContent'
 export { default as CardActions } from './CardActions'
 export { default as CardMedia } from './CardMedia'
 
-export const CardStyles: any = {
+export const CardStyles = {
   CardActionsStyle,
   CardMediaStyle,
   CardMediaWrapperStyle,

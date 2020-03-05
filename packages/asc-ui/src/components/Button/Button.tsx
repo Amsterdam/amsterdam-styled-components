@@ -4,7 +4,7 @@ import ButtonStyle, {
   IconRight,
   ArrowRight,
   Props as ButtonStyleProps,
-  ButtonVariants,
+  ButtonVariant,
 } from './ButtonStyle'
 import Icon, { defaultProps as iconDefaultProps } from '../Icon/Icon'
 
@@ -20,7 +20,7 @@ export type Props = {
   React.AnchorHTMLAttributes<HTMLAnchorElement> &
   React.ButtonHTMLAttributes<HTMLButtonElement>
 
-export { ButtonVariants }
+export { ButtonVariant }
 
 const Button: React.FC<Props> = ({
   children,

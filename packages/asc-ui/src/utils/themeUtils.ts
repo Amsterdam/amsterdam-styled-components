@@ -25,9 +25,9 @@ type ThemeProp = {
  *  ${myThemeHelperFunction(param1, param2)}
  * `
  */
-export const withTheme = <T extends any[]>(
+export const withTheme = <T extends any[], U = any>(
   cb: (theme: ThemeInterface, ...params: T) => any,
-) => (...params: T) => ({ theme }: { theme: ThemeInterface }) =>
+) => (...params: T) => ({ theme }: { theme: ThemeInterface }): U =>
   cb(theme, ...params)
 
 type ThemeColorParameters = [Theme.ColorType?, string?, string?]
@@ -35,11 +35,12 @@ type ThemeColorParameters = [Theme.ColorType?, string?, string?]
 /**
  * A shortcut to the `fromProps` that will get a value out of the props.theme object
  */
-export const getValueFromTheme = withTheme<[string, Function?]>(
-  (theme, identifier, callback) => fromProps(identifier, callback)(theme),
+export const getValueFromTheme = withTheme<[string, ((value: any) => void)?]>(
+  (theme, identifier, callback?: (value: any) => void) =>
+    fromProps(identifier, callback)(theme),
 )
 
-export const themeColor = withTheme<ThemeColorParameters>(
+export const themeColor = withTheme<ThemeColorParameters, string>(
   (theme, colorType, colorSubtype = 'main', override) => {
     if (override) {
       return override
@@ -179,23 +180,15 @@ export const focusStyleFill = withTheme(
   `,
 )
 
-export enum FocusStyleEnum {
-  outline,
-  fill,
-  none,
-}
+export type FocusStyle = 'outline' | 'fill' | 'none'
 
 /**
- * @param  {keyoftypeofFocusStyleEnum='fill'} focusStyle
- *
  * decorates an element with one of the existing focus styles:
  * - outline: draws a border around the element on focus
  * - fill: fills the element background on focus
  * - none: ignored the focus state
  */
-export const getFocusStyle = (
-  focusStyle: keyof typeof FocusStyleEnum = 'fill',
-) => {
+export const getFocusStyle = (focusStyle: FocusStyle = 'fill') => {
   const styles = {
     outline: focusStyleOutline(),
     fill: focusStyleFill(),
@@ -274,7 +267,7 @@ export const perceivedLoading = withTheme(
 )
 
 export const mapToBreakpoints = (
-  sizes: any,
+  sizes: string[],
   propertyName: string,
   theme: Theme.ThemeInterface,
 ) => {
@@ -283,7 +276,7 @@ export const mapToBreakpoints = (
   >
   return css`
     ${sizes
-      .map((value: number, index: number) =>
+      .map((value, index) =>
         index === 0
           ? `${propertyName}: ${value};`
           : breakpointVariants[index] &&
