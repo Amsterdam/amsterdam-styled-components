@@ -103,7 +103,7 @@ export const WithCustomChildren = () => (
       </Link>
     </Alert>
     <Alert level="error" dismissible>
-      <Heading forwardedAs="h3">A header</Heading>
+      <Heading as="h3">A header</Heading>
       <Paragraph>With a paragraph</Paragraph>
       <Link onDarkBackground href="/" variant="with-chevron">
         A link

@@ -3,12 +3,14 @@ import HeadingStyle, { Props as HeadingStyleProps } from './HeadingStyle'
 
 export type Props = HeadingStyleProps & React.HTMLAttributes<HTMLHeadingElement>
 
-const Heading: React.FC<Props> = ({ children, ...otherProps }) => (
-  <HeadingStyle {...otherProps}>{children}</HeadingStyle>
+const Heading: React.FC<Props> = ({ children, as, ...otherProps }) => (
+  <HeadingStyle forwardedAs={as} {...otherProps}>
+    {children}
+  </HeadingStyle>
 )
 
 Heading.defaultProps = {
-  forwardedAs: 'h1',
+  as: 'h1',
 }
 
 export default Heading

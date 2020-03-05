@@ -6,10 +6,10 @@ describe('Heading', () => {
   it('should render', () => {
     const component = renderWithTheme(
       <>
-        <Heading forwardedAs="h1">Foo</Heading>
-        <Heading forwardedAs="h2">Foo</Heading>
-        <Heading forwardedAs="h3">Foo</Heading>
-        <Heading forwardedAs="h4">Foo</Heading>
+        <Heading as="h1">Foo</Heading>
+        <Heading as="h2">Foo</Heading>
+        <Heading as="h3">Foo</Heading>
+        <Heading as="h4">Foo</Heading>
       </>,
     )
 

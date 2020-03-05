@@ -6,10 +6,10 @@ export { Props }
 const Paragraph: React.FC<Props &
   React.HTMLAttributes<HTMLParagraphElement>> = ({
   children,
-  strong,
+  as,
   ...otherProps
 }) => (
-  <ParagraphStyle {...{ strong }} {...otherProps}>
+  <ParagraphStyle forwardedAs={as} {...otherProps}>
     {children}
   </ParagraphStyle>
 )

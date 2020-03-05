@@ -9,12 +9,13 @@ export type Props = styledComponents.StyledProps<any> & LinkStyleProps
 const Link: React.FC<Props> = ({
   children,
   variant: variantProp,
+  as,
   linkType,
   ...otherProps
 }) => {
   const variant = linkType || variantProp
   return (
-    <LinkStyle {...otherProps} variant={variant}>
+    <LinkStyle {...otherProps} variant={variant} forwardedAs={as}>
       {variant === 'with-chevron' && (
         <Icon size={12}>
           <ChevronRight />
@@ -31,7 +32,7 @@ const Link: React.FC<Props> = ({
 }
 
 Link.defaultProps = {
-  forwardedAs: 'a',
+  as: 'a',
 }
 
 export default Link
