@@ -1,8 +1,8 @@
-import React from 'react'
-import InputStyle from './InputStyle'
-import InputContext from './InputMethodsContext'
-import useFocusOnRender from '../../utils/hooks/useFocusOnRender'
+import React, { useImperativeHandle } from 'react'
 import useActionOnEscape from '../../utils/hooks/useActionOnEscape'
+import useFocusOnRender from '../../utils/hooks/useFocusOnRender'
+import InputContext from './InputMethodsContext'
+import InputStyle from './InputStyle'
 
 export interface InputMethods {
   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void
@@ -23,23 +23,19 @@ export interface InputProps extends InputMethods {
   error?: string
 }
 
-export interface Shared {}
-
-const Input: React.FC<InputProps> = ({
-  blurOnEscape,
-  focusOnRender,
-  value,
-  error,
-  ...props
-}: InputProps) => {
-  const ref = React.useRef<HTMLInputElement>(null)
+const Input = React.forwardRef<
+  HTMLInputElement,
+  InputProps & React.HTMLAttributes<HTMLInputElement>
+>(({ blurOnEscape, focusOnRender, value, error, ...props }, externalRef) => {
   const { onKeyDown } = props
+  const inputRef = React.useRef<HTMLInputElement>(null)
 
-  useFocusOnRender(ref, focusOnRender)
+  useImperativeHandle(externalRef, () => inputRef.current as HTMLInputElement)
+  useFocusOnRender(inputRef, focusOnRender)
 
   const { onKeyDown: onKeyDownHook } = useActionOnEscape(() => {
-    if (ref.current) {
-      ref.current.blur()
+    if (inputRef.current) {
+      inputRef.current.blur()
     }
   })
 
@@ -62,11 +58,11 @@ const Input: React.FC<InputProps> = ({
     <InputContext.Consumer>
       {(context: InputMethods) => {
         if (context.setInputRef) {
-          context.setInputRef(ref)
+          context.setInputRef(inputRef)
         }
         return (
           <InputStyle
-            ref={ref}
+            ref={inputRef}
             {...props}
             {...context}
             onKeyDown={e => {
@@ -79,6 +75,6 @@ const Input: React.FC<InputProps> = ({
       }}
     </InputContext.Consumer>
   )
-}
+})
 
 export default Input
