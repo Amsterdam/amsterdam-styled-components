@@ -5,7 +5,7 @@ import Column from './Column'
 import Row from './Row'
 
 export default {
-  title: 'Deprecated/Grid',
+  title: 'Atoms/Grid',
 }
 
 export const DefaultColumn = () => (
