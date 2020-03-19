@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import CompactPager from './CompactPager'
 
 export default {
-  title: 'Composed/CompactPager',
+  title: 'Experimental/Composed/CompactPager',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

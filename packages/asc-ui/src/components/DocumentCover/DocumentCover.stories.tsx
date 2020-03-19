@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions'
 import DocumentCover from './DocumentCover'
 
 export default {
-  title: 'Atoms/DocumentCover',
+  title: 'Experimental/Atoms/DocumentCover',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

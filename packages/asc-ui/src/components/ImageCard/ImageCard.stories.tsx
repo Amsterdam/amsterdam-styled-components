@@ -6,7 +6,7 @@ import Heading from '../Heading'
 import Paragraph from '../Paragraph'
 
 export default {
-  title: 'Atoms/ImageCard',
+  title: 'Experimental/Atoms/ImageCard',
   decorators: [withKnobs],
 }
 

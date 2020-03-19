@@ -5,7 +5,7 @@ import Label from '../Label'
 import { FilterOption } from '../FilterOption'
 
 export default {
-  title: 'Composed/FilterBox',
+  title: 'Experimental/Composed/FilterBox',
   decorators: [
     (storyFn: () => React.ReactNode) => (
       <div style={{ maxWidth: '360px' }}>{storyFn()}</div>

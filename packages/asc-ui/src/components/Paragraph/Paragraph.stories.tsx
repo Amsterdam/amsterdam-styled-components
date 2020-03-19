@@ -3,7 +3,7 @@ import Paragraph from './Paragraph'
 import CompactThemeProvider from '../../theme/CompactThemeProvider'
 
 export default {
-  title: 'Atoms/Typography/Paragraph',
+  title: 'Experimental/Atoms/Typography/Paragraph',
 }
 
 export const DefaultStyle = () => (

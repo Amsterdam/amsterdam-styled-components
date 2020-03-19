@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions'
 import SearchBar from './SearchBar'
 
 export default {
-  title: 'Composed/SearchBar',
+  title: 'Experimental/Composed/SearchBar',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

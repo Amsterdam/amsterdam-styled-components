@@ -10,7 +10,7 @@ import Heading from '../Heading'
 import Paragraph from '../Paragraph'
 
 export default {
-  title: 'Atoms/Card',
+  title: 'Experimental/Atoms/Card',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

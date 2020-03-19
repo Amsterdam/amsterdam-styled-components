@@ -21,7 +21,7 @@ const ControlledSearchBarToggle = ({ hasBackDrop = false }) => {
 }
 
 export default {
-  title: 'Composed/SearchBarToggle',
+  title: 'Experimental/Composed/SearchBarToggle',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

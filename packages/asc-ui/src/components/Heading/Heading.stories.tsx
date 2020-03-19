@@ -2,7 +2,7 @@ import * as React from 'react'
 import Heading from './Heading'
 
 export default {
-  title: 'Atoms/Typography/Heading',
+  title: 'Experimental/Atoms/Typography/Heading',
 }
 
 export const DefaultStyle = () => (

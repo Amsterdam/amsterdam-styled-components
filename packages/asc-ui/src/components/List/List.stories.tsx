@@ -5,7 +5,7 @@ import Link from '../Link/Link'
 import OrderedList from './OrderedList'
 
 export default {
-  title: 'Atoms/List',
+  title: 'Experimental/Atoms/List',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

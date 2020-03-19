@@ -3,7 +3,7 @@ import Checkbox from './Checkbox'
 import Label from '../Label'
 
 export default {
-  title: 'Atoms/Checkbox',
+  title: 'Experimental/Atoms/Checkbox',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (
