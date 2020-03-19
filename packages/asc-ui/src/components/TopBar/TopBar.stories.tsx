@@ -14,7 +14,7 @@ const HeadingStyled = styled(Heading)`
 `
 
 export default {
-  title: 'Atoms/TopBar',
+  title: 'Experimental/Atoms/TopBar',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

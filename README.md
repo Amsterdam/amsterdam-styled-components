@@ -156,3 +156,9 @@ More detailed information can be found in the README.md of each package.
 - [asc-assets](packages/asc-assets/README.md)
 - [asc-core](packages/asc-core/README.md)
 - [asc-ui](packages/asc-ui/README.md)
+
+### Stability of components
+
+All components that are placed inside of the 'Experimental' section of Storybook should be considered
+unstable and prone to change. Components that are approved by the Design System team and with a solid
+technical implementation will be moved out of this section when deemed ready and can be used freely.

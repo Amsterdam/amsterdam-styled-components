@@ -24,7 +24,7 @@ const ButtonBar = styled.div<{}>`
 `
 
 export default {
-  title: 'Atoms/Buttons',
+  title: 'Experimental/Atoms/Buttons',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

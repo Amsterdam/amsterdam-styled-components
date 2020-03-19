@@ -2,7 +2,7 @@ import * as React from 'react'
 import Link from './Link'
 
 export default {
-  title: 'Atoms/Typography/Link',
+  title: 'Experimental/Atoms/Typography/Link',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

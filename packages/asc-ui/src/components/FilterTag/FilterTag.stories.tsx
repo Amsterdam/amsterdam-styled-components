@@ -7,7 +7,7 @@ type FilterTagElement = {
 }
 
 export default {
-  title: 'Atoms/FilterTag',
+  title: 'Experimental/Atoms/FilterTag',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

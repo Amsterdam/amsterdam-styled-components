@@ -16,7 +16,7 @@ import Paragraph from '../Paragraph'
 import Link from '../Link'
 
 export default {
-  title: 'Composed/Footer',
+  title: 'Experimental/Composed/Footer',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

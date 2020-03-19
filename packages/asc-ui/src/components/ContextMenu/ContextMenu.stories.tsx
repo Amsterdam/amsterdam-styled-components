@@ -12,7 +12,7 @@ import { ContextMenu, ContextMenuItem, Icon } from '../..'
 import { Position } from './types'
 
 export default {
-  title: 'Composed/ContextMenu',
+  title: 'Experimental/Composed/ContextMenu',
 }
 
 export const Default = () => (

@@ -15,7 +15,7 @@ const ModalBlock = styled.div`
 `
 
 export default {
-  title: 'Composed/Modal',
+  title: 'Experimental/Composed/Modal',
   decorators: [withKnobs],
 }
 

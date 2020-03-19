@@ -3,7 +3,7 @@ import CustomHTMLBlockStyle from './CustomHTMLBlockStyle'
 import CustomHTMLBlock from './CustomHTMLBlock'
 
 export default {
-  title: 'Atoms/CustomHTMLBlock',
+  title: 'Experimental/Atoms/CustomHTMLBlock',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

@@ -20,7 +20,7 @@ import EditorialSidebar from '../EditorialSidebar/EditorialSidebar'
 import Link from '../../Link/Link'
 
 export default {
-  title: 'Dataportaal/Composed/Editorial/Article',
+  title: 'Dataportaal/Experimental/Composed/Editorial/Article',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

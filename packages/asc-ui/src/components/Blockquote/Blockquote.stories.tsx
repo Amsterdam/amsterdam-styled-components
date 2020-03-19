@@ -2,7 +2,7 @@ import React from 'react'
 import Blockquote from './Blockquote'
 
 export default {
-  title: 'Atoms/Typography/Blockquote',
+  title: 'Experimental/Atoms/Typography/Blockquote',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

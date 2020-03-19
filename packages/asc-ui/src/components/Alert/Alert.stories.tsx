@@ -14,7 +14,7 @@ const Decorator = styled.div`
 `
 
 export default {
-  title: 'Composed/Alert',
+  title: 'Experimental/Composed/Alert',
   component: Alert,
   decorators: [
     (storyFn: () => React.ReactNode) => <Decorator>{storyFn()}</Decorator>,

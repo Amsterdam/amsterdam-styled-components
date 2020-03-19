@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions'
 import Input from './Input'
 
 export default {
-  title: 'Atoms/Input',
+  title: 'Experimental/Atoms/Input',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

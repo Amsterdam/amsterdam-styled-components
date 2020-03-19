@@ -32,7 +32,7 @@ const StyledMenuInline = styled(MenuInline)`
 `
 
 export default {
-  title: 'Composed/Menu',
+  title: 'Experimental/Composed/Menu',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

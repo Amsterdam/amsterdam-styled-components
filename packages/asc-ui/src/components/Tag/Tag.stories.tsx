@@ -2,7 +2,7 @@ import * as React from 'react'
 import Tag from './Tag'
 
 export default {
-  title: 'Atoms/Typography/Tag',
+  title: 'Experimental/Atoms/Typography/Tag',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

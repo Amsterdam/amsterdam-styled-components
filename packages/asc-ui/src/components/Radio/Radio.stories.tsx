@@ -4,7 +4,7 @@ import RadioGroup from './RadioGroup'
 import Label from '../Label'
 
 export default {
-  title: 'Atoms/Radio',
+  title: 'Experimental/Atoms/Radio',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (

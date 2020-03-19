@@ -17,7 +17,7 @@ const CustomLogoStyle = styled.a`
 `
 
 export default {
-  title: 'Composed/Header',
+  title: 'Experimental/Composed/Header',
 }
 
 export const HeaderShort = () => (
