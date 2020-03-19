@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Added: Accordion component
 - Added: Alert component
 - Deprecated: `GridContainer` & `GridItem`, use `Row` with `Column` instead
 - Changed: arrowIcon on ContextMenu is not required anymore

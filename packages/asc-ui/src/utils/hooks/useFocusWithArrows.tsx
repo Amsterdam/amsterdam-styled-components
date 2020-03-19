@@ -22,26 +22,48 @@ const useFocusWithArrows = (
 
       let el
 
-      if (e.key === KeyboardKeys.ArrowDown) {
-        if (getIndex(activeElement) !== focusableEls.length - 1) {
-          el = focusableEls[getIndex(activeElement) + 1]
-          // If there is nothing focussed yet, set the focus on the first element
-          if (activeElement && !focusableEls.includes(activeElement)) {
+      switch (e.key) {
+        case KeyboardKeys.ArrowDown: {
+          if (getIndex(activeElement) !== focusableEls.length - 1) {
+            el = focusableEls[getIndex(activeElement) + 1]
+            // If there is nothing focussed yet, set the focus on the first element
+            if (activeElement && !focusableEls.includes(activeElement)) {
+              ;[el] = focusableEls
+            }
+          } else if (rotating) {
             ;[el] = focusableEls
           }
-        } else if (rotating) {
+
+          break
+        }
+
+        case KeyboardKeys.ArrowUp: {
+          if (getIndex(activeElement) !== 0) {
+            el = focusableEls[getIndex(activeElement) - 1]
+          } else if (rotating) {
+            el = focusableEls[focusableEls.length - 1]
+          }
+          break
+        }
+
+        case KeyboardKeys.Home: {
           ;[el] = focusableEls
+          break
         }
-      } else if (e.key === KeyboardKeys.ArrowUp) {
-        if (getIndex(activeElement) !== 0) {
-          el = focusableEls[getIndex(activeElement) - 1]
-        } else if (rotating) {
+
+        case KeyboardKeys.End: {
           el = focusableEls[focusableEls.length - 1]
+          break
         }
+
+        default:
       }
 
       if (
-        (e.key === KeyboardKeys.ArrowDown || e.key === KeyboardKeys.ArrowUp) &&
+        (e.key === KeyboardKeys.ArrowDown ||
+          e.key === KeyboardKeys.ArrowUp ||
+          e.key === KeyboardKeys.Home ||
+          e.key === KeyboardKeys.End) &&
         el instanceof HTMLElement
       ) {
         el.focus()

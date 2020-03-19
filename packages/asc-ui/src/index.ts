@@ -99,6 +99,11 @@ import Footer, {
 import CompactPager from './components/CompactPager'
 import ViewerContainer from './components/ViewerContainer/ViewerContainer'
 import { AlertMessage, AlertStyle } from './components/Alert'
+import {
+  Accordion,
+  AccordionWrapper,
+  AccordionStyle,
+} from './components/Accordion'
 import { themeColor } from './utils'
 import { perceivedLoading } from './utils/themeUtils'
 
@@ -145,6 +150,7 @@ export const styles = {
   FilterBoxStyle,
   FilterOptionStyle,
   AlertStyle,
+  AccordionStyle,
 }
 
 export const context = {
@@ -155,6 +161,8 @@ export const context = {
 
 // Components
 export {
+  Accordion,
+  AccordionWrapper,
   List,
   OrderedList,
   ListItem,

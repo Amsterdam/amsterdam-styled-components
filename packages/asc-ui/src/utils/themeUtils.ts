@@ -146,10 +146,12 @@ export const getTypographyValueFromProperty = withTheme<
   return rules[property]
 })
 
+export const DEFAULT_OUTLINE_WIDTH = 3
+
 export const outlineStyle = (
   theme: ThemeInterface,
-  width: number = 3,
-  offset: number = 0,
+  width = DEFAULT_OUTLINE_WIDTH,
+  offset = 0,
 ) => css`
   outline-color: ${themeColor('support', 'focus')({ theme })};
   outline-style: solid;
