@@ -90,7 +90,7 @@
     "react": "16.13.1",
     "react-docgen-typescript-loader": "^3.6.0",
     "react-dom": "16.13.0",
-    "react-test-renderer": "16.13.0",
+    "react-test-renderer": "16.13.1",
     "styled-components": "^4.4.1",
     "stylelint": "^13.1.0",
     "stylelint-config-prettier": "^8.0.1",
