@@ -3080,17 +3080,17 @@
     "@svgr/babel-plugin-transform-svg-component" "^5.3.0"
 
 "@svgr/cli@^5.1.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@svgr/cli/-/cli-5.2.0.tgz#87b5dd325c08cb02107e6e07f81778c2c2f4849a"
-  integrity sha512-TPsSFFs5APAVV8hgzRhro6jEr/aZf/SvdRtygA0B83LgZpv8lCCp4i09Zh3N/AZV878GqM/2ruzRJ88fm/lp0g==
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@svgr/cli/-/cli-5.3.0.tgz#377cb63e3d633810b44e59d56eb1b68e1d1bb6ec"
+  integrity sha512-pQe/Rw8IHXUtx/3Iq8YNWchKoDcLEpMFdcu1SZl1Mc+UJV/Y9IPe1SDDyO+AdfIB+BMYnOLo9xhXyC+Ozhksxg==
   dependencies:
-    "@svgr/core" "^5.2.0"
-    "@svgr/plugin-jsx" "^5.2.0"
-    "@svgr/plugin-prettier" "^5.0.1"
-    "@svgr/plugin-svgo" "^5.2.0"
+    "@svgr/core" "^5.3.0"
+    "@svgr/plugin-jsx" "^5.3.0"
+    "@svgr/plugin-prettier" "^5.3.0"
+    "@svgr/plugin-svgo" "^5.3.0"
     camelcase "^5.3.1"
     chalk "^3.0.0"
-    commander "^4.0.1"
+    commander "^5.0.0"
     dashify "^2.0.0"
     glob "^7.1.4"
     output-file-sync "^2.0.1"
@@ -3104,7 +3104,7 @@
     camelcase "^5.3.1"
     cosmiconfig "^5.2.1"
 
-"@svgr/core@^5.0.1", "@svgr/core@^5.2.0":
+"@svgr/core@^5.0.1", "@svgr/core@^5.2.0", "@svgr/core@^5.3.0":
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/@svgr/core/-/core-5.3.0.tgz#fc49d29596daffd739528d76cf9de26ac0548094"
   integrity sha512-ijUF5bLsK4xA0hmg9GEEeFC35LPYcIkONmQLCgjW3NDTf0eRBgCCm+ZZFdeDTYnkNeh+fFOfHEkv7U3tEbJnZQ==
@@ -3147,13 +3147,13 @@
     "@svgr/hast-util-to-babel-ast" "^5.0.1"
     svg-parser "^2.0.2"
 
-"@svgr/plugin-prettier@^5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@svgr/plugin-prettier/-/plugin-prettier-5.0.1.tgz#4522e5d457c1b893b6ed19094ce9c95c7506b737"
-  integrity sha512-d74rQ7RQZ8bFsbgF9fGaWdMYkQtZK6NBbTqNfHTtqpvjjDG4+GKLFiXr0o8axwUcMoP2koTntCA7kxI4M6MvKg==
+"@svgr/plugin-prettier@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@svgr/plugin-prettier/-/plugin-prettier-5.3.0.tgz#4ae6395b7aa56473c789421d7fc6cf502877fd96"
+  integrity sha512-TyIgFuox1L+tm57cBC6CzTrQ/5Uw0cuuu+/NXv3zN84pOaugLHCoaF56raYL23SUqOQnUaxuJFEE8YvbXm/tJQ==
   dependencies:
     merge-deep "^3.0.2"
-    prettier "^1.17.1"
+    prettier "^2.0.1 || ^1.19.1"
 
 "@svgr/plugin-svgo@^4.3.1":
   version "4.3.1"
@@ -3164,10 +3164,10 @@
     merge-deep "^3.0.2"
     svgo "^1.2.2"
 
-"@svgr/plugin-svgo@^5.2.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@svgr/plugin-svgo/-/plugin-svgo-5.2.0.tgz#84162f191a40bd9725a2ff9afdc6cd3ba7e59719"
-  integrity sha512-cyqWx026uO3heGG/55j5zfJLtS5sl0dWYawN1JotOqpJDyyR7rraTsnydpwwsOoz0YpESjVjAkXOAfd41lBY9Q==
+"@svgr/plugin-svgo@^5.2.0", "@svgr/plugin-svgo@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@svgr/plugin-svgo/-/plugin-svgo-5.3.0.tgz#a33d45ecd64cb2c1adaab9196faddc10022552a7"
+  integrity sha512-rQw558t/pPPA/aWrazLDt3xIuxh9zDuUcQUeR8EO6yiYftkjT7My1MLPz1pha1LhkJCR1ug83fp+TPRYkV9EIQ==
   dependencies:
     cosmiconfig "^6.0.0"
     merge-deep "^3.0.2"
@@ -5805,6 +5805,11 @@ commander@^4.0.0, commander@^4.0.1:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.0.tgz#545983a0603fe425bc672d66c9e3c89c42121a83"
   integrity sha512-NIQrwvv9V39FHgGFm36+U9SMQzbiHvU79k+iADraJTpmrFFfx7Ds0IvDoAdZsDrknlkRk14OYoWXb57uTh7/sw==
+
+commander@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-5.0.0.tgz#dbf1909b49e5044f8fdaf0adc809f0c0722bdfd0"
+  integrity sha512-JrDGPAKjMGSP1G0DUoaceEJ3DZgAfr/q6X7FVk4+U5KxUSKviYGM2k6zWkfyyBHy5rAtzgYJFa1ro2O9PtoxwQ==
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -13221,10 +13226,15 @@ prettier-package-json@^2.1.3:
     sort-object-keys "^1.1.2"
     sort-order "^1.0.1"
 
-prettier@^1.16.4, prettier@^1.17.1, prettier@^1.19.1:
+prettier@^1.16.4, prettier@^1.19.1:
   version "1.19.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
   integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
+
+"prettier@^2.0.1 || ^1.19.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.1.tgz#3f00ac71263be34684b2b2c8d7e7f63737592dac"
+  integrity sha512-piXGBcY1zoFOG0MvHpNE5reAGseLmaCRifQ/fmfF49BcYkInEs/naD/unxGNAeOKFA5+JxVrPyMvMlpzcd20UA==
 
 pretty-error@^2.1.1:
   version "2.1.1"
