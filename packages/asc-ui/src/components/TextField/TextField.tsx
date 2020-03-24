@@ -31,27 +31,17 @@ const TextField = ({
   ...otherProps
 }: TextFieldProps) => {
   const uid = useUID()
+
   return (
-    <>
-      <FormLabelStyle
-        htmlFor={uid}
-        srOnly={srOnly}
-        label={label}
-        style={labelStyle}
-      >
-        {label}
-      </FormLabelStyle>
-      {errorMessage && (
-        <FormLabelStyle
-          htmlFor={uid}
-          srOnly={srOnly}
-          error={errorMessage}
-          style={errorStyle}
-        >
-          {errorMessage}
-        </FormLabelStyle>
-      )}
-      <TextFieldStyle>
+    <FormLabelStyle
+      htmlFor={uid}
+      srOnly={srOnly}
+      label={label}
+      error={errorMessage}
+      style={errorMessage ? errorStyle : labelStyle}
+    >
+      {errorMessage || label}
+      <TextFieldStyle hasLabel={!!errorMessage || !!label}>
         <Input
           {...{ keepFocus, value, blurOnEscape, focusOnRender }}
           {...otherProps}
@@ -72,7 +62,7 @@ const TextField = ({
           </Button>
         )}
       </TextFieldStyle>
-    </>
+    </FormLabelStyle>
   )
 }
 
