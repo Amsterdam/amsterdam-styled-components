@@ -9,7 +9,7 @@ const ControlledSearchBarToggle = ({ hasBackDrop = false }) => {
       align="left"
       open={open}
       onOpen={setOpen}
-      onWatchValue={value => {
+      onWatchValue={(value) => {
         action(`input value changed: ${value}`)
       }}
       onSubmit={() => {

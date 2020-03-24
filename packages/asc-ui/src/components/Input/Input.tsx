@@ -65,7 +65,7 @@ const Input = React.forwardRef<
             ref={inputRef}
             {...props}
             {...context}
-            onKeyDown={e => {
+            onKeyDown={(e) => {
               handleOnKeyDown(e, context)
             }}
             error={error}

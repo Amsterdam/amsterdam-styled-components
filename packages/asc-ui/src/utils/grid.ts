@@ -226,7 +226,7 @@ export const defaultParentSpan = (
   const layouts = getValueFromTheme('layouts')({ theme })
   const defaults = <Theme.TypeSpan>{}
 
-  Object.keys(layouts).forEach(layoutId => {
+  Object.keys(layouts).forEach((layoutId) => {
     defaults[layoutId] = columns(layoutId)({ theme })
   })
 

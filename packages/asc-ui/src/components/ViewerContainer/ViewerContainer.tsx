@@ -32,7 +32,7 @@ const ViewerContainer: React.FC<Props> = ({
         {metaData && (
           <div>
             {metaData.map(
-              string =>
+              (string) =>
                 string && (
                   <div key={string}>
                     <span>{string}</span>

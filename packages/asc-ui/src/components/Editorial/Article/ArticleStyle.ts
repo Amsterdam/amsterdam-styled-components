@@ -33,19 +33,21 @@ export default styled(EditorialPost)<Props>`
     @media screen and ${breakpoint('min-width', 'tabletM')} {
       margin-top: ${({ image, theme }) =>
         image
-          ? `${(EDITORIAL_PADDING_TOP * 2 +
-              EDITORIAL_META_LINE_HEIGHT +
-              EDITORIAL_META_MARGIN_TOP +
-              stripUnit(
-                getTypographyValueFromProperty(
-                  'h1',
-                  'lineHeight',
-                  'tabletS',
-                )({
-                  theme,
-                }),
-              )) *
-              -1}px`
+          ? `${
+              (EDITORIAL_PADDING_TOP * 2 +
+                EDITORIAL_META_LINE_HEIGHT +
+                EDITORIAL_META_MARGIN_TOP +
+                stripUnit(
+                  getTypographyValueFromProperty(
+                    'h1',
+                    'lineHeight',
+                    'tabletS',
+                  )({
+                    theme,
+                  }),
+                )) *
+              -1
+            }px`
           : `0`};
     }
   }

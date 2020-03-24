@@ -36,13 +36,13 @@ export const DefaultState = () => {
 
   const filterTagHandleClick = (id: number): void =>
     setFilterTagElements(
-      filterTagElements && filterTagElements.filter(el => el.id !== id),
+      filterTagElements && filterTagElements.filter((el) => el.id !== id),
     )
 
   return (
     <>
       {filterTagElements &&
-        filterTagElements.map(element => (
+        filterTagElements.map((element) => (
           <FilterTag
             onClick={() => filterTagHandleClick(element.id)}
             key={`filterTag${element.id}`}

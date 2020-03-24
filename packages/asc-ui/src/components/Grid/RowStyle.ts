@@ -71,14 +71,15 @@ const RowStyle = styled.div<TypeProps>`
     theme: Theme.ThemeInterface
   }) =>
     Object.keys(theme.layouts).map(
-      layoutId => css`
+      (layoutId) => css`
     @media ${mediaQuery(layoutId)} {
-      ${debug &&
+      ${
+        debug &&
         css`
         .layout-label::before {
-          content: '${layoutId} (${min(layoutId)({ theme }) || 0} - ${max(
-          layoutId,
-        )({ theme }) || '∞'})';
+          content: '${layoutId} (${min(layoutId)({ theme }) || 0} - ${
+          max(layoutId)({ theme }) || '∞'
+        })';
         }
 
         background-image: repeating-linear-gradient(
@@ -96,22 +97,28 @@ const RowStyle = styled.div<TypeProps>`
         )}) + ${gutter(layoutId, true)})
         );
         background-clip: content-box;
-      `};
+      `
+      };
 
-      ${valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 &&
+      ${
+        valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 &&
         hasMargin &&
         css`
           padding-left: ${margin(layoutId, true)};
           padding-right: ${margin(layoutId, true)};
-        `}
+        `
+      }
 
-      ${debug &&
+      ${
+        debug &&
         valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 &&
         css`
           background-position: ${margin(layoutId)}px;
-        `}
+        `
+      }
 
-      ${debug &&
+      ${
+        debug &&
         valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 &&
         hasMargin &&
         css`
@@ -137,7 +144,8 @@ const RowStyle = styled.div<TypeProps>`
           right: 0;
           border-left: 1px solid white;
         }
-      `}
+      `
+      }
     }`,
     )}
 `

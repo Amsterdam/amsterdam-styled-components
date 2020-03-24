@@ -23,7 +23,7 @@ const EditorialMetaList: React.FC<Props> = ({
     )}
     {fields &&
       fields.length &&
-      fields.map(field => (
+      fields.map((field) => (
         <EditorialMetaListItemStyle key={field.id}>
           {field.label}
         </EditorialMetaListItemStyle>

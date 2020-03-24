@@ -18,7 +18,10 @@ export const WithAControlledState = () => {
   return (
     <>
       {' '}
-      <TextField value={value} onChange={e => setValue(e.target.value)} />{' '}
+      <TextField
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />{' '}
       <br /> The user types: {value}{' '}
     </>
   )

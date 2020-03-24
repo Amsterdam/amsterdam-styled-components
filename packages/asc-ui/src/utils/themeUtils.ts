@@ -173,7 +173,7 @@ export const focusStyleOutline = (width?: number, offset?: number) => ({
   `
 
 export const focusStyleFill = withTheme(
-  theme => css`
+  (theme) => css`
     &:focus {
       background-color: ${themeColor('support', 'focus')({ theme })};
     }
@@ -363,7 +363,7 @@ export const themeSpacing = withTheme<ThemeSpacingParameters>(
   (theme, ...factors) => {
     const spacing: Theme.Spacing = getValueFromTheme('spacing')({ theme })
     return factors
-      .map(factor => factor && `${factor * spacing}px`)
+      .map((factor) => factor && `${factor * spacing}px`)
       .join(' ')
       .trim()
   },

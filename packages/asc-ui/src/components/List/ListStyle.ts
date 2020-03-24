@@ -26,16 +26,18 @@ export const BulletCSS = css`
       background-color: ${themeColor('tint', 'level7')};
       left: -${BULLET_MARGIN + BULLET_SIZE}px;
       top: ${({ theme }) =>
-        `${(stripUnit(
-          getTypographyValueFromProperty(
-            'li',
-            'lineHeight',
-          )({
-            theme,
-          }),
-        ) -
-          BULLET_SIZE) /
-          2}px`};
+        `${
+          (stripUnit(
+            getTypographyValueFromProperty(
+              'li',
+              'lineHeight',
+            )({
+              theme,
+            }),
+          ) -
+            BULLET_SIZE) /
+          2
+        }px`};
     }
   }
 `

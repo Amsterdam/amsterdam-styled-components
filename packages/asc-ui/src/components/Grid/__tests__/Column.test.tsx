@@ -78,18 +78,8 @@ describe('ColumnStyle', () => {
       </ThemeProvider>,
     )
 
-    expect(
-      tree
-        .find(ColumnStyle)
-        .first()
-        .props().parentSpan,
-    ).toBeUndefined()
-    expect(
-      tree
-        .find(ColumnStyle)
-        .last()
-        .props().parentSpan,
-    ).toEqual(10)
+    expect(tree.find(ColumnStyle).first().props().parentSpan).toBeUndefined()
+    expect(tree.find(ColumnStyle).last().props().parentSpan).toEqual(10)
   })
 
   it('should show debug information', () => {

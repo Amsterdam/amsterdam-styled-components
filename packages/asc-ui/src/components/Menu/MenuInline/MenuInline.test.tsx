@@ -30,11 +30,6 @@ describe('MenuInline', () => {
 
   it('should render the children', () => {
     expect(component.find(MenuInlineStyle).props()).toEqual({ children })
-    expect(
-      component
-        .find(MenuItem)
-        .at(2)
-        .exists(),
-    ).toBeTruthy()
+    expect(component.find(MenuItem).at(2).exists()).toBeTruthy()
   })
 })
