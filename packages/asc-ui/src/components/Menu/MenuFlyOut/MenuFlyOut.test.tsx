@@ -74,7 +74,7 @@ describe('MenuFlyOut', () => {
     expect(menuListProps['aria-hidden']).toBe(true)
   })
 
-  it('should toggle the open state on click', () => {
+  it('should toggle the isOpen state on click', () => {
     onClickSimulate()
 
     jest.runAllTimers()
@@ -83,7 +83,7 @@ describe('MenuFlyOut', () => {
     expect(menuListProps['aria-hidden']).toBe(false)
   })
 
-  it('should not toggle the open state when already opened', () => {
+  it('should not toggle the isOpen state when already opened', () => {
     onClickSimulate()
     onClickSimulate()
 
@@ -93,7 +93,7 @@ describe('MenuFlyOut', () => {
     expect(menuListProps['aria-hidden']).toBe(false)
   })
 
-  it('should toggle the open state on enter', () => {
+  it('should toggle the isOpen state on enter', () => {
     onKeyDownSimulate('Enter')
 
     jest.runAllTimers()
@@ -102,7 +102,7 @@ describe('MenuFlyOut', () => {
     expect(menuListProps['aria-hidden']).toBe(false)
   })
 
-  it('should toggle the open state on space', () => {
+  it('should toggle the isOpen state on space', () => {
     onKeyDownSimulate('Space')
 
     jest.runAllTimers()
@@ -139,7 +139,7 @@ describe('MenuFlyOut', () => {
         <MenuFlyOut label="Fly Out">{children}</MenuFlyOut>,
       )
     })
-    it('should set the open state including the Chevron icons', () => {
+    it('should set the isOpen state including the Chevron icons', () => {
       const menuItemLink = component.find(MenuButton).at(0)
 
       expect(menuItemLink.find(<ChevronDown />)).toBeTruthy()

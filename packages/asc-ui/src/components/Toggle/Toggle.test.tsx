@@ -51,7 +51,7 @@ describe('Toggle', () => {
     expect(onOpenMock).toHaveBeenCalledWith(true)
   })
 
-  it('should display the children when the parent passes an open prop', () => {
+  it('should display the children when the parent passes an isOpen prop', () => {
     component = mount(
       <Toggle onClick={jest.fn()} open render={false}>
         <div id="child">Foo</div>

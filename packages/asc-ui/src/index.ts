@@ -102,7 +102,7 @@ import { AlertMessage, AlertStyle } from './components/Alert'
 import {
   Accordion,
   AccordionWrapper,
-  AccordionStyle,
+  AccordionStyles,
 } from './components/Accordion'
 import { themeColor } from './utils'
 import { perceivedLoading } from './utils/themeUtils'
@@ -138,6 +138,7 @@ export const styles = {
   ...GridStyles,
   ...FooterStyles,
   ...ListStyles,
+  ...AccordionStyles,
   ParagraphStyle,
   BlockquoteStyle,
   IconStyle,
@@ -150,7 +151,6 @@ export const styles = {
   FilterBoxStyle,
   FilterOptionStyle,
   AlertStyle,
-  AccordionStyle,
 }
 
 export const context = {

@@ -23,21 +23,21 @@ describe('ContextMenu', () => {
   })
 
   describe('click and blur', () => {
-    it('should toggle the open state', () => {
+    it('should toggle the isOpen state', () => {
       const { getByTestId } = getComponent()
       expect(getByTestId('childOne')).not.toBeVisible()
       fireEvent.click(getByTestId('toggle'))
       expect(getByTestId('childOne')).toBeVisible()
     })
 
-    it('should set the open state from props', () => {
+    it('should set the isOpen state from props', () => {
       const { getByTestId } = getComponent({ open: true })
       expect(getByTestId('childOne')).toBeVisible()
       fireEvent.click(getByTestId('toggle'))
       expect(getByTestId('childOne')).not.toBeVisible()
     })
 
-    it('should set the open state to false and reset the selectedChild', () => {
+    it('should set the isOpen state to false and reset the selectedChild', () => {
       const { getByTestId, container } = getComponent({ open: true })
       expect(getByTestId('childOne')).toBeVisible()
       act(() => {

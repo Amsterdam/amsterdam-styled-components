@@ -1,15 +1,10 @@
 import styled from '@datapunt/asc-core'
 import Button from '../Button'
 import { IconStyle } from '../Icon'
-import { getButtonHeight } from '../Button/ButtonStyle'
-import {
-  DEFAULT_OUTLINE_WIDTH,
-  themeColor,
-  themeSpacing,
-} from '../../utils/themeUtils'
+import { themeColor, themeSpacing } from '../../utils/themeUtils'
 
 export type Props = {
-  open?: boolean
+  isOpen?: boolean
 }
 
 const AccordionContent = styled.div<Props>`
@@ -17,7 +12,7 @@ const AccordionContent = styled.div<Props>`
   border: 2px solid ${themeColor('tint', 'level3')};
   border-top: none;
   padding: ${themeSpacing(4, 5)};
-  display: ${({ open }) => !open && 'none'};
+  display: ${({ isOpen }) => !isOpen && 'none'};
 `
 
 const AccordionButtonContent = styled.span`
@@ -45,16 +40,9 @@ const AccordionButton = styled(Button)<Props>`
 
   ${IconStyle} {
     margin-left: auto;
-    transform: rotate(${({ open }) => (open ? '180deg' : '0deg')});
+    transform: rotate(${({ isOpen }) => (isOpen ? '180deg' : '0deg')});
     transition: transform 0.3s ease;
   }
 `
 
 export { AccordionButton, AccordionContent, AccordionButtonContent }
-
-export default styled.div<Props>`
-  height: ${({ open, theme }) => !open && getButtonHeight(theme)};
-  overflow: hidden;
-  padding: ${DEFAULT_OUTLINE_WIDTH}px;
-  box-sizing: content-box;
-`

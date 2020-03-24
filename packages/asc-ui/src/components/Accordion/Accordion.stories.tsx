@@ -56,10 +56,10 @@ export const SingleAccordionWithAControlledState = () => {
     <Accordion
       title="I open after 3 seconds..."
       id="one"
-      open={open}
+      isOpen={open}
       onToggle={(state) => {
         // eslint-disable-next-line no-console
-        console.log('Did I open...?', state)
+        console.log('Did I isOpen...?', state)
       }}
     >
       <Paragraph gutterBottom={0}>
