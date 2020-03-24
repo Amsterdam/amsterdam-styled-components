@@ -31,7 +31,7 @@ export const ControlledState: React.FC<{}> = () => {
     <>
       <SearchBar
         placeholder="Enter the search text"
-        onWatchValue={value => {
+        onWatchValue={(value) => {
           setText(value)
           action(`text changed: ${searchText}`)
         }}

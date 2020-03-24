@@ -29,7 +29,7 @@ export const Variants = () => {
       page={currentPage}
       pageSize={20}
       collectionSize={60}
-      onPageChange={page => setCurrentPage(page)}
+      onPageChange={(page) => setCurrentPage(page)}
     />
   )
 }

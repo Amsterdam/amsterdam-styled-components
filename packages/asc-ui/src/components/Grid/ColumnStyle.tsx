@@ -26,8 +26,8 @@ export type TypeProps = {
 const ColumnStyle = styled(({ className, children, id, ...rest }) => {
   const dataProps = {}
   Object.keys(rest)
-    .filter(key => key.startsWith('data-') || key.startsWith('aria-'))
-    .forEach(key => {
+    .filter((key) => key.startsWith('data-') || key.startsWith('aria-'))
+    .forEach((key) => {
       dataProps[key] = rest[key]
     })
 
@@ -51,7 +51,7 @@ const ColumnStyle = styled(({ className, children, id, ...rest }) => {
   ${({ order }: { order?: number }) =>
     order && typeof order !== 'number'
       ? Object.keys(order).map(
-          layoutId => css`
+          (layoutId) => css`
             @media ${mediaQuery(layoutId)} {
               order: ${order[layoutId]};
             }
@@ -73,7 +73,7 @@ const ColumnStyle = styled(({ className, children, id, ...rest }) => {
     push?: Theme.TypeSpan
     theme: Theme.ThemeInterface
   }) =>
-    Object.keys(theme.layouts).map(layoutId => {
+    Object.keys(theme.layouts).map((layoutId) => {
       const spanCount = colCount(span, layoutId)
       const pushCount = colCount(push, layoutId)
 
@@ -83,17 +83,21 @@ const ColumnStyle = styled(({ className, children, id, ...rest }) => {
 
       return css`
         @media ${mediaQuery(layoutId)} {
-          ${debug &&
+          ${
+            debug &&
             css`
               &::before {
                 content: 'span ${spanCount}';
               }
-            `}
-          ${pushCount > 0 &&
+            `
+          }
+          ${
+            pushCount > 0 &&
             margin(layoutId)({ theme }) > 0 &&
             css`
               margin-left: ${pushWidth({ layoutId, push, parentSpan })};
-            `}
+            `
+          }
           max-width: ${spanWidth({ layoutId, span, parentSpan })};
         }
       `

@@ -49,7 +49,7 @@ describe('Header', () => {
 
   it('should render the tall version with a custom logo', () => {
     const CustomLogoStyle = styled.a``
-    const CustomLogo: React.FC = props => (
+    const CustomLogo: React.FC = (props) => (
       <CustomLogoStyle {...props}>
         <Icon padding={4} size={40}>
           <Facebook />

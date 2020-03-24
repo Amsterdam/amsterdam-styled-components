@@ -21,10 +21,7 @@ describe('Toggle', () => {
 
   it('should display the children when the button is clicked', () => {
     expect(component.find('#child').exists()).toBe(false)
-    component
-      .find(ToggleButton)
-      .at(0)
-      .simulate('click')
+    component.find(ToggleButton).at(0).simulate('click')
     expect(component.find('#child').exists()).toBe(true)
     expect(onClickMock).toHaveBeenCalled()
   })
@@ -35,10 +32,7 @@ describe('Toggle', () => {
       key: KeyboardKeys.Escape,
     }
 
-    component
-      .find(ToggleButton)
-      .at(0)
-      .simulate('click')
+    component.find(ToggleButton).at(0).simulate('click')
     expect(component.find('#child').exists()).toBe(true)
     component.simulate('keydown', escape)
 
@@ -53,10 +47,7 @@ describe('Toggle', () => {
       </Toggle>,
     )
 
-    component
-      .find(ToggleButton)
-      .at(0)
-      .simulate('click')
+    component.find(ToggleButton).at(0).simulate('click')
     expect(onOpenMock).toHaveBeenCalledWith(true)
   })
 

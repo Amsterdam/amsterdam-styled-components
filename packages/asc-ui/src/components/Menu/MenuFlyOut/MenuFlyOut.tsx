@@ -60,7 +60,7 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
   ])
 
   const handleOnExpand = React.useCallback(
-    open => onExpand && onExpand(open),
+    (open) => onExpand && onExpand(open),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   )

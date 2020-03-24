@@ -19,7 +19,7 @@ export const ControlledState = () => {
     <Input
       id="test-id"
       onBlur={action('onBlur called')}
-      onChange={e => {
+      onChange={(e) => {
         setText(e.target.value)
         action(`onChange called: ${text}`)
       }}

@@ -28,7 +28,7 @@ const ContextMenu: React.FC<Props> = ({
   const [open, setOpen] = useState(openProp || false)
 
   useEffect(() => {
-    React.Children.toArray(children).forEach(child => {
+    React.Children.toArray(children).forEach((child) => {
       // @ts-ignore
       if (child && child.type !== ContextMenuItem) {
         // eslint-disable-next-line no-console

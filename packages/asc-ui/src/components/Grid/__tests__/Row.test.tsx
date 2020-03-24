@@ -112,7 +112,7 @@ describe('RowStyle', () => {
 
     const { layouts } = theme
 
-    Object.keys(layouts).forEach(layoutId => {
+    Object.keys(layouts).forEach((layoutId) => {
       const { columns } = layouts[layoutId]
       const bgRe = new RegExp(`repeating-linear-gradient.* / ${columns}`)
 

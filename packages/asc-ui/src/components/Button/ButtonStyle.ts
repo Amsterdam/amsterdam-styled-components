@@ -82,7 +82,7 @@ const getVariant = () => ({
           background-color: ${darken(0.1, themeColor('secondary')({ theme }))};
         }
 
-        ${taskflow =>
+        ${(taskflow) =>
           taskflow &&
           css`
             &:not(:disabled)&:hover ${ArrowRight} {
@@ -172,23 +172,23 @@ const getVariant = () => ({
           ? readableColor(themeColor(color)({ theme }))
           : themeColor('primary')({ theme })};
         ${color &&
-          css`
-            background: ${themeColor(color)};
-          `}
+        css`
+          background: ${themeColor(color)};
+        `}
 
         ${!color &&
-          css`
-            border: 1px solid ${themeColor('primary')};
-          `}
+        css`
+          border: 1px solid ${themeColor('primary')};
+        `}
 
         &:hover {
           background: ${color
             ? themeColor(color, 'dark')({ theme })
             : themeColor('tint', 'level3')({ theme })};
           ${!color &&
-            css`
-              outline: 1px solid ${themeColor('primary')};
-            `}
+          css`
+            outline: 1px solid ${themeColor('primary')};
+          `}
         }
       `
   }
