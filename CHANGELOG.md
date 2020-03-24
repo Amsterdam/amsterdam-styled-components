@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Changed: **BREAKING** package `styled-components` is now a peer-dependency in `asc-core`! Include the package `styled-components` in your project.
 - Changed: The `TextField` component does now have an associated label
 - Changed: Discernible name for the `AmsterdamLogo` anchor
 - Changed: Accessible names for the `ShareButton` component
