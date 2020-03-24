@@ -90,7 +90,7 @@ const Toggle: React.FC<Props & HTMLAttributes<HTMLDivElement>> = ({
     'aria-hidden': !open,
   })
 
-  // Useful if parent needs to take over control the open state
+  // Useful if parent needs to take over control the isOpen state
   React.useEffect(() => {
     if (typeof openProp !== 'undefined') {
       handleOnOpen(openProp)

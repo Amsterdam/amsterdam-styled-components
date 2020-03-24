@@ -22,6 +22,9 @@ const defaultProps = {
   size: 30,
 }
 
+export const getButtonHeight = (theme: Theme.ThemeInterface) =>
+  themeSpacing(11)({ theme })
+
 export const ArrowRight = styled.div`
   position: absolute;
   top: 0;
@@ -220,7 +223,7 @@ export type Props = {
 }
 
 const ButtonStyle = styled.button<Props>`
-  height: 44px;
+  height: ${({ theme }) => getButtonHeight(theme)};
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
