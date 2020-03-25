@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Added: indeterminate state to Checkboxes
 - Changed: **BREAKING** package `styled-components` is now a peer-dependency in `asc-core`! Include the package `styled-components` in your project.
 - Changed: The `TextField` component does now have an associated label
 - Changed: Discernible name for the `AmsterdamLogo` anchor

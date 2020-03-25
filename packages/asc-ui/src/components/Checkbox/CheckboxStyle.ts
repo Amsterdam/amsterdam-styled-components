@@ -10,6 +10,7 @@ export type Props = {
   checked?: boolean
   disabled?: boolean
   error?: boolean
+  indeterminate?: boolean
 }
 
 const getVariant = () => ({ variant }: Props) => {

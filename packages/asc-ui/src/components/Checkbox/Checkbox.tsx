@@ -1,5 +1,11 @@
-import React, { useState, useContext, useMemo } from 'react'
-import { Checkmark } from '@datapunt/asc-assets'
+import React, {
+  useState,
+  useContext,
+  useMemo,
+  useImperativeHandle,
+  useEffect,
+} from 'react'
+import { Checkmark, Indeterminate } from '@datapunt/asc-assets'
 import CheckboxStyle, {
   CheckboxIconStyle,
   CheckboxWrapperStyle,
@@ -19,13 +25,23 @@ const Checkbox = React.forwardRef<
       variant,
       disabled,
       error,
+      indeterminate,
       ...otherProps
     },
-    ref,
+    externalRef,
   ) => {
     const [checked, setChecked] = useState(!!checkedProp)
     const [focus, setFocus] = useState(false)
     const { setActive } = useContext(LabelContext)
+    const ref = React.useRef<HTMLInputElement>(null)
+
+    useImperativeHandle(externalRef, () => ref.current as HTMLInputElement)
+
+    useEffect(() => {
+      if (ref.current) {
+        ref.current.indeterminate = indeterminate ?? false
+      }
+    }, [ref, indeterminate])
 
     // Make the label aware of changes in the checked state
     useMemo(() => {
@@ -43,7 +59,7 @@ const Checkbox = React.forwardRef<
         aria-disabled={disabled}
       >
         <CheckboxIconStyle {...{ disabled, variant, checked, error }} size={15}>
-          {checked && <Checkmark />}
+          {checked && (indeterminate ? <Indeterminate /> : <Checkmark />)}
         </CheckboxIconStyle>
         <CheckboxStyle
           {...{ ...otherProps, disabled, checked, ref }}
@@ -55,7 +71,9 @@ const Checkbox = React.forwardRef<
             if (onChange) {
               onChange(e)
             }
-            setChecked(!checked)
+            if (typeof checkedProp === 'undefined') {
+              setChecked(!checked)
+            }
           }}
         />
       </CheckboxWrapperStyle>
