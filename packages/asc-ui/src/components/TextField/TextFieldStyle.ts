@@ -1,18 +1,8 @@
-import styled, { css } from '@datapunt/asc-core'
+import styled from '@datapunt/asc-core'
 import ButtonStyle from '../Button/ButtonStyle'
-import { themeSpacing } from '../../utils'
 
-export type Props = {
-  hasLabel?: boolean
-}
-
-const TextFieldStyle = styled.div<Props>`
+const TextFieldStyle = styled.div`
   position: relative;
-  ${({ hasLabel }) =>
-    hasLabel &&
-    css`
-      margin-top: ${themeSpacing(2)};
-    `}
 
   & > ${ButtonStyle} {
     position: absolute;

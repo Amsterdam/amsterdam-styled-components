@@ -1,5 +1,10 @@
 import styled, { css } from '@datapunt/asc-core'
-import { srOnlyStyle, getTypographyFromTheme, themeColor } from '../../utils'
+import {
+  srOnlyStyle,
+  getTypographyFromTheme,
+  themeSpacing,
+  themeColor,
+} from '../../utils'
 
 interface IProps {
   htmlFor?: string
@@ -25,10 +30,11 @@ const FormLabelStyle = styled.label.attrs<IProps>(({ htmlFor }: IProps) => {
     `}
     
   ${({ srOnly, label, error }) =>
-    (label || error) && // Style if `label` or `error` prop is set
+    (label || error) && // Style if `label` or `errer` prop is set
     !srOnly && // Don't style for screen reader
     css`
       display: block;
+      padding-bottom: ${themeSpacing(2)};
       font-weight: 700;
     `}
 

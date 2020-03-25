@@ -13,7 +13,6 @@ export type Props = {
   errorMessage?: string
   labelStyle?: object
   errorStyle?: object
-  hasLabel?: boolean
 }
 
 const SelectBoxShadow = (
@@ -81,12 +80,6 @@ const SelectStyle = styled.select<Props>`
     error &&
     css`
       ${SelectBoxShadow(themeColor('error', 'main'))}
-    `}
-
-  ${({ hasLabel }) =>
-    hasLabel &&
-    css`
-      margin-top: ${themeSpacing(2)};
     `}
 `
 

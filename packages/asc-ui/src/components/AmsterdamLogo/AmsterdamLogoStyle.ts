@@ -1,12 +1,7 @@
 import LogoShort from '@datapunt/asc-assets/static/icons/LogoShort.svg'
 import LogoTall from '@datapunt/asc-assets/static/icons/LogoTall.svg'
 import styled, { css } from '@datapunt/asc-core'
-import {
-  breakpoint,
-  focusStyleOutline,
-  srOnlyStyle,
-  themeSpacing,
-} from '../../utils'
+import { breakpoint, focusStyleOutline, themeSpacing } from '../../utils'
 
 export type Props = {
   tall?: boolean
@@ -18,10 +13,6 @@ export const LogoStyle = styled.span`
   width: 100%;
   background-size: cover;
   background-image: url("${LogoShort}");
-`
-
-export const LogoTitleStyle = styled.span`
-  ${srOnlyStyle()}
 `
 
 const tallStyle = css`
@@ -43,7 +34,7 @@ const AmsterdamLogoStyle = styled.a<Props>`
   flex-shrink: 0;
   margin-right: ${themeSpacing(3)};
   ${focusStyleOutline()}
-  ${({ tall }) => tall && tallStyle};
+  ${({ tall }) => tall && tallStyle}
 `
 
 export default AmsterdamLogoStyle
