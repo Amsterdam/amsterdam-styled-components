@@ -13,7 +13,6 @@ const ShareButton: React.FC<Props> = ({
   children,
   onClick,
   iconSize,
-  title,
   ...otherProps
 }) => (
   <ShareButtonStyle
@@ -21,8 +20,6 @@ const ShareButton: React.FC<Props> = ({
     size={30}
     onClick={onClick}
     variant="blank"
-    title={title}
-    aria-label={title}
     {...otherProps}
   >
     <Icon size={iconSize}>{children}</Icon>

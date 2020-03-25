@@ -87,36 +87,31 @@ exports[`Select should render 1`] = `
     >
       Select 1
     </span>
-    <label
-      class=""
-      for="select-1"
+    <select
+      class="c2"
+      id="select-1"
     >
-      <select
-        class="c2"
-        id="select-1"
+      <option
+        value="1"
       >
-        <option
-          value="1"
-        >
-          Option 1
-        </option>
-        <option
-          value="2"
-        >
-          Option 2
-        </option>
-        <option
-          value="3"
-        >
-          Option 3
-        </option>
-        <option
-          value="4"
-        >
-          Option 4
-        </option>
-      </select>
-    </label>
+        Option 1
+      </option>
+      <option
+        value="2"
+      >
+        Option 2
+      </option>
+      <option
+        value="3"
+      >
+        Option 3
+      </option>
+      <option
+        value="4"
+      >
+        Option 4
+      </option>
+    </select>
   </label>
 </div>
 `;
