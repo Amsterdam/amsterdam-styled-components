@@ -32,7 +32,7 @@ const TextField = ({
 }: TextFieldProps) => {
   const uid = useUID()
   return (
-    <>
+    <TextFieldStyle>
       <FormLabelStyle
         htmlFor={uid}
         srOnly={srOnly}
@@ -51,28 +51,26 @@ const TextField = ({
           {errorMessage}
         </FormLabelStyle>
       )}
-      <TextFieldStyle>
-        <Input
-          {...{ keepFocus, value, blurOnEscape, focusOnRender }}
-          {...otherProps}
-          id={uid}
-          error={errorMessage}
-        />
-        {onClear && value && (
-          <Button
-            size={30}
-            variant="blank"
-            type="button"
-            aria-label="Close"
-            onClick={() => onClear()}
-          >
-            <Icon>
-              <Close />
-            </Icon>
-          </Button>
-        )}
-      </TextFieldStyle>
-    </>
+      <Input
+        {...{ keepFocus, value, blurOnEscape, focusOnRender }}
+        {...otherProps}
+        id={uid}
+        error={errorMessage}
+      />
+      {onClear && value && (
+        <Button
+          size={30}
+          variant="blank"
+          type="button"
+          aria-label="Close"
+          onClick={() => onClear()}
+        >
+          <Icon>
+            <Close />
+          </Icon>
+        </Button>
+      )}
+    </TextFieldStyle>
   )
 }
 

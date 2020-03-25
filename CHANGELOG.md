@@ -16,6 +16,9 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Changed: The `TextField` component does now have an associated label
+- Changed: Discernible name for the `AmsterdamLogo` anchor
+- Changed: Accessible names for the `ShareButton` component
 - Added: Accordion component
 - Added: Alert component
 - Deprecated: `GridContainer` & `GridItem`, use `Row` with `Column` instead
