@@ -24,37 +24,25 @@ const Select = React.forwardRef<
     const srOnly = srOnlyProp || false
 
     return (
-      <>
-        {label && (
-          <FormLabelStyle
-            srOnly={srOnly}
-            htmlFor={id}
-            label={label}
-            style={labelStyle}
-          >
-            {label}
-          </FormLabelStyle>
-        )}
-        {errorMessage && (
-          <FormLabelStyle
-            srOnly={srOnly}
-            htmlFor={id}
-            error={errorMessage}
-            style={errorStyle}
-          >
-            {errorMessage}
-          </FormLabelStyle>
-        )}
+      <FormLabelStyle
+        htmlFor={id}
+        srOnly={srOnly}
+        label={label}
+        error={errorMessage}
+        style={errorMessage ? errorStyle : labelStyle}
+      >
+        {errorMessage || label}
         <SelectStyle
           {...{
             ...otherProps,
             id,
             value,
+            error,
+            ref,
+            hasLabel: !!errorMessage || !!label,
           }}
-          error={error}
-          ref={ref}
         />
-      </>
+      </FormLabelStyle>
     )
   },
 )
