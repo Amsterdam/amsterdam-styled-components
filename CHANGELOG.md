@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Deprecated: `SearchBar` - `onWatchValue` and `onSubmit` button. Instead wrap the component in a `form` element with an `onSubmit` and use `onChange` and `onClose` instead of `onWatchValue`
 - Changed: The `TextField` component does now have an associated label
 - Changed: Discernible name for the `AmsterdamLogo` anchor
 - Changed: Accessible names for the `ShareButton` component

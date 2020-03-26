@@ -25,7 +25,7 @@ describe('SearchBar', () => {
     expect(icon.exists()).toBeTruthy()
     expect(icon.props().children).toStrictEqual(<Search />)
 
-    expect(children[children.length - 1]).toBe('searchbar-content')
+    expect(children[children.length]).toBe('searchbar-content')
   })
 
   it('should handle the onClick event', () => {

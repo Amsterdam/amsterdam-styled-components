@@ -4,12 +4,8 @@ import useFocusOnRender from '../../utils/hooks/useFocusOnRender'
 import InputContext from './InputMethodsContext'
 import InputStyle from './InputStyle'
 
-export interface InputMethods {
-  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void
-  onWatchValue?: (value: string) => void
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
-  onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void
-  onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void
+export interface InputMethods extends React.InputHTMLAttributes<Element> {
+  onClear?: Function
   setInputRef?: (ref: React.RefObject<HTMLInputElement>) => void
 }
 
