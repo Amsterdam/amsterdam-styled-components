@@ -26,8 +26,8 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "sideEffects": false,
-  "dependencies": {
-    "styled-components": "^4.3.2"
+  "peerDependencies": {
+    "styled-components": ">= 4.4.1"
   },
   "gitHead": "7fc0216f99b1eed36d7b971d305d3a3906ec2597"
 }
