@@ -15,6 +15,7 @@ export type ToggleHandlerProps = {
 
 export type Props = {
   render?: boolean
+  ariaLabel?: string
   onOpen?: Function
   ToggleHandler?: React.FC<
     ToggleButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>
@@ -24,6 +25,7 @@ export type Props = {
 } & ToggleStyleProps &
   ToggleHandlerProps
 
+// Todo: refactor this to Collapse component https://github.com/Amsterdam/amsterdam-styled-components/issues/379
 const Toggle: React.FC<Props & HTMLAttributes<HTMLDivElement>> = ({
   children: childrenProps,
   onClick,
@@ -37,6 +39,7 @@ const Toggle: React.FC<Props & HTMLAttributes<HTMLDivElement>> = ({
   ToggleHandler,
   title,
   hasBackDrop,
+  ariaLabel,
   ...otherProps
 }) => {
   const [open, setOpen] = React.useState(false)
@@ -119,6 +122,7 @@ const Toggle: React.FC<Props & HTMLAttributes<HTMLDivElement>> = ({
             title,
             hasBackDrop,
           }}
+          {...(ariaLabel ? { 'aria-label': ariaLabel } : {})}
           type="button"
         />
       )}

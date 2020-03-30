@@ -10,6 +10,7 @@ const MenuToggle: React.FC<Props> = ({
   onExpand,
   align = 'left',
   open,
+  ariaLabel,
   ...otherProps
 }) => {
   const [menuOpen, setMenuOpen] = useOptionalControlledState(open, onExpand)
@@ -39,6 +40,7 @@ const MenuToggle: React.FC<Props> = ({
         onClick={toggleMenu}
         align={align}
         open={menuOpen}
+        ariaLabel={ariaLabel || 'Menu'}
         {...otherProps}
       >
         <MenuList>{children}</MenuList>

@@ -7,7 +7,7 @@ import { Props } from './ContextMenu'
 const ContextMenuButton: React.FC<
   Props & React.ButtonHTMLAttributes<HTMLButtonElement>
 > = ({ label, position, icon, arrowIcon, open, ...otherProps }) => (
-  <ContextMenuButtonStyle {...otherProps}>
+  <ContextMenuButtonStyle type="button" {...otherProps}>
     {icon && icon}
     {label && <span>{label}</span>}
     <Icon

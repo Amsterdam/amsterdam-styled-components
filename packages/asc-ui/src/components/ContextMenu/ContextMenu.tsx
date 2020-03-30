@@ -15,13 +15,14 @@ export type Props = {
   open?: boolean
 }
 
-const ContextMenu: React.FC<Props> = ({
+const ContextMenu: React.FC<
+  Props & React.ButtonHTMLAttributes<HTMLButtonElement>
+> = ({
+  className,
   open: openProp,
   label,
   children,
   position,
-  icon,
-  arrowIcon,
   ...otherProps
 }) => {
   const ref = React.useRef<HTMLDivElement>(null)
@@ -63,18 +64,17 @@ const ContextMenu: React.FC<Props> = ({
       ref={ref}
       onKeyDown={keyDown}
       onBlur={onClose}
-      {...otherProps}
+      className={className}
     >
       <ContextMenuButtonStyle
         {...{
-          icon,
           open,
           position,
           label,
-          arrowIcon,
         }}
         data-testid="toggle"
         onClick={onToggle}
+        {...otherProps}
       />
       <MenuList
         {...{

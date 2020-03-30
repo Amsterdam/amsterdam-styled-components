@@ -221,7 +221,6 @@ exports[`<TextField /> should render 1`] = `
   }
 >
   <TextField
-    canClear={true}
     label="description"
     onBlur={[MockFunction]}
     onChange={[MockFunction]}
