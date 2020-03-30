@@ -59,6 +59,23 @@ export const Checked = () => (
   </>
 )
 
+export const IndeterminateState = () => (
+  <>
+    <Label htmlFor="default" label="Default checked">
+      <Checkbox id="default" indeterminate checked />
+    </Label>
+    <Label htmlFor="primary" label="Primary checked">
+      <Checkbox id="primary" indeterminate variant="primary" checked />
+    </Label>
+    <Label htmlFor="secondary" label="Secondary checked">
+      <Checkbox id="secondary" indeterminate variant="secondary" checked />
+    </Label>
+    <Label htmlFor="tertiary" label="Tertiary checked">
+      <Checkbox id="tertiary" indeterminate variant="tertiary" checked />
+    </Label>
+  </>
+)
+
 export const Disabled = () => (
   <>
     <Label disabled htmlFor="disabled" label="Disabled">
