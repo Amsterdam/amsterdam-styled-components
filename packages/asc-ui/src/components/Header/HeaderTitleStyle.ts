@@ -10,6 +10,7 @@ const HeaderTitleStyle = styled(Link)`
 
   &:hover {
     color: inherit;
+    text-decoration: none;
   }
 
   @media screen and ${breakpoint('max-width', 'mobileM')} {
