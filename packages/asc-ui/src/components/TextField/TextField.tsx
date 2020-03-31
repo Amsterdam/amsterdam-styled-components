@@ -10,11 +10,11 @@ import Icon from '../Icon'
 export interface TextFieldProps extends InputProps {
   label?: string
   keepFocus?: boolean
-  srOnly: boolean
+  srOnly?: boolean
   errorMessage?: string
   labelStyle?: object
   errorStyle?: object
-  onClear?: Function
+  onClear?: () => void
 }
 
 const TextField = ({
@@ -28,14 +28,16 @@ const TextField = ({
   errorMessage,
   labelStyle,
   errorStyle,
+  id: idProp,
   ...otherProps
 }: TextFieldProps) => {
   const uid = useUID()
+  const id = idProp || uid
   return (
     <TextFieldStyle>
       <FormLabelStyle
-        htmlFor={uid}
-        srOnly={srOnly}
+        htmlFor={id}
+        srOnly={srOnly ?? false}
         label={label}
         style={labelStyle}
       >
@@ -43,8 +45,8 @@ const TextField = ({
       </FormLabelStyle>
       {errorMessage && (
         <FormLabelStyle
-          htmlFor={uid}
-          srOnly={srOnly}
+          htmlFor={id}
+          srOnly={srOnly ?? false}
           error={errorMessage}
           style={errorStyle}
         >
@@ -54,7 +56,7 @@ const TextField = ({
       <Input
         {...{ keepFocus, value, blurOnEscape, focusOnRender }}
         {...otherProps}
-        id={uid}
+        id={id}
         error={errorMessage}
       />
       {onClear && value && (
@@ -72,11 +74,6 @@ const TextField = ({
       )}
     </TextFieldStyle>
   )
-}
-
-TextField.defaultProps = {
-  srOnly: false,
-  canClear: true,
 }
 
 export default TextField

@@ -16,12 +16,28 @@ export const DefaultState = () => (
   <SearchBar
     placeholder="Enter the search text"
     onChange={() => {
-      action('input changed')
-    }}
-    onSubmit={() => {
-      action('input submitted')
+      action('Input changed')
     }}
   />
+)
+
+export const InAForm = () => (
+  <form
+    onSubmit={(e) => {
+      e.preventDefault()
+      action('Submitted')
+    }}
+  >
+    <SearchBar
+      placeholder="Enter the search text"
+      onChange={() => {
+        action('Input changed')
+      }}
+      onClear={() => {
+        action('Cleared')
+      }}
+    />
+  </form>
 )
 
 export const ControlledState: React.FC<{}> = () => {
@@ -31,9 +47,12 @@ export const ControlledState: React.FC<{}> = () => {
     <>
       <SearchBar
         placeholder="Enter the search text"
-        onWatchValue={(value) => {
-          setText(value)
+        onChange={(e) => {
+          setText(e.currentTarget.value)
           action(`text changed: ${searchText}`)
+        }}
+        onClear={() => {
+          setText('')
         }}
         onSubmit={() => {
           action(`button clicked: ${searchText}`)

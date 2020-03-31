@@ -1,18 +1,25 @@
 import React from 'react'
 import { Search } from '@datapunt/asc-assets'
 import SearchBarStyle, { Props as SearchBarStyleProps } from './SearchBarStyle'
-import TextField from '../TextField/TextField'
+import TextField, { TextFieldProps } from '../TextField/TextField'
 import InputContext from '../Input/InputMethodsContext'
 import { InputProps } from '../Input'
-import { KeyboardKeys } from '../../types'
 import Button from '../Button'
 import Icon from '../Icon'
 
-export interface SearchBarProps extends InputProps, SearchBarStyleProps {
-  placeholder?: string
+export interface SearchBarProps extends TextFieldProps, SearchBarStyleProps {
   label?: string
   inputProps?: InputProps
-  onSubmit?: Function
+  /**
+   * @deprecated, use onChange in combo with onClear instead
+   * @param value
+   */
+  onWatchValue?: (value: string) => void
+  /**
+   * @deprecated, wrap this component inside a <form onSubmit={() => ...}> instead
+   * @param value
+   */
+  onSubmit?: (e: React.FormEvent) => void
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -28,48 +35,49 @@ const SearchBar: React.FC<SearchBarProps> = ({
   label,
   hideAt,
   showAt,
+  onClear,
   inputProps,
   ...otherProps
 }) => {
   let inputRef: React.RefObject<HTMLInputElement> | null = null
   const [inputValue, setInputValue] = React.useState(value || '')
 
-  const triggerOnChange = (val: string) => {
-    setInputValue(val)
-    if (onChange) {
-      // @ts-ignore
-      onChange(val)
-    }
-  }
-
-  const onClear = () => {
+  const handelOnClear = () => {
+    setInputValue('')
     if (inputRef && inputRef.current) {
       inputRef.current.focus()
     }
-    setInputValue('')
-    triggerOnChange('')
-  }
 
-  const handleOnSubmit = () => {
-    if (onSubmit) {
-      onSubmit(inputValue)
+    if (onClear) {
+      onClear()
     }
   }
 
-  const onKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === KeyboardKeys.Enter) {
-      handleOnSubmit()
+  const handleOnSubmit = (e: React.FormEvent) => {
+    if (onSubmit) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `onSubmit is about to be deprecated, wrap this component inside a <form onSubmit={...} /> instead`,
+      )
+      onSubmit(e)
     }
   }
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    triggerOnChange(e.target.value)
+    setInputValue(e.currentTarget.value)
+
+    if (onChange) {
+      onChange(e)
+    }
   }
 
-  // Since the user is able to clear the field, this will not trigger the onChange event,
-  // so we need to manually trigger our self-made onWatchValue
   React.useEffect(() => {
     if (onWatchValue) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'onWatchValue is about to be deprecated. Use onChange in combo with onClear instead',
+      )
+      // @ts-ignore
       onWatchValue(inputValue)
     }
   }, [inputValue, onWatchValue])
@@ -87,7 +95,6 @@ const SearchBar: React.FC<SearchBarProps> = ({
           onBlur,
           onFocus,
           onChange: handleOnChange,
-          onKeyDown,
           placeholder,
           setInputRef: (ref: React.RefObject<HTMLInputElement>) => {
             inputRef = ref
@@ -99,8 +106,9 @@ const SearchBar: React.FC<SearchBarProps> = ({
           srOnly
           keepFocus
           blurOnEscape
-          onClear={onClear}
+          onClear={handelOnClear}
           aria-label={label}
+          id={inputProps?.id}
           value={inputValue}
           {...{
             focusOnRender,
@@ -110,7 +118,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
         />
       </InputContext.Provider>
       <Button
-        aria-label="Search"
+        aria-label={placeholder || 'Zoek'}
+        title={placeholder || 'Zoek'}
         type="submit"
         size={40}
         onClick={handleOnSubmit}

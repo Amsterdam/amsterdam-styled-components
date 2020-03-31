@@ -9,9 +9,7 @@ import Toggle, { Props as ToggleProps } from '../Toggle/Toggle'
 import { SearchBarProps } from '../SearchBar/SearchBar'
 
 interface SearchBarToggleProps extends SearchBarToggleStyleProps, InputMethods {
-  placeholder?: string
   label?: string
-  onSubmit?: Function
   onOpen?: Function
   open?: boolean
   inputProps?: InputProps

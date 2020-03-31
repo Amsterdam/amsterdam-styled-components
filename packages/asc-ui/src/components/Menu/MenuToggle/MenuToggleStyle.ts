@@ -18,6 +18,7 @@ export type Props = {
   onExpand?: Function
   open?: boolean
   hasBackDrop?: boolean
+  ariaLabel?: string
 } & ShowHideTypes
 
 export default styled.div<Props>`
