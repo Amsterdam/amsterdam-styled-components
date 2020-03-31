@@ -109,6 +109,8 @@ exports[`Header should render the short version 1`] = `
 
 .c10:hover {
   color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c12 {
@@ -416,6 +418,8 @@ exports[`Header should render the short version without the full width 1`] = `
 
 .c10:hover {
   color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c12 {
@@ -723,6 +727,8 @@ exports[`Header should render the tall version 1`] = `
 
 .c13:hover {
   color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c15 {
@@ -1135,6 +1141,8 @@ exports[`Header should render the tall version with a custom logo 1`] = `
 
 .c11:hover {
   color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c13 {
@@ -1778,6 +1786,8 @@ exports[`Header should render the tall version without logo 1`] = `
 
 .c9:hover {
   color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c11 {
