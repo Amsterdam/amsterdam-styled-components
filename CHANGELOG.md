@@ -16,6 +16,8 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+## [0.19.0]
+
 - Deprecated: `SearchBar` - `onWatchValue` and `onSubmit` button. Instead wrap the component in a `form` element with an `onSubmit` and use `onChange` and `onClear` instead of `onWatchValue`
 - Removed: `text-decoration` hover styling from the `HeaderTitle` component (according to design system)
 - Added: indeterminate state to Checkboxes
@@ -29,9 +31,7 @@ Prefix the change with one of these keywords:
 - Changed: arrowIcon on ContextMenu is not required anymore
 - Changed: **BREAKING** dropped support for `$as` prop (used components: Button, Tag, Heading, FooterHeading and Link). Use styled-component's `forwardedAs` prop instead
 - Changed: **BREAKING** `objectFitPolyfill` is now a peerDependency in `asc-ui`
-- Changed: **BREAKING** The AmsterdamLogo is not hardcoded anymore in the header component.
-  Has to be passed as parameter `logo={AmsterdamLogo}`. When the 'logo' parameter is not specified,
-  no logo will be shown before the header title
+- Changed: Header logo can be passed as a prop in the Header component.
 
 ## [0.18.2]
 
