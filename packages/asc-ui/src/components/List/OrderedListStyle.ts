@@ -2,9 +2,12 @@ import styled, { css } from '@datapunt/asc-core'
 import { getTypographyFromTheme, themeSpacing } from '../../utils/themeUtils'
 
 export const OrderedListStyleCSS = css`
-  margin: ${themeSpacing(0, 0, 6, 6)};
+  margin: ${themeSpacing(0, 0, 6, 0)};
   padding: 0;
   counter-reset: item;
+  & & {
+    margin: ${themeSpacing(2, 0, 0, 6)};
+  }
 
   li {
     /* Unfortunately we target the element instead of the style. This because we have to target the LI if it's rendered in CustomHTMLBlock */
@@ -15,11 +18,7 @@ export const OrderedListStyleCSS = css`
 
     &::before {
       display: inline-block;
-      width: 1em;
-      position: absolute;
-      left: -${themeSpacing(6)};
-      top: 0;
-      padding-right: 0.5em;
+      padding-right: ${themeSpacing(3)};
       font-weight: bold;
       text-align: right;
       content: counter(item) '.';
