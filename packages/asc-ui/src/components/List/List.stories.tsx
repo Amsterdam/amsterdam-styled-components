@@ -53,7 +53,7 @@ export const BulletList = () => (
   </List>
 )
 
-export const OL = () => (
+export const OrderedListNormal = () => (
   <OrderedList>
     <ListItem>Amsterdam Noord</ListItem>
     <ListItem>Amsterdam Zuid</ListItem>
@@ -64,6 +64,40 @@ export const OL = () => (
   </OrderedList>
 )
 
-OL.story = {
+OrderedListNormal.story = {
   name: 'Ordered List',
 }
+
+export const NestedOrderedList = () => (
+  <OrderedList>
+    <ListItem>Amsterdam Zuid</ListItem>
+    <ListItem>
+      Amsterdam Noord
+      <OrderedList>
+        <ListItem>Vogelbuurt</ListItem>
+        <ListItem>Tuindorp-Oostzaan</ListItem>
+      </OrderedList>
+    </ListItem>
+    <ListItem>Amsterdam Oost</ListItem>
+    <ListItem>Amsterdam Oost</ListItem>
+    <ListItem>Amsterdam Oost</ListItem>
+    <ListItem>Amsterdam Oost</ListItem>
+    <ListItem>Amsterdam Oost</ListItem>
+    <ListItem>Amsterdam Oost</ListItem>
+    <ListItem>Amsterdam Oost</ListItem>
+    <ListItem>
+      <Link href="/">Amsterdam West</Link>
+      <OrderedList>
+        <ListItem>Bos en Lommer</ListItem>
+        <ListItem>
+          Kolenkit
+          <OrderedList>
+            <ListItem>
+              <Link href="/">Foo</Link>
+            </ListItem>
+          </OrderedList>
+        </ListItem>
+      </OrderedList>
+    </ListItem>
+  </OrderedList>
+)
