@@ -5,11 +5,10 @@ const RadioContext = React.createContext({
   setChecked: () => {},
   name: undefined,
   error: false,
-} as
-  {
-    checked: string
-    setChecked: Function
-    name: string | undefined
-    error: boolean | undefined
-  })
+} as {
+  checked: string
+  setChecked: Function
+  name: string | undefined
+  error: boolean | undefined
+})
 export default RadioContext
