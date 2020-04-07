@@ -36,8 +36,9 @@ const Label: React.FC<Props & React.LabelHTMLAttributes<HTMLLabelElement>> = ({
   )
 }
 
-Label.defaultProps = {
-  noActiveState: false,
-} as Props
+Label.defaultProps =
+  {
+    noActiveState: false,
+  } as Props
 
 export default Label

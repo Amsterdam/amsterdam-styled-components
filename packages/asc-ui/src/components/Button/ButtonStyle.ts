@@ -240,7 +240,7 @@ const ButtonStyle = styled.button<Props>`
       display: flex;
       align-items: center;
       justify-content: center;
-      ${size(sizeProp || defaultProps.size)} // width and height
+      ${size(sizeProp || defaultProps.size)}// width and height
     `}
   ${focusStyleOutline()}
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')}

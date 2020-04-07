@@ -95,9 +95,10 @@ export const getTypographyFromTheme = () => ({
   theme,
 }: any) => {
   const as = styleAs || asProp
-  const styles = getValueFromTheme(`typography.${[as]}`)({
-    theme,
-  }) as Theme.TypographyType
+  const styles =
+    getValueFromTheme(`typography.${[as]}`)({
+      theme,
+    }) as Theme.TypographyType
   if (!styles) {
     return ''
   }
@@ -273,9 +274,8 @@ export const mapToBreakpoints = (
   propertyName: string,
   theme: Theme.ThemeInterface,
 ) => {
-  const breakpointVariants = Object.keys(theme.breakpoints) as Array<
-    keyof BreakpointsInterface
-  >
+  const breakpointVariants =
+    Object.keys(theme.breakpoints) as Array<keyof BreakpointsInterface>
   return css`
     ${sizes
       .map((value, index) =>

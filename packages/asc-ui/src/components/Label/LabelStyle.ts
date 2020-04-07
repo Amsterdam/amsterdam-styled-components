@@ -50,10 +50,11 @@ const LabelStyle = styled.label<Props & StyleOnlyProps>`
     `}
 `
 
-LabelStyle.defaultProps = {
-  position: 'right',
-  align: 'center',
-} as SharedProps
+LabelStyle.defaultProps =
+  {
+    position: 'right',
+    align: 'center',
+  } as SharedProps
 
 export const LabelTextStyle = styled.span<SharedProps>`
   ${({ position }) =>
