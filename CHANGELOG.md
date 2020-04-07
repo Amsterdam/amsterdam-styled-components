@@ -15,6 +15,8 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## Unreleased
+
+## [0.19.0]
 - Changed: AmsterdamLogo is now the default logo in the Header
 
 ## [0.19.0]
