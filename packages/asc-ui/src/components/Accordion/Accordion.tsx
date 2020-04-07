@@ -27,6 +27,7 @@ const Accordion: React.FC<
     if (isOpen !== undefined && isOpen !== open) {
       setOpen(isOpen)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen])
 
   const handleClick = useCallback(() => {

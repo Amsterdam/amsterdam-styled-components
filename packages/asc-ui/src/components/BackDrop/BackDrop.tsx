@@ -32,8 +32,9 @@ const BackDrop: React.FC<Props & HTMLAttributes<HTMLDivElement>> = ({
         ? {
             element,
             blurredNode: blurredNodeSelector
-              ? (window.document.querySelector(blurredNodeSelector) as
-                HTMLElement)
+              ? (window.document.querySelector(
+                  blurredNodeSelector,
+                ) as HTMLElement)
               : undefined,
             hideOverFlow,
           }

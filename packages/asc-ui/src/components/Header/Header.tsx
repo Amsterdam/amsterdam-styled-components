@@ -7,6 +7,7 @@ import HeaderLogoText, { LogoProps } from './HeaderLogoText'
 import HeaderNavigation from './HeaderNavigation'
 import HeaderLinks from './HeaderLinks'
 import { CustomCssPropsType } from '../../utils'
+import AmsterdamLogo from '../AmsterdamLogo'
 
 type Props = {
   tall?: boolean
@@ -43,6 +44,7 @@ const Header: React.FC<Props> = ({
 Header.defaultProps = {
   tall: false,
   fullWidth: true,
+  logo: AmsterdamLogo,
 }
 
 export default Header

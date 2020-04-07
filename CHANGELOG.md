@@ -15,9 +15,11 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## Unreleased
+- Changed: AmsterdamLogo is now the default logo in the Header
 
 ## [0.19.0]
 
+- Changed: **Breaking** `SearchBar` - `onChange` and `onSubmit` will pass an event now instead of the input value
 - Deprecated: `SearchBar` - `onWatchValue` and `onSubmit` button. Instead wrap the component in a `form` element with an `onSubmit` and use `onChange` and `onClear` instead of `onWatchValue`
 - Removed: `text-decoration` hover styling from the `HeaderTitle` component (according to design system)
 - Added: indeterminate state to Checkboxes
