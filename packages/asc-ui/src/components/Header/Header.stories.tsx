@@ -3,7 +3,6 @@ import styled from '@datapunt/asc-core'
 import { FacebookPadded } from '@datapunt/asc-assets'
 import Header from './Header'
 import Typography from '../Typography'
-import AmsterdamLogo from '../AmsterdamLogo'
 import Icon from '../Icon'
 import { themeSpacing } from '../../utils'
 
@@ -26,7 +25,6 @@ export const HeaderShort = () => (
     title="Data en informatie"
     homeLink="http://data.amsterdam.nl"
     fullWidth={false}
-    logo={AmsterdamLogo}
   />
 )
 
@@ -36,7 +34,6 @@ export const HeaderShortFullWidth = () => (
     title="Data en informatie"
     homeLink="http://data.amsterdam.nl"
     fullWidth
-    logo={AmsterdamLogo}
   />
 )
 
@@ -50,7 +47,6 @@ export const HeaderTall = () => (
     title="Data en informatie"
     homeLink="http://data.amsterdam.nl"
     fullWidth={false}
-    logo={AmsterdamLogo}
   />
 )
 
@@ -64,7 +60,6 @@ export const HeaderTallWithHeaderContent = () => (
     title="Data en informatie"
     homeLink="http://data.amsterdam.nl"
     fullWidth={false}
-    logo={AmsterdamLogo}
     navigation={
       <Typography as="span">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis,
