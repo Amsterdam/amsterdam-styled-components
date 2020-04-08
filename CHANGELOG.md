@@ -16,7 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
-## [0.19.0]
+## [0.19.1]
 - Changed: AmsterdamLogo is now the default logo in the Header
 
 ## [0.19.0]
