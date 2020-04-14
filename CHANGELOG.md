@@ -15,6 +15,8 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## Unreleased
+
+## [0.19.2-beta.0]
 - Added Hidden component
 
 ## [0.19.1]
