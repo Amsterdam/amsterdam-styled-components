@@ -104,12 +104,14 @@ import {
   AccordionWrapper,
   AccordionStyles,
 } from './components/Accordion'
+import Hidden from './components/Hidden'
 import { themeColor } from './utils'
 import { perceivedLoading } from './utils/themeUtils'
 
+import * as hooks from './utils/hooks'
 import * as constants from './components/shared/constants'
 
-export { constants }
+export { constants, hooks }
 
 /**
  * @deprecated
@@ -120,7 +122,13 @@ const ShareBar = ButtonBar
 const color = themeColor
 export { color, themeColor, perceivedLoading }
 
-export { breakpoint, svgFill, themeSpacing, showAboveBackDrop } from './utils'
+export {
+  breakpoint,
+  svgFill,
+  themeSpacing,
+  showAboveBackDrop,
+  showHide,
+} from './utils'
 
 export const styles = {
   ...AmsterdamLogoStyles,
@@ -249,4 +257,5 @@ export {
   Tag,
   ViewerContainer,
   CompactPager,
+  Hidden,
 }
