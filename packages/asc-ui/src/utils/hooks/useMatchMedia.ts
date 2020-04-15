@@ -54,14 +54,24 @@ const useMatchMedia = ({ minBreakpoint, maxBreakpoint, query }: Arguments) => {
       matchMedia = window.matchMedia(mediaQuery)
       handleMediaQueryListEvent(matchMedia)
 
-      matchMedia.addEventListener('change', handleMediaQueryListEvent)
+      // addEventListener might throw an error on iOS / Safari
+      if (matchMedia.addEventListener) {
+        matchMedia.addEventListener('change', handleMediaQueryListEvent)
+      } else {
+        matchMedia.addListener(handleMediaQueryListEvent)
+      }
     } else {
       // eslint-disable-next-line no-console
       console.warn(WARNING_MESSAGES.noProps)
     }
     return () => {
       if (matchMedia) {
-        matchMedia.removeEventListener('change', handleMediaQueryListEvent)
+        // removeEventListener might throw an error on iOS / Safari
+        if (matchMedia.removeEventListener) {
+          matchMedia.removeEventListener('change', handleMediaQueryListEvent)
+        } else {
+          matchMedia.removeListener(handleMediaQueryListEvent)
+        }
       }
     }
   }, [])
