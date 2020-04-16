@@ -11,7 +11,7 @@ const AccordionContent = styled.div<Props>`
   transition: border-color 0.1s ease-in-out;
   border: 2px solid ${themeColor('tint', 'level3')};
   border-top: none;
-  padding: ${themeSpacing(4, 5)};
+  padding: ${themeSpacing(4)};
   display: ${({ isOpen }) => !isOpen && 'none'};
 `
 
@@ -25,8 +25,6 @@ const AccordionButtonContent = styled.span`
 const AccordionButton = styled(Button)<Props>`
   width: 100%;
   background-color: ${themeColor('tint', 'level3')};
-  padding-left: ${themeSpacing(5)};
-  padding-right: ${themeSpacing(5)};
 
   &:hover,
   /* double ampersand to override this style */
