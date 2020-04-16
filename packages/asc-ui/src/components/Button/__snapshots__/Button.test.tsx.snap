@@ -17,7 +17,7 @@ exports[`Button should render the button 1`] = `
   border: none;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 20px;
   padding: 12px 15px;
   -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;

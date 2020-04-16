@@ -21,7 +21,7 @@ exports[`IconButton should render the IconButton 1`] = `
   border: none;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 20px;
   padding: ",
           [Function],

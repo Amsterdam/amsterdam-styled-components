@@ -130,7 +130,6 @@ const getVariant = () => ({
         text-align: left;
         color: ${themeColor('primary')};
         background-color: rgba(0, 0, 0, 0);
-        font-weight: 700;
         ${svgFill('primary')};
 
         /* remove transition because it's async with Icon */
@@ -231,7 +230,7 @@ const ButtonStyle = styled.button<Props>`
   border: none;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 20px;
   padding: ${({ size: sizeProp }) => (sizeProp ? '0' : '12px 15px')};
   ${({ size: sizeProp, square }) =>
