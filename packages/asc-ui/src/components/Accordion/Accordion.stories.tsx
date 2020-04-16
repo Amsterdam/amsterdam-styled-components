@@ -6,7 +6,7 @@ import AccordionWrapper from './AccordionWrapper'
 import Icon from '../Icon'
 
 export default {
-  title: 'Experimental/Atoms/Accordion',
+  title: 'Atoms/Accordion',
 
   decorators: [
     (storyFn: () => React.ReactNode) => (
