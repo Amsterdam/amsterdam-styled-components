@@ -1,6 +1,6 @@
 import React from 'react'
-import SelectStyle, { Props } from './SelectStyle'
 import FormLabelStyle from '../FormLabelStyle'
+import SelectStyle, { Props, SelectIcon, SelectWrapper } from './SelectStyle'
 
 const Select = React.forwardRef<
   HTMLSelectElement,
@@ -45,15 +45,18 @@ const Select = React.forwardRef<
             {errorMessage}
           </FormLabelStyle>
         )}
-        <SelectStyle
-          {...{
-            ...otherProps,
-            id,
-            value,
-          }}
-          error={error}
-          ref={ref}
-        />
+        <SelectWrapper>
+          <SelectStyle
+            {...{
+              ...otherProps,
+              id,
+              value,
+            }}
+            error={error}
+            ref={ref}
+          />
+          <SelectIcon />
+        </SelectWrapper>
       </>
     )
   },

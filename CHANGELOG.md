@@ -15,6 +15,7 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## Unreleased
+- Changed: Internal SVG icon imports are replaced with React components, eliminating the need for including an SVG loader (closes #459)
 
 ## [0.19.2-beta.0]
 - Added Hidden component
