@@ -37,7 +37,10 @@ module.exports = {
     '/packages/asc-assets/',
     '/packages/asc-ui/src/internals',
   ],
-  setupFilesAfterEnv: ['<rootDir>/config/testing/test-bundler.ts'],
+  setupFilesAfterEnv: [
+    '<rootDir>/config/testing/mocks/matchMedia.ts',
+    '<rootDir>/config/testing/test-bundler.ts',
+  ],
   transform: {
     '\\.(ts|tsx)$': 'ts-jest',
   },

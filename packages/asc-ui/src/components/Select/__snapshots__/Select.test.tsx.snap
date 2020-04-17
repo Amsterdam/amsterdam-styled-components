@@ -1,18 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select should render 1`] = `
+.c4 {
+  position: absolute;
+  display: block;
+  width: 12px;
+  height: 12px;
+  top: calc(50% - 6px);
+  right: 12px;
+}
+
 .c2 {
-  width: 100%;
+  position: relative;
   height: 40px;
+  width: 100%;
+}
+
+.c3 {
+  width: 100%;
+  height: 100%;
   padding: 0 12px;
   font-size: 1rem;
   border: 0;
   border-radius: 0;
   background-color: #ffffff;
-  background-image: url("-react-component: svg-mock;");
-  background-position: calc(100% - 12px) 50%;
-  background-repeat: no-repeat;
-  background-size: 12px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -20,32 +31,32 @@ exports[`Select should render 1`] = `
   box-shadow: inset 0 0 0 1px #767676;
 }
 
-.c2::-ms-expand {
+.c3::-ms-expand {
   display: none;
 }
 
-.c2::-ms-value {
+.c3::-ms-value {
   color: black;
   background: transparent;
 }
 
-.c2:-moz-focusring {
+.c3:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #000000;
 }
 
-.c2:hover {
+.c3:hover {
   box-shadow: inset 0 0 0 1px #000000;
 }
 
-.c2:focus {
+.c3:focus {
   outline-color: #FEC813;
   outline-style: solid;
   outline-offset: 0px;
   outline-width: 2px;
 }
 
-.c2:disabled {
+.c3:disabled {
   pointer-events: none;
   opacity: 0.5;
   box-shadow: inset 0 0 0 1px #B4B4B4;
@@ -65,7 +76,7 @@ exports[`Select should render 1`] = `
   cursor: pointer;
 }
 
-.c0 .c3 {
+.c0 .c5 {
   padding-right: 12px;
 }
 
@@ -87,31 +98,45 @@ exports[`Select should render 1`] = `
     >
       Select 1
     </span>
-    <select
+    <div
       class="c2"
-      id="select-1"
     >
-      <option
-        value="1"
+      <select
+        class="c3"
+        id="select-1"
       >
-        Option 1
-      </option>
-      <option
-        value="2"
+        <option
+          value="1"
+        >
+          Option 1
+        </option>
+        <option
+          value="2"
+        >
+          Option 2
+        </option>
+        <option
+          value="3"
+        >
+          Option 3
+        </option>
+        <option
+          value="4"
+        >
+          Option 4
+        </option>
+      </select>
+      <svg
+        class="c4"
+        focusable="false"
+        viewBox="0 0 32 32"
       >
-        Option 2
-      </option>
-      <option
-        value="3"
-      >
-        Option 3
-      </option>
-      <option
-        value="4"
-      >
-        Option 4
-      </option>
-    </select>
+        <path
+          d="M16 25.757l-16-16 2.91-2.9L16 19.937l13.09-13.08 2.91 2.9z"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </div>
   </label>
 </div>
 `;
