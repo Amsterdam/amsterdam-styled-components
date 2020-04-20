@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import TopBarStyle from '../TopBar/TopBarStyle'
 import { getValueFromTheme } from '../../utils'
 

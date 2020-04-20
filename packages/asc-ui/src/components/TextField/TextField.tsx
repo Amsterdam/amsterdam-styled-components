@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { useUID } from 'react-uid'
 import { Close } from '@datapunt/asc-assets'
 import FormLabelStyle from '../FormLabelStyle'

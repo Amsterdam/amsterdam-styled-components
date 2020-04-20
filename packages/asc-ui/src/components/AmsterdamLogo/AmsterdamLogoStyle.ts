@@ -1,5 +1,5 @@
 import { LogoShort, LogoTall } from '@datapunt/asc-assets'
-import styled, { css } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import {
   breakpoint,
   focusStyleOutline,

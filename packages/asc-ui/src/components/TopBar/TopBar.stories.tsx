@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { Close } from '@datapunt/asc-assets'

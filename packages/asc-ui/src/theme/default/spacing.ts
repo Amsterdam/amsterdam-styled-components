@@ -1,4 +1,4 @@
-import { Theme } from '..'
+import { Theme } from '../../types'
 
 import Spacing = Theme.Spacing
 

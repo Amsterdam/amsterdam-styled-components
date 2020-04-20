@@ -24,7 +24,6 @@ module.exports = {
       '<rootDir>/config/testing/mocks/image.ts',
     '^@datapunt/asc-ui': '<rootDir>/packages/asc-ui/src',
     '^@datapunt/asc-assets': '<rootDir>/packages/asc-assets/src',
-    '^@datapunt/asc-core': '<rootDir>/packages/asc-core/src',
   },
   testPathIgnorePatterns: [
     '/node_modules/',

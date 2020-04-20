@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-constructor, no-empty-function */
 import { CSSProp } from 'styled-components'
 
 export namespace Theme {
@@ -135,43 +134,5 @@ export namespace Theme {
     maxGridWidth: number
     maxContainerWidth: number
     spacing: Spacing
-  }
-
-  export class ThemeFactory implements ThemeInterface {
-    static createTheme(themeName: string): ThemeInterface {
-      /* eslint-disable global-require, import/no-dynamic-require */
-      const breakpoints = require(`./${themeName}/breakpoints`).default
-      const colors = require(`./${themeName}/colors`).default
-      const globalStyle = require(`./${themeName}/globalStyle`).default
-      const typography = require(`./${themeName}/typography`).default
-      const layouts = require(`./${themeName}/layouts`).default
-      const {
-        maxGridWidth,
-        maxContainerWidth,
-      } = require(`./${themeName}/layouts`)
-      const spacing = require(`./${themeName}/spacing`).default
-      /* eslint-enable global-require, import/no-dynamic-require */
-      return new ThemeFactory(
-        breakpoints,
-        colors,
-        globalStyle,
-        typography,
-        layouts,
-        maxGridWidth,
-        maxContainerWidth,
-        spacing,
-      )
-    }
-
-    constructor(
-      public breakpoints: BreakpointsInterface,
-      public colors: ColorTypeInterface,
-      public globalStyle: GlobalStyleType,
-      public typography: TypographyInterface,
-      public layouts: LayoutInterface,
-      public maxGridWidth: number,
-      public maxContainerWidth: number,
-      public spacing: Spacing,
-    ) {}
   }
 }

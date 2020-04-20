@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import HeaderStyle, { Props as HeaderStyleProps } from './HeaderStyle'
 import HeaderWrapperStyle, {
   Props as HeaderWrapperProps,

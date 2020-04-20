@@ -1,4 +1,4 @@
-import styled, { Theme, css } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import { transitions, readableColor, darken, size } from 'polished'
 import {
   themeColor,
@@ -8,6 +8,7 @@ import {
 } from '../../utils'
 import { flexboxMinHeightFix } from '../shared/ie-fixes'
 import Icon from '../Icon'
+import { Theme } from '../../types'
 
 export type ButtonVariant =
   | 'primary'

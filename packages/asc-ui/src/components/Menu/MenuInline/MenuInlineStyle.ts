@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import { MenuListStyle } from '../MenuList'
 import { MenuItemStyle } from '../MenuItem'
 import { showHide, ShowHideTypes, showAboveBackDrop } from '../../../utils'

@@ -1,16 +1,14 @@
-import * as React from 'react'
+import React from 'react'
 import { render, cleanup } from '@testing-library/react'
-import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import Link from './Link'
-
-const theme = { ...ascDefaultTheme }
+import { ThemeProvider } from '../../theme'
 
 describe('Link', () => {
   afterEach(cleanup)
 
   it('should render the links ', () => {
     const { getByText } = render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider>
         <>
           <Link href="http://default-link">default link</Link>
           <Link href="http://with-chevron-link" variant="with-chevron">

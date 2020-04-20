@@ -1,4 +1,4 @@
-import styled, { css } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import { MenuItemStyle } from '../MenuItem'
 import MenuListStyle from '../MenuList/MenuListStyle'
 import { FLY_OUT_WIDTH, MENU_ITEM_SIZE } from '../constants'

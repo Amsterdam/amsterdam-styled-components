@@ -1,4 +1,4 @@
-import styled, { css } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import { stripUnit } from 'polished'
 import { breakpoint } from '../../../utils'
 import EditorialBodyStyle from '../EditorialBody/EditorialBodyStyle'

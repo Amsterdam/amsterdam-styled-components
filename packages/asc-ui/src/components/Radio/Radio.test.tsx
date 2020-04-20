@@ -1,9 +1,9 @@
-import * as React from 'react'
+import React from 'react'
 import { render, cleanup, fireEvent } from '@testing-library/react'
-import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import RadioGroup from './RadioGroup'
 import Radio from './Radio'
 import Label from '../Label'
+import { ThemeProvider } from '../../theme'
 
 describe('Radio', () => {
   let container: any
@@ -13,7 +13,7 @@ describe('Radio', () => {
   beforeEach(() => {
     cleanup()
     ;({ container } = render(
-      <ThemeProvider theme={ascDefaultTheme}>
+      <ThemeProvider>
         <RadioGroup name="group" id="group">
           <Label htmlFor="radio-1" label="Radio 1" id="label-1">
             <Radio onChange={onChangeMock} id="radio-1" value="value-1" />
@@ -74,7 +74,7 @@ describe('Radio', () => {
     const ref = React.createRef<HTMLInputElement>()
 
     render(
-      <ThemeProvider theme={ascDefaultTheme}>
+      <ThemeProvider>
         <RadioGroup name="group" id="group">
           <Radio id="radio-1" value="value-1" ref={ref} />
         </RadioGroup>

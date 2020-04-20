@@ -1,6 +1,5 @@
 import React from 'react'
-import './App.css'
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import {
   ThemeProvider,
   GlobalStyle,
@@ -55,59 +54,51 @@ const StyledLinkListItem = styled(ListItem)`
   }
 `
 
-const App = () => {
-  return (
-    <ThemeProvider overrides={themeOverides}>
-      <>
-        <GlobalStyle />
-        <div className="App">
-          <Typography>Link list deafaultexample</Typography>
-          <Typography $as="p" className="App-link-list-container">
-            <List>
-              <ListItem>
-                <Link href="/" linkType="with-chevron">
-                  default LinkListItem 1
-                </Link>
-              </ListItem>
-              <ListItem>
-                <Link href="/" linkType="with-chevron">
-                  default LinkListItem 2
-                </Link>
-              </ListItem>
-            </List>
-          </Typography>
-          <Typography $as="p" className="App-link-list-container">
-            <StyledLinkList>
-              <ListItem>
-                <Link href="/" linkType="with-chevron">
-                  StyledLinkList LinkListItem 1
-                </Link>
-              </ListItem>
-              <ListItem>
-                <Link href="/" linkType="with-chevron">
-                  StyledLinkList LinkListItem 2
-                </Link>
-              </ListItem>
-            </StyledLinkList>
-          </Typography>
-          <Typography $as="p" className="App-link-list-container">
-            <StyledLinkList className="link-list">
-              <StyledLinkListItem>
-                <Link href="/" linkType="with-chevron">
-                  StyledLinkList StyledLinkListItem 1
-                </Link>
-              </StyledLinkListItem>
-              <StyledLinkListItem>
-                <Link href="/" linkType="with-chevron">
-                  StyledLinkList StyledLinkListItem 2
-                </Link>
-              </StyledLinkListItem>
-            </StyledLinkList>
-          </Typography>
-        </div>
-      </>
-    </ThemeProvider>
-  )
-}
+const App = () => (
+  <ThemeProvider overrides={themeOverides}>
+    <>
+      <GlobalStyle />
+      <div className="App">
+        <Typography>Link list deafaultexample</Typography>
+        <List>
+          <ListItem>
+            <Link href="/" linkType="with-chevron">
+              default LinkListItem 1
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="/" linkType="with-chevron">
+              default LinkListItem 2
+            </Link>
+          </ListItem>
+        </List>
+        <StyledLinkList>
+          <ListItem>
+            <Link href="/" linkType="with-chevron">
+              StyledLinkList LinkListItem 1
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="/" linkType="with-chevron">
+              StyledLinkList LinkListItem 2
+            </Link>
+          </ListItem>
+        </StyledLinkList>
+        <StyledLinkList className="link-list">
+          <StyledLinkListItem>
+            <Link href="/" linkType="with-chevron">
+              StyledLinkList StyledLinkListItem 1
+            </Link>
+          </StyledLinkListItem>
+          <StyledLinkListItem>
+            <Link href="/" linkType="with-chevron">
+              StyledLinkList StyledLinkListItem 2
+            </Link>
+          </StyledLinkListItem>
+        </StyledLinkList>
+      </div>
+    </>
+  </ThemeProvider>
+)
 
 export default App

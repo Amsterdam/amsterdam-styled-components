@@ -1,4 +1,4 @@
-import styled, { css } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import { themeColor, svgFill } from '../../../utils'
 import Button, { Props as ButtonProps } from '../../Button/Button'
 import MenuFlyOutStyle from '../MenuFlyOut/MenuFlyOutStyle'

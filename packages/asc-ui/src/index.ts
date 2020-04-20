@@ -1,5 +1,3 @@
-import { ServerStyleSheet, Theme, ascDefaultTheme } from '@datapunt/asc-core'
-
 import AmsterdamLogo, { AmsterdamLogoStyles } from './components/AmsterdamLogo'
 import BackDrop, { BackDropStyles } from './components/BackDrop'
 import Icon, { IconStyle } from './components/Icon'
@@ -73,7 +71,6 @@ import {
   MenuButton,
   MenuContext,
 } from './components/Menu'
-import ThemeProvider, { CompactThemeProvider } from './theme'
 import IconButton from './components/deprecated/IconButton'
 import ButtonBar from './components/deprecated/ButtonBar'
 import Radio, { RadioGroup } from './components/Radio'
@@ -110,6 +107,10 @@ import { perceivedLoading } from './utils/themeUtils'
 
 import * as hooks from './utils/hooks'
 import * as constants from './components/shared/constants'
+import { ascDefaultTheme } from './theme'
+import ThemeProvider from './theme/ThemeProvider'
+import CompactThemeProvider from './theme/CompactThemeProvider'
+import { Theme } from './types'
 
 export { constants, hooks }
 
@@ -234,7 +235,6 @@ export {
   SearchBar,
   SearchBarToggle,
   Select,
-  ServerStyleSheet,
   ShareButton,
   Spinner,
   TextField,

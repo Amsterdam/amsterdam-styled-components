@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme'
-import * as React from 'react'
+import React from 'react'
 import TextField from './TextField'
-import { ThemeProvider } from '../../index'
+import { ThemeProvider } from '../../theme'
 
 describe('<TextField />', () => {
   it('should render', () => {

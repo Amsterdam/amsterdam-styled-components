@@ -1,17 +1,13 @@
-import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import { cleanup, render } from '@testing-library/react'
-import * as React from 'react'
+import React from 'react'
 import FilterTag from './FilterTag'
-
-const theme = {
-  ...ascDefaultTheme,
-}
+import { ThemeProvider } from '../../theme'
 
 describe('FilterTag', () => {
   beforeEach(cleanup)
   it('should render and apply default style', () => {
     const { queryByText } = render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider>
         <FilterTag>Verkeer en infrastructuur</FilterTag>
       </ThemeProvider>,
     )

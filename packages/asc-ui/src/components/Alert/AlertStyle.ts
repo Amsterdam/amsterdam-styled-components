@@ -1,4 +1,4 @@
-import styled, { css, Theme } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import {
   focusStyleOutline,
   svgFill,
@@ -6,6 +6,7 @@ import {
   themeSpacing,
 } from '../../utils'
 import Button from '../Button'
+import { Theme } from '../../types'
 
 export type Level = 'normal' | 'attention' | 'error'
 

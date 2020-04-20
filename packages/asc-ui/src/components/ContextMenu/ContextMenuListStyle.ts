@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import { themeColor } from '../../utils'
 import { Position } from './types'
 

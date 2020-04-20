@@ -1,4 +1,4 @@
-import styled, { css } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import { HeaderStyleCSS } from '../Heading/HeadingStyle'
 import { InlineLinkStyleCSS } from '../Link/LinkStyle'
 import { ParagraphStyleCSS } from '../Paragraph/ParagraphStyle'

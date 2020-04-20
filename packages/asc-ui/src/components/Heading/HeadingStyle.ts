@@ -1,4 +1,4 @@
-import styled, { css } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import { Props as TypographyProps } from '../Typography/TypographyStyle'
 import Typography from '../Typography'
 

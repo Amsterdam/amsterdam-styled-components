@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import ToggleFooterHeader from './ToggleFooterHeader'
 import { Toggle } from '../../Toggle'
 import { ShowHideTypes, themeSpacing } from '../../../utils'

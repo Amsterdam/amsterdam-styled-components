@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 
 const CardActionsStyle = styled.div`
   padding: 0 16px 24px;

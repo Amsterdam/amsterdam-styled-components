@@ -1,4 +1,4 @@
-import styled, { css } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import { themeSpacing } from '../../utils/themeUtils'
 
 const OFFSET_UNIT = 4

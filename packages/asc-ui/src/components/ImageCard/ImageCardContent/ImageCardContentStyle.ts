@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import { themeColor, breakpoint } from '../../../utils'
 
 export default styled.div`

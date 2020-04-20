@@ -1,4 +1,4 @@
-import styled, { css } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import { breakpoint, themeColor } from '../../../utils'
 import BackgroundImageStyle from '../../BackgroundImage/BackgroundImageStyle'
 import EditorialContentStyle from '../EditorialContent/EditorialContentStyle'

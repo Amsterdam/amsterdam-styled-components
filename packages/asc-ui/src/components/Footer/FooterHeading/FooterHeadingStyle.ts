@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import Heading, { Props } from '../../Heading/Heading'
 import { themeColor } from '../../../utils'
 

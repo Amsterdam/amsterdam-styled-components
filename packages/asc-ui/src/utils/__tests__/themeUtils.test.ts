@@ -1,4 +1,3 @@
-import { ascDefaultTheme } from '@datapunt/asc-core'
 import {
   themeColor,
   focusStyleOutline,
@@ -12,6 +11,7 @@ import {
   showAboveBackDrop,
 } from '../themeUtils'
 import { BACKDROP_Z_INDEX } from '../../components/shared/constants'
+import { ascDefaultTheme } from '../../theme'
 
 const { colors, typography } = ascDefaultTheme
 

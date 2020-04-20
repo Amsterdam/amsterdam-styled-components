@@ -1,11 +1,7 @@
-import * as React from 'react'
-import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
+import React from 'react'
 import { render, cleanup, fireEvent } from '@testing-library/react'
 import FooterToggle from './FooterToggle'
-
-const theme = {
-  ...ascDefaultTheme,
-}
+import { ThemeProvider } from '../../../theme'
 
 describe('FooterToggle', () => {
   afterEach(cleanup)
@@ -14,7 +10,7 @@ describe('FooterToggle', () => {
       title: 'title',
     }
     const { queryByTestId, getByText } = render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider>
         <FooterToggle {...testProps}>
           <div data-testid="test-id">toggle content</div>
         </FooterToggle>

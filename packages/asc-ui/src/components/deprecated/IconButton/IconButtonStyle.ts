@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import { size } from 'polished'
 import IconStyle from '../../Icon/IconStyle'
 import ButtonStyle, {

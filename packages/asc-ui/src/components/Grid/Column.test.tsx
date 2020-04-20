@@ -1,11 +1,11 @@
 import React from 'react'
 import { render, cleanup } from '@testing-library/react'
-import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import { mount } from 'enzyme'
-import Row from '../Row'
-import Column from '../Column'
-import ColumnStyle from '../ColumnStyle'
-import { mediaQuery } from '../../../utils/grid'
+import Row from './Row'
+import Column from './Column'
+import ColumnStyle from './ColumnStyle'
+import { mediaQuery } from '../../utils/grid'
+import { ThemeProvider, ascDefaultTheme } from '../../theme'
 
 const theme = {
   ...ascDefaultTheme,
@@ -16,6 +16,7 @@ const theme = {
       margin: 60,
       gutter: 34,
       min: 2000,
+      max: 4000,
     },
     big: {
       columns: 12,

@@ -3,11 +3,7 @@
     "noLib": false,
     "module": "commonjs",
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "types": [
       "enzyme",
       "enzyme-adapter-react-16",
@@ -43,20 +39,12 @@
   },
   "references": [
     { "path": "packages/asc-assets" },
-    { "path": "packages/asc-core" },
     { "path": "packages/asc-ui" }
   ],
   "files": [
     "custom.d.ts",
     "node_modules/jest-styled-components/typings/index.d.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "lib"
-  ],
-  "include": [
-    "packages",
-    "**/*.tsx",
-    "**/*.ts"
-  ]
+  "exclude": ["node_modules", "lib", "es"],
+  "include": ["packages", "**/*.tsx", "**/*.ts"]
 }

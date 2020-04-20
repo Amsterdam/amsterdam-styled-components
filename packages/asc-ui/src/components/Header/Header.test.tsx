@@ -1,5 +1,5 @@
-import * as React from 'react'
-import styled from '@datapunt/asc-core'
+import React from 'react'
+import styled from 'styled-components'
 import { Facebook } from '@datapunt/asc-assets'
 import Header from './Header'
 import { renderWithTheme } from '../../utils/withTheme'

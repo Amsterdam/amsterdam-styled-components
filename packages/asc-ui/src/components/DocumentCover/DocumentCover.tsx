@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import { Download } from '@datapunt/asc-assets'
 import DocumentCoverStyle from './DocumentCoverStyle'
 import Button from '../Button'

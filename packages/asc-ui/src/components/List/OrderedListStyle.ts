@@ -1,4 +1,4 @@
-import styled, { css } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import { getTypographyFromTheme, themeSpacing } from '../../utils/themeUtils'
 
 export const OrderedListStyleCSS = css`

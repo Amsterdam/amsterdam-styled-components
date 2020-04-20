@@ -1,5 +1,5 @@
 import { position, transparentize } from 'polished'
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import { BACKDROP_Z_INDEX } from '../shared/constants'
 
 import { themeColor } from '../../utils'

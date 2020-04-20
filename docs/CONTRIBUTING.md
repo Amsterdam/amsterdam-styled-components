@@ -11,8 +11,6 @@ While developing we use the following conventions and rules to develop component
 
 - _asc-assets_ contains icons and fonts. This package can be used standalone in other projects that
   are not using Amsterdam Styled Components.
-- _asc-core_ contains re-exported styled components and theme configuration, that can be found in
-  the `asc-core/src/` folder.
 - _asc-ui_ is the main package where we develop our components.
 
 ### File structure and content

@@ -11,7 +11,7 @@
 [Demo site with the storybook of the components](https://amsterdam.github.io/amsterdam-styled-components)
 
 ## Install the complete asc project
-`npm install --save @datapunt/asc-assets @datapunt/asc-core @datapunt/asc-ui`
+`npm install --save @datapunt/asc-assets @datapunt/asc-ui`
 
 ## Vision
 
@@ -68,10 +68,9 @@ Please read the [CONTRIBUTION.md](./docs/CONTRIBUTING.md)
 
 ## Structure
 
-This project is a monorepo with 3 packages
+This project is a monorepo with 2 packages
 
 - [asc-assets](packages/asc-assets) - contains fonts and icons (in directory `static`) and react-icons
-- [asc-core](packages/asc-core) - contains the theme definitions
 - [asc-ui](packages/asc-ui) - the react implementation of the components
 
 ## Usage
@@ -154,7 +153,6 @@ const App = () => (
 More detailed information can be found in the README.md of each package.
 
 - [asc-assets](packages/asc-assets/README.md)
-- [asc-core](packages/asc-core/README.md)
 - [asc-ui](packages/asc-ui/README.md)
 
 ### Stability of components

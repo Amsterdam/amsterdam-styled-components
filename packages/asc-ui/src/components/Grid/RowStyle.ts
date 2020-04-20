@@ -1,4 +1,4 @@
-import styled, { css, Theme } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import { getValueFromTheme, valueFromObject } from '../../utils'
 import {
   mediaQuery,
@@ -10,6 +10,7 @@ import {
   gutter,
 } from '../../utils/grid'
 import { TypeFlexPosition } from '.'
+import { Theme } from '../../types'
 
 type FlexJustify =
   | 'flex-start'
@@ -58,7 +59,7 @@ const RowStyle = styled.div<TypeProps>`
     debug &&
     css`
       position: relative;
-    `};
+    `}
   ${({
     debug,
     debugColor,

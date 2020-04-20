@@ -1,4 +1,4 @@
-import styled, { css } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import { stripUnit } from 'polished'
 import { themeColor, themeSpacing, getTypographyFromTheme } from '../../utils'
 import { getTypographyValueFromProperty } from '../../utils/themeUtils'

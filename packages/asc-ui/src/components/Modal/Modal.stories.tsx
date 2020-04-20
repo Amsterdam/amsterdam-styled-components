@@ -1,5 +1,5 @@
-import * as React from 'react'
-import styled from '@datapunt/asc-core'
+import React from 'react'
+import styled from 'styled-components'
 import { linkTo } from '@storybook/addon-links'
 import { withKnobs, number } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'

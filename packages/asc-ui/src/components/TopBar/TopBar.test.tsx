@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import TopBar from './TopBar'
 import { renderWithTheme } from '../../utils/withTheme'
 

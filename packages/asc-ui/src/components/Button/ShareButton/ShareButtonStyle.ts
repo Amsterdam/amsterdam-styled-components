@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import IconStyle from '../../Icon/IconStyle'
 import { themeColor, svgFill } from '../../../utils'
 import ButtonStyle, { Props as ButtonProps } from '../ButtonStyle'

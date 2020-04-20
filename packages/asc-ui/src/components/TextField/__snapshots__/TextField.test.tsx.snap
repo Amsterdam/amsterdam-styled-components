@@ -4,6 +4,7 @@ exports[`<TextField /> should render 1`] = `
 <ThemeProvider
   theme={
     Object {
+      "DEFAULT_THEME_NAME": "default",
       "breakpoints": Object {
         "desktop": [Function],
         "desktopL": [Function],

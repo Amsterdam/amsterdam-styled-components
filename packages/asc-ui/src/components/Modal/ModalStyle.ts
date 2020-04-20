@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import { position } from 'polished'
 import Focus from '../Focus'
 import TopBarStyle from '../TopBar/TopBarStyle'

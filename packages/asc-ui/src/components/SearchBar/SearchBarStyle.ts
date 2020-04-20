@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import { showHide, ShowHideTypes } from '../../utils'
 import TextFieldStyle from '../TextField/TextFieldStyle'
 import ButtonStyle from '../Button/ButtonStyle'

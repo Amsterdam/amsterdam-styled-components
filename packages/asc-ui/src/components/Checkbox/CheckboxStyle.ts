@@ -1,4 +1,4 @@
-import styled, { css } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import { themeColor, focusStyleOutline, svgFill } from '../../utils'
 import { IconStyle } from '../Icon'
 import { outlineStyle } from '../../utils/themeUtils'

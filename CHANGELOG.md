@@ -17,10 +17,17 @@ Prefix the change with one of these keywords:
 ## Unreleased
 - Changed: Internal SVG icon imports are replaced with React components, eliminating the need for including an SVG loader (closes #459)
 
-## [0.19.2-beta.0]
+- Added: `theme` prop to `ThemeProvider` to pass a custom theme
+- Changed: **BREAKING** `createTheme` method from `Theme`.
+- Changed: **BREAKING** removed `themeName` from `ThemeProvider`
+- Changed: **BREAKING** removed `asc-core` package. `Theme` and `ascDefaultTheme` can now be found in `asc-ui`
+
+## [0.19.2-beta.1]
+
 - Added Hidden component
 
 ## [0.19.1]
+
 - Changed: AmsterdamLogo is now the default logo in the Header
 
 ## [0.19.0]

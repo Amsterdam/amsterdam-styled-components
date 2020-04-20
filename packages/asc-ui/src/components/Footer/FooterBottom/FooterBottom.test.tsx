@@ -1,24 +1,22 @@
-import * as React from 'react'
+import React from 'react'
 import { render, cleanup } from '@testing-library/react'
-import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import FooterBottom from './FooterBottom'
 import { themeColor } from '../../../utils'
-
-const theme = { ...ascDefaultTheme }
+import { ThemeProvider, ascDefaultTheme } from '../../../theme'
 
 describe('FooterBottom', () => {
   afterEach(cleanup)
 
   it('should render with the style', () => {
     const { queryByTestId } = render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider>
         <FooterBottom data-testid="test-id">Footer bottom</FooterBottom>
       </ThemeProvider>,
     )
 
     expect(queryByTestId('test-id')).toHaveStyleRule(
       'background-color',
-      themeColor('tint', 'level1')({ theme }),
+      themeColor('tint', 'level1')({ theme: ascDefaultTheme }),
     )
   })
 })
