@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import { themeColor, svgFill } from '../../../utils'
 import { ListItem } from '../../List'
 import TypographyStyle from '../../Typography/TypographyStyle'

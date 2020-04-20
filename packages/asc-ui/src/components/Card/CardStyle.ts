@@ -1,9 +1,10 @@
-import styled, { Theme, css } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import { themeColor } from '../../utils'
 import { perceivedLoading } from '../../utils/themeUtils'
 import CardActionsStyle from './CardActionsStyle'
 import { CardMediaWrapperStyle } from './CardMediaStyle'
 import CardContentStyle from './CardContentStyle'
+import { Theme } from '../../types'
 
 export type Props = {
   maxWidth?: number

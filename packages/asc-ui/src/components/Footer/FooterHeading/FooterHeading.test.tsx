@@ -1,19 +1,15 @@
-import * as React from 'react'
-import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
+import React from 'react'
 import { render, cleanup, fireEvent } from '@testing-library/react'
 import { FooterHeading, ToggleFooterHeader } from '../index'
 import { themeColor } from '../../../utils'
-
-const theme = {
-  ...ascDefaultTheme,
-}
+import { ThemeProvider, ascDefaultTheme } from '../../../theme'
 
 describe('FooterHeading', () => {
   afterEach(cleanup)
 
   it('should render the heading', () => {
     const { queryByTestId, queryByText } = render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider>
         <FooterHeading data-testid="test-id">Footer heading</FooterHeading>
       </ThemeProvider>,
     )
@@ -23,7 +19,7 @@ describe('FooterHeading', () => {
     expect(queryByTestId('test-id')).toHaveStyleRule('margin-bottom', '8px')
     expect(queryByTestId('test-id')).toHaveStyleRule(
       'color',
-      themeColor('tint', 'level1')({ theme }),
+      themeColor('tint', 'level1')({ theme: ascDefaultTheme }),
     )
     expect(queryByText('Footer heading')).not.toBeNull()
   })
@@ -39,7 +35,7 @@ describe('ToggleFooterHeader', () => {
     }
 
     const { queryByText, getByText } = render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider>
         <ToggleFooterHeader {...testProps} />
       </ThemeProvider>,
     )

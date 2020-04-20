@@ -1,5 +1,5 @@
 import { margin } from 'polished'
-import styled, { css } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import { themeColor } from '../../utils'
 
 type Props = {

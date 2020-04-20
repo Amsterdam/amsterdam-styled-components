@@ -1,5 +1,5 @@
 import { normalize } from 'polished'
-import { createGlobalStyle } from '@datapunt/asc-core'
+import { createGlobalStyle } from 'styled-components'
 import { getValueFromTheme } from '../../utils'
 
 const GlobalStyle = createGlobalStyle`

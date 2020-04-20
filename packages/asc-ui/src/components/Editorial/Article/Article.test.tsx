@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Article from './Article'
 import { renderWithTheme } from '../../../utils/withTheme'
 

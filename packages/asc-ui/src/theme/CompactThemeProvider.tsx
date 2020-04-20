@@ -1,5 +1,6 @@
 import React from 'react'
-import { ThemeProvider, Theme } from '..'
+import ThemeProvider from './ThemeProvider'
+import { Theme } from '../types'
 
 // These are the overrides for showing compact text for several typography types
 const overridesCompactTheme: Partial<Theme.ThemeInterface> = {

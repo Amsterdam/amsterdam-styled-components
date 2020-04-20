@@ -1,4 +1,5 @@
-import { css, keyframes, Theme } from '@datapunt/asc-core'
+import { css, keyframes } from 'styled-components'
+import { Theme } from '../types'
 
 import { fromProps } from './fromProps'
 import { BACKDROP_Z_INDEX } from '../components/shared/constants'

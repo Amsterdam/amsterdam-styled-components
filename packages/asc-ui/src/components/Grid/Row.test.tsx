@@ -1,14 +1,13 @@
 import React from 'react'
 import { render, cleanup } from '@testing-library/react'
-import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 
-import Row from '../Row'
-import RowStyle from '../RowStyle'
-import Column from '../Column'
-import { mediaQuery } from '../../../utils/grid'
+import Row from './Row'
+import RowStyle from './RowStyle'
+import Column from './Column'
+import { mediaQuery } from '../../utils/grid'
+import { ThemeProvider, ascDefaultTheme } from '../../theme'
 
 const theme = {
-  ...ascDefaultTheme,
   maxGridWidth: 1920,
   layouts: {
     huge: {
@@ -31,14 +30,15 @@ const theme = {
   },
 }
 
-const mq = (layoutId: string) => mediaQuery(layoutId)({ theme })
+const mq = (layoutId: string) =>
+  mediaQuery(layoutId)({ theme: { ...ascDefaultTheme, ...theme } })
 
 describe('Row', () => {
   afterEach(cleanup)
 
   it('should render debug label', () => {
     const { container, rerender } = render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider overrides={theme}>
         <Row>
           <Column span={1}>foo bar</Column>
         </Row>
@@ -48,7 +48,7 @@ describe('Row', () => {
     expect(container.querySelector('.layout-label')).toBeNull()
 
     rerender(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider overrides={theme}>
         <Row debug>
           <Column span={1}>foo bar</Column>
         </Row>
@@ -64,7 +64,7 @@ describe('RowStyle', () => {
 
   it("should set the grid's max width", () => {
     const { container } = render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider overrides={theme}>
         <Row>
           <Column data-testid="span1" span={1}>
             foo bar
@@ -81,7 +81,7 @@ describe('RowStyle', () => {
 
   it("should set the grid's max width to 100%", () => {
     const { container } = render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider overrides={theme}>
         <Row hasMaxWidth={false}>
           <Column data-testid="span1" span={1}>
             foo bar
@@ -103,7 +103,7 @@ describe('RowStyle', () => {
 
   it('should show a linear repeating background image', () => {
     const { container } = render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider overrides={theme}>
         <Row debug>
           <Column span={1}>foo bar</Column>
         </Row>
@@ -131,7 +131,7 @@ describe('RowStyle', () => {
     const halign = 'space-around'
 
     const { container, rerender } = render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider overrides={theme}>
         <Row>
           <Column span={1}>foo bar</Column>
         </Row>
@@ -148,7 +148,7 @@ describe('RowStyle', () => {
     )
 
     rerender(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider overrides={theme}>
         <Row halign={halign} valign={valign}>
           <Column span={1}>foo bar</Column>
         </Row>

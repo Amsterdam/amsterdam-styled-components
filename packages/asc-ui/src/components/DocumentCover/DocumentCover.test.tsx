@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import DocumentCover from './DocumentCover'
 import { renderWithTheme, mountWithTheme } from '../../utils/withTheme'
 import Button from '../Button'

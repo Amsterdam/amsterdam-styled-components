@@ -1,7 +1,8 @@
+import styled, { css } from 'styled-components'
 import { ChevronDown } from '@datapunt/asc-assets'
-import styled, { css, Theme } from '@datapunt/asc-core'
 import { themeColor, themeSpacing } from '../../utils'
 import { outlineStyle } from '../../utils/themeUtils'
+import { Theme } from '../../types'
 
 export type Props = {
   id?: string

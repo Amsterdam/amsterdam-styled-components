@@ -1,5 +1,5 @@
-import { Theme } from '@datapunt/asc-core'
 import { withTheme, getValueFromTheme } from './themeUtils'
+import { Theme } from '../types'
 
 /**
  * Get the value for the maximum width of the grid
@@ -75,7 +75,6 @@ export const margin = withTheme<[string, boolean?]>(
 export const min = withTheme<[string, boolean?]>(
   (theme, layoutId: string, withUnit = false): string | number | undefined => {
     const minValue = getValueFromTheme(`layouts.${layoutId}.min`)({ theme })
-
     if (minValue >= 0) {
       if (withUnit) {
         return `${minValue}px`

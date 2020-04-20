@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { renderWithTheme } from '../../utils/withTheme'
 import ImageCard from './ImageCard'
 import Heading from '../Heading'

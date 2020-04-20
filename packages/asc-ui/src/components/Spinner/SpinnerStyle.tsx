@@ -1,5 +1,6 @@
-import styled, { Theme } from '@datapunt/asc-core'
+import styled from 'styled-components'
 import { CustomCssPropsType } from '../../utils'
+import { Theme } from '../../types'
 
 export type Props = {
   color?: Theme.ColorType

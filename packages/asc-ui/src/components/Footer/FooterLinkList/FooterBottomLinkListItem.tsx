@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import { ListItem } from '../../List'
 import LinkStyle from '../../Link/LinkStyle'
 import { breakpoint } from '../../../utils'

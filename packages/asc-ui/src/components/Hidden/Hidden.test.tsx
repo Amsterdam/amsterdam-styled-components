@@ -3,6 +3,7 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import Hidden from './Hidden'
 import { WARNING_MESSAGES } from '../../utils/hooks/useMatchMedia'
+import ThemeProvider from '../../theme/ThemeProvider'
 
 describe('Hidden component and useMatchMedia hook', () => {
   const addEventListenerMock = jest.fn()
@@ -27,9 +28,11 @@ describe('Hidden component and useMatchMedia hook', () => {
 
   it('should not render the child when media matches', () => {
     const { container } = render(
-      <Hidden query="(min-width: 300px;)">
-        <span>Foo</span>
-      </Hidden>,
+      <ThemeProvider>
+        <Hidden query="(min-width: 300px;)">
+          <span>Foo</span>
+        </Hidden>
+      </ThemeProvider>,
     )
 
     expect(container.children.length).toBe(0)
@@ -39,9 +42,11 @@ describe('Hidden component and useMatchMedia hook', () => {
     matches = false
 
     const { container, unmount } = render(
-      <Hidden query="(min-width: 300px;)">
-        <span>Foo</span>
-      </Hidden>,
+      <ThemeProvider>
+        <Hidden query="(min-width: 300px;)">
+          <span>Foo</span>
+        </Hidden>
+      </ThemeProvider>,
     )
 
     expect(addEventListenerMock).toHaveBeenCalled()
@@ -54,9 +59,11 @@ describe('Hidden component and useMatchMedia hook', () => {
   describe('Console warnings', () => {
     it('should only show a warning in the console when both query and minBreakpoint and / or maxBreakpoint props are set', () => {
       render(
-        <Hidden query="foo" minBreakpoint="tabletM">
-          Hello
-        </Hidden>,
+        <ThemeProvider>
+          <Hidden query="foo" minBreakpoint="tabletM">
+            Hello
+          </Hidden>
+        </ThemeProvider>,
       )
 
       expect(console.warn).toHaveBeenCalledWith(
@@ -66,13 +73,15 @@ describe('Hidden component and useMatchMedia hook', () => {
       jest.clearAllMocks()
 
       render(
-        <Hidden
-          query="(min-width: 300px;)"
-          minBreakpoint="tabletM"
-          maxBreakpoint="laptop"
-        >
-          Hello
-        </Hidden>,
+        <ThemeProvider>
+          <Hidden
+            query="(min-width: 300px;)"
+            minBreakpoint="tabletM"
+            maxBreakpoint="laptop"
+          >
+            Hello
+          </Hidden>
+        </ThemeProvider>,
       )
 
       expect(console.warn).toHaveBeenCalledWith(
@@ -81,7 +90,11 @@ describe('Hidden component and useMatchMedia hook', () => {
 
       jest.clearAllMocks()
 
-      render(<Hidden query="(min-width: 300px;)">Hello</Hidden>)
+      render(
+        <ThemeProvider>
+          <Hidden query="(min-width: 300px;)">Hello</Hidden>
+        </ThemeProvider>,
+      )
 
       expect(console.warn).not.toHaveBeenCalledWith(
         WARNING_MESSAGES.bothQueryAndOther,
@@ -89,7 +102,11 @@ describe('Hidden component and useMatchMedia hook', () => {
 
       jest.clearAllMocks()
 
-      render(<Hidden minBreakpoint="tabletM">Hello</Hidden>)
+      render(
+        <ThemeProvider>
+          <Hidden minBreakpoint="tabletM">Hello</Hidden>
+        </ThemeProvider>,
+      )
 
       expect(console.warn).not.toHaveBeenCalledWith(
         WARNING_MESSAGES.bothQueryAndOther,
@@ -97,7 +114,11 @@ describe('Hidden component and useMatchMedia hook', () => {
 
       jest.clearAllMocks()
 
-      render(<Hidden maxBreakpoint="tabletM">Hello</Hidden>)
+      render(
+        <ThemeProvider>
+          <Hidden maxBreakpoint="tabletM">Hello</Hidden>
+        </ThemeProvider>,
+      )
 
       expect(console.warn).not.toHaveBeenCalledWith(
         WARNING_MESSAGES.bothQueryAndOther,
@@ -106,7 +127,11 @@ describe('Hidden component and useMatchMedia hook', () => {
 
     it('should warn the user when no props are given', () => {
       jest.resetAllMocks()
-      const { unmount } = render(<Hidden>Hello</Hidden>)
+      const { unmount } = render(
+        <ThemeProvider>
+          <Hidden>Hello</Hidden>
+        </ThemeProvider>,
+      )
 
       expect(addEventListenerMock).not.toHaveBeenCalled()
       expect(console.warn).toHaveBeenCalledWith(WARNING_MESSAGES.noProps)

@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import { ChevronDown } from '@datapunt/asc-assets'
 import Icon from '../../Icon'
 import { ToggleHandlerProps } from '../../Toggle'

@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import { ShowHideTypes, showHide, themeColor } from '../../../utils'
 import ParagraphStyle from '../../Paragraph/ParagraphStyle'
 

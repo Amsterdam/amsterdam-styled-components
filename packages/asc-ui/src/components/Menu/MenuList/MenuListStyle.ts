@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from '@datapunt/asc-core'
+import styled, { css, keyframes } from 'styled-components'
 import { MenuItemStyle } from '../MenuItem'
 import { EdgeDetectionTypes } from '../../../utils/hooks/useEdgeDetection'
 import { showHide } from '../../../utils'

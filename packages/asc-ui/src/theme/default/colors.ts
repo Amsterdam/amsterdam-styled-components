@@ -1,4 +1,4 @@
-import { Theme } from '../index'
+import { Theme } from '../../types'
 
 const colors: Theme.ColorTypeInterface = {
   primary: {

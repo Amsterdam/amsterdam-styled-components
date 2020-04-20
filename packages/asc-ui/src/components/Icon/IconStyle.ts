@@ -1,5 +1,6 @@
-import styled, { css, Theme } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import { svgFill } from '../../utils'
+import { Theme } from '../../types'
 
 export type Props = {
   inline?: boolean

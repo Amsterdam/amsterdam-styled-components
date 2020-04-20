@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import CardMediaStyle, { CardMediaWrapperStyle, Props } from './CardMediaStyle'
 
 const CardMedia: React.FC<Props> = ({ children, ...otherProps }) => (

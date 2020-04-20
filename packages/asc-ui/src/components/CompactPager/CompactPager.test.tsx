@@ -1,12 +1,12 @@
-import * as React from 'react'
+import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
-import { ThemeProvider, ascDefaultTheme } from '@datapunt/asc-core'
 import CompactPager, { determineTotalPages } from './CompactPager'
 import { PREV_BUTTON, NEXT_BUTTON } from './test-ids'
+import { ThemeProvider } from '../../theme'
 
 describe('CompactPager', () => {
   const MockComponent = (props: any) => (
-    <ThemeProvider theme={ascDefaultTheme}>
+    <ThemeProvider>
       <CompactPager page={1} pageSize={20} collectionSize={60} {...props} />
     </ThemeProvider>
   )

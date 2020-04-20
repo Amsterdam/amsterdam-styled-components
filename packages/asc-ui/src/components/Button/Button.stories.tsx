@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import {
   Download,
   ChevronRight,
@@ -11,7 +11,7 @@ import {
   Enlarge,
   Print,
 } from '@datapunt/asc-assets'
-import * as React from 'react'
+import React from 'react'
 import Button from './Button'
 import ShareButton from './ShareButton'
 

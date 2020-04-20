@@ -1,10 +1,10 @@
-import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import { render } from '@testing-library/react'
 import { mount } from 'enzyme'
 import React from 'react'
 import { KeyboardKeys } from '../../types'
 import { renderWithTheme } from '../../utils/withTheme'
 import Input from './Input'
+import ThemeProvider from '../../theme/ThemeProvider'
 
 jest.useFakeTimers()
 
@@ -76,7 +76,7 @@ describe('Input', () => {
     const ref = React.createRef<HTMLInputElement>()
 
     render(
-      <ThemeProvider theme={ascDefaultTheme}>
+      <ThemeProvider>
         <Input ref={ref} />
       </ThemeProvider>,
     )

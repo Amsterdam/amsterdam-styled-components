@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import ParagraphStyle from '../Paragraph/ParagraphStyle'
 
 const CardContentStyle = styled.div`

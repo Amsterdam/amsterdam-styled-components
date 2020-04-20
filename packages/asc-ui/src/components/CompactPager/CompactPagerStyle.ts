@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import Button from '../Button'
 import { themeColor, themeSpacing } from '../../utils'
 

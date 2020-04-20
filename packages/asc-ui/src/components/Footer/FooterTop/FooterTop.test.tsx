@@ -1,36 +1,41 @@
-import * as React from 'react'
+import React from 'react'
 import { render, cleanup } from '@testing-library/react'
-import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import FooterTop from './FooterTop'
 import { themeColor, breakpoint } from '../../../utils'
-
-const theme = { ...ascDefaultTheme }
+import { ascDefaultTheme } from '../../../index'
+import ThemeProvider from '../../../theme/ThemeProvider'
 
 describe('FooterTop', () => {
   afterEach(cleanup)
 
   it('should render with the style', () => {
     const { queryByTestId } = render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider>
         <FooterTop data-testid="test-id">Footer bottom</FooterTop>
       </ThemeProvider>,
     )
 
     expect(queryByTestId('test-id')).toHaveStyleRule(
       'background-color',
-      themeColor('tint', 'level5')({ theme }),
+      themeColor('tint', 'level5')({ theme: ascDefaultTheme }),
     )
 
     expect(queryByTestId('test-id')).not.toHaveStyleRule(
       'padding-bottom',
       '24px',
       {
-        media: `screen and ${breakpoint('max-width', 'tabletM')({ theme })}`,
+        media: `screen and ${breakpoint(
+          'max-width',
+          'tabletM',
+        )({ theme: ascDefaultTheme })}`,
       },
     )
 
     expect(queryByTestId('test-id')).toHaveStyleRule('padding-bottom', '24px', {
-      media: `screen and ${breakpoint('min-width', 'tabletM')({ theme })}`,
+      media: `screen and ${breakpoint(
+        'min-width',
+        'tabletM',
+      )({ theme: ascDefaultTheme })}`,
     })
   })
 })

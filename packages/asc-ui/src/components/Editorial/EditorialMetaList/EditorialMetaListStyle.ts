@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import { breakpoint, themeColor } from '../../../utils'
 
 export const EDITORIAL_META_MARGIN_TOP = 20

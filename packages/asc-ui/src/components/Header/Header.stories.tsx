@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import { FacebookPadded } from '@datapunt/asc-assets'
 import Header from './Header'
 import Typography from '../Typography'

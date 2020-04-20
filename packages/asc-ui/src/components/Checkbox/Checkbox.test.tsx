@@ -1,7 +1,7 @@
-import * as React from 'react'
+import React from 'react'
 import { render, cleanup, fireEvent } from '@testing-library/react'
-import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import Checkbox from './Checkbox'
+import { ThemeProvider } from '../../theme'
 
 describe('Checkbox', () => {
   let container: any
@@ -11,7 +11,7 @@ describe('Checkbox', () => {
   beforeEach(() => {
     cleanup()
     ;({ container, rerender } = render(
-      <ThemeProvider theme={ascDefaultTheme}>
+      <ThemeProvider>
         <Checkbox onChange={onChangeMock} />
       </ThemeProvider>,
     ))
@@ -46,7 +46,7 @@ describe('Checkbox', () => {
 
     // Toggle on by changing props
     rerender(
-      <ThemeProvider theme={ascDefaultTheme}>
+      <ThemeProvider>
         <Checkbox checked />
       </ThemeProvider>,
     )
@@ -55,7 +55,7 @@ describe('Checkbox', () => {
 
     // Toggle of by changing props
     rerender(
-      <ThemeProvider theme={ascDefaultTheme}>
+      <ThemeProvider>
         <Checkbox />
       </ThemeProvider>,
     )
@@ -67,7 +67,7 @@ describe('Checkbox', () => {
     const ref = React.createRef<HTMLInputElement>()
 
     render(
-      <ThemeProvider theme={ascDefaultTheme}>
+      <ThemeProvider>
         <Checkbox ref={ref} />
       </ThemeProvider>,
     )

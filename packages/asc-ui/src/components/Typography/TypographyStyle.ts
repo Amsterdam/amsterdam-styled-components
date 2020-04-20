@@ -1,14 +1,13 @@
-import styled, { css, Theme } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import { getTypographyFromTheme, themeColor } from '../../utils'
-
-import TypographyElements = Theme.TypographyElements
+import { Theme } from '../../types'
 
 export type Props = {
   gutterBottom?: number
   element?: Variant
   color?: Theme.ColorType
   fontSize?: number
-  styleAs?: keyof TypographyElements
+  styleAs?: keyof Theme.TypographyElements
   as?: any
   forwardedAs?: any
   strong?: boolean

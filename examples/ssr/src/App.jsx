@@ -1,25 +1,25 @@
 import React from 'react'
-import { Button, Theme, ThemeProvider } from '@datapunt/asc-ui'
-import Close from '@datapunt/asc-assets/Icons/Close.svg'
+import { Close } from '@datapunt/asc-assets'
+import ThemeProvider from '@datapunt/asc-ui/lib/theme/ThemeProvider'
+import Button from '@datapunt/asc-ui/lib/components/Button'
 
-const App = () => {
-  return (
-    <ThemeProvider>
-      <>
-        <button
-          type="button"
-          onClick={() => {
-            console.log('Hello from JS world!')
-          }}
-        >
-          An html button with an onclick event, click me!
-        </button>
-        <Button color={Theme.ColorType.primary}>
-          <Close />Hello
-        </Button>
-      </>
-    </ThemeProvider>
-  )
-}
+const App = () => (
+  <ThemeProvider>
+    <>
+      <button
+        type="button"
+        onClick={() => {
+          console.log('Hello from JS world!')
+        }}
+      >
+        A normal html button with an onclick event, click me!
+      </button>
+      <Button variant="primary">
+        <Close />
+        Hello
+      </Button>
+    </>
+  </ThemeProvider>
+)
 
 export default App

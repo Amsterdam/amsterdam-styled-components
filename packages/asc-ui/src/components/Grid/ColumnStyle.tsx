@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { Theme, css } from '@datapunt/asc-core'
+import styled, { css } from 'styled-components'
 import {
   mediaQuery,
   colCount,
@@ -8,6 +8,7 @@ import {
   margin,
 } from '../../utils/grid'
 import { TypeFlexPosition } from '.'
+import { Theme } from '../../types'
 
 export type TypeProps = {
   alignSelf?: TypeFlexPosition

@@ -1,16 +1,17 @@
-import { useEffect, useState } from 'react'
-import { Theme } from '@datapunt/asc-core'
-import { ascDefaultTheme } from '../../index'
+import { useContext, useEffect, useState } from 'react'
+import { ThemeContext } from 'styled-components'
+import { Theme } from '../../types'
 
-const breakpoints = Object.keys(ascDefaultTheme.breakpoints).reduce(
-  (acc, key) => ({
-    ...acc,
-    [key]: ascDefaultTheme.breakpoints[key]('min-width'),
-    [`${key}Max`]: ascDefaultTheme.breakpoints[key]('max-width'),
-  }),
+const getBreakpoints = (theme: Theme.ThemeInterface) =>
+  Object.keys(theme.breakpoints).reduce(
+    (acc, key) => ({
+      ...acc,
+      [key]: theme.breakpoints[key]('min-width'),
+      [`${key}Max`]: theme.breakpoints[key]('max-width'),
+    }),
 
-  {},
-)
+    {},
+  )
 
 export type Arguments = {
   query?: string
@@ -26,7 +27,8 @@ export const WARNING_MESSAGES = {
 
 const useMatchMedia = ({ minBreakpoint, maxBreakpoint, query }: Arguments) => {
   let mediaQuery = query
-
+  const theme = useContext(ThemeContext)
+  const breakpoints = getBreakpoints(theme)
   if (minBreakpoint && maxBreakpoint) {
     mediaQuery = `${breakpoints[minBreakpoint]} and ${
       breakpoints[`${maxBreakpoint}Max`]

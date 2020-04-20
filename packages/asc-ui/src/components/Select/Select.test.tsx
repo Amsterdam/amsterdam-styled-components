@@ -1,8 +1,8 @@
-import * as React from 'react'
+import React from 'react'
 import { render, cleanup, fireEvent } from '@testing-library/react'
-import { ascDefaultTheme, ThemeProvider } from '@datapunt/asc-core'
 import Select from './Select'
 import Label from '../Label'
+import { ThemeProvider } from '../../theme'
 
 describe('Select', () => {
   let container: any
@@ -13,7 +13,7 @@ describe('Select', () => {
   beforeEach(() => {
     cleanup()
     ;({ container } = render(
-      <ThemeProvider theme={ascDefaultTheme}>
+      <ThemeProvider>
         <Label htmlFor="select-1" label="Select 1" id="label-1">
           <Select
             id="select-1"
@@ -63,7 +63,7 @@ describe('Select', () => {
     const ref = React.createRef<HTMLSelectElement>()
 
     render(
-      <ThemeProvider theme={ascDefaultTheme}>
+      <ThemeProvider>
         <Select ref={ref} />
       </ThemeProvider>,
     )

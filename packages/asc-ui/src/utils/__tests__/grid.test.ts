@@ -1,6 +1,6 @@
-import { ascDefaultTheme } from '@datapunt/asc-core'
 import merge from 'deepmerge'
 import * as grid from '../grid'
+import { ascDefaultTheme } from '../../theme'
 
 const theme = {
   ...ascDefaultTheme,

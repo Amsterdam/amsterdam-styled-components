@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import { breakpoint, themeSpacing } from '../../../utils'
 import ImageStyle from '../../Image/ImageStyle'
 

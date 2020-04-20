@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { css } from '@datapunt/asc-core'
+import { css } from 'styled-components'
 
 export const flexboxMinHeightFix = () => css`
   &::after {

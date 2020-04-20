@@ -4,7 +4,6 @@
     "@babel/preset-react"
   ],
   "plugins": [
-    "inline-react-svg",
     "transform-es2015-modules-commonjs"
   ]
 }

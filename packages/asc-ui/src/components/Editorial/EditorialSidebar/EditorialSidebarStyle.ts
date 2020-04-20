@@ -1,4 +1,4 @@
-import styled from '@datapunt/asc-core'
+import styled from 'styled-components'
 import ListStyle from '../../List/ListStyle'
 import HeadingStyle from '../../Heading/HeadingStyle'
 import TypographyStyle from '../../Typography/TypographyStyle'
