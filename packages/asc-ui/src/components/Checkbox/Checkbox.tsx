@@ -44,7 +44,7 @@ const Checkbox = React.forwardRef<
     }, [ref, indeterminate])
 
     // Make the label aware of changes in the checked state
-    useMemo(() => {
+    useEffect(() => {
       setActive(checked)
     }, [checked, setActive])
 

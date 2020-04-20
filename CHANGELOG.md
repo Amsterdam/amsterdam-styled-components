@@ -15,6 +15,8 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## Unreleased
+
+- Fixed: `Radio` and `Checkbox` warnings on new `setState()` updates by react-dom. Check [here](https://reactjs.org/blog/2020/02/26/react-v16.13.0.html#warnings-for-some-updates-during-render) for more info.
 - Changed: Internal SVG icon imports are replaced with React components, eliminating the need for including an SVG loader (closes #459)
 - Added: Added TopTaskButton component
 - Added: `theme` prop to `ThemeProvider` to pass a custom theme
