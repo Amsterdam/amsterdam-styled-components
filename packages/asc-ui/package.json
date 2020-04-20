@@ -28,10 +28,12 @@
     "react-uid": "^2.2.0"
   },
   "peerDependencies": {
-    "objectFitPolyfill": ">=2.3.0",
     "react": ">=16.8.6",
     "react-dom": ">=16.8.6",
     "styled-components": ">=4.4.1"
+  },
+  "optionalDependencies": {
+    "objectFitPolyfill": ">=2.3.0"
   },
   "publishConfig": {
     "access": "public"
