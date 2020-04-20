@@ -1,4 +1,4 @@
-import React, { useState, useContext, useMemo, useEffect } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import RadioStyle, {
   RadioWrapperStyle,
   RadioCircleStyle,
@@ -37,7 +37,7 @@ const Radio = React.forwardRef<
     const error = errorProp || errorGroup || false
 
     // Make the label aware of changes in the checked state
-    useMemo(() => {
+    useEffect(() => {
       setActive(checked)
     }, [checked, setActive])
 
