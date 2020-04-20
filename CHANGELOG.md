@@ -15,7 +15,7 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## Unreleased
-
+- Added: ErrorMessage component
 - Added: Added TextArea component
 - Added: Added FormTitle component (see [design system](https://designsystem.amsterdam.nl/7awj1hc9f/p/537bb7-title-component))
 - Fixed: `Radio` and `Checkbox` warnings on new `setState()` updates by react-dom. Check [here](https://reactjs.org/blog/2020/02/26/react-v16.13.0.html#warnings-for-some-updates-during-render) for more info.

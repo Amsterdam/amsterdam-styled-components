@@ -1,5 +1,6 @@
 import AmsterdamLogo, { AmsterdamLogoStyles } from './components/AmsterdamLogo'
 import BackDrop, { BackDropStyles } from './components/BackDrop'
+import ErrorMessage, { ErrorMessageStyle } from './components/ErrorMessage'
 import Icon, { IconStyle } from './components/Icon'
 import Input, { InputStyles, InputContext } from './components/Input'
 import Modal from './components/Modal'
@@ -154,6 +155,7 @@ export const styles = {
   ...AccordionStyles,
   ParagraphStyle,
   BlockquoteStyle,
+  ErrorMessageStyle,
   IconStyle,
   LinkStyle,
   HeadingStyle,
@@ -197,6 +199,7 @@ export {
   ContextMenu,
   ContextMenuButtonStyle,
   ContextMenuItem,
+  ErrorMessage,
   FilterBox,
   FilterOption,
   FilterTag,
