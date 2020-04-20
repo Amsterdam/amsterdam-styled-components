@@ -1,10 +1,12 @@
+import React from 'react'
+import styled from 'styled-components'
+import { render } from '@testing-library/react'
 import {
   themeColor,
   focusStyleOutline,
   breakpoint,
   svgFill,
   getTypographyFromTheme,
-  mapToBreakpoints,
   getTypographyValueFromProperty,
   themeSpacing,
   getValueFromTheme,
@@ -12,6 +14,7 @@ import {
 } from '../themeUtils'
 import { BACKDROP_Z_INDEX } from '../../components/shared/constants'
 import { ascDefaultTheme } from '../../theme'
+import ThemeProvider from '../../theme/ThemeProvider'
 
 const { colors, typography } = ascDefaultTheme
 
@@ -40,14 +43,17 @@ describe('getColorFromTheme', () => {
 
 describe('getTypographyFromTheme', () => {
   it('should return the requested typography from theme', () => {
-    const theme = {
-      ...ascDefaultTheme,
-      typography: {
-        ...typography,
-      },
-    }
+    const Component = styled.div`
+      ${getTypographyFromTheme()}
+    `
 
-    expect(getTypographyFromTheme()({ as: 'p', theme })).toMatchSnapshot()
+    const { getByTestId } = render(
+      <ThemeProvider>
+        <Component data-testid="paragraph" as="p" />
+      </ThemeProvider>,
+    )
+
+    expect(getByTestId('paragraph')).toHaveStyleRule('font-weight', '400')
   })
 })
 
@@ -121,43 +127,6 @@ describe('svgFill', () => {
 
   it('should return the right fill color for the svg', () => {
     expect(svgFill('tint', 'level5')({ theme })[1]).toContain('#767676')
-  })
-})
-
-// Todo: use serializer: https://github.com/styled-components/jest-styled-components
-describe('mapToBreakpoints', () => {
-  const theme = {
-    ...ascDefaultTheme,
-  }
-
-  it('should return a style with 3 breakpoints and corresponding values', () => {
-    expect(
-      mapToBreakpoints(['100px', '70px', '50px'], 'width', theme),
-    ).toMatchSnapshot()
-    expect(
-      mapToBreakpoints(['500px', '600px', '200px'], 'flex-basis', theme),
-    ).toMatchSnapshot()
-  })
-
-  it('should return only return the possible results if the limit has reached', () => {
-    const result = mapToBreakpoints(
-      [
-        '100px',
-        '70px',
-        '50px',
-        '100px',
-        '70px',
-        '50px',
-        '100px',
-        '70px',
-        '50px',
-        '50px',
-        '50px',
-      ], // 2 too many...
-      'width',
-      theme,
-    )
-    expect(result).toMatchSnapshot()
   })
 })
 

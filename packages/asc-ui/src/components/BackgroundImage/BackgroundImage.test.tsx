@@ -1,14 +1,12 @@
 import React from 'react'
+import { render } from '@testing-library/react'
 import BackgroundImage from './BackgroundImage'
-import { renderWithTheme } from '../../utils/withTheme'
 
 describe('BackgroundImage', () => {
-  let component: any
-
   it('should render', () => {
-    component = renderWithTheme(
+    const { container } = render(
       <BackgroundImage source="http://the-image-path" />,
     )
-    expect(component).toMatchSnapshot()
+    expect(container.firstChild).toBeDefined()
   })
 })

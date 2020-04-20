@@ -1,37 +1,33 @@
 import React from 'react'
-import { shallow } from 'enzyme'
-import { Search } from '@datapunt/asc-assets'
+import { render, fireEvent } from '@testing-library/react'
 import SearchBar from './SearchBar'
 
-jest.useFakeTimers()
+jest.mock('polished')
 
 describe('SearchBar', () => {
-  let component: any
+  let container: any
 
   const mockOnSubmit = jest.fn()
 
   beforeEach(() => {
-    component = shallow(
+    ;({ container } = render(
       <SearchBar onSubmit={mockOnSubmit} onChange={() => {}}>
         searchbar-content
       </SearchBar>,
-    )
+    ))
   })
 
   it('should render the label and icon', () => {
-    const { children } = component.props()
-    const icon = component.find('Icon')
+    const icon = container.querySelector('button span')
 
-    expect(icon.exists()).toBeTruthy()
-    expect(icon.props().children).toStrictEqual(<Search />)
-
-    expect(children[children.length - 1]).toBe('searchbar-content')
+    expect(icon).toBeDefined()
+    expect(container.firstChild).toHaveTextContent('searchbar-content')
   })
 
   it('should handle the onClick event', () => {
-    const button = component.find('Button')
+    const button = container.querySelector('button')
 
-    button.simulate('click')
+    fireEvent.click(button)
 
     expect(mockOnSubmit).toHaveBeenCalled()
   })

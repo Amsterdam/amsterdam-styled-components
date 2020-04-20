@@ -1,24 +1,24 @@
 import React from 'react'
-import { shallow, ShallowWrapper } from 'enzyme'
+import { render } from '@testing-library/react'
 import MenuItemTitle from './MenuItemTitle'
-import MenuItemTitleStyle from './MenuItemTitleStyle'
 
 describe('MenuItemTitle', () => {
-  let component: ShallowWrapper<any, any>
+  let container: HTMLElement
+  let getByText: (s: string) => any
 
   const children = 'foo'
 
   beforeEach(() => {
-    component = shallow<{}>(<MenuItemTitle>{children}</MenuItemTitle>)
+    ;({ container, getByText } = render(
+      <MenuItemTitle>{children}</MenuItemTitle>,
+    ))
   })
 
   it('should render', () => {
-    expect(component.exists()).toBeTruthy()
-    expect(component.props().forwardedAs).toBe('li')
+    expect(container.firstChild).toBeDefined()
   })
 
   it('should render the children', () => {
-    expect(component.find(MenuItemTitleStyle).exists()).toBeTruthy()
-    expect(component.find(MenuItemTitleStyle).props().children).toBe(children)
+    expect(getByText('foo')).toBeDefined()
   })
 })

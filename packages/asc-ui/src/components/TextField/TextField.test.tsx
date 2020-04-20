@@ -1,25 +1,20 @@
-import { shallow } from 'enzyme'
 import React from 'react'
+import { render } from '@testing-library/react'
 import TextField from './TextField'
 import { ThemeProvider } from '../../theme'
 
-describe('<TextField />', () => {
+describe('TextField', () => {
   it('should render', () => {
-    const mockFn = jest.fn()
-    const component = shallow(
+    const { container } = render(
       <ThemeProvider>
         <TextField
           label="description"
           srOnly={false}
           value="test-value"
-          onBlur={mockFn}
-          onChange={mockFn}
-          onClear={mockFn}
-          onFocus={mockFn}
-          onKeyDown={mockFn}
+          onChange={jest.fn}
         />
       </ThemeProvider>,
     )
-    expect(component).toMatchSnapshot()
+    expect(container.firstChild).toBeDefined()
   })
 })

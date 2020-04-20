@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 
-type Props = {
-  tall?: boolean
-}
-
-const HeaderLogoTextStyle = styled.h1<Props>`
+const HeaderLogoTextStyle = styled.h1`
   margin: 0;
   font-weight: 700;
   display: flex;
