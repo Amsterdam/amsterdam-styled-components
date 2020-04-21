@@ -103,6 +103,7 @@ import {
   AccordionStyles,
 } from './components/Accordion'
 import Hidden from './components/Hidden'
+import FormTitle from './components/FormTitle'
 import { themeColor } from './utils'
 import { perceivedLoading } from './utils/themeUtils'
 
@@ -261,4 +262,5 @@ export {
   ViewerContainer,
   CompactPager,
   Hidden,
+  FormTitle,
 }
