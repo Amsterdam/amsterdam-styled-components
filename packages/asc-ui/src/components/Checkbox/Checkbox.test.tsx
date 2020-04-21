@@ -17,10 +17,6 @@ describe('Checkbox', () => {
     ))
   })
 
-  it('should render', () => {
-    expect(container).toMatchSnapshot()
-  })
-
   it('should toggle checked / not checked', () => {
     const checkBox = container.querySelector('input')
     const icon = container.querySelector('span')

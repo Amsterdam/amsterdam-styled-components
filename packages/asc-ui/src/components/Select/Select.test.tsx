@@ -30,10 +30,6 @@ describe('Select', () => {
     ))
   })
 
-  it('should render', () => {
-    expect(container).toMatchSnapshot()
-  })
-
   it('should match the style', () => {
     const select = container.querySelector('#select-1')
     expect(select).toHaveStyleRule('width', '100%')

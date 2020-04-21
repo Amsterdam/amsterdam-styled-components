@@ -1,11 +1,11 @@
 import React from 'react'
+import { render } from '@testing-library/react'
 import Paragraph from './Paragraph'
-import { renderWithTheme } from '../../utils/withTheme'
 
 describe('Paragraph', () => {
   it('should render', () => {
-    const component = renderWithTheme(<Paragraph>Foo</Paragraph>)
+    const { container } = render(<Paragraph>Foo</Paragraph>)
 
-    expect(component).toMatchSnapshot()
+    expect(container.firstChild).toBeDefined()
   })
 })

@@ -1,25 +1,25 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import GlobalStyle from './GlobalStyle'
-import { ThemeProvider, ascDefaultTheme } from '../../theme'
+import { ThemeProvider } from '../../theme'
+import * as utils from '../../utils'
 
 const overrides = {
   globalStyle: `p {margin-bottom:8px;}`,
 }
 
 describe('GlobalStyle', () => {
-  it('should apply the the global style from theme', () => {
-    const testStyle = new GlobalStyle({ theme: ascDefaultTheme })
-    expect(testStyle.state.globalStyle).not.toBeNull()
-    const { globalStyle } = testStyle.state
-    const css = globalStyle.rules.reduce(
-      (acc: string, rule: string) => acc + rule,
+  it('should apply the global style from theme', () => {
+    jest.spyOn(utils, 'getValueFromTheme')
+    render(
+      <ThemeProvider>
+        <>
+          <GlobalStyle />
+        </>
+      </ThemeProvider>,
     )
-    expect(
-      css.indexOf(`utils_1.getValueFromTheme('globalStyle')`),
-    ).toBeGreaterThan(-1)
+    expect(utils.getValueFromTheme).toHaveBeenCalled()
   })
-
   it('should not render global style in the document', () => {
     const { queryByTestId } = render(
       <ThemeProvider overrides={overrides}>

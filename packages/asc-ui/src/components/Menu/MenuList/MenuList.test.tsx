@@ -1,23 +1,22 @@
 import React from 'react'
-import { shallow, ShallowWrapper } from 'enzyme'
+import { render } from '@testing-library/react'
 import MenuList from './MenuList'
-import MenuListStyle from './MenuListStyle'
 
 describe('MenuList', () => {
-  let component: ShallowWrapper<any, any>
+  let container: HTMLElement
+  let getByText: (s: string) => any
 
   const children = 'foo'
 
   beforeEach(() => {
-    component = shallow<{}>(<MenuList>{children}</MenuList>)
+    ;({ container, getByText } = render(<MenuList>{children}</MenuList>))
   })
 
   it('should render', () => {
-    expect(component.exists()).toBeTruthy()
+    expect(container.firstChild).toBeDefined()
   })
 
   it('should render the children', () => {
-    expect(component.find(MenuListStyle).exists()).toBeTruthy()
-    expect(component.find(MenuListStyle).props()).toEqual({ children })
+    expect(getByText('foo')).toBeDefined()
   })
 })

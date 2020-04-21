@@ -1,12 +1,12 @@
 import React from 'react'
-import { renderWithTheme } from '../../utils/withTheme'
+import { render } from '@testing-library/react'
 import ImageCard from './ImageCard'
 import Heading from '../Heading'
 import ImageCardContent from './ImageCardContent/ImageCardContent'
 
 describe('ImageCard', () => {
   it('should render', () => {
-    const component = renderWithTheme(
+    const { container } = render(
       <ImageCard backgroundImage="https://www.example.com">
         <ImageCardContent>
           <Heading forwardedAs="h4" styleAs="h2">
@@ -16,6 +16,6 @@ describe('ImageCard', () => {
       </ImageCard>,
     )
 
-    expect(component).toMatchSnapshot()
+    expect(container.firstChild).toBeDefined()
   })
 })

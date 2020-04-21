@@ -269,6 +269,12 @@ export const perceivedLoading = withTheme(
   },
 )
 
+/**
+ * @deprecated Only used in deprecated component GridItem
+ * @param sizes
+ * @param propertyName
+ * @param theme
+ */
 export const mapToBreakpoints = (
   sizes: string[],
   propertyName: string,

@@ -1,65 +1,46 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Facebook } from '@datapunt/asc-assets'
+import { render } from '@testing-library/react'
 import Header from './Header'
-import { renderWithTheme } from '../../utils/withTheme'
 import Typography from '../Typography'
-import AmsterdamLogo from '../AmsterdamLogo'
-import Icon from '../Icon'
+import ThemeProvider from '../../theme/ThemeProvider'
 
 const setup = (props = {}) =>
-  renderWithTheme(
-    <Header
-      title="Data en informatie"
-      homeLink="http://data.amsterdam.nl"
-      {...props}
-    >
-      <Typography>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet debitis,
-        dicta incidunt maxime necessitatibus voluptatibus.
-      </Typography>
-    </Header>,
+  render(
+    <ThemeProvider>
+      <Header
+        title="Data en informatie"
+        homeLink="http://data.amsterdam.nl"
+        data-testid="header"
+        {...props}
+      >
+        <Typography>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          debitis, dicta incidunt maxime necessitatibus voluptatibus.
+        </Typography>
+      </Header>
+    </ThemeProvider>,
   )
 
 describe('Header', () => {
   it('should render the short version', () => {
-    const component = setup({ logo: AmsterdamLogo })
-    expect(component).toMatchSnapshot()
+    const { getByTestId } = setup()
+
+    expect(getByTestId('header')).toHaveStyleRule('max-width', 'none')
   })
 
   it('should render the short version without the full width', () => {
-    const component = setup({ fullWidth: false, logo: AmsterdamLogo })
-    expect(component).toMatchSnapshot()
-  })
-
-  it('should render the tall version', () => {
-    const component = setup({ tall: true, logo: AmsterdamLogo })
-    expect(component).toMatchSnapshot()
-  })
-
-  it('should render the tall version without a title', () => {
-    const component = setup({ tall: true, title: null, logo: AmsterdamLogo })
-    expect(component).toMatchSnapshot()
-  })
-
-  it('should render the tall version without logo', () => {
-    const component = setup({ tall: true })
-    expect(component).toMatchSnapshot()
+    const { getByTestId } = setup({ fullWidth: false })
+    expect(getByTestId('header')).toHaveStyleRule('max-width', '1430px')
   })
 
   it('should render the tall version with a custom logo', () => {
-    const CustomLogoStyle = styled.a``
-    const CustomLogo: React.FC = (props) => (
-      <CustomLogoStyle {...props}>
-        <Icon padding={4} size={40}>
-          <Facebook />
-        </Icon>
-      </CustomLogoStyle>
+    const CustomLogo = () => (
+      <a href="/" data-testid="logo">
+        some icon
+      </a>
     )
 
-    const component = setup({ tall: true, logo: CustomLogo })
-    expect(component).toMatchSnapshot()
+    const { getByTestId } = setup({ tall: true, logo: CustomLogo })
+    expect(getByTestId('logo')).toBeDefined()
   })
 })
-
-describe('Header short with content', () => {})

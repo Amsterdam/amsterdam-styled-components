@@ -1,11 +1,12 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react'
 import Image from './Image'
 
 describe('Image', () => {
-  it('should render the data attribute for the polyfill', () => {
-    const component = shallow(<Image src="source" square />)
+  it('should render the data attribute for the objectFit polyfill', () => {
+    const { container } = render(<Image src="source" square />)
 
-    expect(component.props()['data-object-fit']).toBe('cover')
+    expect(container.firstChild).toHaveAttribute('data-object-fit')
+    expect(container.firstChild).toHaveStyleRule('object-fit', 'cover')
   })
 })

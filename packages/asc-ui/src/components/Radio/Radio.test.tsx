@@ -26,10 +26,6 @@ describe('Radio', () => {
     ))
   })
 
-  it('should render', () => {
-    expect(container).toMatchSnapshot()
-  })
-
   it('should match the style', () => {
     // Native radio should be hidden
     const radio = container.querySelector('#radio-1')

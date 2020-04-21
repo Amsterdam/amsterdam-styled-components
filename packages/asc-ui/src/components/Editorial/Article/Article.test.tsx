@@ -1,14 +1,12 @@
 import React from 'react'
+import { render } from '@testing-library/react'
 import Article from './Article'
-import { renderWithTheme } from '../../../utils/withTheme'
 
 describe('Article', () => {
-  let component: any
-
   it('should render', () => {
-    component = renderWithTheme(
+    const { container } = render(
       <Article>This is the publication content</Article>,
     )
-    expect(component).toMatchSnapshot()
+    expect(container.firstChild).toBeDefined()
   })
 })

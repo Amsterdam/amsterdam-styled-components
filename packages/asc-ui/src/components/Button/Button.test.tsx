@@ -1,11 +1,15 @@
 import React from 'react'
+import { render } from '@testing-library/react'
 import Button from './Button'
-import { renderWithTheme } from '../../utils/withTheme'
+import ThemeProvider from '../../theme/ThemeProvider'
 
 describe('Button', () => {
   it('should render the button', () => {
-    const component = renderWithTheme(<Button color="primary">Hello</Button>)
-
-    expect(component).toMatchSnapshot()
+    const { container } = render(
+      <ThemeProvider>
+        <Button color="primary">Hello</Button>
+      </ThemeProvider>,
+    )
+    expect(container.firstChild).toBeDefined()
   })
 })

@@ -1,28 +1,30 @@
 import React from 'react'
-import { mount } from 'enzyme'
+import { render, fireEvent } from '@testing-library/react'
 import Toggle from './Toggle'
 import { KeyboardKeys } from '../../types'
-import ToggleButton from '../Button/ToggleButton/ToggleButton'
 
 describe('Toggle', () => {
-  let component: any
+  let container: any
+  let queryByTestId: any
+  let button: HTMLButtonElement
   const onClickMock = jest.fn()
   beforeEach(() => {
-    component = mount(
+    ;({ container, queryByTestId } = render(
       <Toggle onClick={onClickMock} render={false}>
-        <div id="child">Foo</div>
+        <div data-testid="child">Foo</div>
       </Toggle>,
-    )
+    ))
+    button = container.querySelector('button')
   })
 
   it('should render the toggle button', () => {
-    expect(component.find(ToggleButton).exists()).toBe(true)
+    expect(container.querySelector('button')).toBeDefined()
   })
 
   it('should display the children when the button is clicked', () => {
-    expect(component.find('#child').exists()).toBe(false)
-    component.find(ToggleButton).at(0).simulate('click')
-    expect(component.find('#child').exists()).toBe(true)
+    expect(queryByTestId('child')).toBeNull()
+    fireEvent.click(button)
+    expect(queryByTestId('child')).toBeDefined()
     expect(onClickMock).toHaveBeenCalled()
   })
 
@@ -32,32 +34,31 @@ describe('Toggle', () => {
       key: KeyboardKeys.Escape,
     }
 
-    component.find(ToggleButton).at(0).simulate('click')
-    expect(component.find('#child').exists()).toBe(true)
-    component.simulate('keydown', escape)
-
-    expect(component.find('#child').exists()).toBe(false)
+    fireEvent.click(button)
+    expect(queryByTestId('child')).toBeDefined()
+    fireEvent.keyDown(button, escape)
+    expect(queryByTestId('child')).toBeNull()
   })
 
   it('should call the passed parent function when the button is clicked', () => {
     const onOpenMock = jest.fn()
-    component = mount(
+    ;({ container } = render(
       <Toggle onClick={jest.fn()} onOpen={onOpenMock} render={false}>
         <div id="child">Foo</div>
       </Toggle>,
-    )
+    ))
 
-    component.find(ToggleButton).at(0).simulate('click')
+    fireEvent.click(container.querySelector('button'))
     expect(onOpenMock).toHaveBeenCalledWith(true)
   })
 
-  it('should display the children when the parent passes an isOpen prop', () => {
-    component = mount(
+  it('should display the children when the parent passes an open prop', () => {
+    ;({ container } = render(
       <Toggle onClick={jest.fn()} open render={false}>
         <div id="child">Foo</div>
       </Toggle>,
-    )
+    ))
 
-    expect(component.find('#child').exists()).toBe(true)
+    expect(queryByTestId('child')).toBeDefined()
   })
 })

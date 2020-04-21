@@ -1,24 +1,10 @@
-import { render } from '@testing-library/react'
-import { mount } from 'enzyme'
+import { render, fireEvent } from '@testing-library/react'
 import React from 'react'
 import { KeyboardKeys } from '../../types'
-import { renderWithTheme } from '../../utils/withTheme'
 import Input from './Input'
 import ThemeProvider from '../../theme/ThemeProvider'
 
 jest.useFakeTimers()
-
-const keyEvent = (value: KeyboardKeys | number) => {
-  const key = typeof value === 'number' ? 'keyCode' : 'key'
-  const event = {
-    type: 'keydown',
-    payload: {
-      preventDefault: () => {},
-      [key]: value,
-    },
-  }
-  return event
-}
 
 describe('Input', () => {
   const onBlurMockFn = jest.fn()
@@ -38,36 +24,21 @@ describe('Input', () => {
     jest.resetAllMocks()
   })
 
-  describe('component structure', () => {
-    let component: Cheerio
-    beforeEach(() => {
-      component = renderWithTheme(<Input {...props} />)
-    })
-
-    it('should render', () => {
-      expect(component).toMatchSnapshot()
-    })
-  })
-
   describe('component behaviour', () => {
-    let component: any
     let input: any
 
     beforeEach(() => {
-      component = mount(<Input {...props} />)
-      input = component.find('input')
+      const { container } = render(<Input {...props} />)
+      input = container.firstChild
     })
 
     it('should trigger the onOnChange event', () => {
-      input.simulate('change', {
-        target: { value: 'new-value' },
-      })
+      fireEvent.change(input, { target: { value: 'a' } })
       expect(onChangeMockFn).toHaveBeenCalledTimes(1)
     })
 
     it('should trigger the submit when enter is pressed', () => {
-      const enterEvent = keyEvent(KeyboardKeys.Enter)
-      input.simulate(enterEvent.type, enterEvent.payload)
+      fireEvent.keyDown(input, { key: KeyboardKeys.Enter })
       expect(onKeyDownMockFn).toHaveBeenCalledTimes(1)
     })
   })

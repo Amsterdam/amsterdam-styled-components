@@ -1,34 +1,23 @@
 import React from 'react'
+import { render, fireEvent } from '@testing-library/react'
 import DocumentCover from './DocumentCover'
-import { renderWithTheme, mountWithTheme } from '../../utils/withTheme'
-import Button from '../Button'
+import ThemeProvider from '../../theme/ThemeProvider'
 
 jest.useFakeTimers()
 
 describe('DocumentCover', () => {
-  const mockFn = jest.fn()
-  let component: any
-
-  it('should render', () => {
-    component = renderWithTheme(
-      <DocumentCover
-        imageSrc="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
-        onClick={mockFn}
-        description="Download PDF (12MB)"
-      />,
+  it('should trigger the download action when the button is clicked', () => {
+    const mockFn = jest.fn()
+    const { getByText } = render(
+      <ThemeProvider>
+        <DocumentCover
+          imageSrc="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
+          onClick={mockFn}
+          description="Download PDF (12MB)"
+        />
+      </ThemeProvider>,
     )
-    expect(component).toMatchSnapshot()
-  })
-
-  it('should trigger the downlaod action when the button is clicked', () => {
-    component = mountWithTheme(
-      <DocumentCover
-        imageSrc="https://data.amsterdam.nl/assets/images/amsterdam-maps.png"
-        onClick={mockFn}
-        description="Download PDF (12MB)"
-      />,
-    )
-    component.find(Button).simulate('click')
+    fireEvent.click(getByText('Download PDF (12MB)'))
     expect(mockFn).toHaveBeenCalled()
   })
 })
