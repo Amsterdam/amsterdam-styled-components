@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react'
 import { FacebookPadded } from '@datapunt/asc-assets'
-import Accordion from './Accordion'
-import Paragraph from '../Paragraph'
-import AccordionWrapper from './AccordionWrapper'
+import React, { useEffect, useState } from 'react'
 import Icon from '../Icon'
+import Paragraph from '../Paragraph'
+import Accordion from './Accordion'
+import AccordionWrapper from './AccordionWrapper'
+import Readme from './README.md'
 
 export default {
   title: 'Atoms/Accordion',
-
+  parameters: {
+    notes: Readme,
+  },
   decorators: [
     (storyFn: () => React.ReactNode) => (
       <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
