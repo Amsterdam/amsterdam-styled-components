@@ -1,5 +1,5 @@
-function ownerDocument(node: HTMLElement) {
-  return (node && node.ownerDocument) || window.document
+function ownerDocument(node?: HTMLElement | null) {
+  return node?.ownerDocument || window.document
 }
 
 export default ownerDocument

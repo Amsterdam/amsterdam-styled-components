@@ -13,9 +13,6 @@ module.exports = {
     node: true,
     'jest/globals': true,
   },
-  globals: {
-    window: true,
-  },
   overrides: [
     {
       files: ['*.test.tsx', '*.stories.tsx'],

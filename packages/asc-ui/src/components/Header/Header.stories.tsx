@@ -1,19 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
-import { FacebookPadded } from '@datapunt/asc-assets'
+import { Alert } from '@datapunt/asc-assets'
 import Header from './Header'
 import Typography from '../Typography'
 import Icon from '../Icon'
-import { themeSpacing } from '../../utils'
-
-/**
- * This is an example of a Custom facebook logo
- * that can be added to the Header
- */
-const CustomLogoStyle = styled.a`
-  margin-right: ${themeSpacing(3)};
-  border: 1px dotted black;
-`
 
 export default {
   title: 'Experimental/Composed/Header',
@@ -50,10 +39,6 @@ export const HeaderTall = () => (
   />
 )
 
-HeaderTall.story = {
-  name: 'Header tall',
-}
-
 export const HeaderTallWithHeaderContent = () => (
   <Header
     tall
@@ -72,24 +57,25 @@ export const HeaderTallWithHeaderContent = () => (
 export const HeaderTallWithoutLogo = () => (
   <Header
     tall
-    title="Site without logo"
+    title="Site without logo, but why would you?"
     homeLink="http://data.amsterdam.nl"
     fullWidth={false}
+    logo={undefined}
   />
 )
 
 export const HeaderTallWithCustomLogo = () => (
   <Header
     tall
-    title="Facebook custom header"
-    homeLink="http://www.facebook.com"
+    title="Header with custom logo."
+    homeLink="/"
     fullWidth={false}
     logo={() => (
-      <CustomLogoStyle>
+      <a href="/">
         <Icon padding={4} size={48}>
-          <FacebookPadded />
+          <Alert />
         </Icon>
-      </CustomLogoStyle>
+      </a>
     )}
   />
 )
