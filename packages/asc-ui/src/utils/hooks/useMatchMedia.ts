@@ -38,7 +38,9 @@ const useMatchMedia = ({ minBreakpoint, maxBreakpoint, query }: Arguments) => {
   }
 
   const [isMatch, setIsMatch] = useState(
-    mediaQuery ? window.matchMedia(mediaQuery).matches : false,
+    mediaQuery
+      ? typeof window !== 'undefined' && window.matchMedia(mediaQuery).matches
+      : true,
   )
 
   const handleMediaQueryListEvent = ({
@@ -52,7 +54,7 @@ const useMatchMedia = ({ minBreakpoint, maxBreakpoint, query }: Arguments) => {
 
   useEffect(() => {
     let matchMedia: undefined | MediaQueryList
-    if (mediaQuery) {
+    if (mediaQuery && typeof window !== 'undefined') {
       matchMedia = window.matchMedia(mediaQuery)
       handleMediaQueryListEvent(matchMedia)
 
@@ -67,7 +69,7 @@ const useMatchMedia = ({ minBreakpoint, maxBreakpoint, query }: Arguments) => {
       console.warn(WARNING_MESSAGES.noProps)
     }
     return () => {
-      if (matchMedia) {
+      if (matchMedia && typeof window !== 'undefined') {
         // removeEventListener might throw an error on iOS / Safari
         if (matchMedia.removeEventListener) {
           matchMedia.removeEventListener('change', handleMediaQueryListEvent)
@@ -76,6 +78,7 @@ const useMatchMedia = ({ minBreakpoint, maxBreakpoint, query }: Arguments) => {
         }
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return [isMatch]

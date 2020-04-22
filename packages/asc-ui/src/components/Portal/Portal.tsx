@@ -10,8 +10,11 @@ export type Props = {
 
 type State = {}
 
-const mountElement = window.document.createElement('div')
-mountElement.setAttribute('style', 'position: absolute;')
+let mountElement: Element | null = null
+if (typeof window !== 'undefined') {
+  mountElement = window.document.createElement('div')
+  mountElement.setAttribute('style', 'position: absolute;')
+}
 
 class Portal extends React.Component<Props, State> {
   static getOwnerDocument(element: React.ReactInstance) {
@@ -19,8 +22,6 @@ class Portal extends React.Component<Props, State> {
     const el = ReactDOM.findDOMNode(element) as HTMLInputElement
     return ownerDocument(el)
   }
-
-  mountEl: Element = mountElement
 
   componentDidMount(): void {
     this.setMountNode()
@@ -34,9 +35,9 @@ class Portal extends React.Component<Props, State> {
       blurredNode.removeAttribute('style')
     }
 
-    // check if the Portal is still active, in case there are muliple Portals mounted and unmounted
-    if (this.mountEl && this.mountEl.parentNode === el) {
-      el.removeChild(this.mountEl)
+    // check if the Portal is still active, in case there are multiple Portals mounted and unmounted
+    if (mountElement && mountElement.parentNode === el) {
+      el.removeChild(mountElement)
     }
   }
 
@@ -49,7 +50,9 @@ class Portal extends React.Component<Props, State> {
       el.setAttribute('style', 'overflow: hidden;')
     }
 
-    el.appendChild(this.mountEl)
+    if (mountElement) {
+      el.appendChild(mountElement)
+    }
     if (blurredNode) {
       blurredNode.setAttribute('style', 'filter: blur(1px)')
     }
@@ -68,7 +71,7 @@ class Portal extends React.Component<Props, State> {
 
   render() {
     const { children } = this.props
-    return this.mountEl ? ReactDOM.createPortal(children, this.mountEl) : null
+    return mountElement ? ReactDOM.createPortal(children, mountElement) : null
   }
 }
 
