@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { Theme } from '../../types'
 import {
   focusStyleOutline,
   svgFill,
@@ -6,7 +7,7 @@ import {
   themeSpacing,
 } from '../../utils'
 import Button from '../Button'
-import { Theme } from '../../types'
+import Heading from '../Heading'
 
 export type Level = 'normal' | 'attention' | 'error'
 
@@ -65,6 +66,10 @@ export const ContentWrapper = styled.div<SharedProps>`
       margin-bottom: 0;
     }
   }
+`
+
+export const AlertHeading = styled(Heading)`
+  margin: 0;
 `
 
 export default styled.div<Props>`
