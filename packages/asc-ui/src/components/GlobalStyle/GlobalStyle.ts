@@ -8,8 +8,6 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: ${getValueFromTheme('typography.fontFamily')};
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   [aria-hidden="true"] {

@@ -10,5 +10,4 @@ export default styled.h1`
   font-size: 14px;
   font-weight: 700;
   line-height: 18px;
-  -webkit-font-smoothing: auto;
 `
