@@ -1,18 +1,18 @@
 import styled, { css } from 'styled-components'
-import { themeColor, focusStyleOutline } from '../../utils'
+import { focusStyleOutline, themeColor, themeSpacing } from '../../utils'
 
 type StyleProps = {
-  error?: string | boolean
+  error?: boolean
 }
 
-const InputStyle = styled.input<StyleProps>`
+export const inputCss = css<StyleProps>`
   appearance: none;
-  font-size: 1rem;
+  font-size: 16px;
   border: solid 1px ${themeColor('tint', 'level5')};
   border-radius: 0;
   box-sizing: border-box;
   line-height: 18px;
-  padding: 10px;
+  padding: ${themeSpacing(2)};
   width: 100%;
   ${focusStyleOutline(2, 0.5)}
   ${({ error }) =>
@@ -28,6 +28,10 @@ const InputStyle = styled.input<StyleProps>`
     css`
       border-color: ${themeColor('secondary', 'main')};
     `}
+`
+
+const InputStyle = styled.input<StyleProps>`
+  ${inputCss}
 `
 
 export default InputStyle

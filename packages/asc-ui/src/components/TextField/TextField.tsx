@@ -63,7 +63,7 @@ const TextField = ({
         {...{ keepFocus, value, blurOnEscape }}
         {...otherProps}
         id={id}
-        error={errorMessage}
+        error={!!errorMessage}
         ref={inputRef}
       />
       {onClear && value && (

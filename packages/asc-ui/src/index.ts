@@ -81,6 +81,7 @@ import SearchBarToggle, {
 } from './components/SearchBarToggle'
 import Select from './components/Select'
 import Spinner from './components/Spinner/Spinner'
+import TextArea, { TextAreaStyles } from './components/TextArea'
 import TextField, { TextFieldStyles } from './components/TextField'
 import Footer, {
   FooterContent,
@@ -139,6 +140,7 @@ export const styles = {
   ...CardStyles,
   ...HeaderStyles,
   ...SearchBarStyles,
+  ...TextAreaStyles,
   ...TextFieldStyles,
   ...TopBarStyles,
   ...InputStyles,
@@ -240,6 +242,7 @@ export {
   Select,
   ShareButton,
   Spinner,
+  TextArea,
   TextField,
   Theme,
   ThemeProvider,
