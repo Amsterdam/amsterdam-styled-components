@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { createRef, useEffect } from 'react'
+import Label from '../Label'
 import Radio from './Radio'
 import RadioGroup from './RadioGroup'
-import Label from '../Label'
+import Readme from './README.md'
 
 export default {
   title: 'Experimental/Atoms/Radio',
-
+  parameters: {
+    notes: Readme,
+  },
   decorators: [
     (storyFn: () => React.ReactNode) => (
       <div
@@ -172,3 +175,34 @@ export const RadioLabelPositions = () => (
     </RadioGroup>
   </>
 )
+
+export const RadioWithRef = () => {
+  const ref = createRef<HTMLInputElement>()
+
+  useEffect(() => {
+    const element = ref.current
+
+    function onChange() {
+      // eslint-disable-next-line no-console
+      console.log('Value changed to option 2!')
+    }
+
+    element.addEventListener('change', onChange)
+
+    return () => element.removeEventListener('change', onChange)
+  }, [ref])
+
+  return (
+    <RadioGroup name="group-1">
+      <Label htmlFor="some-option-1" label="Option 1">
+        <Radio id="some-option-1" checked />
+      </Label>
+      <Label htmlFor="some-option-2" label="Option 2">
+        <Radio id="some-option-2" ref={ref} />
+      </Label>
+      <Label htmlFor="some-option-3" label="Option 3">
+        <Radio id="some-option-3" />
+      </Label>
+    </RadioGroup>
+  )
+}

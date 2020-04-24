@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { createRef, useEffect } from 'react'
+import Readme from './README.md'
 import Select from './Select'
 
 export default {
   title: 'Experimental/Atoms/Select (Dropdown)',
-
+  parameters: {
+    notes: Readme,
+  },
   decorators: [
     (storyFn: () => React.ReactNode) => (
       <div
@@ -100,3 +103,29 @@ export const Error = () => (
     </Select>
   </>
 )
+
+export const SelectWithRef = () => {
+  const ref = createRef<HTMLSelectElement>()
+
+  useEffect(() => {
+    const element = ref.current
+
+    function onChange(event: Event) {
+      // eslint-disable-next-line no-console
+      console.log('Value changed!', (event.target as HTMLSelectElement).value)
+    }
+
+    element.addEventListener('change', onChange)
+
+    return () => element.removeEventListener('change', onChange)
+  }, [ref])
+
+  return (
+    <Select id="with-ref" label="Select with ref" ref={ref}>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+      <option value="4">Option 4</option>
+    </Select>
+  )
+}
