@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
 import { Close } from '@datapunt/asc-assets'
+import React, { useState } from 'react'
+import CompactThemeProvider from '../../theme/CompactThemeProvider'
+import { ButtonVariant } from '../Button/ButtonStyle'
+import Paragraph from '../Paragraph'
 import AlertStyle, {
-  Props,
+  AlertHeading,
   CloseButton,
   CloseButtonWrapper,
   ContentWrapper,
+  Props,
 } from './AlertStyle'
-import Heading from '../Heading'
-import CompactThemeProvider from '../../theme/CompactThemeProvider'
-import Paragraph from '../Paragraph'
-import { ButtonVariant } from '../Button/ButtonStyle'
 
 const CLOSE_BUTTON_TITLE = 'Sluiten'
 
@@ -51,9 +51,10 @@ const Alert: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
       <CompactThemeProvider>
         <ContentWrapper compact={compact}>
           {heading && (
-            <Heading forwardedAs="strong" styleAs={compact ? 'h5' : 'h3'}>
+            // @ts-ignore
+            <AlertHeading forwardedAs="strong" styleAs={compact ? 'h5' : 'h3'}>
               {heading}
-            </Heading>
+            </AlertHeading>
           )}
           {content && <Paragraph>{content}</Paragraph>}
 
