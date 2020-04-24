@@ -1,10 +1,13 @@
-import React from 'react'
-import Checkbox from './Checkbox'
+import React, { createRef, useEffect } from 'react'
 import Label from '../Label'
+import Checkbox from './Checkbox'
+import Readme from './README.md'
 
 export default {
   title: 'Experimental/Atoms/Checkbox',
-
+  parameters: {
+    notes: Readme,
+  },
   decorators: [
     (storyFn: () => React.ReactNode) => (
       <div
@@ -112,3 +115,26 @@ export const CheckboxLabelPositions = () => (
     </Label>
   </>
 )
+
+export const CheckboxWithRef = () => {
+  const ref = createRef<HTMLInputElement>()
+
+  useEffect(() => {
+    const element = ref.current
+
+    function onChange(event: Event) {
+      // eslint-disable-next-line no-console
+      console.log('Value changed!', (event.target as HTMLInputElement).checked)
+    }
+
+    element.addEventListener('change', onChange)
+
+    return () => element.removeEventListener('change', onChange)
+  }, [ref])
+
+  return (
+    <Label htmlFor="with-ref" label="A checkbox with a ref">
+      <Checkbox id="with-ref" ref={ref} />
+    </Label>
+  )
+}
