@@ -3520,15 +3520,10 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.0.tgz#69a23a3ad29caf0097f06eda59b361ee2f0639f6"
   integrity sha1-aaI6OtKcrwCX8G7aWbNh7i8GOfY=
 
-"@types/node@*", "@types/node@>= 8":
-  version "13.13.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.1.tgz#1ba94c5a177a1692518bfc7b41aec0aa1a14354e"
-  integrity sha512-uysqysLJ+As9jqI5yqjwP3QJrhOcUwBjHUlUxPxjbplwKoILvXVsmYWEhfmAQlrPfbRZmhJB007o4L9sKqtHqQ==
-
-"@types/node@^13.13.2":
-  version "13.13.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.2.tgz#160d82623610db590a64e8ca81784e11117e5a54"
-  integrity sha512-LB2R1Oyhpg8gu4SON/mfforE525+Hi/M1ineICEDftqNVTyFg1aRIeGuTvXAoWHc4nbrFncWtJgMmoyRvuGh7A==
+"@types/node@*", "@types/node@>= 8", "@types/node@^13.13.2":
+  version "13.13.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.4.tgz#1581d6c16e3d4803eb079c87d4ac893ee7501c2c"
+  integrity sha512-x26ur3dSXgv5AwKS0lNfbjpCakGIduWU1DU91Zz58ONRWrIKGunmZBNv4P7N+e27sJkiGDsw/3fT4AtsqQBrBA==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -4013,11 +4008,6 @@ acorn@^5.5.3:
   integrity sha512-T/zvzYRfbVojPWahDsE5evJdHb3oJoQfFbsrKM7w5Zcs++Tr257tia3BmMP8XYVjp1S9RZXQMh7gao96BlqZOw==
 
 acorn@^6.0.1, acorn@^6.4.1:
-  version "6.4.1"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.1.tgz#531e58ba3f51b9dacb9a6646ca4debf5b14ca474"
-  integrity sha512-ZVA9k326Nwrj3Cj9jlh3wGFutC2ZornPNARZwsNYqQYgN0EsV2d53w5RN/co65Ohn4sUAUtb1rSUAOD6XN9idA==
-
-acorn@^6.4.1:
   version "6.4.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.1.tgz#531e58ba3f51b9dacb9a6646ca4debf5b14ca474"
   integrity sha512-ZVA9k326Nwrj3Cj9jlh3wGFutC2ZornPNARZwsNYqQYgN0EsV2d53w5RN/co65Ohn4sUAUtb1rSUAOD6XN9idA==
@@ -5572,7 +5562,7 @@ cheerio@^1.0.0-rc.3:
     lodash "^4.15.0"
     parse5 "^3.0.1"
 
-chokidar@^2.0.2, chokidar@^2.0.4, chokidar@^2.1.8:
+chokidar@^2.0.4, chokidar@^2.1.8:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.1.8.tgz#804b3a7b6a99358c3c5c61e71d8728f041cff917"
   integrity sha512-ZmZUazfOzf0Nve7duiCKD23PFSCs4JPoYyccjUFF3aQkQadqBhfzhjkwBH2mNOG9cTBwhamM37EIsIkZw3nRgg==
@@ -16648,15 +16638,6 @@ warning@^4.0.2, warning@^4.0.3:
   integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
   dependencies:
     loose-envify "^1.0.0"
-
-watchpack@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.6.1.tgz#280da0a8718592174010c078c7585a74cd8cd0e2"
-  integrity sha512-+IF9hfUFOrYOOaKyfaI7h7dquUIOgyEMoQMLA7OP5FxegKA2+XdXThAZ9TU2kucfhDH7rfMHs1oPYziVGWRnZA==
-  dependencies:
-    chokidar "^2.1.8"
-    graceful-fs "^4.1.2"
-    neo-async "^2.5.0"
 
 watchpack@^1.6.1:
   version "1.6.1"
