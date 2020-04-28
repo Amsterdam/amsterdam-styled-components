@@ -29,7 +29,7 @@ export const WithIcon = () => (
   <TopTaskButton
     href="https://amsterdam.nl"
     icon={Location}
-    text="Stadsloket: locaties en openingstijden"
+    title="City hall: locations and opening hours"
     style={{ maxWidth: 220 }}
   />
 )
@@ -37,7 +37,16 @@ export const WithIcon = () => (
 export const WithoutIcon = () => (
   <TopTaskButton
     href="https://amsterdam.nl"
-    text="Stadsloket: locaties en openingstijden"
+    title="City hall: locations and opening hour"
+    style={{ maxWidth: 220 }}
+  />
+)
+
+export const WithText = () => (
+  <TopTaskButton
+    href="https://amsterdam.nl"
+    title="City Hall West"
+    text="Bos en Lommerplein 250"
     style={{ maxWidth: 220 }}
   />
 )
@@ -48,7 +57,7 @@ export const OnDarkBackground = () => (
       href="https://amsterdam.nl"
       target="_blank"
       icon={Passport}
-      text="Stadsloket: locaties en openingstijden"
+      title="City hall: locations and opening hour"
       onDarkBackground
     />
   </div>

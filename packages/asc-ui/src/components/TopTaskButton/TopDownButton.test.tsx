@@ -11,14 +11,16 @@ describe('TopTaskButton', () => {
         <TopTaskButton
           href="https://amsterdam.nl"
           icon={Location}
-          text="Stadsloket: locaties en openingstijden"
+          title="City hall: locations and opening hour"
+          text="A beautiful description"
         />
       </ThemeProvider>,
     )
 
     expect(
-      queryByText('Stadsloket: locaties en openingstijden'),
+      queryByText('City hall: locations and opening hour'),
     ).toBeInTheDocument()
+    expect(queryByText('A beautiful description')).toBeInTheDocument()
     expect(queryByTestId('icon')).toBeInTheDocument()
     expect(queryByTestId('root')).toBeInstanceOf(HTMLAnchorElement)
     expect(queryByTestId('root')?.getAttribute('href')).toEqual(
