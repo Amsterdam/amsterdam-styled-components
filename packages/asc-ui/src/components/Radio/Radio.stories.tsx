@@ -187,9 +187,15 @@ export const RadioWithRef = () => {
       console.log('Value changed to option 2!')
     }
 
+    if (!element) {
+      return undefined
+    }
+
     element.addEventListener('change', onChange)
 
-    return () => element.removeEventListener('change', onChange)
+    return () => {
+      element.removeEventListener('change', onChange)
+    }
   }, [ref])
 
   return (

@@ -1,0 +1,169 @@
+import { Meta, Story, Preview, Description } from '@storybook/addon-docs/blocks'
+import Label from '../Label'
+import Checkbox from './Checkbox'
+import Readme from './README.md'
+
+<Meta
+  title="Experimental/Atoms/Checkbox"
+  component={Checkbox}
+  decorators={[
+    (storyFn) => (
+      <div
+        style={{
+          display: 'flex',
+          maxWidth: 400,
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+        }}
+      >
+        {storyFn()}
+      </div>
+    ),
+  ]}
+/>
+
+<Description>{Readme}</Description>
+
+## Default checkbox
+
+<Preview>
+  <Story name="Default">
+    <React.Fragment>
+      <Label htmlFor="default" label="Default">
+        <Checkbox id="default" />
+      </Label>
+      <Label htmlFor="default_checked" label="Default checked">
+        <Checkbox id="default_checked" checked />
+      </Label>
+      <Label htmlFor="default_disabled" label="Default disabled" disabled>
+        <Checkbox id="default_disabled" />
+      </Label>
+      <Label
+        htmlFor="default_checked_disabled"
+        label="Default checked and disabled"
+        disabled
+      >
+        <Checkbox id="default_checked_disabled" checked />
+      </Label>
+      <Label htmlFor="default_indeterminate" label="Default indeterminate">
+        <Checkbox
+          id="default_indeterminate"
+          variant="default"
+          checked
+          indeterminate
+        />
+      </Label>
+      <Label htmlFor="default_errored" label="Default errored">
+        <Checkbox id="default_errored" variant="default" error />
+      </Label>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Primary checkbox
+
+<Preview>
+  <Story name="Primary">
+    <React.Fragment>
+      <Label htmlFor="primary" label="Primary">
+        <Checkbox id="primary" variant="primary" />
+      </Label>
+      <Label htmlFor="primary_checked" label="Primary checked">
+        <Checkbox id="primary_checked" variant="primary" checked />
+      </Label>
+      <Label htmlFor="primary_disabled" label="Primary disabled" disabled>
+        <Checkbox id="primary_disabled" variant="primary" />
+      </Label>
+      <Label
+        htmlFor="primary_checked_disabled"
+        label="Primary checked and disabled"
+        disabled
+      >
+        <Checkbox id="primary_checked_disabled" variant="primary" checked />
+      </Label>
+      <Label htmlFor="primary_indeterminate" label="Primary indeterminate">
+        <Checkbox
+          id="primary_indeterminate"
+          variant="primary"
+          checked
+          indeterminate
+        />
+      </Label>
+      <Label htmlFor="primary_errored" label="Primary errored">
+        <Checkbox id="primary_errored" variant="primary" error />
+      </Label>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Secondary checkbox
+
+<Preview>
+  <Story name="Secondary">
+    <React.Fragment>
+      <Label htmlFor="secondary" label="Secondary">
+        <Checkbox id="secondary" variant="secondary" />
+      </Label>
+      <Label htmlFor="secondary_checked" label="Secondary checked">
+        <Checkbox id="secondary_checked" variant="secondary" checked />
+      </Label>
+      <Label htmlFor="secondary_disabled" label="Secondary disabled" disabled>
+        <Checkbox id="secondary_disabled" variant="secondary" />
+      </Label>
+      <Label
+        htmlFor="secondary_checked_disabled"
+        label="Secondary checked and disabled"
+        disabled
+      >
+        <Checkbox id="secondary_checked_disabled" variant="secondary" checked />
+      </Label>
+      <Label htmlFor="secondary_indeterminate" label="Secondary indeterminate">
+        <Checkbox
+          id="secondary_indeterminate"
+          variant="secondary"
+          checked
+          indeterminate
+        />
+      </Label>
+      <Label htmlFor="secondary_errored" label="Secondary errored">
+        <Checkbox id="secondary_errored" variant="secondary" error />
+      </Label>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Tertiary checkbox
+
+<Preview>
+  <Story name="Tertiary">
+    <React.Fragment>
+      <Label htmlFor="tertiary" label="Tertiary">
+        <Checkbox id="tertiary" variant="tertiary" />
+      </Label>
+      <Label htmlFor="tertiary_checked" label="Tertiary checked">
+        <Checkbox id="tertiary_checked" variant="tertiary" checked />
+      </Label>
+      <Label htmlFor="tertiary_disabled" label="Tertiary disabled" disabled>
+        <Checkbox id="tertiary_disabled" variant="tertiary" />
+      </Label>
+      <Label
+        htmlFor="tertiary_checked_disabled"
+        label="Tertiary checked and disabled"
+        disabled
+      >
+        <Checkbox id="tertiary_checked_disabled" variant="tertiary" checked />
+      </Label>
+      <Label htmlFor="tertiary_indeterminate" label="Tertiary indeterminate">
+        <Checkbox
+          id="tertiary_indeterminate"
+          variant="tertiary"
+          checked
+          indeterminate
+        />
+      </Label>
+      <Label htmlFor="tertiary_errored" label="Tertiary errored">
+        <Checkbox id="tertiary_errored" variant="tertiary" error />
+      </Label>
+    </React.Fragment>
+  </Story>
+</Preview>

@@ -115,9 +115,15 @@ export const SelectWithRef = () => {
       console.log('Value changed!', (event.target as HTMLSelectElement).value)
     }
 
+    if (!element) {
+      return undefined
+    }
+
     element.addEventListener('change', onChange)
 
-    return () => element.removeEventListener('change', onChange)
+    return () => {
+      element.removeEventListener('change', onChange)
+    }
   }, [ref])
 
   return (
