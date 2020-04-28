@@ -939,17 +939,17 @@
   resolved "https://registry.yarnpkg.com/@datapunt/asc-assets/-/asc-assets-0.19.2-alpha.23.tgz#693f3c287a99e1e6ef07bc780c71a1689678b842"
   integrity sha512-gxwUUVU5oUQKApoN001PUbTPIxVyqVT+B2067gbYxzpOKhsYTmjSXg6cP4t+FRmd+piyZG+U2UTyHhD91RmltA==
 
-"@datapunt/asc-assets@^0.19.2-alpha.23+18279a79":
+"@datapunt/asc-assets@^0.19.2-esm.18+c8db57a5":
   version "0.19.2-esm.18"
   resolved "https://registry.yarnpkg.com/@datapunt/asc-assets/-/asc-assets-0.19.2-esm.18.tgz#ba107a8b8f36f6608ae64abd95f69070b7c53842"
   integrity sha512-DM+b+3Dx2r1hC0mvvETzvyZ7ak/+becljiW+opgGiNx+UJx/23YK6zQNo/sz0C/gTL0KZxBt2mXsZHAjTfgRiA==
 
-"@datapunt/asc-ui@0.19.2-alpha.23":
-  version "0.19.2-alpha.23"
-  resolved "https://registry.yarnpkg.com/@datapunt/asc-ui/-/asc-ui-0.19.2-alpha.23.tgz#ac435cb1514475f2507772a650a1d50ec86667ee"
-  integrity sha512-5FhVRCKQqz7PvYuSVb9WspIStGoD/BiLHEGUJMun1UQhqCxOFHTdZBIQ+hqOEE/duXtXJKSmEwQ4xpA0/RihIw==
+"@datapunt/asc-ui@0.19.2-esm.18":
+  version "0.19.2-esm.18"
+  resolved "https://registry.yarnpkg.com/@datapunt/asc-ui/-/asc-ui-0.19.2-esm.18.tgz#b135584871ae658182f1a50e3022d570bb549c26"
+  integrity sha512-53TOOKo4I4SSa9xt+at2/hHGdmgHSVz8Sljp4a76czpXqkNfYRm880wQui8OH0zOh8RaezfbzrfR6uZNOrZZhA==
   dependencies:
-    "@datapunt/asc-assets" "^0.19.2-alpha.23+18279a79"
+    "@datapunt/asc-assets" "^0.19.2-esm.18+c8db57a5"
     classnames "^2.2.6"
     deepmerge "^4.2.2"
     polished "^3.5.1"
