@@ -1,11 +1,12 @@
-import React from 'react'
-import { useUID } from 'react-uid'
 import { Close } from '@datapunt/asc-assets'
-import FormLabelStyle from '../FormLabelStyle'
-import TextFieldStyle from './TextFieldStyle'
-import Input, { InputProps } from '../Input'
+import React, { useRef } from 'react'
+import { useUID } from 'react-uid'
+import { useFocus } from '../../utils/hooks'
 import Button from '../Button'
+import FormLabelStyle from '../FormLabelStyle'
 import Icon from '../Icon'
+import Input, { InputProps } from '../Input'
+import TextFieldStyle from './TextFieldStyle'
 
 export interface TextFieldProps extends InputProps {
   label?: string
@@ -15,6 +16,7 @@ export interface TextFieldProps extends InputProps {
   labelStyle?: object
   errorStyle?: object
   onClear?: () => void
+  autoFocus?: boolean
 }
 
 const TextField = ({
@@ -24,15 +26,19 @@ const TextField = ({
   value,
   keepFocus,
   blurOnEscape,
-  focusOnRender,
   errorMessage,
   labelStyle,
   errorStyle,
   id: idProp,
+  autoFocus,
   ...otherProps
 }: TextFieldProps) => {
   const uid = useUID()
   const id = idProp || uid
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  useFocus(inputRef, !!autoFocus)
+
   return (
     <TextFieldStyle>
       <FormLabelStyle
@@ -54,10 +60,11 @@ const TextField = ({
         </FormLabelStyle>
       )}
       <Input
-        {...{ keepFocus, value, blurOnEscape, focusOnRender }}
+        {...{ keepFocus, value, blurOnEscape }}
         {...otherProps}
         id={id}
         error={errorMessage}
+        ref={inputRef}
       />
       {onClear && value && (
         <Button
