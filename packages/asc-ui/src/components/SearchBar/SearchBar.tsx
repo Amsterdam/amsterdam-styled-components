@@ -1,11 +1,11 @@
-import React from 'react'
 import { Search } from '@datapunt/asc-assets'
-import SearchBarStyle, { Props as SearchBarStyleProps } from './SearchBarStyle'
-import TextField, { TextFieldProps } from '../TextField/TextField'
-import InputContext from '../Input/InputMethodsContext'
-import { InputProps } from '../Input'
+import React from 'react'
 import Button from '../Button'
 import Icon from '../Icon'
+import { InputProps } from '../Input'
+import InputContext from '../Input/InputMethodsContext'
+import TextField, { TextFieldProps } from '../TextField/TextField'
+import SearchBarStyle, { Props as SearchBarStyleProps } from './SearchBarStyle'
 
 export interface SearchBarProps extends TextFieldProps, SearchBarStyleProps {
   label?: string
@@ -20,6 +20,7 @@ export interface SearchBarProps extends TextFieldProps, SearchBarStyleProps {
    * @param value
    */
   onSubmit?: (e: React.FormEvent) => void
+  autoFocus?: boolean
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -30,13 +31,13 @@ const SearchBar: React.FC<SearchBarProps> = ({
   onChange,
   onFocus,
   onWatchValue,
-  focusOnRender,
   value,
   label,
   hideAt,
   showAt,
   onClear,
   inputProps,
+  autoFocus,
   ...otherProps
 }) => {
   let inputRef: React.RefObject<HTMLInputElement> | null = null
@@ -110,8 +111,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
           aria-label={label}
           id={inputProps?.id}
           value={inputValue}
+          autoFocus={autoFocus}
           {...{
-            focusOnRender,
             inputProps,
             label,
           }}

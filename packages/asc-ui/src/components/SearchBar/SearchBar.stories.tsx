@@ -1,5 +1,5 @@
-import React from 'react'
 import { action } from '@storybook/addon-actions'
+import React from 'react'
 import SearchBar from './SearchBar'
 
 export default {
@@ -19,6 +19,10 @@ export const DefaultState = () => (
       action('Input changed')
     }}
   />
+)
+
+export const WithFocus = () => (
+  <SearchBar placeholder="This will focus automatically" autoFocus />
 )
 
 export const InAForm = () => (

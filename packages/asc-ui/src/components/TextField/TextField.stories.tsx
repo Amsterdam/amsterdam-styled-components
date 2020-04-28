@@ -13,6 +13,9 @@ export default {
 
 export const DefaultState = () => <TextField />
 export const WithALabel = () => <TextField label="A Label" />
+export const WithFocus = () => (
+  <TextField label="This will focus automatically" autoFocus />
+)
 export const WithAControlledState = () => {
   const [value, setValue] = useState('A value')
   return (

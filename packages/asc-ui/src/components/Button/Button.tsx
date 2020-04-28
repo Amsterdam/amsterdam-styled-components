@@ -1,12 +1,12 @@
 import React from 'react'
+import Icon, { defaultProps as iconDefaultProps } from '../Icon/Icon'
 import ButtonStyle, {
+  ArrowRight,
+  ButtonVariant,
   IconLeft,
   IconRight,
-  ArrowRight,
   Props as ButtonStyleProps,
-  ButtonVariant,
 } from './ButtonStyle'
-import Icon, { defaultProps as iconDefaultProps } from '../Icon/Icon'
 
 export type Props = {
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
@@ -22,26 +22,24 @@ export type Props = {
 
 export { ButtonVariant }
 
-const Button: React.FC<Props> = ({
-  children,
-  iconLeft,
-  iconRight,
-  icon,
-  iconSize,
-  taskflow,
-  ...otherProps
-}) => {
-  const iconProps = {
-    size: iconSize || iconDefaultProps.size,
-  }
-  return (
-    <ButtonStyle {...otherProps} taskflow={taskflow}>
-      {iconLeft && <IconLeft {...iconProps}>{iconLeft}</IconLeft>}
-      {icon ? <Icon {...iconProps}>{icon}</Icon> : children}
-      {iconRight && <IconRight {...iconProps}>{iconRight}</IconRight>}
-      {taskflow && <ArrowRight />}
-    </ButtonStyle>
-  )
-}
+const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, Props>(
+  (
+    { children, iconLeft, iconRight, icon, iconSize, taskflow, ...otherProps },
+    ref,
+  ) => {
+    const iconProps = {
+      size: iconSize || iconDefaultProps.size,
+    }
+
+    return (
+      <ButtonStyle ref={ref} {...otherProps} taskflow={taskflow}>
+        {iconLeft && <IconLeft {...iconProps}>{iconLeft}</IconLeft>}
+        {icon ? <Icon {...iconProps}>{icon}</Icon> : children}
+        {iconRight && <IconRight {...iconProps}>{iconRight}</IconRight>}
+        {taskflow && <ArrowRight />}
+      </ButtonStyle>
+    )
+  },
+)
 
 export default Button

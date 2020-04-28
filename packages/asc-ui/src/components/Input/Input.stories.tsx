@@ -39,6 +39,10 @@ export const InputWithRef = () => {
   useEffect(() => {
     const element = ref.current
 
+    if (!element) {
+      return undefined
+    }
+
     function onInput(event: Event) {
       // eslint-disable-next-line no-console
       console.log('Value changed!', (event.target as HTMLInputElement).value)

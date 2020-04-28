@@ -1,12 +1,12 @@
-import React from 'react'
 import { Search } from '@datapunt/asc-assets'
+import React from 'react'
+import { InputMethods, InputProps } from '../Input'
+import SearchBar from '../SearchBar'
+import { SearchBarProps } from '../SearchBar/SearchBar'
+import Toggle, { Props as ToggleProps } from '../Toggle/Toggle'
 import SearchBarToggleStyle, {
   SearchBarToggleStyleProps,
 } from './SearchBarToggleStyle'
-import SearchBar from '../SearchBar'
-import { InputMethods, InputProps } from '../Input'
-import Toggle, { Props as ToggleProps } from '../Toggle/Toggle'
-import { SearchBarProps } from '../SearchBar/SearchBar'
 
 interface SearchBarToggleProps extends SearchBarToggleStyleProps, InputMethods {
   label?: string
@@ -34,7 +34,7 @@ const SearchBarToggle: React.FC<SearchBarToggleProps & ToggleProps> = ({
     iconOpen={<Search />}
     {...otherProps}
   >
-    <SearchBar inputProps={inputProps} focusOnRender {...searchBarProps}>
+    <SearchBar inputProps={inputProps} {...searchBarProps} autoFocus>
       {children}
     </SearchBar>
   </Toggle>

@@ -1,6 +1,5 @@
 import React, { useImperativeHandle } from 'react'
 import useActionOnEscape from '../../utils/hooks/useActionOnEscape'
-import useFocusOnRender from '../../utils/hooks/useFocusOnRender'
 import InputContext from './InputMethodsContext'
 import InputStyle from './InputStyle'
 
@@ -13,17 +12,15 @@ export interface InputMethods
 export interface InputProps extends InputMethods {
   keepFocus?: boolean
   blurOnEscape?: boolean
-  focusOnRender?: boolean
   error?: string
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ blurOnEscape, focusOnRender, value, error, ...props }, externalRef) => {
+  ({ blurOnEscape, value, error, ...props }, externalRef) => {
     const { onKeyDown } = props
     const inputRef = React.useRef<HTMLInputElement>(null)
 
     useImperativeHandle(externalRef, () => inputRef.current as HTMLInputElement)
-    useFocusOnRender(inputRef, focusOnRender)
 
     const { onKeyDown: onKeyDownHook } = useActionOnEscape(() => {
       if (inputRef.current) {
