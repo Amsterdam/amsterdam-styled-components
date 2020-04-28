@@ -9,7 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@datapunt/asc-assets": "0.19.2-alpha.23",
+    "@datapunt/asc-assets": "0.19.2-esm.18",
     "@datapunt/asc-ui": "0.19.2-alpha.23",
     "@zeit/next-css": "^1.0.1",
     "next": "9.3.5",
