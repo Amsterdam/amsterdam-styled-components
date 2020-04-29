@@ -48,9 +48,15 @@ export const InputWithRef = () => {
       console.log('Value changed!', (event.target as HTMLInputElement).value)
     }
 
+    if (!element) {
+      return undefined
+    }
+
     element.addEventListener('input', onInput)
 
-    return () => element.removeEventListener('input', onInput)
+    return () => {
+      element.removeEventListener('input', onInput)
+    }
   }, [ref])
 
   return <Input id="with-ref" ref={ref} />
