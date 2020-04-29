@@ -69,7 +69,7 @@ export const ContentWrapper = styled.div<SharedProps>`
 `
 
 export const AlertHeading = styled(Heading)`
-  margin: 0 0 ${themeSpacing(1)} 0;
+  margin: 0;
 `
 
 export default styled.div<Props>`
