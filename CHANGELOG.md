@@ -24,6 +24,7 @@ Prefix the change with one of these keywords:
 - Changed: **BREAKING** `createTheme` method from `Theme`.
 - Changed: **BREAKING** removed `themeName` from `ThemeProvider`
 - Changed: **BREAKING** removed `asc-core` package. `Theme` and `ascDefaultTheme` can now be found in `asc-ui`
+- Changed: **BREAKING** `AlertMessage` export is renamed to `Alert`.
 
 ## [0.19.2-beta.1]
 
