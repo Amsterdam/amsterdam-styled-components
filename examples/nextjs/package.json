@@ -1,0 +1,23 @@
+{
+  "name": "nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "postinstall": "./scripts/copy-fonts.sh",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@datapunt/asc-assets": "0.19.2-alpha.23",
+    "@datapunt/asc-ui": "0.19.2-alpha.23",
+    "@zeit/next-css": "^1.0.1",
+    "next": "9.3.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.0"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.7"
+  }
+}

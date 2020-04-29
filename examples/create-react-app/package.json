@@ -1,20 +1,20 @@
 {
-  "private": true,
-  "name": "create-react-app",
-  "version": "0.1.0",
+  "name": "asc-create-react-app",
+  "version": "1.0.0",
   "scripts": {
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "postinstall": "../../scripts/link-packages.sh",
     "start": "react-scripts start",
     "test": "react-scripts test"
   },
   "dependencies": {
+    "@datapunt/asc-assets": "^0.19.2-alpha.23",
+    "@datapunt/asc-ui": "^0.19.2-alpha.23",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "styled-components": "^5.1.0"
   },
-  "devDependencies": {},
   "browserslist": [
     ">0.2%",
     "not dead",

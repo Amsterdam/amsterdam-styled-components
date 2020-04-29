@@ -7,3 +7,17 @@ update_configs:
       - match:
           dependency_type: "all"
           update_type: "semver:minor"
+
+  - package_manager: "javascript"
+    directory: "/examples/create-react-app"
+    update_schedule: "daily"
+    default_labels:
+      - dependencies
+      - examples
+
+  - package_manager: "javascript"
+    directory: "/examples/nextjs"
+    update_schedule: "daily"
+    default_labels:
+      - dependencies
+      - examples
