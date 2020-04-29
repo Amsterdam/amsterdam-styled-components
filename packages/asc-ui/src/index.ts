@@ -96,7 +96,7 @@ import Footer, {
 } from './components/Footer'
 import CompactPager from './components/CompactPager'
 import ViewerContainer from './components/ViewerContainer/ViewerContainer'
-import { AlertMessage, AlertStyle } from './components/Alert'
+import Alert, { AlertStyle } from './components/Alert'
 import {
   Accordion,
   AccordionWrapper,
@@ -218,7 +218,7 @@ export {
   Divider,
   IconButton,
   Image,
-  AlertMessage,
+  Alert,
   Input,
   ImageCard,
   ImageCardContent,
