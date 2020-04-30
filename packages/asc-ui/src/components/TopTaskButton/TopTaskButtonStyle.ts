@@ -3,6 +3,22 @@ import { svgFill, themeColor, themeSpacing } from '../../utils'
 import IconStyle from '../Icon/IconStyle'
 import Paragraph from '../Paragraph'
 
+export const TopTaskText = styled(Paragraph)`
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+`
+
+export const TopTaskTitle = styled(Paragraph)`
+  margin: 0;
+
+  /** Add space to the text if used together */
+  & + ${TopTaskText} {
+    margin-top: ${themeSpacing(1)};
+  }
+`
+
 export default styled.a<{
   onDarkBackground?: boolean
 }>`
@@ -20,16 +36,15 @@ export default styled.a<{
 
   :hover {
     border-color: ${themeColor('secondary', 'main')};
-    color: ${themeColor('secondary', 'main')};
-    text-decoration: underline;
+
+    ${TopTaskTitle} {
+      text-decoration: underline;
+      color: ${themeColor('secondary', 'main')};
+    }
   }
 
   ${IconStyle} {
     margin-bottom: ${themeSpacing(2)};
     ${svgFill('tint', 'level7')};
   }
-`
-
-export const ParagraphStyle = styled(Paragraph)`
-  margin-bottom: 0;
 `
