@@ -1,7 +1,8 @@
 {
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "examples/*"
   ],
   "scripts": {
     "prebuild": "scripts/port-check.sh && lerna exec --scope @datapunt/asc-assets -- yarn build",
@@ -20,6 +21,8 @@
     "publish:canary": "lerna publish -c --yes",
     "publish:stable": "lerna publish",
     "start": "concurrently \"yarn build:watch\" \"yarn storybook\"",
+    "start:example:cra": "yarn --cwd ./node_modules/@datapunt/create-react-app-example start",
+    "start:example:nextjs": "yarn --cwd ./node_modules/@datapunt/nextjs-example dev",
     "storybook": "start-storybook -p 6006 -c .storybook -s ./packages/asc-assets/static",
     "stylelint": "stylelint \"./packages/**/*Style.ts\"",
     "test": "yarn jest  --collect-coverage",
