@@ -15,6 +15,8 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## Unreleased
+
+- Added: `Alert` component has a new variant: [`warning`](https://amsterdam.github.io/amsterdam-styled-components/?path=/story/experimental-composed-alert--variants)
 - Added: ErrorMessage component
 - Added: Added TextArea component
 - Added: Added FormTitle component (see [design system](https://designsystem.amsterdam.nl/7awj1hc9f/p/537bb7-title-component))
