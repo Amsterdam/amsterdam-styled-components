@@ -9,7 +9,7 @@ import {
 import Button from '../Button'
 import Heading from '../Heading'
 
-export type Level = 'normal' | 'attention' | 'error'
+export type Level = 'normal' | 'attention' | 'warning' | 'error'
 
 type SharedProps = {
   compact?: boolean
@@ -29,6 +29,7 @@ const colorMap: Record<
 > = {
   normal: themeColor('tint', 'level3'),
   attention: themeColor('primary'),
+  warning: themeColor('tint', 'level1'),
   error: themeColor('secondary'),
 }
 
@@ -75,6 +76,7 @@ export const AlertHeading = styled(Heading)`
 export default styled.div<Props>`
   position: relative;
   display: flex;
+  width: 100%; /* IE11 fix */
   ${focusStyleOutline()}
   ${({ level, compact, theme }) =>
     css`
@@ -90,6 +92,10 @@ export default styled.div<Props>`
         &, & * {
           color: ${themeColor('tint', 'level1')};
         }
+      `}
+      ${level === 'warning' &&
+      css`
+        box-shadow: ${themeColor('secondary')} 0px 0px 0px 2px inset;
       `}
     `}
 `
