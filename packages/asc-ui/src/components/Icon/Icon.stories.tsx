@@ -1,13 +1,9 @@
 import { Location, Passport } from '@datapunt/asc-assets'
 import React from 'react'
-import Readme from './README.md'
 import Icon from './Icon'
 
 export default {
   title: 'Experimental/Atoms/Icon',
-  parameters: {
-    notes: Readme,
-  },
   decorators: [
     (storyFn: () => React.ReactNode) => (
       <div
