@@ -71,3 +71,36 @@ export const ColorError = () => (
     </Icon>
   </>
 )
+
+export const Rotation = () => (
+  <>
+    <Icon size={40}>
+      <Location />
+    </Icon>
+    0 deg
+    <div style={{ paddingTop: 20 }}>
+      <Icon size={40} rotate={90}>
+        <Location />
+      </Icon>
+      90 deg
+    </div>
+    <div style={{ paddingTop: 20 }}>
+      <Icon size={40} rotate={180}>
+        <Location />
+      </Icon>
+      180 deg
+    </div>
+    <div style={{ paddingTop: 20 }}>
+      <Icon size={40} rotate={270}>
+        <Location />
+      </Icon>
+      270 deg
+    </div>
+    <div style={{ paddingTop: 20 }}>
+      <Icon size={40} rotate={68}>
+        <Location />
+      </Icon>
+      68 deg (any number)
+    </div>
+  </>
+)
