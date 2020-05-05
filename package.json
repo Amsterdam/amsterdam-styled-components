@@ -81,7 +81,7 @@
     "husky": "^4.2.5",
     "hygen": "^5.0.3",
     "jest": "^25.4.0",
-    "jest-cli": "^25.4.0",
+    "jest-cli": "^26.0.0",
     "jest-styled-components": "7.0.2",
     "lerna": "3.20.2",
     "lint-staged": "^10.2.0",
