@@ -1,4 +1,4 @@
-import { Location, Passport } from '@datapunt/asc-assets'
+import * as Icons from '@datapunt/asc-assets'
 import React from 'react'
 import Icon from './Icon'
 
@@ -21,19 +21,17 @@ export default {
   ],
 }
 
+let CustomIcon
 export const AllIcons = () => (
   <>
-    <span>
-      <Icon inline size={40}>
-        <Passport />
-      </Icon>
-      Passport
-    </span>
-    <span>
-      <Icon inline size={40}>
-        <Location />
-      </Icon>
-      Location
-    </span>
+    {Object.entries(Icons).map((IconObject) => (
+      <span key={IconObject[1]}>
+        {(CustomIcon = IconObject[1])}
+        <Icon size={60} inline>
+          <CustomIcon />
+        </Icon>
+        {IconObject[0]}
+      </span>
+    ))}
   </>
 )
