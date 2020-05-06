@@ -8,6 +8,7 @@ export namespace Theme {
     | 'tint'
     | 'none'
     | 'support'
+    | 'supplement'
     | 'error'
     | 'default'
 
@@ -66,6 +67,16 @@ export namespace Theme {
     focus: string
   }
 
+  export interface SupplementPaletteInterface {
+    purple: string
+    pink: string
+    orange: string
+    yellow: string
+    lightgreen: string
+    darkgreen: string
+    lightblue: string
+  }
+
   export type Tint = {
     level1: string
     level2: string
@@ -82,6 +93,7 @@ export namespace Theme {
     error: PaletteInterface
     tint: Tint
     support: SupportPaletteInterface
+    supplement: SupplementPaletteInterface
     bright: PaletteInterface
   }
 
