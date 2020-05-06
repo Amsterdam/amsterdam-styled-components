@@ -99,7 +99,6 @@ export const Rotation = () => (
   </>
 )
 
-// primary" | "secondary" | "bright" | "tint" | "none" | "support" | "error" | "default"
 export const Colors = () => (
   <>
     <div>
