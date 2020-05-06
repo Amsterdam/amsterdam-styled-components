@@ -1,7 +1,7 @@
 import React from 'react'
 import * as Icons from '@datapunt/asc-assets'
 import styled from 'styled-components'
-import Icon from './Icon'
+import Icon from '../Icon/Icon'
 
 const IconWrapper = styled.span`
   display: inline-block;
