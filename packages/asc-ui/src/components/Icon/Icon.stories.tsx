@@ -32,6 +32,13 @@ export const InlineFlex = () => (
     <Location />
   </Icon>
 )
+export const CustomIconUrl = () => (
+  <Icon
+    inline
+    size={70}
+    iconUrl="https://cdn.xs4all.nl/content/_xs4all-themes/first-class/images/icons/usp-trophey_yellow_30.svg"
+  />
+)
 
 export const Sizes = () => (
   <>
