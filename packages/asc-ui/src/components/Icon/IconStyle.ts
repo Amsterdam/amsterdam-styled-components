@@ -19,7 +19,11 @@ export const defaultProps = {
 
 const IconStyle = styled.span<Props>`
   display: ${({ inline }) => (inline ? 'inline-flex' : 'flex')};
-  ${({ iconUrl }) => iconUrl && `background-image: ${iconUrl}`}
+  ${({ iconUrl }) =>
+    iconUrl &&
+    css`
+      background-image: url(${iconUrl});
+    `}
   ${({ size = defaultProps.size, padding = defaultProps.padding }) => css`
     width: ${size - padding * 2}px;
     height: ${size - padding * 2}px;
@@ -38,7 +42,7 @@ const IconStyle = styled.span<Props>`
       height: ${size - padding * 2}px;
     `}
   }
-  
+
   ${({ color, theme }) => svgFill(color)({ theme })};
 `
 
