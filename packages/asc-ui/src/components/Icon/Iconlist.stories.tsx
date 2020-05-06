@@ -3,7 +3,7 @@ import React from 'react'
 import Icon from './Icon'
 
 export default {
-  title: 'Experimental/Atoms/Iconlist',
+  title: 'Experimental/Atoms/IconList',
   decorators: [
     (storyFn: () => React.ReactNode) => (
       <div
@@ -22,7 +22,7 @@ export default {
 }
 
 let CustomIcon
-export const AllIcons = () => (
+export const IconList = () => (
   <>
     {Object.entries(Icons).map((IconObject) => (
       <span key={IconObject[1]}>
