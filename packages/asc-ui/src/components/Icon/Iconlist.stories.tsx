@@ -25,16 +25,16 @@ export default {
   ],
 }
 
-let CustomIcon
+const allIcons = Object.values(Icons)
+const allLabels = Object.keys(Icons)
 export const IconList = () => (
   <>
-    {Object.entries(Icons).map((IconObject) => (
-      <IconWrapper key={IconObject[1]} style={{}}>
-        {(CustomIcon = IconObject[1])}
+    {allIcons.map((ListIcon, key) => (
+      <IconWrapper key={allLabels[key]} style={{}}>
         <Icon size={80} inline>
-          <CustomIcon />
+          <ListIcon />
         </Icon>
-        <div>{IconObject[0]}</div>
+        <div>{allLabels[key]}</div>
       </IconWrapper>
     ))}
   </>
