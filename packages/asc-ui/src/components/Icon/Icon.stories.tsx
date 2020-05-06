@@ -99,10 +99,50 @@ export const Rotation = () => (
   </>
 )
 
-export const ColorError = () => (
+// primary" | "secondary" | "bright" | "tint" | "none" | "support" | "error" | "default"
+export const Colors = () => (
   <>
-    <Icon inline size={40} color="error">
-      <Passport />
-    </Icon>
+    <div>
+      <Icon size={40} color="primary">
+        <Location />
+      </Icon>
+      Primary
+    </div>
+    <div style={{ paddingTop: 20 }}>
+      <Icon size={40} color="secondary">
+        <Location />
+      </Icon>
+      Secondary
+    </div>
+    <div style={{ paddingTop: 20 }}>
+      <Icon size={40} color="tint">
+        <Location />
+      </Icon>
+      Tint
+    </div>
+    <div style={{ paddingTop: 20 }}>
+      <Icon size={40} color="none">
+        <Location />
+      </Icon>
+      None
+    </div>
+    <div style={{ paddingTop: 20 }}>
+      <Icon size={40} color="support">
+        <Location />
+      </Icon>
+      support
+    </div>
+    <div style={{ paddingTop: 20 }}>
+      <Icon size={40} color="error">
+        <Location />
+      </Icon>
+      error
+    </div>
+    <div style={{ paddingTop: 20 }}>
+      <Icon size={40} color="default">
+        <Location />
+      </Icon>
+      default
+    </div>
   </>
 )
