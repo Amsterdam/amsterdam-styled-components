@@ -1,6 +1,16 @@
-import * as Icons from '@datapunt/asc-assets'
 import React from 'react'
+import * as Icons from '@datapunt/asc-assets'
+import styled from 'styled-components'
 import Icon from './Icon'
+
+const IconWrapper = styled.span`
+  display: inline-block;
+  width: 170px;
+  height: 170px;
+`
+const IconName = styled.span`
+  display: block;
+`
 
 export default {
   title: 'Experimental/Atoms/IconList',
@@ -8,10 +18,7 @@ export default {
     (storyFn: () => React.ReactNode) => (
       <div
         style={{
-          display: 'flex',
-          maxWidth: 400,
-          flexDirection: 'column',
-          alignItems: 'flex-start',
+          display: 'inline-block',
           padding: '40px 10px',
         }}
       >
@@ -25,13 +32,13 @@ let CustomIcon
 export const IconList = () => (
   <>
     {Object.entries(Icons).map((IconObject) => (
-      <span key={IconObject[1]}>
+      <IconWrapper key={IconObject[1]} style={{}}>
         {(CustomIcon = IconObject[1])}
-        <Icon size={60} inline>
+        <Icon size={100} inline>
           <CustomIcon />
         </Icon>
-        {IconObject[0]}
-      </span>
+        <IconName>{IconObject[0]}</IconName>
+      </IconWrapper>
     ))}
   </>
 )
