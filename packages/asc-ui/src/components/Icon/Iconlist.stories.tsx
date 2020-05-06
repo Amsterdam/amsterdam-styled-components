@@ -5,11 +5,8 @@ import Icon from './Icon'
 
 const IconWrapper = styled.span`
   display: inline-block;
-  width: 170px;
-  height: 170px;
-`
-const IconName = styled.span`
-  display: block;
+  width: 150px;
+  height: 150px;
 `
 
 export default {
@@ -34,10 +31,10 @@ export const IconList = () => (
     {Object.entries(Icons).map((IconObject) => (
       <IconWrapper key={IconObject[1]} style={{}}>
         {(CustomIcon = IconObject[1])}
-        <Icon size={100} inline>
+        <Icon size={80} inline>
           <CustomIcon />
         </Icon>
-        <IconName>{IconObject[0]}</IconName>
+        <div>{IconObject[0]}</div>
       </IconWrapper>
     ))}
   </>
