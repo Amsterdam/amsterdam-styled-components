@@ -57,14 +57,12 @@ export const Sizes = () => (
       </Icon>
       ExtraLarge
     </div>
-  </>
-)
-
-export const ColorError = () => (
-  <>
-    <Icon inline size={40} color="error">
-      <Passport />
-    </Icon>
+    <div style={{ paddingTop: 20 }}>
+      <Icon size={68}>
+        <Location />
+      </Icon>
+      68px (any number)
+    </div>
   </>
 )
 
@@ -98,5 +96,13 @@ export const Rotation = () => (
       </Icon>
       68 deg (any number)
     </div>
+  </>
+)
+
+export const ColorError = () => (
+  <>
+    <Icon inline size={40} color="error">
+      <Passport />
+    </Icon>
   </>
 )
