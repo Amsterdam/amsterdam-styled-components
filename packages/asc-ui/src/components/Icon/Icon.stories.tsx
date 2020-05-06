@@ -1,4 +1,4 @@
-import { Location, Passport } from '@datapunt/asc-assets'
+import { Location } from '@datapunt/asc-assets'
 import React from 'react'
 import Icon from './Icon'
 
