@@ -16,6 +16,9 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Added: `directChildrenOnly` argument for `useFocusWithArrows` hook
+- Added: `noMultiline` prop to Accordion. 
+- Changed: Accordion displays multiline title by default
 - Changed: slight changes to icons in asc-assets': Pano, Map, DocumentText, Data and Api
 - Added: `Alert` component has a new variant: [`warning`](https://amsterdam.github.io/amsterdam-styled-components/?path=/story/experimental-composed-alert--variants)
 - Added: ErrorMessage component
