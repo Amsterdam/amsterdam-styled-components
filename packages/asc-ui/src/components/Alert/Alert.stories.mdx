@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Meta, Story, Preview, Description } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import Alert from './Alert'
 import AlertStyle from './AlertStyle'
 import Link from '../Link'
@@ -19,14 +19,11 @@ export const Decorator = styled.div`
   decorators={[(storyFn) => <Decorator>{storyFn()}</Decorator>]}
 />
 
-<Description>
 # Alert
 
 [Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/901ede-alert)
 
 **Component status: experimental**
-
-</Description>
 
 ## Variants of Alert
 
