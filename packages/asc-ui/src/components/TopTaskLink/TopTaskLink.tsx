@@ -1,24 +1,21 @@
 import React, { AnchorHTMLAttributes } from 'react'
 import Icon from '../Icon'
-import TopTaskButtonStyle, {
-  TopTaskText,
-  TopTaskTitle,
-} from './TopTaskButtonStyle'
+import TopTaskLinkStyle, { TopTaskText, TopTaskTitle } from './TopTaskLinkStyle'
 
-export interface TopTaskButtonProps {
+export interface TopTaskLinkProps {
   icon?: React.ElementType
   title: string
   text?: string
   onDarkBackground?: boolean
 }
 
-const TopTaskButton: React.FC<
-  TopTaskButtonProps & AnchorHTMLAttributes<HTMLAnchorElement>
+const TopTaskLink: React.FC<
+  TopTaskLinkProps & AnchorHTMLAttributes<HTMLAnchorElement>
 > = ({ icon, title, text, ...otherProps }) => {
   const CustomIcon = icon
 
   return (
-    <TopTaskButtonStyle {...otherProps} data-testid="root">
+    <TopTaskLinkStyle {...otherProps} data-testid="root">
       {CustomIcon && (
         <Icon inline size={32} padding={0} data-testid="icon">
           <CustomIcon />
@@ -28,8 +25,8 @@ const TopTaskButton: React.FC<
         {title}
       </TopTaskTitle>
       {text && <TopTaskText>{text}</TopTaskText>}
-    </TopTaskButtonStyle>
+    </TopTaskLinkStyle>
   )
 }
 
-export default TopTaskButton
+export default TopTaskLink
