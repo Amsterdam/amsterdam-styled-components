@@ -4,9 +4,12 @@ import styled from 'styled-components'
 import Icon from '../Icon/Icon'
 
 const IconWrapper = styled.span`
-  display: inline-block;
   width: 150px;
-  height: 150px;
+  height: 180px;
+`
+
+const StyledLabel = styled.div`
+  margin-top: 8px;
 `
 
 export default {
@@ -15,8 +18,10 @@ export default {
     (storyFn: () => React.ReactNode) => (
       <div
         style={{
-          display: 'inline-block',
+          display: 'flex',
+          flexWrap: 'wrap',
           padding: '40px 10px',
+          height: '100%',
         }}
       >
         {storyFn()}
@@ -34,7 +39,7 @@ export const IconList = () => (
         <Icon size={80} inline>
           <ListIcon />
         </Icon>
-        <div>{allLabels[key]}</div>
+        <StyledLabel>{allLabels[key]}</StyledLabel>
       </IconWrapper>
     ))}
   </>
