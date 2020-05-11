@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Added: Supplement colors to default theme 
 - Changed: Stabilized TopTaskLink
 - Added: `directChildrenOnly` argument for `useFocusWithArrows` hook
 - Added: `noMultiline` prop to Accordion. 
