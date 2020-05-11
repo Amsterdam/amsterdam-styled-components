@@ -3,7 +3,7 @@ import useFocusWithArrows from '../../utils/hooks/useFocusWithArrows'
 
 const AccordionWrapper: React.FC = ({ children }) => {
   const ref = useRef<HTMLDivElement>(null)
-  const { keyDown } = useFocusWithArrows(ref, true)
+  const { keyDown } = useFocusWithArrows(ref, true, true)
   return (
     <div role="button" tabIndex={-1} onKeyDown={keyDown} ref={ref}>
       {children}

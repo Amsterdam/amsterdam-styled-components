@@ -2,18 +2,30 @@ import React from 'react'
 import { KeyboardKeys } from '../../types'
 import { FOCUSABLE_ELEMENTS } from './constants'
 
+/**
+ * Focus on children with arrow keys and home / end buttons.
+ *
+ * @param ref Component ref
+ * @param rotating Jump to first item from last or vice versa
+ * @param directChildrenOnly Useful if you don't want to focus on other focussable elements inside the child components of the ref
+ */
 const useFocusWithArrows = (
   ref: React.RefObject<HTMLElement>,
   rotating = false,
+  directChildrenOnly = false,
 ) => {
   const keyDown = (e: React.KeyboardEvent) => {
     if (ref.current) {
       const element = ref.current
 
       const { activeElement } = window.document
-
+      const directChildSelector = directChildrenOnly ? ':scope > ' : ''
       const focusableEls: Array<Element> = Array.from(
-        element.querySelectorAll(FOCUSABLE_ELEMENTS.join(', ')),
+        element.querySelectorAll(
+          `${directChildSelector}${FOCUSABLE_ELEMENTS.join(
+            `, ${directChildSelector}`,
+          )}`,
+        ),
       )
 
       const getIndex = (el: Element | null) => {

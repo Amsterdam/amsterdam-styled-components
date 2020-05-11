@@ -17,13 +17,18 @@ Prefix the change with one of these keywords:
 ## Unreleased
 
 - Added: Supplement colors to default theme 
+- Changed: Stabilized TopTaskLink
+- Added: `directChildrenOnly` argument for `useFocusWithArrows` hook
+- Added: `noMultiline` prop to Accordion. 
+- Changed: Accordion displays multiline title by default
+- Changed: slight changes to icons in asc-assets': Pano, Map, DocumentText, Data and Api
 - Added: `Alert` component has a new variant: [`warning`](https://amsterdam.github.io/amsterdam-styled-components/?path=/story/experimental-composed-alert--variants)
 - Added: ErrorMessage component
 - Added: Added TextArea component
 - Added: Added FormTitle component (see [design system](https://designsystem.amsterdam.nl/7awj1hc9f/p/537bb7-title-component))
 - Fixed: `Radio` and `Checkbox` warnings on new `setState()` updates by react-dom. Check [here](https://reactjs.org/blog/2020/02/26/react-v16.13.0.html#warnings-for-some-updates-during-render) for more info.
 - Changed: Internal SVG icon imports are replaced with React components, eliminating the need for including an SVG loader (closes #459)
-- Added: Added TopTaskButton component
+- Added: Added TopTaskLink component
 - Added: `theme` prop to `ThemeProvider` to pass a custom theme
 - Changed: **BREAKING** `createTheme` method from `Theme`.
 - Changed: **BREAKING** removed `themeName` from `ThemeProvider`

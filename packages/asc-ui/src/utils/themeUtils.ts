@@ -225,6 +225,7 @@ export const svgFill = withTheme<[Theme.ColorType?, string?, string?]>(
       if (typeof value === 'string') {
         return css`
           & svg {
+            circle,
             rect,
             polygon,
             path {
