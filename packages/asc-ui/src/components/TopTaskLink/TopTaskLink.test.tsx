@@ -2,13 +2,13 @@ import { Location } from '@datapunt/asc-assets'
 import { render } from '@testing-library/react'
 import React from 'react'
 import { ThemeProvider } from '../../theme'
-import TopTaskButton from './TopTaskButton'
+import TopTaskLink from './TopTaskLink'
 
-describe('TopTaskButton', () => {
+describe('TopTestLink', () => {
   it('should render', () => {
     const { queryByText, queryByTestId } = render(
       <ThemeProvider>
-        <TopTaskButton
+        <TopTaskLink
           href="https://amsterdam.nl"
           icon={Location}
           title="City hall: locations and opening hour"

@@ -10,7 +10,7 @@ import Tag, { TagStyle } from './components/Tag'
 import Link, { LinkStyle } from './components/Link'
 import Paragraph, { ParagraphStyle } from './components/Paragraph'
 import TopBar, { TopBarStyles } from './components/TopBar'
-import TopTaskButton, { TopTaskButtonStyle } from './components/TopTaskButton'
+import TopTaskLink, { TopTaskLinkStyle } from './components/TopTaskLink'
 import ShareButton from './components/Button/ShareButton'
 import { Article, ArticleStyle } from './components/Editorial/Article'
 import Button from './components/Button'
@@ -162,7 +162,7 @@ export const styles = {
   CustomHTMLBlockStyle,
   ArticleStyle,
   TagStyle,
-  TopTaskButtonStyle,
+  TopTaskLinkStyle,
   CheckboxStyle,
   FilterBoxStyle,
   FilterOptionStyle,
@@ -251,7 +251,7 @@ export {
   ThemeProvider,
   CompactThemeProvider,
   TopBar,
-  TopTaskButton,
+  TopTaskLink,
   EditorialPost,
   Article,
   Link,

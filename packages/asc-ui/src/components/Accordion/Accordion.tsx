@@ -6,19 +6,29 @@ import {
   AccordionButtonContent,
   AccordionContent,
   Props as StyleProps,
+  ButtonContentProps,
 } from './AccordionStyle'
 import { Props as ButtonStyleProps } from '../Button/ButtonStyle'
 
 type Props = {
   onToggle?: (open: boolean) => void
-} & StyleProps
+} & StyleProps &
+  ButtonContentProps
 
 const Accordion: React.FC<
   Props &
     ButtonStyleProps &
     React.ButtonHTMLAttributes<HTMLButtonElement> &
     React.AnchorHTMLAttributes<HTMLAnchorElement>
-> = ({ children, title, id: idProp, isOpen, onToggle, ...otherProps }) => {
+> = ({
+  children,
+  title,
+  id: idProp,
+  isOpen,
+  onToggle,
+  noMultiline,
+  ...otherProps
+}) => {
   const uid = useUID()
   const id = idProp || uid
   const [open, setOpen] = useState(isOpen ?? false)
@@ -52,7 +62,9 @@ const Accordion: React.FC<
         onClick={handleClick}
         {...otherProps}
       >
-        <AccordionButtonContent>{title}</AccordionButtonContent>
+        <AccordionButtonContent noMultiline={noMultiline}>
+          {title}
+        </AccordionButtonContent>
       </AccordionButton>
       <AccordionContent isOpen={open} aria-labelledby={`label-${id}`} id={id}>
         {children}
