@@ -1,10 +1,8 @@
 import styled, { css } from 'styled-components'
-import { svgFill } from '../../utils'
-import { Theme } from '../../types'
 
 export type Props = {
   inline?: boolean
-  color?: Theme.ColorType
+  color?: string
   iconUrl?: string
   size?: number
   padding?: number
@@ -43,7 +41,11 @@ const IconStyle = styled.span<Props>`
     `}
   }
 
-  ${({ color, theme }) => svgFill(color)({ theme })};
+  ${({ color }) => css`
+    & svg * {
+      fill: ${color};
+    }
+  `};
 `
 
 export default IconStyle
