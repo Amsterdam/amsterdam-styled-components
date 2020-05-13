@@ -6,6 +6,7 @@ This component uses the [useMatchMedia](https://github.com/Amsterdam/amsterdam-s
 ## Usage
 
 An example of using this component:
+
 ```
 <Hidden minBreakpoint="mobileS" maxBreakpoint="laptop">
     <Heading>I am visible only between mobileS and laptop</Heading>

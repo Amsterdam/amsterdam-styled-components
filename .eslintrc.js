@@ -1,11 +1,11 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
   extends: [
     'airbnb',
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
     'prettier/react',
     'prettier/standard',
+    'plugin:mdx/recommended',
   ],
   plugins: ['jest', 'prettier', '@typescript-eslint', 'react-hooks'],
   env: {
@@ -18,6 +18,13 @@ module.exports = {
       files: ['*.test.tsx', '*.stories.tsx'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
+      },
+    },
+    {
+      files: ['*.stories.mdx'],
+      rules: {
+        'import/prefer-default-export': 'off',
+        'react/jsx-fragments': 'off',
       },
     },
   ],
@@ -47,7 +54,7 @@ module.exports = {
     'react/jsx-filename-extension': [
       1,
       {
-        extensions: ['.ts', '.tsx'],
+        extensions: ['.ts', '.tsx', '.mdx'],
       },
     ],
     'react/jsx-props-no-spreading': 0,
@@ -66,7 +73,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.ts', '.jsx', '.tsx'],
+        extensions: ['.js', '.ts', '.jsx', '.tsx', '.mdx'],
       },
     },
   },

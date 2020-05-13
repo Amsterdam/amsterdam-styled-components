@@ -26,7 +26,6 @@ The theme configuration can contain any number of layouts.
 
 Layout names are used to generate media queries for `<Column />` and `<Row />` components and don't adhere to any restrictions.
 
-
 # `<Row />`
 
 The `Row` component ensures that its children are positionable in a, well, row. It does so by applying `flex-box` style rules. By default, a `Row`'s children are spaced with space between them. The alignment behaviour can be changed by passing a value for `halign` and/or `valign` prop.
@@ -35,31 +34,25 @@ A `Row` component can take a `debug` prop. Setting this prop will render a label
 The below example will align the child `Column` component with the remaining space around them. Note that using a different alignmen than the default `space-between` will not ensure the alignment of the `Column` components to the grid.
 
 ```jsx
-<Row halign="space-around">
-  ...
-</Row>
+<Row halign="space-around">...</Row>
 ```
 
 Also, the `Row` component can be used without a fixed width by setting the value of the prop `hasMaxwidth` to `false` (default value is `true`).
 
 ```jsx
-<Row hasMaxWidth={false}>
-  ...
-</Row>
+<Row hasMaxWidth={false}>...</Row>
 ```
-
 
 ## Debugging
 
 Setting the `debug` prop on a `<Row />` component will show both a repeating linear background images that indicated where the columns will be placed as well as as label that shows the current layout name based on the width of the screen. The `debugColor` prop can be given a valid color string (hex, hsl, rgb, rbga) which will change the color of the linear gradient.
 
 ```jsx
-<Row debug debugColor="rgba(0,255,0,0.5)"> // 50% green
-  ...
+<Row debug debugColor="rgba(0,255,0,0.5)">
+  {' '}
+  // 50% green ...
 </Row>
 ```
-
-
 
 # `<Column />`
 
@@ -105,5 +98,7 @@ A column can also be pushed a number of columns to the right as can it be given 
 A `Column` component can also be passed a `debug` prop. Setting this prop to 'true' will render a label that shows the current span of that column. As the layout changes, the label on the column will also change value.
 
 ```jsx
-<Column debug span={2}>...</Column>
+<Column debug span={2}>
+  ...
+</Column>
 ```

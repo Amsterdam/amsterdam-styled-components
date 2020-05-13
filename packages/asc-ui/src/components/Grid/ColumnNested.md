@@ -4,7 +4,9 @@ Nesting columns can be tricky, because of the width of the parent element and th
 
 ```jsx
 <Column span={10}>
-  <Column push={1} span={4}>...</Column>
+  <Column push={1} span={4}>
+    ...
+  </Column>
   <Column span={4}>...</Column>
 </Column>
 ```
@@ -14,8 +16,8 @@ Whenever a child `<Column />` component should span the entire width of its pare
 ```jsx
 <Column wrap span={10}>
   <Column span={4}>...</Column>
-  /** if the parent Column doesn't have a wrap prop, both the column below and the above sibling will be placed on a single line as per the flexbox spec */
+  /** if the parent Column doesn't have a wrap prop, both the column below and the
+  above sibling will be placed on a single line as per the flexbox spec */
   <Column span={10}>...</Column>
 </Column>
 ```
-
