@@ -1,10 +1,11 @@
-import { useState } from 'react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { FacebookPadded } from '@datapunt/asc-assets'
 import Accordion from './Accordion'
 import AccordionWrapper from './AccordionWrapper'
 import Paragraph from '../Paragraph'
+import Icon from '../Icon'
 
 <Meta
   title="Atoms/Accordion"
@@ -119,8 +120,12 @@ Check out the knobs and actions panel!
     <AccordionWrapper>
       <Accordion title="Example one" id="one">
         <Paragraph gutterBottom={0}>
-          Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit. Ad delectus
-          hic incidunt iure labore natus odio pariatur qui sint, voluptas!
+          Lorem ipsum dolor sit amet,{' '}
+          <a href="/" title="foo">
+            consectetur
+          </a>{' '}
+          adipisicing elit. Ad delectus hic incidunt iure labore natus odio
+          pariatur qui sint, voluptas!
         </Paragraph>
       </Accordion>
       <Accordion title="Example two" id="two">

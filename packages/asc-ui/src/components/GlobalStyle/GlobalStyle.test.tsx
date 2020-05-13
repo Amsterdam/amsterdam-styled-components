@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import GlobalStyle from './GlobalStyle'
 import { ThemeProvider } from '../../theme'
-import * as utils from '../../utils'
+import * as utils from '../../utils/themeUtils'
 
 const overrides = {
   globalStyle: `p {margin-bottom:8px;}`,

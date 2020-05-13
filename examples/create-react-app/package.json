@@ -1,6 +1,7 @@
 {
-  "name": "asc-create-react-app",
+  "name": "@datapunt/create-react-app-example",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
     "build": "react-scripts build",
     "eject": "react-scripts eject",
@@ -8,8 +9,8 @@
     "test": "react-scripts test"
   },
   "dependencies": {
-    "@datapunt/asc-assets": "^0.19.2-alpha.23",
-    "@datapunt/asc-ui": "^0.19.2-alpha.23",
+    "@datapunt/asc-assets": "^0.19.1",
+    "@datapunt/asc-ui": "^0.19.2-beta.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",

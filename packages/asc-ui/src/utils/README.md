@@ -11,8 +11,9 @@ import { fromProps } from './utils'
 const Div = styled.div`
   display: ${fromProps('display')};
 `
-
-<Div display="flex" /> // styles: { display: 'flex' }
+return (
+  <Div display="flex" /> // styles: { display: 'flex' }
+)
 ```
 
 ## fromTheme
@@ -25,23 +26,24 @@ import fromTheme from './utils'
 
 const theme = {
   colour: {
-    brand: '#f00'
+    brand: '#f00',
   },
   fontSizes: {
-    title: 2
+    title: 2,
   },
   spacing: {
-    max: 4
-  }
+    max: 4,
+  },
 }
 
 const DivStyle = styled.div`
   background-color: ${fromTheme('colour.white')};
   font-size: ${fromTheme('fontSizes.title')}em;
-  padding: ${fromTheme('spacing.max', spacing => spacing * 2)}rem;
+  padding: ${fromTheme('spacing.max', (spacing) => spacing * 2)}rem;
 `
-
-<DivStyle theme={theme} /> // styles: { backgroundColor: '#f00', fontSize: '2em', padding: '8rem' }
+return (
+  <DivStyle theme={theme} /> // styles: { backgroundColor: '#f00', fontSize: '2em', padding: '8rem' }
+)
 ```
 
 ## color
@@ -56,10 +58,10 @@ const theme = {
   colors: {
     primary: {
       dark: '#000',
-      light: '#fff'
+      light: '#fff',
     },
-    light: '#fff'
-  }
+    light: '#fff',
+  },
 }
 
 const ButtonStyle = styled.button`
@@ -67,11 +69,13 @@ const ButtonStyle = styled.button`
   color: ${themeColor('light')};
 `
 
-
-<ButtonStyle theme={theme} /> // styles: { backgroundColor: '#000', color: '#fff' }
+return (
+  <ButtonStyle theme={theme} /> // styles: { backgroundColor: '#000', color: '#fff' }
+)
 ```
 
 ## breakpoint
+
 Extenstion of fromTheme to retrieve the media query breakpoints as specified for the current theme.
 
 ```js static
@@ -80,9 +84,8 @@ const HeaderSearchStyle = styled.div`
     width: 50px;
   }
 `
-<HeaderSearchStyle theme={theme} />
+return <HeaderSearchStyle theme={theme} />
 ```
-
 
 ## svgFill
 
