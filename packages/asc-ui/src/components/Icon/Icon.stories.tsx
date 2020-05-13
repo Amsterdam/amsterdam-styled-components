@@ -1,5 +1,6 @@
 import { Location } from '@datapunt/asc-assets'
 import React from 'react'
+import { themeColor } from '../../utils'
 import Icon from './Icon'
 
 export default {
@@ -109,46 +110,22 @@ export const Rotation = () => (
 export const Colors = () => (
   <>
     <div>
-      <Icon size={40} color="primary">
+      <Icon size={40} color={themeColor('primary', 'main')}>
         <Location />
       </Icon>
-      Primary
+      themeColor: primary, main
     </div>
     <div style={{ paddingTop: 20 }}>
-      <Icon size={40} color="secondary">
+      <Icon size={40} color={themeColor('tint', 'level3')}>
         <Location />
       </Icon>
-      Secondary
+      themeColor: tint, level3
     </div>
     <div style={{ paddingTop: 20 }}>
-      <Icon size={40} color="tint">
+      <Icon size={40} color="hotpink">
         <Location />
       </Icon>
-      Tint
-    </div>
-    <div style={{ paddingTop: 20 }}>
-      <Icon size={40} color="none">
-        <Location />
-      </Icon>
-      None
-    </div>
-    <div style={{ paddingTop: 20 }}>
-      <Icon size={40} color="support">
-        <Location />
-      </Icon>
-      support
-    </div>
-    <div style={{ paddingTop: 20 }}>
-      <Icon size={40} color="error">
-        <Location />
-      </Icon>
-      error
-    </div>
-    <div style={{ paddingTop: 20 }}>
-      <Icon size={40} color="default">
-        <Location />
-      </Icon>
-      default
+      hotpink (any color)
     </div>
   </>
 )

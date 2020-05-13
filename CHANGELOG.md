@@ -16,10 +16,10 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
-- Added: Supplement colors to default theme 
+- Added: Supplement colors to default theme
 - Changed: Stabilized TopTaskLink
 - Added: `directChildrenOnly` argument for `useFocusWithArrows` hook
-- Added: `noMultiline` prop to Accordion. 
+- Added: `noMultiline` prop to Accordion.
 - Changed: Accordion displays multiline title by default
 - Changed: slight changes to icons in asc-assets': Pano, Map, DocumentText, Data and Api
 - Added: `Alert` component has a new variant: [`warning`](https://amsterdam.github.io/amsterdam-styled-components/?path=/story/experimental-composed-alert--variants)
@@ -34,6 +34,7 @@ Prefix the change with one of these keywords:
 - Changed: **BREAKING** removed `themeName` from `ThemeProvider`
 - Changed: **BREAKING** removed `asc-core` package. `Theme` and `ascDefaultTheme` can now be found in `asc-ui`
 - Changed: **BREAKING** `AlertMessage` export is renamed to `Alert`.
+- Changed: **BREAKING** `Icon` component refactored color attribute to being string with css color.
 
 ## [0.19.2-beta.1]
 
