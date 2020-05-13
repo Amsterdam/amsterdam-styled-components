@@ -42,8 +42,13 @@ const IconStyle = styled.span<Props>`
   }
 
   ${({ color }) => css`
-    & svg * {
-      fill: ${color};
+    & svg {
+      circle,
+      rect,
+      polygon,
+      path {
+        fill: ${color};
+      }
     }
   `};
 `
