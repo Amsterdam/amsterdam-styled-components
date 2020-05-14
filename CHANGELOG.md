@@ -16,6 +16,8 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Changed: `::after` and `::before` pseudo elements are now also set to `box-sizing: border-box;` by default
+- Changed: HTML5 elements are set to display block for older browsers
 - Added: Supplement colors to default theme
 - Changed: Stabilized TopTaskLink
 - Added: `directChildrenOnly` argument for `useFocusWithArrows` hook
