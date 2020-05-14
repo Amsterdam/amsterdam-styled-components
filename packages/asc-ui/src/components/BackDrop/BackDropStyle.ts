@@ -19,6 +19,11 @@ const BackDropStyle = styled.div<Props>`
     )};
   z-index: ${({ zIndexOffset }) =>
     zIndexOffset ? BACKDROP_Z_INDEX + zIndexOffset : BACKDROP_Z_INDEX};
+
+  &,
+  & * {
+    pointer-events: none;
+  }
 `
 
 export default BackDropStyle

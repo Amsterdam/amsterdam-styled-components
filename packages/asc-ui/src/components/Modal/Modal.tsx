@@ -3,13 +3,17 @@ import ModalStyle, { ModalStyleContainer, ModalFocus } from './ModalStyle'
 import { KeyboardKeys } from '../../types'
 import useTrappedFocus from '../../utils/hooks/useTrappedFocus'
 import BackDrop, { Props as BackDropProps } from '../BackDrop/BackDrop'
+import Portal, { Props as PortalProps } from '../Portal'
 
 const Z_INDEX_OFFSET = 2
 
 export type Props = {
   open: boolean
   onClose?: Function
+  disablePortal?: boolean
+  blurredNodeSelector?: string
 } & BackDropProps &
+  PortalProps &
   React.HTMLAttributes<HTMLElement>
 
 const Modal: React.FC<Props> = ({
@@ -53,15 +57,27 @@ const Modal: React.FC<Props> = ({
     }
   }
 
+  // React createPortal is not supported for SSR
+  const Wrapper = disablePortal ? React.Fragment : Portal
+
   return open ? (
-    <BackDrop
-      disablePortal={disablePortal}
-      blurredNodeSelector={blurredNodeSelector}
-      element={element}
-      backdropOpacity={backdropOpacity}
-      onClick={handleClose}
-      zIndexOffset={Z_INDEX_OFFSET}
+    <Wrapper
+      {...(!disablePortal
+        ? {
+            element,
+            blurredNode: blurredNodeSelector
+              ? (window.document.querySelector(
+                  blurredNodeSelector,
+                ) as HTMLElement)
+              : undefined,
+          }
+        : {})}
     >
+      <BackDrop
+        backdropOpacity={backdropOpacity}
+        onClick={handleClose}
+        zIndexOffset={Z_INDEX_OFFSET}
+      />
       <ModalFocus zIndexOffset={Z_INDEX_OFFSET} onKeyDown={handleKeyDown}>
         <ModalStyleContainer {...otherProps} className={className}>
           <ModalStyle role="dialog" ref={ref} onKeyDown={keyDown}>
@@ -69,7 +85,7 @@ const Modal: React.FC<Props> = ({
           </ModalStyle>
         </ModalStyleContainer>
       </ModalFocus>
-    </BackDrop>
+    </Wrapper>
   ) : null
 }
 

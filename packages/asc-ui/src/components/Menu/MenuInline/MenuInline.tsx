@@ -12,7 +12,7 @@ const MenuInline: React.FC<Props> = ({
 }) => {
   const [menuOpen, setMenuOpen] = React.useState(false)
 
-  // prevents the backdrop from flickering when you hover to the next menu items
+  // prevents the component from flickering when you hover to the next menu items
   const handleOnExpand = useDebounce((expand: boolean) => {
     setMenuOpen(expand)
 
@@ -28,9 +28,7 @@ const MenuInline: React.FC<Props> = ({
       <MenuInlineStyle hasBackDrop={hasBackDrop} {...otherProps}>
         {children}
       </MenuInlineStyle>
-      {hasBackDrop && menuOpen && (
-        <BackDrop onClick={handleOnExpand} hideOverFlow={false} />
-      )}
+      {hasBackDrop && menuOpen && <BackDrop onClick={handleOnExpand} />}
     </MenuContext.Provider>
   )
 }

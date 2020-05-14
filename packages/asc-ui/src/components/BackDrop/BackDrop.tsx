@@ -1,25 +1,11 @@
 import React, { HTMLAttributes } from 'react'
-import Portal, { Props as PortalProps } from '../Portal/Portal'
-import BackDropStyle, { Props as StyleProps } from './BackDropStyle'
-
-export type Props = {
-  disablePortal?: boolean
-  blurredNodeSelector?: string
-} & StyleProps &
-  PortalProps
+import BackDropStyle, { Props } from './BackDropStyle'
 
 const BackDrop: React.FC<Props & HTMLAttributes<HTMLDivElement>> = ({
   backdropOpacity,
-  blurredNodeSelector,
-  disablePortal,
-  element,
-  children,
-  hideOverFlow,
   onClick,
   ...otherProps
 }) => {
-  const Element = disablePortal ? React.Fragment : Portal
-
   const handleOnClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (onClick) {
       onClick(e)
@@ -27,27 +13,13 @@ const BackDrop: React.FC<Props & HTMLAttributes<HTMLDivElement>> = ({
   }
 
   return (
-    <Element
-      {...(!disablePortal
-        ? {
-            element,
-            blurredNode: blurredNodeSelector
-              ? (window.document.querySelector(
-                  blurredNodeSelector,
-                ) as HTMLElement)
-              : undefined,
-            hideOverFlow,
-          }
-        : {})}
-    >
-      {children}
-      <BackDropStyle
-        backdropOpacity={backdropOpacity}
-        onClick={handleOnClick}
-        {...otherProps}
-      />
-    </Element>
+    <BackDropStyle
+      backdropOpacity={backdropOpacity}
+      onClick={handleOnClick}
+      {...otherProps}
+    />
   )
 }
 
+export { Props }
 export default BackDrop
