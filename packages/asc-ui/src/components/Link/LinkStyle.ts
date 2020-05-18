@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components'
 import { themeColor } from '../../utils'
 import {
-  svgFill,
   FocusStyle,
   getFocusStyle,
+  svgFill,
   themeSpacing,
 } from '../../utils/themeUtils'
-import Typography, { TypographyProps } from '../Typography'
 import IconStyle from '../Icon/IconStyle'
+import Typography, { TypographyProps } from '../Typography'
 
 export type LinkVariant = 'inline' | 'blank' | 'with-chevron'
 
@@ -42,28 +42,28 @@ export const DefaultLinkStyleCSS = css<Props>`
   display: inline-flex;
   text-decoration: none;
   font-weight: 700;
-  color: ${({ color: colorOverride, theme }) =>
-    themeColor('tint', 'level7', colorOverride)({ theme })};
+  color: ${({ color: colorOverride }) =>
+    themeColor('tint', 'level7', colorOverride)};
 
   ${IconStyle} {
     margin: ${themeSpacing(1, 1, 0, 0)};
-    ${({ color: colorOverride, theme, onDarkBackground }) =>
+    ${({ color: colorOverride, onDarkBackground }) =>
       onDarkBackground
-        ? svgFill('tint', 'level1')({ theme })
-        : svgFill('tint', 'level7', colorOverride)({ theme })};
+        ? svgFill(themeColor('tint', 'level1'))
+        : svgFill(themeColor('tint', 'level7', colorOverride))}
   }
 
   &:hover {
     text-decoration: underline;
-    ${({ color: colorOverride, theme, onDarkBackground }) =>
+    ${({ color: colorOverride, onDarkBackground }) =>
       css`
         color: ${onDarkBackground
-          ? themeColor('tint', 'level1')({ theme })
-          : themeColor('secondary', 'main', colorOverride)({ theme })};
+          ? themeColor('tint', 'level1')
+          : themeColor('supplement', 'main', colorOverride)};
         ${IconStyle} {
           ${onDarkBackground
-            ? svgFill('tint', 'level1')({ theme })
-            : svgFill('secondary', 'main', colorOverride)({ theme })}
+            ? svgFill(themeColor('tint', 'level1'))
+            : svgFill(themeColor('secondary', 'main', colorOverride))}
         }
       `}
   }

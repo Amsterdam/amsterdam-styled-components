@@ -69,7 +69,7 @@ const getVariant = () => ({
       return css`
         background-color: ${themeColor('primary')};
         color: ${readableColor(themeColor('primary')({ theme }))};
-        ${svgFill('tint', 'level1')};
+        ${svgFill(themeColor('tint', 'level1'))};
 
         &:hover {
           background-color: ${darken(0.1, themeColor('primary')({ theme }))};
@@ -80,7 +80,7 @@ const getVariant = () => ({
       return css`
         background-color: ${themeColor('secondary')};
         color: ${themeColor('tint', 'level1')};
-        ${svgFill('tint', 'level1')};
+        ${svgFill(themeColor('tint', 'level1'))};
 
         &:hover {
           background-color: ${darken(0.1, themeColor('secondary')({ theme }))};
@@ -101,7 +101,7 @@ const getVariant = () => ({
     case 'tertiary':
       return css`
         background-color: ${themeColor('tint', 'level4')};
-        ${svgFill('tint', 'level7')};
+        ${svgFill(themeColor('tint', 'level7'))};
 
         &:hover {
           background-color: ${darken(
@@ -115,7 +115,7 @@ const getVariant = () => ({
       return css`
         color: ${themeColor('primary')};
         border: 1px solid ${themeColor('primary')};
-        ${svgFill('primary')};
+        ${svgFill(themeColor('primary', 'main'))};
 
         &:hover {
           outline: 1px solid ${themeColor('primary')};
@@ -131,14 +131,14 @@ const getVariant = () => ({
         text-align: left;
         color: ${themeColor('primary')};
         background-color: rgba(0, 0, 0, 0);
-        ${svgFill('primary')};
+        ${svgFill(themeColor('primary', 'main'))};
 
         /* remove transition because it's async with Icon */
         ${transitions('color', '0s')}
 
         &:hover {
           color: ${themeColor('secondary')};
-          ${svgFill('secondary')};
+          ${svgFill(themeColor('secondary', 'main'))};
         }
 
         ${IconLeft} {
@@ -152,7 +152,7 @@ const getVariant = () => ({
     case 'blank':
       return css`
         background-color: ${themeColor('tint', 'level1')};
-        ${svgFill('tint', 'level7')}
+        ${svgFill(themeColor('tint', 'level7'))};
         &:hover {
           background-color: ${themeColor('tint', 'level3')};
         }
@@ -163,7 +163,7 @@ const getVariant = () => ({
         background-color: ${themeColor('tint', 'level1')};
         height: 32px;
         padding: ${themeSpacing(1, 2)};
-        ${svgFill('tint', 'level7')}
+        ${svgFill(themeColor('tint', 'level7'))};
         &:hover {
           background-color: ${themeColor('tint', 'level4')};
         }
@@ -264,7 +264,7 @@ const ButtonStyle = styled.button<Props>`
     border: none;
     color: ${themeColor('tint', 'level4')};
     background-color: ${themeColor('tint', 'level3')};
-    ${svgFill('tint', 'level4')};
+    ${svgFill(themeColor('tint', 'level4'))};
     text-decoration: none;
     ${({ taskflow }) =>
       taskflow &&

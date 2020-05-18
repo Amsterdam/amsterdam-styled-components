@@ -50,7 +50,7 @@ const StyledLinkListItem = styled(ListItem)`
   }
 
   ${styles.IconStyle} {
-    ${svgFill('primary')};
+    ${svgFill(themeColor('primary', 'main'))};
   }
 `
 

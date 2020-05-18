@@ -1,8 +1,7 @@
 import { css, keyframes } from 'styled-components'
-import { Theme } from '../types'
-
-import { fromProps } from './fromProps'
 import { BACKDROP_Z_INDEX } from '../components/shared/constants'
+import { Theme } from '../types'
+import { fromProps } from './fromProps'
 
 import BreakpointsInterface = Theme.BreakpointsInterface
 import ThemeInterface = Theme.ThemeInterface
@@ -12,6 +11,8 @@ import TypographyElementStyle = Theme.TypographyElementStyle
 type ThemeProp = {
   theme: Theme.ThemeInterface
 }
+
+export type ThemeFn<T> = ({ theme }: { theme: Theme.ThemeInterface }) => T
 
 /**
  * Curry function to provide the theme as first parameter, followed up with other parameters
@@ -27,7 +28,7 @@ type ThemeProp = {
  * `
  */
 export const withTheme = <T extends any[], U = any>(
-  cb: (theme: ThemeInterface, ...params: T) => any,
+  cb: (theme: ThemeInterface, ...params: T) => U,
 ) => (...params: T) => ({ theme }: { theme: ThemeInterface }): U =>
   cb(theme, ...params)
 
@@ -160,7 +161,7 @@ export const outlineStyle = (
   outline-width: ${width}px;
 `
 
-/* we have chosen here to use a dubble selector '&&'.  
+/* we have chosen here to use a dubble selector '&&'.
  This will override a hover state with outlines.
  introduced this when resolving issue: #131
 */
@@ -218,27 +219,38 @@ export const srOnlyStyle = () => ({ srOnly }: { srOnly?: boolean }) =>
       `
     : ''
 
-export const svgFill = withTheme<[Theme.ColorType?, string?, string?]>(
-  (theme, colorType, variant = 'main', override) => {
-    if (colorType) {
-      const value = themeColor(colorType, variant, override)({ theme })
-      if (typeof value === 'string') {
-        return css`
-          & svg {
-            circle,
-            rect,
-            polygon,
-            path {
-              fill: ${value};
-            }
-          }
-        `
+/**
+ * Fills the elements in an SVG with a color, useful for styling icons.
+ *
+ * For example, using a theme color:
+ * ```jsx
+ * const PrimaryCarIcon = styled(CarIcon)`
+ *   ${svgFill(themeColor('primary'))}
+ * `
+ * ```
+ *
+ * Or by setting the color directly using any color valid in CSS, such as hexadecimal, rgba() and hsla().
+ *
+ * ```jsx
+ * const RedCarIcon = styled(CarIcon)`
+ *   ${svgFill('#FF0000')}
+ * `
+ * ```
+ */
+export const svgFill = withTheme((theme, color: string | ThemeFn<string>) => {
+  const fill = typeof color === 'function' ? color({ theme }) : color
+
+  return css`
+    & svg {
+      circle,
+      rect,
+      polygon,
+      path {
+        fill: ${fill};
       }
     }
-
-    return ''
-  },
-)
+  `
+})
 
 /**
  * Adds an animated background to the element to indicate the content is loading.
@@ -250,11 +262,11 @@ export const perceivedLoading = withTheme(
       0% {
         background-color: ${themeColor('tint', 'level3')({ theme })};
       }
-    
+
       50% {
         background-color: ${themeColor('tint', 'level4')({ theme })};
       }
-      
+
       100% {
         background-color: ${themeColor('tint', 'level3')({ theme })};
       }

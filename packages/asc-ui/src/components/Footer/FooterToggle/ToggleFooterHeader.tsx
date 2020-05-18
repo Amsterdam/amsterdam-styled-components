@@ -5,7 +5,7 @@ import Icon from '../../Icon'
 import { ToggleHandlerProps } from '../../Toggle'
 import IconStyle from '../../Icon/IconStyle'
 import FooterHeading from '../FooterHeading'
-import { svgFill } from '../../../utils'
+import { svgFill, themeColor } from '../../../utils'
 
 export type Props = ToggleHandlerProps
 
@@ -19,7 +19,7 @@ const ToggleFooterHeader: React.FC<Props> = ({ open, onClick, title }) => {
 
     & > ${IconStyle} {
       margin-right: 8px;
-      ${svgFill('tint', 'level1')};
+      ${svgFill(themeColor('tint', 'level1'))};
     }
   `
 
