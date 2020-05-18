@@ -1,8 +1,7 @@
 {
   "private": true,
   "workspaces": [
-    "packages/*",
-    "examples/*"
+    "packages/*"
   ],
   "scripts": {
     "prebuild": "scripts/port-check.sh && lerna exec --scope @datapunt/asc-assets -- yarn build",

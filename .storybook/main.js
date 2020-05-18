@@ -19,6 +19,7 @@ module.exports = {
     '@storybook/addon-essentials',
   ],
   webpackFinal: async (config) => {
+    const inDevMode = config.mode === 'development'
     config.module.rules.push({
       test: /\.(stories|story)\.mdx$/,
       use: [
@@ -51,6 +52,7 @@ module.exports = {
           options: {
             useCache: true,
             forceIsolatedModules: true,
+            transpileOnly: inDevMode,
             configFileName: './tsconfig.json',
             noUnusedLocals: false,
             getCustomTransformers: () => ({
@@ -79,7 +81,7 @@ module.exports = {
       loader: require.resolve('@storybook/source-loader'),
       exclude: [/node_modules/],
       enforce: 'pre',
-    });
+    })
 
     config.resolve.extensions.push('.ts', '.tsx')
 
@@ -93,6 +95,10 @@ module.exports = {
       '@datapunt/asc-assets': path.join(basePath, 'asc-assets', '/src'),
       '@datapunt/asc-ui': path.join(basePath, 'asc-ui', '/src'),
     })
+
+    if (inDevMode) {
+      config.plugins = [...config.plugins, new CheckerPlugin()]
+    }
 
     return config
   },
