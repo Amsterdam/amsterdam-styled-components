@@ -1,0 +1,143 @@
+import { createRef, useEffect } from 'react'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import Select from './Select'
+import ErrorMessage from '../ErrorMessage'
+
+export const SelectWithRef = () => {
+  const ref = createRef()
+  useEffect(() => {
+    const element = ref.current
+    function onChange(e) {
+      const { value } = e.target
+      // eslint-disable-next-line no-console
+      console.log('Value changed!', value)
+    }
+    if (!element) {
+      return undefined
+    }
+    element.addEventListener('change', onChange)
+    return () => {
+      element.removeEventListener('change', onChange)
+    }
+  }, [ref])
+  return (
+    <Select id="with-ref" label="Select with ref" ref={ref}>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+      <option value="4">Option 4</option>
+    </Select>
+  )
+}
+
+<Meta
+  title="Experimental/Atoms/Select (Dropdown)"
+  component={Select}
+  decorators={[
+    (storyFn) => (
+      <div
+        style={{
+          width: '400px',
+          padding: '40px 10px',
+        }}
+      >
+        {storyFn()}
+      </div>
+    ),
+  ]}
+/>
+
+# Select (dropdown)
+
+Use this component as a last resort, because some users are having trouble
+with it. Try to use Radio Buttons first, or in case of a long list, try
+to ask multiple questions (text from Design System)
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/6561a5-selection-dropdown)
+
+**Component status: experimental**
+
+## Default state
+
+<Preview>
+  <Story name="Default state">
+    <Select id="select-1" label="Label">
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+      <option value="4">Option 4</option>
+    </Select>
+  </Story>
+</Preview>
+
+## Selected state
+
+<Preview>
+  <Story name="Selected state">
+    <Select id="select-1" label="Label">
+      <option value="1">Option 1</option>
+      <option value="2" selected>
+        Option 2
+      </option>
+      <option value="3">Option 3</option>
+      <option value="4">Option 4</option>
+    </Select>
+  </Story>
+</Preview>
+
+## Disabled state
+
+<Preview>
+  <Story name="Disabled state">
+    <React.Fragment>
+      <Select id="select-1" label="Disabled Select component" disabled>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+      </Select>
+      <br />
+      <br />
+      <Select id="select-2" label="Disabled specific Option">
+        <option value="1" disabled>
+          Option 1
+        </option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+      </Select>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Error state
+
+<Preview>
+  <Story name="Error state">
+    <React.Fragment>
+      <Select id="select-1" label="With Error Message" error>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+      </Select>
+      <ErrorMessage message="Error message" />
+      <br />
+      <br />
+      <Select id="select-2" label="Without Error Message" error>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+      </Select>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## With ref
+
+<Preview>
+  <Story name="With ref">
+    <SelectWithRef />
+  </Story>
+</Preview>

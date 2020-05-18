@@ -7,20 +7,9 @@ const Select = React.forwardRef<
   Props & React.HTMLAttributes<HTMLSelectElement>
 >(
   (
-    {
-      id,
-      value,
-      label,
-      srOnly: srOnlyProp,
-      error: errorProp,
-      errorMessage,
-      labelStyle,
-      errorStyle,
-      ...otherProps
-    },
+    { id, value, label, srOnly: srOnlyProp, error, labelStyle, ...otherProps },
     ref,
   ) => {
-    const error = errorProp || errorMessage
     const srOnly = srOnlyProp || false
 
     return (
@@ -35,24 +24,14 @@ const Select = React.forwardRef<
             {label}
           </FormLabelStyle>
         )}
-        {errorMessage && (
-          <FormLabelStyle
-            srOnly={srOnly}
-            htmlFor={id}
-            error={errorMessage}
-            style={errorStyle}
-          >
-            {errorMessage}
-          </FormLabelStyle>
-        )}
         <SelectWrapper>
           <SelectStyle
             {...{
               ...otherProps,
               id,
               value,
+              error,
             }}
-            error={error}
             ref={ref}
           />
           <SelectIcon />
