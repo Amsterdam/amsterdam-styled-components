@@ -19,7 +19,7 @@ const ShareButtonStyle = styled(ButtonStyle)<Props>`
   }
 
   ${IconStyle} {
-    ${svgFill('tint', 'level1')};
+    ${svgFill(themeColor('tint', 'level1'))};
   }
 `
 

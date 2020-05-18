@@ -1,20 +1,20 @@
+import { render } from '@testing-library/react'
 import React from 'react'
 import styled from 'styled-components'
-import { render } from '@testing-library/react'
-import {
-  themeColor,
-  focusStyleOutline,
-  breakpoint,
-  svgFill,
-  getTypographyFromTheme,
-  getTypographyValueFromProperty,
-  themeSpacing,
-  getValueFromTheme,
-  showAboveBackDrop,
-} from '../themeUtils'
 import { BACKDROP_Z_INDEX } from '../../components/shared/constants'
 import { ascDefaultTheme } from '../../theme'
 import ThemeProvider from '../../theme/ThemeProvider'
+import {
+  breakpoint,
+  focusStyleOutline,
+  getTypographyFromTheme,
+  getTypographyValueFromProperty,
+  getValueFromTheme,
+  showAboveBackDrop,
+  svgFill,
+  themeColor,
+  themeSpacing,
+} from '../themeUtils'
 
 const { colors, typography } = ascDefaultTheme
 
@@ -121,12 +121,14 @@ describe('svgFill', () => {
     ...ascDefaultTheme,
   }
 
-  it("should return een empty string when the color doesn't exist", () => {
-    expect(svgFill()({ theme })).toBe('')
+  it('should return the right fill from a literal color', () => {
+    expect(svgFill('#004699')({ theme })).toContain('#004699')
   })
 
-  it('should return the right fill color for the svg', () => {
-    expect(svgFill('tint', 'level5')({ theme })[1]).toContain('#767676')
+  it('should return the right fill from a theme color', () => {
+    expect(svgFill(themeColor('primary', 'main'))({ theme })).toContain(
+      '#004699',
+    )
   })
 })
 

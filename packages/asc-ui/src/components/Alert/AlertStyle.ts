@@ -77,7 +77,7 @@ export default styled.div<Props>`
       })};
       ${(level === 'attention' || level === 'error') &&
       css`
-        ${svgFill('tint', 'level1')({ theme })}
+        ${svgFill(themeColor('tint', 'level1'))}
         &, & * {
           color: ${themeColor('tint', 'level1')};
         }
