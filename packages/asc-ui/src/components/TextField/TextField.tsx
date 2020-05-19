@@ -12,9 +12,8 @@ export interface TextFieldProps extends InputProps {
   label?: string
   keepFocus?: boolean
   srOnly?: boolean
-  errorMessage?: string
+  error?: boolean
   labelStyle?: object
-  errorStyle?: object
   onClear?: () => void
   autoFocus?: boolean
 }
@@ -26,9 +25,8 @@ const TextField = ({
   value,
   keepFocus,
   blurOnEscape,
-  errorMessage,
+  error,
   labelStyle,
-  errorStyle,
   id: idProp,
   autoFocus,
   ...otherProps
@@ -49,21 +47,10 @@ const TextField = ({
       >
         {label}
       </FormLabelStyle>
-      {errorMessage && (
-        <FormLabelStyle
-          htmlFor={id}
-          srOnly={srOnly ?? false}
-          error={errorMessage}
-          style={errorStyle}
-        >
-          {errorMessage}
-        </FormLabelStyle>
-      )}
       <Input
-        {...{ keepFocus, value, blurOnEscape }}
+        {...{ keepFocus, value, blurOnEscape, error }}
         {...otherProps}
         id={id}
-        error={!!errorMessage}
         ref={inputRef}
       />
       {onClear && value && (
