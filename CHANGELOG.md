@@ -37,8 +37,8 @@ Prefix the change with one of these keywords:
 - Changed: **BREAKING** removed `asc-core` package. `Theme` and `ascDefaultTheme` can now be found in `asc-ui`
 - Changed: **BREAKING** `AlertMessage` export is renamed to `Alert`.
 - Changed: **BREAKING** `Icon` component refactored color attribute to being string with css color.
-- Changed: **BREAKING** removed the `errorMessage` prop in <Select>. Use the `error` prop and the [ErrorMessage](https://amsterdam.github.io/amsterdam-styled-components/?path=/story/experimental-atoms-errormessage--with-select) component
-- Changed: **BREAKING** removed the `errorMessage` prop in <TextField>. Use the `error` prop and the [ErrorMessage](https://amsterdam.github.io/amsterdam-styled-components/?path=/story/experimental-atoms-errormessage--with-select) component
+- Changed: **BREAKING** removed the `errorMessage` prop in `Select`. Use the `error` prop and the [ErrorMessage](https://amsterdam.github.io/amsterdam-styled-components/?path=/story/experimental-atoms-errormessage--with-select) component
+- Changed: **BREAKING** removed the `errorMessage` prop in `TextField`. Use the `error` prop and the [ErrorMessage](https://amsterdam.github.io/amsterdam-styled-components/?path=/story/experimental-atoms-errormessage--with-select) component
 
 ## [0.19.2-beta.1]
 
