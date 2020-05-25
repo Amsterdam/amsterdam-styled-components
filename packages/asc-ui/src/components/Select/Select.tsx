@@ -1,16 +1,84 @@
-import React from 'react'
+import React, {
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react'
 import FormLabelStyle from '../FormLabelStyle'
-import SelectStyle, { Props, SelectIcon, SelectWrapper } from './SelectStyle'
+import SelectStyle, {
+  AbsoluteContentWrapper,
+  Props,
+  SelectedValue,
+  SelectIcon,
+  SelectWrapper,
+} from './SelectStyle'
+
+/**
+ * Gets a list of the selected `<option>` elements which are present inside of a `<select>`.
+ *
+ * @param select The `<select>` element of which to get the selected options.
+ */
+function getSelectedOptions(select: HTMLSelectElement) {
+  if (select.selectedOptions) {
+    return Array.from(select.selectedOptions)
+  }
+
+  // The 'selectedOptions' property is not supported (IE11)
+  return Array.from(select.querySelectorAll<HTMLOptionElement>(':checked'))
+}
 
 const Select = React.forwardRef<
   HTMLSelectElement,
   Props & React.HTMLAttributes<HTMLSelectElement>
 >(
   (
-    { id, value, label, srOnly: srOnlyProp, error, labelStyle, ...otherProps },
-    ref,
+    {
+      id,
+      value,
+      label,
+      srOnly: srOnlyProp,
+      error,
+      labelStyle,
+      onChange,
+      children,
+      disabled,
+      ...otherProps
+    },
+    externalRef,
   ) => {
     const srOnly = srOnlyProp || false
+    const [selectedValue, setSelectedValue] = useState('')
+    const ref = useRef<HTMLSelectElement>(null)
+
+    const updateValue = useCallback((select: HTMLSelectElement) => {
+      const selectedOption: HTMLOptionElement | undefined = getSelectedOptions(
+        select,
+      )[0]
+
+      if (selectedOption?.textContent) {
+        setSelectedValue(selectedOption.textContent)
+      }
+    }, [])
+
+    const handleChange = useCallback(
+      (event: React.ChangeEvent<HTMLSelectElement>) => {
+        updateValue(event.target)
+
+        if (onChange) {
+          onChange(event)
+        }
+      },
+      [onChange],
+    )
+
+    useImperativeHandle(externalRef, () => ref.current as HTMLSelectElement)
+
+    useEffect(() => {
+      if (ref.current) {
+        updateValue(ref.current)
+      }
+    }, [ref])
 
     return (
       <>
@@ -32,9 +100,17 @@ const Select = React.forwardRef<
               value,
               error,
             }}
+            disabled={disabled}
+            error={error}
             ref={ref}
-          />
-          <SelectIcon />
+            onChange={handleChange}
+          >
+            {children}
+          </SelectStyle>
+          <AbsoluteContentWrapper>
+            <SelectedValue disabled={disabled}>{selectedValue}</SelectedValue>
+            <SelectIcon />
+          </AbsoluteContentWrapper>
         </SelectWrapper>
       </>
     )
