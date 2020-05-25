@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from 'styled-components'
-import { MenuItemStyle } from '../MenuItem'
-import { EdgeDetectionTypes } from '../../../utils/hooks/useEdgeDetection'
 import { showHide } from '../../../utils'
+import { EdgeDetectionTypes } from '../../../utils/hooks/useEdgeDetection'
+import { MenuItemStyle } from '../MenuItem'
 
 export type Props = {
   edgeDetection?: EdgeDetectionTypes
@@ -42,4 +42,8 @@ export default styled.ul<Props>`
     )}
 
   ${showHide()}
+
+  [aria-hidden='true'] {
+    display: none;
+  }
 `

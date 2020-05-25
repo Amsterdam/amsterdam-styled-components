@@ -74,11 +74,9 @@ to ask multiple questions (text from Design System)
 
 <Preview>
   <Story name="Selected state">
-    <Select id="select-1" label="Label">
+    <Select id="select-1" label="Label" defaultValue="2">
       <option value="1">Option 1</option>
-      <option value="2" selected>
-        Option 2
-      </option>
+      <option value="2">Option 2</option>
       <option value="3">Option 3</option>
       <option value="4">Option 4</option>
     </Select>
@@ -139,5 +137,26 @@ to ask multiple questions (text from Design System)
 <Preview>
   <Story name="With ref">
     <SelectWithRef />
+  </Story>
+</Preview>
+
+## With long text
+
+<Preview>
+  <Story name="With long text">
+    <Select id="select-1" label="Select with long text">
+      <option value="1">
+        Option 1 - with a very very long description that overflows
+      </option>
+      <option value="2">
+        Option 2 - with a very very long description that overflows
+      </option>
+      <option value="3">
+        Option 3 - with a very very long description that overflows
+      </option>
+      <option value="4">
+        Option 4 - with a very very long description that overflows
+      </option>
+    </Select>
   </Story>
 </Preview>
