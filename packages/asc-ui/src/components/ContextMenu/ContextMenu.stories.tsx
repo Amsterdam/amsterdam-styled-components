@@ -9,10 +9,24 @@ import {
   Twitter,
 } from '@datapunt/asc-assets'
 import { ContextMenu, ContextMenuItem, Icon } from '../..'
-import { Position } from './types'
+import ContextMenuSelect from './ContextMenuSelect'
 
 export default {
   title: 'Experimental/Composed/ContextMenu',
+  decorators: [
+    (storyFn: () => React.ReactNode) => (
+      <div
+        style={{
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        {storyFn()}
+      </div>
+    ),
+  ],
 }
 
 export const Default = () => (
@@ -27,7 +41,7 @@ export const Default = () => (
 )
 
 export const PositionBottom = () => (
-  <ContextMenu arrowIcon={<ChevronDown />} position={Position.bottom}>
+  <ContextMenu arrowIcon={<ChevronDown />} position="bottom">
     <ContextMenuItem role="button" onClick={() => {}}>
       One
     </ContextMenuItem>
@@ -39,6 +53,35 @@ export const PositionBottom = () => (
 
 export const WithLabel = () => (
   <ContextMenu arrowIcon={<ChevronDown />} label="I'm a label!">
+    <ContextMenuItem role="button" onClick={() => {}}>
+      One
+    </ContextMenuItem>
+    <ContextMenuItem role="button" onClick={() => {}}>
+      Two
+    </ContextMenuItem>
+  </ContextMenu>
+)
+
+export const WithSelectOnTouchScreen = () => (
+  <ContextMenu
+    arrowIcon={<Ellipsis />}
+    selectElementForTouchScreen={
+      <>
+        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+        <label style={{ display: 'none' }} htmlFor="some-id">
+          Open menu
+        </label>
+        <ContextMenuSelect
+          name="context-menu"
+          id="some-id"
+          onChange={(e) => alert(e.currentTarget.value)}
+        >
+          <option value="one">One</option>
+          <option value="two">Two</option>
+        </ContextMenuSelect>
+      </>
+    }
+  >
     <ContextMenuItem role="button" onClick={() => {}}>
       One
     </ContextMenuItem>
