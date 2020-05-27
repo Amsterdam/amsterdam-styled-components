@@ -2,20 +2,20 @@
 
 This is a standalone package that contains:
 
-- Fonts (including css font-face definitions)
-- Icons (svg's and as react components)
+- Fonts (including CSS `font-face` definitions)
+- Icons (SVGs as React components)
 
 ## Install
 
 Add this package to your project by running:
 
 ```bash
-yarn add @datapunt/asc-assets # or npm install @datapunt/asc-assets --save
+npm install @datapunt/asc-assets
 ```
 
 ## Basic Usage
 
-### Icons (React)
+### Icons
 
 ```jsx
 import { IconName } from '@datapunt/asc-assets'
@@ -25,29 +25,43 @@ return <IconName />
 
 ### Fonts
 
-Below an example of how to use with CopyWebpackPlugin:
+> **Note**: Some of the fonts that are used in Amsterdam are licensed, before you include these fonts in your application make sure that you have obtained a licence to do so.
 
-```js
-new CopyWebpackPlugin([
-  {
-    from: './node_modules/@datapunt/asc-assets/static/fonts',
-    to: 'fonts',
-  },
-])
+There are currently two ways of including the fonts used in your application, you can either copy them in from this package in your build or include a version from the Amsterdam CDN. Note that if you want to use the version hosted by Amsterdam you must have an application that runs in the `amsterdam.nl` domain space.
+
+#### Using the Amsterdam CDN
+
+Add the following code to your `index.html` file:
+
+```html
+<!-- This script is needed as specified by the font license -->
+<script src="https://static.amsterdam.nl/fonts/mtiFontTrackingCode.min.js"></script>
+<link href="https://static.amsterdam.nl/fonts/fonts.css" rel="stylesheet" />
 ```
 
-don't forget to include the css!
+There is nothing more to do, the fonts should now be available in your application.
+
+#### Copying the files at build time
+
+This step assumes that you are using WebPack, but it should be possible to do this with other tools or a simple shell script as well.
+
+Add the following code to your WebPack configuration:
+
+```js
+new CopyWebpackPlugin({
+  patterns: [
+    {
+      from: './node_modules/@datapunt/asc-assets/static/fonts',
+      to: 'fonts',
+    },
+  ],
+})
+```
+
+And make sure to import the CSS file in your stylesheet:
 
 ```scss
 @import '~@datapunt/asc-assets/static/fonts/fonts.css';
-```
-
-## Optimized SVGs
-
-```jsx
-import IconName from '@datapunt/asc-assets/static/icons/IconName.svg'
-
-return <img src={IconName} />
 ```
 
 ## Build Project

@@ -2,14 +2,12 @@
 
 This is the React implementation of the styled-components
 
-
-
 ## Installation
 
 Add this package to your project by running:
 
 ```bash
-yarn add @datapunt/asc-ui # or npm install @datapunt/asc-ui --save
+npm install @datapunt/asc-ui
 ```
 
 ## Usage
