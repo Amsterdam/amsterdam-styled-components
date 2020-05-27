@@ -16,6 +16,8 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+## [0.19.2-beta.2]
+
 - Changed: `::after` and `::before` pseudo elements are now also set to `box-sizing: border-box;` by default
 - Changed: HTML5 elements are set to display block for older browsers
 - Added: Supplement colors to default theme
@@ -39,9 +41,6 @@ Prefix the change with one of these keywords:
 - Changed: **BREAKING** `Icon` component refactored color attribute to being string with css color.
 - Changed: **BREAKING** removed the `errorMessage` prop in `Select`. Use the `error` prop and the [ErrorMessage](https://amsterdam.github.io/amsterdam-styled-components/?path=/story/experimental-atoms-errormessage--with-select) component
 - Changed: **BREAKING** removed the `errorMessage` prop in `TextField`. Use the `error` prop and the [ErrorMessage](https://amsterdam.github.io/amsterdam-styled-components/?path=/story/experimental-atoms-errormessage--with-input) component
-
-## [0.19.2-beta.1]
-
 - Added Hidden component
 
 ## [0.19.1]
