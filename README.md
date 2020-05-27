@@ -10,8 +10,46 @@
 
 [Demo site with the storybook of the components](https://amsterdam.github.io/amsterdam-styled-components)
 
-## Install the complete asc project
-`npm install --save @datapunt/asc-assets @datapunt/asc-ui`
+## Getting started
+
+Start by installing the latest versions of `asc-ui`, `asc-assets` and `styled-components`. We're including `styled-components` as a peer dependency of Amsterdam Styled Components so you can pick which version of `styled-components` you want to use.
+
+```bash
+npm install @datapunt/asc-ui @datapunt/asc-assets styled-components
+```
+
+To add Amsterdam Styled Components to your React application you will have to import the following components to your code:
+
+- `ThemeProvider` the provider of various theme variables which are used throughout the application.
+- `GlobalStyle` a component that provides the global styles needed, such a various resets to get the same behavior in different browsers.
+
+For example, this basic application shows a simple button and adds the aforementioned components:
+
+```jsx
+import { Button, GlobalStyle, ThemeProvider } from '@datapunt/asc-ui'
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+ReactDOM.render(
+  <ThemeProvider>
+    <GlobalStyle />
+    <Button color="primary">Click me!</Button>
+  </ThemeProvider>,
+  document.getElementById('root'),
+)
+```
+
+## Including fonts
+
+By default the fonts used by Amsterdam are not loaded into the page as these are licensed fonts. If you wish to include these fonts follow the steps in the `asc-assets` [documentation](packages/asc-assets/README.md#Fonts).
+
+## Supporting older browsers
+
+If you are going to support older browsers such as Internet Explorer 11 it's important to include some polyfills to enable all of the functionality to work. Since we're shipping code in an ES2015 syntax as well as using ES Modules it's important that you also convert the code itself to the older ES5 syntax that these browsers require.
+
+To do this we highly recommend using a tool such as [babel-env](https://babeljs.io/docs/en/babel-preset-env) together with WebPack to automatically polyfill and transform the code to the platform you want to support.
+
+It's also recommended to polyfill the `object-fit` property if your target does not support it using a [polyfill](https://www.npmjs.com/package/objectFitPolyfill).
 
 ## Vision
 
@@ -20,12 +58,12 @@ and UX. That is why we think a component library who captures styling but also c
 e.g. button loading state, is highly beneficial for organisations with large or multiple
 applications, such as Datapunt Amsterdam.
 
-We acknowledge that such a library entails some risks and pitfalls and we aim to cover these as 
+We acknowledge that such a library entails some risks and pitfalls and we aim to cover these as
 much as possible. On the other hand we think that the benefits outweigh the downsides.
 
 ### Quality assurance and durable maintainability
 
-One of the biggest risks is the way a library needs be maintained in order to guarentee quality and 
+One of the biggest risks is the way a library needs be maintained in order to guarentee quality and
 keep developers motivated to continue using it. This is at risk when:
 
 - Maintainers stop maintaining, e.g. they leave Datapunt
@@ -90,7 +128,7 @@ to your project.
    `yarn link <package-name>`. The `<package-name>` can be found in the `package.json` you linked in
    step 2.
 
-Now you can import the package like you would do like a normal npm dependency. Changes you will make 
+Now you can import the package like you would do like a normal npm dependency. Changes you will make
 in your package will be seen in your repo.
 
 Example: linking the `asc-ui` package.
@@ -115,32 +153,6 @@ is that two React instances are used when using `link`. To solve this problem ad
       'react-dom': path.resolve('./node_modules/react-dom'),
     },
   },
-```
-
-### Using with Webpack
-
-These Component Library renders SVGs as Components, something that should be supported by your 
-Webpack configuration. In case you run into any problems, consider the following steps:
-
-1. Run `npm install @svgr/webpack url-loader`
-2. In your `webpack.config.js` add:
-
-  ```json
-  {
-    test: /\.svg$/,
-    use: ['@svgr/webpack', 'url-loader'],
-  }
-  ```
-
-3. Integrate in your code:
-
-```jsx
-import { Close } from '@datapunt/asc-assets'
-const App = () => (
-  <div>
-    <Close />
-  </div>
-)
 ```
 
 ### References and inspiration
