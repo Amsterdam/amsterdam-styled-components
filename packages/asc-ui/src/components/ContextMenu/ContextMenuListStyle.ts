@@ -1,15 +1,17 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { themeColor } from '../../utils'
 import { Position } from './types'
 
 export type ContextMenuListProps = {
   labelId?: string
   position?: Position
+  ariaHidden?: boolean
 }
 
 const ContextMenuListStyle = styled.ul<ContextMenuListProps>`
   display: flex;
   flex-direction: column;
+  list-style: none;
   margin: 0;
   padding: 0;
 
@@ -24,7 +26,21 @@ export const ContextMenuListWrapperStyle = styled.div<ContextMenuListProps>`
   background-color: ${themeColor('tint', 'level1')};
   border: 1px solid ${themeColor('tint', 'level7')};
   max-width: 250px;
-  width: 100%;
+  width: auto;
+  position: absolute;
+  ${({ position }) =>
+    position === 'bottom'
+      ? css`
+          bottom: 100%;
+        `
+      : css`
+          top: 100%;
+        `};
+  ${({ ariaHidden }) =>
+    ariaHidden &&
+    css`
+      display: none;
+    `}
 
   &:focus {
     outline: none;

@@ -27,7 +27,7 @@ import Card, {
 } from './components/Card'
 import { Checkbox, CheckboxStyle } from './components/Checkbox'
 import Label, { LabelContext } from './components/Label'
-import ContextMenu from './components/ContextMenu'
+import ContextMenu, { ContextMenuSelect } from './components/ContextMenu'
 import ContextMenuButtonStyle from './components/ContextMenu/ContextMenuButton'
 import ContextMenuItem from './components/ContextMenu/ContextMenuItem'
 import {
@@ -197,6 +197,7 @@ export {
   Checkbox,
   Column,
   ContextMenu,
+  ContextMenuSelect,
   ContextMenuButtonStyle,
   ContextMenuItem,
   ErrorMessage,

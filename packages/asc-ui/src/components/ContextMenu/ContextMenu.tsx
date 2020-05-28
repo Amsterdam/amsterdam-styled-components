@@ -6,12 +6,14 @@ import { Position } from './types'
 import ContextMenuWrapperStyle from './ContextMenuWrapperStyle'
 import ContextMenuItem from './ContextMenuItem'
 import useFocusWithArrows from '../../utils/hooks/useFocusWithArrows'
+import useDetectTouchscreen from '../../utils/hooks/useDetectTouchScreen'
 
 export type Props = {
   position?: Position
   label?: string
   icon?: React.ReactNode
   arrowIcon?: React.ReactNode
+  selectElementForTouchScreen?: React.ReactNode
   open?: boolean
 }
 
@@ -23,10 +25,12 @@ const ContextMenu: React.FC<
   label,
   children,
   position,
+  selectElementForTouchScreen,
   ...otherProps
 }) => {
   const ref = React.useRef<HTMLDivElement>(null)
   const [open, setOpen] = useState(openProp || false)
+  const isTouchScreen = useDetectTouchscreen()
 
   useEffect(() => {
     React.Children.toArray(children).forEach((child) => {
@@ -57,7 +61,6 @@ const ContextMenu: React.FC<
       }
     })
   }
-
   const { keyDown } = useFocusWithArrows(ref, true)
 
   return (
@@ -75,17 +78,24 @@ const ContextMenu: React.FC<
         }}
         data-testid="toggle"
         onClick={onToggle}
+        disabled={!!(selectElementForTouchScreen && isTouchScreen)}
         {...otherProps}
       />
-      <MenuList
-        {...{
-          position,
-          open,
-          onClose,
-        }}
-      >
-        {children}
-      </MenuList>
+      {((selectElementForTouchScreen && !isTouchScreen) ||
+        !selectElementForTouchScreen) && (
+        <MenuList
+          {...{
+            position,
+            open,
+            onClose,
+          }}
+        >
+          {children}
+        </MenuList>
+      )}
+      {isTouchScreen &&
+        selectElementForTouchScreen &&
+        selectElementForTouchScreen}
     </ContextMenuWrapperStyle>
   )
 }
