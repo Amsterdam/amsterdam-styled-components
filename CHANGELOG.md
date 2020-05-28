@@ -16,11 +16,11 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+
+## [0.19.2-beta.3]
+
 - Changed: ContextMenu list is positioned absolute now
 - Added: ContextMenuSelect component, to be used for touchscreens. [Check out the story on how to implement](https://amsterdam.github.io/amsterdam-styled-components/?path=/story/experimental-composed-contextmenu--with-select-on-touch-screen) 
-
-## [0.19.2-beta.2]
-
 - Changed: `::after` and `::before` pseudo elements are now also set to `box-sizing: border-box;` by default
 - Changed: HTML5 elements are set to display block for older browsers
 - Added: Supplement colors to default theme
