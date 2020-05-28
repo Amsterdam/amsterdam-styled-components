@@ -16,11 +16,13 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Added: general `deprecatedWarning`
+- Deprecated: `color` prop in `Paragraph` and `Typography` components. Instead use your own custom style rules.
 
 ## [0.19.2-beta.3]
 
 - Changed: ContextMenu list is positioned absolute now
-- Added: ContextMenuSelect component, to be used for touchscreens. [Check out the story on how to implement](https://amsterdam.github.io/amsterdam-styled-components/?path=/story/experimental-composed-contextmenu--with-select-on-touch-screen) 
+- Added: ContextMenuSelect component, to be used for touchscreens. [Check out the story on how to implement](https://amsterdam.github.io/amsterdam-styled-components/?path=/story/experimental-composed-contextmenu--with-select-on-touch-screen)
 - Changed: `::after` and `::before` pseudo elements are now also set to `box-sizing: border-box;` by default
 - Changed: HTML5 elements are set to display block for older browsers
 - Added: Supplement colors to default theme
