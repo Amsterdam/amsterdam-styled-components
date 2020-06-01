@@ -16,6 +16,9 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Changed: **BREAKING** removed the `compact` prop/variant in `Alert`
+- Changed: updated the styling of `Alert` conform to design system
+
 ## [0.20.0]
 
 - Changed: ContextMenu list is positioned absolute now

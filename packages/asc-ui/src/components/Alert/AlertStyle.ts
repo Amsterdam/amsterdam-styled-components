@@ -11,17 +11,13 @@ import Heading from '../Heading'
 
 export type Level = 'normal' | 'attention' | 'warning' | 'error'
 
-type SharedProps = {
-  compact?: boolean
-}
-
 export type Props = {
   level?: Level
   heading?: string
   onDismiss?: () => void
   content?: string
   dismissible?: boolean
-} & SharedProps
+}
 
 const colorMap: Record<
   Level,
@@ -33,34 +29,20 @@ const colorMap: Record<
   error: themeColor('secondary'),
 }
 
-const getVPadding = (compact?: boolean) => (compact ? 2 : 5)
-const getHPadding = (compact?: boolean) => (compact ? 1 : 6)
-
-export const CloseButtonWrapper = styled.div<SharedProps>`
+export const CloseButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: auto;
-
-  &::before,
-  &::after {
-    content: '';
-    height: 100%;
-    max-height: ${({ compact, theme }) =>
-      themeSpacing(getHPadding(compact))({ theme })};
-  }
 `
 
 export const CloseButton = styled(Button)`
   background-color: transparent;
 `
 
-export const ContentWrapper = styled.div<SharedProps>`
+export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  ${({ compact, theme }) =>
-    css`
-      padding: ${themeSpacing(getHPadding(compact), 0)({ theme })};
-    `}
+  justify-content: center;
 
   & > * {
     &:last-child {
@@ -75,12 +57,19 @@ export const AlertHeading = styled(Heading)`
 
 export default styled.div<Props>`
   position: relative;
-  display: flex;
   width: 100%; /* IE11 fix */
   ${focusStyleOutline()}
-  ${({ level, compact, theme }) =>
+
+  /* IE11 fix: display 'flex' only when dismissible */
+  ${({ dismissible }) =>
+    dismissible &&
     css`
-      padding: ${themeSpacing(0, getVPadding(compact))({ theme })};
+      display: flex;
+    `}
+
+  ${({ level, theme }) =>
+    css`
+      padding: ${themeSpacing(4)};
 
       /* Colors */
       background-color: ${colorMap[level || 'normal']({
