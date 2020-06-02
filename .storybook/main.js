@@ -20,6 +20,22 @@ module.exports = {
   ],
   webpackFinal: async (config) => {
     const inDevMode = config.mode === 'development'
+
+    // This rule transpiles `acorn` to es5 to work in IE11
+    // This should probably be fixed in Storybook v6
+    config.module.rules.push({
+      test: /\.js$/,
+      include: /node_modules\/acorn-jsx/,
+      use: [
+        {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      ],
+    })
+
     config.module.rules.push({
       test: /\.(stories|story)\.mdx$/,
       use: [
@@ -27,6 +43,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             plugins: ['@babel/plugin-transform-react-jsx'],
+            presets: ['@babel/preset-env'],
           },
         },
         {
