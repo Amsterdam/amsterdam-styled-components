@@ -31,34 +31,22 @@ export default {
 
 export const Default = () => (
   <ContextMenu arrowIcon={<ChevronDown />}>
-    <ContextMenuItem role="button" onClick={() => {}}>
-      One
-    </ContextMenuItem>
-    <ContextMenuItem role="button" onClick={() => {}}>
-      Two
-    </ContextMenuItem>
+    <ContextMenuItem>One</ContextMenuItem>
+    <ContextMenuItem>Two</ContextMenuItem>
   </ContextMenu>
 )
 
 export const PositionBottom = () => (
   <ContextMenu arrowIcon={<ChevronDown />} position="bottom">
-    <ContextMenuItem role="button" onClick={() => {}}>
-      One
-    </ContextMenuItem>
-    <ContextMenuItem role="button" onClick={() => {}}>
-      Two
-    </ContextMenuItem>
+    <ContextMenuItem>One</ContextMenuItem>
+    <ContextMenuItem>Two</ContextMenuItem>
   </ContextMenu>
 )
 
 export const WithLabel = () => (
   <ContextMenu arrowIcon={<ChevronDown />} label="I'm a label!">
-    <ContextMenuItem role="button" onClick={() => {}}>
-      One
-    </ContextMenuItem>
-    <ContextMenuItem role="button" onClick={() => {}}>
-      Two
-    </ContextMenuItem>
+    <ContextMenuItem>One</ContextMenuItem>
+    <ContextMenuItem>Two</ContextMenuItem>
   </ContextMenu>
 )
 
@@ -82,12 +70,8 @@ export const WithSelectOnTouchScreen = () => (
       </>
     }
   >
-    <ContextMenuItem role="button" onClick={() => {}}>
-      One
-    </ContextMenuItem>
-    <ContextMenuItem role="button" onClick={() => {}}>
-      Two
-    </ContextMenuItem>
+    <ContextMenuItem>One</ContextMenuItem>
+    <ContextMenuItem>Two</ContextMenuItem>
   </ContextMenu>
 )
 
@@ -101,7 +85,6 @@ export const ImplementationForDataportaal = () => (
     }
   >
     <ContextMenuItem
-      role="button"
       divider
       onClick={() => {
         window.print()
@@ -115,7 +98,6 @@ export const ImplementationForDataportaal = () => (
       Printen
     </ContextMenuItem>
     <ContextMenuItem
-      role="button"
       onClick={() => {
         window.open(
           `https://www.facebook.com/sharer/sharer.php?u=` +
@@ -132,7 +114,6 @@ export const ImplementationForDataportaal = () => (
       Deel via Facebook
     </ContextMenuItem>
     <ContextMenuItem
-      role="button"
       onClick={() =>
         window.open(
           `https://twitter.com/intent/tweet?url=${window.location.href}` +
@@ -149,7 +130,6 @@ export const ImplementationForDataportaal = () => (
       Deel via Twitter
     </ContextMenuItem>
     <ContextMenuItem
-      role="button"
       onClick={() =>
         window.open(
           `
@@ -167,7 +147,6 @@ export const ImplementationForDataportaal = () => (
       Deel via Linkedin
     </ContextMenuItem>
     <ContextMenuItem
-      role="button"
       onClick={() => window.open(`mailto:mail@mail.com`, '_blank')}
       icon={
         <Icon inline size={24} padding={4}>
