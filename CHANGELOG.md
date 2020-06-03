@@ -21,6 +21,8 @@ Prefix the change with one of these keywords:
 - Changed: **BREAKING** removed the `compact` prop/variant in `Alert`
 - Changed: **BREAKING** `svgFill` now only accepts CSS color literal or a `ThemeFn` which returns a CSS color (see: https://github.com/Amsterdam/amsterdam-styled-components/pull/594).
 - Changed: **BREAKING** elements using `aria-hidden` are no longer set to `display: none`
+- Fixed: BackDrop component is now decoupled from React Portals
+- Fixed: Button in the SearchBar component is now aligned with the TextField
 
 ## [0.20.0]
 
