@@ -122,7 +122,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
         aria-label={placeholder || 'Zoek'}
         title={placeholder || 'Zoek'}
         type="submit"
-        size={40}
+        size={36}
         onClick={handleOnSubmit}
         variant="secondary"
       >
