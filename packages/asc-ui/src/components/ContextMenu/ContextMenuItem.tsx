@@ -5,19 +5,18 @@ import ContextMenuItemStyle, {
 } from './ContextMenuItemStyle'
 
 type Props = {
-  onClick?: (e: React.MouseEvent) => void
-  role?: string
   icon?: React.ReactNode
-} & ContextMenuItemProps
+} & ContextMenuItemProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement>
 
 const ContextMenuItem: React.FC<Props> = ({
   children,
   icon,
-  onClick,
+  divider,
   ...otherProps
 }) => (
-  <ContextMenuItemStyle {...otherProps}>
-    <ContextMenuItemButton type="button" onClick={onClick}>
+  <ContextMenuItemStyle divider={divider}>
+    <ContextMenuItemButton type="button" {...otherProps}>
       {icon && icon}
       {children}
     </ContextMenuItemButton>

@@ -31,10 +31,10 @@ export const ContextMenuListWrapperStyle = styled.div<ContextMenuListProps>`
   ${({ position }) =>
     position === 'bottom'
       ? css`
-          bottom: 100%;
+          bottom: calc(100% - 1px);
         `
       : css`
-          top: 100%;
+          top: calc(100% - 1px);
         `};
   ${({ ariaHidden }) =>
     ariaHidden &&

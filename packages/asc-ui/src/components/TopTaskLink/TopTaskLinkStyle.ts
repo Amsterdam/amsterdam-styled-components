@@ -45,6 +45,6 @@ export default styled.a<{
 
   ${IconStyle} {
     margin-bottom: ${themeSpacing(2)};
-    ${svgFill('tint', 'level7')};
+    ${svgFill(themeColor('tint', 'level7'))};
   }
 `

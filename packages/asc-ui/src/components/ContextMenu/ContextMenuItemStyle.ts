@@ -6,6 +6,7 @@ export type ContextMenuItemProps = {
 }
 
 export const ContextMenuItemStyle = styled.li<ContextMenuItemProps>`
+  white-space: nowrap;
   ${({ divider }) =>
     divider &&
     css`
@@ -14,7 +15,8 @@ export const ContextMenuItemStyle = styled.li<ContextMenuItemProps>`
 `
 
 export const ContextMenuItemButton = styled.button`
-  padding: ${themeSpacing(0, 3, 0, 1)};
+  cursor: pointer;
+  padding: ${themeSpacing(0, 3)};
   margin: 0;
   display: flex;
   flex-direction: row;
@@ -28,12 +30,12 @@ export const ContextMenuItemButton = styled.button`
   border: 0;
 
   & > span:first-of-type {
-    margin: 5px 6px;
+    margin: ${themeSpacing(1, 1, 1, -2)};
   }
 
   &:hover,
   &:focus {
-    outline: none;
+    z-index: 1;
     background-color: ${themeColor('tint', 'level2')};
   }
 `

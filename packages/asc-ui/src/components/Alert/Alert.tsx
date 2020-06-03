@@ -18,7 +18,6 @@ const Alert: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
   heading,
   onDismiss,
   dismissible,
-  compact,
   content,
   level,
   ...otherProps
@@ -43,16 +42,16 @@ const Alert: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
 
   return open ? (
     <AlertStyle
-      {...{ compact, dismissible, level, ...otherProps }}
+      {...{ dismissible, level, ...otherProps }}
       tabIndex={0}
       role="alert"
       aria-live="polite"
     >
       <CompactThemeProvider>
-        <ContentWrapper compact={compact}>
+        <ContentWrapper>
           {heading && (
             // @ts-ignore
-            <AlertHeading forwardedAs="strong" styleAs={compact ? 'h5' : 'h3'}>
+            <AlertHeading forwardedAs="strong" styleAs="h3">
               {heading}
             </AlertHeading>
           )}
@@ -61,14 +60,14 @@ const Alert: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
           {children}
         </ContentWrapper>
         {dismissible && (
-          <CloseButtonWrapper compact={compact}>
+          <CloseButtonWrapper>
             <CloseButton
               title={CLOSE_BUTTON_TITLE}
               aria-label={CLOSE_BUTTON_TITLE}
-              size={compact ? 24 : 30}
+              size={30}
               variant={variant}
               onClick={handleOnDismiss}
-              iconSize={compact ? 16 : 20}
+              iconSize={20}
               icon={<Close />}
             />
           </CloseButtonWrapper>

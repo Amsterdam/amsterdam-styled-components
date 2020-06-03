@@ -67,14 +67,14 @@ const StyledListItem - styled(ListItem)`
   color: ${themeColor('primary')};
 
   ${styles.IconStyle} {
-    ${svgFill('tint', 'level1')};
+    ${svgFill(themeColor('tint', 'level1'))};
   }
 
   ${styles.LinkStyle} {
 
     &:hover {
       ${IconStyle} {
-        ${svgFill('primary')};
+        ${svgFill(themeColor('primary', 'main'))};
       }
     }
   }

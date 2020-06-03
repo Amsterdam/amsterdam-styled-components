@@ -18,8 +18,11 @@ Prefix the change with one of these keywords:
 
 - Added: general `deprecatedWarning`
 - Deprecated: `color` prop in `Paragraph` and `Typography` components. Instead use your own custom style rules.
+- Changed: updated the styling of `Alert` conform to design system
+- Changed: **BREAKING** removed the `compact` prop/variant in `Alert`
+- Changed: **BREAKING** `svgFill` now only accepts CSS color literal or a `ThemeFn` which returns a CSS color (see: https://github.com/Amsterdam/amsterdam-styled-components/pull/594).
 
-## [0.19.2-beta.3]
+## [0.20.0]
 
 - Changed: ContextMenu list is positioned absolute now
 - Added: ContextMenuSelect component, to be used for touchscreens. [Check out the story on how to implement](https://amsterdam.github.io/amsterdam-styled-components/?path=/story/experimental-composed-contextmenu--with-select-on-touch-screen)
@@ -39,6 +42,7 @@ Prefix the change with one of these keywords:
 - Changed: Internal SVG icon imports are replaced with React components, eliminating the need for including an SVG loader (closes #459)
 - Added: Added TopTaskLink component
 - Added: `theme` prop to `ThemeProvider` to pass a custom theme
+- Changed: **BREAKING** ASC now ships with ESM modules using the `module` field. Make sure that the code is transformed properly if you need to support older platforms (see the [documentation](https://github.com/Amsterdam/amsterdam-styled-components#supporting-older-browsers) or this example WebPack [project](https://github.com/jonkoops/cleanroom)).
 - Changed: **BREAKING** `createTheme` method from `Theme`.
 - Changed: **BREAKING** removed `themeName` from `ThemeProvider`
 - Changed: **BREAKING** removed `asc-core` package. `Theme` and `ascDefaultTheme` can now be found in `asc-ui`
