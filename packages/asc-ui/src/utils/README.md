@@ -86,7 +86,3 @@ const HeaderSearchStyle = styled.div`
 `
 return <HeaderSearchStyle theme={theme} />
 ```
-
-## svgFill
-
-...

@@ -12,7 +12,7 @@ describe('Checkbox', () => {
     cleanup()
     ;({ container, rerender } = render(
       <ThemeProvider>
-        <Checkbox onChange={onChangeMock} />
+        <Checkbox variant="primary" onChange={onChangeMock} />
       </ThemeProvider>,
     ))
   })
@@ -43,7 +43,7 @@ describe('Checkbox', () => {
     // Toggle on by changing props
     rerender(
       <ThemeProvider>
-        <Checkbox checked />
+        <Checkbox checked variant="secondary" />
       </ThemeProvider>,
     )
 

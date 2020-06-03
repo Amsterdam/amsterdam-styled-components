@@ -47,7 +47,7 @@ export const MenuButtonBaseStyle = styled(Button)<Props>`
 
 const activeStyle = css`
   color: ${themeColor('secondary')};
-  ${svgFill('secondary')}
+  ${svgFill(themeColor('secondary', 'main'))}
 
   ${MenuButtonTextStyle} {
     color: ${themeColor('secondary')};

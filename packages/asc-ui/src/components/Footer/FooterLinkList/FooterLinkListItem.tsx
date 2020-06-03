@@ -12,7 +12,7 @@ const StyledListItem = styled(ListItem)`
   }
 
   ${IconStyle} {
-    ${svgFill('tint', 'level1')};
+    ${svgFill(themeColor('tint', 'level1'))};
   }
 
   ${LinkStyle} {
@@ -24,7 +24,7 @@ const StyledListItem = styled(ListItem)`
       text-decoration: underline;
 
       ${IconStyle} {
-        ${svgFill('tint', 'level1')};
+        ${svgFill(themeColor('tint', 'level1'))};
       }
     }
   }
