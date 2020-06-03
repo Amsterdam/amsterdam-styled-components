@@ -21,7 +21,7 @@ const BackDropStyle = styled.div<Props>`
     zIndexOffset ? BACKDROP_Z_INDEX + zIndexOffset : BACKDROP_Z_INDEX};
 
   &,
-  & * {
+  & > * {
     pointer-events: none;
   }
 `
