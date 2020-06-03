@@ -109,8 +109,7 @@ export namespace Theme {
     letterSpacing: CSSProp
     marginBottom: CSSProp
     /**
-     * Deprecated: Use your own custom style rules
-     * @deprecated
+     * @deprecated Use your own custom style rules
      */
     color: CSSProp
   }

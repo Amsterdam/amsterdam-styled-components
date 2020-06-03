@@ -11,8 +11,7 @@ export type Props = {
   forwardedAs?: any
   strong?: boolean
   /**
-   * Deprecated: Use your own custom style rules
-   * @deprecated
+   * @deprecated Use your own custom style rules
    */
   color?: Theme.ColorType
 }

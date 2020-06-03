@@ -199,13 +199,11 @@ const getVariant = () => ({
 
 export type Props = {
   /**
-   * Deprecated: Use variant instead. Pass the theme-color.
-   * @deprecated
+   * @deprecated Use variant instead. Pass the theme-color.
    */
   color?: Theme.ColorType
   /**
-   * Deprecated: use size to create a button with equal width and height
-   * @deprecated
+   * @deprecated Use size to create a button with equal width and height
    */
   square?: boolean
   /**
