@@ -6,7 +6,11 @@ export interface TopTaskLinkProps {
   icon?: React.ElementType
   title: string
   text?: string
+  /**
+   * @deprecated use prop darkBackground instead
+   */
   onDarkBackground?: boolean
+  darkBackground?: boolean
 }
 
 const TopTaskLink: React.FC<
