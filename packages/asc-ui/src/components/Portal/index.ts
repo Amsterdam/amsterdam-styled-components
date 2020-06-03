@@ -1,1 +1,1 @@
-export { default } from './Portal'
+export { default, Props } from './Portal'

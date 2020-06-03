@@ -24,6 +24,7 @@ export type Props = {
 export default styled.div<Props>`
   display: flex;
   flex-direction: column;
+  position: relative;
   align-items: ${({ align }) => (align === 'left' ? 'flex-start' : `flex-end`)};
   max-width: ${FLY_OUT_WIDTH}px;
 
@@ -37,10 +38,10 @@ export default styled.div<Props>`
   }
 
   ${MenuListStyle} {
-    position: absolute;
     width: ${FLY_OUT_WIDTH}px;
     flex-direction: column;
     top: ${TOGGLE_BUTTON_SIZE}px;
+    position: absolute;
     ${({ align }) =>
       align === 'left'
         ? css`

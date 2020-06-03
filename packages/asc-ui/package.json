@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
   },
-  "version": "0.20.0",
+  "version": "0.20.1-alpha.2+814288ae",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -39,5 +39,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "71533a03a5ffde679e93b0e2d94eb5138dc84360"
+  "gitHead": "814288aebd8e30683f6a3d332bcbd98626553a00"
 }

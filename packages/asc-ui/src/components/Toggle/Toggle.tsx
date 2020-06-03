@@ -21,6 +21,7 @@ export type Props = {
     ToggleButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>
   >
   rotateOnOpen?: number
+  zIndexOffset?: number
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
 } & ToggleStyleProps &
   ToggleHandlerProps
@@ -40,6 +41,7 @@ const Toggle: React.FC<Props & HTMLAttributes<HTMLDivElement>> = ({
   title,
   hasBackDrop,
   ariaLabel,
+  zIndexOffset,
   ...otherProps
 }) => {
   const [open, setOpen] = React.useState(false)
@@ -128,7 +130,7 @@ const Toggle: React.FC<Props & HTMLAttributes<HTMLDivElement>> = ({
       )}
       {render ? children : conditionalRenderedChildren}
       {hasBackDrop && open && (
-        <BackDrop onClick={handleOnClick} hideOverFlow={false} />
+        <BackDrop onClick={handleOnClick} zIndexOffset={zIndexOffset} />
       )}
     </ToggleStyle>
   )
