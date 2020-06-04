@@ -6,6 +6,7 @@ import { InputProps } from '../Input'
 import InputContext from '../Input/InputMethodsContext'
 import TextField, { TextFieldProps } from '../TextField/TextField'
 import SearchBarStyle, { Props as SearchBarStyleProps } from './SearchBarStyle'
+import { deprecatedWarning } from '../../utils'
 
 export interface SearchBarProps extends TextFieldProps, SearchBarStyleProps {
   label?: string
@@ -56,8 +57,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
   const handleOnSubmit = (e: React.FormEvent) => {
     if (onSubmit) {
-      // eslint-disable-next-line no-console
-      console.warn(
+      deprecatedWarning(
         `onSubmit is about to be deprecated, wrap this component inside a <form onSubmit={...} /> instead`,
       )
       onSubmit(e)
@@ -74,8 +74,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
   React.useEffect(() => {
     if (onWatchValue) {
-      // eslint-disable-next-line no-console
-      console.warn(
+      deprecatedWarning(
         'onWatchValue is about to be deprecated. Use onChange in combo with onClear instead',
       )
       // @ts-ignore

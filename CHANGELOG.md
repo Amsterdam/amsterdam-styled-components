@@ -16,6 +16,8 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Added: general `deprecatedWarning`
+- Deprecated: `color` prop in `Paragraph` and `Typography` components. Instead use your own custom style rules.
 - Changed: updated the styling of `Alert` conform to design system
 - Changed: Select can now handle large texts by overflowing into an ellipsis
 - Changed: **BREAKING** removed the `compact` prop/variant in `Alert`
