@@ -1,13 +1,15 @@
 import React from 'react'
 import MenuInlineStyle, { Props } from './MenuInlineStyle'
 import MenuContext from '../MenuContext'
-import BackDrop from '../../BackDrop/BackDrop'
+import BackDrop, { Props as BackDropProps } from '../../BackDrop/BackDrop'
 import useDebounce from '../../../utils/hooks/useDebounce'
 
-const MenuInline: React.FC<Props> = ({
+const MenuInline: React.FC<Props & BackDropProps> = ({
   children,
   onExpand,
   hasBackDrop,
+  backdropOpacity,
+  zIndexOffset,
   ...otherProps
 }) => {
   const [menuOpen, setMenuOpen] = React.useState(false)
@@ -28,7 +30,13 @@ const MenuInline: React.FC<Props> = ({
       <MenuInlineStyle hasBackDrop={hasBackDrop} {...otherProps}>
         {children}
       </MenuInlineStyle>
-      {hasBackDrop && menuOpen && <BackDrop onClick={handleOnExpand} />}
+      {hasBackDrop && menuOpen && (
+        <BackDrop
+          onClick={handleOnExpand}
+          backdropOpacity={backdropOpacity}
+          zIndexOffset={zIndexOffset}
+        />
+      )}
     </MenuContext.Provider>
   )
 }

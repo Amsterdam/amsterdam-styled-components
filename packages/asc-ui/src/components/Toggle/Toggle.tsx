@@ -6,7 +6,7 @@ import useActionOnEscape from '../../utils/hooks/useActionOnEscape'
 import ToggleButton, {
   Props as ToggleButtonProps,
 } from '../Button/ToggleButton/ToggleButton'
-import BackDrop from '../BackDrop/BackDrop'
+import BackDrop, { Props as BackDropProps } from '../BackDrop/BackDrop'
 
 export type ToggleHandlerProps = {
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
@@ -21,10 +21,10 @@ export type Props = {
     ToggleButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>
   >
   rotateOnOpen?: number
-  zIndexOffset?: number
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
 } & ToggleStyleProps &
-  ToggleHandlerProps
+  ToggleHandlerProps &
+  BackDropProps
 
 // Todo: refactor this to Collapse component https://github.com/Amsterdam/amsterdam-styled-components/issues/379
 const Toggle: React.FC<Props & HTMLAttributes<HTMLDivElement>> = ({
@@ -40,8 +40,9 @@ const Toggle: React.FC<Props & HTMLAttributes<HTMLDivElement>> = ({
   ToggleHandler,
   title,
   hasBackDrop,
-  ariaLabel,
+  backdropOpacity,
   zIndexOffset,
+  ariaLabel,
   ...otherProps
 }) => {
   const [open, setOpen] = React.useState(false)
@@ -130,7 +131,11 @@ const Toggle: React.FC<Props & HTMLAttributes<HTMLDivElement>> = ({
       )}
       {render ? children : conditionalRenderedChildren}
       {hasBackDrop && open && (
-        <BackDrop onClick={handleOnClick} zIndexOffset={zIndexOffset} />
+        <BackDrop
+          onClick={handleOnClick}
+          zIndexOffset={zIndexOffset}
+          backdropOpacity={backdropOpacity}
+        />
       )}
     </ToggleStyle>
   )
