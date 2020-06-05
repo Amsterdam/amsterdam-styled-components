@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@datapunt/asc-assets": "^0.19.1",
-    "@datapunt/asc-ui": "^0.19.2-beta.1",
+    "@datapunt/asc-ui": "^0.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
