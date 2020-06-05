@@ -1,6 +1,7 @@
-import { ChevronDown, ChevronUp } from '@datapunt/asc-assets'
-import { mount, ReactWrapper, shallow, ShallowWrapper } from 'enzyme'
 import React from 'react'
+import { mount, ReactWrapper, shallow, ShallowWrapper } from 'enzyme'
+import { act } from '@testing-library/react'
+import { ChevronDown, ChevronUp } from '@datapunt/asc-assets'
 import { KeyboardKeys } from '../../../types'
 import { useMenuContext } from '../MenuContext'
 import MenuFlyOut from '.'
@@ -75,37 +76,41 @@ describe('MenuFlyOut', () => {
   })
 
   it('should toggle the isOpen state on click', () => {
-    onClickSimulate()
-
-    jest.runAllTimers()
+    act(() => {
+      onClickSimulate()
+      jest.runAllTimers()
+    })
 
     menuListProps = component.find(MenuList).props()
     expect(menuListProps['aria-hidden']).toBe(false)
   })
 
   it('should not toggle the isOpen state when already opened', () => {
-    onClickSimulate()
-    onClickSimulate()
-
-    jest.runAllTimers()
+    act(() => {
+      onClickSimulate()
+      onClickSimulate()
+      jest.runAllTimers()
+    })
 
     menuListProps = component.find(MenuList).props()
     expect(menuListProps['aria-hidden']).toBe(false)
   })
 
   it('should toggle the isOpen state on enter', () => {
-    onKeyDownSimulate('Enter')
-
-    jest.runAllTimers()
+    act(() => {
+      onKeyDownSimulate('Enter')
+      jest.runAllTimers()
+    })
 
     menuListProps = component.find(MenuList).props()
     expect(menuListProps['aria-hidden']).toBe(false)
   })
 
   it('should toggle the isOpen state on space', () => {
-    onKeyDownSimulate('Space')
-
-    jest.runAllTimers()
+    act(() => {
+      onKeyDownSimulate('Space')
+      jest.runAllTimers()
+    })
 
     menuListProps = component.find(MenuList).props()
     expect(menuListProps['aria-hidden']).toBe(false)
@@ -119,8 +124,9 @@ describe('MenuFlyOut', () => {
     }))
 
     container = mount<{}>(<MenuFlyOut label="Fly Out">{children}</MenuFlyOut>)
-
-    onClickSimulate(container)
+    act(() => {
+      onClickSimulate(container)
+    })
 
     expect(onExpandMock).toHaveBeenCalled()
   })
@@ -146,9 +152,10 @@ describe('MenuFlyOut', () => {
       menuListProps = component.find(MenuList).props()
       expect(menuListProps['aria-hidden']).toBe(true)
 
-      onClickSimulate()
-
-      jest.runAllTimers()
+      act(() => {
+        onClickSimulate()
+        jest.runAllTimers()
+      })
 
       expect(menuItemLink.find(<ChevronUp />)).toBeTruthy()
 

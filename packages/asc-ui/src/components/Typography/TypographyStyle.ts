@@ -5,12 +5,15 @@ import { Theme } from '../../types'
 export type Props = {
   gutterBottom?: number
   element?: Variant
-  color?: Theme.ColorType
   fontSize?: number
   styleAs?: keyof Theme.TypographyElements
   as?: any
   forwardedAs?: any
   strong?: boolean
+  /**
+   * @deprecated Use your own custom style rules
+   */
+  color?: Theme.ColorType
 }
 
 export const defaultTypographyStyles = {

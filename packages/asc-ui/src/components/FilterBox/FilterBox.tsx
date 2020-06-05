@@ -5,6 +5,7 @@ import FilterBoxStyle, {
   Props as StyleProps,
 } from './FilterBoxStyle'
 import Heading from '../Heading'
+import { themeColor } from '../../utils/themeUtils'
 
 type Props = {
   label: string
@@ -12,6 +13,7 @@ type Props = {
 
 const StyledHeading = styled(Heading)`
   margin-bottom: 0;
+  color: ${themeColor('primary', 'main')};
 `
 
 const FilterBox: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
@@ -21,9 +23,7 @@ const FilterBox: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
 }) => (
   <FilterBoxStyle {...otherProps}>
     <FilterBoxHeader>
-      <StyledHeading forwardedAs="h3" color="primary">
-        {label}
-      </StyledHeading>
+      <StyledHeading forwardedAs="h3">{label}</StyledHeading>
     </FilterBoxHeader>
     {children}
   </FilterBoxStyle>
