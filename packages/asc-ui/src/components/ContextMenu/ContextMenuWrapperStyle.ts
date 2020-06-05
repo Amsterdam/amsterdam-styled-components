@@ -5,10 +5,6 @@ const ContextMenuWrapperStyle = styled.div`
   align-items: flex-start;
   flex-direction: column;
   position: relative;
-
-  [aria-hidden='true'] {
-    display: none;
-  }
 `
 
 export default ContextMenuWrapperStyle
