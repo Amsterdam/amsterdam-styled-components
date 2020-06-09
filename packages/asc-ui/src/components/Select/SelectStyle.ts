@@ -1,8 +1,7 @@
-import styled, { css } from 'styled-components'
 import { ChevronDown } from '@datapunt/asc-assets'
+import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
 import { outlineStyle } from '../../utils/themeUtils'
-import { Theme } from '../../types'
 
 export type Props = {
   id?: string
@@ -16,38 +15,62 @@ export type Props = {
   errorStyle?: object
 }
 
-const SelectBoxShadow = (
-  color: ({ theme }: { theme: Theme.ThemeInterface }) => string,
-) => css`
-  box-shadow: inset 0 0 0 1px ${color};
-`
-
-export const SelectIcon = styled(ChevronDown)`
-  position: absolute;
-  display: block;
-  width: ${themeSpacing(3)};
-  height: ${themeSpacing(3)};
-  top: calc(50% - ${themeSpacing(3 / 2)});
-  right: ${themeSpacing(3)};
-`
-
 export const SelectWrapper = styled.div`
   position: relative;
   height: 40px;
   width: 100%;
 `
 
+/**
+ * Contains all of the absolute content which is placed above the select element.
+ */
+export const AbsoluteContentWrapper = styled.div.attrs({
+  'aria-hidden': 'true',
+})`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 1px ${themeSpacing(3)} 1px ${themeSpacing(3)}; /* Match the border and spacing of the select element. */
+  display: flex;
+  align-items: center;
+  background-color: ${themeColor('tint', 'level1')};
+  pointer-events: none;
+`
+
+/**
+ * Since Chrome does not support `text-overflow: hidden` we need show the value in a separate element.
+ */
+export const SelectedValue = styled.div<{ disabled?: boolean }>`
+  margin-right: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      opacity: 0.5;
+    `}
+`
+export const SelectIcon = styled(ChevronDown)`
+  display: block;
+  width: ${themeSpacing(3)};
+  height: ${themeSpacing(3)};
+  margin-left: ${themeSpacing(3)};
+`
+
 const SelectStyle = styled.select<Props>`
+  position: absolute;
   width: 100%;
   height: 100%;
-  padding: 0 ${themeSpacing(3)};
+  padding: ${themeSpacing(0, 3)};
   font-size: 1rem;
-  border: 0;
+  border: 1px solid ${themeColor('tint', 'level5')};
   border-radius: 0;
   background-color: ${themeColor('tint', 'level1')};
   appearance: none;
   cursor: pointer;
-  ${SelectBoxShadow(themeColor('tint', 'level5'))}
 
   /* IE11 (hide native arrow button) */
   &::-ms-expand {
@@ -71,7 +94,7 @@ const SelectStyle = styled.select<Props>`
       !disabled &&
       !error &&
       css`
-        ${SelectBoxShadow(themeColor('tint', 'level7'))}
+        border: 1px solid ${themeColor('tint', 'level7')};
       `}
   }
 
@@ -85,13 +108,13 @@ const SelectStyle = styled.select<Props>`
   &:disabled {
     pointer-events: none;
     opacity: 0.5;
-    ${SelectBoxShadow(themeColor('tint', 'level4'))};
+    border: 1px solid ${themeColor('tint', 'level4')};
   }
 
   ${({ error }) =>
     error &&
     css`
-      ${SelectBoxShadow(themeColor('error', 'main'))}
+      border: 1px solid ${themeColor('error', 'main')};
     `}
 `
 

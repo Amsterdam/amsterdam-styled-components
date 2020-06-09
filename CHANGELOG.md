@@ -16,9 +16,16 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Added: general `deprecatedWarning`
+- Deprecated: `color` prop in `Paragraph` and `Typography` components. Instead use your own custom style rules.
 - Changed: updated the styling of `Alert` conform to design system
+- Changed: Select can now handle large texts by overflowing into an ellipsis
 - Changed: **BREAKING** removed the `compact` prop/variant in `Alert`
 - Changed: **BREAKING** `svgFill` now only accepts CSS color literal or a `ThemeFn` which returns a CSS color (see: https://github.com/Amsterdam/amsterdam-styled-components/pull/594).
+- Changed: **BREAKING** elements using `aria-hidden` are no longer set to `display: none`
+- Fixed: BackDrop component is now decoupled from React Portals
+- Fixed: Button in the SearchBar component is now aligned with the TextField
+- Fixed: Toggle now hides elements inside properly
 - Deprecated: `onDarkBackground` prop in `Link`. Use `darkBackground` instead.
 
 ## [0.20.0]

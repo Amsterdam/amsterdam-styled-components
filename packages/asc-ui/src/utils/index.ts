@@ -1,4 +1,5 @@
 import { getValueFromTheme } from './themeUtils'
+import deprecatedWarning from './deprecatedWarning'
 
 export {
   themeColor,
@@ -24,4 +25,4 @@ export { fromProps } from './fromProps'
  */
 const fromTheme = getValueFromTheme
 
-export { fromTheme }
+export { fromTheme, deprecatedWarning }

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { showHide, ShowHideTypes, CustomCssPropsType } from '../../utils'
+import { CustomCssPropsType, showHide, ShowHideTypes } from '../../utils'
 
 export type Props = {
   align?: 'left' | 'right'
@@ -12,4 +12,8 @@ export default styled.div<Props>`
   flex-direction: column;
   align-items: ${({ align }) => (align === 'left' ? 'flex-start' : `flex-end`)};
   ${showHide()};
+
+  [aria-hidden='true'] {
+    display: none !important;
+  }
 `

@@ -7,6 +7,7 @@ import ContextMenuWrapperStyle from './ContextMenuWrapperStyle'
 import ContextMenuItem from './ContextMenuItem'
 import useFocusWithArrows from '../../utils/hooks/useFocusWithArrows'
 import useDetectTouchscreen from '../../utils/hooks/useDetectTouchScreen'
+import { deprecatedWarning } from '../../utils'
 
 export type Props = {
   position?: Position
@@ -36,9 +37,8 @@ const ContextMenu: React.FC<
     React.Children.toArray(children).forEach((child) => {
       // @ts-ignore
       if (child && child.type !== ContextMenuItem) {
-        // eslint-disable-next-line no-console
-        console.warn(
-          'Warning: you are rendering a different component type in <ContextMenu /> other than <ContextMenuItem />.',
+        deprecatedWarning(
+          'You are rendering a different component type in <ContextMenu /> other than <ContextMenuItem />.',
         )
       }
     })

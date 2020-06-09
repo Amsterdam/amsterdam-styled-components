@@ -103,12 +103,15 @@ export namespace Theme {
       SupportPaletteInterface {}
 
   export type TypographyElementStyle = {
-    color: CSSProp
     fontWeight: 400 | 500 | 700 | 'inherit'
     fontSize: CSSProp
     lineHeight: number | CSSProp
     letterSpacing: CSSProp
     marginBottom: CSSProp
+    /**
+     * @deprecated Use your own custom style rules
+     */
+    color: CSSProp
   }
 
   export interface TypographyType extends Partial<TypographyElementStyle> {
