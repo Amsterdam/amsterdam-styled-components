@@ -21,6 +21,7 @@ export const TopTaskTitle = styled(Paragraph)`
 
 export default styled.a<{
   onDarkBackground?: boolean
+  darkBackground?: boolean
 }>`
   display: block;
   padding: ${themeSpacing(2, 3)};
@@ -29,8 +30,8 @@ export default styled.a<{
   background-color: ${themeColor('tint', 'level2')};
   border-style: solid;
   border-width: 0 2px 2px 0;
-  border-color: ${({ onDarkBackground = false }) =>
-    onDarkBackground
+  border-color: ${({ onDarkBackground = false, darkBackground = false }) =>
+    onDarkBackground || darkBackground
       ? themeColor('tint', 'level7')
       : themeColor('tint', 'level3')};
 
