@@ -86,7 +86,7 @@
     "jest": "^26.0.1",
     "jest-cli": "^26.0.1",
     "jest-styled-components": "7.0.2",
-    "lerna": "3.22.0",
+    "lerna": "3.22.1",
     "lint-staged": "^10.2.2",
     "mkdirp": "^1.0.4",
     "prettier": "^2.0.5",
