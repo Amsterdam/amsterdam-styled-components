@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
+import { themeColor } from '../../../utils'
+import { FLY_OUT_WIDTH, MENU_ITEM_SIZE } from '../constants'
 import { MenuItemStyle } from '../MenuItem'
 import MenuListStyle from '../MenuList/MenuListStyle'
-import { FLY_OUT_WIDTH, MENU_ITEM_SIZE } from '../constants'
-import { themeColor } from '../../../utils'
 
 export type Props = {
   hasToggle?: boolean
@@ -35,5 +35,9 @@ export default styled(MenuItemStyle).attrs({
     ${MenuListStyle} {
       display: block;
     }
-  } 
+  }
+
+  [aria-hidden='true'] {
+    display: none;
+  }
 `

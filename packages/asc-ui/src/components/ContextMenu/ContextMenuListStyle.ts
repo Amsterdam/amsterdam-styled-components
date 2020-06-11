@@ -36,11 +36,6 @@ export const ContextMenuListWrapperStyle = styled.div<ContextMenuListProps>`
       : css`
           top: calc(100% - 1px);
         `};
-  ${({ ariaHidden }) =>
-    ariaHidden &&
-    css`
-      display: none;
-    `}
 
   &:focus {
     outline: none;
