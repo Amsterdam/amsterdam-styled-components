@@ -61,7 +61,6 @@ export const SelectIcon = styled(ChevronDown)`
 `
 
 const SelectStyle = styled.select<Props>`
-  position: absolute;
   width: 100%;
   height: 100%;
   padding: ${themeSpacing(0, 3)};
