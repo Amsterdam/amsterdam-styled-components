@@ -13,14 +13,30 @@ export default {
   ],
 }
 
-export const DefaultType = () => (
+export const Default = () => (
   <Link href="/">I am a &quot;default&quot; link without chevron icon!</Link>
 )
 
-export const DefaultTypeWithChevronIcon = () => (
+export const DefaultWithChevronIcon = () => (
   <Link href="/" variant="with-chevron">
-    I am a default link!
+    I am a chevron link!
   </Link>
+)
+
+export const DefaultOnDarkBackground = () => (
+  <div style={{ backgroundColor: '#004699', padding: '40px 80px' }}>
+    <Link href="/" darkBackground>
+      I am a &quot;default&quot; link on a dark background!
+    </Link>
+  </div>
+)
+
+export const DefaultWithChevronIconOnDarkBackground = () => (
+  <div style={{ backgroundColor: '#004699', padding: '40px 80px' }}>
+    <Link href="/" variant="with-chevron" darkBackground>
+      I am a chevron link on a dark background!
+    </Link>
+  </div>
 )
 
 export const InlineTypeInternalLink = () => (
