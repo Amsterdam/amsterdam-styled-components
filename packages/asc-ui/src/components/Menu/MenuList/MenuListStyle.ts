@@ -43,7 +43,7 @@ export default styled.ul<Props>`
 
   ${showHide()}
 
-  [aria-hidden='true'] {
-    display: none;
+  & [aria-hidden='true'] {
+    display: none !important;
   }
 `

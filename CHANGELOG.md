@@ -25,6 +25,8 @@ Prefix the change with one of these keywords:
 - Changed: **BREAKING** elements using `aria-hidden` are no longer set to `display: none`
 - Fixed: BackDrop component is now decoupled from React Portals
 - Fixed: Button in the SearchBar component is now aligned with the TextField
+- Fixed: Toggle now hides elements inside properly
+- Deprecated: `onDarkBackground` prop in `Link`. Use `darkBackground` instead.
 
 ## [0.20.0]
 

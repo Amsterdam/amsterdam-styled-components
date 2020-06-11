@@ -18,11 +18,12 @@ export type Props = {
    */
   linkType?: LinkVariant
   /**
-   * @deprecated use prop onDarkBackground instead
+   * @deprecated use prop darkBackground instead
    */
+  onDarkBackground?: boolean
   color?: string
   focusStyle?: FocusStyle
-  onDarkBackground?: boolean
+  darkBackground?: boolean
 } & TypographyProps
 
 export const BlankLinkStyleCSS = css`
@@ -47,21 +48,21 @@ export const DefaultLinkStyleCSS = css<Props>`
 
   ${IconStyle} {
     margin: ${themeSpacing(1, 1, 0, 0)};
-    ${({ color: colorOverride, onDarkBackground }) =>
-      onDarkBackground
+    ${({ color: colorOverride, darkBackground, onDarkBackground }) =>
+      darkBackground || onDarkBackground
         ? svgFill(themeColor('tint', 'level1'))
         : svgFill(themeColor('tint', 'level7', colorOverride))}
   }
 
   &:hover {
     text-decoration: underline;
-    ${({ color: colorOverride, onDarkBackground }) =>
+    ${({ color: colorOverride, darkBackground, onDarkBackground }) =>
       css`
-        color: ${onDarkBackground
+        color: ${darkBackground || onDarkBackground
           ? themeColor('tint', 'level1')
           : themeColor('supplement', 'main', colorOverride)};
         ${IconStyle} {
-          ${onDarkBackground
+          ${darkBackground || onDarkBackground
             ? svgFill(themeColor('tint', 'level1'))
             : svgFill(themeColor('secondary', 'main', colorOverride))}
         }
