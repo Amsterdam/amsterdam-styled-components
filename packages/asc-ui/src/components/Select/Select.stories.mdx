@@ -1,6 +1,7 @@
 import { createRef, useEffect } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import Select from './Select'
+import Label from '../Label'
 import ErrorMessage from '../ErrorMessage'
 
 export const SelectWithRef = () => {
@@ -158,5 +159,28 @@ to ask multiple questions (text from Design System)
         Option 4 - with a very very long description that overflows
       </option>
     </Select>
+  </Story>
+</Preview>
+
+## With the label component wrapped around
+
+<Preview>
+  <Story name="With the label component wrapped around">
+    <Label htmlFor="select-with-label" label="Test">
+      <Select id="select-with-label">
+        <option value="1">
+          Option 1 - with a very very long description that overflows
+        </option>
+        <option value="2">
+          Option 2 - with a very very long description that overflows
+        </option>
+        <option value="3">
+          Option 3 - with a very very long description that overflows
+        </option>
+        <option value="4">
+          Option 4 - with a very very long description that overflows
+        </option>
+      </Select>
+    </Label>
   </Story>
 </Preview>
