@@ -21,7 +21,6 @@ export type Props = {
    * @deprecated use prop darkBackground instead
    */
   onDarkBackground?: boolean
-  color?: string
   focusStyle?: FocusStyle
   darkBackground?: boolean
 } & TypographyProps
@@ -43,30 +42,33 @@ export const DefaultLinkStyleCSS = css<Props>`
   display: inline-flex;
   text-decoration: none;
   font-weight: 700;
-  color: ${({ color: colorOverride }) =>
-    themeColor('tint', 'level7', colorOverride)};
+  color: ${({ onDarkBackground, darkBackground }) =>
+    onDarkBackground || darkBackground
+      ? themeColor('tint', 'level1')
+      : themeColor('tint', 'level7')};
 
   ${IconStyle} {
     margin: ${themeSpacing(1, 1, 0, 0)};
-    ${({ color: colorOverride, darkBackground, onDarkBackground }) =>
-      darkBackground || onDarkBackground
-        ? svgFill(themeColor('tint', 'level1'))
-        : svgFill(themeColor('tint', 'level7', colorOverride))}
+    ${({ onDarkBackground, darkBackground }) =>
+      svgFill(
+        onDarkBackground || darkBackground
+          ? themeColor('tint', 'level1')
+          : themeColor('tint', 'level7'),
+      )}
   }
 
   &:hover {
     text-decoration: underline;
-    ${({ color: colorOverride, darkBackground, onDarkBackground }) =>
-      css`
-        color: ${darkBackground || onDarkBackground
+    color: ${({ onDarkBackground, darkBackground }) =>
+      onDarkBackground || darkBackground
+        ? themeColor('tint', 'level1')
+        : themeColor('secondary', 'main')};
+    ${({ onDarkBackground, darkBackground }) =>
+      svgFill(
+        onDarkBackground || darkBackground
           ? themeColor('tint', 'level1')
-          : themeColor('supplement', 'main', colorOverride)};
-        ${IconStyle} {
-          ${darkBackground || onDarkBackground
-            ? svgFill(themeColor('tint', 'level1'))
-            : svgFill(themeColor('secondary', 'main', colorOverride))}
-        }
-      `}
+          : themeColor('secondary', 'main'),
+      )};
   }
 `
 
