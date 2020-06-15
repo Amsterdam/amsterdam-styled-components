@@ -105,12 +105,7 @@ export const getTypographyFromTheme = () => ({
   }
   const { breakpoints, ...otherProps } = styles
   return css`
-    ${generateCSSFromTypography(
-      {
-        ...otherProps,
-      },
-      gutterBottom,
-    )}
+    ${generateCSSFromTypography(otherProps, gutterBottom)}
     ${() =>
       breakpoints
         ? Object.entries(breakpoints).map(

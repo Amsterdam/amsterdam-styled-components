@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { CustomCssPropsType } from '../../utils'
-import { Theme } from '../../types'
+import { ThemeFn } from '../../utils/themeUtils'
 
 export type Props = {
-  color?: Theme.ColorType
+  color?: string | ThemeFn<string>
   size?: number
 } & CustomCssPropsType
 
