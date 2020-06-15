@@ -55,9 +55,10 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
       }
     : {}
 
-  const [listRef, edgeDetection] = useEdgeDetection<HTMLUListElement>([
-    menuOpen,
-  ])
+  const [listRef, edgeDetection] = useEdgeDetection<HTMLUListElement>(
+    [menuOpen],
+    { top: false, right: true, bottom: false, left: true },
+  )
 
   const handleOnExpand = React.useCallback(
     (open) => onExpand && onExpand(open),
