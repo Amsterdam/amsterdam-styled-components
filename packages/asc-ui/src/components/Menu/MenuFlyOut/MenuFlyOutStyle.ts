@@ -33,7 +33,7 @@ export default styled(MenuItemStyle).attrs({
 
   &[aria-hidden='false'] {
     ${MenuListStyle} {
-      display: block;
+      display: flex;
     }
   }
 
