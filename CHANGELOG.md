@@ -16,6 +16,8 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+## [0.21.1]
+
 - Added: general `deprecatedWarning`
 - Deprecated: `color` prop in `Paragraph` and `Typography` components. Instead use your own custom style rules.
 - Changed: updated the styling of `Alert` conform to design system
