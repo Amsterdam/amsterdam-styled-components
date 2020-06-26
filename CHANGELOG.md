@@ -16,6 +16,8 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+## [0.21.1]
+
 - Added: general `deprecatedWarning`
 - Deprecated: `color` prop in `Paragraph` and `Typography` components. Instead use your own custom style rules.
 - Changed: updated the styling of `Alert` conform to design system
@@ -28,6 +30,7 @@ Prefix the change with one of these keywords:
 - Fixed: Button in the SearchBar component is now aligned with the TextField
 - Fixed: Toggle now hides elements inside properly
 - Deprecated: `onDarkBackground` prop in `Link`. Use `darkBackground` instead.
+- Added: make it possible to define which boundaries should be used for edge detection
 
 ## [0.20.0]
 

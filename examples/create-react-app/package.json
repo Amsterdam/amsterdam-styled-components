@@ -9,8 +9,8 @@
     "test": "react-scripts test"
   },
   "dependencies": {
-    "@datapunt/asc-assets": "^0.20.0",
-    "@datapunt/asc-ui": "^0.20.0",
+    "@datapunt/asc-assets": "^0.21.1",
+    "@datapunt/asc-ui": "^0.21.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
