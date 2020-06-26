@@ -80,7 +80,8 @@ import SearchBar, { SearchBarStyles } from './components/SearchBar'
 import SearchBarToggle, {
   SearchBarToggleStyles,
 } from './components/SearchBarToggle'
-import Select from './components/Select'
+import Select, { SelectStyle } from './components/Select'
+
 import Spinner from './components/Spinner/Spinner'
 import TextArea, { TextAreaStyles } from './components/TextArea'
 import TextField, { TextFieldStyles } from './components/TextField'
@@ -157,6 +158,7 @@ export const styles = {
   BlockquoteStyle,
   ErrorMessageStyle,
   IconStyle,
+  SelectStyle,
   LinkStyle,
   HeadingStyle,
   CustomHTMLBlockStyle,
