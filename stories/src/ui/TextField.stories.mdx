@@ -1,0 +1,102 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { ErrorMessage, TextField } from '@datapunt/asc-ui'
+
+export const WithAControlledState = () => {
+  const [value, setValue] = React.useState()
+  return (
+    <React.Fragment>
+      <TextField
+        label="Controlled component"
+        onChange={(e) => setValue(e.target.value)}
+      />
+      <br /> {value ? `The user types: ${value}` : 'Waiting for user input...'}
+    </React.Fragment>
+  )
+}
+
+<Meta
+  title="UI/Form/TextField"
+  component={TextField}
+  decorators={[
+    (storyFn) => (
+      <div
+        style={{
+          width: '400px',
+          padding: '40px 10px',
+        }}
+      >
+        {storyFn()}
+      </div>
+    ),
+  ]}
+/>
+
+# TextField
+
+Single line text input field. Use the Textarea component for multi line text input.
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/657629-text-input)
+
+**Component status: experimental**
+
+## Default state (new)
+
+<Preview>
+  <Story name="Default state">
+    <TextField label="Label" />
+  </Story>
+</Preview>
+
+## Disabled state
+
+<Preview>
+  <Story name="Disabled state">
+    <TextField label="Disabled" disabled />
+  </Story>
+</Preview>
+
+## Error state
+
+<Preview>
+  <Story name="Error state">
+    <React.Fragment>
+      <TextField label="With Error Message" error />
+      <ErrorMessage message="Error message" />
+      <br />
+      <br />
+      <TextField label="Without Error Message" error />
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## With placeholder
+
+<Preview>
+  <Story name="With placeholder">
+    <TextField placeholder="A placeholder" />
+  </Story>
+</Preview>
+
+## With autoFocus
+
+<Preview>
+  <Story name="With autoFocus">
+    <TextField label="This will focus automatically" autoFocus />
+  </Story>
+</Preview>
+
+## With an accessible label for ScreenReader
+
+<Preview>
+  <Story name="With an accessible label for ScreenReader">
+    <TextField srOnly id="text-filed-id" />
+  </Story>
+</Preview>
+
+## With a controlled state
+
+<Preview>
+  <Story name="With a controlled state">
+    <WithAControlledState />
+  </Story>
+</Preview>

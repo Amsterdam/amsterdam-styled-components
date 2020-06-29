@@ -1,0 +1,34 @@
+import styled from 'styled-components'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { breakpoint } from '@datapunt/asc-ui'
+
+<Meta title="Utils/breakpoint" component={breakpoint} />
+
+# breakpoint
+
+A function to retrieve a breakpoint value from a theme
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <React.Fragment>
+      {(() => {
+        const MyDivWithThemeBreakpointDiv = styled.div`
+          @media screen and ${breakpoint('min-width', 'laptopM')} {
+            display: none;
+          }
+        `
+        return (
+          <React.Fragment>
+            Component below is only visible under breakpoint `laptopM` and will
+            print: I&apos;m visible
+            <MyDivWithThemeBreakpointDiv>
+              I'm visible
+            </MyDivWithThemeBreakpointDiv>
+          </React.Fragment>
+        )
+      })()}
+    </React.Fragment>
+  </Story>
+</Preview>

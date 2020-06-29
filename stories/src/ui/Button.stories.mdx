@@ -1,0 +1,156 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Button, ShareButton } from '@datapunt/asc-ui'
+import styled from 'styled-components'
+import {
+  Download,
+  Close,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Email,
+  Print,
+} from '@datapunt/asc-assets'
+
+<Meta title="UI/Form/Button" component={Button} />
+
+# Button
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/25ff19-buttons)
+
+**Component status: experimental**
+
+## Default / Primary variant
+
+export const ButtonBar = styled.div`
+  display: flex;
+  & > * {
+    margin-right: 5px;
+  }
+`
+
+<Preview>
+  <Story name="Default / Primary variant">
+    <React.Fragment>
+      <ButtonBar>
+        <Button variant="primary">Normal</Button>
+        <Button variant="primary" disabled>
+          Disabled
+        </Button>
+        <Button variant="primary" iconSize={14} iconLeft={<Download />}>
+          With icon
+        </Button>
+      </ButtonBar>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Secondary variant
+
+<Preview>
+  <Story name="Secondary variant">
+    <React.Fragment>
+      <ButtonBar>
+        <Button variant="secondary">Normal</Button>
+        <Button variant="secondary" disabled>
+          Disabled
+        </Button>
+        <Button variant="secondary" iconSize={14} iconLeft={<Download />}>
+          With icon
+        </Button>
+        <Button variant="secondary" taskflow>
+          Taskflow state
+        </Button>
+      </ButtonBar>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Tertiary variant
+
+<Preview>
+  <Story name="Tertiary variant">
+    <React.Fragment>
+      <ButtonBar>
+        <Button variant="tertiary">Normal</Button>
+        <Button variant="tertiary" disabled>
+          Disabled
+        </Button>
+        <Button variant="tertiary" iconSize={14} iconLeft={<Download />}>
+          With icon
+        </Button>
+      </ButtonBar>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Primary Inverted variant
+
+<Preview>
+  <Story name="Primary Inverted variant">
+    <React.Fragment>
+      <ButtonBar>
+        <Button variant="primaryInverted">Normal</Button>
+        <Button variant="primaryInverted" disabled>
+          Disabled
+        </Button>
+        <Button variant="primaryInverted" iconSize={14} iconLeft={<Download />}>
+          With icon
+        </Button>
+      </ButtonBar>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Text Button variant
+
+<Preview>
+  <Story name="Text Button variant">
+    <React.Fragment>
+      <ButtonBar>
+        <Button variant="textButton">Normal</Button>
+        <Button variant="textButton" disabled>
+          Disabled
+        </Button>
+        <Button variant="textButton" iconSize={14} iconLeft={<Download />}>
+          With icon
+        </Button>
+      </ButtonBar>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## With only an icon
+
+<Preview>
+  <Story name="With only an icon">
+    <React.Fragment>
+      <Button size={60} variant="blank" iconSize={40} icon={<Close />} />
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Social buttons
+
+<Preview>
+  <Story name="Social buttons">
+    <React.Fragment>
+      <ButtonBar>
+        <ShareButton hoverColor="#3b5999" iconSize={30}>
+          <Facebook />
+        </ShareButton>
+        <ShareButton hoverColor="#55acee">
+          <Twitter />
+        </ShareButton>
+        <ShareButton hoverColor="#0077B5">
+          <Linkedin />
+        </ShareButton>
+        <ShareButton>
+          <Email />
+        </ShareButton>
+        <ShareButton>
+          <Print />
+        </ShareButton>
+      </ButtonBar>
+    </React.Fragment>
+  </Story>
+</Preview>

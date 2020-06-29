@@ -1,0 +1,73 @@
+import { createRef, useEffect } from 'react'
+import { action } from '@storybook/addon-actions'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Input, Label } from '@datapunt/asc-ui'
+
+<Meta title="UI/Form/Input" component={Input} />
+
+# Input
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/657629-text-input)
+
+**Component status: experimental**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <React.Fragment>
+      <Input
+        onBlur={action('onBlur called')}
+        onChange={(e) => {
+          action(`onChange called: ${e.target.value}`)(e)
+        }}
+        onFocus={action('onFocus called')}
+      />
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## With label
+
+<Preview>
+  <Story name="With label">
+    <React.Fragment>
+      <Label htmlFor="some-input" label="Some label" />
+      <Input
+        id="some-input"
+        onBlur={action('onBlur called')}
+        onChange={(e) => {
+          action(`onChange called: ${e.target.value}`)(e)
+        }}
+        onFocus={action('onFocus called')}
+      />
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## With Ref
+
+<Preview>
+  <Story name="With Ref">
+    <React.Fragment>
+      {(() => {
+        const ref = createRef()
+        useEffect(() => {
+          const element = ref.current
+          if (!element) {
+            return undefined
+          }
+          function onInput(event) {
+            // eslint-disable-next-line no-console
+            console.log('Value changed!', event.target.value)
+          }
+          element.addEventListener('input', onInput)
+          return () => {
+            element.removeEventListener('input', onInput)
+          }
+        }, [ref])
+        return <Input ref={ref} />
+      })()}
+    </React.Fragment>
+  </Story>
+</Preview>

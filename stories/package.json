@@ -1,0 +1,34 @@
+{
+  "name": "stories",
+  "private": true,
+  "license": "MPL-2.0",
+  "version": "0.21.1",
+  "author": "Datapunt Amsterdam",
+  "homepage": "https://github.com/Amsterdam/amsterdam-styled-components#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Amsterdam/amsterdam-styled-components.git",
+    "directory": "packages/stories"
+  },
+  "main": "lib/stories.js",
+  "scripts": {
+    "start": "node_modules/.bin/start-storybook -p 6006 -c .storybook -s ./packages/asc-assets/static",
+    "build": "build-storybook -c .storybook -o lib"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^6.0.0-beta.37",
+    "@storybook/addon-actions": "^6.0.0-beta.37",
+    "@storybook/addon-docs": "^6.0.0-beta.37",
+    "@storybook/addon-knobs": "^6.0.0-beta.37",
+    "@storybook/addon-links": "^6.0.0-beta.37",
+    "@storybook/addon-viewport": "^6.0.0-beta.37",
+    "@storybook/react": "^6.0.0-beta.37",
+    "eslint-plugin-mdx": "^1.7.0"
+  },
+  "dependencies": {
+    "@datapunt/asc-assets": "^0.21.1",
+    "@datapunt/asc-ui": "^0.21.1",
+    "react": "^16.13.1",
+    "styled-components": "^5.1.1"
+  }
+}

@@ -3,11 +3,6 @@ import { BACKDROP_Z_INDEX } from '../components/shared/constants'
 import { Theme } from '../types'
 import { fromProps } from './fromProps'
 
-import BreakpointsInterface = Theme.BreakpointsInterface
-import ThemeInterface = Theme.ThemeInterface
-import TypographyInterface = Theme.TypographyInterface
-import TypographyElementStyle = Theme.TypographyElementStyle
-
 type ThemeProp = {
   theme: Theme.ThemeInterface
 }
@@ -28,8 +23,8 @@ export type ThemeFn<T> = ({ theme }: { theme: Theme.ThemeInterface }) => T
  * `
  */
 export const withTheme = <T extends any[], U = any>(
-  cb: (theme: ThemeInterface, ...params: T) => U,
-) => (...params: T) => ({ theme }: { theme: ThemeInterface }): U =>
+  cb: (theme: Theme.ThemeInterface, ...params: T) => U,
+) => (...params: T) => ({ theme }: { theme: Theme.ThemeInterface }): U =>
   cb(theme, ...params)
 
 type ThemeColorParameters = [Theme.ColorType?, string?, string?]
@@ -58,7 +53,7 @@ export const themeColor = withTheme<ThemeColorParameters, string>(
   },
 )
 
-type BreakpointsType = [Theme.TypeBreakpoint, keyof BreakpointsInterface]
+type BreakpointsType = [Theme.TypeBreakpoint, keyof Theme.BreakpointsInterface]
 
 export const breakpoint = withTheme<BreakpointsType>((theme, type, variant) => {
   const breakpointFunc: Theme.GetBreakpointFunc = getValueFromTheme(
@@ -77,7 +72,7 @@ const generateCSSFromTypography = (
     letterSpacing,
     lineHeight,
     marginBottom,
-  }: Partial<TypographyElementStyle>,
+  }: Partial<Theme.TypographyElementStyle>,
   gutterBottom?: number,
 ) => css`
   color: ${color};
@@ -112,7 +107,7 @@ export const getTypographyFromTheme = () => ({
             ([breakpointFromTypography, typoStyles]) => css`
               @media screen and ${breakpoint(
                   'min-width',
-                  <keyof BreakpointsInterface>breakpointFromTypography,
+                  <keyof Theme.BreakpointsInterface>breakpointFromTypography,
                 )} {
                 ${generateCSSFromTypography(typoStyles || {}, gutterBottom)}
               }
@@ -122,11 +117,11 @@ export const getTypographyFromTheme = () => ({
   `
 }
 
-type BreakpointKeys = keyof BreakpointsInterface
+type BreakpointKeys = keyof Theme.BreakpointsInterface
 
 type GetTypographyValueFromPropertyParameters = [
-  keyof TypographyInterface,
-  keyof TypographyElementStyle,
+  keyof Theme.TypographyInterface,
+  keyof Theme.TypographyElementStyle,
   BreakpointKeys?,
 ]
 
@@ -146,7 +141,7 @@ export const getTypographyValueFromProperty = withTheme<
 export const DEFAULT_OUTLINE_WIDTH = 3
 
 export const outlineStyle = (
-  theme: ThemeInterface,
+  theme: Theme.ThemeInterface,
   width = DEFAULT_OUTLINE_WIDTH,
   offset = 0,
 ) => css`
@@ -289,7 +284,7 @@ export const mapToBreakpoints = (
   theme: Theme.ThemeInterface,
 ) => {
   const breakpointVariants = Object.keys(theme.breakpoints) as Array<
-    keyof BreakpointsInterface
+    keyof Theme.BreakpointsInterface
   >
   return css`
     ${sizes
@@ -313,8 +308,8 @@ export const mapToBreakpoints = (
 }
 
 export interface ShowHideTypes {
-  showAt?: keyof BreakpointsInterface
-  hideAt?: keyof BreakpointsInterface
+  showAt?: keyof Theme.BreakpointsInterface
+  hideAt?: keyof Theme.BreakpointsInterface
 }
 
 type ShowHideProps = ThemeProp & ShowHideTypes

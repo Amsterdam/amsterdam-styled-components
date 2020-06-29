@@ -13,7 +13,7 @@ install:
 script:
   - yarn lint
   - yarn test
-  - yarn build-storybook
+  - yarn build:storybook
 branches:
   only:
     - master
@@ -21,7 +21,7 @@ before_deploy:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
 deploy:
   - provider: pages
-    local_dir: .sb
+    local_dir: ./stories/lib
     skip_cleanup: true
     github_token: $GITHUB_TOKEN
     on:

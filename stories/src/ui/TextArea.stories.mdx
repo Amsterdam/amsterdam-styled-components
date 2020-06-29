@@ -1,0 +1,48 @@
+import { createRef, useEffect } from 'react'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { TextArea } from '@datapunt/asc-ui'
+
+<Meta title="UI/Typography/TextArea" component={TextArea} />
+
+# Textarea
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/939dd9-text-area)
+
+**Component status: experimental**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <React.Fragment>
+      <TextArea value="Some text in the textarea" />
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## With ref
+
+<Preview>
+  <Story name="With ref">
+    <React.Fragment>
+      {(() => {
+        const ref = createRef()
+        useEffect(() => {
+          const element = ref.current
+          if (!element) {
+            return undefined
+          }
+          function onInput(event) {
+            // eslint-disable-next-line no-console
+            console.log('Value changed!', event.target.value)
+          }
+          element.addEventListener('input', onInput)
+          return () => {
+            element.removeEventListener('input', onInput)
+          }
+        }, [ref])
+        return <TextArea ref={ref} />
+      })()}
+    </React.Fragment>
+  </Story>
+</Preview>
