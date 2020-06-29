@@ -12,8 +12,8 @@
   },
   "main": "lib/stories.js",
   "scripts": {
-    "start": "node_modules/.bin/start-storybook -p 6006 -c .storybook -s ./packages/asc-assets/static",
-    "build": "build-storybook -c .storybook -o lib"
+    "start": "node_modules/.bin/start-storybook -p 6006 -c .storybook -s ../packages/asc-assets/static",
+    "build": "build-storybook -c .storybook -s ../packages/asc-assets/static -o lib"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^6.0.0-beta.37",
