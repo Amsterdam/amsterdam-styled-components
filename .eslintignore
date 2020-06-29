@@ -1,8 +1,9 @@
-packages/**/lib/
-packages/**/node_modules/
-packages/asc-assets/*.js
+packages/asc-assets/**/*.js
 packages/asc-assets/src/icons/
 *.d.ts
 node_modules/
 config/
 coverage/
+lib
+es
+examples

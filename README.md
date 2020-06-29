@@ -1,4 +1,4 @@
-# Amsterdam Styled Components (asc)
+# Amsterdam Styled Components (ASC)
 
 [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
 [![Storybook](https://github.com/storybooks/brand/blob/master/badge/badge-storybook.svg)](https://github.com/storybooks/storybook)
@@ -8,52 +8,41 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4faed618-ee95-4a15-bebb-448d215dbb38/deploy-status)](https://app.netlify.com/sites/amsterdam-styled-components/deploys)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-[Demo site with the storybook of the components](https://amsterdam.github.io/amsterdam-styled-components)
+[Demo site with the storybook of the components](https://amsterdam.github.io/amsterdam-styled-components/?path=/docs/introduction-welcome--page)
 
-## Getting started
+## Use components in your project
 
-Start by installing the latest versions of `asc-ui`, `asc-assets` and `styled-components`. We're including `styled-components` as a peer dependency of Amsterdam Styled Components so you can pick which version of `styled-components` you want to use.
+Please read the [getting started](https://github.com/Amsterdam/amsterdam-styled-components/tree/master/docs/GETTING_STARTED.md) documentation
 
-```bash
-npm install @datapunt/asc-ui @datapunt/asc-assets styled-components
-```
+## Contributing / Creating components
 
-To add Amsterdam Styled Components to your React application you will have to import the following components to your code:
+Please read the [CONTRIBUTION.md](https://github.com/Amsterdam/amsterdam-styled-components/tree/master/docs/CONTRIBUTING.md)
 
-- `ThemeProvider` the provider of various theme variables which are used throughout the application.
-- `GlobalStyle` a component that provides the global styles needed, such a various resets to get the same behavior in different browsers.
+## Design system
 
-For example, this basic application shows a simple button and adds the aforementioned components:
+We aim the components to be aligned with the [Amsterdam Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/39359e-design-system).
+However, we don't want to be dependent on waiting for design decisions, because this would slow down development. Moreover, specs and explanations are sometimes missing, so these also need to be updated in the design system while aligning component.
+This is why we still have a lot of components that need to be aligned with the design system and get their "approval". The state of a component indicates whether it is ‘approved’ as officially aligned. There are two possible states:
 
-```jsx
-import { Button, GlobalStyle, ThemeProvider } from '@datapunt/asc-ui'
-import React from 'react'
-import ReactDOM from 'react-dom'
+1. **stable**: Stable components are aligned and "approved" by the design system. These components are usually embedded in the corresponding the design system.
+2. **experimental**: These components are simply not yet aligned and reviewed by the Design system, but they can be used in your project if you want. Keep in mind they can change in the near future when aligning them.
 
-ReactDOM.render(
-  <ThemeProvider>
-    <GlobalStyle />
-    <Button color="primary">Click me!</Button>
-  </ThemeProvider>,
-  document.getElementById('root'),
-)
-```
+Some components don't have a state in the stories, consider these "experimental".
 
-## Including fonts
+[More info can be found here](https://github.com/Amsterdam/amsterdam-styled-components/tree/master/docs/CONTRIBUTING.md#aligning)
 
-By default the fonts used by Amsterdam are not loaded into the page as these are licensed fonts. If you wish to include these fonts follow the steps in the `asc-assets` [documentation](packages/asc-assets/README.md#Fonts).
+If you have any questions, please contact one of the [maintainers](https://github.com/Amsterdam/amsterdam-styled-components/tree/master/docs/MAINTAINERS.md) to get access to the [DTS slack group](https://dstamsterdam.slack.com)
 
-## Supporting older browsers
+## Structure
 
-If you are going to support older browsers such as Internet Explorer 11 it's important to include some polyfills to enable all of the functionality to work. Since we're shipping code in an ES2015 syntax as well as using ES Modules it's important that you also convert the code itself to the older ES5 syntax that these browsers require.
+This project is a monorepo with 2 packages
 
-To do this we highly recommend using a tool such as [babel-env](https://babeljs.io/docs/en/babel-preset-env) together with WebPack to automatically polyfill and transform the code to the platform you want to support.
-
-It's also recommended to polyfill the `object-fit` property if your target does not support it using a [polyfill](https://www.npmjs.com/package/objectFitPolyfill).
+- [asc-assets](packages/asc-assets) - contains fonts and icons (in directory `static`) and react-icons
+- [asc-ui](packages/asc-ui) - the react implementation of the components
 
 ## Vision
 
-Consistency is always a painpoint in software engineering, especially when it comes to web styling
+Consistency is always an issue in software engineering, especially when it comes to web styling
 and UX. That is why we think a component library who captures styling but also certain UX aspects,
 e.g. button loading state, is highly beneficial for organisations with large or multiple
 applications, such as Datapunt Amsterdam.
@@ -66,7 +55,7 @@ much as possible. On the other hand we think that the benefits outweigh the down
 One of the biggest risks is the way a library needs be maintained in order to guarentee quality and
 keep developers motivated to continue using it. This is at risk when:
 
-- Maintainers stop maintaining, e.g. they leave Datapunt
+- Maintainers stop maintaining, e.g. they leave the organisation or company
 - Maintainers do not have the time to properly review PR's, e.g. there is no budget/time to spend
   on the project
 - Tests are neglected
@@ -99,66 +88,6 @@ The guidelines can be found here (TBD)
   for most of the time if we have a proper updating strategy in our guidelines.
 - More time to set up, develop and maintain. However, this is an investment for future products that
   will result in decreasing development time drastically.
-
-### Contributing
-
-Please read the [CONTRIBUTION.md](./docs/CONTRIBUTING.md)
-
-## Structure
-
-This project is a monorepo with 2 packages
-
-- [asc-assets](packages/asc-assets) - contains fonts and icons (in directory `static`) and react-icons
-- [asc-ui](packages/asc-ui) - the react implementation of the components
-
-## Usage
-
-Make sure you have the right node version set (see the package.json). Run `yarn` to install the
-dependencies. Next run `yarn start` to start storybook!
-
-### While developing
-
-Something you want to see your changes immediately in your project. Follow these steps to link asc
-to your project.
-
-1. Run `yarn build:watch`, this will watch your files and transpile them to the package lib
-   directory.
-2. cd to the package you want to test, run `yarn link`.
-3. Go to the repo where you want to use your package and run
-   `yarn link <package-name>`. The `<package-name>` can be found in the `package.json` you linked in
-   step 2.
-
-Now you can import the package like you would do like a normal npm dependency. Changes you will make
-in your package will be seen in your repo.
-
-Example: linking the `asc-ui` package.
-
-```
-cd amsterdam-styled-components/packages/asc-ui  # go into the package directory
-yarn link                                       # creates global link
-cd path-to-your-main-project                    # go into the dir of your main project
-yarn link "@datapunt/asc-ui"                    # link-install the package
-```
-
-There is a known issue when developing with `yarn link` and using Hooks
-[(click here for details)](https://reactjs.org/warnings/invalid-hook-call-warning.html). The cause
-is that two React instances are used when using `link`. To solve this problem add this code to `webpack.common.js`:
-
-```javascript
-  resolve: {
-    modules: ['node_modules'],
-    extensions: ['.js', '.jsx'],
-    alias: {
-      react: path.resolve('./node_modules/react'),
-      'react-dom': path.resolve('./node_modules/react-dom'),
-    },
-  },
-```
-
-### References and inspiration
-
-- [Material ui](https://material-ui.com/getting-started/installation/)
-- [styled-components](https://www.styled-components.com/)
 
 ### Extra information
 

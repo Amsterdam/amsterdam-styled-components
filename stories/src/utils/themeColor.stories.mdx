@@ -1,0 +1,25 @@
+import styled from 'styled-components'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { themeColor } from '@datapunt/asc-ui'
+
+<Meta title="Utils/themeColor" component={themeColor} />
+
+# themeColor
+
+A function to retrieve a color from a theme
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <React.Fragment>
+      {(() => {
+        const MyThemeColoredDiv = styled.div`
+          color: ${themeColor('tint', 'level1')};
+          background-color: ${themeColor('primary')};
+        `
+        return <MyThemeColoredDiv>Primary</MyThemeColoredDiv>
+      })()}
+    </React.Fragment>
+  </Story>
+</Preview>

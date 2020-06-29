@@ -1,0 +1,32 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { CustomHTMLBlock } from '@datapunt/asc-ui'
+
+<Meta title="UI/CustomHTMLBlock" component={CustomHTMLBlock} />
+
+Doesn't exist in Design System yet
+
+**Component status: Experimental**
+
+## HTML passed as a child
+
+<Preview>
+  <Story name="HTML passed as a child">
+    <CustomHTMLBlock>
+      <h1>Hello, I am a styled h1</h1>
+      <p>And I am a styled paragraph, we are passed as child components</p>
+    </CustomHTMLBlock>
+  </Story>
+</Preview>
+
+## HTML passed via body prop (as a string)
+
+<Preview>
+  <Story name="HTML passed as via body prop (as a string)">
+    <CustomHTMLBlock
+      body={`
+        <h2>Hello, I'm a styled h2</h2>
+        <p>And I am a styled paragraph passed, we are passed via the body prop</p>
+      `}
+    />
+  </Story>
+</Preview>

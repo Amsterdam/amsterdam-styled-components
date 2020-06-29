@@ -1,0 +1,100 @@
+import styled from 'styled-components'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Link, Paragraph, Heading, Alert, styles } from '@datapunt/asc-ui'
+
+export const Decorator = styled.div`
+  ${styles.AlertStyle} {
+    margin: 30px 10px;
+  }
+`
+
+<Meta
+  title="UI/Alert"
+  component={Alert}
+  decorators={[(storyFn) => <Decorator>{storyFn()}</Decorator>]}
+/>
+
+# Alert
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/901ede-alert)
+
+**Component status: stable**
+
+## Variants of Alert
+
+<Preview>
+  <Story name="Variants">
+    <React.Fragment>
+      <Alert>Normal</Alert>
+      <Alert level="attention">Attention</Alert>
+      <Alert level="error">Error</Alert>
+      <Alert level="warning">Warning</Alert>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Normal state of Alert
+
+<Preview>
+  <Story name="Normal State">
+    <React.Fragment>
+      <Alert
+        level="normal"
+        heading="With a heading and content"
+        content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, vitae."
+      />
+      <Alert
+        dismissible
+        level="attention"
+        content="Without header, with close button"
+      />
+      <Alert
+        dismissible
+        level="warning"
+        heading="With a heading, content and close button"
+        content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, vitae."
+      />
+      <Alert
+        dismissible
+        level="error"
+        heading="With a heading, content and close button"
+        content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, vitae."
+      />
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Alert with custom children
+
+<Preview>
+  <Story name="With Custom Children">
+    <React.Fragment>
+      <Alert level="warning" dismissible>
+        <Heading>With a normal heading and paragraph</Heading>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error,
+          vitae.
+        </Paragraph>
+      </Alert>
+      <Alert level="attention" dismissible>
+        <Paragraph>
+          Just a looooong paragraph with close button: Lorem ipsum dolor sit
+          amet, consectetur adipisicing elit. Aut itaque necessitatibus
+          officiis, quasi quia quisquam sit ut! Dolorum excepturi, inventore!
+          Accusamus ad illo molestiae vel. Deleniti excepturi iusto neque
+          quisquam!
+        </Paragraph>
+        <Link href="/" variant="with-chevron" darkBackground>
+          A link
+        </Link>
+      </Alert>
+      <Alert level="error" dismissible>
+        <Heading as="h3">A header</Heading>
+        <Paragraph>With a paragraph</Paragraph>
+        <Link href="/" variant="with-chevron" darkBackground>
+          A link
+        </Link>
+      </Alert>
+    </React.Fragment>
+  </Story>
+</Preview>

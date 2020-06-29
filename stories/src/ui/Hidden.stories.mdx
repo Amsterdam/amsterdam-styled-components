@@ -1,0 +1,53 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Hidden } from '@datapunt/asc-ui'
+
+<Meta title="Headless/Hidden" component={Hidden} />
+
+# Hidden
+
+A (headless) component that you can wrap around other components to decide if they should render according to a specific mediaQuery. This component, as it is headless, doesn't render an html element, only the children or nothing.
+This component uses the [useMatchMedia](https://github.com/Amsterdam/amsterdam-styled-components/tree/master/packages/asc-ui/src/utils/hooks/useMatchMedia.ts).
+
+## With min breakpoint
+
+<Preview>
+  <Story name="With min breakpoint">
+    <React.Fragment>
+      <Hidden minBreakpoint="tabletM">I am hidden from tabletM</Hidden>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## With max breakpoint
+
+<Preview>
+  <Story name="With max breakpoint">
+    <React.Fragment>
+      <Hidden maxBreakpoint="tabletM">I am hidden from tabletM</Hidden>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## With min and max breakpoint
+
+<Preview>
+  <Story name="With min and max breakpoint">
+    <React.Fragment>
+      <Hidden minBreakpoint="mobileS" maxBreakpoint="laptop">
+        I am hidden from tabletM
+      </Hidden>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## With a custom query
+
+<Preview>
+  <Story name="With a custom query">
+    <React.Fragment>
+      <Hidden query="(min-width: 300px) and (max-width: 600px)">
+        I am hidden from tabletM
+      </Hidden>
+    </React.Fragment>
+  </Story>
+</Preview>
