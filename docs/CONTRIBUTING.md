@@ -138,12 +138,3 @@ case. Otherwise just run this command (if you are using nvm):
 `rm -Rf node_modules && nvm install 10 && nvm alias default 10 && yarn cache clean && yarn`
 
 Still having trouble? Contact one of our [core maintainers](./MAINTAINERS.md)
-
-## Known issues
-
-- ESLint is taking very VERY long, due to eslint-config-prettier...
-- When deploying to github pages with `npm run deploy-storybook` there are \*.d definition files
-  generated. These should not be checked in and can be discarded without problems.
-- When our when storybook is build, some components don't have the style they have to get. This
-  problem is caused when for example a css object is imported from a file, that imported the target
-  css (exported more than twice).

@@ -7,7 +7,7 @@ import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks'
 import sortStories from './util/sort-stories'
 
 const SORT_ORDER = {
-  Introduction: ['Welcome', 'Getting Started', 'Contributing'],
+  Introduction: ['Welcome', 'Getting Started', 'Contributing', 'Changelog'],
   UI: [],
   Headless: [],
   Utils: [],

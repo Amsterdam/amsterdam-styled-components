@@ -1,5 +1,6 @@
 import { createRef, useEffect } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
 import { TextArea } from '@datapunt/asc-ui'
 
 <Meta title="UI/Typography/TextArea" component={TextArea} />
@@ -15,15 +16,25 @@ import { TextArea } from '@datapunt/asc-ui'
 <Preview>
   <Story name="Default">
     <React.Fragment>
-      <TextArea value="Some text in the textarea" />
+      <TextArea />
     </React.Fragment>
   </Story>
 </Preview>
 
-## With ref
+## With a value
 
 <Preview>
-  <Story name="With ref">
+  <Story name="With a value">
+    <React.Fragment>
+      <TextArea value="Some text as value in the textarea" />
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## With ref (check actions tab)
+
+<Preview>
+  <Story name="With ref (check actions tab)">
     <React.Fragment>
       {(() => {
         const ref = createRef()
@@ -33,8 +44,7 @@ import { TextArea } from '@datapunt/asc-ui'
             return undefined
           }
           function onInput(event) {
-            // eslint-disable-next-line no-console
-            console.log('Value changed!', event.target.value)
+            action(`Value changed! ${event.target.value}`)(event)
           }
           element.addEventListener('input', onInput)
           return () => {

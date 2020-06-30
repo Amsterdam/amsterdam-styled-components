@@ -13,14 +13,13 @@ const StyledLabel = styled.div`
 `
 
 export default {
-  title: 'UI/IconList',
+  title: 'Assets/Icons',
   decorators: [
     (storyFn: () => React.ReactNode) => (
       <div
         style={{
           display: 'flex',
           flexWrap: 'wrap',
-          padding: '40px 10px',
           height: '100%',
         }}
       >
