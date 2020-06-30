@@ -8,17 +8,184 @@ import { themeColor } from '@datapunt/asc-ui'
 
 A function to retrieve a color from a theme
 
-## Default
+## Primary colors
 
 <Preview>
-  <Story name="Default">
+  <Story name="Primary colors">
     <React.Fragment>
       {(() => {
-        const MyThemeColoredDiv = styled.div`
+        const Primary = styled.div`
           color: ${themeColor('tint', 'level1')};
           background-color: ${themeColor('primary')};
         `
-        return <MyThemeColoredDiv>Primary</MyThemeColoredDiv>
+        const Secondary = styled.div`
+          color: ${themeColor('tint', 'level1')};
+          background-color: ${themeColor('secondary')};
+        `
+        return (
+          <React.Fragment>
+            <Primary>themeColor(&apos;primary&apos;)</Primary>
+            <Secondary>themeColor(&apos;secondary&apos;)</Secondary>
+          </React.Fragment>
+        )
+      })()}
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Tints
+
+<Preview>
+  <Story name="Tints">
+    <React.Fragment>
+      {(() => {
+        const LevelOne = styled.div`
+          color: ${themeColor('tint', 'level7')};
+          background-color: ${themeColor('tint', 'level1')};
+        `
+        const LevelTwo = styled.div`
+          color: ${themeColor('tint', 'level7')};
+          background-color: ${themeColor('tint', 'level2')};
+        `
+        const LevelThree = styled.div`
+          color: ${themeColor('tint', 'level7')};
+          background-color: ${themeColor('tint', 'level3')};
+        `
+        const LevelFour = styled.div`
+          color: ${themeColor('tint', 'level7')};
+          background-color: ${themeColor('tint', 'level4')};
+        `
+        const LevelFive = styled.div`
+          color: ${themeColor('tint', 'level1')};
+          background-color: ${themeColor('tint', 'level5')};
+        `
+        const LevelSix = styled.div`
+          color: ${themeColor('tint', 'level1')};
+          background-color: ${themeColor('tint', 'level6')};
+        `
+        const LevelSeven = styled.div`
+          color: ${themeColor('tint', 'level1')};
+          background-color: ${themeColor('tint', 'level7')};
+        `
+        return (
+          <React.Fragment>
+            <LevelOne>
+              themeColor(&apos;tint&apos;, &apos;level1&apos;)
+            </LevelOne>
+            <LevelTwo>
+              themeColor(&apos;tint&apos;, &apos;level2&apos;)
+            </LevelTwo>
+            <LevelThree>
+              themeColor(&apos;tint&apos;, &apos;level3&apos;)
+            </LevelThree>
+            <LevelFour>
+              themeColor(&apos;tint&apos;, &apos;level4&apos;)
+            </LevelFour>
+            <LevelFive>
+              themeColor(&apos;tint&apos;, &apos;level5&apos;)
+            </LevelFive>
+            <LevelSix>
+              themeColor(&apos;tint&apos;, &apos;level6&apos;)
+            </LevelSix>
+            <LevelSeven>
+              themeColor(&apos;tint&apos;, &apos;level7&apos;)
+            </LevelSeven>
+          </React.Fragment>
+        )
+      })()}
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Support colors
+
+<Preview>
+  <Story name="Support colors">
+    <React.Fragment>
+      {(() => {
+        const Valid = styled.div`
+          color: ${themeColor('tint', 'level1')};
+          background-color: ${themeColor('support', 'valid')};
+        `
+        const Invalid = styled.div`
+          color: ${themeColor('tint', 'level1')};
+          background-color: ${themeColor('support', 'invalid')};
+        `
+        const Focus = styled.div`
+          color: ${themeColor('tint', 'level7')};
+          background-color: ${themeColor('support', 'focus')};
+        `
+        return (
+          <React.Fragment>
+            <Valid>themeColor(&apos;support&apos;, &apos;valid&apos;)</Valid>
+            <Invalid>
+              themeColor(&apos;support&apos;, &apos;invalid&apos;)
+            </Invalid>
+            <Focus>themeColor(&apos;support&apos;, &apos;focus&apos;)</Focus>
+          </React.Fragment>
+        )
+      })()}
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Supplement colors
+
+<Preview>
+  <Story name="Supplement colors">
+    <React.Fragment>
+      {(() => {
+        const Purple = styled.div`
+          color: ${themeColor('tint', 'level1')};
+          background-color: ${themeColor('supplement', 'purple')};
+        `
+        const Pink = styled.div`
+          color: ${themeColor('tint', 'level1')};
+          background-color: ${themeColor('supplement', 'pink')};
+        `
+        const Orange = styled.div`
+          color: ${themeColor('tint', 'level1')};
+          background-color: ${themeColor('supplement', 'orange')};
+        `
+        const Yellow = styled.div`
+          color: ${themeColor('tint', 'level7')};
+          background-color: ${themeColor('supplement', 'yellow')};
+        `
+        const LightGreen = styled.div`
+          color: ${themeColor('tint', 'level7')};
+          background-color: ${themeColor('supplement', 'lightgreen')};
+        `
+        const DarkGreen = styled.div`
+          color: ${themeColor('tint', 'level1')};
+          background-color: ${themeColor('supplement', 'darkgreen')};
+        `
+        const LightBlue = styled.div`
+          color: ${themeColor('tint', 'level1')};
+          background-color: ${themeColor('supplement', 'lightblue')};
+        `
+        return (
+          <React.Fragment>
+            <Purple>
+              themeColor(&apos;supplement&apos;, &apos;purple&apos;)
+            </Purple>
+            <Pink>themeColor(&apos;supplement&apos;, &apos;pink&apos;)</Pink>
+            <Orange>
+              themeColor(&apos;supplement&apos;, &apos;orange&apos;)
+            </Orange>
+            <Yellow>
+              themeColor(&apos;supplement&apos;, &apos;yellow&apos;)
+            </Yellow>
+            <LightGreen>
+              themeColor(&apos;supplement&apos;, &apos;lightgreen&apos;)
+            </LightGreen>
+            <DarkGreen>
+              themeColor(&apos;supplement&apos;, &apos;darkgreen&apos;)
+            </DarkGreen>
+            <LightBlue>
+              themeColor(&apos;supplement&apos;, &apos;lightblue&apos;)
+            </LightBlue>
+          </React.Fragment>
+        )
       })()}
     </React.Fragment>
   </Story>

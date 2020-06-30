@@ -12,7 +12,7 @@ export default {
     (storyFn: () => React.ReactNode) => (
       <div
         style={{
-          height: '100vh',
+          height: '300px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',

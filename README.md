@@ -21,8 +21,8 @@ Please read the [CONTRIBUTION.md](https://github.com/Amsterdam/amsterdam-styled-
 ## Design system
 
 We aim the components to be aligned with the [Amsterdam Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/39359e-design-system).
-However, we don't want to be dependent on waiting for design decisions, because this would slow down development. Moreover, specs and explanations are sometimes missing, so these also need to be updated in the design system while aligning component.
-This is why we still have a lot of components that need to be aligned with the design system and get their "approval". The state of a component indicates whether it is ‘approved’ as officially aligned. There are two possible states:
+In order to align these components, we contact people on the [DST (Design System Team) slack group](https://dstamsterdam.slack.com) to let them know which components we want to align. Usually some modifications need to be made in both Storybook and Amsterdam Design System.
+The state of a component indicates whether it is ‘approved’ as officially aligned. There are two possible states:
 
 1. **stable**: Stable components are aligned and "approved" by the design system. These components are usually embedded in the corresponding the design system.
 2. **experimental**: These components are simply not yet aligned and reviewed by the Design system, but they can be used in your project if you want. Keep in mind they can change in the near future when aligning them.
@@ -31,7 +31,7 @@ Some components don't have a state in the stories, consider these "experimental"
 
 [More info can be found here](https://github.com/Amsterdam/amsterdam-styled-components/tree/master/docs/CONTRIBUTING.md#aligning)
 
-If you have any questions, please contact one of the [maintainers](https://github.com/Amsterdam/amsterdam-styled-components/tree/master/docs/MAINTAINERS.md) to get access to the [DTS slack group](https://dstamsterdam.slack.com)
+If you have any questions, please contact one of the [maintainers](https://github.com/Amsterdam/amsterdam-styled-components/tree/master/docs/MAINTAINERS.md) to get access to the [DST slack group](https://dstamsterdam.slack.com)
 
 ## Structure
 

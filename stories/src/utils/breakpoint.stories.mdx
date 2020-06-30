@@ -8,10 +8,21 @@ import { breakpoint } from '@datapunt/asc-ui'
 
 A function to retrieve a breakpoint value from a theme
 
-## Default
+- mobileS: 320px
+- mobileM: 375px
+- mobileL: 414px
+- tabletS: 540px
+- tabletM: 768px
+- laptop: 1024px
+- laptopM: 1200px
+- laptopL: 1430px
+- desktop: 1920px
+- desktopL: 2560px
+
+## Min-with, laptopM
 
 <Preview>
-  <Story name="Default">
+  <Story name="Min-with, laptopM">
     <React.Fragment>
       {(() => {
         const MyDivWithThemeBreakpointDiv = styled.div`
@@ -22,9 +33,9 @@ A function to retrieve a breakpoint value from a theme
         return (
           <React.Fragment>
             Component below is only visible under breakpoint `laptopM` and will
-            print: I&apos;m visible
+            print: I am visible
             <MyDivWithThemeBreakpointDiv>
-              I'm visible
+              I am visible
             </MyDivWithThemeBreakpointDiv>
           </React.Fragment>
         )

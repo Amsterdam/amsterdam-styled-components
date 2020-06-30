@@ -41,7 +41,7 @@ export default {
   ],
 }
 
-export const MenuChildren = () => (
+const MenuChildren = () => (
   <>
     <MenuItem>
       <MenuButton forwardedAs="a" href="/" active>

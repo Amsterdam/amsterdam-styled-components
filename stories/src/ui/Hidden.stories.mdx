@@ -23,7 +23,7 @@ This component uses the [useMatchMedia](https://github.com/Amsterdam/amsterdam-s
 <Preview>
   <Story name="With max breakpoint">
     <React.Fragment>
-      <Hidden maxBreakpoint="tabletM">I am hidden from tabletM</Hidden>
+      <Hidden maxBreakpoint="tabletM">I am hidden until tabletM</Hidden>
     </React.Fragment>
   </Story>
 </Preview>
@@ -34,7 +34,7 @@ This component uses the [useMatchMedia](https://github.com/Amsterdam/amsterdam-s
   <Story name="With min and max breakpoint">
     <React.Fragment>
       <Hidden minBreakpoint="mobileS" maxBreakpoint="laptop">
-        I am hidden from tabletM
+        I am hidden only between mobileS and laptop
       </Hidden>
     </React.Fragment>
   </Story>
@@ -46,7 +46,7 @@ This component uses the [useMatchMedia](https://github.com/Amsterdam/amsterdam-s
   <Story name="With a custom query">
     <React.Fragment>
       <Hidden query="(min-width: 300px) and (max-width: 600px)">
-        I am hidden from tabletM
+        I am hidden only between 300px and 600px
       </Hidden>
     </React.Fragment>
   </Story>
