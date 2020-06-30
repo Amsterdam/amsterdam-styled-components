@@ -1,0 +1,106 @@
+import { useRef } from 'react'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { hooks, Button } from '@datapunt/asc-ui'
+
+<Meta
+  title="Utils/useFocusWithArrows hook"
+  component={hooks.useFocusWithArrows}
+/>
+
+# useFocusWithArrows hook
+
+Focus on children with arrow keys and home / end buttons.
+
+_Note:_ these only work in the "Canvas" view
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <React.Fragment>
+      {(() => {
+        const ref = useRef()
+        hooks.useFocus(ref)
+        const { keyDown } = hooks.useFocusWithArrows(ref)
+        return (
+          <div
+            role="button"
+            tabIndex={-1}
+            onKeyDown={keyDown}
+            ref={ref}
+            style={{ display: 'flex', flexDirection: 'column', width: '200px' }}
+          >
+            <p>Press keys up, down, home or end to focus on the buttons</p>
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+          </div>
+        )
+      })()}
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## With rotating option
+
+Jump to first item from last or vice versa
+
+<Preview>
+  <Story name="With rotating option">
+    <React.Fragment>
+      {(() => {
+        const ref = useRef()
+        hooks.useFocus(ref)
+        const { keyDown } = hooks.useFocusWithArrows(ref, true)
+        return (
+          <div
+            role="button"
+            tabIndex={-1}
+            onKeyDown={keyDown}
+            ref={ref}
+            style={{ display: 'flex', flexDirection: 'column', width: '200px' }}
+          >
+            <p>Press keys up, down, home or end to focus on the buttons</p>
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+          </div>
+        )
+      })()}
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## With directChildrenOnly option
+
+Useful if you don't want to focus on other focussable elements inside the child components of the ref
+
+<Preview>
+  <Story name="With directChildrenOnly option">
+    <React.Fragment>
+      {(() => {
+        const ref = useRef()
+        hooks.useFocus(ref)
+        const { keyDown } = hooks.useFocusWithArrows(ref, true, true)
+        return (
+          <div
+            role="button"
+            tabIndex={-1}
+            onKeyDown={keyDown}
+            ref={ref}
+            style={{ display: 'flex', flexDirection: 'column', width: '200px' }}
+          >
+            <p>Press keys up, down, home or end to focus on the buttons</p>
+            <Button>One</Button>
+            <Button>Two</Button>
+            <div>
+              <Button>
+                I&apos;m nested and I should not get focus from arrow keys
+              </Button>
+            </div>
+          </div>
+        )
+      })()}
+    </React.Fragment>
+  </Story>
+</Preview>

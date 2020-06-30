@@ -6,10 +6,9 @@ node_modules
 
 # production
 /build
-/packages/**/lib
-/packages/**/es
+lib
+es
 /storybook-static
-/examples/**/lib
 .sb
 packages/**/*.d.ts
 *.tsbuildinfo

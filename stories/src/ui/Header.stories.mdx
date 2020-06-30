@@ -1,0 +1,77 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import {
+  Header,
+  MenuInline,
+  MenuFlyOut,
+  MenuItem,
+  MenuButton,
+} from '@datapunt/asc-ui'
+
+<Meta title="UI/Header" component={Header} />
+
+# Header
+
+**Component status: experimental**
+
+## Short only
+
+Given the `tall={false}` prop, this will make sure the header is not showing its tall variant after breakpoint laptopM (1200px)
+
+<Preview>
+  <Story name="Short only">
+    <React.Fragment>
+      <Header tall={false} title="Some title" fullWidth={false} />
+    </React.Fragment>
+  </Story>
+</Preview>
+
+# Full width
+
+<Preview>
+  <Story name="Full width">
+    <React.Fragment>
+      <Header tall={false} title="Some title" fullWidth />
+    </React.Fragment>
+  </Story>
+</Preview>
+
+# Tall
+
+To see the tall version, please make sure your viewport is bigger than laptopM (1200px)
+
+<Preview>
+  <Story name="Tall">
+    <React.Fragment>
+      <Header tall title="Some title" fullWidth={false} />
+    </React.Fragment>
+  </Story>
+</Preview>
+
+# Custom navigation component
+
+<Preview>
+  <Story name="Custom navigation component">
+    <React.Fragment>
+      <Header
+        tall
+        title="Some title"
+        navigation={
+          <MenuInline>
+            <MenuItem>
+              <MenuButton forwardedAs="a" href="/" active>
+                I'm a Menu item!
+              </MenuButton>
+            </MenuItem>
+            <MenuFlyOut label="I'm a Menu item with children!">
+              <MenuItem>
+                <MenuButton forwardedAs="a" href="/" active>
+                  Hello
+                </MenuButton>
+              </MenuItem>
+            </MenuFlyOut>
+          </MenuInline>
+        }
+      />
+    </React.Fragment>
+  </Story>
+</Preview>

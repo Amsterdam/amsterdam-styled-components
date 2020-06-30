@@ -1,0 +1,44 @@
+import { useRef, useState, useEffect } from 'react'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { hooks, Button } from '@datapunt/asc-ui'
+
+<Meta title="Utils/useFocus hook" component={hooks.useFocus} />
+
+# useFocus hook
+
+A hook that will automatically bring the referenced element into focus.
+
+_Note:_ these only work in the "Canvas" view
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <React.Fragment>
+      {(() => {
+        const ref = useRef()
+        hooks.useFocus(ref)
+        return <Button ref={ref}>I will focus on render</Button>
+      })()}
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## With timeout
+
+<Preview>
+  <Story name="With timeout">
+    <React.Fragment>
+      {(() => {
+        const [focussed, setFocussed] = useState(false)
+        const ref = useRef()
+        useEffect(() => {
+          const timer = setTimeout(() => setFocussed(true), 3000)
+          return () => clearTimeout(timer)
+        }, [])
+        hooks.useFocus(ref, focussed)
+        return <Button ref={ref}>I will in focus in three seconds</Button>
+      })()}
+    </React.Fragment>
+  </Story>
+</Preview>

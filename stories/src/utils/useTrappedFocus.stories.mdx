@@ -1,0 +1,37 @@
+import { useRef } from 'react'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { hooks, Button } from '@datapunt/asc-ui'
+
+<Meta title="Utils/useTrappedFocus hook" component={hooks.useTrappedFocus} />
+
+# useTrappedFocus hook
+
+A hook that will trap the focus, useful in Modals
+
+_Note:_ these only work in the "Canvas" view
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <React.Fragment>
+      {(() => {
+        const ref = useRef()
+        const { keyDown } = hooks.useTrappedFocus(ref)
+        return (
+          <React.Fragment>
+            <Button>Outside button</Button>
+            <div role="presentation" onKeyDown={keyDown} ref={ref}>
+              <p>
+                Once focussed in here, you can not focus on elements outside
+              </p>
+              <Button>One</Button>
+              <Button>Two</Button>
+            </div>
+            <Button>Outside button</Button>
+          </React.Fragment>
+        )
+      })()}
+    </React.Fragment>
+  </Story>
+</Preview>

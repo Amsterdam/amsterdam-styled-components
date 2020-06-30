@@ -1,0 +1,50 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Spinner, themeColor } from '@datapunt/asc-ui'
+
+<Meta title="UI/Spinner" component={Spinner} />
+
+# Spinner
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/018b4e-progress-indicator)
+
+**Component status: experimental**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <React.Fragment>
+      <Spinner />
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## With size 100px
+
+<Preview>
+  <Story name="With size 100px">
+    <React.Fragment>
+      <Spinner size={100} />
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## With color
+
+<Preview>
+  <Story name="With color">
+    <React.Fragment>
+      <Spinner color="#00ff00" />
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## With themeColor
+
+<Preview>
+  <Story name="With themeColor">
+    <React.Fragment>
+      <Spinner color={themeColor('secondary')} />
+    </React.Fragment>
+  </Story>
+</Preview>

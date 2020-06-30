@@ -1,0 +1,65 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Link, Icon } from '@datapunt/asc-ui'
+import { Alert } from '@datapunt/asc-assets'
+
+<Meta title="UI/Typography/Link" component={Link} />
+
+# Link
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/4701a1-links)
+
+**Component status: experimental**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <React.Fragment>
+      <Link href="/">
+        I am a &quot;default&quot; link without chevron icon!
+      </Link>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Chevron Variant
+
+<Preview>
+  <Story name="Chevron Variant">
+    <React.Fragment>
+      <Link href="/" variant="with-chevron">
+        I am a link with a chevron
+      </Link>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Inline variant
+
+<Preview>
+  <Story name="Inline variant">
+    <React.Fragment>
+      <Link href="/" variant="inline">
+        I am an inline link
+      </Link>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Blank variant
+
+<Preview>
+  <Story name="Blank variant">
+    <React.Fragment>
+      <Link href="/" variant="blank">
+        I am a &quot;blank&quot; link! I have no style. I can be used for adding
+        link functionality to components, like images and icons:
+      </Link>
+      <Link href="/" variant="blank">
+        <Icon>
+          <Alert />
+        </Icon>
+      </Link>
+    </React.Fragment>
+  </Story>
+</Preview>

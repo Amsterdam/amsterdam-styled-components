@@ -1,0 +1,40 @@
+import styled from 'styled-components'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+
+<Meta title="Assets/Fonts" />
+
+# Fonts
+
+## Variations
+
+<Preview>
+  <Story name="Variations">
+    <React.Fragment>
+      {(() => {
+        const Regular = styled.p`
+          font-weight: 400;
+        `
+        const RegularItalic = styled.p`
+          font-weight: 400;
+          font-style: italic;
+        `
+        const Medium = styled.p`
+          font-weight: 500;
+        `
+        const Demi = styled.p`
+          font-weight: 700;
+        `
+        return (
+          <React.Fragment>
+            <Regular>Avenir Next Regular: font-weight: 400</Regular>
+            <RegularItalic>
+              Avenir Next Regular Italic: font-weight: 400, font-style: italic
+            </RegularItalic>
+            <Medium>Avenir Next Medium: font-weight: 500</Medium>
+            <Demi>Avenir Next Demi: font-weight: 700</Demi>
+          </React.Fragment>
+        )
+      })()}
+    </React.Fragment>
+  </Story>
+</Preview>

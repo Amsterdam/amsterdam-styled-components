@@ -1,0 +1,117 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Label, Radio, RadioGroup } from '@datapunt/asc-ui'
+
+<Meta
+  title="UI/Form/Radio"
+  component={Radio}
+  decorators={[
+    (storyFn) => (
+      <div
+        style={{
+          display: 'flex',
+          maxWidth: 400,
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+        }}
+      >
+        {storyFn()}
+      </div>
+    ),
+  ]}
+/>
+
+# Radio
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/6495d9-radio)
+
+**Component status: stable**
+
+## Default / Primary radio
+
+<Preview>
+  <Story name="Default / Primary">
+    <React.Fragment>
+      <RadioGroup name="group-1">
+        <Label htmlFor="primary-radio-1" label="Default">
+          <Radio id="primary-radio-1" variant="primary" />
+        </Label>
+        <Label htmlFor="primary-radio-2" label="Checked">
+          <Radio id="primary-radio-2" variant="primary" checked />
+        </Label>
+      </RadioGroup>
+      <RadioGroup name="group-2-disabled" disabled>
+        <Label htmlFor="primary-radio-3" label="Disabled">
+          <Radio id="primary-radio-3" variant="primary" />
+        </Label>
+        <Label htmlFor="primary-radio-4" label="Checked and disabled">
+          <Radio id="primary-radio-4" variant="primary" checked />
+        </Label>
+      </RadioGroup>
+      <RadioGroup name="group-2-errored" error>
+        <Label htmlFor="primary-radio-5" label="Errored">
+          <Radio id="primary-radio-5" variant="primary" />
+        </Label>
+      </RadioGroup>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Secondary radio
+
+<Preview>
+  <Story name="Secondary">
+    <React.Fragment>
+      <RadioGroup name="group-2">
+        <Label htmlFor="secondary-radio-1" label="Default">
+          <Radio id="secondary-radio-1" variant="secondary" />
+        </Label>
+        <Label htmlFor="secondary-radio-2" label="Checked">
+          <Radio id="secondary-radio-2" variant="secondary" checked />
+        </Label>
+      </RadioGroup>
+      <RadioGroup name="group-2-disabled" disabled>
+        <Label htmlFor="secondary-radio-3" label="Disabled">
+          <Radio id="secondary-radio-3" variant="secondary" />
+        </Label>
+        <Label htmlFor="secondary-radio-4" label="Checked and disabled">
+          <Radio id="secondary-radio-4" variant="secondary" checked />
+        </Label>
+      </RadioGroup>
+      <RadioGroup name="group-2-errored" error>
+        <Label htmlFor="secondary-radio-5" label="Errored">
+          <Radio id="secondary-radio-5" variant="secondary" />
+        </Label>
+      </RadioGroup>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Tertiary radio
+
+<Preview>
+  <Story name="Tertiary">
+    <React.Fragment>
+      <RadioGroup name="group-3">
+        <Label htmlFor="tertiary-radio-1" label="Default">
+          <Radio id="tertiary-radio-1" variant="tertiary" />
+        </Label>
+        <Label htmlFor="tertiary-radio-2" label="Checked">
+          <Radio id="tertiary-radio-2" variant="tertiary" checked />
+        </Label>
+      </RadioGroup>
+      <RadioGroup name="group-3-disabled" disabled>
+        <Label htmlFor="tertiary-radio-3" label="Disabled">
+          <Radio id="tertiary-radio-3" variant="tertiary" />
+        </Label>
+        <Label htmlFor="tertiary-radio-4" label="Checked and disabled">
+          <Radio id="tertiary-radio-4" variant="tertiary" checked />
+        </Label>
+      </RadioGroup>
+      <RadioGroup name="group-3-errored" error>
+        <Label htmlFor="tertiary-radio-5" label="Errored">
+          <Radio id="tertiary-radio-5" variant="tertiary" />
+        </Label>
+      </RadioGroup>
+    </React.Fragment>
+  </Story>
+</Preview>

@@ -115,6 +115,7 @@ const getVariant = () => ({
       return css`
         color: ${themeColor('primary')};
         border: 1px solid ${themeColor('primary')};
+        background-color: ${themeColor('tint', 'level1')};
         ${svgFill(themeColor('primary', 'main'))};
 
         &:hover {
