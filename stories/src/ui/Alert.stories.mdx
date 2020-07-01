@@ -18,6 +18,13 @@ export const Decorator = styled.div`
 
 [Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/901ede-alert)
 
+There are three levels of Alerts you can pass through the `level` prop:
+
+1. Not passing a `level` prop: this is a "normal" Alert, used to inform
+2. `attention`: This is being used to help the user to take action. This usually contains links.
+3. `error`: Use this to inform the user something went wrong, for example a failed request.
+4. `warning`: Use this to warn the user about something and help him to take action.
+
 **Component status: stable**
 
 ## Variants of Alert
@@ -33,10 +40,10 @@ export const Decorator = styled.div`
   </Story>
 </Preview>
 
-## Normal state of Alert
+## With content and heading
 
 <Preview>
-  <Story name="Normal State">
+  <Story name="With content and heading">
     <React.Fragment>
       <Alert
         level="normal"
@@ -64,10 +71,10 @@ export const Decorator = styled.div`
   </Story>
 </Preview>
 
-## Alert with custom children
+## With custom children
 
 <Preview>
-  <Story name="With Custom Children">
+  <Story name="With custom children">
     <React.Fragment>
       <Alert level="warning" dismissible>
         <Heading>With a normal heading and paragraph</Heading>
