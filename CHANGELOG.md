@@ -15,6 +15,8 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## Unreleased
+- Changed: Link component works better on dark backgrounds
+- Changed: **BREAKING** Footer components. Check out footer story for example on usage 
 - Added: Export `SelectWrapperStyle`
 
 ## [0.21.1]

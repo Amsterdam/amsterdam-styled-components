@@ -4,13 +4,17 @@ import { ChevronRight } from '@datapunt/asc-assets'
 import LinkStyle, { LinkContent, Props as LinkStyleProps } from './LinkStyle'
 import Icon from '../Icon'
 
-export type Props = StyledProps<any> & LinkStyleProps
+export type Props = {
+  icon?: React.ReactNode
+} & LinkStyleProps &
+  StyledProps<any>
 
 const Link: React.FC<Props> = ({
   children,
   variant: variantProp,
   as,
   linkType,
+  icon,
   ...otherProps
 }) => {
   const variant = linkType || variantProp
@@ -27,6 +31,7 @@ const Link: React.FC<Props> = ({
       ) : (
         children
       )}
+      {icon && icon}
     </LinkStyle>
   )
 }

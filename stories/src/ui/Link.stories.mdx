@@ -1,6 +1,7 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
-import { Link, Icon } from '@datapunt/asc-ui'
-import { Alert } from '@datapunt/asc-assets'
+import { Link, Icon, List, ListItem, themeColor } from '@datapunt/asc-ui'
+import styled from 'styled-components'
+import { Alert, ExternalLink } from '@datapunt/asc-assets'
 
 <Meta title="UI/Typography/Link" component={Link} />
 
@@ -11,6 +12,10 @@ import { Alert } from '@datapunt/asc-assets'
 **Component status: experimental**
 
 ## Default
+
+export const DarkListItem = styled(ListItem)`
+  background-color: ${themeColor('primary')};
+`
 
 <Preview>
   <Story name="Default">
@@ -27,9 +32,18 @@ import { Alert } from '@datapunt/asc-assets'
 <Preview>
   <Story name="Chevron Variant">
     <React.Fragment>
-      <Link href="/" variant="with-chevron">
-        I am a link with a chevron
-      </Link>
+      <List>
+        <ListItem>
+          <Link href="/" variant="with-chevron">
+            I am a link with a chevron
+          </Link>
+        </ListItem>
+        <DarkListItem>
+          <Link darkBackground href="/" variant="with-chevron">
+            I am a link with a chevron on a dark background styles
+          </Link>
+        </DarkListItem>
+      </List>
     </React.Fragment>
   </Story>
 </Preview>
@@ -39,9 +53,40 @@ import { Alert } from '@datapunt/asc-assets'
 <Preview>
   <Story name="Inline variant">
     <React.Fragment>
-      <Link href="/" variant="inline">
-        I am an inline link
-      </Link>
+      <List>
+        <ListItem>
+          <Link href="/" variant="inline">
+            I am an inline link
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link
+            href="/"
+            variant="inline"
+            icon={
+              <Icon size={16}>
+                <ExternalLink />
+              </Icon>
+            }
+          >
+            I am an external inline link
+          </Link>
+        </ListItem>
+        <DarkListItem>
+          <Link
+            darkBackground
+            href="/"
+            variant="inline"
+            icon={
+              <Icon size={16}>
+                <ExternalLink />
+              </Icon>
+            }
+          >
+            I am an external inline link on a dark background
+          </Link>
+        </DarkListItem>
+      </List>
     </React.Fragment>
   </Story>
 </Preview>
@@ -51,15 +96,21 @@ import { Alert } from '@datapunt/asc-assets'
 <Preview>
   <Story name="Blank variant">
     <React.Fragment>
-      <Link href="/" variant="blank">
-        I am a &quot;blank&quot; link! I have no style. I can be used for adding
-        link functionality to components, like images and icons:
-      </Link>
-      <Link href="/" variant="blank">
-        <Icon>
-          <Alert />
-        </Icon>
-      </Link>
+      <List>
+        <ListItem>
+          <Link href="/" variant="blank">
+            I am a &quot;blank&quot; link! I have no style. I can be used for
+            adding link functionality to components, like images and icons:
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link href="/" variant="blank">
+            <Icon>
+              <Alert />
+            </Icon>
+          </Link>
+        </ListItem>
+      </List>
     </React.Fragment>
   </Story>
 </Preview>
