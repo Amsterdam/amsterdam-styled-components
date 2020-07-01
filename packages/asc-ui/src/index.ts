@@ -38,14 +38,7 @@ import Divider from './components/Divider'
 import DocumentCover from './components/DocumentCover'
 import Focus from './components/Focus'
 import GlobalStyle from './components/GlobalStyle'
-import {
-  Column,
-  Container,
-  GridContainer,
-  GridItem,
-  Row,
-  GridStyles,
-} from './components/Grid'
+import { Column, Container, Row, GridStyles } from './components/Grid'
 import {
   EditorialBody,
   EditorialPost,
@@ -73,8 +66,6 @@ import {
   MenuButton,
   MenuContext,
 } from './components/Menu'
-import IconButton from './components/deprecated/IconButton'
-import ButtonBar from './components/deprecated/ButtonBar'
 import Radio, { RadioGroup } from './components/Radio'
 import SearchBar, { SearchBarStyles } from './components/SearchBar'
 import SearchBarToggle, {
@@ -113,14 +104,7 @@ import { Theme } from './types'
 
 export { constants, hooks }
 
-/**
- * @deprecated
- */
-const ShareBar = ButtonBar
-
-/** @deprecated  the color function was renamed to themeColor to eliminate the ambiguity with css color property. Will be removed in the next version */
-const color = themeColor
-export { color, themeColor, perceivedLoading }
+export { themeColor, perceivedLoading }
 
 export {
   breakpoint,
@@ -188,8 +172,6 @@ export {
   CardActions,
   CardContent,
   CardMedia,
-  ButtonBar,
-  ShareBar,
   Checkbox,
   Column,
   ContextMenu,
@@ -208,12 +190,9 @@ export {
   FooterTop,
   GlobalStyle,
   Container,
-  GridContainer,
-  GridItem,
   Header,
   Icon,
   Divider,
-  IconButton,
   Image,
   Alert,
   Input,
