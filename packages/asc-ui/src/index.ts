@@ -86,16 +86,10 @@ import Spinner from './components/Spinner/Spinner'
 import TextArea, { TextAreaStyles } from './components/TextArea'
 import TextField, { TextFieldStyles } from './components/TextField'
 import Footer, {
-  FooterContent,
-  FooterLinkList,
-  FooterLinkListItem,
-  FooterBottomLinkList,
-  FooterBottomLinkListItem,
   FooterHeading,
-  FooterToggle,
+  FooterSection,
   FooterBottom,
   FooterTop,
-  FooterStyles,
 } from './components/Footer'
 import CompactPager from './components/CompactPager'
 import ViewerContainer from './components/ViewerContainer/ViewerContainer'
@@ -151,7 +145,6 @@ export const styles = {
   ...EditorialStyles,
   ...ImageCardStyles,
   ...GridStyles,
-  ...FooterStyles,
   ...ListStyles,
   ...AccordionStyles,
   ParagraphStyle,
@@ -209,13 +202,8 @@ export {
   FilterTag,
   Focus,
   Footer,
-  FooterContent,
-  FooterLinkList,
-  FooterLinkListItem,
-  FooterBottomLinkList,
-  FooterBottomLinkListItem,
+  FooterSection,
   FooterHeading,
-  FooterToggle,
   FooterBottom,
   FooterTop,
   GlobalStyle,

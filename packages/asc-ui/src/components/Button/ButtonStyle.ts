@@ -232,7 +232,8 @@ const ButtonStyle = styled.button<Props>`
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
-  padding: ${({ size: sizeProp }) => (sizeProp ? '0' : '12px 15px')};
+  padding: ${({ size: sizeProp, theme }) =>
+    sizeProp ? '0' : themeSpacing(3, 4)({ theme })};
   ${({ size: sizeProp, square }) =>
     (sizeProp || square) && // make the button square
     css`

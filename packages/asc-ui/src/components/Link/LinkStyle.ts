@@ -17,58 +17,36 @@ export type Props = {
    * @deprecated
    */
   linkType?: LinkVariant
-  /**
-   * @deprecated use prop darkBackground instead
-   */
-  onDarkBackground?: boolean
   focusStyle?: FocusStyle
   darkBackground?: boolean
 } & TypographyProps
 
 export const BlankLinkStyleCSS = css`
-  display: inline-block;
   text-decoration: none;
   color: inherit;
 `
 export const InlineLinkStyleCSS = css`
-  display: inline-block;
   color: ${themeColor('primary')};
+  ${svgFill(themeColor('primary'))};
 
-  &:hover {
+  &:hover:not(:focus) {
     color: ${themeColor('secondary')};
+    ${svgFill(themeColor('secondary'))};
   }
 `
 export const DefaultLinkStyleCSS = css<Props>`
-  display: inline-flex;
   text-decoration: none;
   font-weight: 700;
-  color: ${({ onDarkBackground, darkBackground }) =>
-    onDarkBackground || darkBackground
-      ? themeColor('tint', 'level1')
-      : themeColor('tint', 'level7')};
-
-  ${IconStyle} {
-    margin: ${themeSpacing(1, 1, 0, 0)};
-    ${({ onDarkBackground, darkBackground }) =>
-      svgFill(
-        onDarkBackground || darkBackground
-          ? themeColor('tint', 'level1')
-          : themeColor('tint', 'level7'),
-      )}
-  }
+  padding-right: ${themeSpacing(1)};
+  color: ${themeColor('tint', 'level7')};
 
   &:hover {
     text-decoration: underline;
-    color: ${({ onDarkBackground, darkBackground }) =>
-      onDarkBackground || darkBackground
-        ? themeColor('tint', 'level1')
-        : themeColor('secondary', 'main')};
-    ${({ onDarkBackground, darkBackground }) =>
-      svgFill(
-        onDarkBackground || darkBackground
-          ? themeColor('tint', 'level1')
-          : themeColor('secondary', 'main'),
-      )};
+  }
+
+  &:hover:not(:focus) {
+    color: ${themeColor('secondary')};
+    ${svgFill(themeColor('secondary'))};
   }
 `
 
@@ -77,6 +55,17 @@ export const LinkContent = styled.span`
 `
 
 export default styled(Typography)<Props>`
+  display: inline-flex;
+  align-items: center;
+
+  & > *:last-of-type {
+    margin-left: ${themeSpacing(1)};
+  }
+
+  & > *:first-of-type {
+    margin-right: ${themeSpacing(1)};
+  }
+
   ${({ focusStyle }) => getFocusStyle(focusStyle)}
   ${({ variant }) => {
     switch (variant) {
@@ -88,4 +77,17 @@ export default styled(Typography)<Props>`
         return DefaultLinkStyleCSS
     }
   }}
+
+  ${({ darkBackground }) =>
+    darkBackground &&
+    css`
+      &:not(:focus),
+      &:hover:not(:focus) {
+        color: ${themeColor('tint', 'level1')};
+
+        ${IconStyle} {
+          ${svgFill(themeColor('tint', 'level1'))}
+        }
+      }
+    `};
 `
