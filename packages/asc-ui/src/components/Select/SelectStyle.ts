@@ -2,6 +2,7 @@ import { ChevronDown } from '@datapunt/asc-assets'
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
 import { outlineStyle } from '../../utils/themeUtils'
+import { INPUT_SIZE } from '../shared/constants'
 
 export type Props = {
   id?: string
@@ -17,7 +18,7 @@ export type Props = {
 
 export const SelectWrapper = styled.div`
   position: relative;
-  height: 40px;
+  height: ${INPUT_SIZE}px;
   width: 100%;
 `
 
@@ -63,7 +64,7 @@ export const SelectIcon = styled(ChevronDown)`
 const SelectStyle = styled.select<Props>`
   width: 100%;
   height: 100%;
-  padding: ${themeSpacing(0, 3)};
+  padding: ${themeSpacing(2, 3)};
   font-size: 1rem;
   border: 1px solid ${themeColor('tint', 'level5')};
   border-radius: 0;

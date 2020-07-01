@@ -18,6 +18,7 @@ Prefix the change with one of these keywords:
 - Changed: Link component works better on dark backgrounds
 - Changed: **BREAKING** Footer components. Check out footer story for example on usage 
 - Added: Export `SelectWrapperStyle`
+- Changed: **BREAKING** set height of input and select elements to 44px (from 40px) to match the design system
 
 ## [0.21.1]
 
