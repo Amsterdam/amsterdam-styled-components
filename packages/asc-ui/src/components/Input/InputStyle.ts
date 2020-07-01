@@ -13,7 +13,7 @@ export const inputCss = css<StyleProps>`
   border-radius: 0;
   box-sizing: border-box;
   line-height: 18px;
-  padding: ${themeSpacing(2, 3)};
+  padding: ${themeSpacing(2)};
   width: 100%;
   height: ${INPUT_SIZE}px;
   ${focusStyleOutline(2, 0.5)}
