@@ -22,6 +22,7 @@ export type Props = {
 } & TypographyProps
 
 export const BlankLinkStyleCSS = css`
+  display: inline-block;
   text-decoration: none;
   color: inherit;
 `
