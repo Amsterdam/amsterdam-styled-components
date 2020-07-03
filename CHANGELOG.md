@@ -20,6 +20,7 @@ Prefix the change with one of these keywords:
 - Changed: **BREAKING** Footer components. Check out footer story for example on usage 
 - Added: Export `SelectWrapperStyle`
 - Changed: **BREAKING** set height of input and select elements to 44px (from 40px) to match the design system
+- Added: Make it possible to programmatically set the value and value label for the select component
 
 ## [0.21.1]
 
