@@ -15,6 +15,7 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## Unreleased
+- Changed: Introduced `createEvent` utility to support creating events in older browsers.
 - Removed: **BREAKING** previously marked deprecated components
 - Changed: Link component works better on dark backgrounds
 - Changed: **BREAKING** Footer components. Check out footer story for example on usage 
