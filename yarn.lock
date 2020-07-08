@@ -2520,17 +2520,17 @@
     vue-docgen-loader "^1.4.0"
 
 "@storybook/addon-knobs@^6.0.0-beta.37":
-  version "6.0.0-beta.44"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-6.0.0-beta.44.tgz#e59688a738c85fefa55eb236e34759f89d9dc8bb"
-  integrity sha512-tqMTLFc7OcjYm0QNMvQDoo9G1UuZvfEVsDt7rf7QcNoqeHLTXJgHKIMcNYIH+1txMfeRosjnvJYIb0hAAoeTeA==
+  version "6.0.0-beta.45"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-6.0.0-beta.45.tgz#ffe1e1dd9dcc4e0f0c3d301146326b3668d0f614"
+  integrity sha512-61vJemhbkhnGzW4FNIoEm5IPEKUNQsuI3/+XznnN955rTOHThO4a0JQ0gmA1WYHKg8O0S0yxsIblDs16yoY+Yg==
   dependencies:
-    "@storybook/addons" "6.0.0-beta.44"
-    "@storybook/api" "6.0.0-beta.44"
-    "@storybook/channels" "6.0.0-beta.44"
-    "@storybook/client-api" "6.0.0-beta.44"
-    "@storybook/components" "6.0.0-beta.44"
-    "@storybook/core-events" "6.0.0-beta.44"
-    "@storybook/theming" "6.0.0-beta.44"
+    "@storybook/addons" "6.0.0-beta.45"
+    "@storybook/api" "6.0.0-beta.45"
+    "@storybook/channels" "6.0.0-beta.45"
+    "@storybook/client-api" "6.0.0-beta.45"
+    "@storybook/components" "6.0.0-beta.45"
+    "@storybook/core-events" "6.0.0-beta.45"
+    "@storybook/theming" "6.0.0-beta.45"
     "@types/react-color" "^3.0.1"
     copy-to-clipboard "^3.0.8"
     core-js "^3.0.1"
