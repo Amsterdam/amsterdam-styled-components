@@ -5,6 +5,7 @@ import React, {
   useRef,
   useState,
 } from 'react'
+import createEvent from '../../utils/createEvent'
 import FormLabelStyle from '../FormLabelStyle'
 import SelectStyle, {
   AbsoluteContentWrapper,
@@ -87,7 +88,7 @@ const Select = React.forwardRef<
 
         // The selectedValue label doesn't update properly if you send a new value prop to this component and the component doesn't rerender
         ref.current.value = inputValue
-        ref.current.dispatchEvent(new Event('change', { bubbles: true }))
+        ref.current.dispatchEvent(createEvent('change', { bubbles: true }))
       }
     }, [inputValue, ref])
 
