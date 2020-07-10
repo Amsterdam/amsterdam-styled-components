@@ -35,7 +35,7 @@ ReactDOM.render(
 
 ## Including fonts
 
-By default the fonts used by Amsterdam are not loaded into the page as these are licensed fonts. If you wish to include these fonts follow the steps in the `asc-assets` [documentation](packages/asc-assets/README.md#Fonts).
+By default the fonts used by Amsterdam are not loaded into the page as these are licensed fonts. If you wish to include these fonts follow the steps in the `asc-assets` [documentation](/packages/asc-assets/README.md#Fonts).
 
 ## Supporting older browsers
 
