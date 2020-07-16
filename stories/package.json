@@ -2,7 +2,7 @@
   "name": "stories",
   "private": true,
   "license": "MPL-2.0",
-  "version": "0.21.2-alpha.0",
+  "version": "0.22.0",
   "author": "Datapunt Amsterdam",
   "homepage": "https://github.com/Amsterdam/amsterdam-styled-components#readme",
   "repository": {
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@datapunt/asc-assets": "^0.21.2-alpha.0",
-    "@datapunt/asc-ui": "^0.21.2-alpha.0",
+    "@datapunt/asc-ui": "^0.22.0",
     "react": "^16.13.1",
     "styled-components": "^5.1.1"
   }
