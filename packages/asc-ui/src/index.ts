@@ -100,6 +100,13 @@ import * as constants from './components/shared/constants'
 import { ascDefaultTheme } from './theme'
 import ThemeProvider from './theme/ThemeProvider'
 import CompactThemeProvider from './theme/CompactThemeProvider'
+import {
+  Table,
+  TableResizer,
+  TableRow,
+  TableCell,
+  TableHeaderCell,
+} from './components/Table'
 import { Theme } from './types'
 
 export { constants, hooks }
@@ -240,4 +247,9 @@ export {
   CompactPager,
   Hidden,
   FormTitle,
+  Table,
+  TableResizer,
+  TableRow,
+  TableCell,
+  TableHeaderCell,
 }

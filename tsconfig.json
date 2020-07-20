@@ -42,7 +42,8 @@
     { "path": "packages/asc-ui" }
   ],
   "files": [
-    "custom.d.ts",
+    "type-definitions/custom.d.ts",
+    "type-definitions/react-table.d.ts",
     "node_modules/jest-styled-components/typings/index.d.ts"
   ],
   "exclude": ["node_modules", "lib", "es"],

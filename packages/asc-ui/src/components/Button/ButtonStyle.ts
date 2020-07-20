@@ -258,6 +258,9 @@ const ButtonStyle = styled.button<Props>`
         opacity: 1;
       }
     `}
+  ${Icon} {
+    flex-shrink: 0;
+  }
   &:disabled {
     cursor: default;
     outline: none;
