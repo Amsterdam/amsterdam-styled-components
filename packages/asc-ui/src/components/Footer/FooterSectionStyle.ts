@@ -25,6 +25,13 @@ const StyledFooterHeading = styled(FooterHeading)`
 `
 
 const StyledButton = styled(Button)`
+  /*
+  Fixed the alignment of the Button compared to the children
+  See PR: https://github.com/Amsterdam/amsterdam-styled-components/pull/834 
+  */
+  margin-left: -${themeSpacing(2)};
+  padding-left: ${themeSpacing(2)};
+
   &,
   &:hover {
     background-color: transparent;
