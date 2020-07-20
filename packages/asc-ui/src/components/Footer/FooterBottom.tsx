@@ -3,6 +3,10 @@ import styled from 'styled-components'
 import { themeSpacing } from '../../utils'
 import { Row } from '../Grid'
 
+type Props = {
+  rowProps: object
+}
+
 const FooterBottomStyle = styled.div`
   display: flex;
   flex-direction: row;
@@ -15,8 +19,12 @@ const FooterBottomStyle = styled.div`
   }
 `
 
-const FooterBottom: React.FC = ({ children, ...otherProps }) => (
-  <Row>
+const FooterBottom: React.FC<Props> = ({
+  children,
+  rowProps,
+  ...otherProps
+}) => (
+  <Row {...rowProps}>
     <FooterBottomStyle {...otherProps}>{children}</FooterBottomStyle>
   </Row>
 )
