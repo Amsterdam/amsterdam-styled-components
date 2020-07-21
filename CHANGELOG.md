@@ -14,6 +14,11 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## Unreleased
+
+- Changed: **BREAKING** indeterminate state on checkbox should only work when `checked === false` and not truthy. 
+This also inverts behaviour when clicking on an indeterminate checkbox: it will enable all instead of disable all first
+
 ## [0.22.0]
 - Changed: Introduced `createEvent` utility to support creating events in older browsers.
 - Removed: **BREAKING** previously marked deprecated components
