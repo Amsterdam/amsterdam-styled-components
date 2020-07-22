@@ -2443,16 +2443,16 @@
     util-deprecate "^1.0.2"
 
 "@storybook/addon-actions@^6.0.0-beta.37":
-  version "6.0.0-rc.12"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.0.0-rc.12.tgz#315f32f5f698ce6e62423d7679ed4a93c35be0c5"
-  integrity sha512-+pOkCe8Bx5/Bn8+wIjFTJwUx++xsRPpadbZN2qrshszhjK1HOB0zKVOK2tbg9rsGSVk8w9QlgyBG5neHweQWxA==
+  version "6.0.0-rc.13"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.0.0-rc.13.tgz#083e8ff0d167e01072ccef19f5450283b118908c"
+  integrity sha512-BZOsAspqnw9B1ylvossEruIuMCMZEdHWTsHN5ig9UKD1glmNYmnKEwz4MC9LeNQk/K5+QpNyRm5uDZsIbfuYbw==
   dependencies:
-    "@storybook/addons" "6.0.0-rc.12"
-    "@storybook/api" "6.0.0-rc.12"
-    "@storybook/client-api" "6.0.0-rc.12"
-    "@storybook/components" "6.0.0-rc.12"
-    "@storybook/core-events" "6.0.0-rc.12"
-    "@storybook/theming" "6.0.0-rc.12"
+    "@storybook/addons" "6.0.0-rc.13"
+    "@storybook/api" "6.0.0-rc.13"
+    "@storybook/client-api" "6.0.0-rc.13"
+    "@storybook/components" "6.0.0-rc.13"
+    "@storybook/core-events" "6.0.0-rc.13"
+    "@storybook/theming" "6.0.0-rc.13"
     core-js "^3.0.1"
     fast-deep-equal "^3.1.1"
     global "^4.3.2"
