@@ -2539,15 +2539,15 @@
     regenerator-runtime "^0.13.3"
 
 "@storybook/addon-links@^6.0.0-beta.37":
-  version "6.0.0-rc.12"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-6.0.0-rc.12.tgz#89d3c40f06208a88f5028eb4a16f11117e35f04c"
-  integrity sha512-/ZZhuTk3AGRXYCFGqZXhrH0P5bIRqJBEiZ3P1KwI3j6wYaHkF+0C7x+LTKtmrYtP4IOv8o83a5+szuvfiT/8oA==
+  version "6.0.0-rc.13"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-6.0.0-rc.13.tgz#156d3565a0ca587ed80ab98a88b4c53bdd309a81"
+  integrity sha512-VC/MC2HbeKJVB2/JYEiANNsdSE+LBwV9AeL3mJ9GAiIw/S0zt6NUqAzSFpbsU17q+4rRYgDSviw2DttEGP3Fww==
   dependencies:
-    "@storybook/addons" "6.0.0-rc.12"
-    "@storybook/client-logger" "6.0.0-rc.12"
-    "@storybook/core-events" "6.0.0-rc.12"
+    "@storybook/addons" "6.0.0-rc.13"
+    "@storybook/client-logger" "6.0.0-rc.13"
+    "@storybook/core-events" "6.0.0-rc.13"
     "@storybook/csf" "0.0.1"
-    "@storybook/router" "6.0.0-rc.12"
+    "@storybook/router" "6.0.0-rc.13"
     "@types/qs" "^6.9.0"
     core-js "^3.0.1"
     global "^4.3.2"
