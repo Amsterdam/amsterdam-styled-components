@@ -58,8 +58,12 @@ const Checkbox = React.forwardRef<
         {...{ className, disabled, focus, checked, error }}
         aria-disabled={disabled}
       >
-        <CheckboxIconStyle {...{ disabled, variant, checked, error }} size={15}>
-          {checked && (indeterminate ? <Indeterminate /> : <Checkmark />)}
+        <CheckboxIconStyle
+          {...{ disabled, variant, checked, error, indeterminate }}
+          size={15}
+        >
+          {!checked && indeterminate && <Indeterminate />}
+          {checked && <Checkmark />}
         </CheckboxIconStyle>
         <CheckboxStyle
           {...{ ...otherProps, disabled, checked, ref }}

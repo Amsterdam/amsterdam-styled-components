@@ -105,6 +105,7 @@ const ReactTableExample: React.FC<Props> = ({ columns, data }) => {
     allColumns,
     gotoPage,
     prepareRow,
+    getToggleHideAllColumnsProps,
     pageOptions,
     state: { pageIndex, pageSize },
   } = useTable(
@@ -133,15 +134,9 @@ const ReactTableExample: React.FC<Props> = ({ columns, data }) => {
           minWidth: 55,
           width: 55,
           maxWidth: 55,
-          Header: ({ getToggleAllRowsSelectedProps }) => {
-            const checkboxProp = getToggleAllRowsSelectedProps()
-            return (
-              <Checkbox
-                {...checkboxProp}
-                checked={checkboxProp.indeterminate || checkboxProp.checked}
-              />
-            )
-          },
+          Header: ({ getToggleAllRowsSelectedProps }) => (
+            <Checkbox {...getToggleAllRowsSelectedProps()} />
+          ),
           Cell: ({ row }) => <Checkbox {...row.getToggleRowSelectedProps()} />,
         },
         ...cols,
@@ -153,6 +148,13 @@ const ReactTableExample: React.FC<Props> = ({ columns, data }) => {
     <Row>
       <Column wrap span={{ small: 1, medium: 1, big: 1, large: 4, xLarge: 4 }}>
         <StyledFilterBox label="Filters">
+          <Label htmlFor="all" label="Alle kolommen tonen">
+            <Checkbox
+              id="all"
+              variant="primary"
+              {...getToggleHideAllColumnsProps()}
+            />
+          </Label>
           <ul>
             {allColumns.slice(1).map((column) => (
               <li key={column.id}>
@@ -169,61 +171,65 @@ const ReactTableExample: React.FC<Props> = ({ columns, data }) => {
           </ul>
         </StyledFilterBox>
       </Column>
-      <Column wrap span={{ small: 1, medium: 3, big: 3, large: 8, xLarge: 8 }}>
-        <StyledTable {...getTableProps()}>
-          <thead>
-            {headerGroups.map((headerGroup) => (
-              <TableRow isSticky {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map((column, i) => (
-                  <>
-                    <TableHeaderCell
-                      // The order of spreading the props here matters
-                      {...column.getSortByToggleProps()}
-                      {...column.getHeaderProps()}
-                      isSticky={i === 0}
-                      sorted={
-                        // eslint-disable-next-line no-nested-ternary
-                        column.isSorted
-                          ? column.isSortedDesc
-                            ? 'desc'
-                            : 'asc'
-                          : 'none'
-                      }
-                      title={column.render('Header') as string}
-                    >
-                      {column.canResize && (
-                        <TableResizer
-                          {...column.getResizerProps({
-                            // This will prevent triggering the sort functionality
-                            onClick(ev: React.MouseEvent) {
-                              ev.stopPropagation()
-                            },
-                          })}
-                        />
-                      )}
-                      {column.canFilter ? column.render('Filter') : null}
-                    </TableHeaderCell>
-                  </>
-                ))}
-              </TableRow>
-            ))}
-          </thead>
-
-          <tbody {...getTableBodyProps()}>
-            {page.map((row) => {
-              prepareRow(row)
-              return (
-                <TableRow {...row.getRowProps()} isSelected={row.isSelected}>
-                  {row.cells.map((cell, i) => (
-                    <TableCell {...cell.getCellProps()} isSticky={i === 0}>
-                      {cell.render('Cell')}
-                    </TableCell>
+      <Column wrap span={{ small: 1, medium: 3, big: 4, large: 8, xLarge: 8 }}>
+        {headerGroups.length ? (
+          <StyledTable {...getTableProps()}>
+            <thead>
+              {headerGroups.map((headerGroup) => (
+                <TableRow isSticky {...headerGroup.getHeaderGroupProps()}>
+                  {headerGroup.headers.map((column, i) => (
+                    <>
+                      <TableHeaderCell
+                        // The order of spreading the props here matters
+                        {...column.getSortByToggleProps()}
+                        {...column.getHeaderProps()}
+                        isSticky={i === 0}
+                        sorted={
+                          // eslint-disable-next-line no-nested-ternary
+                          column.isSorted
+                            ? column.isSortedDesc
+                              ? 'desc'
+                              : 'asc'
+                            : 'none'
+                        }
+                        title={column.render('Header') as string}
+                      >
+                        {column.canResize && (
+                          <TableResizer
+                            {...column.getResizerProps({
+                              // This will prevent triggering the sort functionality
+                              onClick(ev: React.MouseEvent) {
+                                ev.stopPropagation()
+                              },
+                            })}
+                          />
+                        )}
+                        {column.canFilter ? column.render('Filter') : null}
+                      </TableHeaderCell>
+                    </>
                   ))}
                 </TableRow>
-              )
-            })}
-          </tbody>
-        </StyledTable>
+              ))}
+            </thead>
+
+            <tbody {...getTableBodyProps()}>
+              {page.map((row) => {
+                prepareRow(row)
+                return (
+                  <TableRow {...row.getRowProps()} isSelected={row.isSelected}>
+                    {row.cells.map((cell, i) => (
+                      <TableCell {...cell.getCellProps()} isSticky={i === 0}>
+                        {cell.render('Cell')}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                )
+              })}
+            </tbody>
+          </StyledTable>
+        ) : (
+          <Alert>Er zijn geen kolommen geselecteerd</Alert>
+        )}
         <CompactPager
           page={pageIndex + 1}
           pageSize={pageSize}

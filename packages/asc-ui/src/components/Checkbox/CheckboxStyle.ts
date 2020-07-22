@@ -69,8 +69,8 @@ const CheckboxIconStyle = styled(IconStyle)<Props>`
   justify-content: center;
   align-items: center;
   transition: background-color 0.2s ease-in-out;
-  ${({ checked }) =>
-    checked &&
+  ${({ checked, indeterminate }) =>
+    (checked || indeterminate) &&
     css`
       ${getVariant()};
     `}
