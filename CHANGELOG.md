@@ -16,14 +16,15 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
-- Changed: **BREAKING** indeterminate state on checkbox should only work when `checked === false` and not truthy. 
-This also inverts behaviour when clicking on an indeterminate checkbox: it will enable all instead of disable all first
+- Fixed: The Select component with the `disabled` prop had an issue with background-color (See [PR](https://github.com/Amsterdam/amsterdam-styled-components/pull/876))
+- Changed: **BREAKING** indeterminate state on checkbox should only work when `checked === false` and not truthy. This also inverts behaviour when clicking on an indeterminate checkbox: it will enable all instead of disable all first
 
 ## [0.22.0]
+
 - Changed: Introduced `createEvent` utility to support creating events in older browsers.
 - Removed: **BREAKING** previously marked deprecated components
 - Changed: Link component works better on dark backgrounds
-- Changed: **BREAKING** Footer components. Check out footer story for example on usage 
+- Changed: **BREAKING** Footer components. Check out footer story for example on usage
 - Added: Export `SelectWrapperStyle`
 - Changed: **BREAKING** set height of input and select elements to 44px (from 40px) to match the design system
 - Added: Make it possible to programmatically set the value and value label for the select component
