@@ -68,12 +68,13 @@ const CheckboxIconStyle = styled(IconStyle)<Props>`
   position: relative;
   justify-content: center;
   align-items: center;
+  background-color: ${themeColor('tint', 'level1')};
   transition: background-color 0.2s ease-in-out;
   ${({ checked, indeterminate }) =>
     (checked || indeterminate) &&
     css`
       ${getVariant()};
-    `}
+    `};
 `
 
 const CheckboxWrapperStyle = styled.div<Props & { focus: boolean }>`
