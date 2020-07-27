@@ -62,6 +62,7 @@ const RadioCircleStyle = styled.span<StyleOnlyProps>`
   width: 24px;
   height: 24px;
   color: ${themeColor('tint', 'level5')};
+  background-color: ${themeColor('tint', 'level1')};
   border: 1px solid;
   border-radius: 50%;
 

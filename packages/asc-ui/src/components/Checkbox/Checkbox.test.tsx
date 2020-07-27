@@ -1,7 +1,8 @@
 import React from 'react'
 import { render, cleanup, fireEvent } from '@testing-library/react'
 import Checkbox from './Checkbox'
-import { ThemeProvider } from '../../theme'
+import { ascDefaultTheme, ThemeProvider } from '../../theme'
+import { themeColor } from '../../utils'
 
 describe('Checkbox', () => {
   let container: any
@@ -21,24 +22,36 @@ describe('Checkbox', () => {
     const checkBox = container.querySelector('input')
     const icon = container.querySelector('span')
 
-    expect(icon).not.toHaveStyleRule('background-color', expect.any(String))
+    expect(icon).toHaveStyleRule(
+      'background-color',
+      themeColor('tint', 'level1')({ theme: ascDefaultTheme }),
+    )
 
     // Toggle on
     fireEvent.click(checkBox)
 
     expect(onChangeMock).toHaveBeenCalled()
-    expect(icon).toHaveStyleRule('background-color', expect.any(String))
+    expect(icon).not.toHaveStyleRule(
+      'background-color',
+      themeColor('tint', 'level1')({ theme: ascDefaultTheme }),
+    )
 
     // Toggle off
     fireEvent.click(checkBox)
 
-    expect(icon).not.toHaveStyleRule('background-color', expect.any(String))
+    expect(icon).toHaveStyleRule(
+      'background-color',
+      themeColor('tint', 'level1')({ theme: ascDefaultTheme }),
+    )
   })
 
   it('should toggle checked / not checked when the props change', () => {
     const icon = container.querySelector('span')
 
-    expect(icon).not.toHaveStyleRule('background-color', expect.any(String))
+    expect(icon).toHaveStyleRule(
+      'background-color',
+      themeColor('tint', 'level1')({ theme: ascDefaultTheme }),
+    )
 
     // Toggle on by changing props
     rerender(
@@ -47,7 +60,10 @@ describe('Checkbox', () => {
       </ThemeProvider>,
     )
 
-    expect(icon).toHaveStyleRule('background-color', expect.any(String))
+    expect(icon).not.toHaveStyleRule(
+      'background-color',
+      themeColor('tint', 'level1')({ theme: ascDefaultTheme }),
+    )
 
     // Toggle of by changing props
     rerender(
@@ -56,7 +72,10 @@ describe('Checkbox', () => {
       </ThemeProvider>,
     )
 
-    expect(icon).not.toHaveStyleRule('background-color', expect.any(String))
+    expect(icon).toHaveStyleRule(
+      'background-color',
+      themeColor('tint', 'level1')({ theme: ascDefaultTheme }),
+    )
   })
 
   it('should handle refs', () => {
