@@ -16,7 +16,8 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
-- Changed: **BREAKING** indeterminate state on checkbox should only work when `checked === false` and not truthy.
+- Fixed: The Select component with the `disabled` prop had an issue with background-color (See [PR](https://github.com/Amsterdam/amsterdam-styled-components/pull/876))
+- Changed: **BREAKING** indeterminate state on checkbox should only work when `checked === false` and not truthy. This also inverts behaviour when clicking on an indeterminate checkbox: it will enable all instead of disable all first
 - Added: Form elements Checkbox and Radio now have a white background (instead of transparent) (see [PR](https://github.com/Amsterdam/amsterdam-styled-components/pull/875)).
 
 ## [0.22.0]
