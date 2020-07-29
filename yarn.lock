@@ -2513,17 +2513,17 @@
     vue-docgen-loader "^1.4.0"
 
 "@storybook/addon-knobs@^6.0.0-beta.37":
-  version "6.0.0-rc.15"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-6.0.0-rc.15.tgz#e57beacb91902b9cea30430c865bbb3496aebca5"
-  integrity sha512-4XFoB+3rKuxHEWtSUiyGVsLbk568EsCH4d+I9AwOmXF4MYDgWTmgL4cx7Ot4PcWlZ4R4STg9c1/RZbZyB3HWUQ==
+  version "6.0.0-rc.16"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-6.0.0-rc.16.tgz#ea33e6ea5a308a200fd3a33f7a246fe2aef9d184"
+  integrity sha512-ypVPBHH+aWhO5QNZ/pOxaVss3E1FF6aHceMhd6wuZcc6/LZjiy/4FcPUzdB4dLQgVnTr4iNDeLPRWIDUyFa/1g==
   dependencies:
-    "@storybook/addons" "6.0.0-rc.15"
-    "@storybook/api" "6.0.0-rc.15"
-    "@storybook/channels" "6.0.0-rc.15"
-    "@storybook/client-api" "6.0.0-rc.15"
-    "@storybook/components" "6.0.0-rc.15"
-    "@storybook/core-events" "6.0.0-rc.15"
-    "@storybook/theming" "6.0.0-rc.15"
+    "@storybook/addons" "6.0.0-rc.16"
+    "@storybook/api" "6.0.0-rc.16"
+    "@storybook/channels" "6.0.0-rc.16"
+    "@storybook/client-api" "6.0.0-rc.16"
+    "@storybook/components" "6.0.0-rc.16"
+    "@storybook/core-events" "6.0.0-rc.16"
+    "@storybook/theming" "6.0.0-rc.16"
     copy-to-clipboard "^3.0.8"
     core-js "^3.0.1"
     escape-html "^1.0.3"
