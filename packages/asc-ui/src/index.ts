@@ -18,6 +18,7 @@ import Blockquote, { BlockquoteStyle } from './components/Blockquote'
 import { FilterBox, FilterBoxStyle } from './components/FilterBox'
 import { FilterOption, FilterOptionStyle } from './components/FilterOption'
 import FilterTag from './components/FilterTag'
+import ShowMoreShowLess from './components/ShowMoreShowLess'
 import Card, {
   CardActions,
   CardContent,
@@ -252,4 +253,5 @@ export {
   TableRow,
   TableCell,
   TableHeaderCell,
+  ShowMoreShowLess,
 }
