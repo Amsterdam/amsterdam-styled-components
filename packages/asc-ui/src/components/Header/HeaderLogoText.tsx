@@ -6,6 +6,7 @@ export interface LogoProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string
   tall?: boolean
+  title?: string
 }
 
 interface HeaderLogoTextProps extends React.HTMLAttributes<HTMLHeadingElement> {
@@ -22,7 +23,7 @@ const HeaderLogoText: React.FC<HeaderLogoTextProps> = ({
   ...otherProps
 }) => (
   <HeaderLogoTextStyle {...otherProps}>
-    {LogoIcon && <LogoIcon href={homeLink} tall={tall} />}
+    {LogoIcon && <LogoIcon href={homeLink} title={title} tall={tall} />}
     {title && <HeaderTitle href={homeLink}>{title}</HeaderTitle>}
   </HeaderLogoTextStyle>
 )
