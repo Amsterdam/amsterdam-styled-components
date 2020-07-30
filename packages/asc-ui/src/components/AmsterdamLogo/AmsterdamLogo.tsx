@@ -7,7 +7,11 @@ import AmsterdamLogoStyle, {
   LogoTitleStyle,
 } from './AmsterdamLogoStyle'
 
-const AmsterdamLogo: React.FC<LogoProps> = ({ tall, ...otherProps }) => (
+const AmsterdamLogo: React.FC<LogoProps> = ({
+  tall,
+  title = 'Gemeente Amsterdam',
+  ...otherProps
+}) => (
   <AmsterdamLogoStyle tall={tall} {...otherProps}>
     {tall ? (
       <>
@@ -21,7 +25,7 @@ const AmsterdamLogo: React.FC<LogoProps> = ({ tall, ...otherProps }) => (
     ) : (
       <LogoShortStyle />
     )}
-    <LogoTitleStyle srOnly>Gemeente Amsterdam</LogoTitleStyle>
+    <LogoTitleStyle srOnly>{title}</LogoTitleStyle>
   </AmsterdamLogoStyle>
 )
 
