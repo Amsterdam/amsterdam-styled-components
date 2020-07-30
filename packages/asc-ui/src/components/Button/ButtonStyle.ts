@@ -1,14 +1,10 @@
+import { darken, readableColor, size, transitions } from 'polished'
 import styled, { css } from 'styled-components'
-import { transitions, readableColor, darken, size } from 'polished'
-import {
-  themeColor,
-  focusStyleOutline,
-  svgFill,
-  themeSpacing,
-} from '../../utils'
-import { flexboxMinHeightFix } from '../shared/ie-fixes'
-import Icon from '../Icon'
 import { Theme } from '../../types'
+import { svgFill, themeColor, themeSpacing } from '../../utils'
+import { outlineWhenFocused } from '../../utils/focus'
+import Icon from '../Icon'
+import { flexboxMinHeightFix } from '../shared/ie-fixes'
 
 export type ButtonVariant =
   | 'primary'
@@ -242,7 +238,7 @@ const ButtonStyle = styled.button<Props>`
       justify-content: center;
       ${size(sizeProp || defaultProps.size)}// width and height
     `}
-  ${focusStyleOutline()}
+  ${outlineWhenFocused()}
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')}
   ${getVariant()}
   ${flexboxMinHeightFix()} // ie fix

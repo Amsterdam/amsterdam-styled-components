@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
-import { focusStyleOutline, svgFill, themeColor } from '../../utils'
-import { outlineStyle } from '../../utils/themeUtils'
+import { svgFill, themeColor } from '../../utils'
+import { focusOutline, outlineWhenFocused } from '../../utils/focus'
 import { IconStyle } from '../Icon'
 
 type CheckboxVariant = 'primary' | 'secondary' | 'tertiary'
@@ -86,11 +86,11 @@ const CheckboxWrapperStyle = styled.div<Props & { focus: boolean }>`
   padding: 6px;
   flex-shrink: 0; /* IE11 fix */
   color: ${themeColor('tint', 'level5')};
-  ${({ focus, theme }) =>
+  ${({ focus }) =>
     focus &&
     css`
       ${CheckboxIconStyle} {
-        ${outlineStyle(theme, 2, 1)};
+        ${focusOutline()}
       }
     `}
   ${({ disabled }) =>
@@ -123,7 +123,7 @@ const CheckboxWrapperStyle = styled.div<Props & { focus: boolean }>`
           outline: 1px solid red;
         }
       `}
-  ${focusStyleOutline()}
+  ${outlineWhenFocused()}
 `
 
 export { CheckboxWrapperStyle, CheckboxIconStyle }

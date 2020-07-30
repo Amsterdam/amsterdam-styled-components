@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
-import { focusStyleOutline, themeColor, themeSpacing } from '../../utils'
+import { themeColor, themeSpacing } from '../../utils'
+import { outlineWhenFocused } from '../../utils/focus'
 import { INPUT_SIZE } from '../shared/constants'
 
 type StyleProps = {
@@ -16,7 +17,7 @@ export const inputCss = css<StyleProps>`
   padding: ${themeSpacing(2)};
   width: 100%;
   height: ${INPUT_SIZE}px;
-  ${focusStyleOutline(2, 0.5)}
+  ${outlineWhenFocused()}
   ${({ error }) =>
     !error &&
     css`

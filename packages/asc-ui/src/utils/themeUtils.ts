@@ -138,60 +138,6 @@ export const getTypographyValueFromProperty = withTheme<
   return rules[property]
 })
 
-export const DEFAULT_OUTLINE_WIDTH = 3
-
-export const outlineStyle = (
-  theme: Theme.ThemeInterface,
-  width = DEFAULT_OUTLINE_WIDTH,
-  offset = 0,
-) => css`
-  outline-color: ${themeColor('support', 'focus')({ theme })};
-  outline-style: solid;
-  outline-offset: ${offset}px;
-  outline-width: ${width}px;
-`
-
-/* we have chosen here to use a dubble selector '&&'.
- This will override a hover state with outlines.
- introduced this when resolving issue: #131
-*/
-export const focusStyleOutline = (width?: number, offset?: number) => ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}) =>
-  css`
-    &&:focus {
-      ${outlineStyle(theme, width, offset)}
-    }
-  `
-
-export const focusStyleFill = withTheme(
-  (theme) => css`
-    &:focus {
-      background-color: ${themeColor('support', 'focus')({ theme })};
-    }
-  `,
-)
-
-export type FocusStyle = 'outline' | 'fill' | 'none'
-
-/**
- * decorates an element with one of the existing focus styles:
- * - outline: draws a border around the element on focus
- * - fill: fills the element background on focus
- * - none: ignored the focus state
- */
-export const getFocusStyle = (focusStyle: FocusStyle = 'fill') => {
-  const styles = {
-    outline: focusStyleOutline(),
-    fill: focusStyleFill(),
-    none: '',
-  }
-
-  return styles[focusStyle]
-}
-
 /**
  * Util to hide the component for screen readers
  */

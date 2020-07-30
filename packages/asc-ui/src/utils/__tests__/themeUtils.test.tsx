@@ -6,7 +6,6 @@ import { ascDefaultTheme } from '../../theme'
 import ThemeProvider from '../../theme/ThemeProvider'
 import {
   breakpoint,
-  focusStyleOutline,
   getTypographyFromTheme,
   getTypographyValueFromProperty,
   getValueFromTheme,
@@ -80,24 +79,6 @@ describe('getTypographyValueFromProperty', () => {
     expect(
       getTypographyValueFromProperty('h1', 'lineHeight', 'tabletS')({ theme }),
     ).toEqual('')
-  })
-})
-
-describe('focusStyleOutline', () => {
-  const theme = {
-    ...ascDefaultTheme,
-    colors: {
-      ...colors,
-      support: {
-        ...colors.support,
-        focus: '#abcde',
-      },
-    },
-  }
-
-  it('should return the focusstyle from theme', () => {
-    const result = focusStyleOutline()({ theme })
-    expect(result).toContain('#abcde')
   })
 })
 

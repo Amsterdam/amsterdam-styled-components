@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
-import { outlineStyle } from '../../utils/themeUtils'
+import { focusOutline } from '../../utils/focus'
 
 type RadioVariant = 'primary' | 'secondary' | 'tertiary'
 
@@ -106,11 +106,11 @@ const RadioWrapperStyle = styled.div<StyleOnlyProps & { focus: boolean }>`
   padding: ${themeSpacing(1)};
   margin-bottom: 1px;
   margin-right: ${themeSpacing(2)};
-  ${({ focus, theme }) =>
+  ${({ focus }) =>
     focus &&
     css`
       ${RadioCircleStyle} {
-        ${outlineStyle(theme, 2, 1)};
+        ${focusOutline()};
       }
     `}
 

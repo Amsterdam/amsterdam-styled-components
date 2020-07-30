@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
-import { getFocusStyle } from '../../utils/themeUtils'
+import { fillWhenFocused } from '../../utils/focus'
 
 export type Props = {
   active?: boolean
@@ -27,8 +27,6 @@ export default styled.a<Props>`
             border-bottom: 1px solid;
             margin-bottom: -1px; // prevents moving the content below because of border-bottom
           }
-          &:focus {
-            ${getFocusStyle('fill')};
-          }
+          ${fillWhenFocused()};
         `};
 `

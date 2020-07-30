@@ -4,7 +4,6 @@ import deprecatedWarning from './deprecatedWarning'
 export {
   themeColor,
   getTypographyFromTheme,
-  focusStyleOutline,
   srOnlyStyle,
   breakpoint,
   svgFill,

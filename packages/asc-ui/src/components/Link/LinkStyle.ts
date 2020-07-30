@@ -1,11 +1,7 @@
 import styled, { css } from 'styled-components'
 import { themeColor } from '../../utils'
-import {
-  FocusStyle,
-  getFocusStyle,
-  svgFill,
-  themeSpacing,
-} from '../../utils/themeUtils'
+import { FocusStyle, getFocusStyle } from '../../utils/focus'
+import { svgFill, themeSpacing } from '../../utils/themeUtils'
 import IconStyle from '../Icon/IconStyle'
 import Typography, { TypographyProps } from '../Typography'
 
