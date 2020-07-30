@@ -1,11 +1,7 @@
 import { LogoShort, LogoTall } from '@datapunt/asc-assets'
 import styled, { css } from 'styled-components'
-import {
-  breakpoint,
-  focusStyleOutline,
-  srOnlyStyle,
-  themeSpacing,
-} from '../../utils'
+import { breakpoint, srOnlyStyle, themeSpacing } from '../../utils'
+import { outlineWhenFocused } from '../../utils/focus'
 
 export type Props = {
   tall?: boolean
@@ -43,7 +39,7 @@ const AmsterdamLogoStyle = styled.a<Props>`
   width: 68px;
   flex-shrink: 0;
   margin-right: ${themeSpacing(3)};
-  ${focusStyleOutline()}
+  ${outlineWhenFocused()}
   ${({ tall }) => tall && tallStyle};
 `
 
