@@ -51,7 +51,14 @@ describe('MenuFlyOut', () => {
       .find(MenuButton)
       .at(0)
       .simulate('click', { preventDefault: () => {} })
+
   const onKeyDownSimulate = (keyType: any) =>
+    component.simulate('keydown', {
+      preventDefault: () => {},
+      key: KeyboardKeys[keyType],
+    })
+
+  const onKeyDownButtonSimulate = (keyType: any) =>
     component
       .find(MenuButton)
       .at(0)
@@ -98,7 +105,7 @@ describe('MenuFlyOut', () => {
 
   it('should toggle the isOpen state on enter', () => {
     act(() => {
-      onKeyDownSimulate('Enter')
+      onKeyDownButtonSimulate('Enter')
       jest.runAllTimers()
     })
 
@@ -106,14 +113,24 @@ describe('MenuFlyOut', () => {
     expect(menuListProps['aria-hidden']).toBe(false)
   })
 
-  it('should toggle the isOpen state on space', () => {
+  it('should toggle the isOpen state on space and close on escape', () => {
+    // Open a menu with space
     act(() => {
-      onKeyDownSimulate('Space')
+      onKeyDownButtonSimulate('Space')
       jest.runAllTimers()
     })
 
     menuListProps = component.find(MenuList).props()
     expect(menuListProps['aria-hidden']).toBe(false)
+
+    // Close a menu with escape button
+    act(() => {
+      onKeyDownSimulate('Escape')
+      jest.runAllTimers()
+    })
+
+    menuListProps = component.find(MenuList).props()
+    expect(menuListProps['aria-hidden']).toBe(true)
   })
 
   it('should call onExpand', () => {
