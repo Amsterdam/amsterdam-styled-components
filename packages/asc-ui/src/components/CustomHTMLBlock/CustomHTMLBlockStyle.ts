@@ -1,12 +1,22 @@
 import styled, { css } from 'styled-components'
+import { getTypographyFromTheme } from '../../utils'
+import { focusOutline } from '../../utils/focus'
+import { BlockquoteStyleCSS } from '../Blockquote/BlockquoteStyle'
 import { HeaderStyleCSS } from '../Heading/HeadingStyle'
 import { InlineLinkStyleCSS } from '../Link/LinkStyle'
-import { ParagraphStyleCSS } from '../Paragraph/ParagraphStyle'
-import { getTypographyFromTheme } from '../../utils'
-import { BulletCSS, ListStyleCSS } from '../List/ListStyle'
 import { ListItemStyleCSS } from '../List/ListItemStyle'
-import { BlockquoteStyleCSS } from '../Blockquote/BlockquoteStyle'
+import { BulletCSS, ListStyleCSS } from '../List/ListStyle'
 import { OrderedListStyleCSS } from '../List/OrderedListStyle'
+import { ParagraphStyleCSS } from '../Paragraph/ParagraphStyle'
+
+/* stylelint-disable selector-type-no-unknown */
+const LinkCSS = css`
+  ${InlineLinkStyleCSS}
+
+  :focus {
+    ${focusOutline()}
+  }
+`
 
 const ElementStyleMapping = {
   h1: HeaderStyleCSS,
@@ -15,7 +25,7 @@ const ElementStyleMapping = {
   h4: HeaderStyleCSS,
   h5: HeaderStyleCSS,
   h6: HeaderStyleCSS,
-  a: InlineLinkStyleCSS,
+  a: LinkCSS,
   p: ParagraphStyleCSS,
   blockquote: BlockquoteStyleCSS,
   // Default variant bullet when rendered in CustomHTMLBlock
