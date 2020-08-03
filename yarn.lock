@@ -4000,9 +4000,9 @@
     "@types/react" "*"
 
 "@types/react-table@^7.0.19":
-  version "7.0.19"
-  resolved "https://registry.yarnpkg.com/@types/react-table/-/react-table-7.0.19.tgz#a70603ac0ffdeaf399fc6919aacb32fc42e9dd40"
-  integrity sha512-RYyEY7Yry6F2JsKhHeFsGdzuFF1hMqBStQrrazDzpBl4m/ECGHJxFVQjLBRzRwK+47ZKNPm79f7qEpHirbiCLA==
+  version "7.0.20"
+  resolved "https://registry.yarnpkg.com/@types/react-table/-/react-table-7.0.20.tgz#761f61dc21e69082ca9efaed64a227976fb30b01"
+  integrity sha512-oonZr35vV4mNNJ/QFhxpDuyn/y7wrIbzQcRotnMqI1nKLWoOmzAYb25OjWt/UJzCuKU6AJxzNmeDYgGqvIZItg==
   dependencies:
     "@types/react" "*"
 
