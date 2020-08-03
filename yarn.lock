@@ -2558,16 +2558,16 @@
     ts-dedent "^1.1.1"
 
 "@storybook/addon-viewport@^6.0.0-beta.37":
-  version "6.0.0-rc.20"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-6.0.0-rc.20.tgz#75f4ed42c1d99b9a24c16a0be4481d3a90652a19"
-  integrity sha512-zZ/P8ue8RDbRSObOEV2jsgqRMl7rnQ/yP3ajf87IJ6qqudsfjRgn6Ro5MZLVAdb6u326jyO80Sh/Gi9yWhOQDQ==
+  version "6.0.0-rc.24"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-6.0.0-rc.24.tgz#2e8ede3e32e2e78d25958c39fbbbdad8dcc5c389"
+  integrity sha512-QVunuvdCjb3xVBZF+idcU47qRSElw1JaPXRztxOW9yw53LHfA8XfXOPU2jv3hj4XvXlbFZ5+j59nP0/zmpLMFQ==
   dependencies:
-    "@storybook/addons" "6.0.0-rc.20"
-    "@storybook/api" "6.0.0-rc.20"
-    "@storybook/client-logger" "6.0.0-rc.20"
-    "@storybook/components" "6.0.0-rc.20"
-    "@storybook/core-events" "6.0.0-rc.20"
-    "@storybook/theming" "6.0.0-rc.20"
+    "@storybook/addons" "6.0.0-rc.24"
+    "@storybook/api" "6.0.0-rc.24"
+    "@storybook/client-logger" "6.0.0-rc.24"
+    "@storybook/components" "6.0.0-rc.24"
+    "@storybook/core-events" "6.0.0-rc.24"
+    "@storybook/theming" "6.0.0-rc.24"
     core-js "^3.0.1"
     global "^4.3.2"
     memoizerific "^1.11.3"
