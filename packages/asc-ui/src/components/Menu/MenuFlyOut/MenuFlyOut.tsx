@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { ChevronDown, ChevronUp } from '@datapunt/asc-assets'
 import MenuList from '../MenuList/MenuList'
 import MenuContext, { useMenuContext } from '../MenuContext'
@@ -9,7 +9,6 @@ import useDebounce from '../../../utils/hooks/useDebounce'
 import { KeyboardKeys } from '../../../types/index'
 import MenuButton from '../MenuButton/MenuButton'
 import useFocusWithArrows from '../../../utils/hooks/useFocusWithArrows'
-import useActionOnEscape from '../../../utils/hooks/useActionOnEscape'
 
 type Props = {
   label: string
@@ -26,19 +25,28 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
 
   const { keyDown: keyDownArrowFocus } = useFocusWithArrows(ref)
 
-  const { onKeyDown: keyDownEscape } = useActionOnEscape(() => {
-    setOpen(false)
-  })
+  const onKeyDownEventHandler = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === KeyboardKeys.Escape) {
+        setOpen(false)
+      }
+    },
+    [setOpen],
+  )
+
+  // We need to close the menu in case user hovers or focuses on the menu and press escape
+  // Todo: we need to move this to a higher component, as this unnecessarily will add multiple eventlisteners
+  useEffect(() => {
+    window.addEventListener('keydown', onKeyDownEventHandler)
+    return () => {
+      window.removeEventListener('keydown', onKeyDownEventHandler)
+    }
+  }, [onKeyDownEventHandler])
 
   const onHandleOpen = (e: React.MouseEvent | React.KeyboardEvent) => {
     e.preventDefault()
 
     setOpen(!menuOpen)
-  }
-
-  const onHandleKeyDown = (event: React.KeyboardEvent) => {
-    keyDownArrowFocus(event)
-    keyDownEscape(event)
   }
 
   const onHandleKeyDownButton = (event: React.KeyboardEvent) => {
@@ -85,7 +93,7 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
       ref={ref}
       onBlur={onBlurHandler}
       hasToggle={hasToggle}
-      onKeyDown={onHandleKeyDown}
+      onKeyDown={keyDownArrowFocus}
       {...extraEvents}
       {...otherProps}
     >
