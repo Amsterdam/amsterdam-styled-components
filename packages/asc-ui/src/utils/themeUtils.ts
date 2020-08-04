@@ -313,7 +313,7 @@ type ThemeSpacingParameters = [
  *
  * @example If the theme's spacing unit is 4px:
  * css`
- *  padding: ${themeSpacing(1, 2, 1, 4)} // padding: 4px 8px 4px 18px;
+ *  padding: ${themeSpacing(1, 2, 1, 4)} // padding: 4px 8px 4px 16px;
  *  margin-bottom: ${themeSpacing(3)} // margin-bottom: 12px;
  * `
  */
