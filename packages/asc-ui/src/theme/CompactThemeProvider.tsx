@@ -1,6 +1,7 @@
+import deepMerge from 'deepmerge'
 import React from 'react'
-import ThemeProvider from './ThemeProvider'
 import { Theme } from '../types'
+import ThemeProvider, { ThemeProviderProps } from './ThemeProvider'
 
 // These are the overrides for showing compact text for several typography types
 const overridesCompactTheme: Partial<Theme.ThemeInterface> = {
@@ -55,8 +56,24 @@ const overridesCompactTheme: Partial<Theme.ThemeInterface> = {
  * </ThemeProvider>
  *
  */
-const CompactThemeProvider: React.FC<{}> = ({ children }) => (
-  <ThemeProvider overrides={overridesCompactTheme}>{children}</ThemeProvider>
-)
+const CompactThemeProvider: React.FC<ThemeProviderProps> = ({
+  overrides: passedOverrides,
+  deep = true,
+  children,
+  ...otherProps
+}) => {
+  /* eslint-disable no-nested-ternary */
+  const overrides = passedOverrides
+    ? deep
+      ? deepMerge(overridesCompactTheme, passedOverrides)
+      : { ...overridesCompactTheme, ...passedOverrides }
+    : overridesCompactTheme
+
+  return (
+    <ThemeProvider {...otherProps} overrides={overrides} deep={deep}>
+      {children}
+    </ThemeProvider>
+  )
+}
 
 export default CompactThemeProvider
