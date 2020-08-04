@@ -25,8 +25,8 @@
     "@datapunt/asc-assets": "^0.23.0-alpha.1",
     "classnames": "^2.2.6",
     "deepmerge": "^4.2.2",
-    "polished": "^3.5.1",
-    "react-uid": "^2.2.0"
+    "polished": "^3.6.5",
+    "react-uid": "^2.3.0"
   },
   "peerDependencies": {
     "react": ">=16.8.6",
