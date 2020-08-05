@@ -31,7 +31,6 @@ const Checkbox = React.forwardRef<
     externalRef,
   ) => {
     const [checked, setChecked] = useState(!!checkedProp)
-    const [focus, setFocus] = useState(false)
     const { setActive } = useContext(LabelContext)
     const ref = React.useRef<HTMLInputElement>(null)
 
@@ -55,7 +54,7 @@ const Checkbox = React.forwardRef<
 
     return (
       <CheckboxWrapperStyle
-        {...{ className, disabled, focus, checked, error }}
+        {...{ className, disabled, checked, error }}
         aria-disabled={disabled}
       >
         <CheckboxIconStyle
@@ -67,10 +66,6 @@ const Checkbox = React.forwardRef<
         </CheckboxIconStyle>
         <CheckboxStyle
           {...{ ...otherProps, disabled, checked, ref }}
-          onFocus={() => {
-            setFocus(true)
-          }}
-          onBlur={() => setFocus(false)}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             if (onChange) {
               onChange(e)

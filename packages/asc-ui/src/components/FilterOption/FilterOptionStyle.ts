@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
-import { fillWhenFocused } from '../../utils/focus'
 
 export type Props = {
   active?: boolean
@@ -19,7 +18,9 @@ export default styled.a<Props>`
       ? css`
           font-weight: 700;
           border-color: ${themeColor('primary')};
-          outline: 1px solid ${themeColor('primary')};
+          &:not(:focus) {
+            outline: 1px solid ${themeColor('primary')};
+          }
         `
       : css`
           &:hover {
@@ -27,6 +28,5 @@ export default styled.a<Props>`
             border-bottom: 1px solid;
             margin-bottom: -1px; // prevents moving the content below because of border-bottom
           }
-          ${fillWhenFocused()};
         `};
 `

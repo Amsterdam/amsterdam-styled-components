@@ -1,7 +1,6 @@
 import { ChevronDown } from '@datapunt/asc-assets'
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
-import { outlineWhenFocused } from '../../utils/focus'
 import { INPUT_SIZE } from '../shared/constants'
 
 export type Props = {
@@ -98,8 +97,6 @@ const SelectStyle = styled.select<Props>`
         border: 1px solid ${themeColor('tint', 'level7')};
       `}
   }
-
-  ${outlineWhenFocused()}
 
   &:disabled {
     pointer-events: none;

@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
-import { focusOutline } from '../../utils/focus'
 
 type RadioVariant = 'primary' | 'secondary' | 'tertiary'
 
@@ -37,15 +36,14 @@ const getVariantColor = () => ({ variant }: { variant?: RadioVariant }) => {
 const RadioStyle = styled.input.attrs({
   type: 'radio',
 })<Props>`
-  top: 0;
-  left: 0;
-  width: 100%;
   cursor: inherit;
-  height: 100%;
   margin: 0;
   padding: 0;
   position: absolute;
-  opacity: 0;
+  width: 24px;
+  height: 24px;
+  left: 4px;
+  top: 4px;
 `
 
 export default RadioStyle
@@ -65,6 +63,7 @@ const RadioCircleStyle = styled.span<StyleOnlyProps>`
   background-color: ${themeColor('tint', 'level1')};
   border: 1px solid;
   border-radius: 50%;
+  z-index: 1;
 
   &::after {
     content: '';
@@ -106,20 +105,12 @@ const RadioWrapperStyle = styled.div<StyleOnlyProps & { focus: boolean }>`
   padding: ${themeSpacing(1)};
   margin-bottom: 1px;
   margin-right: ${themeSpacing(2)};
-  ${({ focus }) =>
-    focus &&
-    css`
-      ${RadioCircleStyle} {
-        ${focusOutline()};
-      }
-    `}
-
   ${({ disabled }) =>
     disabled &&
     css`
       pointer-events: none;
     `}
-    
+
   ${({ checked, disabled, focus }) =>
     !checked &&
     !disabled && // IE11 fix. If an element is disabled, you can still hover on it on IE11.

@@ -115,12 +115,6 @@ export {
   svgFill,
   themeSpacing,
 } from './utils'
-export {
-  fillWhenFocused,
-  focusFill,
-  focusOutline,
-  outlineWhenFocused,
-} from './utils/focus'
 export { constants, hooks }
 export { themeColor, perceivedLoading }
 // Components

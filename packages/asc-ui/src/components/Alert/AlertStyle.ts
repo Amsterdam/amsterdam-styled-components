@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components'
 import { Theme } from '../../types'
 import { svgFill, themeColor, themeSpacing } from '../../utils'
-import { outlineWhenFocused } from '../../utils/focus'
 import Button from '../Button'
 import Heading from '../Heading'
 
@@ -55,7 +54,6 @@ export const AlertHeading = styled(Heading)`
 export default styled.div<Props>`
   position: relative;
   width: 100%; /* IE11 fix */
-  ${outlineWhenFocused()}
 
   /* IE11 fix: display 'flex' only when dismissible */
   ${({ dismissible }) =>

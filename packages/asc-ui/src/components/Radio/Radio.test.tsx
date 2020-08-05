@@ -27,9 +27,7 @@ describe('Radio', () => {
   })
 
   it('should match the style', () => {
-    // Native radio should be hidden
     const radio = container.querySelector('#radio-1')
-    expect(radio).toHaveStyleRule('opacity', '0')
 
     const circle = radio.previousSibling
     expect(circle).toHaveStyleRule('border-radius', '50%')
