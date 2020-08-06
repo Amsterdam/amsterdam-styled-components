@@ -21,3 +21,7 @@ update_configs:
     default_labels:
       - dependencies
       - examples
+
+  - package-manager: "github-actions"
+    directory: "/"
+    update_schedule: "daily"
