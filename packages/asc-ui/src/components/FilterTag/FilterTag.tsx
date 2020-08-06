@@ -9,7 +9,7 @@ export interface FilterTagProps extends TagProps {}
 const FilterTag: React.FC<
   FilterTagProps & React.ButtonHTMLAttributes<HTMLButtonElement>
 > = ({ children, ...otherProps }) => (
-  <FilterTagStyle forwardedAs="button" {...otherProps}>
+  <FilterTagStyle {...otherProps}>
     {children}
     <Icon inline size={14} color="primary">
       <Close />

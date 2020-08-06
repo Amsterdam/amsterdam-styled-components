@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
-import { outlineWhenFocused } from '../../utils/focus'
 
 const ContextMenuButtonStyle = styled.button`
   cursor: pointer;
@@ -12,7 +11,6 @@ const ContextMenuButtonStyle = styled.button`
   justify-content: space-between;
   z-index: 1;
   border: 1px solid;
-  ${outlineWhenFocused()}
 
   & > span:not(:last-child) {
     margin-right: ${themeSpacing(2)};

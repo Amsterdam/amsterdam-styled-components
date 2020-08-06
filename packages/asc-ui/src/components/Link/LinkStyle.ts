@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components'
-import { themeColor } from '../../utils'
-import { FocusStyle, getFocusStyle } from '../../utils/focus'
-import { svgFill, themeSpacing } from '../../utils/themeUtils'
+import { themeColor, svgFill, themeSpacing } from '../../utils'
 import IconStyle from '../Icon/IconStyle'
 import Typography, { TypographyProps } from '../Typography'
 
@@ -13,7 +11,6 @@ export type Props = {
    * @deprecated
    */
   linkType?: LinkVariant
-  focusStyle?: FocusStyle
   darkBackground?: boolean
 } & TypographyProps
 
@@ -63,7 +60,6 @@ export default styled(Typography)<Props>`
     margin-right: ${themeSpacing(1)};
   }
 
-  ${({ focusStyle }) => getFocusStyle(focusStyle)}
   ${({ variant }) => {
     switch (variant) {
       case 'blank':
@@ -78,13 +74,10 @@ export default styled(Typography)<Props>`
   ${({ darkBackground }) =>
     darkBackground &&
     css`
-      &:not(:focus),
-      &:hover:not(:focus) {
-        color: ${themeColor('tint', 'level1')};
+      color: ${themeColor('tint', 'level1')};
 
-        ${IconStyle} {
-          ${svgFill(themeColor('tint', 'level1'))}
-        }
+      ${IconStyle} {
+        ${svgFill(themeColor('tint', 'level1'))}
       }
     `};
 `

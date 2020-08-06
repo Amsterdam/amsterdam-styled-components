@@ -18,11 +18,7 @@ const GlobalStyle = createGlobalStyle`
   /* Use border-box sizing by default for all elements */
   *, *::before, *::after {
     box-sizing: border-box;
-  }
-  
-  *:focus {
-    outline: none;
-  }
+  } 
 `
 
 export default GlobalStyle

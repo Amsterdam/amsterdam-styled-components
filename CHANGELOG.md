@@ -16,6 +16,9 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Removed: custom (yellow) focus-styles on focussable components, so it will now use the browser's default
+- Removed: **BREAKING** `fillWhenFocused`, `focusFill`, `outlineWhenFocused` and `focusOutline`
+- Removed: **BREAKING** `focusStyle` prop in `Link` component
 - Added: `CompactThemeProvider` now accepts the same props as `ThemeProvider`
 - Changed: Utility functions for applying focus styling are now exported (`focusOutline`, `outlineWhenFocused`, `focusFill`, and `fillWhenFocused`)
 - Fixed: The Select component with the `disabled` prop had an issue with background-color (See [PR](https://github.com/Amsterdam/amsterdam-styled-components/pull/876))

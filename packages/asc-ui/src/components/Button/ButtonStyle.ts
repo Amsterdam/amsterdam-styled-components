@@ -2,7 +2,6 @@ import { darken, readableColor, size, transitions } from 'polished'
 import styled, { css } from 'styled-components'
 import { Theme } from '../../types'
 import { svgFill, themeColor, themeSpacing } from '../../utils'
-import { outlineWhenFocused } from '../../utils/focus'
 import Icon from '../Icon'
 import { flexboxMinHeightFix } from '../shared/ie-fixes'
 
@@ -30,18 +29,7 @@ export const ArrowRight = styled.div`
   height: 0;
   border: 22px solid rgba(255, 255, 255, 0);
   border-left: 15px solid ${themeColor('secondary')};
-  ${transitions('border-color', '0.1s ease-in-out')} :after {
-    content: '';
-    position: absolute;
-    top: -26px;
-    right: -30px;
-    width: 0;
-    height: 0;
-    border: 26px solid rgba(255, 255, 255, 0);
-    border-left: 17px solid ${themeColor('support', 'focus')};
-    z-index: -1;
-    opacity: 0;
-  }
+  ${transitions('border-color', '0.1s ease-in-out')}
 `
 
 export const IconLeft = styled(Icon)`
@@ -238,7 +226,6 @@ const ButtonStyle = styled.button<Props>`
       justify-content: center;
       ${size(sizeProp || defaultProps.size)}// width and height
     `}
-  ${outlineWhenFocused()}
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')}
   ${getVariant()}
   ${flexboxMinHeightFix()} // ie fix
