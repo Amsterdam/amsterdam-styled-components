@@ -23,19 +23,14 @@ export default styled.div<StyleProps>`
 
       ${showMoreShowLess &&
       css`
-        &:after {
-          content: '';
-          display: block;
-          width: 100%;
-          height: 100px;
-          background: linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 1) 100%
-          );
-          position: absolute;
-          bottom: 0;
-        }
+        mask-image: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          color-stop(0, rgba(0, 0, 0, 1)),
+          color-stop(0.6, rgba(0, 0, 0, 1)),
+          color-stop(1, rgba(0, 0, 0, 0))
+        );
       `}
     `}
   ${({ showMoreShowLess }) =>
