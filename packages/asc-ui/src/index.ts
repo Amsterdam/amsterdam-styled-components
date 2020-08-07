@@ -108,6 +108,7 @@ import { themeColor } from './utils'
 import * as hooks from './utils/hooks'
 import { perceivedLoading } from './utils/themeUtils'
 
+export * from './components/Tabs'
 export {
   breakpoint,
   showAboveBackDrop,
