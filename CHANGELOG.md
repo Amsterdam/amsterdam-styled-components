@@ -16,6 +16,9 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Deprecated: `icon` prop now only accepts strings: `download` or `external`. If you want to use a custom icon, please pass it as a child
+- Changed: `icon` prop to render a download or external link icon
+- Deprecated: `with-chevron` variant in Link component. Please use `inList` prop instead
 - Removed: custom (yellow) focus-styles on focussable components, so it will now use the browser's default
 - Removed: **BREAKING** `fillWhenFocused`, `focusFill`, `outlineWhenFocused` and `focusOutline`
 - Removed: **BREAKING** `focusStyle` prop in `Link` component

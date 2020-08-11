@@ -1,9 +1,17 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { Link, Icon, List, ListItem, themeColor } from '@datapunt/asc-ui'
 import styled from 'styled-components'
-import { Alert, ExternalLink } from '@datapunt/asc-assets'
+import { Alert } from '@datapunt/asc-assets'
 
-<Meta title="UI/Typography/Link" component={Link} />
+export const Decorator = styled.div`
+  max-width: 500px;
+`
+
+<Meta
+  title="UI/Typography/Link"
+  component={Link}
+  decorators={[(storyFn) => <Decorator>{storyFn()}</Decorator>]}
+/>
 
 # Link
 
@@ -20,27 +28,36 @@ export const DarkListItem = styled(ListItem)`
 <Preview>
   <Story name="Default">
     <React.Fragment>
-      <Link href="/">
-        I am a &quot;default&quot; link without chevron icon!
-      </Link>
-    </React.Fragment>
-  </Story>
-</Preview>
-
-## Chevron Variant
-
-<Preview>
-  <Story name="Chevron Variant">
-    <React.Fragment>
       <List>
         <ListItem>
-          <Link href="/" variant="with-chevron">
-            I am a link with a chevron
+          <Link href="/">I am a default link</Link>
+        </ListItem>
+        <ListItem>
+          <Link icon="external" href="/">
+            I am an external default link
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link icon="download" href="/">
+            I am an download default link
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link inList href="/">
+            I am an default link inside a list item
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link href="/">
+            <span>I am a default link with a custom icon</span>
+            <Icon size={20}>
+              <Alert />
+            </Icon>
           </Link>
         </ListItem>
         <DarkListItem>
-          <Link darkBackground href="/" variant="with-chevron">
-            I am a link with a chevron on a dark background styles
+          <Link darkBackground icon="external" href="/">
+            I am a default external link on a dark background
           </Link>
         </DarkListItem>
       </List>
@@ -60,29 +77,30 @@ export const DarkListItem = styled(ListItem)`
           </Link>
         </ListItem>
         <ListItem>
-          <Link
-            href="/"
-            variant="inline"
-            icon={
-              <Icon size={16}>
-                <ExternalLink />
-              </Icon>
-            }
-          >
+          <Link href="/" variant="inline" icon="external">
             I am an external inline link
           </Link>
         </ListItem>
+        <ListItem>
+          <Link href="/" variant="inline" icon="download">
+            I am an download inline link
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link href="/" variant="inline" inList>
+            I am an inline link inside a list item
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link href="/" variant="inline">
+            <span>I am an inline link with a custom icon</span>{' '}
+            <Icon size={20}>
+              <Alert />
+            </Icon>
+          </Link>
+        </ListItem>
         <DarkListItem>
-          <Link
-            darkBackground
-            href="/"
-            variant="inline"
-            icon={
-              <Icon size={16}>
-                <ExternalLink />
-              </Icon>
-            }
-          >
+          <Link darkBackground href="/" variant="inline" icon="external">
             I am an external inline link on a dark background
           </Link>
         </DarkListItem>
