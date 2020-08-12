@@ -3971,9 +3971,9 @@
     "@types/react" "*"
 
 "@types/react-table@^7.0.19":
-  version "7.0.20"
-  resolved "https://registry.yarnpkg.com/@types/react-table/-/react-table-7.0.20.tgz#761f61dc21e69082ca9efaed64a227976fb30b01"
-  integrity sha512-oonZr35vV4mNNJ/QFhxpDuyn/y7wrIbzQcRotnMqI1nKLWoOmzAYb25OjWt/UJzCuKU6AJxzNmeDYgGqvIZItg==
+  version "7.0.22"
+  resolved "https://registry.yarnpkg.com/@types/react-table/-/react-table-7.0.22.tgz#5dd97d7c2b1978338ed3f3f634da0d5b0362998d"
+  integrity sha512-RAzjB7Udv23QPuIuNNRn8VBldmcFobqpNqLWXh0FXVVyIye76muzfn01WZdcTIEfmQjHts7bjJSQQVabLQgTcA==
   dependencies:
     "@types/react" "*"
 
