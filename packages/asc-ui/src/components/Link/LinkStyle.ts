@@ -7,11 +7,9 @@ export type LinkVariant = 'inline' | 'blank' | 'with-chevron'
 
 export type Props = {
   variant?: LinkVariant
-  /**
-   * @deprecated
-   */
-  linkType?: LinkVariant
+  icon?: 'external' | 'download'
   darkBackground?: boolean
+  inList?: boolean
 } & TypographyProps
 
 export const BlankLinkStyleCSS = css`
@@ -23,7 +21,7 @@ export const InlineLinkStyleCSS = css`
   color: ${themeColor('primary')};
   ${svgFill(themeColor('primary'))};
 
-  &:hover:not(:focus) {
+  &:hover {
     color: ${themeColor('secondary')};
     ${svgFill(themeColor('secondary'))};
   }
@@ -36,12 +34,19 @@ export const DefaultLinkStyleCSS = css<Props>`
 
   &:hover {
     text-decoration: underline;
-  }
-
-  &:hover:not(:focus) {
     color: ${themeColor('secondary')};
     ${svgFill(themeColor('secondary'))};
   }
+`
+
+export const ChevronIcon = styled(IconStyle)`
+  /* no use of themeSpacing on margin-top, this is just to align the icon with the link text */
+  margin: 5px ${themeSpacing(1)} 0 0;
+`
+
+export const RightIcon = styled(IconStyle)`
+  /* no use of themeSpacing on margin-top, this is just to align the icon with the link text */
+  margin: 3px 0 0 ${themeSpacing(2)};
 `
 
 export const LinkContent = styled.span`
@@ -50,16 +55,6 @@ export const LinkContent = styled.span`
 
 export default styled(Typography)<Props>`
   display: inline-flex;
-  align-items: center;
-
-  & > *:last-of-type {
-    margin-left: ${themeSpacing(1)};
-  }
-
-  & > *:first-of-type {
-    margin-right: ${themeSpacing(1)};
-  }
-
   ${({ variant }) => {
     switch (variant) {
       case 'blank':
@@ -70,14 +65,15 @@ export default styled(Typography)<Props>`
         return DefaultLinkStyleCSS
     }
   }}
-
   ${({ darkBackground }) =>
     darkBackground &&
     css`
-      color: ${themeColor('tint', 'level1')};
-
-      ${IconStyle} {
-        ${svgFill(themeColor('tint', 'level1'))}
+      &,
+      &:hover {
+        color: ${themeColor('tint', 'level1')};
+        ${IconStyle} {
+          ${svgFill(themeColor('tint', 'level1'))}
+        }
       }
     `};
 `

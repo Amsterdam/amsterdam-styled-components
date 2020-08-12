@@ -8,6 +8,15 @@
   ],
   "rules": {
     "prettier/prettier": true,
-    "value-keyword-case": null
+    "value-keyword-case": null,
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignoreTypes": [
+          "/-styled-mixin/",
+          "$dummyValue"
+        ]
+      }
+    ]
   }
 }

@@ -1,47 +1,65 @@
 import React from 'react'
-import { render, cleanup } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import Link from './Link'
+import { ascDefaultTheme, themeColor } from '../../index'
 import { ThemeProvider } from '../../theme'
 
 describe('Link', () => {
-  afterEach(cleanup)
+  it('should render without any icons', () => {
+    const { container } = render(<Link href="/">default link</Link>)
 
-  it('should render the links ', () => {
-    const { getByText } = render(
+    expect(container.firstChild).toBeDefined()
+    expect(container.querySelector('svg')).toBeNull()
+  })
+
+  it('should render an external or download icon', () => {
+    const { container, rerender } = render(
+      <Link icon="external" href="/">
+        default link
+      </Link>,
+    )
+    expect(container.querySelector('svg')).toBeDefined()
+
+    rerender(
+      <Link icon="download" href="/">
+        default link
+      </Link>,
+    )
+    expect(container.querySelector('svg')).toBeDefined()
+  })
+
+  it('should render the inline variant', () => {
+    const { container } = render(
       <ThemeProvider>
-        <>
-          <Link href="http://default-link">default link</Link>
-          <Link href="http://with-chevron-link" variant="with-chevron">
-            default link with chevron
-          </Link>
-          <Link href="http://inline-link" variant="inline">
-            inline link
-          </Link>
-          <Link href="http://blank-link" variant="blank">
-            blank link (no style)
-          </Link>
-        </>
+        <Link variant="inline" href="/">
+          default link
+        </Link>
       </ThemeProvider>,
     )
 
-    const anchorDefault = getByText('default link').closest('a')
-    expect(anchorDefault && anchorDefault.getAttribute('href')).toEqual(
-      'http://default-link',
+    expect(container.firstChild).toHaveStyleRule(
+      'color',
+      themeColor('primary')({ theme: ascDefaultTheme }),
+    )
+  })
+
+  it('should render the blank variant', () => {
+    const { container } = render(
+      <Link variant="blank" href="/">
+        default link
+      </Link>,
     )
 
-    const anchorWithChevron = getByText(/with chevron/).closest('a')
-    expect(anchorWithChevron && anchorWithChevron.getAttribute('href')).toEqual(
-      'http://with-chevron-link',
+    expect(container.firstChild).toHaveStyleRule('display', 'inline-block')
+  })
+
+  it('should render the an icon when passing the inList prop', () => {
+    const { container } = render(
+      <Link inList href="/">
+        default link
+      </Link>,
     )
 
-    const anchorInline = getByText('inline link').closest('a')
-    expect(anchorInline && anchorInline.getAttribute('href')).toEqual(
-      'http://inline-link',
-    )
-
-    const anchorBlank = getByText(/blank link/).closest('a')
-    expect(anchorBlank && anchorBlank.getAttribute('href')).toEqual(
-      'http://blank-link',
-    )
+    expect(container.querySelector('svg')).toBeDefined()
   })
 })

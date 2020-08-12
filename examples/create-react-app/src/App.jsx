@@ -59,39 +59,39 @@ const App = () => (
     <>
       <GlobalStyle />
       <div className="App">
-        <Typography>Link list deafaultexample</Typography>
+        <Typography>Link list default example</Typography>
         <List>
           <ListItem>
-            <Link href="/" linkType="with-chevron">
+            <Link href="/" inList>
               default LinkListItem 1
             </Link>
           </ListItem>
           <ListItem>
-            <Link href="/" linkType="with-chevron">
+            <Link href="/" inList>
               default LinkListItem 2
             </Link>
           </ListItem>
         </List>
         <StyledLinkList>
           <ListItem>
-            <Link href="/" linkType="with-chevron">
+            <Link href="/" inList>
               StyledLinkList LinkListItem 1
             </Link>
           </ListItem>
           <ListItem>
-            <Link href="/" linkType="with-chevron">
+            <Link href="/" inList>
               StyledLinkList LinkListItem 2
             </Link>
           </ListItem>
         </StyledLinkList>
         <StyledLinkList className="link-list">
           <StyledLinkListItem>
-            <Link href="/" linkType="with-chevron">
+            <Link href="/" inList>
               StyledLinkList StyledLinkListItem 1
             </Link>
           </StyledLinkListItem>
           <StyledLinkListItem>
-            <Link href="/" linkType="with-chevron">
+            <Link href="/" inList>
               StyledLinkList StyledLinkListItem 2
             </Link>
           </StyledLinkListItem>
