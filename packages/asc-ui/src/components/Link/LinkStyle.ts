@@ -40,13 +40,13 @@ export const DefaultLinkStyleCSS = css<Props>`
 `
 
 export const ChevronIcon = styled(IconStyle)`
-  /* no use of themeSpacing on margin-top, this is just to align the icon with the link text */
-  margin: 5px ${themeSpacing(1)} 0 0;
+  /* no use of themeSpacing on margin-top, this is just to align the icon perfectly with the link text */
+  margin: 0.25em ${themeSpacing(1)} 0 0;
 `
 
 export const RightIcon = styled(IconStyle)`
-  /* no use of themeSpacing on margin-top, this is just to align the icon with the link text */
-  margin: 3px 0 0 ${themeSpacing(2)};
+  /* no use of themeSpacing on margin-top, this is just to align the icon perfectly with the link text */
+  margin: 0.2em 0 0 ${themeSpacing(2)};
 `
 
 export const LinkContent = styled.span`
