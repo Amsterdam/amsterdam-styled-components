@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import LabelStyle, { LabelTextStyle, Props as StyleProps } from './LabelStyle'
 import usePassPropsToChildren from '../../utils/hooks/usePassPropsToChildren'
 import LabelContext from './LabelContext'
 
 type Props = {
-  label: string
+  label: ReactNode
   noActiveState?: boolean // Temporary solution to make the active state on the label optional, as there is nothing specified in design system. Needs to be discussed with design.
 } & StyleProps
 
