@@ -226,7 +226,10 @@ const ButtonStyle = styled.button<Props>`
       justify-content: center;
       ${size(sizeProp || defaultProps.size)}// width and height
     `}
-  ${transitions(['color', 'background-color'], '0.1s ease-in-out')}
+  ${transitions(
+    ['color', 'background-color'],
+    '0.1s ease-in-out',
+  )}
   ${getVariant()}
   ${flexboxMinHeightFix()} // ie fix
   ${({ taskflow }) =>
@@ -265,7 +268,7 @@ const ButtonStyle = styled.button<Props>`
       css`
         background-color: rgba(0, 0, 0, 0);
       `}
-    }
+  }
 `
 
 export default ButtonStyle

@@ -14,7 +14,7 @@ import EditorialPost, {
 
 export type Props = {} & EditorialPostProps
 
-export default styled(EditorialPost)<Props>` 
+export default styled(EditorialPost)<Props>`
   ${EditorialBodyStyle} {
     ${({ image }) =>
       !!image &&
@@ -23,14 +23,17 @@ export default styled(EditorialPost)<Props>`
           padding: ${EDITORIAL_PADDING_TOP}px 24px;
         }
       `}
-    
+
     /* 
     Here we calculate how much the EditorialBody needs to shift up by getting existing css values from:
     - The H1 line-height
     - the padding of the EditorialBody
     - the EditorialMeta margin-top and line-height
     */
-    @media screen and ${breakpoint('min-width', 'tabletM')} {
+    @media screen and ${breakpoint(
+      'min-width',
+      'tabletM',
+    )} {
       margin-top: ${({ image, theme }) =>
         image
           ? `${

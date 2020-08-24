@@ -18,9 +18,9 @@ const DividerStyle = styled.hr<Props>`
     `}
   background-color:
     ${({ theme, transparent }) =>
-      transparent
-        ? 'background-color: transparent;'
-        : themeColor('tint', 'level4')({ theme })};
+    transparent
+      ? 'background-color: transparent;'
+      : themeColor('tint', 'level4')({ theme })};
 `
 
 export default DividerStyle

@@ -84,21 +84,17 @@ const ColumnStyle = styled(({ className, children, id, ...rest }) => {
 
       return css`
         @media ${mediaQuery(layoutId)} {
-          ${
-            debug &&
-            css`
-              &::before {
-                content: 'span ${spanCount}';
-              }
-            `
-          }
-          ${
-            pushCount > 0 &&
-            margin(layoutId)({ theme }) > 0 &&
-            css`
-              margin-left: ${pushWidth({ layoutId, push, parentSpan })};
-            `
-          }
+          ${debug &&
+          css`
+            &::before {
+              content: 'span ${spanCount}';
+            }
+          `}
+          ${pushCount > 0 &&
+          margin(layoutId)({ theme }) > 0 &&
+          css`
+            margin-left: ${pushWidth({ layoutId, push, parentSpan })};
+          `}
           max-width: ${spanWidth({ layoutId, span, parentSpan })};
         }
       `
