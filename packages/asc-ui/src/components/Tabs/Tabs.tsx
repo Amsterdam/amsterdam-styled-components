@@ -49,14 +49,16 @@ export const Tabs: React.FC<TabsProps> = ({ label, children }) => {
     <>
       <TabList aria-label={label} onKeyDown={keyDown} ref={tabListRef}>
         {children.map(({ props }) => {
-          const { id, label: tabLabel, ...otherProps } = props
+          const { id, label: tabLabel, onClick, ...otherProps } = props
           const isSelected = id === selectedTab
           const tabId = formatTabId(id)
           const panelId = formatPanelId(id)
 
-          const onClick: MouseEventHandler<HTMLButtonElement> = (event) => {
+          const onTabButtonClick: MouseEventHandler<HTMLButtonElement> = (
+            event,
+          ) => {
             setSelectedTab(id)
-            otherProps.onClick?.(event)
+            onClick?.(event)
           }
 
           return (
@@ -67,7 +69,7 @@ export const Tabs: React.FC<TabsProps> = ({ label, children }) => {
               aria-controls={panelId}
               aria-selected={isSelected}
               tabIndex={isSelected ? 0 : -1}
-              onClick={onClick}
+              onClick={onTabButtonClick}
               isSelected={isSelected}
             >
               {tabLabel}

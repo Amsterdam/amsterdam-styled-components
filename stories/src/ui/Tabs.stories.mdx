@@ -16,6 +16,7 @@ Topics to align:
 - What to do when tabs overflow on desktop, how do we scroll?
 - Should we have UI state for tabs with the `:active` and `:focus` state?
 - Should we show a scroll bar on mobile (see design)
+- What should the font-size, -weight and -family of the tab buttons be?
 
 ## Default
 
@@ -38,8 +39,13 @@ Topics to align:
 ## Overflowing tabs
 
 <Preview>
-  <Story name="Overflowing tabs">
-    <Tabs label="An example of tabs that overflow">
+  <Story
+    name="Overflowing tabs"
+    parameters={{
+      viewport: { defaultViewport: 'mobile1' },
+    }}
+  >
+    <Tabs label="An example of overflowing tabs">
       <Tab id="one" label="First with a long label">
         Contents of the first tab.
       </Tab>
@@ -48,12 +54,6 @@ Topics to align:
       </Tab>
       <Tab id="three" label="Third with a long label">
         Contents of the third tab.
-      </Tab>
-      <Tab id="four" label="Fourth with a long label">
-        Contents of the fourth tab.
-      </Tab>
-      <Tab id="five" label="Fifth with a long label">
-        Contents of the fifth tab.
       </Tab>
     </Tabs>
   </Story>
