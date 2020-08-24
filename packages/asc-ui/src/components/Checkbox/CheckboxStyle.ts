@@ -104,15 +104,15 @@ const CheckboxWrapperStyle = styled.div<Props>`
       }
     `}
     ${({ error, checked, disabled }) =>
-      error &&
-      !checked &&
-      !disabled &&
-      css`
-        ${CheckboxIconStyle} {
-          border-color: red;
-          outline: 1px solid red;
-        }
-      `}
+    error &&
+    !checked &&
+    !disabled &&
+    css`
+      ${CheckboxIconStyle} {
+        border-color: red;
+        outline: 1px solid red;
+      }
+    `}
 `
 
 export { CheckboxWrapperStyle, CheckboxIconStyle }
