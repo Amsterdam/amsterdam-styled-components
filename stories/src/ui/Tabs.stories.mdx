@@ -1,0 +1,60 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Tabs, Tab } from '@datapunt/asc-ui'
+
+<Meta title="UI/Tabs" component={Tabs} />
+
+# Tabs
+
+Tabs organise and allow navigation between groups of content that are related and at the same level of hierarchy.
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/15737c-tab-navigation)
+
+**Component status: experimental**
+
+Topics to align:
+
+- What to do when tabs overflow on desktop, how do we scroll?
+- Should we have UI state for tabs with the `:active` and `:focus` state?
+- Should we show a scroll bar on mobile (see design)
+- What should the font-size, -weight and -family of the tab buttons be?
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <Tabs label="An example of tabs">
+      <Tab id="one" label="First">
+        Contents of the first tab.
+      </Tab>
+      <Tab id="two" label="Second">
+        Contents of the second tab.
+      </Tab>
+      <Tab id="three" label="Last">
+        Contents of the last tab.
+      </Tab>
+    </Tabs>
+  </Story>
+</Preview>
+
+## Overflowing tabs
+
+<Preview>
+  <Story
+    name="Overflowing tabs"
+    parameters={{
+      viewport: { defaultViewport: 'mobile1' },
+    }}
+  >
+    <Tabs label="An example of overflowing tabs">
+      <Tab id="one" label="First with a long label">
+        Contents of the first tab.
+      </Tab>
+      <Tab id="two" label="Second with a long label">
+        Contents of the second tab.
+      </Tab>
+      <Tab id="three" label="Third with a long label">
+        Contents of the third tab.
+      </Tab>
+    </Tabs>
+  </Story>
+</Preview>

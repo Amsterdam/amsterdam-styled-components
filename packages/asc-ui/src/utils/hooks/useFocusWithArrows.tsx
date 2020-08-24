@@ -8,12 +8,16 @@ import { FOCUSABLE_ELEMENTS } from './constants'
  * @param ref Component ref
  * @param rotating Jump to first item from last or vice versa
  * @param directChildrenOnly Useful if you don't want to focus on other focussable elements inside the child components of the ref
+ * @param horizontally In case you need to navigate horizontally, using left / right arrow buttons
  */
 const useFocusWithArrows = (
   ref: React.RefObject<HTMLElement>,
   rotating = false,
   directChildrenOnly = false,
+  horizontally = false,
 ) => {
+  const next = horizontally ? KeyboardKeys.ArrowRight : KeyboardKeys.ArrowDown
+  const previous = horizontally ? KeyboardKeys.ArrowLeft : KeyboardKeys.ArrowUp
   const keyDown = (e: React.KeyboardEvent) => {
     if (ref.current) {
       const element = ref.current
@@ -35,7 +39,7 @@ const useFocusWithArrows = (
       let el
 
       switch (e.key) {
-        case KeyboardKeys.ArrowDown: {
+        case next: {
           if (getIndex(activeElement) !== focusableEls.length - 1) {
             el = focusableEls[getIndex(activeElement) + 1]
             // If there is nothing focussed yet, set the focus on the first element
@@ -49,7 +53,7 @@ const useFocusWithArrows = (
           break
         }
 
-        case KeyboardKeys.ArrowUp: {
+        case previous: {
           if (getIndex(activeElement) !== 0) {
             el = focusableEls[getIndex(activeElement) - 1]
           } else if (rotating) {
@@ -74,6 +78,8 @@ const useFocusWithArrows = (
       if (
         (e.key === KeyboardKeys.ArrowDown ||
           e.key === KeyboardKeys.ArrowUp ||
+          e.key === KeyboardKeys.ArrowLeft ||
+          e.key === KeyboardKeys.ArrowRight ||
           e.key === KeyboardKeys.Home ||
           e.key === KeyboardKeys.End) &&
         el instanceof HTMLElement

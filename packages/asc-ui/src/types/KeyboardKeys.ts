@@ -2,6 +2,8 @@ enum Keys {
   // Extend to your needs
   ArrowUp = 'ArrowUp',
   ArrowDown = 'ArrowDown',
+  ArrowRight = 'ArrowRight',
+  ArrowLeft = 'ArrowLeft',
   Escape = 'Escape',
   Enter = 'Enter',
   Tab = 'Tab',
