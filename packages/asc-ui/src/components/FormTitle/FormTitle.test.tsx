@@ -22,7 +22,6 @@ describe('FormTitle', () => {
       </ThemeProvider>,
     )
 
-    expect(container.firstChild).toHaveStyleRule('max-width', '620px')
     expect(container.firstChild).toHaveStyleRule('font-size', '14px')
     expect(container.firstChild).toHaveStyleRule('line-height', '18px')
     expect(container.firstChild).toHaveStyleRule('font-weight', '700')
