@@ -2,7 +2,7 @@
   "name": "stories",
   "private": true,
   "license": "MPL-2.0",
-  "version": "0.23.0-alpha.1",
+  "version": "0.23.0",
   "author": "Datapunt Amsterdam",
   "homepage": "https://github.com/Amsterdam/amsterdam-styled-components#readme",
   "repository": {
@@ -26,8 +26,8 @@
     "eslint-plugin-mdx": "^1.7.0"
   },
   "dependencies": {
-    "@datapunt/asc-assets": "^0.23.0-alpha.1",
-    "@datapunt/asc-ui": "^0.23.0-alpha.1",
+    "@datapunt/asc-assets": "^0.23.0",
+    "@datapunt/asc-ui": "^0.23.0",
     "react": "^16.13.1",
     "react-table": "^7.2.2",
     "styled-components": "^5.1.1"
