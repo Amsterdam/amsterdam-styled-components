@@ -15,17 +15,17 @@ const TabButton = styled.button.attrs({
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0 -6px inset ${themeColor('tint', 'level7')};
+    box-shadow: inset 0 -6px ${themeColor('tint', 'level7')};
   }
 
   ${({ isSelected }) =>
     isSelected &&
     css`
       color: ${themeColor('secondary', 'main')};
-      box-shadow: 0 -6px inset ${themeColor('secondary', 'main')};
+      box-shadow: inset 0 -6px ${themeColor('secondary', 'main')};
 
       &:hover {
-        box-shadow: 0 -6px inset ${themeColor('secondary', 'main')};
+        box-shadow: inset 0 -6px ${themeColor('secondary', 'main')};
       }
     `}
 `
