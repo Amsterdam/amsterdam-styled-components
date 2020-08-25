@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Removed: style rule `max-width: 620px` from FormTitle
 - Added: A new experimental `Tabs` component for tabbed content.
 - Deprecated: `icon` prop now only accepts strings: `download` or `external`. If you want to use a custom icon, please pass it as a child
 - Changed: `icon` prop to render a download or external link icon
