@@ -1,9 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Shape</title>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icon/32/Edit-document" fill="#000000">
-            <path d="M19.9376947,24.1 L23.9252336,20.1 L23.9252336,32 L0,32 L0,0 L15.7507788,0 L22.8286604,7.1 L19.9376947,10 L13.9563863,10 L13.9563863,4 L3.98753894,4 L3.98753894,28 L19.9376947,28 L19.9376947,24.1 Z M14.3551402,23.1 L18.5420561,21.9 L32,7.8 L29.0093458,4.8 L15.5514019,18.8 L14.3551402,23.1 Z" id="Shape"></path>
-        </g>
-    </g>
-</svg>
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M19.938 24.1l3.987-4V32H0V0h15.75l7.079 7.1-2.891 2.9h-5.982V4H3.988v24h15.95v-3.9zm-5.583-1l4.187-1.2L32 7.8l-2.99-3-13.459 14-1.196 4.3z" fill="#000" fill-rule="evenodd"/></svg>
