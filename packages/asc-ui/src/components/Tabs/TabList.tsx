@@ -12,7 +12,7 @@ const TabList = styled.div.attrs({
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   mask: linear-gradient(
       to right,
-      black calc(100% - ${themeSpacing(8)}),
+      black calc(100% - ${themeSpacing(7)}),
       transparent
     ),
     linear-gradient(
