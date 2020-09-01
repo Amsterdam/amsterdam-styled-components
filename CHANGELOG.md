@@ -16,6 +16,8 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Changed: Tabs container fade is now same width as tab-button right margin
+
 ## [0.23.0]
 
 - Removed: style rule `max-width: 620px` from FormTitle
