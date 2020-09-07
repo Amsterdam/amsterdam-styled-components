@@ -6,7 +6,7 @@ const TabButton = styled.button.attrs({
 })<{ isSelected?: boolean }>`
   background-color: transparent;
   padding: ${themeSpacing(3, 0)};
-  color: ${themeColor('tint', 'level7')};
+  color: ${themeColor('tint', 'level6')};
   border: none;
   margin-right: ${themeSpacing(7)};
   transition: box-shadow 0.1s ease-in-out, color 0.1s ease-in-out;

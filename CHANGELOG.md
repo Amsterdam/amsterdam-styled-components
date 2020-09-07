@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Changed: Changed Tabs TabButton `color` in accordance with Design System, added padding to tab content in Tabs stories
 - Changed: Tabs container fade is now same width as tab-button right margin
 
 ## [0.23.0]
