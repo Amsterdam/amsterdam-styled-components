@@ -23,6 +23,7 @@ export default forwardRef<
     aria-hidden={!open}
     onBlur={() => onClose()}
     position={position}
+    open={open}
     {...otherProps}
   >
     <ContextMenuListStyle>{children}</ContextMenuListStyle>

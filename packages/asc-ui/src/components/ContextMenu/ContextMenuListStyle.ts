@@ -5,7 +5,7 @@ import { Position } from './types'
 export type ContextMenuListProps = {
   labelId?: string
   position?: Position
-  ariaHidden?: boolean
+  open?: boolean
 }
 
 const ContextMenuListStyle = styled.ul<ContextMenuListProps>`
@@ -40,4 +40,10 @@ export const ContextMenuListWrapperStyle = styled.div<ContextMenuListProps>`
   &:focus {
     outline: none;
   }
+
+  ${({ open }) =>
+    !open &&
+    css`
+      display: none;
+    `}
 `
