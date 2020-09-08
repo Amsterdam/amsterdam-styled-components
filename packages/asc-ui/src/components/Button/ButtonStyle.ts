@@ -52,6 +52,7 @@ const getVariant = () => ({
   switch (variant) {
     case 'primary':
       return css`
+        min-width: 90px;
         background-color: ${themeColor('primary')};
         color: ${readableColor(themeColor('primary')({ theme }))};
         ${svgFill(themeColor('tint', 'level1'))};
@@ -63,6 +64,7 @@ const getVariant = () => ({
 
     case 'secondary':
       return css`
+        min-width: 90px;
         background-color: ${themeColor('secondary')};
         color: ${themeColor('tint', 'level1')};
         ${svgFill(themeColor('tint', 'level1'))};
@@ -85,6 +87,7 @@ const getVariant = () => ({
 
     case 'tertiary':
       return css`
+        min-width: 90px;
         background-color: ${themeColor('tint', 'level4')};
         ${svgFill(themeColor('tint', 'level7'))};
 
@@ -98,6 +101,7 @@ const getVariant = () => ({
 
     case 'primaryInverted':
       return css`
+        min-width: 90px;
         color: ${themeColor('primary')};
         border: 1px solid ${themeColor('primary')};
         background-color: ${themeColor('tint', 'level1')};
