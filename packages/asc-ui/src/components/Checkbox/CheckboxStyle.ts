@@ -69,6 +69,7 @@ const CheckboxIconStyle = styled(IconStyle)<Props>`
   z-index: 1;
   background-color: ${themeColor('tint', 'level1')};
   transition: background-color 0.2s ease-in-out;
+  pointer-events: none;
   ${({ checked, indeterminate }) =>
     (checked || indeterminate) &&
     css`
