@@ -18,6 +18,8 @@ Prefix the change with one of these keywords:
 
 - Changed: Changed Tabs TabButton `color` in accordance with Design System, added padding to tab content in Tabs stories
 - Changed: Tabs container fade is now same width as tab-button right margin
+- Fixed: Icon overlay of Checkbox now ignores pointer events
+- Fixed: [Taskflow button](https://amsterdam.github.io/amsterdam-styled-components/?path=/docs/ui-form-button--secondary-variant) had a styling issue when focussed
 
 ## [0.23.0]
 
