@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Fixed: Buttons need to be at least 90px width
 - Changed: Changed Tabs TabButton `color` in accordance with Design System, added padding to tab content in Tabs stories
 - Changed: Tabs container fade is now same width as tab-button right margin
 - Fixed: Icon overlay of Checkbox now ignores pointer events
