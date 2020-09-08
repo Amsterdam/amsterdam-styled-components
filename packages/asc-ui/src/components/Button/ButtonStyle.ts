@@ -24,11 +24,12 @@ export const getButtonHeight = (theme: Theme.ThemeInterface) =>
 export const ArrowRight = styled.div`
   position: absolute;
   top: 0;
-  right: -37px;
+  left: 100%;
   width: 0;
   height: 0;
   border: 22px solid rgba(255, 255, 255, 0);
   border-left: 15px solid ${themeColor('secondary')};
+  border-right: 0;
   ${transitions('border-color', '0.1s ease-in-out')}
 `
 
