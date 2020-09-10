@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@datapunt/asc-assets": "^0.24.0",
-    "@datapunt/asc-ui": "^0.23.0",
+    "@datapunt/asc-ui": "^0.24.0",
     "@zeit/next-css": "^1.0.1",
     "next": "9.5.3",
     "react": "^16.13.1",
