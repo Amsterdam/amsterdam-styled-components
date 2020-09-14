@@ -15,6 +15,9 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## Unreleased
+
+## [0.24.1]
+
 - Fixed: alert close button overrides min-width
 
 ## [0.24.0]
