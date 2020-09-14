@@ -23,7 +23,7 @@ There are three levels of Alerts you can pass through the `level` prop:
 1. Not passing a `level` prop: this is a "normal" Alert, used to inform
 2. `attention`: This is being used to help the user to take action. This usually contains links.
 3. `error`: Use this to inform the user something went wrong, for example a failed request.
-4. `warning`: Use this to warn the user about something and help him to take action.
+4. `warning`, `valid` and `focus`: Use these to warn the user about something and help him to take action.
 
 **Component status: stable**
 
@@ -36,6 +36,8 @@ There are three levels of Alerts you can pass through the `level` prop:
       <Alert level="attention">Attention</Alert>
       <Alert level="error">Error</Alert>
       <Alert level="warning">Warning</Alert>
+      <Alert level="valid">Valid</Alert>
+      <Alert level="focus">Focus</Alert>
     </React.Fragment>
   </Story>
 </Preview>

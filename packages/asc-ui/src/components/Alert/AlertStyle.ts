@@ -4,7 +4,13 @@ import { svgFill, themeColor, themeSpacing } from '../../utils'
 import Button from '../Button'
 import Heading from '../Heading'
 
-export type Level = 'normal' | 'attention' | 'warning' | 'error'
+export type Level =
+  | 'normal'
+  | 'attention'
+  | 'warning'
+  | 'error'
+  | 'valid'
+  | 'focus'
 
 export type Props = {
   level?: Level
@@ -22,6 +28,8 @@ const colorMap: Record<
   attention: themeColor('primary'),
   warning: themeColor('tint', 'level1'),
   error: themeColor('secondary'),
+  valid: themeColor('support', 'valid'),
+  focus: themeColor('support', 'focus'),
 }
 
 export const CloseButtonWrapper = styled.div`
@@ -70,7 +78,7 @@ export default styled.div<Props>`
       background-color: ${colorMap[level || 'normal']({
         theme,
       })};
-      ${(level === 'attention' || level === 'error') &&
+      ${(level === 'attention' || level === 'error' || level === 'valid') &&
       css`
         ${svgFill(themeColor('tint', 'level1'))}
         &, & * {

@@ -16,6 +16,8 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Added: `valid` and `focus` variants to `Alert` (green and yellow colors)
+
 ## [0.24.0]
 
 - Fixed: Buttons need to be at least 90px width
