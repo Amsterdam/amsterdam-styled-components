@@ -40,6 +40,7 @@ export const CloseButtonWrapper = styled.div`
 
 export const CloseButton = styled(Button)`
   background-color: transparent;
+  min-width: initial; /* non-blank buttons have a min-width. This is an exception and need to override this */
 `
 
 export const ContentWrapper = styled.div`

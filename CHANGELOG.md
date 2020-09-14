@@ -18,6 +18,10 @@ Prefix the change with one of these keywords:
 
 - Added: `valid` and `focus` variants to `Alert` (green and yellow colors)
 
+## [0.24.1]
+
+- Fixed: alert close button overrides min-width
+
 ## [0.24.0]
 
 - Fixed: Buttons need to be at least 90px width
