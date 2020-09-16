@@ -30,10 +30,7 @@ export default styled(EditorialPost)<Props>`
     - the padding of the EditorialBody
     - the EditorialMeta margin-top and line-height
     */
-    @media screen and ${breakpoint(
-      'min-width',
-      'tabletM',
-    )} {
+    @media screen and ${breakpoint('min-width', 'tabletM')} {
       margin-top: ${({ image, theme }) =>
         image
           ? `${
