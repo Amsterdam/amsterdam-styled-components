@@ -16,6 +16,12 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+## [0.24.1]
+
+- Fixed: alert close button overrides min-width
+
+## [0.24.0]
+
 - Fixed: Buttons need to be at least 90px width
 - Changed: Changed Tabs TabButton `color` in accordance with Design System, added padding to tab content in Tabs stories
 - Changed: Tabs container fade is now same width as tab-button right margin
