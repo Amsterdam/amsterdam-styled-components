@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, cleanup, fireEvent } from '@testing-library/react'
+import { render, fireEvent, act } from '@testing-library/react'
 import Select from './Select'
 import Label from '../Label'
 import { ThemeProvider } from '../../theme'
@@ -11,7 +11,6 @@ describe('Select', () => {
   const onKeyDownMock = jest.fn()
 
   beforeEach(() => {
-    cleanup()
     ;({ container } = render(
       <ThemeProvider>
         <Label htmlFor="select-1" label="Select 1" id="label-1">
@@ -41,7 +40,12 @@ describe('Select', () => {
     expect(select.value).toBe('1')
 
     select.value = '2'
-    fireEvent.change(select)
+
+    expect(onChangeMock).not.toHaveBeenCalled()
+
+    act(() => {
+      fireEvent.change(select)
+    })
 
     expect(select.value).toBe('2')
     expect(onChangeMock).toHaveBeenCalledTimes(1)
@@ -50,7 +54,11 @@ describe('Select', () => {
   it('should trigger the keyDown event', () => {
     const select = container.querySelector('#select-1')
 
-    fireEvent.keyDown(select, { key: 'Enter', code: 13 })
+    expect(onKeyDownMock).not.toHaveBeenCalled()
+
+    act(() => {
+      fireEvent.keyDown(select, { key: 'Enter', code: 13 })
+    })
 
     expect(onKeyDownMock).toHaveBeenCalledTimes(1)
   })
