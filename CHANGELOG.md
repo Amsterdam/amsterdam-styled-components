@@ -19,6 +19,7 @@ Prefix the change with one of these keywords:
 ## [0.24.1]
 
 - Fixed: alert close button overrides min-width
+- Fixed: Radio button active state had bug on IE11
 
 ## [0.24.0]
 
