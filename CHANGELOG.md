@@ -16,10 +16,13 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+## [0.24.2]
+
+- Fixed: Radio button active state had bug on IE11
+
 ## [0.24.1]
 
 - Fixed: alert close button overrides min-width
-- Fixed: Radio button active state had bug on IE11
 
 ## [0.24.0]
 
