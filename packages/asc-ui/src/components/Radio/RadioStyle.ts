@@ -76,6 +76,7 @@ const RadioCircleStyle = styled.span<StyleOnlyProps>`
     top: 50%;
     background-color: ${getVariantColor()};
     opacity: 0;
+    z-index: 1;
     ${({ checked }) =>
       checked &&
       css`
