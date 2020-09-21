@@ -16,6 +16,8 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Fixed: issue where the `Select` component would call the `onChange` callback both on component mount as well as on value change.
+
 ## [0.24.3]
 
 - Fixed: Previous version did not publish, use this one instead.
