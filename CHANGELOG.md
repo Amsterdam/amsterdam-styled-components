@@ -14,7 +14,7 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## Unreleased
+## [0.24.4]
 
 - Fixed: issue where the `Select` component would call the `onChange` callback both on component mount as well as on value change.
 - Changed: Refactored and exported `srOnlyStyle` for screen-reader only elements.
