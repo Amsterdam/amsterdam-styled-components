@@ -5,7 +5,6 @@ import React, {
   useRef,
   useState,
 } from 'react'
-import createEvent from '../../utils/createEvent'
 import FormLabelStyle from '../FormLabelStyle'
 import SelectStyle, {
   AbsoluteContentWrapper,
@@ -36,7 +35,7 @@ const Select = React.forwardRef<
   (
     {
       id,
-      value: inputValue,
+      value,
       label,
       srOnly: srOnlyProp,
       error,
@@ -49,7 +48,6 @@ const Select = React.forwardRef<
     externalRef,
   ) => {
     const srOnly = srOnlyProp || false
-    const [value, setValue] = useState(inputValue)
     const [selectedValue, setSelectedValue] = useState('')
     const ref = useRef<HTMLSelectElement>(null)
 
@@ -80,17 +78,7 @@ const Select = React.forwardRef<
       if (ref.current) {
         updateValue(ref.current)
       }
-    }, [ref])
-
-    useEffect(() => {
-      if (inputValue && ref.current) {
-        setValue(inputValue)
-
-        // The selectedValue label doesn't update properly if you send a new value prop to this component and the component doesn't rerender
-        ref.current.value = inputValue
-        ref.current.dispatchEvent(createEvent('change', { bubbles: true }))
-      }
-    }, [inputValue, ref])
+    }, [ref, value])
 
     return (
       <>
@@ -120,7 +108,9 @@ const Select = React.forwardRef<
             {children}
           </SelectStyle>
           <AbsoluteContentWrapper>
-            <SelectedValue disabled={disabled}>{selectedValue}</SelectedValue>
+            <SelectedValue data-testid="selectedValue" disabled={disabled}>
+              {selectedValue}
+            </SelectedValue>
             <SelectIcon />
           </AbsoluteContentWrapper>
         </SelectWrapper>
