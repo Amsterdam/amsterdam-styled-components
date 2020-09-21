@@ -108,7 +108,9 @@ const Select = React.forwardRef<
             {children}
           </SelectStyle>
           <AbsoluteContentWrapper>
-            <SelectedValue disabled={disabled}>{selectedValue}</SelectedValue>
+            <SelectedValue data-testid="selectedValue" disabled={disabled}>
+              {selectedValue}
+            </SelectedValue>
             <SelectIcon />
           </AbsoluteContentWrapper>
         </SelectWrapper>
