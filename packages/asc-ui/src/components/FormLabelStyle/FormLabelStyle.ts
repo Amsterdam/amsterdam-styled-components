@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components'
 import {
-  srOnlyStyle,
   getTypographyFromTheme,
-  themeSpacing,
+  srOnlyStyle,
   themeColor,
+  themeSpacing,
 } from '../../utils'
 
 interface IProps {
@@ -44,8 +44,7 @@ const FormLabelStyle = styled.label.attrs<IProps>(({ htmlFor }: IProps) => {
       color: ${themeColor('error', 'main')};
     `}
 
-
-  ${srOnlyStyle()}
+  ${({ srOnly }) => srOnly && srOnlyStyle}
 `
 
 export default FormLabelStyle

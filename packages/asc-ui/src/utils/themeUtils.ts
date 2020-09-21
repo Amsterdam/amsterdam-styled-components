@@ -139,21 +139,23 @@ export const getTypographyValueFromProperty = withTheme<
 })
 
 /**
- * Util to hide the component for screen readers
+ * When this style is applied on an element it will be hidden but still readable by screen readers.
+ *
+ * For example:
+ * ```ts
+ * const OnlyVisibleForScreenReaders = styled.button`${srOnlyStyle}`
+ * ```
  */
-export const srOnlyStyle = () => ({ srOnly }: { srOnly?: boolean }) =>
-  srOnly
-    ? css`
-        border-width: 0;
-        clip: rect(0, 0, 0, 0);
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
-      `
-    : ''
+export const srOnlyStyle = css`
+  border-width: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+`
 
 /**
  * Fills the elements in an SVG with a color, useful for styling icons.

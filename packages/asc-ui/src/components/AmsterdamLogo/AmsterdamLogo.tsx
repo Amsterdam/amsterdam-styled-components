@@ -25,7 +25,7 @@ const AmsterdamLogo: React.FC<LogoProps> = ({
     ) : (
       <LogoShortStyle />
     )}
-    <LogoTitleStyle srOnly>{title}</LogoTitleStyle>
+    <LogoTitleStyle>{title}</LogoTitleStyle>
   </AmsterdamLogoStyle>
 )
 

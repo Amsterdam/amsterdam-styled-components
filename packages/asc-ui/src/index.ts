@@ -104,7 +104,6 @@ import { ascDefaultTheme } from './theme'
 import CompactThemeProvider from './theme/CompactThemeProvider'
 import ThemeProvider from './theme/ThemeProvider'
 import { Theme } from './types'
-import { themeColor } from './utils'
 import * as hooks from './utils/hooks'
 import { perceivedLoading } from './utils/themeUtils'
 
@@ -113,11 +112,13 @@ export {
   breakpoint,
   showAboveBackDrop,
   showHide,
+  srOnlyStyle,
   svgFill,
+  themeColor,
   themeSpacing,
 } from './utils'
 export { constants, hooks }
-export { themeColor, perceivedLoading }
+export { perceivedLoading }
 // Components
 export {
   Accordion,
