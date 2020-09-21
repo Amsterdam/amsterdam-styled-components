@@ -21,7 +21,7 @@ export const LogoTallStyle = styled(LogoTall)`
 `
 
 export const LogoTitleStyle = styled.span`
-  ${srOnlyStyle()}
+  ${srOnlyStyle}
 `
 
 const tallStyle = css`

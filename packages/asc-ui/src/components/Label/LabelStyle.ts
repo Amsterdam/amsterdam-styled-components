@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { themeColor, srOnlyStyle } from '../../utils'
+import { srOnlyStyle, themeColor } from '../../utils'
 import { CheckboxWrapperStyle } from '../Checkbox'
 
 type SharedProps = {
@@ -21,7 +21,7 @@ const LabelStyle = styled.label<Props & StyleOnlyProps>`
   align-items: ${({ align }) => align};
   vertical-align: middle;
   color: ${themeColor('tint', 'level7')};
-  ${srOnlyStyle()}
+  ${({ srOnly }) => srOnly && srOnlyStyle}
   ${({ disabled }) =>
     disabled
       ? css`

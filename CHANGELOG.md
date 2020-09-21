@@ -17,6 +17,7 @@ Prefix the change with one of these keywords:
 ## Unreleased
 
 - Fixed: issue where the `Select` component would call the `onChange` callback both on component mount as well as on value change.
+- Changed: Refactored and exported `srOnlyStyle` for screen-reader only elements.
 
 ## [0.24.3]
 
