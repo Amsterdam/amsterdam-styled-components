@@ -78,7 +78,7 @@ const Select = React.forwardRef<
       if (ref.current) {
         updateValue(ref.current)
       }
-    }, [ref])
+    }, [ref, value])
 
     return (
       <>

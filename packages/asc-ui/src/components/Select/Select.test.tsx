@@ -84,6 +84,7 @@ describe('Select', () => {
   })
 
   it("should update the overlay label when the field's value changes", () => {
+    // clean the DOM by unmounting the component
     unmount()
 
     rerender(
@@ -110,17 +111,26 @@ describe('Select', () => {
     // first option value will always be set as the overlay label
     expect(getByTestId('selectedValue')).toHaveTextContent(firstOption.value)
 
-    act(() => {
-      fireEvent.change(select, { target: { value: secondOption.value } })
-    })
+    // programatically changing the value
+    rerender(
+      <ThemeProvider>
+        <Label htmlFor="select-2" label="Select 2" id="label-2">
+          <Select
+            id="select-2"
+            onChange={onChangeMock}
+            onKeyDown={onKeyDownMock}
+            value={secondOption.value}
+          >
+            <option value="11">Option 11</option>
+            <option value="12">Option 12</option>
+            <option value="13">Option 13</option>
+            <option value="14">Option 14</option>
+          </Select>
+        </Label>
+      </ThemeProvider>,
+    )
 
     expect(getByTestId('selectedValue')).toHaveTextContent(secondOption.value)
-
-    act(() => {
-      fireEvent.change(select, { target: { value: firstOption.value } })
-    })
-
-    expect(getByTestId('selectedValue')).toHaveTextContent(firstOption.value)
   })
 
   it('should handle refs', () => {
