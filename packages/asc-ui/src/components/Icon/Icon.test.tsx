@@ -1,7 +1,6 @@
-import React from 'react'
+import { Location } from '@amsterdam/asc-assets'
 import { render } from '@testing-library/react'
-import { Location } from '@datapunt/asc-assets'
-
+import React from 'react'
 import Icon from './Icon'
 
 describe('Icon', () => {

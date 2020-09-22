@@ -5,7 +5,7 @@ skip_if: <%= story %>
 
 import styled from 'styled-components'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
-import { <%= name %> } from '@datapunt/asc-ui'
+import { <%= name %> } from '@amsterdam/asc-ui'
 
 export const Decorator = styled.div`
 `

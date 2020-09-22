@@ -1,4 +1,4 @@
-import { Search } from '@datapunt/asc-assets'
+import { Search } from '@amsterdam/asc-assets'
 import React from 'react'
 import { InputMethods, InputProps } from '../Input'
 import SearchBar from '../SearchBar'

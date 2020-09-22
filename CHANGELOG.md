@@ -14,6 +14,10 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## Unreleased
+
+- Changed: Moved packages to @amsterdam organization on NPM.
+
 ## [0.24.4]
 
 - Fixed: issue where the `Select` component would call the `onChange` callback both on component mount as well as on value change.
@@ -271,7 +275,7 @@ Prefix the change with one of these keywords:
 - Added: tag component
 - Added: new way of loading svg's: instead of importing like this:
   `import Logo from '@datapunt/asc-assets/lib/assets/Icons/Logo.svg'` you now can use the svg object:
-  `import { svg } from '@datapunt/asc-assets'` and load it like this: `background-image: url(${svg.Logo})`
+  `import { svg } from '@amsterdam/asc-assets'` and load it like this: `background-image: url(${svg.Logo})`
 - Added: Image component can render images as a square (including IE11)
 
 ## [0.10.0] - 2019-08-05

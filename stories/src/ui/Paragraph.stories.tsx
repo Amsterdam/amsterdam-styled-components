@@ -1,5 +1,5 @@
+import { CompactThemeProvider, Paragraph } from '@amsterdam/asc-ui'
 import React from 'react'
-import { Paragraph, CompactThemeProvider } from '@datapunt/asc-ui'
 
 export default {
   title: 'UI/Typography/Paragraph',

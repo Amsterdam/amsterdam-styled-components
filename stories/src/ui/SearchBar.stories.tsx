@@ -1,6 +1,6 @@
+import { SearchBar } from '@amsterdam/asc-ui'
 import { action } from '@storybook/addon-actions'
 import React from 'react'
-import { SearchBar } from '@datapunt/asc-ui'
 
 export default {
   title: 'UI/SearchBar',

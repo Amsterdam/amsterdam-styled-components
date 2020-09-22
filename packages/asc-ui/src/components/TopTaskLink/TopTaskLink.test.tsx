@@ -1,4 +1,4 @@
-import { Location } from '@datapunt/asc-assets'
+import { Location } from '@amsterdam/asc-assets'
 import { render } from '@testing-library/react'
 import React from 'react'
 import { ThemeProvider } from '../../theme'

@@ -1,4 +1,4 @@
-import { Close } from '@datapunt/asc-assets'
+import { Close } from '@amsterdam/asc-assets'
 import React, { useRef } from 'react'
 import { useUID } from 'react-uid'
 import { useFocus } from '../../utils/hooks'

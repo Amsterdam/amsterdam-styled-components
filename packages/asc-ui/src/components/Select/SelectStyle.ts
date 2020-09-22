@@ -1,4 +1,4 @@
-import { ChevronDown } from '@datapunt/asc-assets'
+import { ChevronDown } from '@amsterdam/asc-assets'
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
 import { INPUT_SIZE } from '../shared/constants'

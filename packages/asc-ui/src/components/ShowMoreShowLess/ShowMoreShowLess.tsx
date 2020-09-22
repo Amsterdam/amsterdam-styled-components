@@ -1,9 +1,9 @@
+import { Enlarge, Minimise } from '@amsterdam/asc-assets'
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { Enlarge, Minimise } from '@datapunt/asc-assets'
+import Button, { Props as ButtonProps } from '../Button/Button'
 import ShowMoreShowLessStyle, {
   ShowMoreShowLessProps,
 } from './ShowMoreShowLessStyle'
-import Button, { Props as ButtonProps } from '../Button/Button'
 
 const ShowMoreShowLess: React.FC<
   ShowMoreShowLessProps & React.HTMLAttributes<HTMLElement>

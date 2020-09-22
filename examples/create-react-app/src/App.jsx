@@ -1,17 +1,23 @@
+import {
+    breakpoint, GlobalStyle,
+
+
+    Link, List,
+    ListItem,
+
+
+    styles,
+
+
+    svgFill, themeColor, ThemeProvider,
+
+
+
+
+    Typography
+} from '@amsterdam/asc-ui'
 import React from 'react'
 import styled from 'styled-components'
-import {
-  ThemeProvider,
-  GlobalStyle,
-  List,
-  ListItem,
-  Link,
-  Typography,
-  styles,
-  themeColor,
-  breakpoint,
-  svgFill,
-} from '@datapunt/asc-ui'
 
 const themeOverides = {
   breakpoints: {

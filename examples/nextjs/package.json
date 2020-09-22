@@ -1,5 +1,5 @@
 {
-  "name": "@datapunt/nextjs-example",
+  "name": "@amsterdam/nextjs-example",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,8 +9,8 @@
     "start": "yarn copy-fonts && next start"
   },
   "dependencies": {
-    "@datapunt/asc-assets": "^0.24.0",
-    "@datapunt/asc-ui": "^0.24.0",
+    "@amsterdam/asc-assets": "^0.24.0",
+    "@amsterdam/asc-ui": "^0.24.0",
     "@zeit/next-css": "^1.0.1",
     "next": "9.5.3",
     "react": "^16.13.1",

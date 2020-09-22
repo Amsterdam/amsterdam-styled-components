@@ -80,7 +80,7 @@ Example: linking the `asc-ui` package.
 cd amsterdam-styled-components/packages/asc-ui  # go into the package directory
 yarn link                                       # creates global link
 cd path-to-your-main-project                    # go into the dir of your main project
-yarn link "@datapunt/asc-ui"                    # link-install the package
+yarn link "@amsterdam/asc-ui"                   # link-install the package
 ```
 
 There is a known issue when developing with `yarn link` and using Hooks
@@ -119,7 +119,7 @@ of the [core maintainers](./MAINTAINERS.md). To publish these packages to npm, f
 1. Make sure you're logged in to npm, by running `npm login`
 2. Run `yarn publish:canary`. This will run linters and tests before the lerna prompt,
    so be patient :smile:
-3. This canary version is now available for usage in any local or demo version of your project, but not tagged with the `@latest` tag on npm. So use for example `yarn add @datapunt/asc-ui@canary`.
+3. This canary version is now available for usage in any local or demo version of your project, but not tagged with the `@latest` tag on npm. So use for example `yarn add @amsterdam/asc-ui@canary`.
 
 ### Publish stable version
 

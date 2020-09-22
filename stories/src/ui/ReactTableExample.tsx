@@ -1,29 +1,29 @@
+import {
+  Alert,
+  Checkbox,
+  Column,
+  CompactPager,
+  FilterBox,
+  Label,
+  Row,
+  Table,
+  TableCell,
+  TableHeaderCell,
+  TableResizer,
+  TableRow,
+} from '@amsterdam/asc-ui'
 import React, { useEffect, useMemo, useState } from 'react'
 import {
   Column as ColumnType,
   FilterProps,
   useBlockLayout,
   useFilters,
+  usePagination,
   useResizeColumns,
   useRowSelect,
   useSortBy,
   useTable,
-  usePagination,
 } from 'react-table'
-import {
-  Checkbox,
-  FilterBox,
-  Label,
-  Row,
-  Column,
-  CompactPager,
-  Alert,
-  TableResizer,
-  TableCell,
-  Table,
-  TableRow,
-  TableHeaderCell,
-} from '@datapunt/asc-ui'
 import styled from 'styled-components'
 
 const DefaultColumnFilter: React.FC<FilterProps<{}>> = ({

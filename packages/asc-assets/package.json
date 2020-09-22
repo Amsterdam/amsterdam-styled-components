@@ -1,8 +1,8 @@
 {
-  "name": "@datapunt/asc-assets",
+  "name": "@amsterdam/asc-assets",
   "description": "Contains icons and fonts",
   "license": "MPL-2.0",
-  "author": "Datapunt Amsterdam",
+  "author": "Gemeente Amsterdam",
   "homepage": "https://github.com/Amsterdam/amsterdam-styled-components/tree/master/packages/asc-assets#readme",
   "repository": {
     "type": "git",

@@ -1,4 +1,4 @@
-import { Close } from '@datapunt/asc-assets'
+import { Close } from '@amsterdam/asc-assets'
 import React, { useState } from 'react'
 import CompactThemeProvider from '../../theme/CompactThemeProvider'
 import { ButtonVariant } from '../Button/ButtonStyle'

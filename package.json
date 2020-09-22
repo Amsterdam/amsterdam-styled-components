@@ -5,7 +5,7 @@
     "stories"
   ],
   "scripts": {
-    "prebuild": "lerna exec --scope @datapunt/asc-assets -- yarn build",
+    "prebuild": "lerna exec --scope @amsterdam/asc-assets -- yarn build",
     "build": "yarn clean:generated && yarn build:ts && yarn build:ts:es",
     "build:storybook": "yarn --cwd stories build",
     "build:ts": "tsc -b packages/asc-assets packages/asc-ui",
@@ -18,8 +18,8 @@
     "publish:canary": "lerna publish -c --yes",
     "publish:stable": "lerna publish",
     "start": "concurrently \"yarn build:watch\" \"yarn storybook\"",
-    "start:example:cra": "yarn --cwd ./node_modules/@datapunt/create-react-app-example start",
-    "start:example:nextjs": "yarn --cwd ./node_modules/@datapunt/nextjs-example dev",
+    "start:example:cra": "yarn --cwd ./node_modules/@amsterdam/create-react-app-example start",
+    "start:example:nextjs": "yarn --cwd ./node_modules/@amsterdam/nextjs-example dev",
     "storybook": "yarn --cwd stories start",
     "stylelint": "stylelint \"./packages/**/*Style.ts\"",
     "test": "yarn jest  --collect-coverage",

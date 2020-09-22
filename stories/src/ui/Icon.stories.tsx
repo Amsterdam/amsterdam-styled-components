@@ -1,6 +1,6 @@
-import { Location } from '@datapunt/asc-assets'
+import { Location } from '@amsterdam/asc-assets'
+import { Icon, themeColor } from '@amsterdam/asc-ui'
 import React from 'react'
-import { themeColor, Icon } from '@datapunt/asc-ui'
 
 export default {
   title: 'UI/Icon',
