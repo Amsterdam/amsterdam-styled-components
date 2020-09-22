@@ -1,16 +1,16 @@
+import { ChevronDown } from '@amsterdam/asc-assets'
 import React from 'react'
-import { ChevronDown } from '@datapunt/asc-assets'
 import { ShowHideTypes } from '../../utils'
-import FooterHeading from './FooterHeading'
+import Hidden from '../Hidden'
 import Icon from '../Icon/Icon'
+import { ToggleHandlerProps } from '../Toggle'
+import FooterHeading from './FooterHeading'
 import {
   FooterContentWrapper,
   StyledButton,
   StyledFooterHeading,
   StyledFooterToggle,
 } from './FooterSectionStyle'
-import { ToggleHandlerProps } from '../Toggle'
-import Hidden from '../Hidden'
 
 type FooterContentProps = {
   title?: string

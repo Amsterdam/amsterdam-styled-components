@@ -1,13 +1,13 @@
-import React from 'react'
-import { mount, ReactWrapper, shallow, ShallowWrapper } from 'enzyme'
+import { ChevronDown, ChevronUp } from '@amsterdam/asc-assets'
 import { act } from '@testing-library/react'
-import { ChevronDown, ChevronUp } from '@datapunt/asc-assets'
-import { KeyboardKeys } from '../../../types'
-import { useMenuContext } from '../MenuContext'
+import { mount, ReactWrapper, shallow, ShallowWrapper } from 'enzyme'
+import React from 'react'
 import MenuFlyOut from '.'
+import { KeyboardKeys } from '../../../types'
+import MenuButton from '../MenuButton/MenuButton'
+import { useMenuContext } from '../MenuContext'
 import MenuItem from '../MenuItem'
 import MenuList from '../MenuList'
-import MenuButton from '../MenuButton/MenuButton'
 
 jest.useFakeTimers()
 

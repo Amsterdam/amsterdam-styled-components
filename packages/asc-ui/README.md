@@ -7,7 +7,7 @@ This is the React implementation of the styled-components
 Add this package to your project by running:
 
 ```bash
-npm install @datapunt/asc-ui
+npm install @amsterdam/asc-ui
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ Consult the [demo site with the storybook of the components](https://amsterdam.g
 
 ```jsx
 import styled from 'styled-components'
-import { themeColor, List, breakpoint, styles, ThemeProvider } from '@datapunt/asc-ui'
+import { themeColor, List, breakpoint, styles, ThemeProvider } from '@amsterdam/asc-ui'
 
 const StyledList = styled(List)`
   background-color: ${themeColor('tint', 'level5')};
@@ -53,7 +53,7 @@ The same can be achieved by creating of a new StyledLinkedListItem:
 
 ```jsx
 import styled from 'styled-components'
-import { themeColor, List, breakpoint, styles, ThemeProvider, svgFill } from '@datapunt/asc-ui'
+import { themeColor, List, breakpoint, styles, ThemeProvider, svgFill } from '@amsterdam/asc-ui'
 
 const StyledList = styled(List)`
   background-color: ${themeColor('tint', 'level5')};

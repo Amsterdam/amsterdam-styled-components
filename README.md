@@ -45,7 +45,7 @@ This project is a monorepo with 2 packages
 Consistency is always an issue in software engineering, especially when it comes to web styling
 and UX. That is why we think a component library who captures styling but also certain UX aspects,
 e.g. button loading state, is highly beneficial for organisations with large or multiple
-applications, such as Datapunt Amsterdam.
+applications, such as the municipality of Amsterdam.
 
 We acknowledge that such a library entails some risks and pitfalls and we aim to cover these as
 much as possible. On the other hand we think that the benefits outweigh the downsides.
@@ -77,8 +77,7 @@ The guidelines can be found here (TBD)
 - A monorepo: one source for styled components and everything that is related to that. Also updates
   won't immediately affect other repo’s because of versioning
 - Great to be used in a living styleguide like Storybook
-- Attractive for the (internal) open source community; could even be used outside Datapunt in other
-  departments within the Municipality of Amsterdam.
+- Attractive for the (internal) open source community
 
 ### Risks
 

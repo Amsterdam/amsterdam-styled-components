@@ -1,10 +1,10 @@
+import { Download } from '@amsterdam/asc-assets'
 import React from 'react'
 import styled from 'styled-components'
-import { Download } from '@datapunt/asc-assets'
-import DocumentCoverStyle from './DocumentCoverStyle'
 import Button from '../Button'
 import Image from '../Image'
 import DocumentCoverContent from './DocumentCoverContent'
+import DocumentCoverStyle from './DocumentCoverStyle'
 
 type Props = {
   imageSrc: string

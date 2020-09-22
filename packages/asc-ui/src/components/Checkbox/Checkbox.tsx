@@ -1,17 +1,17 @@
+import { Checkmark, Indeterminate } from '@amsterdam/asc-assets'
 import React, {
-  useState,
   useContext,
-  useMemo,
-  useImperativeHandle,
   useEffect,
+  useImperativeHandle,
+  useMemo,
+  useState,
 } from 'react'
-import { Checkmark, Indeterminate } from '@datapunt/asc-assets'
+import LabelContext from '../Label/LabelContext'
 import CheckboxStyle, {
   CheckboxIconStyle,
   CheckboxWrapperStyle,
   Props,
 } from './CheckboxStyle'
-import LabelContext from '../Label/LabelContext'
 
 const Checkbox = React.forwardRef<
   HTMLInputElement,

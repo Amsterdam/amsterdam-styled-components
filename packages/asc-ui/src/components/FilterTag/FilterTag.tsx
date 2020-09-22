@@ -1,8 +1,8 @@
+import { Close } from '@amsterdam/asc-assets'
 import React from 'react'
-import { Close } from '@datapunt/asc-assets'
+import Icon from '../Icon'
 import Tag, { Props as TagProps } from '../Tag/Tag'
 import FilterTagStyle from './FilterTagStyle'
-import Icon from '../Icon'
 
 export interface FilterTagProps extends TagProps {}
 

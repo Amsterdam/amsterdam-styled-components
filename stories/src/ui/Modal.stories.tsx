@@ -1,8 +1,8 @@
+import { Modal, Paragraph } from '@amsterdam/asc-ui'
+import { number, withKnobs } from '@storybook/addon-knobs'
+import { linkTo } from '@storybook/addon-links'
 import React from 'react'
 import styled from 'styled-components'
-import { linkTo } from '@storybook/addon-links'
-import { number, withKnobs } from '@storybook/addon-knobs'
-import { Modal, Paragraph } from '@datapunt/asc-ui'
 
 const ModalBlock = styled.div`
   display: block;

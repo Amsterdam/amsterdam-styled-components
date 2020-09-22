@@ -1,5 +1,5 @@
+import { CompactPager } from '@amsterdam/asc-ui'
 import React, { useState } from 'react'
-import { CompactPager } from '@datapunt/asc-ui'
 
 export default {
   title: 'UI/CompactPager',

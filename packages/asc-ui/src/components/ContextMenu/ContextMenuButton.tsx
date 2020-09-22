@@ -1,8 +1,8 @@
+import { ChevronDown } from '@amsterdam/asc-assets'
 import React from 'react'
-import { ChevronDown } from '@datapunt/asc-assets'
 import Icon from '../Icon'
-import ContextMenuButtonStyle from './ContextMenuButtonStyle'
 import { Props } from './ContextMenu'
+import ContextMenuButtonStyle from './ContextMenuButtonStyle'
 
 const ContextMenuButton: React.FC<
   Props & React.ButtonHTMLAttributes<HTMLButtonElement>

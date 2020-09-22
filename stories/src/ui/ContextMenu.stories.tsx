@@ -1,10 +1,10 @@
-import React from 'react'
-import { ChevronDown, Ellipsis } from '@datapunt/asc-assets'
+import { ChevronDown, Ellipsis } from '@amsterdam/asc-assets'
 import {
   ContextMenu,
   ContextMenuItem,
   ContextMenuSelect,
-} from '@datapunt/asc-ui'
+} from '@amsterdam/asc-ui'
+import React from 'react'
 
 export default {
   title: 'UI/ContextMenu',

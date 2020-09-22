@@ -1,14 +1,14 @@
+import { ChevronDown } from '@amsterdam/asc-assets'
 import React, { useCallback, useEffect, useState } from 'react'
-import { ChevronDown } from '@datapunt/asc-assets'
 import { useUID } from 'react-uid'
+import { Props as ButtonStyleProps } from '../Button/ButtonStyle'
 import {
   AccordionButton,
   AccordionButtonContent,
   AccordionContent,
-  Props as StyleProps,
   ButtonContentProps,
+  Props as StyleProps,
 } from './AccordionStyle'
-import { Props as ButtonStyleProps } from '../Button/ButtonStyle'
 
 type Props = {
   onToggle?: (open: boolean) => void

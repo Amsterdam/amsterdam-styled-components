@@ -1,5 +1,5 @@
+import { Link, List, ListItem, OrderedList } from '@amsterdam/asc-ui'
 import React from 'react'
-import { List, ListItem, Link, OrderedList } from '@datapunt/asc-ui'
 
 export default {
   title: 'UI/List',

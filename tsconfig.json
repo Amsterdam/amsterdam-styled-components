@@ -15,7 +15,7 @@
     ],
     "baseUrl": "./packages",
     "paths": {
-      "@datapunt/*": ["packages/*/src"]
+      "@amsterdam/*": ["packages/*/src"]
     },
     "composite": true,
     "sourceMap": true,

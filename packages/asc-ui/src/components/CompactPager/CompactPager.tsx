@@ -1,7 +1,7 @@
+import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
 import React from 'react'
-import { ChevronRight, ChevronLeft } from '@datapunt/asc-assets'
-import CompactPagerStyle, { PagerText, PagerButton } from './CompactPagerStyle'
-import { PREV_BUTTON, NEXT_BUTTON } from './test-ids'
+import CompactPagerStyle, { PagerButton, PagerText } from './CompactPagerStyle'
+import { NEXT_BUTTON, PREV_BUTTON } from './test-ids'
 
 function clampNumber(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max)

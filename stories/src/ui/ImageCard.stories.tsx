@@ -1,11 +1,11 @@
-import React from 'react'
-import { withKnobs } from '@storybook/addon-knobs'
 import {
-  ImageCardContent,
-  ImageCard,
   Heading,
+  ImageCard,
+  ImageCardContent,
   Paragraph,
-} from '@datapunt/asc-ui'
+} from '@amsterdam/asc-ui'
+import { withKnobs } from '@storybook/addon-knobs'
+import React from 'react'
 
 export default {
   title: 'UI/ImageCard',

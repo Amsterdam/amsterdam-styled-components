@@ -1,15 +1,15 @@
-import { ChevronRight, Download } from '@datapunt/asc-assets'
-import React from 'react'
+import { ChevronRight, Download } from '@amsterdam/asc-assets'
 import {
-  Icon,
-  Image,
   Card,
   CardActions,
   CardContent,
   CardMedia,
   Heading,
+  Icon,
+  Image,
   Paragraph,
-} from '@datapunt/asc-ui'
+} from '@amsterdam/asc-ui'
+import React from 'react'
 
 export default {
   title: 'UI/Card',

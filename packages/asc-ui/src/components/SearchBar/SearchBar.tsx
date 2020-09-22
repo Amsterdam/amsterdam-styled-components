@@ -1,12 +1,12 @@
-import { Search } from '@datapunt/asc-assets'
+import { Search } from '@amsterdam/asc-assets'
 import React from 'react'
+import { deprecatedWarning } from '../../utils'
 import Button from '../Button'
 import Icon from '../Icon'
 import { InputProps } from '../Input'
 import InputContext from '../Input/InputMethodsContext'
 import TextField, { TextFieldProps } from '../TextField/TextField'
 import SearchBarStyle, { Props as SearchBarStyleProps } from './SearchBarStyle'
-import { deprecatedWarning } from '../../utils'
 
 export interface SearchBarProps extends TextFieldProps, SearchBarStyleProps {
   label?: string

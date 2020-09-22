@@ -1,10 +1,10 @@
+import { ChevronSorting } from '@amsterdam/asc-assets'
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { ChevronSorting } from '@datapunt/asc-assets'
-import TableCell, { Props as TableCellProps } from './TableCell'
 import { themeColor, themeSpacing } from '../../utils'
 import Button from '../Button'
 import Icon from '../Icon'
+import TableCell, { Props as TableCellProps } from './TableCell'
 
 type ButtonProps = {
   sorted?: 'none' | 'asc' | 'desc'
