@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@amsterdam/asc-assets": "^0.25.0",
-    "@amsterdam/asc-ui": "^0.24.0",
+    "@amsterdam/asc-ui": "^0.25.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
