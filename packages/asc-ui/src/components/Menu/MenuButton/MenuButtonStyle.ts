@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components'
-import { themeColor, svgFill } from '../../../utils'
-import Button, { Props as ButtonProps } from '../../Button/Button'
+import { svgFill, themeColor } from '../../../utils'
+import Button, { ButtonProps } from '../../Button/Button'
+import { IconStyle } from '../../Icon'
 import MenuFlyOutStyle from '../MenuFlyOut/MenuFlyOutStyle'
 import { MenuListStyle } from '../MenuList'
-import { IconStyle } from '../../Icon'
 
 export const MenuButtonTextStyle = styled.span``
 export const MenuButtonTextWrapperStyle = styled.span``

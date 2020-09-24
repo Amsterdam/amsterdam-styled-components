@@ -187,7 +187,7 @@ const getVariant = () => ({
   }
 }
 
-export type Props = {
+export type ButtonStyleProps = {
   /**
    * @deprecated Use variant instead. Pass the theme-color.
    */
@@ -210,7 +210,7 @@ export type Props = {
   taskflow?: boolean
 }
 
-const ButtonStyle = styled.button<Props>`
+const ButtonStyle = styled.button<ButtonStyleProps>`
   height: ${({ theme }) => getButtonHeight(theme)};
   white-space: nowrap;
   display: inline-flex;

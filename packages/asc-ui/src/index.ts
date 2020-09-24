@@ -7,7 +7,7 @@ import Alert, { AlertStyle } from './components/Alert'
 import AmsterdamLogo, { AmsterdamLogoStyles } from './components/AmsterdamLogo'
 import BackDrop, { BackDropStyles } from './components/BackDrop'
 import Blockquote, { BlockquoteStyle } from './components/Blockquote'
-import Button from './components/Button'
+import Button, { ButtonProps } from './components/Button'
 import ShareButton from './components/Button/ShareButton'
 import Card, {
   CardActions,
@@ -130,6 +130,7 @@ export {
   BackDrop,
   CustomHTMLBlock,
   Button,
+  ButtonProps,
   Blockquote,
   Card,
   CardContainer,

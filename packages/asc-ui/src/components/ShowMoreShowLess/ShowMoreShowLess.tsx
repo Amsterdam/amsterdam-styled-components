@@ -1,6 +1,6 @@
 import { Enlarge, Minimise } from '@amsterdam/asc-assets'
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import Button, { Props as ButtonProps } from '../Button/Button'
+import Button, { ButtonProps } from '../Button/Button'
 import ShowMoreShowLessStyle, {
   ShowMoreShowLessProps,
 } from './ShowMoreShowLessStyle'

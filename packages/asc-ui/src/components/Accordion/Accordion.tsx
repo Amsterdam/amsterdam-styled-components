@@ -1,7 +1,7 @@
 import { ChevronDown } from '@amsterdam/asc-assets'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useUID } from 'react-uid'
-import { Props as ButtonStyleProps } from '../Button/ButtonStyle'
+import { ButtonStyleProps } from '../Button/ButtonStyle'
 import {
   AccordionButton,
   AccordionButtonContent,
