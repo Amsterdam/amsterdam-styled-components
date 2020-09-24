@@ -1,11 +1,11 @@
 import styled from 'styled-components'
+import { svgFill, themeColor } from '../../../utils'
 import IconStyle from '../../Icon/IconStyle'
-import { themeColor, svgFill } from '../../../utils'
-import ButtonStyle, { Props as ButtonProps } from '../ButtonStyle'
+import ButtonStyle, { ButtonStyleProps } from '../ButtonStyle'
 
 export type Props = {
   hoverColor?: string
-} & ButtonProps
+} & ButtonStyleProps
 
 const ShareButtonStyle = styled(ButtonStyle)<Props>`
   padding: 0;

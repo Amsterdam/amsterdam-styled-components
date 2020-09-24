@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 import { themeColor } from '../../../utils'
-import ButtonStyle, { Props as ButtonProps } from '../ButtonStyle'
+import ButtonStyle, { ButtonStyleProps } from '../ButtonStyle'
 
 export type Props = {
   open?: boolean
   size?: number
-} & ButtonProps
+} & ButtonStyleProps
 
 export default styled(ButtonStyle)<Props>`
   background-color: ${({ open, theme }) =>

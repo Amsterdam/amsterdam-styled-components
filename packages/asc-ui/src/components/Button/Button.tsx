@@ -2,13 +2,13 @@ import React from 'react'
 import Icon, { defaultProps as iconDefaultProps } from '../Icon/Icon'
 import ButtonStyle, {
   ArrowRight,
+  ButtonStyleProps,
   ButtonVariant,
   IconLeft,
   IconRight,
-  Props as ButtonStyleProps,
 } from './ButtonStyle'
 
-export type Props = {
+export type ButtonProps = {
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   iconLeft?: React.ReactNode
@@ -22,7 +22,10 @@ export type Props = {
 
 export { ButtonVariant }
 
-const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, Props>(
+const Button = React.forwardRef<
+  HTMLButtonElement | HTMLAnchorElement,
+  ButtonProps
+>(
   (
     { children, iconLeft, iconRight, icon, iconSize, taskflow, ...otherProps },
     ref,
