@@ -3262,9 +3262,9 @@
     "@types/enzyme" "*"
 
 "@types/enzyme-to-json@^1.5.3":
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/@types/enzyme-to-json/-/enzyme-to-json-1.5.3.tgz#9ccd609669011bade7be255f19b607b30b1c1a3b"
-  integrity sha512-9l4dj6CbZGlzdMMDdfXfKRg8oKPmRRgN8eN8Ggf0BzN7lg1Bg+4SwolIi1sdM9eIu2atJU2osmQADMa9FJgZLA==
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/@types/enzyme-to-json/-/enzyme-to-json-1.5.4.tgz#17104deebdd52305adafa5b17c8423511d4390eb"
+  integrity sha512-fVVzq0fYyzv+P/elB0HtTIpltNXK8Fs4LxGpTdQQ6cQMPNbVm3aZQkCYalBfZip2hTo8kNLtGTH8phP+Pi2FOw==
   dependencies:
     "@types/enzyme" "*"
 
