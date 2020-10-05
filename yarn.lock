@@ -2387,18 +2387,18 @@
     "@sinonjs/commons" "^1.7.0"
 
 "@storybook/addon-a11y@^6.0.0-beta.37":
-  version "6.0.22"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.0.22.tgz#194ddf5b050482345fa19546704d463aa489eea2"
-  integrity sha512-mghO2/YhYKNOURPAAm9Ipo5q7XHoGfihomZqFFxdVPVMl1JZe5iQ6Fj0CTZEDfFqzwanZV/MVblRDEOD4zWXcg==
+  version "6.0.26"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.0.26.tgz#b71761d9b8f8b340894eb9826d51ce319ce65116"
+  integrity sha512-sx1Ethl9W3Kfns0qB1v0CoAymKTC+odB+rCjUKM1h/ILS/n8ZzwkzAj0L7DU/6wA0nZwZDQ+1wL2ZN7r+vxr8A==
   dependencies:
-    "@storybook/addons" "6.0.22"
-    "@storybook/api" "6.0.22"
-    "@storybook/channels" "6.0.22"
-    "@storybook/client-api" "6.0.22"
-    "@storybook/client-logger" "6.0.22"
-    "@storybook/components" "6.0.22"
-    "@storybook/core-events" "6.0.22"
-    "@storybook/theming" "6.0.22"
+    "@storybook/addons" "6.0.26"
+    "@storybook/api" "6.0.26"
+    "@storybook/channels" "6.0.26"
+    "@storybook/client-api" "6.0.26"
+    "@storybook/client-logger" "6.0.26"
+    "@storybook/components" "6.0.26"
+    "@storybook/core-events" "6.0.26"
+    "@storybook/theming" "6.0.26"
     axe-core "^3.5.2"
     core-js "^3.0.1"
     global "^4.3.2"
