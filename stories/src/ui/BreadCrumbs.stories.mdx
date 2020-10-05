@@ -1,0 +1,25 @@
+import styled from 'styled-components'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { BreadCrumbs } from '@amsterdam/asc-ui'
+
+export const Decorator = styled.div``
+
+<Meta
+  title="UI/BreadCrumbs"
+  component={BreadCrumbs}
+  decorators={[(storyFn) => <Decorator>{storyFn()}</Decorator>]}
+/>
+
+# BreadCrumbs
+
+[Design System](https://designsystem.amsterdam.nl/LINK_HERE)
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <React.Fragment>
+      <BreadCrumbs>Default state</BreadCrumbs>
+    </React.Fragment>
+  </Story>
+</Preview>
