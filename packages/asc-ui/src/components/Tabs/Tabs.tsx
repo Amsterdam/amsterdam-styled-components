@@ -28,6 +28,10 @@ export interface TabsProps {
    * The children for the tabs, only `Tab` components are allowed.
    */
   children: ReactElement<PropsWithChildren<TabProps>, typeof Tab>[]
+  /**
+   * The ID of the initial active tab
+   */
+  initialTab?: string
 }
 
 function formatTabId(id: string) {
@@ -38,18 +42,34 @@ function formatPanelId(id: string) {
   return `panel-${id}`
 }
 
-export const Tabs: React.FC<TabsProps> = ({ label, children }) => {
+export const Tabs: React.FC<
+  TabsProps & React.HTMLAttributes<HTMLDivElement>
+> = ({ label, children, initialTab, className }) => {
   const allTabs = children.map(({ props }) => props.id)
-  const firstTab = allTabs[0] ?? ''
-  const [selectedTab, setSelectedTab] = useState(firstTab)
+  const foundInitialTab = allTabs.find((id) => id === initialTab)
+  const activeTab = foundInitialTab ?? allTabs[0] ?? ''
+
+  if (initialTab && !foundInitialTab) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      `You passed a wrong initialTab value to Tabs component. Given initialTab ID: ${initialTab}`,
+    )
+  }
+
+  const [selectedTab, setSelectedTab] = useState(activeTab)
   const tabListRef = useRef<HTMLDivElement>(null)
   const { keyDown } = useFocusWithArrows(tabListRef, true, true, true)
 
   return (
     <>
-      <TabList aria-label={label} onKeyDown={keyDown} ref={tabListRef}>
+      <TabList
+        aria-label={label}
+        onKeyDown={keyDown}
+        ref={tabListRef}
+        className={className}
+      >
         {children.map(({ props }) => {
-          const { id, label: tabLabel, onClick, ...otherProps } = props
+          const { id, label: tabLabel, onClick, ...otherChildrenProps } = props
           const isSelected = id === selectedTab
           const tabId = formatTabId(id)
           const panelId = formatPanelId(id)
@@ -63,7 +83,7 @@ export const Tabs: React.FC<TabsProps> = ({ label, children }) => {
 
           return (
             <TabButton
-              {...otherProps}
+              {...otherChildrenProps}
               key={id}
               id={tabId}
               aria-controls={panelId}
