@@ -25,7 +25,7 @@
     "@amsterdam/asc-assets": "^0.25.1",
     "classnames": "^2.2.6",
     "deepmerge": "^4.2.2",
-    "polished": "^3.6.5",
+    "polished": "^4.0.1",
     "react-uid": "^2.3.0"
   },
   "peerDependencies": {
