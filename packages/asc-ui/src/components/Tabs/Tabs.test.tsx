@@ -3,6 +3,18 @@ import React from 'react'
 import { Tab, Tabs } from '.'
 
 describe('Tabs', () => {
+  const consoleOutput: string[] = []
+  // eslint-disable-next-line no-console
+  const originalWarning = console.warn
+  const mockedWarn = (output: string) => consoleOutput.push(output)
+  beforeEach(() => {
+    // eslint-disable-next-line no-console
+    console.warn = mockedWarn
+  })
+  afterEach(() => {
+    // eslint-disable-next-line no-console
+    console.warn = originalWarning
+  })
   it('should render the labels and contents of the tabs', () => {
     const { container } = render(
       <Tabs label="An example of tabs">
@@ -155,5 +167,48 @@ describe('Tabs', () => {
     )
 
     expect(container.querySelector('#tab-one')).toHaveAttribute('title', 'foo')
+  })
+
+  it('should be able to set the active initial tab', () => {
+    const { container } = render(
+      <Tabs label="An example of tabs" initialTab="three">
+        <Tab id="one" label="First">
+          Contents of the first tab.
+        </Tab>
+        <Tab id="two" label="Second">
+          Contents of the second tab.
+        </Tab>
+        <Tab id="three" label="Third">
+          Contents of the third tab.
+        </Tab>
+      </Tabs>,
+    )
+
+    expect(container.querySelector('#tab-three')).toHaveAttribute(
+      'tabindex',
+      '0',
+    )
+  })
+
+  it('should log a warning and set the active tab to the first when passing a wrong initialTab', () => {
+    const { container } = render(
+      <Tabs label="An example of tabs" initialTab="foo">
+        <Tab id="one" label="First">
+          Contents of the first tab.
+        </Tab>
+        <Tab id="two" label="Second">
+          Contents of the second tab.
+        </Tab>
+        <Tab id="three" label="Third">
+          Contents of the third tab.
+        </Tab>
+      </Tabs>,
+    )
+
+    expect(container.querySelector('#tab-one')).toHaveAttribute('tabindex', '0')
+
+    expect(consoleOutput).toEqual([
+      'You passed a wrong initialTab value to Tabs component. Given initialTab ID: foo',
+    ])
   })
 })
