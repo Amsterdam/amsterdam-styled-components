@@ -8,6 +8,10 @@ export interface liProps {
 export default styled.li`
   list-style-type: none;
 
+  svg {
+    fill: ${themeColor('tint', 'level5')};
+  }
+
   a {
     color: ${themeColor('tint', 'level5')};
     text-decoration: none;
