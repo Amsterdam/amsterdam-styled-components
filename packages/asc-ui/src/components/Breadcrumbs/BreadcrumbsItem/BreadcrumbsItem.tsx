@@ -1,9 +1,12 @@
 import React, { FunctionComponent, HTMLAttributes } from 'react'
-import BreadcrumbsItemStyle from './BreadcrumbsItemStyle'
+import BreadcrumbsItemStyle, { liProps } from './BreadcrumbsItemStyle'
 
-const BreadcrumbsItem: FunctionComponent<HTMLAttributes<HTMLLIElement>> = ({
-  children,
-  ...otherProps
-}) => <BreadcrumbsItemStyle {...otherProps}>{children}</BreadcrumbsItemStyle>
+const BreadcrumbsItem: FunctionComponent<
+  liProps & HTMLAttributes<HTMLLIElement>
+> = ({ children, href, ...otherProps }) => (
+  <BreadcrumbsItemStyle {...otherProps}>
+    <a href={href}>{}</a>
+  </BreadcrumbsItemStyle>
+)
 
 export default BreadcrumbsItem
