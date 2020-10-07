@@ -3,8 +3,8 @@ import BreadcrumbsItemStyle, { liProps } from './BreadcrumbsItemStyle'
 
 const BreadcrumbsItem: FunctionComponent<
   liProps & HTMLAttributes<HTMLLIElement>
-> = ({ children, href, ...otherProps }) => (
-  <BreadcrumbsItemStyle {...otherProps}>
+> = ({ children, href, className, ...otherProps }) => (
+  <BreadcrumbsItemStyle className={className} {...otherProps}>
     <a href={href}>{children}</a>
   </BreadcrumbsItemStyle>
 )

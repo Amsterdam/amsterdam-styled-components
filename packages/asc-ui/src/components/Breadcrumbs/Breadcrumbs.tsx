@@ -4,9 +4,10 @@ import BreadcrumbsStyle, { StyledIcon } from './BreadcrumbsStyle'
 
 const Breadcrumbs: FunctionComponent<HTMLAttributes<HTMLUListElement>> = ({
   children,
+  className,
   ...otherProps
 }) => (
-  <BreadcrumbsStyle {...otherProps}>
+  <BreadcrumbsStyle className={className} {...otherProps}>
     {React.Children.map(children, (child, index) => (
       <React.Fragment key={index}>
         {child}
