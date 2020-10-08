@@ -9,6 +9,7 @@ export default styled.li`
   list-style-type: none;
 
   a {
+    font-size: 14px;
     color: ${themeColor('tint', 'level5')};
     text-decoration: none;
     text-decoration-color: ${themeColor('tint', 'level5')};
