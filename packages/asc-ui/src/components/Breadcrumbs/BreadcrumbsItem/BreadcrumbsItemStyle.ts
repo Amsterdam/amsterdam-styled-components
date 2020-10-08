@@ -10,6 +10,7 @@ export default styled.li`
 
   a {
     font-size: 14px;
+    white-space: nowrap;
     color: ${themeColor('tint', 'level5')};
     text-decoration: none;
     text-decoration-color: ${themeColor('tint', 'level5')};
