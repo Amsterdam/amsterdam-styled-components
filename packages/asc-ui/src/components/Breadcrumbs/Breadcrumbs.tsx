@@ -9,7 +9,7 @@ const Breadcrumbs: FunctionComponent<HTMLAttributes<HTMLUListElement>> = ({
 }) => (
   <BreadcrumbsStyle className={className} {...otherProps}>
     {React.Children.map(children, (child, index) => (
-      <React.Fragment key={index}>
+      <React.Fragment key={String(index)}>
         {child}
         {children instanceof Array && index < children.length - 1 && (
           <StyledIcon size={10}>
