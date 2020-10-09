@@ -16,7 +16,3 @@ export default styled.ul`
     margin: ${themeSpacing(5)} 0;
   }
 `
-
-export const StyledIcon = styled(Icon)`
-  margin: 0 ${themeSpacing(1)};
-`

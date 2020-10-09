@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { themeColor } from '../../../utils/themeUtils'
+import { themeColor, themeSpacing } from '../../../utils/themeUtils'
+import Icon from '../../Icon'
 
 export interface liProps {
   href: string
@@ -7,10 +8,10 @@ export interface liProps {
 
 export default styled.li`
   list-style-type: none;
+  white-space: nowrap;
 
   a {
     font-size: 14px;
-    white-space: nowrap;
     color: ${themeColor('tint', 'level5')};
     text-decoration: none;
     text-decoration-color: ${themeColor('tint', 'level5')};
@@ -28,4 +29,9 @@ export default styled.li`
       outline-offset: 4px;
     }
   }
+`
+
+export const StyledIcon = styled(Icon)`
+  display: inline-block;
+  margin: 0 ${themeSpacing(1)};
 `

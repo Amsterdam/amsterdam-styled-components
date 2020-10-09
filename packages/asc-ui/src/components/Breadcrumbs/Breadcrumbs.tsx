@@ -1,6 +1,5 @@
 import React, { FunctionComponent, HTMLAttributes } from 'react'
-import { ChevronRight } from '@amsterdam/asc-assets'
-import BreadcrumbsStyle, { StyledIcon } from './BreadcrumbsStyle'
+import BreadcrumbsStyle from './BreadcrumbsStyle'
 
 const Breadcrumbs: FunctionComponent<HTMLAttributes<HTMLUListElement>> = ({
   children,
@@ -9,14 +8,7 @@ const Breadcrumbs: FunctionComponent<HTMLAttributes<HTMLUListElement>> = ({
 }) => (
   <BreadcrumbsStyle className={className} {...otherProps}>
     {React.Children.map(children, (child, index) => (
-      <React.Fragment key={String(index)}>
-        {children instanceof Array && index > 0 && index < children.length && (
-          <StyledIcon size={10}>
-            <ChevronRight />
-          </StyledIcon>
-        )}
-        {child}
-      </React.Fragment>
+      <React.Fragment key={String(index)}>{child}</React.Fragment>
     ))}
   </BreadcrumbsStyle>
 )
