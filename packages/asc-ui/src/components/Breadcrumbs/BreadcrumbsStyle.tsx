@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Icon from '../Icon'
 import { themeSpacing, themeColor, breakpoint } from '../../utils/themeUtils'
 
 export default styled.ul`
