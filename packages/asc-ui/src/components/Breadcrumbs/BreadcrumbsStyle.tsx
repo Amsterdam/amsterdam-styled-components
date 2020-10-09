@@ -7,6 +7,10 @@ export default styled.ul`
   flex-wrap: wrap;
   margin: ${themeSpacing(4)} 0;
 
+  li:first-child span {
+    display: none;
+  }
+
   svg {
     fill: ${themeColor('tint', 'level5')};
   }

@@ -7,9 +7,7 @@ const Breadcrumbs: FunctionComponent<HTMLAttributes<HTMLUListElement>> = ({
   ...otherProps
 }) => (
   <BreadcrumbsStyle className={className} {...otherProps}>
-    {React.Children.map(children, (child, index) => (
-      <React.Fragment key={String(index)}>{child}</React.Fragment>
-    ))}
+    <React.Fragment>{children}</React.Fragment>
   </BreadcrumbsStyle>
 )
 
