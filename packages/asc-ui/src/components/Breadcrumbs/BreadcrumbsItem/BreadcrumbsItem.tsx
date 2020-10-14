@@ -1,9 +1,9 @@
 import React, { FunctionComponent, HTMLAttributes } from 'react'
+import { ChevronRight } from '@amsterdam/asc-assets'
 import BreadcrumbsItemStyle, {
   liProps,
   StyledIcon,
 } from './BreadcrumbsItemStyle'
-import { ChevronRight } from '@amsterdam/asc-assets'
 
 const BreadcrumbsItem: FunctionComponent<
   liProps & HTMLAttributes<HTMLLIElement>
