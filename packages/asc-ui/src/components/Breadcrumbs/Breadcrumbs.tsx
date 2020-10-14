@@ -1,4 +1,4 @@
-import React, { FunctionComponent, HTMLAttributes } from 'react'
+import React, { Fragment, FunctionComponent, HTMLAttributes } from 'react'
 import BreadcrumbsStyle from './BreadcrumbsStyle'
 
 const Breadcrumbs: FunctionComponent<HTMLAttributes<HTMLUListElement>> = ({
@@ -7,7 +7,7 @@ const Breadcrumbs: FunctionComponent<HTMLAttributes<HTMLUListElement>> = ({
   ...otherProps
 }) => (
   <BreadcrumbsStyle className={className} {...otherProps}>
-    <React.Fragment>{children}</React.Fragment>
+    <Fragment>{children}</Fragment>
   </BreadcrumbsStyle>
 )
 
