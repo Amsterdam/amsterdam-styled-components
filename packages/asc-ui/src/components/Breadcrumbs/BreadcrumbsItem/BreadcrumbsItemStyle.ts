@@ -21,7 +21,7 @@ export default styled.li`
       text-decoration: underline;
     }
 
-    *:focus {
+    &:focus {
       outline: auto;
       outline-color: ${themeColor('support', 'focus')};
       outline-style: solid;
@@ -33,5 +33,5 @@ export default styled.li`
 
 export const StyledIcon = styled(Icon)`
   display: inline-block;
-  margin: 0 ${themeSpacing(1)};
+  padding: ${themeSpacing(0, 2)};
 `
