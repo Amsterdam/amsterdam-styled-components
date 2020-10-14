@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { themeSpacing, themeColor, breakpoint } from '../../utils/themeUtils'
+import { themeSpacing, themeColor } from '../../utils/themeUtils'
 
 export default styled.ul`
   display: flex;
@@ -13,9 +13,5 @@ export default styled.ul`
 
   svg {
     fill: ${themeColor('tint', 'level5')};
-  }
-
-  @media ${breakpoint('min-width', 'laptopM')} {
-    margin: ${themeSpacing(5)} 0;
   }
 `
