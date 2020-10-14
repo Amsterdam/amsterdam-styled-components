@@ -12,9 +12,11 @@ export default styled.li`
 
   a {
     font-size: 14px;
+    line-height: 20px;
     color: ${themeColor('tint', 'level5')};
     text-decoration: none;
     text-decoration-color: ${themeColor('tint', 'level5')};
+    margin: ${themeSpacing(0, 2, 0, 0)};
 
     &:hover {
       color: ${themeColor('secondary', 'main')};
@@ -33,5 +35,5 @@ export default styled.li`
 
 export const StyledIcon = styled(Icon)`
   display: inline-block;
-  padding: ${themeSpacing(0, 2)};
+  padding: ${themeSpacing(0, 2, 0, 0)};
 `
