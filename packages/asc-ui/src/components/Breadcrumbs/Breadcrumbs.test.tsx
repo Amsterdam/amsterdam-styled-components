@@ -5,7 +5,7 @@ import BreadcrumbsItem from './BreadcrumbsItem/BreadcrumbsItem'
 
 describe('Breadcrumbs', () => {
   it('should render', () => {
-    const { container } = render(
+    const { container, queryByText } = render(
       <Breadcrumbs>
         <BreadcrumbsItem href="/">Home</BreadcrumbsItem>
         <BreadcrumbsItem href="/innovatie">Innovatie</BreadcrumbsItem>
@@ -19,5 +19,9 @@ describe('Breadcrumbs', () => {
     )
 
     expect(container.firstChild).toBeDefined()
+
+    expect(queryByText('Home')).toBeInTheDocument()
+    expect(queryByText('Innovatie')).toBeInTheDocument()
+    expect(queryByText('Contact')).toBeInTheDocument()
   })
 })
