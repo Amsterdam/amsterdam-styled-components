@@ -22,6 +22,7 @@ describe('Breadcrumbs', () => {
 
     expect(queryByText('Home')).toBeInTheDocument()
     expect(queryByText('Innovatie')).toBeInTheDocument()
+    expect(queryByText('Bouw- en verkkeersprojecten')).toBeInTheDocument()
     expect(queryByText('Contact')).toBeInTheDocument()
   })
 })
