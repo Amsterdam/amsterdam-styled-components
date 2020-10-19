@@ -12,9 +12,8 @@ export type Props = {
 
 export default styled.span<Props>`
   margin-top: 0;
-  display: block;
+  display: inline-block;
   padding: ${themeSpacing(1)};
-  width: fit-content;
   ${({ theme, colorType, colorSubtype }) => css`
     background-color: ${themeColor(colorType, colorSubtype)({ theme })};
     color: ${readableColor(themeColor(colorType, colorSubtype)({ theme }))};
