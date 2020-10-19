@@ -14,6 +14,10 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## [not released]
+
+- _Fixed_: styling of `Tag` on IE11
+
 ## [0.25.2]
 
 - Added: `initialTab` prop to `Tabs` component
