@@ -8,9 +8,12 @@ export interface liProps {
 
 export default styled.li`
   list-style-type: none;
+  display: flex;
+  align-items: center;
   white-space: nowrap;
 
   a {
+    align-self: center;
     font-size: 14px;
     line-height: 20px;
     color: ${themeColor('tint', 'level5')};
@@ -34,6 +37,7 @@ export default styled.li`
 `
 
 export const StyledIcon = styled(Icon)`
+  align-self: center;
   display: inline-block;
   padding: ${themeSpacing(0, 2, 0, 0)};
 `
