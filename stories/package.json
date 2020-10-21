@@ -28,7 +28,7 @@
   "dependencies": {
     "@amsterdam/asc-assets": "^0.25.2",
     "@amsterdam/asc-ui": "^0.25.2",
-    "react": "^16.13.1",
+    "react": "^17.0.0",
     "react-table": "^7.2.2",
     "styled-components": "^5.1.1"
   }
