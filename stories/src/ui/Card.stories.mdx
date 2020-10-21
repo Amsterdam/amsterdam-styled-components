@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { ChevronRight, Download } from '@amsterdam/asc-assets'
 import {
   Card,
@@ -10,7 +11,15 @@ import {
   Paragraph,
 } from '@amsterdam/asc-ui'
 
-<Meta title="UI/Card" component={Card} />
+export const Decorator = styled.div`
+  padding: 30px;
+`
+
+<Meta
+  title="UI/Card"
+  component={Card}
+  decorators={[(storyFn) => <Decorator>{storyFn()}</Decorator>]}
+/>
 
 # Card
 
