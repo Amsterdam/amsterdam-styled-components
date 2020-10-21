@@ -11,7 +11,7 @@
   "dependencies": {
     "@amsterdam/asc-assets": "^0.25.0",
     "@amsterdam/asc-ui": "^0.25.0",
-    "react": "^16.13.1",
+    "react": "^17.0.0",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
     "styled-components": "^5.1.0"
