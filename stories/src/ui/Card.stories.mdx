@@ -1,0 +1,164 @@
+import { ChevronRight, Download } from '@amsterdam/asc-assets'
+import {
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Heading,
+  Icon,
+  Image,
+  Paragraph,
+} from '@amsterdam/asc-ui'
+
+<Meta title="UI/Card" component={Card} />
+
+Doesn't exist in Design System yet
+
+**Component status: Experimental**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <Card maxWidth={250}>
+      <CardContent>
+        <Heading as="h6">This is a card</Heading>
+        <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
+      </CardContent>
+    </Card>
+  </Story>
+</Preview>
+
+## Default With Action
+
+<Preview>
+  <Story name="Default With Action">
+    <Card maxWidth={250}>
+      <CardContent>
+        <Heading as="h6">This is a card</Heading>
+        <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
+      </CardContent>
+      <CardActions>
+        <Icon size={15}>
+          <ChevronRight />
+        </Icon>
+      </CardActions>
+    </Card>
+  </Story>
+</Preview>
+
+## Default With Action And Media Item
+
+<Preview>
+  <Story name="Default With Action And Media Item">
+    <Card maxWidth={250}>
+      <CardMedia>
+        <Image src="https://picsum.photos/300/200/" alt="stadsloket" square />
+      </CardMedia>
+      <CardContent>
+        <Heading as="h6">Title</Heading>
+        <Paragraph>This is a card</Paragraph>
+      </CardContent>
+      <CardActions>
+        <Icon size={15}>
+          <ChevronRight />
+        </Icon>
+      </CardActions>
+    </Card>
+  </Story>
+</Preview>
+
+## With Shadow
+
+<Preview>
+  <Story name="With Shadow">
+    <Card maxWidth={250} backgroundColor="level2" shadow>
+      <CardContent>
+        <Heading as="h6">This is a card</Heading>
+        <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
+      </CardContent>
+      <CardActions>
+        <Icon size={15}>
+          <ChevronRight />
+        </Icon>
+      </CardActions>
+    </Card>
+  </Story>
+</Preview>
+
+## Horizontal With Action And Media Item
+
+<Preview>
+  <Story name="Horizontal With Action And Media Item">
+    <Card maxWidth={450} horizontal>
+      <CardMedia maxWidth={100} backgroundColor="level2">
+        <Icon size={25}>
+          <Download />
+        </Icon>
+      </CardMedia>
+      <CardContent>
+        <Heading as="h6">This is a card</Heading>
+        <Paragraph>Lorem ipsum dolor sit amet</Paragraph>
+      </CardContent>
+      <CardActions>
+        <Icon size={15}>
+          <ChevronRight />
+        </Icon>
+      </CardActions>
+    </Card>
+  </Story>
+</Preview>
+
+## Loading State Default
+
+<Preview>
+  <Story name="Loading State Default">
+    <Card maxWidth={250} isLoading>
+      <CardContent>
+        <Heading as="h6" />
+        <Paragraph />
+      </CardContent>
+    </Card>
+  </Story>
+</Preview>
+
+## Loading State With Action
+
+<Preview>
+  <Story name="Loading State With Action">
+    <Card maxWidth={250} isLoading>
+      <CardContent>
+        <Heading as="h6" />
+        <Paragraph />
+      </CardContent>
+      <CardActions>
+        <Icon size={15}>
+          <ChevronRight />
+        </Icon>
+      </CardActions>
+    </Card>
+  </Story>
+</Preview>
+
+## Loading State Horizontal
+
+<Preview>
+  <Story name="Loading State Horizontal">
+    <Card maxWidth={450} horizontal isLoading>
+      <CardMedia backgroundColor="level2">
+        <Icon size={25}>
+          <Download />
+        </Icon>
+      </CardMedia>
+      <CardContent>
+        <Heading as="h6" />
+        <Paragraph />
+      </CardContent>
+      <CardActions>
+        <Icon size={15}>
+          <ChevronRight />
+        </Icon>
+      </CardActions>
+    </Card>
+  </Story>
+</Preview>
