@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { ChevronRight, Download } from '@amsterdam/asc-assets'
 import {
   Card,
@@ -11,15 +12,7 @@ import {
   Paragraph,
 } from '@amsterdam/asc-ui'
 
-export const Decorator = styled.div`
-  padding: 30px;
-`
-
-<Meta
-  title="UI/Card"
-  component={Card}
-  decorators={[(storyFn) => <Decorator>{storyFn()}</Decorator>]}
-/>
+<Meta title="UI/Card" component={Card} />
 
 # Card
 
