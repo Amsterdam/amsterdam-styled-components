@@ -1,0 +1,77 @@
+import { ChevronDown, Ellipsis } from '@amsterdam/asc-assets'
+import {
+  ContextMenu,
+  ContextMenuItem,
+  ContextMenuSelect,
+} from '@amsterdam/asc-ui'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+
+<Meta title="UI/ContextMenu" component={ContextMenu} />
+
+# ContextMenu
+
+Doesn't exist in Design System yet
+
+**Component status: Experimental**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <ContextMenu arrowIcon={<ChevronDown />}>
+      <ContextMenuItem>One</ContextMenuItem>
+      <ContextMenuItem>Two</ContextMenuItem>
+    </ContextMenu>
+  </Story>
+</Preview>
+
+## Position Bottom
+
+<Preview>
+  <Story name="Position Bottom">
+    <ContextMenu arrowIcon={<ChevronDown />} position="bottom">
+      <ContextMenuItem>One</ContextMenuItem>
+      <ContextMenuItem>Two</ContextMenuItem>
+    </ContextMenu>
+  </Story>
+</Preview>
+
+## With Label
+
+<Preview>
+  <Story name="With Label">
+    <ContextMenu arrowIcon={<ChevronDown />} label="I'm a label!">
+      <ContextMenuItem>One</ContextMenuItem>
+      <ContextMenuItem>Two</ContextMenuItem>
+    </ContextMenu>
+  </Story>
+</Preview>
+
+## With Select On Touch Screen
+
+<Preview>
+  <Story name="With Select On Touch Screen">
+    <ContextMenu
+      arrowIcon={<Ellipsis />}
+      selectElementForTouchScreen={
+        <>
+          {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+          <label style={{ display: 'none' }} htmlFor="some-id">
+            Open menu
+          </label>
+          <ContextMenuSelect
+            name="context-menu"
+            id="some-id"
+            onChange={(e) => alert(e.currentTarget.value)}
+          >
+            <option value="one">One</option>
+            <option value="two">Two</option>
+          </ContextMenuSelect>
+        </>
+      }
+    >
+      <ContextMenuItem>One</ContextMenuItem>
+      <ContextMenuItem>Two</ContextMenuItem>
+    </ContextMenu>
+  </Story>
+</Preview>
