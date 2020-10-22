@@ -6,7 +6,24 @@ import {
 } from '@amsterdam/asc-ui'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 
-<Meta title="UI/ContextMenu" component={ContextMenu} />
+<Meta
+  title="UI/ContextMenu"
+  component={ContextMenu}
+  decorators={[
+    (Story) => (
+      <div
+        style={{
+          height: '300px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ]}
+/>
 
 # ContextMenu
 
