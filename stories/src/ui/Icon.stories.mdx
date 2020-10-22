@@ -1,0 +1,130 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Location } from '@amsterdam/asc-assets'
+import { Icon, themeColor } from '@amsterdam/asc-ui'
+
+<Meta title="UI/Icon" component={Icon} />
+
+# Icon
+
+Doesn't exist in Design System yet
+
+**Component status: Experimental**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <Icon>
+      <Location />
+    </Icon>
+  </Story>
+</Preview>
+
+## Inline Flex
+
+<Preview>
+  <Story name="Inline Flex">
+    <Icon inline>
+      <Location />
+    </Icon>
+  </Story>
+</Preview>
+
+## Custom Icon Url
+
+<Preview>
+  <Story name="Custom Icon Url">
+    <Icon
+      inline
+      size={70}
+      iconUrl="https://cdn.xs4all.nl/content/_xs4all-themes/first-class/images/icons/usp-trophey_yellow_30.svg"
+    />
+  </Story>
+</Preview>
+
+## Sizes
+
+<Preview>
+  <Story name="Sizes">
+    <>
+      <Icon size={14}>
+        <Location />
+      </Icon>
+      Small
+      <div style={{ paddingTop: 20 }}>
+        <Icon size={20}>
+          <Location />
+        </Icon>
+        Medium
+      </div>
+      <div style={{ paddingTop: 20 }}>
+        <Icon size={32}>
+          <Location />
+        </Icon>
+        Large
+      </div>
+      <div style={{ paddingTop: 20 }}>
+        <Icon size={40}>
+          <Location />
+        </Icon>
+        ExtraLarge
+      </div>
+      <div style={{ paddingTop: 20 }}>
+        <Icon size={68}>
+          <Location />
+        </Icon>
+        68px (any number)
+      </div>
+    </>
+  </Story>
+</Preview>
+
+## Rotation
+
+<Preview>
+  <Story name="Rotation">
+    <>
+      <Icon size={40}>
+        <Location />
+      </Icon>
+      0 deg
+      <div style={{ paddingTop: 20 }}>
+        <Icon size={40} rotate={90}>
+          <Location />
+        </Icon>
+        90 deg
+      </div>
+      <div style={{ paddingTop: 20 }}>
+        <Icon size={40} rotate={180}>
+          <Location />
+        </Icon>
+        180 deg
+      </div>
+      <div style={{ paddingTop: 20 }}>
+        <Icon size={40} rotate={270}>
+          <Location />
+        </Icon>
+        270 deg
+      </div>
+      <div style={{ paddingTop: 20 }}>
+        <Icon size={40} rotate={68}>
+          <Location />
+        </Icon>
+        68 deg (any number)
+      </div>
+    </>
+  </Story>
+</Preview>
+
+## Colors
+
+<Preview>
+  <Story name="Colors">
+    <div>
+      <Icon size={40} color="hotpink">
+        <Location />
+      </Icon>
+      any color
+    </div>
+  </Story>
+</Preview>
