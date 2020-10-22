@@ -2,7 +2,7 @@ import { CompactPager } from '@amsterdam/asc-ui'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 
 export let currentPage, setCurrentPage
-export const setup = () => {
+export const setupState = () => {
   ;[currentPage, setCurrentPage] = React.useState(1)
 }
 
@@ -18,12 +18,12 @@ Doesn't exist in Design System yet
 
 <Preview>
   <Story name="Default">
-    {setup()}
     <CompactPager
       page={currentPage}
       pageSize={20}
       collectionSize={60}
       onPageChange={(page) => setCurrentPage(page)}
     />
+    {setupState()}
   </Story>
 </Preview>
