@@ -1,0 +1,45 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Checkbox, FilterBox, FilterOption, Label } from '@amsterdam/asc-ui'
+
+<Meta title="UI/FilterBox" component={FilterBox} />
+
+Doesn't exist in Design System yet
+
+**Component status: Experimental**
+
+## With Label Options
+
+<Preview>
+  <Story name="WithLabelOptions">
+    <FilterBox label="Filters">
+      <FilterOption active href="#">
+        Optie 1
+      </FilterOption>
+      <FilterOption href="#">Optie 2</FilterOption>
+      <FilterOption href="#">Optie 3</FilterOption>
+      <FilterOption href="#">Optie 4</FilterOption>
+    </FilterBox>
+  </Story>
+</Preview>
+
+## With CheckBoxes
+
+<Preview>
+  <Story name="With CheckBoxes">
+    <FilterBox label="Filters">
+      <Label
+        align="flex-start"
+        htmlFor="one"
+        label="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque earum eum"
+      >
+        <Checkbox id="one" variant="primary" />
+      </Label>
+      <Label htmlFor="two" label="Lorem ipsum dolor sit amet">
+        <Checkbox checked id="two" variant="primary" />
+      </Label>
+      <Label htmlFor="three" label="Lorem ipsum dolor sit amet">
+        <Checkbox id="three" variant="primary" />
+      </Label>
+    </FilterBox>
+  </Story>
+</Preview>
