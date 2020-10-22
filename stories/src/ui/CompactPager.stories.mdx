@@ -1,0 +1,29 @@
+import { CompactPager } from '@amsterdam/asc-ui'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+
+export let currentPage, setCurrentPage
+export const setup = () => {
+  ;[currentPage, setCurrentPage] = React.useState(1)
+}
+
+<Meta title="UI/CompactPager" component={CompactPager} />
+
+# CompactPager
+
+Doesn't exist in Design System yet
+
+**Component status: Experimental**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    {setup()}
+    <CompactPager
+      page={currentPage}
+      pageSize={20}
+      collectionSize={60}
+      onPageChange={(page) => setCurrentPage(page)}
+    />
+  </Story>
+</Preview>
