@@ -1,0 +1,49 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import {
+  Heading,
+  ImageCard,
+  ImageCardContent,
+  Paragraph,
+} from '@amsterdam/asc-ui'
+
+<Meta title="UI/ImageCard" component={ImageCard} />
+
+# ImageCard
+
+Doesn't exist in Design System yet
+
+**Component status: Experimental**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <ImageCard backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg">
+      <ImageCardContent>
+        <Heading forwardedAs="h4" styleAs="h2">
+          Jeugdwerkloosheid Amsterdam daalt naar 6,2%
+        </Heading>
+      </ImageCardContent>
+    </ImageCard>
+  </Story>
+</Preview>
+
+## Loading State
+
+<Preview>
+  <Story name="Loading State">
+    <ImageCard
+      isLoading
+      backgroundImage="http://lorempixel.com/output/food-q-c-640-480-3.jpg"
+    >
+      <ImageCardContent>
+        <Heading forwardedAs="h4" styleAs="h2">
+          Jeugdwerkloosheid Amsterdam daalt naar 6,2%
+        </Heading>
+        <Paragraph gutterBottom={0}>
+          Amsterdamse jongeren even vaak werkloos als gemiddeld in Nederland
+        </Paragraph>
+      </ImageCardContent>
+    </ImageCard>
+  </Story>
+</Preview>
