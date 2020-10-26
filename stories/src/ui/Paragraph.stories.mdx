@@ -1,0 +1,47 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { CompactThemeProvider, Paragraph } from '@amsterdam/asc-ui'
+
+<Meta title="UI/Typography/Paragraph" component={Paragraph} />
+
+# Paragraph
+
+Doesn't exist in Design System yet
+
+**Component status: Experimental**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <Paragraph>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deleniti
+      dicta doloremque eveniet explicabo id ipsum omnis placeat rerum suscipit.
+    </Paragraph>
+  </Story>
+</Preview>
+
+## Strong
+
+<Preview>
+  <Story name="Strong">
+    <Paragraph strong>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deleniti
+      dicta doloremque eveniet explicabo id ipsum omnis placeat rerum suscipit.
+    </Paragraph>
+  </Story>
+</Preview>
+
+## Compact
+
+<Preview>
+  <Story name="Compact">
+    <CompactThemeProvider>
+      <Paragraph>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+        deleniti dicta doloremque eveniet explicabo id ipsum omnis placeat rerum
+        suscipit.
+      </Paragraph>
+    </CompactThemeProvider>
+    )
+  </Story>
+</Preview>
