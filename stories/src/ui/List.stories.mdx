@@ -1,0 +1,114 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Link, List, ListItem, OrderedList } from '@amsterdam/asc-ui'
+
+<Meta title="UI/List" component={List} />
+
+# List
+
+Doesn't exist in Design System yet
+
+**Component status: Experimental**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <List>
+      <ListItem>I am a ListLink!</ListItem>
+      <ListItem>Another one</ListItem>
+      <ListItem>A file!</ListItem>
+    </List>
+  </Story>
+</Preview>
+
+## Default With Chevron Links
+
+<Preview>
+  <Story name="Default With Chevron Links">
+    <List>
+      <ListItem>
+        <Link href="/" variant="with-chevron">
+          I am a ListLink!
+        </Link>
+      </ListItem>
+      <ListItem>
+        <Link href="/" variant="with-chevron">
+          Another one
+        </Link>
+      </ListItem>
+      <ListItem>
+        <Link href="/" variant="with-chevron">
+          A file!
+        </Link>
+      </ListItem>
+    </List>
+  </Story>
+</Preview>
+
+## Bullet List
+
+<Preview>
+  <Story name="Bullet List">
+    <List variant="bullet">
+      <ListItem>Amsterdam Noord</ListItem>
+      <ListItem>Amsterdam Zuid</ListItem>
+      <ListItem>Amsterdam Oost</ListItem>
+      <ListItem>
+        <Link href="/">Amsterdam West</Link>
+      </ListItem>
+    </List>
+  </Story>
+</Preview>
+
+## Ordered List
+
+<Preview>
+  <Story name="Ordered List">
+    <OrderedList>
+      <ListItem>Amsterdam Noord</ListItem>
+      <ListItem>Amsterdam Zuid</ListItem>
+      <ListItem>Amsterdam Oost</ListItem>
+      <ListItem>
+        <Link href="/">Amsterdam West</Link>
+      </ListItem>
+    </OrderedList>
+  </Story>
+</Preview>
+
+## Nested Ordered List
+
+<Preview>
+  <Story name="Nested Ordered List">
+    <OrderedList>
+      <ListItem>Amsterdam Zuid</ListItem>
+      <ListItem>
+        Amsterdam Noord
+        <OrderedList>
+          <ListItem>Vogelbuurt</ListItem>
+          <ListItem>Tuindorp-Oostzaan</ListItem>
+        </OrderedList>
+      </ListItem>
+      <ListItem>Amsterdam Oost</ListItem>
+      <ListItem>Amsterdam Oost</ListItem>
+      <ListItem>Amsterdam Oost</ListItem>
+      <ListItem>Amsterdam Oost</ListItem>
+      <ListItem>Amsterdam Oost</ListItem>
+      <ListItem>Amsterdam Oost</ListItem>
+      <ListItem>Amsterdam Oost</ListItem>
+      <ListItem>
+        <Link href="/">Amsterdam West</Link>
+        <OrderedList>
+          <ListItem>Bos en Lommer</ListItem>
+          <ListItem>
+            Kolenkit
+            <OrderedList>
+              <ListItem>
+                <Link href="/">Foo</Link>
+              </ListItem>
+            </OrderedList>
+          </ListItem>
+        </OrderedList>
+      </ListItem>
+    </OrderedList>
+  </Story>
+</Preview>
