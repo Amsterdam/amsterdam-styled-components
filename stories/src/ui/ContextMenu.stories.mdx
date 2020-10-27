@@ -5,12 +5,13 @@ import {
   ContextMenuSelect,
 } from '@amsterdam/asc-ui'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
 
 <Meta
   title="UI/ContextMenu"
   component={ContextMenu}
   decorators={[
-    (Story) => (
+    (Item) => (
       <div
         style={{
           height: '300px',
@@ -19,7 +20,7 @@ import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
           justifyContent: 'center',
         }}
       >
-        <Story />
+        <Item />
       </div>
     ),
   ]}
@@ -79,7 +80,7 @@ Doesn't exist in Design System yet
           <ContextMenuSelect
             name="context-menu"
             id="some-id"
-            onChange={(e) => alert(e.currentTarget.value)}
+            onChange={(e) => action(e.currentTarget.value)(e)}
           >
             <option value="one">One</option>
             <option value="two">Two</option>
