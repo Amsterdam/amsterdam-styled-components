@@ -1,4 +1,5 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
 import { SearchBar } from '@amsterdam/asc-ui'
 
 export let searchText, setText
@@ -20,8 +21,8 @@ Doesn't exist in Design System yet
   <Story name="Default">
     <SearchBar
       placeholder="Enter the search text"
-      onChange={() => {
-        console.log('Input changed')
+      onChange={(e) => {
+        action(`text changed: ${e.target.value}`)(e)
       }}
     />
   </Story>
@@ -47,11 +48,8 @@ Doesn't exist in Design System yet
     >
       <SearchBar
         placeholder="Enter the search text"
-        onChange={() => {
-          console.log('Input changed')
-        }}
-        onClear={() => {
-          console.log('Cleared')
+        onChange={(e) => {
+          action(`text changed: ${e.target.value}`)(e)
         }}
       />
     </form>
@@ -68,14 +66,14 @@ Doesn't exist in Design System yet
         placeholder="Enter the search text"
         onChange={(e) => {
           setText(e.currentTarget.value)
-          console.log(`text changed: ${searchText}`)
+          action(`text changed: ${searchText}`)(e)
         }}
-        onClear={() => {
-          console.log('Cleared')
+        onClear={(e) => {
+          action('Cleared')(e)
           setText('')
         }}
-        onSubmit={() => {
-          console.log(`button clicked: ${searchText}`)
+        onSubmit={(e) => {
+          action(`button clicked: ${searchText}`)(e)
         }}
         value={searchText}
       />
