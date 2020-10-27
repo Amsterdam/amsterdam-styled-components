@@ -1,0 +1,54 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { SearchBar } from '@amsterdam/asc-ui'
+
+<Meta title="UI/SearchBar" component={SearchBar} />
+
+# SearchBar
+
+Doesn't exist in Design System yet
+
+**Component status: Experimental**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <SearchBar
+      placeholder="Enter the search text"
+      onChange={() => {
+        alert('Input changed')
+      }}
+    />
+  </Story>
+</Preview>
+
+## With Focus
+
+<Preview>
+  <Story name="With Focus">
+    <SearchBar placeholder="This will focus automatically" autoFocus />
+  </Story>
+</Preview>
+
+## In A Form
+
+<Preview>
+  <Story name="In A Form">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault()
+        alert('Submitted')
+      }}
+    >
+      <SearchBar
+        placeholder="Enter the search text"
+        onChange={() => {
+          alert('Input changed')
+        }}
+        onClear={() => {
+          alert('Cleared')
+        }}
+      />
+    </form>
+  </Story>
+</Preview>
