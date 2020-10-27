@@ -1,5 +1,6 @@
 import { createRef, useEffect } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
 import { Select, Label, ErrorMessage } from '@amsterdam/asc-ui'
 
 export const SelectWithRef = () => {
@@ -7,9 +8,7 @@ export const SelectWithRef = () => {
   useEffect(() => {
     const element = ref.current
     function onChange(e) {
-      const { value } = e.target
-      // eslint-disable-next-line no-console
-      console.log('Value changed!', value)
+      action(`Value changed! ${e.target.value}`)(e)
     }
     if (!element) {
       return undefined
