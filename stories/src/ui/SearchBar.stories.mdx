@@ -1,6 +1,11 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { SearchBar } from '@amsterdam/asc-ui'
 
+export let searchText, setText
+export const setupState = () => {
+  ;[searchText, setText] = React.useState('')
+}
+
 <Meta title="UI/SearchBar" component={SearchBar} />
 
 # SearchBar
@@ -16,7 +21,7 @@ Doesn't exist in Design System yet
     <SearchBar
       placeholder="Enter the search text"
       onChange={() => {
-        alert('Input changed')
+        console.log('Input changed')
       }}
     />
   </Story>
@@ -37,18 +42,47 @@ Doesn't exist in Design System yet
     <form
       onSubmit={(e) => {
         e.preventDefault()
-        alert('Submitted')
+        console.log('Submitted')
       }}
     >
       <SearchBar
         placeholder="Enter the search text"
         onChange={() => {
-          alert('Input changed')
+          console.log('Input changed')
         }}
         onClear={() => {
-          alert('Cleared')
+          console.log('Cleared')
         }}
       />
     </form>
+  </Story>
+</Preview>
+
+## Controlled State
+
+<Preview>
+  <Story name="Controlled State">
+    <>
+      {setupState()}
+      <SearchBar
+        placeholder="Enter the search text"
+        onChange={(e) => {
+          setText(e.currentTarget.value)
+          console.log(`text changed: ${searchText}`)
+        }}
+        onClear={() => {
+          console.log('Cleared')
+          setText('')
+        }}
+        onSubmit={() => {
+          console.log(`button clicked: ${searchText}`)
+        }}
+        value={searchText}
+      />
+      <p>
+        <span>Searching for:</span>
+        {searchText}
+      </p>
+    </>
   </Story>
 </Preview>
