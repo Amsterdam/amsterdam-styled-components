@@ -15,20 +15,23 @@ const CLOSE_BUTTON_TITLE = 'Sluiten'
 
 const Alert: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
   children,
-  heading,
-  onDismiss,
-  dismissible,
   content,
+  dismissible,
+  heading,
   level,
+  onDismiss,
+  outline,
   ...otherProps
 }) => {
   const [open, setOpen] = useState(true)
 
   let variant: ButtonVariant = 'tertiary'
 
-  if (level === 'error') {
+  if (outline) {
+    variant = 'blank'
+  } else if (level === 'error') {
     variant = 'secondary'
-  } else if (level === 'attention') {
+  } else if (level === 'info') {
     variant = 'primary'
   }
 
@@ -42,7 +45,7 @@ const Alert: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
 
   return open ? (
     <AlertStyle
-      {...{ dismissible, level, ...otherProps }}
+      {...{ dismissible, level, outline, ...otherProps }}
       tabIndex={0}
       role="alert"
       aria-live="polite"
