@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { CompactPager } from '@amsterdam/asc-ui'
 
 const CompactPagerExample: React.FC<React.HTMLAttributes<HTMLElement>> = () => {
-  const [currentPage, setCurrentPage] = useState(1)
+  const [currentPage, setCurrentPage] = useState<number>(1)
   return (
     <CompactPager
       page={currentPage}
