@@ -19,6 +19,7 @@ Prefix the change with one of these keywords:
 - Fixed: `Modal` component no longer produces `zIndexOffset` exceptions (https://github.com/Amsterdam/amsterdam-styled-components/issues/1289)
 - Fixed: `Tag` component width is now displayed correctly in IE11 (https://github.com/Amsterdam/amsterdam-styled-components/issues/634)
 - Changed: Most of the documentation has been re-written to use the MDX file format (https://github.com/Amsterdam/amsterdam-styled-components/issues/558)
+- Changed: `Button` component now changes background color when focussed (https://github.com/Amsterdam/amsterdam-styled-components/pull/1296)
 
 ## [0.25.2]
 
