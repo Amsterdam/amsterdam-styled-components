@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { action } from '@storybook/addon-actions'
 import { CompactPager } from '@amsterdam/asc-ui'
 
 const CompactPagerExample: React.FC<React.HTMLAttributes<HTMLElement>> = () => {
@@ -8,7 +9,10 @@ const CompactPagerExample: React.FC<React.HTMLAttributes<HTMLElement>> = () => {
       page={currentPage}
       pageSize={20}
       collectionSize={60}
-      onPageChange={(page) => setCurrentPage(page)}
+      onPageChange={(page) => {
+        action(`current page ${page}`)(page)
+        setCurrentPage(page)
+      }}
     />
   )
 }
