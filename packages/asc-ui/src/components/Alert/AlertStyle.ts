@@ -4,24 +4,25 @@ import { svgFill, themeColor, themeSpacing } from '../../utils'
 import Button from '../Button'
 import Heading from '../Heading'
 
-export type Level = 'normal' | 'attention' | 'warning' | 'error'
+export type Level = 'error' | 'info' | 'neutral' | 'warning'
 
 export type Props = {
-  level?: Level
-  heading?: string
-  onDismiss?: () => void
   content?: string
   dismissible?: boolean
+  heading?: string
+  level?: Level
+  onDismiss?: () => void
+  outline?: boolean
 }
 
 const colorMap: Record<
   Level,
   ({ theme }: { theme: Theme.ThemeInterface }) => string
 > = {
-  normal: themeColor('tint', 'level3'),
-  attention: themeColor('primary'),
-  warning: themeColor('tint', 'level1'),
-  error: themeColor('secondary'),
+  error: themeColor('error'),
+  info: themeColor('primary'),
+  neutral: themeColor('tint', 'level3'),
+  warning: themeColor('support', 'focus'),
 }
 
 export const CloseButtonWrapper = styled.div`
@@ -63,24 +64,38 @@ export default styled.div<Props>`
       display: flex;
     `}
 
-  ${({ level, theme }) =>
+  ${({ level, outline, theme }) =>
     css`
       padding: ${themeSpacing(4)};
 
-      /* Colors */
-      background-color: ${colorMap[level || 'normal']({
-        theme,
-      })};
-      ${(level === 'attention' || level === 'error') &&
+      /* Solid colors */
+      ${!outline &&
+      css`
+        background-color: ${colorMap[level || 'neutral']({
+          theme,
+        })};
+      `}
+      ${!outline &&
+      (level === 'error' || level === 'info') &&
       css`
         ${svgFill(themeColor('tint', 'level1'))}
         &, & * {
           color: ${themeColor('tint', 'level1')};
         }
       `}
-      ${level === 'warning' &&
+      
+      /* Outline color */
+      ${outline &&
       css`
-        box-shadow: ${themeColor('secondary')} 0px 0px 0px 2px inset;
+        box-shadow: ${colorMap[level || 'neutral']({
+            theme,
+          })}
+          0px 0px 0px 2px inset;
+      `}
+      ${outline &&
+      (level === 'error' || level === 'info') &&
+      css`
+        ${svgFill(themeColor('tint', 'level7'))}
       `}
     `}
 `
