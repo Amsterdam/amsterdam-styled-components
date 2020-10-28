@@ -1,11 +1,7 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
 import { SearchBar } from '@amsterdam/asc-ui'
-
-export let searchText, setText
-export const setupState = () => {
-  ;[searchText, setText] = React.useState('')
-}
+import SearchBarExample from './SearchBarExample'
 
 <Meta title="UI/SearchBar" component={SearchBar} />
 
@@ -60,27 +56,6 @@ Doesn't exist in Design System yet
 
 <Preview>
   <Story name="Controlled State">
-    <>
-      {setupState()}
-      <SearchBar
-        placeholder="Enter the search text"
-        onChange={(e) => {
-          setText(e.currentTarget.value)
-          action(`text changed: ${searchText}`)(e)
-        }}
-        onClear={(e) => {
-          action('Cleared')(e)
-          setText('')
-        }}
-        onSubmit={(e) => {
-          action(`button clicked: ${searchText}`)(e)
-        }}
-        value={searchText}
-      />
-      <p>
-        <span>Searching for:</span>
-        {searchText}
-      </p>
-    </>
+    <SearchBarExample />
   </Story>
 </Preview>
