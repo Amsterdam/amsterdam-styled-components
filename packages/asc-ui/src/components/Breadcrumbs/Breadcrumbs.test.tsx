@@ -24,5 +24,18 @@ describe('Breadcrumbs', () => {
     expect(queryByText('Innovatie')).toBeInTheDocument()
     expect(queryByText('Bouw- en verkkeersprojecten')).toBeInTheDocument()
     expect(queryByText('Contact')).toBeInTheDocument()
+
+    expect(
+      container.querySelector('li:nth-child(1) a')?.getAttribute('href'),
+    ).toEqual('/')
+    expect(
+      container.querySelector('li:nth-child(2) a')?.getAttribute('href'),
+    ).toEqual('/innovatie')
+    expect(
+      container.querySelector('li:nth-child(3) a')?.getAttribute('href'),
+    ).toEqual('/innovatie/bouwprojecten')
+    expect(
+      container.querySelector('li:nth-child(4) a')?.getAttribute('href'),
+    ).toEqual('/innovatie/bouwprojecten/contact')
   })
 })

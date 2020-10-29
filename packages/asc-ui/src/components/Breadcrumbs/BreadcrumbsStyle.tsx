@@ -1,17 +1,16 @@
 import styled from 'styled-components'
-import { themeColor } from '../../utils/themeUtils'
+import { themeColor, svgFill } from '../../utils/themeUtils'
+import Icon from '../Icon'
 
-export default styled.ul`
+export default styled.ol`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   margin: 0;
 
-  li:first-child span {
+  li:first-child ${Icon} {
     display: none;
   }
 
-  svg {
-    fill: ${themeColor('tint', 'level5')};
-  }
+  ${svgFill(themeColor('tint', 'level5'))};
 `
