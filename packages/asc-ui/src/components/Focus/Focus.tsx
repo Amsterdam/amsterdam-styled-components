@@ -1,9 +1,12 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React from 'react'
+import styled from 'styled-components'
 
 type Props = {
   onKeyDown?: React.EventHandler<React.KeyboardEvent>
 }
+
+const FocusStyle = styled.div``
 
 const Focus: React.FC<Props> = ({ children, onKeyDown, ...otherProps }) => {
   const myRef = React.createRef<HTMLDivElement>()
@@ -28,7 +31,7 @@ const Focus: React.FC<Props> = ({ children, onKeyDown, ...otherProps }) => {
   }, [myRef])
 
   return (
-    <div
+    <FocusStyle
       {...otherProps}
       role="presentation"
       ref={myRef}
@@ -36,7 +39,7 @@ const Focus: React.FC<Props> = ({ children, onKeyDown, ...otherProps }) => {
       tabIndex={0}
     >
       {children}
-    </div>
+    </FocusStyle>
   )
 }
 
