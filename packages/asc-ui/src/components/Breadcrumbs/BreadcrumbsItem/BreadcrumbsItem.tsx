@@ -9,7 +9,7 @@ const BreadcrumbsItem: FunctionComponent<
   liProps & HTMLAttributes<HTMLLIElement>
 > = ({ children, href, ...otherProps }) => (
   <BreadcrumbsItemStyle {...otherProps}>
-    <StyledIcon size={14}>
+    <StyledIcon size={6}>
       <ChevronRight />
     </StyledIcon>
     <a href={href}>{children}</a>
