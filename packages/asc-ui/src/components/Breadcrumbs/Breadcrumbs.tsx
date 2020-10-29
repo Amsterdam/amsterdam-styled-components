@@ -1,6 +1,6 @@
 import React, { FunctionComponent, HTMLAttributes } from 'react'
-import BreadcrumbsStyle, { StyledIcon } from './BreadcrumbsStyle'
 import { ChevronRight } from '@amsterdam/asc-assets'
+import BreadcrumbsStyle, { StyledIcon } from './BreadcrumbsStyle'
 
 const Breadcrumbs: FunctionComponent<HTMLAttributes<HTMLUListElement>> = ({
   children,
