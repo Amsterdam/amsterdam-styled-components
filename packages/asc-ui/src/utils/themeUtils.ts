@@ -127,7 +127,7 @@ type GetTypographyValueFromPropertyParameters = [
 
 export const getTypographyValueFromProperty = withTheme<
   GetTypographyValueFromPropertyParameters
->((theme, element, property, breakpointRule) => {
+>((theme, element, property, breakpointRule): string => {
   const rules = getValueFromTheme(`typography.${[element]}`)({ theme })
   if (breakpointRule) {
     if (rules.breakpoints[breakpointRule]) {

@@ -37,7 +37,7 @@ export default styled(EditorialPost)<Props>`
               (EDITORIAL_PADDING_TOP * 2 +
                 EDITORIAL_META_LINE_HEIGHT +
                 EDITORIAL_META_MARGIN_TOP +
-                stripUnit(
+                (stripUnit(
                   getTypographyValueFromProperty(
                     'h1',
                     'lineHeight',
@@ -45,7 +45,7 @@ export default styled(EditorialPost)<Props>`
                   )({
                     theme,
                   }),
-                )) *
+                ) as number)) *
               -1
             }px`
           : `0`};

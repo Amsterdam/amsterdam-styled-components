@@ -27,14 +27,14 @@ export const BulletCSS = css`
       left: -${BULLET_MARGIN + BULLET_SIZE}px;
       top: ${({ theme }) =>
         `${
-          (stripUnit(
+          ((stripUnit(
             getTypographyValueFromProperty(
               'li',
               'lineHeight',
             )({
               theme,
             }),
-          ) -
+          ) as number) -
             BULLET_SIZE) /
           2
         }px`};
