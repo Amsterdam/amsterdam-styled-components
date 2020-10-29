@@ -42,7 +42,13 @@ module.exports = {
     'react/jsx-wrap-multilines': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    // Check why we disabled some rules: https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#i-am-using-a-rule-from-eslint-core-and-it-doesnt-work-correctly-with-typescript-code
     'no-unused-vars': 'off',
+    'no-use-before-define': 'off',
+    'no-undef': 'off',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'error',
+    '@typescript-eslint/no-use-before-define': 'error',
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
