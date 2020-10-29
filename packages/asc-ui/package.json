@@ -29,9 +29,9 @@
     "react-uid": "^2.3.0"
   },
   "peerDependencies": {
-    "react": ">=17.0.1",
-    "react-dom": ">=17.0.1",
-    "styled-components": ">=5.2.0"
+    "react": ">=16.8.6",
+    "react-dom": ">=16.8.6",
+    "styled-components": ">=4.4.1"
   },
   "optionalDependencies": {
     "objectFitPolyfill": ">=2.3.0"
