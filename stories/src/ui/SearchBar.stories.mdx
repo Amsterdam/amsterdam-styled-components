@@ -3,7 +3,21 @@ import { action } from '@storybook/addon-actions'
 import { SearchBar } from '@amsterdam/asc-ui'
 import SearchBarExample from './SearchBarExample'
 
-<Meta title="UI/SearchBar" component={SearchBar} />
+<Meta
+  title="UI/SearchBar"
+  component={SearchBar}
+  decorators={[
+    (Item) => (
+      <div
+        style={{
+          maxWidth: '400px',
+        }}
+      >
+        <Item />
+      </div>
+    ),
+  ]}
+/>
 
 # SearchBar
 

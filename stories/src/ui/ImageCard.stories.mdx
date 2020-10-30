@@ -6,7 +6,21 @@ import {
   Paragraph,
 } from '@amsterdam/asc-ui'
 
-<Meta title="UI/ImageCard" component={ImageCard} />
+<Meta
+  title="UI/ImageCard"
+  component={ImageCard}
+  decorators={[
+    (Item) => (
+      <div
+        style={{
+          maxWidth: '400px',
+        }}
+      >
+        <Item />
+      </div>
+    ),
+  ]}
+/>
 
 # ImageCard
 

@@ -1,7 +1,21 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { Link, List, ListItem, OrderedList } from '@amsterdam/asc-ui'
 
-<Meta title="UI/List" component={List} />
+<Meta
+  title="UI/List"
+  component={List}
+  decorators={[
+    (Item) => (
+      <div
+        style={{
+          maxWidth: '400px',
+        }}
+      >
+        <Item />
+      </div>
+    ),
+  ]}
+/>
 
 # List
 

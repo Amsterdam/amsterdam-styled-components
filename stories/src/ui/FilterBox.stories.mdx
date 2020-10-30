@@ -1,7 +1,21 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { Checkbox, FilterBox, FilterOption, Label } from '@amsterdam/asc-ui'
 
-<Meta title="UI/FilterBox" component={FilterBox} />
+<Meta
+  title="UI/FilterBox"
+  component={FilterBox}
+  decorators={[
+    (Item) => (
+      <div
+        style={{
+          maxWidth: '400px',
+        }}
+      >
+        <Item />
+      </div>
+    ),
+  ]}
+/>
 
 # FilterBox
 

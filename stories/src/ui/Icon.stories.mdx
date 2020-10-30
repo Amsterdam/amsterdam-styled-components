@@ -2,7 +2,21 @@ import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { Location } from '@amsterdam/asc-assets'
 import { Icon } from '@amsterdam/asc-ui'
 
-<Meta title="UI/Icon" component={Icon} />
+<Meta
+  title="UI/Icon"
+  component={Icon}
+  decorators={[
+    (Item) => (
+      <div
+        style={{
+          maxWidth: '400px',
+        }}
+      >
+        <Item />
+      </div>
+    ),
+  ]}
+/>
 
 # Icon
 

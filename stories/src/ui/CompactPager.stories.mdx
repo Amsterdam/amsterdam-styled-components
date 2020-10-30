@@ -1,7 +1,21 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import CompactPagerExample from './CompactPagerExample'
 
-<Meta title="UI/CompactPager" component={CompactPagerExample} />
+<Meta
+  title="UI/CompactPager"
+  component={CompactPagerExample}
+  decorators={[
+    (Item) => (
+      <div
+        style={{
+          maxWidth: '400px',
+        }}
+      >
+        <Item />
+      </div>
+    ),
+  ]}
+/>
 
 # CompactPager
 
