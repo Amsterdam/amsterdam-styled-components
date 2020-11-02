@@ -10,7 +10,7 @@ const Breadcrumbs: FunctionComponent<HTMLAttributes<HTMLUListElement>> = ({
     {React.Children.map(children, (child, index) => (
       <React.Fragment key={String(index)}>
         <li>
-          <StyledIcon size={6}>
+          <StyledIcon size={10}>
             <ChevronRight />
           </StyledIcon>
           {child}
