@@ -45,6 +45,15 @@ const ContextMenu: React.FC<
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  // Set state with 'open' prop if it's set
+  useEffect(() => {
+    if (!openProp) {
+      setOpen(false)
+    } else if (openProp) {
+      setOpen(true)
+    }
+  }, [openProp])
+
   const onToggle = () => {
     setOpen(!open)
   }
