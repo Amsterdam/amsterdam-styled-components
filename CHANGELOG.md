@@ -14,7 +14,7 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## [not released]
+## [UNRELEASED]
 
 - _Fixed_: styling of `Tag` on IE11
 
