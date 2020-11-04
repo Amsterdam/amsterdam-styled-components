@@ -16,7 +16,8 @@ Prefix the change with one of these keywords:
 
 ## [UNRELEASED]
 
-- _Fixed_: styling of `Tag` on IE11
+- _Fixed_: `Modal` component no longer produces `zIndexOffset` exceptions (https://github.com/Amsterdam/amsterdam-styled-components/issues/1289)
+- _Fixed_: `Tag` component width is now displayed correctly in IE11 (https://github.com/Amsterdam/amsterdam-styled-components/issues/634)
 
 ## [0.25.2]
 
