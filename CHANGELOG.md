@@ -14,6 +14,10 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## [Unreleased]
+
+- Changed: Made ContextMenu respond dynamically to `open` prop.
+
 ## [0.25.2]
 
 - Added: `initialTab` prop to `Tabs` component
