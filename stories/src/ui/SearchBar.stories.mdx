@@ -1,0 +1,75 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import { SearchBar } from '@amsterdam/asc-ui'
+import SearchBarExample from './SearchBarExample'
+
+<Meta
+  title="UI/SearchBar"
+  component={SearchBar}
+  decorators={[
+    (Item) => (
+      <div
+        style={{
+          maxWidth: '400px',
+        }}
+      >
+        <Item />
+      </div>
+    ),
+  ]}
+/>
+
+# SearchBar
+
+Doesn't exist in Design System yet
+
+**Component status: Experimental**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <SearchBar
+      placeholder="Enter the search text"
+      onChange={(e) => {
+        action(`text changed: ${e.target.value}`)(e)
+      }}
+    />
+  </Story>
+</Preview>
+
+## With Focus
+
+<Preview>
+  <Story name="With Focus">
+    <SearchBar placeholder="This will focus automatically" autoFocus />
+  </Story>
+</Preview>
+
+## In A Form
+
+<Preview>
+  <Story name="In A Form">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault()
+        action('Submitted')(e)
+      }}
+    >
+      <SearchBar
+        placeholder="Enter the search text"
+        onChange={(e) => {
+          action(`text changed: ${e.target.value}`)(e)
+        }}
+      />
+    </form>
+  </Story>
+</Preview>
+
+## Controlled State
+
+<Preview>
+  <Story name="Controlled State">
+    <SearchBarExample />
+  </Story>
+</Preview>

@@ -57,9 +57,8 @@ import { Input, Label } from '@amsterdam/asc-ui'
           if (!element) {
             return undefined
           }
-          function onInput(event) {
-            // eslint-disable-next-line no-console
-            console.log('Value changed!', event.target.value)
+          function onInput(e) {
+            action(`Value changed! ${e.target.value}`)(e)
           }
           element.addEventListener('input', onInput)
           return () => {
