@@ -3,9 +3,7 @@ import { themeColor, themeSpacing } from '../../utils'
 import LabelStyle from '../Label/LabelStyle'
 import ButtonStyle from '../Button/ButtonStyle'
 
-export type Props = {}
-
-export default styled.div<Props>`
+export default styled.div`
   border: 2px solid ${themeColor('tint', 'level3')};
   padding: 0 ${themeSpacing(5)} ${themeSpacing(5)};
 

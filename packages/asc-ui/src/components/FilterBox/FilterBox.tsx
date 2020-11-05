@@ -1,15 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import FilterBoxStyle, {
-  FilterBoxHeader,
-  Props as StyleProps,
-} from './FilterBoxStyle'
+import FilterBoxStyle, { FilterBoxHeader } from './FilterBoxStyle'
 import Heading from '../Heading'
 import { themeColor } from '../../utils/themeUtils'
 
 type Props = {
   label: string
-} & StyleProps
+}
 
 const StyledHeading = styled(Heading)`
   margin-bottom: 0;

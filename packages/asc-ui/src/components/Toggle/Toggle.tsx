@@ -16,7 +16,7 @@ export type ToggleHandlerProps = {
 export type Props = {
   render?: boolean
   ariaLabel?: string
-  onOpen?: Function
+  onOpen?: (open: boolean) => void
   ToggleHandler?: React.FC<
     ToggleButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>
   >

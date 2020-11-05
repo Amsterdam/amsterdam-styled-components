@@ -1,4 +1,5 @@
 import { ChevronDown } from '@amsterdam/asc-assets'
+import { CSSProperties } from 'react'
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
 import { INPUT_SIZE } from '../shared/constants'
@@ -11,8 +12,8 @@ export type Props = {
   srOnly?: boolean
   error?: boolean | string
   errorMessage?: string
-  labelStyle?: object
-  errorStyle?: object
+  labelStyle?: CSSProperties
+  errorStyle?: CSSProperties
 }
 
 export const SelectWrapper = styled.div`

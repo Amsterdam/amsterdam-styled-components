@@ -4,7 +4,7 @@ import Icon from '../Icon'
 import Tag, { Props as TagProps } from '../Tag/Tag'
 import FilterTagStyle from './FilterTagStyle'
 
-export interface FilterTagProps extends TagProps {}
+export type FilterTagProps = TagProps
 
 const FilterTag: React.FC<
   FilterTagProps & React.ButtonHTMLAttributes<HTMLButtonElement>

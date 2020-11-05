@@ -194,9 +194,8 @@ export const svgFill = withTheme((theme, color: string | ThemeFn<string>) => {
  * Adds an animated background to the element to indicate the content is loading.
  * @param animateLoading Allows toggling the animation effect, if false a fixed color will be used instead.
  */
-export const perceivedLoading = withTheme(
-  (theme, animateLoading: boolean = true) => {
-    const animation = keyframes`
+export const perceivedLoading = withTheme((theme, animateLoading = true) => {
+  const animation = keyframes`
       0% {
         background-color: ${themeColor('tint', 'level3')({ theme })};
       }
@@ -210,15 +209,14 @@ export const perceivedLoading = withTheme(
       }
     `
 
-    return animateLoading
-      ? css`
-          animation: ${animation} 2s ease-in-out infinite;
-        `
-      : css`
-          background-color: ${themeColor('tint', 'level4')({ theme })};
-        `
-  },
-)
+  return animateLoading
+    ? css`
+        animation: ${animation} 2s ease-in-out infinite;
+      `
+    : css`
+        background-color: ${themeColor('tint', 'level4')({ theme })};
+      `
+})
 
 /**
  * @deprecated Only used in deprecated component GridItem

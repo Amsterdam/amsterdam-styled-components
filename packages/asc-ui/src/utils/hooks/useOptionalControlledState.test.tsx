@@ -1,6 +1,10 @@
 import React from 'react'
 import { getByText, render } from '@testing-library/react'
-import { act, renderHook } from '@testing-library/react-hooks'
+import {
+  act,
+  renderHook,
+  RenderHookOptions,
+} from '@testing-library/react-hooks'
 import useOptionalControlledState from './useOptionalControlledState'
 
 describe('useOptionalControlledState', () => {
@@ -19,8 +23,8 @@ describe('useOptionalControlledState', () => {
 
   function getHookResult(
     controlledBoolean?: boolean,
-    setControlledBoolean?: Function,
-    options?: object,
+    setControlledBoolean?: () => void,
+    options?: RenderHookOptions<any>,
   ) {
     const { result } = renderHook(() => {
       const [value, setFn] = useOptionalControlledState(
@@ -81,6 +85,7 @@ describe('useOptionalControlledState', () => {
 
   it('should set the state when the controlled value is changed', () => {
     const Wrapper: React.FC<any> = ({ open }) => {
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       const [value] = useOptionalControlledState(open, () => {})
       return <div data-testid="node">{value ? 'open' : ''}</div>
     }

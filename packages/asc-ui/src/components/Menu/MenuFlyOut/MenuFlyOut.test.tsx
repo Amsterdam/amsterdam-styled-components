@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { ChevronDown, ChevronUp } from '@amsterdam/asc-assets'
 import { act } from '@testing-library/react'
 import { mount, ReactWrapper, shallow, ShallowWrapper } from 'enzyme'
@@ -63,7 +64,7 @@ describe('MenuFlyOut', () => {
 
   beforeEach(() => {
     useMenuContextMock.mockImplementation(() => mockContext)
-    component = shallow<{}>(<MenuFlyOut label="Fly Out">{children}</MenuFlyOut>)
+    component = shallow(<MenuFlyOut label="Fly Out">{children}</MenuFlyOut>)
   })
 
   it('should render', () => {
@@ -113,7 +114,7 @@ describe('MenuFlyOut', () => {
       onExpand: onExpandMock,
     }))
 
-    container = mount<{}>(<MenuFlyOut label="Fly Out">{children}</MenuFlyOut>)
+    container = mount(<MenuFlyOut label="Fly Out">{children}</MenuFlyOut>)
     act(() => {
       onClickSimulate(container)
     })
@@ -131,9 +132,7 @@ describe('MenuFlyOut', () => {
         hasToggle: true,
       }))
 
-      component = shallow<{}>(
-        <MenuFlyOut label="Fly Out">{children}</MenuFlyOut>,
-      )
+      component = shallow(<MenuFlyOut label="Fly Out">{children}</MenuFlyOut>)
     })
     it('should set the isOpen state including the Chevron icons', () => {
       const menuItemLink = component.find(MenuButton).at(0)

@@ -11,9 +11,7 @@ describe('SearchBar', () => {
 
   beforeEach(() => {
     ;({ container } = render(
-      <SearchBar onSubmit={mockOnSubmit} onChange={() => {}}>
-        searchbar-content
-      </SearchBar>,
+      <SearchBar onSubmit={mockOnSubmit}>searchbar-content</SearchBar>,
     ))
   })
 

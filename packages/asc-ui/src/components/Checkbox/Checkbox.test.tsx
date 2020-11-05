@@ -1,24 +1,18 @@
 import React from 'react'
-import { render, cleanup, fireEvent } from '@testing-library/react'
+import { render, fireEvent } from '@testing-library/react'
 import Checkbox from './Checkbox'
 import { ascDefaultTheme, ThemeProvider } from '../../theme'
 import { themeColor } from '../../utils'
 
 describe('Checkbox', () => {
-  let container: any
-  let rerender: Function
-  const onChangeMock = jest.fn()
-
-  beforeEach(() => {
-    cleanup()
-    ;({ container, rerender } = render(
+  it('should toggle checked / not checked', () => {
+    const onChangeMock = jest.fn()
+    const { container } = render(
       <ThemeProvider>
         <Checkbox variant="primary" onChange={onChangeMock} />
       </ThemeProvider>,
-    ))
-  })
+    )
 
-  it('should toggle checked / not checked', () => {
     const checkBox = container.querySelector('input')
     const icon = container.querySelector('span')
 
@@ -28,7 +22,9 @@ describe('Checkbox', () => {
     )
 
     // Toggle on
-    fireEvent.click(checkBox)
+    if (checkBox) {
+      fireEvent.click(checkBox)
+    }
 
     expect(onChangeMock).toHaveBeenCalled()
     expect(icon).not.toHaveStyleRule(
@@ -37,7 +33,9 @@ describe('Checkbox', () => {
     )
 
     // Toggle off
-    fireEvent.click(checkBox)
+    if (checkBox) {
+      fireEvent.click(checkBox)
+    }
 
     expect(icon).toHaveStyleRule(
       'background-color',
@@ -46,6 +44,13 @@ describe('Checkbox', () => {
   })
 
   it('should toggle checked / not checked when the props change', () => {
+    const onChangeMock = jest.fn()
+    const { container, rerender } = render(
+      <ThemeProvider>
+        <Checkbox variant="primary" onChange={onChangeMock} />
+      </ThemeProvider>,
+    )
+
     const icon = container.querySelector('span')
 
     expect(icon).toHaveStyleRule(

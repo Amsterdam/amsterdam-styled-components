@@ -5,7 +5,7 @@ import ButtonStyle from '../Button/ButtonStyle'
 import { SEARCH_BAR_HEIGHT } from '../shared/constants'
 import InputStyle from '../Input/InputStyle'
 
-export interface Props extends ShowHideTypes {}
+export type Props = ShowHideTypes
 
 const SearchBarStyle = styled.div<Props>`
   display: flex;

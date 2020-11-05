@@ -8,15 +8,13 @@ export type Props = {
   hideOverFlow?: boolean
 }
 
-type State = {}
-
 let mountElement: Element | null = null
 if (typeof window !== 'undefined') {
   mountElement = window.document.createElement('div')
   mountElement.setAttribute('style', 'position: absolute;')
 }
 
-class Portal extends React.Component<Props, State> {
+class Portal extends React.Component<Props> {
   static getOwnerDocument(element: React.ReactInstance) {
     // eslint-disable-next-line react/no-find-dom-node
     const el = ReactDOM.findDOMNode(element) as HTMLInputElement

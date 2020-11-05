@@ -5,7 +5,7 @@ import { showHide, ShowHideTypes, showAboveBackDrop } from '../../../utils'
 import { MENU_ITEM_SIZE } from '../constants'
 
 export type Props = {
-  onExpand?: Function
+  onExpand?: (expanded: boolean) => void
   hasBackDrop?: boolean
 } & ShowHideTypes
 

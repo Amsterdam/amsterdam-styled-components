@@ -1,9 +1,9 @@
-import React from 'react'
-
+import React, { FunctionComponent, HTMLAttributes } from 'react'
 import CardActionsStyle from './CardActionsStyle'
 
-const CardActions: React.FC<{}> = ({ children, ...otherProps }) => (
-  <CardActionsStyle {...otherProps}>{children}</CardActionsStyle>
-)
+const CardActions: FunctionComponent<HTMLAttributes<HTMLDivElement>> = ({
+  children,
+  ...otherProps
+}) => <CardActionsStyle {...otherProps}>{children}</CardActionsStyle>
 
 export default CardActions

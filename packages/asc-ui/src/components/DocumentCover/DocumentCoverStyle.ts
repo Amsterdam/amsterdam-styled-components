@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
 
-const DocumentCoverStyle = styled.div<{}>`
+const DocumentCoverStyle = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;

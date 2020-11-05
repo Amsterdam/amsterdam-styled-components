@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 export type Props = {
-  order?: Number
+  order?: number
 } & React.HTMLAttributes<HTMLElement>
 
 export const ListItemStyleCSS = css`

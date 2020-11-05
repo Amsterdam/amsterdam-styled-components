@@ -12,7 +12,7 @@ const Focus: React.FC<Props> = ({ children, onKeyDown, ...otherProps }) => {
   const myRef = React.createRef<HTMLDivElement>()
 
   React.useEffect(() => {
-    let renderedTimer: number = 0
+    let renderedTimer = 0
     const { current: node } = myRef
     if (node) {
       clearTimeout(renderedTimer)
