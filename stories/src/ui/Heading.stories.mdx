@@ -1,0 +1,37 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Heading } from '@amsterdam/asc-ui'
+
+<Meta
+  title="UI/Typography/Heading"
+  component={Heading}
+  decorators={[
+    (Item) => (
+      <div
+        style={{
+          maxWidth: '400px',
+        }}
+      >
+        <Item />
+      </div>
+    ),
+  ]}
+/>
+
+# Heading
+
+Doesn't exist in Design System yet
+
+**Component status: Experimental**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <>
+      <Heading>Heading one</Heading>
+      <Heading forwardedAs="h2">Heading two</Heading>
+      <Heading forwardedAs="h3">Heading three</Heading>
+      <Heading forwardedAs="h4">Heading four</Heading>
+    </>
+  </Story>
+</Preview>

@@ -18,12 +18,14 @@ export const Decorator = styled.div`
 
 [Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/901ede-alert)
 
-There are three levels of Alerts you can pass through the `level` prop:
+There are four levels of Alerts you can pass through the `level` prop:
 
-1. Not passing a `level` prop: this is a "normal" Alert, used to inform
-2. `attention`: This is being used to help the user to take action. This usually contains links.
-3. `error`: Use this to inform the user something went wrong, for example a failed request.
-4. `warning`: Use this to warn the user about something and help him to take action.
+1. `neutral`: This is the default level and is used to inform the user. (gray color)
+2. `error`: Use this to inform the user something went wrong, for example a failed request. (red color)
+3. `info`: This is being used to help the user to take action. (blue color)
+4. `warning`: Use this to warn the user about something and help him to take action. (yellow color)
+
+The prop `outline` places the color on the outline, instead of the background of the Alert
 
 **Component status: stable**
 
@@ -32,10 +34,14 @@ There are three levels of Alerts you can pass through the `level` prop:
 <Preview>
   <Story name="Variants">
     <React.Fragment>
-      <Alert>Normal</Alert>
-      <Alert level="attention">Attention</Alert>
+      <Alert>Neutral</Alert>
       <Alert level="error">Error</Alert>
+      <Alert level="info">Info</Alert>
       <Alert level="warning">Warning</Alert>
+      <br />
+      <Alert level="error" outline>
+        Error (outline)
+      </Alert>
     </React.Fragment>
   </Story>
 </Preview>
@@ -46,26 +52,21 @@ There are three levels of Alerts you can pass through the `level` prop:
   <Story name="With content and heading">
     <React.Fragment>
       <Alert
-        level="normal"
+        level="neutral"
         heading="With a heading and content"
-        content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, vitae."
-      />
-      <Alert
-        dismissible
-        level="attention"
-        content="Without header, with close button"
-      />
-      <Alert
-        dismissible
-        level="warning"
-        heading="With a heading, content and close button"
-        content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, vitae."
+        content="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
       />
       <Alert
         dismissible
         level="error"
+        content="Without header, with close button"
+        outline
+      />
+      <Alert
+        dismissible
+        level="info"
         heading="With a heading, content and close button"
-        content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, vitae."
+        content="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
       />
     </React.Fragment>
   </Story>
@@ -76,30 +77,38 @@ There are three levels of Alerts you can pass through the `level` prop:
 <Preview>
   <Story name="With custom children">
     <React.Fragment>
-      <Alert level="warning" dismissible>
-        <Heading>With a normal heading and paragraph</Heading>
+      <Alert level="neutral">
+        <Heading>With a large heading</Heading>
+      </Alert>
+      <Alert level="error" dismissible>
+        <Heading forwardedAs="h2">
+          With a neutral heading, paragraph and closing button
+        </Heading>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error,
           vitae.
         </Paragraph>
       </Alert>
-      <Alert level="attention" dismissible>
+      <Alert level="warning">
+        <Paragraph strong>Only a strong paragraph</Paragraph>
+      </Alert>
+      <Alert level="info" dismissible>
         <Paragraph>
-          Just a looooong paragraph with close button: Lorem ipsum dolor sit
-          amet, consectetur adipisicing elit. Aut itaque necessitatibus
-          officiis, quasi quia quisquam sit ut! Dolorum excepturi, inventore!
-          Accusamus ad illo molestiae vel. Deleniti excepturi iusto neque
-          quisquam!
+          Just a looooong paragraph with a link and a closing button: Lorem
+          ipsum dolor sit amet, consectetur adipisicing elit. Aut itaque
+          necessitatibus officiis, quasi quia quisquam sit ut! Dolorum
+          excepturi, inventore! Accusamus ad illo molestiae vel. Deleniti
+          excepturi iusto neque quisquam!
         </Paragraph>
         <Link href="/" variant="with-chevron" darkBackground>
           A link
         </Link>
       </Alert>
-      <Alert level="error" dismissible>
+      <Alert level="error" dismissible outline>
         <Heading as="h3">A header</Heading>
         <Paragraph>With a paragraph</Paragraph>
-        <Link href="/" variant="with-chevron" darkBackground>
-          A link
+        <Link href="/" variant="with-chevron">
+          And a link
         </Link>
       </Alert>
     </React.Fragment>

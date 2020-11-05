@@ -107,6 +107,7 @@ import { Theme } from './types'
 import * as hooks from './utils/hooks'
 import { perceivedLoading } from './utils/themeUtils'
 
+export * from './components/Breadcrumbs'
 export * from './components/Tabs'
 export {
   breakpoint,

@@ -57,6 +57,7 @@ const getVariant = () => ({
         color: ${readableColor(themeColor('primary')({ theme }))};
         ${svgFill(themeColor('tint', 'level1'))};
 
+        &:focus,
         &:hover {
           background-color: ${darken(0.1, themeColor('primary')({ theme }))};
         }
@@ -69,6 +70,7 @@ const getVariant = () => ({
         color: ${themeColor('tint', 'level1')};
         ${svgFill(themeColor('tint', 'level1'))};
 
+        &:focus,
         &:hover {
           background-color: ${darken(0.1, themeColor('secondary')({ theme }))};
         }
@@ -76,7 +78,10 @@ const getVariant = () => ({
         ${(taskflow) =>
           taskflow &&
           css`
-            &:not(:disabled)&:hover ${ArrowRight} {
+            &:not(:disabled)&:focus
+              ${ArrowRight},
+              &:not(:disabled)&:hover
+              ${ArrowRight} {
               border-left-color: ${darken(
                 0.1,
                 themeColor('secondary')({ theme }),
@@ -91,6 +96,7 @@ const getVariant = () => ({
         background-color: ${themeColor('tint', 'level4')};
         ${svgFill(themeColor('tint', 'level7'))};
 
+        &:focus,
         &:hover {
           background-color: ${darken(
             0.1,
