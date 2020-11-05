@@ -1,14 +1,14 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, ReactNode } from 'react'
 import {
   ViewerContainerItem,
   ViewerContainerWrapper,
 } from './ViewerContainerStyle'
 
 type Props = {
-  topLeft?: React.ReactNode
-  topRight?: React.ReactNode
-  bottomLeft?: React.ReactNode
-  bottomRight?: React.ReactNode
+  topLeft?: ReactNode
+  topRight?: ReactNode
+  bottomLeft?: ReactNode
+  bottomRight?: ReactNode
   metaData?: Array<string>
 }
 

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, HTMLAttributes } from 'react'
 import ImageCardStyle, {
   ImageCardWrapperStyle,
   WrapperProps,
@@ -6,7 +6,7 @@ import ImageCardStyle, {
 } from './ImageCardStyle'
 
 const ImageCard: FunctionComponent<
-  Props & WrapperProps & React.HTMLAttributes<HTMLElement>
+  Props & WrapperProps & HTMLAttributes<HTMLElement>
 > = ({ children, backgroundImage, margin, ...otherProps }) => (
   <ImageCardWrapperStyle margin={margin}>
     <ImageCardStyle backgroundImage={backgroundImage} {...otherProps}>

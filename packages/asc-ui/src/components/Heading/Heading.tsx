@@ -1,7 +1,7 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, HTMLAttributes } from 'react'
 import HeadingStyle, { Props as HeadingStyleProps } from './HeadingStyle'
 
-export type Props = HeadingStyleProps & React.HTMLAttributes<HTMLHeadingElement>
+export type Props = HeadingStyleProps & HTMLAttributes<HTMLHeadingElement>
 
 const Heading: FunctionComponent<Props> = ({ children, as, ...otherProps }) => (
   <HeadingStyle forwardedAs={as} {...otherProps}>

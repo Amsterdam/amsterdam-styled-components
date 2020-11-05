@@ -1,9 +1,13 @@
 import { Checkmark, Indeterminate } from '@amsterdam/asc-assets'
 import React, {
+  ChangeEvent,
+  forwardRef,
+  HTMLAttributes,
   useContext,
   useEffect,
   useImperativeHandle,
   useMemo,
+  useRef,
   useState,
 } from 'react'
 import LabelContext from '../Label/LabelContext'
@@ -13,9 +17,9 @@ import CheckboxStyle, {
   Props,
 } from './CheckboxStyle'
 
-const Checkbox = React.forwardRef<
+const Checkbox = forwardRef<
   HTMLInputElement,
-  Props & React.HTMLAttributes<HTMLInputElement>
+  Props & HTMLAttributes<HTMLInputElement>
 >(
   (
     {
@@ -32,7 +36,7 @@ const Checkbox = React.forwardRef<
   ) => {
     const [checked, setChecked] = useState(!!checkedProp)
     const { setActive } = useContext(LabelContext)
-    const ref = React.useRef<HTMLInputElement>(null)
+    const ref = useRef<HTMLInputElement>(null)
 
     useImperativeHandle(externalRef, () => ref.current as HTMLInputElement)
 
@@ -66,7 +70,7 @@ const Checkbox = React.forwardRef<
         </CheckboxIconStyle>
         <CheckboxStyle
           {...{ ...otherProps, disabled, checked, ref }}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+          onChange={(e: ChangeEvent<HTMLInputElement>) => {
             if (onChange) {
               onChange(e)
             }

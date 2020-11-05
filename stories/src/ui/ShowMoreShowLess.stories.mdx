@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import styled from 'styled-components'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { number, withKnobs } from '@storybook/addon-knobs'
@@ -23,7 +24,7 @@ Not in Amsterdam Design System yet
 
 <Preview>
   <Story name="Default">
-    <React.Fragment>
+    <Fragment>
       <ShowMoreShowLess
         maxHeight={`${number('maxHeight', 300, {
           range: true,
@@ -58,6 +59,6 @@ Not in Amsterdam Design System yet
           omnis placeat, sit ullam ut velit!
         </Paragraph>
       </ShowMoreShowLess>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

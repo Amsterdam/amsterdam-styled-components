@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { Button, ShareButton } from '@amsterdam/asc-ui'
 import styled from 'styled-components'
@@ -30,7 +31,7 @@ export const ButtonBar = styled.div`
 
 <Preview>
   <Story name="Default / Primary variant">
-    <React.Fragment>
+    <Fragment>
       <ButtonBar>
         <Button variant="primary">Normal</Button>
         <Button variant="primary" disabled>
@@ -40,7 +41,7 @@ export const ButtonBar = styled.div`
           With icon
         </Button>
       </ButtonBar>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -48,7 +49,7 @@ export const ButtonBar = styled.div`
 
 <Preview>
   <Story name="Secondary variant">
-    <React.Fragment>
+    <Fragment>
       <ButtonBar>
         <Button variant="secondary">Normal</Button>
         <Button variant="secondary" disabled>
@@ -61,7 +62,7 @@ export const ButtonBar = styled.div`
           Taskflow state
         </Button>
       </ButtonBar>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -69,7 +70,7 @@ export const ButtonBar = styled.div`
 
 <Preview>
   <Story name="Tertiary variant">
-    <React.Fragment>
+    <Fragment>
       <ButtonBar>
         <Button variant="tertiary">Normal</Button>
         <Button variant="tertiary" disabled>
@@ -79,7 +80,7 @@ export const ButtonBar = styled.div`
           With icon
         </Button>
       </ButtonBar>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -87,7 +88,7 @@ export const ButtonBar = styled.div`
 
 <Preview>
   <Story name="Primary Inverted variant">
-    <React.Fragment>
+    <Fragment>
       <ButtonBar>
         <Button variant="primaryInverted">Normal</Button>
         <Button variant="primaryInverted" disabled>
@@ -97,7 +98,7 @@ export const ButtonBar = styled.div`
           With icon
         </Button>
       </ButtonBar>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -105,7 +106,7 @@ export const ButtonBar = styled.div`
 
 <Preview>
   <Story name="Text Button variant">
-    <React.Fragment>
+    <Fragment>
       <ButtonBar>
         <Button variant="textButton">Normal</Button>
         <Button variant="textButton" disabled>
@@ -115,7 +116,7 @@ export const ButtonBar = styled.div`
           With icon
         </Button>
       </ButtonBar>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -123,9 +124,9 @@ export const ButtonBar = styled.div`
 
 <Preview>
   <Story name="With only an icon">
-    <React.Fragment>
+    <Fragment>
       <Button size={60} variant="blank" iconSize={40} icon={<Close />} />
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -133,7 +134,7 @@ export const ButtonBar = styled.div`
 
 <Preview>
   <Story name="Social buttons">
-    <React.Fragment>
+    <Fragment>
       <ButtonBar>
         <ShareButton hoverColor="#3b5999" iconSize={30}>
           <Facebook />
@@ -151,6 +152,6 @@ export const ButtonBar = styled.div`
           <Print />
         </ShareButton>
       </ButtonBar>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

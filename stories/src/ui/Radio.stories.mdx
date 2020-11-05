@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { Label, Radio, RadioGroup } from '@amsterdam/asc-ui'
 
@@ -30,7 +31,7 @@ import { Label, Radio, RadioGroup } from '@amsterdam/asc-ui'
 
 <Preview>
   <Story name="Default / Primary">
-    <React.Fragment>
+    <Fragment>
       <RadioGroup name="group-1">
         <Label htmlFor="primary-radio-1" label="Default">
           <Radio id="primary-radio-1" variant="primary" />
@@ -52,7 +53,7 @@ import { Label, Radio, RadioGroup } from '@amsterdam/asc-ui'
           <Radio id="primary-radio-5" variant="primary" />
         </Label>
       </RadioGroup>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -60,7 +61,7 @@ import { Label, Radio, RadioGroup } from '@amsterdam/asc-ui'
 
 <Preview>
   <Story name="Secondary">
-    <React.Fragment>
+    <Fragment>
       <RadioGroup name="group-2">
         <Label htmlFor="secondary-radio-1" label="Default">
           <Radio id="secondary-radio-1" variant="secondary" />
@@ -82,7 +83,7 @@ import { Label, Radio, RadioGroup } from '@amsterdam/asc-ui'
           <Radio id="secondary-radio-5" variant="secondary" />
         </Label>
       </RadioGroup>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -90,7 +91,7 @@ import { Label, Radio, RadioGroup } from '@amsterdam/asc-ui'
 
 <Preview>
   <Story name="Tertiary">
-    <React.Fragment>
+    <Fragment>
       <RadioGroup name="group-3">
         <Label htmlFor="tertiary-radio-1" label="Default">
           <Radio id="tertiary-radio-1" variant="tertiary" />
@@ -112,6 +113,6 @@ import { Label, Radio, RadioGroup } from '@amsterdam/asc-ui'
           <Radio id="tertiary-radio-5" variant="tertiary" />
         </Label>
       </RadioGroup>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

@@ -1,7 +1,7 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, HTMLAttributes } from 'react'
 import FormTitleStyle from './FormTitleStyle'
 
-const FormTitle: FunctionComponent<React.HTMLAttributes<HTMLElement>> = ({
+const FormTitle: FunctionComponent<HTMLAttributes<HTMLElement>> = ({
   children,
   ...otherProps
 }) =>

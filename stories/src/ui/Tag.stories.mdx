@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { Tag } from '@amsterdam/asc-ui'
 
@@ -11,7 +12,7 @@ import { Tag } from '@amsterdam/asc-ui'
 
 <Preview>
   <Story name="Default">
-    <React.Fragment>
+    <Fragment>
       <Tag>Tag one</Tag>
       <br />
       <Tag colorType="tint" colorSubtype="level3">
@@ -19,6 +20,6 @@ import { Tag } from '@amsterdam/asc-ui'
       </Tag>
       <br />
       <Tag colorType="secondary">Tag three</Tag>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

@@ -1,10 +1,10 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, HTMLAttributes } from 'react'
 import TypographyStyle, {
   Props as TypographyStyleProps,
 } from './TypographyStyle'
 import { deprecatedWarning } from '../../utils'
 
-export type Props = TypographyStyleProps & React.HTMLAttributes<HTMLElement>
+export type Props = TypographyStyleProps & HTMLAttributes<HTMLElement>
 
 const Typography: FunctionComponent<Props> = ({ children, ...otherProps }) => {
   if (otherProps.color) {

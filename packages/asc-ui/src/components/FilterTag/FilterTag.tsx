@@ -1,5 +1,5 @@
 import { Close } from '@amsterdam/asc-assets'
-import React, { FunctionComponent } from 'react'
+import React, { ButtonHTMLAttributes, FunctionComponent } from 'react'
 import Icon from '../Icon'
 import Tag, { Props as TagProps } from '../Tag/Tag'
 import FilterTagStyle from './FilterTagStyle'
@@ -7,7 +7,7 @@ import FilterTagStyle from './FilterTagStyle'
 export type FilterTagProps = TagProps
 
 const FilterTag: FunctionComponent<
-  FilterTagProps & React.ButtonHTMLAttributes<HTMLButtonElement>
+  FilterTagProps & ButtonHTMLAttributes<HTMLButtonElement>
 > = ({ children, ...otherProps }) => (
   <FilterTagStyle {...otherProps}>
     {children}

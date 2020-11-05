@@ -1,6 +1,7 @@
 import { Enlarge, Minimise } from '@amsterdam/asc-assets'
 import React, {
   FunctionComponent,
+  HTMLAttributes,
   useEffect,
   useMemo,
   useRef,
@@ -12,7 +13,7 @@ import ShowMoreShowLessStyle, {
 } from './ShowMoreShowLessStyle'
 
 const ShowMoreShowLess: FunctionComponent<
-  ShowMoreShowLessProps & React.HTMLAttributes<HTMLElement>
+  ShowMoreShowLessProps & HTMLAttributes<HTMLElement>
 > = ({
   children,
   maxHeight = '300px',

@@ -1,5 +1,12 @@
 import { Search } from '@amsterdam/asc-assets'
-import React, { FunctionComponent } from 'react'
+import React, {
+  ChangeEvent,
+  FormEvent,
+  FunctionComponent,
+  RefObject,
+  useEffect,
+  useState,
+} from 'react'
 import { deprecatedWarning } from '../../utils'
 import Button from '../Button'
 import Icon from '../Icon'
@@ -20,7 +27,7 @@ export interface SearchBarProps extends TextFieldProps, SearchBarStyleProps {
    * @deprecated, wrap this component inside a <form onSubmit={() => ...}> instead
    * @param value
    */
-  onSubmit?: (e: React.FormEvent) => void
+  onSubmit?: (e: FormEvent) => void
   autoFocus?: boolean
 }
 
@@ -41,8 +48,8 @@ const SearchBar: FunctionComponent<SearchBarProps> = ({
   autoFocus,
   ...otherProps
 }) => {
-  let inputRef: React.RefObject<HTMLInputElement> | null = null
-  const [inputValue, setInputValue] = React.useState(value || '')
+  let inputRef: RefObject<HTMLInputElement> | null = null
+  const [inputValue, setInputValue] = useState(value || '')
 
   const handelOnClear = () => {
     setInputValue('')
@@ -55,7 +62,7 @@ const SearchBar: FunctionComponent<SearchBarProps> = ({
     }
   }
 
-  const handleOnSubmit = (e: React.FormEvent) => {
+  const handleOnSubmit = (e: FormEvent) => {
     if (onSubmit) {
       deprecatedWarning(
         `onSubmit is about to be deprecated, wrap this component inside a <form onSubmit={...} /> instead`,
@@ -64,7 +71,7 @@ const SearchBar: FunctionComponent<SearchBarProps> = ({
     }
   }
 
-  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.currentTarget.value)
 
     if (onChange) {
@@ -72,7 +79,7 @@ const SearchBar: FunctionComponent<SearchBarProps> = ({
     }
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (onWatchValue) {
       deprecatedWarning(
         'onWatchValue is about to be deprecated. Use onChange in combo with onClear instead',
@@ -82,7 +89,7 @@ const SearchBar: FunctionComponent<SearchBarProps> = ({
     }
   }, [inputValue, onWatchValue])
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (typeof value !== 'undefined') {
       setInputValue(value)
     }
@@ -96,7 +103,7 @@ const SearchBar: FunctionComponent<SearchBarProps> = ({
           onFocus,
           onChange: handleOnChange,
           placeholder,
-          setInputRef: (ref: React.RefObject<HTMLInputElement>) => {
+          setInputRef: (ref: RefObject<HTMLInputElement>) => {
             inputRef = ref
           },
           ...inputProps,

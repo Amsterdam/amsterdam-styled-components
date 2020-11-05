@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useState } from 'react'
 import MenuInlineStyle, { Props } from './MenuInlineStyle'
 import MenuContext from '../MenuContext'
 import BackDrop, { Props as BackDropProps } from '../../BackDrop/BackDrop'
@@ -12,7 +12,7 @@ const MenuInline: FunctionComponent<Props & BackDropProps> = ({
   zIndexOffset,
   ...otherProps
 }) => {
-  const [menuOpen, setMenuOpen] = React.useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   // prevents the component from flickering when you hover to the next menu items
   const handleOnExpand = useDebounce((expand: boolean) => {

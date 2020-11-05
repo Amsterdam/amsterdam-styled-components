@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { Label, Checkbox } from '@amsterdam/asc-ui'
 
@@ -30,7 +31,7 @@ import { Label, Checkbox } from '@amsterdam/asc-ui'
 
 <Preview>
   <Story name="Default">
-    <React.Fragment>
+    <Fragment>
       <Label htmlFor="default" label="Default">
         <Checkbox id="default" />
       </Label>
@@ -53,7 +54,7 @@ import { Label, Checkbox } from '@amsterdam/asc-ui'
       <Label htmlFor="default_errored" label="Default errored">
         <Checkbox id="default_errored" variant="default" error />
       </Label>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -61,7 +62,7 @@ import { Label, Checkbox } from '@amsterdam/asc-ui'
 
 <Preview>
   <Story name="Primary">
-    <React.Fragment>
+    <Fragment>
       <Label htmlFor="primary" label="Primary">
         <Checkbox id="primary" variant="primary" />
       </Label>
@@ -84,7 +85,7 @@ import { Label, Checkbox } from '@amsterdam/asc-ui'
       <Label htmlFor="primary_errored" label="Primary errored">
         <Checkbox id="primary_errored" variant="primary" error />
       </Label>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -92,7 +93,7 @@ import { Label, Checkbox } from '@amsterdam/asc-ui'
 
 <Preview>
   <Story name="Secondary">
-    <React.Fragment>
+    <Fragment>
       <Label htmlFor="secondary" label="Secondary">
         <Checkbox id="secondary" variant="secondary" />
       </Label>
@@ -119,7 +120,7 @@ import { Label, Checkbox } from '@amsterdam/asc-ui'
       <Label htmlFor="secondary_errored" label="Secondary errored">
         <Checkbox id="secondary_errored" variant="secondary" error />
       </Label>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -127,7 +128,7 @@ import { Label, Checkbox } from '@amsterdam/asc-ui'
 
 <Preview>
   <Story name="Tertiary">
-    <React.Fragment>
+    <Fragment>
       <Label htmlFor="tertiary" label="Tertiary">
         <Checkbox id="tertiary" variant="tertiary" />
       </Label>
@@ -154,6 +155,6 @@ import { Label, Checkbox } from '@amsterdam/asc-ui'
       <Label htmlFor="tertiary_errored" label="Tertiary errored">
         <Checkbox id="tertiary_errored" variant="tertiary" error />
       </Label>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

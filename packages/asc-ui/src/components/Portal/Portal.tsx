@@ -1,4 +1,4 @@
-import React from 'react'
+import { Component, ReactInstance } from 'react'
 import ReactDOM from 'react-dom'
 import ownerDocument from '../../utils/ownerDocument'
 
@@ -14,8 +14,8 @@ if (typeof window !== 'undefined') {
   mountElement.setAttribute('style', 'position: absolute;')
 }
 
-class Portal extends React.Component<Props> {
-  static getOwnerDocument(element: React.ReactInstance) {
+class Portal extends Component<Props> {
+  static getOwnerDocument(element: ReactInstance) {
     // eslint-disable-next-line react/no-find-dom-node
     const el = ReactDOM.findDOMNode(element) as HTMLInputElement
     return ownerDocument(el)

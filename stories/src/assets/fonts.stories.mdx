@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import styled from 'styled-components'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 
@@ -9,7 +10,7 @@ import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 
 <Preview>
   <Story name="Variations">
-    <React.Fragment>
+    <Fragment>
       {(() => {
         const Regular = styled.p`
           font-weight: 400;
@@ -25,16 +26,16 @@ import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
           font-weight: 700;
         `
         return (
-          <React.Fragment>
+          <Fragment>
             <Regular>Avenir Next Regular: font-weight: 400</Regular>
             <RegularItalic>
               Avenir Next Regular Italic: font-weight: 400, font-style: italic
             </RegularItalic>
             <Medium>Avenir Next Medium: font-weight: 500</Medium>
             <Demi>Avenir Next Demi: font-weight: 700</Demi>
-          </React.Fragment>
+          </Fragment>
         )
       })()}
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

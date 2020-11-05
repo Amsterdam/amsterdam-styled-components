@@ -1,9 +1,13 @@
-import React, { AnchorHTMLAttributes, FunctionComponent } from 'react'
+import React, {
+  AnchorHTMLAttributes,
+  ElementType,
+  FunctionComponent,
+} from 'react'
 import Icon from '../Icon'
 import TopTaskLinkStyle, { TopTaskText, TopTaskTitle } from './TopTaskLinkStyle'
 
 export interface TopTaskLinkProps {
-  icon?: React.ElementType
+  icon?: ElementType
   title: string
   text?: string
   /**

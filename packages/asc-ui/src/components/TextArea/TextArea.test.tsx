@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import React from 'react'
+import React, { createRef } from 'react'
 import ThemeProvider from '../../theme/ThemeProvider'
 import TextArea from './TextArea'
 
@@ -11,7 +11,7 @@ describe('TextArea', () => {
   })
 
   it('should handle refs', () => {
-    const ref = React.createRef<HTMLTextAreaElement>()
+    const ref = createRef<HTMLTextAreaElement>()
 
     render(
       <ThemeProvider>

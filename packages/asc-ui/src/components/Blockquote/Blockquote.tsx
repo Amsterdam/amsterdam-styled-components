@@ -1,10 +1,10 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, HTMLAttributes } from 'react'
 import BlockquoteStyle, { Props } from './BlockquoteStyle'
 
 export { Props }
 
 const Blockquote: FunctionComponent<
-  Props & React.HTMLAttributes<HTMLParagraphElement>
+  Props & HTMLAttributes<HTMLParagraphElement>
 > = ({ children, as, ...otherProps }) => (
   <BlockquoteStyle forwardedAs={as} {...otherProps}>
     {children}

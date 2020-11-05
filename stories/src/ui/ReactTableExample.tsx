@@ -12,7 +12,13 @@ import {
   TableResizer,
   TableRow,
 } from '@amsterdam/asc-ui'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, {
+  FunctionComponent,
+  MouseEvent,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import {
   Column as ColumnType,
   FilterProps,
@@ -41,7 +47,7 @@ const DefaultColumnFilter: FunctionComponent<FilterProps<any>> = ({
 const SelectColumnFilter: FunctionComponent<FilterProps<any>> = ({
   column: { filterValue, setFilter, preFilteredRows, id },
 }) => {
-  const options = React.useMemo(() => {
+  const options = useMemo(() => {
     const opts = new Set()
     preFilteredRows.forEach((row) => {
       opts.add(row.values[id])
@@ -88,7 +94,7 @@ type Props = {
 }
 
 const ReactTableExample: FunctionComponent<Props> = ({ columns, data }) => {
-  const defaultColumn = React.useMemo(
+  const defaultColumn = useMemo(
     () => ({
       minWidth: 30,
       width: 150,
@@ -198,7 +204,7 @@ const ReactTableExample: FunctionComponent<Props> = ({ columns, data }) => {
                           <TableResizer
                             {...column.getResizerProps({
                               // This will prevent triggering the sort functionality
-                              onClick(ev: React.MouseEvent) {
+                              onClick(ev: MouseEvent) {
                                 ev.stopPropagation()
                               },
                             })}
@@ -244,7 +250,7 @@ const ReactTableExample: FunctionComponent<Props> = ({ columns, data }) => {
 }
 
 function TestComponent() {
-  const columns: ColumnType[] = React.useMemo(
+  const columns: ColumnType[] = useMemo(
     () => [
       {
         Header: 'Naam',

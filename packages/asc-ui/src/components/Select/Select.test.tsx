@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import React from 'react'
+import React, { createRef } from 'react'
 import { render, fireEvent, act } from '@testing-library/react'
 import 'jest-styled-components'
 import Select from './Select'
@@ -135,7 +135,7 @@ describe('Select', () => {
   })
 
   it('should handle refs', () => {
-    const ref = React.createRef<HTMLSelectElement>()
+    const ref = createRef<HTMLSelectElement>()
 
     render(
       <ThemeProvider>
