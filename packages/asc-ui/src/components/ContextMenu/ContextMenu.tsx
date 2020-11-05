@@ -22,7 +22,7 @@ const ContextMenu: React.FC<
   Props & React.ButtonHTMLAttributes<HTMLButtonElement>
 > = ({
   className,
-  open: openProp,
+  open: openProp = false,
   label,
   children,
   position,
@@ -30,7 +30,7 @@ const ContextMenu: React.FC<
   ...otherProps
 }) => {
   const ref = React.useRef<HTMLDivElement>(null)
-  const [open, setOpen] = useState(openProp || false)
+  const [open, setOpen] = useState(openProp)
   const isTouchScreen = useDetectTouchscreen()
 
   useEffect(() => {
@@ -47,10 +47,8 @@ const ContextMenu: React.FC<
 
   // Set state with 'open' prop if it's set
   useEffect(() => {
-    if (!openProp) {
-      setOpen(false)
-    } else if (openProp) {
-      setOpen(true)
+    if (openProp !== open) {
+      setOpen(openProp)
     }
   }, [openProp])
 
