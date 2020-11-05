@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import ColumnStyle, { TypeProps as ColumnStyleProps } from './ColumnStyle'
 import { Theme } from '../../types'
 
@@ -20,7 +20,7 @@ type Context = {
 
 const ParentContext = React.createContext<Context>({})
 
-const Column: React.FC<Props> = ({ children, span, ...props }) => {
+const Column: FunctionComponent<Props> = ({ children, span, ...props }) => {
   const { parentSpan } = React.useContext<Context>(ParentContext)
 
   return (

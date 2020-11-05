@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactNode } from 'react'
+import { FunctionComponent, HTMLAttributes, ReactNode } from 'react'
 
 // Some props are omitted since they cannot be overwritten.
 type OmittedProps = 'role' | 'aria-controls' | 'aria-selected' | 'tabIndex'
@@ -9,6 +9,6 @@ export interface TabProps
   label: ReactNode
 }
 
-export const Tab: React.FC<TabProps> = () => {
+export const Tab: FunctionComponent<TabProps> = () => {
   return null
 }

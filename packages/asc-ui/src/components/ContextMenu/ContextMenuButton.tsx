@@ -1,10 +1,10 @@
 import { ChevronDown } from '@amsterdam/asc-assets'
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import Icon from '../Icon'
 import { Props } from './ContextMenu'
 import ContextMenuButtonStyle from './ContextMenuButtonStyle'
 
-const ContextMenuButton: React.FC<
+const ContextMenuButton: FunctionComponent<
   Props & React.ButtonHTMLAttributes<HTMLButtonElement>
 > = ({ label, position, icon, arrowIcon, open, ...otherProps }) => (
   <ContextMenuButtonStyle type="button" {...otherProps}>

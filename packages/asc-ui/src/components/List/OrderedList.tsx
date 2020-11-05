@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import OrderedListStyle from './OrderedListStyle'
 
-const OrderedList: React.FC<React.HTMLAttributes<HTMLUListElement>> = ({
-  children,
-  ...otherProps
-}) => {
+const OrderedList: FunctionComponent<
+  React.HTMLAttributes<HTMLUListElement>
+> = ({ children, ...otherProps }) => {
   return <OrderedListStyle {...otherProps}>{children}</OrderedListStyle>
 }
 

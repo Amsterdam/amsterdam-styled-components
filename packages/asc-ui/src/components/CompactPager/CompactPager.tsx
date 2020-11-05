@@ -1,5 +1,5 @@
 import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import CompactPagerStyle, { PagerButton, PagerText } from './CompactPagerStyle'
 import { NEXT_BUTTON, PREV_BUTTON } from './test-ids'
 
@@ -36,13 +36,9 @@ export interface Props {
   onPageChange?: (page: number) => void
 }
 
-const CompactPager: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
-  page,
-  pageSize,
-  collectionSize,
-  onPageChange,
-  ...otherProps
-}) => {
+const CompactPager: FunctionComponent<
+  Props & React.HTMLAttributes<HTMLElement>
+> = ({ page, pageSize, collectionSize, onPageChange, ...otherProps }) => {
   const totalPages = determineTotalPages(collectionSize, pageSize)
   const hasPrevPage = page > 1
   const hasNextPage = page < totalPages

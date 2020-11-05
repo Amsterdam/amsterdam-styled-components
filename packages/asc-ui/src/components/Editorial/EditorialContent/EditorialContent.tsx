@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import EditorialContentStyle from './EditorialContentStyle'
 
-const EditorialContent: React.FC<React.HTMLAttributes<HTMLElement>> = ({
-  children,
-  ...otherProps
-}) => <EditorialContentStyle {...otherProps}>{children}</EditorialContentStyle>
+const EditorialContent: FunctionComponent<
+  React.HTMLAttributes<HTMLElement>
+> = ({ children, ...otherProps }) => (
+  <EditorialContentStyle {...otherProps}>{children}</EditorialContentStyle>
+)
 
 export default EditorialContent

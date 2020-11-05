@@ -1,5 +1,5 @@
 import { ChevronRight, Download, ExternalLink } from '@amsterdam/asc-assets'
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { StyledProps } from 'styled-components'
 import { deprecatedWarning } from '../../utils'
 import LinkStyle, {
@@ -11,7 +11,7 @@ import LinkStyle, {
 
 export type Props = LinkStyleProps & StyledProps<any>
 
-const Link: React.FC<Props> = ({
+const Link: FunctionComponent<Props> = ({
   children,
   variant,
   as,

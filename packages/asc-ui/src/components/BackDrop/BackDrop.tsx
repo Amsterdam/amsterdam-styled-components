@@ -1,7 +1,7 @@
-import React, { HTMLAttributes } from 'react'
+import React, { FunctionComponent, HTMLAttributes } from 'react'
 import BackDropStyle, { Props } from './BackDropStyle'
 
-const BackDrop: React.FC<Props & HTMLAttributes<HTMLDivElement>> = ({
+const BackDrop: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
   backdropOpacity,
   onClick,
   ...otherProps

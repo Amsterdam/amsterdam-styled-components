@@ -1,5 +1,5 @@
 import { ChevronDown, ChevronUp } from '@amsterdam/asc-assets'
-import React, { useCallback, useEffect } from 'react'
+import React, { FunctionComponent, useCallback, useEffect } from 'react'
 import { KeyboardKeys } from '../../../types/index'
 import useDebounce from '../../../utils/hooks/useDebounce'
 import useEdgeDetection from '../../../utils/hooks/useEdgeDetection'
@@ -14,7 +14,11 @@ type Props = {
   label: string
 } & MenuFlyOutProps
 
-const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
+const MenuFlyOut: FunctionComponent<Props> = ({
+  children,
+  label,
+  ...otherProps
+}) => {
   const { hasToggle, onExpand, setOpenToggle } = useMenuContext()
 
   const ref = React.useRef<HTMLLIElement>(null)

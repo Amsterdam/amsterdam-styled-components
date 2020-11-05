@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { FunctionComponent, useEffect, useState } from 'react'
 import ContextMenuButtonStyle from './ContextMenuButton'
 import MenuList from './ContextMenuList'
 import ownerDocument from '../../utils/ownerDocument'
@@ -18,7 +18,7 @@ export type Props = {
   open?: boolean
 }
 
-const ContextMenu: React.FC<
+const ContextMenu: FunctionComponent<
   Props & React.ButtonHTMLAttributes<HTMLButtonElement>
 > = ({
   className,

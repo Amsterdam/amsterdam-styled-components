@@ -1,11 +1,11 @@
-import React, { HTMLAttributes } from 'react'
+import React, { FunctionComponent, HTMLAttributes } from 'react'
 import ErrorMessageStyle from './ErrorMessageStyle'
 
 export interface ErrorMessageProps {
   message: string
 }
 
-const ErrorMessage: React.FC<
+const ErrorMessage: FunctionComponent<
   ErrorMessageProps & HTMLAttributes<HTMLDivElement>
 > = ({ message, ...otherProps }) => {
   return (

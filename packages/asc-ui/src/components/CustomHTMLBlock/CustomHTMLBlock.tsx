@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import CustomHTMLBlockStyle from './CustomHTMLBlockStyle'
 
 type Props = {
   body?: string
 }
 
-const CustomHTMLBlock: React.FC<Props> = ({
+const CustomHTMLBlock: FunctionComponent<Props> = ({
   body,
   children,
   ...otherProps

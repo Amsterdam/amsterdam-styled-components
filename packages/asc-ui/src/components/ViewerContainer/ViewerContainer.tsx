@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import {
   ViewerContainerItem,
   ViewerContainerWrapper,
@@ -12,7 +12,7 @@ type Props = {
   metaData?: Array<string>
 }
 
-const ViewerContainer: React.FC<Props> = ({
+const ViewerContainer: FunctionComponent<Props> = ({
   bottomLeft,
   topLeft,
   topRight,
