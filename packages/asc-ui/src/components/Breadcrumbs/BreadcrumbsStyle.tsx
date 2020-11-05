@@ -7,11 +7,12 @@ export default styled.ol`
   align-items: center;
   flex-wrap: wrap;
   margin: 0;
-  color: red;
+  list-style: none;
 
   li {
-    list-style-type: none;
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    color: ${themeColor('secondary', 'main')};
 
     a {
       font-size: 14px;
@@ -36,13 +37,8 @@ export default styled.ol`
     }
   }
 
-  li:first-child ${Icon} {
-    display: none;
-  }
-
   ${svgFill(themeColor('tint', 'level5'))};
 `
 export const StyledIcon = styled(Icon)`
-  display: inline-block;
   padding: ${themeSpacing(0, 2, 0, 0)};
 `
