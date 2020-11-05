@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import {
   FormTitle,
@@ -44,7 +45,7 @@ The Form Title component is used for forms, mostly on subdomains of amsterdam.nl
 
 <Preview>
   <Story name="In context">
-    <React.Fragment>
+    <Fragment>
       <Header homeLink="" tall />
       <FormTitle>This is the title of the FormTitle component</FormTitle>
       <Card maxWidth={500} backgroundColor="level2" shadow>
@@ -53,6 +54,6 @@ The Form Title component is used for forms, mostly on subdomains of amsterdam.nl
           <Paragraph>To create some context</Paragraph>
         </CardContent>
       </Card>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

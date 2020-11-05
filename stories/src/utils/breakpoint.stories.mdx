@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import styled from 'styled-components'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { breakpoint } from '@amsterdam/asc-ui'
@@ -23,7 +24,7 @@ A function to retrieve a breakpoint value from a theme
 
 <Preview>
   <Story name="Min-with, laptopM">
-    <React.Fragment>
+    <Fragment>
       {(() => {
         const MyDivWithThemeBreakpointDiv = styled.div`
           @media screen and ${breakpoint('min-width', 'laptopM')} {
@@ -31,15 +32,15 @@ A function to retrieve a breakpoint value from a theme
           }
         `
         return (
-          <React.Fragment>
+          <Fragment>
             Component below is only visible under breakpoint `laptopM` and will
             print: I am visible
             <MyDivWithThemeBreakpointDiv>
               I am visible
             </MyDivWithThemeBreakpointDiv>
-          </React.Fragment>
+          </Fragment>
         )
       })()}
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

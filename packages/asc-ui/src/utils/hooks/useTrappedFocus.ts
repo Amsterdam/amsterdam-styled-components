@@ -1,4 +1,4 @@
-import React from 'react'
+import { KeyboardEvent, RefObject } from 'react'
 import { KeyboardKeys } from '../../types'
 import ownerDocument from '../ownerDocument'
 
@@ -12,8 +12,8 @@ const FocusableElements = [
   'select:not([disabled])',
 ]
 
-const useTrappedFocus = (ref: React.RefObject<HTMLElement>) => {
-  const keyDown = (e: React.KeyboardEvent) => {
+const useTrappedFocus = (ref: RefObject<HTMLElement>) => {
+  const keyDown = (e: KeyboardEvent) => {
     if (ref.current) {
       const element = ref.current
 

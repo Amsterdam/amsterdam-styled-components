@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { hooks, Button } from '@amsterdam/asc-ui'
 
@@ -14,12 +14,12 @@ _Note:_ these only work in the "Canvas" view
 
 <Preview>
   <Story name="Default">
-    <React.Fragment>
+    <Fragment>
       {(() => {
         const ref = useRef()
         const { keyDown } = hooks.useTrappedFocus(ref)
         return (
-          <React.Fragment>
+          <Fragment>
             <Button>Outside button</Button>
             <div role="presentation" onKeyDown={keyDown} ref={ref}>
               <p>
@@ -29,9 +29,9 @@ _Note:_ these only work in the "Canvas" view
               <Button>Two</Button>
             </div>
             <Button>Outside button</Button>
-          </React.Fragment>
+          </Fragment>
         )
       })()}
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

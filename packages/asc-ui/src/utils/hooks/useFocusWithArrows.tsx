@@ -1,4 +1,4 @@
-import React from 'react'
+import { RefObject, KeyboardEvent } from 'react'
 import { KeyboardKeys } from '../../types'
 import { FOCUSABLE_ELEMENTS } from './constants'
 
@@ -11,14 +11,14 @@ import { FOCUSABLE_ELEMENTS } from './constants'
  * @param horizontally In case you need to navigate horizontally, using left / right arrow buttons
  */
 const useFocusWithArrows = (
-  ref: React.RefObject<HTMLElement>,
+  ref: RefObject<HTMLElement>,
   rotating = false,
   directChildrenOnly = false,
   horizontally = false,
 ) => {
   const next = horizontally ? KeyboardKeys.ArrowRight : KeyboardKeys.ArrowDown
   const previous = horizontally ? KeyboardKeys.ArrowLeft : KeyboardKeys.ArrowUp
-  const keyDown = (e: React.KeyboardEvent) => {
+  const keyDown = (e: KeyboardEvent) => {
     if (ref.current) {
       const element = ref.current
 

@@ -1,9 +1,9 @@
 import { SearchBarToggle } from '@amsterdam/asc-ui'
 import { action } from '@storybook/addon-actions'
-import React from 'react'
+import React, { useState } from 'react'
 
 const ControlledSearchBarToggle = ({ hasBackDrop = false }) => {
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = useState(false)
   return (
     <SearchBarToggle
       align="left"

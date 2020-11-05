@@ -1,15 +1,15 @@
-import React, { FunctionComponent } from 'react'
 import { render } from '@testing-library/react'
 import {
   act,
   renderHook,
   RenderHookOptions,
 } from '@testing-library/react-hooks'
+import React, { createRef, FunctionComponent } from 'react'
 import useOptionalControlledState from './useOptionalControlledState'
 
 describe('useOptionalControlledState', () => {
   const mockFn: jest.Mock = jest.fn()
-  const ref: React.Ref<HTMLButtonElement> = React.createRef()
+  const ref = createRef<HTMLButtonElement>()
 
   beforeEach(() => {
     render(

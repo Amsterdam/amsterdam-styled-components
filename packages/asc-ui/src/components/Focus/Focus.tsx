@@ -1,9 +1,15 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-import React, { FunctionComponent } from 'react'
+import React, {
+  createRef,
+  EventHandler,
+  FunctionComponent,
+  KeyboardEvent,
+  useEffect,
+} from 'react'
 import styled from 'styled-components'
 
 type Props = {
-  onKeyDown?: React.EventHandler<React.KeyboardEvent>
+  onKeyDown?: EventHandler<KeyboardEvent>
 }
 
 const FocusStyle = styled.div``
@@ -13,9 +19,9 @@ const Focus: FunctionComponent<Props> = ({
   onKeyDown,
   ...otherProps
 }) => {
-  const myRef = React.createRef<HTMLDivElement>()
+  const myRef = createRef<HTMLDivElement>()
 
-  React.useEffect(() => {
+  useEffect(() => {
     let renderedTimer = 0
     const { current: node } = myRef
     if (node) {

@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import styled from 'styled-components'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { themeColor } from '@amsterdam/asc-ui'
@@ -12,7 +13,7 @@ A function to retrieve a color from a theme
 
 <Preview>
   <Story name="Primary colors">
-    <React.Fragment>
+    <Fragment>
       {(() => {
         const Primary = styled.div`
           color: ${themeColor('tint', 'level1')};
@@ -23,13 +24,13 @@ A function to retrieve a color from a theme
           background-color: ${themeColor('secondary')};
         `
         return (
-          <React.Fragment>
+          <Fragment>
             <Primary>themeColor(&apos;primary&apos;)</Primary>
             <Secondary>themeColor(&apos;secondary&apos;)</Secondary>
-          </React.Fragment>
+          </Fragment>
         )
       })()}
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -37,7 +38,7 @@ A function to retrieve a color from a theme
 
 <Preview>
   <Story name="Tints">
-    <React.Fragment>
+    <Fragment>
       {(() => {
         const LevelOne = styled.div`
           color: ${themeColor('tint', 'level7')};
@@ -68,7 +69,7 @@ A function to retrieve a color from a theme
           background-color: ${themeColor('tint', 'level7')};
         `
         return (
-          <React.Fragment>
+          <Fragment>
             <LevelOne>
               themeColor(&apos;tint&apos;, &apos;level1&apos;) (#FFFFFF)
             </LevelOne>
@@ -90,10 +91,10 @@ A function to retrieve a color from a theme
             <LevelSeven>
               themeColor(&apos;tint&apos;, &apos;level7&apos;) (#000000)
             </LevelSeven>
-          </React.Fragment>
+          </Fragment>
         )
       })()}
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -101,7 +102,7 @@ A function to retrieve a color from a theme
 
 <Preview>
   <Story name="Support colors">
-    <React.Fragment>
+    <Fragment>
       {(() => {
         const Valid = styled.div`
           color: ${themeColor('tint', 'level1')};
@@ -116,16 +117,16 @@ A function to retrieve a color from a theme
           background-color: ${themeColor('support', 'focus')};
         `
         return (
-          <React.Fragment>
+          <Fragment>
             <Valid>themeColor(&apos;support&apos;, &apos;valid&apos;)</Valid>
             <Invalid>
               themeColor(&apos;support&apos;, &apos;invalid&apos;)
             </Invalid>
             <Focus>themeColor(&apos;support&apos;, &apos;focus&apos;)</Focus>
-          </React.Fragment>
+          </Fragment>
         )
       })()}
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -133,7 +134,7 @@ A function to retrieve a color from a theme
 
 <Preview>
   <Story name="Supplement colors">
-    <React.Fragment>
+    <Fragment>
       {(() => {
         const Purple = styled.div`
           color: ${themeColor('tint', 'level1')};
@@ -164,7 +165,7 @@ A function to retrieve a color from a theme
           background-color: ${themeColor('supplement', 'lightblue')};
         `
         return (
-          <React.Fragment>
+          <Fragment>
             <Purple>
               themeColor(&apos;supplement&apos;, &apos;purple&apos;)
             </Purple>
@@ -184,9 +185,9 @@ A function to retrieve a color from a theme
             <LightBlue>
               themeColor(&apos;supplement&apos;, &apos;lightblue&apos;)
             </LightBlue>
-          </React.Fragment>
+          </Fragment>
         )
       })()}
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

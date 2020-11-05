@@ -8,7 +8,7 @@ import {
   MenuToggle,
   themeColor,
 } from '@amsterdam/asc-ui'
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, ReactNode } from 'react'
 import styled from 'styled-components'
 
 const ReactRouterLink: FunctionComponent<any> = ({
@@ -38,7 +38,7 @@ export default {
   title: 'UI/Menu',
 
   decorators: [
-    (storyFn: () => React.ReactNode) => (
+    (storyFn: () => ReactNode) => (
       <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
     ),
   ],

@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, HTMLAttributes } from 'react'
 import ArticleStyle from './ArticleStyle'
 import { Props } from '../EditorialPost/EditorialPost'
 
-const Article: FunctionComponent<Props & React.HTMLAttributes<HTMLElement>> = ({
+const Article: FunctionComponent<Props & HTMLAttributes<HTMLElement>> = ({
   children,
   image,
   ...otherProps

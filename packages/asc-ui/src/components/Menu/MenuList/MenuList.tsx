@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { forwardRef, HTMLAttributes } from 'react'
 import MenuListStyle, { Props } from './MenuListStyle'
 
-const MenuList = React.forwardRef<
+const MenuList = forwardRef<
   HTMLUListElement,
-  Props & React.HTMLAttributes<HTMLUListElement>
+  Props & HTMLAttributes<HTMLUListElement>
 >(({ children, edgeDetection, ...otherProps }, ref) => (
   <MenuListStyle {...{ edgeDetection, ref }} {...otherProps}>
     {children}

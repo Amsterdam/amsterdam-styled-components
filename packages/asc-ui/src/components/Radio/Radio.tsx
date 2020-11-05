@@ -1,4 +1,10 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, {
+  useState,
+  useContext,
+  useEffect,
+  forwardRef,
+  HTMLAttributes,
+} from 'react'
 import RadioStyle, {
   RadioWrapperStyle,
   RadioCircleStyle,
@@ -7,9 +13,9 @@ import RadioStyle, {
 import RadioContext from './RadioContext'
 import LabelContext from '../Label/LabelContext'
 
-const Radio = React.forwardRef<
+const Radio = forwardRef<
   HTMLInputElement,
-  Props & React.HTMLAttributes<HTMLInputElement>
+  Props & HTMLAttributes<HTMLInputElement>
 >(
   (
     {

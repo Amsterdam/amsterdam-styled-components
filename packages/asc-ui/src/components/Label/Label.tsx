@@ -1,4 +1,9 @@
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, {
+  FunctionComponent,
+  LabelHTMLAttributes,
+  ReactNode,
+  useState,
+} from 'react'
 import LabelStyle, { LabelTextStyle, Props as StyleProps } from './LabelStyle'
 import usePassPropsToChildren from '../../utils/hooks/usePassPropsToChildren'
 import LabelContext from './LabelContext'
@@ -9,7 +14,7 @@ type Props = {
 } & StyleProps
 
 const Label: FunctionComponent<
-  Props & React.LabelHTMLAttributes<HTMLLabelElement>
+  Props & LabelHTMLAttributes<HTMLLabelElement>
 > = ({
   children: childrenProps,
   label,
@@ -18,7 +23,7 @@ const Label: FunctionComponent<
   noActiveState,
   ...otherProps
 }) => {
-  const [active, setActive] = React.useState(false)
+  const [active, setActive] = useState(false)
   const { children } = usePassPropsToChildren(childrenProps, {
     disabled,
   })

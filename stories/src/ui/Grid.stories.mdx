@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { Row, Column } from '@amsterdam/asc-ui'
 
@@ -116,7 +117,7 @@ A `Column` component can also be passed a `debug` prop. Setting this prop to 'tr
 
 <Preview>
   <Story name="Default">
-    <React.Fragment>
+    <Fragment>
       <br />
       <br />
       <Row debug hasMaxWidth={false}>
@@ -145,7 +146,7 @@ A `Column` component can also be passed a `debug` prop. Setting this prop to 'tr
           </pre>
         </Column>
       </Row>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -155,7 +156,7 @@ Nesting columns can be tricky, because of the width of the parent element and th
 
 <Preview>
   <Story name="Nesting columns">
-    <React.Fragment>
+    <Fragment>
       <br />
       <br />
       <Row debug>
@@ -184,7 +185,7 @@ Nesting columns can be tricky, because of the width of the parent element and th
           <pre>Right sidebar</pre>
         </Column>
       </Row>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -194,7 +195,7 @@ Whenever a child `<Column />` component should span the entire width of its pare
 
 <Preview>
   <Story name="Nesting columns with wrap">
-    <React.Fragment>
+    <Fragment>
       <br />
       <br />
       <Row debug>
@@ -221,6 +222,6 @@ Whenever a child `<Column />` component should span the entire width of its pare
           </Column>
         </Column>
       </Row>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

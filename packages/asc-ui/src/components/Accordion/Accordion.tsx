@@ -1,5 +1,7 @@
 import { ChevronDown } from '@amsterdam/asc-assets'
 import React, {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
   FunctionComponent,
   useCallback,
   useEffect,
@@ -23,8 +25,8 @@ type Props = {
 const Accordion: FunctionComponent<
   Props &
     ButtonStyleProps &
-    React.ButtonHTMLAttributes<HTMLButtonElement> &
-    React.AnchorHTMLAttributes<HTMLAnchorElement>
+    ButtonHTMLAttributes<HTMLButtonElement> &
+    AnchorHTMLAttributes<HTMLAnchorElement>
 > = ({
   children,
   title,

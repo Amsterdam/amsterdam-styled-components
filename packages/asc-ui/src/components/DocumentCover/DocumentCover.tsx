@@ -1,5 +1,5 @@
 import { Download } from '@amsterdam/asc-assets'
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, MouseEvent } from 'react'
 import styled from 'styled-components'
 import Button from '../Button'
 import Image from '../Image'
@@ -8,9 +8,7 @@ import DocumentCoverStyle from './DocumentCoverStyle'
 
 type Props = {
   imageSrc: string
-  onClick: (
-    event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>,
-  ) => void
+  onClick: (event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void
   description: string
   alt?: string
 }

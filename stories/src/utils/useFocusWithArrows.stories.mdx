@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { hooks, Button } from '@amsterdam/asc-ui'
 
@@ -17,7 +17,7 @@ _Note:_ these only work in the "Canvas" view
 
 <Preview>
   <Story name="Default">
-    <React.Fragment>
+    <Fragment>
       {(() => {
         const ref = useRef()
         hooks.useFocus(ref)
@@ -37,7 +37,7 @@ _Note:_ these only work in the "Canvas" view
           </div>
         )
       })()}
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -47,7 +47,7 @@ Jump to first item from last or vice versa
 
 <Preview>
   <Story name="With rotating option">
-    <React.Fragment>
+    <Fragment>
       {(() => {
         const ref = useRef()
         hooks.useFocus(ref)
@@ -67,7 +67,7 @@ Jump to first item from last or vice versa
           </div>
         )
       })()}
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -77,7 +77,7 @@ Useful if you don't want to focus on other focussable elements inside the child 
 
 <Preview>
   <Story name="With directChildrenOnly option">
-    <React.Fragment>
+    <Fragment>
       {(() => {
         const ref = useRef()
         hooks.useFocus(ref)
@@ -101,6 +101,6 @@ Useful if you don't want to focus on other focussable elements inside the child 
           </div>
         )
       })()}
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

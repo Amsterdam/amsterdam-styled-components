@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
 import { FilterTag } from '@amsterdam/asc-ui'
@@ -14,8 +15,8 @@ import { FilterTag } from '@amsterdam/asc-ui'
 
 <Preview>
   <Story name="Default">
-    <React.Fragment>
+    <Fragment>
       <FilterTag onClick={(e) => action('Remove me!')(e)}>Just a tag</FilterTag>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

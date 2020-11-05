@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from 'react'
+import React, { AnchorHTMLAttributes, FunctionComponent } from 'react'
 import FilterOptionStyle, { Props } from './FilterOptionStyle'
 
 const FilterOption: FunctionComponent<
-  Props & React.AnchorHTMLAttributes<HTMLAnchorElement>
+  Props & AnchorHTMLAttributes<HTMLAnchorElement>
 > = ({ children, ...otherProps }) => (
   <FilterOptionStyle {...otherProps}>{children}</FilterOptionStyle>
 )

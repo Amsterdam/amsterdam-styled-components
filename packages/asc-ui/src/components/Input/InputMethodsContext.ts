@@ -1,5 +1,5 @@
-import React from 'react'
+import { createContext } from 'react'
 
-const InputMethodsContext = React.createContext({})
+const InputMethodsContext = createContext({})
 
 export default InputMethodsContext

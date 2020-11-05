@@ -1,5 +1,5 @@
 import { ChevronSorting } from '@amsterdam/asc-assets'
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, MouseEvent } from 'react'
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
 import Button from '../Button'
@@ -11,7 +11,7 @@ type ButtonProps = {
 }
 
 type Props = {
-  onClick?: (e: React.MouseEvent) => void
+  onClick?: (e: MouseEvent) => void
   title: string
 } & ButtonProps &
   TableCellProps

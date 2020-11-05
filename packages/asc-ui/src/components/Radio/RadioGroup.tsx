@@ -1,12 +1,10 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, HTMLAttributes, useState } from 'react'
 
 import usePassPropsToChildren from '../../utils/hooks/usePassPropsToChildren'
 import RadioGroupStyle, { Props } from './RadioGroupStyle'
 import RadioContext from './RadioContext'
 
-const RadioGroup: FunctionComponent<
-  Props & React.HTMLAttributes<HTMLDivElement>
-> = ({
+const RadioGroup: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
   disabled,
   error,
   name,
@@ -14,7 +12,7 @@ const RadioGroup: FunctionComponent<
   children: childrenProps,
   ...otherProps
 }) => {
-  const [checked, setChecked] = React.useState('')
+  const [checked, setChecked] = useState('')
   const { children } = usePassPropsToChildren(childrenProps, {
     disabled,
   })

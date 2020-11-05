@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { ReactNode } from 'react'
 import { getValueFromTheme, valueFromObject } from '../../utils'
 import {
   mediaQuery,
@@ -21,7 +22,7 @@ type FlexJustify =
   | 'space-evenly'
 
 export type TypeProps = {
-  children: React.ReactNode
+  children: ReactNode
   className?: string
   debug?: boolean
   debugColor?: string

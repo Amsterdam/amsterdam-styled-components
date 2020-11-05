@@ -1,4 +1,7 @@
 import React, {
+  ChangeEvent,
+  forwardRef,
+  HTMLAttributes,
   useCallback,
   useEffect,
   useImperativeHandle,
@@ -28,9 +31,9 @@ function getSelectedOptions(select: HTMLSelectElement) {
   return Array.from(select.querySelectorAll<HTMLOptionElement>(':checked'))
 }
 
-const Select = React.forwardRef<
+const Select = forwardRef<
   HTMLSelectElement,
-  Props & React.HTMLAttributes<HTMLSelectElement>
+  Props & HTMLAttributes<HTMLSelectElement>
 >(
   (
     {
@@ -63,7 +66,7 @@ const Select = React.forwardRef<
     }, [])
 
     const handleChange = useCallback(
-      (event: React.ChangeEvent<HTMLSelectElement>) => {
+      (event: ChangeEvent<HTMLSelectElement>) => {
         updateValue(event.target)
 
         if (onChange) {

@@ -1,6 +1,6 @@
 import * as Icons from '@amsterdam/asc-assets'
 import { Icon } from '@amsterdam/asc-ui'
-import React from 'react'
+import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 
 const IconWrapper = styled.span`
@@ -15,7 +15,7 @@ const StyledLabel = styled.div`
 export default {
   title: 'Assets/Icons',
   decorators: [
-    (storyFn: () => React.ReactNode) => (
+    (storyFn: () => ReactNode) => (
       <div
         style={{
           display: 'flex',

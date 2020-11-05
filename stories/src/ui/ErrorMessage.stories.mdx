@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import {
   ErrorMessage,
@@ -39,9 +40,9 @@ Used in forms if a field is invalid.
 
 <Preview>
   <Story name="Default">
-    <React.Fragment>
+    <Fragment>
       <ErrorMessage message="This is an incorrect value" />
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -49,10 +50,10 @@ Used in forms if a field is invalid.
 
 <Preview>
   <Story name="With input">
-    <React.Fragment>
+    <Fragment>
       <Input error />
       <ErrorMessage message="This a required field" />
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -60,7 +61,7 @@ Used in forms if a field is invalid.
 
 <Preview>
   <Story name="With radio">
-    <React.Fragment>
+    <Fragment>
       <RadioGroup name="group-1" error>
         <Label htmlFor="radio-1" label="Windows">
           <Radio id="radio-1" />
@@ -73,7 +74,7 @@ Used in forms if a field is invalid.
         </Label>
       </RadioGroup>
       <ErrorMessage message="This a required field" />
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -81,12 +82,12 @@ Used in forms if a field is invalid.
 
 <Preview>
   <Story name="With checkbox">
-    <React.Fragment>
+    <Fragment>
       <Label htmlFor="error" label="Accept terms">
         <Checkbox id="error" error />
       </Label>
       <ErrorMessage message="This a required field" />
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -94,7 +95,7 @@ Used in forms if a field is invalid.
 
 <Preview>
   <Story name="With select">
-    <React.Fragment>
+    <Fragment>
       <Select id="select-1" error>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
@@ -102,6 +103,6 @@ Used in forms if a field is invalid.
         <option value="4">Option 4</option>
       </Select>
       <ErrorMessage message="This a required field" />
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

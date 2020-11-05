@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 import {
   mediaQuery,
@@ -12,7 +12,7 @@ import { Theme } from '../../types'
 
 export type TypeProps = {
   alignSelf?: TypeFlexPosition
-  children: React.ReactNode
+  children: ReactNode
   className?: string
   debug?: boolean
   debugColor?: string

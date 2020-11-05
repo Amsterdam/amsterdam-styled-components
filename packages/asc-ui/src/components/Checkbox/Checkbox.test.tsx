@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createRef } from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import Checkbox from './Checkbox'
 import { ascDefaultTheme, ThemeProvider } from '../../theme'
@@ -84,7 +84,7 @@ describe('Checkbox', () => {
   })
 
   it('should handle refs', () => {
-    const ref = React.createRef<HTMLInputElement>()
+    const ref = createRef<HTMLInputElement>()
 
     render(
       <ThemeProvider>

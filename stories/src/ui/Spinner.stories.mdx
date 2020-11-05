@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { Spinner, themeColor } from '@amsterdam/asc-ui'
 
@@ -13,9 +14,9 @@ import { Spinner, themeColor } from '@amsterdam/asc-ui'
 
 <Preview>
   <Story name="Default">
-    <React.Fragment>
+    <Fragment>
       <Spinner />
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -23,9 +24,9 @@ import { Spinner, themeColor } from '@amsterdam/asc-ui'
 
 <Preview>
   <Story name="With size 100px">
-    <React.Fragment>
+    <Fragment>
       <Spinner size={100} />
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -33,9 +34,9 @@ import { Spinner, themeColor } from '@amsterdam/asc-ui'
 
 <Preview>
   <Story name="With color">
-    <React.Fragment>
+    <Fragment>
       <Spinner color="#00ff00" />
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -43,8 +44,8 @@ import { Spinner, themeColor } from '@amsterdam/asc-ui'
 
 <Preview>
   <Story name="With themeColor">
-    <React.Fragment>
+    <Fragment>
       <Spinner color={themeColor('secondary')} />
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import styled from 'styled-components'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { themeSpacing, themeColor } from '@amsterdam/asc-ui'
@@ -12,7 +13,7 @@ A function to retrieve a value derived from the theme spacing unit
 
 <Preview>
   <Story name="Default">
-    <React.Fragment>
+    <Fragment>
       {(() => {
         const MyThemeSpacedDiv = styled.div`
           color: ${themeColor('tint', 'level1')};
@@ -26,6 +27,6 @@ A function to retrieve a value derived from the theme spacing unit
           </MyThemeSpacedDiv>
         )
       })()}
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
