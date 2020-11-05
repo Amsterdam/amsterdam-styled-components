@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## [UNRELEASED]
 
+- Changed: Made ContextMenu respond dynamically to `open` prop.
 - Added: New `Breadcumbs` component (https://github.com/Amsterdam/amsterdam-styled-components/pull/1241)
 - Fixed: `Modal` component no longer produces `zIndexOffset` exceptions (https://github.com/Amsterdam/amsterdam-styled-components/issues/1289)
 - Fixed: `Tag` component width is now displayed correctly in IE11 (https://github.com/Amsterdam/amsterdam-styled-components/issues/634)
