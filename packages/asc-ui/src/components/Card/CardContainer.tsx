@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 import CardContainerStyle from './CardContainerStyle'
 
-const CardContainer: React.FC = ({ children, ...otherProps }) => (
+const CardContainer: FunctionComponent = ({ children, ...otherProps }) => (
   <CardContainerStyle {...otherProps}>{children}</CardContainerStyle>
 )
 

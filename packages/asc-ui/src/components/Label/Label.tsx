@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { FunctionComponent, ReactNode } from 'react'
 import LabelStyle, { LabelTextStyle, Props as StyleProps } from './LabelStyle'
 import usePassPropsToChildren from '../../utils/hooks/usePassPropsToChildren'
 import LabelContext from './LabelContext'
@@ -8,7 +8,9 @@ type Props = {
   noActiveState?: boolean // Temporary solution to make the active state on the label optional, as there is nothing specified in design system. Needs to be discussed with design.
 } & StyleProps
 
-const Label: React.FC<Props & React.LabelHTMLAttributes<HTMLLabelElement>> = ({
+const Label: FunctionComponent<
+  Props & React.LabelHTMLAttributes<HTMLLabelElement>
+> = ({
   children: childrenProps,
   label,
   disabled,

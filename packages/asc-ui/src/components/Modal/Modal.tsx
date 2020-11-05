@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import ModalStyle, { ModalStyleContainer, ModalFocus } from './ModalStyle'
 import { KeyboardKeys } from '../../types'
 import useTrappedFocus from '../../utils/hooks/useTrappedFocus'
@@ -16,7 +16,7 @@ export type Props = {
   PortalProps &
   React.HTMLAttributes<HTMLElement>
 
-const Modal: React.FC<Props> = ({
+const Modal: FunctionComponent<Props> = ({
   open,
   disablePortal,
   children,

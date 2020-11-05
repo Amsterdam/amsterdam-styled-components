@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import ListItemStyle, { Props as ListItemStyleProps } from './ListItemStyle'
 
 type Props = ListItemStyleProps
 
-const ListItem: React.FC<Props> = ({ children, ...otherProps }) => (
+const ListItem: FunctionComponent<Props> = ({ children, ...otherProps }) => (
   <ListItemStyle {...otherProps}>{children}</ListItemStyle>
 )
 

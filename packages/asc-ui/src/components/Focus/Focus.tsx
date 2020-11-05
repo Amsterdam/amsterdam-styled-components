@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 
 type Props = {
@@ -8,7 +8,11 @@ type Props = {
 
 const FocusStyle = styled.div``
 
-const Focus: React.FC<Props> = ({ children, onKeyDown, ...otherProps }) => {
+const Focus: FunctionComponent<Props> = ({
+  children,
+  onKeyDown,
+  ...otherProps
+}) => {
   const myRef = React.createRef<HTMLDivElement>()
 
   React.useEffect(() => {

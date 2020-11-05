@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import ParagraphStyle, { Props } from './ParagraphStyle'
 
 export { Props }
 
-const Paragraph: React.FC<
+const Paragraph: FunctionComponent<
   Props & React.HTMLAttributes<HTMLParagraphElement>
 > = ({ children, as, ...otherProps }) => (
   <ParagraphStyle forwardedAs={as} {...otherProps}>

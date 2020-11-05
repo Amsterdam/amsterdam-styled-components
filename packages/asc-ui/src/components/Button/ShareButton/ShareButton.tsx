@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import Icon from '../../Icon'
 import ShareButtonStyle, {
   Props as ShareButtonStyleProps,
@@ -9,7 +9,7 @@ type Props = {
 } & ShareButtonStyleProps &
   React.HTMLAttributes<HTMLButtonElement>
 
-const ShareButton: React.FC<Props> = ({
+const ShareButton: FunctionComponent<Props> = ({
   children,
   onClick,
   iconSize,

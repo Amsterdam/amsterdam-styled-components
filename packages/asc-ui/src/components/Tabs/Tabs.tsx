@@ -1,4 +1,5 @@
 import React, {
+  FunctionComponent,
   MouseEventHandler,
   PropsWithChildren,
   ReactElement,
@@ -42,7 +43,7 @@ function formatPanelId(id: string) {
   return `panel-${id}`
 }
 
-export const Tabs: React.FC<
+export const Tabs: FunctionComponent<
   TabsProps & React.HTMLAttributes<HTMLDivElement>
 > = ({ label, children, initialTab, className }) => {
   const allTabs = children.map(({ props }) => props.id)

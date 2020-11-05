@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import ContextMenuItemStyle, {
   ContextMenuItemButton,
   ContextMenuItemProps,
@@ -9,7 +9,7 @@ type Props = {
 } & ContextMenuItemProps &
   React.ButtonHTMLAttributes<HTMLButtonElement>
 
-const ContextMenuItem: React.FC<Props> = ({
+const ContextMenuItem: FunctionComponent<Props> = ({
   children,
   icon,
   divider,

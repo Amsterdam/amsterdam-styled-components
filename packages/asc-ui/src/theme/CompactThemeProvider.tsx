@@ -1,5 +1,5 @@
 import deepMerge from 'deepmerge'
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { Theme } from '../types'
 import ThemeProvider, { ThemeProviderProps } from './ThemeProvider'
 
@@ -56,7 +56,7 @@ const overridesCompactTheme: Partial<Theme.ThemeInterface> = {
  * </ThemeProvider>
  *
  */
-const CompactThemeProvider: React.FC<ThemeProviderProps> = ({
+const CompactThemeProvider: FunctionComponent<ThemeProviderProps> = ({
   overrides: passedOverrides,
   deep = true,
   children,

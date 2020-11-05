@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 import { themeSpacing } from '../../utils'
 import { Row } from '../Grid'
@@ -15,7 +15,7 @@ const FooterBottomStyle = styled.div`
   }
 `
 
-const FooterBottom: React.FC = ({ children, ...otherProps }) => (
+const FooterBottom: FunctionComponent = ({ children, ...otherProps }) => (
   <Row>
     <FooterBottomStyle {...otherProps}>{children}</FooterBottomStyle>
   </Row>

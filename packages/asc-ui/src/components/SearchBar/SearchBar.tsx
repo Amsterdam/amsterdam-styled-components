@@ -1,5 +1,5 @@
 import { Search } from '@amsterdam/asc-assets'
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { deprecatedWarning } from '../../utils'
 import Button from '../Button'
 import Icon from '../Icon'
@@ -24,7 +24,7 @@ export interface SearchBarProps extends TextFieldProps, SearchBarStyleProps {
   autoFocus?: boolean
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({
+const SearchBar: FunctionComponent<SearchBarProps> = ({
   children,
   placeholder,
   onSubmit,

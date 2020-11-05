@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import EditorialMetaListStyle, {
   EditorialMetaListItemStyle,
 } from './EditorialMetaListStyle'
@@ -9,7 +9,7 @@ export type Props = {
   fields?: Array<{ id: number; label: string }>
 } & React.HTMLAttributes<HTMLElement>
 
-const EditorialMetaList: React.FC<Props> = ({
+const EditorialMetaList: FunctionComponent<Props> = ({
   dateTime,
   dateFormatted,
   fields,

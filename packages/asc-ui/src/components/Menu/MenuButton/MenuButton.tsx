@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import MenuButtonStyle, {
   MenuButtonTextStyle,
   MenuButtonTextWrapperStyle,
   Props,
 } from './MenuButtonStyle'
 
-const MenuButton: React.FC<Props> = ({ children, as, ...otherProps }) => (
+const MenuButton: FunctionComponent<Props> = ({
+  children,
+  as,
+  ...otherProps
+}) => (
   <MenuButtonStyle
     forwardedAs={as}
     iconSize={14}

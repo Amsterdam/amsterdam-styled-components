@@ -1,7 +1,7 @@
-import React, { useRef } from 'react'
+import React, { FunctionComponent, useRef } from 'react'
 import useFocusWithArrows from '../../utils/hooks/useFocusWithArrows'
 
-const AccordionWrapper: React.FC = ({ children }) => {
+const AccordionWrapper: FunctionComponent = ({ children }) => {
   const ref = useRef<HTMLDivElement>(null)
   const { keyDown } = useFocusWithArrows(ref, true, true)
   return (

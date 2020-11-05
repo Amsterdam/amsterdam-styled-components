@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { LogoProps } from '../Header/HeaderLogoText'
 import Hidden from '../Hidden'
 import AmsterdamLogoStyle, {
@@ -7,7 +7,7 @@ import AmsterdamLogoStyle, {
   LogoTitleStyle,
 } from './AmsterdamLogoStyle'
 
-const AmsterdamLogo: React.FC<LogoProps> = ({
+const AmsterdamLogo: FunctionComponent<LogoProps> = ({
   tall,
   title = 'Gemeente Amsterdam',
   ...otherProps

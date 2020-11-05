@@ -1,5 +1,5 @@
 import { Download } from '@amsterdam/asc-assets'
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 import Button from '../Button'
 import Image from '../Image'
@@ -20,7 +20,7 @@ const ButtonStyled = styled(Button)`
   justify-content: center;
 `
 
-const DocumentCoverContentStyle: React.FC<Props> = ({
+const DocumentCoverContentStyle: FunctionComponent<Props> = ({
   imageSrc,
   onClick,
   description,

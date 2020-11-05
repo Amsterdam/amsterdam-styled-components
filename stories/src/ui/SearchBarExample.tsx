@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { FunctionComponent, useState } from 'react'
 import { action } from '@storybook/addon-actions'
 import { SearchBar } from '@amsterdam/asc-ui'
 
-const SearchBarExample: React.FC<React.HTMLAttributes<HTMLElement>> = () => {
+const SearchBarExample: FunctionComponent<
+  React.HTMLAttributes<HTMLElement>
+> = () => {
   const [searchText, setText] = useState<string>('')
   return (
     <>
