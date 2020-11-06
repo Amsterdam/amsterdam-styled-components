@@ -14,15 +14,15 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## [UNRELEASED]
+## [0.26.0]
 
-- Changed: Made ContextMenu respond dynamically to `open` prop.
-- Added: New `Breadcumbs` component (https://github.com/Amsterdam/amsterdam-styled-components/pull/1241)
-- Fixed: `Modal` component no longer produces `zIndexOffset` exceptions (https://github.com/Amsterdam/amsterdam-styled-components/issues/1289)
-- Fixed: `Tag` component width is now displayed correctly in IE11 (https://github.com/Amsterdam/amsterdam-styled-components/issues/634)
-- Changed: Most of the documentation has been re-written to use the MDX file format (https://github.com/Amsterdam/amsterdam-styled-components/issues/558)
-- Changed: `Button` component now changes background color when focussed (https://github.com/Amsterdam/amsterdam-styled-components/pull/1296)
-- Changed: **BREAKING** the `Alert` levels have been modified to align to their respective function (https://github.com/Amsterdam/amsterdam-styled-components/pull/1295)
+- Added: New `Breadcumbs` component [#1241](https://github.com/Amsterdam/amsterdam-styled-components/pull/1241)
+- Fixed: `Modal` component no longer produces `zIndexOffset` exceptions [#1289](https://github.com/Amsterdam/amsterdam-styled-components/issues/1289)
+- Fixed: `Tag` component width is now displayed correctly in IE11 [#634](https://github.com/Amsterdam/amsterdam-styled-components/issues/634)
+- Changed: `ContextMenu` will now work without managing the `open` prop from a parent component [#1321](https://github.com/Amsterdam/amsterdam-styled-components/pull/1321)
+- Changed: Most of the documentation has been re-written to use the MDX file format [#558](https://github.com/Amsterdam/amsterdam-styled-components/issues/558)
+- Changed: `Button` component now changes background color when focussed [#1296](https://github.com/Amsterdam/amsterdam-styled-components/pull/1296)
+- Changed: **BREAKING** the `Alert` levels have been modified to align to their respective function [#1295](https://github.com/Amsterdam/amsterdam-styled-components/pull/1295)
 
 ## [0.25.2]
 
