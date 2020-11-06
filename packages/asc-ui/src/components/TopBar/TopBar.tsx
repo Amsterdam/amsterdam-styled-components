@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import TopBarStyle, { Props as TopBarStyleProps } from './TopBarStyle'
 
 type Props = TopBarStyleProps

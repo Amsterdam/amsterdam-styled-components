@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { fireEvent, render } from '@testing-library/react'
 import useFocusWithArrows from './useFocusWithArrows'
 import Keys from '../../types/KeyboardKeys'

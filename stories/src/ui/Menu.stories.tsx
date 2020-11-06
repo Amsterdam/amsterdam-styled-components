@@ -8,7 +8,7 @@ import {
   MenuToggle,
   themeColor,
 } from '@amsterdam/asc-ui'
-import React, { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 import styled from 'styled-components'
 
 const ReactRouterLink: FunctionComponent<any> = ({

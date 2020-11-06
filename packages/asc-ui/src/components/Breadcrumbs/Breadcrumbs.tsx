@@ -1,4 +1,4 @@
-import React, { Children, FunctionComponent, HTMLAttributes } from 'react'
+import { Children, FunctionComponent, HTMLAttributes } from 'react'
 import { ChevronRight } from '@amsterdam/asc-assets'
 import BreadcrumbsStyle, { StyledIcon } from './BreadcrumbsStyle'
 

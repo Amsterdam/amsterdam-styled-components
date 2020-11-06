@@ -1,5 +1,5 @@
-import React, { FunctionComponent, HTMLAttributes } from 'react'
 import styled from 'styled-components'
+import { FunctionComponent, HTMLAttributes } from 'react'
 import FilterBoxStyle, { FilterBoxHeader } from './FilterBoxStyle'
 import Heading from '../Heading'
 import { themeColor } from '../../utils/themeUtils'

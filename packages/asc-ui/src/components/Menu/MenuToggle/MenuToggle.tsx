@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import MenuList from '../MenuList/MenuList'
 import MenuContext from '../MenuContext'
 import MenuToggleStyle, { Props } from './MenuToggleStyle'

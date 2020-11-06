@@ -1,5 +1,5 @@
 import deepMerge from 'deepmerge'
-import React, { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 import { ThemeProvider as AscThemeProvider } from 'styled-components'
 import { ascDefaultTheme } from '.'
 import { Theme } from '../types'
@@ -21,11 +21,7 @@ const ThemeProvider: FunctionComponent<ThemeProviderProps> = ({
     ? deepMerge(defaultTheme, overrides || {})
     : { ...defaultTheme, ...overrides }
 
-  return (
-    <AscThemeProvider theme={theme}>
-      <>{children}</>
-    </AscThemeProvider>
-  )
+  return <AscThemeProvider theme={theme}>{children}</AscThemeProvider>
 }
 
 export default ThemeProvider

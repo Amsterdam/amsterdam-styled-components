@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ImgHTMLAttributes } from 'react'
+import { FunctionComponent, ImgHTMLAttributes } from 'react'
 import ImageStyle, { Props as ImageStyleProps } from './ImageStyle'
 
 type Props = ImageStyleProps & ImgHTMLAttributes<HTMLImageElement>

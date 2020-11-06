@@ -1,4 +1,4 @@
-import React, { FunctionComponent, HTMLAttributes } from 'react'
+import { FunctionComponent, HTMLAttributes } from 'react'
 import BackgroundImage from '../../BackgroundImage'
 import EditorialPostStyle from './EditorialPostStyle'
 

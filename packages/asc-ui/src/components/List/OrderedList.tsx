@@ -1,4 +1,4 @@
-import React, { FunctionComponent, HTMLAttributes } from 'react'
+import { FunctionComponent, HTMLAttributes } from 'react'
 import OrderedListStyle from './OrderedListStyle'
 
 const OrderedList: FunctionComponent<HTMLAttributes<HTMLUListElement>> = ({

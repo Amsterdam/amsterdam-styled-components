@@ -1,4 +1,4 @@
-import React, { FunctionComponent, HTMLAttributes } from 'react'
+import { FunctionComponent, HTMLAttributes } from 'react'
 import Icon from '../../Icon'
 import ShareButtonStyle, {
   Props as ShareButtonStyleProps,

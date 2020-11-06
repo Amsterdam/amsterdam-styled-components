@@ -1,9 +1,4 @@
-import React, {
-  createContext,
-  FunctionComponent,
-  ReactNode,
-  useContext,
-} from 'react'
+import { createContext, FunctionComponent, ReactNode, useContext } from 'react'
 import ColumnStyle, { TypeProps as ColumnStyleProps } from './ColumnStyle'
 import { Theme } from '../../types'
 

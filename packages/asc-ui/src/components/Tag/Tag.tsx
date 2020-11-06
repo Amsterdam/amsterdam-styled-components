@@ -1,4 +1,4 @@
-import React, { FunctionComponent, HTMLAttributes } from 'react'
+import { FunctionComponent, HTMLAttributes } from 'react'
 import TagStyle, { Props as TagStyleProps } from './TagStyle'
 
 export type Props = TagStyleProps & HTMLAttributes<HTMLSpanElement>

@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import { renderHook } from '@testing-library/react-hooks'
-import React, { createRef } from 'react'
+import { createRef } from 'react'
 import useFocus from './useFocus'
 
 describe('useFocus', () => {

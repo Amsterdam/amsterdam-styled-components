@@ -1,5 +1,5 @@
 import { Search } from '@amsterdam/asc-assets'
-import React, {
+import {
   ChangeEvent,
   FormEvent,
   FunctionComponent,

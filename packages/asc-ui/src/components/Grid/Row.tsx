@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import RowStyle, { TypeProps } from './RowStyle'
 
 const Row: FunctionComponent<TypeProps> = ({ children, debug, ...props }) => (

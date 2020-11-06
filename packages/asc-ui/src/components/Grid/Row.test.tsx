@@ -1,6 +1,4 @@
-import React from 'react'
 import { render, cleanup } from '@testing-library/react'
-
 import Row from './Row'
 import RowStyle from './RowStyle'
 import Column from './Column'

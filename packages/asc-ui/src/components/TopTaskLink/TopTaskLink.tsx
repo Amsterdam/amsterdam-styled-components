@@ -1,8 +1,4 @@
-import React, {
-  AnchorHTMLAttributes,
-  ElementType,
-  FunctionComponent,
-} from 'react'
+import { AnchorHTMLAttributes, ElementType, FunctionComponent } from 'react'
 import Icon from '../Icon'
 import TopTaskLinkStyle, { TopTaskText, TopTaskTitle } from './TopTaskLinkStyle'
 

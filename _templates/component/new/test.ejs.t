@@ -1,7 +1,6 @@
 ---
 to: packages/asc-ui/src/components/<%= parent %>/<%=name%>/<%=name%>.test.tsx
 ---
-import React from 'react'
 import <%=name%> from './<%=name%>'
 
 describe('<%=name%>', () => {

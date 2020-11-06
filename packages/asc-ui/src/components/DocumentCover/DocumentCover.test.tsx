@@ -1,4 +1,3 @@
-import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import DocumentCover from './DocumentCover'
 import ThemeProvider from '../../theme/ThemeProvider'

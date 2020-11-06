@@ -1,4 +1,4 @@
-import React, { FunctionComponent, HTMLAttributes } from 'react'
+import { FunctionComponent, HTMLAttributes } from 'react'
 import { ContainerStyle, ContainerWrapperStyle, Props } from './ContainerStyle'
 
 const Container: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({

@@ -1,5 +1,5 @@
 import { Close } from '@amsterdam/asc-assets'
-import React, { CSSProperties, useRef } from 'react'
+import { CSSProperties, useRef } from 'react'
 import { useUID } from 'react-uid'
 import { useFocus } from '../../utils/hooks'
 import Button from '../Button'

@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react'
 import styled, { css } from 'styled-components'
+import { ReactNode } from 'react'
 import {
   mediaQuery,
   colCount,

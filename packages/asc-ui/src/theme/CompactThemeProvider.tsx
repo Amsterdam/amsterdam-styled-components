@@ -1,5 +1,5 @@
 import deepMerge from 'deepmerge'
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import { Theme } from '../types'
 import ThemeProvider, { ThemeProviderProps } from './ThemeProvider'
 

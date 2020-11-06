@@ -1,5 +1,5 @@
 import { Close } from '@amsterdam/asc-assets'
-import React, { ButtonHTMLAttributes, FunctionComponent } from 'react'
+import { ButtonHTMLAttributes, FunctionComponent } from 'react'
 import Icon from '../Icon'
 import Tag, { Props as TagProps } from '../Tag/Tag'
 import FilterTagStyle from './FilterTagStyle'

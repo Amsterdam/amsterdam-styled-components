@@ -1,5 +1,5 @@
 import { ChevronDown } from '@amsterdam/asc-assets'
-import React, { ButtonHTMLAttributes, FunctionComponent } from 'react'
+import { ButtonHTMLAttributes, FunctionComponent } from 'react'
 import Icon from '../Icon'
 import { Props } from './ContextMenu'
 import ContextMenuButtonStyle from './ContextMenuButtonStyle'

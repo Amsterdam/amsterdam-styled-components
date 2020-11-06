@@ -1,4 +1,4 @@
-import React, { createRef } from 'react'
+import { createRef } from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import Checkbox from './Checkbox'
 import { ascDefaultTheme, ThemeProvider } from '../../theme'

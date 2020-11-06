@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import React, { createRef } from 'react'
+import { createRef } from 'react'
 import { render, fireEvent, act } from '@testing-library/react'
 import 'jest-styled-components'
 import Select from './Select'

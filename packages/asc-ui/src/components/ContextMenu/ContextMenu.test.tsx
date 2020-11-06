@@ -1,6 +1,5 @@
 import { ChevronDown } from '@amsterdam/asc-assets'
 import { act, fireEvent, render, screen } from '@testing-library/react'
-import React from 'react'
 import ContextMenu, { Props } from './ContextMenu'
 import ContextMenuItem from './ContextMenuItem'
 

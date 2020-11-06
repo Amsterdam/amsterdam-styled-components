@@ -1,5 +1,5 @@
 import { Close } from '@amsterdam/asc-assets'
-import React, { FunctionComponent, HTMLAttributes, useState } from 'react'
+import { FunctionComponent, HTMLAttributes, useState } from 'react'
 import CompactThemeProvider from '../../theme/CompactThemeProvider'
 import { ButtonVariant } from '../Button/ButtonStyle'
 import Paragraph from '../Paragraph'

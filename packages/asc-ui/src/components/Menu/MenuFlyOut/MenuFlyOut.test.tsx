@@ -2,7 +2,6 @@
 import { ChevronDown, ChevronUp } from '@amsterdam/asc-assets'
 import { act } from '@testing-library/react'
 import { mount, ReactWrapper, shallow, ShallowWrapper } from 'enzyme'
-import React from 'react'
 import MenuFlyOut from '.'
 import { KeyboardKeys } from '../../../types'
 import MenuButton from '../MenuButton/MenuButton'

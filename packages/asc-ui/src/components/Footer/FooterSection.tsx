@@ -1,5 +1,5 @@
 import { ChevronDown } from '@amsterdam/asc-assets'
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import { ShowHideTypes } from '../../utils'
 import Hidden from '../Hidden'
 import Icon from '../Icon/Icon'

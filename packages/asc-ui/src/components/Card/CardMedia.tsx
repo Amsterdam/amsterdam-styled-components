@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import CardMediaStyle, { CardMediaWrapperStyle, Props } from './CardMediaStyle'
 
 const CardMedia: FunctionComponent<Props> = ({ children, ...otherProps }) => (
