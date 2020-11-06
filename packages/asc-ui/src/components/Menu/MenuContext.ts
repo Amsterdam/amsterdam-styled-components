@@ -8,8 +8,6 @@ export interface MenuContextValue {
 }
 
 const initialValues: MenuContextValue = {
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setOpenToggle: () => {},
   underFlyOutMenu: false,
   hasToggle: false,
 }
