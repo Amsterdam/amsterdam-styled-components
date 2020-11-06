@@ -1,5 +1,5 @@
 import { Close } from '@amsterdam/asc-assets'
-import React, { useRef } from 'react'
+import React, { CSSProperties, useRef } from 'react'
 import { useUID } from 'react-uid'
 import { useFocus } from '../../utils/hooks'
 import Button from '../Button'
@@ -13,7 +13,7 @@ export interface TextFieldProps extends InputProps {
   keepFocus?: boolean
   srOnly?: boolean
   error?: boolean
-  labelStyle?: object
+  labelStyle?: CSSProperties
   onClear?: () => void
   autoFocus?: boolean
 }

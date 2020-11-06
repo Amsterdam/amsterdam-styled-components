@@ -1,3 +1,4 @@
+import { ChangeEvent } from 'react'
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
 
@@ -11,7 +12,7 @@ export type Props = {
   value?: string
   id: string
   checked?: boolean
-  onChange?: Function
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
 const getVariantColor = () => ({ variant }: { variant?: RadioVariant }) => {

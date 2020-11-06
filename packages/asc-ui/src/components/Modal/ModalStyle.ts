@@ -5,7 +5,6 @@ import TopBarStyle from '../TopBar/TopBarStyle'
 import { themeColor, showAboveBackDrop } from '../../utils'
 
 type Props = {
-  attributes?: object
   hasBackDrop?: boolean
   zIndexOffset?: number
 }

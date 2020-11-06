@@ -1,19 +1,19 @@
-import React from 'react'
+import { createContext, useContext } from 'react'
 
-export type ContextValueTypes = {
-  setOpenToggle?: Function
+export interface MenuContextValue {
+  setOpenToggle?: (open: boolean) => void
   underFlyOutMenu?: boolean
   hasToggle?: boolean
-  onExpand?: Function
+  onExpand?: (expanded: boolean) => void
 }
 
-const initialValues: ContextValueTypes = {
-  setOpenToggle: () => {},
+const initialValues: MenuContextValue = {
   underFlyOutMenu: false,
   hasToggle: false,
 }
 
-const MenuContext = React.createContext(initialValues)
+const MenuContext = createContext(initialValues)
 
 export default MenuContext
-export const useMenuContext = () => React.useContext(MenuContext)
+
+export const useMenuContext = () => useContext(MenuContext)

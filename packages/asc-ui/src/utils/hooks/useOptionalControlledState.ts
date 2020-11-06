@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
  */
 const useOptionalControlledState = (
   controlledBoolean?: boolean,
-  onSetBoolean?: Function,
+  onSetBoolean?: (state: boolean) => void,
 ) => {
   const [boolean, setBoolean] = useState(controlledBoolean || false)
 

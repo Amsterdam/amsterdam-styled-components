@@ -1,7 +1,16 @@
-import React from 'react'
+import { createContext } from 'react'
 
-const LabelContext = React.createContext({
+export interface LabelContextValue {
+  active: boolean
+  setActive: (active: boolean) => void
+}
+
+const initialValue: LabelContextValue = {
   active: false,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   setActive: () => {},
-} as { active: boolean; setActive: Function })
+}
+
+const LabelContext = createContext(initialValue)
+
 export default LabelContext

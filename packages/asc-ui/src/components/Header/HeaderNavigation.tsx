@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import HeaderNavigationStyle from './HeaderNavigationStyle'
 
-const HeaderNavigation: React.FC<{}> = ({ children }) => (
+const HeaderNavigation: FunctionComponent = ({ children }) => (
   <HeaderNavigationStyle>{children}</HeaderNavigationStyle>
 )
 

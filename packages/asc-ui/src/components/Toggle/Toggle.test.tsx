@@ -30,6 +30,7 @@ describe('Toggle', () => {
 
   it('should not render the children when user presses the escape key after opening it', () => {
     const escape = {
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       preventDefault: () => {},
       key: KeyboardKeys.Escape,
     }

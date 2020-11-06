@@ -6,7 +6,7 @@ import ContextMenuListStyle, {
 
 type Props = {
   open?: boolean
-  onClose: Function
+  onClose: () => void
   position?: Position
   label?: string
   icon?: React.ReactNode

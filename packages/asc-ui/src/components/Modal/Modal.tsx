@@ -9,7 +9,7 @@ const Z_INDEX_OFFSET = 2
 
 export type Props = {
   open: boolean
-  onClose?: Function
+  onClose?: () => void
   disablePortal?: boolean
   blurredNodeSelector?: string
 } & BackDropProps &
@@ -31,7 +31,7 @@ const Modal: React.FC<Props> = ({
   const { keyDown } = useTrappedFocus(ref)
 
   React.useEffect(() => {
-    let renderedTimer: number = 0
+    let renderedTimer = 0
     const { current: node } = ref
     if (node) {
       clearTimeout(renderedTimer)

@@ -9,7 +9,7 @@ type Callback = (index?: number) => any
  */
 const usePassPropsToChildren = (
   childrenProps: React.ReactNode,
-  propsOrCallback: React.PropsWithoutRef<{}> | Callback,
+  propsOrCallback: React.PropsWithoutRef<any> | Callback,
 ) => {
   const children = React.Children.map(childrenProps, (child, index) =>
     React.cloneElement(

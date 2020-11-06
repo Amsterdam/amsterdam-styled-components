@@ -69,12 +69,16 @@ export const Tabs: React.FC<
         className={className}
       >
         {children.map(({ props }) => {
+          // See: https://github.com/typescript-eslint/typescript-eslint/issues/2715
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
           const { id, label: tabLabel, onClick, ...otherChildrenProps } = props
           const isSelected = id === selectedTab
           const tabId = formatTabId(id)
           const panelId = formatPanelId(id)
 
           const onTabButtonClick: MouseEventHandler<HTMLButtonElement> = (
+            // See: https://github.com/typescript-eslint/typescript-eslint/issues/2715
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             event,
           ) => {
             setSelectedTab(id)

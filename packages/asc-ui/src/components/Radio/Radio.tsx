@@ -81,7 +81,7 @@ const Radio = React.forwardRef<
             setFocus(true)
           }}
           onBlur={() => setFocus(false)}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+          onChange={(e) => {
             if (onChange) {
               onChange(e)
             }

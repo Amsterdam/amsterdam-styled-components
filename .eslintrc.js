@@ -6,6 +6,7 @@ module.exports = {
     'prettier/react',
     'prettier/standard',
     'plugin:mdx/recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   plugins: ['jest', 'prettier', '@typescript-eslint', 'react-hooks'],
   env: {
@@ -69,6 +70,12 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'no-use-before-define': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-extra-semi': 'off',
+    '@typescript-eslint/ban-ts-comment': 'warn',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'error',
   },
   settings: {
     'import/resolver': {

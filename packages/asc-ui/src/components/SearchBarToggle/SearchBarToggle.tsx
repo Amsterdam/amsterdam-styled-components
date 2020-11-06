@@ -10,7 +10,7 @@ import SearchBarToggleStyle, {
 
 interface SearchBarToggleProps extends SearchBarToggleStyleProps, InputMethods {
   label?: string
-  onOpen?: Function
+  onOpen?: (open: boolean) => void
   open?: boolean
   inputProps?: InputProps
   searchBarProps?: SearchBarProps

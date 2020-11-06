@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { FunctionComponent, HTMLAttributes } from 'react'
 import DocumentCoverContentStyle from './DocumentCoverContentStyle'
 
-const DocumentCoverContent: React.FC<{}> = ({ children }) => (
+const DocumentCoverContent: FunctionComponent<HTMLAttributes<
+  HTMLDivElement
+>> = ({ children }) => (
   <DocumentCoverContentStyle>{children}</DocumentCoverContentStyle>
 )
 

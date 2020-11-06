@@ -26,7 +26,7 @@ import {
 } from 'react-table'
 import styled from 'styled-components'
 
-const DefaultColumnFilter: React.FC<FilterProps<{}>> = ({
+const DefaultColumnFilter: React.FC<FilterProps<any>> = ({
   column: { filterValue, preFilteredRows, setFilter },
 }) => (
   <input
@@ -38,7 +38,7 @@ const DefaultColumnFilter: React.FC<FilterProps<{}>> = ({
   />
 )
 
-const SelectColumnFilter: React.FC<FilterProps<{}>> = ({
+const SelectColumnFilter: React.FC<FilterProps<any>> = ({
   column: { filterValue, setFilter, preFilteredRows, id },
 }) => {
   const options = React.useMemo(() => {
@@ -292,7 +292,7 @@ function TestComponent() {
     ],
     [],
   )
-  const [data, setData] = useState<object[]>([])
+  const [data, setData] = useState<any[]>([])
   const [page, setPage] = useState(1)
   const memoizedData = useMemo(() => data, [data])
 

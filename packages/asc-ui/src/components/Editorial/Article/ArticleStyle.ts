@@ -12,9 +12,7 @@ import EditorialPost, {
   Props as EditorialPostProps,
 } from '../EditorialPost/EditorialPost'
 
-export type Props = {} & EditorialPostProps
-
-export default styled(EditorialPost)<Props>`
+export default styled(EditorialPost)<EditorialPostProps>`
   ${EditorialBodyStyle} {
     ${({ image }) =>
       !!image &&
