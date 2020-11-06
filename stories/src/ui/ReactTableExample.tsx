@@ -12,7 +12,7 @@ import {
   TableResizer,
   TableRow,
 } from '@amsterdam/asc-ui'
-import React, {
+import {
   FunctionComponent,
   MouseEvent,
   useEffect,

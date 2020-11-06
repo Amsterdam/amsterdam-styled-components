@@ -1,4 +1,3 @@
-import React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import Footer from './Footer'
 import { ThemeProvider } from '../../theme'

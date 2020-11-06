@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react'
+import { FunctionComponent, useState } from 'react'
 import { action } from '@storybook/addon-actions'
 import { CompactPager } from '@amsterdam/asc-ui'
 

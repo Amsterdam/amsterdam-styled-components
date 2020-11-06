@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, FunctionComponent } from 'react'
+import { HTMLAttributes, FunctionComponent } from 'react'
 import EditorialBodyStyle from './EditorialBodyStyle'
 
 const EditorialBody: FunctionComponent<HTMLAttributes<HTMLElement>> = ({

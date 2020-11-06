@@ -1,5 +1,4 @@
-import React, { FunctionComponent, HTMLAttributes, useState } from 'react'
-
+import { FunctionComponent, HTMLAttributes, useState } from 'react'
 import usePassPropsToChildren from '../../utils/hooks/usePassPropsToChildren'
 import RadioGroupStyle, { Props } from './RadioGroupStyle'
 import RadioContext from './RadioContext'

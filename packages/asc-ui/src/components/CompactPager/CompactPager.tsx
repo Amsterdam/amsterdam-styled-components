@@ -1,5 +1,5 @@
 import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
-import React, { FunctionComponent, HTMLAttributes } from 'react'
+import { FunctionComponent, HTMLAttributes } from 'react'
 import CompactPagerStyle, { PagerButton, PagerText } from './CompactPagerStyle'
 import { NEXT_BUTTON, PREV_BUTTON } from './test-ids'
 

@@ -1,4 +1,4 @@
-import React, {
+import {
   MouseEvent as ReactMouseEvent,
   FunctionComponent,
   HTMLAttributes,

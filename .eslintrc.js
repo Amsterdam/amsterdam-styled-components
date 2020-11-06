@@ -76,6 +76,8 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'warn',
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': 'error',
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
   settings: {
     'import/resolver': {

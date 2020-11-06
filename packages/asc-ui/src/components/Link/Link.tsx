@@ -1,5 +1,5 @@
 import { ChevronRight, Download, ExternalLink } from '@amsterdam/asc-assets'
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import { StyledProps } from 'styled-components'
 import { deprecatedWarning } from '../../utils'
 import LinkStyle, {

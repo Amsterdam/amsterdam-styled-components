@@ -1,4 +1,4 @@
-import React, {
+import {
   ChangeEvent,
   forwardRef,
   HTMLAttributes,
@@ -27,7 +27,7 @@ function getSelectedOptions(select: HTMLSelectElement) {
     return Array.from(select.selectedOptions)
   }
 
-  // The 'selectedOptions' property is not supported (IE11)
+  // The 'edOptions' property is not supported (IE11)
   return Array.from(select.querySelectorAll<HTMLOptionElement>(':checked'))
 }
 

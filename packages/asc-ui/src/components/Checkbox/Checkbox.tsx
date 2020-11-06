@@ -1,5 +1,5 @@
 import { Checkmark, Indeterminate } from '@amsterdam/asc-assets'
-import React, {
+import {
   ChangeEvent,
   forwardRef,
   HTMLAttributes,

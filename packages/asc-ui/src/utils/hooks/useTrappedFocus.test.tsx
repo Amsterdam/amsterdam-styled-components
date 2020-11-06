@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { render } from '@testing-library/react'
 import useTrappedFocus from './useTrappedFocus'
 import { KeyboardKeys } from '../../types'

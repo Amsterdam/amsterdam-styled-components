@@ -1,5 +1,5 @@
 import { Close, Menu } from '@amsterdam/asc-assets'
-import React, { FunctionComponent, ReactElement } from 'react'
+import { FunctionComponent, ReactElement } from 'react'
 import Icon, { Props as IconProps } from '../../Icon/Icon'
 import { TOGGLE_BUTTON_SIZE } from '../../shared/constants'
 import ToggleButtonStyle, { Props as StyleProps } from './ToggleButtonStyle'

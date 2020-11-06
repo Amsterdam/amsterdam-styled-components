@@ -1,5 +1,5 @@
 import { ChevronDown } from '@amsterdam/asc-assets'
-import React, {
+import {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
   FunctionComponent,

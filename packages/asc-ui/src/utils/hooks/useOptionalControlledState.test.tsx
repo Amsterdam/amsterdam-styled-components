@@ -4,7 +4,7 @@ import {
   renderHook,
   RenderHookOptions,
 } from '@testing-library/react-hooks'
-import React, { createRef, FunctionComponent } from 'react'
+import { createRef, FunctionComponent } from 'react'
 import useOptionalControlledState from './useOptionalControlledState'
 
 describe('useOptionalControlledState', () => {

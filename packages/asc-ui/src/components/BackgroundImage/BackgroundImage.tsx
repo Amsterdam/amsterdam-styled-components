@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import BackgroundImageStyle, { Props } from './BackgroundImageStyle'
 
 const BackgroundImage: FunctionComponent<Props> = ({ ...otherProps }) => (

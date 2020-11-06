@@ -1,5 +1,5 @@
 import { Enlarge, Minimise } from '@amsterdam/asc-assets'
-import React, {
+import {
   FunctionComponent,
   HTMLAttributes,
   useEffect,

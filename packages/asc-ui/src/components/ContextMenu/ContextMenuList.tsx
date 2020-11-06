@@ -1,4 +1,4 @@
-import React, { forwardRef, HTMLAttributes, ReactNode } from 'react'
+import { forwardRef, HTMLAttributes, ReactNode } from 'react'
 import { Position } from './types'
 import ContextMenuListStyle, {
   ContextMenuListWrapperStyle,

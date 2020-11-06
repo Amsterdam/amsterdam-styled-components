@@ -1,5 +1,5 @@
 import { Download } from '@amsterdam/asc-assets'
-import React, { FunctionComponent, MouseEvent } from 'react'
+import { FunctionComponent, MouseEvent } from 'react'
 import styled from 'styled-components'
 import Button from '../Button'
 import Image from '../Image'

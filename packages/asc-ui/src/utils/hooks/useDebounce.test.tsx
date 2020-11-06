@@ -1,4 +1,3 @@
-import React from 'react'
 import { render, getByTestId, fireEvent, cleanup } from '@testing-library/react'
 import useDebounce from './useDebounce'
 

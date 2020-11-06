@@ -1,5 +1,4 @@
-import React, { FunctionComponent } from 'react'
-
+import { FunctionComponent } from 'react'
 import CardStyle, { Props } from './CardStyle'
 
 const Card: FunctionComponent<Props> = ({ children, ...otherProps }) => (

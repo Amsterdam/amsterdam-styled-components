@@ -21,7 +21,6 @@ For example, this basic application shows a simple button and adds the aforement
 
 ```jsx
 import { Button, GlobalStyle, ThemeProvider } from '@amsterdam/asc-ui'
-import React from 'react'
 import ReactDOM from 'react-dom'
 
 ReactDOM.render(

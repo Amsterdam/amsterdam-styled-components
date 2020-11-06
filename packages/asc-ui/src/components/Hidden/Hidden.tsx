@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import useMatchMedia, { Arguments } from '../../utils/hooks/useMatchMedia'
 
 // Use this to wrap around components that should only render when matching a certain media query

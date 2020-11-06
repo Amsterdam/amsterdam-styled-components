@@ -1,5 +1,4 @@
 import { render } from '@testing-library/react'
-import React from 'react'
 import styled from 'styled-components'
 import { BACKDROP_Z_INDEX } from '../../components/shared/constants'
 import { ascDefaultTheme } from '../../theme'

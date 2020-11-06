@@ -1,4 +1,4 @@
-import React, { DetailedHTMLProps, forwardRef, LiHTMLAttributes } from 'react'
+import { DetailedHTMLProps, forwardRef, LiHTMLAttributes } from 'react'
 import MenuItemStyle from './MenuItemStyle'
 
 type Props = DetailedHTMLProps<LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>

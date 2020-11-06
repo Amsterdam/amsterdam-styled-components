@@ -1,6 +1,6 @@
 import * as Icons from '@amsterdam/asc-assets'
 import { Icon } from '@amsterdam/asc-ui'
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import styled from 'styled-components'
 
 const IconWrapper = styled.span`

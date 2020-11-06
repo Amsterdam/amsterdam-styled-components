@@ -1,5 +1,5 @@
 import { Search } from '@amsterdam/asc-assets'
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import { InputMethods, InputProps } from '../Input'
 import SearchBar from '../SearchBar'
 import { SearchBarProps } from '../SearchBar/SearchBar'

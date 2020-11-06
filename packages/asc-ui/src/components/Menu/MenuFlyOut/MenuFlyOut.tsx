@@ -1,5 +1,5 @@
 import { ChevronDown, ChevronUp } from '@amsterdam/asc-assets'
-import React, {
+import {
   FunctionComponent,
   KeyboardEvent as ReactKeyboardEvent,
   MouseEvent as ReactMouseEvent,

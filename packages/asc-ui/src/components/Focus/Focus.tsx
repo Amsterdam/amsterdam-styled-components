@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-import React, {
+import {
   createRef,
   EventHandler,
   FunctionComponent,

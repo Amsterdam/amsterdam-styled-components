@@ -1,8 +1,4 @@
-import React, {
-  ButtonHTMLAttributes,
-  FunctionComponent,
-  ReactNode,
-} from 'react'
+import { ButtonHTMLAttributes, FunctionComponent, ReactNode } from 'react'
 import ContextMenuItemStyle, {
   ContextMenuItemButton,
   ContextMenuItemProps,

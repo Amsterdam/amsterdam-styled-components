@@ -1,4 +1,4 @@
-import React, { createRef } from 'react'
+import { createRef } from 'react'
 import { render, cleanup, fireEvent } from '@testing-library/react'
 import RadioGroup from './RadioGroup'
 import Radio from './Radio'

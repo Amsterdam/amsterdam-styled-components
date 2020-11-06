@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react'
+import { FunctionComponent, useState } from 'react'
 import MenuInlineStyle, { Props } from './MenuInlineStyle'
 import MenuContext from '../MenuContext'
 import BackDrop, { Props as BackDropProps } from '../../BackDrop/BackDrop'

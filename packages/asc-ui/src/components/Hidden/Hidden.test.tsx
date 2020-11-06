@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-import React from 'react'
 import { render } from '@testing-library/react'
 import Hidden from './Hidden'
 import { WARNING_MESSAGES } from '../../utils/hooks/useMatchMedia'

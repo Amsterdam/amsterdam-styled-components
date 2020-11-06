@@ -1,4 +1,4 @@
-import React, { FunctionComponent, HTMLAttributes, useState } from 'react'
+import { FunctionComponent, HTMLAttributes, useState } from 'react'
 import { action } from '@storybook/addon-actions'
 import { SearchBar } from '@amsterdam/asc-ui'
 

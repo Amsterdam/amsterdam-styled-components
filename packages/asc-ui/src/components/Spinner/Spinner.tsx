@@ -1,5 +1,5 @@
 import { Spinner as SpinnerIcon } from '@amsterdam/asc-assets'
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import Icon from '../Icon/Icon'
 import SpinnerStyle, { Props } from './SpinnerStyle'
 

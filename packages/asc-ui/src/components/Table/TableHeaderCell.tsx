@@ -1,5 +1,5 @@
 import { ChevronSorting } from '@amsterdam/asc-assets'
-import React, { FunctionComponent, MouseEvent } from 'react'
+import { FunctionComponent, MouseEvent } from 'react'
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
 import Button from '../Button'
