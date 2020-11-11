@@ -14,7 +14,7 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## Unreleased
+## [0.26.1]
 
 - Changed: Types for the `Alert` component (`AlertProps` and `AlertLevel`) are now exported from the package root.
 
