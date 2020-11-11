@@ -1,5 +1,5 @@
 import { Close } from '@amsterdam/asc-assets'
-import React, { useState } from 'react'
+import React, { FunctionComponent, HTMLAttributes, useState } from 'react'
 import CompactThemeProvider from '../../theme/CompactThemeProvider'
 import { ButtonVariant } from '../Button/ButtonStyle'
 import Paragraph from '../Paragraph'
@@ -8,12 +8,12 @@ import AlertStyle, {
   CloseButton,
   CloseButtonWrapper,
   ContentWrapper,
-  Props,
+  AlertProps,
 } from './AlertStyle'
 
 const CLOSE_BUTTON_TITLE = 'Sluiten'
 
-const Alert: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
+const Alert: FunctionComponent<AlertProps & HTMLAttributes<HTMLElement>> = ({
   children,
   content,
   dismissible,
