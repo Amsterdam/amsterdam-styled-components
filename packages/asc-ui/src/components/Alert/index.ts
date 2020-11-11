@@ -1,2 +1,2 @@
-export { default as AlertStyle } from './AlertStyle'
-export { default } from './Alert'
+export { default as AlertStyle, AlertProps, AlertLevel } from './AlertStyle'
+export { default as Alert } from './Alert'

@@ -3,7 +3,6 @@ import {
   AccordionStyles,
   AccordionWrapper,
 } from './components/Accordion'
-import Alert, { AlertStyle } from './components/Alert'
 import AmsterdamLogo, { AmsterdamLogoStyles } from './components/AmsterdamLogo'
 import BackDrop, { BackDropStyles } from './components/BackDrop'
 import Blockquote, { BlockquoteStyle } from './components/Blockquote'
@@ -107,6 +106,7 @@ import { Theme } from './types'
 import * as hooks from './utils/hooks'
 import { perceivedLoading } from './utils/themeUtils'
 
+export * from './components/Alert'
 export * from './components/Breadcrumbs'
 export * from './components/Tabs'
 export {
@@ -160,7 +160,6 @@ export {
   Icon,
   Divider,
   Image,
-  Alert,
   Input,
   ImageCard,
   ImageCardContent,
@@ -246,7 +245,6 @@ export const styles = {
   CheckboxStyle,
   FilterBoxStyle,
   FilterOptionStyle,
-  AlertStyle,
 }
 
 export const context = {

@@ -4,19 +4,19 @@ import { svgFill, themeColor, themeSpacing } from '../../utils'
 import Button from '../Button'
 import Heading from '../Heading'
 
-export type Level = 'error' | 'info' | 'neutral' | 'warning'
+export type AlertLevel = 'error' | 'info' | 'neutral' | 'warning'
 
-export type Props = {
+export interface AlertProps {
   content?: string
   dismissible?: boolean
   heading?: string
-  level?: Level
+  level?: AlertLevel
   onDismiss?: () => void
   outline?: boolean
 }
 
 const colorMap: Record<
-  Level,
+  AlertLevel,
   ({ theme }: { theme: Theme.ThemeInterface }) => string
 > = {
   error: themeColor('error'),
@@ -53,7 +53,7 @@ export const AlertHeading = styled(Heading)`
   margin: 0;
 `
 
-export default styled.div<Props>`
+export default styled.div<AlertProps>`
   position: relative;
   width: 100%; /* IE11 fix */
 

@@ -14,6 +14,10 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## Unreleased
+
+- Changed: Types for the `Alert` component (`AlertProps` and `AlertLevel`) are now exported from the package root.
+
 ## [0.26.0]
 
 - Added: New `Breadcumbs` component [#1241](https://github.com/Amsterdam/amsterdam-styled-components/pull/1241)
