@@ -125,18 +125,18 @@ type GetTypographyValueFromPropertyParameters = [
   BreakpointKeys?,
 ]
 
-export const getTypographyValueFromProperty = withTheme<
-  GetTypographyValueFromPropertyParameters
->((theme, element, property, breakpointRule) => {
-  const rules = getValueFromTheme(`typography.${[element]}`)({ theme })
-  if (breakpointRule) {
-    if (rules.breakpoints[breakpointRule]) {
-      return rules.breakpoints[breakpointRule][property]
+export const getTypographyValueFromProperty = withTheme<GetTypographyValueFromPropertyParameters>(
+  (theme, element, property, breakpointRule) => {
+    const rules = getValueFromTheme(`typography.${[element]}`)({ theme })
+    if (breakpointRule) {
+      if (rules.breakpoints[breakpointRule]) {
+        return rules.breakpoints[breakpointRule][property]
+      }
+      return ''
     }
-    return ''
-  }
-  return rules[property]
-})
+    return rules[property]
+  },
+)
 
 /**
  * When this style is applied on an element it will be hidden but still readable by screen readers.
