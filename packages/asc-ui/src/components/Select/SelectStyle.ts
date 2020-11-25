@@ -33,7 +33,7 @@ export const AbsoluteContentWrapper = styled.div.attrs({
   right: 0;
   bottom: 0;
   left: 0;
-  margin: 1px; /* Match the border of the select element. */
+  margin: 3px; /* Allows the default browser(s) default focus style to be displayed. */
   padding: 0 calc(${themeSpacing(3)} - 1px); /* Match the spacing of the select element. */
   display: flex;
   align-items: center;
