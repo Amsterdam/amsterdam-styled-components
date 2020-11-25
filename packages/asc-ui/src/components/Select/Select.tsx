@@ -43,6 +43,7 @@ const Select = React.forwardRef<
       onChange,
       children,
       disabled,
+      className,
       ...otherProps
     },
     externalRef,
@@ -92,7 +93,7 @@ const Select = React.forwardRef<
             {label}
           </FormLabelStyle>
         )}
-        <SelectWrapper>
+        <SelectWrapper className={className}>
           <SelectStyle
             {...{
               ...otherProps,
