@@ -1,4 +1,5 @@
 import React from 'react'
+import { StyledProps } from 'styled-components'
 import HeaderLogoTextStyle from './HeaderLogoTextStyle'
 import HeaderTitle from './HeaderTitle'
 
@@ -15,7 +16,7 @@ interface HeaderLogoTextProps extends React.HTMLAttributes<HTMLHeadingElement> {
   logo?: React.FC<LogoProps>
 }
 
-const HeaderLogoText: React.FC<HeaderLogoTextProps> = ({
+const HeaderLogoText: React.FC<HeaderLogoTextProps & StyledProps<any>> = ({
   title,
   homeLink,
   tall,

@@ -20,7 +20,12 @@ Given the `tall={false}` prop, this will make sure the header is not showing its
 <Preview>
   <Story name="Short only">
     <React.Fragment>
-      <Header tall={false} title="Some title" fullWidth={false} />
+      <Header
+        headerLogoTextAs="div" // Now the HeaderLogoText component will be a `div`
+        tall={false}
+        title="Some title"
+        fullWidth={false}
+      />
     </React.Fragment>
   </Story>
 </Preview>

@@ -16,6 +16,7 @@ type Props = {
   navigation?: React.ReactNode
   links?: React.ReactNode
   logo?: React.FC<LogoProps>
+  headerLogoTextAs?: React.ComponentType<any>
 } & HeaderWrapperProps &
   HeaderStyleProps &
   CustomCssPropsType &
@@ -30,11 +31,15 @@ const Header: React.FC<Props> = ({
   navigation,
   links,
   logo,
+  headerLogoTextAs,
   ...otherProps
 }) => (
   <HeaderWrapperStyle {...{ css, tall }} id="header">
     <HeaderStyle {...{ fullWidth, ...otherProps }}>
-      <HeaderLogoText {...{ tall, title, homeLink, logo }} />
+      <HeaderLogoText
+        as={headerLogoTextAs}
+        {...{ tall, title, homeLink, logo }}
+      />
       <HeaderNavigation>{navigation}</HeaderNavigation>
       <HeaderLinks>{links}</HeaderLinks>
     </HeaderStyle>
