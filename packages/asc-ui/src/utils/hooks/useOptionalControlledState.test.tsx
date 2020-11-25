@@ -1,5 +1,5 @@
-import React from 'react'
-import { getByText, render } from '@testing-library/react'
+import React, { FunctionComponent } from 'react'
+import { render } from '@testing-library/react'
 import {
   act,
   renderHook,
@@ -84,14 +84,14 @@ describe('useOptionalControlledState', () => {
   })
 
   it('should set the state when the controlled value is changed', () => {
-    const Wrapper: React.FC<any> = ({ open }) => {
+    const Wrapper: FunctionComponent<{ open: boolean }> = ({ open }) => {
       // eslint-disable-next-line @typescript-eslint/no-empty-function
       const [value] = useOptionalControlledState(open, () => {})
       return <div data-testid="node">{value ? 'open' : ''}</div>
     }
-    const { container, rerender } = render(<Wrapper open={false} />)
+    const { getByText, rerender } = render(<Wrapper open={false} />)
     rerender(<Wrapper open />)
 
-    expect(getByText(container, 'open')).toBeDefined()
+    expect(getByText('open')).toBeDefined()
   })
 })

@@ -1,10 +1,9 @@
 import React from 'react'
-import { getByTestId, render } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import useTrappedFocus from './useTrappedFocus'
 import { KeyboardKeys } from '../../types'
 
 describe('useTrappedFocus', () => {
-  let container: HTMLElement
   let keyDown: any
   let elementFocus1: HTMLElement
   let elementFocus2: HTMLElement
@@ -39,10 +38,12 @@ describe('useTrappedFocus', () => {
         </div>
       )
     }
-    ;({ container } = render(<Component />))
-    elementFocus1 = getByTestId(container, 'focus1')
-    elementFocus2 = getByTestId(container, 'focus2')
-    elementFocus3 = getByTestId(container, 'focus3')
+
+    const { getByTestId } = render(<Component />)
+
+    elementFocus1 = getByTestId('focus1')
+    elementFocus2 = getByTestId('focus2')
+    elementFocus3 = getByTestId('focus3')
   })
 
   afterEach(() => {
