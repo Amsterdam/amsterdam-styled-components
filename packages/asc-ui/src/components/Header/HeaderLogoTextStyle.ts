@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const HeaderLogoTextStyle = styled.h1`
+const HeaderLogoTextStyle = styled.div`
   margin: 0;
   font-weight: 700;
   display: flex;
