@@ -3,7 +3,7 @@ import { render } from '@testing-library/react'
 import MenuItemTitle from './MenuItemTitle'
 
 describe('MenuItemTitle', () => {
-  let container: HTMLElement
+  let container: Element
   let getByText: (s: string) => any
 
   const children = 'foo'
