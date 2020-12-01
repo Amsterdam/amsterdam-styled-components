@@ -1,28 +1,33 @@
-import React from 'react'
+import React, {
+  ElementType,
+  FunctionComponent,
+  HTMLAttributes,
+  ReactNode,
+} from 'react'
+import { CustomCssPropsType } from '../../utils'
+import AmsterdamLogo from '../AmsterdamLogo'
+import HeaderLinks from './HeaderLinks'
+import HeaderLogoText, { LogoProps } from './HeaderLogoText'
+import HeaderNavigation from './HeaderNavigation'
 import HeaderStyle, { Props as HeaderStyleProps } from './HeaderStyle'
 import HeaderWrapperStyle, {
   Props as HeaderWrapperProps,
 } from './HeaderWrapperStyle'
-import HeaderLogoText, { LogoProps } from './HeaderLogoText'
-import HeaderNavigation from './HeaderNavigation'
-import HeaderLinks from './HeaderLinks'
-import { CustomCssPropsType } from '../../utils'
-import AmsterdamLogo from '../AmsterdamLogo'
 
-type Props = {
+type HeaderProps = {
   tall?: boolean
   homeLink: string
   title?: string
-  navigation?: React.ReactNode
-  links?: React.ReactNode
-  logo?: React.FC<LogoProps>
-  headerLogoTextAs?: React.ComponentType<any>
+  navigation?: ReactNode
+  links?: ReactNode
+  logo?: FunctionComponent<LogoProps>
+  headerLogoTextAs?: ElementType
 } & HeaderWrapperProps &
   HeaderStyleProps &
   CustomCssPropsType &
-  React.HTMLAttributes<HTMLDivElement>
+  HTMLAttributes<HTMLDivElement>
 
-const Header: React.FC<Props> = ({
+const Header: FunctionComponent<HeaderProps> = ({
   css,
   title,
   homeLink,
