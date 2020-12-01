@@ -81,7 +81,11 @@ import SearchBar, { SearchBarStyles } from './components/SearchBar'
 import SearchBarToggle, {
   SearchBarToggleStyles,
 } from './components/SearchBarToggle'
-import Select, { SelectStyle, SelectWrapperStyle } from './components/Select'
+import Select, {
+  SelectStyle,
+  SelectWrapperStyle,
+  SelectContentWrapperStyle,
+} from './components/Select'
 import * as constants from './components/shared/constants'
 import ShowMoreShowLess from './components/ShowMoreShowLess'
 import Spinner from './components/Spinner/Spinner'
@@ -236,6 +240,7 @@ export const styles = {
   IconStyle,
   SelectStyle,
   SelectWrapperStyle,
+  SelectContentWrapperStyle,
   LinkStyle,
   HeadingStyle,
   CustomHTMLBlockStyle,
