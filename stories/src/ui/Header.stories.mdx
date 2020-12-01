@@ -20,12 +20,7 @@ Given the `tall={false}` prop, this will make sure the header is not showing its
 <Preview>
   <Story name="Short only">
     <React.Fragment>
-      <Header
-        headerLogoTextAs="div" // Now the HeaderLogoText component will be a `div`
-        tall={false}
-        title="Some title"
-        fullWidth={false}
-      />
+      <Header tall={false} title="Some title" fullWidth={false} />
     </React.Fragment>
   </Story>
 </Preview>
@@ -48,6 +43,18 @@ To see the tall version, please make sure your viewport is bigger than laptopM (
   <Story name="Tall">
     <React.Fragment>
       <Header tall title="Some title" fullWidth={false} />
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Overwrite the default h1 tag
+
+Use `headerLogoTextAs` to overwrite the default `h1` tag on the logo. Useful for SEO purposes.
+
+<Preview>
+  <Story name="Overwrite the default h1 tag">
+    <React.Fragment>
+      <Header headerLogoTextAs="div" tall={false} title="Some title" />
     </React.Fragment>
   </Story>
 </Preview>
