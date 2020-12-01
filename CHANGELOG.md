@@ -17,7 +17,7 @@ Prefix the change with one of these keywords:
 ## Unreleased
 
 - Added: `headerLogoTextAs` prop to `Header` component to overwrite the default `h1` tag
-- Fixed: The select component shows the default browser focus
+- Fixed: The `Select` component shows the default browser focus
 
 ## [0.26.1]
 
