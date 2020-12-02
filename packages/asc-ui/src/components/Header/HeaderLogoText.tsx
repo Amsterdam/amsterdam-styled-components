@@ -1,6 +1,6 @@
 import React, {
   AnchorHTMLAttributes,
-  ComponentType,
+  ElementType,
   FunctionComponent,
   HTMLAttributes,
 } from 'react'
@@ -14,7 +14,7 @@ export interface LogoProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 interface HeaderLogoTextProps extends HTMLAttributes<HTMLHeadingElement> {
-  as?: string | ComponentType
+  as?: string | ElementType
   homeLink: string
   tall?: boolean
   logo?: FunctionComponent<LogoProps>
