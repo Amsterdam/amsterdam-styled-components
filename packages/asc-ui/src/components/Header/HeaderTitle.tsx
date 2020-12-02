@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { AnchorHTMLAttributes, FunctionComponent } from 'react'
 import HeaderTitleStyle from './HeaderTitleStyle'
 
-const HeaderTitle: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({
-  children,
-  ...otherProps
-}) => {
+const HeaderTitle: FunctionComponent<
+  AnchorHTMLAttributes<HTMLAnchorElement>
+> = ({ children, ...otherProps }) => {
   return <HeaderTitleStyle {...otherProps}>{children}</HeaderTitleStyle>
 }
 
