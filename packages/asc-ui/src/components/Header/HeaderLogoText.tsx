@@ -14,7 +14,7 @@ export interface LogoProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 interface HeaderLogoTextProps extends HTMLAttributes<HTMLHeadingElement> {
-  as?: string | ElementType
+  as?: ElementType
   homeLink: string
   tall?: boolean
   logo?: FunctionComponent<LogoProps>
