@@ -14,7 +14,7 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## Unreleased
+## [0.26.2]
 
 - Added: `headerLogoTextAs` prop to `Header` component to overwrite the default `h1` tag
 - Fixed: The `Select` component shows the default browser focus
