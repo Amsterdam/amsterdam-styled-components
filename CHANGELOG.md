@@ -18,6 +18,7 @@ Prefix the change with one of these keywords:
 
 - Added: `headerLogoTextAs` prop to `Header` component to overwrite the default `h1` tag
 - Fixed: The `Select` component shows the default browser focus
+- Changed: The `as` and `forwardedAs` props are now correctly typed with the `ElementType` type.
 
 ## [0.26.1]
 
