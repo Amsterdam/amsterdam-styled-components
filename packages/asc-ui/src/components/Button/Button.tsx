@@ -1,4 +1,10 @@
-import React from 'react'
+import React, {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  ElementType,
+  forwardRef,
+  ReactNode,
+} from 'react'
 import Icon, { defaultProps as iconDefaultProps } from '../Icon/Icon'
 import ButtonStyle, {
   ArrowRight,
@@ -9,23 +15,20 @@ import ButtonStyle, {
 } from './ButtonStyle'
 
 export type ButtonProps = {
-  as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
-  forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
-  iconLeft?: React.ReactNode
-  iconRight?: React.ReactNode
-  icon?: React.ReactNode
+  as?: ElementType
+  forwardedAs?: ElementType
+  iconLeft?: ReactNode
+  iconRight?: ReactNode
+  icon?: ReactNode
   iconSize?: number
   taskflow?: boolean
 } & ButtonStyleProps &
-  React.AnchorHTMLAttributes<HTMLAnchorElement> &
-  React.ButtonHTMLAttributes<HTMLButtonElement>
+  AnchorHTMLAttributes<HTMLAnchorElement> &
+  ButtonHTMLAttributes<HTMLButtonElement>
 
 export { ButtonVariant }
 
-const Button = React.forwardRef<
-  HTMLButtonElement | HTMLAnchorElement,
-  ButtonProps
->(
+const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   (
     { children, iconLeft, iconRight, icon, iconSize, taskflow, ...otherProps },
     ref,
