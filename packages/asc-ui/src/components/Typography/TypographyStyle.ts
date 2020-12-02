@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 import { ElementType } from 'react'
 import { getTypographyFromTheme, themeColor } from '../../utils'
 import { Theme } from '../../types'
@@ -17,7 +17,9 @@ export type Props = {
   color?: Theme.ColorType
 }
 
-export const defaultTypographyStyles = {
+export const defaultTypographyStyles: {
+  [key: string]: FlattenSimpleInterpolation
+} = {
   em: css`
     font-style: italic;
   `,
@@ -29,11 +31,7 @@ export default styled.p<Props>`
   ${({ as, forwardedAs }) => {
     const key = as ?? forwardedAs
 
-    if (typeof key === 'string') {
-      return defaultTypographyStyles[key] ?? null
-    }
-
-    return null
+    return typeof key === 'string' && defaultTypographyStyles[key]
   }}
   margin: 0;
   ${getTypographyFromTheme()};
