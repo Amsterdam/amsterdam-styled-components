@@ -4,7 +4,6 @@ updates:
   directory: "/examples/create-react-app"
   schedule:
     interval: weekly
-  open-pull-requests-limit: 10
   labels:
   - dependencies
   - examples
@@ -12,12 +11,10 @@ updates:
   directory: "/"
   schedule:
     interval: weekly
-  open-pull-requests-limit: 10
 - package-ecosystem: npm
   directory: "/examples/nextjs"
   schedule:
     interval: weekly
-  open-pull-requests-limit: 10
   labels:
   - dependencies
   - examples
