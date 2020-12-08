@@ -35,7 +35,7 @@
     "@svgr/webpack": "^5.4.0",
     "@testing-library/jest-dom": "^5.11.2",
     "@testing-library/react": "11.2.2",
-    "@testing-library/react-hooks": "3.4.2",
+    "@testing-library/react-hooks": "3.7.0",
     "@types/babel__core": "^7.1.9",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
