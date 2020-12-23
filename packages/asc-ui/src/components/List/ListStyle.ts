@@ -27,13 +27,15 @@ export const BulletCSS = css`
       left: -${BULLET_MARGIN + BULLET_SIZE}px;
       top: ${({ theme }) =>
         `${
-          (stripUnit(
-            getTypographyValueFromProperty(
-              'li',
-              'lineHeight',
-            )({
-              theme,
-            }),
+          (Number(
+            stripUnit(
+              getTypographyValueFromProperty(
+                'li',
+                'lineHeight',
+              )({
+                theme,
+              }),
+            ),
           ) -
             BULLET_SIZE) /
           2
