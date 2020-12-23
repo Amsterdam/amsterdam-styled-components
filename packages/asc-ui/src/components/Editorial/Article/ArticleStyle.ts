@@ -35,14 +35,16 @@ export default styled(EditorialPost)<EditorialPostProps>`
               (EDITORIAL_PADDING_TOP * 2 +
                 EDITORIAL_META_LINE_HEIGHT +
                 EDITORIAL_META_MARGIN_TOP +
-                stripUnit(
-                  getTypographyValueFromProperty(
-                    'h1',
-                    'lineHeight',
-                    'tabletS',
-                  )({
-                    theme,
-                  }),
+                Number(
+                  stripUnit(
+                    getTypographyValueFromProperty(
+                      'h1',
+                      'lineHeight',
+                      'tabletS',
+                    )({
+                      theme,
+                    }),
+                  ),
                 )) *
               -1
             }px`

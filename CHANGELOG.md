@@ -14,6 +14,11 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## Unreleased
+
+- Added: Support for React 17
+- Changed: **BREAKING** Minimum React version is now version `16.14.0`
+
 ## [0.26.2]
 
 - Added: `headerLogoTextAs` prop to `Header` component to overwrite the default `h1` tag

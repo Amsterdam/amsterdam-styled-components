@@ -26,6 +26,10 @@
     "build:react-icons": "svgr -d src/icons static/icons --template src/utils/generateIconReact.js --svg-props focusable={false} --ext tsx"
   },
   "sideEffects": false,
+  "peerDependencies": {
+    "react": "^16.14.0 || ^17.0.1",
+    "react-dom": "^16.14.0 || ^17.0.1"
+  },
   "devDependencies": {
     "@svgr/cli": "^5.4.0",
     "@svgr/core": "^5.4.0",
