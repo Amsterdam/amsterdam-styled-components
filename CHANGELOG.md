@@ -17,7 +17,8 @@ Prefix the change with one of these keywords:
 ## Unreleased
 
 - Added: Support for React 17
-- Changed: **BREAKING** Minimum React version is now version `16.14.0`
+- Changed: **BREAKING** Minimum React version is now `16.14.0`
+- Changed: **BREAKING** Minimum Styled Components version is now `5.1.0`
 
 ## [0.26.2]
 

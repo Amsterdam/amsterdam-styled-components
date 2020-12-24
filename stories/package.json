@@ -30,6 +30,6 @@
     "@amsterdam/asc-ui": "^0.26.2",
     "react": "^17.0.1",
     "react-table": "^7.2.2",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.2.1"
   }
 }
