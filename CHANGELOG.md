@@ -14,7 +14,7 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## Unreleased
+## [0.27.0]
 
 - Added: Support for React 17
 - Changed: **BREAKING** Minimum React version is now `16.14.0`
