@@ -9,7 +9,7 @@
     "start": "yarn copy-fonts && next start"
   },
   "dependencies": {
-    "@amsterdam/asc-assets": "^0.26.0",
+    "@amsterdam/asc-assets": "^0.27.0",
     "@amsterdam/asc-ui": "^0.26.0",
     "@zeit/next-css": "^1.0.1",
     "next": "10.0.3",
