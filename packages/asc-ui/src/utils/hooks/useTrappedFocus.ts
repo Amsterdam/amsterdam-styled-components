@@ -13,6 +13,19 @@ const FocusableElements = [
 ]
 
 const useTrappedFocus = (ref: RefObject<HTMLElement>) => {
+  const initialFocus = () => {
+    if (ref.current) {
+      const element = ref.current
+
+      const firstFocusableEl = element.querySelector(
+        FocusableElements.join(', '),
+      )
+      if (firstFocusableEl instanceof HTMLElement) {
+        firstFocusableEl.focus()
+      }
+    }
+  }
+
   const keyDown = (e: KeyboardEvent) => {
     if (ref.current) {
       const element = ref.current
@@ -47,6 +60,7 @@ const useTrappedFocus = (ref: RefObject<HTMLElement>) => {
 
   return {
     keyDown,
+    initialFocus,
   }
 }
 
