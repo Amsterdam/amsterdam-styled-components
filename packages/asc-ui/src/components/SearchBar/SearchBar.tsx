@@ -107,6 +107,7 @@ const SearchBar: FunctionComponent<SearchBarProps> = ({
             inputRef = ref
           },
           ...inputProps,
+          ...otherProps
         }}
       >
         <TextField
