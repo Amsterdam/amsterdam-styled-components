@@ -19,6 +19,7 @@ export interface InputProps extends InputMethods {
   keepFocus?: boolean
   blurOnEscape?: boolean
   error?: boolean
+  ref?: RefObject<HTMLInputElement>
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
