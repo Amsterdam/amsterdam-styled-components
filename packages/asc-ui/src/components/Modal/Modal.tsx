@@ -8,7 +8,9 @@ import {
 } from 'react'
 import ModalStyle from './ModalStyle'
 import { KeyboardKeys } from '../../types'
-import useTrappedFocus from '../../utils/hooks/useTrappedFocus'
+import useTrappedFocus, {
+  FocusableElements,
+} from '../../utils/hooks/useTrappedFocus'
 import BackDrop, { Props as BackDropProps } from '../BackDrop/BackDrop'
 import Portal, { Props as PortalProps } from '../Portal'
 
@@ -33,14 +35,18 @@ const Modal: FunctionComponent<Props> = ({
   ...otherProps
 }) => {
   const ref = useRef<HTMLDivElement>(null)
-  const { keyDown, initialFocus } = useTrappedFocus(ref)
+  const { keyDown } = useTrappedFocus(ref)
   const previouslyFocusedElement = document.activeElement
 
   useEffect(() => {
-    if (open) {
-      initialFocus()
+    if (open && ref.current) {
+      const node = ref.current
+      const firstFocusableEl = node.querySelector(FocusableElements.join(', '))
+
+      if (firstFocusableEl instanceof HTMLElement) {
+        firstFocusableEl.focus()
+      }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open])
 
   const handleClose = () => {
