@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "build": "yarn build:optimize-svg && yarn build:react-icons",
-    "build:optimize-svg": "svgo --config=.svgo.yml -f static/icons",
+    "build:optimize-svg": "svgo -f static/icons",
     "build:react-icons": "svgr -d src/icons static/icons --template src/utils/generateIconReact.js --svg-props focusable={false} --ext tsx"
   },
   "sideEffects": false,
