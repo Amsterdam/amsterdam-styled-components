@@ -9,7 +9,7 @@ const SearchBarExample: FunctionComponent<HTMLAttributes<HTMLElement>> = () => {
     <>
       <SearchBar
         placeholder="Enter the search text"
-        inputProps={{ ref: searchRef }}
+        ref={searchRef}
         onChange={(e) => {
           setText(e.currentTarget.value)
           action(`text changed: ${searchText}`)(e)
