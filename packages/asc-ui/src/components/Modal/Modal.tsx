@@ -9,7 +9,7 @@ import {
 import ModalStyle from './ModalStyle'
 import { KeyboardKeys } from '../../types'
 import useTrappedFocus, {
-  FocusableElements,
+  focusableElements,
 } from '../../utils/hooks/useTrappedFocus'
 import BackDrop, { Props as BackDropProps } from '../BackDrop/BackDrop'
 import Portal, { Props as PortalProps } from '../Portal'
@@ -30,7 +30,6 @@ const Modal: FunctionComponent<Props> = ({
   backdropOpacity,
   element,
   blurredNodeSelector,
-  className,
   onClose,
   ...otherProps
 }) => {
@@ -39,22 +38,22 @@ const Modal: FunctionComponent<Props> = ({
   const previouslyFocusedElement = document.activeElement
 
   useEffect(() => {
-    if (open && ref.current) {
-      const node = ref.current
-      const firstFocusableEl = node.querySelector(FocusableElements.join(', '))
+    if (!open || !ref.current) {
+      return
+    }
 
-      if (firstFocusableEl instanceof HTMLElement) {
-        firstFocusableEl.focus()
-      }
+    const firstFocusableEl = ref.current.querySelector(
+      focusableElements.join(', '),
+    )
+
+    if (firstFocusableEl instanceof HTMLElement) {
+      firstFocusableEl.focus()
     }
   }, [open])
 
   const handleClose = () => {
     if (onClose) {
-      if (
-        previouslyFocusedElement &&
-        previouslyFocusedElement instanceof HTMLElement
-      ) {
+      if (previouslyFocusedElement instanceof HTMLElement) {
         previouslyFocusedElement.focus()
       }
       onClose()
@@ -91,7 +90,6 @@ const Modal: FunctionComponent<Props> = ({
         aria-modal="true"
         ref={ref}
         onKeyDown={handleKeyDown}
-        className={className}
         {...otherProps}
       >
         {children}

@@ -2,7 +2,7 @@ import { KeyboardEvent, RefObject } from 'react'
 import { KeyboardKeys } from '../../types'
 import ownerDocument from '../ownerDocument'
 
-export const FocusableElements = [
+export const focusableElements = [
   'a[href]:not([disabled])',
   'button:not([disabled])',
   'textarea:not([disabled])',
@@ -16,7 +16,7 @@ const useTrappedFocus = (ref: RefObject<HTMLElement>) => {
       const element = ref.current
 
       const focusableEls = element.querySelectorAll(
-        FocusableElements.join(', '),
+        focusableElements.join(', '),
       )
 
       const firstFocusableEl = focusableEls[0]
