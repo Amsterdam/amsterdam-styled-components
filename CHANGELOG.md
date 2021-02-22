@@ -15,6 +15,8 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## [new verion]
+- Removed: **BREAKING** `Focus` component
+- Changed: `Modal` component now receives focus on first focusable child on open, returns focus to element that previously had focus on close.
 - Fixed: Search button in header is elongated [#1227]
 
 ## [0.27.0]
