@@ -23,7 +23,7 @@ describe('Modal', () => {
     expect(container.lastChild).toBeNull()
   })
 
-  it('should set focus on first focussable element', () => {
+  it('should set focus on first focusable element', () => {
     const { queryByText } = render(
       <Modal open>
         <button type="button">First</button>
