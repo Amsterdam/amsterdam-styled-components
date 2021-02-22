@@ -14,6 +14,9 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## [new verion]
+- Fixed: Search button in header is elongated [#1227]
+
 ## [0.27.0]
 
 - Added: Support for React 17
