@@ -23,6 +23,7 @@ const SearchBarStyle = styled.div<Props>`
 
   /** The searchbar button has a different height to fit the (small) header */
   & > ${ButtonStyle} {
+    min-width: auto;
     margin-left: ${themeSpacing(1)};
     height: ${SEARCH_BAR_HEIGHT}px;
     width: ${SEARCH_BAR_HEIGHT}px;
