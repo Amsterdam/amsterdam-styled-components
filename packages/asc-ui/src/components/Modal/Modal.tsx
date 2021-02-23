@@ -4,6 +4,7 @@ import {
   HTMLAttributes,
   KeyboardEvent,
   useEffect,
+  useMemo,
   useRef,
 } from 'react'
 import ModalStyle from './ModalStyle'
@@ -35,7 +36,8 @@ const Modal: FunctionComponent<Props> = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null)
   const { keyDown } = useTrappedFocus(ref)
-  const previouslyFocusedElement = document.activeElement
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const previouslyFocusedElement = useMemo(() => document.activeElement, [open])
 
   useEffect(() => {
     if (!open || !ref.current) {
