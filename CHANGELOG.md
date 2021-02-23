@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## [new verion]
 - Fixed: Search button in header is elongated [#1227]
+- Changed: **BREAKING** removed variant prop in Radio component, tertiary variant is now default [#1125]
 
 ## [0.27.0]
 
