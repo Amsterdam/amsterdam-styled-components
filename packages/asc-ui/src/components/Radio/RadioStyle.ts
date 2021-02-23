@@ -2,10 +2,7 @@ import { ChangeEvent } from 'react'
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
 
-type RadioVariant = 'primary' | 'secondary' | 'tertiary'
-
 export type Props = {
-  variant?: RadioVariant
   disabled?: boolean
   error?: boolean
   name?: string
@@ -13,25 +10,6 @@ export type Props = {
   id: string
   checked?: boolean
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void
-}
-
-const getVariantColor = () => ({ variant }: { variant?: RadioVariant }) => {
-  switch (variant) {
-    case 'primary':
-      return css`
-        ${themeColor('primary', 'main')};
-      `
-
-    case 'secondary':
-      return css`
-        ${themeColor('secondary', 'main')};
-      `
-
-    default:
-      return css`
-        ${themeColor('tint', 'level7')};
-      `
-  }
 }
 
 const RadioStyle = styled.input.attrs({
@@ -50,7 +28,6 @@ const RadioStyle = styled.input.attrs({
 export default RadioStyle
 
 type StyleOnlyProps = {
-  variant?: RadioVariant
   checked?: boolean
   disabled?: boolean
   error?: boolean
@@ -75,7 +52,7 @@ const RadioCircleStyle = styled.span<StyleOnlyProps>`
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
-    background-color: ${getVariantColor()};
+    background-color: ${themeColor('tint', 'level7')};
     opacity: 0;
     z-index: 1;
     ${({ checked }) =>
@@ -120,7 +97,7 @@ const RadioWrapperStyle = styled.div<StyleOnlyProps & { focus: boolean }>`
     css`
       &:hover ${RadioCircleStyle} {
         border: 2px solid;
-        color: ${getVariantColor() as any};
+        color: ${themeColor('tint', 'level7')};
       }
     `}
 `
