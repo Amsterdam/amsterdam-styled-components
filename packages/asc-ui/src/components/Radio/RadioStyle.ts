@@ -23,6 +23,20 @@ const RadioStyle = styled.input.attrs({
   height: 24px;
   left: 4px;
   top: 4px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    border: 2px solid green;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    opacity: 1;
+    z-index: 2;
+  }
 `
 
 export default RadioStyle
