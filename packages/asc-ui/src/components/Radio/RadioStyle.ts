@@ -23,23 +23,24 @@ const RadioStyle = styled.input.attrs({
   height: 24px;
   left: 4px;
   top: 4px;
-
-  &::after {
-    content: '';
-    position: absolute;
-    height: 26px;
-    width: 26px;
-    border-radius: 50%;
-    border: 2px solid green;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-    opacity: 1;
-    z-index: 2;
-  }
+  outline-width: 10px;
 `
 
 export default RadioStyle
+
+export const RadioFocusStyle = styled.span`
+  display: none;
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border: 2px solid #0E62C9;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+}
+`
 
 type StyleOnlyProps = {
   checked?: boolean
@@ -98,6 +99,11 @@ const RadioWrapperStyle = styled.div<StyleOnlyProps & { focus: boolean }>`
   padding: ${themeSpacing(1)};
   margin-bottom: 1px;
   margin-right: ${themeSpacing(2)};
+
+  input:focus ~ span {
+    display: inline-block;
+  }
+
   ${({ disabled }) =>
     disabled &&
     css`

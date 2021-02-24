@@ -8,6 +8,7 @@ import {
 import RadioStyle, {
   RadioWrapperStyle,
   RadioCircleStyle,
+  RadioFocusStyle,
   Props,
 } from './RadioStyle'
 import RadioContext from './RadioContext'
@@ -91,6 +92,7 @@ const Radio = forwardRef<
             setChecked(e.target.id)
           }}
         />
+        <RadioFocusStyle />
       </RadioWrapperStyle>
     )
   },
