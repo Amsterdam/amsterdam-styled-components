@@ -1,25 +1,33 @@
+import { useState } from 'react'
 import { fireEvent, render } from '@testing-library/react'
 import Modal from './Modal'
 
 jest.mock('polished')
 
+const ButtonAndModal = () => {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <>
+      <button type="button" onClick={() => setOpen(true)} />
+      <Modal open={open} onClose={() => setOpen(false)} disablePortal>
+        <input />
+      </Modal>
+    </>
+  )
+}
+
 describe('Modal', () => {
   it('should render when open prop is true', () => {
     const { container } = render(
       // portal is disabled because react testing library has issues handling it
-      <Modal open disablePortal>
-        Foo
-      </Modal>,
+      <Modal open disablePortal />,
     )
     expect(container.lastChild).toBeTruthy()
   })
 
   it('should render null when open prop is false', () => {
-    const { container } = render(
-      <Modal open={false} disablePortal>
-        Foo
-      </Modal>,
-    )
+    const { container } = render(<Modal open={false} disablePortal />)
     expect(container.lastChild).toBeNull()
   })
 
@@ -37,9 +45,7 @@ describe('Modal', () => {
     const onCloseMock = jest.fn()
 
     const { container } = render(
-      <Modal open onClose={onCloseMock} disablePortal>
-        Foo
-      </Modal>,
+      <Modal open onClose={onCloseMock} disablePortal />,
     )
 
     expect(onCloseMock).not.toHaveBeenCalled()
@@ -54,9 +60,7 @@ describe('Modal', () => {
     const onCloseMock = jest.fn()
 
     const { container } = render(
-      <Modal open onClose={onCloseMock} disablePortal>
-        Foo
-      </Modal>,
+      <Modal open onClose={onCloseMock} disablePortal />,
     )
 
     expect(onCloseMock).not.toHaveBeenCalled()
@@ -65,5 +69,18 @@ describe('Modal', () => {
     fireEvent.keyDown(lastChild, { key: 'Escape', code: 'Escape' })
 
     expect(onCloseMock).toHaveBeenCalled()
+  })
+
+  it('should return focus to previously focused element when modal closes', () => {
+    const { container } = render(<ButtonAndModal />)
+
+    const button = container.firstChild as HTMLElement
+    button.focus()
+    fireEvent.click(button) // open modal
+
+    const modal = container.lastChild as HTMLElement
+    fireEvent.keyDown(modal, { key: 'Escape', code: 'Escape' }) // close modal
+
+    expect(button).toHaveFocus()
   })
 })
