@@ -4,15 +4,16 @@ import {
   HTMLAttributes,
   KeyboardEvent,
   useEffect,
+  useMemo,
   useRef,
 } from 'react'
-import ModalStyle, { ModalStyleContainer, ModalFocus } from './ModalStyle'
+import ModalStyle from './ModalStyle'
 import { KeyboardKeys } from '../../types'
-import useTrappedFocus from '../../utils/hooks/useTrappedFocus'
+import useTrappedFocus, {
+  focusableElements,
+} from '../../utils/hooks/useTrappedFocus'
 import BackDrop, { Props as BackDropProps } from '../BackDrop/BackDrop'
 import Portal, { Props as PortalProps } from '../Portal'
-
-const Z_INDEX_OFFSET = 2
 
 export type Props = {
   open: boolean
@@ -30,34 +31,39 @@ const Modal: FunctionComponent<Props> = ({
   backdropOpacity,
   element,
   blurredNodeSelector,
-  className,
   onClose,
   ...otherProps
 }) => {
   const ref = useRef<HTMLDivElement>(null)
   const { keyDown } = useTrappedFocus(ref)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const previouslyFocusedElement = useMemo(() => document.activeElement, [open])
 
   useEffect(() => {
-    let renderedTimer = 0
-    const { current: node } = ref
-    if (node) {
-      clearTimeout(renderedTimer)
-      renderedTimer = setTimeout(() => {
-        node.focus()
-      })
+    if (!open || !ref.current) {
+      return
     }
-    return () => {
-      clearTimeout(renderedTimer)
+
+    const firstFocusableEl = ref.current.querySelector(
+      focusableElements.join(', '),
+    )
+
+    if (firstFocusableEl instanceof HTMLElement) {
+      firstFocusableEl.focus()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [open])
 
   const handleClose = () => {
     if (onClose) {
+      if (previouslyFocusedElement instanceof HTMLElement) {
+        previouslyFocusedElement.focus()
+      }
       onClose()
     }
   }
   const handleKeyDown = (event: KeyboardEvent) => {
+    keyDown(event)
+
     if (event.key === KeyboardKeys.Escape) {
       event.stopPropagation()
       handleClose()
@@ -80,18 +86,16 @@ const Modal: FunctionComponent<Props> = ({
           }
         : {})}
     >
-      <BackDrop
-        backdropOpacity={backdropOpacity}
-        onClick={handleClose}
-        zIndexOffset={Z_INDEX_OFFSET}
-      />
-      <ModalFocus zIndexOffset={Z_INDEX_OFFSET} onKeyDown={handleKeyDown}>
-        <ModalStyleContainer {...otherProps} className={className}>
-          <ModalStyle role="dialog" ref={ref} onKeyDown={keyDown}>
-            {children}
-          </ModalStyle>
-        </ModalStyleContainer>
-      </ModalFocus>
+      <BackDrop backdropOpacity={backdropOpacity} onClick={handleClose} />
+      <ModalStyle
+        role="dialog"
+        aria-modal="true"
+        ref={ref}
+        onKeyDown={handleKeyDown}
+        {...otherProps}
+      >
+        {children}
+      </ModalStyle>
     </Wrapper>
   ) : null
 }
