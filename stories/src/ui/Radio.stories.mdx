@@ -27,90 +27,30 @@ import { Label, Radio, RadioGroup } from '@amsterdam/asc-ui'
 
 **Component status: stable**
 
-## Default / Primary radio
+## Default
 
 <Preview>
-  <Story name="Default / Primary">
+  <Story name="Default">
     <Fragment>
-      <RadioGroup name="group-1">
-        <Label htmlFor="primary-radio-1" label="Default">
-          <Radio id="primary-radio-1" variant="primary" />
+      <RadioGroup name="group">
+        <Label htmlFor="radio-1" label="Default">
+          <Radio id="radio-1" />
         </Label>
-        <Label htmlFor="primary-radio-2" label="Checked">
-          <Radio id="primary-radio-2" variant="primary" checked />
-        </Label>
-      </RadioGroup>
-      <RadioGroup name="group-2-disabled" disabled>
-        <Label htmlFor="primary-radio-3" label="Disabled">
-          <Radio id="primary-radio-3" variant="primary" />
-        </Label>
-        <Label htmlFor="primary-radio-4" label="Checked and disabled">
-          <Radio id="primary-radio-4" variant="primary" checked />
+        <Label htmlFor="radio-2" label="Checked">
+          <Radio id="radio-2" checked />
         </Label>
       </RadioGroup>
-      <RadioGroup name="group-2-errored" error>
-        <Label htmlFor="primary-radio-5" label="Errored">
-          <Radio id="primary-radio-5" variant="primary" />
+      <RadioGroup name="group-disabled" disabled>
+        <Label htmlFor="radio-3" label="Disabled">
+          <Radio id="radio-3" />
+        </Label>
+        <Label htmlFor="radio-4" label="Checked and disabled">
+          <Radio id="radio-4" checked />
         </Label>
       </RadioGroup>
-    </Fragment>
-  </Story>
-</Preview>
-
-## Secondary radio
-
-<Preview>
-  <Story name="Secondary">
-    <Fragment>
-      <RadioGroup name="group-2">
-        <Label htmlFor="secondary-radio-1" label="Default">
-          <Radio id="secondary-radio-1" variant="secondary" />
-        </Label>
-        <Label htmlFor="secondary-radio-2" label="Checked">
-          <Radio id="secondary-radio-2" variant="secondary" checked />
-        </Label>
-      </RadioGroup>
-      <RadioGroup name="group-2-disabled" disabled>
-        <Label htmlFor="secondary-radio-3" label="Disabled">
-          <Radio id="secondary-radio-3" variant="secondary" />
-        </Label>
-        <Label htmlFor="secondary-radio-4" label="Checked and disabled">
-          <Radio id="secondary-radio-4" variant="secondary" checked />
-        </Label>
-      </RadioGroup>
-      <RadioGroup name="group-2-errored" error>
-        <Label htmlFor="secondary-radio-5" label="Errored">
-          <Radio id="secondary-radio-5" variant="secondary" />
-        </Label>
-      </RadioGroup>
-    </Fragment>
-  </Story>
-</Preview>
-
-## Tertiary radio
-
-<Preview>
-  <Story name="Tertiary">
-    <Fragment>
-      <RadioGroup name="group-3">
-        <Label htmlFor="tertiary-radio-1" label="Default">
-          <Radio id="tertiary-radio-1" variant="tertiary" />
-        </Label>
-        <Label htmlFor="tertiary-radio-2" label="Checked">
-          <Radio id="tertiary-radio-2" variant="tertiary" checked />
-        </Label>
-      </RadioGroup>
-      <RadioGroup name="group-3-disabled" disabled>
-        <Label htmlFor="tertiary-radio-3" label="Disabled">
-          <Radio id="tertiary-radio-3" variant="tertiary" />
-        </Label>
-        <Label htmlFor="tertiary-radio-4" label="Checked and disabled">
-          <Radio id="tertiary-radio-4" variant="tertiary" checked />
-        </Label>
-      </RadioGroup>
-      <RadioGroup name="group-3-errored" error>
-        <Label htmlFor="tertiary-radio-5" label="Errored">
-          <Radio id="tertiary-radio-5" variant="tertiary" />
+      <RadioGroup name="group-errored" error>
+        <Label htmlFor="radio-5" label="Errored">
+          <Radio id="radio-5" />
         </Label>
       </RadioGroup>
     </Fragment>

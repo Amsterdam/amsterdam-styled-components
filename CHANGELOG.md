@@ -18,6 +18,7 @@ Prefix the change with one of these keywords:
 - Removed: **BREAKING** `Focus` component
 - Changed: `Modal` component now receives focus on first focusable child on open, returns focus to element that previously had focus on close.
 - Fixed: Search button in header is elongated [#1227]
+- Changed: **BREAKING** removed variant prop in Radio component, tertiary variant is now default [#1125]
 
 ## [0.27.0]
 

@@ -21,7 +21,6 @@ const Radio = forwardRef<
     {
       className,
       onChange,
-      variant,
       disabled,
       id,
       checked: defaultChecked,
@@ -58,7 +57,6 @@ const Radio = forwardRef<
           focus,
           error,
           className,
-          variant,
           disabled,
           checked,
         }}
@@ -69,7 +67,6 @@ const Radio = forwardRef<
             error,
             disabled,
             focus,
-            variant,
             checked,
           }}
         />
