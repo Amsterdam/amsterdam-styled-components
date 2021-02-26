@@ -14,11 +14,11 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## [new verion]
-- Removed: **BREAKING** `Focus` component
-- Changed: `Modal` component now receives focus on first focusable child on open, returns focus to element that previously had focus on close.
-- Fixed: Search button in header is elongated [#1227]
-- Changed: **BREAKING** removed variant prop in Radio component, tertiary variant is now default [#1125]
+## [0.28.0]
+- Fixed: Search button in header is elongated [#1227](https://github.com/Amsterdam/amsterdam-styled-components/issues/1227)
+- Fixed: Searchbar focus management [#1485](https://github.com/Amsterdam/amsterdam-styled-components/issues/1485)
+- Removed: **BREAKING** `Focus` component [#1507](https://github.com/Amsterdam/amsterdam-styled-components/pull/1507)
+- Removed: **BREAKING** Variant prop in Radio component, tertiary variant is now default [#1125](https://github.com/Amsterdam/amsterdam-styled-components/pull/1516)
 
 ## [0.27.0]
 
