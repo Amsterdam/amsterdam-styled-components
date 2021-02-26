@@ -2,7 +2,7 @@
 
 Before opening a pull request, please ensure:
 
-- [ ] You've added or updated the README.md of the component
+- [ ] You've added or updated the README.mdx of the story of the component
 - [ ] You have been following the guidelines, written in the [README](../blob/master/docs/CONTRIBUTING.md#user-content-conventions-and-rules) file
 - [ ] Your code has the necessary tests written
 - [ ] You've exported the component in [index.ts](./packages/asc-ui/src/index.ts)
