@@ -40,7 +40,6 @@ import ErrorMessage, { ErrorMessageStyle } from './components/ErrorMessage'
 import { FilterBox, FilterBoxStyle } from './components/FilterBox'
 import { FilterOption, FilterOptionStyle } from './components/FilterOption'
 import FilterTag from './components/FilterTag'
-import Focus from './components/Focus'
 import Footer, {
   FooterBottom,
   FooterHeading,
@@ -152,7 +151,6 @@ export {
   FilterBox,
   FilterOption,
   FilterTag,
-  Focus,
   Footer,
   FooterSection,
   FooterHeading,
