@@ -28,20 +28,6 @@ const RadioStyle = styled.input.attrs({
 
 export default RadioStyle
 
-export const RadioFocusStyle = styled.span`
-  display: none;
-  position: absolute;
-  height: 32px;
-  width: 32px;
-  border-radius: 50%;
-  border: 2px solid #0E62C9;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-  z-index: 2;
-}
-`
-
 type StyleOnlyProps = {
   checked?: boolean
   disabled?: boolean
