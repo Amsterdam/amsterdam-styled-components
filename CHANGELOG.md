@@ -14,6 +14,9 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## [new version]
+- Changed: Hooks should be exported directly [#1120]
+
 ## [0.28.0]
 - Fixed: Search button in header is elongated [#1227](https://github.com/Amsterdam/amsterdam-styled-components/issues/1227)
 - Fixed: Searchbar focus management [#1485](https://github.com/Amsterdam/amsterdam-styled-components/issues/1485)
