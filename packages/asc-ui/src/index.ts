@@ -106,8 +106,19 @@ import { ascDefaultTheme } from './theme'
 import CompactThemeProvider from './theme/CompactThemeProvider'
 import ThemeProvider from './theme/ThemeProvider'
 import { Theme } from './types'
-import * as hooks from './utils/hooks'
+
 import { perceivedLoading } from './utils/themeUtils'
+
+export {
+  useDebounce,
+  useActionOnEscape,
+  useEdgeDetection,
+  useFocus,
+  useFocusWithArrows,
+  useMatchMedia,
+  useOptionalControlledState,
+  useTrappedFocus,
+} from './utils/hooks'
 
 export * from './components/Alert'
 export * from './components/Breadcrumbs'
@@ -121,7 +132,7 @@ export {
   themeColor,
   themeSpacing,
 } from './utils'
-export { constants, hooks }
+export { constants }
 export { perceivedLoading }
 // Components
 export {

@@ -1,11 +1,8 @@
 import { useRef, Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
-import { hooks, Button } from '@amsterdam/asc-ui'
+import { useFocusWithArrows, useFocus, Button } from '@amsterdam/asc-ui'
 
-<Meta
-  title="Utils/useFocusWithArrows hook"
-  component={hooks.useFocusWithArrows}
-/>
+<Meta title="Utils/useFocusWithArrows hook" component={useFocusWithArrows} />
 
 # useFocusWithArrows hook
 
@@ -20,8 +17,8 @@ _Note:_ these only work in the "Canvas" view
     <Fragment>
       {(() => {
         const ref = useRef()
-        hooks.useFocus(ref)
-        const { keyDown } = hooks.useFocusWithArrows(ref)
+        useFocus(ref)
+        const { keyDown } = useFocusWithArrows(ref)
         return (
           <div
             role="button"
@@ -50,8 +47,8 @@ Jump to first item from last or vice versa
     <Fragment>
       {(() => {
         const ref = useRef()
-        hooks.useFocus(ref)
-        const { keyDown } = hooks.useFocusWithArrows(ref, true)
+        useFocus(ref)
+        const { keyDown } = useFocusWithArrows(ref, true)
         return (
           <div
             role="button"
@@ -80,8 +77,8 @@ Useful if you don't want to focus on other focussable elements inside the child 
     <Fragment>
       {(() => {
         const ref = useRef()
-        hooks.useFocus(ref)
-        const { keyDown } = hooks.useFocusWithArrows(ref, true, true)
+        useFocus(ref)
+        const { keyDown } = useFocusWithArrows(ref, true, true)
         return (
           <div
             role="button"

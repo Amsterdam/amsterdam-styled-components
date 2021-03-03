@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect, Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
-import { hooks, Button } from '@amsterdam/asc-ui'
+import { useFocus, Button } from '@amsterdam/asc-ui'
 
-<Meta title="Utils/useFocus hook" component={hooks.useFocus} />
+<Meta title="Utils/useFocus hook" component={useFocus} />
 
 # useFocus hook
 
@@ -17,7 +17,7 @@ _Note:_ these only work in the "Canvas" view
     <Fragment>
       {(() => {
         const ref = useRef()
-        hooks.useFocus(ref)
+        useFocus(ref)
         return <Button ref={ref}>I will focus on render</Button>
       })()}
     </Fragment>
@@ -36,7 +36,7 @@ _Note:_ these only work in the "Canvas" view
           const timer = setTimeout(() => setFocussed(true), 3000)
           return () => clearTimeout(timer)
         }, [])
-        hooks.useFocus(ref, focussed)
+        useFocus(ref, focussed)
         return <Button ref={ref}>I will in focus in three seconds</Button>
       })()}
     </Fragment>

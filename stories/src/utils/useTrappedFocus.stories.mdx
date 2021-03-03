@@ -1,8 +1,8 @@
 import { useRef, Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
-import { hooks, Button } from '@amsterdam/asc-ui'
+import { useTrappedFocus, Button } from '@amsterdam/asc-ui'
 
-<Meta title="Utils/useTrappedFocus hook" component={hooks.useTrappedFocus} />
+<Meta title="Utils/useTrappedFocus hook" component={useTrappedFocus} />
 
 # useTrappedFocus hook
 
@@ -17,7 +17,7 @@ _Note:_ these only work in the "Canvas" view
     <Fragment>
       {(() => {
         const ref = useRef()
-        const { keyDown } = hooks.useTrappedFocus(ref)
+        const { keyDown } = useTrappedFocus(ref)
         return (
           <Fragment>
             <Button>Outside button</Button>
