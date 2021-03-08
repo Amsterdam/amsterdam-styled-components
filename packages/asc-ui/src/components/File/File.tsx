@@ -108,7 +108,7 @@ const File = forwardRef<
         <FilePreviewContainer>
           <span>To Upload</span>
           <PreviewList>
-            {Object.keys(files).map((fileName, index) => {
+            {Object.keys(files).map((fileName) => {
               const file = files[fileName]
               // const isImageFile = false // file.type.split('/')[0] === 'image'
               return (

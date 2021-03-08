@@ -40,7 +40,7 @@ import ErrorMessage, { ErrorMessageStyle } from './components/ErrorMessage'
 import { FilterBox, FilterBoxStyle } from './components/FilterBox'
 import { FilterOption, FilterOptionStyle } from './components/FilterOption'
 import FilterTag from './components/FilterTag'
-import { File, FileStyle } from './components/File'
+import File, { FileStyles } from './components/File'
 import Footer, {
   FooterBottom,
   FooterHeading,
@@ -232,7 +232,7 @@ export const styles = {
   ...AmsterdamLogoStyles,
   ...BackDropStyles,
   ...CardStyles,
-  ...FileStyle,
+  ...FileStyles,
   ...HeaderStyles,
   ...SearchBarStyles,
   ...TextAreaStyles,
