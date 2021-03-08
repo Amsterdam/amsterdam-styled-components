@@ -1,0 +1,22 @@
+import { Fragment } from 'react'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import { FilterTag, File } from '@amsterdam/asc-ui'
+
+<Meta title="UI/Form/File" component={FilterTag} />
+
+# FilterTag
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/962093-tags)
+
+**Component status: experimental**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <Fragment>
+      <FilterTag onClick={(e) => action('Remove me!')(e)} />
+    </Fragment>
+  </Story>
+</Preview>
