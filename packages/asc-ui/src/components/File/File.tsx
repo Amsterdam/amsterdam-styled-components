@@ -1,4 +1,4 @@
-import React, { useState, forwardRef, HTMLAttributes } from 'react'
+import React, { useState, useRef, useImperativeHandle, forwardRef, HTMLAttributes } from 'react'
 import {
   Props,
   FileUploadContainer,
@@ -17,10 +17,10 @@ import {
 const KILO_BYTES_PER_BYTE = 1000
 const DEFAULT_MAX_FILE_SIZE_IN_BYTES = 500000
 
-const convertNestedObjectToArray = (nestedObj) =>
+const convertNestedObjectToArray = (nestedObj: any) =>
   Object.keys(nestedObj).map((key) => nestedObj[key])
 
-const convertBytesToKB = (bytes) => Math.round(bytes / KILO_BYTES_PER_BYTE)
+const convertBytesToKB = (bytes: number) => Math.round(bytes / KILO_BYTES_PER_BYTE)
 
 const File = forwardRef<
   HTMLInputElement,
@@ -33,13 +33,17 @@ const File = forwardRef<
       maxFileSizeInBytes = DEFAULT_MAX_FILE_SIZE_IN_BYTES,
       ...otherProps
     },
-    fileInputField,
+    externalRef,
   ) => {
-    // const fileInputField = useRef(null)
     const [files, setFiles] = useState({})
+    const ref = useRef<HTMLInputElement>(null)
+
+    useImperativeHandle(externalRef, () => ref.current as HTMLInputElement)
 
     const handleUploadBtnClick = () => {
-      fileInputField.current.click()
+      if (ref.current) {
+        ref.current.click()
+      }
     }
 
     const addNewFiles = (newFiles) => {
@@ -54,9 +58,9 @@ const File = forwardRef<
       return { ...files }
     }
 
-    const callUpdateFilesCb = (files) => {
+    const callUpdateFilesCb = (files: any) => {
       const filesAsArray = convertNestedObjectToArray(files)
-      updateFilesCb(filesAsArray)
+      updateFilesCb(filesAsArray) 
     }
 
     const handleNewFileUpload = (e) => {
@@ -85,7 +89,7 @@ const File = forwardRef<
           </UploadFileBtn>
           <FormField
             type="file"
-            ref={fileInputField}
+            ref={ref}
             onChange={handleNewFileUpload}
             title=""
             value=""

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export type Props = {
   label?: string
   maxFileSizeInBytes?: number
+  multiple?: boolean
   updateFilesCb?: function
 }
 
