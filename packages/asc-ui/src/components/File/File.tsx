@@ -1,7 +1,13 @@
-import React, { useState, useRef, useImperativeHandle, forwardRef, HTMLAttributes , ChangeEvent} from 'react'
+import React, {
+  useState,
+  useRef,
+  useImperativeHandle,
+  forwardRef,
+  HTMLAttributes,
+  ChangeEvent,
+} from 'react'
 import {
   Props,
-  // FileProps,
   FilesProps,
   FileUploadContainer,
   FormField,
@@ -22,7 +28,8 @@ const DEFAULT_MAX_FILE_SIZE_IN_BYTES = 500000
 const convertNestedObjectToArray = (nestedObj: any) =>
   Object.keys(nestedObj).map((key) => nestedObj[key])
 
-const convertBytesToKB = (bytes: number) => Math.round(bytes / KILO_BYTES_PER_BYTE)
+const convertBytesToKB = (bytes: number) =>
+  Math.round(bytes / KILO_BYTES_PER_BYTE)
 
 const File = forwardRef<
   HTMLInputElement,
@@ -42,31 +49,31 @@ const File = forwardRef<
 
     useImperativeHandle(externalRef, () => ref.current as HTMLInputElement)
 
-    // const handleUploadBtnClick = () => {
-    //   if (ref.current) {
-    //     ref.current.click()
-    //   }
-    // }
-
-    // const addNewFiles = (newFiles: FilesProps) => {
-    //   for (const file of newFiles) {
-    //     if (file.size <= maxFileSizeInBytes) {
-    //       if (!otherProps.multiple) {
-    //         return { file }
-    //       }
-    //       files[file.name] = file
-    //     }
-    //   }
-    //   return { ...files }
-    // }
-
-    const callUpdateFilesCb = (files: FilesProps) => {
-      const filesAsArray = convertNestedObjectToArray(files)
-      updateFilesCb(filesAsArray) 
+    const callUpdateFilesCb = (allFiles: FilesProps) => {
+      const filesAsArray = convertNestedObjectToArray(allFiles)
+      updateFilesCb(filesAsArray)
     }
 
-    const handleNewFileUpload = (e :ChangeEvent<HTMLInputElement>) => {
-      const { files: newFiles} = e.target
+    const handleUploadBtnClick = () => {
+      if (ref.current) {
+        ref.current.click()
+      }
+    }
+
+    const addNewFiles = (newFiles: FilesProps) => {
+      for (const file of newFiles) {
+        if (file.size <= maxFileSizeInBytes) {
+          if (!otherProps.multiple) {
+            return { file }
+          }
+          files[file.name] = file
+        }
+      }
+      return { ...files }
+    }
+
+    const handleNewFileUpload = (e: ChangeEvent<HTMLInputElement>) => {
+      const { files: newFiles } = e.target
       if (newFiles?.length) {
         const updatedFiles = addNewFiles(newFiles)
         setFiles(updatedFiles)
@@ -74,7 +81,7 @@ const File = forwardRef<
       }
     }
 
-    const removeFile = (fileName :string) => {
+    const removeFile = (fileName: string) => {
       delete files[fileName]
       setFiles({ ...files })
       callUpdateFilesCb({ ...files } as FilesProps)
