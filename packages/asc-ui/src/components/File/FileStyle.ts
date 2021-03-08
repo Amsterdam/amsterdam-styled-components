@@ -4,8 +4,20 @@ export type Props = {
   label?: string
   maxFileSizeInBytes?: number
   multiple?: boolean
-  updateFilesCb?: function
+  updateFilesCb?: any
 }
+
+export type FileProps = {
+  lastModified: number
+  lastModifiedDate: any
+  name: string
+  size: number
+  type: string
+  webkitRelativePath?: string
+}
+
+export type FilesProps = any
+
 
 export const FileUploadContainer = styled.section`
   position: relative;

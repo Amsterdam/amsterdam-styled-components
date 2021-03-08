@@ -1,6 +1,8 @@
-import React, { useState, useRef, useImperativeHandle, forwardRef, HTMLAttributes } from 'react'
+import React, { useState, useRef, useImperativeHandle, forwardRef, HTMLAttributes , ChangeEvent} from 'react'
 import {
   Props,
+  // FileProps,
+  FilesProps,
   FileUploadContainer,
   FormField,
   DragDropText,
@@ -35,47 +37,47 @@ const File = forwardRef<
     },
     externalRef,
   ) => {
-    const [files, setFiles] = useState({})
+    const [files, setFiles] = useState<any>({})
     const ref = useRef<HTMLInputElement>(null)
 
     useImperativeHandle(externalRef, () => ref.current as HTMLInputElement)
 
-    const handleUploadBtnClick = () => {
-      if (ref.current) {
-        ref.current.click()
-      }
-    }
+    // const handleUploadBtnClick = () => {
+    //   if (ref.current) {
+    //     ref.current.click()
+    //   }
+    // }
 
-    const addNewFiles = (newFiles) => {
-      for (const file of newFiles) {
-        if (file.size <= maxFileSizeInBytes) {
-          if (!otherProps.multiple) {
-            return { file }
-          }
-          files[file.name] = file
-        }
-      }
-      return { ...files }
-    }
+    // const addNewFiles = (newFiles: FilesProps) => {
+    //   for (const file of newFiles) {
+    //     if (file.size <= maxFileSizeInBytes) {
+    //       if (!otherProps.multiple) {
+    //         return { file }
+    //       }
+    //       files[file.name] = file
+    //     }
+    //   }
+    //   return { ...files }
+    // }
 
-    const callUpdateFilesCb = (files: any) => {
+    const callUpdateFilesCb = (files: FilesProps) => {
       const filesAsArray = convertNestedObjectToArray(files)
       updateFilesCb(filesAsArray) 
     }
 
-    const handleNewFileUpload = (e) => {
-      const { files: newFiles } = e.target
-      if (newFiles.length) {
+    const handleNewFileUpload = (e :ChangeEvent<HTMLInputElement>) => {
+      const { files: newFiles} = e.target
+      if (newFiles?.length) {
         const updatedFiles = addNewFiles(newFiles)
         setFiles(updatedFiles)
         callUpdateFilesCb(updatedFiles)
       }
     }
 
-    const removeFile = (fileName) => {
+    const removeFile = (fileName :string) => {
       delete files[fileName]
       setFiles({ ...files })
-      callUpdateFilesCb({ ...files })
+      callUpdateFilesCb({ ...files } as FilesProps)
     }
 
     return (
