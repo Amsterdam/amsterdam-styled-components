@@ -40,7 +40,7 @@ import ErrorMessage, { ErrorMessageStyle } from './components/ErrorMessage'
 import { FilterBox, FilterBoxStyle } from './components/FilterBox'
 import { FilterOption, FilterOptionStyle } from './components/FilterOption'
 import FilterTag from './components/FilterTag'
-import { File, FileStyle } from './components/File/File'
+import { File, FileStyle } from './components/File'
 import Footer, {
   FooterBottom,
   FooterHeading,

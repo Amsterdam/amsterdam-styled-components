@@ -14,7 +14,7 @@ import {
   DragDropText,
   UploadFileBtn,
   FilePreviewContainer,
-  ImagePreview,
+  // ImagePreview,
   PreviewContainer,
   PreviewList,
   FileMetaData,
@@ -110,17 +110,11 @@ const File = forwardRef<
           <PreviewList>
             {Object.keys(files).map((fileName, index) => {
               const file = files[fileName]
-              const isImageFile = file.type.split('/')[0] === 'image'
+              // const isImageFile = false // file.type.split('/')[0] === 'image'
               return (
                 <PreviewContainer key={fileName}>
                   <div>
-                    {isImageFile && (
-                      <ImagePreview
-                        src={URL.createObjectURL(file)}
-                        alt={`file preview ${index}`}
-                      />
-                    )}
-                    <FileMetaData isImageFile={isImageFile}>
+                    <FileMetaData>
                       <span>{file.name}</span>
                       <aside>
                         <span>{convertBytesToKB(file.size)} kb</span>
