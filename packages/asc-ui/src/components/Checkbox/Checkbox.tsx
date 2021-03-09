@@ -26,7 +26,6 @@ const Checkbox = forwardRef<
       checked: checkedProp,
       className,
       onChange,
-      variant,
       disabled,
       error,
       indeterminate,
@@ -62,7 +61,7 @@ const Checkbox = forwardRef<
         aria-disabled={disabled}
       >
         <CheckboxIconStyle
-          {...{ disabled, variant, checked, error, indeterminate }}
+          {...{ disabled, checked, error, indeterminate }}
           size={15}
         >
           {!checked && indeterminate && <Indeterminate />}
