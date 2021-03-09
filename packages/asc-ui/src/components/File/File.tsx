@@ -25,7 +25,7 @@ import {
 const KILO_BYTES_PER_BYTE = 1000
 const DEFAULT_MAX_FILE_SIZE_IN_BYTES = 500000
 
-const convertNestedObjectToArray = (nestedObj: any) =>
+const convertNestedObjectToArray = (nestedObj: FilesProps) =>
   Object.keys(nestedObj).map((key) => nestedObj[key])
 
 const convertBytesToKB = (bytes: number) =>
@@ -74,6 +74,8 @@ const File = forwardRef<
 
     const handleNewFileUpload = (e: ChangeEvent<HTMLInputElement>) => {
       const { files: newFiles } = e.target
+      console.log('handleNewFileUpload', newFiles)
+
       if (newFiles?.length) {
         const updatedFiles = addNewFiles(newFiles)
         setFiles(updatedFiles)

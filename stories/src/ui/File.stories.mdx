@@ -16,7 +16,7 @@ import { File } from '@amsterdam/asc-ui'
 <Preview>
   <Story name="Default">
     <Fragment>
-      <File  />
+      <File  multiple updateFilesCb={(files) => {console.log('update', files)}} />
     </Fragment>
   </Story>
 </Preview>

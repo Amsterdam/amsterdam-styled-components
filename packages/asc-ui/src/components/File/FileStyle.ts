@@ -18,7 +18,6 @@ export type FileProps = {
 
 export type FilesProps = any
 
-
 export const FileUploadContainer = styled.section`
   position: relative;
   margin: 25px 0 15px;
@@ -229,8 +228,8 @@ export const PreviewContainer = styled.section`
   }
 `
 
-export const ImagePreview = styled.img`
-  border-radius: 6px;
-  width: 100%;
-  height: 100%;
-`
+// export const ImagePreview = styled.img`
+//   border-radius: 6px;
+//   width: 100%;
+//   height: 100%;
+// `
