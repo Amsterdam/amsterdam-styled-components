@@ -91,10 +91,15 @@ const File = forwardRef<
       <>
         <FileUploadContainer>
           <InputLabel>{label}</InputLabel>
-          <DragDropText>Drag and drop your files anywhere or</DragDropText>
+          <DragDropText>
+            Sleep {otherProps.multiple ? 'de bestanden' : 'een bestand'} in dit
+            vlak of
+          </DragDropText>
           <UploadFileBtn type="button" onClick={handleUploadBtnClick}>
             <i className="fas fa-file-upload" />
-            <span> Upload {otherProps.multiple ? 'files' : 'a file'}</span>
+            <span>
+              selecteer {otherProps.multiple ? 'bestanden' : 'een bestand'}
+            </span>
           </UploadFileBtn>
           <FormField
             type="file"
@@ -110,6 +115,8 @@ const File = forwardRef<
           <PreviewList>
             {Object.keys(files).map((fileName) => {
               const file = files[fileName]
+              console.log('file', file)
+
               // const isImageFile = false // file.type.split('/')[0] === 'image'
               return (
                 <PreviewContainer key={fileName}>
@@ -119,6 +126,7 @@ const File = forwardRef<
                       <aside>
                         <span>{convertBytesToKB(file.size)} kb</span>
                         <RemoveFileIcon
+                          style={{ padding: '5px' }}
                           className="fas fa-trash-alt"
                           onClick={() => removeFile(fileName)}
                         />
