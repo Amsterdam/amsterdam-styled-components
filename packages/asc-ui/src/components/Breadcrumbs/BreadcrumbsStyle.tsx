@@ -16,7 +16,7 @@ export default styled.ol`
 
     a {
       font-size: 14px;
-      line-height: 20px;
+      line-height: 22px;
       color: ${themeColor('tint', 'level5')};
       text-decoration: none;
       text-decoration-color: ${themeColor('tint', 'level5')};
