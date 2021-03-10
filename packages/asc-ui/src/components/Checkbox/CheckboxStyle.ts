@@ -2,46 +2,12 @@ import styled, { css } from 'styled-components'
 import { svgFill, themeColor } from '../../utils'
 import { IconStyle } from '../Icon'
 
-// type CheckboxVariant = 'primary' | 'secondary' | 'tertiary'
-
 export type Props = {
   checked?: boolean
   disabled?: boolean
   error?: boolean
   indeterminate?: boolean
 }
-
-// const getVariant = () => ({ variant }: Props) => {
-//   switch (variant) {
-//     case 'primary':
-//       return css`
-//         color: ${themeColor('primary', 'main')};
-//         background-color: ${themeColor('primary', 'main')};
-//         ${svgFill(themeColor('tint', 'level1'))};
-//       `
-
-//     case 'secondary':
-//       return css`
-//         color: ${themeColor('secondary', 'main')};
-//         background-color: ${themeColor('secondary', 'main')};
-//         ${svgFill(themeColor('tint', 'level1'))};
-//       `
-
-//     case 'tertiary':
-//       return css`
-//         color: ${themeColor('tint', 'level7')};
-//         background-color: ${themeColor('tint', 'level1')};
-//         ${svgFill(themeColor('tint', 'level7'))};
-//       `
-
-//     default:
-//       return css`
-//         color: ${themeColor('tint', 'level7')};
-//         background-color: ${themeColor('tint', 'level7')};
-//         ${svgFill(themeColor('tint', 'level1'))};
-//       `
-//   }
-// }
 
 export default styled.input.attrs({
   type: 'checkbox',
