@@ -9,7 +9,7 @@ describe('Checkbox', () => {
     const onChangeMock = jest.fn()
     const { container } = render(
       <ThemeProvider>
-        <Checkbox variant="primary" onChange={onChangeMock} />
+        <Checkbox onChange={onChangeMock} />
       </ThemeProvider>,
     )
 
@@ -36,46 +36,6 @@ describe('Checkbox', () => {
     if (checkBox) {
       fireEvent.click(checkBox)
     }
-
-    expect(icon).toHaveStyleRule(
-      'background-color',
-      themeColor('tint', 'level1')({ theme: ascDefaultTheme }),
-    )
-  })
-
-  it('should toggle checked / not checked when the props change', () => {
-    const onChangeMock = jest.fn()
-    const { container, rerender } = render(
-      <ThemeProvider>
-        <Checkbox variant="primary" onChange={onChangeMock} />
-      </ThemeProvider>,
-    )
-
-    const icon = container.querySelector('span')
-
-    expect(icon).toHaveStyleRule(
-      'background-color',
-      themeColor('tint', 'level1')({ theme: ascDefaultTheme }),
-    )
-
-    // Toggle on by changing props
-    rerender(
-      <ThemeProvider>
-        <Checkbox checked variant="secondary" />
-      </ThemeProvider>,
-    )
-
-    expect(icon).not.toHaveStyleRule(
-      'background-color',
-      themeColor('tint', 'level1')({ theme: ascDefaultTheme }),
-    )
-
-    // Toggle of by changing props
-    rerender(
-      <ThemeProvider>
-        <Checkbox />
-      </ThemeProvider>,
-    )
 
     expect(icon).toHaveStyleRule(
       'background-color',
