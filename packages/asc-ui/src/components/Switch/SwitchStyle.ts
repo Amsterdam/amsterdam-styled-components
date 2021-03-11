@@ -8,6 +8,7 @@ export type Props = {
 export const WrapperStyle = styled.span`
   input:checked + span {
     right: 0;
+    left: auto;
   }
 `
 
@@ -23,8 +24,8 @@ type LabelProps = {
 }
 
 export const LabelStyle = styled.label<LabelProps>`
-  display: block;
   position: relative;
+  display: inline-block;
   background-color: lightgrey;
   height: 44px;
   width: 80px;
@@ -33,9 +34,13 @@ export const LabelStyle = styled.label<LabelProps>`
 
 export const KnobStyle = styled.span`
   position: absolute;
+  left: 0;
+  right: auto;
   display: inline-block;
   background-color: red;
-  height: 44px;
-  width: 44px;
+  height: 52px;
+  width: 52px;
+  ght: 0;
   border-radius: 50%;
+  margin: -4px;
 `
