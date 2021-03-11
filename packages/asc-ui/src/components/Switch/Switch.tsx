@@ -1,14 +1,14 @@
-import { Checkmark, Indeterminate } from '@amsterdam/asc-assets'
+// import { Checkmark, Indeterminate } from '@amsterdam/asc-assets'
 import {
-  ChangeEvent,
+  //   ChangeEvent,
   forwardRef,
   HTMLAttributes,
-  useContext,
-  useEffect,
+  //   useContext,
+  //   useEffect,
   useImperativeHandle,
-  useMemo,
+  //   useMemo,
   useRef,
-  useState,
+  //   useState,
 } from 'react'
 // import LabelContext from '../Label/LabelContext'
 import SwitchStyle, { Props } from './SwitchStyle'

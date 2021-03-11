@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components'
-import { svgFill, themeColor } from '../../utils'
-import { IconStyle } from '../Icon'
+import styled from 'styled-components'
+// import { svgFill, themeColor } from '../../utils'
+// import { IconStyle } from '../Icon'
 
 export type Props = {
   id: string
