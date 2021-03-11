@@ -4,10 +4,7 @@ import styled from 'styled-components'
 
 export type Props = {
   id: string
-  checked?: boolean
-  disabled?: boolean
-  error?: boolean
-  indeterminate?: boolean
+  className?: string
 }
 
 export default styled.input.attrs({
@@ -19,13 +16,23 @@ export default styled.input.attrs({
   padding: 4px;
 `
 
-export type LabelProps = {
+type LabelProps = {
   htmlFor: string
 }
 
 export const LabelStyle = styled.label<LabelProps>`
+  display: flex;
   background-color: yellow;
   height: 44px;
   width: 80px;
   border-radius: 22px;
+`
+
+export const KnobStyle = styled.span`
+  position: inline-block;
+  display: absolute;
+  background-color: red;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
 `
