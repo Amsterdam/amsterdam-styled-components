@@ -1,10 +1,4 @@
-import {
-  forwardRef,
-  HTMLAttributes,
-  useImperativeHandle,
-  useRef,
-  //   useState,
-} from 'react'
+import { forwardRef, HTMLAttributes, useImperativeHandle, useRef } from 'react'
 import SwitchStyle, {
   Props,
   LabelStyle,
@@ -16,15 +10,9 @@ const Switch = forwardRef<
   HTMLInputElement,
   Props & HTMLAttributes<HTMLInputElement>
 >(({ id, className, ...otherProps }, externalRef) => {
-  //   const [checked, setChecked] = useState<boolean>(false)
   const ref = useRef<HTMLInputElement>(null)
 
   useImperativeHandle(externalRef, () => ref.current as HTMLInputElement)
-
-  // Make the component aware of changes in the checked prop
-  // useMemo(() => {
-  //   setChecked(!!checkedProp)
-  // }, [checkedProp, setChecked])
 
   return (
     <WrapperStyle className={className}>
