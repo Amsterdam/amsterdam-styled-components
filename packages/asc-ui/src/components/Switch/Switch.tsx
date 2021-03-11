@@ -11,7 +11,7 @@ import {
   //   useState,
 } from 'react'
 // import LabelContext from '../Label/LabelContext'
-import SwitchStyle, { Props } from './SwitchStyle'
+import SwitchStyle, { Props, LabelStyle } from './SwitchStyle'
 
 const Switch = forwardRef<
   HTMLInputElement,
@@ -36,17 +36,6 @@ const Switch = forwardRef<
 
     useImperativeHandle(externalRef, () => ref.current as HTMLInputElement)
 
-    // useEffect(() => {
-    //   if (ref.current) {
-    //     ref.current.indeterminate = indeterminate ?? false
-    //   }
-    // }, [ref, indeterminate])
-
-    // // Make the label aware of changes in the checked state
-    // useEffect(() => {
-    //   setActive(checked)
-    // }, [checked, setActive])
-
     // Make the component aware of changes in the checked prop
     // useMemo(() => {
     //   setChecked(!!checkedProp)
@@ -54,7 +43,9 @@ const Switch = forwardRef<
 
     return (
       <>
-        <SwitchStyle {...{ ...otherProps, id, ref }} />
+        <LabelStyle htmlFor={id}>
+          <SwitchStyle role="switch" {...{ ...otherProps, id, ref }} />
+        </LabelStyle>
       </>
     )
   },

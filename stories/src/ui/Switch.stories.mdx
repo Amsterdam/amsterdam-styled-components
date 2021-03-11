@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import { action } from '@storybook/addon-actions'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { Switch } from '@amsterdam/asc-ui'
 
@@ -32,7 +33,7 @@ import { Switch } from '@amsterdam/asc-ui'
 <Preview>
   <Story name="Default">
     <Fragment>
-      <Switch id="default" />
+      <Switch id="default" onChange={(e) => {  action(`switch pressed ${e.target.checked}`)(e)}} />
     </Fragment>
   </Story>
 </Preview>

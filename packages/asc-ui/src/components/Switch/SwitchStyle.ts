@@ -13,12 +13,19 @@ export type Props = {
 export default styled.input.attrs({
   type: 'checkbox',
 })<Props>`
+  background-color: red;
   cursor: inherit;
   margin: 0;
-  padding: 0;
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  left: 6px;
-  top: 6px;
+  padding: 4px;
+`
+
+export type LabelProps = {
+  htmlFor: string
+}
+
+export const LabelStyle = styled.label<LabelProps>`
+  background-color: yellow;
+  height: 44px;
+  width: 80px;
+  border-radius: 22px;
 `
