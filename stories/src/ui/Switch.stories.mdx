@@ -1,0 +1,38 @@
+import { Fragment } from 'react'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Switch } from '@amsterdam/asc-ui'
+
+<Meta
+  title="UI/Switch"
+  component={Switch}
+  decorators={[
+    (storyFn) => (
+      <div
+        style={{
+          display: 'flex',
+          maxWidth: 400,
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+        }}
+      >
+        {storyFn()}
+      </div>
+    ),
+  ]}
+/>
+
+# Checkbox
+
+[Design System]()
+
+**Component status: experimental**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <Fragment>
+      <Switch id="default" />
+    </Fragment>
+  </Story>
+</Preview>

@@ -85,6 +85,8 @@ import Select, {
   SelectWrapperStyle,
   SelectContentWrapperStyle,
 } from './components/Select'
+import Switch, { SwitchStyle } from './components/Switch'
+
 import * as constants from './components/shared/constants'
 import ShowMoreShowLess from './components/ShowMoreShowLess'
 import Spinner from './components/Spinner/Spinner'
@@ -196,6 +198,7 @@ export {
   Spinner,
   TextArea,
   TextField,
+  Switch,
   Theme,
   ThemeProvider,
   CompactThemeProvider,
@@ -254,6 +257,7 @@ export const styles = {
   HeadingStyle,
   CustomHTMLBlockStyle,
   ArticleStyle,
+  SwitchStyle,
   TagStyle,
   TopTaskLinkStyle,
   CheckboxStyle,
