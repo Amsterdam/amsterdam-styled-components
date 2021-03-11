@@ -7,6 +7,8 @@ export type Props = {
   className?: string
 }
 
+export const WrapperStyle = styled.span``
+
 export default styled.input.attrs({
   type: 'checkbox',
 })<Props>`

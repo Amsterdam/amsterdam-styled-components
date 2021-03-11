@@ -12,7 +12,12 @@ import {
   //   className,
 } from 'react'
 // import LabelContext from '../Label/LabelContext'
-import SwitchStyle, { Props, LabelStyle, KnobStyle } from './SwitchStyle'
+import SwitchStyle, {
+  Props,
+  LabelStyle,
+  KnobStyle,
+  WrapperStyle,
+} from './SwitchStyle'
 
 const Switch = forwardRef<
   HTMLInputElement,
@@ -43,12 +48,12 @@ const Switch = forwardRef<
     // }, [checkedProp, setChecked])
 
     return (
-      <span className={className}>
+      <WrapperStyle className={className}>
         <LabelStyle htmlFor={id}>
           <KnobStyle />
           <SwitchStyle role="switch" {...{ ...otherProps, id, ref }} />
         </LabelStyle>
-      </span>
+      </WrapperStyle>
     )
   },
 )
