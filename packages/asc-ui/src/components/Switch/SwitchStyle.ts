@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { themeColor } from '../../utils/themeUtils'
+import { themeColor, themeSpacing } from '../../utils/themeUtils'
 
 export type Props = {
   id: string
@@ -29,7 +29,7 @@ export const LabelStyle = styled.label<LabelProps>`
   display: inline-block;
   background-color: ${themeColor('tint', 'level3')};
   height: 44px;
-  width: 80px;
+  width: 88px;
   border-radius: 22px;
 `
 
@@ -41,7 +41,6 @@ export const KnobStyle = styled.span`
   background-color: ${themeColor('secondary')};
   height: 52px;
   width: 52px;
-  ght: 0;
   border-radius: 50%;
-  margin: -4px;
+  margin: ${themeSpacing(-1)};
 `
