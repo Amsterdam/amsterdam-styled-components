@@ -1,4 +1,9 @@
-import { forwardRef, HTMLAttributes, useImperativeHandle, useRef } from 'react'
+import React, {
+  forwardRef,
+  HTMLAttributes,
+  useImperativeHandle,
+  useRef,
+} from 'react'
 import SwitchStyle, {
   Props,
   LabelStyle,
