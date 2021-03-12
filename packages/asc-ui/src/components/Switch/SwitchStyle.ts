@@ -16,8 +16,7 @@ export const WrapperStyle = styled.span`
 export default styled.input.attrs({
   type: 'checkbox',
 })<Props>`
-  width: 0;
-  height: 0;
+  opacity: 0;
 `
 
 type LabelProps = {
