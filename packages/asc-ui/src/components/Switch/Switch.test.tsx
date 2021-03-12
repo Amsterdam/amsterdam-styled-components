@@ -2,7 +2,6 @@ import { createRef } from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import Switch from './Switch'
 import { ThemeProvider } from '../../theme'
-// import { themeColor } from '../../utils'
 
 describe('Switch', () => {
   it('should toggle checked / not checked', () => {
