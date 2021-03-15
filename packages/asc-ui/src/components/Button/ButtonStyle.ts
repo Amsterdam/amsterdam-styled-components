@@ -244,7 +244,10 @@ const ButtonStyle = styled.button<ButtonStyleProps>`
     taskflow &&
     css`
       position: relative;
+      min-width: initial;
       padding-right: 0;
+      padding-top: 0; // safari fix
+      padding-bottom: 0; // safari fix
       z-index: 0;
       && {
         margin-right: 25px;
