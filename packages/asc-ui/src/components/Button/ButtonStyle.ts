@@ -22,9 +22,9 @@ export const getButtonHeight = (theme: Theme.ThemeInterface) =>
   themeSpacing(11)({ theme })
 
 export const ArrowRight = styled.div`
-  position: absolute;
+  position: relative;
   top: 0;
-  left: 100%;
+  right: -15px;
   width: 0;
   height: 0;
   border: 22px solid rgba(255, 255, 255, 0);
@@ -244,6 +244,7 @@ const ButtonStyle = styled.button<ButtonStyleProps>`
     taskflow &&
     css`
       position: relative;
+      padding-right: 0;
       z-index: 0;
       && {
         margin-right: 25px;
