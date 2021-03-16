@@ -8,10 +8,9 @@ export type Props = {
   className?: string
 }
 
-export const WrapperStyle = styled.span<Props>`
-  input:checked + span {
-    right: 0;
-    left: auto;
+export const WrapperStyle = styled.span`
+  input:checked + label {
+    background-color: red;
   }
 `
 
