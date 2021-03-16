@@ -12,12 +12,24 @@ const Toggle = forwardRef<
   return (
     <div className={className}>
       <LabelStyle htmlFor={left}>
-        <RadioStyle role="switch" name={id} id={left} {...{ ...otherProps }} />
+        <RadioStyle
+          role="switch"
+          name={id}
+          id={left}
+          value={left}
+          {...{ ...otherProps }}
+        />
         {left}
       </LabelStyle>
       <LabelStyle htmlFor={right}>
         {right}
-        <RadioStyle role="switch" name={id} id={right} {...{ ...otherProps }} />
+        <RadioStyle
+          role="switch"
+          name={id}
+          id={right}
+          value={right}
+          {...{ ...otherProps }}
+        />
       </LabelStyle>
     </div>
   )
