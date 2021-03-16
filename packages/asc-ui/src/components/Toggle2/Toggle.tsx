@@ -1,32 +1,26 @@
-import React, {
-  forwardRef,
-  HTMLAttributes,
-  useImperativeHandle,
-  useRef,
-} from 'react'
-import SwitchStyle, {
-  Props,
-  LabelStyle,
-  KnobStyle,
-  WrapperStyle,
-} from './ToggleStyle'
+import { forwardRef, HTMLAttributes, useImperativeHandle, useRef } from 'react'
+import ToggleStyle, { Props, LabelStyle } from './ToggleStyle'
 
-const Switch = forwardRef<
+const Toggle = forwardRef<
   HTMLInputElement,
   Props & HTMLAttributes<HTMLInputElement>
->(({ id, className, ...otherProps }, externalRef) => {
+>(({ id, left, right, className, ...otherProps }, externalRef) => {
   const ref = useRef<HTMLInputElement>(null)
 
   useImperativeHandle(externalRef, () => ref.current as HTMLInputElement)
 
   return (
-    <WrapperStyle className={className}>
-      <LabelStyle htmlFor={id}>
-        <SwitchStyle role="switch" {...{ ...otherProps, id, ref }} />
-        <KnobStyle />
+    <div className={className}>
+      <LabelStyle htmlFor={left}>
+        <ToggleStyle role="switch" {...{ ...otherProps, id }} />
+        {left}
       </LabelStyle>
-    </WrapperStyle>
+      <LabelStyle htmlFor={right}>
+        {right}
+        <ToggleStyle role="switch" {...{ ...otherProps, id }} />
+      </LabelStyle>
+    </div>
   )
 })
 
-export default Switch
+export default Toggle
