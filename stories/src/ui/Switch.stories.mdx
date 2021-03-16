@@ -33,7 +33,12 @@ import { Switch } from '@amsterdam/asc-ui'
 <Preview>
   <Story name="Default">
     <Fragment>
-      <Switch id="default" onChange={(e) => {  action(`switch pressed ${e.target.checked}`)(e)}} />
+      <Switch
+        id="default"
+        onChange={(e) => {
+          action(`switch pressed ${e.target.checked}`)(e)
+        }}
+      />
     </Fragment>
   </Story>
 </Preview>
@@ -43,8 +48,13 @@ import { Switch } from '@amsterdam/asc-ui'
 <Preview>
   <Story name="Checked">
     <Fragment>
-      <Switch id="checked" defaultChecked="checked" onChange={(e) => {  action(`switch pressed ${e.target.checked}`)(e)}} />
+      <Switch
+        id="checked"
+        defaultChecked="checked"
+        onChange={(e) => {
+          action(`switch pressed ${e.target.checked}`)(e)
+        }}
+      />
     </Fragment>
   </Story>
 </Preview>
-
