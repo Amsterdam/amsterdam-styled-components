@@ -31,6 +31,7 @@ type LabelProps = {
 
 export const LabelStyle = styled.label<LabelProps>`
   background-color: ${themeColor('tint', 'level3')};
+  padding: 20px;
 `
 
 export const KnobStyle = styled.span`

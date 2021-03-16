@@ -1,5 +1,5 @@
 import { forwardRef, HTMLAttributes, useImperativeHandle, useRef } from 'react'
-import ToggleStyle, { Props, LabelStyle } from './ToggleStyle'
+import RadioStyle, { Props, LabelStyle } from './ToggleStyle'
 
 const Toggle = forwardRef<
   HTMLInputElement,
@@ -12,12 +12,12 @@ const Toggle = forwardRef<
   return (
     <div className={className}>
       <LabelStyle htmlFor={left}>
-        <ToggleStyle role="switch" {...{ ...otherProps, id }} />
+        <RadioStyle role="switch" name={id} id={left} {...{ ...otherProps }} />
         {left}
       </LabelStyle>
       <LabelStyle htmlFor={right}>
         {right}
-        <ToggleStyle role="switch" {...{ ...otherProps, id }} />
+        <RadioStyle role="switch" name={id} id={right} {...{ ...otherProps }} />
       </LabelStyle>
     </div>
   )
