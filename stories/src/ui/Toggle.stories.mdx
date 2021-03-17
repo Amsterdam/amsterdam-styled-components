@@ -12,7 +12,7 @@ import { Toggle } from '@amsterdam/asc-ui'
         style={{
           display: 'flex',
           maxWidth: 400,
-          flexDirection: 'column',
+          flexDirection: 'column',  
           alignItems: 'flex-start',
         }}
       >
@@ -33,7 +33,7 @@ import { Toggle } from '@amsterdam/asc-ui'
 <Preview>
   <Story name="Default">
     <Fragment>
-      <Toggle id="default" left="Ja" right="Nee" onChange={(e) => { action(`toggle switched ${e.target.value}`)(e)}} />
+      <Toggle id="default" defaultValue="Nee" left="Ja" right="Nee" onChange={(e) => { action(`toggle switched ${e.target.value}`)(e)}} />
     </Fragment>
   </Story>
 </Preview>

@@ -5,6 +5,7 @@ export type Props = {
   id: string
   left: string
   right: string
+  defaultValue: string
   className?: string
 }
 
@@ -30,7 +31,7 @@ type LabelProps = {
 
 export const LabelStyle = styled.label<LabelProps>`
   background-color: ${themeColor('tint', 'level3')};
-  padding: 20px;
+  padding: 10px 20px;
 `
 
 export const KnobStyle = styled.span`
