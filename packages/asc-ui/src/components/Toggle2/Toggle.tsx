@@ -18,22 +18,22 @@ const Toggle = forwardRef<
         <RadioStyle
           role="switch"
           name={id}
-          id={left}
+          id={`${id}-${left}`}
           value={left}
           defaultChecked={defaultValue === left}
           {...{ ...otherProps }}
         />
-        <LabelStyle htmlFor={left}>{left}</LabelStyle>
+        <LabelStyle htmlFor={`${id}-${left}`}>{left}</LabelStyle>
 
         <RadioStyle
           role="switch"
           name={id}
-          id={right}
+          id={`${id}-${right}`}
           value={right}
           defaultChecked={defaultValue === right}
           {...{ ...otherProps }}
         />
-        <LabelStyle htmlFor={right}>{right} </LabelStyle>
+        <LabelStyle htmlFor={`${id}-${right}`}>{right} </LabelStyle>
       </WrapperStyle>
     )
   },
