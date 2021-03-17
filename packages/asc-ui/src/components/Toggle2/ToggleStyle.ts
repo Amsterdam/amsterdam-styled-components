@@ -11,7 +11,7 @@ export type Props = {
 
 export const WrapperStyle = styled.span`
   input:checked + label {
-    background-color: red;
+    background-color: ${themeColor('secondary')};
   }
 `
 
@@ -23,7 +23,11 @@ type RadioProps = {
 
 export default styled.input.attrs({
   type: 'radio',
-})<RadioProps>``
+})<RadioProps>`
+  opacity: 0;
+  width: 0;
+  height: 0;
+`
 
 type LabelProps = {
   htmlFor: string
@@ -32,8 +36,4 @@ type LabelProps = {
 export const LabelStyle = styled.label<LabelProps>`
   background-color: ${themeColor('tint', 'level3')};
   padding: 10px 20px;
-`
-
-export const KnobStyle = styled.span`
-  background-color: ${themeColor('secondary')};
 `
