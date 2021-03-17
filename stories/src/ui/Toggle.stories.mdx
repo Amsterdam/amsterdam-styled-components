@@ -28,22 +28,22 @@ import { Toggle } from '@amsterdam/asc-ui'
 
 **Component status: experimental**
 
-## Default - ja
+## Default - dag
 
 <Preview>
-  <Story name="Default-ja">
+  <Story name="Default-dag">
     <Fragment>
-      <Toggle id="default-ja" defaultValue="Ja" left="Ja" right="Nee" onChange={(e) => { action(`toggle switched ${e.target.value}`)(e)}} />
+      <Toggle id="default-dag" defaultValue="Dag" left="Dag" right="Week" onChange={(e) => { action(`toggle switched ${e.target.value}`)(e)}} />
     </Fragment>
   </Story>
 </Preview>
 
-## Default - nee
+## Default - Week
 
 <Preview>
-  <Story name="Default-nee">
+  <Story name="Default-week">
     <Fragment>
-      <Toggle id="default-nee" defaultValue="Nee" left="Ja" right="Nee" onChange={(e) => { action(`toggle switched ${e.target.value}`)(e)}} />
+      <Toggle id="default-week" defaultValue="Week" left="Dag" right="Week" onChange={(e) => { action(`toggle switched ${e.target.value}`)(e)}} />
     </Fragment>
   </Story>
 </Preview>

@@ -11,7 +11,9 @@ export type Props = {
 
 export const WrapperStyle = styled.span`
   input:checked + label {
+    color: white;
     background-color: ${themeColor('secondary')};
+    border: 4px solid ${themeColor('secondary')};
   }
 `
 
@@ -35,5 +37,6 @@ type LabelProps = {
 
 export const LabelStyle = styled.label<LabelProps>`
   background-color: ${themeColor('tint', 'level3')};
+  font-weight: bold;
   padding: 10px 20px;
 `
