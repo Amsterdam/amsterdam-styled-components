@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react'
 import { InputMethods, InputProps } from '../Input'
 import SearchBar from '../SearchBar'
 import { SearchBarProps } from '../SearchBar/SearchBar'
-import Toggle, { Props as ToggleProps } from '../Toggle/Toggle'
+import Toggle, { Props as ToggleProps } from '../MenuToggle/Toggle'
 import SearchBarToggleStyle, {
   SearchBarToggleStyleProps,
 } from './SearchBarToggleStyle'

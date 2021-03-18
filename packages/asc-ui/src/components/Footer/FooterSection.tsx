@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react'
 import { ShowHideTypes } from '../../utils'
 import Hidden from '../Hidden'
 import Icon from '../Icon/Icon'
-import { ToggleHandlerProps } from '../Toggle'
+import { ToggleHandlerProps } from '../MenuToggle'
 import FooterHeading from './FooterHeading'
 import {
   FooterContentWrapper,

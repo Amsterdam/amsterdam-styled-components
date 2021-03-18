@@ -6,7 +6,7 @@ import {
   showAboveBackDrop,
 } from '../../utils'
 import SearchBarStyle from '../SearchBar/SearchBarStyle'
-import ToggleStyle from '../Toggle/ToggleStyle'
+import ToggleStyle from '../MenuToggle/ToggleStyle'
 import { TOGGLE_BUTTON_SIZE } from '../shared/constants'
 import ToggleButtonStyle from '../Button/ToggleButton'
 

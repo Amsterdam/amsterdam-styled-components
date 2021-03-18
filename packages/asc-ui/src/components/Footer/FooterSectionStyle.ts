@@ -3,7 +3,7 @@ import { themeColor, themeSpacing, svgFill } from '../../utils'
 import FooterHeading from './FooterHeading'
 import IconStyle from '../Icon'
 import Button from '../Button'
-import { Toggle } from '../Toggle'
+import { Toggle } from '../MenuToggle'
 
 const FooterContentWrapper = styled.div`
   display: flex;
