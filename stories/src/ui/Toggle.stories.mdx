@@ -33,7 +33,7 @@ import { Toggle } from '@amsterdam/asc-ui'
 <Preview>
   <Story name="Default-dag">
     <Fragment>
-      <Toggle id="default-dag" defaultValue="Dag" left="Dag" right="Week" onChange={(e) => { action(`toggle switched ${e.target.value}`)(e)}} />
+      <Toggle id="default-dag" value="Dag" left="Dag" right="Week" onChange={(e) => { action(`toggle switched ${e.target.value}`)(e)}} />
     </Fragment>
   </Story>
 </Preview>
@@ -43,7 +43,7 @@ import { Toggle } from '@amsterdam/asc-ui'
 <Preview>
   <Story name="Default-week">
     <Fragment>
-      <Toggle id="default-week" defaultValue="Week" left="Dag" right="Week" onChange={(e) => { action(`toggle switched ${e.target.value}`)(e)}} />
+      <Toggle id="default-week" value="Week" left="Dag" right="Week" onChange={(e) => { action(`toggle switched ${e.target.value}`)(e)}} />
     </Fragment>
   </Story>
 </Preview>

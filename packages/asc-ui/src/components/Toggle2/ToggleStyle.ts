@@ -5,7 +5,7 @@ export type Props = {
   id: string
   left: string
   right: string
-  defaultValue: string
+  value: string
   className?: string
 }
 
