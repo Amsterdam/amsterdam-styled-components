@@ -27,9 +27,9 @@ export default styled.input.attrs({
   type: 'radio',
 })<RadioProps>`
   opacity: 0;
-  width: 0;
-  height: 0;
+  position: absolute;
 `
+// position: absolute Firefox error
 
 type LabelProps = {
   htmlFor: string
