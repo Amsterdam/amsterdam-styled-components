@@ -16,11 +16,18 @@ Prefix the change with one of these keywords:
 
 ## [new version]
 
+- ...
+
+## [0.29.2]
+
 - Fixed: Taskflow button has better focus state
-- Changed: Line-height of breadcrumbs component according to spec.
-- Changed: **BREAKING** hooks object is not exported anymore. You can import hooks now directly, for example import { useFocus } from '@amsterdam/asc-ui' [#1120]
+
+## [0.29.0]
+
+- Changed: **BREAKING** hooks object is not exported anymore. You can import hooks now directly, for example import { useFocus } from '@amsterdam/asc-ui' [#1528](https://github.com/Amsterdam/amsterdam-styled-components/pull/1528)
 - Removed: **BREAKING** the variant prop in Checkbox component, [#1539](https://github.com/Amsterdam/amsterdam-styled-components/pull/1539)
-- Added: Switch component [#1542](https://github.com/Amsterdam/amsterdam-styled-components/pull/1542)
+- Changed: Breadcrumbs component now marked as stable
+- Changed: Line-height of breadcrumbs component according to spec.
 
 ## [0.28.0]
 

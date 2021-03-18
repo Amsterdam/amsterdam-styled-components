@@ -248,6 +248,7 @@ const ButtonStyle = styled.button<ButtonStyleProps>`
       padding-right: 0;
       padding-top: 0; // safari fix
       padding-bottom: 0; // safari fix
+      line-height: ${({ theme }) => getButtonHeight(theme)}; // safari 10.1 fix
       z-index: 0;
       && {
         margin-right: 25px;
