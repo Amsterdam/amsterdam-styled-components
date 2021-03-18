@@ -14,6 +14,7 @@ export const WrapperStyle = styled.span`
     color: white;
     background-color: ${themeColor('secondary')};
     border: 2px solid ${themeColor('secondary')};
+    padding: 12px 18px;
   }
 `
 
@@ -38,5 +39,5 @@ type LabelProps = {
 export const LabelStyle = styled.label<LabelProps>`
   background-color: ${themeColor('tint', 'level3')};
   font-weight: bold;
-  padding: 12px 18px;
+  padding: 12px 20px;
 `
