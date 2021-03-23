@@ -12,7 +12,7 @@ import { Toggle } from '@amsterdam/asc-ui'
         style={{
           display: 'flex',
           maxWidth: 400,
-          flexDirection: 'column',  
+          flexDirection: 'column',
           alignItems: 'flex-start',
         }}
       >
@@ -33,7 +33,15 @@ import { Toggle } from '@amsterdam/asc-ui'
 <Preview>
   <Story name="dag">
     <Fragment>
-      <Toggle id="dag" value="Dag" left="Dag" right="Week" onChange={(e) => { action(`toggle switched ${e.target.value}`)(e)}} />
+      <Toggle
+        id="dag"
+        value="Dag"
+        left="Dag"
+        right="Week"
+        onChange={(e) => {
+          action(`toggle switched ${e.target.value}`)(e)
+        }}
+      />
     </Fragment>
   </Story>
 </Preview>
@@ -43,7 +51,15 @@ import { Toggle } from '@amsterdam/asc-ui'
 <Preview>
   <Story name="week">
     <Fragment>
-      <Toggle id="week" value="Week" left="Dag" right="Week" onChange={(e) => { action(`toggle switched ${e.target.value}`)(e)}} />
+      <Toggle
+        id="week"
+        value="Week"
+        left="Dag"
+        right="Week"
+        onChange={(e) => {
+          action(`toggle switched ${e.target.value}`)(e)
+        }}
+      />
     </Fragment>
   </Story>
 </Preview>
