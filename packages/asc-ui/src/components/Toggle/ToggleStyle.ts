@@ -30,7 +30,6 @@ export default styled.input.attrs({
   opacity: 0;
   position: absolute;
 `
-// position: absolute Firefox error
 
 type LabelProps = {
   htmlFor: string
