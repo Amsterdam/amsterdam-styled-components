@@ -1,46 +1,22 @@
-// import { createRef } from 'react'
-// import { render, fireEvent } from '@testing-library/react'
-// import Toggle from './Toggle'
-// import { ThemeProvider } from '../../theme'
+import { fireEvent, render } from '@testing-library/react'
+import Toggle from './Toggle'
+import { ThemeProvider } from '../../theme'
 
-// describe('Switch', () => {
-//   it('should toggle checked / not checked', () => {
-//     const onChangeMock = jest.fn()
-//     const { container } = render(
-//       <ThemeProvider>
-//         <Toggle id="id" onChange={onChangeMock} />
-//       </ThemeProvider>,
-//     )
+describe('Toggle', () => {
+  it('should toggle checked / not checked', () => {
+    // const onChangeMock = jest.fn()
+    const { container } = render(
+      <ThemeProvider>
+        <Toggle id="id" left="Dag" right="Week" value="Dag" />
+      </ThemeProvider>,
+    )
+    // const input1 = container.querySelector('#id-Dag')
+    const input2 = container.querySelector('#id-Week')
 
-// const input = container.querySelector('input')
+    expect(container.querySelector('input:checked').value).toBe('Dag')
 
-// expect(input?.checked).toEqual(false)
+    fireEvent.click(input2)
 
-// // Toggle on
-// if (input) {
-//   fireEvent.click(input)
-// }
-
-// expect(input?.checked).toEqual(true)
-
-// // Toggle off
-// if (input) {
-//   fireEvent.click(input)
-// }
-
-// expect(input?.checked).toEqual(false)
-//   })
-
-//   it('should handle refs', () => {
-//     const ref = createRef<HTMLInputElement>()
-
-//     render(
-//       <ThemeProvider>
-//         <Toggle id="id" ref={ref} />
-//       </ThemeProvider>,
-//     )
-
-//     expect(ref.current).toBeInstanceOf(HTMLInputElement)
-//     expect(ref.current?.type).toEqual('checkbox')
-//   })
-// })
+    expect(container.querySelector('input:checked').value).toBe('Week')
+  })
+})
