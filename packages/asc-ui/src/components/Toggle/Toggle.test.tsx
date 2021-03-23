@@ -9,23 +9,23 @@ describe('Toggle', () => {
         <Toggle id="id" left="Dag" right="Week" value="Dag" />
       </ThemeProvider>,
     )
-    const input1 = container.querySelector('#id-Dag')
-    const input2 = container.querySelector('#id-Week')
+    const labelLeft = container.querySelector('[for="id-Dag"]')
+    const labelRight = container.querySelector('[for="id-Week"]')
 
     expect(container.querySelector('input:checked')).toEqual(
       expect.objectContaining({ value: 'Dag' }),
     )
 
-    if (input2) {
-      fireEvent.click(input2)
+    if (labelRight) {
+      fireEvent.click(labelRight)
     }
 
     expect(container.querySelector('input:checked')).toEqual(
       expect.objectContaining({ value: 'Week' }),
     )
 
-    if (input1) {
-      fireEvent.click(input1)
+    if (labelLeft) {
+      fireEvent.click(labelLeft)
     }
 
     expect(container.querySelector('input:checked')).toEqual(
