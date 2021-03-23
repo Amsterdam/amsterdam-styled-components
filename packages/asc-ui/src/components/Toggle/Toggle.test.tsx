@@ -13,12 +13,16 @@ describe('Toggle', () => {
     // const input1 = container.querySelector('#id-Dag')
     const input2 = container.querySelector('#id-Week')
 
-    expect(container.querySelector('input:checked').value).toBe('Dag')
+    expect(container.querySelector('input:checked')).toEqual(
+      expect.objectContaining({ value: 'Dag' }),
+    )
 
     if (input2) {
       fireEvent.click(input2)
     }
 
-    expect(container.querySelector('input:checked').value).toBe('Week')
+    expect(container.querySelector('input:checked')).toEqual(
+      expect.objectContaining({ value: 'Week' }),
+    )
   })
 })
