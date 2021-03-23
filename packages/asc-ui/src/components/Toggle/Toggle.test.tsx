@@ -15,7 +15,9 @@ describe('Toggle', () => {
 
     expect(container.querySelector('input:checked').value).toBe('Dag')
 
-    fireEvent.click(input2)
+    if (input2) {
+      fireEvent.click(input2)
+    }
 
     expect(container.querySelector('input:checked').value).toBe('Week')
   })
