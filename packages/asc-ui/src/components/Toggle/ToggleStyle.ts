@@ -11,7 +11,7 @@ export type Props = {
 
 export const WrapperStyle = styled.span`
   input:checked + label {
-    color: white;
+    color: ${themeColor('tint', 'level1')};
     background-color: ${themeColor('secondary')};
     border: 2px solid ${themeColor('secondary')};
     padding: 12px 18px;
