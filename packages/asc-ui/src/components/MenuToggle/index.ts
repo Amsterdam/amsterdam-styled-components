@@ -1,5 +1,6 @@
 export {
-  default as Toggle,
-  ToggleHandlerProps,
-  Props as ToggleProps,
-} from './Toggle'
+  default as MenuToggle,
+  MenuToggleHandlerProps,
+  Props as MenuToggleProps,
+  default as MenuToggleStyle,
+} from './MenuToggle'

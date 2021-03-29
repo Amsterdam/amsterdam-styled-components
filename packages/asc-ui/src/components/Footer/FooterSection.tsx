@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react'
 import { ShowHideTypes } from '../../utils'
 import Hidden from '../Hidden'
 import Icon from '../Icon/Icon'
-import { ToggleHandlerProps } from '../MenuToggle'
+import { MenuToggleHandlerProps } from '../MenuToggle'
 import FooterHeading from './FooterHeading'
 import {
   FooterContentWrapper,
@@ -16,7 +16,7 @@ type FooterContentProps = {
   title?: string
 } & ShowHideTypes
 
-const ToggleFooterHeader: FunctionComponent<ToggleHandlerProps> = ({
+const ToggleFooterHeader: FunctionComponent<MenuToggleHandlerProps> = ({
   open,
   onClick,
   title,

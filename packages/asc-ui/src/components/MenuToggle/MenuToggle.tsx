@@ -10,7 +10,9 @@ import {
   useRef,
   useState,
 } from 'react'
-import ToggleStyle, { Props as ToggleStyleProps } from './ToggleStyle'
+import MenuToggleStyle, {
+  Props as MenuToggleStyleProps,
+} from './MenuToggleStyle'
 import ownerDocument from '../../utils/ownerDocument'
 import usePassPropsToChildren from '../../utils/hooks/usePassPropsToChildren'
 import useActionOnEscape from '../../utils/hooks/useActionOnEscape'
@@ -19,7 +21,7 @@ import ToggleButton, {
 } from '../Button/ToggleButton/ToggleButton'
 import BackDrop, { Props as BackDropProps } from '../BackDrop/BackDrop'
 
-export type ToggleHandlerProps = {
+export type MenuToggleHandlerProps = {
   as?: ElementType
 } & ToggleButtonProps &
   HTMLAttributes<HTMLElement>
@@ -33,12 +35,12 @@ export type Props = {
   >
   rotateOnOpen?: number
   as?: ElementType
-} & ToggleStyleProps &
-  ToggleHandlerProps &
+} & MenuToggleStyleProps &
+  MenuToggleHandlerProps &
   BackDropProps
 
 // Todo: refactor this to Collapse component https://github.com/Amsterdam/amsterdam-styled-components/issues/379
-const Toggle: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
+const MenuToggle: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
   children: childrenProps,
   onClick,
   open: openProp,
@@ -117,7 +119,7 @@ const Toggle: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
   const conditionalRenderedChildren = open ? children : null
 
   return (
-    <ToggleStyle
+    <MenuToggleStyle
       ref={ref}
       css={css}
       onBlur={handleOnBlur}
@@ -148,13 +150,13 @@ const Toggle: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
           backdropOpacity={backdropOpacity}
         />
       )}
-    </ToggleStyle>
+    </MenuToggleStyle>
   )
 }
 
-Toggle.defaultProps = {
+MenuToggle.defaultProps = {
   render: true,
   ToggleHandler: ToggleButton,
 }
 
-export default Toggle
+export default MenuToggle

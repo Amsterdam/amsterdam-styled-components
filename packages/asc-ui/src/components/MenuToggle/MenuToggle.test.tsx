@@ -1,17 +1,17 @@
 import { render, fireEvent } from '@testing-library/react'
-import Toggle from './Toggle'
+import MenuToggle from './MenuToggle'
 import { KeyboardKeys } from '../../types'
 
-describe('Toggle', () => {
+describe('MenuToggle', () => {
   let container: any
   let queryByTestId: any
   let button: HTMLButtonElement
   const onClickMock = jest.fn()
   beforeEach(() => {
     ;({ container, queryByTestId } = render(
-      <Toggle onClick={onClickMock} render={false}>
+      <MenuToggle onClick={onClickMock} render={false}>
         <div data-testid="child">Foo</div>
-      </Toggle>,
+      </MenuToggle>,
     ))
     button = container.querySelector('button')
   })
@@ -43,9 +43,9 @@ describe('Toggle', () => {
   it('should call the passed parent function when the button is clicked', () => {
     const onOpenMock = jest.fn()
     ;({ container } = render(
-      <Toggle onClick={jest.fn()} onOpen={onOpenMock} render={false}>
+      <MenuToggle onClick={jest.fn()} onOpen={onOpenMock} render={false}>
         <div id="child">Foo</div>
-      </Toggle>,
+      </MenuToggle>,
     ))
 
     fireEvent.click(container.querySelector('button'))
@@ -54,9 +54,9 @@ describe('Toggle', () => {
 
   it('should display the children when the parent passes an open prop', () => {
     ;({ container } = render(
-      <Toggle onClick={jest.fn()} open render={false}>
+      <MenuToggle onClick={jest.fn()} open render={false}>
         <div id="child">Foo</div>
-      </Toggle>,
+      </MenuToggle>,
     ))
 
     expect(queryByTestId('child')).toBeDefined()
