@@ -98,7 +98,7 @@ import {
 import Tag, { TagStyle } from './components/Tag'
 import TextArea, { TextAreaStyles } from './components/TextArea'
 import TextField, { TextFieldStyles } from './components/TextField'
-import Toggle, { ToggleStyle } from './components/Toggle'
+import Toggle from './components/Toggle'
 import TopBar, { TopBarStyles } from './components/TopBar'
 import TopTaskLink, { TopTaskLinkStyle } from './components/TopTaskLink'
 import Typography from './components/Typography'
@@ -257,7 +257,6 @@ export const styles = {
   CustomHTMLBlockStyle,
   ArticleStyle,
   TagStyle,
-  ToggleStyle,
   TopTaskLinkStyle,
   CheckboxStyle,
   FilterBoxStyle,
