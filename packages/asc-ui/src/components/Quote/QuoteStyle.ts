@@ -1,20 +1,9 @@
 import styled from 'styled-components'
-// import TypographyStyle, {
-//   Props as TypographyProps,
-// } from '../Typography/TypographyStyle'
 import { themeColor, themeSpacing } from '../../utils'
 
-// export type Props = {}
-
-// export const BlockquoteStyleCSS = css``
-
-export default styled.p`
-  margin-bottom: ${themeSpacing(5)};
-  padding: ${themeSpacing(1, 4)};
-  border-left: 2px solid ${themeColor('tint', 'level4')};
-  font-style: italic;
-
-  & p {
-    margin-bottom: 0;
-  }
+export default styled.blockquote`
+  padding: ${themeSpacing(8, 0)};
+  margin: 0;
+  line-height: 24px;
+  color: ${themeColor('tint', 'level6')};
 `
