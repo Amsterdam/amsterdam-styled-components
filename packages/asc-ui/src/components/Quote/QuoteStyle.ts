@@ -9,11 +9,11 @@ export default styled.blockquote`
   line-height: 24px;
   color: ${themeColor('tint', 'level6')};
 
-  @media screen and ${breakpoint('max-width', 'mobileM')} {
+  @media screen and ${breakpoint('max-width', 'tabletS')} {
     font-size: 16px;
   }
 
-  @media screen and ${breakpoint('min-width', 'mobileM')} {
+  @media screen and ${breakpoint('min-width', 'tabletS')} {
     font-size: 18px;
   }
 `
@@ -23,7 +23,7 @@ export const Icon = styled(IconComponent)`
   fill: ${themeColor('secondary')};
   padding-right: 20px;
 
-  @media screen and ${breakpoint('max-width', 'mobileM')} {
+  @media screen and ${breakpoint('max-width', 'tabletS')} {
     & svg {
       width: 20px;
       height: 20px;
