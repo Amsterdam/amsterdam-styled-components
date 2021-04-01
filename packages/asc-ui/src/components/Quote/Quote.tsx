@@ -1,13 +1,12 @@
 import { Quote as QuoteIcon } from '@amsterdam/asc-assets'
 import { FunctionComponent, HTMLAttributes } from 'react'
-import QuoteStyle from './QuoteStyle'
-import Icon from '../Icon'
+import QuoteStyle, { Icon } from './QuoteStyle'
 
 const Quote: FunctionComponent<HTMLAttributes<HTMLParagraphElement>> = ({
   children,
 }) => (
   <QuoteStyle>
-    <Icon>
+    <Icon size={40}>
       <QuoteIcon />
     </Icon>
     {children}
