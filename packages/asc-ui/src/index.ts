@@ -75,6 +75,7 @@ import {
 import Modal from './components/Modal'
 import Paragraph, { ParagraphStyle } from './components/Paragraph'
 import Portal from './components/Portal'
+import Quote, { QuoteStyle } from './components/Quote'
 import Radio, { RadioGroup } from './components/Radio'
 import SearchBar, { SearchBarStyles } from './components/SearchBar'
 import SearchBarToggle, {
@@ -187,6 +188,7 @@ export {
   Portal,
   Radio,
   RadioGroup,
+  Quote,
   Row,
   Typography,
   SearchBar,
@@ -245,6 +247,7 @@ export const styles = {
   ...AccordionStyles,
   ParagraphStyle,
   BlockquoteStyle,
+  QuoteStyle,
   ErrorMessageStyle,
   IconStyle,
   SelectStyle,
