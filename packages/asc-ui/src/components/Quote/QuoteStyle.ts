@@ -22,11 +22,15 @@ export const Icon = styled(IconComponent)`
   align-self: flex-start;
   fill: ${themeColor('secondary')};
   padding-right: 20px;
+  flex-basis: 60px;
 
   @media screen and ${breakpoint('max-width', 'tabletS')} {
+    padding-right: 15px;
+
     & svg {
       width: 20px;
       height: 20px;
+      flex-basis: 35px;
     }
   }
 `
