@@ -5,5 +5,8 @@ describe('Quote', () => {
   it('should render', () => {
     const { container } = render(<Quote>Foo</Quote>)
     expect(container.firstChild).toBeDefined()
+
+    // icon
+    expect(container.querySelector('span svg')).toBeDefined()
   })
 })
