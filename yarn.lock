@@ -4064,10 +4064,10 @@
   dependencies:
     postcss "7.x.x"
 
-"@types/svgo@^1.3.3":
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/@types/svgo/-/svgo-1.3.4.tgz#75d67b31ed3006c5014c4f810aa300162b68afc8"
-  integrity sha512-ru1a0V8k+Z+Hz3oDjJKRElBPt3IvoHx06tU4RRSCDllG+sRhuDULTpdRHRm+rgDeyUWLRjbvMpMLGhYuDU2aQA==
+"@types/svgo@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@types/svgo/-/svgo-2.3.0.tgz#16723e04f9892b20368ff6f43396557ab86a1f39"
+  integrity sha512-DrZoZNZr4DlJEpu+g71l1SOxJ5KzLdRV2h+JBOgMmsL5zU82G9WW0fPjUhNM6WbVuVYoJ6mUhAgLZfsh3TQxlw==
 
 "@types/tapable@*", "@types/tapable@^1.0.5":
   version "1.0.6"
