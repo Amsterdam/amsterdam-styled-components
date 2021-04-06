@@ -21,11 +21,11 @@ export default styled.blockquote`
 export const Icon = styled(IconComponent)`
   align-self: flex-start;
   fill: ${themeColor('secondary')};
-  padding-right: 20px;
+  padding-right: ${themeSpacing(5)};
   flex-basis: 60px;
 
   @media screen and ${breakpoint('max-width', 'tabletS')} {
-    padding-right: 15px;
+    padding-right: ${themeSpacing(4)};
 
     & svg {
       width: 20px;
