@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { render } from '@testing-library/react'
 import FormTitle from './FormTitle'
 import ThemeProvider from '../../theme/ThemeProvider'
