@@ -136,6 +136,7 @@ export {
 export { constants }
 export { perceivedLoading }
 // Components
+export { Quote, QuoteStyle }
 export {
   Accordion,
   AccordionWrapper,
@@ -188,7 +189,6 @@ export {
   Portal,
   Radio,
   RadioGroup,
-  Quote,
   Row,
   Typography,
   SearchBar,
@@ -247,7 +247,6 @@ export const styles = {
   ...AccordionStyles,
   ParagraphStyle,
   BlockquoteStyle,
-  QuoteStyle,
   ErrorMessageStyle,
   IconStyle,
   SelectStyle,
