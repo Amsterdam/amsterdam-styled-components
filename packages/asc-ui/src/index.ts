@@ -75,7 +75,12 @@ import {
 import Modal from './components/Modal'
 import Paragraph, { ParagraphStyle } from './components/Paragraph'
 import Portal from './components/Portal'
-import Radio, { RadioGroup } from './components/Radio'
+import Radio, {
+  RadioGroup,
+  RadioStyle,
+  RadioWrapperStyle,
+  RadioCircleStyle,
+} from './components/Radio'
 import SearchBar, { SearchBarStyles } from './components/SearchBar'
 import SearchBarToggle, {
   SearchBarToggleStyles,
@@ -261,6 +266,9 @@ export const styles = {
   CheckboxStyle,
   FilterBoxStyle,
   FilterOptionStyle,
+  RadioStyle,
+  RadioWrapperStyle,
+  RadioCircleStyle,
 }
 
 export const context = {
