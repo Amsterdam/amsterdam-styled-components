@@ -62,14 +62,6 @@ const Radio = forwardRef<
         }}
         aria-disabled={disabled}
       >
-        <RadioCircleStyle
-          {...{
-            error,
-            disabled,
-            focus,
-            checked,
-          }}
-        />
         <RadioStyle
           {...{
             ...otherProps,
@@ -89,6 +81,14 @@ const Radio = forwardRef<
               onChange(e)
             }
             setChecked(e.target.id)
+          }}
+        />
+        <RadioCircleStyle
+          {...{
+            error,
+            disabled,
+            focus,
+            checked,
           }}
         />
       </RadioWrapperStyle>
