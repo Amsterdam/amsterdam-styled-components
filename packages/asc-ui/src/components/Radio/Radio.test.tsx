@@ -29,7 +29,7 @@ describe('Radio', () => {
   it('should match the style', () => {
     const radio = container.querySelector('#radio-1')
 
-    const circle = radio.previousSibling
+    const circle = radio.nextSibling
     expect(circle).toHaveStyleRule('border-radius', '50%')
 
     const wrapper = radio.parentNode
