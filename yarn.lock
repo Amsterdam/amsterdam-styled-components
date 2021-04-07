@@ -2,6 +2,19 @@
 # yarn lockfile v1
 
 
+"@amsterdam/asc-ui@^^0.29.3-alpha.23":
+  version "0.29.3-alpha.23"
+  resolved "https://registry.yarnpkg.com/@amsterdam/asc-ui/-/asc-ui-0.29.3-alpha.23.tgz#a1a08a652be61937fff8ac7305c8ab6d07d0fb67"
+  integrity sha512-dU5I2mFPFT2zO8FWsOVTTFKq1AGuO73Vb1qndT3OAtw19d1OOCxFZSJW/BTQYaVzOOunQ6mrt0VmXB0KnYMQOQ==
+  dependencies:
+    "@amsterdam/asc-assets" "^0.29.2"
+    classnames "^2.2.6"
+    deepmerge "^4.2.2"
+    polished "^4.0.1"
+    react-uid "^2.3.0"
+  optionalDependencies:
+    objectFitPolyfill ">=2.3.0"
+
 "@babel/code-frame@7.10.4":
   version "7.10.4"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.10.4.tgz#168da1a36e90da68ae8d49c0f1b48c7c6249213a"
