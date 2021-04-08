@@ -75,6 +75,7 @@ import {
 import Modal from './components/Modal'
 import Paragraph, { ParagraphStyle } from './components/Paragraph'
 import Portal from './components/Portal'
+import Quote, { QuoteStyle } from './components/Quote'
 import Radio, {
   RadioGroup,
   RadioStyle,
@@ -140,6 +141,7 @@ export {
 export { constants }
 export { perceivedLoading }
 // Components
+export { Quote, QuoteStyle }
 export {
   Accordion,
   AccordionWrapper,
