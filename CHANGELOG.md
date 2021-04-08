@@ -17,6 +17,7 @@ Prefix the change with one of these keywords:
 ## [new version]
 
 - ...
+- Added: Quote component
 
 ## [0.29.2]
 

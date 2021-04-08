@@ -26,8 +26,6 @@ const RadioStyle = styled.input.attrs({
   outline-width: 10px;
 `
 
-export default RadioStyle
-
 type StyleOnlyProps = {
   checked?: boolean
   disabled?: boolean
@@ -74,8 +72,6 @@ const RadioCircleStyle = styled.span<StyleOnlyProps>`
     `}
 `
 
-export { RadioCircleStyle }
-
 const RadioWrapperStyle = styled.div<StyleOnlyProps & { focus: boolean }>`
   position: relative;
   display: inline-flex;
@@ -108,4 +104,5 @@ const RadioWrapperStyle = styled.div<StyleOnlyProps & { focus: boolean }>`
     `}
 `
 
-export { RadioWrapperStyle }
+export { RadioWrapperStyle, RadioCircleStyle }
+export default RadioStyle
