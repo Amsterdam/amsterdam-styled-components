@@ -16,7 +16,8 @@ Prefix the change with one of these keywords:
 
 ## [new version]
 
-- ...
+- Fixed: issue with not programmically changing the active / initial tab on `Tabs` component
+- Deprecated: `initialTab` in `Tabs` component. Please use `activeTab` instead.
 - Added: Quote component
 
 ## [0.29.2]
