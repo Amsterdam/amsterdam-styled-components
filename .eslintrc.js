@@ -3,8 +3,6 @@ module.exports = {
     'airbnb',
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
-    'prettier/react',
-    'prettier/standard',
     'plugin:mdx/recommended',
     'plugin:@typescript-eslint/recommended',
   ],
