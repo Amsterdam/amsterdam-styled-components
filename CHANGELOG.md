@@ -18,6 +18,7 @@ Prefix the change with one of these keywords:
 
 - ...
 - Added: Toggle component
+- Added: Quote component
 
 ## [0.29.2]
 

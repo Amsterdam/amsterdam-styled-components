@@ -5,7 +5,9 @@ import TextArea from './TextArea'
 
 describe('TextArea', () => {
   it('should render', () => {
-    const { container } = render(<TextArea value="Some text in the textarea" />)
+    const { container } = render(
+      <TextArea defaultValue="Some text in the textarea" />,
+    )
 
     expect(container.firstChild).toBeDefined()
   })
