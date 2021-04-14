@@ -1,9 +1,9 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
-import { Quote } from '@amsterdam/asc-ui'
+import { Datepicker } from '@amsterdam/asc-ui'
 
 <Meta
-  title="UI/Typography/Quote"
-  component={Quote}
+  title="UI/Datepicker"
+  component={Datepicker}
   decorators={[
     (Item) => (
       <div
@@ -17,9 +17,9 @@ import { Quote } from '@amsterdam/asc-ui'
   ]}
 />
 
-# Quote
+# Datepicker
 
-[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/2516d8-quotehttps://designsystem.amsterdam.nl/7awj1hc9f/p/2516d8-quote)
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/46628a-date-picker)
 
 **Component status: Experimental**
 
@@ -27,9 +27,6 @@ import { Quote } from '@amsterdam/asc-ui'
 
 <Preview>
   <Story name="Default">
-    <Quote>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deleniti
-      dicta doloremque eveniet explicabo id ipsum omnis placeat rerum suscipit.
-    </Quote>
+    <Datepicker value={`23-02-2019`} />
   </Story>
 </Preview>
