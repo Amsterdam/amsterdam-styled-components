@@ -1,8 +1,13 @@
 import { FunctionComponent, HTMLAttributes } from 'react'
 import DatepickerStyle from './DatepickerStyle'
+import Month from './Month'
 
-const Quote: FunctionComponent<HTMLAttributes<HTMLParagraphElement>> = ({}) => (
-  <DatepickerStyle>yo</DatepickerStyle>
+const Datepicker: FunctionComponent<
+  HTMLAttributes<HTMLParagraphElement>
+> = () => (
+  <DatepickerStyle>
+    <Month />
+  </DatepickerStyle>
 )
 
-export default Quote
+export default Datepicker
