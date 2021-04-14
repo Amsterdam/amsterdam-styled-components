@@ -4,7 +4,7 @@ import Month from './Month'
 
 const Datepicker: FunctionComponent<Props> = ({ value }) => {
   console.log('Datepicker')
-  const newDate = '14-04-2021'
+  const newDate = '12-03-2021'
 
   return (
     <DatepickerStyle>
