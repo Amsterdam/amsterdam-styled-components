@@ -1,10 +1,25 @@
 import styled from 'styled-components'
-import { themeColor, themeSpacing } from '../../../utils'
+// import { themeColor, themeSpacing } from '../../../utils'
 
-export default styled.div`
-  padding: ${themeSpacing(8, 0)};
+export interface Props {
+  date?: string
+}
+
+export default styled.div<Props>`
+  padding: 0;
   margin: 0;
+  width: 224px;
   display: flex;
-  line-height: 24px;
-  color: ${themeColor('tint', 'level6')};
+  flex-wrap: wrap;
+  align-items: center;
+`
+
+export const Weekday = styled.span`
+  display: inline-block;
+  line-height: 18px;
+  font-size: 14px;
+  align-self: center;
+  text-align: center;
+  padding: 2px 0;
+  width: 32px;
 `

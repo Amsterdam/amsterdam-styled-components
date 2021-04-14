@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { themeColor, themeSpacing } from '../../utils'
+// import { themeSpacing } from '../../utils'
 
-export default styled.div`
-  padding: ${themeSpacing(8, 0)};
+export interface Props {
+  value?: string
+}
+export default styled.div<Props>`
+  padding: 0;
   margin: 0;
-  display: flex;
-  line-height: 24px;
-  color: ${themeColor('tint', 'level6')};
 `
