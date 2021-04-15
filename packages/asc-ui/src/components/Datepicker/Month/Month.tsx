@@ -11,6 +11,9 @@ import MonthStyle, {
 } from './MonthStyle'
 import { weekDays, months, daysInMonth } from '../../shared/constants'
 
+// @TODO add support for schrikkeljaar
+// @TODO add numbers of prev month
+
 const Month: FunctionComponent<Props> = ({ date }) => {
   const [firstDay, setFirstDay] = useState<any>(new Date())
   const [month, setMonth] = useState<number>(new Date().getMonth())
@@ -24,6 +27,16 @@ const Month: FunctionComponent<Props> = ({ date }) => {
     setYear(firstDay.getFullYear())
     renderDays()
   }, [])
+
+  const onPrevious = (e: any) => {
+    e.preventDefault()
+    console.log('onPrevious')
+  }
+
+  const onNext = (e: any) => {
+    e.preventDefault()
+    console.log('onNext')
+  }
 
   const renderDays = () => {
     const days: any = []
@@ -52,14 +65,7 @@ const Month: FunctionComponent<Props> = ({ date }) => {
   return (
     <MonthStyle>
       <Header>
-        <NextPrev
-          href="/"
-          variant="blank"
-          onClick={(e: any) => {
-            e.preventDefault()
-            console.log('previous month')
-          }}
-        >
+        <NextPrev href="/" variant="blank" onClick={(e: any) => onPrevious(e)}>
           <Icon>
             <ChevronLeft />
           </Icon>
@@ -67,14 +73,7 @@ const Month: FunctionComponent<Props> = ({ date }) => {
         <Title>
           {months[month]} {year}
         </Title>
-        <NextPrev
-          href="/"
-          variant="blank"
-          onClick={(e: any) => {
-            e.preventDefault()
-            console.log('next month')
-          }}
-        >
+        <NextPrev href="/" variant="blank" onClick={(e: any) => onNext(e)}>
           <Icon>
             <ChevronRight />
           </Icon>
