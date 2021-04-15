@@ -48,3 +48,11 @@ export const Title = styled.div`
   justify-content: center;
   align-items: center;
 `
+
+export const Day = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+`

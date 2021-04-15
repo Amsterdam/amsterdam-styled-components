@@ -7,22 +7,47 @@ import MonthStyle, {
   Header,
   NextPrev,
   Title,
+  Day,
 } from './MonthStyle'
-import { weekDays, months } from '../../shared/constants'
+import { weekDays, months, daysInMonth } from '../../shared/constants'
 
 const Month: FunctionComponent<Props> = ({ date }) => {
   const [firstDay, setFirstDay] = useState<any>(new Date())
   const [month, setMonth] = useState<number>(new Date().getMonth())
   const [year, setYear] = useState<number>(new Date().getFullYear())
+  const [allDays, setAllDays] = useState<any>([])
 
   useEffect(() => {
     const parts = '14-03-2021'.split('-')
     setFirstDay(new Date(`${parts[2]}/${parts[1]}/01`))
     setMonth(firstDay.getMonth())
     setYear(firstDay.getFullYear())
+    renderDays()
   }, [])
 
-  console.log('Month +++ === YO', month, year)
+  const renderDays = () => {
+    const days: any = []
+
+    for (let i = 0; i < firstDay.getDay() - 1; i++) {
+      days.push({ number: '*', key: days.length })
+    }
+
+    for (let i = 1; i <= daysInMonth[month]; i++) {
+      days.push({ number: i, key: days.length })
+    }
+
+    const count = days.length
+    if (count !== 28) {
+      for (let i = 1; i < 35 - count + 1; i++) {
+        days.push({ number: i, key: days.length })
+      }
+    }
+    console.log('renderDays', firstDay.getDay())
+
+    setAllDays(days)
+  }
+
+  console.log('Month ', allDays)
 
   return (
     <MonthStyle>
@@ -58,6 +83,9 @@ const Month: FunctionComponent<Props> = ({ date }) => {
 
       {weekDays.map((day) => (
         <Weekday key={day}>{day}</Weekday>
+      ))}
+      {allDays.map((day: any) => (
+        <Day key={day.key}>{day.number}</Day>
       ))}
     </MonthStyle>
   )
