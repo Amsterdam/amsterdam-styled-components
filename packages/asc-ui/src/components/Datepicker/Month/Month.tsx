@@ -21,25 +21,34 @@ const Month: FunctionComponent<Props> = ({ date }) => {
   const [allDays, setAllDays] = useState<any>([])
 
   useEffect(() => {
-    const parts = '14-03-2021'.split('-')
-    setFirstDay(new Date(`${parts[2]}/${parts[1]}/01`))
-    setMonth(firstDay.getMonth())
+    // const parts = '15-04-2021'.split('-')
+    setFirstDay(new Date(new Date(`2021/4/1`)))
+    setMonth(firstDay.getMonth() + 1)
     setYear(firstDay.getFullYear())
     renderDays()
   }, [])
 
   const onPrevious = (e: any) => {
     e.preventDefault()
-    console.log('onPrevious')
+    const newMonth = month - 1
+    console.log('onPrevious', newMonth, new Date(`${year}/${newMonth}/1`))
+    setFirstDay(new Date(`${year}/${newMonth}/1`))
+    setMonth(newMonth)
+    renderDays()
   }
 
   const onNext = (e: any) => {
     e.preventDefault()
-    console.log('onNext')
+    const newMonth = month + 1
+    console.log('onNext', newMonth, new Date(`${year}/${newMonth}/1`))
+    setFirstDay(new Date(`${year}/${newMonth}/1`))
+    setMonth(newMonth)
+    renderDays()
   }
 
   const renderDays = () => {
     const days: any = []
+    console.log('firstDay', firstDay)
 
     for (let i = 0; i < firstDay.getDay() - 1; i++) {
       days.push({ number: '*', key: days.length })
@@ -60,7 +69,7 @@ const Month: FunctionComponent<Props> = ({ date }) => {
     setAllDays(days)
   }
 
-  console.log('Month ', allDays)
+  console.log('Month ', month, year, firstDay)
 
   return (
     <MonthStyle>
@@ -71,7 +80,7 @@ const Month: FunctionComponent<Props> = ({ date }) => {
           </Icon>
         </NextPrev>
         <Title>
-          {months[month]} {year}
+          {months[month - 1]} {year}
         </Title>
         <NextPrev href="/" variant="blank" onClick={(e: any) => onNext(e)}>
           <Icon>
