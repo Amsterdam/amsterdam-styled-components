@@ -18,7 +18,6 @@ export const Weekday = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
-
   line-height: 18px;
   font-size: 14px;
   width: 40px;

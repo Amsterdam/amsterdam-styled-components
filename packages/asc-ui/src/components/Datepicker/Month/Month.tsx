@@ -1,8 +1,6 @@
-import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
-
 import { FunctionComponent, useState, useEffect } from 'react'
+import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
 import Icon from '../../Icon'
-
 import MonthStyle, {
   Props,
   Weekday,
@@ -10,33 +8,21 @@ import MonthStyle, {
   NextPrev,
   Title,
 } from './MonthStyle'
-
-const weekDays = ['ma', 'di', 'woe', 'do', 'vrij', 'za', 'zo']
-const months = [
-  'januari',
-  'februari',
-  'maart',
-  'april',
-  'mei',
-  'juni',
-  'juli',
-  'augustus',
-  'september',
-  'oktober',
-  'november',
-  'december',
-]
+import { weekDays, months } from '../../shared/constants'
 
 const Month: FunctionComponent<Props> = ({ date }) => {
-  const [dateObject, setDate] = useState<any>(new Date())
+  const [firstDay, setFirstDay] = useState<any>(new Date())
+  const [month, setMonth] = useState<number>(new Date().getMonth())
+  const [year, setYear] = useState<number>(new Date().getFullYear())
 
   useEffect(() => {
-    if (date) {
-      const parts = date.split('-')
-      setDate(new Date(`${parts[2]}/${parts[1]}/${parts[0]}`))
-    }
-  }, [date])
-  console.log('Month', date, months[dateObject.getMonth()])
+    const parts = '14-03-2021'.split('-')
+    setFirstDay(new Date(`${parts[2]}/${parts[1]}/01`))
+    setMonth(firstDay.getMonth())
+    setYear(firstDay.getFullYear())
+  }, [])
+
+  console.log('Month +++ === YO', month, year)
 
   return (
     <MonthStyle>
@@ -54,7 +40,7 @@ const Month: FunctionComponent<Props> = ({ date }) => {
           </Icon>
         </NextPrev>
         <Title>
-          {months[dateObject.getMonth()]} {dateObject.getFullYear()}
+          {months[month]} {year}
         </Title>
         <NextPrev
           href="/"
