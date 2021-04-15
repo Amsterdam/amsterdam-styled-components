@@ -11,7 +11,7 @@ import MonthStyle, {
 } from './MonthStyle'
 import { weekDays, months, daysInMonth } from '../../shared/constants'
 
-const Month: FunctionComponent<Props> = () => {
+const Month: FunctionComponent<Props> = ({ date }) => {
   const [firstDay, setFirstDay] = useState<any>(new Date())
   const [month, setMonth] = useState<number>(new Date().getMonth())
   const [year, setYear] = useState<number>(new Date().getFullYear())
@@ -28,8 +28,6 @@ const Month: FunctionComponent<Props> = () => {
   const renderDays = () => {
     const days: any = []
 
-    // @TODO  added support for schrikkeljaar
-
     for (let i = 0; i < firstDay.getDay() - 1; i++) {
       days.push({ number: '*', key: days.length })
     }
@@ -44,23 +42,9 @@ const Month: FunctionComponent<Props> = () => {
         days.push({ number: i, key: days.length })
       }
     }
-    console.log('renderDays', days)
+    console.log('renderDays', firstDay.getDay())
 
     setAllDays(days)
-  }
-
-  const onPrevious = () => {
-    console.log('onPrevious')
-    e.preventDefault()
-    setMonth(month - 1)
-    renderDays()
-  }
-
-  const onNext = () => {
-    console.log('onNext')
-    e.preventDefault()
-    setMonth(month + 1)
-    renderDays()
   }
 
   console.log('Month ', allDays)
@@ -68,7 +52,14 @@ const Month: FunctionComponent<Props> = () => {
   return (
     <MonthStyle>
       <Header>
-        <NextPrev href="/" variant="blank" onClick={(e: any) => onPrevious(e)}>
+        <NextPrev
+          href="/"
+          variant="blank"
+          onClick={(e: any) => {
+            e.preventDefault()
+            console.log('previous month')
+          }}
+        >
           <Icon>
             <ChevronLeft />
           </Icon>
@@ -76,7 +67,14 @@ const Month: FunctionComponent<Props> = () => {
         <Title>
           {months[month]} {year}
         </Title>
-        <NextPrev href="/" variant="blank" onClick={(e: any) => onNext(e)}>
+        <NextPrev
+          href="/"
+          variant="blank"
+          onClick={(e: any) => {
+            e.preventDefault()
+            console.log('next month')
+          }}
+        >
           <Icon>
             <ChevronRight />
           </Icon>
