@@ -28,13 +28,19 @@ const Month: FunctionComponent<Props> = ({ date }) => {
     renderDays()
   }, [])
 
+  useEffect(() => {
+    setMonth(firstDay.getMonth() + 1)
+    setYear(firstDay.getFullYear())
+    renderDays()
+  }, [firstDay])
+
   const onPrevious = (e: any) => {
     e.preventDefault()
     const newMonth = month - 1
     console.log('onPrevious', newMonth, new Date(`${year}/${newMonth}/1`))
     setFirstDay(new Date(`${year}/${newMonth}/1`))
-    setMonth(newMonth)
-    renderDays()
+    // setMonth(newMonth)
+    // renderDays()
   }
 
   const onNext = (e: any) => {
@@ -42,8 +48,8 @@ const Month: FunctionComponent<Props> = ({ date }) => {
     const newMonth = month + 1
     console.log('onNext', newMonth, new Date(`${year}/${newMonth}/1`))
     setFirstDay(new Date(`${year}/${newMonth}/1`))
-    setMonth(newMonth)
-    renderDays()
+    // setMonth(newMonth)
+    // renderDays()
   }
 
   const renderDays = () => {
@@ -54,7 +60,7 @@ const Month: FunctionComponent<Props> = ({ date }) => {
       days.push({ number: '*', key: days.length })
     }
 
-    for (let i = 1; i <= daysInMonth[month]; i++) {
+    for (let i = 1; i <= daysInMonth[month - 1]; i++) {
       days.push({ number: i, key: days.length })
     }
 
