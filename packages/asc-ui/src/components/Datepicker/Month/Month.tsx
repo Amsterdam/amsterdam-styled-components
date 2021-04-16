@@ -42,11 +42,11 @@ const Month: FunctionComponent<Props> = ({ date }) => {
   }
 
   const onNext = (e: any) => {
-    console.log('onNext')
+    console.log('onNext', month)
     e.preventDefault()
     const newYear = year + (month === 12 ? 1 : 0)
     const newMonth = month + 1
-    setFirstDay(new Date(`${newYear}/${newMonth === 13 ? 1 : newMonth}/1`))
+    setFirstDay(new Date(`${newYear}/${month === 12 ? 1 : newMonth}/1`))
   }
 
   const numberOfDays = (mnth: number) => {
