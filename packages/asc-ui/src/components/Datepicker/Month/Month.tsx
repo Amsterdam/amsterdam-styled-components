@@ -11,8 +11,8 @@ import MonthStyle, {
 } from './MonthStyle'
 import { weekDays, months, daysInMonth } from '../../shared/constants'
 
-// @TODO add support for schrikkeljaar
 // @TODO add numbers of prev month
+// @TODO add support for click events of Month days
 
 const Month: FunctionComponent<Props> = ({ date }) => {
   const [firstDay, setFirstDay] = useState<any>(new Date())
@@ -36,13 +36,12 @@ const Month: FunctionComponent<Props> = ({ date }) => {
 
   const onPrevious = (e: any) => {
     e.preventDefault()
+    const newYear = year - (month === 1 ? 1 : 0)
     const newMonth = month - 1
-    console.log('onPrevious', newMonth, new Date(`${year}/${newMonth}/1`))
-    setFirstDay(new Date(`${year}/${newMonth}/1`))
+    setFirstDay(new Date(`${newYear}/${month === 1 ? 12 : newMonth}/1`))
   }
 
   const onNext = (e: any) => {
-    console.log('onNext', month)
     e.preventDefault()
     const newYear = year + (month === 12 ? 1 : 0)
     const newMonth = month + 1
@@ -58,7 +57,6 @@ const Month: FunctionComponent<Props> = ({ date }) => {
 
   const renderDays = (mnth: number) => {
     const days: any = []
-    console.log('renderDays month', mnth)
 
     for (let i = 0; i < firstDay.getDay() - 1; i++) {
       days.push({ number: '*', key: days.length })
@@ -96,7 +94,7 @@ const Month: FunctionComponent<Props> = ({ date }) => {
           </Icon>
         </NextPrev>
         <Title>
-          {months[month - 1]} {year}
+          {months[month - 1]} {year} {month}
         </Title>
         <NextPrev href="/" variant="blank" onClick={(e: any) => onNext(e)}>
           <Icon>
@@ -108,6 +106,7 @@ const Month: FunctionComponent<Props> = ({ date }) => {
       {weekDays.map((day) => (
         <Weekday key={day}>{day}</Weekday>
       ))}
+
       {allDays.map((day: any) => (
         <Day key={day.key}>{day.number}</Day>
       ))}
