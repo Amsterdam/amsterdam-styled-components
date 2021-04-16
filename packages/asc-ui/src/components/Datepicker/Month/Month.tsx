@@ -25,52 +25,62 @@ const Month: FunctionComponent<Props> = ({ date }) => {
     setFirstDay(new Date(new Date(`2021/4/1`)))
     setMonth(firstDay.getMonth() + 1)
     setYear(firstDay.getFullYear())
-    renderDays()
+    renderDays(firstDay.getMonth() + 1)
   }, [])
 
   useEffect(() => {
     setMonth(firstDay.getMonth() + 1)
     setYear(firstDay.getFullYear())
-    renderDays()
-  }, [firstDay])
+    renderDays(firstDay.getMonth() + 1)
+  }, [firstDay, setMonth, setYear])
 
   const onPrevious = (e: any) => {
     e.preventDefault()
     const newMonth = month - 1
     console.log('onPrevious', newMonth, new Date(`${year}/${newMonth}/1`))
     setFirstDay(new Date(`${year}/${newMonth}/1`))
-    // setMonth(newMonth)
-    // renderDays()
   }
 
   const onNext = (e: any) => {
+    console.log('onNext')
     e.preventDefault()
+    const newYear = year + (month === 12 ? 1 : 0)
     const newMonth = month + 1
-    console.log('onNext', newMonth, new Date(`${year}/${newMonth}/1`))
-    setFirstDay(new Date(`${year}/${newMonth}/1`))
-    // setMonth(newMonth)
-    // renderDays()
+    setFirstDay(new Date(`${newYear}/${newMonth === 13 ? 1 : newMonth}/1`))
   }
 
-  const renderDays = () => {
+  const numberOfDays = (mnth: number) => {
+    if (mnth === 1 && year % 4 === 0) {
+      return 29
+    }
+    return daysInMonth[mnth]
+  }
+
+  const renderDays = (mnth: number) => {
     const days: any = []
-    console.log('firstDay', firstDay)
+    console.log('renderDays month', mnth)
 
     for (let i = 0; i < firstDay.getDay() - 1; i++) {
       days.push({ number: '*', key: days.length })
     }
 
-    for (let i = 1; i <= daysInMonth[month - 1]; i++) {
+    for (let i = 1; i <= numberOfDays(mnth - 1); i++) {
       days.push({ number: i, key: days.length })
     }
 
+    let emptyDays = 35
     const count = days.length
-    if (count !== 28) {
-      for (let i = 1; i < 35 - count + 1; i++) {
+    if (count === 28) {
+      emptyDays = 0
+    }
+    if (count > 35) {
+      emptyDays = 42
+    }
+    if (emptyDays) {
+      for (let i = 1; i < emptyDays - count + 1; i++) {
         days.push({ number: i, key: days.length })
       }
     }
-    console.log('renderDays', firstDay.getDay())
 
     setAllDays(days)
   }
