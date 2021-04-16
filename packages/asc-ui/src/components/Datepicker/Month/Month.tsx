@@ -59,11 +59,11 @@ const Month: FunctionComponent<Props> = ({ date }) => {
     const days: any = []
     console.log('renderDays', thisMonth, thisYear)
 
-    for (let i = 0; i < firstDay.getDay() - 1; i++) {
+    for (let i = 0; i < firstDay.getDay() - 1; i += 1) {
       days.push({ number: '*', key: days.length })
     }
 
-    for (let i = 1; i <= numberOfDays(thisMonth - 1); i++) {
+    for (let i = 1; i <= numberOfDays(thisMonth - 1); i += 1) {
       days.push({
         number: i,
         date: `${i}-${thisMonth}-${thisYear}`,
@@ -80,7 +80,7 @@ const Month: FunctionComponent<Props> = ({ date }) => {
       emptyDays = 42
     }
     if (emptyDays) {
-      for (let i = 1; i < emptyDays - count + 1; i++) {
+      for (let i = 1; i < emptyDays - count + 1; i += 1) {
         days.push({
           number: i,
           date: `${i}-${thisMonth === 12 ? 1 : thisMonth + 1}-${
