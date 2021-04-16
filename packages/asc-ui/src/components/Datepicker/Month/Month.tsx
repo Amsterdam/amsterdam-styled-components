@@ -8,6 +8,7 @@ import MonthStyle, {
   NextPrev,
   Title,
   Day,
+  OutsideDay,
 } from './MonthStyle'
 import { weekDays, months, daysInMonth } from '../../shared/constants'
 
@@ -60,13 +61,14 @@ const Month: FunctionComponent<Props> = ({ date }) => {
     console.log('renderDays', thisMonth, thisYear)
 
     for (let i = 0; i < firstDay.getDay() - 1; i += 1) {
-      days.push({ number: '*', key: days.length })
+      days.push({ number: '*', outside: true, key: days.length })
     }
 
     for (let i = 1; i <= numberOfDays(thisMonth - 1); i += 1) {
       days.push({
         number: i,
         date: `${i}-${thisMonth}-${thisYear}`,
+        outside: false,
         key: days.length,
       })
     }
@@ -86,6 +88,7 @@ const Month: FunctionComponent<Props> = ({ date }) => {
           date: `${i}-${thisMonth === 12 ? 1 : thisMonth + 1}-${
             thisMonth === 12 ? thisYear + 1 : thisYear
           }`,
+          outside: true,
           key: days.length,
         })
       }
@@ -120,7 +123,10 @@ const Month: FunctionComponent<Props> = ({ date }) => {
       ))}
 
       {allDays.map((day: any) => (
-        <Day key={day.key}>{day.number}</Day>
+        <>
+          {day.outside && <OutsideDay key={day.key}>{day.number}</OutsideDay>}
+          {!day.outside && <Day key={day.key}>{day.number}</Day>}
+        </>
       ))}
     </MonthStyle>
   )

@@ -56,3 +56,12 @@ export const Day = styled.span`
   width: 40px;
   height: 40px;
 `
+
+export const OutsideDay = styled.span`
+  color: #b4b4b4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+`
