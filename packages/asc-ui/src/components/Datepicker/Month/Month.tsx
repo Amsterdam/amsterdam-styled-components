@@ -60,10 +60,21 @@ const Month: FunctionComponent<Props> = ({ date }) => {
     const days: any = []
     console.log('renderDays', thisMonth, thisYear)
 
+    // first dates outside current month
+    let dayBefore = numberOfDays(thisMonth === 1 ? 11 : thisMonth - 2)
+    const monthBefore = thisMonth === 1 ? 12 : thisMonth - 1
+    const yearBefore = thisMonth === 1 ? thisYear - 1 : thisYear
     for (let i = 0; i < firstDay.getDay() - 1; i += 1) {
-      days.push({ number: '*', outside: true, key: days.length })
+      days.unshift({
+        number: dayBefore,
+        date: `${dayBefore}-${monthBefore}-${yearBefore}`,
+        outside: true,
+        key: days.length,
+      })
+      dayBefore -= 1
     }
 
+    // add all days of the current month
     for (let i = 1; i <= numberOfDays(thisMonth - 1); i += 1) {
       days.push({
         number: i,
@@ -73,6 +84,7 @@ const Month: FunctionComponent<Props> = ({ date }) => {
       })
     }
 
+    // create outside days after current month
     let emptyDays = 35
     const count = days.length
     if (count === 28) {
@@ -93,12 +105,10 @@ const Month: FunctionComponent<Props> = ({ date }) => {
         })
       }
     }
-    console.log('renderDays =', days)
+    console.log('renderDays days', days)
 
     setAllDays(days)
   }
-
-  // console.log('Month ', month, year, firstDay)
 
   return (
     <MonthStyle>
