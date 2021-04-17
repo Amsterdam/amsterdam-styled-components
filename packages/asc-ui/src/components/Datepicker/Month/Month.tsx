@@ -119,7 +119,7 @@ const Month: FunctionComponent<Props> = ({ date }) => {
           </Icon>
         </NextPrev>
         <Title>
-          {months[month - 1]} {year} {month}
+          {months[month - 1]} {year}
         </Title>
         <NextPrev href="/" variant="blank" onClick={(e: any) => onNext(e)}>
           <Icon>
