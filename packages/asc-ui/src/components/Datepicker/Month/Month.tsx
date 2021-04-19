@@ -3,13 +3,13 @@ import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
 import Icon from '../../Icon'
 import MonthStyle, {
   Props,
+  DayProps,
   Weekday,
   Header,
   NextPrev,
   Title,
-  Day,
-  OutsideDay,
 } from './MonthStyle'
+import Day from './Day'
 import { weekDays, months, daysInMonth } from '../../shared/constants'
 
 // @TODO add numbers of prev month
@@ -59,7 +59,7 @@ const Month: FunctionComponent<Props> = ({ date }) => {
   }
 
   const renderDays = (thisMonth: number, thisYear: number) => {
-    const days: any = []
+    const days: Array<DayProps> = []
     console.log('renderDays', thisMonth, thisYear)
 
     // first dates outside current month
@@ -71,7 +71,6 @@ const Month: FunctionComponent<Props> = ({ date }) => {
         number: dayBefore,
         date: `${dayBefore}-${monthBefore}-${yearBefore}`,
         outside: true,
-        key: days.length,
       })
       dayBefore -= 1
     }
@@ -82,7 +81,6 @@ const Month: FunctionComponent<Props> = ({ date }) => {
         number: i,
         date: `${i}-${thisMonth}-${thisYear}`,
         outside: false,
-        key: days.length,
       })
     }
 
@@ -103,11 +101,10 @@ const Month: FunctionComponent<Props> = ({ date }) => {
             thisMonth === 12 ? thisYear + 1 : thisYear
           }`,
           outside: true,
-          key: days.length,
         })
       }
     }
-    console.log('renderDays days', days)
+    console.log('renderDays days WORTEL', days)
 
     setAllDays(days)
   }
@@ -136,8 +133,9 @@ const Month: FunctionComponent<Props> = ({ date }) => {
 
       {allDays.map((day: any) => (
         <>
-          {day.outside && <OutsideDay key={day.date}>{day.number}</OutsideDay>}
-          {!day.outside && <Day key={day.date}>{day.number}</Day>}
+          <Day outside={day.outside} key={day.date}>
+            {day.number}
+          </Day>
         </>
       ))}
     </MonthStyle>

@@ -14,6 +14,12 @@ export default styled.div<Props>`
   border: 1px solid black;
 `
 
+export interface DayProps {
+  number: number
+  date: string
+  outside: boolean
+}
+
 export const Weekday = styled.span`
   display: flex;
   justify-content: center;
