@@ -14,6 +14,8 @@ import { weekDays, months, daysInMonth } from '../../shared/constants'
 
 // @TODO add numbers of prev month
 // @TODO add support for click events of Month days
+// @TODO add Day component
+// @TODO use useCallback everywhnere
 
 const Month: FunctionComponent<Props> = ({ date }) => {
   const [firstDay, setFirstDay] = useState<any>(new Date())
@@ -134,8 +136,8 @@ const Month: FunctionComponent<Props> = ({ date }) => {
 
       {allDays.map((day: any) => (
         <>
-          {day.outside && <OutsideDay key={day.key}>{day.number}</OutsideDay>}
-          {!day.outside && <Day key={day.key}>{day.number}</Day>}
+          {day.outside && <OutsideDay key={day.date}>{day.number}</OutsideDay>}
+          {!day.outside && <Day key={day.date}>{day.number}</Day>}
         </>
       ))}
     </MonthStyle>
