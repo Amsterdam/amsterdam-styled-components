@@ -18,10 +18,10 @@ import { weekDays, months, daysInMonth } from '../../shared/constants'
 // @TODO use useCallback everywhnere
 
 const Month: FunctionComponent<Props> = ({ date }) => {
-  const [firstDay, setFirstDay] = useState<any>(new Date())
+  const [firstDay, setFirstDay] = useState<Date>(new Date())
   const [month, setMonth] = useState<number>(new Date().getMonth())
   const [year, setYear] = useState<number>(new Date().getFullYear())
-  const [allDays, setAllDays] = useState<any>([])
+  const [allDays, setAllDays] = useState<Array<DayProps>>([])
 
   useEffect(() => {
     // const parts = '15-04-2021'.split('-')
@@ -29,7 +29,7 @@ const Month: FunctionComponent<Props> = ({ date }) => {
     setMonth(firstDay.getMonth() + 1)
     setYear(firstDay.getFullYear())
     renderDays(firstDay.getMonth() + 1, firstDay.getFullYear())
-  }, [])
+  }, [setMonth, setYear])
 
   useEffect(() => {
     setMonth(firstDay.getMonth() + 1)
