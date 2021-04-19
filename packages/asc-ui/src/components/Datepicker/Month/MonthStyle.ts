@@ -58,7 +58,7 @@ export const Day = styled.span`
 `
 
 export const OutsideDay = styled.span`
-  color: #b4b4b4;
+  color: red;
   display: flex;
   justify-content: center;
   align-items: center;

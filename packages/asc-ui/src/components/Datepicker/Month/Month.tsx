@@ -12,8 +12,7 @@ import MonthStyle, {
 } from './MonthStyle'
 import { weekDays, months, daysInMonth } from '../../shared/constants'
 
-// @TODO add numbers of prev month
-// @TODO add support for click events of Month days
+// @TODO put Day  in a separate component
 
 const Month: FunctionComponent<Props> = ({ date }) => {
   const [firstDay, setFirstDay] = useState<any>(new Date())
@@ -35,7 +34,6 @@ const Month: FunctionComponent<Props> = ({ date }) => {
     renderDays(firstDay.getMonth() + 1, firstDay.getFullYear())
   }, [firstDay, setMonth, setYear])
 
-
   const onPrevious = useCallback(
     (e: any) => {
       e.preventDefault()
@@ -53,15 +51,15 @@ const Month: FunctionComponent<Props> = ({ date }) => {
       const newMonth = month + 1
       setFirstDay(new Date(`${newYear}/${month === 12 ? 1 : newMonth}/1`))
     },
-    [year, month, setFirstDay,
+    [year, month, setFirstDay],
   )
 
   const numberOfDays = useCallback(
-    (mnth: number) => {
-      if (mnth === 1 && year % 4 === 0) {
+    (thisMonth: number) => {
+      if (thisMonth === 1 && year % 4 === 0) {
         return 29
       }
-      return daysInMonth[mnth]
+      return daysInMonth[thisMonth]
     },
     [year],
   )
@@ -93,16 +91,19 @@ const Month: FunctionComponent<Props> = ({ date }) => {
     }
 
     // create outside days after current month
-    let emptyDays = 35
+    // for 5 week month
+    let total = 35
     const count = days.length
     if (count === 28) {
-      emptyDays = 0
+      // for 4 week month
+      total = 28
     }
     if (count > 35) {
-      emptyDays = 42
+      // for 6 week month
+      total = 42
     }
-    if (emptyDays) {
-      for (let i = 1; i < emptyDays - count + 1; i += 1) {
+    if (total) {
+      for (let i = 1; i < total - count + 1; i += 1) {
         days.push({
           number: i,
           date: `${i}-${thisMonth === 12 ? 1 : thisMonth + 1}-${
@@ -117,7 +118,7 @@ const Month: FunctionComponent<Props> = ({ date }) => {
     setAllDays(days)
   }, [])
 
-  console.log('---')
+  console.log('--- yooo YRS')
 
   return (
     <MonthStyle>
