@@ -1,4 +1,4 @@
-import { FunctionComponent, useState, useEffect } from 'react'
+import { FunctionComponent, useState, useEffect, useCallback } from 'react'
 import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
 import Icon from '../../Icon'
 import MonthStyle, {
@@ -35,28 +35,38 @@ const Month: FunctionComponent<Props> = ({ date }) => {
     renderDays(firstDay.getMonth() + 1, firstDay.getFullYear())
   }, [firstDay, setMonth, setYear])
 
-  const onPrevious = (e: any) => {
-    e.preventDefault()
-    const newYear = year - (month === 1 ? 1 : 0)
-    const newMonth = month - 1
-    setFirstDay(new Date(`${newYear}/${month === 1 ? 12 : newMonth}/1`))
-  }
 
-  const onNext = (e: any) => {
-    e.preventDefault()
-    const newYear = year + (month === 12 ? 1 : 0)
-    const newMonth = month + 1
-    setFirstDay(new Date(`${newYear}/${month === 12 ? 1 : newMonth}/1`))
-  }
+  const onPrevious = useCallback(
+    (e: any) => {
+      e.preventDefault()
+      const newYear = year - (month === 1 ? 1 : 0)
+      const newMonth = month - 1
+      setFirstDay(new Date(`${newYear}/${month === 1 ? 12 : newMonth}/1`))
+    },
+    [year, month, setFirstDay],
+  )
 
-  const numberOfDays = (mnth: number) => {
-    if (mnth === 1 && year % 4 === 0) {
-      return 29
-    }
-    return daysInMonth[mnth]
-  }
+  const onNext = useCallback(
+    (e: any) => {
+      e.preventDefault()
+      const newYear = year + (month === 12 ? 1 : 0)
+      const newMonth = month + 1
+      setFirstDay(new Date(`${newYear}/${month === 12 ? 1 : newMonth}/1`))
+    },
+    [year, month, setFirstDay,
+  )
 
-  const renderDays = (thisMonth: number, thisYear: number) => {
+  const numberOfDays = useCallback(
+    (mnth: number) => {
+      if (mnth === 1 && year % 4 === 0) {
+        return 29
+      }
+      return daysInMonth[mnth]
+    },
+    [year],
+  )
+
+  const renderDays = useCallback((thisMonth: number, thisYear: number) => {
     const days: any = []
     console.log('renderDays', thisMonth, thisYear)
 
@@ -69,7 +79,6 @@ const Month: FunctionComponent<Props> = ({ date }) => {
         number: dayBefore,
         date: `${dayBefore}-${monthBefore}-${yearBefore}`,
         outside: true,
-        key: days.length,
       })
       dayBefore -= 1
     }
@@ -80,7 +89,6 @@ const Month: FunctionComponent<Props> = ({ date }) => {
         number: i,
         date: `${i}-${thisMonth}-${thisYear}`,
         outside: false,
-        key: days.length,
       })
     }
 
@@ -101,14 +109,15 @@ const Month: FunctionComponent<Props> = ({ date }) => {
             thisMonth === 12 ? thisYear + 1 : thisYear
           }`,
           outside: true,
-          key: days.length,
         })
       }
     }
     console.log('renderDays days', days)
 
     setAllDays(days)
-  }
+  }, [])
+
+  console.log('---')
 
   return (
     <MonthStyle>
