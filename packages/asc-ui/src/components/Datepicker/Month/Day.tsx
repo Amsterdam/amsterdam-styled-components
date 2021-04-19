@@ -4,7 +4,7 @@ import DayStyle, { Props } from './DayStyle'
 const Day: FunctionComponent<Props> = ({ number, date, outside }) => {
   const onClick = useCallback(() => {
     console.log('Day onClick', date)
-  }, [])
+  }, [date])
 
   return (
     <DayStyle outside={outside} onClick={onClick}>
