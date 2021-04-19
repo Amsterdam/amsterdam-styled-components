@@ -12,12 +12,10 @@ import MonthStyle, {
 import Day from './Day'
 import { weekDays, months, daysInMonth } from '../../shared/constants'
 
-// @TODO add numbers of prev month
 // @TODO add support for click events of Month days
-// @TODO add Day component
 // @TODO use useCallback everywhnere
 
-const Month: FunctionComponent<Props> = ({ date }) => {
+const Month: FunctionComponent<Props> = () => {
   const [firstDay, setFirstDay] = useState<Date>(new Date())
   const [month, setMonth] = useState<number>(new Date().getMonth())
   const [year, setYear] = useState<number>(new Date().getFullYear())
@@ -104,7 +102,7 @@ const Month: FunctionComponent<Props> = ({ date }) => {
         })
       }
     }
-    console.log('renderDays days WORTEL', days)
+    console.log('renderDays days JAA', days)
 
     setAllDays(days)
   }
@@ -112,7 +110,13 @@ const Month: FunctionComponent<Props> = ({ date }) => {
   return (
     <MonthStyle>
       <Header>
-        <NextPrev href="/" variant="blank" onClick={(e: any) => onPrevious(e)}>
+        <NextPrev
+          href="/"
+          variant="blank"
+          onClick={(e: MouseEvent<HTMLParagraphElement, MouseEvent>) =>
+            onPrevious(e)
+          }
+        >
           <Icon>
             <ChevronLeft />
           </Icon>
@@ -120,7 +124,13 @@ const Month: FunctionComponent<Props> = ({ date }) => {
         <Title>
           {months[month - 1]} {year}
         </Title>
-        <NextPrev href="/" variant="blank" onClick={(e: any) => onNext(e)}>
+        <NextPrev
+          href="/"
+          variant="blank"
+          onClick={(e: MouseEvent<HTMLParagraphElement, MouseEvent>) =>
+            onNext(e)
+          }
+        >
           <Icon>
             <ChevronRight />
           </Icon>
