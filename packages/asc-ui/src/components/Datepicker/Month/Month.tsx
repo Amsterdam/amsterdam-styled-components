@@ -18,7 +18,7 @@ import MonthStyle, {
 import Day from './Day'
 import { weekDays, months, daysInMonth } from '../../shared/constants'
 
-const Month: FunctionComponent<Props> = () => {
+const Month: FunctionComponent<Props> = ({ onClickDay }) => {
   const [firstDay, setFirstDay] = useState<Date>(new Date())
   const [month, setMonth] = useState<number>(new Date().getMonth())
   const [year, setYear] = useState<number>(new Date().getFullYear())
@@ -171,7 +171,12 @@ const Month: FunctionComponent<Props> = () => {
 
       {allDays.map((day: DayProps) => (
         <>
-          <Day date={day.date} outside={day.outside} key={day.date}>
+          <Day
+            onClickDay={onClickDay}
+            date={day.date}
+            outside={day.outside}
+            key={day.date}
+          >
             {day.number}
           </Day>
         </>

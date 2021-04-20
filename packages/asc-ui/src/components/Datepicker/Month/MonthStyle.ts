@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-// import { themeColor, themeSpacing } from '../../../utils'
 import Link from '../../Link'
 
 export interface Props {
   date?: string
+  onClickDay: (date: string) => void
 }
 
 export default styled.div<Props>`

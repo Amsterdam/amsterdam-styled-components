@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useCallback } from 'react'
 import DatepickerStyle, { Props } from './DatepickerStyle'
 import Month from './Month'
 
@@ -9,10 +9,13 @@ import Month from './Month'
 const Datepicker: FunctionComponent<Props> = ({ value }) => {
   console.log('Datepicker', value)
   // const newDate = '12-03-2021'
+  const onClickDay = useCallback((thisDate: string) => {
+    console.log('onClickDay =====', thisDate)
+  }, [])
 
   return (
     <DatepickerStyle>
-      <Month />
+      <Month onClickDay={onClickDay} />
     </DatepickerStyle>
   )
 }
