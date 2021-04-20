@@ -4,6 +4,7 @@ import {
   useState,
   useEffect,
   useCallback,
+  HTMLAttributes,
 } from 'react'
 import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
 import Icon from '../../Icon'
@@ -18,7 +19,9 @@ import MonthStyle, {
 import Day from './Day'
 import { weekDays, months, daysInMonth } from '../../shared/constants'
 
-const Month: FunctionComponent<Props> = ({ onClickDay }) => {
+const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
+  onClickDay,
+}) => {
   const [firstDay, setFirstDay] = useState<Date>(new Date())
   const [month, setMonth] = useState<number>(new Date().getMonth())
   const [year, setYear] = useState<number>(new Date().getFullYear())
