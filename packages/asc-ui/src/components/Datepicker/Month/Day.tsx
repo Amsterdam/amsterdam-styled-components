@@ -8,13 +8,7 @@ const Day: FunctionComponent<Props & HTMLAttributes<HTMLSpanElement>> = ({
   onClickDay,
   ...otherProps
 }) => {
-  // const onClick = useCallback(
-  //   (e: MouseEvent<HTMLParagraphElement, MouseEvent>, thisDate: string) => {
-  //     e.preventDefault()
-  //     console.log('Day onClick', thisDate)
-  //   },
-  //   [],
-  // )
+  console.log('Day', onClickDay)
 
   return (
     <DayStyle
