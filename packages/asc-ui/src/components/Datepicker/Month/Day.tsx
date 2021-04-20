@@ -16,7 +16,9 @@ const Day: FunctionComponent<Props & HTMLAttributes<HTMLSpanElement>> = ({
       variant="blank"
       onClick={(e: MouseEvent<HTMLParagraphElement, MouseEvent>) => {
         e.preventDefault()
-        onClickDay(date)
+        if (onClickDay) {
+          onClickDay(date)
+        }
       }}
       outside={outside}
       date={date}

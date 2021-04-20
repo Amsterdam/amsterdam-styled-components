@@ -5,7 +5,7 @@ import Link from '../../Link'
 export interface Props {
   date: string
   outside: boolean
-  onClickDay: (thisDate: string) => void
+  onClickDay?: (thisDate: string) => void
 }
 
 export default styled(Link)<Props>`

@@ -14,6 +14,7 @@ const Datepicker: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
   const onClickDay = useCallback((thisDate: string) => {
     console.log('onClickDay =====', thisDate)
   }, [])
+  console.log('Datepicker', onClickDay)
 
   return (
     <DatepickerStyle>
