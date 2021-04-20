@@ -1,4 +1,10 @@
-import { FunctionComponent, MouseEvent, useState, useEffect } from 'react'
+import {
+  FunctionComponent,
+  MouseEvent,
+  useState,
+  useEffect,
+  useCallback,
+} from 'react'
 import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
 import Icon from '../../Icon'
 import MonthStyle, {
@@ -35,79 +41,90 @@ const Month: FunctionComponent<Props> = () => {
     renderDays(firstDay.getMonth() + 1, firstDay.getFullYear())
   }, [firstDay, setMonth, setYear])
 
-  const onPrevious = (e: MouseEvent<HTMLParagraphElement, MouseEvent>) => {
-    e.preventDefault()
-    const newYear = year - (month === 1 ? 1 : 0)
-    const newMonth = month - 1
-    setFirstDay(new Date(`${newYear}/${month === 1 ? 12 : newMonth}/1`))
-  }
+  const onPrevious = useCallback(
+    (e: MouseEvent<HTMLParagraphElement, MouseEvent>) => {
+      e.preventDefault()
+      const newYear = year - (month === 1 ? 1 : 0)
+      const newMonth = month - 1
+      setFirstDay(new Date(`${newYear}/${month === 1 ? 12 : newMonth}/1`))
+    },
+    [month, year, setFirstDay],
+  )
 
-  const onNext = (e: MouseEvent<HTMLParagraphElement, MouseEvent>) => {
-    e.preventDefault()
-    const newYear = year + (month === 12 ? 1 : 0)
-    const newMonth = month + 1
-    setFirstDay(new Date(`${newYear}/${month === 12 ? 1 : newMonth}/1`))
-  }
+  const onNext = useCallback(
+    (e: MouseEvent<HTMLParagraphElement, MouseEvent>) => {
+      e.preventDefault()
+      const newYear = year + (month === 12 ? 1 : 0)
+      const newMonth = month + 1
+      setFirstDay(new Date(`${newYear}/${month === 12 ? 1 : newMonth}/1`))
+    },
+    [month, year, setFirstDay],
+  )
 
-  const numberOfDays = (mnth: number) => {
-    if (mnth === 1 && year % 4 === 0) {
-      return 29
-    }
-    return daysInMonth[mnth]
-  }
+  const numberOfDays = useCallback(
+    (thisMonth: number) => {
+      if (thisMonth === 1 && year % 4 === 0) {
+        return 29
+      }
+      return daysInMonth[thisMonth]
+    },
+    [year],
+  )
 
-  const renderDays = (thisMonth: number, thisYear: number) => {
-    const days: Array<DayProps> = []
-    // console.log('renderDays', thisMonth, thisYear)
+  const renderDays = useCallback(
+    (thisMonth: number, thisYear: number) => {
+      const days: Array<DayProps> = []
 
-    // first dates outside current month
-    let dayBefore = numberOfDays(thisMonth === 1 ? 11 : thisMonth - 2)
-    const monthBefore = thisMonth === 1 ? 12 : thisMonth - 1
-    const yearBefore = thisMonth === 1 ? thisYear - 1 : thisYear
-    for (let i = 0; i < firstDay.getDay() - 1; i += 1) {
-      days.unshift({
-        number: dayBefore,
-        date: `${dayBefore}-${monthBefore}-${yearBefore}`,
-        outside: true,
-      })
-      dayBefore -= 1
-    }
-
-    // add all days of the current month
-    for (let i = 1; i <= numberOfDays(thisMonth - 1); i += 1) {
-      days.push({
-        number: i,
-        date: `${i}-${thisMonth}-${thisYear}`,
-        outside: false,
-      })
-    }
-
-    // create outside days after current month
-    let emptyDays = 35
-    const count = days.length
-    if (count === 28) {
-      emptyDays = 0
-    }
-    if (count > 35) {
-      emptyDays = 42
-    }
-    if (emptyDays) {
-      for (let i = 1; i < emptyDays - count + 1; i += 1) {
-        days.push({
-          number: i,
-          date: `${i}-${thisMonth === 12 ? 1 : thisMonth + 1}-${
-            thisMonth === 12 ? thisYear + 1 : thisYear
-          }`,
+      // first dates outside current month
+      let dayBefore = numberOfDays(thisMonth === 1 ? 11 : thisMonth - 2)
+      const monthBefore = thisMonth === 1 ? 12 : thisMonth - 1
+      const yearBefore = thisMonth === 1 ? thisYear - 1 : thisYear
+      for (let i = 0; i < firstDay.getDay() - 1; i += 1) {
+        days.unshift({
+          number: dayBefore,
+          date: `${dayBefore}-${monthBefore}-${yearBefore}`,
           outside: true,
         })
+        dayBefore -= 1
       }
-    }
-    // console.log('renderDays days', days)
 
-    setAllDays(days)
-  }
+      // add all days of the current month
+      for (let i = 1; i <= numberOfDays(thisMonth - 1); i += 1) {
+        days.push({
+          number: i,
+          date: `${i}-${thisMonth}-${thisYear}`,
+          outside: false,
+        })
+      }
 
-  console.log('render JA Nee yo')
+      // create outside days after current month
+      let emptyDays = 35
+      const count = days.length
+      if (count === 28) {
+        emptyDays = 0
+      }
+      if (count > 35) {
+        emptyDays = 42
+      }
+      if (emptyDays) {
+        for (let i = 1; i < emptyDays - count + 1; i += 1) {
+          days.push({
+            number: i,
+            date: `${i}-${thisMonth === 12 ? 1 : thisMonth + 1}-${
+              thisMonth === 12 ? thisYear + 1 : thisYear
+            }`,
+            outside: true,
+          })
+        }
+      }
+      console.log('renderDays days', days)
+
+      setAllDays(days)
+    },
+    [firstDay, numberOfDays],
+  )
+
+  console.log('render')
 
   return (
     <MonthStyle>
