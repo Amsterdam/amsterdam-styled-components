@@ -58,7 +58,7 @@ const Month: FunctionComponent<Props> = () => {
 
   const renderDays = (thisMonth: number, thisYear: number) => {
     const days: Array<DayProps> = []
-    console.log('renderDays', thisMonth, thisYear)
+    // console.log('renderDays', thisMonth, thisYear)
 
     // first dates outside current month
     let dayBefore = numberOfDays(thisMonth === 1 ? 11 : thisMonth - 2)
@@ -102,10 +102,12 @@ const Month: FunctionComponent<Props> = () => {
         })
       }
     }
-    console.log('renderDays days JAA', days)
+    // console.log('renderDays days', days)
 
     setAllDays(days)
   }
+
+  console.log('render JA Nee yo')
 
   return (
     <MonthStyle>
@@ -143,7 +145,7 @@ const Month: FunctionComponent<Props> = () => {
 
       {allDays.map((day: DayProps) => (
         <>
-          <Day outside={day.outside} key={day.date}>
+          <Day date={day.date} outside={day.outside} key={day.date}>
             {day.number}
           </Day>
         </>

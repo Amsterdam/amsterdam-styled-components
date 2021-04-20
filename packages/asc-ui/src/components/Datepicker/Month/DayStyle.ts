@@ -4,7 +4,6 @@ import { themeColor } from '../../../utils'
 // import Link from '../../Link'
 
 export interface Props {
-  number?: number
   date: string
   outside: boolean
 }
