@@ -9,7 +9,8 @@ import {
 import DatepickerStyle, { Props, StyledInput } from './DatepickerStyle'
 import Month from './Month'
 
-// @TODO add text input element
+// @TODO add icon to text input element
+// @TODO add selected state
 // @TODO add support date pushing down to Month
 // @TODO add open close state in Datepicker
 
