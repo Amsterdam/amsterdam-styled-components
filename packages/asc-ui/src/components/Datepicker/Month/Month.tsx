@@ -68,10 +68,15 @@ const Month: FunctionComponent<Props> = () => {
     [year],
   )
 
-  const formatDate = useCallback((day, thisMonth, thisYear) => {
-    console.log('formatDate')
-    return `${day}-${thisMonth}-${thisYear}`
-  }, [])
+  const formatDate = useCallback(
+    (day: number, thisMonth: number, thisYear: number) => {
+      const newday = `${day}`.length === 1 ? `0${day}` : day
+      const newMonth = `${thisMonth}`.length === 1 ? `0${thisMonth}` : thisMonth
+
+      return `${newday}-${newMonth}-${thisYear}`
+    },
+    [],
+  )
 
   const renderDays = useCallback(
     (thisMonth: number, thisYear: number) => {
