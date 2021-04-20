@@ -3,15 +3,21 @@ import Link from '../../Link'
 
 export interface Props {
   date?: string
+  open?: boolean
   onClickDay?: (date: string) => void
 }
 
-export default styled.div<Props>`
+export default styled.div`
   width: 282px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   border: 1px solid black;
+`
+
+export const Wrapper = styled.div<Props>`
+  width: 282px;
+  position: absolute;
 `
 
 export interface DayProps {

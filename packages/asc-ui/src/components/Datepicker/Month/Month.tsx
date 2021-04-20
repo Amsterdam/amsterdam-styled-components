@@ -9,6 +9,7 @@ import {
 import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
 import Icon from '../../Icon'
 import MonthStyle, {
+  Wrapper,
   Props,
   DayProps,
   Weekday,
@@ -21,6 +22,7 @@ import { weekDays, months, daysInMonth } from '../../shared/constants'
 
 const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
   onClickDay,
+  open,
   ...otherProps
 }) => {
   const [firstDay, setFirstDay] = useState<Date>(new Date())
@@ -145,56 +147,60 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
     [firstDay, numberOfDays],
   )
 
-  console.log('Month', allDays)
+  console.log('Month', open)
 
   return (
-    <MonthStyle {...otherProps}>
-      <Header>
-        <NextPrev
-          href="/"
-          variant="blank"
-          onClick={(e: MouseEvent<HTMLParagraphElement, MouseEvent>) =>
-            onPrevious(e)
-          }
-        >
-          <Icon>
-            <ChevronLeft />
-          </Icon>
-        </NextPrev>
-        <Title>
-          {months[month - 1]} {year}
-        </Title>
-        <NextPrev
-          href="/"
-          variant="blank"
-          onClick={(e: MouseEvent<HTMLParagraphElement, MouseEvent>) =>
-            onNext(e)
-          }
-        >
-          <Icon>
-            <ChevronRight />
-          </Icon>
-        </NextPrev>
-      </Header>
+    <Wrapper {...otherProps}>
+      {open && (
+        <MonthStyle>
+          <Header>
+            <NextPrev
+              href="/"
+              variant="blank"
+              onClick={(e: MouseEvent<HTMLParagraphElement, MouseEvent>) =>
+                onPrevious(e)
+              }
+            >
+              <Icon>
+                <ChevronLeft />
+              </Icon>
+            </NextPrev>
+            <Title>
+              {months[month - 1]} {year}
+            </Title>
+            <NextPrev
+              href="/"
+              variant="blank"
+              onClick={(e: MouseEvent<HTMLParagraphElement, MouseEvent>) =>
+                onNext(e)
+              }
+            >
+              <Icon>
+                <ChevronRight />
+              </Icon>
+            </NextPrev>
+          </Header>
 
-      {weekDays.map((day) => (
-        <Weekday key={day}>{day}</Weekday>
-      ))}
+          {weekDays.map((day) => (
+            <Weekday key={day}>{day}</Weekday>
+          ))}
 
-      {allDays.map((day: DayProps) => (
-        <>
-          <Day
-            onClickDay={onClickDay}
-            date={day.date}
-            outside={day.outside}
-            today={day.today}
-            key={day.date}
-          >
-            {day.number}
-          </Day>
-        </>
-      ))}
-    </MonthStyle>
+          {allDays.map((day: DayProps) => (
+            <>
+              <Day
+                onClickDay={onClickDay}
+                date={day.date}
+                outside={day.outside}
+                today={day.today}
+                key={day.date}
+              >
+                {day.number}
+              </Day>
+            </>
+          ))}
+        </MonthStyle>
+      )}
+    </Wrapper>
   )
 }
 
