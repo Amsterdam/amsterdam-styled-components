@@ -21,6 +21,7 @@ import { weekDays, months, daysInMonth } from '../../shared/constants'
 
 const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
   onClickDay,
+  ...otherProps
 }) => {
   const [firstDay, setFirstDay] = useState<Date>(new Date())
   const [month, setMonth] = useState<number>(new Date().getMonth())
@@ -147,7 +148,7 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
   console.log('Month', allDays)
 
   return (
-    <MonthStyle>
+    <MonthStyle {...otherProps}>
       <Header>
         <NextPrev
           href="/"
