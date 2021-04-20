@@ -68,6 +68,11 @@ const Month: FunctionComponent<Props> = () => {
     [year],
   )
 
+  const formatDate = useCallback((day, thisMonth, thisYear) => {
+    console.log('formatDate')
+    return `${day}-${thisMonth}-${thisYear}`
+  }, [])
+
   const renderDays = useCallback(
     (thisMonth: number, thisYear: number) => {
       const days: Array<DayProps> = []
@@ -79,7 +84,7 @@ const Month: FunctionComponent<Props> = () => {
       for (let i = 0; i < firstDay.getDay() - 1; i += 1) {
         days.unshift({
           number: dayBefore,
-          date: `${dayBefore}-${monthBefore}-${yearBefore}`,
+          date: formatDate(dayBefore, monthBefore, yearBefore),
           outside: true,
         })
         dayBefore -= 1
@@ -89,7 +94,7 @@ const Month: FunctionComponent<Props> = () => {
       for (let i = 1; i <= numberOfDays(thisMonth - 1); i += 1) {
         days.push({
           number: i,
-          date: `${i}-${thisMonth}-${thisYear}`,
+          date: formatDate(i, thisMonth, thisYear),
           outside: false,
         })
       }
@@ -107,9 +112,11 @@ const Month: FunctionComponent<Props> = () => {
         for (let i = 1; i < emptyDays - count + 1; i += 1) {
           days.push({
             number: i,
-            date: `${i}-${thisMonth === 12 ? 1 : thisMonth + 1}-${
-              thisMonth === 12 ? thisYear + 1 : thisYear
-            }`,
+            date: formatDate(
+              i,
+              thisMonth === 12 ? 1 : thisMonth + 1,
+              thisMonth === 12 ? thisYear + 1 : thisYear,
+            ),
             outside: true,
           })
         }
