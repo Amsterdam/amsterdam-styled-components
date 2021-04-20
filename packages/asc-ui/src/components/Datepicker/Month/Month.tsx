@@ -94,9 +94,12 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
           number: dayBefore,
           date: formatDate(dayBefore, monthBefore, yearBefore),
           outside: true,
+          today: false,
         })
         dayBefore -= 1
       }
+
+      const today = new Date()
 
       // add all days of the current month
       for (let i = 1; i <= numberOfDays(thisMonth - 1); i += 1) {
@@ -104,6 +107,10 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
           number: i,
           date: formatDate(i, thisMonth, thisYear),
           outside: false,
+          today:
+            today.getDate() === i &&
+            today.getMonth() === thisMonth - 1 &&
+            today.getFullYear() === thisYear,
         })
       }
 
@@ -126,6 +133,7 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
               thisMonth === 12 ? thisYear + 1 : thisYear,
             ),
             outside: true,
+            today: false,
           })
         }
       }
@@ -178,6 +186,7 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
             onClickDay={onClickDay}
             date={day.date}
             outside={day.outside}
+            today={day.today}
             key={day.date}
           >
             {day.number}

@@ -18,6 +18,7 @@ export interface DayProps {
   number: number
   date: string
   outside: boolean
+  today: boolean
 }
 
 export const Weekday = styled.span`

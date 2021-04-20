@@ -2,7 +2,6 @@ import { FunctionComponent, useCallback, HTMLAttributes } from 'react'
 import DatepickerStyle, { Props } from './DatepickerStyle'
 import Month from './Month'
 
-// @TODO add support for click events of Month days
 // @TODO add text input element
 // @TODO add support date pushing down to Month
 

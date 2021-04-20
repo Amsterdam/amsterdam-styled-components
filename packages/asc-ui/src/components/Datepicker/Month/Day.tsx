@@ -8,8 +8,6 @@ const Day: FunctionComponent<Props & HTMLAttributes<HTMLSpanElement>> = ({
   onClickDay,
   ...otherProps
 }) => {
-  console.log('Day', onClickDay)
-
   return (
     <DayStyle
       href="/"
