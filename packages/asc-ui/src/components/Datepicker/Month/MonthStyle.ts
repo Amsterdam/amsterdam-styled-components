@@ -3,7 +3,7 @@ import Link from '../../Link'
 
 export interface Props {
   date?: string
-  onClickDay?: (thisDate: string) => void
+  onClickDay?: (date: string) => void
 }
 
 export default styled.div<Props>`

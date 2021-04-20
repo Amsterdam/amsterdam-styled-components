@@ -10,8 +10,8 @@ const Datepicker: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
 }) => {
   console.log('Datepicker', value)
   // const newDate = '12-03-2021'
-  const onClickDay = useCallback((thisDate: string) => {
-    console.log('onClickDay =====', thisDate)
+  const onClickDay = useCallback((date: string) => {
+    console.log('onClickDay =====', date)
   }, [])
   console.log('Datepicker', onClickDay)
 

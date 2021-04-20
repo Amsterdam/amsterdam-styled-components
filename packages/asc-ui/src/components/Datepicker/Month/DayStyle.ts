@@ -6,7 +6,7 @@ export interface Props {
   date: string
   outside: boolean
   today: boolean
-  onClickDay?: (thisDate: string) => void
+  onClickDay?: (date: string) => void
 }
 
 export default styled(Link)<Props>`
