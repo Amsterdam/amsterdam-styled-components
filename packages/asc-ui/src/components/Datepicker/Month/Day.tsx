@@ -1,4 +1,9 @@
-import { FunctionComponent, HTMLAttributes } from 'react'
+import {
+  FunctionComponent,
+  HTMLAttributes,
+  MouseEvent,
+  useCallback,
+} from 'react'
 import DayStyle, { Props } from './DayStyle'
 
 const Day: FunctionComponent<Props & HTMLAttributes<HTMLSpanElement>> = ({
@@ -7,12 +12,25 @@ const Day: FunctionComponent<Props & HTMLAttributes<HTMLSpanElement>> = ({
   outside,
   ...otherProps
 }) => {
-  // const onClick = useCallback(() => {
-  //   console.log('Day onClick', date)
-  // }, [date])
+  const onClick = useCallback(
+    (e: MouseEvent<HTMLParagraphElement, MouseEvent>, thisDate: string) => {
+      e.preventDefault()
+      console.log('Day onClick', thisDate)
+    },
+    [],
+  )
 
   return (
-    <DayStyle outside={outside} date={date} {...otherProps}>
+    <DayStyle
+      href="/"
+      variant="blank"
+      onClick={(e: MouseEvent<HTMLParagraphElement, MouseEvent>) =>
+        onClick(e, date)
+      }
+      outside={outside}
+      date={date}
+      {...otherProps}
+    >
       {children}
     </DayStyle>
   )

@@ -18,9 +18,6 @@ import MonthStyle, {
 import Day from './Day'
 import { weekDays, months, daysInMonth } from '../../shared/constants'
 
-// @TODO add support for click events of Month days
-// @TODO use useCallback everywhnere
-
 const Month: FunctionComponent<Props> = () => {
   const [firstDay, setFirstDay] = useState<Date>(new Date())
   const [month, setMonth] = useState<number>(new Date().getMonth())
@@ -124,7 +121,7 @@ const Month: FunctionComponent<Props> = () => {
     [firstDay, numberOfDays],
   )
 
-  console.log('render')
+  console.log('Month', allDays)
 
   return (
     <MonthStyle>
