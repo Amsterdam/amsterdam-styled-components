@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { themeSpacing } from '../../utils'
 import Input from '../Input'
-// import Icon from '../Icon/Icon'
 
 export interface Props {
   id?: string
