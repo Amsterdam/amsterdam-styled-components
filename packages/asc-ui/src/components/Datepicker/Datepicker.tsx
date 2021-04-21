@@ -15,24 +15,20 @@ import DatepickerStyle, {
 } from './DatepickerStyle'
 import Month from './Month'
 
-// @TODO add selected state
-// @TODO add support date pushing down to Month
-// @TODO add open close state in Datepicker
-
 const Datepicker = forwardRef<
   HTMLInputElement,
   Props & HTMLAttributes<HTMLInputElement>
 >(({ id, value, ...otherProps }, externalRef) => {
   const [open, setOpen] = useState<boolean>(false)
+  const [selected, setSelected] = useState<string>('')
   const ref = useRef<HTMLInputElement>(null)
-  console.log('Datepicker', value, open)
 
   useImperativeHandle(externalRef, () => ref.current as HTMLInputElement)
 
-  // const newDate = '12-03-2021'
-  const onClickDay = useCallback((date: string) => {
+  const onSelectDay = useCallback((date: string) => {
     if (ref.current) {
       ref.current.value = date
+      setSelected(date)
     }
     setOpen(false)
   }, [])
@@ -41,6 +37,7 @@ const Datepicker = forwardRef<
     <DatepickerStyle>
       <StyledInput
         id={id}
+        autoComplete="off"
         ref={ref}
         defaultValue={value}
         {...otherProps}
@@ -49,7 +46,7 @@ const Datepicker = forwardRef<
       <StyledLabel htmlFor={id}>
         <Calendar />
       </StyledLabel>
-      <Month open={open} date={value} onClickDay={onClickDay} />
+      <Month open={open} date={selected || value} onSelectDay={onSelectDay} />
     </DatepickerStyle>
   )
 })

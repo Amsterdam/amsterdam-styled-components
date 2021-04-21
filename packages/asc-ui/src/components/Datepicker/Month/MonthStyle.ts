@@ -4,7 +4,7 @@ import Link from '../../Link'
 export interface Props {
   date?: string
   open?: boolean
-  onClickDay?: (date: string) => void
+  onSelectDay?: (date: string) => void
 }
 
 export default styled.div`

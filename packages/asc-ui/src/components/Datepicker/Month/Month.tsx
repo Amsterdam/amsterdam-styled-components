@@ -23,7 +23,7 @@ import { weekDays, months, daysInMonth } from '../../shared/constants'
 const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
   date,
   open,
-  onClickDay,
+  onSelectDay,
   ...otherProps
 }) => {
   const [firstDay, setFirstDay] = useState<Date>(new Date())
@@ -198,7 +198,7 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
           {allDays.map((day: DayProps) => (
             <>
               <Day
-                onClickDay={onClickDay}
+                onSelectDay={onSelectDay}
                 date={day.date}
                 outside={day.outside}
                 today={day.today}

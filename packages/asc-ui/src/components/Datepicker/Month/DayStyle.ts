@@ -7,7 +7,7 @@ export interface Props {
   outside: boolean
   selected: boolean
   today: boolean
-  onClickDay?: (date: string) => void
+  onSelectDay?: (date: string) => void
 }
 
 const getColor = (selected: boolean, outside: boolean) => {

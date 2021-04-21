@@ -5,7 +5,7 @@ const Day: FunctionComponent<Props & HTMLAttributes<HTMLSpanElement>> = ({
   children,
   date,
   outside,
-  onClickDay,
+  onSelectDay,
   ...otherProps
 }) => {
   return (
@@ -14,8 +14,8 @@ const Day: FunctionComponent<Props & HTMLAttributes<HTMLSpanElement>> = ({
       variant="blank"
       onClick={(e: MouseEvent<HTMLParagraphElement, MouseEvent>) => {
         e.preventDefault()
-        if (onClickDay) {
-          onClickDay(date)
+        if (onSelectDay) {
+          onSelectDay(date)
         }
       }}
       outside={outside}
