@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import { themeSpacing } from '../../utils'
 import Input from '../Input'
-import Icon from '../Icon/Icon'
+// import Icon from '../Icon/Icon'
 
 export interface Props {
+  id?: string
   value?: string
 }
 export default styled.div<Props>`
@@ -15,9 +16,11 @@ export const StyledInput = styled(Input)`
   width: 282px;
 `
 
-export const StyledIcon = styled(Icon)`
+export const StyledLabel = styled.label`
   position: absolute;
   margin-left: ${themeSpacing(-8)};
   display: inline-block;
   margin-top: ${themeSpacing(3)};
+  width: 20px;
+  height: 20px;
 `

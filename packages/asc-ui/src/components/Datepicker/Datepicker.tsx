@@ -11,7 +11,7 @@ import { Calendar } from '@amsterdam/asc-assets'
 import DatepickerStyle, {
   Props,
   StyledInput,
-  StyledIcon,
+  StyledLabel,
 } from './DatepickerStyle'
 import Month from './Month'
 
@@ -22,7 +22,7 @@ import Month from './Month'
 const Datepicker = forwardRef<
   HTMLInputElement,
   Props & HTMLAttributes<HTMLInputElement>
->(({ value, ...otherProps }, externalRef) => {
+>(({ id, value, ...otherProps }, externalRef) => {
   const [open, setOpen] = useState<boolean>(false)
   const ref = useRef<HTMLInputElement>(null)
   console.log('Datepicker', value, open)
@@ -39,10 +39,15 @@ const Datepicker = forwardRef<
 
   return (
     <DatepickerStyle>
-      <StyledInput ref={ref} {...otherProps} onClick={() => setOpen(true)} />
-      <StyledIcon>
+      <StyledInput
+        id={id}
+        ref={ref}
+        {...otherProps}
+        onClick={() => setOpen(true)}
+      />
+      <StyledLabel htmlFor={id}>
         <Calendar />
-      </StyledIcon>
+      </StyledLabel>
       <Month open={open} onClickDay={onClickDay} />
     </DatepickerStyle>
   )
