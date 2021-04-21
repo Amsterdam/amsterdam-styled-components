@@ -21,8 +21,9 @@ import Day from './Day'
 import { weekDays, months, daysInMonth } from '../../shared/constants'
 
 const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
-  onClickDay,
+  date,
   open,
+  onClickDay,
   ...otherProps
 }) => {
   const [firstDay, setFirstDay] = useState<Date>(new Date())
@@ -31,12 +32,18 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
   const [allDays, setAllDays] = useState<Array<DayProps>>([])
 
   useEffect(() => {
-    // const parts = '15-04-2021'.split('-')
-    setFirstDay(new Date(new Date(`2021/4/1`)))
+    if (date) {
+      const parts = date.split('-')
+
+      setFirstDay(new Date(`${parts[2]}/${parts[1]}/${parts[0]}`))
+    } else {
+      setFirstDay(new Date())
+    }
+
     setMonth(firstDay.getMonth() + 1)
     setYear(firstDay.getFullYear())
     renderDays(firstDay.getMonth() + 1, firstDay.getFullYear())
-  }, [setMonth, setYear])
+  }, [date, setMonth, setYear])
 
   useEffect(() => {
     setMonth(firstDay.getMonth() + 1)
@@ -97,6 +104,7 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
           number: dayBefore,
           date: formatDate(dayBefore, monthBefore, yearBefore),
           outside: true,
+          selected: false,
           today: false,
         })
         dayBefore -= 1
@@ -106,10 +114,12 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
 
       // add all days of the current month
       for (let i = 1; i <= numberOfDays(thisMonth - 1); i += 1) {
+        const thisDate = formatDate(i, thisMonth, thisYear)
         days.push({
           number: i,
-          date: formatDate(i, thisMonth, thisYear),
+          date: thisDate,
           outside: false,
+          selected: thisDate === date,
           today:
             today.getDate() === i &&
             today.getMonth() === thisMonth - 1 &&
@@ -135,19 +145,19 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
               thisMonth === 12 ? 1 : thisMonth + 1,
               thisMonth === 12 ? thisYear + 1 : thisYear,
             ),
+            selected: false,
             outside: true,
             today: false,
           })
         }
       }
-      console.log('renderDays days', days)
 
       setAllDays(days)
     },
     [firstDay, numberOfDays],
   )
 
-  console.log('Month', open)
+  console.log('Month', date, open)
 
   return (
     <Wrapper {...otherProps}>
@@ -192,6 +202,7 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
                 date={day.date}
                 outside={day.outside}
                 today={day.today}
+                selected={day.selected}
                 key={day.date}
               >
                 {day.number}

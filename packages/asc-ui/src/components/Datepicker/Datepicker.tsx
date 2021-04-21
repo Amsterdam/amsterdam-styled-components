@@ -42,13 +42,14 @@ const Datepicker = forwardRef<
       <StyledInput
         id={id}
         ref={ref}
+        defaultValue={value}
         {...otherProps}
         onClick={() => setOpen(true)}
       />
       <StyledLabel htmlFor={id}>
         <Calendar />
       </StyledLabel>
-      <Month open={open} onClickDay={onClickDay} />
+      <Month open={open} date={value} onClickDay={onClickDay} />
     </DatepickerStyle>
   )
 })

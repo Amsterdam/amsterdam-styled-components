@@ -24,6 +24,7 @@ export interface DayProps {
   number: number
   date: string
   outside: boolean
+  selected: boolean
   today: boolean
 }
 
