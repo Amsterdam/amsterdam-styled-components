@@ -15,7 +15,7 @@ export default styled(Link)<Props>`
     today ? themeColor('tint', 'level5') : 'transparent'};
   border-style: solid;
   border-width: 1px;
-  scursor: pointer !important;
+  cursor: pointer !important;
   display: flex;
   justify-content: center;
   align-items: center;
