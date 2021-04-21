@@ -6,10 +6,15 @@ import {
   HTMLAttributes,
   useState,
 } from 'react'
-import DatepickerStyle, { Props, StyledInput } from './DatepickerStyle'
+import { Calendar } from '@amsterdam/asc-assets'
+
+import DatepickerStyle, {
+  Props,
+  StyledInput,
+  StyledIcon,
+} from './DatepickerStyle'
 import Month from './Month'
 
-// @TODO add icon to text input element
 // @TODO add selected state
 // @TODO add support date pushing down to Month
 // @TODO add open close state in Datepicker
@@ -35,6 +40,9 @@ const Datepicker = forwardRef<
   return (
     <DatepickerStyle>
       <StyledInput ref={ref} {...otherProps} onClick={() => setOpen(true)} />
+      <StyledIcon>
+        <Calendar />
+      </StyledIcon>
       <Month open={open} onClickDay={onClickDay} />
     </DatepickerStyle>
   )
