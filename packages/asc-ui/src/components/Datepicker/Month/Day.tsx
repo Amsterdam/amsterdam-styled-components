@@ -12,6 +12,7 @@ const Day: FunctionComponent<Props & HTMLAttributes<HTMLSpanElement>> = ({
     <DayStyle
       href="/"
       variant="blank"
+      data-testid="day"
       onClick={(e: MouseEvent<HTMLParagraphElement, MouseEvent>) => {
         e.preventDefault()
         if (onSelectDay) {
