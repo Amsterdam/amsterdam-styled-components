@@ -5,6 +5,7 @@ import Input from '../Input'
 export interface Props {
   id?: string
   value?: string
+  placeholder?: string
 }
 export default styled.div<Props>`
   padding: 0;

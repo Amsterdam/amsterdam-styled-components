@@ -20,17 +20,10 @@ import Month from './Month'
 const Datepicker = forwardRef<
   HTMLInputElement,
   Props & HTMLAttributes<HTMLInputElement>
->(({ id, value, ...otherProps }, externalRef) => {
+>(({ id, value, placeholder, ...otherProps }, externalRef) => {
   const [open, setOpen] = useState<boolean>(false)
   const [selected, setSelected] = useState<string>('')
   const ref = useRef<HTMLInputElement>(null)
-  const wrapperRef = useRef<HTMLInputElement>(null)
-
-  const handleBlur = (e: any) => {
-    if (wrapperRef.current && !wrapperRef.current.contains(e.relatedTarget)) {
-      setOpen(false)
-    }
-  }
 
   useImperativeHandle(externalRef, () => ref.current as HTMLInputElement)
 
@@ -43,11 +36,12 @@ const Datepicker = forwardRef<
   }, [])
 
   return (
-    <DatepickerStyle ref={wrapperRef} onBlur={handleBlur}>
+    <DatepickerStyle>
       <StyledInput
         id={id}
         autoComplete="off"
         ref={ref}
+        placeholder={placeholder || 'dd-mm-jjjj'}
         defaultValue={value}
         {...otherProps}
         onClick={() => setOpen(true)}
