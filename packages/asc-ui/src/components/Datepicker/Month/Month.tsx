@@ -1,4 +1,4 @@
-import {
+import React, {
   FunctionComponent,
   MouseEvent,
   useState,
@@ -154,8 +154,6 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
     },
     [firstDay, numberOfDays],
   )
-
-  // console.log('Month', date, open)
 
   return (
     <Wrapper {...otherProps}>

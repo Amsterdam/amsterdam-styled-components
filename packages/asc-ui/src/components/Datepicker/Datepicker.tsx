@@ -1,4 +1,4 @@
-import {
+import React, {
   forwardRef,
   useImperativeHandle,
   useRef,
@@ -7,7 +7,6 @@ import {
   useState,
 } from 'react'
 import { Calendar } from '@amsterdam/asc-assets'
-
 import DatepickerStyle, {
   Props,
   StyledInput,
