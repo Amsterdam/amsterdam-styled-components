@@ -15,6 +15,8 @@ import DatepickerStyle, {
 } from './DatepickerStyle'
 import Month from './Month'
 
+// @TODO fix error in incorrect month showing
+
 const Datepicker = forwardRef<
   HTMLInputElement,
   Props & HTMLAttributes<HTMLInputElement>
@@ -22,6 +24,13 @@ const Datepicker = forwardRef<
   const [open, setOpen] = useState<boolean>(false)
   const [selected, setSelected] = useState<string>('')
   const ref = useRef<HTMLInputElement>(null)
+  const wrapperRef = useRef<HTMLInputElement>(null)
+
+  const handleBlur = (e: any) => {
+    if (wrapperRef.current && !wrapperRef.current.contains(e.relatedTarget)) {
+      setOpen(false)
+    }
+  }
 
   useImperativeHandle(externalRef, () => ref.current as HTMLInputElement)
 
@@ -34,7 +43,7 @@ const Datepicker = forwardRef<
   }, [])
 
   return (
-    <DatepickerStyle>
+    <DatepickerStyle ref={wrapperRef} onBlur={handleBlur}>
       <StyledInput
         id={id}
         autoComplete="off"
