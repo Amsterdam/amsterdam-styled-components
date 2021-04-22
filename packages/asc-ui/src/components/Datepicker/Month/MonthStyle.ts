@@ -2,9 +2,9 @@ import styled from 'styled-components'
 import Link from '../../Link'
 
 export interface Props {
-  date?: string
-  open?: boolean
-  onSelectDay?: (date: string) => void
+  date: string
+  open: boolean
+  onSelectDay: (date: string) => void
 }
 
 export default styled.div`
