@@ -15,7 +15,6 @@ import DatepickerStyle, {
 } from './DatepickerStyle'
 import Month from './Month'
 
-// @TODO fix after selectieng date the first date of the month is incorrect
 // @TODO when clicking outside the Datepicker it should be closed
 
 const Datepicker = forwardRef<
