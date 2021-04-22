@@ -35,14 +35,12 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
     if (date) {
       const parts = date.split('-')
 
-      setFirstDay(new Date(`${parts[2]}/${parts[1]}/${parts[0]}`))
+      setFirstDay(new Date(`${parts[2]}/${parts[1]}/1`))
     } else {
-      setFirstDay(new Date())
+      setFirstDay(
+        new Date(`${new Date().getFullYear()}/${new Date().getMonth() + 1}/1`),
+      )
     }
-
-    setMonth(firstDay.getMonth() + 1)
-    setYear(firstDay.getFullYear())
-    renderDays(firstDay.getMonth() + 1, firstDay.getFullYear())
   }, [date, setMonth, setYear])
 
   useEffect(() => {
@@ -157,7 +155,7 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
     [firstDay, numberOfDays],
   )
 
-  console.log('Month', date, open)
+  // console.log('Month', date, open)
 
   return (
     <Wrapper {...otherProps}>
