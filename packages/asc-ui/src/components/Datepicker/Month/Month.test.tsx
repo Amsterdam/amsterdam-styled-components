@@ -1,10 +1,9 @@
 import { screen, render } from '@testing-library/react'
 import Month from './Month'
 import { ThemeProvider } from '../../../theme'
-// import { themeColor } from '../../../utils'
 
 describe('Month', () => {
-  it('should render default', () => {
+  it('should render', () => {
     const onSelectDay = jest.fn()
     render(
       <ThemeProvider>
@@ -12,6 +11,9 @@ describe('Month', () => {
       </ThemeProvider>,
     )
 
+    expect(screen.queryByTestId('month')).toBeInTheDocument()
+    expect(screen.queryByTestId('previous')).toBeInTheDocument()
+    expect(screen.queryByTestId('next')).toBeInTheDocument()
     expect(screen.queryAllByTestId('weekday').length).toBe(7)
   })
 })
