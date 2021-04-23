@@ -37,9 +37,10 @@ const Datepicker = forwardRef<
   }, [])
 
   return (
-    <DatepickerStyle>
+    <DatepickerStyle data-testid="datepicker">
       <StyledInput
         id={id}
+        data-testid="input"
         autoComplete="off"
         ref={ref}
         placeholder={placeholder || 'dd-mm-jjjj'}
