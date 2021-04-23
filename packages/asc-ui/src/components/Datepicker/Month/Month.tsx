@@ -157,11 +157,12 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
   return (
     <Wrapper {...otherProps}>
       {open && (
-        <MonthStyle>
+        <MonthStyle data-testid="month">
           <Header>
             <NextPrev
               href="/"
               variant="blank"
+              data-testid="previous"
               onClick={(e: MouseEvent<HTMLParagraphElement, MouseEvent>) =>
                 onPrevious(e)
               }
@@ -176,6 +177,7 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
             <NextPrev
               href="/"
               variant="blank"
+              data-testid="next"
               onClick={(e: MouseEvent<HTMLParagraphElement, MouseEvent>) =>
                 onNext(e)
               }
@@ -187,12 +189,15 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
           </Header>
 
           {weekDays.map((day) => (
-            <Weekday key={day}>{day}</Weekday>
+            <Weekday key={day} data-testid="weekday">
+              {day}
+            </Weekday>
           ))}
 
           {allDays.map((day: DayProps) => (
             <>
               <Day
+                data-testid="day"
                 onSelectDay={onSelectDay}
                 date={day.date}
                 outside={day.outside}
