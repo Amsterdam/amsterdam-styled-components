@@ -1,4 +1,4 @@
-import React, {
+import {
   forwardRef,
   useImperativeHandle,
   useRef,
@@ -33,6 +33,7 @@ const Datepicker = forwardRef<
     }
     setOpen(false)
   }, [])
+  console.log('yo')
 
   return (
     <DatepickerStyle>
