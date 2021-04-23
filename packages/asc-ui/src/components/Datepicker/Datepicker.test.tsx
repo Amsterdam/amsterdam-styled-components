@@ -13,4 +13,6 @@ describe('Datepicker', () => {
     expect(screen.queryByTestId('datepicker')).toBeInTheDocument()
     expect(screen.queryByTestId('input')).toBeInTheDocument()
   })
+
+  // @TODO add more tests
 })

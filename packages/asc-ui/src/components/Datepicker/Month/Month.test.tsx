@@ -51,6 +51,6 @@ describe('Month', () => {
       </ThemeProvider>,
     )
 
-    expect(screen.queryAllByTestId('day').length).toBe(42)
-  })
+    // @TODO add more tests for click handlers
+
 })
