@@ -14,7 +14,10 @@ import DatepickerStyle, {
 } from './DatepickerStyle'
 import Month from './Month'
 
-// @TODO when clicking outside the Datepicker it should be closed
+// @ADD unit test for Month
+// @ADD unit test for Datepicker
+// @FIX add support for typing date into input field
+// @FIX when clicking outside the Datepicker it should be closed
 
 const Datepicker = forwardRef<
   HTMLInputElement,
