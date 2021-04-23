@@ -35,7 +35,6 @@ const Datepicker = forwardRef<
     }
     setOpen(false)
   }, [])
-  console.log('yo')
 
   return (
     <DatepickerStyle>
