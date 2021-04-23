@@ -43,12 +43,6 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
     }
   }, [date, setMonth, setYear])
 
-  useEffect(() => {
-    setMonth(firstDay.getMonth() + 1)
-    setYear(firstDay.getFullYear())
-    renderDays(firstDay.getMonth() + 1, firstDay.getFullYear())
-  }, [firstDay, setMonth, setYear])
-
   const onPrevious = useCallback(
     (e: MouseEvent<HTMLParagraphElement, MouseEvent>) => {
       e.preventDefault()
@@ -152,8 +146,14 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
 
       setAllDays(days)
     },
-    [firstDay, numberOfDays],
+    [date, firstDay, formatDate, numberOfDays],
   )
+
+  useEffect(() => {
+    setMonth(firstDay.getMonth() + 1)
+    setYear(firstDay.getFullYear())
+    renderDays(firstDay.getMonth() + 1, firstDay.getFullYear())
+  }, [firstDay, renderDays, setMonth, setYear])
 
   return (
     <Wrapper {...otherProps}>
