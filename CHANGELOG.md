@@ -18,6 +18,7 @@ Prefix the change with one of these keywords:
 
 - ...
 - Added: Quote component
+- Added: Datepicker component
 
 ## [0.29.2]
 
