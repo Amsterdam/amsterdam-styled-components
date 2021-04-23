@@ -20,12 +20,14 @@ describe('Day', () => {
       </ThemeProvider>,
     )
 
-    expect(screen.queryByTestId('day')).toHaveStyleRule(
+    const day = screen.getByTestId('day')
+
+    expect(day).toHaveStyleRule(
       'color',
       themeColor('tint', 'level7')({ theme: ascDefaultTheme }),
     )
 
-    fireEvent.click(screen.queryByTestId('day'))
+    fireEvent.click(day)
 
     expect(onSelectDay).toHaveBeenCalledWith('15-04-2019')
   })
