@@ -16,7 +16,6 @@ import Month from './Month'
 
 // @ADD unit test for Month
 // @ADD unit test for Datepicker
-// @FIX add support for typing date into input field
 // @FIX when clicking outside the Datepicker it should be closed
 
 const Datepicker = forwardRef<
@@ -46,6 +45,7 @@ const Datepicker = forwardRef<
         ref={ref}
         placeholder={placeholder || 'dd-mm-jjjj'}
         defaultValue={value}
+        onChange={(e) => setSelected(e.target.value)}
         {...otherProps}
         onClick={() => setOpen(true)}
       />

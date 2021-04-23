@@ -32,9 +32,8 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
   const [allDays, setAllDays] = useState<Array<DayProps>>([])
 
   useEffect(() => {
-    if (date) {
+    if (date && date.length === 10) {
       const parts = date.split('-')
-
       setFirstDay(new Date(`${parts[2]}/${parts[1]}/1`))
     } else {
       setFirstDay(
