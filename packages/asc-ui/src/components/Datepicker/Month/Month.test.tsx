@@ -12,12 +12,6 @@ describe('Month', () => {
       </ThemeProvider>,
     )
 
-    screen.debug()
-
     expect(screen.queryAllByTestId('weekday').length).toBe(7)
-
-    // fireEvent.click(day)
-
-    // expect(onSelectDay).toHaveBeenCalledWith('15-04-2019')
   })
 })
