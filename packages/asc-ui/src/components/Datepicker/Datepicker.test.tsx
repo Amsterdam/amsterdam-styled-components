@@ -1,9 +1,16 @@
-import { render } from '@testing-library/react'
+import { screen, render } from '@testing-library/react'
 import Datepicker from './Datepicker'
+import { ThemeProvider } from '../../theme'
 
 describe('Datepicker', () => {
   it('should render', () => {
-    const { container } = render(<Datepicker />)
-    expect(container.firstChild).toBeDefined()
+    render(
+      <ThemeProvider>
+        <Datepicker />
+      </ThemeProvider>,
+    )
+
+    expect(screen.queryByTestId('datepicker')).toBeInTheDocument()
+    expect(screen.queryByTestId('input')).toBeInTheDocument()
   })
 })
