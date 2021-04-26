@@ -14,16 +14,16 @@ jobs:
       with:
         # Fetch all history for all tags and branches (needed for lerna / semantic release to correctly version)
         fetch-depth: 0
-    - name: Use Node.js 14
+    - name: Use Node.js 16
       uses: actions/setup-node@v1
       with:
-        node-version: 14
+        node-version: 16
     - name: install
-      run: yarn install --frozen-lockfile
+      run: npm ci
 
     - name: Publish canary to NPM
       run: |
         echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
-        yarn publish:canary
+        npm run publish:canary
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
