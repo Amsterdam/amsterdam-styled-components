@@ -21,7 +21,7 @@
     "static"
   ],
   "scripts": {
-    "build": "yarn build:optimize-svg && yarn build:react-icons",
+    "build": "npm run build:optimize-svg && npm run build:react-icons",
     "build:optimize-svg": "svgo -f static/icons",
     "build:react-icons": "svgr -d src/icons static/icons --template src/utils/generateIconReact.js --svg-props focusable={false} --ext tsx"
   },
