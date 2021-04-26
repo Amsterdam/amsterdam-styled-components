@@ -52,5 +52,5 @@ describe('Month', () => {
     )
 
     // @TODO add more tests for click handlers
-
+  })
 })
