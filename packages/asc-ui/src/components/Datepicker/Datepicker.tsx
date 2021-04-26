@@ -7,6 +7,7 @@ import {
   useState,
 } from 'react'
 import { Calendar } from '@amsterdam/asc-assets'
+import useOutsideAlerter from './Month/useClickOutside'
 import DatepickerStyle, {
   Props,
   StyledInput,
@@ -16,7 +17,6 @@ import Month from './Month'
 
 // @ADD unit test for Month
 // @ADD unit test for Datepicker
-// @FIX when clicking outside the Datepicker it should be closed
 
 const Datepicker = forwardRef<
   HTMLInputElement,
@@ -25,6 +25,9 @@ const Datepicker = forwardRef<
   const [open, setOpen] = useState<boolean>(false)
   const [selected, setSelected] = useState<string>('')
   const ref = useRef<HTMLInputElement>(null)
+
+  const wrapperRef = useRef(null)
+  useOutsideAlerter(wrapperRef, () => setOpen(false))
 
   useImperativeHandle(externalRef, () => ref.current as HTMLInputElement)
 
@@ -37,7 +40,7 @@ const Datepicker = forwardRef<
   }, [])
 
   return (
-    <DatepickerStyle data-testid="datepicker">
+    <DatepickerStyle data-testid="datepicker" ref={wrapperRef}>
       <StyledInput
         id={id}
         data-testid="input"
