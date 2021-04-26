@@ -7,7 +7,7 @@ import {
   useState,
 } from 'react'
 import { Calendar } from '@amsterdam/asc-assets'
-import useOutsideAlerter from './Month/useClickOutside'
+import useClickOutside from './Month/useClickOutside'
 import DatepickerStyle, {
   Props,
   StyledInput,
@@ -27,7 +27,7 @@ const Datepicker = forwardRef<
   const ref = useRef<HTMLInputElement>(null)
 
   const wrapperRef = useRef(null)
-  useOutsideAlerter(wrapperRef, () => setOpen(false))
+  useClickOutside(wrapperRef, () => setOpen(false))
 
   useImperativeHandle(externalRef, () => ref.current as HTMLInputElement)
 
