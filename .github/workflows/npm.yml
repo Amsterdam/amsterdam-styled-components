@@ -15,7 +15,7 @@ jobs:
         # Fetch all history for all tags and branches (needed for lerna / semantic release to correctly version)
         fetch-depth: 0
     - name: Use Node.js 16
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: 16
     - name: install
