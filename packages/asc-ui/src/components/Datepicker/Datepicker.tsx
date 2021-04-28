@@ -15,7 +15,7 @@ import DatepickerStyle, {
 } from './DatepickerStyle'
 import Month from './Month'
 
-// @ADD unit test for useClickOutside
+// @MOVE useClickOutside to utils/hooks
 
 const Datepicker = forwardRef<
   HTMLInputElement,
