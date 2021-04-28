@@ -15,7 +15,6 @@ import DatepickerStyle, {
 } from './DatepickerStyle'
 import Month from './Month'
 
-// @ADD unit test for Month
 // @ADD unit test for useClickOutside
 
 const Datepicker = forwardRef<
