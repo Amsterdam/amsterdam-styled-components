@@ -1,7 +1,7 @@
-import { fireEvent, render, screen } from '@testing-library/react'
+// import { fireEvent, render, screen } from '@testing-library/react'
 // import { renderHook } from '@testing-library/react-hooks'
-import { useRef } from 'react'
-import useClickOutside from './useClickOutside'
+// import { useRef } from 'react'
+// import useClickOutside from './useClickOutside'
 
 describe('useClickOutside', () => {
   afterEach(() => {
