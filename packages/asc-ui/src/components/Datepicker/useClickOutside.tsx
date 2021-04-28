@@ -17,7 +17,6 @@ const useClickOutside = (ref: any, handler: () => void) => {
     }
 
     // Bind the event listener
-    
     document.addEventListener('mouseup', handleClickOutside)
     return () => {
       // Unbind the event listener on clean up
