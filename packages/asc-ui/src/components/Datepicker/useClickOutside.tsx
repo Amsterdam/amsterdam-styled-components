@@ -1,9 +1,12 @@
-import { useEffect } from 'react'
+import { useEffect, RefObject } from 'react'
 
 /**
  * Hook that alerts clicks outside of the passed ref
  */
-const useClickOutside = (ref: any, handler: () => void) => {
+const useClickOutside = (
+  ref: RefObject<HTMLDivElement>,
+  handler: () => void,
+) => {
   useEffect(() => {
     /**
      * Alert if clicked on outside of element
