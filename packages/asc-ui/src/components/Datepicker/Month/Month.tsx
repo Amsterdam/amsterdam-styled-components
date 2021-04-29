@@ -195,19 +195,17 @@ const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
           ))}
 
           {allDays.map((day: DayProps) => (
-            <>
-              <Day
-                data-testid="day"
-                onSelectDay={onSelectDay}
-                date={day.date}
-                outside={day.outside}
-                today={day.today}
-                selected={day.selected}
-                key={day.date}
-              >
-                {day.number}
-              </Day>
-            </>
+            <Day
+              data-testid="day"
+              onSelectDay={onSelectDay}
+              date={day.date}
+              outside={day.outside}
+              today={day.today}
+              selected={day.selected}
+              key={day.date}
+            >
+              {day.number}
+            </Day>
           ))}
         </MonthStyle>
       )}
