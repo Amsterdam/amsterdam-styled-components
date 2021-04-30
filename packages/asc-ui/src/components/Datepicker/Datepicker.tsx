@@ -7,7 +7,7 @@ import {
   useState,
 } from 'react'
 import { Calendar } from '@amsterdam/asc-assets'
-import useClickOutside from './useClickOutside'
+import useClickOutside from '../../utils/hooks/useClickOutside'
 import DatepickerStyle, {
   Props,
   StyledInput,

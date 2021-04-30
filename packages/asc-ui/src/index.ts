@@ -120,6 +120,7 @@ import { perceivedLoading } from './utils/themeUtils'
 export {
   useDebounce,
   useActionOnEscape,
+  useClickOutside,
   useEdgeDetection,
   useFocus,
   useFocusWithArrows,
