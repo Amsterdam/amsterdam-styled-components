@@ -103,6 +103,7 @@ const MenuFlyOut: FunctionComponent<Props> = ({
   return (
     <MenuFlyOutStyle
       ref={ref}
+      data-testid="flyout"
       onBlur={onBlurHandler}
       hasToggle={hasToggle}
       onKeyDown={keyDownArrowFocus}
