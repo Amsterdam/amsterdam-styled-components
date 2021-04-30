@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "copy-fonts": "./scripts/copy-fonts.sh",
-    "start": "yarn copy-fonts && next start"
+    "start": "npm run copy-fonts && next start"
   },
   "dependencies": {
     "@amsterdam/asc-assets": "^0.29.2",
