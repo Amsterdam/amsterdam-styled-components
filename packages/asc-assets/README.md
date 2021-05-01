@@ -67,5 +67,5 @@ And make sure to import the CSS file in your stylesheet:
 ## Build Project
 
 ```bash
-yarn build # generates JSX components using the optimized SVG icons
+npm run build # generates JSX components using the optimized SVG icons
 ```

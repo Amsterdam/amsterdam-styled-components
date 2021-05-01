@@ -14,7 +14,7 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## [new version]
+## [0.29.3]
 
 - Fixed: issue with not programmically changing the active / initial tab on `Tabs` component
 - Deprecated: `initialTab` in `Tabs` component. Please use `activeTab` instead.
