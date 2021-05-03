@@ -1,30 +1,45 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent, act } from '@testing-library/react'
 import MenuInline from '../MenuInline'
+import MenuButton from '../MenuButton'
+import MenuItem from '../MenuItem'
 import MenuFlyOut from './MenuFlyOut'
 
+// @TODO fix aria-expanded test
+
 describe('MenuFlyOut', () => {
-  it('should render', () => {
-    render(
+  it('should render', async () => {
+    const { container } = render(
       <MenuInline>
-        <MenuFlyOut label="Submenu">menu</MenuFlyOut>
+        <MenuFlyOut label="Submenu">
+          <MenuItem>
+            <MenuButton forwardedAs="a" href="/">
+              Link 1
+            </MenuButton>
+          </MenuItem>
+          <MenuItem>
+            <MenuButton forwardedAs="a" href="/">
+              Link2
+            </MenuButton>
+          </MenuItem>
+        </MenuFlyOut>
       </MenuInline>,
     )
 
     expect(screen.queryByTestId('flyout')).toBeInTheDocument()
+    expect(screen.queryByTestId('flyoutButton')).toBeInTheDocument()
     expect(screen.getByText('Submenu')).toBeInTheDocument()
+
+    expect(
+      container.querySelector('button[aria-expanded="false"]'),
+    ).toBeInTheDocument()
+
+    const flyOut = screen.getByTestId('flyout')
+    act(() => {
+      fireEvent.mouseOver(flyOut)
+    })
+
+    // expect(
+    //   container.querySelector('button[aria-expanded="true"]'),
+    // ).toBeInTheDocument()
   })
 })
-
-//
-//     <MenuFlyOut label="Submenu">
-//     <MenuItem>
-//       <MenuButton forwardedAs="a" href="/" iconLeft={<ChevronRight />}>
-//         Link 1
-//       </MenuButton>
-//     </MenuItem>
-//     <MenuItem>
-//       <MenuButton forwardedAs="a" href="/" iconLeft={<ChevronRight />}>
-//         Link2
-//       </MenuButton>
-//     </MenuItem>
-//   </MenuFlyOut>
