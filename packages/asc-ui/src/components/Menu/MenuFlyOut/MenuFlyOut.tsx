@@ -115,6 +115,7 @@ const MenuFlyOut: FunctionComponent<Props> = ({
           // eslint-disable-next-line no-nested-ternary
           hasToggle ? menuOpen ? <ChevronUp /> : <ChevronDown /> : undefined
         }
+        data-testid="flyoutButton"
         onClick={onHandleOpen}
         onKeyDown={onHandleKeyDownButton}
         aria-haspopup="true"
