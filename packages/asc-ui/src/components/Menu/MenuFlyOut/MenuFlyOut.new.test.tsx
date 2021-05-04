@@ -6,6 +6,10 @@ import MenuContext from '../MenuContext'
 import MenuFlyOut from './MenuFlyOut'
 
 describe('MenuFlyOut', () => {
+  beforeEach(() => {
+    jest.useFakeTimers()
+  })
+
   it('should render', () => {
     const { container } = render(
       <MenuInline>
@@ -34,13 +38,16 @@ describe('MenuFlyOut', () => {
       container.querySelector('button[aria-expanded="false"]'),
     ).toBeInTheDocument()
 
-    const flyOut = screen.getByTestId('flyout')
+    const flyout = screen.getByTestId('flyout')
     act(() => {
-      fireEvent.mouseOver(flyOut)
+      fireEvent.mouseOver(flyout)
     })
 
-    // @TODO fix aria-expanded test
+    act(() => {
+      jest.runAllTimers()
+    })
 
+    // @TODO fix fireEvent.mouseOver not working
     expect(
       container.querySelector('button[aria-expanded="true"]'),
     ).toBeInTheDocument()
