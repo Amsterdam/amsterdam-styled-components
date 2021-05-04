@@ -4,10 +4,8 @@ import MenuButton from '../MenuButton'
 import MenuItem from '../MenuItem'
 import MenuFlyOut from './MenuFlyOut'
 
-// @TODO fix aria-expanded test
-
 describe('MenuFlyOut', () => {
-  it('should render', async () => {
+  it('should render', () => {
     const { container } = render(
       <MenuInline>
         <MenuFlyOut label="Submenu">
@@ -37,6 +35,10 @@ describe('MenuFlyOut', () => {
     act(() => {
       fireEvent.mouseOver(flyOut)
     })
+
+    // screen.debug()
+
+    // @TODO fix aria-expanded test
 
     // expect(
     //   container.querySelector('button[aria-expanded="true"]'),
