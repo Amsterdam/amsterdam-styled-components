@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { fireEvent, render } from '@testing-library/react'
 import { Tab, Tabs } from '.'
 
@@ -170,7 +171,7 @@ describe('Tabs', () => {
 
   it('should be able to set the active initial tab', () => {
     const { container } = render(
-      <Tabs label="An example of tabs" initialTab="three">
+      <Tabs label="An example of tabs" activeTab="three">
         <Tab id="one" label="First">
           Contents of the first tab.
         </Tab>
@@ -189,9 +190,9 @@ describe('Tabs', () => {
     )
   })
 
-  it('should log a warning and set the active tab to the first when passing a wrong initialTab', () => {
+  it('should log a warning and set the active tab to the first when passing a wrong activeTab', () => {
     const { container } = render(
-      <Tabs label="An example of tabs" initialTab="foo">
+      <Tabs label="An example of tabs" activeTab="foo">
         <Tab id="one" label="First">
           Contents of the first tab.
         </Tab>
@@ -207,7 +208,51 @@ describe('Tabs', () => {
     expect(container.querySelector('#tab-one')).toHaveAttribute('tabindex', '0')
 
     expect(consoleOutput).toEqual([
-      'You passed a wrong initialTab value to Tabs component. Given initialTab ID: foo',
+      'You passed a wrong activeTab value to Tabs component. Given ID: foo',
     ])
+  })
+
+  it('should change the active tab when the activeTab prop changes', () => {
+    const Wrapper = () => {
+      const [activeTab, setActiveTab] = useState('two')
+      return (
+        <>
+          <Tabs label="An example of tabs" activeTab={activeTab}>
+            <Tab id="one" label="First">
+              Contents of the first tab.
+            </Tab>
+            <Tab id="two" label="Second">
+              Contents of the second tab.
+            </Tab>
+            <Tab id="three" label="Third">
+              Contents of the third tab.
+            </Tab>
+          </Tabs>
+          <button
+            type="button"
+            data-testid="button"
+            onClick={() => setActiveTab('three')}
+          >
+            Programmically change the active tab to the third tab
+          </button>
+        </>
+      )
+    }
+    const { container, getByTestId } = render(<Wrapper />)
+
+    expect(container.querySelector('#tab-two')).toHaveAttribute('tabindex', '0')
+    expect(container.querySelector('#tab-three')).toHaveAttribute(
+      'tabindex',
+      '-1',
+    )
+    fireEvent.click(getByTestId('button'))
+    expect(container.querySelector('#tab-two')).toHaveAttribute(
+      'tabindex',
+      '-1',
+    )
+    expect(container.querySelector('#tab-three')).toHaveAttribute(
+      'tabindex',
+      '0',
+    )
   })
 })
