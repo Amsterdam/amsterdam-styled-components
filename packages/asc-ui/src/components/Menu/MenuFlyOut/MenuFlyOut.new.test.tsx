@@ -36,12 +36,10 @@ describe('MenuFlyOut', () => {
       fireEvent.mouseOver(flyOut)
     })
 
-    // screen.debug()
-
     // @TODO fix aria-expanded test
 
-    // expect(
-    //   container.querySelector('button[aria-expanded="true"]'),
-    // ).toBeInTheDocument()
+    expect(
+      container.querySelector('button[aria-expanded="true"]'),
+    ).toBeInTheDocument()
   })
 })
