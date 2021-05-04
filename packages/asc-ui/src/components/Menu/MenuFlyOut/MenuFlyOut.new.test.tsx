@@ -10,7 +10,7 @@ describe('MenuFlyOut', () => {
     jest.useFakeTimers()
   })
 
-  it('should render', () => {
+  it('should render and trigger mouseOver', () => {
     const { container } = render(
       <MenuInline>
         <MenuContext.Provider value={{ hasToggle: true }}>
