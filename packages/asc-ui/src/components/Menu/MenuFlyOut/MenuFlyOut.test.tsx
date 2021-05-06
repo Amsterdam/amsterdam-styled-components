@@ -1,6 +1,5 @@
 import { render, screen, fireEvent, act } from '@testing-library/react'
 import MenuInline from '../MenuInline'
-import MenuContext from '../MenuContext'
 import MenuFlyOut from './MenuFlyOut'
 
 describe('MenuFlyOut', () => {
@@ -11,9 +10,7 @@ describe('MenuFlyOut', () => {
   it('should render and trigger mouseOver', () => {
     const { container } = render(
       <MenuInline>
-        <MenuContext.Provider value={{ hasToggle: true }}>
-          <MenuFlyOut label="Submenu">Flyout content</MenuFlyOut>
-        </MenuContext.Provider>
+        <MenuFlyOut label="Submenu">Flyout content</MenuFlyOut>={' '}
       </MenuInline>,
     )
 
@@ -35,7 +32,6 @@ describe('MenuFlyOut', () => {
       jest.runAllTimers()
     })
 
-    // @TODO fix fireEvent.mouseOver not working
     expect(
       container.querySelector('button[aria-expanded="true"]'),
     ).toBeInTheDocument()
