@@ -1,11 +1,12 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { withKnobs, select } from '@storybook/addon-knobs'
 import { Tabs, Tab } from '@amsterdam/asc-ui'
 
 export const PaddedContent = ({ children }) => (
   <div style={{ paddingTop: '20px' }}>{children}</div>
 )
 
-<Meta title="UI/Tabs" component={Tabs} />
+<Meta title="UI/Tabs" component={Tabs} decorators={[withKnobs]} />
 
 # Tabs
 
@@ -40,8 +41,19 @@ Topics to align:
 ## With initial tab
 
 <Preview>
-  <Story name="With initial tab">
-    <Tabs label="An example of tabs" initialTab="two">
+  <Story name="With active tab set">
+    <Tabs
+      label="An example of tabs"
+      activeTab={select(
+        'Active tab',
+        {
+          First: 'one',
+          Second: 'two',
+          Last: 'three',
+        },
+        'two',
+      )}
+    >
       <Tab id="one" label="First">
         <PaddedContent>Contents of the first tab.</PaddedContent>
       </Tab>
