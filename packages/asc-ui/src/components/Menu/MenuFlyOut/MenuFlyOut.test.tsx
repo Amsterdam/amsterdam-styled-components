@@ -7,7 +7,7 @@ describe('MenuFlyOut', () => {
     jest.useFakeTimers()
   })
 
-  it('should render and trigger mouseOver', () => {
+  it('should render and trigger mouseOver and close on mouseOut', () => {
     const { container } = render(
       <MenuInline>
         <MenuFlyOut label="Submenu">Flyout content</MenuFlyOut>={' '}
@@ -24,9 +24,7 @@ describe('MenuFlyOut', () => {
     ).toBeInTheDocument()
 
     const flyout = screen.getByTestId('flyout')
-    act(() => {
-      fireEvent.mouseOver(flyout)
-    })
+    fireEvent.mouseOver(flyout)
 
     act(() => {
       jest.runAllTimers()
@@ -34,6 +32,43 @@ describe('MenuFlyOut', () => {
 
     expect(
       container.querySelector('button[aria-expanded="true"]'),
+    ).toBeInTheDocument()
+    fireEvent.mouseOut(flyout)
+
+    act(() => {
+      jest.runAllTimers()
+    })
+
+    expect(
+      container.querySelector('button[aria-expanded="false"]'),
+    ).toBeInTheDocument()
+  })
+
+  it('should render and trigger mouseOver and close on escape key', () => {
+    const { container } = render(
+      <MenuInline>
+        <MenuFlyOut label="Submenu">Flyout content</MenuFlyOut>={' '}
+      </MenuInline>,
+    )
+
+    const flyout = screen.getByTestId('flyout')
+    fireEvent.mouseOver(flyout)
+    act(() => {
+      jest.runAllTimers()
+    })
+
+    expect(
+      container.querySelector('button[aria-expanded="true"]'),
+    ).toBeInTheDocument()
+
+    fireEvent.keyDown(window, { key: 'Escape' })
+
+    act(() => {
+      jest.runAllTimers()
+    })
+
+    expect(
+      container.querySelector('button[aria-expanded="false"]'),
     ).toBeInTheDocument()
   })
 })
