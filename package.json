@@ -80,12 +80,6 @@
   "engines": {
     "node": "^16"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run test -- --bail",
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{ts,tsx,mdx,js}": [
       "prettier --write",
