@@ -1,8 +1,6 @@
 import { render, cleanup } from '@testing-library/react'
-import { mount } from 'enzyme'
 import Row from './Row'
 import Column from './Column'
-import ColumnStyle from './ColumnStyle'
 import { mediaQuery } from '../../utils/grid'
 import { ThemeProvider, ascDefaultTheme } from '../../theme'
 
@@ -64,23 +62,6 @@ describe('Column', () => {
 
 describe('ColumnStyle', () => {
   afterEach(cleanup)
-
-  it('should set parentSpan for nested column components', () => {
-    const tree = mount(
-      <ThemeProvider theme={theme}>
-        <Row>
-          <Column span={10}>
-            <Column data-testid="span5" span={5}>
-              Child right here
-            </Column>
-          </Column>
-        </Row>
-      </ThemeProvider>,
-    )
-
-    expect(tree.find(ColumnStyle).first().props().parentSpan).toBeUndefined()
-    expect(tree.find(ColumnStyle).last().props().parentSpan).toEqual(10)
-  })
 
   it('should show debug information', () => {
     const span = 7
