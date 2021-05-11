@@ -33,7 +33,6 @@ describe('MenuFlyOut', () => {
     expect(
       container.querySelector('button[aria-expanded="true"]'),
     ).toBeInTheDocument()
-    fireEvent.mouseOut(flyout)
 
     fireEvent.mouseOut(flyout)
 
