@@ -49,5 +49,4 @@ module.exports = {
     },
   },
   testRegex: ['/__tests__/.*\\.(ts|tsx|js)$', '/*.test\\.(ts|tsx|js)$'],
-  snapshotSerializers: ['enzyme-to-json/serializer'],
 }
