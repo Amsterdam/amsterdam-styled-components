@@ -35,6 +35,8 @@ describe('MenuFlyOut', () => {
     ).toBeInTheDocument()
     fireEvent.mouseOut(flyout)
 
+    fireEvent.mouseOut(flyout)
+
     act(() => {
       jest.runAllTimers()
     })
