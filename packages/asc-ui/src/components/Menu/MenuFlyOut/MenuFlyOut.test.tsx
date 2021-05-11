@@ -43,32 +43,4 @@ describe('MenuFlyOut', () => {
       container.querySelector('button[aria-expanded="false"]'),
     ).toBeInTheDocument()
   })
-
-  it('should render and trigger mouseOver and close on escape key', () => {
-    const { container } = render(
-      <MenuInline>
-        <MenuFlyOut label="Submenu">Flyout content</MenuFlyOut>={' '}
-      </MenuInline>,
-    )
-
-    const flyout = screen.getByTestId('flyout')
-    fireEvent.mouseOver(flyout)
-    act(() => {
-      jest.runAllTimers()
-    })
-
-    expect(
-      container.querySelector('button[aria-expanded="true"]'),
-    ).toBeInTheDocument()
-
-    fireEvent.keyDown(window, { key: 'Escape' })
-
-    act(() => {
-      jest.runAllTimers()
-    })
-
-    expect(
-      container.querySelector('button[aria-expanded="false"]'),
-    ).toBeInTheDocument()
-  })
 })
