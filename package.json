@@ -25,7 +25,6 @@
     "test:watch": "jest --watch --onlyChanged --verbose true"
   },
   "devDependencies": {
-    "@amsterdam/asc-assets": "^0.29.3",
     "@babel/core": "^7.11.0",
     "@svgr/webpack": "^5.4.0",
     "@testing-library/jest-dom": "^5.11.2",
