@@ -3,7 +3,7 @@
   "description": "Contains icons and fonts",
   "license": "MPL-2.0",
   "author": "Gemeente Amsterdam",
-  "homepage": "https://github.com/Amsterdam/amsterdam-styled-components/tree/master/packages/asc-assets#readme",
+  "homepage": "https://github.com/Amsterdam/amsterdam-styled-components/tree/main/packages/asc-assets#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/Amsterdam/amsterdam-styled-components.git",
