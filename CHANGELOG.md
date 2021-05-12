@@ -16,7 +16,8 @@ Prefix the change with one of these keywords:
 
 ## [new version]
 
-- Deprecated: removed ViewerContainer component use ARM ViewerContainer
+- Removed: Support for React 16
+- Removed: `ViewerContainer` component
 
 ## [0.29.3]
 
