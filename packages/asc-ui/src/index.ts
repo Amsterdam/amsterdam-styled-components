@@ -109,7 +109,6 @@ import TextField, { TextFieldStyles } from './components/TextField'
 import TopBar, { TopBarStyles } from './components/TopBar'
 import TopTaskLink, { TopTaskLinkStyle } from './components/TopTaskLink'
 import Typography from './components/Typography'
-import ViewerContainer from './components/ViewerContainer/ViewerContainer'
 import { ascDefaultTheme } from './theme'
 import CompactThemeProvider from './theme/CompactThemeProvider'
 import ThemeProvider from './theme/ThemeProvider'
@@ -225,7 +224,6 @@ export {
   ascDefaultTheme,
   DocumentCover,
   Tag,
-  ViewerContainer,
   CompactPager,
   Hidden,
   FormTitle,
