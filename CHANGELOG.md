@@ -14,6 +14,10 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## [new version]
+
+- Deprecated: removed ViewerContainer component use ARM ViewerContainer
+
 ## [0.29.3]
 
 - Added: Switch component
