@@ -1,160 +1,78 @@
-import {
-  ButtonHTMLAttributes,
-  ElementType,
-  FunctionComponent,
-  KeyboardEvent,
-  HTMLAttributes,
-  MouseEvent,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react'
-import ToggleStyle, { Props as ToggleStyleProps } from './ToggleStyle'
-import ownerDocument from '../../utils/ownerDocument'
-import usePassPropsToChildren from '../../utils/hooks/usePassPropsToChildren'
-import useActionOnEscape from '../../utils/hooks/useActionOnEscape'
-import ToggleButton, {
-  Props as ToggleButtonProps,
-} from '../Button/ToggleButton/ToggleButton'
-import BackDrop, { Props as BackDropProps } from '../BackDrop/BackDrop'
+import { forwardRef, HTMLAttributes, useImperativeHandle, useRef } from 'react'
+import styled from 'styled-components'
+import { themeColor } from '../../utils/themeUtils'
 
-export type ToggleHandlerProps = {
-  as?: ElementType
-} & ToggleButtonProps &
-  HTMLAttributes<HTMLElement>
+type Props = {
+  id: string
+  left: string
+  right: string
+  value: string
+  className?: string
+}
 
-export type Props = {
-  render?: boolean
-  ariaLabel?: string
-  onOpen?: (open: boolean) => void
-  ToggleHandler?: FunctionComponent<
-    ToggleButtonProps & ButtonHTMLAttributes<HTMLButtonElement>
-  >
-  rotateOnOpen?: number
-  as?: ElementType
-} & ToggleStyleProps &
-  ToggleHandlerProps &
-  BackDropProps
-
-// Todo: refactor this to Collapse component https://github.com/Amsterdam/amsterdam-styled-components/issues/379
-const Toggle: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
-  children: childrenProps,
-  onClick,
-  open: openProp,
-  onKeyDown,
-  onOpen,
-  css,
-  render,
-  iconOpen,
-  iconClose,
-  ToggleHandler,
-  title,
-  hasBackDrop,
-  backdropOpacity,
-  zIndexOffset,
-  ariaLabel,
-  ...otherProps
-}) => {
-  const [open, setOpen] = useState(false)
-
-  const handleOnOpen = useCallback(
-    (openParam: boolean) => {
-      setOpen(openParam)
-
-      if (onOpen) {
-        onOpen(openParam)
-      }
-    },
-    // Empty dependency array prevents an infinite loop if the parent rerenders
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
-  )
-
-  const { onKeyDown: onKeyDownHook } = useActionOnEscape(() =>
-    handleOnOpen(false),
-  )
-  const ref = useRef<HTMLDivElement>(null!)
-
-  const handleOnBlur = () => {
-    setTimeout(() => {
-      const element = ref.current
-      if (element) {
-        const currentFocus = ownerDocument(element).activeElement
-        if (!element.contains(currentFocus)) {
-          handleOnOpen(false)
-        }
-      }
-    })
+export const WrapperStyle = styled.span`
+  input:checked + label {
+    color: ${themeColor('tint', 'level1')};
+    background-color: ${themeColor('secondary')};
+    border: 2px solid ${themeColor('secondary')};
+    padding: 12px 18px;
   }
+`
 
-  const handleOnKeyDown = (e: KeyboardEvent<HTMLElement>) => {
-    onKeyDownHook(e)
-    if (onKeyDown) {
-      onKeyDown(e)
-    }
-  }
+type RadioProps = {
+  role: string
+  id: string
+  type: string
+}
 
-  const handleOnClick = (e: MouseEvent<HTMLElement>) => {
-    handleOnOpen(!open)
+const RadioStyle = styled.input.attrs({
+  type: 'radio',
+})<RadioProps>`
+  opacity: 0;
+  position: absolute;
+`
 
-    if (onClick) {
-      onClick(e)
-    }
-  }
+type LabelProps = {
+  htmlFor: string
+}
 
-  const { children } = usePassPropsToChildren(childrenProps, {
-    'aria-hidden': !open,
-  })
+const LabelStyle = styled.label<LabelProps>`
+  background-color: ${themeColor('tint', 'level3')};
+  font-weight: bold;
+  padding: 12px 20px;
+`
 
-  // Useful if parent needs to take over control the isOpen state
-  useEffect(() => {
-    if (typeof openProp !== 'undefined') {
-      handleOnOpen(openProp)
-    }
-  }, [handleOnOpen, openProp])
+const Toggle = forwardRef<
+  HTMLInputElement,
+  Props & HTMLAttributes<HTMLInputElement>
+>(({ id, left, right, value, className, ...otherProps }, externalRef) => {
+  const ref = useRef<HTMLInputElement>(null)
 
-  const conditionalRenderedChildren = open ? children : null
+  useImperativeHandle(externalRef, () => ref.current as HTMLInputElement)
 
   return (
-    <ToggleStyle
-      ref={ref}
-      css={css}
-      onBlur={handleOnBlur}
-      onKeyDown={handleOnKeyDown}
-      hasBackDrop={hasBackDrop}
-      {...otherProps}
-      tabIndex={-1} // This will enable the onblur event for this div element on all browsers
-    >
-      {ToggleHandler && (
-        <ToggleHandler
-          {...{
-            open,
-            iconClose,
-            iconOpen,
-            onClick: handleOnClick,
-            title,
-            hasBackDrop,
-          }}
-          {...(ariaLabel ? { 'aria-label': ariaLabel } : {})}
-          type="button"
-        />
-      )}
-      {render ? children : conditionalRenderedChildren}
-      {hasBackDrop && open && (
-        <BackDrop
-          onClick={handleOnClick}
-          zIndexOffset={zIndexOffset}
-          backdropOpacity={backdropOpacity}
-        />
-      )}
-    </ToggleStyle>
-  )
-}
+    <WrapperStyle className={className}>
+      <RadioStyle
+        role="switch"
+        name={id}
+        id={`${id}-${left}`}
+        value={left}
+        defaultChecked={value === left}
+        {...{ ...otherProps }}
+      />
+      <LabelStyle htmlFor={`${id}-${left}`}>{left}</LabelStyle>
 
-Toggle.defaultProps = {
-  render: true,
-  ToggleHandler: ToggleButton,
-}
+      <RadioStyle
+        role="switch"
+        name={id}
+        id={`${id}-${right}`}
+        value={right}
+        defaultChecked={value === right}
+        {...{ ...otherProps }}
+      />
+      <LabelStyle htmlFor={`${id}-${right}`}>{right} </LabelStyle>
+    </WrapperStyle>
+  )
+})
 
 export default Toggle

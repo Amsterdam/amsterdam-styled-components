@@ -1,5 +1,1 @@
-export {
-  default as Toggle,
-  ToggleHandlerProps,
-  Props as ToggleProps,
-} from './Toggle'
+export { default } from './Toggle'

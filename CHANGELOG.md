@@ -21,6 +21,7 @@ Prefix the change with one of these keywords:
 
 ## [0.29.3]
 
+- Added: Toggle component
 - Fixed: issue with not programmically changing the active / initial tab on `Tabs` component
 - Deprecated: `initialTab` in `Tabs` component. Please use `activeTab` instead.
 - Added: Quote component

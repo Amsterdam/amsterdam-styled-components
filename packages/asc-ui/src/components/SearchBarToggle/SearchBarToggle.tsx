@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react'
 import { InputMethods, InputProps } from '../Input'
 import SearchBar from '../SearchBar'
 import { SearchBarProps } from '../SearchBar/SearchBar'
-import Toggle, { Props as ToggleProps } from '../Toggle/Toggle'
+import { MenuToggle, MenuToggleProps } from '../MenuToggle'
 import SearchBarToggleStyle, {
   SearchBarToggleStyleProps,
 } from './SearchBarToggleStyle'
@@ -17,7 +17,7 @@ interface SearchBarToggleProps extends SearchBarToggleStyleProps, InputMethods {
 }
 
 const SearchBarToggle: FunctionComponent<
-  SearchBarToggleProps & ToggleProps
+  SearchBarToggleProps & MenuToggleProps
 > = ({
   children,
   hideAt,
@@ -26,7 +26,7 @@ const SearchBarToggle: FunctionComponent<
   inputProps,
   ...otherProps
 }) => (
-  <Toggle
+  <MenuToggle
     as={SearchBarToggleStyle}
     {...{
       hideAt,
@@ -39,7 +39,7 @@ const SearchBarToggle: FunctionComponent<
     <SearchBar inputProps={inputProps} {...searchBarProps} autoFocus>
       {children}
     </SearchBar>
-  </Toggle>
+  </MenuToggle>
 )
 
 SearchBarToggle.defaultProps = {

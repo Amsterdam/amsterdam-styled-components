@@ -1,0 +1,65 @@
+import { Fragment } from 'react'
+import { action } from '@storybook/addon-actions'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Toggle } from '@amsterdam/asc-ui'
+
+<Meta
+  title="UI/Form/Toggle"
+  component={Toggle}
+  decorators={[
+    (storyFn) => (
+      <div
+        style={{
+          display: 'flex',
+          maxWidth: 400,
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+        }}
+      >
+        {storyFn()}
+      </div>
+    ),
+  ]}
+/>
+
+# Toggle
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/647350-toggle)
+
+**Component status: experimental**
+
+## Dag
+
+<Preview>
+  <Story name="dag">
+    <Fragment>
+      <Toggle
+        id="dag"
+        value="Dag"
+        left="Dag"
+        right="Week"
+        onChange={(e) => {
+          action(`toggle switched ${e.target.value}`)(e)
+        }}
+      />
+    </Fragment>
+  </Story>
+</Preview>
+
+## Week
+
+<Preview>
+  <Story name="week">
+    <Fragment>
+      <Toggle
+        id="week"
+        value="Week"
+        left="Dag"
+        right="Week"
+        onChange={(e) => {
+          action(`toggle switched ${e.target.value}`)(e)
+        }}
+      />
+    </Fragment>
+  </Story>
+</Preview>

@@ -3,7 +3,7 @@ import { themeColor, themeSpacing, svgFill } from '../../utils'
 import FooterHeading from './FooterHeading'
 import IconStyle from '../Icon'
 import Button from '../Button'
-import { Toggle } from '../Toggle'
+import { MenuToggle } from '../MenuToggle'
 
 const FooterContentWrapper = styled.div`
   display: flex;
@@ -38,7 +38,7 @@ const StyledButton = styled(Button)`
   }
 `
 
-const StyledFooterToggle = styled(Toggle)`
+const StyledFooterToggle = styled(MenuToggle)`
   margin-bottom: ${themeSpacing(3)};
 
   ${FooterContentWrapper} {

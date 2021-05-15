@@ -6,7 +6,7 @@ import {
   showAboveBackDrop,
 } from '../../utils'
 import SearchBarStyle from '../SearchBar/SearchBarStyle'
-import ToggleStyle from '../Toggle/ToggleStyle'
+import { MenuToggleStyle } from '../MenuToggle'
 import { TOGGLE_BUTTON_SIZE } from '../shared/constants'
 import ToggleButtonStyle from '../Button/ToggleButton'
 
@@ -14,7 +14,7 @@ export interface SearchBarToggleStyleProps extends ShowHideTypes {
   open?: boolean
 }
 
-const SearchBarToggleStyle = styled(ToggleStyle)<SearchBarToggleStyleProps>`
+const SearchBarToggleStyle = styled(MenuToggleStyle)<SearchBarToggleStyleProps>`
   display: flex;
   align-items: flex-end;
   flex-direction: column;
