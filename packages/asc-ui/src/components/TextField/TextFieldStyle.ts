@@ -6,8 +6,9 @@ const TextFieldStyle = styled.div`
 
   & > ${ButtonStyle} {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 3px;
+    right: 3px;
+    height: calc(100% - 6px);
   }
 `
 
