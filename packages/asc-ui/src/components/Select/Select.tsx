@@ -56,9 +56,8 @@ const Select = forwardRef<
     const ref = useRef<HTMLSelectElement>(null)
 
     const updateValue = useCallback((select: HTMLSelectElement) => {
-      const selectedOption: HTMLOptionElement | undefined = getSelectedOptions(
-        select,
-      )[0]
+      const selectedOption: HTMLOptionElement | undefined =
+        getSelectedOptions(select)[0]
 
       if (selectedOption?.textContent) {
         setSelectedValue(selectedOption.textContent)

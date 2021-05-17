@@ -44,15 +44,17 @@ export const BulletCSS = css`
   }
 `
 
-const getVariant = () => ({ variant }: Props) => {
-  switch (variant /* Switch statement because more variants to be added */) {
-    case 'bullet':
-      return BulletCSS
+const getVariant =
+  () =>
+  ({ variant }: Props) => {
+    switch (variant /* Switch statement because more variants to be added */) {
+      case 'bullet':
+        return BulletCSS
 
-    default:
-      return css``
+      default:
+        return css``
+    }
   }
-}
 
 export const ListStyleCSS = css`
   list-style: none;
