@@ -15,14 +15,16 @@ export default styled.ol`
     align-items: center;
     color: ${themeColor('secondary', 'main')};
 
-    a {
+    a, span {
       font-size: 14px;
       line-height: 22px;
       color: ${themeColor('tint', 'level5')};
       text-decoration: none;
       text-decoration-color: ${themeColor('tint', 'level5')};
       margin: ${themeSpacing(0, 2, 0, 0)};
+    }
 
+    a {
       &:hover {
         color: ${themeColor('secondary', 'main')};
         text-decoration: underline;
