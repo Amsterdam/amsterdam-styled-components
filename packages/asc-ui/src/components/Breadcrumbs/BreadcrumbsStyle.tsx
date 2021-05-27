@@ -15,7 +15,8 @@ export default styled.ol`
     align-items: center;
     color: ${themeColor('secondary', 'main')};
 
-    a, span {
+    a,
+    span {
       font-size: 14px;
       line-height: 22px;
       color: ${themeColor('tint', 'level5')};
