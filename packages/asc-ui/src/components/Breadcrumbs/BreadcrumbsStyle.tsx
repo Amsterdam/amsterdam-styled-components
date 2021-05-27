@@ -8,6 +8,7 @@ export default styled.ol`
   flex-wrap: wrap;
   margin: 0;
   list-style: none;
+  padding-inline-start: 0;
 
   li {
     display: flex;
