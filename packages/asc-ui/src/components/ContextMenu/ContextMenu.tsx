@@ -1,6 +1,5 @@
 import {
   ButtonHTMLAttributes,
-  Children,
   FunctionComponent,
   ReactNode,
   useEffect,
@@ -12,10 +11,9 @@ import MenuList from './ContextMenuList'
 import ownerDocument from '../../utils/ownerDocument'
 import { Position } from './types'
 import ContextMenuWrapperStyle from './ContextMenuWrapperStyle'
-import ContextMenuItem from './ContextMenuItem'
 import useFocusWithArrows from '../../utils/hooks/useFocusWithArrows'
 import useDetectTouchscreen from '../../utils/hooks/useDetectTouchScreen'
-import { deprecatedWarning } from '../../utils'
+import useActionOnEscape from '../../utils/hooks/useActionOnEscape'
 
 export type Props = {
   position?: Position
@@ -41,23 +39,12 @@ const ContextMenu: FunctionComponent<
   const [open, setOpen] = useState(openProp)
   const isTouchScreen = useDetectTouchscreen()
 
-  useEffect(() => {
-    Children.toArray(children).forEach((child) => {
-      // @ts-ignore
-      if (child && child.type !== ContextMenuItem) {
-        deprecatedWarning(
-          'You are rendering a different component type in <ContextMenu /> other than <ContextMenuItem />.',
-        )
-      }
-    })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
   // Set state with 'open' prop if it's set
   useEffect(() => {
     if (openProp !== open) {
       setOpen(openProp)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [openProp])
 
   const onToggle = () => {
@@ -76,12 +63,18 @@ const ContextMenu: FunctionComponent<
       }
     })
   }
-  const { keyDown } = useFocusWithArrows(ref, true)
+  const { keyDown: focusWithArrowKeys } = useFocusWithArrows(ref, true)
+  const { onKeyDown: closeOnEscape } = useActionOnEscape(() => {
+    setOpen(false)
+  })
 
   return (
     <ContextMenuWrapperStyle
       ref={ref}
-      onKeyDown={keyDown}
+      onKeyDown={(e) => {
+        focusWithArrowKeys(e)
+        closeOnEscape(e)
+      }}
       onBlur={onClose}
       className={className}
     >
