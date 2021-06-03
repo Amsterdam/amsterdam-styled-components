@@ -9,6 +9,7 @@ export type Props = {
   variant?: LinkVariant
   icon?: 'external' | 'download'
   darkBackground?: boolean
+  $darkBackground?: boolean // transient prop https://styled-components.com/docs/api#transient-props
   inList?: boolean
 } & TypographyProps
 
@@ -65,8 +66,8 @@ export default styled(Typography)<Props>`
         return DefaultLinkStyleCSS
     }
   }}
-  ${({ darkBackground }) =>
-    darkBackground &&
+  ${({ darkBackground, $darkBackground }) =>
+    (darkBackground || $darkBackground) &&
     css`
       &,
       &:hover {
