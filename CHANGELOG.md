@@ -16,7 +16,11 @@ Prefix the change with one of these keywords:
 
 ## [new version]
 
-- Deprecated: removed ViewerContainer component use ARM ViewerContainer
+- Added: transient prop $darkBackground to `Link` component
+- Added: keyevent on `ContextMenu`: close when pressing escape
+- Removed: Console warning in `ContextMenu` for not passing the right children
+- Removed: Support for React 16
+- Removed: `ViewerContainer` component
 
 ## [0.29.3]
 

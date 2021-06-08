@@ -16,31 +16,23 @@ interface SearchBarToggleProps extends SearchBarToggleStyleProps, InputMethods {
   searchBarProps?: SearchBarProps
 }
 
-const SearchBarToggle: FunctionComponent<
-  SearchBarToggleProps & ToggleProps
-> = ({
-  children,
-  hideAt,
-  showAt,
-  searchBarProps,
-  inputProps,
-  ...otherProps
-}) => (
-  <Toggle
-    as={SearchBarToggleStyle}
-    {...{
-      hideAt,
-      showAt,
-    }}
-    render={false}
-    iconOpen={<Search />}
-    {...otherProps}
-  >
-    <SearchBar inputProps={inputProps} {...searchBarProps} autoFocus>
-      {children}
-    </SearchBar>
-  </Toggle>
-)
+const SearchBarToggle: FunctionComponent<SearchBarToggleProps & ToggleProps> =
+  ({ children, hideAt, showAt, searchBarProps, inputProps, ...otherProps }) => (
+    <Toggle
+      as={SearchBarToggleStyle}
+      {...{
+        hideAt,
+        showAt,
+      }}
+      render={false}
+      iconOpen={<Search />}
+      {...otherProps}
+    >
+      <SearchBar inputProps={inputProps} {...searchBarProps} autoFocus>
+        {children}
+      </SearchBar>
+    </Toggle>
+  )
 
 SearchBarToggle.defaultProps = {
   placeholder: 'Search...',

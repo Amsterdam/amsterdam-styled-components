@@ -54,19 +54,20 @@ function formatPanelId(id: string) {
 export const Tabs: FunctionComponent<
   TabsProps & HTMLAttributes<HTMLDivElement>
 > = ({ label, children, initialTab, activeTab, className }) => {
-  const allTabs = useMemo(() => children.map(({ props }) => props.id), [
-    children,
-  ])
+  const allTabs = useMemo(
+    () => children.map(({ props }) => props.id),
+    [children],
+  )
   const foundInitialTab = useMemo(
     () => allTabs.find((id) => id === (activeTab ?? initialTab)),
     [allTabs, initialTab, activeTab],
   )
 
   // default to first tab
-  const initialActiveTab = useMemo(() => foundInitialTab ?? allTabs[0], [
-    foundInitialTab,
-    allTabs,
-  ])
+  const initialActiveTab = useMemo(
+    () => foundInitialTab ?? allTabs[0],
+    [foundInitialTab, allTabs],
+  )
 
   useEffect(() => {
     if ((activeTab ?? initialTab) && !foundInitialTab) {
