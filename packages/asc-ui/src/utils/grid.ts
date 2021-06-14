@@ -4,23 +4,23 @@ import { Theme } from '../types'
 /**
  * Get the value for the maximum width of the grid
  */
-export const maxWidth = withTheme<[boolean?]>((theme, withUnit = false):
-  | number
-  | string => {
-  const gridWidthValue = getValueFromTheme('maxGridWidth')({ theme })
+export const maxWidth = withTheme<[boolean?]>(
+  (theme, withUnit = false): number | string => {
+    const gridWidthValue = getValueFromTheme('maxGridWidth')({ theme })
 
-  if (Number.isNaN(parseInt(gridWidthValue, 10))) {
-    throw new Error(
-      "Your theme configuration does not seem to have a value for 'maxGridWidth'",
-    )
-  }
+    if (Number.isNaN(parseInt(gridWidthValue, 10))) {
+      throw new Error(
+        "Your theme configuration does not seem to have a value for 'maxGridWidth'",
+      )
+    }
 
-  if (withUnit) {
-    return `${gridWidthValue}px`
-  }
+    if (withUnit) {
+      return `${gridWidthValue}px`
+    }
 
-  return gridWidthValue
-})
+    return gridWidthValue
+  },
+)
 
 /**
  * Get the amount of column for a specific layout
