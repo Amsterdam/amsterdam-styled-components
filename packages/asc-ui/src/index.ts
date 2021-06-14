@@ -107,6 +107,7 @@ import {
 } from './components/Accordion'
 import Hidden from './components/Hidden'
 import FormTitle from './components/FormTitle'
+import { Pagination } from './components/Pagination'
 import { themeColor } from './utils'
 import { perceivedLoading } from './utils/themeUtils'
 
@@ -239,6 +240,7 @@ export {
   MenuToggle,
   MenuButton,
   Modal,
+  Pagination,
   Portal,
   Radio,
   RadioGroup,
