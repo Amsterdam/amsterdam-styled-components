@@ -15,6 +15,7 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## Unreleased
+- Added: `Pagination` component
 - Added: Export `SelectWrapperStyle`
 
 ## [0.21.1]
