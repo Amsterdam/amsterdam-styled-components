@@ -57,9 +57,12 @@ export const PageNumber = styled.button.attrs({
       color: ${themeColor('bright', 'main')};
     `};
 
-  &:active,
   &:focus {
     background-color: ${themeColor('support', 'focus')};
+  }
+
+  &:active {
+    background: none;
   }
 `
 

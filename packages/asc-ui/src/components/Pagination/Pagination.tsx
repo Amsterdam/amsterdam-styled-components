@@ -45,8 +45,11 @@ const Pagination: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
         }
         aria-current={isCurrent}
         data-testid={`btn-page-${pageNumber}`}
-        onClick={() => setCurrentPage(pageNumber)}
-        className="page-number"
+        onClick={(evt) => {
+          // Remove focus from button after click
+          evt.currentTarget.blur()
+          setCurrentPage(pageNumber)
+        }}
         isCurrent={isCurrent}
         tabIndex={isCurrent ? -1 : 0}
       >
@@ -59,7 +62,7 @@ const Pagination: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
     return (
       <>
         {Array.from(Array(totalPages).keys()).map((num) => (
-          <li>{renderButton(num + 1)}</li>
+          <li key={`pag-${num}`}>{renderButton(num + 1)}</li>
         ))}
       </>
     )
