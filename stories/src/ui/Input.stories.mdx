@@ -1,7 +1,7 @@
-import { createRef, useEffect } from 'react'
+import { createRef, useEffect, Fragment } from 'react'
 import { action } from '@storybook/addon-actions'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
-import { Input, Label } from '@datapunt/asc-ui'
+import { Input, Label } from '@amsterdam/asc-ui'
 
 <Meta title="UI/Form/Input" component={Input} />
 
@@ -15,7 +15,7 @@ import { Input, Label } from '@datapunt/asc-ui'
 
 <Preview>
   <Story name="Default">
-    <React.Fragment>
+    <Fragment>
       <Input
         onBlur={action('onBlur called')}
         onChange={(e) => {
@@ -23,7 +23,7 @@ import { Input, Label } from '@datapunt/asc-ui'
         }}
         onFocus={action('onFocus called')}
       />
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -31,7 +31,7 @@ import { Input, Label } from '@datapunt/asc-ui'
 
 <Preview>
   <Story name="With label">
-    <React.Fragment>
+    <Fragment>
       <Label htmlFor="some-input" label="Some label" />
       <Input
         id="some-input"
@@ -41,7 +41,7 @@ import { Input, Label } from '@datapunt/asc-ui'
         }}
         onFocus={action('onFocus called')}
       />
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -49,7 +49,7 @@ import { Input, Label } from '@datapunt/asc-ui'
 
 <Preview>
   <Story name="With Ref">
-    <React.Fragment>
+    <Fragment>
       {(() => {
         const ref = createRef()
         useEffect(() => {
@@ -57,9 +57,8 @@ import { Input, Label } from '@datapunt/asc-ui'
           if (!element) {
             return undefined
           }
-          function onInput(event) {
-            // eslint-disable-next-line no-console
-            console.log('Value changed!', event.target.value)
+          function onInput(e) {
+            action(`Value changed! ${e.target.value}`)(e)
           }
           element.addEventListener('input', onInput)
           return () => {
@@ -68,6 +67,6 @@ import { Input, Label } from '@datapunt/asc-ui'
         }, [ref])
         return <Input ref={ref} />
       })()}
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

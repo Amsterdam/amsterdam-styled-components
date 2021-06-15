@@ -1,6 +1,6 @@
 import merge from 'deepmerge'
-import * as grid from '../grid'
 import { ascDefaultTheme } from '../../theme'
+import * as grid from '../grid'
 
 const theme = {
   ...ascDefaultTheme,
@@ -43,6 +43,7 @@ describe('utils/grid', () => {
     it('should throw', () => {
       expect(() => {
         const noMaxGridWidthValue = { ...theme }
+        // @ts-ignore
         delete noMaxGridWidthValue.maxGridWidth
 
         grid.maxWidth()({ theme: noMaxGridWidthValue })
@@ -62,6 +63,7 @@ describe('utils/grid', () => {
     it('should throw', () => {
       expect(() => {
         const noColumns = merge({}, { ...theme })
+        // @ts-ignore
         delete noColumns.layouts.huge.columns
 
         grid.columns('huge')({ theme: noColumns })
@@ -84,6 +86,7 @@ describe('utils/grid', () => {
 
     it('should return 0', () => {
       const noGutter = merge({}, theme)
+      // @ts-ignore
       delete noGutter.layouts.huge.gutter
 
       expect(grid.gutter('huge')({ theme: noGutter })).toEqual(0)
@@ -340,7 +343,8 @@ describe('utils/grid', () => {
 
       expect(spanWidthStr).not.toEqual(spanWithParentSpanWidthstr)
 
-      const widthRe = /^calc\(\(\(\(100% - (\d+)px\) \/ (\d+)\) \* \d+\) \+ \d+px \+ \d+px\)$/
+      const widthRe =
+        /^calc\(\(\(\(100% - (\d+)px\) \/ (\d+)\) \* \d+\) \+ \d+px \+ \d+px\)$/
       const matches: any = spanWidthStr.match(widthRe)
       const parentSpanMatches: any = spanWithParentSpanWidthstr.match(widthRe)
 

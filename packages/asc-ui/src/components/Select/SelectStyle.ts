@@ -1,7 +1,8 @@
-import { ChevronDown } from '@datapunt/asc-assets'
+import { ChevronDown } from '@amsterdam/asc-assets'
+import { CSSProperties } from 'react'
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
-import { outlineStyle } from '../../utils/themeUtils'
+import { INPUT_SIZE } from '../shared/constants'
 
 export type Props = {
   id?: string
@@ -11,13 +12,13 @@ export type Props = {
   srOnly?: boolean
   error?: boolean | string
   errorMessage?: string
-  labelStyle?: object
-  errorStyle?: object
+  labelStyle?: CSSProperties
+  errorStyle?: CSSProperties
 }
 
 export const SelectWrapper = styled.div`
   position: relative;
-  height: 40px;
+  height: ${INPUT_SIZE}px;
   width: 100%;
 `
 
@@ -32,11 +33,12 @@ export const AbsoluteContentWrapper = styled.div.attrs({
   right: 0;
   bottom: 0;
   left: 0;
-  margin: 1px ${themeSpacing(3)} 1px ${themeSpacing(3)}; /* Match the border and spacing of the select element. */
+  margin: 3px; /* Allows the default browser(s) default focus style to be displayed. */
+  padding: 0 calc(${themeSpacing(3)} - 1px); /* Match the spacing of the select element. */
   display: flex;
   align-items: center;
-  background-color: ${themeColor('tint', 'level1')};
   pointer-events: none;
+  background-color: ${themeColor('tint', 'level1')};
 `
 
 /**
@@ -63,7 +65,7 @@ export const SelectIcon = styled(ChevronDown)`
 const SelectStyle = styled.select<Props>`
   width: 100%;
   height: 100%;
-  padding: ${themeSpacing(0, 3)};
+  padding: ${themeSpacing(2, 3)};
   font-size: 1rem;
   border: 1px solid ${themeColor('tint', 'level5')};
   border-radius: 0;
@@ -94,13 +96,6 @@ const SelectStyle = styled.select<Props>`
       !error &&
       css`
         border: 1px solid ${themeColor('tint', 'level7')};
-      `}
-  }
-
-  &:focus {
-    ${({ theme }) =>
-      css`
-        ${outlineStyle(theme, 2)};
       `}
   }
 

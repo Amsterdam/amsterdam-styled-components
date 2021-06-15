@@ -1,22 +1,19 @@
-import React from 'react'
 import styled from 'styled-components'
-import FilterBoxStyle, {
-  FilterBoxHeader,
-  Props as StyleProps,
-} from './FilterBoxStyle'
+import { FunctionComponent, HTMLAttributes } from 'react'
+import FilterBoxStyle, { FilterBoxHeader } from './FilterBoxStyle'
 import Heading from '../Heading'
 import { themeColor } from '../../utils/themeUtils'
 
 type Props = {
   label: string
-} & StyleProps
+}
 
 const StyledHeading = styled(Heading)`
   margin-bottom: 0;
   color: ${themeColor('primary', 'main')};
 `
 
-const FilterBox: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
+const FilterBox: FunctionComponent<Props & HTMLAttributes<HTMLElement>> = ({
   children,
   label,
   ...otherProps

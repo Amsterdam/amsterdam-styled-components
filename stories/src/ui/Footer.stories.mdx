@@ -1,0 +1,142 @@
+import { Fragment } from 'react'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import {
+  Column,
+  Footer,
+  FooterBottom,
+  FooterSection,
+  FooterTop,
+  Link,
+  List,
+  ListItem,
+  Paragraph,
+  Row,
+} from '@amsterdam/asc-ui'
+
+<Meta title="UI/Footer" component={Footer} />
+
+# Footer
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/83164c-footer)
+
+**Component status: experimental**
+
+## In context
+
+<Preview>
+  <Story name="In context">
+    <Fragment>
+      <Footer>
+        <FooterTop>
+          <Row>
+            <Column
+              wrap
+              span={{ small: 1, medium: 2, big: 2, large: 4, xLarge: 4 }}
+            >
+              <FooterSection title="Some page links" hideAt="tabletM">
+                <List>
+                  <ListItem>
+                    <Link darkBackground href="/" variant="with-chevron">
+                      Lorem ipsum.
+                    </Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link darkBackground href="/" variant="with-chevron">
+                      Lorem ipsum dolor.
+                    </Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link darkBackground href="/" variant="with-chevron">
+                      Lorem.
+                    </Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link darkBackground href="/" variant="with-chevron">
+                      Lorem ipsum dolor sit.
+                    </Link>
+                  </ListItem>
+                </List>
+              </FooterSection>
+            </Column>
+            <Column
+              wrap
+              span={{ small: 1, medium: 2, big: 2, large: 4, xLarge: 4 }}
+            >
+              <FooterSection title="Some share links" hideAt="tabletM">
+                <List>
+                  <ListItem>
+                    <Link darkBackground href="/" variant="with-chevron">
+                      Lorem ipsum dolor sit.
+                    </Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link darkBackground href="/" variant="with-chevron">
+                      Lorem.
+                    </Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link darkBackground href="/" variant="with-chevron">
+                      Lorem ipsum.
+                    </Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link darkBackground href="/" variant="with-chevron">
+                      Lorem ipsum.
+                    </Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link darkBackground href="/" variant="with-chevron">
+                      Lorem ipsum dolor sit amet.
+                    </Link>
+                  </ListItem>
+                </List>
+              </FooterSection>
+            </Column>
+            <Column
+              wrap
+              span={{ small: 1, medium: 2, big: 2, large: 4, xLarge: 4 }}
+            >
+              <FooterSection title="Questions?" hideAt="tabletM">
+                <Paragraph gutterBottom={8}>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Commodi dolor doloremque ea eos facere hic ipsum nobis
+                  provident quidem voluptates.
+                </Paragraph>
+                <List>
+                  <ListItem>
+                    <Link darkBackground href="/" variant="with-chevron">
+                      Lorem ipsum dolor.
+                    </Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link darkBackground href="/" variant="with-chevron">
+                      Lorem ipsum dolor sit.
+                    </Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link darkBackground href="/" variant="with-chevron">
+                      Lorem.
+                    </Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link darkBackground href="/" variant="with-chevron">
+                      Lorem ipsum.
+                    </Link>
+                  </ListItem>
+                </List>
+              </FooterSection>
+            </Column>
+          </Row>
+        </FooterTop>
+        <FooterBottom>
+          <Link href="/" inList>
+            Privacy and cookies
+          </Link>
+          <Link href="/" inList>
+            About this site
+          </Link>
+        </FooterBottom>
+      </Footer>
+    </Fragment>
+  </Story>
+</Preview>

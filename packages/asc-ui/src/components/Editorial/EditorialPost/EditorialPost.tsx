@@ -1,13 +1,13 @@
-import React from 'react'
-import EditorialPostStyle from './EditorialPostStyle'
+import { FunctionComponent, HTMLAttributes } from 'react'
 import BackgroundImage from '../../BackgroundImage'
+import EditorialPostStyle from './EditorialPostStyle'
 
 export type Props = {
   StyledComponent?: any
   image?: string
-} & React.HTMLAttributes<HTMLElement>
+} & HTMLAttributes<HTMLElement>
 
-const EditorialPost: React.FC<Props> = ({
+const EditorialPost: FunctionComponent<Props> = ({
   children,
   image,
   StyledComponent,

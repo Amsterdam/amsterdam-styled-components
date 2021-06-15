@@ -45,6 +45,7 @@ const CardStyle = styled.div<Props>`
       ${CardContentStyle} > * {
         display: none;
       }
-    `}`
+    `}
+`
 
 export default CardStyle

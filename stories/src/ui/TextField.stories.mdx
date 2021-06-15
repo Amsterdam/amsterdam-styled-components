@@ -1,16 +1,17 @@
+import { useState, Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
-import { ErrorMessage, TextField } from '@datapunt/asc-ui'
+import { ErrorMessage, TextField } from '@amsterdam/asc-ui'
 
 export const WithAControlledState = () => {
-  const [value, setValue] = React.useState()
+  const [value, setValue] = useState()
   return (
-    <React.Fragment>
+    <Fragment>
       <TextField
         label="Controlled component"
         onChange={(e) => setValue(e.target.value)}
       />
       <br /> {value ? `The user types: ${value}` : 'Waiting for user input...'}
-    </React.Fragment>
+    </Fragment>
   )
 }
 
@@ -59,13 +60,13 @@ Single line text input field. Use the Textarea component for multi line text inp
 
 <Preview>
   <Story name="Error state">
-    <React.Fragment>
+    <Fragment>
       <TextField label="With Error Message" error />
       <ErrorMessage message="Error message" />
       <br />
       <br />
       <TextField label="Without Error Message" error />
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 

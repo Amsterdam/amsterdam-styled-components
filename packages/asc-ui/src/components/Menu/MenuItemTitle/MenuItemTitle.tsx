@@ -1,7 +1,7 @@
-import React from 'react'
+import { FunctionComponent } from 'react'
 import MenuItemTitleStyle from './MenuItemTitleStyle'
 
-const MenuItemTitle: React.FC<{}> = ({ children }) => (
+const MenuItemTitle: FunctionComponent = ({ children }) => (
   <MenuItemTitleStyle forwardedAs="li" variant="blank">
     {children}
   </MenuItemTitleStyle>

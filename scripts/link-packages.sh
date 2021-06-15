@@ -10,7 +10,7 @@ PACKAGE_NAMES=()
 for dir in ../packages/*/
 do
     cd $dir
-    yarn link
+    npm link
     PACKAGE_NAME=$(cat package.json | grep name | head -1 | sed 's/\"name\"://g' | tr -d '"'  | tr -d ',')
     PACKAGE_NAMES+=($PACKAGE_NAME)
     cd ../
@@ -20,5 +20,5 @@ cd "$current_path"
 
 for package_name in "${PACKAGE_NAMES[@]}"
 do
-    yarn link $package_name
+    npm link $package_name
 done

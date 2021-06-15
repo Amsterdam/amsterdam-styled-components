@@ -1,37 +1,67 @@
-import React from 'react'
-import { ChevronDown, ChevronUp } from '@datapunt/asc-assets'
-import MenuList from '../MenuList/MenuList'
-import MenuContext, { useMenuContext } from '../MenuContext'
-import ownerDocument from '../../../utils/ownerDocument'
-import MenuFlyOutStyle, { Props as MenuFlyOutProps } from './MenuFlyOutStyle'
-import useEdgeDetection from '../../../utils/hooks/useEdgeDetection'
-import useDebounce from '../../../utils/hooks/useDebounce'
+import { ChevronDown, ChevronUp } from '@amsterdam/asc-assets'
+import {
+  FunctionComponent,
+  KeyboardEvent as ReactKeyboardEvent,
+  MouseEvent as ReactMouseEvent,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import { KeyboardKeys } from '../../../types/index'
-import MenuButton from '../MenuButton/MenuButton'
+import useDebounce from '../../../utils/hooks/useDebounce'
+import useEdgeDetection from '../../../utils/hooks/useEdgeDetection'
 import useFocusWithArrows from '../../../utils/hooks/useFocusWithArrows'
+import ownerDocument from '../../../utils/ownerDocument'
+import MenuButton from '../MenuButton/MenuButton'
+import MenuContext, { useMenuContext } from '../MenuContext'
+import MenuList from '../MenuList/MenuList'
+import MenuFlyOutStyle, { Props as MenuFlyOutProps } from './MenuFlyOutStyle'
 
 type Props = {
   label: string
 } & MenuFlyOutProps
 
-const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
+const MenuFlyOut: FunctionComponent<Props> = ({
+  children,
+  label,
+  ...otherProps
+}) => {
   const { hasToggle, onExpand, setOpenToggle } = useMenuContext()
 
-  const ref = React.useRef<HTMLLIElement>(null)
+  const ref = useRef<HTMLLIElement>(null)
 
-  const [menuOpen, setMenuOpen] = React.useState(false)
-
-  const { keyDown } = useFocusWithArrows(ref)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const setOpen = useDebounce(setMenuOpen, 0)
 
-  const onHandleOpen = (e: React.MouseEvent | React.KeyboardEvent) => {
+  const { keyDown: keyDownArrowFocus } = useFocusWithArrows(ref)
+
+  const onKeyDownEventHandler = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === KeyboardKeys.Escape) {
+        setOpen(false)
+      }
+    },
+    [setOpen],
+  )
+
+  // We need to close the menu in case user hovers or focuses on the menu and press escape
+  // Todo: we need to move this to a higher component, as this unnecessarily will add multiple eventlisteners
+  useEffect(() => {
+    window.addEventListener('keydown', onKeyDownEventHandler)
+    return () => {
+      window.removeEventListener('keydown', onKeyDownEventHandler)
+    }
+  }, [onKeyDownEventHandler])
+
+  const onHandleOpen = (e: ReactMouseEvent | ReactKeyboardEvent) => {
     e.preventDefault()
 
     setOpen(!menuOpen)
   }
 
-  const onHandleKeyDown = (event: React.KeyboardEvent) => {
+  const onHandleKeyDownButton = (event: ReactKeyboardEvent) => {
     if (event.key === KeyboardKeys.Enter || event.key === KeyboardKeys.Space) {
       onHandleOpen(event)
     }
@@ -60,22 +90,23 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
     { top: false, right: true, bottom: false, left: true },
   )
 
-  const handleOnExpand = React.useCallback(
+  const handleOnExpand = useCallback(
     (open) => onExpand && onExpand(open),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   )
 
-  React.useEffect(() => {
+  useEffect(() => {
     handleOnExpand(menuOpen)
   }, [menuOpen, handleOnExpand])
 
   return (
     <MenuFlyOutStyle
       ref={ref}
+      data-testid="flyout"
       onBlur={onBlurHandler}
       hasToggle={hasToggle}
-      onKeyDown={keyDown}
+      onKeyDown={keyDownArrowFocus}
       {...extraEvents}
       {...otherProps}
     >
@@ -84,8 +115,9 @@ const MenuFlyOut: React.FC<Props> = ({ children, label, ...otherProps }) => {
           // eslint-disable-next-line no-nested-ternary
           hasToggle ? menuOpen ? <ChevronUp /> : <ChevronDown /> : undefined
         }
+        data-testid="flyoutButton"
         onClick={onHandleOpen}
-        onKeyDown={onHandleKeyDown}
+        onKeyDown={onHandleKeyDownButton}
         aria-haspopup="true"
         aria-expanded={menuOpen}
       >

@@ -1,0 +1,31 @@
+import styled from 'styled-components'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Breadcrumbs } from '@amsterdam/asc-ui'
+
+export const Decorator = styled.div``
+
+<Meta
+  title="UI/Breadcrumbs"
+  component={Breadcrumbs}
+  decorators={[(storyFn) => <Decorator>{storyFn()}</Decorator>]}
+/>
+
+# Breadcrumbs
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/35ca97-breadcrumbs)
+
+**Component status: stable**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <Breadcrumbs>
+      <a href="/">Home</a>
+      <a href="/innovatie">Innovatie</a>
+      <a href="/innovatie/bouwprojecten">Bouw- en verkeersprojecten</a>
+      <a href="/innovatie/bouwprojecten/contact">Contact</a>
+      <span>Ankerloos</span>
+    </Breadcrumbs>
+  </Story>
+</Preview>

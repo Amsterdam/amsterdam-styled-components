@@ -1,0 +1,91 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { withKnobs, select } from '@storybook/addon-knobs'
+import { Tabs, Tab } from '@amsterdam/asc-ui'
+
+export const PaddedContent = ({ children }) => (
+  <div style={{ paddingTop: '20px' }}>{children}</div>
+)
+
+<Meta title="UI/Tabs" component={Tabs} decorators={[withKnobs]} />
+
+# Tabs
+
+Tabs organise and allow navigation between groups of content that are related and at the same level of hierarchy.
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/15737c-tab-navigation)
+
+**Component status: experimental**
+
+Topics to align:
+
+- What to do when tabs overflow on desktop, how do we scroll?
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <Tabs label="An example of tabs">
+      <Tab id="one" label="First">
+        <PaddedContent>Contents of the first tab.</PaddedContent>
+      </Tab>
+      <Tab id="two" label="Second">
+        <PaddedContent>Contents of the second tab.</PaddedContent>
+      </Tab>
+      <Tab id="three" label="Last">
+        <PaddedContent>Contents of the last tab.</PaddedContent>
+      </Tab>
+    </Tabs>
+  </Story>
+</Preview>
+
+## With initial tab
+
+<Preview>
+  <Story name="With active tab set">
+    <Tabs
+      label="An example of tabs"
+      activeTab={select(
+        'Active tab',
+        {
+          First: 'one',
+          Second: 'two',
+          Last: 'three',
+        },
+        'two',
+      )}
+    >
+      <Tab id="one" label="First">
+        <PaddedContent>Contents of the first tab.</PaddedContent>
+      </Tab>
+      <Tab id="two" label="Second">
+        <PaddedContent>Contents of the second tab.</PaddedContent>
+      </Tab>
+      <Tab id="three" label="Last">
+        <PaddedContent>Contents of the last tab.</PaddedContent>
+      </Tab>
+    </Tabs>
+  </Story>
+</Preview>
+
+## Overflowing tabs
+
+<Preview>
+  <Story
+    name="Overflowing tabs"
+    parameters={{
+      viewport: { defaultViewport: 'mobile1' },
+    }}
+  >
+    <Tabs label="An example of overflowing tabs">
+      <Tab id="one" label="First with a long label">
+        <PaddedContent>Contents of the first tab.</PaddedContent>
+      </Tab>
+      <Tab id="two" label="Second with a long label">
+        <PaddedContent>Contents of the second tab.</PaddedContent>
+      </Tab>
+      <Tab id="three" label="Third with a long label">
+        <PaddedContent>Contents of the last tab.</PaddedContent>
+      </Tab>
+    </Tabs>
+  </Story>
+</Preview>

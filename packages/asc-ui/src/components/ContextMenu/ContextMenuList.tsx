@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import { forwardRef, HTMLAttributes, ReactNode } from 'react'
 import { Position } from './types'
 import ContextMenuListStyle, {
   ContextMenuListWrapperStyle,
@@ -6,15 +6,15 @@ import ContextMenuListStyle, {
 
 type Props = {
   open?: boolean
-  onClose: Function
+  onClose: () => void
   position?: Position
   label?: string
-  icon?: React.ReactNode
+  icon?: ReactNode
 }
 
 export default forwardRef<
   HTMLDivElement,
-  Props & React.HTMLAttributes<HTMLDivElement>
+  Props & HTMLAttributes<HTMLDivElement>
 >(({ children, position, open, onClose, ...otherProps }, ref) => (
   <ContextMenuListWrapperStyle
     ref={ref}
@@ -23,6 +23,7 @@ export default forwardRef<
     aria-hidden={!open}
     onBlur={() => onClose()}
     position={position}
+    open={open}
     {...otherProps}
   >
     <ContextMenuListStyle>{children}</ContextMenuListStyle>

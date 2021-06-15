@@ -1,4 +1,3 @@
-import React from 'react'
 import { render } from '@testing-library/react'
 import { renderHook, act } from '@testing-library/react-hooks'
 import useEdgeDetection from './useEdgeDetection'

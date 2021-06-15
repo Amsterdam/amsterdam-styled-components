@@ -1,9 +1,8 @@
-import React from 'react'
 import { render } from '@testing-library/react'
 import MenuList from './MenuList'
 
 describe('MenuList', () => {
-  let container: HTMLElement
+  let container: Element
   let getByText: (s: string) => any
 
   const children = 'foo'

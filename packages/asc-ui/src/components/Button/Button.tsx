@@ -1,28 +1,34 @@
-import React from 'react'
+import {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  ElementType,
+  forwardRef,
+  ReactNode,
+} from 'react'
 import Icon, { defaultProps as iconDefaultProps } from '../Icon/Icon'
 import ButtonStyle, {
   ArrowRight,
+  ButtonStyleProps,
   ButtonVariant,
   IconLeft,
   IconRight,
-  Props as ButtonStyleProps,
 } from './ButtonStyle'
 
-export type Props = {
-  as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
-  forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
-  iconLeft?: React.ReactNode
-  iconRight?: React.ReactNode
-  icon?: React.ReactNode
+export type ButtonProps = {
+  as?: ElementType
+  forwardedAs?: ElementType
+  iconLeft?: ReactNode
+  iconRight?: ReactNode
+  icon?: ReactNode
   iconSize?: number
   taskflow?: boolean
 } & ButtonStyleProps &
-  React.AnchorHTMLAttributes<HTMLAnchorElement> &
-  React.ButtonHTMLAttributes<HTMLButtonElement>
+  AnchorHTMLAttributes<HTMLAnchorElement> &
+  ButtonHTMLAttributes<HTMLButtonElement>
 
 export { ButtonVariant }
 
-const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, Props>(
+const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   (
     { children, iconLeft, iconRight, icon, iconSize, taskflow, ...otherProps },
     ref,

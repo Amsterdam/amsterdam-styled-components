@@ -1,4 +1,7 @@
-import React, {
+import {
+  ChangeEvent,
+  forwardRef,
+  HTMLAttributes,
   useCallback,
   useEffect,
   useImperativeHandle,
@@ -24,13 +27,13 @@ function getSelectedOptions(select: HTMLSelectElement) {
     return Array.from(select.selectedOptions)
   }
 
-  // The 'selectedOptions' property is not supported (IE11)
+  // The 'edOptions' property is not supported (IE11)
   return Array.from(select.querySelectorAll<HTMLOptionElement>(':checked'))
 }
 
-const Select = React.forwardRef<
+const Select = forwardRef<
   HTMLSelectElement,
-  Props & React.HTMLAttributes<HTMLSelectElement>
+  Props & HTMLAttributes<HTMLSelectElement>
 >(
   (
     {
@@ -43,6 +46,7 @@ const Select = React.forwardRef<
       onChange,
       children,
       disabled,
+      className,
       ...otherProps
     },
     externalRef,
@@ -52,9 +56,8 @@ const Select = React.forwardRef<
     const ref = useRef<HTMLSelectElement>(null)
 
     const updateValue = useCallback((select: HTMLSelectElement) => {
-      const selectedOption: HTMLOptionElement | undefined = getSelectedOptions(
-        select,
-      )[0]
+      const selectedOption: HTMLOptionElement | undefined =
+        getSelectedOptions(select)[0]
 
       if (selectedOption?.textContent) {
         setSelectedValue(selectedOption.textContent)
@@ -62,7 +65,7 @@ const Select = React.forwardRef<
     }, [])
 
     const handleChange = useCallback(
-      (event: React.ChangeEvent<HTMLSelectElement>) => {
+      (event: ChangeEvent<HTMLSelectElement>) => {
         updateValue(event.target)
 
         if (onChange) {
@@ -78,7 +81,7 @@ const Select = React.forwardRef<
       if (ref.current) {
         updateValue(ref.current)
       }
-    }, [ref])
+    }, [ref, value])
 
     return (
       <>
@@ -92,7 +95,7 @@ const Select = React.forwardRef<
             {label}
           </FormLabelStyle>
         )}
-        <SelectWrapper>
+        <SelectWrapper className={className}>
           <SelectStyle
             {...{
               ...otherProps,
@@ -108,7 +111,9 @@ const Select = React.forwardRef<
             {children}
           </SelectStyle>
           <AbsoluteContentWrapper>
-            <SelectedValue disabled={disabled}>{selectedValue}</SelectedValue>
+            <SelectedValue data-testid="selectedValue" disabled={disabled}>
+              {selectedValue}
+            </SelectedValue>
             <SelectIcon />
           </AbsoluteContentWrapper>
         </SelectWrapper>

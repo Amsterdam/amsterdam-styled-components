@@ -1,49 +1,51 @@
-import React, { useEffect, useState } from 'react'
+import {
+  ButtonHTMLAttributes,
+  FunctionComponent,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import ContextMenuButtonStyle from './ContextMenuButton'
 import MenuList from './ContextMenuList'
 import ownerDocument from '../../utils/ownerDocument'
 import { Position } from './types'
 import ContextMenuWrapperStyle from './ContextMenuWrapperStyle'
-import ContextMenuItem from './ContextMenuItem'
 import useFocusWithArrows from '../../utils/hooks/useFocusWithArrows'
 import useDetectTouchscreen from '../../utils/hooks/useDetectTouchScreen'
-import { deprecatedWarning } from '../../utils'
+import useActionOnEscape from '../../utils/hooks/useActionOnEscape'
 
 export type Props = {
   position?: Position
   label?: string
-  icon?: React.ReactNode
-  arrowIcon?: React.ReactNode
-  selectElementForTouchScreen?: React.ReactNode
+  icon?: ReactNode
+  arrowIcon?: ReactNode
+  selectElementForTouchScreen?: ReactNode
   open?: boolean
 }
 
-const ContextMenu: React.FC<
-  Props & React.ButtonHTMLAttributes<HTMLButtonElement>
+const ContextMenu: FunctionComponent<
+  Props & ButtonHTMLAttributes<HTMLButtonElement>
 > = ({
   className,
-  open: openProp,
+  open: openProp = false,
   label,
   children,
   position,
   selectElementForTouchScreen,
   ...otherProps
 }) => {
-  const ref = React.useRef<HTMLDivElement>(null)
-  const [open, setOpen] = useState(openProp || false)
+  const ref = useRef<HTMLDivElement>(null)
+  const [open, setOpen] = useState(openProp)
   const isTouchScreen = useDetectTouchscreen()
 
+  // Set state with 'open' prop if it's set
   useEffect(() => {
-    React.Children.toArray(children).forEach((child) => {
-      // @ts-ignore
-      if (child && child.type !== ContextMenuItem) {
-        deprecatedWarning(
-          'You are rendering a different component type in <ContextMenu /> other than <ContextMenuItem />.',
-        )
-      }
-    })
+    if (openProp !== open) {
+      setOpen(openProp)
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [openProp])
 
   const onToggle = () => {
     setOpen(!open)
@@ -61,12 +63,18 @@ const ContextMenu: React.FC<
       }
     })
   }
-  const { keyDown } = useFocusWithArrows(ref, true)
+  const { keyDown: focusWithArrowKeys } = useFocusWithArrows(ref, true)
+  const { onKeyDown: closeOnEscape } = useActionOnEscape(() => {
+    setOpen(false)
+  })
 
   return (
     <ContextMenuWrapperStyle
       ref={ref}
-      onKeyDown={keyDown}
+      onKeyDown={(e) => {
+        focusWithArrowKeys(e)
+        closeOnEscape(e)
+      }}
       onBlur={onClose}
       className={className}
     >

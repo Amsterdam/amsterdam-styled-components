@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { ReactNode } from 'react'
 import { getValueFromTheme, valueFromObject } from '../../utils'
 import {
   mediaQuery,
@@ -21,7 +22,7 @@ type FlexJustify =
   | 'space-evenly'
 
 export type TypeProps = {
-  children: React.ReactNode
+  children: ReactNode
   className?: string
   debug?: boolean
   debugColor?: string
@@ -73,81 +74,80 @@ const RowStyle = styled.div<TypeProps>`
   }) =>
     Object.keys(theme.layouts).map(
       (layoutId) => css`
-    @media ${mediaQuery(layoutId)} {
-      ${
-        debug &&
-        css`
-        .layout-label::before {
-          content: '${layoutId} (${min(layoutId)({ theme }) || 0} - ${
-          max(layoutId)({ theme }) || '∞'
-        })';
-        }
+        @media ${mediaQuery(layoutId)} {
+          ${debug &&
+          css`
+            .layout-label::before {
+              content: '${layoutId} (${min(layoutId)({ theme }) || 0} - ${max(
+                layoutId,
+              )({ theme }) || '∞'})';
+            }
 
-        background-image: repeating-linear-gradient(
-          to right,
-          ${debugColor},
-          ${debugColor} calc((100% - ${spacerWidth(
-          layoutId,
-          true,
-        )}) / ${columns(layoutId)}),
-          transparent calc((100% - ${spacerWidth(layoutId, true)}) / ${columns(
-          layoutId,
-        )}),
-          transparent calc(((100% - ${spacerWidth(layoutId, true)}) / ${columns(
-          layoutId,
-        )}) + ${gutter(layoutId, true)})
-        );
-        background-clip: content-box;
-      `
-      };
+            background-image: repeating-linear-gradient(
+              to right,
+              ${debugColor},
+              ${debugColor}
+                calc(
+                  (100% - ${spacerWidth(layoutId, true)}) / ${columns(layoutId)}
+                ),
+              transparent
+                calc(
+                  (100% - ${spacerWidth(layoutId, true)}) / ${columns(layoutId)}
+                ),
+              transparent
+                calc(
+                  (
+                      (100% - ${spacerWidth(layoutId, true)}) /
+                        ${columns(layoutId)}
+                    ) + ${gutter(layoutId, true)}
+                )
+            );
+            background-clip: content-box;
+          `};
 
-      ${
-        valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 &&
-        hasMargin &&
-        css`
-          padding-left: ${margin(layoutId, true)};
-          padding-right: ${margin(layoutId, true)};
-        `
-      }
+          ${valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 &&
+          hasMargin &&
+          css`
+            padding-left: ${margin(layoutId, true)};
+            padding-right: ${margin(layoutId, true)};
+          `}
 
-      ${
-        debug &&
-        valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 &&
-        css`
-          background-position: ${margin(layoutId)}px;
-        `
-      }
+          ${debug &&
+          valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 &&
+          css`
+            background-position: ${margin(layoutId)}px;
+          `}
 
-      ${
-        debug &&
-        valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 &&
-        hasMargin &&
-        css`
-        &::before, &::after {
-          box-sizing: border-box;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          height: 100%;
-          width: ${margin(layoutId, true)};
-          content: '${margin(layoutId)}';
-          font: 10px sans-serif;
-          z-index: 1;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+      ${debug &&
+          valueFromObject(`layouts.${layoutId}.margin`, theme) > 0 &&
+          hasMargin &&
+          css`
+            &::before,
+            &::after {
+              box-sizing: border-box;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              height: 100%;
+              width: ${margin(layoutId, true)};
+              content: '${margin(layoutId)}';
+              font: 10px sans-serif;
+              z-index: 1;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            &::before {
+              left: 0;
+              border-right: 1px solid white;
+            }
+            &::after {
+              right: 0;
+              border-left: 1px solid white;
+            }
+          `}
         }
-        &::before {
-          left: 0;
-          border-right: 1px solid white;
-        }
-        &::after {
-          right: 0;
-          border-left: 1px solid white;
-        }
-      `
-      }
-    }`,
+      `,
     )}
 `
 

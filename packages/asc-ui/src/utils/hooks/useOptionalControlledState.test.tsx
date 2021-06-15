@@ -1,11 +1,15 @@
-import React from 'react'
-import { getByText, render } from '@testing-library/react'
-import { act, renderHook } from '@testing-library/react-hooks'
+import { render } from '@testing-library/react'
+import {
+  act,
+  renderHook,
+  RenderHookOptions,
+} from '@testing-library/react-hooks'
+import { createRef, FunctionComponent } from 'react'
 import useOptionalControlledState from './useOptionalControlledState'
 
 describe('useOptionalControlledState', () => {
   const mockFn: jest.Mock = jest.fn()
-  const ref: React.Ref<HTMLButtonElement> = React.createRef()
+  const ref = createRef<HTMLButtonElement>()
 
   beforeEach(() => {
     render(
@@ -19,8 +23,8 @@ describe('useOptionalControlledState', () => {
 
   function getHookResult(
     controlledBoolean?: boolean,
-    setControlledBoolean?: Function,
-    options?: object,
+    setControlledBoolean?: () => void,
+    options?: RenderHookOptions<any>,
   ) {
     const { result } = renderHook(() => {
       const [value, setFn] = useOptionalControlledState(
@@ -80,13 +84,14 @@ describe('useOptionalControlledState', () => {
   })
 
   it('should set the state when the controlled value is changed', () => {
-    const Wrapper: React.FC<any> = ({ open }) => {
+    const Wrapper: FunctionComponent<{ open: boolean }> = ({ open }) => {
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       const [value] = useOptionalControlledState(open, () => {})
       return <div data-testid="node">{value ? 'open' : ''}</div>
     }
-    const { container, rerender } = render(<Wrapper open={false} />)
+    const { getByText, rerender } = render(<Wrapper open={false} />)
     rerender(<Wrapper open />)
 
-    expect(getByText(container, 'open')).toBeDefined()
+    expect(getByText('open')).toBeDefined()
   })
 })

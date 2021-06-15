@@ -1,8 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import { linkTo } from '@storybook/addon-links'
+import { useState } from 'react'
+import { Modal, Paragraph, Button, Input } from '@amsterdam/asc-ui'
 import { number, withKnobs } from '@storybook/addon-knobs'
-import { Modal, Paragraph } from '@datapunt/asc-ui'
+import styled from 'styled-components'
 
 const ModalBlock = styled.div`
   display: block;
@@ -15,75 +14,79 @@ export default {
   decorators: [withKnobs],
 }
 
-export const DefaultState = () => (
-  <div>
-    Lorem ipsum dolor.
-    <Modal
-      aria-labelledby="modal"
-      open
-      onClose={linkTo('Modal', 'closed state')}
-    >
-      <ModalBlock>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto,
-          quisquam!
-        </Paragraph>
-      </ModalBlock>
-    </Modal>
-  </div>
-)
+export const DefaultState = () => {
+  const [open, setOpen] = useState<boolean>(true)
+  return (
+    <div>
+      <Button onClick={() => setOpen(true)}>Open modal</Button>
+      <Modal aria-labelledby="modal" open={open} onClose={() => setOpen(false)}>
+        <ModalBlock>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Architecto, quisquam!
+          </Paragraph>
+          <Input />
+        </ModalBlock>
+      </Modal>
+    </div>
+  )
+}
 
-export const BackdropOpacity = () => (
-  <div>
-    Lorem ipsum dolor.
-    <Modal
-      aria-labelledby="modal"
-      open
-      backdropOpacity={number('backdropOpacity', 0.2, {
-        range: true,
-        min: 0,
-        max: 1,
-        step: 0.1,
-      })}
-      onClose={linkTo('Modal', 'closed state')}
-    >
-      <ModalBlock>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto,
-          quisquam!
-        </Paragraph>
-      </ModalBlock>
-    </Modal>
-  </div>
-)
+export const BackdropOpacity = () => {
+  const [open, setOpen] = useState<boolean>(true)
+  return (
+    <div>
+      <Button onClick={() => setOpen(true)}>Open modal</Button>
+      <Modal
+        aria-labelledby="modal"
+        open={open}
+        backdropOpacity={number('backdropOpacity', 0.2, {
+          range: true,
+          min: 0,
+          max: 1,
+          step: 0.1,
+        })}
+        onClose={() => setOpen(false)}
+      >
+        <ModalBlock>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Architecto, quisquam!
+          </Paragraph>
+          <Input />
+        </ModalBlock>
+      </Modal>
+    </div>
+  )
+}
 
-export const WithBlurredBackground = () => (
-  <div>
-    Lorem ipsum dolor.
-    <Modal
-      aria-labelledby="modal"
-      blurredNodeSelector="#root"
-      open
-      onClose={linkTo('Modal', 'closed state')}
-    >
-      <ModalBlock>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto,
-          quisquam!
-        </Paragraph>
-      </ModalBlock>
-    </Modal>
-  </div>
-)
+export const WithBlurredBackground = () => {
+  const [open, setOpen] = useState<boolean>(true)
+  return (
+    <div>
+      <Button onClick={() => setOpen(true)}>Open modal</Button>
+      <Modal
+        aria-labelledby="modal"
+        blurredNodeSelector="#root"
+        open={open}
+        onClose={() => setOpen(false)}
+      >
+        <ModalBlock>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Architecto, quisquam!
+          </Paragraph>
+          <Input />
+        </ModalBlock>
+      </Modal>
+    </div>
+  )
+}
 
 export const ClosedState = () => (
   <div>
     Lorem ipsum dolor.
-    <Modal
-      aria-labelledby="modal"
-      open={false}
-      onClose={linkTo('Modal', 'closed state')}
-    >
+    <Modal aria-labelledby="modal" open={false}>
       <ModalBlock>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto,

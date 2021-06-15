@@ -9,7 +9,7 @@ export type Props = {
   maxWidth?: number
 }
 
-const ContainerWrapperStyle = styled.div<{}>`
+const ContainerWrapperStyle = styled.div`
   display: flex;
   justify-content: center;
 `

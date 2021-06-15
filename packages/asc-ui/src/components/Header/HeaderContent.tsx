@@ -1,12 +1,13 @@
-import React, { ReactNode } from 'react'
+import { FunctionComponent, HTMLAttributes, ReactNode } from 'react'
 import HeaderContentStyle from './HeaderContentStyle'
 
-type Props = {
+type HeaderContentProps = {
   children: ReactNode
-} & React.HTMLAttributes<HTMLDivElement>
+} & HTMLAttributes<HTMLDivElement>
 
-const HeaderContent: React.FC<Props> = ({ children, ...otherProps }) => (
-  <HeaderContentStyle {...otherProps}>{children}</HeaderContentStyle>
-)
+const HeaderContent: FunctionComponent<HeaderContentProps> = ({
+  children,
+  ...otherProps
+}) => <HeaderContentStyle {...otherProps}>{children}</HeaderContentStyle>
 
 export default HeaderContent

@@ -22,10 +22,13 @@ export type ThemeFn<T> = ({ theme }: { theme: Theme.ThemeInterface }) => T
  *  ${myThemeHelperFunction(param1, param2)}
  * `
  */
-export const withTheme = <T extends any[], U = any>(
-  cb: (theme: Theme.ThemeInterface, ...params: T) => U,
-) => (...params: T) => ({ theme }: { theme: Theme.ThemeInterface }): U =>
-  cb(theme, ...params)
+export const withTheme =
+  <T extends any[], U = any>(
+    cb: (theme: Theme.ThemeInterface, ...params: T) => U,
+  ) =>
+  (...params: T) =>
+  ({ theme }: { theme: Theme.ThemeInterface }): U =>
+    cb(theme, ...params)
 
 type ThemeColorParameters = [Theme.ColorType?, string?, string?]
 
@@ -85,37 +88,34 @@ const generateCSSFromTypography = (
     : marginBottom};
 `
 
-export const getTypographyFromTheme = () => ({
-  as: asProp = 'p',
-  gutterBottom,
-  styleAs,
-  theme,
-}: any) => {
-  const as = styleAs || asProp
-  const styles = getValueFromTheme(`typography.${[as]}`)({
-    theme,
-  }) as Theme.TypographyType
-  if (!styles) {
-    return ''
+export const getTypographyFromTheme =
+  () =>
+  ({ as: asProp = 'p', gutterBottom, styleAs, theme }: any) => {
+    const as = styleAs || asProp
+    const styles = getValueFromTheme(`typography.${[as]}`)({
+      theme,
+    }) as Theme.TypographyType
+    if (!styles) {
+      return ''
+    }
+    const { breakpoints, ...otherProps } = styles
+    return css`
+      ${generateCSSFromTypography(otherProps, gutterBottom)}
+      ${() =>
+        breakpoints
+          ? Object.entries(breakpoints).map(
+              ([breakpointFromTypography, typoStyles]) => css`
+                @media screen and ${breakpoint(
+                    'min-width',
+                    <keyof Theme.BreakpointsInterface>breakpointFromTypography,
+                  )} {
+                  ${generateCSSFromTypography(typoStyles || {}, gutterBottom)}
+                }
+              `,
+            )
+          : ``}
+    `
   }
-  const { breakpoints, ...otherProps } = styles
-  return css`
-    ${generateCSSFromTypography(otherProps, gutterBottom)}
-    ${() =>
-      breakpoints
-        ? Object.entries(breakpoints).map(
-            ([breakpointFromTypography, typoStyles]) => css`
-              @media screen and ${breakpoint(
-                  'min-width',
-                  <keyof Theme.BreakpointsInterface>breakpointFromTypography,
-                )} {
-                ${generateCSSFromTypography(typoStyles || {}, gutterBottom)}
-              }
-            `,
-          )
-        : ``}
-  `
-}
 
 type BreakpointKeys = keyof Theme.BreakpointsInterface
 
@@ -125,89 +125,38 @@ type GetTypographyValueFromPropertyParameters = [
   BreakpointKeys?,
 ]
 
-export const getTypographyValueFromProperty = withTheme<
-  GetTypographyValueFromPropertyParameters
->((theme, element, property, breakpointRule) => {
-  const rules = getValueFromTheme(`typography.${[element]}`)({ theme })
-  if (breakpointRule) {
-    if (rules.breakpoints[breakpointRule]) {
-      return rules.breakpoints[breakpointRule][property]
-    }
-    return ''
-  }
-  return rules[property]
-})
+export const getTypographyValueFromProperty =
+  withTheme<GetTypographyValueFromPropertyParameters>(
+    (theme, element, property, breakpointRule) => {
+      const rules = getValueFromTheme(`typography.${[element]}`)({ theme })
+      if (breakpointRule) {
+        if (rules.breakpoints[breakpointRule]) {
+          return rules.breakpoints[breakpointRule][property]
+        }
+        return ''
+      }
+      return rules[property]
+    },
+  )
 
-export const DEFAULT_OUTLINE_WIDTH = 3
-
-export const outlineStyle = (
-  theme: Theme.ThemeInterface,
-  width = DEFAULT_OUTLINE_WIDTH,
-  offset = 0,
-) => css`
-  outline-color: ${themeColor('support', 'focus')({ theme })};
-  outline-style: solid;
-  outline-offset: ${offset}px;
-  outline-width: ${width}px;
+/**
+ * When this style is applied on an element it will be hidden but still readable by screen readers.
+ *
+ * For example:
+ * ```ts
+ * const OnlyVisibleForScreenReaders = styled.button`${srOnlyStyle}`
+ * ```
+ */
+export const srOnlyStyle = css`
+  border-width: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 `
-
-/* we have chosen here to use a dubble selector '&&'.
- This will override a hover state with outlines.
- introduced this when resolving issue: #131
-*/
-export const focusStyleOutline = (width?: number, offset?: number) => ({
-  theme,
-}: {
-  theme: Theme.ThemeInterface
-}) =>
-  css`
-    &&:focus {
-      ${outlineStyle(theme, width, offset)}
-    }
-  `
-
-export const focusStyleFill = withTheme(
-  (theme) => css`
-    &:focus {
-      background-color: ${themeColor('support', 'focus')({ theme })};
-    }
-  `,
-)
-
-export type FocusStyle = 'outline' | 'fill' | 'none'
-
-/**
- * decorates an element with one of the existing focus styles:
- * - outline: draws a border around the element on focus
- * - fill: fills the element background on focus
- * - none: ignored the focus state
- */
-export const getFocusStyle = (focusStyle: FocusStyle = 'fill') => {
-  const styles = {
-    outline: focusStyleOutline(),
-    fill: focusStyleFill(),
-    none: '',
-  }
-
-  return styles[focusStyle]
-}
-
-/**
- * Util to hide the component for screen readers
- */
-export const srOnlyStyle = () => ({ srOnly }: { srOnly?: boolean }) =>
-  srOnly
-    ? css`
-        border-width: 0;
-        clip: rect(0, 0, 0, 0);
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
-      `
-    : ''
 
 /**
  * Fills the elements in an SVG with a color, useful for styling icons.
@@ -246,9 +195,8 @@ export const svgFill = withTheme((theme, color: string | ThemeFn<string>) => {
  * Adds an animated background to the element to indicate the content is loading.
  * @param animateLoading Allows toggling the animation effect, if false a fixed color will be used instead.
  */
-export const perceivedLoading = withTheme(
-  (theme, animateLoading: boolean = true) => {
-    const animation = keyframes`
+export const perceivedLoading = withTheme((theme, animateLoading = true) => {
+  const animation = keyframes`
       0% {
         background-color: ${themeColor('tint', 'level3')({ theme })};
       }
@@ -262,15 +210,14 @@ export const perceivedLoading = withTheme(
       }
     `
 
-    return animateLoading
-      ? css`
-          animation: ${animation} 2s ease-in-out infinite;
-        `
-      : css`
-          background-color: ${themeColor('tint', 'level4')({ theme })};
-        `
-  },
-)
+  return animateLoading
+    ? css`
+        animation: ${animation} 2s ease-in-out infinite;
+      `
+    : css`
+        background-color: ${themeColor('tint', 'level4')({ theme })};
+      `
+})
 
 /**
  * @deprecated Only used in deprecated component GridItem
@@ -314,46 +261,50 @@ export interface ShowHideTypes {
 
 type ShowHideProps = ThemeProp & ShowHideTypes
 
-export const showHide = () => ({ hideAt, showAt, theme }: ShowHideProps) => {
-  const hideAtCss = hideAt
-    ? css`
-        @media screen and ${breakpoint('min-width', hideAt)({ theme })} {
-          display: none;
-        }
-      `
-    : ''
+export const showHide =
+  () =>
+  ({ hideAt, showAt, theme }: ShowHideProps) => {
+    const hideAtCss = hideAt
+      ? css`
+          @media screen and ${breakpoint('min-width', hideAt)({ theme })} {
+            display: none;
+          }
+        `
+      : ''
 
-  const showAtCss = showAt
-    ? css`
-        @media screen and ${breakpoint('max-width', showAt)({ theme })} {
-          display: none;
-        }
-      `
-    : ''
+    const showAtCss = showAt
+      ? css`
+          @media screen and ${breakpoint('max-width', showAt)({ theme })} {
+            display: none;
+          }
+        `
+      : ''
 
-  return css`
-    ${showAtCss}
-    ${hideAtCss}
-  `
-}
+    return css`
+      ${showAtCss}
+      ${hideAtCss}
+    `
+  }
 
 // Function that uses the BACKDROP_Z_INDEX constant to determine the z-index for components rendered with a backdrop
 // The first argument in the curry can be used to raise the z-index for components that need to be displayed above
 // the backdrop, but aren't directly related
-export const showAboveBackDrop = (show?: boolean) => ({
-  hasBackDrop,
-  zIndexOffset,
-}: {
-  hasBackDrop?: boolean
-  zIndexOffset?: number
-}) =>
-  hasBackDrop || show
-    ? css`
-        z-index: ${zIndexOffset
-          ? BACKDROP_Z_INDEX + zIndexOffset + 1
-          : BACKDROP_Z_INDEX + 1};
-      `
-    : ''
+export const showAboveBackDrop =
+  (show?: boolean) =>
+  ({
+    hasBackDrop,
+    zIndexOffset,
+  }: {
+    hasBackDrop?: boolean
+    zIndexOffset?: number
+  }) =>
+    hasBackDrop || show
+      ? css`
+          z-index: ${zIndexOffset
+            ? BACKDROP_Z_INDEX + zIndexOffset + 1
+            : BACKDROP_Z_INDEX + 1};
+        `
+      : ''
 
 type ThemeSpacingParameters = [
   Theme.Spacing,
@@ -367,7 +318,7 @@ type ThemeSpacingParameters = [
  *
  * @example If the theme's spacing unit is 4px:
  * css`
- *  padding: ${themeSpacing(1, 2, 1, 4)} // padding: 4px 8px 4px 18px;
+ *  padding: ${themeSpacing(1, 2, 1, 4)} // padding: 4px 8px 4px 16px;
  *  margin-bottom: ${themeSpacing(3)} // margin-bottom: 12px;
  * `
  */

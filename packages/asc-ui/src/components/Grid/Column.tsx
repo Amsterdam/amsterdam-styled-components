@@ -1,9 +1,9 @@
-import React from 'react'
+import { createContext, FunctionComponent, ReactNode, useContext } from 'react'
 import ColumnStyle, { TypeProps as ColumnStyleProps } from './ColumnStyle'
 import { Theme } from '../../types'
 
 type Props = {
-  children: React.ReactNode
+  children: ReactNode
   className?: string
   debug?: boolean
   debugColor?: string
@@ -18,10 +18,10 @@ type Context = {
   parentSpan?: Theme.TypeSpan
 }
 
-const ParentContext = React.createContext<Context>({})
+const ParentContext = createContext<Context>({})
 
-const Column: React.FC<Props> = ({ children, span, ...props }) => {
-  const { parentSpan } = React.useContext<Context>(ParentContext)
+const Column: FunctionComponent<Props> = ({ children, span, ...props }) => {
+  const { parentSpan } = useContext<Context>(ParentContext)
 
   return (
     <ParentContext.Provider value={{ parentSpan: span }}>

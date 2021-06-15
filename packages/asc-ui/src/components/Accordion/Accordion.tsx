@@ -1,25 +1,32 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import { ChevronDown } from '@datapunt/asc-assets'
+import { ChevronDown } from '@amsterdam/asc-assets'
+import {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  FunctionComponent,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react'
 import { useUID } from 'react-uid'
+import { ButtonStyleProps } from '../Button/ButtonStyle'
 import {
   AccordionButton,
   AccordionButtonContent,
   AccordionContent,
-  Props as StyleProps,
   ButtonContentProps,
+  Props as StyleProps,
 } from './AccordionStyle'
-import { Props as ButtonStyleProps } from '../Button/ButtonStyle'
 
 type Props = {
   onToggle?: (open: boolean) => void
 } & StyleProps &
   ButtonContentProps
 
-const Accordion: React.FC<
+const Accordion: FunctionComponent<
   Props &
     ButtonStyleProps &
-    React.ButtonHTMLAttributes<HTMLButtonElement> &
-    React.AnchorHTMLAttributes<HTMLAnchorElement>
+    ButtonHTMLAttributes<HTMLButtonElement> &
+    AnchorHTMLAttributes<HTMLAnchorElement>
 > = ({
   children,
   title,

@@ -1,7 +1,7 @@
-import React from 'react'
+import { FunctionComponent } from 'react'
 import RowStyle, { TypeProps } from './RowStyle'
 
-const Row: React.FC<TypeProps> = ({ children, debug, ...props }) => (
+const Row: FunctionComponent<TypeProps> = ({ children, debug, ...props }) => (
   <RowStyle {...props} debug={debug}>
     {debug && (
       <span className="layout-label">

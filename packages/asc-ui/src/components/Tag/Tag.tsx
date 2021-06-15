@@ -1,16 +1,13 @@
-import React from 'react'
+import { FunctionComponent, HTMLAttributes } from 'react'
 import TagStyle, { Props as TagStyleProps } from './TagStyle'
 
-export type Props = TagStyleProps & React.HTMLAttributes<HTMLSpanElement>
+export type Props = TagStyleProps & HTMLAttributes<HTMLSpanElement>
 
-const Tag: React.FC<Props> = ({ children, as, ...otherProps }) => (
-  <TagStyle forwardedAs={as} {...otherProps}>
-    {children}
-  </TagStyle>
+const Tag: FunctionComponent<Props> = ({ children, ...otherProps }) => (
+  <TagStyle {...otherProps}>{children}</TagStyle>
 )
 
 Tag.defaultProps = {
-  as: 'span',
   colorType: 'primary',
   colorSubtype: 'main',
 }

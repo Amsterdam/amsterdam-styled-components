@@ -1,4 +1,10 @@
-import React, { useState, useContext, useEffect } from 'react'
+import {
+  useState,
+  useContext,
+  useEffect,
+  forwardRef,
+  HTMLAttributes,
+} from 'react'
 import RadioStyle, {
   RadioWrapperStyle,
   RadioCircleStyle,
@@ -7,15 +13,14 @@ import RadioStyle, {
 import RadioContext from './RadioContext'
 import LabelContext from '../Label/LabelContext'
 
-const Radio = React.forwardRef<
+const Radio = forwardRef<
   HTMLInputElement,
-  Props & React.HTMLAttributes<HTMLInputElement>
+  Props & HTMLAttributes<HTMLInputElement>
 >(
   (
     {
       className,
       onChange,
-      variant,
       disabled,
       id,
       checked: defaultChecked,
@@ -52,21 +57,11 @@ const Radio = React.forwardRef<
           focus,
           error,
           className,
-          variant,
           disabled,
           checked,
         }}
         aria-disabled={disabled}
       >
-        <RadioCircleStyle
-          {...{
-            error,
-            disabled,
-            focus,
-            variant,
-            checked,
-          }}
-        />
         <RadioStyle
           {...{
             ...otherProps,
@@ -81,11 +76,19 @@ const Radio = React.forwardRef<
             setFocus(true)
           }}
           onBlur={() => setFocus(false)}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+          onChange={(e) => {
             if (onChange) {
               onChange(e)
             }
             setChecked(e.target.id)
+          }}
+        />
+        <RadioCircleStyle
+          {...{
+            error,
+            disabled,
+            focus,
+            checked,
           }}
         />
       </RadioWrapperStyle>

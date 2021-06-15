@@ -1,17 +1,17 @@
-import React from 'react'
-import styled from 'styled-components'
-import { ChevronRight } from '@datapunt/asc-assets'
+import { ChevronRight } from '@amsterdam/asc-assets'
 import {
-  MenuFlyOut,
-  MenuItem,
   MenuButton,
-  MenuItemTitle,
+  MenuFlyOut,
   MenuInline,
+  MenuItem,
+  MenuItemTitle,
   MenuToggle,
   themeColor,
-} from '@datapunt/asc-ui'
+} from '@amsterdam/asc-ui'
+import { FunctionComponent, ReactNode } from 'react'
+import styled from 'styled-components'
 
-const ReactRouterLink: React.FC<any> = ({
+const ReactRouterLink: FunctionComponent<any> = ({
   children,
   reactRouterProp,
   ...otherProps
@@ -21,7 +21,10 @@ const ReactRouterLink: React.FC<any> = ({
   </a>
 )
 
-const StyledReactRouterLink: React.FC<any> = ({ children, ...otherProps }) => (
+const StyledReactRouterLink: FunctionComponent<any> = ({
+  children,
+  ...otherProps
+}) => (
   <MenuButton forwardedAs={ReactRouterLink} {...otherProps}>
     {children}
   </MenuButton>
@@ -35,7 +38,7 @@ export default {
   title: 'UI/Menu',
 
   decorators: [
-    (storyFn: () => React.ReactNode) => (
+    (storyFn: () => ReactNode) => (
       <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
     ),
   ],

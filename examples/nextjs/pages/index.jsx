@@ -1,6 +1,6 @@
+import { Close } from '@amsterdam/asc-assets'
+import { Button, Header, Typography } from '@amsterdam/asc-ui'
 import React from 'react'
-import { Close } from '@datapunt/asc-assets'
-import { Header, Button, Typography } from '@datapunt/asc-ui'
 
 export default function Home() {
   return (

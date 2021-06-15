@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react'
 import { renderHook } from '@testing-library/react-hooks'
-import React from 'react'
+import { createRef } from 'react'
 import useFocus from './useFocus'
 
 describe('useFocus', () => {
   const onFocusMock = jest.fn()
-  const ref = React.createRef<HTMLButtonElement>()
+  const ref = createRef<HTMLButtonElement>()
 
   beforeEach(() => {
     render(<button type="button" ref={ref} onFocus={onFocusMock} />)

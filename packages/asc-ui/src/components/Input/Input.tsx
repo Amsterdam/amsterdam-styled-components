@@ -1,12 +1,18 @@
-import React, { useImperativeHandle } from 'react'
+import {
+  forwardRef,
+  InputHTMLAttributes,
+  KeyboardEvent,
+  RefObject,
+  useImperativeHandle,
+  useRef,
+} from 'react'
 import useActionOnEscape from '../../utils/hooks/useActionOnEscape'
 import InputContext from './InputMethodsContext'
 import InputStyle from './InputStyle'
 
-export interface InputMethods
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputMethods extends InputHTMLAttributes<HTMLInputElement> {
   onWatchValue?: (value: string) => void
-  setInputRef?: (ref: React.RefObject<HTMLInputElement>) => void
+  setInputRef?: (ref: RefObject<HTMLInputElement>) => void
 }
 
 export interface InputProps extends InputMethods {
@@ -15,10 +21,10 @@ export interface InputProps extends InputMethods {
   error?: boolean
 }
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
+const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ blurOnEscape, value, error, ...props }, externalRef) => {
     const { onKeyDown } = props
-    const inputRef = React.useRef<HTMLInputElement>(null)
+    const inputRef = useRef<HTMLInputElement>(null)
 
     useImperativeHandle(externalRef, () => inputRef.current as HTMLInputElement)
 
@@ -29,7 +35,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     })
 
     const handleOnKeyDown = (
-      e: React.KeyboardEvent<HTMLInputElement>,
+      e: KeyboardEvent<HTMLInputElement>,
       context: InputMethods,
     ) => {
       if (onKeyDown) {

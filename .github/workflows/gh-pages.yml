@@ -1,0 +1,32 @@
+name: Deploy to Github pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+    - name: install
+      run: npm ci
+
+    - name: build
+      run: npm run build
+
+    - name: build:storybook
+      run: npm run build:storybook
+
+    - name: Deploy to Github pages
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: stories/lib

@@ -1,4 +1,4 @@
-import React from 'react'
+import { createRef } from 'react'
 import { render, cleanup, fireEvent } from '@testing-library/react'
 import RadioGroup from './RadioGroup'
 import Radio from './Radio'
@@ -27,11 +27,9 @@ describe('Radio', () => {
   })
 
   it('should match the style', () => {
-    // Native radio should be hidden
     const radio = container.querySelector('#radio-1')
-    expect(radio).toHaveStyleRule('opacity', '0')
 
-    const circle = radio.previousSibling
+    const circle = radio.nextSibling
     expect(circle).toHaveStyleRule('border-radius', '50%')
 
     const wrapper = radio.parentNode
@@ -67,7 +65,7 @@ describe('Radio', () => {
   })
 
   it('should handle refs', () => {
-    const ref = React.createRef<HTMLInputElement>()
+    const ref = createRef<HTMLInputElement>()
 
     render(
       <ThemeProvider>

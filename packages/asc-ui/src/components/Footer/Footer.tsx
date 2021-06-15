@@ -1,8 +1,8 @@
-import React from 'react'
-import FooterStyle, { Props } from './FooterStyle'
+import { HTMLAttributes } from 'react'
+import styled from 'styled-components'
 
-const Footer: React.FC<Props> = ({ children, ...otherProps }) => (
-  <FooterStyle {...otherProps}>{children}</FooterStyle>
-)
+export type Props = HTMLAttributes<HTMLElement>
 
-export default Footer
+export default styled.footer<Props>`
+  width: 100%;
+`

@@ -1,9 +1,11 @@
 import styled from 'styled-components'
-import { showHide, ShowHideTypes } from '../../utils'
+import { showHide, ShowHideTypes, themeSpacing } from '../../utils'
 import TextFieldStyle from '../TextField/TextFieldStyle'
 import ButtonStyle from '../Button/ButtonStyle'
+import { SEARCH_BAR_HEIGHT } from '../shared/constants'
+import InputStyle from '../Input/InputStyle'
 
-export interface Props extends ShowHideTypes {}
+export type Props = ShowHideTypes
 
 const SearchBarStyle = styled.div<Props>`
   display: flex;
@@ -11,10 +13,20 @@ const SearchBarStyle = styled.div<Props>`
 
   ${TextFieldStyle} {
     flex-grow: 1;
+
+    /** The searchbar input has a different height to fit the (small) header */
+    ${InputStyle} {
+      height: ${SEARCH_BAR_HEIGHT}px;
+      padding: ${themeSpacing(1, 2)};
+    }
   }
 
+  /** The searchbar button has a different height to fit the (small) header */
   & > ${ButtonStyle} {
-    margin-left: 5px;
+    min-width: auto;
+    margin-left: ${themeSpacing(1)};
+    height: ${SEARCH_BAR_HEIGHT}px;
+    width: ${SEARCH_BAR_HEIGHT}px;
   }
 
   ${showHide()}

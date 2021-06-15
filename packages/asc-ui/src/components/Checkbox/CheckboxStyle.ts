@@ -1,62 +1,25 @@
 import styled, { css } from 'styled-components'
-import { focusStyleOutline, svgFill, themeColor } from '../../utils'
-import { outlineStyle } from '../../utils/themeUtils'
+import { svgFill, themeColor } from '../../utils'
 import { IconStyle } from '../Icon'
 
-type CheckboxVariant = 'primary' | 'secondary' | 'tertiary'
-
 export type Props = {
-  variant?: CheckboxVariant
   checked?: boolean
   disabled?: boolean
   error?: boolean
   indeterminate?: boolean
 }
 
-const getVariant = () => ({ variant }: Props) => {
-  switch (variant) {
-    case 'primary':
-      return css`
-        color: ${themeColor('primary', 'main')};
-        background-color: ${themeColor('primary', 'main')};
-        ${svgFill(themeColor('tint', 'level1'))};
-      `
-
-    case 'secondary':
-      return css`
-        color: ${themeColor('secondary', 'main')};
-        background-color: ${themeColor('secondary', 'main')};
-        ${svgFill(themeColor('tint', 'level1'))};
-      `
-
-    case 'tertiary':
-      return css`
-        color: ${themeColor('tint', 'level7')};
-        background-color: ${themeColor('tint', 'level1')};
-        ${svgFill(themeColor('tint', 'level7'))};
-      `
-
-    default:
-      return css`
-        color: ${themeColor('tint', 'level7')};
-        background-color: ${themeColor('tint', 'level7')};
-        ${svgFill(themeColor('tint', 'level1'))};
-      `
-  }
-}
-
 export default styled.input.attrs({
   type: 'checkbox',
 })<Props>`
-  top: 0;
-  left: 0;
-  width: 100%;
   cursor: inherit;
-  height: 100%;
   margin: 0;
-  opacity: 0;
   padding: 0;
   position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 6px;
+  top: 6px;
 `
 
 const CheckboxIconStyle = styled(IconStyle)<Props>`
@@ -68,15 +31,20 @@ const CheckboxIconStyle = styled(IconStyle)<Props>`
   position: relative;
   justify-content: center;
   align-items: center;
+  z-index: 1;
+  background-color: ${themeColor('tint', 'level1')};
   transition: background-color 0.2s ease-in-out;
-  ${({ checked }) =>
-    checked &&
+  pointer-events: none;
+  ${({ checked, indeterminate }) =>
+    (checked || indeterminate) &&
     css`
-      ${getVariant()};
-    `}
+      color: ${themeColor('tint', 'level7')};
+      background-color: ${themeColor('tint', 'level7')};
+      ${svgFill(themeColor('tint', 'level1'))};
+    `};
 `
 
-const CheckboxWrapperStyle = styled.div<Props & { focus: boolean }>`
+const CheckboxWrapperStyle = styled.div<Props>`
   position: relative;
   display: inline-flex;
   user-select: none;
@@ -85,22 +53,14 @@ const CheckboxWrapperStyle = styled.div<Props & { focus: boolean }>`
   padding: 6px;
   flex-shrink: 0; /* IE11 fix */
   color: ${themeColor('tint', 'level5')};
-  ${({ focus, theme }) =>
-    focus &&
-    css`
-      ${CheckboxIconStyle} {
-        ${outlineStyle(theme, 2, 1)};
-      }
-    `}
   ${({ disabled }) =>
     disabled &&
     css`
       pointer-events: none;
     `}
-  ${({ checked, disabled, focus }) =>
+  ${({ checked, disabled }) =>
     !checked &&
     !disabled && // IE11 fix. If an element is disabled, you can still hover on it on IE11.
-    !focus && // don't override the outline if element is also focussed
     css`
       &:hover {
         color: ${themeColor('tint', 'level7')};
@@ -111,18 +71,16 @@ const CheckboxWrapperStyle = styled.div<Props & { focus: boolean }>`
         }
       }
     `}
-    ${({ error, checked, disabled, focus }) =>
-      error &&
-      !checked &&
-      !disabled &&
-      !focus &&
-      css`
-        ${CheckboxIconStyle} {
-          border-color: red;
-          outline: 1px solid red;
-        }
-      `}
-  ${focusStyleOutline()}
+    ${({ error, checked, disabled }) =>
+    error &&
+    !checked &&
+    !disabled &&
+    css`
+      ${CheckboxIconStyle} {
+        border-color: red;
+        outline: 1px solid red;
+      }
+    `}
 `
 
 export { CheckboxWrapperStyle, CheckboxIconStyle }

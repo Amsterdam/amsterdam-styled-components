@@ -6,15 +6,13 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-**NOTE** In order to get the fonts in your project, you either need to copy and run the [./scripts/copy_fonts.sh](./scripts/copy_fonts.sh) script in your project or manually copy the [fonts directory in asc-assets](./node_modules/@datapunt/asc-assets/static/fonts) to the [public](./public) directory. Then you'll need to load the css file in [./pages/_app.js](./pages/_app.js).
+**NOTE** In order to get the fonts in your project, you either need to copy and run the [./scripts/copy_fonts.sh](./scripts/copy_fonts.sh) script in your project or manually copy the [fonts directory in asc-assets](./node_modules/@amsterdam/asc-assets/static/fonts) to the [public](./public) directory. Then you'll need to load the css file in [./pages/_app.js](./pages/_app.js).
 
 ## Learn More
 

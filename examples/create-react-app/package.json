@@ -1,5 +1,5 @@
 {
-  "name": "@datapunt/create-react-app-example",
+  "name": "@amsterdam/create-react-app-example",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,11 +9,11 @@
     "test": "react-scripts test"
   },
   "dependencies": {
-    "@datapunt/asc-assets": "^0.21.1",
-    "@datapunt/asc-ui": "^0.21.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1",
+    "@amsterdam/asc-assets": "^0.29.2",
+    "@amsterdam/asc-ui": "^0.29.2",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.0",
     "styled-components": "^5.1.0"
   },
   "browserslist": [

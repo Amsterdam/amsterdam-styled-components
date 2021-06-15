@@ -5,7 +5,7 @@ email, slack, or any other method with the owners of this repository before maki
 
 ## Getting started
 
-Run `yarn` to install dependencies, followed by `yarn start`: this will run storybook on your machine
+Run `npm install` to install dependencies, followed by `npm run start`: this will run storybook on your machine
 
 ## Conventions and rules
 
@@ -64,11 +64,11 @@ for the new component. For more info possibilities, check the hygen documentatio
 Something you want to see your changes immediately in your project. Follow these steps to link asc
 to your project.
 
-1. Run `yarn build:watch`, this will watch your files and transpile them to the package lib
+1. Run `npm run build:watch`, this will watch your files and transpile them to the package lib
    directory.
-2. cd to the package you want to test, run `yarn link`.
+2. cd to the package you want to test, run `npm link`.
 3. Go to the repo where you want to use your package and run
-   `yarn link <package-name>`. The `<package-name>` can be found in the `package.json` you linked in
+   `npm link <package-name>`. The `<package-name>` can be found in the `package.json` you linked in
    step 2.
 
 Now you can import the package like you would do like a normal npm dependency. Changes you will make
@@ -78,12 +78,12 @@ Example: linking the `asc-ui` package.
 
 ```
 cd amsterdam-styled-components/packages/asc-ui  # go into the package directory
-yarn link                                       # creates global link
+npm link                                        # creates global link
 cd path-to-your-main-project                    # go into the dir of your main project
-yarn link "@datapunt/asc-ui"                    # link-install the package
+npm link "@amsterdam/asc-ui"                    # link-install the package
 ```
 
-There is a known issue when developing with `yarn link` and using Hooks
+There is a known issue when developing with `npm link` and using Hooks
 [(click here for details)](https://reactjs.org/warnings/invalid-hook-call-warning.html). The cause
 is that two React instances are used when using `link`. To solve this problem add this code to `webpack.common.js`:
 
@@ -117,14 +117,14 @@ of the [core maintainers](./MAINTAINERS.md). To publish these packages to npm, f
 ### Publish canary version
 
 1. Make sure you're logged in to npm, by running `npm login`
-2. Run `yarn publish:canary`. This will run linters and tests before the lerna prompt,
+2. Run `npm run publish:canary`. This will run linters and tests before the lerna prompt,
    so be patient :smile:
-3. This canary version is now available for usage in any local or demo version of your project, but not tagged with the `@latest` tag on npm. So use for example `yarn add @datapunt/asc-ui@canary`.
+3. This canary version is now available for usage in any local or demo version of your project, but not tagged with the `@latest` tag on npm. So use for example `npm install @amsterdam/asc-ui@canary`.
 
 ### Publish stable version
 
 1. Make sure you're logged in to npm, by running `npm login`
-2. Run `yarn publish:stable`. This will run linters and tests before the lerna prompt,
+2. Run `npm run publish:stable`. This will run linters and tests before the lerna prompt,
    so be patient :smile:
 3. Select a version
 4. Once published, update the [changelog](../CHANGELOG.md) and move all the bulletpoints under the
@@ -135,6 +135,6 @@ of the [core maintainers](./MAINTAINERS.md). To publish these packages to npm, f
 Sometimes you either can't build the project or run tests properly. Usually this is due to the fact
 that a package is updated or you're not using the right node version. Please check if this is the
 case. Otherwise just run this command (if you are using nvm):
-`rm -Rf node_modules && nvm install 10 && nvm alias default 10 && yarn cache clean && yarn`
+`rm -Rf node_modules && nvm install 16 && nvm alias default 16 && npm i`
 
 Still having trouble? Contact one of our [core maintainers](./MAINTAINERS.md)

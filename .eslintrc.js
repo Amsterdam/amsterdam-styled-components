@@ -3,9 +3,8 @@ module.exports = {
     'airbnb',
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
-    'prettier/react',
-    'prettier/standard',
     'plugin:mdx/recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   plugins: ['jest', 'prettier', '@typescript-eslint', 'react-hooks'],
   env: {
@@ -69,6 +68,14 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'no-use-before-define': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-extra-semi': 'off',
+    '@typescript-eslint/ban-ts-comment': 'warn',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'error',
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
   settings: {
     'import/resolver': {

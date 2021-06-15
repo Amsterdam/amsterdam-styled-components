@@ -12,9 +12,7 @@ import EditorialPost, {
   Props as EditorialPostProps,
 } from '../EditorialPost/EditorialPost'
 
-export type Props = {} & EditorialPostProps
-
-export default styled(EditorialPost)<Props>` 
+export default styled(EditorialPost)<EditorialPostProps>`
   ${EditorialBodyStyle} {
     ${({ image }) =>
       !!image &&
@@ -23,7 +21,7 @@ export default styled(EditorialPost)<Props>`
           padding: ${EDITORIAL_PADDING_TOP}px 24px;
         }
       `}
-    
+
     /* 
     Here we calculate how much the EditorialBody needs to shift up by getting existing css values from:
     - The H1 line-height
@@ -37,14 +35,16 @@ export default styled(EditorialPost)<Props>`
               (EDITORIAL_PADDING_TOP * 2 +
                 EDITORIAL_META_LINE_HEIGHT +
                 EDITORIAL_META_MARGIN_TOP +
-                stripUnit(
-                  getTypographyValueFromProperty(
-                    'h1',
-                    'lineHeight',
-                    'tabletS',
-                  )({
-                    theme,
-                  }),
+                Number(
+                  stripUnit(
+                    getTypographyValueFromProperty(
+                      'h1',
+                      'lineHeight',
+                      'tabletS',
+                    )({
+                      theme,
+                    }),
+                  ),
                 )) *
               -1
             }px`

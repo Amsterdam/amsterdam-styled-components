@@ -2,8 +2,8 @@
   "name": "stories",
   "private": true,
   "license": "MPL-2.0",
-  "version": "0.21.2-alpha.0",
-  "author": "Datapunt Amsterdam",
+  "version": "0.29.3",
+  "author": "Gemeente Amsterdam",
   "homepage": "https://github.com/Amsterdam/amsterdam-styled-components#readme",
   "repository": {
     "type": "git",
@@ -26,9 +26,10 @@
     "eslint-plugin-mdx": "^1.7.0"
   },
   "dependencies": {
-    "@datapunt/asc-assets": "^0.21.2-alpha.0",
-    "@datapunt/asc-ui": "^0.21.2-alpha.0",
-    "react": "^16.13.1",
-    "styled-components": "^5.1.1"
+    "@amsterdam/asc-assets": "^0.29.3",
+    "@amsterdam/asc-ui": "^0.29.3",
+    "react": "^17.0.1",
+    "react-table": "^7.2.2",
+    "styled-components": "^5.2.1"
   }
 }

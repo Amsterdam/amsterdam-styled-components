@@ -1,9 +1,9 @@
-import { createRef, useEffect } from 'react'
+import { createRef, useEffect, Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
-import { TextArea } from '@datapunt/asc-ui'
+import { TextArea } from '@amsterdam/asc-ui'
 
-<Meta title="UI/Typography/TextArea" component={TextArea} />
+<Meta title="UI/Form/TextArea" component={TextArea} />
 
 # Textarea
 
@@ -15,9 +15,9 @@ import { TextArea } from '@datapunt/asc-ui'
 
 <Preview>
   <Story name="Default">
-    <React.Fragment>
+    <Fragment>
       <TextArea />
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -25,9 +25,9 @@ import { TextArea } from '@datapunt/asc-ui'
 
 <Preview>
   <Story name="With a value">
-    <React.Fragment>
+    <Fragment>
       <TextArea value="Some text as value in the textarea" />
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -35,7 +35,7 @@ import { TextArea } from '@datapunt/asc-ui'
 
 <Preview>
   <Story name="With ref (check actions tab)">
-    <React.Fragment>
+    <Fragment>
       {(() => {
         const ref = createRef()
         useEffect(() => {
@@ -53,6 +53,6 @@ import { TextArea } from '@datapunt/asc-ui'
         }, [ref])
         return <TextArea ref={ref} />
       })()}
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

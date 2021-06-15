@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components'
+import { getTypographyFromTheme } from '../../utils'
+import { BlockquoteStyleCSS } from '../Blockquote/BlockquoteStyle'
 import { HeaderStyleCSS } from '../Heading/HeadingStyle'
 import { InlineLinkStyleCSS } from '../Link/LinkStyle'
-import { ParagraphStyleCSS } from '../Paragraph/ParagraphStyle'
-import { getTypographyFromTheme } from '../../utils'
-import { BulletCSS, ListStyleCSS } from '../List/ListStyle'
 import { ListItemStyleCSS } from '../List/ListItemStyle'
-import { BlockquoteStyleCSS } from '../Blockquote/BlockquoteStyle'
+import { BulletCSS, ListStyleCSS } from '../List/ListStyle'
 import { OrderedListStyleCSS } from '../List/OrderedListStyle'
+import { ParagraphStyleCSS } from '../Paragraph/ParagraphStyle'
 
 const ElementStyleMapping = {
   h1: HeaderStyleCSS,

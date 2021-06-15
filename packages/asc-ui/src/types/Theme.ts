@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-namespace */
 import { CSSProp } from 'styled-components'
 
+// TODO: This should not be in a namespace, use ES2015 modules instead.
 export namespace Theme {
   export type ColorType =
     | 'primary'

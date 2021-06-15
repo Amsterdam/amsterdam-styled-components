@@ -1,4 +1,5 @@
 module.exports = {
+  testEnvironment: 'jsdom',
   collectCoverage: false,
   collectCoverageFrom: [
     'packages/asc-ui/src/**/*.{js,jsx,ts,tsx}',
@@ -22,8 +23,8 @@ module.exports = {
     '^.+\\.svg$': '<rootDir>/config/testing/mocks/svg.ts',
     '.*\\.(jpg|jpeg|png|gif|eot|otf|webp|sv|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/config/testing/mocks/image.ts',
-    '^@datapunt/asc-ui': '<rootDir>/packages/asc-ui/src',
-    '^@datapunt/asc-assets': '<rootDir>/packages/asc-assets/src',
+    '^@amsterdam/asc-ui': '<rootDir>/packages/asc-ui/src',
+    '^@amsterdam/asc-assets': '<rootDir>/packages/asc-assets/src',
   },
   testPathIgnorePatterns: [
     '/node_modules/',
@@ -45,9 +46,8 @@ module.exports = {
   },
   globals: {
     'ts-jest': {
-      tsConfig: 'tsconfig.json',
+      tsconfig: 'tsconfig.json',
     },
   },
   testRegex: ['/__tests__/.*\\.(ts|tsx|js)$', '/*.test\\.(ts|tsx|js)$'],
-  snapshotSerializers: ['enzyme-to-json/serializer'],
 }

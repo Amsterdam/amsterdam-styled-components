@@ -1,9 +1,9 @@
 {
-  "name": "@datapunt/asc-assets",
+  "name": "@amsterdam/asc-assets",
   "description": "Contains icons and fonts",
   "license": "MPL-2.0",
-  "author": "Datapunt Amsterdam",
-  "homepage": "https://github.com/Amsterdam/amsterdam-styled-components/tree/master/packages/asc-assets#readme",
+  "author": "Gemeente Amsterdam",
+  "homepage": "https://github.com/Amsterdam/amsterdam-styled-components/tree/main/packages/asc-assets#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/Amsterdam/amsterdam-styled-components.git",
@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
   },
-  "version": "0.21.2-alpha.0",
+  "version": "0.29.3",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -21,15 +21,19 @@
     "static"
   ],
   "scripts": {
-    "build": "yarn build:optimize-svg && yarn build:react-icons",
-    "build:optimize-svg": "svgo --config=.svgo.yml -f static/icons",
+    "build": "npm run build:optimize-svg && npm run build:react-icons",
+    "build:optimize-svg": "svgo -f static/icons",
     "build:react-icons": "svgr -d src/icons static/icons --template src/utils/generateIconReact.js --svg-props focusable={false} --ext tsx"
   },
   "sideEffects": false,
+  "peerDependencies": {
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  },
   "devDependencies": {
-    "@svgr/cli": "^5.3.1",
-    "@svgr/core": "^5.3.1",
-    "svgo": "^1.3.2"
+    "@svgr/cli": "^5.4.0",
+    "@svgr/core": "^5.4.0",
+    "svgo": "^2.0.3"
   },
   "publishConfig": {
     "access": "public"

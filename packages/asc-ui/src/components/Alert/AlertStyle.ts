@@ -1,32 +1,28 @@
 import styled, { css } from 'styled-components'
 import { Theme } from '../../types'
-import {
-  focusStyleOutline,
-  svgFill,
-  themeColor,
-  themeSpacing,
-} from '../../utils'
+import { svgFill, themeColor, themeSpacing } from '../../utils'
 import Button from '../Button'
 import Heading from '../Heading'
 
-export type Level = 'normal' | 'attention' | 'warning' | 'error'
+export type AlertLevel = 'error' | 'info' | 'neutral' | 'warning'
 
-export type Props = {
-  level?: Level
-  heading?: string
-  onDismiss?: () => void
+export interface AlertProps {
   content?: string
   dismissible?: boolean
+  heading?: string
+  level?: AlertLevel
+  onDismiss?: () => void
+  outline?: boolean
 }
 
 const colorMap: Record<
-  Level,
+  AlertLevel,
   ({ theme }: { theme: Theme.ThemeInterface }) => string
 > = {
-  normal: themeColor('tint', 'level3'),
-  attention: themeColor('primary'),
-  warning: themeColor('tint', 'level1'),
-  error: themeColor('secondary'),
+  error: themeColor('error'),
+  info: themeColor('primary'),
+  neutral: themeColor('tint', 'level3'),
+  warning: themeColor('support', 'focus'),
 }
 
 export const CloseButtonWrapper = styled.div`
@@ -37,6 +33,7 @@ export const CloseButtonWrapper = styled.div`
 
 export const CloseButton = styled(Button)`
   background-color: transparent;
+  min-width: initial; /* non-blank buttons have a min-width. This is an exception and need to override this */
 `
 
 export const ContentWrapper = styled.div`
@@ -56,10 +53,9 @@ export const AlertHeading = styled(Heading)`
   margin: 0;
 `
 
-export default styled.div<Props>`
+export default styled.div<AlertProps>`
   position: relative;
   width: 100%; /* IE11 fix */
-  ${focusStyleOutline()}
 
   /* IE11 fix: display 'flex' only when dismissible */
   ${({ dismissible }) =>
@@ -68,24 +64,38 @@ export default styled.div<Props>`
       display: flex;
     `}
 
-  ${({ level, theme }) =>
+  ${({ level, outline, theme }) =>
     css`
       padding: ${themeSpacing(4)};
 
-      /* Colors */
-      background-color: ${colorMap[level || 'normal']({
-        theme,
-      })};
-      ${(level === 'attention' || level === 'error') &&
+      /* Solid colors */
+      ${!outline &&
+      css`
+        background-color: ${colorMap[level || 'neutral']({
+          theme,
+        })};
+      `}
+      ${!outline &&
+      (level === 'error' || level === 'info') &&
       css`
         ${svgFill(themeColor('tint', 'level1'))}
         &, & * {
           color: ${themeColor('tint', 'level1')};
         }
       `}
-      ${level === 'warning' &&
+      
+      /* Outline color */
+      ${outline &&
       css`
-        box-shadow: ${themeColor('secondary')} 0px 0px 0px 2px inset;
+        box-shadow: ${colorMap[level || 'neutral']({
+            theme,
+          })}
+          0px 0px 0px 2px inset;
+      `}
+      ${outline &&
+      (level === 'error' || level === 'info') &&
+      css`
+        ${svgFill(themeColor('tint', 'level7'))}
       `}
     `}
 `

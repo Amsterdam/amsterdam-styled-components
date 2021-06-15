@@ -1,4 +1,3 @@
-import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import Toggle from './Toggle'
 import { KeyboardKeys } from '../../types'
@@ -30,6 +29,7 @@ describe('Toggle', () => {
 
   it('should not render the children when user presses the escape key after opening it', () => {
     const escape = {
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       preventDefault: () => {},
       key: KeyboardKeys.Escape,
     }

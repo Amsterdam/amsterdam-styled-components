@@ -1,15 +1,14 @@
-import { createRef, useEffect } from 'react'
+import { createRef, useEffect, Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
-import { Select, Label, ErrorMessage } from '@datapunt/asc-ui'
+import { action } from '@storybook/addon-actions'
+import { Select, Label, ErrorMessage } from '@amsterdam/asc-ui'
 
 export const SelectWithRef = () => {
   const ref = createRef()
   useEffect(() => {
     const element = ref.current
     function onChange(e) {
-      const { value } = e.target
-      // eslint-disable-next-line no-console
-      console.log('Value changed!', value)
+      action(`Value changed! ${e.target.value}`)(e)
     }
     if (!element) {
       return undefined
@@ -85,7 +84,7 @@ to ask multiple questions (text from Design System)
 
 <Preview>
   <Story name="Disabled state">
-    <React.Fragment>
+    <Fragment>
       <Select id="select-1" label="Disabled Select component" disabled>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
@@ -102,7 +101,7 @@ to ask multiple questions (text from Design System)
         <option value="3">Option 3</option>
         <option value="4">Option 4</option>
       </Select>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -110,7 +109,7 @@ to ask multiple questions (text from Design System)
 
 <Preview>
   <Story name="Error state">
-    <React.Fragment>
+    <Fragment>
       <Select id="select-1" label="With Error Message" error>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
@@ -126,7 +125,7 @@ to ask multiple questions (text from Design System)
         <option value="3">Option 3</option>
         <option value="4">Option 4</option>
       </Select>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 

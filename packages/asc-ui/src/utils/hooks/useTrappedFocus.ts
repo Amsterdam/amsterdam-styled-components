@@ -1,24 +1,22 @@
-import React from 'react'
+import { KeyboardEvent, RefObject } from 'react'
 import { KeyboardKeys } from '../../types'
 import ownerDocument from '../ownerDocument'
 
-const FocusableElements = [
+export const focusableElements = [
   'a[href]:not([disabled])',
   'button:not([disabled])',
   'textarea:not([disabled])',
-  'input[type="text"]:not([disabled])',
-  'input[type="radio"]:not([disabled])',
-  'input[type="checkbox"]:not([disabled])',
+  'input:not([disabled])',
   'select:not([disabled])',
 ]
 
-const useTrappedFocus = (ref: React.RefObject<HTMLElement>) => {
-  const keyDown = (e: React.KeyboardEvent) => {
+const useTrappedFocus = (ref: RefObject<HTMLElement>) => {
+  const keyDown = (e: KeyboardEvent) => {
     if (ref.current) {
       const element = ref.current
 
       const focusableEls = element.querySelectorAll(
-        FocusableElements.join(', '),
+        focusableElements.join(', '),
       )
 
       const firstFocusableEl = focusableEls[0]

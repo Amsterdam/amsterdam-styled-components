@@ -1,12 +1,10 @@
 import { render } from '@testing-library/react'
-import React from 'react'
 import styled from 'styled-components'
 import { BACKDROP_Z_INDEX } from '../../components/shared/constants'
 import { ascDefaultTheme } from '../../theme'
 import ThemeProvider from '../../theme/ThemeProvider'
 import {
   breakpoint,
-  focusStyleOutline,
   getTypographyFromTheme,
   getTypographyValueFromProperty,
   getValueFromTheme,
@@ -80,24 +78,6 @@ describe('getTypographyValueFromProperty', () => {
     expect(
       getTypographyValueFromProperty('h1', 'lineHeight', 'tabletS')({ theme }),
     ).toEqual('')
-  })
-})
-
-describe('focusStyleOutline', () => {
-  const theme = {
-    ...ascDefaultTheme,
-    colors: {
-      ...colors,
-      support: {
-        ...colors.support,
-        focus: '#abcde',
-      },
-    },
-  }
-
-  it('should return the focusstyle from theme', () => {
-    const result = focusStyleOutline()({ theme })
-    expect(result).toContain('#abcde')
   })
 })
 
@@ -178,21 +158,21 @@ describe('fromTheme', () => {
 describe('showAboveBackDrop', () => {
   it('should set the correct z-index when there is a hasBackDrop prop or positive parameter', () => {
     expect(showAboveBackDrop(true)({})[1]).toBeTruthy() // should return an array with the styling rules
-    expect(showAboveBackDrop(true)({})[1]).toContain(BACKDROP_Z_INDEX + 1)
+    expect(showAboveBackDrop(true)({})[1]).toContain(`${BACKDROP_Z_INDEX + 1}`)
 
     expect(showAboveBackDrop(true)({ hasBackDrop: false })[1]).toBeTruthy() // should return an array with the styling rules
     expect(showAboveBackDrop(true)({ hasBackDrop: false })[1]).toContain(
-      BACKDROP_Z_INDEX + 1,
+      `${BACKDROP_Z_INDEX + 1}`,
     )
 
     expect(showAboveBackDrop()({ hasBackDrop: true })[1]).toBeTruthy() // should return an array with the styling rules
     expect(showAboveBackDrop()({ hasBackDrop: true })[1]).toContain(
-      BACKDROP_Z_INDEX + 1,
+      `${BACKDROP_Z_INDEX + 1}`,
     )
 
     expect(showAboveBackDrop(false)({ hasBackDrop: true })[1]).toBeTruthy() // should return an array with the styling rules
     expect(showAboveBackDrop(false)({ hasBackDrop: true })[1]).toContain(
-      BACKDROP_Z_INDEX + 1,
+      `${BACKDROP_Z_INDEX + 1}`,
     )
   })
 

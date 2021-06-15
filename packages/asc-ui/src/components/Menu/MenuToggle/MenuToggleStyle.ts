@@ -15,7 +15,7 @@ import ToggleButtonStyle from '../../Button/ToggleButton'
 
 export type Props = {
   align?: 'left' | 'right'
-  onExpand?: Function
+  onExpand?: () => void
   open?: boolean
   hasBackDrop?: boolean
   ariaLabel?: string

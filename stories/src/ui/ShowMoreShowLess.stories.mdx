@@ -1,0 +1,64 @@
+import { Fragment } from 'react'
+import styled from 'styled-components'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { number, withKnobs } from '@storybook/addon-knobs'
+import { ShowMoreShowLess, Paragraph } from '@amsterdam/asc-ui'
+
+export const Decorator = styled.div`
+  max-width: 500px;
+`
+
+<Meta
+  title="UI/ShowMoreShowLess"
+  component={ShowMoreShowLess}
+  decorators={[withKnobs, (storyFn) => <Decorator>{storyFn()}</Decorator>]}
+/>
+
+# ShowMoreShowLess
+
+Used to hide large content, but be able to show / hide it
+
+Not in Amsterdam Design System yet
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <Fragment>
+      <ShowMoreShowLess
+        maxHeight={`${number('maxHeight', 300, {
+          range: true,
+          min: 0,
+          max: 1000,
+          step: 1,
+        })}px`}
+      >
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
+          accusantium aliquid atque aut exercitationem fuga fugiat, ipsam itaque
+          maiores, nisi nobis omnis, placeat quasi ratione repudiandae sint
+          sunt. Aliquam debitis dicta ducimus eaque excepturi maxime, odio sequi
+          velit voluptatum. Architecto, aspernatur beatae consequuntur
+          cupiditate eveniet laboriosam nemo nisi nobis odio officia optio
+          pariatur placeat quis, repudiandae similique sit velit veniam
+          voluptatibus? Animi aperiam maiores minima molestias natus porro
+          rerum, voluptatem. Architecto atque cum dolorum eligendi eveniet harum
+          ipsum laboriosam laborum minus mollitia neque nesciunt odio
+          perspiciatis porro ratione, repellat tempore? Ab accusantium amet
+          architecto autem delectus deleniti dicta dolor dolorem error harum
+          impedit iste itaque magnam maiores maxime, molestiae, nesciunt
+          officiis quam quia quidem quod tempore temporibus vel. A accusamus
+          aspernatur, consequuntur corporis delectus ducimus eum incidunt
+          laborum maxime nihil obcaecati quis, ratione, repellat rerum sapiente
+          sit suscipit ullam voluptate. A accusantium adipisci amet aperiam
+          assumenda aut blanditiis consequuntur cum dolores earum eius excepturi
+          fuga in ipsam minima nam, nihil nisi nulla odio possimus quae quaerat
+          quam quis quisquam quo quod ratione rem rerum sint suscipit tenetur
+          totam vel velit veritatis vitae, voluptates voluptatibus. Autem
+          commodi delectus iusto magni maxime minima, molestias nesciunt nisi
+          omnis placeat, sit ullam ut velit!
+        </Paragraph>
+      </ShowMoreShowLess>
+    </Fragment>
+  </Story>
+</Preview>

@@ -14,9 +14,130 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## Unreleased
+## [new version]
+
+- Added: transient prop $darkBackground to `Link` component
+- Added: keyevent on `ContextMenu`: close when pressing escape
+- Removed: Console warning in `ContextMenu` for not passing the right children
+- Removed: Support for React 16
+- Removed: `ViewerContainer` component
 - Added: `Pagination` component
+
+## [0.29.3]
+
+- Fixed: issue with not programmically changing the active / initial tab on `Tabs` component
+- Deprecated: `initialTab` in `Tabs` component. Please use `activeTab` instead.
+- Added: Quote component
+
+## [0.29.2]
+
+- Fixed: Taskflow button has better focus state
+
+## [0.29.0]
+
+- Changed: **BREAKING** hooks object is not exported anymore. You can import hooks now directly, for example import { useFocus } from '@amsterdam/asc-ui' [#1528](https://github.com/Amsterdam/amsterdam-styled-components/pull/1528)
+- Removed: **BREAKING** the variant prop in Checkbox component, [#1539](https://github.com/Amsterdam/amsterdam-styled-components/pull/1539)
+- Changed: Breadcrumbs component now marked as stable
+- Changed: Line-height of breadcrumbs component according to spec.
+
+## [0.28.0]
+
+- Fixed: Search button in header is elongated [#1227](https://github.com/Amsterdam/amsterdam-styled-components/issues/1227)
+- Fixed: Searchbar focus management [#1485](https://github.com/Amsterdam/amsterdam-styled-components/issues/1485)
+- Removed: **BREAKING** `Focus` component [#1507](https://github.com/Amsterdam/amsterdam-styled-components/pull/1507)
+- Removed: **BREAKING** Variant prop in Radio component, tertiary variant is now default [#1125](https://github.com/Amsterdam/amsterdam-styled-components/pull/1516)
+
+## [0.27.0]
+
+- Added: Support for React 17
+- Changed: **BREAKING** Minimum React version is now `16.14.0`
+- Changed: **BREAKING** Minimum Styled Components version is now `5.1.0`
+
+## [0.26.2]
+
+- Added: `headerLogoTextAs` prop to `Header` component to overwrite the default `h1` tag
+- Fixed: The `Select` component shows the default browser focus
+- Changed: The `as` and `forwardedAs` props are now correctly typed with the `ElementType` type.
+
+## [0.26.1]
+
+- Changed: Types for the `Alert` component (`AlertProps` and `AlertLevel`) are now exported from the package root.
+
+## [0.26.0]
+
+- Added: New `Breadcumbs` component [#1241](https://github.com/Amsterdam/amsterdam-styled-components/pull/1241)
+- Fixed: `Modal` component no longer produces `zIndexOffset` exceptions [#1289](https://github.com/Amsterdam/amsterdam-styled-components/issues/1289)
+- Fixed: `Tag` component width is now displayed correctly in IE11 [#634](https://github.com/Amsterdam/amsterdam-styled-components/issues/634)
+- Changed: `ContextMenu` will now work without managing the `open` prop from a parent component [#1321](https://github.com/Amsterdam/amsterdam-styled-components/pull/1321)
+- Changed: Most of the documentation has been re-written to use the MDX file format [#558](https://github.com/Amsterdam/amsterdam-styled-components/issues/558)
+- Changed: `Button` component now changes background color when focussed [#1296](https://github.com/Amsterdam/amsterdam-styled-components/pull/1296)
+- Changed: **BREAKING** the `Alert` levels have been modified to align to their respective function [#1295](https://github.com/Amsterdam/amsterdam-styled-components/pull/1295)
+
+## [0.25.2]
+
+- Added: `initialTab` prop to `Tabs` component
+
+## [0.25.1]
+
+- Changed: `ButtonProps` is now exported publicly from the package.
+
+## [0.25.0]
+
+- Changed: Moved packages to @amsterdam organization on NPM.
+
+## [0.24.4]
+
+- Fixed: issue where the `Select` component would call the `onChange` callback both on component mount as well as on value change.
+- Changed: Refactored and exported `srOnlyStyle` for screen-reader only elements.
+
+## [0.24.3]
+
+- Fixed: Previous version did not publish, use this one instead.
+
+## [0.24.2]
+
+- Fixed: Radio button active state had bug on IE11
+
+## [0.24.1]
+
+- Fixed: alert close button overrides min-width
+
+## [0.24.0]
+
+- Fixed: Buttons need to be at least 90px width
+- Changed: Changed Tabs TabButton `color` in accordance with Design System, added padding to tab content in Tabs stories
+- Changed: Tabs container fade is now same width as tab-button right margin
+- Fixed: Icon overlay of Checkbox now ignores pointer events
+- Fixed: [Taskflow button](https://amsterdam.github.io/amsterdam-styled-components/?path=/docs/ui-form-button--secondary-variant) had a styling issue when focussed
+
+## [0.23.0]
+
+- Removed: style rule `max-width: 620px` from FormTitle
+- Added: A new experimental `Tabs` component for tabbed content.
+- Deprecated: `icon` prop now only accepts strings: `download` or `external`. If you want to use a custom icon, please pass it as a child
+- Changed: `icon` prop to render a download or external link icon
+- Deprecated: `with-chevron` variant in Link component. Please use `inList` prop instead
+- Removed: custom (yellow) focus-styles on focussable components, so it will now use the browser's default
+- Removed: **BREAKING** `fillWhenFocused`, `focusFill`, `outlineWhenFocused` and `focusOutline`
+- Removed: **BREAKING** `focusStyle` prop in `Link` component
+- Added: `CompactThemeProvider` now accepts the same props as `ThemeProvider`
+- Changed: Utility functions for applying focus styling are now exported (`focusOutline`, `outlineWhenFocused`, `focusFill`, and `fillWhenFocused`)
+- Fixed: The Select component with the `disabled` prop had an issue with background-color (See [PR](https://github.com/Amsterdam/amsterdam-styled-components/pull/876))
+- Changed: **BREAKING** indeterminate state on checkbox should only work when `checked === false` and not truthy. This also inverts behaviour when clicking on an indeterminate checkbox: it will enable all instead of disable all first
+- Added: Form elements Checkbox and Radio now have a white background (instead of transparent) (see [PR](https://github.com/Amsterdam/amsterdam-styled-components/pull/875)).
+- Added: SVG assets for Ball, Bell, Broom, Building, Buildings, Camera, Car, ChargingPoint, ChatBubble, Chatting, Clock, Collaborate, DocumentCheckmark, DocumentEdit, DocumentEuroSign, EditDocument, Energy, EuroCoin, FastForward, Favourite, Filter, FontEnlarge, FullScreen, HandEuroCoin, Handicap, HousePlant, Housing, IdentityCard, Info, Lamp, Layers, List, LocationFields, MarketStall, Minimize, Pause, PersonDesk, PersonalLogin, Phone, Picture, Plane, Play, Pointer, PublicParks, Purse, Reaction, Religion, Replay, Ruler, Share, Stop, Student, Suitcase, Swimming, ThumbnailResults, ThumbsDown, ThumbsUp, UmbrellaChairs, Video, Volume, VolumeOff, Vote, Wifi icons
+- Changed: SVG Ellipsis icon
+- Changed: **BREAKING** Removed fill attribute from SVG ChevronSorting icon
+
+## [0.22.0]
+
+- Changed: Introduced `createEvent` utility to support creating events in older browsers.
+- Removed: **BREAKING** previously marked deprecated components
+- Changed: Link component works better on dark backgrounds
+- Changed: **BREAKING** Footer components. Check out footer story for example on usage
 - Added: Export `SelectWrapperStyle`
+- Changed: **BREAKING** set height of input and select elements to 44px (from 40px) to match the design system
+- Added: Make it possible to programmatically set the value and value label for the select component
 
 ## [0.21.1]
 
@@ -221,7 +342,7 @@ Prefix the change with one of these keywords:
 - Added: tag component
 - Added: new way of loading svg's: instead of importing like this:
   `import Logo from '@datapunt/asc-assets/lib/assets/Icons/Logo.svg'` you now can use the svg object:
-  `import { svg } from '@datapunt/asc-assets'` and load it like this: `background-image: url(${svg.Logo})`
+  `import { svg } from '@amsterdam/asc-assets'` and load it like this: `background-image: url(${svg.Logo})`
 - Added: Image component can render images as a square (including IE11)
 
 ## [0.10.0] - 2019-08-05

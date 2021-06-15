@@ -3,13 +3,13 @@
 Start by installing the latest versions of `asc-ui`, `asc-assets` and `styled-components`. We're including `styled-components` as a peer dependency of Amsterdam Styled Components so you can pick which version of `styled-components` you want to use.
 
 ```bash
-npm install @datapunt/asc-ui @datapunt/asc-assets styled-components
+npm install @amsterdam/asc-ui @amsterdam/asc-assets styled-components
 ```
 
 or with yarn
 
 ```bash
-yarn add @datapunt/asc-ui @datapunt/asc-assets styled-components
+yarn add @amsterdam/asc-ui @amsterdam/asc-assets styled-components
 ```
 
 To add Amsterdam Styled Components to your React application you will have to import the following components to your code:
@@ -20,8 +20,7 @@ To add Amsterdam Styled Components to your React application you will have to im
 For example, this basic application shows a simple button and adds the aforementioned components:
 
 ```jsx
-import { Button, GlobalStyle, ThemeProvider } from '@datapunt/asc-ui'
-import React from 'react'
+import { Button, GlobalStyle, ThemeProvider } from '@amsterdam/asc-ui'
 import ReactDOM from 'react-dom'
 
 ReactDOM.render(
@@ -35,7 +34,7 @@ ReactDOM.render(
 
 ## Including fonts
 
-By default the fonts used by Amsterdam are not loaded into the page as these are licensed fonts. If you wish to include these fonts follow the steps in the `asc-assets` [documentation](packages/asc-assets/README.md#Fonts).
+By default the fonts used by Amsterdam are not loaded into the page as these are licensed fonts. If you wish to include these fonts follow the steps in the `asc-assets` [documentation](/packages/asc-assets/README.md#Fonts).
 
 ## Supporting older browsers
 

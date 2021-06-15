@@ -1,4 +1,10 @@
-import React from 'react'
+import {
+  Children,
+  cloneElement,
+  PropsWithoutRef,
+  ReactElement,
+  ReactNode,
+} from 'react'
 
 type Callback = (index?: number) => any
 
@@ -8,12 +14,12 @@ type Callback = (index?: number) => any
  * @param propsOrCallback this could be an object or a callback with the index as a parameter
  */
 const usePassPropsToChildren = (
-  childrenProps: React.ReactNode,
-  propsOrCallback: React.PropsWithoutRef<{}> | Callback,
+  childrenProps: ReactNode,
+  propsOrCallback: PropsWithoutRef<any> | Callback,
 ) => {
-  const children = React.Children.map(childrenProps, (child, index) =>
-    React.cloneElement(
-      child as React.ReactElement<any>,
+  const children = Children.map(childrenProps, (child, index) =>
+    cloneElement(
+      child as ReactElement<any>,
       typeof propsOrCallback === 'function'
         ? propsOrCallback(index)
         : propsOrCallback,

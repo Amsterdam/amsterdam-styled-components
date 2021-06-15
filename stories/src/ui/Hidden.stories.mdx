@@ -1,20 +1,21 @@
+import { Fragment } from 'react'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
-import { Hidden } from '@datapunt/asc-ui'
+import { Hidden } from '@amsterdam/asc-ui'
 
 <Meta title="Headless/Hidden" component={Hidden} />
 
 # Hidden
 
 A (headless) component that you can wrap around other components to decide if they should render according to a specific mediaQuery. This component, as it is headless, doesn't render an html element, only the children or nothing.
-This component uses the [useMatchMedia](https://github.com/Amsterdam/amsterdam-styled-components/tree/master/packages/asc-ui/src/utils/hooks/useMatchMedia.ts).
+This component uses the [useMatchMedia](https://github.com/Amsterdam/amsterdam-styled-components/tree/main/packages/asc-ui/src/utils/hooks/useMatchMedia.ts).
 
 ## With min breakpoint
 
 <Preview>
   <Story name="With min breakpoint">
-    <React.Fragment>
+    <Fragment>
       <Hidden minBreakpoint="tabletM">I am hidden from tabletM</Hidden>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -22,9 +23,9 @@ This component uses the [useMatchMedia](https://github.com/Amsterdam/amsterdam-s
 
 <Preview>
   <Story name="With max breakpoint">
-    <React.Fragment>
+    <Fragment>
       <Hidden maxBreakpoint="tabletM">I am hidden until tabletM</Hidden>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -32,11 +33,11 @@ This component uses the [useMatchMedia](https://github.com/Amsterdam/amsterdam-s
 
 <Preview>
   <Story name="With min and max breakpoint">
-    <React.Fragment>
+    <Fragment>
       <Hidden minBreakpoint="mobileS" maxBreakpoint="laptop">
         I am hidden only between mobileS and laptop
       </Hidden>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -44,10 +45,10 @@ This component uses the [useMatchMedia](https://github.com/Amsterdam/amsterdam-s
 
 <Preview>
   <Story name="With a custom query">
-    <React.Fragment>
+    <Fragment>
       <Hidden query="(min-width: 300px) and (max-width: 600px)">
         I am hidden only between 300px and 600px
       </Hidden>
-    </React.Fragment>
+    </Fragment>
   </Story>
 </Preview>

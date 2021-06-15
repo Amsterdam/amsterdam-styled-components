@@ -1,5 +1,5 @@
-import { Close } from '@datapunt/asc-assets'
-import React, { useState } from 'react'
+import { Close } from '@amsterdam/asc-assets'
+import { FunctionComponent, HTMLAttributes, useState } from 'react'
 import CompactThemeProvider from '../../theme/CompactThemeProvider'
 import { ButtonVariant } from '../Button/ButtonStyle'
 import Paragraph from '../Paragraph'
@@ -8,27 +8,30 @@ import AlertStyle, {
   CloseButton,
   CloseButtonWrapper,
   ContentWrapper,
-  Props,
+  AlertProps,
 } from './AlertStyle'
 
 const CLOSE_BUTTON_TITLE = 'Sluiten'
 
-const Alert: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
+const Alert: FunctionComponent<AlertProps & HTMLAttributes<HTMLElement>> = ({
   children,
-  heading,
-  onDismiss,
-  dismissible,
   content,
+  dismissible,
+  heading,
   level,
+  onDismiss,
+  outline,
   ...otherProps
 }) => {
   const [open, setOpen] = useState(true)
 
   let variant: ButtonVariant = 'tertiary'
 
-  if (level === 'error') {
+  if (outline) {
+    variant = 'blank'
+  } else if (level === 'error') {
     variant = 'secondary'
-  } else if (level === 'attention') {
+  } else if (level === 'info') {
     variant = 'primary'
   }
 
@@ -42,7 +45,7 @@ const Alert: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
 
   return open ? (
     <AlertStyle
-      {...{ dismissible, level, ...otherProps }}
+      {...{ dismissible, level, outline, ...otherProps }}
       tabIndex={0}
       role="alert"
       aria-live="polite"

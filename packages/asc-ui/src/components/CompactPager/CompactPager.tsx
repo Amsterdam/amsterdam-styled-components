@@ -1,7 +1,7 @@
-import React from 'react'
-import { ChevronRight, ChevronLeft } from '@datapunt/asc-assets'
-import CompactPagerStyle, { PagerText, PagerButton } from './CompactPagerStyle'
-import { PREV_BUTTON, NEXT_BUTTON } from './test-ids'
+import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
+import { FunctionComponent, HTMLAttributes } from 'react'
+import CompactPagerStyle, { PagerButton, PagerText } from './CompactPagerStyle'
+import { NEXT_BUTTON, PREV_BUTTON } from './test-ids'
 
 function clampNumber(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max)
@@ -36,7 +36,7 @@ export interface Props {
   onPageChange?: (page: number) => void
 }
 
-const CompactPager: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
+const CompactPager: FunctionComponent<Props & HTMLAttributes<HTMLElement>> = ({
   page,
   pageSize,
   collectionSize,

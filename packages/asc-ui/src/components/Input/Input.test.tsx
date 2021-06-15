@@ -1,5 +1,5 @@
 import { render, fireEvent } from '@testing-library/react'
-import React from 'react'
+import { createRef } from 'react'
 import { KeyboardKeys } from '../../types'
 import Input from './Input'
 import ThemeProvider from '../../theme/ThemeProvider'
@@ -44,7 +44,7 @@ describe('Input', () => {
   })
 
   it('should handle refs', () => {
-    const ref = React.createRef<HTMLInputElement>()
+    const ref = createRef<HTMLInputElement>()
 
     render(
       <ThemeProvider>

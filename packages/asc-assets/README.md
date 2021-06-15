@@ -10,7 +10,7 @@ This is a standalone package that contains:
 Add this package to your project by running:
 
 ```bash
-npm install @datapunt/asc-assets
+npm install @amsterdam/asc-assets
 ```
 
 ## Basic Usage
@@ -18,7 +18,7 @@ npm install @datapunt/asc-assets
 ### Icons
 
 ```jsx
-import { IconName } from '@datapunt/asc-assets'
+import { IconName } from '@amsterdam/asc-assets'
 
 return <IconName />
 ```
@@ -51,7 +51,7 @@ Add the following code to your WebPack configuration:
 new CopyWebpackPlugin({
   patterns: [
     {
-      from: './node_modules/@datapunt/asc-assets/static/fonts',
+      from: './node_modules/@amsterdam/asc-assets/static/fonts',
       to: 'fonts',
     },
   ],
@@ -61,11 +61,11 @@ new CopyWebpackPlugin({
 And make sure to import the CSS file in your stylesheet:
 
 ```scss
-@import '~@datapunt/asc-assets/static/fonts/fonts.css';
+@import '~@amsterdam/asc-assets/static/fonts/fonts.css';
 ```
 
 ## Build Project
 
 ```bash
-yarn build # generates JSX components using the optimized SVG icons
+npm run build # generates JSX components using the optimized SVG icons
 ```

@@ -1,4 +1,4 @@
-import React from 'react'
+import { Component, ReactInstance } from 'react'
 import ReactDOM from 'react-dom'
 import ownerDocument from '../../utils/ownerDocument'
 
@@ -8,16 +8,14 @@ export type Props = {
   hideOverFlow?: boolean
 }
 
-type State = {}
-
 let mountElement: Element | null = null
 if (typeof window !== 'undefined') {
   mountElement = window.document.createElement('div')
   mountElement.setAttribute('style', 'position: absolute;')
 }
 
-class Portal extends React.Component<Props, State> {
-  static getOwnerDocument(element: React.ReactInstance) {
+class Portal extends Component<Props> {
+  static getOwnerDocument(element: ReactInstance) {
     // eslint-disable-next-line react/no-find-dom-node
     const el = ReactDOM.findDOMNode(element) as HTMLInputElement
     return ownerDocument(el)

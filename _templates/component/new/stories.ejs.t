@@ -1,20 +1,32 @@
 ---
-to: "<%= story ? `packages/asc-ui/src/components/${parent}/${name}/${name}.stories.tsx` : null %>"
+to: "<%= story ? `stories/src/ui/${name}.stories.mdx` : null %>"
 skip_if: <%= story %>
 ---
 
-import React from 'react'
-import <%= name %> from './<%= name %>'
+import { Fragment } from 'react'
+import styled from 'styled-components'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { <%= name %> } from '@amsterdam/asc-ui'
 
-export default {
-  title: '<%= composed ? 'Composed' : 'Atoms' %>/<%= name %>',
+export const Decorator = styled.div`
+`
 
-  decorators: [
-    (storyFn: () => React.ReactNode) => (
-      <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
-    ),
-  ],
-}
+<Meta
+  title="UI/<%= name %>"
+  component={<%= name %>}
+  decorators={[(storyFn) => <Decorator>{storyFn()}</Decorator>]}
+/>
 
+# <%= name %>
 
-export const DefaultState = () => <<%= name %> />
+[Design System](https://designsystem.amsterdam.nl/LINK_HERE)
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <Fragment>
+      <<%= name %>>Default state</<%= name %>>
+    </Fragment>
+  </Story>
+</Preview>

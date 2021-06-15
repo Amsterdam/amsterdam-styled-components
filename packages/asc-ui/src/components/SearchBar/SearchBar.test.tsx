@@ -1,4 +1,3 @@
-import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import SearchBar from './SearchBar'
 
@@ -11,9 +10,9 @@ describe('SearchBar', () => {
 
   beforeEach(() => {
     ;({ container } = render(
-      <SearchBar onSubmit={mockOnSubmit} onChange={() => {}}>
-        searchbar-content
-      </SearchBar>,
+      <form onSubmit={mockOnSubmit}>
+        <SearchBar>searchbar-content</SearchBar>
+      </form>,
     ))
   })
 
@@ -25,9 +24,9 @@ describe('SearchBar', () => {
   })
 
   it('should handle the onClick event', () => {
-    const button = container.querySelector('button')
+    const form = container.querySelector('form')
 
-    fireEvent.click(button)
+    fireEvent.submit(form)
 
     expect(mockOnSubmit).toHaveBeenCalled()
   })

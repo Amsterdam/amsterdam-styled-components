@@ -1,4 +1,5 @@
-import styled, { css } from 'styled-components'
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import { ElementType } from 'react'
 import { getTypographyFromTheme, themeColor } from '../../utils'
 import { Theme } from '../../types'
 
@@ -7,8 +8,8 @@ export type Props = {
   element?: Variant
   fontSize?: number
   styleAs?: keyof Theme.TypographyElements
-  as?: any
-  forwardedAs?: any
+  as?: ElementType
+  forwardedAs?: ElementType
   strong?: boolean
   /**
    * @deprecated Use your own custom style rules
@@ -16,7 +17,9 @@ export type Props = {
   color?: Theme.ColorType
 }
 
-export const defaultTypographyStyles = {
+export const defaultTypographyStyles: {
+  [key: string]: FlattenSimpleInterpolation
+} = {
   em: css`
     font-style: italic;
   `,
@@ -24,11 +27,12 @@ export const defaultTypographyStyles = {
 
 export type Variant = keyof typeof defaultTypographyStyles
 
-const getProperty = <T, K extends keyof T>(obj: T, key: K) => obj[key]
-
 export default styled.p<Props>`
-  ${({ as, forwardedAs }) =>
-    getProperty(defaultTypographyStyles, as || forwardedAs)};
+  ${({ as, forwardedAs }) => {
+    const key = as ?? forwardedAs
+
+    return typeof key === 'string' && defaultTypographyStyles[key]
+  }}
   margin: 0;
   ${getTypographyFromTheme()};
   font-stretch: normal;

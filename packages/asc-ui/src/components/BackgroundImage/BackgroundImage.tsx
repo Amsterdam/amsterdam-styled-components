@@ -1,7 +1,7 @@
-import React from 'react'
+import { FunctionComponent } from 'react'
 import BackgroundImageStyle, { Props } from './BackgroundImageStyle'
 
-const BackgroundImage: React.FC<Props> = ({ ...otherProps }) => (
+const BackgroundImage: FunctionComponent<Props> = ({ ...otherProps }) => (
   <BackgroundImageStyle {...otherProps} />
 )
 

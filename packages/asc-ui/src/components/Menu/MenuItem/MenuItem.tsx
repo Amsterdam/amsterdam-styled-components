@@ -1,12 +1,9 @@
-import React from 'react'
+import { DetailedHTMLProps, forwardRef, LiHTMLAttributes } from 'react'
 import MenuItemStyle from './MenuItemStyle'
 
-type Props = React.DetailedHTMLProps<
-  React.LiHTMLAttributes<HTMLLIElement>,
-  HTMLLIElement
->
+type Props = DetailedHTMLProps<LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>
 
-export default React.forwardRef<HTMLLIElement, Props>(function MenuItem(
+export default forwardRef<HTMLLIElement, Props>(function MenuItem(
   { children, className, ...otherProps },
   ref,
 ) {

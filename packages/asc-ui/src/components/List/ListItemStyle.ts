@@ -1,8 +1,9 @@
+import { HTMLAttributes } from 'react'
 import styled, { css } from 'styled-components'
 
 export type Props = {
-  order?: Number
-} & React.HTMLAttributes<HTMLElement>
+  order?: number
+} & HTMLAttributes<HTMLElement>
 
 export const ListItemStyleCSS = css`
   word-break: break-word;
