@@ -1,0 +1,40 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Pagination } from '@datapunt/asc-ui'
+
+<Meta
+  title="UI/Pagination"
+  component={Pagination}
+  decorators={[
+    (storyFn) => (
+      <div
+        style={{
+          padding: '40px 10px',
+        }}
+      >
+        {storyFn()}
+      </div>
+    ),
+  ]}
+/>
+
+# Pagination
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/431c4a-pagination)
+
+**Component status: experimental**
+
+## Unphased
+
+<Preview>
+  <Story name="Unphased">
+    <Pagination collectionSize={50} pageSize={10} page={1} />
+  </Story>
+</Preview>
+
+## Phased
+
+<Preview>
+  <Story name="Phased">
+    <Pagination collectionSize={1000} pageSize={10} page={2} />
+  </Story>
+</Preview>
