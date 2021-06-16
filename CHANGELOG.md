@@ -27,6 +27,7 @@ Prefix the change with one of these keywords:
 - Fixed: issue with not programmically changing the active / initial tab on `Tabs` component
 - Deprecated: `initialTab` in `Tabs` component. Please use `activeTab` instead.
 - Added: Quote component
+- Added: Datepicker component
 
 ## [0.29.2]
 
