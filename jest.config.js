@@ -1,4 +1,5 @@
 module.exports = {
+  testEnvironment: 'jsdom',
   collectCoverage: false,
   collectCoverageFrom: [
     'packages/asc-ui/src/**/*.{js,jsx,ts,tsx}',
