@@ -22,12 +22,13 @@ Prefix the change with one of these keywords:
 - Removed: Support for React 16
 - Removed: `ViewerContainer` component
 
+- Added: Datepicker component
+
 ## [0.29.3]
 
 - Fixed: issue with not programmically changing the active / initial tab on `Tabs` component
 - Deprecated: `initialTab` in `Tabs` component. Please use `activeTab` instead.
 - Added: Quote component
-- Added: Datepicker component
 
 ## [0.29.2]
 
