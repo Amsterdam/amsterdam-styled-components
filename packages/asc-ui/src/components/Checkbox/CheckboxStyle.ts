@@ -44,7 +44,7 @@ const CheckboxIconStyle = styled(IconStyle)<Props>`
     `};
 `
 
-const CheckboxWrapperStyle = styled.div<Props>`
+const CheckboxWrapperStyle = styled.span<Props>`
   position: relative;
   display: inline-flex;
   user-select: none;

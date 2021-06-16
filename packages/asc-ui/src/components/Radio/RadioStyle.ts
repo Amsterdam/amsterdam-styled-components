@@ -72,7 +72,7 @@ const RadioCircleStyle = styled.span<StyleOnlyProps>`
     `}
 `
 
-const RadioWrapperStyle = styled.div<StyleOnlyProps & { focus: boolean }>`
+const RadioWrapperStyle = styled.span<StyleOnlyProps & { focus: boolean }>`
   position: relative;
   display: inline-flex;
   user-select: none;
