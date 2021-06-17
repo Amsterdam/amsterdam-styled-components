@@ -12,6 +12,7 @@ export default styled.nav<Props & HTMLAttributes<HTMLElement>>`
     align-items: center;
     flex-wrap: wrap;
     list-style: none;
+    padding: 0;
   }
 
   li {
