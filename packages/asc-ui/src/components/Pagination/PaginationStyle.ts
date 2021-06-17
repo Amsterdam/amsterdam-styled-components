@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { HTMLAttributes } from 'react'
 import styled, { css } from 'styled-components'
 import { Props as CompactPagerProps } from '../CompactPager/CompactPager'
-import { svgFill, themeColor } from '../../utils'
+import { svgFill, themeColor, themeSpacing } from '../../utils'
 import Button from '../Button'
 
 export type Props = CompactPagerProps
 
-export default styled.nav<Props>`
+export default styled.nav<Props & HTMLAttributes<HTMLElement>>`
   ul {
     display: flex;
     align-items: center;
@@ -16,7 +16,7 @@ export default styled.nav<Props>`
 
   li {
     display: list-item;
-    margin: 0 15px 0 0;
+    margin: 0 ${themeSpacing(4)} 0 0;
   }
 `
 
@@ -35,14 +35,14 @@ const baseButtonStyles = css`
   ${svgFill(themeColor('tint', 'level7'))}
 `
 
-export const PageNumber = styled.button.attrs({
+export const PageNumberStyle = styled.button.attrs({
   type: 'button',
 })<ButtonProps & React.HTMLAttributes<HTMLButtonElement>>`
   cursor: pointer;
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
-  padding: 0 10px;
+  padding: 0 ${themeSpacing(3)};
   appearance: none;
   border: none;
   background: none;
@@ -56,10 +56,6 @@ export const PageNumber = styled.button.attrs({
       background-color: ${themeColor('tint', 'level5')};
       color: ${themeColor('bright', 'main')};
     `};
-
-  &:focus {
-    background-color: ${themeColor('support', 'focus')};
-  }
 
   &:active {
     background: none;

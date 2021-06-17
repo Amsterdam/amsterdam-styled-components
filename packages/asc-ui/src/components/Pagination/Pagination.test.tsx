@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   fireEvent,
   getByTestId,
@@ -53,7 +52,7 @@ const assertUnphasedPageNumbers = (
     assertPageNumber.bind(this)(btn, i, isCurrent)
   }
   expect(queryByTestId(container, `btn-page-6`)).not.toBeInTheDocument()
-  expect(queryByText(container, '...')).not.toBeInTheDocument()
+  expect(queryByText(container, '&mldr;')).not.toBeInTheDocument()
 }
 
 describe('Pagination', () => {
@@ -155,9 +154,10 @@ describe('Pagination', () => {
           false,
         )
         expect(queryByTestId(container, 'btn-next')).toBeInTheDocument()
-        const spacers = screen.getAllByText('...')
-        expect(spacers[0]?.nextSibling?.textContent).toEqual('100')
-        expect(spacers.length).toEqual(1)
+        expect(queryByTestId(container, 'spacer-1')).not.toBeInTheDocument()
+        expect(
+          queryByTestId(container, 'spacer-2')?.nextSibling?.textContent,
+        ).toEqual('100')
         const listItems = screen.getAllByRole('listitem')
         expect(listItems.length).toBe(5)
       })
@@ -192,9 +192,10 @@ describe('Pagination', () => {
           false,
         )
         expect(queryByTestId(container, 'btn-next')).toBeInTheDocument()
-        const spacers = screen.getAllByText('...')
-        expect(spacers[0]?.nextSibling?.textContent).toEqual('100')
-        expect(spacers.length).toEqual(1)
+        expect(queryByTestId(container, 'spacer-1')).not.toBeInTheDocument()
+        expect(
+          queryByTestId(container, 'spacer-2')?.nextSibling?.textContent,
+        ).toEqual('100')
         const listItems = screen.getAllByRole('listitem')
         expect(listItems.length).toBe(7)
       })
@@ -235,9 +236,10 @@ describe('Pagination', () => {
           false,
         )
         expect(queryByTestId(container, 'btn-next')).toBeInTheDocument()
-        const spacers = screen.getAllByText('...')
-        expect(spacers[0]?.nextSibling?.textContent).toEqual('100')
-        expect(spacers.length).toEqual(1)
+        expect(queryByTestId(container, 'spacer-1')).not.toBeInTheDocument()
+        expect(
+          queryByTestId(container, 'spacer-2')?.nextSibling?.textContent,
+        ).toEqual('100')
         const listItems = screen.getAllByRole('listitem')
         expect(listItems.length).toBe(8)
       })
@@ -278,10 +280,12 @@ describe('Pagination', () => {
           false,
         )
         expect(queryByTestId(container, 'btn-next')).toBeInTheDocument()
-        const spacers = screen.getAllByText('...')
-        expect(spacers[0]?.nextSibling?.textContent).toEqual('3')
-        expect(spacers[1]?.nextSibling?.textContent).toEqual('100')
-        expect(spacers.length).toEqual(2)
+        expect(
+          queryByTestId(container, 'spacer-1')?.nextSibling?.textContent,
+        ).toEqual('3')
+        expect(
+          queryByTestId(container, 'spacer-2')?.nextSibling?.textContent,
+        ).toEqual('100')
         const listItems = screen.getAllByRole('listitem')
         expect(listItems.length).toBe(9)
       })
@@ -322,10 +326,12 @@ describe('Pagination', () => {
           false,
         )
         expect(queryByTestId(container, 'btn-next')).toBeInTheDocument()
-        const spacers = screen.getAllByText('...')
-        expect(spacers[0]?.nextSibling?.textContent).toEqual('96')
-        expect(spacers[1]?.nextSibling?.textContent).toEqual('100')
-        expect(spacers.length).toEqual(2)
+        expect(
+          queryByTestId(container, 'spacer-1')?.nextSibling?.textContent,
+        ).toEqual('96')
+        expect(
+          queryByTestId(container, 'spacer-2')?.nextSibling?.textContent,
+        ).toEqual('100')
         const listItems = screen.getAllByRole('listitem')
         expect(listItems.length).toBe(9)
       })
@@ -366,9 +372,10 @@ describe('Pagination', () => {
           false,
         )
         expect(queryByTestId(container, 'btn-next')).toBeInTheDocument()
-        const spacers = screen.getAllByText('...')
-        expect(spacers[0]?.nextSibling?.textContent).toEqual('97')
-        expect(spacers.length).toEqual(1)
+        expect(
+          queryByTestId(container, 'spacer-1')?.nextSibling?.textContent,
+        ).toEqual('97')
+        expect(queryByTestId(container, 'spacer-2')).not.toBeInTheDocument()
         const listItems = screen.getAllByRole('listitem')
         expect(listItems.length).toBe(8)
       })
@@ -403,9 +410,10 @@ describe('Pagination', () => {
           false,
         )
         expect(queryByTestId(container, 'btn-next')).toBeInTheDocument()
-        const spacers = screen.getAllByText('...')
-        expect(spacers[0]?.nextSibling?.textContent).toEqual('98')
-        expect(spacers.length).toEqual(1)
+        expect(
+          queryByTestId(container, 'spacer-1')?.nextSibling?.textContent,
+        ).toEqual('98')
+        expect(queryByTestId(container, 'spacer-2')).not.toBeInTheDocument()
         const listItems = screen.getAllByRole('listitem')
         expect(listItems.length).toBe(7)
       })
@@ -428,9 +436,10 @@ describe('Pagination', () => {
           true,
         )
         expect(queryByTestId(container, 'btn-next')).not.toBeInTheDocument()
-        const spacers = screen.getAllByText('...')
-        expect(spacers[0]?.nextSibling?.textContent).toEqual('99')
-        expect(spacers.length).toEqual(1)
+        expect(
+          queryByTestId(container, 'spacer-1')?.nextSibling?.textContent,
+        ).toEqual('99')
+        expect(queryByTestId(container, 'spacer-2')).not.toBeInTheDocument()
         const listItems = screen.getAllByRole('listitem')
         expect(listItems.length).toBe(5)
       })

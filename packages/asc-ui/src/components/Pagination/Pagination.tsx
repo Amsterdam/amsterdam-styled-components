@@ -1,11 +1,131 @@
 import React from 'react'
-import { ChevronLeft, ChevronRight } from '@datapunt/asc-assets'
+import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
 import PaginationStyle, {
   Props,
-  PageNumber,
+  PageNumberStyle,
   PreviousButton,
   NextButton,
 } from './PaginationStyle'
+
+const PageNumber = ({
+  pageNumber,
+  currentPage,
+  onPageChange,
+}: {
+  pageNumber: number
+  currentPage: number
+  onPageChange: (page: number) => void
+}) => {
+  const isCurrent = pageNumber === currentPage
+  return (
+    <PageNumberStyle
+      aria-label={
+        isCurrent ? `Pagina ${pageNumber}` : `Ga naar pagina ${pageNumber}`
+      }
+      aria-current={isCurrent}
+      data-testid={`btn-page-${pageNumber}`}
+      onClick={() => onPageChange(pageNumber)}
+      isCurrent={isCurrent}
+      tabIndex={isCurrent ? -1 : 0}
+    >
+      {pageNumber}
+    </PageNumberStyle>
+  )
+}
+
+const Unphased = ({
+  totalPages,
+  currentPage,
+  onPageChange,
+}: {
+  totalPages: number
+  currentPage: number
+  onPageChange: (page: number) => void
+}) => {
+  return (
+    <>
+      {Array.from(Array(totalPages).keys()).map((pageNumber) => (
+        <li key={`pag-${pageNumber + 1}`}>
+          <PageNumber
+            pageNumber={pageNumber + 1}
+            currentPage={currentPage}
+            onPageChange={onPageChange}
+          />
+        </li>
+      ))}
+    </>
+  )
+}
+
+const Phased = ({
+  totalPages,
+  currentPage,
+  onPageChange,
+}: {
+  totalPages: number
+  currentPage: number
+  onPageChange: (page: number) => void
+}) => {
+  const [pageCluster, setPageCluster] = React.useState<number[]>([])
+
+  React.useEffect(() => {
+    const cluster = [currentPage]
+    if (currentPage > 2) {
+      cluster.unshift(currentPage - 1)
+    }
+    if (totalPages <= 5 || currentPage < totalPages - 1) {
+      cluster.push(currentPage + 1)
+    }
+    setPageCluster(cluster)
+  }, [currentPage, totalPages])
+
+  return (
+    <>
+      {currentPage > 1 && (
+        <li key="pag-1">
+          <PageNumber
+            pageNumber={1}
+            currentPage={currentPage}
+            onPageChange={onPageChange}
+          />
+        </li>
+      )}
+      {currentPage > 3 && (
+        <li
+          key="pag-spacer-1"
+          dangerouslySetInnerHTML={{ __html: '&mldr;' }}
+          data-testid="spacer-1"
+        />
+      )}
+      {pageCluster.map((num) => (
+        <li key={`pag-${num}`}>
+          <PageNumber
+            pageNumber={num}
+            currentPage={currentPage}
+            onPageChange={onPageChange}
+          />
+        </li>
+      ))}
+      {currentPage < totalPages - 2 && (
+        // eslint-disable-next-line react/no-danger
+        <li
+          key="pag-spacer-2"
+          dangerouslySetInnerHTML={{ __html: '&mldr;' }}
+          data-testid="spacer-2"
+        />
+      )}
+      {currentPage < totalPages && (
+        <li key={`pag-${totalPages}`}>
+          <PageNumber
+            pageNumber={totalPages}
+            currentPage={currentPage}
+            onPageChange={onPageChange}
+          />
+        </li>
+      )}
+    </>
+  )
+}
 
 const Pagination: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
   page = 1,
@@ -15,81 +135,24 @@ const Pagination: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
   ...otherProps
 }) => {
   const [currentPage, setCurrentPage] = React.useState<number>(page)
-  const totalPages = Math.ceil(collectionSize / pageSize)
-  const pageCluster = [currentPage]
-  if (currentPage > 2) {
-    pageCluster.unshift(currentPage - 1)
-  }
-  if (totalPages <= 5 || currentPage < totalPages - 1) {
-    pageCluster.push(currentPage + 1)
-  }
+  const [totalPages, setTotalPages] = React.useState<number>(
+    Math.ceil(collectionSize / pageSize),
+  )
 
   React.useEffect(() => {
     if (onPageChange !== undefined) onPageChange(currentPage)
   }, [currentPage, onPageChange])
 
-  const handlePrevious = () => {
+  React.useEffect(() => {
+    setTotalPages(Math.ceil(collectionSize / pageSize))
+  }, [collectionSize, pageSize])
+
+  const onPrevious = () => {
     setCurrentPage(currentPage - 1)
   }
 
-  const handleNext = () => {
+  const onNext = () => {
     setCurrentPage(currentPage + 1)
-  }
-
-  const renderButton = (pageNumber: number) => {
-    const isCurrent = pageNumber === currentPage
-    return (
-      <PageNumber
-        aria-label={
-          isCurrent ? `Pagina ${pageNumber}` : `Ga naar pagina ${pageNumber}`
-        }
-        aria-current={isCurrent}
-        data-testid={`btn-page-${pageNumber}`}
-        onClick={(evt) => {
-          // Remove focus from button after click
-          evt.currentTarget.blur()
-          setCurrentPage(pageNumber)
-        }}
-        isCurrent={isCurrent}
-        tabIndex={isCurrent ? -1 : 0}
-      >
-        {pageNumber}
-      </PageNumber>
-    )
-  }
-
-  const renderUnphased = () => {
-    return (
-      <>
-        {Array.from(Array(totalPages).keys()).map((num) => (
-          <li key={`pag-${num}`}>{renderButton(num + 1)}</li>
-        ))}
-      </>
-    )
-  }
-
-  const renderPhased = () => {
-    return (
-      <>
-        {currentPage > 1 && <li key="pag-1">{renderButton(1)}</li>}
-        {currentPage > 3 && (
-          <li key="pag-spacer-1" className="spacer">
-            ...
-          </li>
-        )}
-        {pageCluster.map((num) => (
-          <li key={`pag-${num}`}>{renderButton(num)}</li>
-        ))}
-        {currentPage < totalPages - 2 && (
-          <li key="pag-spacer-2" className="spacer">
-            ...
-          </li>
-        )}
-        {currentPage < totalPages && (
-          <li key={`pag-${totalPages}`}>{renderButton(totalPages)}</li>
-        )}
-      </>
-    )
   }
 
   return (
@@ -99,6 +162,7 @@ const Pagination: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
       pageSize={pageSize}
       {...otherProps}
       aria-label="paginatie navigatie"
+      role="navigation"
     >
       <ul>
         {currentPage > 1 && (
@@ -108,7 +172,7 @@ const Pagination: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
               aria-label="Vorige pagina"
               tabIndex={0}
               data-testid="btn-previous"
-              onClick={handlePrevious}
+              onClick={onPrevious}
               className="previous-page"
               iconLeft={<ChevronLeft />}
               variant="textButton"
@@ -117,8 +181,20 @@ const Pagination: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
             </PreviousButton>
           </li>
         )}
-        {totalPages <= 5 && renderUnphased()}
-        {totalPages > 5 && renderPhased()}
+        {totalPages <= 5 && (
+          <Unphased
+            totalPages={totalPages}
+            currentPage={currentPage}
+            onPageChange={(pageNumber) => setCurrentPage(pageNumber)}
+          />
+        )}
+        {totalPages > 5 && (
+          <Phased
+            totalPages={totalPages}
+            currentPage={currentPage}
+            onPageChange={(pageNumber) => setCurrentPage(pageNumber)}
+          />
+        )}
         {currentPage < totalPages && (
           <li key="pag-next">
             <NextButton
@@ -126,7 +202,7 @@ const Pagination: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
               aria-label="Volgende pagina"
               tabIndex={0}
               data-testid="btn-next"
-              onClick={handleNext}
+              onClick={onNext}
               className="next-page"
               iconRight={<ChevronRight />}
               variant="textButton"
