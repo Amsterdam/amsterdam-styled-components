@@ -14,16 +14,15 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## [new version]
+## [0.30.0]
 
 - Added: transient prop $darkBackground to `Link` component
 - Added: keyevent on `ContextMenu`: close when pressing escape
 - Removed: Console warning in `ContextMenu` for not passing the right children
 - Removed: Support for React 16
 - Removed: `ViewerContainer` component
-- Changed: `Radio` and `Checkbox` component HTML div tag to span
-
 - Added: Datepicker component
+- Changed: `Radio` and `Checkbox` component HTML div tag to span
 
 ## [0.29.3]
 
