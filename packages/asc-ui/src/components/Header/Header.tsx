@@ -22,6 +22,7 @@ type HeaderProps = {
   links?: ReactNode
   logo?: FunctionComponent<LogoProps>
   headerLogoTextAs?: ElementType
+  ssr?: boolean
 } & HeaderWrapperProps &
   HeaderStyleProps &
   CustomCssPropsType &
@@ -37,13 +38,14 @@ const Header: FunctionComponent<HeaderProps> = ({
   links,
   logo,
   headerLogoTextAs,
+  ssr,
   ...otherProps
 }) => (
   <HeaderWrapperStyle {...{ css, tall }} id="header">
     <HeaderStyle {...{ fullWidth, ...otherProps }}>
       <HeaderLogoText
         as={headerLogoTextAs}
-        {...{ tall, title, homeLink, logo }}
+        {...{ tall, title, homeLink, logo, ssr }}
       />
       <HeaderNavigation>{navigation}</HeaderNavigation>
       <HeaderLinks>{links}</HeaderLinks>

@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## [0.30.0]
 
+- Added: `ssr` prop to `Header` and `AmsterdamLogo` components for correct server side rendering
 - Added: transient prop $darkBackground to `Link` component
 - Added: keyevent on `ContextMenu`: close when pressing escape
 - Removed: Console warning in `ContextMenu` for not passing the right children
