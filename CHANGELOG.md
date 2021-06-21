@@ -23,6 +23,7 @@ Prefix the change with one of these keywords:
 - Removed: Support for React 16
 - Removed: `ViewerContainer` component
 - Added: Datepicker component
+- Changed: `Radio` and `Checkbox` component HTML div tag to span
 
 ## [0.29.3]
 
