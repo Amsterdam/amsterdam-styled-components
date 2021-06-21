@@ -9,7 +9,7 @@
     "start": "npm run copy-fonts && next start"
   },
   "dependencies": {
-    "@amsterdam/asc-assets": "^0.29.2",
+    "@amsterdam/asc-assets": "^0.30.0",
     "@amsterdam/asc-ui": "^0.29.2",
     "@zeit/next-css": "^1.0.1",
     "next": "10.2.3",
