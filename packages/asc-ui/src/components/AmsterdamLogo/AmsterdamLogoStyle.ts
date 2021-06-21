@@ -20,6 +20,18 @@ export const LogoTallStyle = styled(LogoTall)`
   ${logoStyle}
 `
 
+export const LogoShortStyleSSR = styled(LogoShortStyle)`
+  @media screen and ${breakpoint('min-width', 'laptopM')} {
+    display: none;
+  }
+`
+
+export const LogoTallStyleSSR = styled(LogoTallStyle)`
+  @media screen and ${breakpoint('max-width', 'laptopM')} {
+    display: none;
+  }
+`
+
 export const LogoTitleStyle = styled.span`
   ${srOnlyStyle}
 `

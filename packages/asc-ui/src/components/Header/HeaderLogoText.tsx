@@ -11,6 +11,7 @@ export interface LogoProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string
   tall?: boolean
   title?: string
+  ssr?: boolean
 }
 
 interface HeaderLogoTextProps extends HTMLAttributes<HTMLHeadingElement> {
@@ -18,6 +19,7 @@ interface HeaderLogoTextProps extends HTMLAttributes<HTMLHeadingElement> {
   homeLink: string
   tall?: boolean
   logo?: FunctionComponent<LogoProps>
+  ssr?: boolean
 }
 
 const HeaderLogoText: FunctionComponent<HeaderLogoTextProps> = ({
@@ -26,10 +28,13 @@ const HeaderLogoText: FunctionComponent<HeaderLogoTextProps> = ({
   homeLink,
   tall,
   logo: LogoIcon,
+  ssr,
   ...otherProps
 }) => (
   <HeaderLogoTextStyle as={as} {...otherProps}>
-    {LogoIcon && <LogoIcon href={homeLink} title={title} tall={tall} />}
+    {LogoIcon && (
+      <LogoIcon href={homeLink} title={title} tall={tall} ssr={ssr} />
+    )}
     {title && <HeaderTitle href={homeLink}>{title}</HeaderTitle>}
   </HeaderLogoTextStyle>
 )
