@@ -7,7 +7,10 @@ export type Props = {
   size?: number
 } & CustomCssPropsType
 
-const SpinnerStyle = styled.div<Props>`
+const SpinnerStyle = styled.div.withConfig({
+  shouldForwardProp: (prop, defaultValidatorFn) =>
+    !['size', 'color'].includes(prop) && defaultValidatorFn(prop),
+})<Props>`
   @keyframes rotating {
     0% {
       transform: rotate(0deg);

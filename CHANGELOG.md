@@ -14,6 +14,10 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## Unreleased
+
+- Fixed: unwanted props bleeding through to HTML attributes when using `Icon` and `Spinner`
+
 ## [0.30.0]
 
 - Added: `ssr` prop to `Header` and `AmsterdamLogo` components for correct server side rendering

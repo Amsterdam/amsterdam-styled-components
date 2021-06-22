@@ -17,7 +17,11 @@ export const defaultProps = {
   rotate: 0,
 }
 
-const IconStyle = styled.span<Props>`
+const IconStyle = styled.span.withConfig({
+  shouldForwardProp: (prop, defaultValidatorFn) =>
+    !['size', 'rotate', 'padding', 'inline', 'color'].includes(prop) &&
+    defaultValidatorFn(prop),
+})<Props>`
   display: ${({ inline }) => (inline ? 'inline-flex' : 'flex')};
   ${({ iconUrl }) =>
     iconUrl &&
