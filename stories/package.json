@@ -16,20 +16,20 @@
     "build": "build-storybook -c .storybook -s ../packages/asc-assets/static -o lib"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "^6.0.0-beta.37",
-    "@storybook/addon-actions": "^6.0.0-beta.37",
-    "@storybook/addon-docs": "^6.0.0-beta.37",
-    "@storybook/addon-knobs": "^6.0.0-beta.37",
-    "@storybook/addon-links": "^6.0.0-beta.37",
-    "@storybook/addon-viewport": "^6.0.0-beta.37",
-    "@storybook/react": "^6.0.0-beta.37",
-    "eslint-plugin-mdx": "^1.7.0"
+    "@storybook/addon-a11y": "^6.3.0-rc.11",
+    "@storybook/addon-actions": "^6.3.0-rc.11",
+    "@storybook/addon-docs": "^6.3.0-rc.11",
+    "@storybook/addon-knobs": "^6.3.0-next.2",
+    "@storybook/addon-links": "^6.3.0-rc.11",
+    "@storybook/addon-viewport": "^6.3.0-rc.11",
+    "@storybook/react": "^6.3.0-rc.11",
+    "eslint-plugin-mdx": "^1.13.0"
   },
   "dependencies": {
     "@amsterdam/asc-assets": "^0.30.0",
     "@amsterdam/asc-ui": "^0.30.0",
-    "react": "^17.0.1",
-    "react-table": "^7.2.2",
-    "styled-components": "^5.2.1"
+    "react": "^17.0.2",
+    "react-table": "^7.7.0",
+    "styled-components": "^5.3.0"
   }
 }
