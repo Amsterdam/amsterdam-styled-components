@@ -12,7 +12,7 @@
   },
   "main": "lib/stories.js",
   "scripts": {
-    "start": "node_modules/.bin/start-storybook -p 6006 -c .storybook -s ../packages/asc-assets/static",
+    "start": "start-storybook -p 6006 -c .storybook -s ../packages/asc-assets/static",
     "build": "build-storybook -c .storybook -s ../packages/asc-assets/static -o lib"
   },
   "devDependencies": {
