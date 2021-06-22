@@ -29,7 +29,7 @@
     "@svgr/webpack": "^5.4.0",
     "@testing-library/jest-dom": "^5.11.2",
     "@testing-library/react": "11.2.7",
-    "@testing-library/react-hooks": "5.1.2",
+    "@testing-library/react-hooks": "7.0.0",
     "@types/babel__core": "^7.1.9",
     "@types/eslint": "^7.2.0",
     "@types/eslint-plugin-prettier": "^3.1.0",
