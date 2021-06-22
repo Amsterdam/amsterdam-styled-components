@@ -22,7 +22,8 @@
     "storybook": "npm run start --workspace=stories",
     "stylelint": "stylelint \"./packages/**/*Style.ts\"",
     "test": "jest --collect-coverage",
-    "test:watch": "jest --watch --onlyChanged --verbose true"
+    "test:watch": "jest --watch --onlyChanged --verbose true",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
