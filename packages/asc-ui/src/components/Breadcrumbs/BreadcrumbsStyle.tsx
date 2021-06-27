@@ -8,20 +8,24 @@ export default styled.ol`
   flex-wrap: wrap;
   margin: 0;
   list-style: none;
+  padding-inline-start: 0;
 
   li {
     display: flex;
     align-items: center;
     color: ${themeColor('secondary', 'main')};
 
-    a {
+    a,
+    span {
       font-size: 14px;
       line-height: 22px;
       color: ${themeColor('tint', 'level5')};
       text-decoration: none;
       text-decoration-color: ${themeColor('tint', 'level5')};
       margin: ${themeSpacing(0, 2, 0, 0)};
+    }
 
+    a {
       &:hover {
         color: ${themeColor('secondary', 'main')};
         text-decoration: underline;

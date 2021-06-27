@@ -158,21 +158,21 @@ describe('fromTheme', () => {
 describe('showAboveBackDrop', () => {
   it('should set the correct z-index when there is a hasBackDrop prop or positive parameter', () => {
     expect(showAboveBackDrop(true)({})[1]).toBeTruthy() // should return an array with the styling rules
-    expect(showAboveBackDrop(true)({})[1]).toContain(BACKDROP_Z_INDEX + 1)
+    expect(showAboveBackDrop(true)({})[1]).toContain(`${BACKDROP_Z_INDEX + 1}`)
 
     expect(showAboveBackDrop(true)({ hasBackDrop: false })[1]).toBeTruthy() // should return an array with the styling rules
     expect(showAboveBackDrop(true)({ hasBackDrop: false })[1]).toContain(
-      BACKDROP_Z_INDEX + 1,
+      `${BACKDROP_Z_INDEX + 1}`,
     )
 
     expect(showAboveBackDrop()({ hasBackDrop: true })[1]).toBeTruthy() // should return an array with the styling rules
     expect(showAboveBackDrop()({ hasBackDrop: true })[1]).toContain(
-      BACKDROP_Z_INDEX + 1,
+      `${BACKDROP_Z_INDEX + 1}`,
     )
 
     expect(showAboveBackDrop(false)({ hasBackDrop: true })[1]).toBeTruthy() // should return an array with the styling rules
     expect(showAboveBackDrop(false)({ hasBackDrop: true })[1]).toContain(
-      BACKDROP_Z_INDEX + 1,
+      `${BACKDROP_Z_INDEX + 1}`,
     )
   })
 

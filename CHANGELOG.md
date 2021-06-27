@@ -14,9 +14,20 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## [new version]
+## Unreleased
 
-- Deprecated: removed ViewerContainer component use ARM ViewerContainer
+- Fixed: unwanted props bleeding through to HTML attributes when using `Icon` and `Spinner`
+
+## [0.30.0]
+
+- Added: `ssr` prop to `Header` and `AmsterdamLogo` components for correct server side rendering
+- Added: transient prop $darkBackground to `Link` component
+- Added: keyevent on `ContextMenu`: close when pressing escape
+- Removed: Console warning in `ContextMenu` for not passing the right children
+- Removed: Support for React 16
+- Removed: `ViewerContainer` component
+- Added: Datepicker component
+- Changed: `Radio` and `Checkbox` component HTML div tag to span
 
 ## [0.29.3]
 

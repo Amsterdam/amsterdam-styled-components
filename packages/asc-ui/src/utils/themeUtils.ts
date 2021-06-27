@@ -22,10 +22,13 @@ export type ThemeFn<T> = ({ theme }: { theme: Theme.ThemeInterface }) => T
  *  ${myThemeHelperFunction(param1, param2)}
  * `
  */
-export const withTheme = <T extends any[], U = any>(
-  cb: (theme: Theme.ThemeInterface, ...params: T) => U,
-) => (...params: T) => ({ theme }: { theme: Theme.ThemeInterface }): U =>
-  cb(theme, ...params)
+export const withTheme =
+  <T extends any[], U = any>(
+    cb: (theme: Theme.ThemeInterface, ...params: T) => U,
+  ) =>
+  (...params: T) =>
+  ({ theme }: { theme: Theme.ThemeInterface }): U =>
+    cb(theme, ...params)
 
 type ThemeColorParameters = [Theme.ColorType?, string?, string?]
 
@@ -85,37 +88,34 @@ const generateCSSFromTypography = (
     : marginBottom};
 `
 
-export const getTypographyFromTheme = () => ({
-  as: asProp = 'p',
-  gutterBottom,
-  styleAs,
-  theme,
-}: any) => {
-  const as = styleAs || asProp
-  const styles = getValueFromTheme(`typography.${[as]}`)({
-    theme,
-  }) as Theme.TypographyType
-  if (!styles) {
-    return ''
+export const getTypographyFromTheme =
+  () =>
+  ({ as: asProp = 'p', gutterBottom, styleAs, theme }: any) => {
+    const as = styleAs || asProp
+    const styles = getValueFromTheme(`typography.${[as]}`)({
+      theme,
+    }) as Theme.TypographyType
+    if (!styles) {
+      return ''
+    }
+    const { breakpoints, ...otherProps } = styles
+    return css`
+      ${generateCSSFromTypography(otherProps, gutterBottom)}
+      ${() =>
+        breakpoints
+          ? Object.entries(breakpoints).map(
+              ([breakpointFromTypography, typoStyles]) => css`
+                @media screen and ${breakpoint(
+                    'min-width',
+                    <keyof Theme.BreakpointsInterface>breakpointFromTypography,
+                  )} {
+                  ${generateCSSFromTypography(typoStyles || {}, gutterBottom)}
+                }
+              `,
+            )
+          : ``}
+    `
   }
-  const { breakpoints, ...otherProps } = styles
-  return css`
-    ${generateCSSFromTypography(otherProps, gutterBottom)}
-    ${() =>
-      breakpoints
-        ? Object.entries(breakpoints).map(
-            ([breakpointFromTypography, typoStyles]) => css`
-              @media screen and ${breakpoint(
-                  'min-width',
-                  <keyof Theme.BreakpointsInterface>breakpointFromTypography,
-                )} {
-                ${generateCSSFromTypography(typoStyles || {}, gutterBottom)}
-              }
-            `,
-          )
-        : ``}
-  `
-}
 
 type BreakpointKeys = keyof Theme.BreakpointsInterface
 
@@ -125,18 +125,19 @@ type GetTypographyValueFromPropertyParameters = [
   BreakpointKeys?,
 ]
 
-export const getTypographyValueFromProperty = withTheme<GetTypographyValueFromPropertyParameters>(
-  (theme, element, property, breakpointRule) => {
-    const rules = getValueFromTheme(`typography.${[element]}`)({ theme })
-    if (breakpointRule) {
-      if (rules.breakpoints[breakpointRule]) {
-        return rules.breakpoints[breakpointRule][property]
+export const getTypographyValueFromProperty =
+  withTheme<GetTypographyValueFromPropertyParameters>(
+    (theme, element, property, breakpointRule) => {
+      const rules = getValueFromTheme(`typography.${[element]}`)({ theme })
+      if (breakpointRule) {
+        if (rules.breakpoints[breakpointRule]) {
+          return rules.breakpoints[breakpointRule][property]
+        }
+        return ''
       }
-      return ''
-    }
-    return rules[property]
-  },
-)
+      return rules[property]
+    },
+  )
 
 /**
  * When this style is applied on an element it will be hidden but still readable by screen readers.
@@ -260,46 +261,50 @@ export interface ShowHideTypes {
 
 type ShowHideProps = ThemeProp & ShowHideTypes
 
-export const showHide = () => ({ hideAt, showAt, theme }: ShowHideProps) => {
-  const hideAtCss = hideAt
-    ? css`
-        @media screen and ${breakpoint('min-width', hideAt)({ theme })} {
-          display: none;
-        }
-      `
-    : ''
+export const showHide =
+  () =>
+  ({ hideAt, showAt, theme }: ShowHideProps) => {
+    const hideAtCss = hideAt
+      ? css`
+          @media screen and ${breakpoint('min-width', hideAt)({ theme })} {
+            display: none;
+          }
+        `
+      : ''
 
-  const showAtCss = showAt
-    ? css`
-        @media screen and ${breakpoint('max-width', showAt)({ theme })} {
-          display: none;
-        }
-      `
-    : ''
+    const showAtCss = showAt
+      ? css`
+          @media screen and ${breakpoint('max-width', showAt)({ theme })} {
+            display: none;
+          }
+        `
+      : ''
 
-  return css`
-    ${showAtCss}
-    ${hideAtCss}
-  `
-}
+    return css`
+      ${showAtCss}
+      ${hideAtCss}
+    `
+  }
 
 // Function that uses the BACKDROP_Z_INDEX constant to determine the z-index for components rendered with a backdrop
 // The first argument in the curry can be used to raise the z-index for components that need to be displayed above
 // the backdrop, but aren't directly related
-export const showAboveBackDrop = (show?: boolean) => ({
-  hasBackDrop,
-  zIndexOffset,
-}: {
-  hasBackDrop?: boolean
-  zIndexOffset?: number
-}) =>
-  hasBackDrop || show
-    ? css`
-        z-index: ${zIndexOffset
-          ? BACKDROP_Z_INDEX + zIndexOffset + 1
-          : BACKDROP_Z_INDEX + 1};
-      `
-    : ''
+export const showAboveBackDrop =
+  (show?: boolean) =>
+  ({
+    hasBackDrop,
+    zIndexOffset,
+  }: {
+    hasBackDrop?: boolean
+    zIndexOffset?: number
+  }) =>
+    hasBackDrop || show
+      ? css`
+          z-index: ${zIndexOffset
+            ? BACKDROP_Z_INDEX + zIndexOffset + 1
+            : BACKDROP_Z_INDEX + 1};
+        `
+      : ''
 
 type ThemeSpacingParameters = [
   Theme.Spacing,
