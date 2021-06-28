@@ -17,6 +17,7 @@ Prefix the change with one of these keywords:
 ## Unreleased
 
 - Fixed: unwanted props bleeding through to HTML attributes when using `Icon` and `Spinner`
+- Added: `Switch` component!️
 
 ## [0.30.0]
 
@@ -31,6 +32,7 @@ Prefix the change with one of these keywords:
 
 ## [0.29.3]
 
+- Added: Switch component
 - Fixed: issue with not programmically changing the active / initial tab on `Tabs` component
 - Deprecated: `initialTab` in `Tabs` component. Please use `activeTab` instead.
 - Added: Quote component
