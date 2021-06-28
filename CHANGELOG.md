@@ -17,6 +17,7 @@ Prefix the change with one of these keywords:
 ## Unreleased
 
 - Fixed: unwanted props bleeding through to HTML attributes when using `Icon` and `Spinner`
+- Added: `Switch` component!️
 
 ## [0.30.0]
 

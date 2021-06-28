@@ -1,27 +1,20 @@
 import { forwardRef, HTMLAttributes, useImperativeHandle, useRef } from 'react'
-import SwitchStyle, {
-  Props,
-  LabelStyle,
-  KnobStyle,
-  WrapperStyle,
-} from './SwitchStyle'
+import SwitchStyle, { Checkbox, Track, Knob } from './SwitchStyle'
 
-const Switch = forwardRef<
-  HTMLInputElement,
-  Props & HTMLAttributes<HTMLInputElement>
->(({ id, className, ...otherProps }, externalRef) => {
-  const ref = useRef<HTMLInputElement>(null)
+const Switch = forwardRef<HTMLInputElement, HTMLAttributes<HTMLInputElement>>(
+  ({ className, ...otherProps }, externalRef) => {
+    const ref = useRef<HTMLInputElement>(null)
 
-  useImperativeHandle(externalRef, () => ref.current as HTMLInputElement)
+    useImperativeHandle(externalRef, () => ref.current as HTMLInputElement)
 
-  return (
-    <WrapperStyle className={className}>
-      <LabelStyle htmlFor={id}>
-        <SwitchStyle role="switch" {...{ ...otherProps, id, ref }} />
-        <KnobStyle />
-      </LabelStyle>
-    </WrapperStyle>
-  )
-})
+    return (
+      <SwitchStyle className={className}>
+        <Checkbox role="switch" {...{ ...otherProps, ref }} />
+        <Track />
+        <Knob />
+      </SwitchStyle>
+    )
+  },
+)
 
 export default Switch
