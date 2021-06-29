@@ -1,6 +1,6 @@
 import { ChevronDown } from '@amsterdam/asc-assets'
 import { FunctionComponent } from 'react'
-import { ShowHideTypes } from '../../utils'
+import { Theme } from '../../types'
 import Hidden from '../Hidden'
 import Icon from '../Icon/Icon'
 import { ToggleHandlerProps } from '../Toggle'
@@ -15,7 +15,16 @@ import {
 type FooterContentProps = {
   title?: string
   ssr?: boolean
-} & ShowHideTypes
+  toggleAt?: keyof Theme.BreakpointsInterface
+  /**
+   * @deprecated Use toggleAt instead.
+   */
+  hideAt?: keyof Theme.BreakpointsInterface
+  /**
+   * @deprecated Use toggleAt instead.
+   */
+  showAt?: keyof Theme.BreakpointsInterface
+}
 
 type ConditionalWrapperProps = {
   condition: boolean
@@ -47,37 +56,44 @@ const ConditionalWrapper: FunctionComponent<ConditionalWrapperProps> = ({
 const FooterSection: FunctionComponent<FooterContentProps> = ({
   title,
   ssr,
+  toggleAt = 'tabletM',
+  showAt,
+  hideAt,
   children,
-  ...otherProps
-}) => (
-  <>
-    <ConditionalWrapper
-      condition={!ssr}
-      wrapper={(wrapperChildren) => (
-        <Hidden minBreakpoint="tabletM">{wrapperChildren}</Hidden>
-      )}
-    >
-      <StyledFooterToggle
-        ToggleHandler={ToggleFooterHeader}
-        title={title}
-        align="left"
-        {...otherProps}
+}) => {
+  const breakpoint = showAt || hideAt || toggleAt
+
+  return (
+    <>
+      <ConditionalWrapper
+        condition={!ssr}
+        wrapper={(wrapperChildren) => (
+          <Hidden minBreakpoint={breakpoint}>{wrapperChildren}</Hidden>
+        )}
       >
-        <FooterContentWrapper>{children}</FooterContentWrapper>
-      </StyledFooterToggle>
-    </ConditionalWrapper>
-    <ConditionalWrapper
-      condition={!ssr}
-      wrapper={(wrapperChildren) => (
-        <Hidden maxBreakpoint="tabletM">{wrapperChildren}</Hidden>
-      )}
-    >
-      <FooterContentWrapper ssr={ssr}>
-        <FooterHeading>{title}</FooterHeading>
-        {children}
-      </FooterContentWrapper>
-    </ConditionalWrapper>
-  </>
-)
+        <StyledFooterToggle
+          ToggleHandler={ToggleFooterHeader}
+          title={title}
+          align="left"
+          ssr={ssr}
+          breakpoint={breakpoint}
+        >
+          <FooterContentWrapper>{children}</FooterContentWrapper>
+        </StyledFooterToggle>
+      </ConditionalWrapper>
+      <ConditionalWrapper
+        condition={!ssr}
+        wrapper={(wrapperChildren) => (
+          <Hidden maxBreakpoint={breakpoint}>{wrapperChildren}</Hidden>
+        )}
+      >
+        <FooterContentWrapper ssr={ssr} breakpoint={breakpoint}>
+          <FooterHeading>{title}</FooterHeading>
+          {children}
+        </FooterContentWrapper>
+      </ConditionalWrapper>
+    </>
+  )
+}
 
 export default FooterSection

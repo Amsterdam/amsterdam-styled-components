@@ -1,24 +1,27 @@
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing, svgFill, breakpoint } from '../../utils'
+import { Theme } from '../../types'
 import FooterHeading from './FooterHeading'
 import IconStyle from '../Icon'
 import Button from '../Button'
 import { Toggle } from '../Toggle'
 
-type SsrProp = {
+type FooterProps = {
   ssr?: boolean
+  breakpoint?: keyof Theme.BreakpointsInterface
 }
 
-const FooterContentWrapper = styled.div<SsrProp>`
+const FooterContentWrapper = styled.div<FooterProps>`
   display: flex;
   flex: 1;
   flex-direction: column;
   color: ${themeColor('tint', 'level1')};
 
-  ${({ ssr }) =>
+  ${({ ssr, breakpoint: breakPointstring }) =>
     ssr &&
+    breakPointstring &&
     css`
-      @media screen and ${breakpoint('max-width', 'tabletM')} {
+      @media screen and ${breakpoint('max-width', breakPointstring)} {
         display: none;
       }
     `}
@@ -50,13 +53,14 @@ const StyledButton = styled(Button)`
   }
 `
 
-const StyledFooterToggle = styled(Toggle)<SsrProp>`
+const StyledFooterToggle = styled(Toggle)<FooterProps>`
   margin-bottom: ${themeSpacing(3)};
 
-  ${({ ssr }) =>
+  ${({ ssr, breakpoint: breakPointstring }) =>
     ssr &&
+    breakPointstring &&
     css`
-      @media screen and ${breakpoint('min-width', 'tabletM')} {
+      @media screen and ${breakpoint('min-width', breakPointstring)} {
         display: none;
       }
     `}
