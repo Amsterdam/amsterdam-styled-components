@@ -14,7 +14,14 @@ import {
 
 type FooterContentProps = {
   title?: string
+  ssr?: boolean
 } & ShowHideTypes
+
+type ConditionalWrapperProps = {
+  condition: boolean
+  wrapper: (wrapperChildren: JSX.Element) => JSX.Element
+  children: JSX.Element
+}
 
 const ToggleFooterHeader: FunctionComponent<ToggleHandlerProps> = ({
   open,
@@ -31,13 +38,25 @@ const ToggleFooterHeader: FunctionComponent<ToggleHandlerProps> = ({
   </StyledButton>
 )
 
+const ConditionalWrapper: FunctionComponent<ConditionalWrapperProps> = ({
+  condition,
+  wrapper,
+  children,
+}) => (condition ? wrapper(children) : children)
+
 const FooterSection: FunctionComponent<FooterContentProps> = ({
   title,
+  ssr,
   children,
   ...otherProps
 }) => (
   <>
-    <Hidden minBreakpoint="tabletM">
+    <ConditionalWrapper
+      condition={!ssr}
+      wrapper={(wrapperChildren) => (
+        <Hidden minBreakpoint="tabletM">{wrapperChildren}</Hidden>
+      )}
+    >
       <StyledFooterToggle
         ToggleHandler={ToggleFooterHeader}
         title={title}
@@ -46,13 +65,18 @@ const FooterSection: FunctionComponent<FooterContentProps> = ({
       >
         <FooterContentWrapper>{children}</FooterContentWrapper>
       </StyledFooterToggle>
-    </Hidden>
-    <Hidden maxBreakpoint="tabletM">
-      <FooterContentWrapper>
+    </ConditionalWrapper>
+    <ConditionalWrapper
+      condition={!ssr}
+      wrapper={(wrapperChildren) => (
+        <Hidden maxBreakpoint="tabletM">{wrapperChildren}</Hidden>
+      )}
+    >
+      <FooterContentWrapper ssr={ssr}>
         <FooterHeading>{title}</FooterHeading>
         {children}
       </FooterContentWrapper>
-    </Hidden>
+    </ConditionalWrapper>
   </>
 )
 

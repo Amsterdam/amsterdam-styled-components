@@ -1,15 +1,27 @@
-import styled from 'styled-components'
-import { themeColor, themeSpacing, svgFill } from '../../utils'
+import styled, { css } from 'styled-components'
+import { themeColor, themeSpacing, svgFill, breakpoint } from '../../utils'
 import FooterHeading from './FooterHeading'
 import IconStyle from '../Icon'
 import Button from '../Button'
 import { Toggle } from '../Toggle'
 
-const FooterContentWrapper = styled.div`
+type SsrProp = {
+  ssr?: boolean
+}
+
+const FooterContentWrapper = styled.div<SsrProp>`
   display: flex;
   flex: 1;
   flex-direction: column;
   color: ${themeColor('tint', 'level1')};
+
+  ${({ ssr }) =>
+    ssr &&
+    css`
+      @media screen and ${breakpoint('max-width', 'tabletM')} {
+        display: none;
+      }
+    `}
 `
 
 const StyledFooterHeading = styled(FooterHeading)`
@@ -38,8 +50,16 @@ const StyledButton = styled(Button)`
   }
 `
 
-const StyledFooterToggle = styled(Toggle)`
+const StyledFooterToggle = styled(Toggle)<SsrProp>`
   margin-bottom: ${themeSpacing(3)};
+
+  ${({ ssr }) =>
+    ssr &&
+    css`
+      @media screen and ${breakpoint('min-width', 'tabletM')} {
+        display: none;
+      }
+    `}
 
   ${FooterContentWrapper} {
     margin-top: ${themeSpacing(2)};
