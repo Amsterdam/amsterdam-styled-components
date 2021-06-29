@@ -1,20 +1,22 @@
 version: 2
 updates:
 - package-ecosystem: npm
-  directory: "/examples/create-react-app"
+  directory: "/"
   schedule:
     interval: weekly
-  labels:
-  - dependencies
-  - examples
 - package-ecosystem: npm
-  directory: "/"
+  directory: "/packages/asc-assets"
+  schedule:
+    interval: weekly
+- package-ecosystem: npm
+  directory: "/packages/asc-ui"
+  schedule:
+    interval: weekly
+- package-ecosystem: npm
+  directory: "/examples/create-react-app"
   schedule:
     interval: weekly
 - package-ecosystem: npm
   directory: "/examples/nextjs"
   schedule:
     interval: weekly
-  labels:
-  - dependencies
-  - examples

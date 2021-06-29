@@ -26,6 +26,8 @@ import {
 } from './components/CustomHTMLBlock'
 import Divider from './components/Divider'
 import DocumentCover from './components/DocumentCover'
+import Datepicker, { DatepickerStyle } from './components/Datepicker'
+
 import {
   EditorialBody,
   EditorialContent,
@@ -118,6 +120,7 @@ import { perceivedLoading } from './utils/themeUtils'
 export {
   useDebounce,
   useActionOnEscape,
+  useClickOutside,
   useEdgeDetection,
   useFocus,
   useFocusWithArrows,
@@ -141,6 +144,7 @@ export {
 export { constants }
 export { perceivedLoading }
 // Components
+export { Datepicker, DatepickerStyle }
 export { Quote, QuoteStyle }
 export {
   Accordion,

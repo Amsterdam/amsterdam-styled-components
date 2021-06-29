@@ -62,6 +62,7 @@ const Checkbox = forwardRef<
       >
         <CheckboxIconStyle
           {...{ disabled, checked, error, indeterminate }}
+          data-testid="checkboxIcon"
           size={15}
         >
           {!checked && indeterminate && <Indeterminate />}

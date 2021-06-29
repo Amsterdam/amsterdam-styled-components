@@ -1,5 +1,5 @@
 import { createRef } from 'react'
-import { render, fireEvent } from '@testing-library/react'
+import { render, fireEvent, screen } from '@testing-library/react'
 import Checkbox from './Checkbox'
 import { ascDefaultTheme, ThemeProvider } from '../../theme'
 import { themeColor } from '../../utils'
@@ -7,14 +7,14 @@ import { themeColor } from '../../utils'
 describe('Checkbox', () => {
   it('should toggle checked / not checked', () => {
     const onChangeMock = jest.fn()
-    const { container } = render(
+    render(
       <ThemeProvider>
         <Checkbox onChange={onChangeMock} />
       </ThemeProvider>,
     )
 
-    const checkBox = container.querySelector('input')
-    const icon = container.querySelector('span')
+    const checkBox = screen.getByRole('checkbox')
+    const icon = screen.getByTestId('checkboxIcon')
 
     expect(icon).toHaveStyleRule(
       'background-color',
