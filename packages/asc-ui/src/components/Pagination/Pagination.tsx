@@ -1,151 +1,112 @@
-import React from 'react'
+import {
+  FunctionComponent,
+  HTMLAttributes,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
-import PaginationStyle, {
-  Props,
+import {
   PageNumberStyle,
   PreviousButton,
   NextButton,
+  ListItem,
+  List,
 } from './PaginationStyle'
 
-const PageNumber = ({
-  pageNumber,
-  currentPage,
-  onPageChange,
-}: {
-  pageNumber: number
-  currentPage: number
-  onPageChange: (page: number) => void
-}) => {
-  const isCurrent = pageNumber === currentPage
-  return (
-    <PageNumberStyle
-      aria-label={
-        isCurrent ? `Pagina ${pageNumber}` : `Ga naar pagina ${pageNumber}`
-      }
-      aria-current={isCurrent}
-      data-testid={`btn-page-${pageNumber}`}
-      onClick={() => onPageChange(pageNumber)}
-      isCurrent={isCurrent}
-      tabIndex={isCurrent ? -1 : 0}
-    >
-      {pageNumber}
-    </PageNumberStyle>
-  )
+export interface PaginationProps {
+  /**
+   * The current page number. Page numbers start with `1`.
+   */
+  page: number
+  /**
+   * The number of items per page.
+   */
+  pageSize: number
+  /**
+   * The number of items in your paginated collection.
+   *
+   * Note that this is not the same as the number of pages, but will be used to calculate it instead.
+   */
+  collectionSize: number
+  /**
+   * Callback triggered when interaction with the pager changes the page number.
+   */
+  onPageChange?: (page: number) => void
+  /**
+   * The number of pages to show in the pagination
+   */
+  paginationLength?: number
 }
 
-const Unphased = ({
-  totalPages,
-  currentPage,
-  onPageChange,
-}: {
-  totalPages: number
-  currentPage: number
-  onPageChange: (page: number) => void
-}) => {
-  return (
-    <>
-      {Array.from(Array(totalPages).keys()).map((pageNumber) => (
-        <li key={`pag-${pageNumber + 1}`}>
-          <PageNumber
-            pageNumber={pageNumber + 1}
-            currentPage={currentPage}
-            onPageChange={onPageChange}
-          />
-        </li>
-      ))}
-    </>
-  )
-}
-
-const Phased = ({
-  totalPages,
-  currentPage,
-  onPageChange,
-}: {
-  totalPages: number
-  currentPage: number
-  onPageChange: (page: number) => void
-}) => {
-  const [pageCluster, setPageCluster] = React.useState<number[]>([])
-
-  React.useEffect(() => {
-    const cluster = [currentPage]
-    if (currentPage > 2) {
-      cluster.unshift(currentPage - 1)
-    }
-    if (totalPages <= 5 || currentPage < totalPages - 1) {
-      cluster.push(currentPage + 1)
-    }
-    setPageCluster(cluster)
-  }, [currentPage, totalPages])
-
-  return (
-    <>
-      {currentPage > 1 && (
-        <li key="pag-1">
-          <PageNumber
-            pageNumber={1}
-            currentPage={currentPage}
-            onPageChange={onPageChange}
-          />
-        </li>
-      )}
-      {currentPage > 3 && (
-        <li
-          key="pag-spacer-1"
-          dangerouslySetInnerHTML={{ __html: '&mldr;' }}
-          data-testid="spacer-1"
-        />
-      )}
-      {pageCluster.map((num) => (
-        <li key={`pag-${num}`}>
-          <PageNumber
-            pageNumber={num}
-            currentPage={currentPage}
-            onPageChange={onPageChange}
-          />
-        </li>
-      ))}
-      {currentPage < totalPages - 2 && (
-        // eslint-disable-next-line react/no-danger
-        <li
-          key="pag-spacer-2"
-          dangerouslySetInnerHTML={{ __html: '&mldr;' }}
-          data-testid="spacer-2"
-        />
-      )}
-      {currentPage < totalPages && (
-        <li key={`pag-${totalPages}`}>
-          <PageNumber
-            pageNumber={totalPages}
-            currentPage={currentPage}
-            onPageChange={onPageChange}
-          />
-        </li>
-      )}
-    </>
-  )
-}
-
-const Pagination: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
-  page = 1,
+const Pagination: FunctionComponent<
+  PaginationProps & HTMLAttributes<HTMLElement>
+> = ({
   collectionSize,
-  pageSize = 10,
   onPageChange,
+  page = 1,
+  pageSize = 10,
+  paginationLength = 7,
   ...otherProps
 }) => {
-  const [currentPage, setCurrentPage] = React.useState<number>(page)
-  const [totalPages, setTotalPages] = React.useState<number>(
+  const [currentPage, setCurrentPage] = useState<number>(page)
+  const [totalPages, setTotalPages] = useState<number>(
     Math.ceil(collectionSize / pageSize),
   )
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (onPageChange !== undefined) onPageChange(currentPage)
   }, [currentPage, onPageChange])
 
-  React.useEffect(() => {
+  useEffect(() => {
     setTotalPages(Math.ceil(collectionSize / pageSize))
   }, [collectionSize, pageSize])
+
+  /**
+   * This returns an array of the range, including spacers
+   *
+   * @example
+   * currentPage = 4, totalPages = 7
+   * // returns [1, 2, 3, 4, 5, 6, 7]
+   *
+   * @example
+   * currentPage = 5, totalPages = 100
+   * // returns [1, 'firstSpacer', 4, 5, 6, 'lastSpacer', 100]
+   *
+   * @example
+   * currentPage = 97, totalPages = 100
+   * // returns [1, 'firstSpacer', 96, 97, 98, 99, 100]
+   */
+  const range = useMemo(() => {
+    const min = 1
+    let paginatedLength = paginationLength
+    if (paginationLength > totalPages) {
+      paginatedLength = totalPages
+    }
+
+    let start = currentPage - Math.floor(paginatedLength / 2)
+    start = Math.max(start, min)
+    start = Math.min(start, min + totalPages - paginatedLength)
+
+    return Array.from({ length: paginatedLength }, (el, i) => start + i).reduce<
+      Array<string | number>
+    >((acc, pageNr, index) => {
+      if (index === 0 && pageNr !== 1) {
+        return [1, 'firstSpacer']
+      }
+      if (index === paginationLength - 2 && currentPage < totalPages - 2) {
+        return [...acc, 'lastSpacer', totalPages]
+      }
+      // Skip a number when spacer is already add
+      if (
+        (acc.includes('firstSpacer') && index === 1) ||
+        (acc.includes('lastSpacer') && index === paginationLength - 1)
+      ) {
+        return acc
+      }
+      return [...acc, pageNr]
+    }, [])
+  }, [currentPage, totalPages, paginationLength])
 
   const onPrevious = () => {
     setCurrentPage(currentPage - 1)
@@ -156,63 +117,60 @@ const Pagination: React.FC<Props & React.HTMLAttributes<HTMLElement>> = ({
   }
 
   return (
-    <PaginationStyle
-      collectionSize={collectionSize}
-      page={page}
-      pageSize={pageSize}
-      {...otherProps}
-      aria-label="paginatie navigatie"
-      role="navigation"
-    >
-      <ul>
-        {currentPage > 1 && (
-          <li key="pag-previous">
-            <PreviousButton
-              type="button"
-              aria-label="Vorige pagina"
-              tabIndex={0}
-              data-testid="btn-previous"
-              onClick={onPrevious}
-              className="previous-page"
-              iconLeft={<ChevronLeft />}
-              variant="textButton"
-            >
-              vorige
-            </PreviousButton>
-          </li>
-        )}
-        {totalPages <= 5 && (
-          <Unphased
-            totalPages={totalPages}
-            currentPage={currentPage}
-            onPageChange={(pageNumber) => setCurrentPage(pageNumber)}
-          />
-        )}
-        {totalPages > 5 && (
-          <Phased
-            totalPages={totalPages}
-            currentPage={currentPage}
-            onPageChange={(pageNumber) => setCurrentPage(pageNumber)}
-          />
-        )}
-        {currentPage < totalPages && (
-          <li key="pag-next">
-            <NextButton
-              type="button"
-              aria-label="Volgende pagina"
-              tabIndex={0}
-              data-testid="btn-next"
-              onClick={onNext}
-              className="next-page"
-              iconRight={<ChevronRight />}
-              variant="textButton"
-            >
-              volgende
-            </NextButton>
-          </li>
-        )}
-      </ul>
-    </PaginationStyle>
+    <nav aria-label="paginering" role="navigation" {...otherProps}>
+      <List>
+        <ListItem>
+          <PreviousButton
+            type="button"
+            aria-label="Vorige pagina"
+            tabIndex={0}
+            data-testid="btn-previous"
+            onClick={onPrevious}
+            iconLeft={<ChevronLeft />}
+            variant="textButton"
+            disabled={currentPage === 1}
+          >
+            vorige
+          </PreviousButton>
+        </ListItem>
+        {range.map((pageNumberOrSpacer) => (
+          <ListItem key={`pag-${pageNumberOrSpacer}`}>
+            {typeof pageNumberOrSpacer === 'number' ? (
+              <PageNumberStyle
+                aria-label={
+                  pageNumberOrSpacer === currentPage
+                    ? `Pagina ${pageNumberOrSpacer}`
+                    : `Ga naar pagina ${pageNumberOrSpacer}`
+                }
+                aria-current={pageNumberOrSpacer === currentPage}
+                data-testid={`btn-page-${pageNumberOrSpacer}`}
+                onClick={() => setCurrentPage(pageNumberOrSpacer)}
+                isCurrent={pageNumberOrSpacer === currentPage}
+                tabIndex={pageNumberOrSpacer === currentPage ? -1 : 0}
+              >
+                {pageNumberOrSpacer}
+              </PageNumberStyle>
+            ) : (
+              <li data-testid={pageNumberOrSpacer}>{'\u2026'}</li>
+            )}
+          </ListItem>
+        ))}
+        <ListItem>
+          <NextButton
+            type="button"
+            aria-label="Volgende pagina"
+            tabIndex={0}
+            data-testid="btn-next"
+            onClick={onNext}
+            iconRight={<ChevronRight />}
+            variant="textButton"
+            disabled={currentPage === totalPages}
+          >
+            volgende
+          </NextButton>
+        </ListItem>
+      </List>
+    </nav>
   )
 }
 

@@ -26,18 +26,20 @@ import { Pagination } from '@amsterdam/asc-ui'
 The Design System team has placed an item on their backlog to decide on how this pagination bar should behave on
 smaller viewports. With the current spacing the pagination bar does not fit on for example 320px.
 
-## Unphased
+## Default
 
 <Preview>
-  <Story name="Unphased">
-    <Pagination collectionSize={50} pageSize={10} page={1} />
+  <Story name="Default">
+    <Pagination collectionSize={30} pageSize={10} page={1} />
   </Story>
 </Preview>
 
-## Phased
+## Lots of pages
 
 <Preview>
-  <Story name="Phased">
-    <Pagination collectionSize={1000} pageSize={10} page={2} />
+  <Story name="Lots of pages">
+    <Pagination collectionSize={300} pageSize={10} page={2} />
+    <Pagination collectionSize={300} pageSize={10} page={20} />
+    <Pagination collectionSize={300} pageSize={10} page={30} />
   </Story>
 </Preview>

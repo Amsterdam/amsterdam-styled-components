@@ -1,34 +1,25 @@
-import React, { HTMLAttributes } from 'react'
 import styled, { css } from 'styled-components'
-import { Props as CompactPagerProps } from '../CompactPager/CompactPager'
 import { svgFill, themeColor, themeSpacing } from '../../utils'
 import Button from '../Button'
 
-export type Props = CompactPagerProps
-
-export default styled.nav<Props & HTMLAttributes<HTMLElement>>`
-  ul {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-  }
-
-  li {
-    display: list-item;
-    margin: 0 ${themeSpacing(4)} 0 0;
-  }
+export const List = styled.ul`
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  list-style: none;
+  padding: 0;
 `
 
-export type ButtonProps = {
-  isCurrent: boolean
-}
+export const ListItem = styled.li`
+  min-width: 54px;
+  display: inline-flex;
+  justify-content: center;
+`
 
 const baseButtonStyles = css`
   color: ${themeColor('tint', 'level7')};
 
-  &:hover {
+  &:not(:disabled):hover {
     color: ${themeColor('secondary', 'main')};
     text-decoration: underline;
   }
@@ -38,7 +29,7 @@ const baseButtonStyles = css`
 
 export const PageNumberStyle = styled.button.attrs({
   type: 'button',
-})<ButtonProps & React.HTMLAttributes<HTMLButtonElement>>`
+})<ButtonProps>`
   cursor: pointer;
   font-size: 16px;
   font-weight: 400;
@@ -49,19 +40,20 @@ export const PageNumberStyle = styled.button.attrs({
   background: none;
   text-align: center;
   ${baseButtonStyles}
-  ${(props) =>
-    props.isCurrent &&
+  ${({ isCurrent }) =>
+    isCurrent &&
     css`
-      cursor: default;
-      pointer-events: none;
       background-color: ${themeColor('tint', 'level5')};
       color: ${themeColor('bright', 'main')};
+      &:not(:disabled):hover {
+        color: ${themeColor('bright', 'main')};
+      }
     `};
-
-  &:active {
-    background: none;
-  }
 `
+
+export interface ButtonProps {
+  isCurrent: boolean
+}
 
 export const PreviousButton = styled(Button)`
   ${baseButtonStyles}
