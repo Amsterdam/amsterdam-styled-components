@@ -1,0 +1,59 @@
+import { action } from '@storybook/addon-actions'
+import { withKnobs, boolean } from '@storybook/addon-knobs'
+import { Meta, Story, Preview } from '@storybook/addon-docs'
+import { Switch } from '@amsterdam/asc-ui'
+
+<Meta title="UI/Form/Switch" component={Switch} decorators={[withKnobs]} />
+
+# Switch
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/647350-toggle)
+
+**Component status: experimental**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <Switch
+      onChange={(e) => {
+        action(`switch pressed ${e.target.checked}`)(e)
+      }}
+    />
+  </Story>
+</Preview>
+
+## With label
+
+To comply with WCAG, please use labels
+
+<Preview>
+  <Story name="With label">
+    <label htmlFor="checkBox">
+      {/* eslint-disable-line jsx-a11y/label-has-associated-control */}
+      <Switch
+        id="checkBox"
+        defaultChecked="checked"
+        onChange={(e) => {
+          action(`switch pressed ${e.target.checked}`)(e)
+        }}
+      />
+      With a label
+    </label>
+  </Story>
+</Preview>
+
+## Controlled state
+
+Please check the knobs tab
+
+<Preview>
+  <Story name="Controlled state">
+    <Switch
+      checked={boolean('Toggle switch', true)}
+      onChange={action(
+        'switch pressed, but please note the component is controlled! Check the knobs tab to programmatically toggle',
+      )}
+    />
+  </Story>
+</Preview>
