@@ -16,7 +16,6 @@ const FooterContentWrapper = styled.div<FooterProps>`
   flex: 1;
   flex-direction: column;
   color: ${themeColor('tint', 'level1')};
-
   ${({ ssr, breakpoint: breakPointstring }) =>
     ssr &&
     breakPointstring &&
@@ -55,7 +54,6 @@ const StyledButton = styled(Button)`
 
 const StyledFooterToggle = styled(Toggle)<FooterProps>`
   margin-bottom: ${themeSpacing(3)};
-
   ${({ ssr, breakpoint: breakPointstring }) =>
     ssr &&
     breakPointstring &&
