@@ -75,6 +75,7 @@ import {
   MenuToggle,
 } from './components/Menu'
 import Modal from './components/Modal'
+import { Pagination } from './components/Pagination'
 import Paragraph, { ParagraphStyle } from './components/Paragraph'
 import Portal from './components/Portal'
 import Quote, { QuoteStyle } from './components/Quote'
@@ -196,6 +197,7 @@ export {
   MenuToggle,
   MenuButton,
   Modal,
+  Pagination,
   Portal,
   Radio,
   RadioGroup,
