@@ -16,6 +16,8 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Added: `ssr` and `toggleAt` props to `FooterSection` component
+- Deprecated: `showAt` and `hideAt` props of `FooterSection` component
 - Fixed: unwanted props bleeding through to HTML attributes when using `Icon` and `Spinner`
 - Added: `Switch` component!️
 
