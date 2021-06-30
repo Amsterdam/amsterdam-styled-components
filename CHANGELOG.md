@@ -19,7 +19,6 @@ Prefix the change with one of these keywords:
 - Added: `ssr` and `toggleAt` props to `FooterSection` component
 - Deprecated: `showAt` and `hideAt` props of `FooterSection` component
 - Fixed: unwanted props bleeding through to HTML attributes when using `Icon` and `Spinner`
-- Added: `Switch` component!️
 - Added: `Pagination` component
 
 ## [0.30.0]
@@ -32,6 +31,7 @@ Prefix the change with one of these keywords:
 - Removed: `ViewerContainer` component
 - Added: Datepicker component
 - Changed: `Radio` and `Checkbox` component HTML div tag to span
+- Added: `Switch` component
 
 ## [0.29.3]
 
