@@ -65,7 +65,7 @@ const Pagination: FunctionComponent<
         'paginationLength prop in Pagination component should be at least 5. If you need a smaller pagination component, please use the CompactPager component. Now falling back to default value',
       )
     }
-  }, [])
+  }, [paginationLength])
 
   /**
    * This returns an array of the range, including spacers
