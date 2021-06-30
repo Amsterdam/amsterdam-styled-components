@@ -1,10 +1,4 @@
-import {
-  FunctionComponent,
-  HTMLAttributes,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { FunctionComponent, HTMLAttributes, useMemo, useState } from 'react'
 import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
 import {
   PageNumberStyle,
@@ -50,17 +44,11 @@ const Pagination: FunctionComponent<
   ...otherProps
 }) => {
   const [currentPage, setCurrentPage] = useState<number>(page)
-  const [totalPages, setTotalPages] = useState<number>(
-    Math.ceil(collectionSize / pageSize),
+
+  const totalPages = useMemo(
+    () => Math.ceil(collectionSize / pageSize),
+    [collectionSize, pageSize],
   )
-
-  useEffect(() => {
-    if (onPageChange !== undefined) onPageChange(currentPage)
-  }, [currentPage, onPageChange])
-
-  useEffect(() => {
-    setTotalPages(Math.ceil(collectionSize / pageSize))
-  }, [collectionSize, pageSize])
 
   /**
    * This returns an array of the range, including spacers
@@ -94,7 +82,11 @@ const Pagination: FunctionComponent<
       if (index === 0 && pageNr !== 1) {
         return [1, 'firstSpacer']
       }
-      if (index === paginationLength - 2 && currentPage < totalPages - 2) {
+      if (
+        totalPages > paginationLength &&
+        index === paginationLength - 2 &&
+        currentPage < totalPages - 2
+      ) {
         return [...acc, 'lastSpacer', totalPages]
       }
       // Skip a number when spacer is already add
@@ -108,12 +100,17 @@ const Pagination: FunctionComponent<
     }, [])
   }, [currentPage, totalPages, paginationLength])
 
+  const onChangePage = (newPage: number) => {
+    if (onPageChange !== undefined) onPageChange(newPage)
+    setCurrentPage(newPage)
+  }
+
   const onPrevious = () => {
-    setCurrentPage(currentPage - 1)
+    onChangePage(currentPage - 1)
   }
 
   const onNext = () => {
-    setCurrentPage(currentPage + 1)
+    onChangePage(currentPage + 1)
   }
 
   return (
@@ -124,7 +121,7 @@ const Pagination: FunctionComponent<
             type="button"
             aria-label="Vorige pagina"
             tabIndex={0}
-            data-testid="btn-previous"
+            data-testid="previousButton"
             onClick={onPrevious}
             iconLeft={<ChevronLeft />}
             variant="textButton"
@@ -133,9 +130,9 @@ const Pagination: FunctionComponent<
             vorige
           </PreviousButton>
         </ListItem>
-        {range.map((pageNumberOrSpacer) => (
-          <ListItem key={`pag-${pageNumberOrSpacer}`}>
-            {typeof pageNumberOrSpacer === 'number' ? (
+        {range.map((pageNumberOrSpacer) =>
+          typeof pageNumberOrSpacer === 'number' ? (
+            <ListItem key={`pag-${pageNumberOrSpacer}`}>
               <PageNumberStyle
                 aria-label={
                   pageNumberOrSpacer === currentPage
@@ -143,24 +140,26 @@ const Pagination: FunctionComponent<
                     : `Ga naar pagina ${pageNumberOrSpacer}`
                 }
                 aria-current={pageNumberOrSpacer === currentPage}
-                data-testid={`btn-page-${pageNumberOrSpacer}`}
-                onClick={() => setCurrentPage(pageNumberOrSpacer)}
+                data-testid={`pageButton-${pageNumberOrSpacer}`}
+                onClick={() => onChangePage(pageNumberOrSpacer)}
                 isCurrent={pageNumberOrSpacer === currentPage}
                 tabIndex={pageNumberOrSpacer === currentPage ? -1 : 0}
               >
                 {pageNumberOrSpacer}
               </PageNumberStyle>
-            ) : (
-              <li data-testid={pageNumberOrSpacer}>{'\u2026'}</li>
-            )}
-          </ListItem>
-        ))}
+            </ListItem>
+          ) : (
+            <ListItem key={pageNumberOrSpacer} data-testid={pageNumberOrSpacer}>
+              {'\u2026'}
+            </ListItem>
+          ),
+        )}
         <ListItem>
           <NextButton
             type="button"
             aria-label="Volgende pagina"
             tabIndex={0}
-            data-testid="btn-next"
+            data-testid="nextButton"
             onClick={onNext}
             iconRight={<ChevronRight />}
             variant="textButton"

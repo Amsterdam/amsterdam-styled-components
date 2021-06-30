@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { svgFill, themeColor, themeSpacing } from '../../utils'
+import { svgFill, themeColor } from '../../utils'
 import Button from '../Button'
 
 export const List = styled.ul`
@@ -34,7 +34,7 @@ export const PageNumberStyle = styled.button.attrs({
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
-  padding: 0 ${themeSpacing(3)};
+  min-width: 32px;
   appearance: none;
   border: none;
   background: none;
