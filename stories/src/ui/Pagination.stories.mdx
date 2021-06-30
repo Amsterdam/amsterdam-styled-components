@@ -45,3 +45,22 @@ smaller viewports. With the current spacing the pagination bar does not fit on f
     <Pagination collectionSize={300} pageSize={10} page={30} />
   </Story>
 </Preview>
+
+## Custom pagination length
+
+<Preview>
+  <Story name="Custom pagination length">
+    <Pagination
+      collectionSize={300}
+      pageSize={10}
+      page={2}
+      paginationLength={12}
+    />
+    <Pagination
+      collectionSize={300}
+      pageSize={10}
+      page={20}
+      paginationLength={5}
+    />
+  </Story>
+</Preview>

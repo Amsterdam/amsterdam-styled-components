@@ -106,4 +106,20 @@ describe('Pagination', () => {
     expect(screen.getByTestId('pageButton-6')).toHaveAttribute('tabIndex', '-1')
     expect(screen.getByTestId('pageButton-5')).toHaveAttribute('tabIndex', '0')
   })
+
+  it('should show a warning when prop paginationLength is < 5', () => {
+    jest.spyOn(global.console, 'warn')
+    render(
+      <Pagination
+        page={4}
+        pageSize={10}
+        collectionSize={100}
+        paginationLength={4}
+      />,
+    )
+    // eslint-disable-next-line no-console
+    expect(console.warn).toHaveBeenCalledWith(
+      'paginationLength prop in Pagination component should be at least 5. If you need a smaller pagination component, please use the CompactPager component. Now falling back to default value',
+    )
+  })
 })

@@ -1,4 +1,10 @@
-import { FunctionComponent, HTMLAttributes, useMemo, useState } from 'react'
+import {
+  FunctionComponent,
+  HTMLAttributes,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
 import {
   PageNumberStyle,
@@ -33,6 +39,8 @@ export interface PaginationProps {
   paginationLength?: number
 }
 
+const DEFAULT_PAGINATION_LENGTH = 7
+
 const Pagination: FunctionComponent<
   PaginationProps & HTMLAttributes<HTMLElement>
 > = ({
@@ -40,7 +48,7 @@ const Pagination: FunctionComponent<
   onPageChange,
   page = 1,
   pageSize = 10,
-  paginationLength = 7,
+  paginationLength = DEFAULT_PAGINATION_LENGTH,
   ...otherProps
 }) => {
   const [currentPage, setCurrentPage] = useState<number>(page)
@@ -49,6 +57,15 @@ const Pagination: FunctionComponent<
     () => Math.ceil(collectionSize / pageSize),
     [collectionSize, pageSize],
   )
+
+  useEffect(() => {
+    if (paginationLength < 5) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'paginationLength prop in Pagination component should be at least 5. If you need a smaller pagination component, please use the CompactPager component. Now falling back to default value',
+      )
+    }
+  }, [])
 
   /**
    * This returns an array of the range, including spacers
@@ -67,7 +84,8 @@ const Pagination: FunctionComponent<
    */
   const range = useMemo(() => {
     const min = 1
-    let paginatedLength = paginationLength
+    let paginatedLength =
+      paginationLength < 5 ? DEFAULT_PAGINATION_LENGTH : paginationLength
     if (paginationLength > totalPages) {
       paginatedLength = totalPages
     }
@@ -83,8 +101,8 @@ const Pagination: FunctionComponent<
         return [1, 'firstSpacer']
       }
       if (
-        totalPages > paginationLength &&
-        index === paginationLength - 2 &&
+        totalPages > paginatedLength &&
+        index === paginatedLength - 2 &&
         currentPage < totalPages - 2
       ) {
         return [...acc, 'lastSpacer', totalPages]
@@ -92,7 +110,7 @@ const Pagination: FunctionComponent<
       // Skip a number when spacer is already add
       if (
         (acc.includes('firstSpacer') && index === 1) ||
-        (acc.includes('lastSpacer') && index === paginationLength - 1)
+        (acc.includes('lastSpacer') && index === paginatedLength - 1)
       ) {
         return acc
       }
