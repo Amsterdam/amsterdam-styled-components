@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
   },
-  "version": "0.30.0",
+  "version": "0.31.0",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -22,7 +22,7 @@
   "sideEffects": false,
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@amsterdam/asc-assets": "^0.30.0",
+    "@amsterdam/asc-assets": "^0.31.0",
     "classnames": "^2.3.1",
     "deepmerge": "^4.2.2",
     "polished": "^4.1.3",
