@@ -14,7 +14,7 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## Unreleased
+## [0.31.0]
 
 - Added: `ssr` and `toggleAt` props to `FooterSection` component
 - Deprecated: `showAt` and `hideAt` props of `FooterSection` component
