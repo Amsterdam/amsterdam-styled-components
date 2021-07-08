@@ -41,6 +41,9 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  overflow-wrap: anywhere;
+  overflow: hidden;
+  margin-right: ${themeSpacing(4)};
 
   & > * {
     &:last-child {
