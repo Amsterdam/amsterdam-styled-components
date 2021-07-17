@@ -9,6 +9,10 @@ export const WithAControlledState = () => {
       <TextField
         label="Controlled component"
         onChange={(e) => setValue(e.target.value)}
+        value={value}
+        onClear={() => {
+          setValue('')
+        }}
       />
       <br /> {value ? `The user types: ${value}` : 'Waiting for user input...'}
     </Fragment>
@@ -98,10 +102,10 @@ Single line text input field. Use the Textarea component for multi line text inp
   </Story>
 </Preview>
 
-## With a controlled state
+## With a controlled state that shows a clear button
 
 <Preview>
-  <Story name="With a controlled state">
+  <Story name="With a controlled state that shows a clear button">
     <WithAControlledState />
   </Story>
 </Preview>
