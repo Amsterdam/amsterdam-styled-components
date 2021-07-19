@@ -2,11 +2,10 @@ import { Close } from '@amsterdam/asc-assets'
 import { CSSProperties, useRef } from 'react'
 import { useUID } from 'react-uid'
 import { useFocus } from '../../utils/hooks'
-import Button from '../Button'
 import FormLabelStyle from '../FormLabelStyle'
 import Icon from '../Icon'
 import Input, { InputProps } from '../Input'
-import TextFieldStyle from './TextFieldStyle'
+import TextFieldStyle, { CloseButton, InputWrapper } from './TextFieldStyle'
 
 export interface TextFieldProps extends InputProps {
   label?: string
@@ -47,25 +46,27 @@ const TextField = ({
       >
         {label}
       </FormLabelStyle>
-      <Input
-        {...{ keepFocus, value, blurOnEscape, error }}
-        {...otherProps}
-        id={id}
-        ref={inputRef}
-      />
-      {onClear && value && (
-        <Button
-          size={30}
-          variant="blank"
-          type="button"
-          aria-label="Close"
-          onClick={() => onClear()}
-        >
-          <Icon>
-            <Close />
-          </Icon>
-        </Button>
-      )}
+      <InputWrapper>
+        <Input
+          {...{ keepFocus, value, blurOnEscape, error }}
+          {...otherProps}
+          id={id}
+          ref={inputRef}
+        />
+        {onClear && value && (
+          <CloseButton
+            size={30}
+            variant="blank"
+            type="button"
+            aria-label="Close"
+            onClick={() => onClear()}
+          >
+            <Icon>
+              <Close />
+            </Icon>
+          </CloseButton>
+        )}
+      </InputWrapper>
     </TextFieldStyle>
   )
 }
