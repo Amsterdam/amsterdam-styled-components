@@ -27,6 +27,7 @@ const colorMap: Record<
 
 export const CloseButtonWrapper = styled.div`
   float: right;
+  margin-left: ${themeSpacing(4)};
 `
 
 export const CloseButton = styled(Button)`
