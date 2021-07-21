@@ -14,6 +14,10 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## Unreleased
+
+- Fixed: close button style issues in `TextField` component
+
 ## [0.31.0]
 
 - Added: `ssr` and `toggleAt` props to `FooterSection` component
