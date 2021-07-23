@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Fixed: Long contiguous text overlaps Alert in mobile view
 - Fixed: close button style issues in `TextField` component
 
 ## [0.31.0]
