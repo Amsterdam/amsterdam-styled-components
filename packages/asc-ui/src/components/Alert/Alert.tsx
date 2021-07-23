@@ -52,6 +52,19 @@ const Alert: FunctionComponent<AlertProps & HTMLAttributes<HTMLElement>> = ({
     >
       <CompactThemeProvider>
         <ContentWrapper>
+          {dismissible && (
+            <CloseButtonWrapper>
+              <CloseButton
+                title={CLOSE_BUTTON_TITLE}
+                aria-label={CLOSE_BUTTON_TITLE}
+                size={30}
+                variant={variant}
+                onClick={handleOnDismiss}
+                iconSize={20}
+                icon={<Close />}
+              />
+            </CloseButtonWrapper>
+          )}
           {heading && (
             // @ts-ignore
             <AlertHeading forwardedAs="strong" styleAs="h3">
@@ -62,19 +75,6 @@ const Alert: FunctionComponent<AlertProps & HTMLAttributes<HTMLElement>> = ({
 
           {children}
         </ContentWrapper>
-        {dismissible && (
-          <CloseButtonWrapper>
-            <CloseButton
-              title={CLOSE_BUTTON_TITLE}
-              aria-label={CLOSE_BUTTON_TITLE}
-              size={30}
-              variant={variant}
-              onClick={handleOnDismiss}
-              iconSize={20}
-              icon={<Close />}
-            />
-          </CloseButtonWrapper>
-        )}
       </CompactThemeProvider>
     </AlertStyle>
   ) : null
