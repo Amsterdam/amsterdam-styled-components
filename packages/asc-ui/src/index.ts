@@ -102,9 +102,11 @@ import Spinner from './components/Spinner/Spinner'
 import {
   Table,
   TableCell,
-  TableHeaderCell,
-  TableResizer,
+  TableHeader,
   TableRow,
+  TableBody,
+  TableContainer,
+  TableFooter,
 } from './components/Table'
 import Tag, { TagStyle } from './components/Tag'
 import TextArea, { TextAreaStyles } from './components/TextArea'
@@ -233,10 +235,12 @@ export {
   Hidden,
   FormTitle,
   Table,
-  TableResizer,
   TableRow,
   TableCell,
-  TableHeaderCell,
+  TableHeader,
+  TableBody,
+  TableContainer,
+  TableFooter,
   ShowMoreShowLess,
 }
 
