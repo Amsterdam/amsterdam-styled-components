@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-import { themeColor } from '../../utils'
 import TableCell from './TableCell'
+import { themeColor } from '../../utils'
 
-const TableRow = styled.tr`
-  &:not(:last-child) ${TableCell} {
+const TableHeader = styled.thead`
+  ${TableCell} {
     border-bottom: 1px solid ${themeColor('tint', 'level3')};
   }
 `
 
-export default TableRow
+export default TableHeader
