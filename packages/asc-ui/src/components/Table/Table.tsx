@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import { themeColor, themeSpacing } from '../../utils'
-import TableCell from './TableCell'
+import { themeSpacing } from '../../utils'
 
 const Table = styled.table`
   display: inline-block;
@@ -10,10 +9,6 @@ const Table = styled.table`
 
   th {
     font-weight: 700;
-  }
-
-  & > *:first-child > *:first-child ${TableCell} {
-    border-top: 2px solid ${themeColor('tint', 'level4')};
   }
 `
 
