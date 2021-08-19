@@ -11,7 +11,21 @@ import {
 } from '@amsterdam/asc-ui'
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 
-<Meta title="UI/Table" component={Table} />
+<Meta
+  title="UI/Table"
+  component={Table}
+  decorators={[
+    (Item) => (
+      <div
+        style={{
+          maxWidth: '1000px',
+        }}
+      >
+        <Item />
+      </div>
+    ),
+  ]}
+/>
 
 # Table
 
