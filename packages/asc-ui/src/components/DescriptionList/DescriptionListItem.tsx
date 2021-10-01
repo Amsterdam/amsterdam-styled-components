@@ -1,4 +1,5 @@
 import type { FunctionComponent } from 'react'
+import { useMemo } from 'react'
 import {
   DescriptionListItemWrapper,
   DescriptionListTerm,
@@ -14,10 +15,20 @@ const DescriptionListItem: FunctionComponent<DescriptionListItemProps> = ({
   children,
   ...otherProps
 }) => {
+  const description = useMemo(
+    () =>
+      /* eslint-disable-next-line no-nested-ternary */
+      Array.isArray(children)
+        ? children.filter((value: any) => !!value).length
+          ? children
+          : '-'
+        : children || '-',
+    [children],
+  )
   return (
     <DescriptionListItemWrapper {...otherProps}>
       <DescriptionListTerm>{term}</DescriptionListTerm>
-      <DescriptionListDescription>{children}</DescriptionListDescription>
+      <DescriptionListDescription>{description}</DescriptionListDescription>
     </DescriptionListItemWrapper>
   )
 }
