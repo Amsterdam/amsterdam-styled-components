@@ -16,7 +16,8 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
-- Fixed: `Link` icons are now aligned properly based on line-height 
+- Fixed: `Link` icons are now aligned properly based on line-height
+- Added: Descriptionlist component
 
 ## [0.32.1]
 
