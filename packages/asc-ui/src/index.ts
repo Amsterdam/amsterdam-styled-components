@@ -121,6 +121,10 @@ import { Theme } from './types'
 
 import { perceivedLoading } from './utils/themeUtils'
 
+import DescriptionList, {
+  DescriptionListItem,
+} from './components/DescriptionList'
+
 export {
   useDebounce,
   useActionOnEscape,
@@ -242,6 +246,8 @@ export {
   TableContainer,
   TableFooter,
   ShowMoreShowLess,
+  DescriptionList,
+  DescriptionListItem,
 }
 
 export const styles = {
