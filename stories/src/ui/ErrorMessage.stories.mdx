@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import {
   ErrorMessage,
   Input,
@@ -14,7 +14,7 @@ import {
   title="UI/Form/ErrorMessage"
   component={ErrorMessage}
   decorators={[
-    (storyFn) => (
+    (StoryComponent) => (
       <div
         style={{
           display: 'flex',
@@ -23,7 +23,7 @@ import {
           alignItems: 'flex-start',
         }}
       >
-        {storyFn()}
+        <StoryComponent />
       </div>
     ),
   ]}
@@ -38,28 +38,28 @@ Used in forms if a field is invalid.
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Fragment>
       <ErrorMessage message="This is an incorrect value" />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With input
 
-<Preview>
+<Canvas>
   <Story name="With input">
     <Fragment>
       <Input error />
       <ErrorMessage message="This a required field" />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With radio
 
-<Preview>
+<Canvas>
   <Story name="With radio">
     <Fragment>
       <RadioGroup name="group-1" error>
@@ -76,11 +76,11 @@ Used in forms if a field is invalid.
       <ErrorMessage message="This a required field" />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With checkbox
 
-<Preview>
+<Canvas>
   <Story name="With checkbox">
     <Fragment>
       <Label htmlFor="error" label="Accept terms">
@@ -89,11 +89,11 @@ Used in forms if a field is invalid.
       <ErrorMessage message="This a required field" />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With select
 
-<Preview>
+<Canvas>
   <Story name="With select">
     <Fragment>
       <Select id="select-1" error>
@@ -105,4 +105,4 @@ Used in forms if a field is invalid.
       <ErrorMessage message="This a required field" />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

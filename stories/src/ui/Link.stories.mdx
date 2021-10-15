@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Link, Icon, List, ListItem, themeColor } from '@amsterdam/asc-ui'
 import styled from 'styled-components'
 import { Alert } from '@amsterdam/asc-assets'
@@ -11,7 +11,13 @@ export const Decorator = styled.div`
 <Meta
   title="UI/Typography/Link"
   component={Link}
-  decorators={[(storyFn) => <Decorator>{storyFn()}</Decorator>]}
+  decorators={[
+    (StoryComponent) => (
+      <Decorator>
+        <StoryComponent />
+      </Decorator>
+    ),
+  ]}
 />
 
 # Link
@@ -26,7 +32,7 @@ export const DarkListItem = styled(ListItem)`
   background-color: ${themeColor('primary')};
 `
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Fragment>
       <List>
@@ -64,11 +70,11 @@ export const DarkListItem = styled(ListItem)`
       </List>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Inline variant
 
-<Preview>
+<Canvas>
   <Story name="Inline variant">
     <Fragment>
       <List>
@@ -108,11 +114,11 @@ export const DarkListItem = styled(ListItem)`
       </List>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Blank variant
 
-<Preview>
+<Canvas>
   <Story name="Blank variant">
     <Fragment>
       <List>
@@ -132,4 +138,4 @@ export const DarkListItem = styled(ListItem)`
       </List>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

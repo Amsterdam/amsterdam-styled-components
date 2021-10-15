@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import {
   FormTitle,
   Card,
@@ -13,13 +13,13 @@ import {
   title="UI/Form/FormTitle"
   component={FormTitle}
   decorators={[
-    (storyFn) => (
+    (StoryComponent) => (
       <div
         style={{
           padding: '0px 10px',
         }}
       >
-        {storyFn()}
+        <StoryComponent />
       </div>
     ),
   ]}
@@ -35,15 +35,15 @@ The Form Title component is used for forms, mostly on subdomains of amsterdam.nl
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <FormTitle>This is the title of the FormTitle component</FormTitle>
   </Story>
-</Preview>
+</Canvas>
 
 ## In context
 
-<Preview>
+<Canvas>
   <Story name="In context">
     <Fragment>
       <Header homeLink="" tall />
@@ -56,4 +56,4 @@ The Form Title component is used for forms, mostly on subdomains of amsterdam.nl
       </Card>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Location } from '@amsterdam/asc-assets'
 import { Icon } from '@amsterdam/asc-ui'
 
@@ -26,27 +26,27 @@ Doesn't exist in Design System yet
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Icon>
       <Location />
     </Icon>
   </Story>
-</Preview>
+</Canvas>
 
 ## Inline Flex
 
-<Preview>
+<Canvas>
   <Story name="Inline Flex">
     <Icon inline>
       <Location />
     </Icon>
   </Story>
-</Preview>
+</Canvas>
 
 ## Custom Icon Url
 
-<Preview>
+<Canvas>
   <Story name="Custom Icon Url">
     <Icon
       inline
@@ -54,11 +54,11 @@ Doesn't exist in Design System yet
       iconUrl="https://cdn.xs4all.nl/content/_xs4all-themes/first-class/images/icons/usp-trophey_yellow_30.svg"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Sizes
 
-<Preview>
+<Canvas>
   <Story name="Sizes">
     <>
       <Icon size={14}>
@@ -91,11 +91,11 @@ Doesn't exist in Design System yet
       </div>
     </>
   </Story>
-</Preview>
+</Canvas>
 
 ## Rotation
 
-<Preview>
+<Canvas>
   <Story name="Rotation">
     <>
       <Icon size={40}>
@@ -128,11 +128,11 @@ Doesn't exist in Design System yet
       </div>
     </>
   </Story>
-</Preview>
+</Canvas>
 
 ## Colors
 
-<Preview>
+<Canvas>
   <Story name="Colors">
     <div>
       <Icon size={40} color="hotpink">
@@ -141,4 +141,4 @@ Doesn't exist in Design System yet
       any color
     </div>
   </Story>
-</Preview>
+</Canvas>

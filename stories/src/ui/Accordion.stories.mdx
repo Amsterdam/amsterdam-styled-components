@@ -1,10 +1,19 @@
-import { action } from '@storybook/addon-actions'
-import { withKnobs, boolean, text } from '@storybook/addon-knobs'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { FacebookPadded } from '@amsterdam/asc-assets'
 import { Accordion, AccordionWrapper, Paragraph, Icon } from '@amsterdam/asc-ui'
 
-<Meta title="UI/Accordion" component={Accordion} decorators={[withKnobs]} />
+<Meta
+  title="UI/Accordion"
+  component={Accordion}
+  argTypes={{
+    isOpen: {
+      control: { type: 'boolean' },
+    },
+    noMultiline: {
+      control: { type: 'boolean' },
+    },
+  }}
+/>
 
 # Accordion
 
@@ -16,112 +25,105 @@ Used to show or hide related content.
 
 ## Single Accordion With Paragraph
 
-<Preview>
+<Canvas>
   <Story name="Single Accordion With Paragraph">
-    <Accordion title="Only a paragraph" id="one">
-      <Paragraph gutterBottom={0}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad delectus
-        hic incidunt iure labore natus odio pariatur qui sint, voluptas!
-      </Paragraph>
-    </Accordion>
+    {(args) => (
+      <Accordion title="Only a paragraph" id="one" {...args}>
+        <Paragraph gutterBottom={0}>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad delectus
+          hic incidunt iure labore natus odio pariatur qui sint, voluptas!
+        </Paragraph>
+      </Accordion>
+    )}
   </Story>
-</Preview>
+</Canvas>
 
 ## Single Accordion With Paragraph
 
-<Preview>
+<Canvas>
   <Story name="Single Accordion With Custom Content">
-    <Accordion title="With custom content" id="one">
-      <Icon padding={4} size={48}>
-        <FacebookPadded />
-      </Icon>
-    </Accordion>
+    {(args) => (
+      <Accordion title="With custom content" id="one" {...args}>
+        <Icon padding={4} size={48}>
+          <FacebookPadded />
+        </Icon>
+      </Accordion>
+    )}
   </Story>
-</Preview>
+</Canvas>
 
 ## Single Accordion With A Huge Title
 
-<Preview>
+<Canvas>
   <Story name="Single Accordion With A Huge Title">
-    <Accordion
-      title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam consequatur id, ipsum, libero minima praesentium qui recusandae repellat, repellendus reprehenderit vel? Amet beatae consequatur debitis, ex, fuga hic id itaque laborum neque odio officia optio perferendis tempore tenetur totam."
-      id="one"
-    >
-      <Paragraph gutterBottom={0}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad delectus
-        hic incidunt iure labore natus odio pariatur qui sint, voluptas!
-      </Paragraph>
-    </Accordion>
+    {(args) => (
+      <Accordion
+        title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam consequatur id, ipsum, libero minima praesentium qui recusandae repellat, repellendus reprehenderit vel? Amet beatae consequatur debitis, ex, fuga hic id itaque laborum neque odio officia optio perferendis tempore tenetur totam."
+        id="one"
+        {...args}
+      >
+        <Paragraph gutterBottom={0}>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad delectus
+          hic incidunt iure labore natus odio pariatur qui sint, voluptas!
+        </Paragraph>
+      </Accordion>
+    )}
   </Story>
-</Preview>
+</Canvas>
 
 ## Single Accordion With A Huge Title But On One Line
 
-<Preview>
-  <Story name="Single Accordion With A Huge Title But On One Line">
-    <Accordion
-      title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam consequatur id, ipsum, libero minima praesentium qui recusandae repellat, repellendus reprehenderit vel? Amet beatae consequatur debitis, ex, fuga hic id itaque laborum neque odio officia optio perferendis tempore tenetur totam."
-      id="one"
-      noMultiline
-    >
-      <Paragraph gutterBottom={0}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad delectus
-        hic incidunt iure labore natus odio pariatur qui sint, voluptas!
-      </Paragraph>
-    </Accordion>
+<Canvas>
+  <Story
+    name="Single Accordion With A Huge Title But On One Line"
+    args={{ noMultiline: true }}
+  >
+    {(args) => (
+      <Accordion
+        title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam consequatur id, ipsum, libero minima praesentium qui recusandae repellat, repellendus reprehenderit vel? Amet beatae consequatur debitis, ex, fuga hic id itaque laborum neque odio officia optio perferendis tempore tenetur totam."
+        id="one"
+        {...args}
+      >
+        <Paragraph gutterBottom={0}>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad delectus
+          hic incidunt iure labore natus odio pariatur qui sint, voluptas!
+        </Paragraph>
+      </Accordion>
+    )}
   </Story>
-</Preview>
-
-## Single Accordion With Storybook Knobs and Actions
-
-Check out the knobs and actions panel!
-
-<Preview>
-  <Story name="Single Accordion With A Controlled State">
-    <Accordion
-      title={text('Title', 'Customize me!')}
-      id="one"
-      isOpen={boolean('Open Accordion')}
-      noMultiline={boolean('Toggle Multiline')}
-      onToggle={action('I Toggled!')}
-    >
-      <Paragraph gutterBottom={0}>
-        {text(
-          'Content',
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad delectus hic incidunt iure labore natus odio pariatur qui sint, voluptas!',
-        )}
-      </Paragraph>
-    </Accordion>
-  </Story>
-</Preview>
+</Canvas>
 
 ## Multiple Accordions With Arrow Keys Support
 
-<Preview>
+<Canvas>
   <Story name="Multiple Accordions With Arrow Keys Support">
-    <AccordionWrapper>
-      <Accordion title="Example one" id="one">
-        <Paragraph gutterBottom={0}>
-          Lorem ipsum dolor sit amet,{' '}
-          <a href="/" title="foo">
-            consectetur
-          </a>{' '}
-          adipisicing elit. Ad delectus hic incidunt iure labore natus odio
-          pariatur qui sint, voluptas!
-        </Paragraph>
-      </Accordion>
-      <Accordion title="Example two" id="two">
-        <Paragraph gutterBottom={0}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad delectus
-          hic incidunt iure labore natus odio pariatur qui sint, voluptas!
-        </Paragraph>
-      </Accordion>
-      <Accordion title="Example three" id="three">
-        <Paragraph gutterBottom={0}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad delectus
-          hic incidunt iure labore natus odio pariatur qui sint, voluptas!
-        </Paragraph>
-      </Accordion>
-    </AccordionWrapper>
+    {(args) => (
+      <AccordionWrapper>
+        <Accordion title="Example one" id="one" {...args}>
+          <Paragraph gutterBottom={0}>
+            Lorem ipsum dolor sit amet,{' '}
+            <a href="/" title="foo">
+              consectetur
+            </a>{' '}
+            adipisicing elit. Ad delectus hic incidunt iure labore natus odio
+            pariatur qui sint, voluptas!
+          </Paragraph>
+        </Accordion>
+        <Accordion title="Example two" id="two">
+          <Paragraph gutterBottom={0}>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+            delectus hic incidunt iure labore natus odio pariatur qui sint,
+            voluptas!
+          </Paragraph>
+        </Accordion>
+        <Accordion title="Example three" id="three">
+          <Paragraph gutterBottom={0}>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+            delectus hic incidunt iure labore natus odio pariatur qui sint,
+            voluptas!
+          </Paragraph>
+        </Accordion>
+      </AccordionWrapper>
+    )}
   </Story>
-</Preview>
+</Canvas>

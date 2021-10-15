@@ -1,5 +1,5 @@
 import { useRef, Fragment } from 'react'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { useTrappedFocus, Button } from '@amsterdam/asc-ui'
 
 <Meta title="Utils/useTrappedFocus hook" component={useTrappedFocus} />
@@ -12,7 +12,7 @@ _Note:_ these only work in the "Canvas" view
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Fragment>
       {(() => {
@@ -34,4 +34,4 @@ _Note:_ these only work in the "Canvas" view
       })()}
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

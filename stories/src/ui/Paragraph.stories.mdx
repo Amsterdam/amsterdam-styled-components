@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { CompactThemeProvider, Paragraph } from '@amsterdam/asc-ui'
 
 <Meta
@@ -25,29 +25,29 @@ Doesn't exist in Design System yet
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Paragraph>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deleniti
       dicta doloremque eveniet explicabo id ipsum omnis placeat rerum suscipit.
     </Paragraph>
   </Story>
-</Preview>
+</Canvas>
 
 ## Strong
 
-<Preview>
+<Canvas>
   <Story name="Strong">
     <Paragraph strong>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deleniti
       dicta doloremque eveniet explicabo id ipsum omnis placeat rerum suscipit.
     </Paragraph>
   </Story>
-</Preview>
+</Canvas>
 
 ## Compact
 
-<Preview>
+<Canvas>
   <Story name="Compact">
     <CompactThemeProvider>
       <Paragraph>
@@ -58,4 +58,4 @@ Doesn't exist in Design System yet
     </CompactThemeProvider>
     )
   </Story>
-</Preview>
+</Canvas>

@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import {
   Header,
   MenuInline,
@@ -18,51 +18,51 @@ import {
 
 Given the `tall={false}` prop, this will make sure the header is not showing its tall variant after breakpoint laptopM (1200px)
 
-<Preview>
+<Canvas>
   <Story name="Short only">
     <Fragment>
       <Header tall={false} title="Some title" fullWidth={false} />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 # Full width
 
-<Preview>
+<Canvas>
   <Story name="Full width">
     <Fragment>
       <Header tall={false} title="Some title" fullWidth />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 # Tall
 
 To see the tall version, please make sure your viewport is bigger than laptopM (1200px)
 
-<Preview>
+<Canvas>
   <Story name="Tall">
     <Fragment>
       <Header tall title="Some title" fullWidth={false} />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Overwrite the default h1 tag
 
 Use `headerLogoTextAs` to overwrite the default `h1` tag on the logo. Useful for SEO purposes.
 
-<Preview>
+<Canvas>
   <Story name="Overwrite the default h1 tag">
     <Fragment>
       <Header headerLogoTextAs="div" tall={false} title="Some title" />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 # Custom navigation component
 
-<Preview>
+<Canvas>
   <Story name="Custom navigation component">
     <Fragment>
       <Header
@@ -87,4 +87,4 @@ Use `headerLogoTextAs` to overwrite the default `h1` tag on the logo. Useful for
       />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

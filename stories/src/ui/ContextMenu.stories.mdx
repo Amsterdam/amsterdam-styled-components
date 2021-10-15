@@ -4,7 +4,7 @@ import {
   ContextMenuItem,
   ContextMenuSelect,
 } from '@amsterdam/asc-ui'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { action } from '@storybook/addon-actions'
 
 <Meta
@@ -35,40 +35,40 @@ Doesn't exist in Design System yet
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <ContextMenu arrowIcon={<ChevronDown />}>
       <ContextMenuItem>One</ContextMenuItem>
       <ContextMenuItem>Two</ContextMenuItem>
     </ContextMenu>
   </Story>
-</Preview>
+</Canvas>
 
 ## Position Bottom
 
-<Preview>
+<Canvas>
   <Story name="Position Bottom">
     <ContextMenu arrowIcon={<ChevronDown />} position="bottom">
       <ContextMenuItem>One</ContextMenuItem>
       <ContextMenuItem>Two</ContextMenuItem>
     </ContextMenu>
   </Story>
-</Preview>
+</Canvas>
 
 ## With Label
 
-<Preview>
+<Canvas>
   <Story name="With Label">
     <ContextMenu arrowIcon={<ChevronDown />} label="I'm a label!">
       <ContextMenuItem>One</ContextMenuItem>
       <ContextMenuItem>Two</ContextMenuItem>
     </ContextMenu>
   </Story>
-</Preview>
+</Canvas>
 
 ## With Select On Touch Screen
 
-<Preview>
+<Canvas>
   <Story name="With Select On Touch Screen">
     <ContextMenu
       arrowIcon={<Ellipsis />}
@@ -93,4 +93,4 @@ Doesn't exist in Design System yet
       <ContextMenuItem>Two</ContextMenuItem>
     </ContextMenu>
   </Story>
-</Preview>
+</Canvas>

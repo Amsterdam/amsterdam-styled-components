@@ -1,7 +1,7 @@
 import * as Icons from '@amsterdam/asc-assets'
 import { Icon } from '@amsterdam/asc-ui'
-import { ReactNode } from 'react'
 import styled from 'styled-components'
+import { Meta } from '@storybook/react'
 
 const IconWrapper = styled.span`
   width: 150px;
@@ -15,7 +15,7 @@ const StyledLabel = styled.div`
 export default {
   title: 'Assets/Icons',
   decorators: [
-    (storyFn: () => ReactNode) => (
+    (StoryComponent) => (
       <div
         style={{
           display: 'flex',
@@ -23,11 +23,11 @@ export default {
           height: '100%',
         }}
       >
-        {storyFn()}
+        <StoryComponent />
       </div>
     ),
   ],
-}
+} as Meta
 
 const allIcons = Object.values(Icons)
 const allLabels = Object.keys(Icons)
