@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Hidden } from '@amsterdam/asc-ui'
 
 <Meta title="Headless/Hidden" component={Hidden} />
@@ -11,27 +11,27 @@ This component uses the [useMatchMedia](https://github.com/Amsterdam/amsterdam-s
 
 ## With min breakpoint
 
-<Preview>
+<Canvas>
   <Story name="With min breakpoint">
     <Fragment>
       <Hidden minBreakpoint="tabletM">I am hidden from tabletM</Hidden>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With max breakpoint
 
-<Preview>
+<Canvas>
   <Story name="With max breakpoint">
     <Fragment>
       <Hidden maxBreakpoint="tabletM">I am hidden until tabletM</Hidden>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With min and max breakpoint
 
-<Preview>
+<Canvas>
   <Story name="With min and max breakpoint">
     <Fragment>
       <Hidden minBreakpoint="mobileS" maxBreakpoint="laptop">
@@ -39,11 +39,11 @@ This component uses the [useMatchMedia](https://github.com/Amsterdam/amsterdam-s
       </Hidden>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With a custom query
 
-<Preview>
+<Canvas>
   <Story name="With a custom query">
     <Fragment>
       <Hidden query="(min-width: 300px) and (max-width: 600px)">
@@ -51,4 +51,4 @@ This component uses the [useMatchMedia](https://github.com/Amsterdam/amsterdam-s
       </Hidden>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

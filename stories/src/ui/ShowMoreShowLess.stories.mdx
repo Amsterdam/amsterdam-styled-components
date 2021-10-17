@@ -1,7 +1,5 @@
-import { Fragment } from 'react'
 import styled from 'styled-components'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
-import { number, withKnobs } from '@storybook/addon-knobs'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { ShowMoreShowLess, Paragraph } from '@amsterdam/asc-ui'
 
 export const Decorator = styled.div`
@@ -11,7 +9,23 @@ export const Decorator = styled.div`
 <Meta
   title="UI/ShowMoreShowLess"
   component={ShowMoreShowLess}
-  decorators={[withKnobs, (storyFn) => <Decorator>{storyFn()}</Decorator>]}
+  decorators={[
+    (StoryComponent) => (
+      <Decorator>
+        <StoryComponent />
+      </Decorator>
+    ),
+  ]}
+  argTypes={{
+    maxHeight: {
+      control: {
+        type: 'range',
+        min: 50,
+        max: 600,
+        step: 1,
+      },
+    },
+  }}
 />
 
 # ShowMoreShowLess
@@ -22,17 +36,10 @@ Not in Amsterdam Design System yet
 
 ## Default
 
-<Preview>
-  <Story name="Default">
-    <Fragment>
-      <ShowMoreShowLess
-        maxHeight={`${number('maxHeight', 300, {
-          range: true,
-          min: 0,
-          max: 1000,
-          step: 1,
-        })}px`}
-      >
+<Canvas>
+  <Story name="Default" args={{ maxHeight: 300 }}>
+    {({ maxHeight }) => (
+      <ShowMoreShowLess maxHeight={`${maxHeight}px`}>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
           accusantium aliquid atque aut exercitationem fuga fugiat, ipsam itaque
@@ -59,6 +66,6 @@ Not in Amsterdam Design System yet
           omnis placeat, sit ullam ut velit!
         </Paragraph>
       </ShowMoreShowLess>
-    </Fragment>
+    )}
   </Story>
-</Preview>
+</Canvas>

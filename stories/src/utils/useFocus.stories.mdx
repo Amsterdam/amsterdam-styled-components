@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, Fragment } from 'react'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { useFocus, Button } from '@amsterdam/asc-ui'
 
 <Meta title="Utils/useFocus hook" component={useFocus} />
@@ -12,7 +12,7 @@ _Note:_ these only work in the "Canvas" view
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Fragment>
       {(() => {
@@ -22,11 +22,11 @@ _Note:_ these only work in the "Canvas" view
       })()}
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With timeout
 
-<Preview>
+<Canvas>
   <Story name="With timeout">
     <Fragment>
       {(() => {
@@ -41,4 +41,4 @@ _Note:_ these only work in the "Canvas" view
       })()}
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

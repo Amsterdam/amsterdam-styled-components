@@ -1,12 +1,12 @@
 import { Fragment } from 'react'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Label, Checkbox } from '@amsterdam/asc-ui'
 
 <Meta
   title="UI/Form/Checkbox"
   component={Checkbox}
   decorators={[
-    (storyFn) => (
+    (StoryComponent) => (
       <div
         style={{
           display: 'flex',
@@ -15,7 +15,7 @@ import { Label, Checkbox } from '@amsterdam/asc-ui'
           alignItems: 'flex-start',
         }}
       >
-        {storyFn()}
+        <StoryComponent />
       </div>
     ),
   ]}
@@ -29,7 +29,7 @@ import { Label, Checkbox } from '@amsterdam/asc-ui'
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Fragment>
       <Label htmlFor="default" label="Default">
@@ -56,4 +56,4 @@ import { Label, Checkbox } from '@amsterdam/asc-ui'
       </Label>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

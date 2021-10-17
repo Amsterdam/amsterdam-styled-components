@@ -1,5 +1,5 @@
 import { createRef, useEffect, Fragment } from 'react'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { action } from '@storybook/addon-actions'
 import { TextArea } from '@amsterdam/asc-ui'
 
@@ -13,27 +13,27 @@ import { TextArea } from '@amsterdam/asc-ui'
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Fragment>
       <TextArea />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With a value
 
-<Preview>
+<Canvas>
   <Story name="With a value">
     <Fragment>
       <TextArea value="Some text as value in the textarea" />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With ref (check actions tab)
 
-<Preview>
+<Canvas>
   <Story name="With ref (check actions tab)">
     <Fragment>
       {(() => {
@@ -55,4 +55,4 @@ import { TextArea } from '@amsterdam/asc-ui'
       })()}
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

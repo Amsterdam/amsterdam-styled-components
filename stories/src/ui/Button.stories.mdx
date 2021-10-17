@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Button, ShareButton } from '@amsterdam/asc-ui'
 import styled from 'styled-components'
 import {
@@ -31,7 +31,7 @@ export const ButtonBar = styled.div`
   }
 `
 
-<Preview>
+<Canvas>
   <Story name="Default / Primary variant">
     <Fragment>
       <ButtonBar>
@@ -45,11 +45,11 @@ export const ButtonBar = styled.div`
       </ButtonBar>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Secondary variant
 
-<Preview>
+<Canvas>
   <Story name="Secondary variant">
     <Fragment>
       <ButtonBar>
@@ -66,11 +66,11 @@ export const ButtonBar = styled.div`
       </ButtonBar>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Tertiary variant
 
-<Preview>
+<Canvas>
   <Story name="Tertiary variant">
     <Fragment>
       <ButtonBar>
@@ -84,11 +84,11 @@ export const ButtonBar = styled.div`
       </ButtonBar>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Primary Inverted variant
 
-<Preview>
+<Canvas>
   <Story name="Primary Inverted variant">
     <Fragment>
       <ButtonBar>
@@ -102,11 +102,11 @@ export const ButtonBar = styled.div`
       </ButtonBar>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Text Button variant
 
-<Preview>
+<Canvas>
   <Story name="Text Button variant">
     <Fragment>
       <ButtonBar>
@@ -120,21 +120,21 @@ export const ButtonBar = styled.div`
       </ButtonBar>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With only an icon
 
-<Preview>
+<Canvas>
   <Story name="With only an icon">
     <Fragment>
       <Button size={60} variant="blank" iconSize={40} icon={<Close />} />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Social buttons
 
-<Preview>
+<Canvas>
   <Story name="Social buttons">
     <Fragment>
       <ButtonBar>
@@ -156,4 +156,4 @@ export const ButtonBar = styled.div`
       </ButtonBar>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

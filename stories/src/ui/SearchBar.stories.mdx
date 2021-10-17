@@ -1,7 +1,5 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
-import { action } from '@storybook/addon-actions'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { SearchBar } from '@amsterdam/asc-ui'
-import SearchBarExample from './SearchBarExample'
 
 <Meta
   title="UI/SearchBar"
@@ -17,6 +15,22 @@ import SearchBarExample from './SearchBarExample'
       </div>
     ),
   ]}
+  argTypes={{
+    value: {
+      control: {
+        type: 'text',
+      },
+    },
+    onChange: {
+      action: 'onChange triggered',
+    },
+    onClear: {
+      action: 'onClear triggered',
+    },
+    onSubmit: {
+      action: 'onSubmit triggered',
+    },
+  }}
 />
 
 # SearchBar
@@ -27,49 +41,34 @@ Doesn't exist in Design System yet
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
-    <SearchBar
-      placeholder="Enter the search text"
-      onChange={(e) => {
-        action(`text changed: ${e.target.value}`)(e)
-      }}
-    />
+    {(args) => <SearchBar placeholder="Enter the search text" {...args} />}
   </Story>
-</Preview>
+</Canvas>
 
 ## With Focus
 
-<Preview>
+<Canvas>
   <Story name="With Focus">
-    <SearchBar placeholder="This will focus automatically" autoFocus />
+    {(args) => (
+      <SearchBar
+        placeholder="This will focus automatically"
+        autoFocus
+        {...args}
+      />
+    )}
   </Story>
-</Preview>
+</Canvas>
 
 ## In A Form
 
-<Preview>
+<Canvas>
   <Story name="In A Form">
-    <form
-      onSubmit={(e) => {
-        e.preventDefault()
-        action('Submitted')(e)
-      }}
-    >
-      <SearchBar
-        placeholder="Enter the search text"
-        onChange={(e) => {
-          action(`text changed: ${e.target.value}`)(e)
-        }}
-      />
-    </form>
+    {({ onChange, onSubmit }) => (
+      <form onSubmit={onSubmit}>
+        <SearchBar placeholder="Enter the search text" onChange={onChange} />
+      </form>
+    )}
   </Story>
-</Preview>
-
-## Controlled State
-
-<Preview>
-  <Story name="Controlled State">
-    <SearchBarExample />
-  </Story>
-</Preview>
+</Canvas>

@@ -1,9 +1,29 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
-import CompactPagerExample from './CompactPagerExample'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { CompactPager } from '@amsterdam/asc-ui'
 
 <Meta
   title="UI/CompactPager"
-  component={CompactPagerExample}
+  component={CompactPager}
+  argTypes={{
+    page: {
+      control: {
+        type: 'number',
+      },
+    },
+    collectionSize: {
+      control: {
+        type: 'number',
+      },
+    },
+    pageSize: {
+      control: {
+        type: 'number',
+      },
+    },
+    onPageChange: {
+      action: 'Change detected! Current page is: ',
+    },
+  }}
   decorators={[
     (Item) => (
       <div
@@ -25,8 +45,8 @@ Doesn't exist in Design System yet
 
 ## Default
 
-<Preview>
-  <Story name="Default">
-    <CompactPagerExample />
+<Canvas>
+  <Story name="Default" args={{ page: 1, pageSize: 20, collectionSize: 60 }}>
+    {(args) => <CompactPager {...args} />}
   </Story>
-</Preview>
+</Canvas>

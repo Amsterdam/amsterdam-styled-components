@@ -5,7 +5,7 @@ skip_if: <%= story %>
 
 import { Fragment } from 'react'
 import styled from 'styled-components'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { <%= name %> } from '@amsterdam/asc-ui'
 
 export const Decorator = styled.div`
@@ -14,7 +14,7 @@ export const Decorator = styled.div`
 <Meta
   title="UI/<%= name %>"
   component={<%= name %>}
-  decorators={[(storyFn) => <Decorator>{storyFn()}</Decorator>]}
+  decorators={[(StoryComponent) => <Decorator><StoryComponent /></Decorator>]}
 />
 
 # <%= name %>
@@ -23,10 +23,10 @@ export const Decorator = styled.div`
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Fragment>
       <<%= name %>>Default state</<%= name %>>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

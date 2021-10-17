@@ -1,6 +1,6 @@
 import { createRef, useEffect, Fragment } from 'react'
 import { action } from '@storybook/addon-actions'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Input, Label } from '@amsterdam/asc-ui'
 
 <Meta title="UI/Form/Input" component={Input} />
@@ -13,7 +13,7 @@ import { Input, Label } from '@amsterdam/asc-ui'
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Fragment>
       <Input
@@ -25,11 +25,11 @@ import { Input, Label } from '@amsterdam/asc-ui'
       />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With label
 
-<Preview>
+<Canvas>
   <Story name="With label">
     <Fragment>
       <Label htmlFor="some-input" label="Some label" />
@@ -43,11 +43,11 @@ import { Input, Label } from '@amsterdam/asc-ui'
       />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With Ref
 
-<Preview>
+<Canvas>
   <Story name="With Ref">
     <Fragment>
       {(() => {
@@ -69,4 +69,4 @@ import { Input, Label } from '@amsterdam/asc-ui'
       })()}
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

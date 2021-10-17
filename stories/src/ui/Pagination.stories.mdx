@@ -1,17 +1,17 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Pagination } from '@amsterdam/asc-ui'
 
 <Meta
   title="UI/Pagination"
   component={Pagination}
   decorators={[
-    (storyFn) => (
+    (StoryComponent) => (
       <div
         style={{
           padding: '40px 10px',
         }}
       >
-        {storyFn()}
+        <StoryComponent />
       </div>
     ),
   ]}
@@ -28,27 +28,27 @@ smaller viewports. With the current spacing the pagination bar does not fit on f
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Pagination page={1} pageSize={10} collectionSize={40} />
     <Pagination page={3} pageSize={10} collectionSize={50} />
     <Pagination page={6} pageSize={10} collectionSize={60} />
   </Story>
-</Preview>
+</Canvas>
 
 ## Lots of pages
 
-<Preview>
+<Canvas>
   <Story name="Lots of pages">
     <Pagination collectionSize={300} pageSize={10} page={2} />
     <Pagination collectionSize={300} pageSize={10} page={20} />
     <Pagination collectionSize={300} pageSize={10} page={30} />
   </Story>
-</Preview>
+</Canvas>
 
 ## Custom pagination length
 
-<Preview>
+<Canvas>
   <Story name="Custom pagination length">
     <Pagination
       collectionSize={300}
@@ -63,4 +63,4 @@ smaller viewports. With the current spacing the pagination bar does not fit on f
       paginationLength={5}
     />
   </Story>
-</Preview>
+</Canvas>

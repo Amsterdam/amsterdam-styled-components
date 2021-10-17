@@ -1,5 +1,5 @@
 import { useRef, Fragment } from 'react'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { useFocusWithArrows, useFocus, Button } from '@amsterdam/asc-ui'
 
 <Meta title="Utils/useFocusWithArrows hook" component={useFocusWithArrows} />
@@ -12,7 +12,7 @@ _Note:_ these only work in the "Canvas" view
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Fragment>
       {(() => {
@@ -36,13 +36,13 @@ _Note:_ these only work in the "Canvas" view
       })()}
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With rotating option
 
 Jump to first item from last or vice versa
 
-<Preview>
+<Canvas>
   <Story name="With rotating option">
     <Fragment>
       {(() => {
@@ -66,13 +66,13 @@ Jump to first item from last or vice versa
       })()}
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With directChildrenOnly option
 
 Useful if you don't want to focus on other focussable elements inside the child components of the ref
 
-<Preview>
+<Canvas>
   <Story name="With directChildrenOnly option">
     <Fragment>
       {(() => {
@@ -100,4 +100,4 @@ Useful if you don't want to focus on other focussable elements inside the child 
       })()}
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

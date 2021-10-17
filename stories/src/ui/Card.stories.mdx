@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { ChevronRight, Download } from '@amsterdam/asc-assets'
 import {
   Card,
@@ -15,13 +15,13 @@ import {
   title="UI/Card"
   component={Card}
   decorators={[
-    (Item) => (
+    (StoryComponent) => (
       <div
         style={{
           maxWidth: '400px',
         }}
       >
-        <Item />
+        <StoryComponent />
       </div>
     ),
   ]}
@@ -35,7 +35,7 @@ Doesn't exist in Design System yet
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Card maxWidth={250}>
       <CardContent>
@@ -44,11 +44,11 @@ Doesn't exist in Design System yet
       </CardContent>
     </Card>
   </Story>
-</Preview>
+</Canvas>
 
 ## Default With Action
 
-<Preview>
+<Canvas>
   <Story name="Default With Action">
     <Card maxWidth={250}>
       <CardContent>
@@ -62,11 +62,11 @@ Doesn't exist in Design System yet
       </CardActions>
     </Card>
   </Story>
-</Preview>
+</Canvas>
 
 ## Default With Action And Media Item
 
-<Preview>
+<Canvas>
   <Story name="Default With Action And Media Item">
     <Card maxWidth={250}>
       <CardMedia>
@@ -83,11 +83,11 @@ Doesn't exist in Design System yet
       </CardActions>
     </Card>
   </Story>
-</Preview>
+</Canvas>
 
 ## With Shadow
 
-<Preview>
+<Canvas>
   <Story name="With Shadow">
     <Card maxWidth={250} backgroundColor="level2" shadow>
       <CardContent>
@@ -101,11 +101,11 @@ Doesn't exist in Design System yet
       </CardActions>
     </Card>
   </Story>
-</Preview>
+</Canvas>
 
 ## Horizontal With Action And Media Item
 
-<Preview>
+<Canvas>
   <Story name="Horizontal With Action And Media Item">
     <Card maxWidth={450} horizontal>
       <CardMedia maxWidth={100} backgroundColor="level2">
@@ -124,11 +124,11 @@ Doesn't exist in Design System yet
       </CardActions>
     </Card>
   </Story>
-</Preview>
+</Canvas>
 
 ## Loading State Default
 
-<Preview>
+<Canvas>
   <Story name="Loading State Default">
     <Card maxWidth={250} isLoading>
       <CardContent>
@@ -137,11 +137,11 @@ Doesn't exist in Design System yet
       </CardContent>
     </Card>
   </Story>
-</Preview>
+</Canvas>
 
 ## Loading State With Action
 
-<Preview>
+<Canvas>
   <Story name="Loading State With Action">
     <Card maxWidth={250} isLoading>
       <CardContent>
@@ -155,11 +155,11 @@ Doesn't exist in Design System yet
       </CardActions>
     </Card>
   </Story>
-</Preview>
+</Canvas>
 
 ## Loading State Horizontal
 
-<Preview>
+<Canvas>
   <Story name="Loading State Horizontal">
     <Card maxWidth={450} horizontal isLoading>
       <CardMedia backgroundColor="level2">
@@ -178,4 +178,4 @@ Doesn't exist in Design System yet
       </CardActions>
     </Card>
   </Story>
-</Preview>
+</Canvas>

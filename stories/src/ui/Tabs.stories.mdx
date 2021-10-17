@@ -1,12 +1,36 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
-import { withKnobs, select } from '@storybook/addon-knobs'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Tabs, Tab } from '@amsterdam/asc-ui'
 
 export const PaddedContent = ({ children }) => (
   <div style={{ paddingTop: '20px' }}>{children}</div>
 )
 
-<Meta title="UI/Tabs" component={Tabs} decorators={[withKnobs]} />
+export const tabOptions = { First: 'one', Second: 'two', Last: 'three' }
+
+export const TabsStory = (args) => (
+  <Tabs label="An example of tabs" {...args}>
+    {Object.entries(tabOptions).map(([key, value]) => (
+      <Tab id={value} label={key}>
+        <PaddedContent>Contents of the {key.toLowerCase()} tab.</PaddedContent>
+      </Tab>
+    ))}
+  </Tabs>
+)
+
+<Meta
+  title="UI/Tabs"
+  component={Tabs}
+  argTypes={{
+    activeTab: {
+      options: tabOptions,
+      control: { type: 'select' },
+    },
+    initialTab: {
+      options: tabOptions,
+      control: { type: 'select' },
+    },
+  }}
+/>
 
 # Tabs
 
@@ -22,70 +46,19 @@ Topics to align:
 
 ## Default
 
-<Preview>
-  <Story name="Default">
-    <Tabs label="An example of tabs">
-      <Tab id="one" label="First">
-        <PaddedContent>Contents of the first tab.</PaddedContent>
-      </Tab>
-      <Tab id="two" label="Second">
-        <PaddedContent>Contents of the second tab.</PaddedContent>
-      </Tab>
-      <Tab id="three" label="Last">
-        <PaddedContent>Contents of the last tab.</PaddedContent>
-      </Tab>
-    </Tabs>
-  </Story>
-</Preview>
-
-## With initial tab
-
-<Preview>
-  <Story name="With active tab set">
-    <Tabs
-      label="An example of tabs"
-      activeTab={select(
-        'Active tab',
-        {
-          First: 'one',
-          Second: 'two',
-          Last: 'three',
-        },
-        'two',
-      )}
-    >
-      <Tab id="one" label="First">
-        <PaddedContent>Contents of the first tab.</PaddedContent>
-      </Tab>
-      <Tab id="two" label="Second">
-        <PaddedContent>Contents of the second tab.</PaddedContent>
-      </Tab>
-      <Tab id="three" label="Last">
-        <PaddedContent>Contents of the last tab.</PaddedContent>
-      </Tab>
-    </Tabs>
-  </Story>
-</Preview>
+<Canvas>
+  <Story name="Default">{TabsStory.bind({})}</Story>
+</Canvas>
 
 ## Overflowing tabs
 
-<Preview>
+<Canvas>
   <Story
     name="Overflowing tabs"
     parameters={{
       viewport: { defaultViewport: 'mobile1' },
     }}
   >
-    <Tabs label="An example of overflowing tabs">
-      <Tab id="one" label="First with a long label">
-        <PaddedContent>Contents of the first tab.</PaddedContent>
-      </Tab>
-      <Tab id="two" label="Second with a long label">
-        <PaddedContent>Contents of the second tab.</PaddedContent>
-      </Tab>
-      <Tab id="three" label="Third with a long label">
-        <PaddedContent>Contents of the last tab.</PaddedContent>
-      </Tab>
-    </Tabs>
+    {TabsStory.bind({})}
   </Story>
-</Preview>
+</Canvas>
