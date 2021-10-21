@@ -7,23 +7,25 @@ describe('useFocusWithArrows', () => {
   const onFocusOneMock = jest.fn()
   const onFocusTwoMock = jest.fn()
   const onFocusThreeMock = jest.fn()
-  const getComponent = (rotate: boolean | undefined = undefined) => () => {
-    const ref = useRef<HTMLDivElement>(null)
-    const { keyDown } = useFocusWithArrows(ref, rotate)
-    return (
-      <div onKeyDown={keyDown} tabIndex={0} role="menu" ref={ref}>
-        <button onFocus={onFocusOneMock} type="button">
-          One
-        </button>
-        <button onFocus={onFocusTwoMock} type="button">
-          Two
-        </button>
-        <button onFocus={onFocusThreeMock} type="button">
-          Three
-        </button>
-      </div>
-    )
-  }
+  const getComponent =
+    (rotate: boolean | undefined = undefined) =>
+    () => {
+      const ref = useRef<HTMLDivElement>(null)
+      const { keyDown } = useFocusWithArrows(ref, rotate)
+      return (
+        <div onKeyDown={keyDown} tabIndex={0} role="menu" ref={ref}>
+          <button onFocus={onFocusOneMock} type="button">
+            One
+          </button>
+          <button onFocus={onFocusTwoMock} type="button">
+            Two
+          </button>
+          <button onFocus={onFocusThreeMock} type="button">
+            Three
+          </button>
+        </div>
+      )
+    }
 
   afterEach(() => {
     onFocusOneMock.mockReset()

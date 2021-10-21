@@ -103,6 +103,7 @@ const MenuFlyOut: FunctionComponent<Props> = ({
   return (
     <MenuFlyOutStyle
       ref={ref}
+      data-testid="flyout"
       onBlur={onBlurHandler}
       hasToggle={hasToggle}
       onKeyDown={keyDownArrowFocus}
@@ -114,6 +115,7 @@ const MenuFlyOut: FunctionComponent<Props> = ({
           // eslint-disable-next-line no-nested-ternary
           hasToggle ? menuOpen ? <ChevronUp /> : <ChevronDown /> : undefined
         }
+        data-testid="flyoutButton"
         onClick={onHandleOpen}
         onKeyDown={onHandleKeyDownButton}
         aria-haspopup="true"

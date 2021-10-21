@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import styled from 'styled-components'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Link, Paragraph, Heading, Alert, styles } from '@amsterdam/asc-ui'
 
 export const Decorator = styled.div`
@@ -12,7 +12,13 @@ export const Decorator = styled.div`
 <Meta
   title="UI/Alert"
   component={Alert}
-  decorators={[(storyFn) => <Decorator>{storyFn()}</Decorator>]}
+  decorators={[
+    (StoryComponent) => (
+      <Decorator>
+        <StoryComponent />
+      </Decorator>
+    ),
+  ]}
 />
 
 # Alert
@@ -32,7 +38,7 @@ The prop `outline` places the color on the outline, instead of the background of
 
 ## Variants of Alert
 
-<Preview>
+<Canvas>
   <Story name="Variants">
     <Fragment>
       <Alert>Neutral</Alert>
@@ -45,11 +51,11 @@ The prop `outline` places the color on the outline, instead of the background of
       </Alert>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With content and heading
 
-<Preview>
+<Canvas>
   <Story name="With content and heading">
     <Fragment>
       <Alert
@@ -71,11 +77,11 @@ The prop `outline` places the color on the outline, instead of the background of
       />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With custom children
 
-<Preview>
+<Canvas>
   <Story name="With custom children">
     <Fragment>
       <Alert level="neutral">
@@ -95,11 +101,12 @@ The prop `outline` places the color on the outline, instead of the background of
       </Alert>
       <Alert level="info" dismissible>
         <Paragraph>
-          Just a looooong paragraph with a link and a closing button: Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Aut itaque
-          necessitatibus officiis, quasi quia quisquam sit ut! Dolorum
-          excepturi, inventore! Accusamus ad illo molestiae vel. Deleniti
-          excepturi iusto neque quisquam!
+          Just a looooong paragraph with a long contiguous text, a link and a
+          closing button: Lorem ipsum dolor sit amet, consectetur adipisicing
+          elit. Aut itaque necessitatibus officiis, quasi quia quisquam sit ut!
+          Dolorum excepturi, inventore! Accusamus ad illo molestiae vel.
+          Deleniti excepturi iusto neque quisquam! Long contiguous text:
+          abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!
         </Paragraph>
         <Link href="/" variant="with-chevron" darkBackground>
           A link
@@ -114,4 +121,4 @@ The prop `outline` places the color on the outline, instead of the background of
       </Alert>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

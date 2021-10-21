@@ -26,9 +26,8 @@ const colorMap: Record<
 }
 
 export const CloseButtonWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
+  float: right;
+  margin-left: ${themeSpacing(4)};
 `
 
 export const CloseButton = styled(Button)`
@@ -37,10 +36,9 @@ export const CloseButton = styled(Button)`
 `
 
 export const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 100%;
+  overflow-wrap: anywhere;
+  overflow: hidden;
 
   & > * {
     &:last-child {

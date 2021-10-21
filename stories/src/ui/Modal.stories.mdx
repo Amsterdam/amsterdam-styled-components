@@ -1,0 +1,87 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { Modal, Paragraph, Input } from '@amsterdam/asc-ui'
+import { action } from '@storybook/addon-actions'
+
+<Meta
+  title="UI/Modal"
+  component={Modal}
+  argTypes={{
+    open: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    backdropOpacity: {
+      control: {
+        type: 'range',
+        min: 0,
+        max: 1,
+        step: 0.1,
+      },
+    },
+  }}
+/>
+
+# Modal
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/2516d8-quotehttps://designsystem.amsterdam.nl/7awj1hc9f/p/2516d8-quote)
+
+**Component status: Experimental**
+
+## Default
+
+<Canvas>
+  <Story name="Default" args={{ open: true, backdropOpacity: 0.3 }}>
+    {(args) => (
+      <>
+        <p>Some content</p>
+        <Modal
+          aria-labelledby="modal"
+          onClose={action('onClose triggered')}
+          {...args}
+        >
+          <div
+            style={{ display: 'block', padding: '0 15px', margin: '15px 0' }}
+          >
+            <Paragraph>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Architecto, quisquam!
+            </Paragraph>
+            <Input />
+          </div>
+        </Modal>
+      </>
+    )}
+  </Story>
+</Canvas>
+
+## With blurred background
+
+<Canvas>
+  <Story
+    name="With blurred background"
+    args={{ open: true, backdropOpacity: 0.3 }}
+  >
+    {(args) => (
+      <>
+        <p>Some content</p>
+        <Modal
+          aria-labelledby="modal"
+          onClose={action('onClose triggered')}
+          blurredNodeSelector="#root"
+          {...args}
+        >
+          <div
+            style={{ display: 'block', padding: '0 15px', margin: '15px 0' }}
+          >
+            <Paragraph>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Architecto, quisquam!
+            </Paragraph>
+            <Input />
+          </div>
+        </Modal>
+      </>
+    )}
+  </Story>
+</Canvas>

@@ -1,12 +1,12 @@
 import { Location, Passport } from '@amsterdam/asc-assets'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { TopTaskLink } from '@amsterdam/asc-ui'
 
 <Meta
   title="UI/TopTaskLink"
   component={TopTaskLink}
   decorators={[
-    (storyFn) => (
+    (StoryComponent) => (
       <div
         style={{
           display: 'flex',
@@ -15,7 +15,7 @@ import { TopTaskLink } from '@amsterdam/asc-ui'
           alignItems: 'flex-start',
         }}
       >
-        {storyFn()}
+        <StoryComponent />
       </div>
     ),
   ]}
@@ -31,7 +31,7 @@ Used as a navigational element to direct a user to a specific subject.
 
 ## With icon
 
-<Preview>
+<Canvas>
   <Story name="With icon">
     <TopTaskLink
       href="#"
@@ -40,11 +40,11 @@ Used as a navigational element to direct a user to a specific subject.
       style={{ maxWidth: 220, minHeight: 132 }}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Without icon
 
-<Preview>
+<Canvas>
   <Story name="Without icon">
     <TopTaskLink
       href="#"
@@ -52,11 +52,11 @@ Used as a navigational element to direct a user to a specific subject.
       style={{ maxWidth: 220, minHeight: 132 }}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## With text
 
-<Preview>
+<Canvas>
   <Story name="With text">
     <TopTaskLink
       href="#"
@@ -65,11 +65,11 @@ Used as a navigational element to direct a user to a specific subject.
       style={{ maxWidth: 220, minHeight: 132 }}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## On a dark background
 
-<Preview>
+<Canvas>
   <Story name="On a dark background">
     <div style={{ backgroundColor: '#004699', padding: '40px 80px' }}>
       <TopTaskLink
@@ -82,4 +82,4 @@ Used as a navigational element to direct a user to a specific subject.
       />
     </div>
   </Story>
-</Preview>
+</Canvas>

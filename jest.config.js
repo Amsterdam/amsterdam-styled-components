@@ -1,4 +1,5 @@
 module.exports = {
+  testEnvironment: 'jsdom',
   collectCoverage: false,
   collectCoverageFrom: [
     'packages/asc-ui/src/**/*.{js,jsx,ts,tsx}',
@@ -49,5 +50,4 @@ module.exports = {
     },
   },
   testRegex: ['/__tests__/.*\\.(ts|tsx|js)$', '/*.test\\.(ts|tsx|js)$'],
-  snapshotSerializers: ['enzyme-to-json/serializer'],
 }

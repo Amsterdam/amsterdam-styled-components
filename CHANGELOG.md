@@ -17,6 +17,38 @@ Prefix the change with one of these keywords:
 ## Unreleased
 
 - Allow passing a `ReactNode` as the value of the `label` prop in the `Select` component
+- Fixed: `Link` icons are now aligned properly based on line-height
+- Added: Descriptionlist component
+
+## [0.32.1]
+
+- Fixed: default 100% width for `Table` component
+
+## [0.32.0]
+
+- Added: experimental `Table` component
+- Fixed: Long contiguous text overlaps Alert in mobile view
+- Fixed: close button style issues in `TextField` component
+
+## [0.31.0]
+
+- Added: `ssr` and `toggleAt` props to `FooterSection` component
+- Deprecated: `showAt` and `hideAt` props of `FooterSection` component
+- Fixed: unwanted props bleeding through to HTML attributes when using `Icon` and `Spinner`
+- Added: `Pagination` component
+
+## [0.30.0]
+
+- Added: `ssr` prop to `Header` and `AmsterdamLogo` components for correct server side rendering
+- Added: transient prop $darkBackground to `Link` component
+- Added: keyevent on `ContextMenu`: close when pressing escape
+- Removed: Console warning in `ContextMenu` for not passing the right children
+- Removed: Support for React 16
+- Removed: `ViewerContainer` component
+- Added: Datepicker component
+- Changed: `Radio` and `Checkbox` component HTML div tag to span
+- Added: `Switch` component
+
 ## [0.29.3]
 
 - Fixed: issue with not programmically changing the active / initial tab on `Tabs` component

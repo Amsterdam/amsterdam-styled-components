@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Breadcrumbs } from '@amsterdam/asc-ui'
 
 export const Decorator = styled.div``
@@ -7,7 +7,13 @@ export const Decorator = styled.div``
 <Meta
   title="UI/Breadcrumbs"
   component={Breadcrumbs}
-  decorators={[(storyFn) => <Decorator>{storyFn()}</Decorator>]}
+  decorators={[
+    (StoryComponent) => (
+      <Decorator>
+        <StoryComponent />
+      </Decorator>
+    ),
+  ]}
 />
 
 # Breadcrumbs
@@ -18,13 +24,14 @@ export const Decorator = styled.div``
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Breadcrumbs>
       <a href="/">Home</a>
       <a href="/innovatie">Innovatie</a>
-      <a href="/innovatie/bouwprojecten">Bouw- en verkkeersprojecten</a>
+      <a href="/innovatie/bouwprojecten">Bouw- en verkeersprojecten</a>
       <a href="/innovatie/bouwprojecten/contact">Contact</a>
+      <span>Ankerloos</span>
     </Breadcrumbs>
   </Story>
-</Preview>
+</Canvas>

@@ -1,0 +1,41 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { Datepicker } from '@amsterdam/asc-ui'
+
+<Meta
+  title="UI/Form/Datepicker"
+  component={Datepicker}
+  decorators={[
+    (Item) => (
+      <div
+        style={{
+          maxWidth: '400px',
+          minHeight: '350px',
+        }}
+      >
+        <Item />
+      </div>
+    ),
+  ]}
+/>
+
+# Datepicker
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/46628a-date-picker)
+
+**Component status: Experimental**
+
+## Default
+
+<Canvas>
+  <Story name="Default">
+    <Datepicker id="default" />
+  </Story>
+</Canvas>
+
+## With value
+
+<Canvas>
+  <Story name="With value">
+    <Datepicker id="with-value" value="13-03-2021" />
+  </Story>
+</Canvas>

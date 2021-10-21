@@ -4,16 +4,25 @@ import Hidden from '../Hidden'
 import AmsterdamLogoStyle, {
   LogoShortStyle,
   LogoTallStyle,
+  LogoShortStyleSSR,
+  LogoTallStyleSSR,
   LogoTitleStyle,
 } from './AmsterdamLogoStyle'
 
 const AmsterdamLogo: FunctionComponent<LogoProps> = ({
   tall,
   title = 'Gemeente Amsterdam',
+  ssr,
   ...otherProps
 }) => (
   <AmsterdamLogoStyle tall={tall} {...otherProps}>
-    {tall ? (
+    {tall && ssr && (
+      <>
+        <LogoShortStyleSSR />
+        <LogoTallStyleSSR />
+      </>
+    )}
+    {tall && !ssr && (
       <>
         <Hidden minBreakpoint="laptopM">
           <LogoShortStyle />
@@ -22,9 +31,8 @@ const AmsterdamLogo: FunctionComponent<LogoProps> = ({
           <LogoTallStyle />
         </Hidden>
       </>
-    ) : (
-      <LogoShortStyle />
     )}
+    {!tall && <LogoShortStyle />}
     <LogoTitleStyle>{title}</LogoTitleStyle>
   </AmsterdamLogoStyle>
 )

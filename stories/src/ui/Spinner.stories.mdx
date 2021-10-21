@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Spinner, themeColor } from '@amsterdam/asc-ui'
 
 <Meta title="UI/Spinner" component={Spinner} />
@@ -12,40 +12,40 @@ import { Spinner, themeColor } from '@amsterdam/asc-ui'
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Fragment>
       <Spinner />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With size 100px
 
-<Preview>
+<Canvas>
   <Story name="With size 100px">
     <Fragment>
       <Spinner size={100} />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With color
 
-<Preview>
+<Canvas>
   <Story name="With color">
     <Fragment>
       <Spinner color="#00ff00" />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With themeColor
 
-<Preview>
+<Canvas>
   <Story name="With themeColor">
     <Fragment>
       <Spinner color={themeColor('secondary')} />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

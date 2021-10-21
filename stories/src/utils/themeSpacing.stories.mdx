@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import styled from 'styled-components'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { themeSpacing, themeColor } from '@amsterdam/asc-ui'
 
 <Meta title="Utils/themeSpacing" component={themeSpacing} />
@@ -11,7 +11,7 @@ A function to retrieve a value derived from the theme spacing unit
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Fragment>
       {(() => {
@@ -29,4 +29,4 @@ A function to retrieve a value derived from the theme spacing unit
       })()}
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

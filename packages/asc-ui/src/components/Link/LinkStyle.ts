@@ -9,6 +9,7 @@ export type Props = {
   variant?: LinkVariant
   icon?: 'external' | 'download'
   darkBackground?: boolean
+  $darkBackground?: boolean // transient prop https://styled-components.com/docs/api#transient-props
   inList?: boolean
 } & TypographyProps
 
@@ -39,14 +40,16 @@ export const DefaultLinkStyleCSS = css<Props>`
   }
 `
 
-export const ChevronIcon = styled(IconStyle)`
-  /* no use of themeSpacing on margin-top, this is just to align the icon perfectly with the link text */
-  margin: 0.25em ${themeSpacing(1)} 0 0;
+const Icon = styled(IconStyle)`
+  display: inline;
 `
 
-export const RightIcon = styled(IconStyle)`
-  /* no use of themeSpacing on margin-top, this is just to align the icon perfectly with the link text */
-  margin: 0.2em 0 0 ${themeSpacing(2)};
+export const ChevronIcon = styled(Icon)`
+  margin-right: ${themeSpacing(1)};
+`
+
+export const RightIcon = styled(Icon)`
+  margin-left: ${themeSpacing(2)};
 `
 
 export const LinkContent = styled.span`
@@ -65,8 +68,8 @@ export default styled(Typography)<Props>`
         return DefaultLinkStyleCSS
     }
   }}
-  ${({ darkBackground }) =>
-    darkBackground &&
+  ${({ darkBackground, $darkBackground }) =>
+    (darkBackground || $darkBackground) &&
     css`
       &,
       &:hover {

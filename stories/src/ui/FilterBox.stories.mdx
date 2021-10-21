@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Checkbox, FilterBox, FilterOption, Label } from '@amsterdam/asc-ui'
 
 <Meta
@@ -25,7 +25,7 @@ Doesn't exist in Design System yet
 
 ## With Label Options
 
-<Preview>
+<Canvas>
   <Story name="WithLabelOptions">
     <FilterBox label="Filters">
       <FilterOption active href="#">
@@ -36,11 +36,11 @@ Doesn't exist in Design System yet
       <FilterOption href="#">Optie 4</FilterOption>
     </FilterBox>
   </Story>
-</Preview>
+</Canvas>
 
 ## With CheckBoxes
 
-<Preview>
+<Canvas>
   <Story name="With CheckBoxes">
     <FilterBox label="Filters">
       <Label
@@ -58,4 +58,4 @@ Doesn't exist in Design System yet
       </Label>
     </FilterBox>
   </Story>
-</Preview>
+</Canvas>

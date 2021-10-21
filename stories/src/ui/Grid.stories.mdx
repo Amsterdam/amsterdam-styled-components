@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Row, Column } from '@amsterdam/asc-ui'
 
 <Meta title="Headless/Grid" />
@@ -115,7 +115,7 @@ A `Column` component can also be passed a `debug` prop. Setting this prop to 'tr
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Fragment>
       <br />
@@ -148,13 +148,13 @@ A `Column` component can also be passed a `debug` prop. Setting this prop to 'tr
       </Row>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Nesting `<Column />`
 
 Nesting columns can be tricky, because of the width of the parent element and the widths in percentages of each column. The `<Column />` component contains its parent's span context and can thus safely be nested:
 
-<Preview>
+<Canvas>
   <Story name="Nesting columns">
     <Fragment>
       <br />
@@ -187,13 +187,13 @@ Nesting columns can be tricky, because of the width of the parent element and th
       </Row>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Nesting columns with wrap
 
 Whenever a child `<Column />` component should span the entire width of its parent, the parent should be passed the prop `wrap`. If not, all child components will remain adjacent to one another.
 
-<Preview>
+<Canvas>
   <Story name="Nesting columns with wrap">
     <Fragment>
       <br />
@@ -224,4 +224,4 @@ Whenever a child `<Column />` component should span the entire width of its pare
       </Row>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

@@ -4,7 +4,7 @@
 [![Storybook](https://github.com/storybooks/brand/blob/master/badge/badge-storybook.svg)](https://github.com/storybooks/storybook)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 [![TypeScript](https://badges.frapsoft.com/typescript/version/typescript-next.svg?v=101)](https://github.com/ellerbrock/typescript-badges/)
-[![Build Status](https://travis-ci.org/Amsterdam/amsterdam-styled-components.svg?branch=master)](https://travis-ci.org/Amsterdam/amsterdam-styled-components)
+[![Build Status](https://travis-ci.org/Amsterdam/amsterdam-styled-components.svg?branch=main)](https://travis-ci.org/Amsterdam/amsterdam-styled-components)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8662c9dc-e673-434b-9a95-a642e4b45825/deploy-status)](https://app.netlify.com/sites/amsterdam-styled-components/deploys)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
@@ -12,11 +12,11 @@
 
 ## Use components in your project
 
-Please read the [getting started](https://github.com/Amsterdam/amsterdam-styled-components/tree/master/docs/GETTING_STARTED.md) documentation
+Please read the [getting started](https://github.com/Amsterdam/amsterdam-styled-components/tree/main/docs/GETTING_STARTED.md) documentation
 
 ## Contributing / Creating components
 
-Please read the [CONTRIBUTION.md](https://github.com/Amsterdam/amsterdam-styled-components/tree/master/docs/CONTRIBUTING.md)
+Please read the [CONTRIBUTION.md](https://github.com/Amsterdam/amsterdam-styled-components/tree/main/docs/CONTRIBUTING.md)
 
 ## Design system
 
@@ -29,9 +29,9 @@ The state of a component indicates whether it is ‘approved’ as officially al
 
 Some components don't have a state in the stories, consider these "experimental".
 
-[More info can be found here](https://github.com/Amsterdam/amsterdam-styled-components/tree/master/docs/CONTRIBUTING.md#aligning)
+[More info can be found here](https://github.com/Amsterdam/amsterdam-styled-components/tree/main/docs/CONTRIBUTING.md#aligning)
 
-If you have any questions, please contact one of the [maintainers](https://github.com/Amsterdam/amsterdam-styled-components/tree/master/docs/MAINTAINERS.md) to get access to the [DST slack group](https://dstamsterdam.slack.com)
+If you have any questions, please contact one of the [maintainers](https://github.com/Amsterdam/amsterdam-styled-components/tree/main/docs/MAINTAINERS.md) to get access to the [DST slack group](https://dstamsterdam.slack.com)
 
 ## Structure
 

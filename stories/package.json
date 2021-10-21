@@ -2,7 +2,7 @@
   "name": "stories",
   "private": true,
   "license": "MPL-2.0",
-  "version": "0.29.3",
+  "version": "0.33.0",
   "author": "Gemeente Amsterdam",
   "homepage": "https://github.com/Amsterdam/amsterdam-styled-components#readme",
   "repository": {
@@ -12,24 +12,23 @@
   },
   "main": "lib/stories.js",
   "scripts": {
-    "start": "node_modules/.bin/start-storybook -p 6006 -c .storybook -s ../packages/asc-assets/static",
+    "start": "start-storybook -p 6006 -c .storybook -s ../packages/asc-assets/static",
     "build": "build-storybook -c .storybook -s ../packages/asc-assets/static -o lib"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "^6.0.0-beta.37",
-    "@storybook/addon-actions": "^6.0.0-beta.37",
-    "@storybook/addon-docs": "^6.0.0-beta.37",
-    "@storybook/addon-knobs": "^6.0.0-beta.37",
-    "@storybook/addon-links": "^6.0.0-beta.37",
-    "@storybook/addon-viewport": "^6.0.0-beta.37",
-    "@storybook/react": "^6.0.0-beta.37",
-    "eslint-plugin-mdx": "^1.7.0"
+    "@storybook/addon-a11y": "^6.3.12",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-docs": "^6.3.12",
+    "@storybook/addon-controls": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/addon-viewport": "^6.3.12",
+    "@storybook/react": "^6.3.12",
+    "eslint-plugin-mdx": "^1.15.1"
   },
   "dependencies": {
-    "@amsterdam/asc-assets": "^0.29.3",
-    "@amsterdam/asc-ui": "^0.29.3",
-    "react": "^17.0.1",
-    "react-table": "^7.2.2",
-    "styled-components": "^5.2.1"
+    "@amsterdam/asc-assets": "^0.33.0",
+    "@amsterdam/asc-ui": "^0.33.0",
+    "react": "^17.0.2",
+    "styled-components": "^5.3.0"
   }
 }

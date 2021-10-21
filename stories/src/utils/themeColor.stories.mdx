@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import styled from 'styled-components'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { themeColor } from '@amsterdam/asc-ui'
 
 <Meta title="Utils/themeColor" component={themeColor} />
@@ -11,7 +11,7 @@ A function to retrieve a color from a theme
 
 ## Primary colors
 
-<Preview>
+<Canvas>
   <Story name="Primary colors">
     <Fragment>
       {(() => {
@@ -32,11 +32,11 @@ A function to retrieve a color from a theme
       })()}
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Tints
 
-<Preview>
+<Canvas>
   <Story name="Tints">
     <Fragment>
       {(() => {
@@ -96,11 +96,11 @@ A function to retrieve a color from a theme
       })()}
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Support colors
 
-<Preview>
+<Canvas>
   <Story name="Support colors">
     <Fragment>
       {(() => {
@@ -128,11 +128,11 @@ A function to retrieve a color from a theme
       })()}
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Supplement colors
 
-<Preview>
+<Canvas>
   <Story name="Supplement colors">
     <Fragment>
       {(() => {
@@ -190,4 +190,4 @@ A function to retrieve a color from a theme
       })()}
     </Fragment>
   </Story>
-</Preview>
+</Canvas>

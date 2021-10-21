@@ -1,5 +1,5 @@
 import { useState, Fragment } from 'react'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { ErrorMessage, TextField } from '@amsterdam/asc-ui'
 
 export const WithAControlledState = () => {
@@ -9,6 +9,10 @@ export const WithAControlledState = () => {
       <TextField
         label="Controlled component"
         onChange={(e) => setValue(e.target.value)}
+        value={value}
+        onClear={() => {
+          setValue('')
+        }}
       />
       <br /> {value ? `The user types: ${value}` : 'Waiting for user input...'}
     </Fragment>
@@ -19,14 +23,14 @@ export const WithAControlledState = () => {
   title="UI/Form/TextField"
   component={TextField}
   decorators={[
-    (storyFn) => (
+    (StoryComponent) => (
       <div
         style={{
           width: '400px',
           padding: '40px 10px',
         }}
       >
-        {storyFn()}
+        <StoryComponent />
       </div>
     ),
   ]}
@@ -42,23 +46,23 @@ Single line text input field. Use the Textarea component for multi line text inp
 
 ## Default state (new)
 
-<Preview>
+<Canvas>
   <Story name="Default state">
     <TextField label="Label" />
   </Story>
-</Preview>
+</Canvas>
 
 ## Disabled state
 
-<Preview>
+<Canvas>
   <Story name="Disabled state">
     <TextField label="Disabled" disabled />
   </Story>
-</Preview>
+</Canvas>
 
 ## Error state
 
-<Preview>
+<Canvas>
   <Story name="Error state">
     <Fragment>
       <TextField label="With Error Message" error />
@@ -68,27 +72,27 @@ Single line text input field. Use the Textarea component for multi line text inp
       <TextField label="Without Error Message" error />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With placeholder
 
-<Preview>
+<Canvas>
   <Story name="With placeholder">
     <TextField placeholder="A placeholder" />
   </Story>
-</Preview>
+</Canvas>
 
 ## With autoFocus
 
-<Preview>
+<Canvas>
   <Story name="With autoFocus">
     <TextField label="This will focus automatically" autoFocus />
   </Story>
-</Preview>
+</Canvas>
 
 ## With an accessible label for ScreenReader
 
-<Preview>
+<Canvas>
   <Story name="With an accessible label for ScreenReader">
     <TextField
       label="I am only visible for ScreenReaders"
@@ -96,12 +100,12 @@ Single line text input field. Use the Textarea component for multi line text inp
       id="text-filed-id"
     />
   </Story>
-</Preview>
+</Canvas>
 
-## With a controlled state
+## With a controlled state that shows a clear button
 
-<Preview>
-  <Story name="With a controlled state">
+<Canvas>
+  <Story name="With a controlled state that shows a clear button">
     <WithAControlledState />
   </Story>
-</Preview>
+</Canvas>

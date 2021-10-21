@@ -26,6 +26,8 @@ import {
 } from './components/CustomHTMLBlock'
 import Divider from './components/Divider'
 import DocumentCover from './components/DocumentCover'
+import Datepicker, { DatepickerStyle } from './components/Datepicker'
+
 import {
   EditorialBody,
   EditorialContent,
@@ -73,6 +75,7 @@ import {
   MenuToggle,
 } from './components/Menu'
 import Modal from './components/Modal'
+import { Pagination } from './components/Pagination'
 import Paragraph, { ParagraphStyle } from './components/Paragraph'
 import Portal from './components/Portal'
 import Quote, { QuoteStyle } from './components/Quote'
@@ -91,15 +94,19 @@ import Select, {
   SelectWrapperStyle,
   SelectContentWrapperStyle,
 } from './components/Select'
+import Switch, { SwitchStyle } from './components/Switch'
+
 import * as constants from './components/shared/constants'
 import ShowMoreShowLess from './components/ShowMoreShowLess'
 import Spinner from './components/Spinner/Spinner'
 import {
   Table,
   TableCell,
-  TableHeaderCell,
-  TableResizer,
+  TableHeader,
   TableRow,
+  TableBody,
+  TableContainer,
+  TableFooter,
 } from './components/Table'
 import Tag, { TagStyle } from './components/Tag'
 import TextArea, { TextAreaStyles } from './components/TextArea'
@@ -107,7 +114,6 @@ import TextField, { TextFieldStyles } from './components/TextField'
 import TopBar, { TopBarStyles } from './components/TopBar'
 import TopTaskLink, { TopTaskLinkStyle } from './components/TopTaskLink'
 import Typography from './components/Typography'
-import ViewerContainer from './components/ViewerContainer/ViewerContainer'
 import { ascDefaultTheme } from './theme'
 import CompactThemeProvider from './theme/CompactThemeProvider'
 import ThemeProvider from './theme/ThemeProvider'
@@ -115,9 +121,14 @@ import { Theme } from './types'
 
 import { perceivedLoading } from './utils/themeUtils'
 
+import DescriptionList, {
+  DescriptionListItem,
+} from './components/DescriptionList'
+
 export {
   useDebounce,
   useActionOnEscape,
+  useClickOutside,
   useEdgeDetection,
   useFocus,
   useFocusWithArrows,
@@ -141,6 +152,7 @@ export {
 export { constants }
 export { perceivedLoading }
 // Components
+export { Datepicker, DatepickerStyle }
 export { Quote, QuoteStyle }
 export {
   Accordion,
@@ -191,6 +203,7 @@ export {
   MenuToggle,
   MenuButton,
   Modal,
+  Pagination,
   Portal,
   Radio,
   RadioGroup,
@@ -203,6 +216,7 @@ export {
   Spinner,
   TextArea,
   TextField,
+  Switch,
   Theme,
   ThemeProvider,
   CompactThemeProvider,
@@ -221,16 +235,19 @@ export {
   ascDefaultTheme,
   DocumentCover,
   Tag,
-  ViewerContainer,
   CompactPager,
   Hidden,
   FormTitle,
   Table,
-  TableResizer,
   TableRow,
   TableCell,
-  TableHeaderCell,
+  TableHeader,
+  TableBody,
+  TableContainer,
+  TableFooter,
   ShowMoreShowLess,
+  DescriptionList,
+  DescriptionListItem,
 }
 
 export const styles = {
@@ -261,6 +278,7 @@ export const styles = {
   HeadingStyle,
   CustomHTMLBlockStyle,
   ArticleStyle,
+  SwitchStyle,
   TagStyle,
   TopTaskLinkStyle,
   CheckboxStyle,

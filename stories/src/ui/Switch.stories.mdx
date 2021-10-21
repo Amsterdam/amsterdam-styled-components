@@ -1,0 +1,27 @@
+import { action } from '@storybook/addon-actions'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { Switch } from '@amsterdam/asc-ui'
+
+<Meta title="UI/Form/Switch" component={Switch} />
+
+# Switch
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/647350-toggle)
+
+**Component status: experimental**
+
+## Default
+
+<Canvas>
+  <Story name="Default">
+    <>
+      <Switch
+        aria-label="This is a checkbox!"
+        id="checkBox"
+        onChange={(e) => {
+          action(`switch pressed ${e.target.checked}`)(e)
+        }}
+      />
+    </>
+  </Story>
+</Canvas>

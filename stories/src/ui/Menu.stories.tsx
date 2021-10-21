@@ -8,8 +8,9 @@ import {
   MenuToggle,
   themeColor,
 } from '@amsterdam/asc-ui'
-import { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent } from 'react'
 import styled from 'styled-components'
+import { Meta } from '@storybook/react'
 
 const ReactRouterLink: FunctionComponent<any> = ({
   children,
@@ -38,11 +39,13 @@ export default {
   title: 'UI/Menu',
 
   decorators: [
-    (storyFn: () => ReactNode) => (
-      <div style={{ padding: '40px 10px' }}>{storyFn()}</div>
+    (StoryComponent) => (
+      <div style={{ padding: '40px 10px' }}>
+        <StoryComponent />
+      </div>
     ),
   ],
-}
+} as Meta
 
 const MenuChildren = () => (
   <>

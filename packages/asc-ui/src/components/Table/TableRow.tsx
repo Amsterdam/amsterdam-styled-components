@@ -1,32 +1,11 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { themeColor } from '../../utils'
+import TableCell from './TableCell'
 
-type Props = {
-  isSelected?: boolean
-  isSticky?: boolean
-}
-
-const TableRow = styled.tr<Props>`
-  :last-child {
-    td {
-      border-bottom: 0;
-    }
+const TableRow = styled.tr`
+  &:not(:last-child) ${TableCell} {
+    border-bottom: 1px solid ${themeColor('tint', 'level3')};
   }
-
-  ${({ isSelected }) =>
-    isSelected &&
-    css`
-      background-color: ${themeColor('tint', 'level2')};
-    `}
-
-  ${({ isSticky }) =>
-    isSticky &&
-    css`
-      background-color: ${themeColor('tint', 'level1')};
-      position: sticky;
-      top: 0;
-      z-index: 2;
-    `}
 `
 
 export default TableRow

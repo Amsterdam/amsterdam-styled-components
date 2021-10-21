@@ -1,5 +1,5 @@
 import { createRef, useEffect, Fragment } from 'react'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { action } from '@storybook/addon-actions'
 import { Select, Label, ErrorMessage } from '@amsterdam/asc-ui'
 
@@ -32,13 +32,13 @@ export const SelectWithRef = () => {
   title="UI/Form/Select (Dropdown)"
   component={Select}
   decorators={[
-    (storyFn) => (
+    (StoryComponent) => (
       <div
         style={{
           width: '400px',
         }}
       >
-        {storyFn()}
+        <StoryComponent />
       </div>
     ),
   ]}
@@ -56,7 +56,7 @@ to ask multiple questions (text from Design System)
 
 ## Default state
 
-<Preview>
+<Canvas>
   <Story name="Default state">
     <Select id="select-1" label="Label">
       <option value="1">Option 1</option>
@@ -65,11 +65,11 @@ to ask multiple questions (text from Design System)
       <option value="4">Option 4</option>
     </Select>
   </Story>
-</Preview>
+</Canvas>
 
 ## Selected state
 
-<Preview>
+<Canvas>
   <Story name="Selected state">
     <Select id="select-1" label="Label" defaultValue="2">
       <option value="1">Option 1</option>
@@ -78,11 +78,11 @@ to ask multiple questions (text from Design System)
       <option value="4">Option 4</option>
     </Select>
   </Story>
-</Preview>
+</Canvas>
 
 ## Disabled state
 
-<Preview>
+<Canvas>
   <Story name="Disabled state">
     <Fragment>
       <Select id="select-1" label="Disabled Select component" disabled>
@@ -103,11 +103,11 @@ to ask multiple questions (text from Design System)
       </Select>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Error state
 
-<Preview>
+<Canvas>
   <Story name="Error state">
     <Fragment>
       <Select id="select-1" label="With Error Message" error>
@@ -127,19 +127,19 @@ to ask multiple questions (text from Design System)
       </Select>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## With ref
 
-<Preview>
+<Canvas>
   <Story name="With ref">
     <SelectWithRef />
   </Story>
-</Preview>
+</Canvas>
 
 ## With long text
 
-<Preview>
+<Canvas>
   <Story name="With long text">
     <Select id="select-1" label="Select with long text">
       <option value="1">
@@ -156,11 +156,11 @@ to ask multiple questions (text from Design System)
       </option>
     </Select>
   </Story>
-</Preview>
+</Canvas>
 
 ## With the label component wrapped around
 
-<Preview>
+<Canvas>
   <Story name="With the label component wrapped around">
     <Label htmlFor="select-with-label" label="Test">
       <Select id="select-with-label">
@@ -179,4 +179,4 @@ to ask multiple questions (text from Design System)
       </Select>
     </Label>
   </Story>
-</Preview>
+</Canvas>

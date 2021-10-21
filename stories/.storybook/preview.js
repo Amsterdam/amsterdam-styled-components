@@ -1,5 +1,5 @@
 import { GlobalStyle, ThemeProvider } from '@amsterdam/asc-ui'
-import { DocsContainer, DocsPage } from '@storybook/addon-docs/blocks'
+import { DocsContainer, DocsPage } from '@storybook/addon-docs'
 import { addDecorator, addParameters } from '@storybook/react'
 import React from 'react'
 import styled from 'styled-components'
@@ -33,7 +33,6 @@ addDecorator(withGlobalStyles)
 addParameters({
   options: {
     storySort: sortStories(SORT_ORDER),
-    showRoots: true,
   },
   a11y: {},
   docs: {
