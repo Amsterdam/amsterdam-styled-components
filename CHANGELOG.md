@@ -16,6 +16,7 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Allow passing a `ReactNode` as the value of the `label` prop in the `Select` component
 - Fixed: `Link` icons are now aligned properly based on line-height
 - Added: Descriptionlist component
 

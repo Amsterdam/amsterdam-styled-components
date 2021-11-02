@@ -72,7 +72,7 @@ const Select = forwardRef<
           onChange(event)
         }
       },
-      [onChange],
+      [onChange, updateValue],
     )
 
     useImperativeHandle(externalRef, () => ref.current as HTMLSelectElement)
@@ -81,7 +81,7 @@ const Select = forwardRef<
       if (ref.current) {
         updateValue(ref.current)
       }
-    }, [ref, value])
+    }, [ref, updateValue, value])
 
     return (
       <>

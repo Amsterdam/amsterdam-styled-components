@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 import {
   getTypographyFromTheme,
@@ -9,7 +10,7 @@ import {
 interface IProps {
   htmlFor?: string
   srOnly: boolean
-  label?: string
+  label?: ReactNode
   error?: string | boolean
 }
 
