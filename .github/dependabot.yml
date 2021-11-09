@@ -2,21 +2,26 @@ version: 2
 updates:
 - package-ecosystem: npm
   directory: "/"
+  open-pull-requests-limit: 100
   schedule:
     interval: weekly
 - package-ecosystem: npm
   directory: "/packages/asc-assets"
+  open-pull-requests-limit: 100
   schedule:
     interval: weekly
 - package-ecosystem: npm
   directory: "/packages/asc-ui"
+  open-pull-requests-limit: 100
   schedule:
     interval: weekly
 - package-ecosystem: npm
   directory: "/examples/create-react-app"
+  open-pull-requests-limit: 100
   schedule:
     interval: weekly
 - package-ecosystem: npm
   directory: "/examples/nextjs"
+  open-pull-requests-limit: 100
   schedule:
     interval: weekly
