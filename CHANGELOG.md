@@ -14,8 +14,9 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
-## Unreleased
+## [0.34.0]
 
+- Added Avenir Bold font
 - Allow passing a `ReactNode` as the value of the `label` prop in the `Select` component
 - Fixed: `Link` icons are now aligned properly based on line-height
 - Added: Descriptionlist component
