@@ -1,0 +1,59 @@
+import styled from 'styled-components'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { StepByStepNav } from '@amsterdam/asc-ui'
+
+export const Decorator = styled.div``
+
+<Meta
+  title="UI/StepByStepNav"
+  component={StepByStepNav}
+  decorators={[
+    (StoryComponent) => (
+      <Decorator>
+        <StoryComponent />
+      </Decorator>
+    ),
+  ]}
+  args={{
+    steps: [
+      { label: 'item #1' },
+      { label: 'item #2' },
+      { label: 'item #3' },
+      { label: 'Lorem ipsum dolor sit amet. Hic sunt dracones' },
+      { label: 'item #4' },
+    ],
+  }}
+  argTypes={{
+    className: {
+      table: {
+        disable: true,
+      },
+    },
+    indexType: {
+      defaultValue: 'none',
+      options: ['checkmark', 'numeric', 'none'],
+      control: { type: 'radio' },
+    },
+    activeIndex: {
+      defaultValue: 0,
+      control: { type: 'number' },
+    },
+    steps: {
+      table: {
+        disable: true,
+      },
+    },
+  }}
+/>
+
+# StepByStepNav
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/0659fc-step-by-step-navigation)
+
+**Component status: experimental**
+
+## Default
+
+<Canvas>
+  <Story name="Default">{(args) => <StepByStepNav {...args} />}</Story>
+</Canvas>

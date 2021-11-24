@@ -125,6 +125,8 @@ import DescriptionList, {
   DescriptionListItem,
 } from './components/DescriptionList'
 
+import StepByStepNav from './components/StepByStepNav'
+
 export {
   useDebounce,
   useActionOnEscape,
@@ -248,6 +250,7 @@ export {
   ShowMoreShowLess,
   DescriptionList,
   DescriptionListItem,
+  StepByStepNav,
 }
 
 export const styles = {
