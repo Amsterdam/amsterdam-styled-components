@@ -29,19 +29,22 @@ export const Decorator = styled.div``
         disable: true,
       },
     },
-    indexType: {
+    itemType: {
       defaultValue: 'none',
       options: ['checkmark', 'numeric', 'none'],
       control: { type: 'radio' },
     },
-    activeIndex: {
-      defaultValue: 0,
+    activeItem: {
+      defaultValue: 1,
       control: { type: 'number' },
     },
     steps: {
       table: {
         disable: true,
       },
+    },
+    stepsCompleted: {
+      control: { type: 'boolean' },
     },
   }}
 />

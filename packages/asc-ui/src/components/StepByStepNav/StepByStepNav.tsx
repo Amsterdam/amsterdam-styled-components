@@ -7,13 +7,32 @@ import Typography from '../Typography'
 const StepByStepNav: FunctionComponent<
   StepByStepNavProps & HTMLAttributes<HTMLElement>
 > = (props) => {
-  const { activeIndex, steps } = props
+  const { activeItem, steps, stepsCompleted } = props
+  let realActiveItem: number
+
+  if (!activeItem || activeItem < 1) {
+    realActiveItem = 1
+  } else if (stepsCompleted || activeItem > steps.length) {
+    realActiveItem = steps.length
+  } else {
+    realActiveItem = activeItem
+  }
 
   return (
-    <StepByStepNavStyle {...props} role="group" aria-label="progress">
+    <StepByStepNavStyle
+      {...props}
+      activeItem={realActiveItem}
+      role="group"
+      aria-label="progress"
+    >
       <ol>
         {steps.map(({ label }, index) => (
-          <li key={label} aria-current={index === activeIndex && 'step'}>
+          <li
+            key={label}
+            aria-current={
+              !stepsCompleted && index === realActiveItem - 1 && 'step'
+            }
+          >
             <Typography as="span">{label}</Typography>
           </li>
         ))}
@@ -23,9 +42,9 @@ const StepByStepNav: FunctionComponent<
 }
 
 StepByStepNav.defaultProps = {
-  activeIndex: 1,
+  activeItem: 1,
   className: '',
-  indexType: 'none',
+  itemType: 'none',
 }
 
 export default StepByStepNav
