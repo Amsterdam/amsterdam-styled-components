@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react'
 
+import type { StepByStepNavProps } from './StepByStepNavStyle'
 import StepByStepNav from './StepByStepNav'
 
-const steps = [
+const steps: StepByStepNavProps['steps'] = [
   { label: 'item #1' },
   { label: 'item #2' },
   { label: 'item #3' },
@@ -12,7 +13,7 @@ const steps = [
 
 describe('StepByStepNav', () => {
   it('renders correctly', () => {
-    const types: Array<'checkmark' | 'numeric' | 'none'> = [
+    const types: Array<StepByStepNavProps['itemType']> = [
       'none',
       'numeric',
       'checkmark',

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { Meta, Story } from '@storybook/addon-docs'
 import { StepByStepNav } from '@amsterdam/asc-ui'
 
 export const Decorator = styled.div``
@@ -35,7 +35,7 @@ export const Decorator = styled.div``
       control: { type: 'radio' },
     },
     activeItem: {
-      defaultValue: 1,
+      defaultValue: 3,
       control: { type: 'number' },
     },
     steps: {
@@ -55,8 +55,22 @@ export const Decorator = styled.div``
 
 **Component status: experimental**
 
+Step by step navigation component. Does not contains links. Can displays three different variants: no visual indicators other than the blue and gray discs, numerical indicators and check-mark indicators. Will not render in a viewport that is configured to have a width that is equal to or smaller than the `mobileS` breakpoint (defaults to 320 pixels).
+
 ## Default
 
-<Canvas>
-  <Story name="Default">{(args) => <StepByStepNav {...args} />}</Story>
-</Canvas>
+<Story name="Default">{(args) => <StepByStepNav {...args} />}</Story>
+
+## Numeric
+
+<Story name="Numeric">
+  {(args) => <StepByStepNav {...args} itemType="numeric" />}
+</Story>
+
+## Checkmark
+
+Will show a checkmark icon on each of the items that are before the active item. For all items to get a checkmark, set the `stepsCompleted` prop to 'true'.
+
+<Story name="Checkmark">
+  {(args) => <StepByStepNav {...args} itemType="checkmark" />}
+</Story>

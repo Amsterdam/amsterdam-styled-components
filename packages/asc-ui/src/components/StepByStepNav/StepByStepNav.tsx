@@ -1,14 +1,17 @@
 import type { FunctionComponent, HTMLAttributes } from 'react'
 import type { StepByStepNavProps } from './StepByStepNavStyle'
 
-import StepByStepNavStyle from './StepByStepNavStyle'
-import Typography from '../Typography'
+import StepByStepNavStyle, {
+  OrderdedList,
+  Label,
+  ListItem,
+} from './StepByStepNavStyle'
 
 const StepByStepNav: FunctionComponent<
   StepByStepNavProps & HTMLAttributes<HTMLElement>
-> = (props) => {
-  const { activeItem, steps, stepsCompleted } = props
-  let realActiveItem: number
+> = ({ activeItem, className, ...props }) => {
+  const { steps, stepsCompleted } = props
+  let realActiveItem = 0
 
   if (!activeItem || activeItem < 1) {
     realActiveItem = 1
@@ -20,23 +23,26 @@ const StepByStepNav: FunctionComponent<
 
   return (
     <StepByStepNavStyle
-      {...props}
       activeItem={realActiveItem}
-      role="group"
       aria-label="progress"
+      className={className}
+      role="group"
+      {...props}
     >
-      <ol>
+      <OrderdedList>
         {steps.map(({ label }, index) => (
-          <li
-            key={label}
+          <ListItem
+            activeItem={realActiveItem}
             aria-current={
-              !stepsCompleted && index === realActiveItem - 1 && 'step'
+              !stepsCompleted && index === realActiveItem - 1 ? 'step' : 'false'
             }
+            key={label}
+            {...props}
           >
-            <Typography as="span">{label}</Typography>
-          </li>
+            <Label itemType={props.itemType}>{label}</Label>
+          </ListItem>
         ))}
-      </ol>
+      </OrderdedList>
     </StepByStepNavStyle>
   )
 }

@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 
-import { breakpoint, themeColor } from '../../utils'
+import Typography from '../Typography'
+import { breakpoint, themeColor } from '../../utils/themeUtils'
 
 type Step = {
   label: string
@@ -29,147 +30,144 @@ const iconStyle = css`
   background-image: url('data:image/svg+xml,${checkmarkIcon}');
 `
 
-export default styled.div<StyledProps>`
-  ${({ activeItem, itemType, steps, stepsCompleted }) => {
-    return css`
-      @media screen and ${breakpoint('max-width', 'mobileS')} {
-        display: none;
+export const OrderdedList = styled.ol`
+  counter-reset: stepByStep;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media screen and ${breakpoint('max-width', 'laptop')} {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+`
+
+export const Label = styled(Typography).attrs({ as: 'span' })<{
+  itemType: StyledProps['itemType']
+}>`
+  font-weight: 400;
+
+  &::before {
+    background-color: ${themeColor('tint', 'level5')};
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: ${itemSize}px;
+    left: -${itemSize / 2 + 1}px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: ${itemSize}px;
+    ${({ itemType }) =>
+      itemType === 'numeric' &&
+      css`
+        color: white;
+        content: counter(stepByStep);
+        counter-increment: stepByStep;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: ${itemSize}px;
+      `}
+  }
+
+  @media screen and ${breakpoint('max-width', 'laptop')} {
+    display: inline-block;
+    height: ${activeItemSize}px;
+    visibility: hidden;
+    width: ${activeItemSize}px;
+
+    &::before {
+      top: ${itemSize / 2}px;
+      visibility: visible;
+    }
+  }
+`
+
+export const ListItem = styled.li<StyledProps>`
+  ${({ activeItem, itemType, steps, stepsCompleted }) => css`
+    border-left: 2px solid ${themeColor('tint', 'level5')};
+    margin-left: ${itemSize}px;
+    padding-bottom: ${itemSize * 2}px;
+    padding-left: ${itemSize * 1.5}px;
+    position: relative;
+
+    &:last-child {
+      border-left-color: transparent;
+    }
+
+    /* All list items before and including the active one */
+    &:nth-child(-n + ${activeItem}) {
+      &:not(:nth-last-of-type(${steps.length - (activeItem - 1)})) {
+        border-left: 2px solid ${themeColor('primary', 'main')};
+
+        ${Label}:before {
+          ${itemType === 'checkmark' && iconStyle}
+        }
       }
 
-      ol {
-        counter-reset: stepByStep;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+      ${Label}:before {
+        background-color: ${themeColor('primary', 'main')};
       }
+    }
 
-      li {
-        border-left: 2px solid ${themeColor('tint', 'level5')};
-        margin-left: ${itemSize}px;
-        padding-bottom: ${itemSize * 2}px;
-        padding-left: ${itemSize * 1.5}px;
-        position: relative;
+    /* Active list item */
+    &:nth-of-type(${activeItem}) {
+      ${Label} {
+        font-size: ${itemSize}px;
+        font-weight: 700;
 
-        &:last-child {
-          border-left-color: transparent;
-        }
-
-        & > span {
-          font-weight: 400;
-
-          &:before {
-            background-color: ${themeColor('tint', 'level5')};
-            border-radius: 50%;
-            content: '';
-            display: block;
-            height: ${itemSize}px;
-            left: -${itemSize / 2 + 1}px;
-            position: absolute;
-            text-align: center;
-            top: 0;
-            width: ${itemSize}px;
-
-            ${itemType === 'numeric' &&
-            css`
-              color: white;
-              content: counter(stepByStep);
-              counter-increment: stepByStep;
-              font-size: 14px;
-              font-weight: 500;
-              line-height: ${itemSize}px;
-            `}
-          }
-        }
-
-        /* All list items before and including the active one */
-        &:nth-child(-n + ${activeItem}) {
-          &:not(:nth-last-of-type(${steps.length - (activeItem - 1)})) {
-            border-left: 2px solid ${themeColor('primary', 'main')};
-
-            span:before {
-              ${itemType === 'checkmark' && iconStyle}
-            }
-          }
-
-          span:before {
-            background-color: ${themeColor('primary', 'main')};
-          }
-        }
-
-        /* Active list item */
-        &:nth-of-type(${activeItem}) {
-          & > span {
-            font-size: ${itemSize}px;
-            font-weight: 700;
-
-            &:before {
-              font-size: ${itemSize}px;
-              height: ${activeItemSize}px;
-              left: -${activeItemSize / 2 + 1}px;
-              line-height: ${activeItemSize}px;
-              top: -${(activeItemSize - itemSize) / 2}px;
-              width: ${activeItemSize}px;
-            }
-          }
-        }
-
-        ${stepsCompleted &&
-        css`
-          span:before {
-            background-color: ${themeColor('primary', 'main')};
-
-            ${itemType === 'checkmark' && iconStyle}
-          }
-        `}
-      }
-
-      @media screen and ${breakpoint('max-width', 'laptop')} {
-        ol {
-          display: flex;
-          flex-wrap: nowrap;
-          padding: 0;
-        }
-
-        li {
-          border: none !important;
+        &::before {
+          font-size: ${itemSize}px;
           height: ${activeItemSize}px;
-          margin: 0;
-          padding-left: ${itemSize}px;
-
-          &:last-child > span {
-            width: 0;
-          }
-
-          &:not(:last-child) {
-            background-image: linear-gradient(
-              to bottom,
-              transparent 0%,
-              transparent calc(50% - 1px),
-              ${themeColor('tint', 'level5')} calc(50% - 1px),
-              ${themeColor('tint', 'level5')} calc(50% + 1px),
-              transparent calc(50% + 1px),
-              transparent 100%
-            );
-          }
-
-          & > span {
-            display: inline-block;
-            height: ${activeItemSize}px;
-            visibility: hidden;
-            width: ${activeItemSize}px;
-
-            &:before {
-              top: ${itemSize / 2}px;
-              visibility: visible;
-            }
-          }
-
-          /* Active list item */
-          &:nth-of-type(${activeItem}) > span:before {
-            top: 1px;
-          }
+          left: -${activeItemSize / 2 + 1}px;
+          line-height: ${activeItemSize}px;
+          top: -${(activeItemSize - itemSize) / 2}px;
+          width: ${activeItemSize}px;
         }
       }
-    `
-  }}
+    }
+
+    ${stepsCompleted &&
+    css`
+      ${Label}:before {
+        background-color: ${themeColor('primary', 'main')};
+
+        ${itemType === 'checkmark' && iconStyle}
+      }
+    `}
+
+    @media screen and ${breakpoint('max-width', 'laptop')} {
+      border: none !important;
+      height: ${activeItemSize}px;
+      margin: 0;
+      padding-left: ${itemSize}px;
+
+      &:last-child > span {
+        width: 0;
+      }
+
+      &:not(:last-child) {
+        background-image: linear-gradient(
+          to bottom,
+          transparent 0%,
+          transparent calc(50% - 1px),
+          ${themeColor('tint', 'level5')} calc(50% - 1px),
+          ${themeColor('tint', 'level5')} calc(50% + 1px),
+          transparent calc(50% + 1px),
+          transparent 100%
+        );
+      }
+
+      /* Active list item */
+      &:nth-of-type(${activeItem}) ${Label}:before {
+        top: 1px;
+      }
+    }
+  `}
+`
+
+export default styled.div<StyledProps>`
+  @media screen and ${breakpoint('max-width', 'mobileS')} {
+    display: none;
+  }
 `
