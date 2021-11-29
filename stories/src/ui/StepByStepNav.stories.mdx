@@ -1,0 +1,54 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { StepByStepNav } from '@amsterdam/asc-ui'
+
+<Meta
+  title="UI/StepByStepNav"
+  component={StepByStepNav}
+  args={{
+    itemType: 'checkmark',
+    steps: [
+      { label: 'item #1' },
+      { label: 'item #2' },
+      { label: 'item #3' },
+      { label: 'Lorem ipsum dolor sit amet. Hic sunt dracones' },
+      { label: 'item #4' },
+    ],
+    stepsCompleted: false,
+  }}
+  argTypes={{
+    className: {
+      table: {
+        disable: true,
+      },
+    },
+    itemType: {
+      defaultValue: 'none',
+      options: ['checkmark', 'numeric', 'none'],
+      control: { type: 'radio' },
+    },
+    activeItem: {
+      defaultValue: 3,
+      control: { type: 'number' },
+    },
+    steps: {
+      table: {
+        disable: true,
+      },
+    },
+    stepsCompleted: {
+      control: { type: 'boolean' },
+    },
+  }}
+/>
+
+# StepByStepNav
+
+[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/0659fc-step-by-step-navigation)
+
+**Component status: experimental**
+
+Step by step navigation component. Does not contains links. Can displays three different variants: no visual indicators other than the blue and gray discs, numerical indicators and check-mark indicators. Will not render in a viewport that is configured to have a width that is equal to or smaller than the `mobileS` breakpoint (defaults to 320 pixels).
+
+<Canvas>
+  <Story name="Default">{(args) => <StepByStepNav {...args} />}</Story>
+</Canvas>
