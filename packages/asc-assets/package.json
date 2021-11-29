@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@svgr/cli": "^5.5.0",
-    "@svgr/core": "^5.5.0",
+    "@svgr/core": "^6.0.0",
     "svgo": "^2.3.0"
   },
   "publishConfig": {
