@@ -1,19 +1,9 @@
-import styled from 'styled-components'
-import { Meta, Story } from '@storybook/addon-docs'
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
 import { StepByStepNav } from '@amsterdam/asc-ui'
-
-export const Decorator = styled.div``
 
 <Meta
   title="UI/StepByStepNav"
   component={StepByStepNav}
-  decorators={[
-    (StoryComponent) => (
-      <Decorator>
-        <StoryComponent />
-      </Decorator>
-    ),
-  ]}
   args={{
     steps: [
       { label: 'item #1' },
@@ -59,18 +49,24 @@ Step by step navigation component. Does not contains links. Can displays three d
 
 ## Default
 
-<Story name="Default">{(args) => <StepByStepNav {...args} />}</Story>
+<Canvas>
+  <Story name="Default">{(args) => <StepByStepNav {...args} />}</Story>
+</Canvas>
 
 ## Numeric
 
-<Story name="Numeric">
-  {(args) => <StepByStepNav {...args} itemType="numeric" />}
-</Story>
+<Canvas>
+  <Story name="Numeric">
+    {(args) => <StepByStepNav {...args} itemType="numeric" />}
+  </Story>
+</Canvas>
 
 ## Checkmark
 
 Will show a checkmark icon on each of the items that are before the active item. For all items to get a checkmark, set the `stepsCompleted` prop to 'true'.
 
-<Story name="Checkmark">
-  {(args) => <StepByStepNav {...args} itemType="checkmark" />}
-</Story>
+<Canvas>
+  <Story name="Checkmark">
+    {(args) => <StepByStepNav {...args} itemType="checkmark" />}
+  </Story>
+</Canvas>
