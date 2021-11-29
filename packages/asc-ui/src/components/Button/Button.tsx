@@ -1,14 +1,14 @@
-import {
+import type {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
   ElementType,
-  forwardRef,
   ReactNode,
 } from 'react'
+import { forwardRef } from 'react'
 import Icon, { defaultProps as iconDefaultProps } from '../Icon/Icon'
+import type { ButtonStyleProps } from './ButtonStyle'
 import ButtonStyle, {
   ArrowRight,
-  ButtonStyleProps,
   ButtonVariant,
   IconLeft,
   IconRight,

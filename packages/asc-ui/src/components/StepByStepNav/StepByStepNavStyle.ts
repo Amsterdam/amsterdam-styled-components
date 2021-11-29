@@ -1,17 +1,19 @@
 import styled, { css } from 'styled-components'
 
 import Typography from '../Typography'
-import { breakpoint, themeColor } from '../../utils/themeUtils'
+import { breakpoint, themeColor } from '../../utils'
 
-type Step = {
+export interface Step {
   label: string
 }
 
-export type StepByStepNavProps = {
+export type ItemType = 'checkmark' | 'numeric' | 'none'
+
+export interface StepByStepNavProps {
   /** 1-based index determining which of the steps is active */
   activeItem?: number
   className?: string
-  itemType?: 'checkmark' | 'numeric' | 'none'
+  itemType?: ItemType
   steps: Array<Step>
   stepsCompleted?: boolean
 }

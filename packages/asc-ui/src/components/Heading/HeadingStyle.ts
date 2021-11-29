@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Props as TypographyProps } from '../Typography/TypographyStyle'
+import type { Props as TypographyProps } from '../Typography/TypographyStyle'
 import Typography from '../Typography'
 
 export type Props = TypographyProps

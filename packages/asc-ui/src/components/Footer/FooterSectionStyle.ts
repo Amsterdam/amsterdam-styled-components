@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing, svgFill, breakpoint } from '../../utils'
-import { Theme } from '../../types'
+import type { Theme } from '../../types'
 import FooterHeading from './FooterHeading'
 import IconStyle from '../Icon'
 import Button from '../Button'
 import { Toggle } from '../Toggle'
 
-type FooterProps = {
+interface FooterProps {
   ssr?: boolean
   breakpoint?: keyof Theme.BreakpointsInterface
 }

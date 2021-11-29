@@ -1,4 +1,5 @@
-import { FunctionComponent, useRef } from 'react'
+import type { FunctionComponent } from 'react'
+import { useRef } from 'react'
 import useFocusWithArrows from '../../utils/hooks/useFocusWithArrows'
 
 const AccordionWrapper: FunctionComponent = ({ children }) => {

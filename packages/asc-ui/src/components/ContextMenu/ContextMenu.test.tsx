@@ -1,6 +1,7 @@
 import { ChevronDown } from '@amsterdam/asc-assets'
 import { act, fireEvent, render, screen } from '@testing-library/react'
-import ContextMenu, { Props } from './ContextMenu'
+import type { Props } from './ContextMenu'
+import ContextMenu from './ContextMenu'
 import ContextMenuItem from './ContextMenuItem'
 
 jest.useFakeTimers()

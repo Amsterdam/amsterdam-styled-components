@@ -1,10 +1,7 @@
-import {
-  FunctionComponent,
-  LabelHTMLAttributes,
-  ReactNode,
-  useState,
-} from 'react'
-import LabelStyle, { LabelTextStyle, Props as StyleProps } from './LabelStyle'
+import type { FunctionComponent, LabelHTMLAttributes, ReactNode } from 'react'
+import { useState } from 'react'
+import type { Props as StyleProps } from './LabelStyle'
+import LabelStyle, { LabelTextStyle } from './LabelStyle'
 import usePassPropsToChildren from '../../utils/hooks/usePassPropsToChildren'
 import LabelContext from './LabelContext'
 

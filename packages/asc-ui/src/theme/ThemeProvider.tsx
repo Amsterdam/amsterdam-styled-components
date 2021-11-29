@@ -1,8 +1,8 @@
 import deepMerge from 'deepmerge'
-import { FunctionComponent, ReactNode } from 'react'
+import type { FunctionComponent, ReactNode } from 'react'
 import { ThemeProvider as AscThemeProvider } from 'styled-components'
 import { ascDefaultTheme } from '.'
-import { Theme } from '../types'
+import type { Theme } from '../types'
 
 export interface ThemeProviderProps {
   overrides?: Partial<Theme.ThemeInterface>

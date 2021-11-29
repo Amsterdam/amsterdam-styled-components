@@ -8,9 +8,9 @@ import {
   MenuToggle,
   themeColor,
 } from '@amsterdam/asc-ui'
-import { FunctionComponent } from 'react'
+import type { FunctionComponent } from 'react'
 import styled from 'styled-components'
-import { Meta } from '@storybook/react'
+import type { Meta } from '@storybook/react'
 
 const ReactRouterLink: FunctionComponent<any> = ({
   children,

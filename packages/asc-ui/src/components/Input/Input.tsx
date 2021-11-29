@@ -1,11 +1,5 @@
-import {
-  forwardRef,
-  InputHTMLAttributes,
-  KeyboardEvent,
-  RefObject,
-  useImperativeHandle,
-  useRef,
-} from 'react'
+import type { InputHTMLAttributes, KeyboardEvent, RefObject } from 'react'
+import { forwardRef, useImperativeHandle, useRef } from 'react'
 import useActionOnEscape from '../../utils/hooks/useActionOnEscape'
 import InputContext from './InputMethodsContext'
 import InputStyle from './InputStyle'

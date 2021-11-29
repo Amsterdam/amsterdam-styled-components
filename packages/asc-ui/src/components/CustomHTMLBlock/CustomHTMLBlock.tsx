@@ -1,7 +1,7 @@
-import { FunctionComponent } from 'react'
+import type { FunctionComponent } from 'react'
 import CustomHTMLBlockStyle from './CustomHTMLBlockStyle'
 
-type Props = {
+interface Props {
   body?: string
 }
 

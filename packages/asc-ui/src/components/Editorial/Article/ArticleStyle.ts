@@ -8,9 +8,8 @@ import {
   EDITORIAL_META_LINE_HEIGHT,
   EDITORIAL_META_MARGIN_TOP,
 } from '../EditorialMetaList/EditorialMetaListStyle'
-import EditorialPost, {
-  Props as EditorialPostProps,
-} from '../EditorialPost/EditorialPost'
+import type { Props as EditorialPostProps } from '../EditorialPost/EditorialPost'
+import EditorialPost from '../EditorialPost/EditorialPost'
 
 export default styled(EditorialPost)<EditorialPostProps>`
   ${EditorialBodyStyle} {

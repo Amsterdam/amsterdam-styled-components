@@ -1,16 +1,10 @@
 import { Enlarge, Minimise } from '@amsterdam/asc-assets'
-import {
-  FunctionComponent,
-  HTMLAttributes,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react'
-import Button, { ButtonProps } from '../Button/Button'
-import ShowMoreShowLessStyle, {
-  ShowMoreShowLessProps,
-} from './ShowMoreShowLessStyle'
+import type { FunctionComponent, HTMLAttributes } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import type { ButtonProps } from '../Button/Button'
+import Button from '../Button/Button'
+import type { ShowMoreShowLessProps } from './ShowMoreShowLessStyle'
+import ShowMoreShowLessStyle from './ShowMoreShowLessStyle'
 
 const ShowMoreShowLess: FunctionComponent<
   ShowMoreShowLessProps & HTMLAttributes<HTMLElement>

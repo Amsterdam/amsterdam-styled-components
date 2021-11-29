@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
 import { INPUT_SIZE } from '../shared/constants'
 
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type StyleProps = {
   error?: boolean
 }

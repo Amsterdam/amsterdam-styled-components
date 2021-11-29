@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import type { FunctionComponent } from 'react'
 import MenuItemTitleStyle from './MenuItemTitleStyle'
 
 const MenuItemTitle: FunctionComponent = ({ children }) => (

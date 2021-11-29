@@ -1,6 +1,6 @@
 import { darken, readableColor, size, transitions } from 'polished'
 import styled, { css } from 'styled-components'
-import { Theme } from '../../types'
+import type { Theme } from '../../types'
 import { svgFill, themeColor, themeSpacing } from '../../utils'
 import Icon from '../Icon'
 import { flexboxMinHeightFix } from '../shared/ie-fixes'
@@ -198,7 +198,7 @@ const getVariant =
     }
   }
 
-export type ButtonStyleProps = {
+export interface ButtonStyleProps {
   /**
    * @deprecated Use variant instead. Pass the theme-color.
    */

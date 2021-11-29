@@ -1,4 +1,4 @@
-import { Theme } from '../../types'
+import type { Theme } from '../../types'
 
 const withTypeBreakpoint = (size: number) => (type: Theme.TypeBreakpoint) =>
   `(${type}: ${size + (type === 'max-width' ? -1 : 0)}px)`

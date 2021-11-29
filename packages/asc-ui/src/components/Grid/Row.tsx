@@ -1,5 +1,6 @@
-import { FunctionComponent } from 'react'
-import RowStyle, { TypeProps } from './RowStyle'
+import type { FunctionComponent } from 'react'
+import type { TypeProps } from './RowStyle'
+import RowStyle from './RowStyle'
 
 const Row: FunctionComponent<TypeProps> = ({ children, debug, ...props }) => (
   <RowStyle {...props} debug={debug}>

@@ -1,5 +1,6 @@
-import { FunctionComponent } from 'react'
-import ListItemStyle, { Props as ListItemStyleProps } from './ListItemStyle'
+import type { FunctionComponent } from 'react'
+import type { Props as ListItemStyleProps } from './ListItemStyle'
+import ListItemStyle from './ListItemStyle'
 
 type Props = ListItemStyleProps
 

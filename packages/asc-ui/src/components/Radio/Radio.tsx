@@ -1,15 +1,7 @@
-import {
-  useState,
-  useContext,
-  useEffect,
-  forwardRef,
-  HTMLAttributes,
-} from 'react'
-import RadioStyle, {
-  RadioWrapperStyle,
-  RadioCircleStyle,
-  Props,
-} from './RadioStyle'
+import type { HTMLAttributes } from 'react'
+import { useState, useContext, useEffect, forwardRef } from 'react'
+import type { Props } from './RadioStyle'
+import RadioStyle, { RadioWrapperStyle, RadioCircleStyle } from './RadioStyle'
 import RadioContext from './RadioContext'
 import LabelContext from '../Label/LabelContext'
 

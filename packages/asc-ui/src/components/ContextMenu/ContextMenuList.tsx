@@ -1,10 +1,11 @@
-import { forwardRef, HTMLAttributes, ReactNode } from 'react'
-import { Position } from './types'
+import type { HTMLAttributes, ReactNode } from 'react'
+import { forwardRef } from 'react'
+import type { Position } from './types'
 import ContextMenuListStyle, {
   ContextMenuListWrapperStyle,
 } from './ContextMenuListStyle'
 
-type Props = {
+interface Props {
   open?: boolean
   onClose: () => void
   position?: Position

@@ -1,5 +1,7 @@
-import { forwardRef, HTMLAttributes } from 'react'
-import MenuListStyle, { Props } from './MenuListStyle'
+import type { HTMLAttributes } from 'react'
+import { forwardRef } from 'react'
+import type { Props } from './MenuListStyle'
+import MenuListStyle from './MenuListStyle'
 
 const MenuList = forwardRef<
   HTMLUListElement,

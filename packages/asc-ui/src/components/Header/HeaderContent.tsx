@@ -1,4 +1,4 @@
-import { FunctionComponent, HTMLAttributes, ReactNode } from 'react'
+import type { FunctionComponent, HTMLAttributes, ReactNode } from 'react'
 import HeaderContentStyle from './HeaderContentStyle'
 
 type HeaderContentProps = {

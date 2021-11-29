@@ -1,13 +1,9 @@
 import { ChevronRight, Download, ExternalLink } from '@amsterdam/asc-assets'
-import { FunctionComponent } from 'react'
-import { StyledProps } from 'styled-components'
+import type { FunctionComponent } from 'react'
+import type { StyledProps } from 'styled-components'
 import { deprecatedWarning } from '../../utils'
-import LinkStyle, {
-  ChevronIcon,
-  LinkContent,
-  Props as LinkStyleProps,
-  RightIcon,
-} from './LinkStyle'
+import type { Props as LinkStyleProps } from './LinkStyle'
+import LinkStyle, { ChevronIcon, LinkContent, RightIcon } from './LinkStyle'
 
 export type Props = LinkStyleProps & StyledProps<any>
 

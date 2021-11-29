@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export type Props = {
+export interface Props {
   square?: boolean
 }
 

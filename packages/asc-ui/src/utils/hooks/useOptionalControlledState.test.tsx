@@ -1,10 +1,8 @@
 import { render } from '@testing-library/react'
-import {
-  act,
-  renderHook,
-  RenderHookOptions,
-} from '@testing-library/react-hooks'
-import { createRef, FunctionComponent } from 'react'
+import type { RenderHookOptions } from '@testing-library/react-hooks'
+import { act, renderHook } from '@testing-library/react-hooks'
+import type { FunctionComponent } from 'react'
+import { createRef } from 'react'
 import useOptionalControlledState from './useOptionalControlledState'
 
 describe('useOptionalControlledState', () => {

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-namespace */
-import { CSSProp } from 'styled-components'
+import type { CSSProp } from 'styled-components'
 
 // TODO: This should not be in a namespace, use ES2015 modules instead.
 export namespace Theme {
@@ -79,7 +79,7 @@ export namespace Theme {
     lightblue: string
   }
 
-  export type Tint = {
+  export interface Tint {
     level1: string
     level2: string
     level3: string
@@ -104,7 +104,7 @@ export namespace Theme {
       PaletteInterface,
       SupportPaletteInterface {}
 
-  export type TypographyElementStyle = {
+  export interface TypographyElementStyle {
     fontWeight: 400 | 500 | 700 | 'inherit'
     fontSize: CSSProp
     lineHeight: number | CSSProp

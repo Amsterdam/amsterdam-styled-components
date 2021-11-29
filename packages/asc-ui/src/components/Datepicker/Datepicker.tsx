@@ -1,18 +1,15 @@
+import type { HTMLAttributes } from 'react'
 import {
   forwardRef,
   useImperativeHandle,
   useRef,
   useCallback,
-  HTMLAttributes,
   useState,
 } from 'react'
 import { Calendar } from '@amsterdam/asc-assets'
 import useClickOutside from '../../utils/hooks/useClickOutside'
-import DatepickerStyle, {
-  Props,
-  StyledInput,
-  StyledLabel,
-} from './DatepickerStyle'
+import type { Props } from './DatepickerStyle'
+import DatepickerStyle, { StyledInput, StyledLabel } from './DatepickerStyle'
 import Month from './Month'
 
 const Datepicker = forwardRef<

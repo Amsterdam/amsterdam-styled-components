@@ -76,6 +76,8 @@ module.exports = {
     '@typescript-eslint/no-shadow': 'error',
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
+    '@typescript-eslint/consistent-type-imports': 'error',
   },
   settings: {
     'import/resolver': {

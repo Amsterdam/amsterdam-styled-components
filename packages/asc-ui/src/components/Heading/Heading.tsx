@@ -1,5 +1,6 @@
-import { FunctionComponent, HTMLAttributes } from 'react'
-import HeadingStyle, { Props as HeadingStyleProps } from './HeadingStyle'
+import type { FunctionComponent, HTMLAttributes } from 'react'
+import type { Props as HeadingStyleProps } from './HeadingStyle'
+import HeadingStyle from './HeadingStyle'
 
 export type Props = HeadingStyleProps & HTMLAttributes<HTMLHeadingElement>
 

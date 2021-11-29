@@ -1,5 +1,6 @@
-import { FunctionComponent, HTMLAttributes, MouseEvent } from 'react'
-import DayStyle, { Props } from './DayStyle'
+import type { FunctionComponent, HTMLAttributes, MouseEvent } from 'react'
+import type { Props } from './DayStyle'
+import DayStyle from './DayStyle'
 
 const Day: FunctionComponent<Props & HTMLAttributes<HTMLSpanElement>> = ({
   children,

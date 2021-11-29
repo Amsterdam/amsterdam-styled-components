@@ -1,8 +1,9 @@
-import styled, { css, StyledProps } from 'styled-components'
+import type { StyledProps } from 'styled-components'
+import styled, { css } from 'styled-components'
 import { readableColor } from 'polished'
-import { Props as TypographyProps } from '../Typography/TypographyStyle'
+import type { Props as TypographyProps } from '../Typography/TypographyStyle'
 import { themeColor, themeSpacing } from '../../utils'
-import { Theme } from '../../types'
+import type { Theme } from '../../types'
 
 export type Props = {
   colorType?: keyof Theme.ColorType

@@ -1,7 +1,10 @@
-import { FunctionComponent, useState } from 'react'
-import MenuInlineStyle, { Props } from './MenuInlineStyle'
+import type { FunctionComponent } from 'react'
+import { useState } from 'react'
+import type { Props } from './MenuInlineStyle'
+import MenuInlineStyle from './MenuInlineStyle'
 import MenuContext from '../MenuContext'
-import BackDrop, { Props as BackDropProps } from '../../BackDrop/BackDrop'
+import type { Props as BackDropProps } from '../../BackDrop/BackDrop'
+import BackDrop from '../../BackDrop/BackDrop'
 import useDebounce from '../../../utils/hooks/useDebounce'
 
 const MenuInline: FunctionComponent<Props & BackDropProps> = ({

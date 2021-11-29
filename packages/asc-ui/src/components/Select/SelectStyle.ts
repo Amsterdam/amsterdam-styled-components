@@ -1,10 +1,10 @@
 import { ChevronDown } from '@amsterdam/asc-assets'
-import { CSSProperties, ReactNode } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
 import { INPUT_SIZE } from '../shared/constants'
 
-export type Props = {
+export interface Props {
   id?: string
   value?: string
   label?: ReactNode

@@ -1,11 +1,6 @@
 import styled, { css } from 'styled-components'
-import {
-  breakpoint,
-  themeColor,
-  customCss,
-  CustomCssPropsInterface,
-  themeSpacing,
-} from '../../utils'
+import type { CustomCssPropsInterface } from '../../utils'
+import { breakpoint, themeColor, customCss, themeSpacing } from '../../utils'
 import HeaderTitleStyle from './HeaderTitleStyle'
 import HeaderNavigationStyle from './HeaderNavigationStyle'
 import HeaderLogoTextStyle from './HeaderLogoTextStyle'

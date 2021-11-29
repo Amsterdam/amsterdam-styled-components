@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { svgFill, themeColor } from '../../utils'
 import { IconStyle } from '../Icon'
 
-export type Props = {
+export interface Props {
   checked?: boolean
   disabled?: boolean
   error?: boolean

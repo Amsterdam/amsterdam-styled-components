@@ -1,4 +1,5 @@
-import { forwardRef, HTMLAttributes, useImperativeHandle, useRef } from 'react'
+import type { HTMLAttributes } from 'react'
+import { forwardRef, useImperativeHandle, useRef } from 'react'
 import SwitchStyle, { Checkbox, Track, Knob } from './SwitchStyle'
 
 const Switch = forwardRef<HTMLInputElement, HTMLAttributes<HTMLInputElement>>(

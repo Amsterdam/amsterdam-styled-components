@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { CustomCssPropsType, showHide, ShowHideTypes } from '../../utils'
+import type { CustomCssPropsType, ShowHideTypes } from '../../utils'
+import { showHide } from '../../utils'
 
 export type Props = {
   align?: 'left' | 'right'

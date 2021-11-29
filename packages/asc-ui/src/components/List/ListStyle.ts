@@ -3,7 +3,7 @@ import { stripUnit } from 'polished'
 import { themeColor, themeSpacing, getTypographyFromTheme } from '../../utils'
 import { getTypographyValueFromProperty } from '../../utils/themeUtils'
 
-export type Props = {
+export interface Props {
   variant?: 'bullet'
 }
 

@@ -3,11 +3,13 @@ import Button from '../Button'
 import { IconStyle } from '../Icon'
 import { themeColor, themeSpacing } from '../../utils/themeUtils'
 
-export type Props = {
+export interface Props {
   isOpen?: boolean
 }
 
-export type ButtonContentProps = { noMultiline?: boolean }
+export interface ButtonContentProps {
+  noMultiline?: boolean
+}
 
 const AccordionContent = styled.div<Props>`
   transition: border-color 0.1s ease-in-out;

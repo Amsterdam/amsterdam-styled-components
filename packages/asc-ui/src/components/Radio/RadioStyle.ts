@@ -1,7 +1,8 @@
-import { ChangeEvent } from 'react'
+import type { ChangeEvent } from 'react'
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
 
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 export type Props = {
   disabled?: boolean
   error?: boolean
@@ -26,6 +27,7 @@ const RadioStyle = styled.input.attrs({
   outline-width: 10px;
 `
 
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type StyleOnlyProps = {
   checked?: boolean
   disabled?: boolean

@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import type { FunctionComponent } from 'react'
 import CardContainerStyle from './CardContainerStyle'
 
 const CardContainer: FunctionComponent = ({ children, ...otherProps }) => (

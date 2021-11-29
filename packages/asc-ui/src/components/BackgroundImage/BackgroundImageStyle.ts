@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { clearFix } from 'polished'
 
-export type Props = {
+export interface Props {
   source: string
   position?: string
   aspectRatio?: number

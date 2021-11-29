@@ -1,19 +1,14 @@
-import {
-  Fragment,
-  FunctionComponent,
-  HTMLAttributes,
-  KeyboardEvent,
-  useEffect,
-  useMemo,
-  useRef,
-} from 'react'
+import type { FunctionComponent, HTMLAttributes, KeyboardEvent } from 'react'
+import { Fragment, useEffect, useMemo, useRef } from 'react'
 import ModalStyle from './ModalStyle'
 import { KeyboardKeys } from '../../types'
 import useTrappedFocus, {
   focusableElements,
 } from '../../utils/hooks/useTrappedFocus'
-import BackDrop, { Props as BackDropProps } from '../BackDrop/BackDrop'
-import Portal, { Props as PortalProps } from '../Portal'
+import type { Props as BackDropProps } from '../BackDrop/BackDrop'
+import BackDrop from '../BackDrop/BackDrop'
+import type { Props as PortalProps } from '../Portal'
+import Portal from '../Portal'
 
 export type Props = {
   open: boolean

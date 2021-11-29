@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import type { FunctionComponent } from 'react'
 import styled from 'styled-components'
 import { themeSpacing } from '../../utils'
 import { Row } from '../Grid'

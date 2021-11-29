@@ -1,21 +1,15 @@
-import {
-  ButtonHTMLAttributes,
-  FunctionComponent,
-  ReactNode,
-  useEffect,
-  useRef,
-  useState,
-} from 'react'
+import type { ButtonHTMLAttributes, FunctionComponent, ReactNode } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ContextMenuButtonStyle from './ContextMenuButton'
 import MenuList from './ContextMenuList'
 import ownerDocument from '../../utils/ownerDocument'
-import { Position } from './types'
+import type { Position } from './types'
 import ContextMenuWrapperStyle from './ContextMenuWrapperStyle'
 import useFocusWithArrows from '../../utils/hooks/useFocusWithArrows'
 import useDetectTouchscreen from '../../utils/hooks/useDetectTouchScreen'
 import useActionOnEscape from '../../utils/hooks/useActionOnEscape'
 
-export type Props = {
+export interface Props {
   position?: Position
   label?: string
   icon?: ReactNode

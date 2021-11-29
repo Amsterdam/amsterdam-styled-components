@@ -2,7 +2,7 @@ import { LogoShort, LogoTall } from '@amsterdam/asc-assets'
 import styled, { css } from 'styled-components'
 import { breakpoint, srOnlyStyle, themeSpacing } from '../../utils'
 
-export type Props = {
+export interface Props {
   tall?: boolean
 }
 

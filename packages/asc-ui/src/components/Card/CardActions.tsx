@@ -1,4 +1,4 @@
-import { FunctionComponent, HTMLAttributes } from 'react'
+import type { FunctionComponent, HTMLAttributes } from 'react'
 import CardActionsStyle from './CardActionsStyle'
 
 const CardActions: FunctionComponent<HTMLAttributes<HTMLDivElement>> = ({

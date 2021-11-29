@@ -1,8 +1,7 @@
-import { FunctionComponent, HTMLAttributes } from 'react'
+import type { FunctionComponent, HTMLAttributes } from 'react'
 import Icon from '../../Icon'
-import ShareButtonStyle, {
-  Props as ShareButtonStyleProps,
-} from './ShareButtonStyle'
+import type { Props as ShareButtonStyleProps } from './ShareButtonStyle'
+import ShareButtonStyle from './ShareButtonStyle'
 
 type Props = {
   iconSize?: number

@@ -1,7 +1,7 @@
-import { ButtonHTMLAttributes, FunctionComponent, ReactNode } from 'react'
+import type { ButtonHTMLAttributes, FunctionComponent, ReactNode } from 'react'
+import type { ContextMenuItemProps } from './ContextMenuItemStyle'
 import ContextMenuItemStyle, {
   ContextMenuItemButton,
-  ContextMenuItemProps,
 } from './ContextMenuItemStyle'
 
 type Props = {

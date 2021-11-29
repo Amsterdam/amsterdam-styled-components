@@ -1,9 +1,6 @@
-import { FunctionComponent, HTMLAttributes } from 'react'
-import ImageCardStyle, {
-  ImageCardWrapperStyle,
-  WrapperProps,
-  Props,
-} from './ImageCardStyle'
+import type { FunctionComponent, HTMLAttributes } from 'react'
+import type { WrapperProps, Props } from './ImageCardStyle'
+import ImageCardStyle, { ImageCardWrapperStyle } from './ImageCardStyle'
 
 const ImageCard: FunctionComponent<
   Props & WrapperProps & HTMLAttributes<HTMLElement>

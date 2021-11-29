@@ -1,5 +1,6 @@
-import { FunctionComponent, ImgHTMLAttributes } from 'react'
-import ImageStyle, { Props as ImageStyleProps } from './ImageStyle'
+import type { FunctionComponent, ImgHTMLAttributes } from 'react'
+import type { Props as ImageStyleProps } from './ImageStyle'
+import ImageStyle from './ImageStyle'
 
 type Props = ImageStyleProps & ImgHTMLAttributes<HTMLImageElement>
 

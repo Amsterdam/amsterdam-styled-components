@@ -2,7 +2,7 @@ import { margin } from 'polished'
 import styled, { css } from 'styled-components'
 import { themeColor } from '../../utils'
 
-type Props = {
+interface Props {
   gutter?: boolean
   transparent?: boolean
 }

@@ -1,9 +1,10 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
-import { ElementType } from 'react'
+import type { FlattenSimpleInterpolation } from 'styled-components'
+import styled, { css } from 'styled-components'
+import type { ElementType } from 'react'
 import { getTypographyFromTheme, themeColor } from '../../utils'
-import { Theme } from '../../types'
+import type { Theme } from '../../types'
 
-export type Props = {
+export interface Props {
   gutterBottom?: number
   element?: Variant
   fontSize?: number

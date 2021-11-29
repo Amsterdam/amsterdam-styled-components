@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import LabelStyle from '../Label/LabelStyle'
 import { themeSpacing } from '../../utils'
 
-export type Props = {
+export interface Props {
   name?: string
   horizontal?: boolean
   disabled?: boolean

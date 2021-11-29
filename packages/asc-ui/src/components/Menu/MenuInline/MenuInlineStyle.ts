@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import { MenuListStyle } from '../MenuList'
 import { MenuItemStyle } from '../MenuItem'
-import { showHide, ShowHideTypes, showAboveBackDrop } from '../../../utils'
+import type { ShowHideTypes } from '../../../utils'
+import { showHide, showAboveBackDrop } from '../../../utils'
 import { MENU_ITEM_SIZE } from '../constants'
 
 export type Props = {

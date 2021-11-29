@@ -1,8 +1,8 @@
-import { FunctionComponent } from 'react'
+import type { FunctionComponent } from 'react'
+import type { Props } from './MenuButtonStyle'
 import MenuButtonStyle, {
   MenuButtonTextStyle,
   MenuButtonTextWrapperStyle,
-  Props,
 } from './MenuButtonStyle'
 
 const MenuButton: FunctionComponent<Props> = ({

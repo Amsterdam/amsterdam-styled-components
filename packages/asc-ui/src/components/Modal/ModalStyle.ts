@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import TopBarStyle from '../TopBar/TopBarStyle'
 import { themeColor, showAboveBackDrop } from '../../utils'
 
-type Props = {
+interface Props {
   hasBackDrop?: boolean
   zIndexOffset?: number
 }

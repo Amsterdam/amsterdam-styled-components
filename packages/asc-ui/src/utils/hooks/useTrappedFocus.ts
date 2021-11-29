@@ -1,4 +1,4 @@
-import { KeyboardEvent, RefObject } from 'react'
+import type { KeyboardEvent, RefObject } from 'react'
 import { KeyboardKeys } from '../../types'
 import ownerDocument from '../ownerDocument'
 

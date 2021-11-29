@@ -1,7 +1,7 @@
 import * as Icons from '@amsterdam/asc-assets'
 import { Icon } from '@amsterdam/asc-ui'
 import styled from 'styled-components'
-import { Meta } from '@storybook/react'
+import type { Meta } from '@storybook/react'
 
 const IconWrapper = styled.span`
   width: 150px;
