@@ -3,7 +3,7 @@ import { flexboxMinHeightFix } from '../shared/ie-fixes'
 import { breakpoint, themeColor } from '../../utils'
 import HeadingStyle from '../Heading/HeadingStyle'
 
-export type Props = {
+export interface Props {
   backgroundColor?: string
 }
 

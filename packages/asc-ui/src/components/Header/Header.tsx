@@ -1,18 +1,19 @@
-import {
+import type {
   ElementType,
   FunctionComponent,
   HTMLAttributes,
   ReactNode,
 } from 'react'
-import { CustomCssPropsType } from '../../utils'
+import type { CustomCssPropsType } from '../../utils'
 import AmsterdamLogo from '../AmsterdamLogo'
 import HeaderLinks from './HeaderLinks'
-import HeaderLogoText, { LogoProps } from './HeaderLogoText'
+import type { LogoProps } from './HeaderLogoText'
+import HeaderLogoText from './HeaderLogoText'
 import HeaderNavigation from './HeaderNavigation'
-import HeaderStyle, { Props as HeaderStyleProps } from './HeaderStyle'
-import HeaderWrapperStyle, {
-  Props as HeaderWrapperProps,
-} from './HeaderWrapperStyle'
+import type { Props as HeaderStyleProps } from './HeaderStyle'
+import HeaderStyle from './HeaderStyle'
+import type { Props as HeaderWrapperProps } from './HeaderWrapperStyle'
+import HeaderWrapperStyle from './HeaderWrapperStyle'
 
 type HeaderProps = {
   tall?: boolean

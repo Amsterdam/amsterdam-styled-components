@@ -1,4 +1,4 @@
-import { FunctionComponent, HTMLAttributes } from 'react'
+import type { FunctionComponent, HTMLAttributes } from 'react'
 import HeaderLinksStyle from './HeaderLinksStyle'
 
 const HeaderLinks: FunctionComponent<HTMLAttributes<HTMLDivElement>> = ({

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import GridItemStyle from './GridItemStyle'
 
-type Props = {
+interface Props {
   direction?: string
   wrap?: string
   gutterY?: number

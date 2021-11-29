@@ -1,5 +1,6 @@
-import { FunctionComponent, HTMLAttributes } from 'react'
-import { ContainerStyle, ContainerWrapperStyle, Props } from './ContainerStyle'
+import type { FunctionComponent, HTMLAttributes } from 'react'
+import type { Props } from './ContainerStyle'
+import { ContainerStyle, ContainerWrapperStyle } from './ContainerStyle'
 
 const Container: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
   beamColor,

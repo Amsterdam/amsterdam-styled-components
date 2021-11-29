@@ -1,5 +1,6 @@
-import styled, { StyledProps } from 'styled-components'
-import { Props as TypographyProps } from '../Typography/TypographyStyle'
+import type { StyledProps } from 'styled-components'
+import styled from 'styled-components'
+import type { Props as TypographyProps } from '../Typography/TypographyStyle'
 import { themeColor, themeSpacing } from '../../utils'
 import IconStyle from '../Icon/IconStyle'
 

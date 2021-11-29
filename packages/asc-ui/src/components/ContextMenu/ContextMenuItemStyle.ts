@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { themeColor, getValueFromTheme, themeSpacing } from '../../utils'
 
-export type ContextMenuItemProps = {
+export interface ContextMenuItemProps {
   divider?: boolean
 }
 

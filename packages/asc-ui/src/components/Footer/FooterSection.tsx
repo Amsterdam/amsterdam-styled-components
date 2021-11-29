@@ -1,9 +1,9 @@
 import { ChevronDown } from '@amsterdam/asc-assets'
-import { FunctionComponent } from 'react'
-import { Theme } from '../../types'
+import type { FunctionComponent } from 'react'
+import type { Theme } from '../../types'
 import Hidden from '../Hidden'
 import Icon from '../Icon/Icon'
-import { ToggleHandlerProps } from '../Toggle'
+import type { ToggleHandlerProps } from '../Toggle'
 import FooterHeading from './FooterHeading'
 import {
   FooterContentWrapper,
@@ -12,7 +12,7 @@ import {
   StyledFooterToggle,
 } from './FooterSectionStyle'
 
-type FooterContentProps = {
+interface FooterContentProps {
   title?: string
   ssr?: boolean
   toggleAt?: keyof Theme.BreakpointsInterface
@@ -26,7 +26,7 @@ type FooterContentProps = {
   showAt?: keyof Theme.BreakpointsInterface
 }
 
-type ConditionalWrapperProps = {
+interface ConditionalWrapperProps {
   condition: boolean
   wrapper: (wrapperChildren: JSX.Element) => JSX.Element
   children: JSX.Element

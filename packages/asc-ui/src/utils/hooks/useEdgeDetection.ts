@@ -1,6 +1,7 @@
-import { RefObject, useEffect, useRef, useState } from 'react'
+import type { RefObject } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-export type EdgeDetectionTypes = {
+export interface EdgeDetectionTypes {
   top: boolean
   right: boolean
   bottom: boolean

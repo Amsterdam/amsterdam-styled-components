@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { themeSpacing } from '../../utils'
 
-export type ShowMoreShowLessProps = {
+export interface ShowMoreShowLessProps {
   maxHeight?: string
   showMoreText?: string
   showLessText?: string

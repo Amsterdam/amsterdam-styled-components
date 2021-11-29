@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 import { breakpoint, themeColor, getValueFromTheme } from '../../utils'
-import { Theme } from '../../types'
+import type { Theme } from '../../types'
 
-export type Props = {
+export interface Props {
   beamColor?: keyof Theme.SupportPaletteInterface
 
   // this property defaults to the maxGridWidth of the current grid layout

@@ -1,23 +1,21 @@
-import {
+import type {
   ButtonHTMLAttributes,
   ElementType,
   FunctionComponent,
   KeyboardEvent,
   HTMLAttributes,
   MouseEvent,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
 } from 'react'
-import ToggleStyle, { Props as ToggleStyleProps } from './ToggleStyle'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import type { Props as ToggleStyleProps } from './ToggleStyle'
+import ToggleStyle from './ToggleStyle'
 import ownerDocument from '../../utils/ownerDocument'
 import usePassPropsToChildren from '../../utils/hooks/usePassPropsToChildren'
 import useActionOnEscape from '../../utils/hooks/useActionOnEscape'
-import ToggleButton, {
-  Props as ToggleButtonProps,
-} from '../Button/ToggleButton/ToggleButton'
-import BackDrop, { Props as BackDropProps } from '../BackDrop/BackDrop'
+import type { Props as ToggleButtonProps } from '../Button/ToggleButton/ToggleButton'
+import ToggleButton from '../Button/ToggleButton/ToggleButton'
+import type { Props as BackDropProps } from '../BackDrop/BackDrop'
+import BackDrop from '../BackDrop/BackDrop'
 
 export type ToggleHandlerProps = {
   as?: ElementType

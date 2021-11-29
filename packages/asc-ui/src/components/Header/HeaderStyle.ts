@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import TopBarStyle from '../TopBar/TopBarStyle'
 import { getValueFromTheme } from '../../utils'
 
-export type Props = {
+export interface Props {
   fullWidth?: boolean
 }
 

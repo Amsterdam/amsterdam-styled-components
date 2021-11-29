@@ -1,8 +1,9 @@
-import { Component, ReactInstance } from 'react'
+import type { ReactInstance } from 'react'
+import { Component } from 'react'
 import ReactDOM from 'react-dom'
 import ownerDocument from '../../utils/ownerDocument'
 
-export type Props = {
+export interface Props {
   element?: HTMLElement
   blurredNode?: HTMLElement
   hideOverFlow?: boolean

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Theme } from '../../types'
+import type { Theme } from '../../types'
 import { svgFill, themeColor, themeSpacing } from '../../utils'
 import Button from '../Button'
 import Heading from '../Heading'

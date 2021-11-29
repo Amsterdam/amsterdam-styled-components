@@ -1,10 +1,5 @@
-import {
-  Children,
-  cloneElement,
-  PropsWithoutRef,
-  ReactElement,
-  ReactNode,
-} from 'react'
+import type { PropsWithoutRef, ReactElement, ReactNode } from 'react'
+import { Children, cloneElement } from 'react'
 
 type Callback = (index?: number) => any
 

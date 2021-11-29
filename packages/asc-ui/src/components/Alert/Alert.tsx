@@ -1,14 +1,15 @@
 import { Close } from '@amsterdam/asc-assets'
-import { FunctionComponent, HTMLAttributes, useState } from 'react'
+import type { FunctionComponent, HTMLAttributes } from 'react'
+import { useState } from 'react'
 import CompactThemeProvider from '../../theme/CompactThemeProvider'
-import { ButtonVariant } from '../Button/ButtonStyle'
+import type { ButtonVariant } from '../Button/ButtonStyle'
 import Paragraph from '../Paragraph'
+import type { AlertProps } from './AlertStyle'
 import AlertStyle, {
   AlertHeading,
   CloseButton,
   CloseButtonWrapper,
   ContentWrapper,
-  AlertProps,
 } from './AlertStyle'
 
 const CLOSE_BUTTON_TITLE = 'Sluiten'

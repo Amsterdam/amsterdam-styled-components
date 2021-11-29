@@ -1,12 +1,12 @@
 import { Search } from '@amsterdam/asc-assets'
-import { FunctionComponent } from 'react'
-import { InputMethods, InputProps } from '../Input'
+import type { FunctionComponent } from 'react'
+import type { InputMethods, InputProps } from '../Input'
 import SearchBar from '../SearchBar'
-import { SearchBarProps } from '../SearchBar/SearchBar'
-import Toggle, { Props as ToggleProps } from '../Toggle/Toggle'
-import SearchBarToggleStyle, {
-  SearchBarToggleStyleProps,
-} from './SearchBarToggleStyle'
+import type { SearchBarProps } from '../SearchBar/SearchBar'
+import type { Props as ToggleProps } from '../Toggle/Toggle'
+import Toggle from '../Toggle/Toggle'
+import type { SearchBarToggleStyleProps } from './SearchBarToggleStyle'
+import SearchBarToggleStyle from './SearchBarToggleStyle'
 
 interface SearchBarToggleProps extends SearchBarToggleStyleProps, InputMethods {
   label?: string

@@ -117,7 +117,7 @@ import Typography from './components/Typography'
 import { ascDefaultTheme } from './theme'
 import CompactThemeProvider from './theme/CompactThemeProvider'
 import ThemeProvider from './theme/ThemeProvider'
-import { Theme } from './types'
+import type { Theme } from './types'
 
 import { perceivedLoading } from './utils/themeUtils'
 

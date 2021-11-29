@@ -4,7 +4,7 @@ import { FLY_OUT_WIDTH, MENU_ITEM_SIZE } from '../constants'
 import { MenuItemStyle } from '../MenuItem'
 import MenuListStyle from '../MenuList/MenuListStyle'
 
-export type Props = {
+export interface Props {
   hasToggle?: boolean
 }
 

@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components'
 import { themeColor, svgFill, themeSpacing } from '../../utils'
 import IconStyle from '../Icon/IconStyle'
-import Typography, { TypographyProps } from '../Typography'
+import type { TypographyProps } from '../Typography'
+import Typography from '../Typography'
 
 export type LinkVariant = 'inline' | 'blank' | 'with-chevron'
 

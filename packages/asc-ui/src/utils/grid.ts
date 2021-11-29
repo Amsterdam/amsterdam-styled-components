@@ -1,5 +1,5 @@
 import { withTheme, getValueFromTheme } from './themeUtils'
-import { Theme } from '../types'
+import type { Theme } from '../types'
 
 /**
  * Get the value for the maximum width of the grid

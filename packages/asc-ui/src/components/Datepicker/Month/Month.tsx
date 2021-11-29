@@ -1,17 +1,10 @@
-import {
-  FunctionComponent,
-  MouseEvent,
-  useState,
-  useEffect,
-  useCallback,
-  HTMLAttributes,
-} from 'react'
+import type { FunctionComponent, MouseEvent, HTMLAttributes } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
 import Icon from '../../Icon'
+import type { Props, DayProps } from './MonthStyle'
 import MonthStyle, {
   Wrapper,
-  Props,
-  DayProps,
   Weekday,
   Header,
   NextPrev,

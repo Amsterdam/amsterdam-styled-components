@@ -1,7 +1,8 @@
 import { Close } from '@amsterdam/asc-assets'
-import { ButtonHTMLAttributes, FunctionComponent } from 'react'
+import type { ButtonHTMLAttributes, FunctionComponent } from 'react'
 import Icon from '../Icon'
-import Tag, { Props as TagProps } from '../Tag/Tag'
+import type { Props as TagProps } from '../Tag/Tag'
+import Tag from '../Tag/Tag'
 import FilterTagStyle from './FilterTagStyle'
 
 export type FilterTagProps = TagProps

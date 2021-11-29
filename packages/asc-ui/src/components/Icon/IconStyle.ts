@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 import { svgFill } from '../../utils'
-import { ThemeFn } from '../../utils/themeUtils'
+import type { ThemeFn } from '../../utils/themeUtils'
 
-export type Props = {
+export interface Props {
   inline?: boolean
   color?: string | ThemeFn<string>
   iconUrl?: string

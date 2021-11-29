@@ -1,6 +1,8 @@
-import { createContext, FunctionComponent, ReactNode, useContext } from 'react'
-import ColumnStyle, { TypeProps as ColumnStyleProps } from './ColumnStyle'
-import { Theme } from '../../types'
+import type { FunctionComponent, ReactNode } from 'react'
+import { createContext, useContext } from 'react'
+import type { TypeProps as ColumnStyleProps } from './ColumnStyle'
+import ColumnStyle from './ColumnStyle'
+import type { Theme } from '../../types'
 
 type Props = {
   children: ReactNode
@@ -14,7 +16,7 @@ type Props = {
   wrap?: boolean
 } & ColumnStyleProps
 
-type Context = {
+interface Context {
   parentSpan?: Theme.TypeSpan
 }
 

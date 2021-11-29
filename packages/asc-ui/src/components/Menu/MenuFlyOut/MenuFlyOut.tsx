@@ -1,13 +1,10 @@
 import { ChevronDown, ChevronUp } from '@amsterdam/asc-assets'
-import {
+import type {
   FunctionComponent,
   KeyboardEvent as ReactKeyboardEvent,
   MouseEvent as ReactMouseEvent,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
 } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { KeyboardKeys } from '../../../types/index'
 import useDebounce from '../../../utils/hooks/useDebounce'
 import useEdgeDetection from '../../../utils/hooks/useEdgeDetection'
@@ -16,7 +13,8 @@ import ownerDocument from '../../../utils/ownerDocument'
 import MenuButton from '../MenuButton/MenuButton'
 import MenuContext, { useMenuContext } from '../MenuContext'
 import MenuList from '../MenuList/MenuList'
-import MenuFlyOutStyle, { Props as MenuFlyOutProps } from './MenuFlyOutStyle'
+import type { Props as MenuFlyOutProps } from './MenuFlyOutStyle'
+import MenuFlyOutStyle from './MenuFlyOutStyle'
 
 type Props = {
   label: string

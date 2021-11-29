@@ -1,7 +1,8 @@
 import deepMerge from 'deepmerge'
-import { FunctionComponent } from 'react'
-import { Theme } from '../types'
-import ThemeProvider, { ThemeProviderProps } from './ThemeProvider'
+import type { FunctionComponent } from 'react'
+import type { Theme } from '../types'
+import type { ThemeProviderProps } from './ThemeProvider'
+import ThemeProvider from './ThemeProvider'
 
 // These are the overrides for showing compact text for several typography types
 const overridesCompactTheme: Partial<Theme.ThemeInterface> = {

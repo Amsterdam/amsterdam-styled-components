@@ -1,7 +1,6 @@
-import { FunctionComponent, HTMLAttributes } from 'react'
-import TypographyStyle, {
-  Props as TypographyStyleProps,
-} from './TypographyStyle'
+import type { FunctionComponent, HTMLAttributes } from 'react'
+import type { Props as TypographyStyleProps } from './TypographyStyle'
+import TypographyStyle from './TypographyStyle'
 import { deprecatedWarning } from '../../utils'
 
 export type Props = TypographyStyleProps & HTMLAttributes<HTMLElement>

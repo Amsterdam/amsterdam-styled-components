@@ -1,7 +1,8 @@
 import { Spinner as SpinnerIcon } from '@amsterdam/asc-assets'
-import { FunctionComponent } from 'react'
+import type { FunctionComponent } from 'react'
 import Icon from '../Icon/Icon'
-import SpinnerStyle, { Props } from './SpinnerStyle'
+import type { Props } from './SpinnerStyle'
+import SpinnerStyle from './SpinnerStyle'
 
 const Spinner: FunctionComponent<Props> = ({ size, color, ...otherProps }) => (
   <SpinnerStyle size={size} {...otherProps}>

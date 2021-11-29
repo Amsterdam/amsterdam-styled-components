@@ -1,4 +1,5 @@
-import IconStyle, { defaultProps, Props as IconStyleProps } from './IconStyle'
+import type { Props as IconStyleProps } from './IconStyle'
+import IconStyle, { defaultProps } from './IconStyle'
 
 export { defaultProps }
 

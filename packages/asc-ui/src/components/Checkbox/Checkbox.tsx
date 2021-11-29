@@ -1,8 +1,7 @@
 import { Checkmark, Indeterminate } from '@amsterdam/asc-assets'
+import type { ChangeEvent, HTMLAttributes } from 'react'
 import {
-  ChangeEvent,
   forwardRef,
-  HTMLAttributes,
   useContext,
   useEffect,
   useImperativeHandle,
@@ -11,10 +10,10 @@ import {
   useState,
 } from 'react'
 import LabelContext from '../Label/LabelContext'
+import type { Props } from './CheckboxStyle'
 import CheckboxStyle, {
   CheckboxIconStyle,
   CheckboxWrapperStyle,
-  Props,
 } from './CheckboxStyle'
 
 const Checkbox = forwardRef<

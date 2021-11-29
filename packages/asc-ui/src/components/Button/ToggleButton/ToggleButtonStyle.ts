@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { themeColor } from '../../../utils'
-import ButtonStyle, { ButtonStyleProps } from '../ButtonStyle'
+import type { ButtonStyleProps } from '../ButtonStyle'
+import ButtonStyle from '../ButtonStyle'
 
 export type Props = {
   open?: boolean

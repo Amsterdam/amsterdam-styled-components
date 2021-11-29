@@ -1,10 +1,5 @@
-import {
-  FunctionComponent,
-  HTMLAttributes,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import type { FunctionComponent, HTMLAttributes } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
 import {
   PageNumberStyle,

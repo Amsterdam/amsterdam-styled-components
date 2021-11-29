@@ -33,7 +33,8 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "strict": true
+    "strict": true,
+    "importsNotUsedAsValues": "error",
   },
   "references": [
     { "path": "packages/asc-assets" },

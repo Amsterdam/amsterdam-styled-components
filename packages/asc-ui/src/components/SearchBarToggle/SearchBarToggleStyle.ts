@@ -1,10 +1,6 @@
 import styled from 'styled-components'
-import {
-  themeColor,
-  showHide,
-  ShowHideTypes,
-  showAboveBackDrop,
-} from '../../utils'
+import type { ShowHideTypes } from '../../utils'
+import { themeColor, showHide, showAboveBackDrop } from '../../utils'
 import SearchBarStyle from '../SearchBar/SearchBarStyle'
 import ToggleStyle from '../Toggle/ToggleStyle'
 import { TOGGLE_BUTTON_SIZE } from '../shared/constants'

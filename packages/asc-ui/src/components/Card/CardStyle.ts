@@ -4,9 +4,9 @@ import { perceivedLoading } from '../../utils/themeUtils'
 import CardActionsStyle from './CardActionsStyle'
 import { CardMediaWrapperStyle } from './CardMediaStyle'
 import CardContentStyle from './CardContentStyle'
-import { Theme } from '../../types'
+import type { Theme } from '../../types'
 
-export type Props = {
+export interface Props {
   maxWidth?: number
   shadow?: boolean
   horizontal?: boolean

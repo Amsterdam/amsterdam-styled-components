@@ -1,9 +1,9 @@
 import { css, keyframes } from 'styled-components'
 import { BACKDROP_Z_INDEX } from '../components/shared/constants'
-import { Theme } from '../types'
+import type { Theme } from '../types'
 import { fromProps } from './fromProps'
 
-type ThemeProp = {
+interface ThemeProp {
   theme: Theme.ThemeInterface
 }
 
@@ -344,6 +344,6 @@ export interface CustomCssPropsInterface {
   css?: any
 }
 
-export type CustomCssPropsType = {
+export interface CustomCssPropsType {
   css?: any
 }

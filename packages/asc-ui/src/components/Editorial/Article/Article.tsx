@@ -1,6 +1,6 @@
-import { FunctionComponent, HTMLAttributes } from 'react'
+import type { FunctionComponent, HTMLAttributes } from 'react'
 import ArticleStyle from './ArticleStyle'
-import { Props } from '../EditorialPost/EditorialPost'
+import type { Props } from '../EditorialPost/EditorialPost'
 
 const Article: FunctionComponent<Props & HTMLAttributes<HTMLElement>> = ({
   children,

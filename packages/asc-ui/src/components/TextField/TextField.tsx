@@ -1,10 +1,12 @@
 import { Close } from '@amsterdam/asc-assets'
-import { CSSProperties, useRef } from 'react'
+import type { CSSProperties } from 'react'
+import { useRef } from 'react'
 import { useUID } from 'react-uid'
 import { useFocus } from '../../utils/hooks'
 import FormLabelStyle from '../FormLabelStyle'
 import Icon from '../Icon'
-import Input, { InputProps } from '../Input'
+import type { InputProps } from '../Input'
+import Input from '../Input'
 import TextFieldStyle, { CloseButton, InputWrapper } from './TextFieldStyle'
 
 export interface TextFieldProps extends InputProps {

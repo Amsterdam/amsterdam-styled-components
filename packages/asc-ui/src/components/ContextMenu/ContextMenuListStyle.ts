@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 import { themeColor } from '../../utils'
-import { Position } from './types'
+import type { Position } from './types'
 
-export type ContextMenuListProps = {
+export interface ContextMenuListProps {
   labelId?: string
   position?: Position
   open?: boolean

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { srOnlyStyle, themeColor } from '../../utils'
 import { CheckboxWrapperStyle } from '../Checkbox'
 
-type SharedProps = {
+interface SharedProps {
   position?: 'top' | 'right' | 'bottom' | 'left'
 }
 
@@ -12,7 +12,7 @@ export type Props = {
   align?: 'center' | 'flex-start' | 'flex-end'
 } & SharedProps
 
-type StyleOnlyProps = {
+interface StyleOnlyProps {
   active: boolean
 }
 

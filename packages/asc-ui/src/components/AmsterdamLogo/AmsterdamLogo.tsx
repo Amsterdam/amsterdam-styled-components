@@ -1,5 +1,5 @@
-import { FunctionComponent } from 'react'
-import { LogoProps } from '../Header/HeaderLogoText'
+import type { FunctionComponent } from 'react'
+import type { LogoProps } from '../Header/HeaderLogoText'
 import Hidden from '../Hidden'
 import AmsterdamLogoStyle, {
   LogoShortStyle,

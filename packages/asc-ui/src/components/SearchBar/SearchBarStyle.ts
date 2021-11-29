@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { showHide, ShowHideTypes, themeSpacing } from '../../utils'
+import type { ShowHideTypes } from '../../utils'
+import { showHide, themeSpacing } from '../../utils'
 import TextFieldStyle from '../TextField/TextFieldStyle'
 import ButtonStyle from '../Button/ButtonStyle'
 import { SEARCH_BAR_HEIGHT } from '../shared/constants'

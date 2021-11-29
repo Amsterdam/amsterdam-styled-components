@@ -1,20 +1,17 @@
 import { ChevronDown } from '@amsterdam/asc-assets'
-import {
+import type {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
   FunctionComponent,
-  useCallback,
-  useEffect,
-  useState,
 } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useUID } from 'react-uid'
-import { ButtonStyleProps } from '../Button/ButtonStyle'
+import type { ButtonStyleProps } from '../Button/ButtonStyle'
+import type { ButtonContentProps, Props as StyleProps } from './AccordionStyle'
 import {
   AccordionButton,
   AccordionButtonContent,
   AccordionContent,
-  ButtonContentProps,
-  Props as StyleProps,
 } from './AccordionStyle'
 
 type Props = {

@@ -1,12 +1,12 @@
 import { Download } from '@amsterdam/asc-assets'
-import { FunctionComponent, MouseEvent } from 'react'
+import type { FunctionComponent, MouseEvent } from 'react'
 import styled from 'styled-components'
 import Button from '../Button'
 import Image from '../Image'
 import DocumentCoverContent from './DocumentCoverContent'
 import DocumentCoverStyle from './DocumentCoverStyle'
 
-type Props = {
+interface Props {
   imageSrc: string
   onClick: (event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void
   description: string

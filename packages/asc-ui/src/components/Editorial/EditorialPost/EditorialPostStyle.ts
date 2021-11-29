@@ -3,7 +3,7 @@ import { breakpoint, themeColor } from '../../../utils'
 import BackgroundImageStyle from '../../BackgroundImage/BackgroundImageStyle'
 import EditorialContentStyle from '../EditorialContent/EditorialContentStyle'
 
-export type Props = {
+export interface Props {
   hasImage: boolean
 }
 

@@ -1,9 +1,9 @@
 import styled, { css, keyframes } from 'styled-components'
 import { showHide } from '../../../utils'
-import { EdgeDetectionTypes } from '../../../utils/hooks/useEdgeDetection'
+import type { EdgeDetectionTypes } from '../../../utils/hooks/useEdgeDetection'
 import { MenuItemStyle } from '../MenuItem'
 
-export type Props = {
+export interface Props {
   edgeDetection?: EdgeDetectionTypes
 }
 

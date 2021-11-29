@@ -1,4 +1,4 @@
-import { RefObject, KeyboardEvent } from 'react'
+import type { RefObject, KeyboardEvent } from 'react'
 import { KeyboardKeys } from '../../types'
 import { FOCUSABLE_ELEMENTS } from './constants'
 

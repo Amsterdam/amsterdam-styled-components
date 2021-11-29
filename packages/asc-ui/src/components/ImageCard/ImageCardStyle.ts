@@ -2,13 +2,13 @@ import styled, { css } from 'styled-components'
 import { perceivedLoading } from '../../utils/themeUtils'
 import { ImageCardContentStyle } from './ImageCardContent'
 
-export type Props = {
+export interface Props {
   backgroundImage: string
   isLoading?: boolean
   animateLoading?: boolean
 }
 
-export type WrapperProps = {
+export interface WrapperProps {
   margin?: number
 }
 

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { getValueFromTheme, valueFromObject } from '../../utils'
 import {
   mediaQuery,
@@ -10,8 +10,8 @@ import {
   spacerWidth,
   gutter,
 } from '../../utils/grid'
-import { TypeFlexPosition } from '.'
-import { Theme } from '../../types'
+import type { TypeFlexPosition } from '.'
+import type { Theme } from '../../types'
 
 type FlexJustify =
   | 'flex-start'
@@ -21,7 +21,7 @@ type FlexJustify =
   | 'space-around'
   | 'space-evenly'
 
-export type TypeProps = {
+export interface TypeProps {
   children: ReactNode
   className?: string
   debug?: boolean

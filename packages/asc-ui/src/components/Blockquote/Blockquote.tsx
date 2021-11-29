@@ -1,4 +1,4 @@
-import { FunctionComponent, HTMLAttributes } from 'react'
+import type { FunctionComponent, HTMLAttributes } from 'react'
 import BlockquoteStyle, { Props } from './BlockquoteStyle'
 
 export { Props }

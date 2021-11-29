@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { mapToBreakpoints } from '../../utils/themeUtils'
 
-type Props = {
+interface Props {
   width?: string[]
 }
 

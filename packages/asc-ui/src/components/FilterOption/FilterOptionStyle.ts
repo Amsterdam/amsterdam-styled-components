@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { themeColor, themeSpacing } from '../../utils'
 
-export type Props = {
+export interface Props {
   active?: boolean
 }
 

@@ -4,7 +4,7 @@
  * const bazValue = valueFromObject('foo.bar.baz', obj);
  * @throws {Error} whenever the requested key cannot be found
  */
-import { Theme } from '../types'
+import type { Theme } from '../types'
 
 // eslint-disable-next-line import/prefer-default-export
 export const valueFromObject = <T = Theme.ThemeInterface>(

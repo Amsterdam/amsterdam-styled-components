@@ -1,7 +1,6 @@
+import type { ChangeEvent, HTMLAttributes } from 'react'
 import {
-  ChangeEvent,
   forwardRef,
-  HTMLAttributes,
   useCallback,
   useEffect,
   useImperativeHandle,
@@ -9,9 +8,9 @@ import {
   useState,
 } from 'react'
 import FormLabelStyle from '../FormLabelStyle'
+import type { Props } from './SelectStyle'
 import SelectStyle, {
   AbsoluteContentWrapper,
-  Props,
   SelectedValue,
   SelectIcon,
   SelectWrapper,

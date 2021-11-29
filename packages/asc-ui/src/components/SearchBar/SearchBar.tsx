@@ -1,19 +1,20 @@
 import { Search } from '@amsterdam/asc-assets'
-import {
+import type {
   ChangeEvent,
   FormEvent,
   FunctionComponent,
   RefObject,
-  useEffect,
-  useState,
 } from 'react'
+import { useEffect, useState } from 'react'
 import { deprecatedWarning } from '../../utils'
 import Button from '../Button'
 import Icon from '../Icon'
-import { InputProps } from '../Input'
+import type { InputProps } from '../Input'
 import InputContext from '../Input/InputMethodsContext'
-import TextField, { TextFieldProps } from '../TextField/TextField'
-import SearchBarStyle, { Props as SearchBarStyleProps } from './SearchBarStyle'
+import type { TextFieldProps } from '../TextField/TextField'
+import TextField from '../TextField/TextField'
+import type { Props as SearchBarStyleProps } from './SearchBarStyle'
+import SearchBarStyle from './SearchBarStyle'
 
 export interface SearchBarProps extends TextFieldProps, SearchBarStyleProps {
   label?: string

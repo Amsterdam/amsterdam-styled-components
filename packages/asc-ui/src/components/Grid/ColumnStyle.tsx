@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import {
   mediaQuery,
   colCount,
@@ -7,10 +7,10 @@ import {
   pushWidth,
   margin,
 } from '../../utils/grid'
-import { TypeFlexPosition } from '.'
-import { Theme } from '../../types'
+import type { TypeFlexPosition } from '.'
+import type { Theme } from '../../types'
 
-export type TypeProps = {
+export interface TypeProps {
   alignSelf?: TypeFlexPosition
   children: ReactNode
   className?: string

@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { ThemeContext } from 'styled-components'
-import { Theme } from '../../types'
+import type { Theme } from '../../types'
 
 const getBreakpoints = (theme: Theme.ThemeInterface) =>
   Object.keys(theme.breakpoints).reduce(
@@ -13,7 +13,7 @@ const getBreakpoints = (theme: Theme.ThemeInterface) =>
     {},
   )
 
-export type Arguments = {
+export interface Arguments {
   query?: string
   minBreakpoint?: keyof Theme.BreakpointsInterface
   maxBreakpoint?: keyof Theme.BreakpointsInterface

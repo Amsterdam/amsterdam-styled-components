@@ -4,7 +4,7 @@ import { BACKDROP_Z_INDEX } from '../shared/constants'
 
 import { themeColor } from '../../utils'
 
-export type Props = {
+export interface Props {
   backdropOpacity?: number
   zIndexOffset?: number
 }

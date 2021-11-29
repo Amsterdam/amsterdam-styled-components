@@ -1,10 +1,6 @@
 import styled, { css } from 'styled-components'
-import {
-  themeColor,
-  showHide,
-  ShowHideTypes,
-  showAboveBackDrop,
-} from '../../../utils'
+import type { ShowHideTypes } from '../../../utils'
+import { themeColor, showHide, showAboveBackDrop } from '../../../utils'
 import { MenuItemTitleStyle } from '../MenuItemTitle'
 import { MenuListStyle } from '../MenuList'
 import { MenuFlyOutStyle } from '../MenuFlyOut'

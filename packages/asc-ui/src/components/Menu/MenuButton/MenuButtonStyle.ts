@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import { svgFill, themeColor } from '../../../utils'
-import Button, { ButtonProps } from '../../Button/Button'
+import type { ButtonProps } from '../../Button/Button'
+import Button from '../../Button/Button'
 import { IconStyle } from '../../Icon'
 import MenuFlyOutStyle from '../MenuFlyOut/MenuFlyOutStyle'
 import { MenuListStyle } from '../MenuList'

@@ -1,4 +1,4 @@
-import { FunctionComponent, HTMLAttributes } from 'react'
+import type { FunctionComponent, HTMLAttributes } from 'react'
 import EditorialSidebarStyle from './EditorialSidebarStyle'
 
 const EditorialContent: FunctionComponent<HTMLAttributes<HTMLElement>> = ({

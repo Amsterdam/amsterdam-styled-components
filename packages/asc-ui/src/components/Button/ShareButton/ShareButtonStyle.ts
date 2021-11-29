@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import { svgFill, themeColor } from '../../../utils'
 import IconStyle from '../../Icon/IconStyle'
-import ButtonStyle, { ButtonStyleProps } from '../ButtonStyle'
+import type { ButtonStyleProps } from '../ButtonStyle'
+import ButtonStyle from '../ButtonStyle'
 
 export type Props = {
   hoverColor?: string

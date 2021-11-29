@@ -1,17 +1,14 @@
-import {
+import type {
   FunctionComponent,
   HTMLAttributes,
   MouseEventHandler,
   PropsWithChildren,
   ReactElement,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
 } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import styled from 'styled-components'
 import useFocusWithArrows from '../../utils/hooks/useFocusWithArrows'
-import { Tab, TabProps } from './Tab'
+import type { Tab, TabProps } from './Tab'
 import TabButton from './TabButton'
 import TabList from './TabList'
 
