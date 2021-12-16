@@ -9,7 +9,7 @@
     "test": "react-scripts test"
   },
   "dependencies": {
-    "@amsterdam/asc-ui": "^0.33.0",
+    "@amsterdam/asc-ui": "^0.35.0",
     "@amsterdam/asc-assets": "^0.35.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.1",
