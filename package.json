@@ -6,11 +6,12 @@
   ],
   "scripts": {
     "prebuild": "npm run build --workspace=@amsterdam/asc-assets",
-    "build": "npm run clean:generated && npm run build:ts && npm run build:ts:es",
+    "build": "npm run clean:generated && npm run build:ts && npm run build:ts:es && npm run build:ts:beta",
     "build:watch": "npm run clean:generated && concurrently \"npm run build:ts -- --watch\" \"npm run build:ts:es -- --watch\"",
     "build:storybook": "npm run build --workspace=stories",
     "build:ts": "tsc -b packages/asc-assets packages/asc-ui",
     "build:ts:es": "tsc -b packages/asc-assets/tsconfig.es.json packages/asc-ui/tsconfig.es.json",
+    "build:ts:beta": "tsc -b packages/asc-ui/tsconfig.beta.json",
     "build:netlify": "npm run build && npm run build:storybook",
     "clean:generated": "find ./packages -name \"*.d.ts\" -type f -delete && find ./packages -name \"*.tsbuildinfo\" -type f -delete",
     "lint": "concurrently \"npm run lint:css\" \"npm run lint:js\"",

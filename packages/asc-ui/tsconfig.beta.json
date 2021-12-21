@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.build.json",
+  "compilerOptions": {
+    "rootDir": "./src/beta",
+    "outDir": "./beta"
+  },
+  "include": [
+    "./src/beta"
+  ]
+}
