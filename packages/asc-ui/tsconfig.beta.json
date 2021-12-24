@@ -6,5 +6,11 @@
   },
   "include": [
     "./src/beta"
+  ],
+  "exclude": [
+    "lib",
+    "node_modules",
+    "**/*.test.tsx",
+    "**/*.stories.tsx"
   ]
 }
