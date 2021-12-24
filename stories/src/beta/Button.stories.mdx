@@ -1,0 +1,100 @@
+import { Fragment } from 'react'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { Icon } from '@amsterdam/asc-ui'
+import { Button } from '@amsterdam/asc-ui/beta'
+import styled from 'styled-components'
+import { Download } from '@amsterdam/asc-assets'
+
+<Meta title="Beta/Button" component={Button} />
+
+# Button
+
+## Default / Primary variant
+
+export const ButtonBar = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  & > * {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+`
+
+export const StyledIcon = styled(Icon)`
+  margin-right: 16px;
+`
+
+<Canvas>
+  <Story name="Default / Primary variant">
+    <Fragment>
+      <ButtonBar>
+        <Button>Normal</Button>
+        <Button disabled>
+          Disabled
+        </Button>
+        <Button>
+          <StyledIcon size={20}>
+            <Download />
+          </StyledIcon>
+          With icon
+        </Button>
+      </ButtonBar>
+    </Fragment>
+  </Story>
+</Canvas>
+
+## Secondary variant
+
+<Canvas>
+  <Story name="Secondary variant">
+    <Fragment>
+      <ButtonBar>
+        <Button variant="secondary">Normal</Button>
+        <Button variant="secondary" disabled>
+          Disabled
+        </Button>
+        <Button variant="secondary">
+          <StyledIcon size={20}>
+            <Download />
+          </StyledIcon>
+          With icon
+        </Button>
+      </ButtonBar>
+    </Fragment>
+  </Story>
+</Canvas>
+
+## Tertiary variant
+
+<Canvas>
+  <Story name="Tertiary variant">
+    <Fragment>
+      <ButtonBar>
+        <Button variant="tertiary">Normal</Button>
+        <Button variant="tertiary" disabled>
+          Disabled
+        </Button>
+        <Button variant="tertiary">
+          <StyledIcon size={20}>
+            <Download />
+          </StyledIcon>
+          With icon
+        </Button>
+      </ButtonBar>
+    </Fragment>
+  </Story>
+</Canvas>
+
+## With only an icon
+
+<Canvas>
+  <Story name="With only an icon">
+    <Fragment>
+      <Button variant="blank">
+        <Icon size={24}>
+          <Download />
+        </Icon>
+      </Button>
+    </Fragment>
+  </Story>
+</Canvas>
