@@ -1,144 +1,157 @@
 import type { Theme } from '../../types'
-import colors from './colors'
 
-const defaultFontFamily = 'Avenir Next, Arial, sans-serif'
+const defaultFontFamily =
+  'Avenir Next W01,Helvetica Neue,Helvetica,Arial,sans-serif'
 
-/**
- *  The font definitions differ from the ones in the design system.
- *  In this theme are the breakpoints for the typographty set to `laptop` (1024px)
- *  while in design system are set to `tabletS` (540px)
- */
 const typography: Theme.TypographyInterface = {
   fontFamily: defaultFontFamily,
-  fontSize: '16px',
   h1: {
-    color: colors.tint.level7,
-    fontSize: '24px',
-    fontWeight: 700,
-    letterSpacing: 'inherit',
-    lineHeight: '30px',
-    marginBottom: '0',
-    breakpoints: {
-      laptop: {
-        fontSize: '30px',
-        lineHeight: '38px',
-      },
+    default: {
+      minFontSize: 32,
+      maxFontSize: 80,
+      minLineHeight: 40,
+      maxLineHeight: 88,
+    },
+    small: {
+      minFontSize: 30,
+      maxFontSize: 60,
+      minLineHeight: 34,
+      maxLineHeight: 64,
     },
   },
   h2: {
-    color: colors.tint.level7,
-    fontSize: '20px',
-    fontWeight: 700,
-    letterSpacing: 'inherit',
-    lineHeight: '28px',
-    marginBottom: '8px',
-    breakpoints: {
-      laptop: {
-        fontSize: '24px',
-        lineHeight: '30px',
-      },
+    default: {
+      minFontSize: 28,
+      maxFontSize: 56,
+      minLineHeight: 32,
+      maxLineHeight: 64,
     },
   },
   h3: {
-    color: colors.tint.level7,
-    fontSize: '20px',
-    fontWeight: 700,
-    letterSpacing: 'inherit',
-    lineHeight: '28px',
-    marginBottom: '8px',
+    default: {
+      minFontSize: 24,
+      maxFontSize: 40,
+      minLineHeight: 32,
+      maxLineHeight: 48,
+    },
   },
   h4: {
-    color: colors.tint.level7,
-    fontSize: '18px',
-    fontWeight: 700,
-    letterSpacing: 'inherit',
-    lineHeight: '25px',
-    marginBottom: '8px',
+    default: {
+      minFontSize: 22,
+      maxFontSize: 32,
+      minLineHeight: 32,
+      maxLineHeight: 40,
+    },
   },
   h5: {
-    color: colors.tint.level7,
-    fontSize: '18px',
-    fontWeight: 700,
-    letterSpacing: 'inherit',
-    lineHeight: '25px',
-    marginBottom: '8px',
+    default: {
+      minFontSize: 18,
+      maxFontSize: 24,
+      minLineHeight: 26,
+      maxLineHeight: 32,
+    },
   },
   h6: {
-    color: colors.tint.level7,
-    fontSize: '16px',
-    fontWeight: 500,
-    letterSpacing: 'inherit',
-    lineHeight: '20px',
-    marginBottom: '0',
-  },
-  a: {
-    color: colors.tint.level7,
-    fontSize: '16px',
-    fontWeight: 'inherit',
-    letterSpacing: 'inherit',
-    lineHeight: '22px',
-    marginBottom: '0',
-    breakpoints: {
-      laptop: {
-        fontSize: '18px',
-        lineHeight: '25px',
-      },
+    default: {
+      minFontSize: 16,
+      maxFontSize: 18,
+      minLineHeight: 22,
+      maxLineHeight: 24,
     },
   },
   p: {
-    color: colors.tint.level7,
-    fontSize: '16px',
-    fontWeight: 400,
-    letterSpacing: 'inherit',
-    lineHeight: '22px',
-    marginBottom: '20px',
-    breakpoints: {
-      tabletS: {
-        marginBottom: '24px',
-      },
-      laptop: {
-        fontSize: '18px',
-        lineHeight: '25px',
-      },
+    default: {
+      minFontSize: 18,
+      maxFontSize: 24,
+      minLineHeight: 28,
+      maxLineHeight: 40,
+    },
+    intro: {
+      minFontSize: 18,
+      maxFontSize: 30,
+      minLineHeight: 28,
+      maxLineHeight: 40,
+    },
+    small: {
+      minFontSize: 16,
+      maxFontSize: 18,
+      minLineHeight: 24,
+      maxLineHeight: 26,
     },
   },
-  li: {
-    color: colors.tint.level7,
-    fontSize: '16px',
-    fontWeight: 400,
-    letterSpacing: 'inherit',
-    lineHeight: '22px',
-    marginBottom: '8',
-    breakpoints: {
-      laptop: {
-        fontSize: '18px',
-        lineHeight: '25px',
-      },
+  a: {
+    default: {
+      minFontSize: 18,
+      maxFontSize: 24,
+      minLineHeight: 26,
+      maxLineHeight: 32,
     },
   },
-  em: {
-    color: colors.tint.level7,
-    fontSize: '16px',
-    fontWeight: 400,
-    letterSpacing: 'inherit',
-    lineHeight: 1.25,
-    marginBottom: '0',
+  button: {
+    default: {
+      minFontSize: 18,
+      maxFontSize: 24,
+      minLineHeight: 28,
+      maxLineHeight: 40,
+    },
+    small: {
+      minFontSize: 16,
+      maxFontSize: 18,
+      minLineHeight: 22,
+      maxLineHeight: 24,
+    },
   },
-  small: {
-    color: colors.tint.level7,
-    fontSize: '14px',
-    fontWeight: 400,
-    letterSpacing: 'inherit',
-    lineHeight: '18px',
-    marginBottom: '0',
+  blockquote: {
+    default: {
+      minFontSize: 24,
+      maxFontSize: 40,
+      minLineHeight: 32,
+      maxLineHeight: 48,
+    },
   },
-  span: {
-    color: colors.tint.level7,
-    fontSize: '14px',
-    fontWeight: 400,
-    letterSpacing: 'inherit',
-    lineHeight: '18px',
-    marginBottom: '0',
+  ul: {
+    default: {
+      minFontSize: 18,
+      maxFontSize: 24,
+      minLineHeight: 28,
+      maxLineHeight: 40,
+    },
+    small: {
+      minFontSize: 16,
+      maxFontSize: 18,
+      minLineHeight: 24,
+      maxLineHeight: 26,
+    },
+  },
+  ol: {
+    default: {
+      minFontSize: 18,
+      maxFontSize: 24,
+      minLineHeight: 28,
+      maxLineHeight: 40,
+    },
+    small: {
+      minFontSize: 16,
+      maxFontSize: 18,
+      minLineHeight: 24,
+      maxLineHeight: 26,
+    },
+  },
+  dl: {
+    default: {
+      minFontSize: 16,
+      maxFontSize: 18,
+      minLineHeight: 24,
+      maxLineHeight: 26,
+    },
+  },
+  table: {
+    default: {
+      minFontSize: 16,
+      maxFontSize: 18,
+      minLineHeight: 24,
+      maxLineHeight: 26,
+    },
   },
 }
 

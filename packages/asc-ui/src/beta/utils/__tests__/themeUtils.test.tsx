@@ -1,12 +1,7 @@
-import { render } from '@testing-library/react'
-import styled from 'styled-components'
 import { BACKDROP_Z_INDEX } from '../../components/shared/constants'
-import { ascDefaultTheme } from '../../theme'
-import ThemeProvider from '../../theme/ThemeProvider'
+import { ascBetaTheme } from '../../theme'
 import {
   breakpoint,
-  getTypographyFromTheme,
-  getTypographyValueFromProperty,
   getValueFromTheme,
   showAboveBackDrop,
   svgFill,
@@ -14,11 +9,11 @@ import {
   themeSpacing,
 } from '../themeUtils'
 
-const { colors, typography } = ascDefaultTheme
+const { colors } = ascBetaTheme
 
 describe('getColorFromTheme', () => {
   const theme = {
-    ...ascDefaultTheme,
+    ...ascBetaTheme,
     colors: {
       ...colors,
       primary: {
@@ -39,51 +34,9 @@ describe('getColorFromTheme', () => {
   })
 })
 
-describe('getTypographyFromTheme', () => {
-  it('should return the requested typography from theme', () => {
-    const Component = styled.div`
-      ${getTypographyFromTheme()}
-    `
-
-    const { getByTestId } = render(
-      <ThemeProvider>
-        <Component data-testid="paragraph" as="p" />
-      </ThemeProvider>,
-    )
-
-    expect(getByTestId('paragraph')).toHaveStyleRule('font-weight', '400')
-  })
-})
-
-describe('getTypographyValueFromProperty', () => {
-  const theme = {
-    ...ascDefaultTheme,
-    typography: {
-      ...typography,
-    },
-  }
-  it('should the value without a breakpoint', () => {
-    expect(
-      getTypographyValueFromProperty('h1', 'lineHeight')({ theme }),
-    ).toEqual('30px')
-  })
-
-  it('should the value with a breakpoint', () => {
-    expect(
-      getTypographyValueFromProperty('h1', 'lineHeight', 'laptop')({ theme }),
-    ).toEqual('38px')
-  })
-
-  it('should return an empty string if no results could be found', () => {
-    expect(
-      getTypographyValueFromProperty('h1', 'lineHeight', 'tabletS')({ theme }),
-    ).toEqual('')
-  })
-})
-
 describe('breakpoint', () => {
   const theme = {
-    ...ascDefaultTheme,
+    ...ascBetaTheme,
   }
 
   it('should return the right breakpoint', () => {
@@ -98,7 +51,7 @@ describe('breakpoint', () => {
 
 describe('svgFill', () => {
   const theme = {
-    ...ascDefaultTheme,
+    ...ascBetaTheme,
   }
 
   it('should return the right fill from a literal color', () => {
@@ -114,7 +67,7 @@ describe('svgFill', () => {
 
 describe('themeSpacing', () => {
   const theme = {
-    ...ascDefaultTheme,
+    ...ascBetaTheme,
   }
   it('should return the result of n * theme spacing', () => {
     expect(themeSpacing(0)({ theme })).toBe('0')
@@ -132,7 +85,7 @@ describe('themeSpacing', () => {
 
 describe('fromTheme', () => {
   const theme = {
-    ...ascDefaultTheme,
+    ...ascBetaTheme,
     colours: { white: '#fff' },
     units: 'px',
     size: 1,

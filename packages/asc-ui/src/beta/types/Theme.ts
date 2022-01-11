@@ -117,8 +117,23 @@ export namespace Theme {
   }
 
   export interface TypographyType extends Partial<TypographyElementStyle> {
-    breakpoints?: {
-      [key in keyof BreakpointsInterface]?: Partial<TypographyElementStyle>
+    default: {
+      minFontSize: number
+      maxFontSize: number
+      minLineHeight: number
+      maxLineHeight: number
+    }
+    intro?: {
+      minFontSize: number
+      maxFontSize: number
+      minLineHeight: number
+      maxLineHeight: number
+    }
+    small?: {
+      minFontSize: number
+      maxFontSize: number
+      minLineHeight: number
+      maxLineHeight: number
     }
   }
 
@@ -130,11 +145,13 @@ export namespace Theme {
     h5: TypographyType
     h6: TypographyType
     p: TypographyType
-    li: TypographyType
     a: TypographyType
-    em: TypographyType
-    small: TypographyType
-    span: TypographyType
+    button: TypographyType
+    blockquote: TypographyType
+    ul: TypographyType
+    ol: TypographyType
+    dl: TypographyType
+    table: TypographyType
   }
 
   export interface TypographyInterface extends Partial<TypographyElements> {
@@ -147,9 +164,6 @@ export namespace Theme {
     colors: Partial<ColorTypeInterface>
     globalStyle: Partial<GlobalStyleType>
     typography: Partial<TypographyInterface>
-    layouts: Partial<LayoutInterface>
-    maxGridWidth: number
-    maxContainerWidth: number
     spacing: Spacing
   }
 }

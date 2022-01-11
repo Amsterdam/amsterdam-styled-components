@@ -1,7 +1,7 @@
 import deepMerge from 'deepmerge'
 import type { FunctionComponent, ReactNode } from 'react'
 import { ThemeProvider as AscThemeProvider } from 'styled-components'
-import { ascDefaultTheme } from '.'
+import { ascBetaTheme } from '.'
 import type { Theme } from '../types'
 
 export interface ThemeProviderProps {
@@ -12,7 +12,7 @@ export interface ThemeProviderProps {
 }
 
 const ThemeProvider: FunctionComponent<ThemeProviderProps> = ({
-  theme: defaultTheme = ascDefaultTheme,
+  theme: defaultTheme = ascBetaTheme,
   overrides,
   deep = true,
   children,

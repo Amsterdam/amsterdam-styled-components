@@ -1,11 +1,8 @@
-import { css, keyframes } from 'styled-components'
+import { css } from 'styled-components'
 import { BACKDROP_Z_INDEX } from '../components/shared/constants'
 import type { Theme } from '../types'
 import { fromProps } from './fromProps'
-
-interface ThemeProp {
-  theme: Theme.ThemeInterface
-}
+import { ascBetaTheme } from '..'
 
 export type ThemeFn<T> = ({ theme }: { theme: Theme.ThemeInterface }) => T
 
@@ -67,78 +64,6 @@ export const breakpoint = withTheme<BreakpointsType>((theme, type, variant) => {
   return breakpointFunc && breakpointFunc(type)
 })
 
-const generateCSSFromTypography = (
-  {
-    color,
-    fontWeight,
-    fontSize,
-    letterSpacing,
-    lineHeight,
-    marginBottom,
-  }: Partial<Theme.TypographyElementStyle>,
-  gutterBottom?: number,
-) => css`
-  color: ${color};
-  font-weight: ${fontWeight};
-  font-size: ${fontSize};
-  letter-spacing: ${letterSpacing};
-  line-height: ${lineHeight};
-  margin-bottom: ${typeof gutterBottom === 'number'
-    ? `${gutterBottom}px`
-    : marginBottom};
-`
-
-export const getTypographyFromTheme =
-  () =>
-  ({ as: asProp = 'p', gutterBottom, styleAs, theme }: any) => {
-    const as = styleAs || asProp
-    const styles = getValueFromTheme(`typography.${[as]}`)({
-      theme,
-    }) as Theme.TypographyType
-    if (!styles) {
-      return ''
-    }
-    const { breakpoints, ...otherProps } = styles
-    return css`
-      ${generateCSSFromTypography(otherProps, gutterBottom)}
-      ${() =>
-        breakpoints
-          ? Object.entries(breakpoints).map(
-              ([breakpointFromTypography, typoStyles]) => css`
-                @media screen and ${breakpoint(
-                    'min-width',
-                    <keyof Theme.BreakpointsInterface>breakpointFromTypography,
-                  )} {
-                  ${generateCSSFromTypography(typoStyles || {}, gutterBottom)}
-                }
-              `,
-            )
-          : ``}
-    `
-  }
-
-type BreakpointKeys = keyof Theme.BreakpointsInterface
-
-type GetTypographyValueFromPropertyParameters = [
-  keyof Theme.TypographyInterface,
-  keyof Theme.TypographyElementStyle,
-  BreakpointKeys?,
-]
-
-export const getTypographyValueFromProperty =
-  withTheme<GetTypographyValueFromPropertyParameters>(
-    (theme, element, property, breakpointRule) => {
-      const rules = getValueFromTheme(`typography.${[element]}`)({ theme })
-      if (breakpointRule) {
-        if (rules.breakpoints[breakpointRule]) {
-          return rules.breakpoints[breakpointRule][property]
-        }
-        return ''
-      }
-      return rules[property]
-    },
-  )
-
 /**
  * When this style is applied on an element it will be hidden but still readable by screen readers.
  *
@@ -191,100 +116,101 @@ export const svgFill = withTheme((theme, color: string | ThemeFn<string>) => {
   `
 })
 
-/**
- * Adds an animated background to the element to indicate the content is loading.
- * @param animateLoading Allows toggling the animation effect, if false a fixed color will be used instead.
- */
-export const perceivedLoading = withTheme((theme, animateLoading = true) => {
-  const animation = keyframes`
-      0% {
-        background-color: ${themeColor('tint', 'level3')({ theme })};
-      }
-
-      50% {
-        background-color: ${themeColor('tint', 'level4')({ theme })};
-      }
-
-      100% {
-        background-color: ${themeColor('tint', 'level3')({ theme })};
-      }
-    `
-
-  return animateLoading
-    ? css`
-        animation: ${animation} 2s ease-in-out infinite;
-      `
-    : css`
-        background-color: ${themeColor('tint', 'level4')({ theme })};
-      `
-})
-
-/**
- * @deprecated Only used in deprecated component GridItem
- * @param sizes
- * @param propertyName
- * @param theme
- */
-export const mapToBreakpoints = (
-  sizes: string[],
-  propertyName: string,
-  theme: Theme.ThemeInterface,
+export const calculateFluidStyle = (
+  minSizePx: number,
+  maxSizePx: number,
+  minScreenWidthPx = 320,
+  maxScreenWidthPx = 1920,
 ) => {
-  const breakpointVariants = Object.keys(theme.breakpoints) as Array<
-    keyof Theme.BreakpointsInterface
-  >
-  return css`
-    ${sizes
-      .map((value, index) =>
-        index === 0
-          ? `${propertyName}: ${value};`
-          : breakpointVariants[index] &&
-            `
-        @media screen and ${breakpoint(
-          'min-width',
-          breakpointVariants[index],
-        )({
-          theme,
-        })} {
-          ${propertyName}: ${value};
-        }
-      `,
-      )
-      .join('')}
-  `
+  const defaultBaseSize = 16
+  const minSize = minSizePx / defaultBaseSize
+  const maxSize = maxSizePx / defaultBaseSize
+  const minScreenWidth = minScreenWidthPx / defaultBaseSize
+  const maxScreenWidth = maxScreenWidthPx / defaultBaseSize
+
+  return `clamp(
+    ${minSize}rem,
+    ${minSize}rem + ${maxSize - minSize} * 
+    (100vw - ${minScreenWidth}rem) / ${maxScreenWidth - minScreenWidth},
+    ${maxSize}rem
+  )`
 }
 
-export interface ShowHideTypes {
-  showAt?: keyof Theme.BreakpointsInterface
-  hideAt?: keyof Theme.BreakpointsInterface
+export interface FluidTypoStyle {
+  small?: boolean
+  intro?: boolean
+  styleAs?: any
+  as?: any
 }
 
-type ShowHideProps = ThemeProp & ShowHideTypes
+export const fluidTypoStyle = css`
+  ${({ small, intro, styleAs, as }: FluidTypoStyle) => {
+    const tag =
+      (Object.keys(ascBetaTheme.typography).includes(styleAs) && styleAs) ||
+      (Object.keys(ascBetaTheme.typography).includes(as) && as) ||
+      'p'
 
-export const showHide =
-  () =>
-  ({ hideAt, showAt, theme }: ShowHideProps) => {
-    const hideAtCss = hideAt
-      ? css`
-          @media screen and ${breakpoint('min-width', hideAt)({ theme })} {
-            display: none;
-          }
-        `
-      : ''
-
-    const showAtCss = showAt
-      ? css`
-          @media screen and ${breakpoint('max-width', showAt)({ theme })} {
-            display: none;
-          }
-        `
-      : ''
+    const prop =
+      (small &&
+        Object.keys(ascBetaTheme.typography[tag]).includes('small') &&
+        'small') ||
+      (intro &&
+        Object.keys(ascBetaTheme.typography[tag]).includes('intro') &&
+        'intro') ||
+      'default'
 
     return css`
-      ${showAtCss}
-      ${hideAtCss}
+      font-size: ${calculateFluidStyle(
+        ascBetaTheme.typography[tag][prop].minFontSize,
+        ascBetaTheme.typography[tag][prop].maxFontSize,
+      )};
+      line-height: ${calculateFluidStyle(
+        ascBetaTheme.typography[tag][prop].minLineHeight,
+        ascBetaTheme.typography[tag][prop].maxLineHeight,
+      )};
     `
+  }}
+`
+
+export interface TypoStyle {
+  gutterBottom?: {
+    small: number
+    large: number
   }
+  strong?: boolean
+  darkBackground?: boolean
+}
+
+export const typographyStyle = css<TypoStyle>`
+  margin-top: 0;
+  margin-bottom: ${({ gutterBottom }) =>
+    `${
+      typeof gutterBottom?.large === 'number'
+        ? gutterBottom.large
+        : gutterBottom || 0
+    }px`};
+
+  ${({ gutterBottom }) =>
+    typeof gutterBottom?.small === 'number' &&
+    css`
+      @media screen and ${breakpoint('max-width', 'laptop')} {
+        margin-bottom: ${gutterBottom.small}px;
+      }
+    `}
+
+  ${({ strong }) =>
+    strong &&
+    css`
+      font-weight: 700;
+    `}
+
+  ${({ darkBackground }) =>
+    darkBackground &&
+    css`
+      color: white;
+      ${svgFill('white')}
+    `}
+`
 
 // Function that uses the BACKDROP_Z_INDEX constant to determine the z-index for components rendered with a backdrop
 // The first argument in the curry can be used to raise the z-index for components that need to be displayed above
@@ -331,19 +257,3 @@ export const themeSpacing = withTheme<ThemeSpacingParameters>(
       .trim()
   },
 )
-
-/**
- * @deprecated Please wrap around the SC styled() method to extend your styles.
- */
-export const customCss = (props: any) =>
-  props.css &&
-  css`
-    ${props.css}
-  `
-export interface CustomCssPropsInterface {
-  css?: any
-}
-
-export interface CustomCssPropsType {
-  css?: any
-}

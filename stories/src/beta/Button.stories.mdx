@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { Meta, Story, Canvas } from '@storybook/addon-docs'
-import { Icon } from '@amsterdam/asc-ui'
-import { Button } from '@amsterdam/asc-ui/beta'
+import { Icon, ThemeProvider, GlobalStyle } from '@amsterdam/asc-ui'
+import { Button, ascBetaTheme } from '@amsterdam/asc-ui/beta'
 import styled from 'styled-components'
 import { Download } from '@amsterdam/asc-assets'
 
@@ -27,18 +27,21 @@ export const StyledIcon = styled(Icon)`
 <Canvas>
   <Story name="Default / Primary variant">
     <Fragment>
-      <ButtonBar>
-        <Button>Normal</Button>
-        <Button disabled>
-          Disabled
-        </Button>
-        <Button>
-          <StyledIcon size={20}>
-            <Download />
-          </StyledIcon>
-          With icon
-        </Button>
-      </ButtonBar>
+      <ThemeProvider theme={ascBetaTheme}>
+        <GlobalStyle />
+        <ButtonBar>
+          <Button>Normal</Button>
+          <Button disabled>
+            Disabled
+          </Button>
+          <Button>
+            <StyledIcon size={20}>
+              <Download />
+            </StyledIcon>
+            With icon
+          </Button>
+        </ButtonBar>
+      </ThemeProvider>
     </Fragment>
   </Story>
 </Canvas>
@@ -48,18 +51,21 @@ export const StyledIcon = styled(Icon)`
 <Canvas>
   <Story name="Secondary variant">
     <Fragment>
-      <ButtonBar>
-        <Button variant="secondary">Normal</Button>
-        <Button variant="secondary" disabled>
-          Disabled
-        </Button>
-        <Button variant="secondary">
-          <StyledIcon size={20}>
-            <Download />
-          </StyledIcon>
-          With icon
-        </Button>
-      </ButtonBar>
+      <ThemeProvider theme={ascBetaTheme}>
+        <GlobalStyle />
+        <ButtonBar>
+          <Button variant="secondary">Normal</Button>
+          <Button variant="secondary" disabled>
+            Disabled
+          </Button>
+          <Button variant="secondary">
+            <StyledIcon size={20}>
+              <Download />
+            </StyledIcon>
+            With icon
+          </Button>
+        </ButtonBar>
+      </ThemeProvider>
     </Fragment>
   </Story>
 </Canvas>
@@ -69,18 +75,21 @@ export const StyledIcon = styled(Icon)`
 <Canvas>
   <Story name="Tertiary variant">
     <Fragment>
-      <ButtonBar>
-        <Button variant="tertiary">Normal</Button>
-        <Button variant="tertiary" disabled>
-          Disabled
-        </Button>
-        <Button variant="tertiary">
-          <StyledIcon size={20}>
-            <Download />
-          </StyledIcon>
-          With icon
-        </Button>
-      </ButtonBar>
+      <ThemeProvider theme={ascBetaTheme}>
+        <GlobalStyle />
+        <ButtonBar>
+          <Button variant="tertiary">Normal</Button>
+          <Button variant="tertiary" disabled>
+            Disabled
+          </Button>
+          <Button variant="tertiary">
+            <StyledIcon size={20}>
+              <Download />
+            </StyledIcon>
+            With icon
+          </Button>
+        </ButtonBar>
+      </ThemeProvider>
     </Fragment>
   </Story>
 </Canvas>
@@ -90,11 +99,14 @@ export const StyledIcon = styled(Icon)`
 <Canvas>
   <Story name="With only an icon">
     <Fragment>
-      <Button variant="blank">
-        <Icon size={24}>
-          <Download />
-        </Icon>
-      </Button>
+      <ThemeProvider theme={ascBetaTheme}>
+        <GlobalStyle />
+        <Button variant="blank">
+          <Icon size={24}>
+            <Download />
+          </Icon>
+        </Button>
+      </ThemeProvider>
     </Fragment>
   </Story>
 </Canvas>

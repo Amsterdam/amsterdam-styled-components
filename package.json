@@ -7,7 +7,7 @@
   "scripts": {
     "prebuild": "npm run build --workspace=@amsterdam/asc-assets",
     "build": "npm run clean:generated && npm run build:ts && npm run build:ts:es && npm run build:ts:beta",
-    "build:watch": "npm run clean:generated && concurrently \"npm run build:ts -- --watch\" \"npm run build:ts:es -- --watch\"",
+    "build:watch": "npm run clean:generated && concurrently \"npm run build:ts -- --watch\" \"npm run build:ts:es -- --watch\" \"npm run build:ts:beta -- --watch\"",
     "build:storybook": "npm run build --workspace=stories",
     "build:ts": "tsc -b packages/asc-assets packages/asc-ui",
     "build:ts:es": "tsc -b packages/asc-assets/tsconfig.es.json packages/asc-ui/tsconfig.es.json",
