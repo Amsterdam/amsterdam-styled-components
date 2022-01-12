@@ -30,6 +30,7 @@ module.exports = {
     '/node_modules/',
     '/lib/',
     '/es/',
+    '/asc-ui/beta/',
     '/examples/',
     '/config/',
     '/package/',
