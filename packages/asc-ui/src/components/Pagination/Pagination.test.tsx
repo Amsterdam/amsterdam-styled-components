@@ -122,4 +122,21 @@ describe('Pagination', () => {
       'paginationLength prop in Pagination component should be at least 5. If you need a smaller pagination component, please use the CompactPager component. Now falling back to default value',
     )
   })
+
+  it('should be working with controlled page prop', () => {
+    const { rerender } = render(
+      <Pagination page={6} pageSize={10} collectionSize={100} />,
+    )
+
+    expect(screen.getByTestId('pageButton-6')).toHaveAttribute('tabIndex', '-1')
+    expect(screen.getByTestId('pageButton-5')).toHaveAttribute('tabIndex', '0')
+
+    rerender(<Pagination page={5} pageSize={10} collectionSize={100} />)
+    expect(screen.getByTestId('pageButton-6')).toHaveAttribute('tabIndex', '0')
+    expect(screen.getByTestId('pageButton-5')).toHaveAttribute('tabIndex', '-1')
+
+    rerender(<Pagination page={6} pageSize={10} collectionSize={100} />)
+    expect(screen.getByTestId('pageButton-6')).toHaveAttribute('tabIndex', '-1')
+    expect(screen.getByTestId('pageButton-5')).toHaveAttribute('tabIndex', '0')
+  })
 })
