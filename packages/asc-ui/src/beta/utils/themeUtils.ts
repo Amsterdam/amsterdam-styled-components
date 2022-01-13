@@ -1,5 +1,4 @@
 import { css } from 'styled-components'
-import { BACKDROP_Z_INDEX } from '../components/shared/constants'
 import type { Theme } from '../types'
 import { fromProps } from './fromProps'
 import { ascBetaTheme } from '..'
@@ -211,26 +210,6 @@ export const typographyStyle = css<TypoStyle>`
       ${svgFill('white')}
     `}
 `
-
-// Function that uses the BACKDROP_Z_INDEX constant to determine the z-index for components rendered with a backdrop
-// The first argument in the curry can be used to raise the z-index for components that need to be displayed above
-// the backdrop, but aren't directly related
-export const showAboveBackDrop =
-  (show?: boolean) =>
-  ({
-    hasBackDrop,
-    zIndexOffset,
-  }: {
-    hasBackDrop?: boolean
-    zIndexOffset?: number
-  }) =>
-    hasBackDrop || show
-      ? css`
-          z-index: ${zIndexOffset
-            ? BACKDROP_Z_INDEX + zIndexOffset + 1
-            : BACKDROP_Z_INDEX + 1};
-        `
-      : ''
 
 type ThemeSpacingParameters = [
   Theme.Spacing,

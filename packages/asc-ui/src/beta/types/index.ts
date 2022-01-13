@@ -1,2 +1,2 @@
-export { default as KeyboardKeys } from './KeyboardKeys'
+// eslint-disable-next-line import/prefer-default-export
 export { Theme } from './Theme'
