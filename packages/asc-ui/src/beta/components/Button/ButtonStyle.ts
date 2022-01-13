@@ -23,7 +23,6 @@ const baseStyle = css`
 
   :disabled {
     ${svgFill('white')}
-
     cursor: default;
     outline: none;
     border: none;
@@ -33,7 +32,6 @@ const baseStyle = css`
 
 export const primaryButtonStyle = css`
   ${svgFill('white')}
-
   background-color: ${themeColor('primary')};
   color: white;
   padding: ${themeSpacing(3, 6)};
@@ -53,7 +51,6 @@ export const primaryButtonStyle = css`
 
 export const secondaryButtonStyle = css`
   ${svgFill(themeColor('primary'))}
-
   background-color: white;
   color: ${themeColor('primary')};
   padding: ${themeSpacing(3, 6)};
@@ -75,7 +72,6 @@ export const secondaryButtonStyle = css`
 
 export const tertiaryButtonStyle = css`
   ${svgFill(themeColor('primary'))}
-
   color: ${themeColor('primary')};
   background-color: transparent;
 
@@ -92,7 +88,6 @@ export const tertiaryButtonStyle = css`
 
 export const blankButtonStyle = css`
   ${svgFill(themeColor('tint', 'level7'))}
-
   padding: ${themeSpacing(3, 3)};
   background-color: white;
 
@@ -109,7 +104,6 @@ const ButtonStyle = styled.button<Props>`
     It can be overwritten with specific variant styles.
   */
   ${fluidTypoStyle}
-
   ${({ variant }) => {
     switch (variant) {
       case 'secondary':

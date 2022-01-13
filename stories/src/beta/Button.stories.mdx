@@ -10,7 +10,7 @@ import { Download } from '@amsterdam/asc-assets'
   component={Button}
   argTypes={{
     small: {
-      control: { type: 'boolean' }
+      control: { type: 'boolean' },
     },
   }}
 />
@@ -33,10 +33,7 @@ export const StyledIcon = styled(Icon)`
 `
 
 <Canvas>
-  <Story
-    name="Default / Primary variant"
-    args={{ small: false }}
-  >
+  <Story name="Default / Primary variant" args={{ small: false }}>
     {({ small }) => (
       <ThemeProvider theme={ascBetaTheme}>
         <GlobalStyle />
@@ -60,15 +57,14 @@ export const StyledIcon = styled(Icon)`
 ## Secondary variant
 
 <Canvas>
-  <Story
-    name="Secondary variant"
-    args={{ small: false }}
-  >
+  <Story name="Secondary variant" args={{ small: false }}>
     {({ small }) => (
       <ThemeProvider theme={ascBetaTheme}>
         <GlobalStyle />
         <ButtonBar>
-          <Button small={small} variant="secondary">Normal</Button>
+          <Button small={small} variant="secondary">
+            Normal
+          </Button>
           <Button small={small} variant="secondary" disabled>
             Disabled
           </Button>
@@ -87,15 +83,14 @@ export const StyledIcon = styled(Icon)`
 ## Tertiary variant
 
 <Canvas>
-  <Story
-    name="Tertiary variant"
-    args={{ small: false }}
-  >
+  <Story name="Tertiary variant" args={{ small: false }}>
     {({ small }) => (
       <ThemeProvider theme={ascBetaTheme}>
         <GlobalStyle />
         <ButtonBar>
-          <Button small={small} variant="tertiary">Normal</Button>
+          <Button small={small} variant="tertiary">
+            Normal
+          </Button>
           <Button small={small} variant="tertiary" disabled>
             Disabled
           </Button>
