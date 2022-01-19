@@ -1,11 +1,6 @@
 import styled, { css } from 'styled-components'
-import {
-  fluidTypoStyle,
-  typographyStyle,
-  svgFill,
-  themeColor,
-  themeSpacing,
-} from '../../utils'
+import { svgFill, themeColor, themeSpacing } from '@amsterdam/asc-ui'
+import { fluidTypoStyle, typographyStyle } from '../../utils/betaUtils'
 
 export interface Props {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'blank'

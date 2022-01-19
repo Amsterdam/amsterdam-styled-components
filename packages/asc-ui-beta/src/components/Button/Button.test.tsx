@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
+import { ThemeProvider } from '@amsterdam/asc-ui'
 import Button from './Button'
-import ThemeProvider from '../../theme/ThemeProvider'
 
 describe('Button', () => {
   it('should render the button', () => {

@@ -11,7 +11,6 @@
     "lib",
     "node_modules",
     "**/*.test.tsx",
-    "**/*.stories.tsx",
-    "./src/beta"
+    "**/*.stories.tsx"
   ]
 }

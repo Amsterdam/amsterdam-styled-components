@@ -24,19 +24,20 @@ module.exports = {
     '.*\\.(jpg|jpeg|png|gif|eot|otf|webp|sv|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/config/testing/mocks/image.ts',
     '^@amsterdam/asc-ui': '<rootDir>/packages/asc-ui/src',
+    '^@amsterdam/asc-ui-beta': '<rootDir>/packages/asc-ui-beta/src',
     '^@amsterdam/asc-assets': '<rootDir>/packages/asc-assets/src',
   },
   testPathIgnorePatterns: [
     '/node_modules/',
     '/lib/',
     '/es/',
-    '/asc-ui/beta/',
     '/examples/',
     '/config/',
     '/package/',
     '/scripts/',
     '/packages/asc-assets/',
     '/packages/asc-ui/src/internals',
+    '/packages/asc-ui-beta/src/internals',
   ],
   setupFilesAfterEnv: [
     '<rootDir>/config/testing/mocks/matchMedia.ts',
