@@ -28,6 +28,7 @@ const FooterContentWrapper = styled.div<FooterProps>`
 
 const StyledFooterHeading = styled(FooterHeading)`
   margin-bottom: 0;
+
   &:hover {
     text-decoration: underline;
   }
@@ -41,7 +42,7 @@ const StyledFooterHeading = styled(FooterHeading)`
 const StyledButton = styled(Button)`
   /*
   Fixed the alignment of the Button compared to the children
-  See PR: https://github.com/Amsterdam/amsterdam-styled-components/pull/834 
+  See PR: https://github.com/Amsterdam/amsterdam-styled-components/pull/834
   */
   margin-left: -${themeSpacing(2)};
   padding-left: ${themeSpacing(2)};

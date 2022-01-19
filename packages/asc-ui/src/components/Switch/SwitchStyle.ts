@@ -43,6 +43,7 @@ export const Checkbox = styled.input.attrs({
   width: 100%;
   height: 100%;
   cursor: pointer;
+
   &:checked + ${Track} {
     background-color: ${themeColor('support', 'valid')};
     border-color: ${themeColor('support', 'valid')};

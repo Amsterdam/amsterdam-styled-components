@@ -67,8 +67,9 @@ const MenuButtonStyle = styled(MenuButtonBaseStyle)<Props>`
           }
         `}
 
-  ${MenuFlyOutStyle} ${MenuListStyle} &,
-  ${/* sc-selector */ MenuFlyOutStyle}[aria-expanded='true'] {
+  ${/* sc-selector */ MenuFlyOutStyle} ${/* sc-selector */ MenuListStyle} &, ${
+    /* sc-selector */ MenuFlyOutStyle
+  }[aria-expanded='true'] {
     font-weight: 400;
   }
 `

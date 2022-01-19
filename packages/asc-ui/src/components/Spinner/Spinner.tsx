@@ -6,6 +6,7 @@ import SpinnerStyle from './SpinnerStyle'
 
 const Spinner: FunctionComponent<Props> = ({ size, color, ...otherProps }) => (
   <SpinnerStyle size={size} {...otherProps}>
+    {/* eslint-disable-next-line */}
     {/* @ts-ignore */}
     <Icon size={size} color={color}>
       <SpinnerIcon />
