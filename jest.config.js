@@ -3,7 +3,9 @@ module.exports = {
   collectCoverage: false,
   collectCoverageFrom: [
     'packages/asc-ui/src/**/*.{js,jsx,ts,tsx}',
+    'packages/asc-ui-beta/src/**/*.{js,jsx,ts,tsx}',
     '!packages/asc-ui/src/(styles|internals)/**/*.{js,jsx,ts,tsx}',
+    '!packages/asc-ui-beta/src/(styles|internals)/**/*.{js,jsx,ts,tsx}',
     '!packages/**/*.(test|stories).{js,jsx,ts,tsx}',
     '!packages/**/(index).{js,jsx,ts,tsx}',
   ],
