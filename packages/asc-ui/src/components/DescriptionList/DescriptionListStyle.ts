@@ -9,6 +9,7 @@ export const DescriptionListWrapper = styled.dl`
 export const DescriptionListItemWrapper = styled.div`
   display: flex;
   padding: 10.5px 0;
+
   &:not(:last-of-type) {
     border-bottom: 1px solid ${themeColor('tint', 'level4')};
   }
