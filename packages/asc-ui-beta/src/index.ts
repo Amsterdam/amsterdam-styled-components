@@ -1,5 +1,4 @@
 import ascBetaTheme from './theme/ascBetaTheme'
 import Button from './components/Button/Button'
 
-// eslint-disable-next-line import/prefer-default-export
 export { ascBetaTheme, Button }
