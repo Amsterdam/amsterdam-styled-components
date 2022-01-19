@@ -14,6 +14,10 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## [0.35.1]
+
+- Changed: `page` prop in `Pagination` component can be managed externally
+
 ## [0.35.0]
 
 - Added: experimental `StepByStepNav` component

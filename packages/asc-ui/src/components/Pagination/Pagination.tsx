@@ -62,6 +62,11 @@ const Pagination: FunctionComponent<
     }
   }, [paginationLength])
 
+  // If page prop changes, set currentPage so component can be managed externally
+  useEffect(() => {
+    setCurrentPage(page)
+  }, [page])
+
   /**
    * This returns an array of the range, including spacers
    *
