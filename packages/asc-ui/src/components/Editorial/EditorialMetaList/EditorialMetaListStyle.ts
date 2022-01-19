@@ -23,6 +23,7 @@ export const EditorialMetaListItemStyle = styled.li`
   &:not(:last-of-type) {
     position: relative;
     margin-right: 20px;
+
     &::after {
       content: '';
       height: 100%;
