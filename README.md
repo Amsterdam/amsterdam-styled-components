@@ -35,10 +35,11 @@ If you have any questions, please contact one of the [maintainers](https://githu
 
 ## Structure
 
-This project is a monorepo with 2 packages
+This project is a monorepo with 3 packages
 
 - [asc-assets](packages/asc-assets) - contains fonts and icons (in directory `static`) and react-icons
 - [asc-ui](packages/asc-ui) - the react implementation of the components
+- [asc-ui-beta](packages/asc-ui-beta) - a new beta version of the components
 
 ## Vision
 
@@ -94,3 +95,4 @@ More detailed information can be found in the README.md of each package.
 
 - [asc-assets](packages/asc-assets/README.md)
 - [asc-ui](packages/asc-ui/README.md)
+- [asc-ui-beta](packages/asc-ui-beta/README.md)
