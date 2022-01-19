@@ -67,7 +67,6 @@ const Alert: FunctionComponent<AlertProps & HTMLAttributes<HTMLElement>> = ({
             </CloseButtonWrapper>
           )}
           {heading && (
-            // @ts-ignore
             <AlertHeading forwardedAs="strong" styleAs="h3">
               {heading}
             </AlertHeading>
