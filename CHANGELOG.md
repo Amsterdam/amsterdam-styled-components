@@ -14,6 +14,9 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## Unreleased
+- `StepByStepNav` component: alignment changes and addition of `breakpoint` prop
+
 ## [0.35.1]
 
 - Changed: `page` prop in `Pagination` component can be managed externally
