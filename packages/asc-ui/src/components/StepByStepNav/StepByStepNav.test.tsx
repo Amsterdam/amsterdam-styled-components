@@ -1,6 +1,11 @@
 import { render, screen } from '@testing-library/react'
+import 'jest-styled-components'
 
 import type { ItemType, Step } from './StepByStepNavStyle'
+
+import { transitionBreakpoint } from './StepByStepNavStyle'
+import { ThemeProvider, ascDefaultTheme } from '../../theme'
+import { breakpoint } from '../../utils'
 import StepByStepNav from './StepByStepNav'
 
 const steps: Step[] = [
@@ -82,5 +87,43 @@ describe('StepByStepNav', () => {
       'aria-current',
       'step',
     )
+  })
+
+  it('applies the correct breakpoints', () => {
+    const { rerender } = render(
+      <ThemeProvider>
+        <StepByStepNav steps={steps} />
+      </ThemeProvider>,
+    )
+
+    expect(screen.getByLabelText('progress')).toHaveStyleRule(
+      'display',
+      'none',
+      {
+        media: `screen and ${breakpoint(
+          'max-width',
+          'mobileS',
+        )({ theme: ascDefaultTheme })}`,
+      },
+    )
+
+    expect(screen.getByRole('list')).toHaveStyleRule('display', 'flex', {
+      media: `screen and ${transitionBreakpoint}`,
+    })
+
+    const newBreakpoint = breakpoint(
+      'max-width',
+      'laptop',
+    )({ theme: ascDefaultTheme })
+
+    rerender(
+      <ThemeProvider>
+        <StepByStepNav steps={steps} breakpoint={newBreakpoint} />
+      </ThemeProvider>,
+    )
+
+    expect(screen.getByRole('list')).toHaveStyleRule('display', 'flex', {
+      media: `screen and ${newBreakpoint}`,
+    })
   })
 })
