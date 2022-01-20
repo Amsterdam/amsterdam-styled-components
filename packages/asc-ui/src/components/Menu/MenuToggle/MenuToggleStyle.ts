@@ -70,6 +70,7 @@ export default styled.div<Props>`
     ${MenuListStyle} {
       ${MenuButtonStyle} {
         background-color: ${themeColor('tint', 'level1')};
+
         &:hover,
         &:focus {
           background-color: ${themeColor('tint', 'level1')};
@@ -88,6 +89,7 @@ export default styled.div<Props>`
       border-bottom: 1px solid ${themeColor('tint', 'level3')};
       border-left-color: ${themeColor('tint', 'level2')};
     }
+
     ${MenuListStyle} {
       background-color: ${themeColor('tint', 'level1')};
       position: relative;

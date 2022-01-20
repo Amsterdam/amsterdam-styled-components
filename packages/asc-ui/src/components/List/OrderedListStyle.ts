@@ -5,6 +5,7 @@ export const OrderedListStyleCSS = css`
   margin: ${themeSpacing(0, 0, 6, 0)};
   padding: 0;
   counter-reset: item;
+
   & & {
     margin: ${themeSpacing(2, 0, 0, 6)};
   }

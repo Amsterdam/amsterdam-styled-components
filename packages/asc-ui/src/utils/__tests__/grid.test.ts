@@ -43,6 +43,7 @@ describe('utils/grid', () => {
     it('should throw', () => {
       expect(() => {
         const noMaxGridWidthValue = { ...theme }
+        // eslint-disable-next-line
         // @ts-ignore
         delete noMaxGridWidthValue.maxGridWidth
 
@@ -63,6 +64,7 @@ describe('utils/grid', () => {
     it('should throw', () => {
       expect(() => {
         const noColumns = merge({}, { ...theme })
+        // eslint-disable-next-line
         // @ts-ignore
         delete noColumns.layouts.huge.columns
 
@@ -86,6 +88,7 @@ describe('utils/grid', () => {
 
     it('should return 0', () => {
       const noGutter = merge({}, theme)
+      // eslint-disable-next-line
       // @ts-ignore
       delete noGutter.layouts.huge.gutter
 
@@ -345,8 +348,9 @@ describe('utils/grid', () => {
 
       const widthRe =
         /^calc\(\(\(\(100% - (\d+)px\) \/ (\d+)\) \* \d+\) \+ \d+px \+ \d+px\)$/
-      const matches: any = spanWidthStr.match(widthRe)
-      const parentSpanMatches: any = spanWithParentSpanWidthstr.match(widthRe)
+      const matches: string[] = spanWidthStr.match(widthRe)
+      const parentSpanMatches: string[] =
+        spanWithParentSpanWidthstr.match(widthRe)
 
       expect(parseInt(matches[1], 10)).toBeGreaterThan(
         parseInt(parentSpanMatches[1], 10),
