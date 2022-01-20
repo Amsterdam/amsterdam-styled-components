@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components'
 
 import Typography from '../Typography'
-import { breakpoint, themeColor } from '../../utils'
+import { ascDefaultTheme } from '../../theme'
+import { breakpoint as mqBreakpoint, themeColor } from '../../utils'
 
 export interface Step {
   label: string
@@ -12,6 +13,7 @@ export type ItemType = 'checkmark' | 'numeric' | 'none'
 export interface StepByStepNavProps {
   /** 1-based index determining which of the steps is active */
   activeItem?: number
+  breakpoint?: ReturnType<typeof mqBreakpoint>
   className?: string
   itemType?: ItemType
   steps: Array<Step>
@@ -26,26 +28,36 @@ const checkmarkIcon = `<svg viewBox="0 0 32 32" width="14" height="14" fill="whi
 const itemSize = 20
 const activeItemSize = 36
 
+export const transitionBreakpoint = mqBreakpoint(
+  'max-width',
+  'laptop',
+)({ theme: ascDefaultTheme })
+
 const iconStyle = css`
   background-repeat: no-repeat;
   background-position: center;
   background-image: url('data:image/svg+xml,${checkmarkIcon}');
 `
 
-export const OrderdedList = styled.ol`
+export const OrderdedList = styled.ol<{
+  breakpoint?: StepByStepNavProps['breakpoint']
+}>`
   counter-reset: stepByStep;
   list-style: none;
   margin: 0;
   padding: 0;
 
-  @media screen and ${breakpoint('max-width', 'tabletS')} {
+  @media screen and ${({ breakpoint }) => breakpoint} {
     display: flex;
     flex-wrap: nowrap;
   }
 `
 
-export const Label = styled(Typography).attrs({ as: 'span' })<{
+export const Label = styled(Typography).attrs({
+  as: 'span',
+})<{
   itemType: StyledProps['itemType']
+  breakpoint?: StepByStepNavProps['breakpoint']
 }>`
   font-weight: 400;
   line-height: ${itemSize}px;
@@ -74,7 +86,7 @@ export const Label = styled(Typography).attrs({ as: 'span' })<{
       `}
   }
 
-  @media screen and ${breakpoint('max-width', 'tabletS')} {
+  @media screen and ${({ breakpoint }) => breakpoint} {
     display: inline-block;
     height: ${activeItemSize}px;
     visibility: hidden;
@@ -88,7 +100,7 @@ export const Label = styled(Typography).attrs({ as: 'span' })<{
 `
 
 export const ListItem = styled.li<StyledProps>`
-  ${({ activeItem, itemType, steps, stepsCompleted }) => css`
+  ${({ activeItem, itemType, steps, stepsCompleted, breakpoint }) => css`
     border-left: 2px solid ${themeColor('tint', 'level5')};
     margin-left: ${itemSize}px;
     padding-bottom: ${itemSize * 2}px;
@@ -131,7 +143,7 @@ export const ListItem = styled.li<StyledProps>`
       }
     }
 
-    @media screen and ${breakpoint('max-width', 'tabletS')} {
+    @media screen and ${breakpoint} {
       border: none !important;
       height: ${activeItemSize}px;
       margin: 0;
@@ -187,7 +199,7 @@ export const ListItem = styled.li<StyledProps>`
 `
 
 export default styled.div<StyledProps>`
-  @media screen and ${breakpoint('max-width', 'mobileS')} {
+  @media screen and ${mqBreakpoint('max-width', 'mobileS')} {
     display: none;
   }
 `
