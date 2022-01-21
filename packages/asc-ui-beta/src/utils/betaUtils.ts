@@ -14,11 +14,11 @@ export const calculateFluidStyle = (
   const minScreenWidth = minScreenWidthPx / defaultBaseSize
   const maxScreenWidth = maxScreenWidthPx / defaultBaseSize
 
-  return `clamp(
-    ${minSize}rem,
-    ${minSize}rem + ${maxSize - minSize} * 
-    (100vw - ${minScreenWidth}rem) / ${maxScreenWidth - minScreenWidth},
-    ${maxSize}rem
+  return `clamp(\
+    ${minSize}rem,\
+    ${minSize}rem + ${maxSize - minSize} * \
+    (100vw - ${minScreenWidth}rem) / ${maxScreenWidth - minScreenWidth},\
+    ${maxSize}rem\
   )`
 }
 
@@ -59,10 +59,7 @@ export const fluidTypoStyle = css`
 `
 
 export interface TypoStyle {
-  gutterBottom?: {
-    small: number
-    large: number
-  }
+  gutterBottom?: any
   strong?: boolean
   darkBackground?: boolean
 }

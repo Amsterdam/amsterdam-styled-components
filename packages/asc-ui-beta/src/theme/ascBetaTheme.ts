@@ -1,6 +1,12 @@
+import type { Theme } from '@amsterdam/asc-ui'
 import { ascDefaultTheme } from '@amsterdam/asc-ui'
 
-const ascBetaTheme = {
+export interface BetaThemeInterface
+  extends Omit<Theme.ThemeInterface, 'typography'> {
+  typography: any
+}
+
+const ascBetaTheme: BetaThemeInterface = {
   ...ascDefaultTheme,
   typography: {
     ...ascDefaultTheme.typography,
