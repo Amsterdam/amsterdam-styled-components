@@ -38,7 +38,8 @@
   },
   "references": [
     { "path": "packages/asc-assets" },
-    { "path": "packages/asc-ui" }
+    { "path": "packages/asc-ui" },
+    { "path": "packages/asc-ui-beta" }
   ],
   "files": [
     "type-definitions/custom.d.ts",

@@ -1,0 +1,43 @@
+{
+  "name": "@amsterdam/asc-ui-beta",
+  "description": "React UI Components with new styling that developers at de Gemeente Amsterdam can reuse in multiple projects",
+  "license": "MPL-2.0",
+  "author": "Gemeente Amsterdam",
+  "homepage": "https://github.com/Amsterdam/amsterdam-styled-components#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Amsterdam/amsterdam-styled-components.git",
+    "directory": "packages/asc-ui-beta"
+  },
+  "bugs": {
+    "url": "https://github.com/Amsterdam/amsterdam-styled-components/issues"
+  },
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "es",
+    "lib"
+  ],
+  "sideEffects": false,
+  "typings": "lib/index.d.ts",
+  "dependencies": {
+    "@amsterdam/asc-assets": "^0.35.0",
+    "@amsterdam/asc-ui": "^0.35.0",
+    "classnames": "^2.3.1",
+    "deepmerge": "^4.2.2",
+    "polished": "^4.1.3",
+    "react-uid": "^2.3.1"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.0"
+  },
+  "optionalDependencies": {
+    "objectFitPolyfill": ">=2.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
