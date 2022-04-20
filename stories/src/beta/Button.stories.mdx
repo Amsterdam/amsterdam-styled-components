@@ -1,0 +1,124 @@
+import { Fragment } from 'react'
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { Icon, ThemeProvider, GlobalStyle } from '@amsterdam/asc-ui'
+import { Button, ascBetaTheme } from '@amsterdam/asc-ui-beta'
+import styled from 'styled-components'
+import { Download } from '@amsterdam/asc-assets'
+
+<Meta
+  title="Beta/Button"
+  component={Button}
+  argTypes={{
+    small: {
+      control: { type: 'boolean' },
+    },
+  }}
+/>
+
+# Button
+
+## Default / Primary variant
+
+export const ButtonBar = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  & > * {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+`
+
+export const StyledIcon = styled(Icon)`
+  margin-right: 16px;
+`
+
+<Canvas>
+  <Story name="Default / Primary variant" args={{ small: false }}>
+    {({ small }) => (
+      <ThemeProvider theme={ascBetaTheme}>
+        <GlobalStyle />
+        <ButtonBar>
+          <Button small={small}>Normal</Button>
+          <Button small={small} disabled>
+            Disabled
+          </Button>
+          <Button small={small}>
+            <StyledIcon size={20}>
+              <Download />
+            </StyledIcon>
+            With icon
+          </Button>
+        </ButtonBar>
+      </ThemeProvider>
+    )}
+  </Story>
+</Canvas>
+
+## Secondary variant
+
+<Canvas>
+  <Story name="Secondary variant" args={{ small: false }}>
+    {({ small }) => (
+      <ThemeProvider theme={ascBetaTheme}>
+        <GlobalStyle />
+        <ButtonBar>
+          <Button small={small} variant="secondary">
+            Normal
+          </Button>
+          <Button small={small} variant="secondary" disabled>
+            Disabled
+          </Button>
+          <Button small={small} variant="secondary">
+            <StyledIcon size={20}>
+              <Download />
+            </StyledIcon>
+            With icon
+          </Button>
+        </ButtonBar>
+      </ThemeProvider>
+    )}
+  </Story>
+</Canvas>
+
+## Tertiary variant
+
+<Canvas>
+  <Story name="Tertiary variant" args={{ small: false }}>
+    {({ small }) => (
+      <ThemeProvider theme={ascBetaTheme}>
+        <GlobalStyle />
+        <ButtonBar>
+          <Button small={small} variant="tertiary">
+            Normal
+          </Button>
+          <Button small={small} variant="tertiary" disabled>
+            Disabled
+          </Button>
+          <Button small={small} variant="tertiary">
+            <StyledIcon size={20}>
+              <Download />
+            </StyledIcon>
+            With icon
+          </Button>
+        </ButtonBar>
+      </ThemeProvider>
+    )}
+  </Story>
+</Canvas>
+
+## With only an icon
+
+<Canvas>
+  <Story name="With only an icon">
+    <Fragment>
+      <ThemeProvider theme={ascBetaTheme}>
+        <GlobalStyle />
+        <Button variant="blank">
+          <Icon size={24}>
+            <Download />
+          </Icon>
+        </Button>
+      </ThemeProvider>
+    </Fragment>
+  </Story>
+</Canvas>
