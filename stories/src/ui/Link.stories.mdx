@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Link, Icon, List, ListItem, themeColor } from '@amsterdam/asc-ui'
 import styled from 'styled-components'
@@ -26,15 +25,15 @@ export const Decorator = styled.div`
 
 **Component status: experimental**
 
-## Default
-
 export const DarkListItem = styled(ListItem)`
   background-color: ${themeColor('primary')};
 `
 
+## Default
+
 <Canvas>
   <Story name="Default">
-    <Fragment>
+    <List>
       <ListItem>
         <Link href="/">I am a default link</Link>
       </ListItem>

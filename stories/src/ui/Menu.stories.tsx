@@ -8,28 +8,24 @@ import {
   MenuToggle,
   themeColor,
 } from '@amsterdam/asc-ui'
-import type { FunctionComponent } from 'react'
 import styled from 'styled-components'
 import type { Meta } from '@storybook/react'
 
-const ReactRouterLink: FunctionComponent<any> = ({
-  children,
-  reactRouterProp,
-  ...otherProps
-}) => (
-  <a {...otherProps} data-attr={reactRouterProp}>
-    {children}
-  </a>
-)
+function ReactRouterLink({ children, reactRouterProp, ...otherProps }: any) {
+  return (
+    <a {...otherProps} data-attr={reactRouterProp}>
+      {children}
+    </a>
+  )
+}
 
-const StyledReactRouterLink: FunctionComponent<any> = ({
-  children,
-  ...otherProps
-}) => (
-  <MenuButton forwardedAs={ReactRouterLink} {...otherProps}>
-    {children}
-  </MenuButton>
-)
+function StyledReactRouterLink({ children, ...otherProps }: any) {
+  return (
+    <MenuButton forwardedAs={ReactRouterLink} {...otherProps}>
+      {children}
+    </MenuButton>
+  )
+}
 
 const StyledMenuInline = styled(MenuInline)`
   background-color: ${themeColor('tint', 'level2')};
