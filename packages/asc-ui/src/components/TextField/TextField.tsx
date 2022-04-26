@@ -19,7 +19,7 @@ export interface TextFieldProps extends InputProps {
   autoFocus?: boolean
 }
 
-const TextField = ({
+function TextField({
   label,
   srOnly,
   onClear,
@@ -31,7 +31,7 @@ const TextField = ({
   id: idProp,
   autoFocus,
   ...otherProps
-}: TextFieldProps) => {
+}: TextFieldProps) {
   const uid = useUID()
   const id = idProp || uid
   const inputRef = useRef<HTMLInputElement>(null)

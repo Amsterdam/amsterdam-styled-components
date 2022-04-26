@@ -4,11 +4,13 @@ import { PREV_BUTTON, NEXT_BUTTON } from './test-ids'
 import { ThemeProvider } from '../../theme'
 
 describe('CompactPager', () => {
-  const MockComponent = (props: any) => (
-    <ThemeProvider>
-      <CompactPager page={1} pageSize={20} collectionSize={60} {...props} />
-    </ThemeProvider>
-  )
+  function MockComponent(props: any) {
+    return (
+      <ThemeProvider>
+        <CompactPager page={1} pageSize={20} collectionSize={60} {...props} />
+      </ThemeProvider>
+    )
+  }
 
   it('should change the page when pressing prev button', () => {
     const onPageChangeMock = jest.fn()

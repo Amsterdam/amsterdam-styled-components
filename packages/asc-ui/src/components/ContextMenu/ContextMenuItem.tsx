@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, FunctionComponent, ReactNode } from 'react'
+import type { ButtonHTMLAttributes, ReactNode } from 'react'
 import type { ContextMenuItemProps } from './ContextMenuItemStyle'
 import ContextMenuItemStyle, {
   ContextMenuItemButton,
@@ -9,18 +9,15 @@ type Props = {
 } & ContextMenuItemProps &
   ButtonHTMLAttributes<HTMLButtonElement>
 
-const ContextMenuItem: FunctionComponent<Props> = ({
-  children,
-  icon,
-  divider,
-  ...otherProps
-}) => (
-  <ContextMenuItemStyle divider={divider}>
-    <ContextMenuItemButton type="button" {...otherProps}>
-      {icon && icon}
-      {children}
-    </ContextMenuItemButton>
-  </ContextMenuItemStyle>
-)
+function ContextMenuItem({ children, icon, divider, ...otherProps }: Props) {
+  return (
+    <ContextMenuItemStyle divider={divider}>
+      <ContextMenuItemButton type="button" {...otherProps}>
+        {icon && icon}
+        {children}
+      </ContextMenuItemButton>
+    </ContextMenuItemStyle>
+  )
+}
 
 export default ContextMenuItem

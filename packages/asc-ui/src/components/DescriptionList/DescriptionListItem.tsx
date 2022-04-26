@@ -1,4 +1,3 @@
-import type { FunctionComponent } from 'react'
 import { useMemo } from 'react'
 import {
   DescriptionListItemWrapper,
@@ -10,11 +9,11 @@ export interface DescriptionListItemProps {
   term: string
 }
 
-const DescriptionListItem: FunctionComponent<DescriptionListItemProps> = ({
+function DescriptionListItem({
   term,
   children,
   ...otherProps
-}) => {
+}: DescriptionListItemProps) {
   const description = useMemo(
     () =>
       /* eslint-disable-next-line no-nested-ternary */

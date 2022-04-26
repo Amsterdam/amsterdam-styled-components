@@ -1,4 +1,3 @@
-import type { FunctionComponent } from 'react'
 import MenuList from '../MenuList/MenuList'
 import MenuContext from '../MenuContext'
 import type { Props } from './MenuToggleStyle'
@@ -6,14 +5,14 @@ import MenuToggleStyle from './MenuToggleStyle'
 import Toggle from '../../Toggle/Toggle'
 import useOptionalControlledState from '../../../utils/hooks/useOptionalControlledState'
 
-const MenuToggle: FunctionComponent<Props> = ({
+function MenuToggle({
   children,
   onExpand,
   align = 'left',
   open,
   ariaLabel,
   ...otherProps
-}) => {
+}: Props) {
   const [menuOpen, setMenuOpen] = useOptionalControlledState(open, onExpand)
   const toggleMenu = () => {
     setMenuOpen(!menuOpen)

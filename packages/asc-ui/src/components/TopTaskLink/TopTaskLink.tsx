@@ -1,8 +1,4 @@
-import type {
-  AnchorHTMLAttributes,
-  ElementType,
-  FunctionComponent,
-} from 'react'
+import type { AnchorHTMLAttributes, ElementType } from 'react'
 import Icon from '../Icon'
 import TopTaskLinkStyle, { TopTaskText, TopTaskTitle } from './TopTaskLinkStyle'
 
@@ -17,9 +13,12 @@ export interface TopTaskLinkProps {
   darkBackground?: boolean
 }
 
-const TopTaskLink: FunctionComponent<
-  TopTaskLinkProps & AnchorHTMLAttributes<HTMLAnchorElement>
-> = ({ icon, title, text, ...otherProps }) => {
+function TopTaskLink({
+  icon,
+  title,
+  text,
+  ...otherProps
+}: TopTaskLinkProps & AnchorHTMLAttributes<HTMLAnchorElement>) {
   const CustomIcon = icon
 
   return (

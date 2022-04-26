@@ -1,8 +1,9 @@
-import type { FunctionComponent } from 'react'
 import { DescriptionListWrapper } from './DescriptionListStyle'
 
-const DescriptionList: FunctionComponent = ({ children, ...otherProps }) => (
-  <DescriptionListWrapper {...otherProps}>{children}</DescriptionListWrapper>
-)
+function DescriptionList({ children, ...otherProps }) {
+  return (
+    <DescriptionListWrapper {...otherProps}>{children}</DescriptionListWrapper>
+  )
+}
 
 export default DescriptionList

@@ -36,7 +36,7 @@ export type Props = {
   BackDropProps
 
 // Todo: refactor this to Collapse component https://github.com/Amsterdam/amsterdam-styled-components/issues/379
-const Toggle: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
+function Toggle({
   children: childrenProps,
   onClick,
   open: openProp,
@@ -53,7 +53,7 @@ const Toggle: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
   zIndexOffset,
   ariaLabel,
   ...otherProps
-}) => {
+}: Props & HTMLAttributes<HTMLDivElement>) {
   const [open, setOpen] = useState(false)
 
   const handleOnOpen = useCallback(

@@ -1,5 +1,4 @@
 import { ChevronDown } from '@amsterdam/asc-assets'
-import type { FunctionComponent } from 'react'
 import type { Theme } from '../../types'
 import Hidden from '../Hidden'
 import Icon from '../Icon/Icon'
@@ -32,35 +31,33 @@ interface ConditionalWrapperProps {
   children: JSX.Element
 }
 
-const ToggleFooterHeader: FunctionComponent<ToggleHandlerProps> = ({
-  open,
-  onClick,
-  title,
-}) => (
-  <StyledButton variant="blank" onClick={onClick}>
-    <StyledFooterHeading>
-      <Icon rotate={open ? 180 : 0} size={20}>
-        <ChevronDown />
-      </Icon>
-      {title && title}
-    </StyledFooterHeading>
-  </StyledButton>
-)
+function ToggleFooterHeader({ open, onClick, title }: ToggleHandlerProps) {
+  return (
+    <StyledButton variant="blank" onClick={onClick}>
+      <StyledFooterHeading>
+        <Icon rotate={open ? 180 : 0} size={20}>
+          <ChevronDown />
+        </Icon>
+        {title && title}
+      </StyledFooterHeading>
+    </StyledButton>
+  )
+}
 
-const ConditionalWrapper: FunctionComponent<ConditionalWrapperProps> = ({
+const ConditionalWrapper = ({
   condition,
   wrapper,
   children,
-}) => (condition ? wrapper(children) : children)
+}: ConditionalWrapperProps) => (condition ? wrapper(children) : children)
 
-const FooterSection: FunctionComponent<FooterContentProps> = ({
+function FooterSection({
   title,
   ssr,
   toggleAt = 'tabletM',
   showAt,
   hideAt,
   children,
-}) => {
+}: FooterContentProps) {
   const breakpoint = showAt || hideAt || toggleAt
 
   return (

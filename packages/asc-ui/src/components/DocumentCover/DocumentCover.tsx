@@ -1,5 +1,5 @@
 import { Download } from '@amsterdam/asc-assets'
-import type { FunctionComponent, MouseEvent } from 'react'
+import type { MouseEvent } from 'react'
 import styled from 'styled-components'
 import Button from '../Button'
 import Image from '../Image'
@@ -18,21 +18,27 @@ const ButtonStyled = styled(Button)`
   justify-content: center;
 `
 
-const DocumentCoverContentStyle: FunctionComponent<Props> = ({
+function DocumentCoverContentStyle({
   imageSrc,
   onClick,
   description,
   alt = '',
   ...otherProps
-}) => (
-  <DocumentCoverStyle {...otherProps}>
-    <DocumentCoverContent>
-      <Image src={imageSrc} alt={alt} />
-      <ButtonStyled variant="primary" onClick={onClick} iconLeft={<Download />}>
-        {description}
-      </ButtonStyled>
-    </DocumentCoverContent>
-  </DocumentCoverStyle>
-)
+}: Props) {
+  return (
+    <DocumentCoverStyle {...otherProps}>
+      <DocumentCoverContent>
+        <Image src={imageSrc} alt={alt} />
+        <ButtonStyled
+          variant="primary"
+          onClick={onClick}
+          iconLeft={<Download />}
+        >
+          {description}
+        </ButtonStyled>
+      </DocumentCoverContent>
+    </DocumentCoverStyle>
+  )
+}
 
 export default DocumentCoverContentStyle

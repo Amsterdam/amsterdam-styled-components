@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { action } from '@storybook/addon-actions'
 import { FilterTag } from '@amsterdam/asc-ui'
@@ -15,8 +14,6 @@ import { FilterTag } from '@amsterdam/asc-ui'
 
 <Canvas>
   <Story name="Default">
-    <Fragment>
-      <FilterTag onClick={(e) => action('Remove me!')(e)}>Just a tag</FilterTag>
-    </Fragment>
+    <FilterTag onClick={(e) => action('Remove me!')(e)}>Just a tag</FilterTag>
   </Story>
 </Canvas>

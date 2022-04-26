@@ -41,7 +41,7 @@ export const getValueFromTheme = withTheme<[string, ((value: any) => void)?]>(
 )
 
 export const themeColor = withTheme<ThemeColorParameters, string>(
-  (theme, colorType, colorSubtype = 'main', override) => {
+  (theme, colorType, override, colorSubtype = 'main') => {
     if (override) {
       return override
     }

@@ -1,4 +1,4 @@
-import type { FunctionComponent, MouseEvent, HTMLAttributes } from 'react'
+import type { MouseEvent, HTMLAttributes } from 'react'
 import { useState, useEffect, useCallback } from 'react'
 import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
 import Icon from '../../Icon'
@@ -13,12 +13,12 @@ import MonthStyle, {
 import Day from './Day'
 import { weekDays, months, daysInMonth } from '../../shared/constants'
 
-const Month: FunctionComponent<Props & HTMLAttributes<HTMLDivElement>> = ({
+function Month({
   date,
   open,
   onSelectDay,
   ...otherProps
-}) => {
+}: Props & HTMLAttributes<HTMLDivElement>) {
   const [firstDay, setFirstDay] = useState<Date>(new Date())
   const [month, setMonth] = useState<number>(new Date().getMonth())
   const [year, setYear] = useState<number>(new Date().getFullYear())

@@ -1,10 +1,5 @@
 import { Search } from '@amsterdam/asc-assets'
-import type {
-  ChangeEvent,
-  FormEvent,
-  FunctionComponent,
-  RefObject,
-} from 'react'
+import type { ChangeEvent, FormEvent, RefObject } from 'react'
 import { useEffect, useState } from 'react'
 import { deprecatedWarning } from '../../utils'
 import Button from '../Button'
@@ -32,7 +27,7 @@ export interface SearchBarProps extends TextFieldProps, SearchBarStyleProps {
   autoFocus?: boolean
 }
 
-const SearchBar: FunctionComponent<SearchBarProps> = ({
+function SearchBar({
   children,
   placeholder,
   onSubmit,
@@ -48,7 +43,7 @@ const SearchBar: FunctionComponent<SearchBarProps> = ({
   inputProps,
   autoFocus,
   ...otherProps
-}) => {
+}: SearchBarProps) {
   let inputRef: RefObject<HTMLInputElement> | null = null
   const [inputValue, setInputValue] = useState(value || '')
 

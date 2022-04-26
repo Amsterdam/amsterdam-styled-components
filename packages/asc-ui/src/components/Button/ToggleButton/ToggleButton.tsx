@@ -1,5 +1,5 @@
 import { Close, Menu } from '@amsterdam/asc-assets'
-import type { FunctionComponent, ReactElement } from 'react'
+import type { ReactElement } from 'react'
 import type { Props as IconProps } from '../../Icon/Icon'
 import Icon from '../../Icon/Icon'
 import { TOGGLE_BUTTON_SIZE } from '../../shared/constants'
@@ -12,14 +12,14 @@ export type Props = {
 } & StyleProps &
   IconProps
 
-const ToggleHandlerButton: FunctionComponent<Props> = ({
+function ToggleHandlerButton({
   iconOpen,
   iconClose,
   open,
   rotate,
   size,
   ...otherProps
-}) => {
+}: Props) {
   const IconOpen = iconOpen || <Menu />
   const IconClose = iconClose || <Close />
   return (

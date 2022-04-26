@@ -1,6 +1,5 @@
 import { ChevronDown, ChevronUp } from '@amsterdam/asc-assets'
 import type {
-  FunctionComponent,
   KeyboardEvent as ReactKeyboardEvent,
   MouseEvent as ReactMouseEvent,
 } from 'react'
@@ -20,11 +19,7 @@ type Props = {
   label: string
 } & MenuFlyOutProps
 
-const MenuFlyOut: FunctionComponent<Props> = ({
-  children,
-  label,
-  ...otherProps
-}) => {
+function MenuFlyOut({ children, label, ...otherProps }: Props) {
   const { hasToggle, onExpand, setOpenToggle } = useMenuContext()
 
   const ref = useRef<HTMLLIElement>(null)

@@ -1,10 +1,10 @@
-import type { FunctionComponent, HTMLAttributes } from 'react'
+import type { HTMLAttributes } from 'react'
 import OrderedListStyle from './OrderedListStyle'
 
-const OrderedList: FunctionComponent<HTMLAttributes<HTMLUListElement>> = ({
+function OrderedList({
   children,
   ...otherProps
-}) => {
+}: HTMLAttributes<HTMLUListElement>) {
   return <OrderedListStyle {...otherProps}>{children}</OrderedListStyle>
 }
 
