@@ -1,11 +1,6 @@
 import { Search } from '@amsterdam/asc-assets'
-import type {
-  ChangeEvent,
-  FormEvent,
-  FunctionComponent,
-  RefObject,
-} from 'react'
-import { useEffect, useState } from 'react'
+import type { ChangeEvent, FormEvent, RefObject } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { deprecatedWarning } from '../../utils'
 import Button from '../Button'
 import Icon from '../Icon'
@@ -32,7 +27,7 @@ export interface SearchBarProps extends TextFieldProps, SearchBarStyleProps {
   autoFocus?: boolean
 }
 
-const SearchBar: FunctionComponent<SearchBarProps> = ({
+function SearchBar({
   children,
   placeholder,
   onSubmit,
@@ -48,7 +43,7 @@ const SearchBar: FunctionComponent<SearchBarProps> = ({
   inputProps,
   autoFocus,
   ...otherProps
-}) => {
+}: SearchBarProps) {
   let inputRef: RefObject<HTMLInputElement> | null = null
   const [inputValue, setInputValue] = useState(value || '')
 
@@ -96,20 +91,23 @@ const SearchBar: FunctionComponent<SearchBarProps> = ({
     }
   }, [value, setInputValue])
 
+  const contextValue = useMemo(
+    () => ({
+      onBlur,
+      onFocus,
+      onChange: handleOnChange,
+      placeholder,
+      setInputRef: (ref: RefObject<HTMLInputElement>) => {
+        inputRef = ref
+      },
+      ...inputProps,
+    }),
+    [],
+  )
+
   return (
     <SearchBarStyle {...otherProps} {...{ hideAt, showAt }}>
-      <InputContext.Provider
-        value={{
-          onBlur,
-          onFocus,
-          onChange: handleOnChange,
-          placeholder,
-          setInputRef: (ref: RefObject<HTMLInputElement>) => {
-            inputRef = ref
-          },
-          ...inputProps,
-        }}
-      >
+      <InputContext.Provider value={contextValue}>
         <TextField
           srOnly
           keepFocus

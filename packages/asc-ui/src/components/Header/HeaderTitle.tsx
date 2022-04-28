@@ -1,9 +1,11 @@
-import type { AnchorHTMLAttributes, FunctionComponent } from 'react'
+import type { AnchorHTMLAttributes } from 'react'
 import HeaderTitleStyle from './HeaderTitleStyle'
 
-const HeaderTitle: FunctionComponent<AnchorHTMLAttributes<HTMLAnchorElement>> =
-  ({ children, ...otherProps }) => {
-    return <HeaderTitleStyle {...otherProps}>{children}</HeaderTitleStyle>
-  }
+function HeaderTitle({
+  children,
+  ...otherProps
+}: AnchorHTMLAttributes<HTMLAnchorElement>) {
+  return <HeaderTitleStyle {...otherProps}>{children}</HeaderTitleStyle>
+}
 
 export default HeaderTitle

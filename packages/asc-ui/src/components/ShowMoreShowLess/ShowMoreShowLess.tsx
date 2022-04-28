@@ -1,20 +1,18 @@
 import { Enlarge, Minimise } from '@amsterdam/asc-assets'
-import type { FunctionComponent, HTMLAttributes } from 'react'
+import type { HTMLAttributes } from 'react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { ButtonProps } from '../Button/Button'
 import Button from '../Button/Button'
 import type { ShowMoreShowLessProps } from './ShowMoreShowLessStyle'
 import ShowMoreShowLessStyle from './ShowMoreShowLessStyle'
 
-const ShowMoreShowLess: FunctionComponent<
-  ShowMoreShowLessProps & HTMLAttributes<HTMLElement>
-> = ({
+function ShowMoreShowLess({
   children,
   maxHeight = '300px',
   showMoreText = 'Toon meer',
   showLessText = 'Toon minder',
   ...otherProps
-}) => {
+}: ShowMoreShowLessProps & HTMLAttributes<HTMLElement>) {
   const ref = useRef<HTMLDivElement>(null)
   const [showMoreShowLess, setShowMoreShowLess] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
@@ -44,27 +42,24 @@ const ShowMoreShowLess: FunctionComponent<
       >
         {children}
       </ShowMoreShowLessStyle>
-      {showMoreShowLess && (
-        <>
-          {!isOpen ? (
-            <Button
-              title={showMoreText}
-              iconLeft={<Enlarge />}
-              {...sharedButtonProps}
-            >
-              {showMoreText}
-            </Button>
-          ) : (
-            <Button
-              title={showLessText}
-              iconLeft={<Minimise />}
-              {...sharedButtonProps}
-            >
-              {showLessText}
-            </Button>
-          )}
-        </>
-      )}
+      {showMoreShowLess &&
+        (!isOpen ? (
+          <Button
+            title={showMoreText}
+            iconLeft={<Enlarge />}
+            {...sharedButtonProps}
+          >
+            {showMoreText}
+          </Button>
+        ) : (
+          <Button
+            title={showLessText}
+            iconLeft={<Minimise />}
+            {...sharedButtonProps}
+          >
+            {showLessText}
+          </Button>
+        ))}
     </>
   )
 }

@@ -2,7 +2,7 @@ import { useState, Fragment } from 'react'
 import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { ErrorMessage, TextField } from '@amsterdam/asc-ui'
 
-export const WithAControlledState = () => {
+export function WithAControlledState() {
   const [value, setValue] = useState()
   return (
     <Fragment>

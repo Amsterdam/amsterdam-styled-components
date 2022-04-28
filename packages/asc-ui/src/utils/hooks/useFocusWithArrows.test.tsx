@@ -7,9 +7,8 @@ describe('useFocusWithArrows', () => {
   const onFocusOneMock = jest.fn()
   const onFocusTwoMock = jest.fn()
   const onFocusThreeMock = jest.fn()
-  const getComponent =
-    (rotate: boolean | undefined = undefined) =>
-    () => {
+  const getComponent = (rotate: boolean | undefined = undefined) =>
+    function () {
       const ref = useRef<HTMLDivElement>(null)
       const { keyDown } = useFocusWithArrows(ref, rotate)
       return (

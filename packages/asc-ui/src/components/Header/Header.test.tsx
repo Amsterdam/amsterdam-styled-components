@@ -33,11 +33,13 @@ describe('Header', () => {
   })
 
   it('should render the tall version with a custom logo', () => {
-    const CustomLogo = () => (
-      <a href="/" data-testid="logo">
-        some icon
-      </a>
-    )
+    function CustomLogo() {
+      return (
+        <a href="/" data-testid="logo">
+          some icon
+        </a>
+      )
+    }
 
     const { getByTestId } = setup({ tall: true, logo: CustomLogo })
     expect(getByTestId('logo')).toBeDefined()

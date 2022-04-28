@@ -1,4 +1,4 @@
-import type { FunctionComponent, HTMLAttributes } from 'react'
+import type { HTMLAttributes } from 'react'
 import Icon from '../../Icon'
 import type { Props as ShareButtonStyleProps } from './ShareButtonStyle'
 import ShareButtonStyle from './ShareButtonStyle'
@@ -8,24 +8,26 @@ type Props = {
 } & ShareButtonStyleProps &
   HTMLAttributes<HTMLButtonElement>
 
-const ShareButton: FunctionComponent<Props> = ({
+function ShareButton({
   children,
   onClick,
   iconSize,
   title,
   ...otherProps
-}) => (
-  <ShareButtonStyle
-    data-testid="share-button"
-    size={30}
-    onClick={onClick}
-    variant="blank"
-    title={title}
-    aria-label={title}
-    {...otherProps}
-  >
-    <Icon size={iconSize}>{children}</Icon>
-  </ShareButtonStyle>
-)
+}: Props) {
+  return (
+    <ShareButtonStyle
+      data-testid="share-button"
+      size={30}
+      onClick={onClick}
+      variant="blank"
+      title={title}
+      aria-label={title}
+      {...otherProps}
+    >
+      <Icon size={iconSize}>{children}</Icon>
+    </ShareButtonStyle>
+  )
+}
 
 export default ShareButton

@@ -35,13 +35,16 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   rules: {
-    'no-console': 2,
+    'no-console': 'error',
     'prettier/prettier': ['error'],
-    'react/prop-types': 0,
+    'react/prop-types': 'off',
+    'react/require-default-props': 'off',
+    'react/default-props-match-prop-types': 'off',
     'react/jsx-wrap-multilines': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'no-unused-vars': 'off',
+    'no-restricted-exports': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
@@ -56,8 +59,8 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.mdx'],
       },
     ],
-    'react/jsx-props-no-spreading': 0,
-    semi: [2, 'never'],
+    'react/jsx-props-no-spreading': 'off',
+    semi: ['error', 'never'],
     'import/extensions': [
       'error',
       'ignorePackages',

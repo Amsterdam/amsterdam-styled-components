@@ -213,7 +213,7 @@ describe('Tabs', () => {
   })
 
   it('should change the active tab when the activeTab prop changes', () => {
-    const Wrapper = () => {
+    function Wrapper() {
       const [activeTab, setActiveTab] = useState('two')
       return (
         <>

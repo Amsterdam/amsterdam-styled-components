@@ -1,4 +1,4 @@
-import type { FunctionComponent, HTMLAttributes } from 'react'
+import type { HTMLAttributes } from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import { ChevronLeft, ChevronRight } from '@amsterdam/asc-assets'
 import {
@@ -36,16 +36,14 @@ export interface PaginationProps {
 
 const DEFAULT_PAGINATION_LENGTH = 7
 
-const Pagination: FunctionComponent<
-  PaginationProps & HTMLAttributes<HTMLElement>
-> = ({
+function Pagination({
   collectionSize,
   onPageChange,
   page = 1,
   pageSize = 10,
   paginationLength = DEFAULT_PAGINATION_LENGTH,
   ...otherProps
-}) => {
+}: PaginationProps & HTMLAttributes<HTMLElement>) {
   const [currentPage, setCurrentPage] = useState<number>(page)
 
   const totalPages = useMemo(

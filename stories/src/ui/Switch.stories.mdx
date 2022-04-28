@@ -14,14 +14,12 @@ import { Switch } from '@amsterdam/asc-ui'
 
 <Canvas>
   <Story name="Default">
-    <>
-      <Switch
-        aria-label="This is a checkbox!"
-        id="checkBox"
-        onChange={(e) => {
-          action(`switch pressed ${e.target.checked}`)(e)
-        }}
-      />
-    </>
+    <Switch
+      aria-label="This is a checkbox!"
+      id="checkBox"
+      onChange={(e) => {
+        action(`switch pressed ${e.target.checked}`)(e)
+      }}
+    />
   </Story>
 </Canvas>

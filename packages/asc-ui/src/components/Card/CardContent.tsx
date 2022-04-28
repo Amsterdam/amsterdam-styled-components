@@ -1,9 +1,11 @@
-import type { FunctionComponent, HTMLAttributes } from 'react'
+import type { HTMLAttributes } from 'react'
 import CardContentStyle from './CardContentStyle'
 
-const CardContent: FunctionComponent<HTMLAttributes<HTMLDivElement>> = ({
+function CardContent({
   children,
   ...otherProps
-}) => <CardContentStyle {...otherProps}>{children}</CardContentStyle>
+}: HTMLAttributes<HTMLDivElement>) {
+  return <CardContentStyle {...otherProps}>{children}</CardContentStyle>
+}
 
 export default CardContent

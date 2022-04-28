@@ -1,5 +1,4 @@
 import { Search } from '@amsterdam/asc-assets'
-import type { FunctionComponent } from 'react'
 import type { InputMethods, InputProps } from '../Input'
 import SearchBar from '../SearchBar'
 import type { SearchBarProps } from '../SearchBar/SearchBar'
@@ -16,8 +15,15 @@ interface SearchBarToggleProps extends SearchBarToggleStyleProps, InputMethods {
   searchBarProps?: SearchBarProps
 }
 
-const SearchBarToggle: FunctionComponent<SearchBarToggleProps & ToggleProps> =
-  ({ children, hideAt, showAt, searchBarProps, inputProps, ...otherProps }) => (
+function SearchBarToggle({
+  children,
+  hideAt,
+  showAt,
+  searchBarProps,
+  inputProps,
+  ...otherProps
+}: SearchBarToggleProps & ToggleProps) {
+  return (
     <Toggle
       as={SearchBarToggleStyle}
       {...{
@@ -33,6 +39,7 @@ const SearchBarToggle: FunctionComponent<SearchBarToggleProps & ToggleProps> =
       </SearchBar>
     </Toggle>
   )
+}
 
 SearchBarToggle.defaultProps = {
   placeholder: 'Search...',

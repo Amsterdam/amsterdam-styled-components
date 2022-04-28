@@ -1,13 +1,14 @@
-import type { FunctionComponent, HTMLAttributes } from 'react'
+import type { HTMLAttributes } from 'react'
 import ErrorMessageStyle from './ErrorMessageStyle'
 
 export interface ErrorMessageProps {
   message: string
 }
 
-const ErrorMessage: FunctionComponent<
-  ErrorMessageProps & HTMLAttributes<HTMLDivElement>
-> = ({ message, ...otherProps }) => {
+function ErrorMessage({
+  message,
+  ...otherProps
+}: ErrorMessageProps & HTMLAttributes<HTMLDivElement>) {
   return (
     <ErrorMessageStyle role="alert" {...otherProps}>
       {message}
