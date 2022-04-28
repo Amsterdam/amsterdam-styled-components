@@ -1,0 +1,73 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { ThemeProvider, GlobalStyle } from '@amsterdam/asc-ui'
+import { ascBetaTheme, Heading } from '@amsterdam/asc-ui-beta'
+
+<Meta
+  title="Beta/Heading"
+  component={Heading}
+  argTypes={{
+    small: {
+      control: { type: 'boolean' },
+    },
+    darkBackground: {
+      control: { type: 'boolean' },
+    },
+    gutterBottom: {
+      control: { type: 'number' },
+    },
+  }}
+/>
+
+# Heading
+
+Heading can accept a `small` prop, currently only heading level one has a small version.
+
+## Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{ small: false, darkBackground: false, gutterBottom: 0 }}
+  >
+    {({ small, darkBackground, gutterBottom }) => (
+      <ThemeProvider theme={ascBetaTheme}>
+        <GlobalStyle />
+        <Heading
+          small={small}
+          darkBackground={darkBackground}
+          gutterBottom={gutterBottom}
+        >
+          Heading one
+        </Heading>
+        <Heading
+          as="h2"
+          darkBackground={darkBackground}
+          gutterBottom={gutterBottom}
+        >
+          Heading two
+        </Heading>
+        <Heading
+          as="h3"
+          darkBackground={darkBackground}
+          gutterBottom={gutterBottom}
+        >
+          Heading three
+        </Heading>
+        <Heading
+          as="h4"
+          darkBackground={darkBackground}
+          gutterBottom={gutterBottom}
+        >
+          Heading four
+        </Heading>
+        <Heading
+          as="h5"
+          darkBackground={darkBackground}
+          gutterBottom={gutterBottom}
+        >
+          Heading five
+        </Heading>
+      </ThemeProvider>
+    )}
+  </Story>
+</Canvas>
