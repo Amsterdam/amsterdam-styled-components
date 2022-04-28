@@ -1,6 +1,11 @@
+import type { ReactNode } from 'react'
 import HeaderNavigationStyle from './HeaderNavigationStyle'
 
-function HeaderNavigation({ children }) {
+interface Props {
+  children?: ReactNode
+}
+
+function HeaderNavigation({ children }: Props) {
   return <HeaderNavigationStyle>{children}</HeaderNavigationStyle>
 }
 

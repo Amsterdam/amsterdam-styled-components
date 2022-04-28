@@ -1,3 +1,4 @@
+import type { PropsWithChildren } from 'react'
 import { useState, useMemo } from 'react'
 import type { Props } from './MenuInlineStyle'
 import MenuInlineStyle from './MenuInlineStyle'
@@ -13,7 +14,7 @@ function MenuInline({
   backdropOpacity,
   zIndexOffset,
   ...otherProps
-}: Props & BackDropProps) {
+}: PropsWithChildren<Props> & BackDropProps) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   // prevents the component from flickering when you hover to the next menu items

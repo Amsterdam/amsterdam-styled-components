@@ -1,10 +1,15 @@
+import type { PropsWithChildren } from 'react'
 import CustomHTMLBlockStyle from './CustomHTMLBlockStyle'
 
 interface Props {
   body?: string
 }
 
-function CustomHTMLBlock({ body, children, ...otherProps }: Props) {
+function CustomHTMLBlock({
+  body,
+  children,
+  ...otherProps
+}: PropsWithChildren<Props>) {
   return (
     <CustomHTMLBlockStyle
       {...(!children && body

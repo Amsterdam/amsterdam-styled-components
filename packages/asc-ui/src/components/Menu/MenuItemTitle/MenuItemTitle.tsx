@@ -1,6 +1,11 @@
+import type { ReactNode } from 'react'
 import MenuItemTitleStyle from './MenuItemTitleStyle'
 
-function MenuItemTitle({ children }) {
+interface Props {
+  children?: ReactNode
+}
+
+function MenuItemTitle({ children }: Props) {
   return (
     <MenuItemTitleStyle forwardedAs="li" variant="blank">
       {children}

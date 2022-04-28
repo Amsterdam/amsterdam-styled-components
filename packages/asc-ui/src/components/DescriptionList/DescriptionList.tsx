@@ -1,6 +1,11 @@
+import type { ReactNode } from 'react'
 import { DescriptionListWrapper } from './DescriptionListStyle'
 
-function DescriptionList({ children, ...otherProps }) {
+interface Props {
+  children?: ReactNode
+}
+
+function DescriptionList({ children, ...otherProps }: Props) {
   return (
     <DescriptionListWrapper {...otherProps}>{children}</DescriptionListWrapper>
   )

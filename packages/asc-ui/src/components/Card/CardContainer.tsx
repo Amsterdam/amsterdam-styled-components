@@ -1,6 +1,11 @@
+import type { ReactNode } from 'react'
 import CardContainerStyle from './CardContainerStyle'
 
-function CardContainer({ children, ...otherProps }) {
+interface Props {
+  children?: ReactNode
+}
+
+function CardContainer({ children, ...otherProps }: Props) {
   return <CardContainerStyle {...otherProps}>{children}</CardContainerStyle>
 }
 

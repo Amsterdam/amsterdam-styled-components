@@ -23,6 +23,7 @@ module.exports = {
       files: ['*.stories.mdx'],
       rules: {
         'import/prefer-default-export': 'off',
+        'react/jsx-fragments': 'off',
       },
     },
   ],

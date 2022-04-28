@@ -1,6 +1,11 @@
+import type { ReactNode } from 'react'
 import styled from 'styled-components'
 import { themeSpacing } from '../../utils'
 import { Row } from '../Grid'
+
+interface Props {
+  children?: ReactNode
+}
 
 const FooterBottomStyle = styled.div`
   display: flex;
@@ -14,7 +19,7 @@ const FooterBottomStyle = styled.div`
   }
 `
 
-function FooterBottom({ children, ...otherProps }) {
+function FooterBottom({ children, ...otherProps }: Props) {
   return (
     <Row>
       <FooterBottomStyle {...otherProps}>{children}</FooterBottomStyle>

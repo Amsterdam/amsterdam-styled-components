@@ -1,7 +1,12 @@
+import type { ReactNode } from 'react'
 import { useRef } from 'react'
 import useFocusWithArrows from '../../utils/hooks/useFocusWithArrows'
 
-function AccordionWrapper({ children }) {
+interface Props {
+  children?: ReactNode
+}
+
+function AccordionWrapper({ children }: Props) {
   const ref = useRef<HTMLDivElement>(null)
   const { keyDown } = useFocusWithArrows(ref, true, true)
   return (

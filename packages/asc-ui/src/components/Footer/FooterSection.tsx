@@ -1,3 +1,4 @@
+import type { PropsWithChildren } from 'react'
 import { ChevronDown } from '@amsterdam/asc-assets'
 import type { Theme } from '../../types'
 import Hidden from '../Hidden'
@@ -57,7 +58,7 @@ function FooterSection({
   showAt,
   hideAt,
   children,
-}: FooterContentProps) {
+}: PropsWithChildren<FooterContentProps>) {
   const breakpoint = showAt || hideAt || toggleAt
 
   const wrapperLargeScreen = (wrapperChildren: any) => (

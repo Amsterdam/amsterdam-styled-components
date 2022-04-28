@@ -1,3 +1,4 @@
+import type { PropsWithChildren } from 'react'
 import { useMemo } from 'react'
 import {
   DescriptionListItemWrapper,
@@ -13,7 +14,7 @@ function DescriptionListItem({
   term,
   children,
   ...otherProps
-}: DescriptionListItemProps) {
+}: PropsWithChildren<DescriptionListItemProps>) {
   const description = useMemo(
     () =>
       /* eslint-disable-next-line no-nested-ternary */
