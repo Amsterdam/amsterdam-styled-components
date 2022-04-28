@@ -23,7 +23,6 @@ module.exports = {
       files: ['*.stories.mdx'],
       rules: {
         'import/prefer-default-export': 'off',
-        'react/jsx-fragments': 'off',
       },
     },
   ],
@@ -44,6 +43,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'no-unused-vars': 'off',
+    'no-restricted-exports': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',
       {

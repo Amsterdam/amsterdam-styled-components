@@ -1,6 +1,6 @@
 import { Search } from '@amsterdam/asc-assets'
 import type { ChangeEvent, FormEvent, RefObject } from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { deprecatedWarning } from '../../utils'
 import Button from '../Button'
 import Icon from '../Icon'
@@ -91,20 +91,23 @@ function SearchBar({
     }
   }, [value, setInputValue])
 
+  const contextValue = useMemo(
+    () => ({
+      onBlur,
+      onFocus,
+      onChange: handleOnChange,
+      placeholder,
+      setInputRef: (ref: RefObject<HTMLInputElement>) => {
+        inputRef = ref
+      },
+      ...inputProps,
+    }),
+    [],
+  )
+
   return (
     <SearchBarStyle {...otherProps} {...{ hideAt, showAt }}>
-      <InputContext.Provider
-        value={{
-          onBlur,
-          onFocus,
-          onChange: handleOnChange,
-          placeholder,
-          setInputRef: (ref: RefObject<HTMLInputElement>) => {
-            inputRef = ref
-          },
-          ...inputProps,
-        }}
-      >
+      <InputContext.Provider value={contextValue}>
         <TextField
           srOnly
           keepFocus

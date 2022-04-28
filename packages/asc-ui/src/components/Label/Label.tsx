@@ -1,5 +1,5 @@
 import type { LabelHTMLAttributes, ReactNode } from 'react'
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import type { Props as StyleProps } from './LabelStyle'
 import LabelStyle, { LabelTextStyle } from './LabelStyle'
 import usePassPropsToChildren from '../../utils/hooks/usePassPropsToChildren'
@@ -25,8 +25,10 @@ function Label({
 
   const activeState = noActiveState ? false : active
 
+  const value = useMemo(() => ({ active, setActive }), [active])
+
   return (
-    <LabelContext.Provider value={{ active, setActive }}>
+    <LabelContext.Provider value={value}>
       <LabelStyle
         {...{ ...otherProps, disabled, position }}
         active={activeState}

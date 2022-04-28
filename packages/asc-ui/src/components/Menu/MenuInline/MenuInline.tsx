@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import type { Props } from './MenuInlineStyle'
 import MenuInlineStyle from './MenuInlineStyle'
 import MenuContext from '../MenuContext'
@@ -23,12 +23,15 @@ function MenuInline({
     return onExpand && onExpand(expand)
   }, 50)
 
+  const value = useMemo(
+    () => ({
+      onExpand: handleOnExpand,
+    }),
+    [handleOnExpand],
+  )
+
   return (
-    <MenuContext.Provider
-      value={{
-        onExpand: handleOnExpand,
-      }}
-    >
+    <MenuContext.Provider value={value}>
       <MenuInlineStyle hasBackDrop={hasBackDrop} {...otherProps}>
         {children}
       </MenuInlineStyle>

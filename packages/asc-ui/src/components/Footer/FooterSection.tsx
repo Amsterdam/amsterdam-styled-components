@@ -60,14 +60,17 @@ function FooterSection({
 }: FooterContentProps) {
   const breakpoint = showAt || hideAt || toggleAt
 
+  const wrapperLargeScreen = (wrapperChildren: any) => (
+    <Hidden minBreakpoint={breakpoint}>{wrapperChildren}</Hidden>
+  )
+
+  const wrapperSmallScreen = (wrapperChildren: any) => (
+    <Hidden maxBreakpoint={breakpoint}>{wrapperChildren}</Hidden>
+  )
+
   return (
     <>
-      <ConditionalWrapper
-        condition={!ssr}
-        wrapper={(wrapperChildren) => (
-          <Hidden minBreakpoint={breakpoint}>{wrapperChildren}</Hidden>
-        )}
-      >
+      <ConditionalWrapper condition={!ssr} wrapper={wrapperLargeScreen}>
         <StyledFooterToggle
           ToggleHandler={ToggleFooterHeader}
           title={title}
@@ -78,12 +81,7 @@ function FooterSection({
           <FooterContentWrapper>{children}</FooterContentWrapper>
         </StyledFooterToggle>
       </ConditionalWrapper>
-      <ConditionalWrapper
-        condition={!ssr}
-        wrapper={(wrapperChildren) => (
-          <Hidden maxBreakpoint={breakpoint}>{wrapperChildren}</Hidden>
-        )}
-      >
+      <ConditionalWrapper condition={!ssr} wrapper={wrapperSmallScreen}>
         <FooterContentWrapper ssr={ssr} breakpoint={breakpoint}>
           <FooterHeading>{title}</FooterHeading>
           {children}

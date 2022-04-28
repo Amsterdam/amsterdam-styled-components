@@ -3,7 +3,7 @@ import type {
   KeyboardEvent as ReactKeyboardEvent,
   MouseEvent as ReactMouseEvent,
 } from 'react'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState, useMemo } from 'react'
 import { KeyboardKeys } from '../../../types/index'
 import useDebounce from '../../../utils/hooks/useDebounce'
 import useEdgeDetection from '../../../utils/hooks/useEdgeDetection'
@@ -93,6 +93,20 @@ function MenuFlyOut({ children, label, ...otherProps }: Props) {
     handleOnExpand(menuOpen)
   }, [menuOpen, handleOnExpand])
 
+  const value = useMemo(
+    () => ({
+      underFlyOutMenu: true,
+      hasToggle,
+      setOpenToggle: (val: boolean) => {
+        if (setOpenToggle) {
+          setOpenToggle(val)
+        }
+        setOpen(val)
+      },
+    }),
+    [hasToggle, setOpen, setOpenToggle],
+  )
+
   return (
     <MenuFlyOutStyle
       ref={ref}
@@ -116,18 +130,7 @@ function MenuFlyOut({ children, label, ...otherProps }: Props) {
       >
         {label}
       </MenuButton>
-      <MenuContext.Provider
-        value={{
-          underFlyOutMenu: true,
-          hasToggle,
-          setOpenToggle: (val: boolean) => {
-            if (setOpenToggle) {
-              setOpenToggle(val)
-            }
-            setOpen(val)
-          },
-        }}
-      >
+      <MenuContext.Provider value={value}>
         <MenuList
           ref={listRef}
           edgeDetection={edgeDetection}
