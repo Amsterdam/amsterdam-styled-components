@@ -1,9 +1,5 @@
 import { ChevronDown } from '@amsterdam/asc-assets'
-import type {
-  AnchorHTMLAttributes,
-  ButtonHTMLAttributes,
-  FunctionComponent,
-} from 'react'
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
 import { useCallback, useEffect, useState } from 'react'
 import { useUID } from 'react-uid'
 import type { ButtonStyleProps } from '../Button/ButtonStyle'
@@ -19,12 +15,7 @@ type Props = {
 } & StyleProps &
   ButtonContentProps
 
-const Accordion: FunctionComponent<
-  Props &
-    ButtonStyleProps &
-    ButtonHTMLAttributes<HTMLButtonElement> &
-    AnchorHTMLAttributes<HTMLAnchorElement>
-> = ({
+function Accordion({
   children,
   title,
   id: idProp,
@@ -32,7 +23,10 @@ const Accordion: FunctionComponent<
   onToggle,
   noMultiline,
   ...otherProps
-}) => {
+}: Props &
+  ButtonStyleProps &
+  ButtonHTMLAttributes<HTMLButtonElement> &
+  AnchorHTMLAttributes<HTMLAnchorElement>) {
   const uid = useUID()
   const id = idProp || uid
   const [open, setOpen] = useState(isOpen ?? false)

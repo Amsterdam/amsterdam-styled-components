@@ -10,7 +10,7 @@ describe('useTrappedFocus', () => {
   let elementFocus3: HTMLElement
 
   beforeEach(() => {
-    const Component = () => {
+    function Component() {
       const ref: any = useRef()
       ;({ keyDown } = useTrappedFocus(ref))
 

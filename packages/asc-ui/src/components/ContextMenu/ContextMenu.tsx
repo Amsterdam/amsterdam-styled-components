@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, FunctionComponent, ReactNode } from 'react'
+import type { ButtonHTMLAttributes, ReactNode } from 'react'
 import { useEffect, useRef, useState } from 'react'
 import ContextMenuButtonStyle from './ContextMenuButton'
 import MenuList from './ContextMenuList'
@@ -18,9 +18,7 @@ export interface Props {
   open?: boolean
 }
 
-const ContextMenu: FunctionComponent<
-  Props & ButtonHTMLAttributes<HTMLButtonElement>
-> = ({
+function ContextMenu({
   className,
   open: openProp = false,
   label,
@@ -28,7 +26,7 @@ const ContextMenu: FunctionComponent<
   position,
   selectElementForTouchScreen,
   ...otherProps
-}) => {
+}: Props & ButtonHTMLAttributes<HTMLButtonElement>) {
   const ref = useRef<HTMLDivElement>(null)
   const [open, setOpen] = useState(openProp)
   const isTouchScreen = useDetectTouchscreen()

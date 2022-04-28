@@ -1,5 +1,5 @@
-import type { FunctionComponent, ReactNode } from 'react'
-import { createContext, useContext } from 'react'
+import type { ReactNode } from 'react'
+import { createContext, useContext, useMemo } from 'react'
 import type { TypeProps as ColumnStyleProps } from './ColumnStyle'
 import ColumnStyle from './ColumnStyle'
 import type { Theme } from '../../types'
@@ -22,11 +22,13 @@ interface Context {
 
 const ParentContext = createContext<Context>({})
 
-const Column: FunctionComponent<Props> = ({ children, span, ...props }) => {
+function Column({ children, span, ...props }: Props) {
   const { parentSpan } = useContext<Context>(ParentContext)
 
+  const value = useMemo(() => ({ parentSpan: span }), [span])
+
   return (
-    <ParentContext.Provider value={{ parentSpan: span }}>
+    <ParentContext.Provider value={value}>
       <ColumnStyle parentSpan={parentSpan} span={span} {...props}>
         {children}
       </ColumnStyle>

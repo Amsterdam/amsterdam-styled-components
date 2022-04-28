@@ -1,8 +1,12 @@
-import type { FunctionComponent } from 'react'
+import type { ReactNode } from 'react'
 import HeaderNavigationStyle from './HeaderNavigationStyle'
 
-const HeaderNavigation: FunctionComponent = ({ children }) => (
-  <HeaderNavigationStyle>{children}</HeaderNavigationStyle>
-)
+interface Props {
+  children?: ReactNode
+}
+
+function HeaderNavigation({ children }: Props) {
+  return <HeaderNavigationStyle>{children}</HeaderNavigationStyle>
+}
 
 export default HeaderNavigation

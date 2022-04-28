@@ -41,6 +41,7 @@ export const getValueFromTheme = withTheme<[string, ((value: any) => void)?]>(
 )
 
 export const themeColor = withTheme<ThemeColorParameters, string>(
+  // eslint-disable-next-line default-param-last
   (theme, colorType, colorSubtype = 'main', override) => {
     if (override) {
       return override

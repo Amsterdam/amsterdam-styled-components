@@ -4,7 +4,7 @@ import Modal from './Modal'
 
 jest.mock('polished')
 
-const ButtonAndModal = () => {
+function ButtonAndModal() {
   const [open, setOpen] = useState(false)
 
   return (

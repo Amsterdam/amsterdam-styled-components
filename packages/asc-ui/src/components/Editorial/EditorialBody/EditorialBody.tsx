@@ -1,9 +1,11 @@
-import type { HTMLAttributes, FunctionComponent } from 'react'
+import type { HTMLAttributes } from 'react'
 import EditorialBodyStyle from './EditorialBodyStyle'
 
-const EditorialBody: FunctionComponent<HTMLAttributes<HTMLElement>> = ({
+function EditorialBody({
   children,
   ...otherProps
-}) => <EditorialBodyStyle {...otherProps}>{children}</EditorialBodyStyle>
+}: HTMLAttributes<HTMLElement>) {
+  return <EditorialBodyStyle {...otherProps}>{children}</EditorialBodyStyle>
+}
 
 export default EditorialBody

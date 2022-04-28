@@ -22,7 +22,7 @@ interface HeaderLogoTextProps extends HTMLAttributes<HTMLHeadingElement> {
   ssr?: boolean
 }
 
-const HeaderLogoText: FunctionComponent<HeaderLogoTextProps> = ({
+function HeaderLogoText({
   as,
   title,
   homeLink,
@@ -30,13 +30,15 @@ const HeaderLogoText: FunctionComponent<HeaderLogoTextProps> = ({
   logo: LogoIcon,
   ssr,
   ...otherProps
-}) => (
-  <HeaderLogoTextStyle as={as} {...otherProps}>
-    {LogoIcon && (
-      <LogoIcon href={homeLink} title={title} tall={tall} ssr={ssr} />
-    )}
-    {title && <HeaderTitle href={homeLink}>{title}</HeaderTitle>}
-  </HeaderLogoTextStyle>
-)
+}: HeaderLogoTextProps) {
+  return (
+    <HeaderLogoTextStyle as={as} {...otherProps}>
+      {LogoIcon && (
+        <LogoIcon href={homeLink} title={title} tall={tall} ssr={ssr} />
+      )}
+      {title && <HeaderTitle href={homeLink}>{title}</HeaderTitle>}
+    </HeaderLogoTextStyle>
+  )
+}
 
 export default HeaderLogoText

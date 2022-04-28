@@ -12,9 +12,7 @@ describe('GlobalStyle', () => {
     jest.spyOn(utils, 'getValueFromTheme')
     render(
       <ThemeProvider>
-        <>
-          <GlobalStyle />
-        </>
+        <GlobalStyle />
       </ThemeProvider>,
     )
     expect(utils.getValueFromTheme).toHaveBeenCalled()

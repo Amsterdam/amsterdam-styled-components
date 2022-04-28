@@ -1,15 +1,17 @@
-import type { FunctionComponent, HTMLAttributes } from 'react'
+import type { HTMLAttributes } from 'react'
 import ArticleStyle from './ArticleStyle'
 import type { Props } from '../EditorialPost/EditorialPost'
 
-const Article: FunctionComponent<Props & HTMLAttributes<HTMLElement>> = ({
+function Article({
   children,
   image,
   ...otherProps
-}) => (
-  <ArticleStyle image={image} {...otherProps}>
-    {children}
-  </ArticleStyle>
-)
+}: Props & HTMLAttributes<HTMLElement>) {
+  return (
+    <ArticleStyle image={image} {...otherProps}>
+      {children}
+    </ArticleStyle>
+  )
+}
 
 export default Article

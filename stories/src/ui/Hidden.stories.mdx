@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Hidden } from '@amsterdam/asc-ui'
 
@@ -13,9 +12,7 @@ This component uses the [useMatchMedia](https://github.com/Amsterdam/amsterdam-s
 
 <Canvas>
   <Story name="With min breakpoint">
-    <Fragment>
-      <Hidden minBreakpoint="tabletM">I am hidden from tabletM</Hidden>
-    </Fragment>
+    <Hidden minBreakpoint="tabletM">I am hidden from tabletM</Hidden>
   </Story>
 </Canvas>
 
@@ -23,9 +20,7 @@ This component uses the [useMatchMedia](https://github.com/Amsterdam/amsterdam-s
 
 <Canvas>
   <Story name="With max breakpoint">
-    <Fragment>
-      <Hidden maxBreakpoint="tabletM">I am hidden until tabletM</Hidden>
-    </Fragment>
+    <Hidden maxBreakpoint="tabletM">I am hidden until tabletM</Hidden>
   </Story>
 </Canvas>
 
@@ -33,11 +28,9 @@ This component uses the [useMatchMedia](https://github.com/Amsterdam/amsterdam-s
 
 <Canvas>
   <Story name="With min and max breakpoint">
-    <Fragment>
-      <Hidden minBreakpoint="mobileS" maxBreakpoint="laptop">
-        I am hidden only between mobileS and laptop
-      </Hidden>
-    </Fragment>
+    <Hidden minBreakpoint="mobileS" maxBreakpoint="laptop">
+      I am hidden only between mobileS and laptop
+    </Hidden>
   </Story>
 </Canvas>
 
@@ -45,10 +38,8 @@ This component uses the [useMatchMedia](https://github.com/Amsterdam/amsterdam-s
 
 <Canvas>
   <Story name="With a custom query">
-    <Fragment>
-      <Hidden query="(min-width: 300px) and (max-width: 600px)">
-        I am hidden only between 300px and 600px
-      </Hidden>
-    </Fragment>
+    <Hidden query="(min-width: 300px) and (max-width: 600px)">
+      I am hidden only between 300px and 600px
+    </Hidden>
   </Story>
 </Canvas>
