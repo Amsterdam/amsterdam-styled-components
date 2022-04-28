@@ -1,7 +1,7 @@
 import type { ElementType } from 'react'
 import { render, screen } from '@testing-library/react'
 import styled from 'styled-components'
-import { ThemeProvider, breakpoint } from '../../../../asc-ui'
+import { ThemeProvider, breakpoint } from '@amsterdam/asc-ui/es'
 import ascBetaTheme from '../../theme/ascBetaTheme'
 import {
   calculateFluidStyle,

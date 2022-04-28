@@ -80,7 +80,7 @@ describe('Pagination', () => {
   })
 
   it('should be working in a controlled state', () => {
-    const ControlledComponent = () => {
+    function ControlledComponent() {
       const [page, setPage] = useState(6)
 
       return (

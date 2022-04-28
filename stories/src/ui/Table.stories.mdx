@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import {
   TableContainer,
   Table,
@@ -35,38 +34,36 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs'
 
 <Canvas>
   <Story name="Table with one header">
-    <Fragment>
-      <TableContainer>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableCell as="th">One</TableCell>
-              <TableCell as="th">Two</TableCell>
-              <TableCell as="th">Three</TableCell>
-              <TableCell as="th">Four</TableCell>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            <TableRow>
-              <TableCell>A looooooong text</TableCell>
-              <TableCell>1</TableCell>
-              <TableCell>
-                <Link variant="inline" href="/">
-                  Lorem ipsum dolor sit amet.
-                </Link>
-              </TableCell>
-              <TableCell>2000</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>Foo</TableCell>
-              <TableCell>1</TableCell>
-              <TableCell>Baz</TableCell>
-              <TableCell>2000</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Fragment>
+    <TableContainer>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableCell as="th">One</TableCell>
+            <TableCell as="th">Two</TableCell>
+            <TableCell as="th">Three</TableCell>
+            <TableCell as="th">Four</TableCell>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell>A looooooong text</TableCell>
+            <TableCell>1</TableCell>
+            <TableCell>
+              <Link variant="inline" href="/">
+                Lorem ipsum dolor sit amet.
+              </Link>
+            </TableCell>
+            <TableCell>2000</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Foo</TableCell>
+            <TableCell>1</TableCell>
+            <TableCell>Baz</TableCell>
+            <TableCell>2000</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
   </Story>
 </Canvas>
 
@@ -74,57 +71,55 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs'
 
 <Canvas>
   <Story name="Table with two headers and footer">
-    <Fragment>
-      <TableContainer>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableCell as="th" scope="col">
-                Dessert (100g serving)
-              </TableCell>
-              <TableCell as="th" scope="col">
-                Calories
-              </TableCell>
-              <TableCell as="th" scope="col">
-                Fat (g)
-              </TableCell>
-              <TableCell as="th" scope="col">
-                Carbs (g)
-              </TableCell>
-              <TableCell as="th" scope="col">
-                Price
-              </TableCell>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            <TableRow>
-              <TableCell as="th" role="cell" scope="row">
-                Frozen yoghurt
-              </TableCell>
-              <TableCell>159</TableCell>
-              <TableCell>6</TableCell>
-              <TableCell>24</TableCell>
-              <TableCell>4,-</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell as="th">Cupcake</TableCell>
-              <TableCell>159</TableCell>
-              <TableCell>6</TableCell>
-              <TableCell>24</TableCell>
-              <TableCell>8,-</TableCell>
-            </TableRow>
-          </TableBody>
-          <TableFooter>
-            <TableRow>
-              <TableCell as="th" colSpan="4">
-                Total
-              </TableCell>
-              <TableCell>12,-</TableCell>
-            </TableRow>
-          </TableFooter>
-        </Table>
-      </TableContainer>
-    </Fragment>
+    <TableContainer>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableCell as="th" scope="col">
+              Dessert (100g serving)
+            </TableCell>
+            <TableCell as="th" scope="col">
+              Calories
+            </TableCell>
+            <TableCell as="th" scope="col">
+              Fat (g)
+            </TableCell>
+            <TableCell as="th" scope="col">
+              Carbs (g)
+            </TableCell>
+            <TableCell as="th" scope="col">
+              Price
+            </TableCell>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell as="th" role="cell" scope="row">
+              Frozen yoghurt
+            </TableCell>
+            <TableCell>159</TableCell>
+            <TableCell>6</TableCell>
+            <TableCell>24</TableCell>
+            <TableCell>4,-</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell as="th">Cupcake</TableCell>
+            <TableCell>159</TableCell>
+            <TableCell>6</TableCell>
+            <TableCell>24</TableCell>
+            <TableCell>8,-</TableCell>
+          </TableRow>
+        </TableBody>
+        <TableFooter>
+          <TableRow>
+            <TableCell as="th" colSpan="4">
+              Total
+            </TableCell>
+            <TableCell>12,-</TableCell>
+          </TableRow>
+        </TableFooter>
+      </Table>
+    </TableContainer>
   </Story>
 </Canvas>
 
@@ -132,30 +127,28 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs'
 
 <Canvas>
   <Story name="Table without header">
-    <Fragment>
-      <TableContainer>
-        <Table>
-          <TableBody>
-            <TableRow>
-              <TableCell>A looooooong text</TableCell>
-              <TableCell>1</TableCell>
-              <TableCell>
-                <Link variant="inline" href="/">
-                  Lorem ipsum dolor sit amet.
-                </Link>
-              </TableCell>
-              <TableCell>2000</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>Foo</TableCell>
-              <TableCell>1</TableCell>
-              <TableCell>Baz</TableCell>
-              <TableCell>2000</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Fragment>
+    <TableContainer>
+      <Table>
+        <TableBody>
+          <TableRow>
+            <TableCell>A looooooong text</TableCell>
+            <TableCell>1</TableCell>
+            <TableCell>
+              <Link variant="inline" href="/">
+                Lorem ipsum dolor sit amet.
+              </Link>
+            </TableCell>
+            <TableCell>2000</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Foo</TableCell>
+            <TableCell>1</TableCell>
+            <TableCell>Baz</TableCell>
+            <TableCell>2000</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
   </Story>
 </Canvas>
 
@@ -163,39 +156,37 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs'
 
 <Canvas>
   <Story name="Table with fixed with and overflow">
-    <Fragment>
-      <TableContainer style={{ width: '300px' }}>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableCell as="th">One</TableCell>
-              <TableCell as="th">Two</TableCell>
-              <TableCell as="th" style={{ minWidth: '300px' }}>
-                Three
-              </TableCell>
-              <TableCell as="th">Four</TableCell>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            <TableRow>
-              <TableCell>A looooooong text</TableCell>
-              <TableCell>1</TableCell>
-              <TableCell>
-                <Link variant="inline" href="/">
-                  Lorem ipsum dolor sit amet.
-                </Link>
-              </TableCell>
-              <TableCell>2000</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>Foo</TableCell>
-              <TableCell>1</TableCell>
-              <TableCell>Baz</TableCell>
-              <TableCell>2000</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Fragment>
+    <TableContainer style={{ width: '300px' }}>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableCell as="th">One</TableCell>
+            <TableCell as="th">Two</TableCell>
+            <TableCell as="th" style={{ minWidth: '300px' }}>
+              Three
+            </TableCell>
+            <TableCell as="th">Four</TableCell>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell>A looooooong text</TableCell>
+            <TableCell>1</TableCell>
+            <TableCell>
+              <Link variant="inline" href="/">
+                Lorem ipsum dolor sit amet.
+              </Link>
+            </TableCell>
+            <TableCell>2000</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Foo</TableCell>
+            <TableCell>1</TableCell>
+            <TableCell>Baz</TableCell>
+            <TableCell>2000</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
   </Story>
 </Canvas>

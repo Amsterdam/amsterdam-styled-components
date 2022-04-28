@@ -1,14 +1,14 @@
-import type { FunctionComponent, HTMLAttributes, MouseEvent } from 'react'
+import type { HTMLAttributes, MouseEvent } from 'react'
 import type { Props } from './DayStyle'
 import DayStyle from './DayStyle'
 
-const Day: FunctionComponent<Props & HTMLAttributes<HTMLSpanElement>> = ({
+function Day({
   children,
   date,
   outside,
   onSelectDay,
   ...otherProps
-}) => {
+}: Props & HTMLAttributes<HTMLSpanElement>) {
   return (
     <DayStyle
       href="/"

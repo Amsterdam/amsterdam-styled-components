@@ -1,4 +1,4 @@
-import type { FunctionComponent, HTMLAttributes, KeyboardEvent } from 'react'
+import type { HTMLAttributes, KeyboardEvent } from 'react'
 import { Fragment, useEffect, useMemo, useRef } from 'react'
 import ModalStyle from './ModalStyle'
 import { KeyboardKeys } from '../../types'
@@ -19,7 +19,7 @@ export type Props = {
   PortalProps &
   HTMLAttributes<HTMLElement>
 
-const Modal: FunctionComponent<Props> = ({
+function Modal({
   open,
   disablePortal,
   children,
@@ -28,7 +28,7 @@ const Modal: FunctionComponent<Props> = ({
   blurredNodeSelector,
   onClose,
   ...otherProps
-}) => {
+}: Props) {
   const ref = useRef<HTMLDivElement>(null)
   const { keyDown } = useTrappedFocus(ref)
   // eslint-disable-next-line react-hooks/exhaustive-deps

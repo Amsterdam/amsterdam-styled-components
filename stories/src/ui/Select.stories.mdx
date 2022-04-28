@@ -3,7 +3,7 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { action } from '@storybook/addon-actions'
 import { Select, Label, ErrorMessage } from '@amsterdam/asc-ui'
 
-export const SelectWithRef = () => {
+export function SelectWithRef() {
   const ref = createRef()
   useEffect(() => {
     const element = ref.current

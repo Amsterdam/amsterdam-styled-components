@@ -15,15 +15,13 @@ import { Input, Label } from '@amsterdam/asc-ui'
 
 <Canvas>
   <Story name="Default">
-    <Fragment>
-      <Input
-        onBlur={action('onBlur called')}
-        onChange={(e) => {
-          action(`onChange called: ${e.target.value}`)(e)
-        }}
-        onFocus={action('onFocus called')}
-      />
-    </Fragment>
+    <Input
+      onBlur={action('onBlur called')}
+      onChange={(e) => {
+        action(`onChange called: ${e.target.value}`)(e)
+      }}
+      onFocus={action('onFocus called')}
+    />
   </Story>
 </Canvas>
 
