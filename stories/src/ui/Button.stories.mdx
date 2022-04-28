@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Button, ShareButton } from '@amsterdam/asc-ui'
 import styled from 'styled-components'
@@ -33,17 +32,15 @@ export const ButtonBar = styled.div`
 
 <Canvas>
   <Story name="Default / Primary variant">
-    <Fragment>
-      <ButtonBar>
-        <Button variant="primary">Normal</Button>
-        <Button variant="primary" disabled>
-          Disabled
-        </Button>
-        <Button variant="primary" iconSize={14} iconLeft={<Download />}>
-          With icon
-        </Button>
-      </ButtonBar>
-    </Fragment>
+    <ButtonBar>
+      <Button variant="primary">Normal</Button>
+      <Button variant="primary" disabled>
+        Disabled
+      </Button>
+      <Button variant="primary" iconSize={14} iconLeft={<Download />}>
+        With icon
+      </Button>
+    </ButtonBar>
   </Story>
 </Canvas>
 
@@ -51,20 +48,18 @@ export const ButtonBar = styled.div`
 
 <Canvas>
   <Story name="Secondary variant">
-    <Fragment>
-      <ButtonBar>
-        <Button variant="secondary">Normal</Button>
-        <Button variant="secondary" disabled>
-          Disabled
-        </Button>
-        <Button variant="secondary" iconSize={14} iconLeft={<Download />}>
-          With icon
-        </Button>
-        <Button variant="secondary" taskflow>
-          Taskflow state
-        </Button>
-      </ButtonBar>
-    </Fragment>
+    <ButtonBar>
+      <Button variant="secondary">Normal</Button>
+      <Button variant="secondary" disabled>
+        Disabled
+      </Button>
+      <Button variant="secondary" iconSize={14} iconLeft={<Download />}>
+        With icon
+      </Button>
+      <Button variant="secondary" taskflow>
+        Taskflow state
+      </Button>
+    </ButtonBar>
   </Story>
 </Canvas>
 
@@ -72,17 +67,15 @@ export const ButtonBar = styled.div`
 
 <Canvas>
   <Story name="Tertiary variant">
-    <Fragment>
-      <ButtonBar>
-        <Button variant="tertiary">Normal</Button>
-        <Button variant="tertiary" disabled>
-          Disabled
-        </Button>
-        <Button variant="tertiary" iconSize={14} iconLeft={<Download />}>
-          With icon
-        </Button>
-      </ButtonBar>
-    </Fragment>
+    <ButtonBar>
+      <Button variant="tertiary">Normal</Button>
+      <Button variant="tertiary" disabled>
+        Disabled
+      </Button>
+      <Button variant="tertiary" iconSize={14} iconLeft={<Download />}>
+        With icon
+      </Button>
+    </ButtonBar>
   </Story>
 </Canvas>
 
@@ -90,17 +83,15 @@ export const ButtonBar = styled.div`
 
 <Canvas>
   <Story name="Primary Inverted variant">
-    <Fragment>
-      <ButtonBar>
-        <Button variant="primaryInverted">Normal</Button>
-        <Button variant="primaryInverted" disabled>
-          Disabled
-        </Button>
-        <Button variant="primaryInverted" iconSize={14} iconLeft={<Download />}>
-          With icon
-        </Button>
-      </ButtonBar>
-    </Fragment>
+    <ButtonBar>
+      <Button variant="primaryInverted">Normal</Button>
+      <Button variant="primaryInverted" disabled>
+        Disabled
+      </Button>
+      <Button variant="primaryInverted" iconSize={14} iconLeft={<Download />}>
+        With icon
+      </Button>
+    </ButtonBar>
   </Story>
 </Canvas>
 
@@ -108,17 +99,15 @@ export const ButtonBar = styled.div`
 
 <Canvas>
   <Story name="Text Button variant">
-    <Fragment>
-      <ButtonBar>
-        <Button variant="textButton">Normal</Button>
-        <Button variant="textButton" disabled>
-          Disabled
-        </Button>
-        <Button variant="textButton" iconSize={14} iconLeft={<Download />}>
-          With icon
-        </Button>
-      </ButtonBar>
-    </Fragment>
+    <ButtonBar>
+      <Button variant="textButton">Normal</Button>
+      <Button variant="textButton" disabled>
+        Disabled
+      </Button>
+      <Button variant="textButton" iconSize={14} iconLeft={<Download />}>
+        With icon
+      </Button>
+    </ButtonBar>
   </Story>
 </Canvas>
 
@@ -126,9 +115,7 @@ export const ButtonBar = styled.div`
 
 <Canvas>
   <Story name="With only an icon">
-    <Fragment>
-      <Button size={60} variant="blank" iconSize={40} icon={<Close />} />
-    </Fragment>
+    <Button size={60} variant="blank" iconSize={40} icon={<Close />} />
   </Story>
 </Canvas>
 
@@ -136,24 +123,22 @@ export const ButtonBar = styled.div`
 
 <Canvas>
   <Story name="Social buttons">
-    <Fragment>
-      <ButtonBar>
-        <ShareButton hoverColor="#3b5999" iconSize={30}>
-          <Facebook />
-        </ShareButton>
-        <ShareButton hoverColor="#55acee">
-          <Twitter />
-        </ShareButton>
-        <ShareButton hoverColor="#0077B5">
-          <Linkedin />
-        </ShareButton>
-        <ShareButton>
-          <Email />
-        </ShareButton>
-        <ShareButton>
-          <Print />
-        </ShareButton>
-      </ButtonBar>
-    </Fragment>
+    <ButtonBar>
+      <ShareButton hoverColor="#3b5999" iconSize={30}>
+        <Facebook />
+      </ShareButton>
+      <ShareButton hoverColor="#55acee">
+        <Twitter />
+      </ShareButton>
+      <ShareButton hoverColor="#0077B5">
+        <Linkedin />
+      </ShareButton>
+      <ShareButton>
+        <Email />
+      </ShareButton>
+      <ShareButton>
+        <Print />
+      </ShareButton>
+    </ButtonBar>
   </Story>
 </Canvas>

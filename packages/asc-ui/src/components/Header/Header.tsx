@@ -29,7 +29,7 @@ type HeaderProps = {
   CustomCssPropsType &
   HTMLAttributes<HTMLDivElement>
 
-const Header: FunctionComponent<HeaderProps> = ({
+function Header({
   css,
   title,
   homeLink,
@@ -41,18 +41,20 @@ const Header: FunctionComponent<HeaderProps> = ({
   headerLogoTextAs,
   ssr,
   ...otherProps
-}) => (
-  <HeaderWrapperStyle {...{ css, tall }} id="header">
-    <HeaderStyle {...{ fullWidth, ...otherProps }}>
-      <HeaderLogoText
-        as={headerLogoTextAs}
-        {...{ tall, title, homeLink, logo, ssr }}
-      />
-      <HeaderNavigation>{navigation}</HeaderNavigation>
-      <HeaderLinks>{links}</HeaderLinks>
-    </HeaderStyle>
-  </HeaderWrapperStyle>
-)
+}: HeaderProps) {
+  return (
+    <HeaderWrapperStyle {...{ css, tall }} id="header">
+      <HeaderStyle {...{ fullWidth, ...otherProps }}>
+        <HeaderLogoText
+          as={headerLogoTextAs}
+          {...{ tall, title, homeLink, logo, ssr }}
+        />
+        <HeaderNavigation>{navigation}</HeaderNavigation>
+        <HeaderLinks>{links}</HeaderLinks>
+      </HeaderStyle>
+    </HeaderWrapperStyle>
+  )
+}
 
 Header.defaultProps = {
   tall: false,

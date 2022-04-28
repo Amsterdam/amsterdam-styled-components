@@ -1,5 +1,4 @@
 import deepMerge from 'deepmerge'
-import type { FunctionComponent } from 'react'
 import type { Theme } from '../types'
 import type { ThemeProviderProps } from './ThemeProvider'
 import ThemeProvider from './ThemeProvider'
@@ -57,12 +56,12 @@ const overridesCompactTheme: Partial<Theme.ThemeInterface> = {
  * </ThemeProvider>
  *
  */
-const CompactThemeProvider: FunctionComponent<ThemeProviderProps> = ({
+function CompactThemeProvider({
   overrides: passedOverrides,
   deep = true,
   children,
   ...otherProps
-}) => {
+}: ThemeProviderProps) {
   /* eslint-disable no-nested-ternary */
   const overrides = passedOverrides
     ? deep

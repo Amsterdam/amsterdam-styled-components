@@ -1,5 +1,5 @@
 import { Close } from '@amsterdam/asc-assets'
-import type { FunctionComponent, HTMLAttributes } from 'react'
+import type { HTMLAttributes } from 'react'
 import { useState } from 'react'
 import CompactThemeProvider from '../../theme/CompactThemeProvider'
 import type { ButtonVariant } from '../Button/ButtonStyle'
@@ -14,7 +14,7 @@ import AlertStyle, {
 
 const CLOSE_BUTTON_TITLE = 'Sluiten'
 
-const Alert: FunctionComponent<AlertProps & HTMLAttributes<HTMLElement>> = ({
+function Alert({
   children,
   content,
   dismissible,
@@ -23,7 +23,7 @@ const Alert: FunctionComponent<AlertProps & HTMLAttributes<HTMLElement>> = ({
   onDismiss,
   outline,
   ...otherProps
-}) => {
+}: AlertProps & HTMLAttributes<HTMLElement>) {
   const [open, setOpen] = useState(true)
 
   let variant: ButtonVariant = 'tertiary'

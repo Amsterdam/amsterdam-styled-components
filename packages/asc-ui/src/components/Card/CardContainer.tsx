@@ -1,8 +1,12 @@
-import type { FunctionComponent } from 'react'
+import type { ReactNode } from 'react'
 import CardContainerStyle from './CardContainerStyle'
 
-const CardContainer: FunctionComponent = ({ children, ...otherProps }) => (
-  <CardContainerStyle {...otherProps}>{children}</CardContainerStyle>
-)
+interface Props {
+  children?: ReactNode
+}
+
+function CardContainer({ children, ...otherProps }: Props) {
+  return <CardContainerStyle {...otherProps}>{children}</CardContainerStyle>
+}
 
 export default CardContainer

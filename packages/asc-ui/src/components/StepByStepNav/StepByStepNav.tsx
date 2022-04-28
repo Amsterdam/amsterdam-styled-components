@@ -1,4 +1,4 @@
-import type { FunctionComponent, HTMLAttributes } from 'react'
+import type { HTMLAttributes } from 'react'
 import type { StepByStepNavProps } from './StepByStepNavStyle'
 
 import StepByStepNavStyle, {
@@ -8,9 +8,12 @@ import StepByStepNavStyle, {
   transitionBreakpoint,
 } from './StepByStepNavStyle'
 
-const StepByStepNav: FunctionComponent<
-  StepByStepNavProps & HTMLAttributes<HTMLElement>
-> = ({ activeItem, className, breakpoint, ...props }) => {
+function StepByStepNav({
+  activeItem,
+  className,
+  breakpoint,
+  ...props
+}: StepByStepNavProps & HTMLAttributes<HTMLElement>) {
   const { steps, stepsCompleted } = props
   let realActiveItem = 0
 

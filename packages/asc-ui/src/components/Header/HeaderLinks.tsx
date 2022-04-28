@@ -1,9 +1,11 @@
-import type { FunctionComponent, HTMLAttributes } from 'react'
+import type { HTMLAttributes } from 'react'
 import HeaderLinksStyle from './HeaderLinksStyle'
 
-const HeaderLinks: FunctionComponent<HTMLAttributes<HTMLDivElement>> = ({
+function HeaderLinks({
   children,
   ...otherProps
-}) => <HeaderLinksStyle {...otherProps}>{children}</HeaderLinksStyle>
+}: HTMLAttributes<HTMLDivElement>) {
+  return <HeaderLinksStyle {...otherProps}>{children}</HeaderLinksStyle>
+}
 
 export default HeaderLinks

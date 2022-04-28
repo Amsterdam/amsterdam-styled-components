@@ -1,10 +1,9 @@
-import type { FunctionComponent } from 'react'
 import type { Props } from './BackgroundImageStyle'
 import BackgroundImageStyle from './BackgroundImageStyle'
 
-const BackgroundImage: FunctionComponent<Props> = ({ ...otherProps }) => (
-  <BackgroundImageStyle {...otherProps} />
-)
+function BackgroundImage({ ...otherProps }: Props) {
+  return <BackgroundImageStyle {...otherProps} />
+}
 
 BackgroundImage.defaultProps = {
   position: 'center',

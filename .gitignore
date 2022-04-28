@@ -21,7 +21,6 @@ packages/**/*.d.ts
 .env.test.local
 .env.production.local
 /.awcache/
-.devcontainer
 
 npm-debug.log*
 yarn-debug.log*

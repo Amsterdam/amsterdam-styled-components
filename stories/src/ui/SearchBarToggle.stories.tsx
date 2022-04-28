@@ -2,7 +2,7 @@ import { SearchBarToggle } from '@amsterdam/asc-ui'
 import { action } from '@storybook/addon-actions'
 import { useState } from 'react'
 
-export const ControlledSearchBarToggle = ({ hasBackDrop = false }) => {
+export function ControlledSearchBarToggle({ hasBackDrop = false }) {
   const [open, setOpen] = useState(false)
   return (
     <SearchBarToggle
@@ -21,8 +21,10 @@ export default {
   title: 'UI/SearchBarToggle',
 }
 
-export const Default = () => <ControlledSearchBarToggle />
+export function Default() {
+  return <ControlledSearchBarToggle />
+}
 
-export const DefaultWithBackdrop = () => (
-  <ControlledSearchBarToggle hasBackDrop />
-)
+export function DefaultWithBackdrop() {
+  return <ControlledSearchBarToggle hasBackDrop />
+}

@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react'
 import type { RenderHookOptions } from '@testing-library/react-hooks'
 import { act, renderHook } from '@testing-library/react-hooks'
-import type { FunctionComponent } from 'react'
 import { createRef } from 'react'
 import useOptionalControlledState from './useOptionalControlledState'
 
@@ -82,7 +81,7 @@ describe('useOptionalControlledState', () => {
   })
 
   it('should set the state when the controlled value is changed', () => {
-    const Wrapper: FunctionComponent<{ open: boolean }> = ({ open }) => {
+    function Wrapper({ open }: { open: boolean }) {
       // eslint-disable-next-line @typescript-eslint/no-empty-function
       const [value] = useOptionalControlledState(open, () => {})
       return <div data-testid="node">{value ? 'open' : ''}</div>

@@ -1,21 +1,25 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Tabs, Tab } from '@amsterdam/asc-ui'
 
-export const PaddedContent = ({ children }) => (
-  <div style={{ paddingTop: '20px' }}>{children}</div>
-)
+export function PaddedContent({ children }) {
+  return <div style={{ paddingTop: '20px' }}>{children}</div>
+}
 
 export const tabOptions = { First: 'one', Second: 'two', Last: 'three' }
 
-export const TabsStory = (args) => (
-  <Tabs label="An example of tabs" {...args}>
-    {Object.entries(tabOptions).map(([key, value]) => (
-      <Tab id={value} label={key}>
-        <PaddedContent>Contents of the {key.toLowerCase()} tab.</PaddedContent>
-      </Tab>
-    ))}
-  </Tabs>
-)
+export function TabsStory(args) {
+  return (
+    <Tabs label="An example of tabs" {...args}>
+      {Object.entries(tabOptions).map(([key, value]) => (
+        <Tab id={value} label={key}>
+          <PaddedContent>
+            Contents of the {key.toLowerCase()} tab.
+          </PaddedContent>
+        </Tab>
+      ))}
+    </Tabs>
+  )
+}
 
 <Meta
   title="UI/Tabs"

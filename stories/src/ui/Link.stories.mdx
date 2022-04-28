@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { Link, Icon, List, ListItem, themeColor } from '@amsterdam/asc-ui'
 import styled from 'styled-components'
@@ -26,49 +25,47 @@ export const Decorator = styled.div`
 
 **Component status: experimental**
 
-## Default
-
 export const DarkListItem = styled(ListItem)`
   background-color: ${themeColor('primary')};
 `
 
+## Default
+
 <Canvas>
   <Story name="Default">
-    <Fragment>
-      <List>
-        <ListItem>
-          <Link href="/">I am a default link</Link>
-        </ListItem>
-        <ListItem>
-          <Link icon="external" href="/">
-            I am an external default link
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link icon="download" href="/">
-            I am an download default link
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link inList href="/">
-            I am an default link inside a list item
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link href="/">
-            <span>I am a default link with a custom icon</span>
-            <Icon size={20}>
-              <Alert />
-            </Icon>
-          </Link>
-        </ListItem>
-        <DarkListItem>
-          <Link darkBackground icon="external" href="/">
-            I am a default external link on a dark background
-          </Link>
-        </DarkListItem>
-      </List>
-    </Fragment>
+    <List>
+      <ListItem>
+        <Link href="/">I am a default link</Link>
+      </ListItem>
+      <ListItem>
+        <Link icon="external" href="/">
+          I am an external default link
+        </Link>
+      </ListItem>
+      <ListItem>
+        <Link icon="download" href="/">
+          I am an download default link
+        </Link>
+      </ListItem>
+      <ListItem>
+        <Link inList href="/">
+          I am an default link inside a list item
+        </Link>
+      </ListItem>
+      <ListItem>
+        <Link href="/">
+          <span>I am a default link with a custom icon</span>
+          <Icon size={20}>
+            <Alert />
+          </Icon>
+        </Link>
+      </ListItem>
+      <DarkListItem>
+        <Link darkBackground icon="external" href="/">
+          I am a default external link on a dark background
+        </Link>
+      </DarkListItem>
+    </List>
   </Story>
 </Canvas>
 
@@ -76,43 +73,41 @@ export const DarkListItem = styled(ListItem)`
 
 <Canvas>
   <Story name="Inline variant">
-    <Fragment>
-      <List>
-        <ListItem>
-          <Link href="/" variant="inline">
-            I am an inline link
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link href="/" variant="inline" icon="external">
-            I am an external inline link
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link href="/" variant="inline" icon="download">
-            I am an download inline link
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link href="/" variant="inline" inList>
-            I am an inline link inside a list item
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link href="/" variant="inline">
-            <span>I am an inline link with a custom icon</span>{' '}
-            <Icon size={20}>
-              <Alert />
-            </Icon>
-          </Link>
-        </ListItem>
-        <DarkListItem>
-          <Link darkBackground href="/" variant="inline" icon="external">
-            I am an external inline link on a dark background
-          </Link>
-        </DarkListItem>
-      </List>
-    </Fragment>
+    <List>
+      <ListItem>
+        <Link href="/" variant="inline">
+          I am an inline link
+        </Link>
+      </ListItem>
+      <ListItem>
+        <Link href="/" variant="inline" icon="external">
+          I am an external inline link
+        </Link>
+      </ListItem>
+      <ListItem>
+        <Link href="/" variant="inline" icon="download">
+          I am an download inline link
+        </Link>
+      </ListItem>
+      <ListItem>
+        <Link href="/" variant="inline" inList>
+          I am an inline link inside a list item
+        </Link>
+      </ListItem>
+      <ListItem>
+        <Link href="/" variant="inline">
+          <span>I am an inline link with a custom icon</span>{' '}
+          <Icon size={20}>
+            <Alert />
+          </Icon>
+        </Link>
+      </ListItem>
+      <DarkListItem>
+        <Link darkBackground href="/" variant="inline" icon="external">
+          I am an external inline link on a dark background
+        </Link>
+      </DarkListItem>
+    </List>
   </Story>
 </Canvas>
 
@@ -120,22 +115,20 @@ export const DarkListItem = styled(ListItem)`
 
 <Canvas>
   <Story name="Blank variant">
-    <Fragment>
-      <List>
-        <ListItem>
-          <Link href="/" variant="blank">
-            I am a &quot;blank&quot; link! I have no style. I can be used for
-            adding link functionality to components, like images and icons:
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link href="/" variant="blank">
-            <Icon>
-              <Alert />
-            </Icon>
-          </Link>
-        </ListItem>
-      </List>
-    </Fragment>
+    <List>
+      <ListItem>
+        <Link href="/" variant="blank">
+          I am a &quot;blank&quot; link! I have no style. I can be used for
+          adding link functionality to components, like images and icons:
+        </Link>
+      </ListItem>
+      <ListItem>
+        <Link href="/" variant="blank">
+          <Icon>
+            <Alert />
+          </Icon>
+        </Link>
+      </ListItem>
+    </List>
   </Story>
 </Canvas>

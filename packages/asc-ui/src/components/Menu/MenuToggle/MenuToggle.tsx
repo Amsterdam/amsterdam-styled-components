@@ -1,4 +1,5 @@
-import type { FunctionComponent } from 'react'
+import type { PropsWithChildren } from 'react'
+import { useMemo } from 'react'
 import MenuList from '../MenuList/MenuList'
 import MenuContext from '../MenuContext'
 import type { Props } from './MenuToggleStyle'
@@ -6,14 +7,14 @@ import MenuToggleStyle from './MenuToggleStyle'
 import Toggle from '../../Toggle/Toggle'
 import useOptionalControlledState from '../../../utils/hooks/useOptionalControlledState'
 
-const MenuToggle: FunctionComponent<Props> = ({
+function MenuToggle({
   children,
   onExpand,
   align = 'left',
   open,
   ariaLabel,
   ...otherProps
-}) => {
+}: PropsWithChildren<Props>) {
   const [menuOpen, setMenuOpen] = useOptionalControlledState(open, onExpand)
   const toggleMenu = () => {
     setMenuOpen(!menuOpen)
@@ -25,16 +26,19 @@ const MenuToggle: FunctionComponent<Props> = ({
     }
   }
 
+  const value = useMemo(
+    () => ({
+      underFlyOutMenu: false,
+      hasToggle: true,
+      setOpenToggle: () => {
+        setMenuOpen(false)
+      },
+    }),
+    [setMenuOpen],
+  )
+
   return (
-    <MenuContext.Provider
-      value={{
-        underFlyOutMenu: false,
-        hasToggle: true,
-        setOpenToggle: () => {
-          setMenuOpen(false)
-        },
-      }}
-    >
+    <MenuContext.Provider value={value}>
       <Toggle
         as={MenuToggleStyle}
         onOpen={onOpen}
