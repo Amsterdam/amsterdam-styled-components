@@ -23,7 +23,7 @@
   "scripts": {
     "build": "npm run build:optimize-svg && npm run build:react-icons",
     "build:optimize-svg": "svgo -f static/icons",
-    "build:react-icons": "svgr -d src/icons static/icons --template src/utils/generateIconReact.js --svg-props focusable={false} --ext tsx"
+    "build:react-icons": "svgr -d src/icons static/icons --template src/utils/generateIconReact.js --typescript --svg-props focusable={false} --ext tsx"
   },
   "sideEffects": false,
   "peerDependencies": {
@@ -33,7 +33,7 @@
   "devDependencies": {
     "@svgr/cli": "^6.2.1",
     "@svgr/core": "^6.2.1",
-    "svgo": "^2.3.0"
+    "svgo": "^2.8.0"
   },
   "publishConfig": {
     "access": "public"
