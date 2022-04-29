@@ -1,6 +1,7 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import { ThemeProvider, GlobalStyle } from '@amsterdam/asc-ui'
 import { ascBetaTheme, Paragraph } from '@amsterdam/asc-ui-beta'
+import styled from 'styled-components'
 
 <Meta
   title="Beta/Paragraph"
@@ -21,6 +22,11 @@ import { ascBetaTheme, Paragraph } from '@amsterdam/asc-ui-beta'
   }}
 />
 
+export const Container = styled.div`
+  background-color: ${({ darkBackground }) =>
+    darkBackground ? ascBetaTheme.colors.primary.main : 'transparent'};
+`
+
 # Paragraph
 
 ## Default
@@ -38,16 +44,18 @@ import { ascBetaTheme, Paragraph } from '@amsterdam/asc-ui-beta'
     {({ small, strong, darkBackground, gutterBottom }) => (
       <ThemeProvider theme={ascBetaTheme}>
         <GlobalStyle />
-        <Paragraph
-          small={small}
-          strong={strong}
-          darkBackground={darkBackground}
-          gutterBottom={gutterBottom}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
-          deleniti dicta doloremque eveniet explicabo id ipsum omnis placeat
-          rerum suscipit.
-        </Paragraph>
+        <Container darkBackground={darkBackground}>
+          <Paragraph
+            small={small}
+            strong={strong}
+            darkBackground={darkBackground}
+            gutterBottom={gutterBottom}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+            deleniti dicta doloremque eveniet explicabo id ipsum omnis placeat
+            rerum suscipit.
+          </Paragraph>
+        </Container>
       </ThemeProvider>
     )}
   </Story>
@@ -63,16 +71,18 @@ import { ascBetaTheme, Paragraph } from '@amsterdam/asc-ui-beta'
     {({ strong, darkBackground, gutterBottom }) => (
       <ThemeProvider theme={ascBetaTheme}>
         <GlobalStyle />
-        <Paragraph
-          intro
-          strong={strong}
-          darkBackground={darkBackground}
-          gutterBottom={gutterBottom}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
-          deleniti dicta doloremque eveniet explicabo id ipsum omnis placeat
-          rerum suscipit.
-        </Paragraph>
+        <Container darkBackground={darkBackground}>
+          <Paragraph
+            intro
+            strong={strong}
+            darkBackground={darkBackground}
+            gutterBottom={gutterBottom}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+            deleniti dicta doloremque eveniet explicabo id ipsum omnis placeat
+            rerum suscipit.
+          </Paragraph>
+        </Container>
       </ThemeProvider>
     )}
   </Story>
