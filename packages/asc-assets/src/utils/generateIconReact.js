@@ -1,10 +1,13 @@
-function iconTemplate({ template }, opts, { componentName, jsx }) {
-  const typeScriptTpl = template.smart({ plugins: ['typescript'] })
-  return typeScriptTpl.ast`
+const typescriptTemplate = ({ componentName, jsx, exports }, { tpl }) => {
+  return tpl`
     import type { SVGAttributes } from 'react'
-    const ${componentName} = (props: SVGAttributes<SVGElement>) => ${jsx}
-    export default ${componentName}
+
+    function ${componentName}(props: SVGAttributes<SVGElement>) {
+      return ${jsx};
+    }
+
+    ${exports}
   `
 }
 
-module.exports = iconTemplate
+module.exports = typescriptTemplate
