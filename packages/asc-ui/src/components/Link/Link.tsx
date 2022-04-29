@@ -1,5 +1,4 @@
 import { ChevronRight, Download, ExternalLink } from '@amsterdam/asc-assets'
-import type { FunctionComponent } from 'react'
 import type { StyledProps } from 'styled-components'
 import { deprecatedWarning } from '../../utils'
 import type { Props as LinkStyleProps } from './LinkStyle'
@@ -7,14 +6,7 @@ import LinkStyle, { ChevronIcon, LinkContent, RightIcon } from './LinkStyle'
 
 export type Props = LinkStyleProps & StyledProps<any>
 
-const Link: FunctionComponent<Props> = ({
-  children,
-  variant,
-  as,
-  icon,
-  inList,
-  ...otherProps
-}) => {
+function Link({ children, variant, as, icon, inList, ...otherProps }: Props) {
   if (variant === 'with-chevron') {
     deprecatedWarning(
       'Please note that the `with-chevron` variant will be deprecated soon, please use the `inList` prop',

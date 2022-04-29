@@ -1,5 +1,4 @@
 import type {
-  FunctionComponent,
   HTMLAttributes,
   MouseEventHandler,
   PropsWithChildren,
@@ -48,9 +47,13 @@ function formatPanelId(id: string) {
   return `panel-${id}`
 }
 
-export const Tabs: FunctionComponent<
-  TabsProps & HTMLAttributes<HTMLDivElement>
-> = ({ label, children, initialTab, activeTab, className }) => {
+export function Tabs({
+  label,
+  children,
+  initialTab,
+  activeTab,
+  className,
+}: TabsProps & HTMLAttributes<HTMLDivElement>) {
   const allTabs = useMemo(
     () => children.map(({ props }) => props.id),
     [children],

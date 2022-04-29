@@ -1,10 +1,10 @@
 import { ChevronDown, ChevronUp } from '@amsterdam/asc-assets'
 import type {
-  FunctionComponent,
   KeyboardEvent as ReactKeyboardEvent,
   MouseEvent as ReactMouseEvent,
+  PropsWithChildren,
 } from 'react'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState, useMemo } from 'react'
 import { KeyboardKeys } from '../../../types/index'
 import useDebounce from '../../../utils/hooks/useDebounce'
 import useEdgeDetection from '../../../utils/hooks/useEdgeDetection'
@@ -20,11 +20,11 @@ type Props = {
   label: string
 } & MenuFlyOutProps
 
-const MenuFlyOut: FunctionComponent<Props> = ({
+function MenuFlyOut({
   children,
   label,
   ...otherProps
-}) => {
+}: PropsWithChildren<Props>) {
   const { hasToggle, onExpand, setOpenToggle } = useMenuContext()
 
   const ref = useRef<HTMLLIElement>(null)
@@ -98,6 +98,20 @@ const MenuFlyOut: FunctionComponent<Props> = ({
     handleOnExpand(menuOpen)
   }, [menuOpen, handleOnExpand])
 
+  const value = useMemo(
+    () => ({
+      underFlyOutMenu: true,
+      hasToggle,
+      setOpenToggle: (val: boolean) => {
+        if (setOpenToggle) {
+          setOpenToggle(val)
+        }
+        setOpen(val)
+      },
+    }),
+    [hasToggle, setOpen, setOpenToggle],
+  )
+
   return (
     <MenuFlyOutStyle
       ref={ref}
@@ -121,18 +135,7 @@ const MenuFlyOut: FunctionComponent<Props> = ({
       >
         {label}
       </MenuButton>
-      <MenuContext.Provider
-        value={{
-          underFlyOutMenu: true,
-          hasToggle,
-          setOpenToggle: (val: boolean) => {
-            if (setOpenToggle) {
-              setOpenToggle(val)
-            }
-            setOpen(val)
-          },
-        }}
-      >
+      <MenuContext.Provider value={value}>
         <MenuList
           ref={listRef}
           edgeDetection={edgeDetection}
