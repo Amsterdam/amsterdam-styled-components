@@ -11,6 +11,9 @@ import { Download } from '@amsterdam/asc-assets'
     small: {
       control: { type: 'boolean' },
     },
+    gutterBottom: {
+      control: { type: 'number' },
+    },
   }}
 />
 
@@ -23,7 +26,6 @@ export const ButtonBar = styled.div`
   flex-wrap: wrap;
   & > * {
     margin-right: 5px;
-    margin-bottom: 5px;
   }
 `
 
@@ -32,16 +34,21 @@ export const StyledIcon = styled(Icon)`
 `
 
 <Canvas>
-  <Story name="Default / Primary variant" args={{ small: false }}>
-    {({ small }) => (
+  <Story
+    name="Default / Primary variant"
+    args={{ small: false, gutterBottom: 0 }}
+  >
+    {({ small, gutterBottom }) => (
       <ThemeProvider theme={ascBetaTheme}>
         <GlobalStyle />
         <ButtonBar>
-          <Button small={small}>Normal</Button>
-          <Button small={small} disabled>
+          <Button small={small} gutterBottom={gutterBottom}>
+            Normal
+          </Button>
+          <Button small={small} gutterBottom={gutterBottom} disabled>
             Disabled
           </Button>
-          <Button small={small}>
+          <Button small={small} gutterBottom={gutterBottom}>
             <StyledIcon size={20}>
               <Download />
             </StyledIcon>
@@ -56,18 +63,23 @@ export const StyledIcon = styled(Icon)`
 ## Secondary variant
 
 <Canvas>
-  <Story name="Secondary variant" args={{ small: false }}>
-    {({ small }) => (
+  <Story name="Secondary variant" args={{ small: false, gutterBottom: 0 }}>
+    {({ small, gutterBottom }) => (
       <ThemeProvider theme={ascBetaTheme}>
         <GlobalStyle />
         <ButtonBar>
-          <Button small={small} variant="secondary">
+          <Button small={small} variant="secondary" gutterBottom={gutterBottom}>
             Normal
           </Button>
-          <Button small={small} variant="secondary" disabled>
+          <Button
+            small={small}
+            variant="secondary"
+            disabled
+            gutterBottom={gutterBottom}
+          >
             Disabled
           </Button>
-          <Button small={small} variant="secondary">
+          <Button small={small} variant="secondary" gutterBottom={gutterBottom}>
             <StyledIcon size={20}>
               <Download />
             </StyledIcon>
@@ -82,18 +94,23 @@ export const StyledIcon = styled(Icon)`
 ## Tertiary variant
 
 <Canvas>
-  <Story name="Tertiary variant" args={{ small: false }}>
-    {({ small }) => (
+  <Story name="Tertiary variant" args={{ small: false, gutterBottom: 0 }}>
+    {({ small, gutterBottom }) => (
       <ThemeProvider theme={ascBetaTheme}>
         <GlobalStyle />
         <ButtonBar>
-          <Button small={small} variant="tertiary">
+          <Button small={small} variant="tertiary" gutterBottom={gutterBottom}>
             Normal
           </Button>
-          <Button small={small} variant="tertiary" disabled>
+          <Button
+            small={small}
+            variant="tertiary"
+            disabled
+            gutterBottom={gutterBottom}
+          >
             Disabled
           </Button>
-          <Button small={small} variant="tertiary">
+          <Button small={small} variant="tertiary" gutterBottom={gutterBottom}>
             <StyledIcon size={20}>
               <Download />
             </StyledIcon>
@@ -108,14 +125,16 @@ export const StyledIcon = styled(Icon)`
 ## With only an icon
 
 <Canvas>
-  <Story name="With only an icon">
-    <ThemeProvider theme={ascBetaTheme}>
-      <GlobalStyle />
-      <Button variant="blank">
-        <Icon size={24}>
-          <Download />
-        </Icon>
-      </Button>
-    </ThemeProvider>
+  <Story name="With only an icon" args={{ gutterBottom: 0 }}>
+    {({ gutterBottom }) => (
+      <ThemeProvider theme={ascBetaTheme}>
+        <GlobalStyle />
+        <Button variant="blank" gutterBottom={gutterBottom}>
+          <Icon size={24}>
+            <Download />
+          </Icon>
+        </Button>
+      </ThemeProvider>
+    )}
   </Story>
 </Canvas>
