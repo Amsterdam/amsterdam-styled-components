@@ -28,15 +28,6 @@
   src: url(./AvenirAll/1a7c9181-cd24-4943-a9d9-d033189524e0.eot?#iefix) format("eot"), url(./AvenirAll/627fbb5a-3bae-4cd9-b617-2f923e29d55e.woff2) format("woff2"), url(./AvenirAll/f26faddb-86cc-4477-a253-1e1287684336.woff) format("woff"), url(./AvenirAll/63a74598-733c-4d0c-bd91-b01bffcd6e69.ttf) format("truetype")
 }
 
-/* Medium Italic */
-@font-face {
-  font-family: "Avenir Next";
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url(./AvenirAll/550a1ae7-eb23-492c-bcf6-536c114660d3.woff2) format("woff2"), url(./AvenirAll/af937d9c-6c85-47e9-b67d-42c50d442a19.woff) format("woff");
-}
-
 /* Demi */
 @font-face {
   font-family: "Avenir Next";
@@ -55,13 +46,4 @@
   font-display: swap;
   src: url(./AvenirAll/AvenirNextLTPro-Bold.eot?#iefix);
   src: url(./AvenirAll/AvenirNextLTPro-Bold.eot?#iefix) format("eot"),url(./AvenirAll/AvenirNextLTPro-Bold.woff2) format("woff2"),url(./AvenirAll/AvenirNextLTPro-Bold.woff) format("woff"),url(./AvenirAll/AvenirNextLTPro-Bold.ttf) format("truetype")
-}
-
-/* Bold Italic */
-@font-face {
-  font-family: "Avenir Next";
-  font-style: italic;
-  font-weight: 800;
-  font-display: swap;
-  src: url(./BetaFonts/77cc83cb-2e3b-4ad7-84db-f2b65fdf87a1.woff2) format("woff2"), url(./BetaFonts/b5c7efb8-0318-48d1-9f59-5e509587930f.woff) format("woff");
 }
