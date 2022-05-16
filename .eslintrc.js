@@ -6,6 +6,7 @@ module.exports = {
     'plugin:mdx/recommended',
     'plugin:@typescript-eslint/recommended',
   ],
+  root: true,
   plugins: ['jest', 'prettier', '@typescript-eslint', 'react-hooks'],
   env: {
     browser: true,
