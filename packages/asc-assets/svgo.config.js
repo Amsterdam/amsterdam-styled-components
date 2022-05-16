@@ -5,10 +5,10 @@ module.exports = {
       params: {
         overrides: {
           removeViewBox: false,
-          removeDimensions: true,
-          removeRasterImages: true,
         },
       },
     },
+    'removeDimensions',
+    'removeRasterImages',
   ],
 };
