@@ -1,5 +1,5 @@
 import type { Theme } from '../../types'
 
-const spacing: Theme.Spacing = 8
+const spacing: Theme.Spacing = 4
 
 export default spacing
