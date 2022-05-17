@@ -14,6 +14,10 @@ Prefix the change with one of these keywords:
 - _Fixed_: for any bug fixes.
 - _Security_: in case of vulnerabilities.
 
+## [Unreleased Beta]
+
+- Changed: **Breaking** remove CompactThemeProvider
+
 ## [0.35.2]
 
 - `StepByStepNav` component: alignment changes and addition of `breakpoint` prop

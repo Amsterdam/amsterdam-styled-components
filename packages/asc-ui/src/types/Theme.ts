@@ -139,7 +139,6 @@ export namespace Theme {
 
   export interface TypographyInterface extends Partial<TypographyElements> {
     fontFamily?: string
-    fontSize?: string
   }
 
   export interface ThemeInterface {

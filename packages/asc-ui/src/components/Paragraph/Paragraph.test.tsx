@@ -3,8 +3,8 @@ import Paragraph from './Paragraph'
 
 describe('Paragraph', () => {
   it('should render', () => {
-    const { container } = render(<Paragraph>Foo</Paragraph>)
+    const { getByText } = render(<Paragraph>Foo</Paragraph>)
 
-    expect(container.firstChild).toBeDefined()
+    expect(getByText('Foo')).toBeDefined()
   })
 })

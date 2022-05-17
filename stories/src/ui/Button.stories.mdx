@@ -1,15 +1,7 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs'
-import { Button, ShareButton } from '@amsterdam/asc-ui'
+import { Button } from '@amsterdam/asc-ui'
 import styled from 'styled-components'
-import {
-  Download,
-  Close,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Email,
-  Print,
-} from '@amsterdam/asc-assets'
+import { Download, Close } from '@amsterdam/asc-assets'
 
 <Meta title="UI/Form/Button" component={Button} />
 
@@ -55,9 +47,6 @@ export const ButtonBar = styled.div`
       </Button>
       <Button variant="secondary" iconSize={14} iconLeft={<Download />}>
         With icon
-      </Button>
-      <Button variant="secondary" taskflow>
-        Taskflow state
       </Button>
     </ButtonBar>
   </Story>
@@ -116,29 +105,5 @@ export const ButtonBar = styled.div`
 <Canvas>
   <Story name="With only an icon">
     <Button size={60} variant="blank" iconSize={40} icon={<Close />} />
-  </Story>
-</Canvas>
-
-## Social buttons
-
-<Canvas>
-  <Story name="Social buttons">
-    <ButtonBar>
-      <ShareButton hoverColor="#3b5999" iconSize={30}>
-        <Facebook />
-      </ShareButton>
-      <ShareButton hoverColor="#55acee">
-        <Twitter />
-      </ShareButton>
-      <ShareButton hoverColor="#0077B5">
-        <Linkedin />
-      </ShareButton>
-      <ShareButton>
-        <Email />
-      </ShareButton>
-      <ShareButton>
-        <Print />
-      </ShareButton>
-    </ButtonBar>
   </Story>
 </Canvas>

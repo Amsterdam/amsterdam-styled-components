@@ -5,7 +5,7 @@ export { Props }
 
 function Paragraph({
   children,
-  as,
+  as = 'p',
   ...otherProps
 }: Props & HTMLAttributes<HTMLParagraphElement>) {
   return (

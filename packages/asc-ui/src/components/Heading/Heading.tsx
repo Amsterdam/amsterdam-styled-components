@@ -4,16 +4,12 @@ import HeadingStyle from './HeadingStyle'
 
 export type Props = HeadingStyleProps & HTMLAttributes<HTMLHeadingElement>
 
-function Heading({ children, as, ...otherProps }: Props) {
+function Heading({ children, as = 'h1', ...otherProps }: Props) {
   return (
     <HeadingStyle forwardedAs={as} {...otherProps}>
       {children}
     </HeadingStyle>
   )
-}
-
-Heading.defaultProps = {
-  as: 'h1',
 }
 
 export default Heading

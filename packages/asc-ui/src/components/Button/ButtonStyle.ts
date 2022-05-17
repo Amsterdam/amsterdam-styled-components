@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components'
 import type { Theme } from '../../types'
 import { svgFill, themeColor, themeSpacing } from '../../utils'
 import Icon from '../Icon'
-import { flexboxMinHeightFix } from '../shared/ie-fixes'
 
 export type ButtonVariant =
   | 'primary'
@@ -79,20 +78,6 @@ const getVariant =
               themeColor('secondary')({ theme }),
             )};
           }
-
-          ${(taskflow) =>
-            taskflow &&
-            css`
-              &:not(:disabled)&:focus
-                ${ArrowRight},
-                &:not(:disabled)&:hover
-                ${ArrowRight} {
-                border-left-color: ${darken(
-                  0.1,
-                  themeColor('secondary')({ theme }),
-                )};
-              }
-            `}
         `
 
       case 'tertiary':
@@ -215,10 +200,6 @@ export interface ButtonStyleProps {
    * A variant, usually different background-color and color of a button
    */
   variant?: ButtonVariant
-  /**
-   * Add narrow arrow on the right side of the secondary button
-   */
-  taskflow?: boolean
 }
 
 const ButtonStyle = styled.button<ButtonStyleProps>`
@@ -244,24 +225,6 @@ const ButtonStyle = styled.button<ButtonStyleProps>`
     `}
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')}
   ${getVariant()}
-  ${flexboxMinHeightFix()} // ie fix
-  ${({ taskflow }) =>
-    taskflow &&
-    css`
-      position: relative;
-      min-width: initial;
-      padding-right: 0;
-      padding-top: 0; // safari fix
-      padding-bottom: 0; // safari fix
-      line-height: ${({ theme }) => getButtonHeight(theme)}; // safari 10.1 fix
-      z-index: 0;
-      && {
-        margin-right: 25px;
-      }
-      &:focus ${ArrowRight}:after {
-        opacity: 1;
-      }
-    `}
   ${Icon} {
     flex-shrink: 0;
   }
@@ -273,13 +236,6 @@ const ButtonStyle = styled.button<ButtonStyleProps>`
     background-color: ${themeColor('tint', 'level3')};
     ${svgFill(themeColor('tint', 'level4'))};
     text-decoration: none;
-    ${({ taskflow }) =>
-      taskflow &&
-      css`
-        ${ArrowRight} {
-          border-left-color: ${themeColor('tint', 'level3')};
-        }
-      `}
     ${({ variant }) =>
       variant &&
       variant === 'textButton' &&

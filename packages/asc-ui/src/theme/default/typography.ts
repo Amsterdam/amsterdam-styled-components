@@ -1,5 +1,6 @@
 import type { Theme } from '../../types'
 import colors from './colors'
+import { calculateFluidStyle } from '../../utils/themeUtils'
 
 const defaultFontFamily = 'Avenir Next, Arial, sans-serif'
 
@@ -10,18 +11,16 @@ const defaultFontFamily = 'Avenir Next, Arial, sans-serif'
  */
 const typography: Theme.TypographyInterface = {
   fontFamily: defaultFontFamily,
-  fontSize: '16px',
   h1: {
     color: colors.tint.level7,
-    fontSize: '24px',
+    fontSize: calculateFluidStyle(32, 80),
     fontWeight: 700,
     letterSpacing: 'inherit',
     lineHeight: '30px',
     marginBottom: '0',
     breakpoints: {
       laptop: {
-        fontSize: '30px',
-        lineHeight: '38px',
+        letterSpacing: 'inherit',
       },
     },
   },
