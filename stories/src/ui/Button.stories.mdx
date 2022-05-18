@@ -3,11 +3,19 @@ import { Button } from '@amsterdam/asc-ui'
 import styled from 'styled-components'
 import { Download, Close } from '@amsterdam/asc-assets'
 
-<Meta title="UI/Form/Button" component={Button} />
+<Meta
+  title="UI/Form/Button"
+  component={Button}
+  argTypes={{
+    small: {
+      control: { type: 'boolean' },
+    },
+  }}
+/>
 
 # Button
 
-[Design System](https://designsystem.amsterdam.nl/7awj1hc9f/p/25ff19-buttons)
+[Design System](https://amsterdam.nl/designsystem/design-bibliotheek/atomen-moleculen/button/)
 
 **Component status: experimental**
 
@@ -23,80 +31,75 @@ export const ButtonBar = styled.div`
 `
 
 <Canvas>
-  <Story name="Default / Primary variant">
-    <ButtonBar>
-      <Button variant="primary">Normal</Button>
-      <Button variant="primary" disabled>
-        Disabled
-      </Button>
-      <Button variant="primary" iconSize={14} iconLeft={<Download />}>
-        With icon
-      </Button>
-    </ButtonBar>
+  <Story name="Default / Primary variant" args={{ small: false }}>
+    {({ small }) => (
+      <ButtonBar>
+        <Button variant="primary" small={small}>
+          Normal
+        </Button>
+        <Button variant="primary" small={small} disabled>
+          Disabled
+        </Button>
+        <Button
+          variant="primary"
+          small={small}
+          iconSize={small ? 24 : 32}
+          iconLeft={<Download />}
+        >
+          With icon
+        </Button>
+      </ButtonBar>
+    )}
   </Story>
 </Canvas>
 
 ## Secondary variant
 
 <Canvas>
-  <Story name="Secondary variant">
-    <ButtonBar>
-      <Button variant="secondary">Normal</Button>
-      <Button variant="secondary" disabled>
-        Disabled
-      </Button>
-      <Button variant="secondary" iconSize={14} iconLeft={<Download />}>
-        With icon
-      </Button>
-    </ButtonBar>
+  <Story name="Secondary variant" args={{ small: false }}>
+    {({ small }) => (
+      <ButtonBar>
+        <Button variant="secondary" small={small}>
+          Normal
+        </Button>
+        <Button variant="secondary" small={small} disabled>
+          Disabled
+        </Button>
+        <Button
+          variant="secondary"
+          small={small}
+          iconSize={small ? 24 : 32}
+          iconLeft={<Download />}
+        >
+          With icon
+        </Button>
+      </ButtonBar>
+    )}
   </Story>
 </Canvas>
 
 ## Tertiary variant
 
 <Canvas>
-  <Story name="Tertiary variant">
-    <ButtonBar>
-      <Button variant="tertiary">Normal</Button>
-      <Button variant="tertiary" disabled>
-        Disabled
-      </Button>
-      <Button variant="tertiary" iconSize={14} iconLeft={<Download />}>
-        With icon
-      </Button>
-    </ButtonBar>
-  </Story>
-</Canvas>
-
-## Primary Inverted variant
-
-<Canvas>
-  <Story name="Primary Inverted variant">
-    <ButtonBar>
-      <Button variant="primaryInverted">Normal</Button>
-      <Button variant="primaryInverted" disabled>
-        Disabled
-      </Button>
-      <Button variant="primaryInverted" iconSize={14} iconLeft={<Download />}>
-        With icon
-      </Button>
-    </ButtonBar>
-  </Story>
-</Canvas>
-
-## Text Button variant
-
-<Canvas>
-  <Story name="Text Button variant">
-    <ButtonBar>
-      <Button variant="textButton">Normal</Button>
-      <Button variant="textButton" disabled>
-        Disabled
-      </Button>
-      <Button variant="textButton" iconSize={14} iconLeft={<Download />}>
-        With icon
-      </Button>
-    </ButtonBar>
+  <Story name="Tertiary variant" args={{ small: false }}>
+    {({ small }) => (
+      <ButtonBar>
+        <Button variant="tertiary" small={small}>
+          Normal
+        </Button>
+        <Button variant="tertiary" small={small} disabled>
+          Disabled
+        </Button>
+        <Button
+          variant="tertiary"
+          small={small}
+          iconSize={small ? 24 : 32}
+          iconLeft={<Download />}
+        >
+          With icon
+        </Button>
+      </ButtonBar>
+    )}
   </Story>
 </Canvas>
 
@@ -104,6 +107,6 @@ export const ButtonBar = styled.div`
 
 <Canvas>
   <Story name="With only an icon">
-    <Button size={60} variant="blank" iconSize={40} icon={<Close />} />
+    <Button variant="blank" iconSize={32} icon={<Close />} />
   </Story>
 </Canvas>

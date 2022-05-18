@@ -5,6 +5,7 @@ import Paragraph, { ParagraphStyle } from './components/Paragraph'
 import Typography from './components/Typography'
 import { ascDefaultTheme } from './theme'
 import ThemeProvider from './theme/ThemeProvider'
+import GlobalStyle from './components/GlobalStyle'
 import type { Theme } from './types'
 
 import { perceivedLoading } from './utils/themeUtils'
@@ -29,6 +30,7 @@ export {
   svgFill,
   themeColor,
   themeSpacing,
+  calculateFluidStyle,
 } from './utils'
 export { perceivedLoading }
 // Components
@@ -39,6 +41,7 @@ export {
   Typography,
   Theme,
   ThemeProvider,
+  GlobalStyle,
   Paragraph,
   Heading,
   ascDefaultTheme,

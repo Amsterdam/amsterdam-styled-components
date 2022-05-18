@@ -1,36 +1,14 @@
-import { darken, readableColor, size, transitions } from 'polished'
+import { transitions } from 'polished'
 import styled, { css } from 'styled-components'
-import type { Theme } from '../../types'
-import { svgFill, themeColor, themeSpacing } from '../../utils'
+import {
+  svgFill,
+  themeColor,
+  calculateFluidStyle,
+  themeSpacing,
+} from '../../utils'
 import Icon from '../Icon'
 
-export type ButtonVariant =
-  | 'primary'
-  | 'secondary'
-  | 'tertiary'
-  | 'primaryInverted'
-  | 'textButton'
-  | 'blank'
-  | 'application'
-
-const defaultProps = {
-  size: 30,
-}
-
-export const getButtonHeight = (theme: Theme.ThemeInterface) =>
-  themeSpacing(11)({ theme })
-
-export const ArrowRight = styled.div`
-  position: relative;
-  top: 0;
-  right: -15px;
-  width: 0;
-  height: 0;
-  border: 22px solid rgba(255, 255, 255, 0);
-  border-left: 15px solid ${themeColor('secondary')};
-  border-right: 0;
-  ${transitions('border-color', '0.1s ease-in-out')}
-`
+export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'blank'
 
 export const IconLeft = styled(Icon)`
   margin-right: 10px;
@@ -39,209 +17,114 @@ export const IconRight = styled(Icon)`
   margin-left: 10px;
 `
 
-const getVariant =
-  () =>
-  ({
-    theme,
-    variant,
-    color,
-  }: {
-    theme: Theme.ThemeInterface
-    variant?: ButtonVariant
-    color?: Theme.ColorType
-  }) => {
-    switch (variant) {
-      case 'primary':
-        return css`
-          min-width: 90px;
-          background-color: ${themeColor('primary')};
-          color: ${readableColor(themeColor('primary')({ theme }))};
-          ${svgFill(themeColor('tint', 'level1'))};
+function getVariant({ variant }: { variant?: ButtonVariant }) {
+  switch (variant) {
+    case 'primary':
+      return css`
+        background-color: ${themeColor('primary')};
+        color: ${themeColor('tint', 'level1')};
+        ${svgFill(themeColor('tint', 'level1'))};
+        padding: ${themeSpacing(1, 2)};
 
-          &:focus,
-          &:hover {
-            background-color: ${darken(0.1, themeColor('primary')({ theme }))};
-          }
-        `
+        &:focus,
+        &:hover {
+          background-color: ${themeColor('primary', 'dark')};
+        }
 
-      case 'secondary':
-        return css`
-          min-width: 90px;
-          background-color: ${themeColor('secondary')};
+        :disabled {
           color: ${themeColor('tint', 'level1')};
-          ${svgFill(themeColor('tint', 'level1'))};
-
-          &:focus,
-          &:hover {
-            background-color: ${darken(
-              0.1,
-              themeColor('secondary')({ theme }),
-            )};
-          }
-        `
-
-      case 'tertiary':
-        return css`
-          min-width: 90px;
           background-color: ${themeColor('tint', 'level4')};
-          ${svgFill(themeColor('tint', 'level7'))};
+        }
+      `
 
-          &:focus,
-          &:hover {
-            background-color: ${darken(
-              0.1,
-              themeColor('tint', 'level4')({ theme }),
-            )};
-          }
-        `
+    case 'secondary':
+      return css`
+        background-color: ${themeColor('tint', 'level1')};
+        color: ${themeColor('primary')};
+        ${svgFill(themeColor('primary'))};
+        padding: ${themeSpacing(1, 2)};
+        box-shadow: inset 0 0 0 2px ${themeColor('primary')};
 
-      case 'primaryInverted':
-        return css`
-          min-width: 90px;
-          color: ${themeColor('primary')};
-          border: 1px solid ${themeColor('primary')};
+        &:focus,
+        &:hover {
+          box-shadow: inset 0 0 0 3px ${themeColor('primary', 'dark')};
+          color: ${themeColor('primary', 'dark')};
+          ${svgFill(themeColor('primary', 'dark'))};
+        }
+
+        :disabled {
+          color: ${themeColor('tint', 'level4')};
           background-color: ${themeColor('tint', 'level1')};
-          ${svgFill(themeColor('primary', 'main'))};
+          box-shadow: inset 0 0 0 2px ${themeColor('tint', 'level4')};
+          ${svgFill(themeColor('tint', 'level4'))};
+        }
+      `
 
-          &:hover {
-            outline: 1px solid ${themeColor('primary')};
-          }
-        `
+    case 'tertiary':
+      return css`
+        background-color: ${themeColor('tint', 'level1')};
+        ${svgFill(themeColor('primary'))};
+        color: ${themeColor('primary')};
+        padding: ${themeSpacing(1, 2)};
 
-      case 'textButton':
-        return css`
-          height: auto;
-          padding: 0;
-          align-self: baseline;
-          white-space: normal;
-          text-align: left;
-          color: ${themeColor('primary')};
-          background-color: rgba(0, 0, 0, 0);
-          ${svgFill(themeColor('primary', 'main'))};
+        &:focus,
+        &:hover {
+          box-shadow: inset 0 0 0 2px ${themeColor('tint', 'level4')};
+        }
 
-          /* remove transition because it's async with Icon */
-          ${transitions('color', '0s')}
+        :disabled {
+          color: ${themeColor('tint', 'level4')};
+          ${svgFill(themeColor('tint', 'level4'))};
+          box-shadow: none;
+        }
+      `
 
-          &:hover {
-            color: ${themeColor('secondary')};
-            ${svgFill(themeColor('secondary', 'main'))};
-          }
-
-          ${IconLeft} {
-            margin-right: ${themeSpacing(1)};
-          }
-          ${IconRight} {
-            margin-left: ${themeSpacing(1)};
-          }
-        `
-
-      case 'blank':
-        return css`
-          background-color: ${themeColor('tint', 'level1')};
-          ${svgFill(themeColor('tint', 'level7'))};
-          &:hover {
-            background-color: ${themeColor('tint', 'level3')};
-          }
-        `
-      case 'application':
-        return css`
-          border: 1px solid ${themeColor('tint', 'level7')};
-          background-color: ${themeColor('tint', 'level1')};
-          height: 32px;
-          padding: ${themeSpacing(1, 2)};
-          ${svgFill(themeColor('tint', 'level7'))};
-          &:hover {
-            background-color: ${themeColor('tint', 'level4')};
-          }
-        `
-      default:
-        // About-to-be-deprecated codeblock to support the 'color' prop
-        return css`
-          color: ${color
-            ? readableColor(themeColor(color)({ theme }))
-            : themeColor('primary')({ theme })};
-          ${color &&
-          css`
-            background: ${themeColor(color)};
-          `}
-
-          ${!color &&
-          css`
-            border: 1px solid ${themeColor('primary')};
-          `}
+    case 'blank':
+      return css`
+        background-color: ${themeColor('tint', 'level1')};
+        ${svgFill(themeColor('tint', 'level7'))};
+        padding: ${themeSpacing(2)};
 
         &:hover {
-            background: ${color
-              ? themeColor(color, 'dark')({ theme })
-              : themeColor('tint', 'level3')({ theme })};
-            ${!color &&
-            css`
-              outline: 1px solid ${themeColor('primary')};
-            `}
-          }
-        `
-    }
+          ${svgFill(themeColor('primary'))};
+        }
+      `
+
+    default:
+      return null
   }
+}
 
 export interface ButtonStyleProps {
-  /**
-   * @deprecated Use variant instead. Pass the theme-color.
-   */
-  color?: Theme.ColorType
-  /**
-   * @deprecated Use size to create a button with equal width and height
-   */
-  square?: boolean
-  /**
-   * Set an equal height and width
-   */
-  size?: number
-  /**
-   * A variant, usually different background-color and color of a button
-   */
   variant?: ButtonVariant
+  small?: boolean
 }
 
 const ButtonStyle = styled.button<ButtonStyleProps>`
-  height: ${({ theme }) => getButtonHeight(theme)};
+  font-weight: 500;
+  letter-spacing: 0.0125rem;
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 20px;
-  padding: ${({ size: sizeProp, theme }) =>
-    sizeProp ? '0' : themeSpacing(3, 4)({ theme })};
-  ${({ size: sizeProp, square }) =>
-    (sizeProp || square) && // make the button square
-    css`
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      ${size(sizeProp || defaultProps.size)}// width and height
-    `}
+  font-size: ${({ small }) =>
+    small ? calculateFluidStyle(16, 18) : calculateFluidStyle(18, 24)};
+  line-height: ${({ small }) =>
+    small ? calculateFluidStyle(22, 24) : calculateFluidStyle(29, 38)};
+
   ${transitions(['color', 'background-color'], '0.1s ease-in-out')}
-  ${getVariant()}
+  ${(variant) => getVariant(variant)}
   ${Icon} {
     flex-shrink: 0;
   }
+
   &:disabled {
     cursor: default;
     outline: none;
     border: none;
-    color: ${themeColor('tint', 'level4')};
-    background-color: ${themeColor('tint', 'level3')};
-    ${svgFill(themeColor('tint', 'level4'))};
     text-decoration: none;
-    ${({ variant }) =>
-      variant &&
-      variant === 'textButton' &&
-      css`
-        background-color: rgba(0, 0, 0, 0);
-      `}
   }
 `
 

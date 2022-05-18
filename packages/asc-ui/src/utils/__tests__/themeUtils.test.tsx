@@ -118,15 +118,15 @@ describe('themeSpacing', () => {
   }
   it('should return the result of n * theme spacing', () => {
     expect(themeSpacing(0)({ theme })).toBe('0')
-    expect(themeSpacing(1)({ theme })).toBe('4px')
-    expect(themeSpacing(2)({ theme })).toBe('8px')
-    expect(themeSpacing(3)({ theme })).toBe('12px')
+    expect(themeSpacing(1)({ theme })).toBe('8px')
+    expect(themeSpacing(2)({ theme })).toBe('16px')
+    expect(themeSpacing(3)({ theme })).toBe('24px')
   })
 
   it('should accept up to 4 parameters and return a spaced separated string with the results', () => {
-    expect(themeSpacing(1, 3)({ theme })).toBe('4px 12px')
-    expect(themeSpacing(1, 2, 3)({ theme })).toBe('4px 8px 12px')
-    expect(themeSpacing(1, 2, 3, 4)({ theme })).toBe('4px 8px 12px 16px')
+    expect(themeSpacing(1, 3)({ theme })).toBe('8px 24px')
+    expect(themeSpacing(1, 2, 3)({ theme })).toBe('8px 16px 24px')
+    expect(themeSpacing(1, 2, 3, 4)({ theme })).toBe('8px 16px 24px 32px')
   })
 })
 

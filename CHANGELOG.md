@@ -16,7 +16,10 @@ Prefix the change with one of these keywords:
 
 ## [Unreleased Beta]
 
-- Changed: **Breaking** remove CompactThemeProvider
+- Changed: **Breaking** remove `CompactThemeProvider`
+- Changed: **Breaking** Button variants `primaryInverted`, `textButton` and `application` are removed
+- Changed: **Breaking** Button `size`, `square` and `color` props are removed
+- Changed: Button has a `small` prop, for smaller buttons
 
 ## [0.35.2]
 
