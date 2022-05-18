@@ -99,46 +99,11 @@ export const getTypographyFromTheme =
     if (!styles) {
       return ''
     }
-    const { breakpoints, ...otherProps } = styles
+    const { ...otherProps } = styles
     return css`
       ${generateCSSFromTypography(otherProps, gutterBottom)}
-      ${() =>
-        breakpoints
-          ? Object.entries(breakpoints).map(
-              ([breakpointFromTypography, typoStyles]) => css`
-                @media screen and ${breakpoint(
-                    'min-width',
-                    <keyof Theme.BreakpointsInterface>breakpointFromTypography,
-                  )} {
-                  ${generateCSSFromTypography(typoStyles || {}, gutterBottom)}
-                }
-              `,
-            )
-          : ``}
     `
   }
-
-type BreakpointKeys = keyof Theme.BreakpointsInterface
-
-type GetTypographyValueFromPropertyParameters = [
-  keyof Theme.TypographyInterface,
-  keyof Theme.TypographyElementStyle,
-  BreakpointKeys?,
-]
-
-export const getTypographyValueFromProperty =
-  withTheme<GetTypographyValueFromPropertyParameters>(
-    (theme, element, property, breakpointRule) => {
-      const rules = getValueFromTheme(`typography.${[element]}`)({ theme })
-      if (breakpointRule) {
-        if (rules.breakpoints[breakpointRule]) {
-          return rules.breakpoints[breakpointRule][property]
-        }
-        return ''
-      }
-      return rules[property]
-    },
-  )
 
 /**
  * When this style is applied on an element it will be hidden but still readable by screen readers.

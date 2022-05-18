@@ -6,7 +6,6 @@ import ThemeProvider from '../../theme/ThemeProvider'
 import {
   breakpoint,
   getTypographyFromTheme,
-  getTypographyValueFromProperty,
   getValueFromTheme,
   showAboveBackDrop,
   svgFill,
@@ -14,7 +13,7 @@ import {
   themeSpacing,
 } from '../themeUtils'
 
-const { colors, typography } = ascDefaultTheme
+const { colors } = ascDefaultTheme
 
 describe('getColorFromTheme', () => {
   const theme = {
@@ -52,32 +51,6 @@ describe('getTypographyFromTheme', () => {
     )
 
     expect(getByTestId('paragraph')).toHaveStyleRule('font-weight', '400')
-  })
-})
-
-describe('getTypographyValueFromProperty', () => {
-  const theme = {
-    ...ascDefaultTheme,
-    typography: {
-      ...typography,
-    },
-  }
-  it('should the value without a breakpoint', () => {
-    expect(
-      getTypographyValueFromProperty('h1', 'lineHeight')({ theme }),
-    ).toEqual('30px')
-  })
-
-  it('should the value with a breakpoint', () => {
-    expect(
-      getTypographyValueFromProperty('h1', 'lineHeight', 'laptop')({ theme }),
-    ).toEqual('38px')
-  })
-
-  it('should return an empty string if no results could be found', () => {
-    expect(
-      getTypographyValueFromProperty('h1', 'lineHeight', 'tabletS')({ theme }),
-    ).toEqual('')
   })
 })
 

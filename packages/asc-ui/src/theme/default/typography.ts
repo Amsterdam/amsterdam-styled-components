@@ -1,75 +1,46 @@
+import { calculateFluidStyle } from '../../utils'
 import type { Theme } from '../../types'
 import colors from './colors'
 
 const defaultFontFamily = 'Avenir Next, Arial, sans-serif'
 
-/**
- *  The font definitions differ from the ones in the design system.
- *  In this theme are the breakpoints for the typographty set to `laptop` (1024px)
- *  while in design system are set to `tabletS` (540px)
- */
 const typography: Theme.TypographyInterface = {
   fontFamily: defaultFontFamily,
-  fontSize: '16px',
   h1: {
     color: colors.tint.level7,
-    fontSize: '24px',
-    fontWeight: 700,
-    letterSpacing: 'inherit',
-    lineHeight: '30px',
-    marginBottom: '0',
-    breakpoints: {
-      laptop: {
-        fontSize: '30px',
-        lineHeight: '38px',
-      },
-    },
+    fontSize: calculateFluidStyle(32, 80),
+    fontWeight: 800,
+    lineHeight: calculateFluidStyle(40, 88),
   },
   h2: {
     color: colors.tint.level7,
-    fontSize: '20px',
-    fontWeight: 700,
-    letterSpacing: 'inherit',
-    lineHeight: '28px',
-    marginBottom: '8px',
-    breakpoints: {
-      laptop: {
-        fontSize: '24px',
-        lineHeight: '30px',
-      },
-    },
+    fontSize: calculateFluidStyle(28, 56),
+    fontWeight: 800,
+    lineHeight: calculateFluidStyle(34, 62),
   },
   h3: {
     color: colors.tint.level7,
-    fontSize: '20px',
-    fontWeight: 700,
-    letterSpacing: 'inherit',
-    lineHeight: '28px',
-    marginBottom: '8px',
+    fontSize: calculateFluidStyle(24, 40),
+    fontWeight: 800,
+    lineHeight: calculateFluidStyle(31, 44),
   },
   h4: {
     color: colors.tint.level7,
-    fontSize: '18px',
-    fontWeight: 700,
-    letterSpacing: 'inherit',
-    lineHeight: '25px',
-    marginBottom: '8px',
+    fontSize: calculateFluidStyle(22, 32),
+    fontWeight: 800,
+    lineHeight: calculateFluidStyle(31, 38),
   },
   h5: {
     color: colors.tint.level7,
-    fontSize: '18px',
-    fontWeight: 700,
-    letterSpacing: 'inherit',
-    lineHeight: '25px',
-    marginBottom: '8px',
+    fontSize: calculateFluidStyle(18, 24),
+    fontWeight: 800,
+    lineHeight: calculateFluidStyle(25, 31),
   },
   h6: {
     color: colors.tint.level7,
-    fontSize: '16px',
-    fontWeight: 500,
-    letterSpacing: 'inherit',
-    lineHeight: '20px',
-    marginBottom: '0',
+    fontSize: calculateFluidStyle(16, 18),
+    fontWeight: 800,
+    lineHeight: calculateFluidStyle(22, 23),
   },
   a: {
     color: colors.tint.level7,

@@ -105,7 +105,7 @@ export namespace Theme {
       SupportPaletteInterface {}
 
   export interface TypographyElementStyle {
-    fontWeight: 400 | 500 | 700 | 'inherit'
+    fontWeight: 400 | 500 | 700 | 800 | 'inherit'
     fontSize: CSSProp
     lineHeight: number | CSSProp
     letterSpacing: CSSProp
@@ -139,7 +139,6 @@ export namespace Theme {
 
   export interface TypographyInterface extends Partial<TypographyElements> {
     fontFamily?: string
-    fontSize?: string
   }
 
   export interface ThemeInterface {
