@@ -9,6 +9,7 @@ describe('Button', () => {
         <Button color="primary">Hello</Button>
       </ThemeProvider>,
     )
+
     expect(container.firstChild).toBeDefined()
   })
 })
