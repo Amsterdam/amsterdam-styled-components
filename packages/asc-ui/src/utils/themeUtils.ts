@@ -196,41 +196,6 @@ export const perceivedLoading = withTheme((theme, animateLoading = true) => {
       `
 })
 
-/**
- * @deprecated Only used in deprecated component GridItem
- * @param sizes
- * @param propertyName
- * @param theme
- */
-export const mapToBreakpoints = (
-  sizes: string[],
-  propertyName: string,
-  theme: Theme.ThemeInterface,
-) => {
-  const breakpointVariants = Object.keys(theme.breakpoints) as Array<
-    keyof Theme.BreakpointsInterface
-  >
-  return css`
-    ${sizes
-      .map((value, index) =>
-        index === 0
-          ? `${propertyName}: ${value};`
-          : breakpointVariants[index] &&
-            `
-        @media screen and ${breakpoint(
-          'min-width',
-          breakpointVariants[index],
-        )({
-          theme,
-        })} {
-          ${propertyName}: ${value};
-        }
-      `,
-      )
-      .join('')}
-  `
-}
-
 export interface ShowHideTypes {
   showAt?: keyof Theme.BreakpointsInterface
   hideAt?: keyof Theme.BreakpointsInterface
@@ -327,20 +292,4 @@ export const calculateFluidStyle = (
     (100vw - ${minScreenWidth}rem) / ${maxScreenWidth - minScreenWidth},\
     ${maxSize}rem\
   )`
-}
-
-/**
- * @deprecated Please wrap around the SC styled() method to extend your styles.
- */
-export const customCss = (props: any) =>
-  props.css &&
-  css`
-    ${props.css}
-  `
-export interface CustomCssPropsInterface {
-  css?: any
-}
-
-export interface CustomCssPropsType {
-  css?: any
 }

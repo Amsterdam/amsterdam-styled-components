@@ -143,9 +143,6 @@ export namespace Theme {
     colors: Partial<ColorTypeInterface>
     globalStyle: Partial<GlobalStyleType>
     typography: Partial<TypographyInterface>
-    layouts: Partial<LayoutInterface>
-    maxGridWidth: number
-    maxContainerWidth: number
     spacing: Spacing
   }
 }
