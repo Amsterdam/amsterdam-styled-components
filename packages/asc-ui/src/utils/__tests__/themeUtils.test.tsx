@@ -11,6 +11,7 @@ import {
   svgFill,
   themeColor,
   themeSpacing,
+  calculateFluidStyle,
 } from '../themeUtils'
 
 const { colors } = ascDefaultTheme
@@ -152,5 +153,23 @@ describe('showAboveBackDrop', () => {
   it("should set no correct z-index when there isn't a hasBackDrop prop or positive parameter", () => {
     expect(showAboveBackDrop(false)({})).toBe('')
     expect(showAboveBackDrop()({ hasBackDrop: false })).toBe('')
+  })
+})
+
+describe('calculateFluidStyle', () => {
+  it('should return the correct css clamp rule', () => {
+    const rule = calculateFluidStyle(16, 32)
+
+    expect(rule).toEqual(
+      `clamp(    1rem,    1rem + 1 *     (100vw - 20rem) / 100,    2rem  )`,
+    )
+  })
+
+  it('should return the correct css clamp rule when using custom min and max screen width', () => {
+    const rule = calculateFluidStyle(16, 32, 100, 200)
+
+    expect(rule).toEqual(
+      `clamp(    1rem,    1rem + 1 *     (100vw - 6.25rem) / 6.25,    2rem  )`,
+    )
   })
 })
