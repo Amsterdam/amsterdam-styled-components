@@ -48,7 +48,7 @@ jobs:
       
       - name: Push files to target
         run: |
-          cp -r stories/lib deploy
+          cp -r build/stories/lib/* deploy
           cd deploy
           touch .nojekyll
           echo ${{ env.URL }} > CNAME
