@@ -1,0 +1,57 @@
+name: Deploy beta branch to Storybook
+on:
+  push:
+    branches: [ beta ]
+    paths-ignore:
+      - '.github/workflows/**'
+      - '**.md'
+env:
+  URL: https://alimpens.github.io/asc-beta/
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: beta
+      url: https://${{ env.URL }}
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      
+      # https://github.com/actions/checkout#push-a-commit-using-the-built-in-token
+      - name: Set GitHub Actions as Commit Author
+        run: |
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
+          
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          path: 'build'
+      
+      - name: Build
+        run: |
+          cd build
+          npm ci
+          npm run build
+          npm run build:storybook
+          cd ..
+      
+      - name: Checkout Dev Target
+        uses: actions/checkout@v2
+        with:
+          repository: alimpens/asc-beta
+          path: 'deploy'
+          token: ${{ secrets.PAT }}
+      
+      - name: Push files to target
+        run: |
+          cp -r stories/lib deploy
+          cd deploy
+          touch .nojekyll
+          echo ${{ env.URL }} > CNAME
+          git add .
+          git commit -m $GITHUB_SHA
+          git push
