@@ -70,28 +70,41 @@ export const breakpoint = withTheme<BreakpointsType>((theme, type, variant) => {
 
 const generateCSSFromTypography = (
   {
-    color,
     fontWeight,
     fontSize,
     letterSpacing,
     lineHeight,
     marginBottom,
+    small,
   }: Partial<Theme.TypographyElementStyle>,
   gutterBottom?: number,
+  smallProp?: boolean,
 ) => css`
-  color: ${color};
   font-weight: ${fontWeight};
-  font-size: ${fontSize};
   letter-spacing: ${letterSpacing};
-  line-height: ${lineHeight};
   margin-bottom: ${typeof gutterBottom === 'number'
     ? `${gutterBottom}px`
     : marginBottom};
+  ${small && smallProp
+    ? `
+      font-size: ${small.fontSize};
+      line-height: ${small.lineHeight};
+    `
+    : `
+      font-size: ${fontSize};
+      line-height: ${lineHeight};
+    `}
 `
 
 export const getTypographyFromTheme =
   () =>
-  ({ as: asProp = 'p', gutterBottom, styleAs, theme }: any) => {
+  ({
+    as: asProp = 'p',
+    gutterBottom,
+    styleAs,
+    theme,
+    small: smallProp,
+  }: any) => {
     const as = styleAs || asProp
     const styles = getValueFromTheme(`typography.${[as]}`)({
       theme,
@@ -101,7 +114,7 @@ export const getTypographyFromTheme =
     }
     const { ...otherProps } = styles
     return css`
-      ${generateCSSFromTypography(otherProps, gutterBottom)}
+      ${generateCSSFromTypography(otherProps, gutterBottom, smallProp)}
     `
   }
 

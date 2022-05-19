@@ -110,10 +110,10 @@ export namespace Theme {
     lineHeight: number | CSSProp
     letterSpacing: CSSProp
     marginBottom: CSSProp
-    /**
-     * @deprecated Use your own custom style rules
-     */
-    color: CSSProp
+    small: {
+      fontSize: CSSProp
+      lineHeight: number | CSSProp
+    }
   }
 
   export interface TypographyType extends Partial<TypographyElementStyle> {

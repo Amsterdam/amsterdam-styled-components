@@ -19,9 +19,11 @@ Prefix the change with one of these keywords:
 - Changed: **Breaking** removed `CompactThemeProvider`
 - Changed: **Breaking** Button variants `primaryInverted`, `textButton` and `application` are removed
 - Changed: **Breaking** Button `size`, `square` and `color` props are removed
-- Changed: **Breaking** `color`, `fontSize` and `element` props are removed from Typography components
+- Changed: **Breaking** `color`, `fontSize` and `element` props are removed from Typography components (Heading, Paragraph, Link, Quote, Blockquote)
 - Changed: **Breaking** removed `getTypographyValueFromProperty`
 - Changed: Button has a `small` prop, for smaller buttons
+- Changed: Heading has a `small` prop, for a smaller version of h1
+- Changed: Heading has a `darkBackground` prop, to switch to a white color
 
 ## [0.35.2]
 

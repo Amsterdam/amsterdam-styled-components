@@ -1,7 +1,7 @@
 import type { FlattenSimpleInterpolation } from 'styled-components'
 import styled, { css } from 'styled-components'
 import type { ElementType } from 'react'
-import { getTypographyFromTheme, themeColor } from '../../utils'
+import { getTypographyFromTheme, themeColor, svgFill } from '../../utils'
 import type { Theme } from '../../types'
 
 export interface Props {
@@ -10,6 +10,7 @@ export interface Props {
   as?: ElementType
   forwardedAs?: ElementType
   strong?: boolean
+  darkBackground?: boolean
 }
 
 export const defaultTypographyStyles: {
@@ -30,6 +31,7 @@ export default styled.p<Props>`
   }}
 
   margin: 0;
+  color: ${themeColor('tint', 'level7')};
 
   ${getTypographyFromTheme()};
 
@@ -38,5 +40,12 @@ export default styled.p<Props>`
     css`
       font-weight: 700;
       color: ${themeColor('tint', 'level7')};
+    `}
+
+  ${({ darkBackground }) =>
+    darkBackground &&
+    css`
+      color: ${themeColor('tint', 'level1')};
+      ${svgFill(themeColor('tint', 'level1'))}
     `}
 `

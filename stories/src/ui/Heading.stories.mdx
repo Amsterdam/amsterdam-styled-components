@@ -1,37 +1,86 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs'
-import { Heading } from '@amsterdam/asc-ui'
+import { Heading, ascDefaultTheme } from '@amsterdam/asc-ui'
+import styled from 'styled-components'
 
 <Meta
   title="UI/Typography/Heading"
   component={Heading}
-  decorators={[
-    (Item) => (
-      <div
-        style={{
-          maxWidth: '400px',
-        }}
-      >
-        <Item />
-      </div>
-    ),
-  ]}
+  argTypes={{
+    small: {
+      control: { type: 'boolean' },
+    },
+    darkBackground: {
+      control: { type: 'boolean' },
+    },
+    gutterBottom: {
+      control: { type: 'number' },
+    },
+  }}
 />
+
+export const Container = styled.div`
+  background-color: ${({ darkBackground }) =>
+    darkBackground ? ascDefaultTheme.colors.primary.main : 'transparent'};
+`
 
 # Heading
 
-Doesn't exist in Design System yet
+Heading can accept a `small` prop, currently only heading level one has a small version.
 
 **Component status: Experimental**
 
 ## Default
 
 <Canvas>
-  <Story name="Default">
-    <>
-      <Heading>Heading one</Heading>
-      <Heading forwardedAs="h2">Heading two</Heading>
-      <Heading forwardedAs="h3">Heading three</Heading>
-      <Heading forwardedAs="h4">Heading four</Heading>
-    </>
+  <Story
+    name="Default"
+    args={{ small: false, darkBackground: false, gutterBottom: 0 }}
+  >
+    {({ small, darkBackground, gutterBottom }) => (
+      <Container darkBackground={darkBackground}>
+        <Heading
+          small={small}
+          darkBackground={darkBackground}
+          gutterBottom={gutterBottom}
+        >
+          Heading one
+        </Heading>
+        <Heading
+          as="h2"
+          darkBackground={darkBackground}
+          gutterBottom={gutterBottom}
+        >
+          Heading two
+        </Heading>
+        <Heading
+          as="h3"
+          darkBackground={darkBackground}
+          gutterBottom={gutterBottom}
+        >
+          Heading three
+        </Heading>
+        <Heading
+          as="h4"
+          darkBackground={darkBackground}
+          gutterBottom={gutterBottom}
+        >
+          Heading four
+        </Heading>
+        <Heading
+          as="h5"
+          darkBackground={darkBackground}
+          gutterBottom={gutterBottom}
+        >
+          Heading five
+        </Heading>
+        <Heading
+          as="h6"
+          darkBackground={darkBackground}
+          gutterBottom={gutterBottom}
+        >
+          Heading six
+        </Heading>
+      </Container>
+    )}
   </Story>
 </Canvas>
