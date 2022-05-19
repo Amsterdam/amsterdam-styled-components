@@ -28,6 +28,10 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs'
         const Bold = styled.p`
           font-weight: 800;
         `
+        const BoldItalic = styled.p`
+          font-weight: 800;
+          font-style: italic;
+        `
         return (
           <Fragment>
             <Regular>Avenir Next Regular: font-weight: 400</Regular>
@@ -37,6 +41,7 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs'
             <Medium>Avenir Next Medium: font-weight: 500</Medium>
             <Demi>Avenir Next Demi: font-weight: 700</Demi>
             <Bold>Avenir Next Bold: font-weight: 800</Bold>
+            <BoldItalic>Avenir Next Bold Italic: font-weight: 800</BoldItalic>
           </Fragment>
         )
       })()}
