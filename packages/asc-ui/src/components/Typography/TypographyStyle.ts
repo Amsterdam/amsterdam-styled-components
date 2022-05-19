@@ -31,7 +31,7 @@ export default styled.p<Props>`
   }}
 
   margin: 0;
-  color: ${themeColor('tint', 'level7')};
+  color: ${themeColor('tint', 'level6')};
 
   ${getTypographyFromTheme()};
 
@@ -39,7 +39,6 @@ export default styled.p<Props>`
     strong &&
     css`
       font-weight: 700;
-      color: ${themeColor('tint', 'level7')};
     `}
 
   ${({ darkBackground }) =>

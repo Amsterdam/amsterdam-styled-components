@@ -23,9 +23,16 @@ A function to retrieve a color from a theme
           color: ${themeColor('tint', 'level1')};
           background-color: ${themeColor('secondary')};
         `
+        const PrimaryDark = styled.div`
+          color: ${themeColor('tint', 'level1')};
+          background-color: ${themeColor('primary', 'dark')};
+        `
         return (
           <Fragment>
             <Primary>themeColor(&apos;primary&apos;)</Primary>
+            <PrimaryDark>
+              themeColor(&apos;primary&apos;, &apos;dark&apos;)
+            </PrimaryDark>
             <Secondary>themeColor(&apos;secondary&apos;)</Secondary>
           </Fragment>
         )
@@ -41,19 +48,19 @@ A function to retrieve a color from a theme
     <Fragment>
       {(() => {
         const LevelOne = styled.div`
-          color: ${themeColor('tint', 'level7')};
+          color: ${themeColor('tint', 'level6')};
           background-color: ${themeColor('tint', 'level1')};
         `
         const LevelTwo = styled.div`
-          color: ${themeColor('tint', 'level7')};
+          color: ${themeColor('tint', 'level6')};
           background-color: ${themeColor('tint', 'level2')};
         `
         const LevelThree = styled.div`
-          color: ${themeColor('tint', 'level7')};
+          color: ${themeColor('tint', 'level6')};
           background-color: ${themeColor('tint', 'level3')};
         `
         const LevelFour = styled.div`
-          color: ${themeColor('tint', 'level7')};
+          color: ${themeColor('tint', 'level1')};
           background-color: ${themeColor('tint', 'level4')};
         `
         const LevelFive = styled.div`
@@ -64,33 +71,26 @@ A function to retrieve a color from a theme
           color: ${themeColor('tint', 'level1')};
           background-color: ${themeColor('tint', 'level6')};
         `
-        const LevelSeven = styled.div`
-          color: ${themeColor('tint', 'level1')};
-          background-color: ${themeColor('tint', 'level7')};
-        `
         return (
           <Fragment>
             <LevelOne>
               themeColor(&apos;tint&apos;, &apos;level1&apos;) (#FFFFFF)
             </LevelOne>
             <LevelTwo>
-              themeColor(&apos;tint&apos;, &apos;level2&apos;) (#F5F5F5)
+              themeColor(&apos;tint&apos;, &apos;level2&apos;) (#E6E6E6)
             </LevelTwo>
             <LevelThree>
-              themeColor(&apos;tint&apos;, &apos;level3&apos;) (#E6E6E6)
+              themeColor(&apos;tint&apos;, &apos;level3&apos;) (#B4B4B4)
             </LevelThree>
             <LevelFour>
-              themeColor(&apos;tint&apos;, &apos;level4&apos;) (#B4B4B4)
+              themeColor(&apos;tint&apos;, &apos;level4&apos;) (#767676)
             </LevelFour>
             <LevelFive>
-              themeColor(&apos;tint&apos;, &apos;level5&apos;) (#767676)
+              themeColor(&apos;tint&apos;, &apos;level5&apos;) (#323232)
             </LevelFive>
             <LevelSix>
-              themeColor(&apos;tint&apos;, &apos;level6&apos;) (#323232)
+              themeColor(&apos;tint&apos;, &apos;level6&apos;) (#000000)
             </LevelSix>
-            <LevelSeven>
-              themeColor(&apos;tint&apos;, &apos;level7&apos;) (#000000)
-            </LevelSeven>
           </Fragment>
         )
       })()}
@@ -112,17 +112,12 @@ A function to retrieve a color from a theme
           color: ${themeColor('tint', 'level1')};
           background-color: ${themeColor('support', 'invalid')};
         `
-        const Focus = styled.div`
-          color: ${themeColor('tint', 'level7')};
-          background-color: ${themeColor('support', 'focus')};
-        `
         return (
           <Fragment>
             <Valid>themeColor(&apos;support&apos;, &apos;valid&apos;)</Valid>
             <Invalid>
               themeColor(&apos;support&apos;, &apos;invalid&apos;)
             </Invalid>
-            <Focus>themeColor(&apos;support&apos;, &apos;focus&apos;)</Focus>
           </Fragment>
         )
       })()}
@@ -149,11 +144,11 @@ A function to retrieve a color from a theme
           background-color: ${themeColor('supplement', 'orange')};
         `
         const Yellow = styled.div`
-          color: ${themeColor('tint', 'level7')};
+          color: ${themeColor('tint', 'level6')};
           background-color: ${themeColor('supplement', 'yellow')};
         `
         const LightGreen = styled.div`
-          color: ${themeColor('tint', 'level7')};
+          color: ${themeColor('tint', 'level6')};
           background-color: ${themeColor('supplement', 'lightgreen')};
         `
         const DarkGreen = styled.div`

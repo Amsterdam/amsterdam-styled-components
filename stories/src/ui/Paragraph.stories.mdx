@@ -1,46 +1,84 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs'
-import { Paragraph } from '@amsterdam/asc-ui'
+import { Paragraph, ascDefaultTheme } from '@amsterdam/asc-ui'
+import styled from 'styled-components'
 
 <Meta
   title="UI/Typography/Paragraph"
   component={Paragraph}
-  decorators={[
-    (Item) => (
-      <div
-        style={{
-          maxWidth: '400px',
-        }}
-      >
-        <Item />
-      </div>
-    ),
-  ]}
+  argTypes={{
+    small: {
+      control: { type: 'boolean' },
+    },
+    strong: {
+      control: { type: 'boolean' },
+    },
+    darkBackground: {
+      control: { type: 'boolean' },
+    },
+    gutterBottom: {
+      control: { type: 'number' },
+    },
+  }}
 />
 
-# Paragraph
+export const Container = styled.div`
+  background-color: ${({ darkBackground }) =>
+    darkBackground ? ascDefaultTheme.colors.primary.main : 'transparent'};
+`
 
-Doesn't exist in Design System yet
+# Paragraph
 
 **Component status: Experimental**
 
 ## Default
 
 <Canvas>
-  <Story name="Default">
-    <Paragraph>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deleniti
-      dicta doloremque eveniet explicabo id ipsum omnis placeat rerum suscipit.
-    </Paragraph>
+  <Story
+    name="Default"
+    args={{
+      small: false,
+      strong: false,
+      darkBackground: false,
+      gutterBottom: 0,
+    }}
+  >
+    {({ small, strong, darkBackground, gutterBottom }) => (
+      <Container darkBackground={darkBackground}>
+        <Paragraph
+          small={small}
+          strong={strong}
+          darkBackground={darkBackground}
+          gutterBottom={gutterBottom}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+          deleniti dicta doloremque eveniet explicabo id ipsum omnis placeat
+          rerum suscipit.
+        </Paragraph>
+      </Container>
+    )}
   </Story>
 </Canvas>
 
-## Strong
+## Intro
 
 <Canvas>
-  <Story name="Strong">
-    <Paragraph strong>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deleniti
-      dicta doloremque eveniet explicabo id ipsum omnis placeat rerum suscipit.
-    </Paragraph>
+  <Story
+    name="Intro"
+    args={{ strong: false, darkBackground: false, gutterBottom: 0 }}
+  >
+    {({ strong, darkBackground, gutterBottom }) => (
+      <Container darkBackground={darkBackground}>
+        <Paragraph
+          intro
+          strong={strong}
+          darkBackground={darkBackground}
+          gutterBottom={gutterBottom}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+          deleniti dicta doloremque eveniet explicabo id ipsum omnis placeat
+          rerum suscipit.
+        </Paragraph>
+      </Container>
+    )}
   </Story>
 </Canvas>

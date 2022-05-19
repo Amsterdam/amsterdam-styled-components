@@ -21,9 +21,13 @@ Prefix the change with one of these keywords:
 - Changed: **Breaking** Button `size`, `square` and `color` props are removed
 - Changed: **Breaking** `color`, `fontSize` and `element` props are removed from Typography components (Heading, Paragraph, Link, Quote, Blockquote)
 - Changed: **Breaking** removed `getTypographyValueFromProperty`
+- Changed: **Breaking** Tint color `level2` is removed, all grey tints slide down a position. Support color `focus` is removed.
 - Changed: Button has a `small` prop, for smaller buttons
 - Changed: Heading has a `small` prop, for a smaller version of h1
 - Changed: Heading has a `darkBackground` prop, to switch to a white color
+- Changed: Paragraph has a `small` prop, for a smaller version
+- Changed: Paragraph has an `intro` prop, for the intro version of a paragraph
+- Changed: Paragraph has a `darkBackground` prop, to switch to a white color
 
 ## [0.35.2]
 

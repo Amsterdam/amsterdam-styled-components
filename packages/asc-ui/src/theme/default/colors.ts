@@ -11,17 +11,15 @@ const colors: Theme.ColorTypeInterface = {
   },
   tint: {
     level1: '#ffffff',
-    level2: '#f5f5f5',
-    level3: '#e6e6e6',
-    level4: '#b4b4b4',
-    level5: '#767676',
-    level6: '#323232',
-    level7: '#000000',
+    level2: '#e6e6e6',
+    level3: '#b4b4b4',
+    level4: '#767676',
+    level5: '#323232',
+    level6: '#000000',
   },
   support: {
     valid: '#00a03c',
     invalid: '#ec0000',
-    focus: '#fec813',
   },
   supplement: {
     purple: '#a00078',

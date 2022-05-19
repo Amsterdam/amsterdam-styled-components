@@ -33,7 +33,7 @@ function getVariant({ variant }: { variant?: ButtonVariant }) {
 
         :disabled {
           color: ${themeColor('tint', 'level1')};
-          background-color: ${themeColor('tint', 'level4')};
+          background-color: ${themeColor('tint', 'level3')};
         }
       `
 
@@ -53,10 +53,10 @@ function getVariant({ variant }: { variant?: ButtonVariant }) {
         }
 
         :disabled {
-          color: ${themeColor('tint', 'level4')};
+          color: ${themeColor('tint', 'level3')};
           background-color: ${themeColor('tint', 'level1')};
-          box-shadow: inset 0 0 0 2px ${themeColor('tint', 'level4')};
-          ${svgFill(themeColor('tint', 'level4'))};
+          box-shadow: inset 0 0 0 2px ${themeColor('tint', 'level3')};
+          ${svgFill(themeColor('tint', 'level3'))};
         }
       `
 
@@ -69,12 +69,12 @@ function getVariant({ variant }: { variant?: ButtonVariant }) {
 
         &:focus,
         &:hover {
-          box-shadow: inset 0 0 0 2px ${themeColor('tint', 'level4')};
+          box-shadow: inset 0 0 0 2px ${themeColor('tint', 'level3')};
         }
 
         :disabled {
-          color: ${themeColor('tint', 'level4')};
-          ${svgFill(themeColor('tint', 'level4'))};
+          color: ${themeColor('tint', 'level3')};
+          ${svgFill(themeColor('tint', 'level3'))};
           box-shadow: none;
         }
       `
@@ -82,7 +82,7 @@ function getVariant({ variant }: { variant?: ButtonVariant }) {
     case 'blank':
       return css`
         background-color: ${themeColor('tint', 'level1')};
-        ${svgFill(themeColor('tint', 'level7'))};
+        ${svgFill(themeColor('tint', 'level6'))};
         padding: ${themeSpacing(2)};
 
         &:hover {

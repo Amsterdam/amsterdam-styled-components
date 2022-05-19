@@ -72,7 +72,6 @@ const generateCSSFromTypography = (
   {
     fontWeight,
     fontSize,
-    letterSpacing,
     lineHeight,
     marginBottom,
     small,
@@ -81,7 +80,6 @@ const generateCSSFromTypography = (
   smallProp?: boolean,
 ) => css`
   font-weight: ${fontWeight};
-  letter-spacing: ${letterSpacing};
   margin-bottom: ${typeof gutterBottom === 'number'
     ? `${gutterBottom}px`
     : marginBottom};
@@ -177,15 +175,15 @@ export const svgFill = withTheme((theme, color: string | ThemeFn<string>) => {
 export const perceivedLoading = withTheme((theme, animateLoading = true) => {
   const animation = keyframes`
       0% {
-        background-color: ${themeColor('tint', 'level3')({ theme })};
+        background-color: ${themeColor('tint', 'level2')({ theme })};
       }
 
       50% {
-        background-color: ${themeColor('tint', 'level4')({ theme })};
+        background-color: ${themeColor('tint', 'level3')({ theme })};
       }
 
       100% {
-        background-color: ${themeColor('tint', 'level3')({ theme })};
+        background-color: ${themeColor('tint', 'level2')({ theme })};
       }
     `
 
@@ -194,7 +192,7 @@ export const perceivedLoading = withTheme((theme, animateLoading = true) => {
         animation: ${animation} 2s ease-in-out infinite;
       `
     : css`
-        background-color: ${themeColor('tint', 'level4')({ theme })};
+        background-color: ${themeColor('tint', 'level3')({ theme })};
       `
 })
 

@@ -42,7 +42,6 @@ const typography: Theme.TypographyInterface = {
   a: {
     fontSize: '16px',
     fontWeight: 'inherit',
-    letterSpacing: 'inherit',
     lineHeight: '22px',
     marginBottom: '0',
     breakpoints: {
@@ -53,25 +52,17 @@ const typography: Theme.TypographyInterface = {
     },
   },
   p: {
-    fontSize: '16px',
+    fontSize: calculateFluidStyle(18, 24),
     fontWeight: 400,
-    letterSpacing: 'inherit',
-    lineHeight: '22px',
-    marginBottom: '20px',
-    breakpoints: {
-      tabletS: {
-        marginBottom: '24px',
-      },
-      laptop: {
-        fontSize: '18px',
-        lineHeight: '25px',
-      },
+    lineHeight: calculateFluidStyle(29, 38),
+    small: {
+      fontSize: calculateFluidStyle(16, 18),
+      lineHeight: calculateFluidStyle(24, 29),
     },
   },
   li: {
     fontSize: '16px',
     fontWeight: 400,
-    letterSpacing: 'inherit',
     lineHeight: '22px',
     marginBottom: '8',
     breakpoints: {
@@ -84,21 +75,18 @@ const typography: Theme.TypographyInterface = {
   em: {
     fontSize: '16px',
     fontWeight: 400,
-    letterSpacing: 'inherit',
     lineHeight: 1.25,
     marginBottom: '0',
   },
   small: {
     fontSize: '14px',
     fontWeight: 400,
-    letterSpacing: 'inherit',
     lineHeight: '18px',
     marginBottom: '0',
   },
   span: {
     fontSize: '14px',
     fontWeight: 400,
-    letterSpacing: 'inherit',
     lineHeight: '18px',
     marginBottom: '0',
   },

@@ -66,7 +66,6 @@ export namespace Theme {
   export interface SupportPaletteInterface {
     valid: string
     invalid: string
-    focus: string
   }
 
   export interface SupplementPaletteInterface {
@@ -86,7 +85,6 @@ export namespace Theme {
     level4: string
     level5: string
     level6: string
-    level7: string
   }
 
   export interface ColorTypeInterface {
@@ -108,7 +106,6 @@ export namespace Theme {
     fontWeight: 400 | 500 | 700 | 800 | 'inherit'
     fontSize: CSSProp
     lineHeight: number | CSSProp
-    letterSpacing: CSSProp
     marginBottom: CSSProp
     small: {
       fontSize: CSSProp
