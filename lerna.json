@@ -1,5 +1,5 @@
 {
   "useWorkspaces": true,
   "npmClient": "npm",
-  "version": "1.0.0-beta.0"
+  "version": "0.35.3"
 }
