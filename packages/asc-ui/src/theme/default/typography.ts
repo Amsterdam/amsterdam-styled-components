@@ -43,13 +43,6 @@ const typography: Theme.TypographyInterface = {
     fontSize: '16px',
     fontWeight: 'inherit',
     lineHeight: '22px',
-    marginBottom: '0',
-    breakpoints: {
-      laptop: {
-        fontSize: '18px',
-        lineHeight: '25px',
-      },
-    },
   },
   p: {
     fontSize: calculateFluidStyle(18, 24),
@@ -64,31 +57,21 @@ const typography: Theme.TypographyInterface = {
     fontSize: '16px',
     fontWeight: 400,
     lineHeight: '22px',
-    marginBottom: '8',
-    breakpoints: {
-      laptop: {
-        fontSize: '18px',
-        lineHeight: '25px',
-      },
-    },
   },
   em: {
     fontSize: '16px',
     fontWeight: 400,
     lineHeight: 1.25,
-    marginBottom: '0',
   },
   small: {
     fontSize: '14px',
     fontWeight: 400,
     lineHeight: '18px',
-    marginBottom: '0',
   },
   span: {
     fontSize: '14px',
     fontWeight: 400,
     lineHeight: '18px',
-    marginBottom: '0',
   },
 }
 

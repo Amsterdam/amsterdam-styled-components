@@ -36,19 +36,6 @@ export namespace Theme {
 
   export type Spacing = number
 
-  export interface BreakpointsInterface {
-    mobileS: GetBreakpointFunc
-    mobileM: GetBreakpointFunc
-    mobileL: GetBreakpointFunc
-    tabletS: GetBreakpointFunc
-    tabletM: GetBreakpointFunc
-    laptop: GetBreakpointFunc
-    laptopM: GetBreakpointFunc
-    laptopL: GetBreakpointFunc
-    desktop: GetBreakpointFunc
-    desktopL: GetBreakpointFunc
-  }
-
   export interface GridInterface {
     xLarge: LayoutInterface
     large: LayoutInterface
@@ -106,32 +93,26 @@ export namespace Theme {
     fontWeight: 400 | 500 | 700 | 800 | 'inherit'
     fontSize: CSSProp
     lineHeight: number | CSSProp
-    marginBottom: CSSProp
-    small: {
+    marginBottom?: CSSProp
+    small?: {
       fontSize: CSSProp
       lineHeight: number | CSSProp
     }
   }
 
-  export interface TypographyType extends Partial<TypographyElementStyle> {
-    breakpoints?: {
-      [key in keyof BreakpointsInterface]?: Partial<TypographyElementStyle>
-    }
-  }
-
   export interface TypographyElements {
-    h1: TypographyType
-    h2: TypographyType
-    h3: TypographyType
-    h4: TypographyType
-    h5: TypographyType
-    h6: TypographyType
-    p: TypographyType
-    li: TypographyType
-    a: TypographyType
-    em: TypographyType
-    small: TypographyType
-    span: TypographyType
+    h1: TypographyElementStyle
+    h2: TypographyElementStyle
+    h3: TypographyElementStyle
+    h4: TypographyElementStyle
+    h5: TypographyElementStyle
+    h6: TypographyElementStyle
+    p: TypographyElementStyle
+    li: TypographyElementStyle
+    a: TypographyElementStyle
+    em: TypographyElementStyle
+    small: TypographyElementStyle
+    span: TypographyElementStyle
   }
 
   export interface TypographyInterface extends Partial<TypographyElements> {
@@ -139,7 +120,7 @@ export namespace Theme {
   }
 
   export interface ThemeInterface {
-    breakpoints: Partial<BreakpointsInterface>
+    breakpoint: GetBreakpointFunc
     colors: Partial<ColorTypeInterface>
     globalStyle: Partial<GlobalStyleType>
     typography: Partial<TypographyInterface>

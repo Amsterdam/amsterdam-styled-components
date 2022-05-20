@@ -17,7 +17,6 @@ export {
   useEdgeDetection,
   useFocus,
   useFocusWithArrows,
-  useMatchMedia,
   useOptionalControlledState,
   useTrappedFocus,
 } from './utils/hooks'
@@ -25,7 +24,6 @@ export {
 export {
   breakpoint,
   showAboveBackDrop,
-  showHide,
   srOnlyStyle,
   svgFill,
   themeColor,

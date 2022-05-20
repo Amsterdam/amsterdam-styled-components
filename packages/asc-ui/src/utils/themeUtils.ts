@@ -3,10 +3,6 @@ import { BACKDROP_Z_INDEX } from '../components/shared/constants'
 import type { Theme } from '../types'
 import { fromProps } from './fromProps'
 
-interface ThemeProp {
-  theme: Theme.ThemeInterface
-}
-
 export type ThemeFn<T> = ({ theme }: { theme: Theme.ThemeInterface }) => T
 
 /**
@@ -57,32 +53,29 @@ export const themeColor = withTheme<ThemeColorParameters, string>(
   },
 )
 
-type BreakpointsType = [Theme.TypeBreakpoint, keyof Theme.BreakpointsInterface]
+type BreakpointsType = [Theme.TypeBreakpoint] | []
 
-export const breakpoint = withTheme<BreakpointsType>((theme, type, variant) => {
-  const breakpointFunc: Theme.GetBreakpointFunc = getValueFromTheme(
-    `breakpoints.${[variant]}`,
-  )({
-    theme,
-  })
-  return breakpointFunc && breakpointFunc(type)
-})
+export const breakpoint = withTheme<BreakpointsType>(
+  (theme, type = 'min-width') => {
+    const breakpointFunc: Theme.GetBreakpointFunc = getValueFromTheme(
+      'breakpoint',
+    )({
+      theme,
+    })
+    return breakpointFunc && breakpointFunc(type)
+  },
+)
 
 const generateCSSFromTypography = (
   {
     fontWeight,
     fontSize,
     lineHeight,
-    marginBottom,
     small,
   }: Partial<Theme.TypographyElementStyle>,
-  gutterBottom?: number,
   smallProp?: boolean,
 ) => css`
   font-weight: ${fontWeight};
-  margin-bottom: ${typeof gutterBottom === 'number'
-    ? `${gutterBottom}px`
-    : marginBottom};
   ${small && smallProp
     ? `
       font-size: ${small.fontSize};
@@ -96,23 +89,17 @@ const generateCSSFromTypography = (
 
 export const getTypographyFromTheme =
   () =>
-  ({
-    as: asProp = 'p',
-    gutterBottom,
-    styleAs,
-    theme,
-    small: smallProp,
-  }: any) => {
+  ({ as: asProp = 'p', styleAs, theme, small: smallProp }: any) => {
     const as = styleAs || asProp
     const styles = getValueFromTheme(`typography.${[as]}`)({
       theme,
-    }) as Theme.TypographyType
+    }) as Theme.TypographyElementStyle
     if (!styles) {
       return ''
     }
     const { ...otherProps } = styles
     return css`
-      ${generateCSSFromTypography(otherProps, gutterBottom, smallProp)}
+      ${generateCSSFromTypography(otherProps, smallProp)}
     `
   }
 
@@ -195,38 +182,6 @@ export const perceivedLoading = withTheme((theme, animateLoading = true) => {
         background-color: ${themeColor('tint', 'level3')({ theme })};
       `
 })
-
-export interface ShowHideTypes {
-  showAt?: keyof Theme.BreakpointsInterface
-  hideAt?: keyof Theme.BreakpointsInterface
-}
-
-type ShowHideProps = ThemeProp & ShowHideTypes
-
-export const showHide =
-  () =>
-  ({ hideAt, showAt, theme }: ShowHideProps) => {
-    const hideAtCss = hideAt
-      ? css`
-          @media screen and ${breakpoint('min-width', hideAt)({ theme })} {
-            display: none;
-          }
-        `
-      : ''
-
-    const showAtCss = showAt
-      ? css`
-          @media screen and ${breakpoint('max-width', showAt)({ theme })} {
-            display: none;
-          }
-        `
-      : ''
-
-    return css`
-      ${showAtCss}
-      ${hideAtCss}
-    `
-  }
 
 // Function that uses the BACKDROP_Z_INDEX constant to determine the z-index for components rendered with a backdrop
 // The first argument in the curry can be used to raise the z-index for components that need to be displayed above

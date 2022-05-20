@@ -24,12 +24,14 @@ Prefix the change with one of these keywords:
 - Changed: **Breaking** Tint color `level2` is removed, all grey tints slide down a position. Support color `focus` is removed.
 - Changed: **Breaking** `layouts` is removed from the default theme
 - Changed: **Breaking** deprecated utils `mapToBreakpoints`, `customCss` and `fromTheme` are removed
+- Changed: **Breaking** `breakpoint` function doesn't take a second prop anymore, there's only one breakpoint @ 820px now
 - Changed: Button has a `small` prop, for smaller buttons
 - Changed: Heading has a `small` prop, for a smaller version of h1
 - Changed: Heading has a `darkBackground` prop, to switch to a white color
 - Changed: Paragraph has a `small` prop, for a smaller version
 - Changed: Paragraph has an `intro` prop, for the intro version of a paragraph
 - Changed: Paragraph has a `darkBackground` prop, to switch to a white color
+- Changed: The Button component and all Typography components (Heading, Paragraph, Link, Quote, Blockquote) accept an object for `gutterBottom`, with small (below the breakpoint) and large (higher than the breakpoint) values
 
 ## [0.35.2]
 

@@ -5,16 +5,17 @@ import {
   themeColor,
   calculateFluidStyle,
   themeSpacing,
+  breakpoint,
 } from '../../utils'
 import Icon from '../Icon'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'blank'
 
 export const IconLeft = styled(Icon)`
-  margin-right: 10px;
+  margin-right: ${themeSpacing(2)};
 `
 export const IconRight = styled(Icon)`
-  margin-left: 10px;
+  margin-left: ${themeSpacing(2)};
 `
 
 function getVariant({ variant }: { variant?: ButtonVariant }) {
@@ -98,6 +99,10 @@ function getVariant({ variant }: { variant?: ButtonVariant }) {
 export interface ButtonStyleProps {
   variant?: ButtonVariant
   small?: boolean
+  gutterBottom?: {
+    small: number
+    large: number
+  } & number
 }
 
 const ButtonStyle = styled.button<ButtonStyleProps>`
@@ -119,6 +124,19 @@ const ButtonStyle = styled.button<ButtonStyleProps>`
   ${Icon} {
     flex-shrink: 0;
   }
+  margin-bottom: ${({ gutterBottom }) =>
+    `${
+      typeof gutterBottom?.large === 'number'
+        ? gutterBottom.large
+        : gutterBottom || 0
+    }px`};
+  ${({ gutterBottom }) =>
+    typeof gutterBottom?.small === 'number' &&
+    css`
+      @media screen and ${breakpoint('max-width')} {
+        margin-bottom: ${gutterBottom.small}px;
+      }
+    `}
 
   &:disabled {
     cursor: default;

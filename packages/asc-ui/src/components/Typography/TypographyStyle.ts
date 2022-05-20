@@ -1,11 +1,19 @@
 import type { FlattenSimpleInterpolation } from 'styled-components'
 import styled, { css } from 'styled-components'
 import type { ElementType } from 'react'
-import { getTypographyFromTheme, themeColor, svgFill } from '../../utils'
+import {
+  getTypographyFromTheme,
+  themeColor,
+  svgFill,
+  breakpoint,
+} from '../../utils'
 import type { Theme } from '../../types'
 
 export interface Props {
-  gutterBottom?: number
+  gutterBottom?: {
+    small: number
+    large: number
+  } & number
   styleAs?: keyof Theme.TypographyElements
   as?: ElementType
   forwardedAs?: ElementType
@@ -46,5 +54,19 @@ export default styled.p<Props>`
     css`
       color: ${themeColor('tint', 'level1')};
       ${svgFill(themeColor('tint', 'level1'))}
+    `}
+
+  margin-bottom: ${({ gutterBottom }) =>
+    `${
+      typeof gutterBottom?.large === 'number'
+        ? gutterBottom.large
+        : gutterBottom || 0
+    }px`};
+  ${({ gutterBottom }) =>
+    typeof gutterBottom?.small === 'number' &&
+    css`
+      @media screen and ${breakpoint('max-width')} {
+        margin-bottom: ${gutterBottom.small}px;
+      }
     `}
 `

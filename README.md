@@ -10,6 +10,11 @@
 
 [Demo site with the storybook of the components](https://amsterdam.github.io/amsterdam-styled-components/?path=/docs/introduction-welcome--page)
 
+## Beta
+You're currently looking at a new beta version of Amsterdam Styled Components, using the new gemeente Amsterdam style. Everything is still a work in progress, use at your own risk. The beta version is published on NPM with the version number 1.0.0-beta.x (check the [repository](https://github.com/Amsterdam/amsterdam-styled-components/tree/beta) for the latest version)
+
+If you want to use both the current and the beta versions of ASC side by side, you can use a [package alias](https://dev.to/abdelrahmanahmed/package-alias-name-using-npm-yarn-d9p). You could do something like `npm install asc-ui-beta@npm:@amsterdam/asc-ui@1.0.0-beta.x` to have both `@amsterdam/asc-ui` and `asc-ui-beta` available in your project.
+
 ## Use components in your project
 
 Please read the [getting started](https://github.com/Amsterdam/amsterdam-styled-components/tree/main/docs/GETTING_STARTED.md) documentation

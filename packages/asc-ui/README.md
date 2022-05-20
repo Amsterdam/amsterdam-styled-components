@@ -23,7 +23,7 @@ import { themeColor, List, breakpoint, styles, ThemeProvider } from '@amsterdam/
 const StyledList = styled(List)`
   background-color: ${themeColor('tint', 'level5')};
 
-  @media screen and ${breakpoint('min-width', 'laptopM')} {
+  @media screen and ${breakpoint()} {
     background-color: ${themeColor('tint', 'level1')};
   }
 
@@ -58,7 +58,7 @@ import { themeColor, List, breakpoint, styles, ThemeProvider, svgFill } from '@a
 const StyledList = styled(List)`
   background-color: ${themeColor('tint', 'level5')};
 
-  @media screen and ${breakpoint('min-width', 'laptopM')} {
+  @media screen and ${breakpoint()} {
     background-color: ${themeColor('tint', 'level1')};
   }
 `

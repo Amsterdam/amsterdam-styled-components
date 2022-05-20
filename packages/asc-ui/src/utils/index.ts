@@ -6,8 +6,6 @@ export {
   srOnlyStyle,
   breakpoint,
   svgFill,
-  showHide,
-  ShowHideTypes,
   showAboveBackDrop,
   getValueFromTheme,
   themeSpacing,

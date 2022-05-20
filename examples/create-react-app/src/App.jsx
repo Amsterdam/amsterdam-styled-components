@@ -37,7 +37,7 @@ const StyledLinkList = styled(List)`
   padding: 50px;
   background-color: ${themeColor('tint', 'level2')};
 
-  @media screen and ${breakpoint('min-width', 'laptopM')} {
+  @media screen and ${breakpoint()} {
     background-color: ${themeColor('tint', 'level4')};
   }
 

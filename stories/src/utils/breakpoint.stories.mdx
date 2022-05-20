@@ -7,40 +7,27 @@ import { breakpoint } from '@amsterdam/asc-ui'
 
 # breakpoint
 
-A function to retrieve a breakpoint value from a theme
+A function to retrieve the breakpoint value from a theme. The default theme only has one breakpoint @ 820px.
 
-- mobileS: 320px
-- mobileM: 375px
-- mobileL: 414px
-- tabletS: 540px
-- tabletM: 768px
-- laptop: 1024px
-- laptopM: 1200px
-- laptopL: 1430px
-- desktop: 1920px
-- desktopL: 2560px
-
-## Min-with, laptopM
+## Default
 
 <Canvas>
-  <Story name="Min-width, laptopM">
-    <Fragment>
-      {(() => {
-        const MyDivWithThemeBreakpointDiv = styled.div`
-          @media screen and ${breakpoint('min-width', 'laptopM')} {
-            display: none;
-          }
-        `
-        return (
-          <Fragment>
-            Component below is only visible under breakpoint `laptopM` and will
-            print: I am visible
-            <MyDivWithThemeBreakpointDiv>
-              I am visible
-            </MyDivWithThemeBreakpointDiv>
-          </Fragment>
-        )
-      })()}
-    </Fragment>
+  <Story name="Default">
+    {(() => {
+      const MyDivWithThemeBreakpointDiv = styled.div`
+        @media screen and ${breakpoint()} {
+          display: none;
+        }
+      `
+      return (
+        <Fragment>
+          Component below is only visible below 820px and will print: I am
+          visible
+          <MyDivWithThemeBreakpointDiv>
+            I am visible
+          </MyDivWithThemeBreakpointDiv>
+        </Fragment>
+      )
+    })()}
   </Story>
 </Canvas>

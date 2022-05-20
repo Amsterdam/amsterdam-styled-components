@@ -61,12 +61,9 @@ describe('breakpoint', () => {
   }
 
   it('should return the right breakpoint', () => {
-    expect(breakpoint('max-width', 'desktopL')({ theme })).toEqual(
-      '(max-width: 2559px)',
-    )
-    expect(breakpoint('min-width', 'mobileL')({ theme })).toEqual(
-      '(min-width: 414px)',
-    )
+    expect(breakpoint()({ theme })).toEqual('(min-width: 820px)')
+    expect(breakpoint('min-width')({ theme })).toEqual('(min-width: 820px)')
+    expect(breakpoint('max-width')({ theme })).toEqual('(max-width: 819px)')
   })
 })
 

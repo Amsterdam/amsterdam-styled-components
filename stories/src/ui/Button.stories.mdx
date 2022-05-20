@@ -10,6 +10,9 @@ import { Download, Close } from '@amsterdam/asc-assets'
     small: {
       control: { type: 'boolean' },
     },
+    gutterBottom: {
+      control: { type: 'number' },
+    },
   }}
 />
 
@@ -26,18 +29,25 @@ export const ButtonBar = styled.div`
   flex-wrap: wrap;
   & > * {
     margin-right: 5px;
-    margin-bottom: 5px;
   }
 `
 
 <Canvas>
-  <Story name="Default / Primary variant" args={{ small: false }}>
-    {({ small }) => (
+  <Story
+    name="Default / Primary variant"
+    args={{ small: false, gutterBottom: 0 }}
+  >
+    {({ small, gutterBottom }) => (
       <ButtonBar>
-        <Button variant="primary" small={small}>
+        <Button variant="primary" small={small} gutterBottom={gutterBottom}>
           Normal
         </Button>
-        <Button variant="primary" small={small} disabled>
+        <Button
+          variant="primary"
+          small={small}
+          disabled
+          gutterBottom={gutterBottom}
+        >
           Disabled
         </Button>
         <Button
@@ -45,6 +55,7 @@ export const ButtonBar = styled.div`
           small={small}
           iconSize={small ? 24 : 32}
           iconLeft={<Download />}
+          gutterBottom={gutterBottom}
         >
           With icon
         </Button>
@@ -56,13 +67,18 @@ export const ButtonBar = styled.div`
 ## Secondary variant
 
 <Canvas>
-  <Story name="Secondary variant" args={{ small: false }}>
-    {({ small }) => (
+  <Story name="Secondary variant" args={{ small: false, gutterBottom: 0 }}>
+    {({ small, gutterBottom }) => (
       <ButtonBar>
-        <Button variant="secondary" small={small}>
+        <Button variant="secondary" small={small} gutterBottom={gutterBottom}>
           Normal
         </Button>
-        <Button variant="secondary" small={small} disabled>
+        <Button
+          variant="secondary"
+          small={small}
+          disabled
+          gutterBottom={gutterBottom}
+        >
           Disabled
         </Button>
         <Button
@@ -70,6 +86,7 @@ export const ButtonBar = styled.div`
           small={small}
           iconSize={small ? 24 : 32}
           iconLeft={<Download />}
+          gutterBottom={gutterBottom}
         >
           With icon
         </Button>
@@ -81,13 +98,18 @@ export const ButtonBar = styled.div`
 ## Tertiary variant
 
 <Canvas>
-  <Story name="Tertiary variant" args={{ small: false }}>
-    {({ small }) => (
+  <Story name="Tertiary variant" args={{ small: false, gutterBottom: 0 }}>
+    {({ small, gutterBottom }) => (
       <ButtonBar>
-        <Button variant="tertiary" small={small}>
+        <Button variant="tertiary" small={small} gutterBottom={gutterBottom}>
           Normal
         </Button>
-        <Button variant="tertiary" small={small} disabled>
+        <Button
+          variant="tertiary"
+          small={small}
+          disabled
+          gutterBottom={gutterBottom}
+        >
           Disabled
         </Button>
         <Button
@@ -95,6 +117,7 @@ export const ButtonBar = styled.div`
           small={small}
           iconSize={small ? 24 : 32}
           iconLeft={<Download />}
+          gutterBottom={gutterBottom}
         >
           With icon
         </Button>
@@ -106,7 +129,14 @@ export const ButtonBar = styled.div`
 ## With only an icon
 
 <Canvas>
-  <Story name="With only an icon">
-    <Button variant="blank" iconSize={32} icon={<Close />} />
+  <Story name="With only an icon" args={{ gutterBottom: 0 }}>
+    {({ gutterBottom }) => (
+      <Button
+        variant="blank"
+        iconSize={32}
+        icon={<Close />}
+        gutterBottom={gutterBottom}
+      />
+    )}
   </Story>
 </Canvas>

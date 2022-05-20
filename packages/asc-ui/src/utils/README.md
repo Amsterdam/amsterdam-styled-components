@@ -80,7 +80,7 @@ Extenstion of fromTheme to retrieve the media query breakpoints as specified for
 
 ```js static
 const HeaderSearchStyle = styled.div`
-  @media screen and ${breakpoint('max-width', 'tabletM')} {
+  @media screen and ${breakpoint('max-width')} {
     width: 50px;
   }
 `
