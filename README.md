@@ -8,7 +8,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8662c9dc-e673-434b-9a95-a642e4b45825/deploy-status)](https://app.netlify.com/sites/amsterdam-styled-components/deploys)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-[Demo site with the storybook of the components](https://amsterdam.github.io/amsterdam-styled-components/?path=/docs/introduction-welcome--page)
+[Demo site with the storybook of the components]([https://amsterdam.github.io/amsterdam-styled-components/?path=/docs/introduction-welcome--page](https://alimpens.github.io/asc-beta/?path=/story/introduction-welcome--page))
 
 ## Alpha
 You're currently looking at a new alpha version of Amsterdam Styled Components, using the new gemeente Amsterdam style. Everything is still a work in progress, use at your own risk. The alpha version is published on NPM with the version number 1.0.0-alpha.x (check the [repository](https://github.com/Amsterdam/amsterdam-styled-components/tree/beta) for the latest version)
