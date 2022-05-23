@@ -63,7 +63,6 @@ const StyledList = styled(List)`
   }
 `
 
-
 const StyledListItem - styled(ListItem)`
   color: ${themeColor('primary')};
 
