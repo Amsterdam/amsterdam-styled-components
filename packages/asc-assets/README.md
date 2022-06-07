@@ -15,7 +15,6 @@ npm install @amsterdam/asc-assets
 
 ## Basic Usage
 
-
 ### Icons
 
 ```jsx
