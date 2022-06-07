@@ -129,6 +129,7 @@ of the [core maintainers](./MAINTAINERS.md). To publish these packages to npm, f
 3. Select a version
 4. Once published, update the [changelog](../CHANGELOG.md) and move all the bulletpoints under the
    Unreleased section to the corresponding file.
+5. Go to the [tags of the repository](https://github.com/Amsterdam/amsterdam-styled-components/tags) and create a release of the latest version.
 
 ## Troubleshooting
 
