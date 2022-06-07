@@ -21,14 +21,16 @@ For example, this basic application shows a simple button and adds the aforement
 
 ```jsx
 import { Button, GlobalStyle, ThemeProvider } from '@amsterdam/asc-ui'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client';
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+
+root.render(
   <ThemeProvider>
     <GlobalStyle />
     <Button variant="primary">Click me!</Button>
-  </ThemeProvider>,
-  document.getElementById('root'),
+  </ThemeProvider>
 )
 ```
 
