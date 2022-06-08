@@ -79,6 +79,25 @@ describe('Pagination', () => {
     expect(screen.getByTestId('pageButton-5')).toHaveAttribute('tabIndex', '-1')
   })
 
+  it('should render customized "previous" and "next" button labels', () => {
+    const onPageChangeMock = jest.fn()
+    render(
+      <Pagination
+        page={6}
+        pageSize={10}
+        collectionSize={100}
+        onPageChange={onPageChangeMock}
+        labelPrevious="Vorige pagina"
+        labelNext="Volgende pagina"
+      />,
+    )
+
+    expect(screen.getByTestId('nextButton').textContent).toBe('Volgende pagina')
+    expect(screen.getByTestId('previousButton').textContent).toBe(
+      'Vorige pagina',
+    )
+  })
+
   it('should be working in a controlled state', () => {
     function ControlledComponent() {
       const [page, setPage] = useState(6)
