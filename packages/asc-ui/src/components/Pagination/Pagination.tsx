@@ -32,6 +32,22 @@ export interface PaginationProps {
    * The number of pages to show in the pagination
    */
   paginationLength?: number
+  /**
+   * Label for previous
+   */
+  labelPrevious?: string
+  /**
+   * Label for next
+   */
+  labelNext?: string
+  /**
+   * Aria Label for previous
+   */
+  ariaLabelPrevious?: string
+  /**
+   * Aria Label for next
+   */
+  ariaLabelNext?: string
 }
 
 const DEFAULT_PAGINATION_LENGTH = 7
@@ -42,6 +58,10 @@ function Pagination({
   page = 1,
   pageSize = 10,
   paginationLength = DEFAULT_PAGINATION_LENGTH,
+  labelPrevious = 'vorige',
+  labelNext = 'volgende',
+  ariaLabelPrevious = 'Vorige pagina',
+  ariaLabelNext = 'Volgende pagina',
   ...otherProps
 }: PaginationProps & HTMLAttributes<HTMLElement>) {
   const [currentPage, setCurrentPage] = useState<number>(page)
@@ -135,7 +155,7 @@ function Pagination({
         <ListItem>
           <PreviousButton
             type="button"
-            aria-label="Vorige pagina"
+            aria-label={ariaLabelPrevious}
             tabIndex={0}
             data-testid="previousButton"
             onClick={onPrevious}
@@ -143,7 +163,7 @@ function Pagination({
             variant="textButton"
             disabled={currentPage === 1}
           >
-            vorige
+            {labelPrevious}
           </PreviousButton>
         </ListItem>
         {range.map((pageNumberOrSpacer) =>
@@ -173,7 +193,7 @@ function Pagination({
         <ListItem>
           <NextButton
             type="button"
-            aria-label="Volgende pagina"
+            aria-label={ariaLabelNext}
             tabIndex={0}
             data-testid="nextButton"
             onClick={onNext}
@@ -181,7 +201,7 @@ function Pagination({
             variant="textButton"
             disabled={currentPage === totalPages}
           >
-            volgende
+            {labelNext}
           </NextButton>
         </ListItem>
       </List>
