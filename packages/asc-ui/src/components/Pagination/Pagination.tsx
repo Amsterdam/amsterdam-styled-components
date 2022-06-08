@@ -51,10 +51,6 @@ export interface PaginationProps {
 }
 
 const DEFAULT_PAGINATION_LENGTH = 7
-const DEFAULT_LABEL_PREVIOUS = 'vorige'
-const DEFAULT_LABEL_NEXT = 'volgende'
-const DEFAULT_ARIA_LABEL_PREVIOUS = 'Vorige pagina'
-const DEFAULT_ARIA_LABEL_NEXT = 'Volgende pagina'
 
 function Pagination({
   collectionSize,
@@ -62,10 +58,10 @@ function Pagination({
   page = 1,
   pageSize = 10,
   paginationLength = DEFAULT_PAGINATION_LENGTH,
-  labelPrevious = DEFAULT_LABEL_PREVIOUS,
-  labelNext = DEFAULT_LABEL_NEXT,
-  ariaLabelPrevious = DEFAULT_ARIA_LABEL_PREVIOUS,
-  ariaLabelNext = DEFAULT_ARIA_LABEL_NEXT,
+  labelPrevious = 'vorige',
+  labelNext = 'volgende',
+  ariaLabelPrevious = 'Vorige pagina',
+  ariaLabelNext = 'Volgende pagina',
   ...otherProps
 }: PaginationProps & HTMLAttributes<HTMLElement>) {
   const [currentPage, setCurrentPage] = useState<number>(page)

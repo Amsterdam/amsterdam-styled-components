@@ -89,12 +89,23 @@ describe('Pagination', () => {
         onPageChange={onPageChangeMock}
         labelPrevious="Vorige pagina"
         labelNext="Volgende pagina"
+        ariaLabelPrevious="Vorige aria"
+        ariaLabelNext="Volgende aria"
       />,
     )
 
     expect(screen.getByTestId('nextButton').textContent).toBe('Volgende pagina')
     expect(screen.getByTestId('previousButton').textContent).toBe(
       'Vorige pagina',
+    )
+
+    expect(screen.getByTestId('previousButton')).toHaveAttribute(
+      'aria-label',
+      'Vorige aria',
+    )
+    expect(screen.getByTestId('nextButton')).toHaveAttribute(
+      'aria-label',
+      'Volgende aria',
     )
   })
 
