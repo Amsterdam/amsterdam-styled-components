@@ -62,7 +62,7 @@
     "jest-environment-jsdom": "^28.1.0",
     "jest-styled-components": "7.0.8",
     "lerna": "4.0.0",
-    "lint-staged": "^12.1.2",
+    "lint-staged": "^13.0.0",
     "postcss-syntax": "^0.36.2",
     "prettier": "^2.4.1",
     "prettier-package-json": "^2.6.0",
