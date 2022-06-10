@@ -16,6 +16,9 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+## [0.36.0]
+
+- Added: custom labels for Pagination component
 - Added: Support for React 18
 
 ## [0.35.2]
