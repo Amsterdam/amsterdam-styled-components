@@ -33,6 +33,13 @@ Prefix the change with one of these keywords:
 - Changed: Paragraph has a `darkBackground` prop, to switch to a white color
 - Changed: The Button component and all Typography components (Heading, Paragraph, Link, Quote, Blockquote) accept an object for `gutterBottom`, with small (below the breakpoint) and large (higher than the breakpoint) values
 
+## Unreleased
+
+## [0.36.0]
+
+- Added: custom labels for Pagination component
+- Added: Support for React 18
+
 ## [0.35.2]
 
 - `StepByStepNav` component: alignment changes and addition of `breakpoint` prop

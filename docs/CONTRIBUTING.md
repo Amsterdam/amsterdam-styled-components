@@ -5,7 +5,7 @@ email, slack, or any other method with the owners of this repository before maki
 
 ## Getting started
 
-Run `npm install` to install dependencies, followed by `npm run start`: this will run storybook on your machine
+Run `npm install` to install dependencies, followed by `npm run prebuild`, `npm run build` and then `npm run start`: this will run storybook on your machine.
 
 ## Conventions and rules
 
@@ -129,6 +129,7 @@ of the [core maintainers](./MAINTAINERS.md). To publish these packages to npm, f
 3. Select a version
 4. Once published, update the [changelog](../CHANGELOG.md) and move all the bulletpoints under the
    Unreleased section to the corresponding file.
+5. Go to the [tags of the repository](https://github.com/Amsterdam/amsterdam-styled-components/tags) and create a release of the latest version.
 
 ## Troubleshooting
 
