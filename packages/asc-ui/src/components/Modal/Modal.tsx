@@ -81,7 +81,11 @@ function Modal({
           }
         : {})}
     >
-      <BackDrop backdropOpacity={backdropOpacity} onClick={handleClose} />
+      <BackDrop
+        backdropOpacity={backdropOpacity}
+        onClick={handleClose}
+        {...otherProps}
+      />
       <ModalStyle
         role="dialog"
         aria-modal="true"
