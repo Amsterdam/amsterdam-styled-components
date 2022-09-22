@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { fireEvent, render } from '@testing-library/react'
+import { BACKDROP_Z_INDEX } from '../shared/constants'
 import Modal from './Modal'
 
 jest.mock('polished')
@@ -29,6 +30,27 @@ describe('Modal', () => {
   it('should render null when open prop is false', () => {
     const { container } = render(<Modal open={false} disablePortal />)
     expect(container.lastChild).toBeNull()
+  })
+
+  it('should render the BackDrop and the Modal with the default z-index when zIndexOffset prop is not set', () => {
+    const { container } = render(<Modal open disablePortal />)
+
+    expect(container.firstChild).toHaveStyle(`z-index: ${BACKDROP_Z_INDEX}`)
+    expect(container.lastChild).toHaveStyle(`z-index: ${BACKDROP_Z_INDEX + 1}`)
+  })
+
+  it('should render the BackDrop and the Modal with an higher z-index when zIndexOffset prop is set', () => {
+    const offset = 500
+    const { container } = render(
+      <Modal open zIndexOffset={offset} disablePortal />,
+    )
+
+    expect(container.firstChild).toHaveStyle(
+      `z-index: ${BACKDROP_Z_INDEX + offset}`,
+    )
+    expect(container.lastChild).toHaveStyle(
+      `z-index: ${BACKDROP_Z_INDEX + 1 + offset}`,
+    )
   })
 
   it('should set focus on first focusable element', () => {
