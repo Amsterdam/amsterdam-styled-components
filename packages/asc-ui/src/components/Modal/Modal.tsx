@@ -27,6 +27,7 @@ function Modal({
   element,
   blurredNodeSelector,
   onClose,
+  zIndexOffset,
   ...otherProps
 }: Props) {
   const ref = useRef<HTMLDivElement>(null)
@@ -81,12 +82,17 @@ function Modal({
           }
         : {})}
     >
-      <BackDrop backdropOpacity={backdropOpacity} onClick={handleClose} />
+      <BackDrop
+        backdropOpacity={backdropOpacity}
+        onClick={handleClose}
+        zIndexOffset={zIndexOffset}
+      />
       <ModalStyle
         role="dialog"
         aria-modal="true"
         ref={ref}
         onKeyDown={handleKeyDown}
+        zIndexOffset={zIndexOffset}
         {...otherProps}
       >
         {children}
