@@ -16,6 +16,8 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Fixed: pass Modal prop zIndexOffset also to BackDrop
+
 ## [0.36.0]
 
 - Added: custom labels for Pagination component
