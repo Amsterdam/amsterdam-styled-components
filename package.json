@@ -58,7 +58,7 @@
     "husky": "^8.0.1",
     "hygen": "^6.1.0",
     "jest": "^28.1.0",
-    "jest-cli": "^28.1.0",
+    "jest-cli": "^29.0.3",
     "jest-environment-jsdom": "^28.1.0",
     "jest-styled-components": "7.0.8",
     "lerna": "5.1.1",
