@@ -15,28 +15,17 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs'
         const Regular = styled.p`
           font-weight: 400;
         `
-        const RegularItalic = styled.p`
-          font-weight: 400;
-          font-style: italic;
-        `
-        const Medium = styled.p`
-          font-weight: 500;
-        `
-        const Demi = styled.p`
+        const Bold = styled.p`
           font-weight: 700;
         `
-        const Bold = styled.p`
+        const ExtraBold = styled.p`
           font-weight: 800;
         `
         return (
           <Fragment>
-            <Regular>Avenir Next Regular: font-weight: 400</Regular>
-            <RegularItalic>
-              Avenir Next Regular Italic: font-weight: 400, font-style: italic
-            </RegularItalic>
-            <Medium>Avenir Next Medium: font-weight: 500</Medium>
-            <Demi>Avenir Next Demi: font-weight: 700</Demi>
-            <Bold>Avenir Next Bold: font-weight: 800</Bold>
+            <Regular>Amsterdam Sans Regular: font-weight: 400</Regular>
+            <Bold>Amsterdam Sans Bold: font-weight: 700</Bold>
+            <ExtraBold>Amsterdam Sans ExtraBold: font-weight: 800</ExtraBold>
           </Fragment>
         )
       })()}
