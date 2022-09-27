@@ -1,7 +1,7 @@
 import type { Theme } from '../../types'
 import colors from './colors'
 
-const defaultFontFamily = 'Avenir Next, Arial, sans-serif'
+const defaultFontFamily = 'Amsterdam Sans, Arial, sans-serif'
 
 /**
  *  The font definitions differ from the ones in the design system.
