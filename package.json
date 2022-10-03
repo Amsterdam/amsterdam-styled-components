@@ -15,6 +15,8 @@
     "lint": "concurrently \"npm run lint:css\" \"npm run lint:js\"",
     "lint:css": "stylelint \"./packages/**/*Style.ts\"",
     "lint:js": "eslint ./ --ext js,mdx,ts,tsx",
+    "prebuild": "npm run build --workspace=@amsterdam/asc-assets",
+    "prepare": "husky install",
     "publish:canary": "npm run build && lerna publish -c --yes",
     "publish:stable": "npm run build && lerna publish",
     "start": "concurrently \"npm run build:watch\" \"npm run storybook\"",
