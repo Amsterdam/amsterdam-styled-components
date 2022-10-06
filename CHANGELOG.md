@@ -16,7 +16,9 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
-- Replace Avenir font with Amsterdam Sans
+## [0.37.0]
+
+- Changed: Replace Avenir font with Amsterdam Sans
 - Fixed: pass Modal prop zIndexOffset also to BackDrop
 
 ## [0.36.0]
