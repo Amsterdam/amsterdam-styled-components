@@ -5,7 +5,7 @@ email, slack, or any other method with the owners of this repository before maki
 
 ## Getting started
 
-Run `npm install` to install dependencies, followed by `npm run prebuild`, `npm run build` and then `npm run start`: this will run storybook on your machine.
+Run `npm install` to install dependencies, followed by `npm run build` and then `npm start`: this will run storybook on your machine.
 
 ## Conventions and rules
 
