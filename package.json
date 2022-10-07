@@ -5,25 +5,25 @@
     "stories"
   ],
   "scripts": {
-    "prebuild": "npm run build --workspace=@amsterdam/asc-assets",
     "build": "npm run clean:generated && npm run build:ts && npm run build:ts:es",
     "build:watch": "npm run clean:generated && concurrently \"npm run build:ts -- --watch\" \"npm run build:ts:es -- --watch\"",
     "build:storybook": "npm run build --workspace=stories",
     "build:ts": "tsc -b packages/asc-assets packages/asc-ui",
     "build:ts:es": "tsc -b packages/asc-assets/tsconfig.es.json packages/asc-ui/tsconfig.es.json",
     "build:netlify": "npm run build && npm run build:storybook",
-    "clean:generated": "find ./packages -name \"*.d.ts\" -type f -delete && find ./packages -name \"*.tsbuildinfo\" -type f -delete",
+    "clean:generated": "rimraf ./packages/*/*.tsbuildinfo",
     "lint": "concurrently \"npm run lint:css\" \"npm run lint:js\"",
     "lint:css": "stylelint \"./packages/**/*Style.ts\"",
     "lint:js": "eslint ./ --ext js,mdx,ts,tsx",
+    "prebuild": "npm run build --workspace=@amsterdam/asc-assets",
+    "prepare": "husky install",
     "publish:canary": "npm run build && lerna publish -c --yes",
     "publish:stable": "npm run build && lerna publish",
     "start": "concurrently \"npm run build:watch\" \"npm run storybook\"",
     "storybook": "npm run start --workspace=stories",
     "stylelint": "stylelint \"./packages/**/*Style.ts\"",
     "test": "jest --collect-coverage",
-    "test:watch": "jest --watch --onlyChanged --verbose true",
-    "prepare": "husky install"
+    "test:watch": "jest --watch --onlyChanged --verbose true"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -68,6 +68,7 @@
     "prettier-package-json": "^2.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "rimraf": "^3.0.2",
     "styled-components": "^5.3.0",
     "stylelint": "^14.8.0",
     "stylelint-config-prettier": "^9.0.3",
