@@ -16,6 +16,9 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+- Changed: updated Amsterdam Sans font
+- Changed: show fallback font while font files are loading
+
 ## [0.37.0]
 
 - Changed: Replace Avenir font with Amsterdam Sans

@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: 'Amsterdam Sans';
   font-style: normal;
@@ -6,7 +5,8 @@
   src: url(./eot/AmsterdamSans-Light.eot?#iefix);
   src: url(./eot/AmsterdamSans-Light.eot?#iefix) format('eot'),
     url(./woff2/AmsterdamSans-Light.woff2) format('woff2'),
-    url(./woff/AmsterdamSans-Light.woff) format('woff')
+    url(./woff/AmsterdamSans-Light.woff) format('woff');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Amsterdam Sans';
@@ -15,7 +15,8 @@
   src: url(./eot/AmsterdamSans-Regular.eot?#iefix);
   src: url(./eot/AmsterdamSans-Regular.eot?#iefix) format('eot'),
     url(./woff2/AmsterdamSans-Regular.woff2) format('woff2'),
-    url(./woff/AmsterdamSans-Regular.woff) format('woff')
+    url(./woff/AmsterdamSans-Regular.woff) format('woff');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Amsterdam Sans';
@@ -24,7 +25,8 @@
   src: url(./eot/AmsterdamSans-Italic.eot?#iefix);
   src: url(./eot/AmsterdamSans-Italic.eot?#iefix) format('eot'),
     url(./woff2/AmsterdamSans-Italic.woff2) format('woff2'),
-    url(./woff/AmsterdamSans-Italic.woff) format('woff')
+    url(./woff/AmsterdamSans-Italic.woff) format('woff');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Amsterdam Sans';
@@ -33,7 +35,8 @@
   src: url(./eot/AmsterdamSans-Bold.eot?#iefix);
   src: url(./eot/AmsterdamSans-Bold.eot?#iefix) format('eot'),
     url(./woff2/AmsterdamSans-Bold.woff2) format('woff2'),
-    url(./woff/AmsterdamSans-Bold.woff) format('woff')
+    url(./woff/AmsterdamSans-Bold.woff) format('woff');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Amsterdam Sans';
@@ -42,7 +45,8 @@
   src: url(./eot/AmsterdamSans-BoldItalic.eot?#iefix);
   src: url(./eot/AmsterdamSans-BoldItalic.eot?#iefix) format('eot'),
     url(./woff2/AmsterdamSans-BoldItalic.woff2) format('woff2'),
-    url(./woff/AmsterdamSans-BoldItalic.woff) format('woff')
+    url(./woff/AmsterdamSans-BoldItalic.woff) format('woff');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Amsterdam Sans';
@@ -51,5 +55,6 @@
   src: url(./eot/AmsterdamSans-ExtraBold.eot?#iefix);
   src: url(./eot/AmsterdamSans-ExtraBold.eot?#iefix) format('eot'),
     url(./woff2/AmsterdamSans-ExtraBold.woff2) format('woff2'),
-    url(./woff/AmsterdamSans-ExtraBold.woff) format('woff')
+    url(./woff/AmsterdamSans-ExtraBold.woff) format('woff');
+  font-display: swap;
 }
