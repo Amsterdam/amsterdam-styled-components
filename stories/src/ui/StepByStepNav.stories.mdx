@@ -1,5 +1,5 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { StepByStepNav } from '@amsterdam/asc-ui'
+import { List, ListItem, Paragraph, StepByStepNav } from '@amsterdam/asc-ui'
 
 <Meta
   title="UI/StepByStepNav"
@@ -9,7 +9,18 @@ import { StepByStepNav } from '@amsterdam/asc-ui'
     steps: [
       { label: 'item #1' },
       { label: 'item #2' },
-      { label: 'item #3' },
+      {
+        label: 'item #3',
+        component: (
+          <>
+            <Paragraph>Lorem ipsum dolor sit amet.</Paragraph>{' '}
+            <List variant="bullet">
+              <ListItem>listitem</ListItem>
+              <ListItem>listitem</ListItem>
+            </List>
+          </>
+        ),
+      },
       { label: 'Lorem ipsum dolor sit amet. Hic sunt dracones' },
       { label: 'item #4' },
     ],

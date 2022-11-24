@@ -6,6 +6,7 @@ import StepByStepNavStyle, {
   Label,
   ListItem,
   transitionBreakpoint,
+  ComponentWrapper,
 } from './StepByStepNavStyle'
 
 function StepByStepNav({
@@ -34,21 +35,30 @@ function StepByStepNav({
       {...props}
     >
       <OrderdedList breakpoint={breakpoint}>
-        {steps.map(({ label }, index) => (
-          <ListItem
-            activeItem={realActiveItem}
-            aria-current={
-              !stepsCompleted && index === realActiveItem - 1 ? 'step' : 'false'
-            }
-            breakpoint={breakpoint}
-            key={label}
-            {...props}
-          >
-            <Label itemType={props.itemType} breakpoint={breakpoint}>
-              {label}
-            </Label>
-          </ListItem>
-        ))}
+        {steps.map(({ label, component }, index) => {
+          return (
+            <ListItem
+              activeItem={realActiveItem}
+              aria-current={
+                !stepsCompleted && index === realActiveItem - 1
+                  ? 'step'
+                  : 'false'
+              }
+              breakpoint={breakpoint}
+              key={label}
+              {...props}
+            >
+              <Label itemType={props.itemType} breakpoint={breakpoint}>
+                {label}
+              </Label>
+              {component && index === realActiveItem - 1 && (
+                <ComponentWrapper breakpoint={breakpoint}>
+                  {component}
+                </ComponentWrapper>
+              )}
+            </ListItem>
+          )
+        })}
       </OrderdedList>
     </StepByStepNavStyle>
   )

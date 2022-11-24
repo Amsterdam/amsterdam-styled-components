@@ -1,11 +1,12 @@
 import styled, { css } from 'styled-components'
-
+import type { ReactElement } from 'react'
 import Typography from '../Typography'
 import { ascDefaultTheme } from '../../theme'
 import { breakpoint as mqBreakpoint, themeColor } from '../../utils'
 
 export interface Step {
   label: string
+  component?: ReactElement
 }
 
 export type ItemType = 'checkmark' | 'numeric' | 'none'
@@ -50,6 +51,17 @@ export const OrderdedList = styled.ol<{
   @media screen and ${({ breakpoint }) => breakpoint} {
     display: flex;
     flex-wrap: nowrap;
+  }
+`
+
+export const ComponentWrapper = styled.div<{
+  breakpoint?: StepByStepNavProps['breakpoint']
+}>`
+  @media screen and ${({ breakpoint }) => breakpoint} {
+    display: inline-block;
+    height: ${activeItemSize}px;
+    visibility: hidden;
+    width: ${activeItemSize}px;
   }
 `
 
