@@ -59,9 +59,9 @@ export const ComponentWrapper = styled.div<{
 }>`
   @media screen and ${({ breakpoint }) => breakpoint} {
     display: inline-block;
-    height: ${activeItemSize}px;
+    height: 0;
     visibility: hidden;
-    width: ${activeItemSize}px;
+    width: 0;
   }
 `
 
