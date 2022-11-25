@@ -6,7 +6,7 @@ import { breakpoint as mqBreakpoint, themeColor } from '../../utils'
 
 export interface Step {
   label: string
-  component?: ReactElement
+  content?: ReactElement
 }
 
 export type ItemType = 'checkmark' | 'numeric' | 'none'

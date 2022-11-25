@@ -35,7 +35,7 @@ function StepByStepNav({
       {...props}
     >
       <OrderdedList breakpoint={breakpoint}>
-        {steps.map(({ label, component }, index) => {
+        {steps.map(({ label, content }, index) => {
           const isActive = index === realActiveItem - 1
           return (
             <ListItem
@@ -48,9 +48,9 @@ function StepByStepNav({
               <Label itemType={props.itemType} breakpoint={breakpoint}>
                 {label}
               </Label>
-              {component && isActive && (
+              {content && isActive && (
                 <ComponentWrapper breakpoint={breakpoint}>
-                  {component}
+                  {content}
                 </ComponentWrapper>
               )}
             </ListItem>
