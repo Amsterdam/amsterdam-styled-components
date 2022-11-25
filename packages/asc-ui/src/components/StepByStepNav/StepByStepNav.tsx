@@ -36,14 +36,11 @@ function StepByStepNav({
     >
       <OrderdedList breakpoint={breakpoint}>
         {steps.map(({ label, component }, index) => {
+          const isActive = index === realActiveItem - 1
           return (
             <ListItem
               activeItem={realActiveItem}
-              aria-current={
-                !stepsCompleted && index === realActiveItem - 1
-                  ? 'step'
-                  : 'false'
-              }
+              aria-current={!stepsCompleted && isActive ? 'step' : 'false'}
               breakpoint={breakpoint}
               key={label}
               {...props}
@@ -51,7 +48,7 @@ function StepByStepNav({
               <Label itemType={props.itemType} breakpoint={breakpoint}>
                 {label}
               </Label>
-              {component && index === realActiveItem - 1 && (
+              {component && isActive && (
                 <ComponentWrapper breakpoint={breakpoint}>
                   {component}
                 </ComponentWrapper>
