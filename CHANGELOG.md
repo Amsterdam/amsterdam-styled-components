@@ -18,7 +18,7 @@ Prefix the change with one of these keywords:
 
 - Changed: updated Amsterdam Sans font
 - Changed: show fallback font while font files are loading
-- Added: component prop for StepByStepNav
+- Added: content prop for StepByStepNav
 
 ## [0.37.0]
 
