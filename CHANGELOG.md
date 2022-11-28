@@ -16,6 +16,8 @@ Prefix the change with one of these keywords:
 
 ## Unreleased
 
+## [0.38.0]
+
 - Changed: updated Amsterdam Sans font
 - Changed: show fallback font while font files are loading
 - Added: content prop for StepByStepNav
