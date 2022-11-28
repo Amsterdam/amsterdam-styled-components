@@ -1,4 +1,3 @@
 # Core Maintainers
 
-- [Chris van Mook](https://github.com/chrisvanmook)
-- [Jon Koops](https://github.com/jonkoops)
+- [Aram Limpens](https://github.com/alimpens)
