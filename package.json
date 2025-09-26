@@ -51,7 +51,7 @@
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jest": "^27.1.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-mdx": "^2.0.5",
+    "eslint-plugin-mdx": "^3.6.2",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.2.0",
