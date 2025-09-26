@@ -1,12 +1,12 @@
 # Amsterdam Styled Components (ASC)
 
-[!CAUTION]
-
-## Deprecated
-
-Amsterdam Styled Components is no longer supported.
-
-Use [Amsterdam Design System](https://designsystem.amsterdam/) instead.
+> [!CAUTION]
+>
+> ## Deprecated
+>
+> Amsterdam Styled Components is no longer supported.
+>
+> Use [Amsterdam Design System](https://designsystem.amsterdam/) instead.
 
 
 
