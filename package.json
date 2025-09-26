@@ -55,7 +55,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^8.0.1",
+    "husky": "^9.1.7",
     "hygen": "^6.2.11",
     "jest": "^28.1.0",
     "jest-cli": "^29.1.2",
