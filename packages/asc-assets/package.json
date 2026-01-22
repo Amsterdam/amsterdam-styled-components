@@ -33,7 +33,7 @@
   "devDependencies": {
     "@svgr/cli": "^6.2.1",
     "@svgr/core": "^6.2.1",
-    "svgo": "^2.8.0"
+    "svgo": "^4.0.0"
   },
   "publishConfig": {
     "access": "public"
